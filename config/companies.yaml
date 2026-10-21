@@ -610,9 +610,14 @@ companies:
   name: Plaid
   category: fintech
   careers_url: ['https://plaid.com/careers/', 'https://plaid.com/careers/?search=intern#search']
-  checker: ashby
-  settings: {board: plaid}
-  verified: {page_total: 132}
+  checker: multi
+  settings:
+    sources:
+    - checker: ashby
+      settings: {board: plaid}
+    - checker: ripplematch
+      settings: {company_id: 718}
+  verified: {page_total: 132, explained: Ashby board (no student roles) plus the student roles Plaid posts only on RippleMatch}
 - key: nuro
   name: Nuro
   category: autonomy

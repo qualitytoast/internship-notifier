@@ -800,12 +800,12 @@
   "requests": 1
  },
  "plaid": {
-  "jobs": 133,
-  "students": 0,
-  "matched": 0,
-  "at": "2026-10-20T15:09:46Z",
-  "duration": 0.2,
-  "requests": 1
+  "jobs": 131,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-10-21T03:24:44Z",
+  "duration": 0.4,
+  "requests": 2
  },
  "point72": {
   "jobs": 215,

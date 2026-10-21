@@ -158,6 +158,10 @@ OVERRIDES: dict[str, dict] = {
             {"checker": "workday", "settings": {"host": "expedia.wd108.myworkdayjobs.com", "tenant": "expedia", "site": "private"}}]}},
     "hubspot": {"checker": "multi", "settings": {"sources": [
         {"checker": "hubspot", "settings": {}}, {"checker": "ripplematch", "settings": {"company_id": 708}}]}},
+    # Plaid posts its student roles (the Summer 2027 SWE internship) only on RippleMatch, linked from its careers page
+    "plaid": {"checker": "multi", "verified": {"explained":
+        "Ashby board (no student roles) plus the student roles Plaid posts only on RippleMatch"}, "settings": {"sources": [
+        {"checker": "ashby", "settings": {"board": "plaid"}}, {"checker": "ripplematch", "settings": {"company_id": 718}}]}},
     "apple": {"checker": "apple", "settings": {}, "big": True, "verified": {"page_total": None, "explained":
         "reads the complete student slice (Students team + exact-word searches; 306 rows = 251 postings), grouped "
         "by posting; the whole site is ~6,100 posting x location rows and the page shows only '600+'"}},
