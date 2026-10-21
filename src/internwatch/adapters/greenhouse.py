@@ -3,14 +3,16 @@
 settings: board: <token>            e.g. stripe  (or boards: [a, b] for companies with several boards)
           dedupe_requisitions: true the same requisition posted on several boards is reported once (C3 AI)
           missing_ok: true          a board that answers 404 counts as empty (a company that switched its board
-                                    off for now; the zero-jobs health check still flags a working board going to 0)
+                                    off for now; the zero-jobs health check still flags a working board going to 0).
+                                    A board that answered before and now answers 404 marks the poll degraded.
 List:   GET https://boards-api.greenhouse.io/v1/boards/<board>/jobs        → {"jobs": [...], "meta": {"total": N}}
 Detail: GET https://boards-api.greenhouse.io/v1/boards/<board>/jobs/<id>   → adds content, departments, offices
+With several boards, one that fails marks the poll degraded and the others are still read; all failing fails.
 """
 from __future__ import annotations
 
-from ..models import Job
-from .base import Checker, check_total, html_text, iso_date, need, need_list, register
+from ..models import CheckerError, Job
+from .base import Checker, check_total, degrade, html_text, iso_date, need, need_list, register
 
 API = "https://boards-api.greenhouse.io/v1/boards/{board}/jobs"
 
@@ -39,29 +41,56 @@ class Greenhouse(Checker):
     def fetch(self, http, s, ctx=None):
         jobs: list[Job] = []
         reqs: set[str] = set()
+        # boards that answered before (kept between polls): a 404 from one of them is news, not a board switched off
+        answered = set(ctx.state.get("boards_ok") or []) if ctx is not None else set()
+        errors: list[CheckerError] = []
+        read = 0
         for board in self.boards(s):
-            resp = http.get(API.format(board=board), ok_statuses=(404,) if s.get("missing_ok") else ())
-            if resp.status == 404:
+            try:
+                resp = http.get(API.format(board=board), ok_statuses=(404,) if s.get("missing_ok") else ())
+                if resp.status == 404:
+                    if board in answered:
+                        degrade(ctx, f"greenhouse:{board} answered 404 (it answered before)")
+                    continue
+                got = self._board(board, resp.json())
+            except CheckerError as e:
+                if ctx is None:
+                    raise
+                errors.append(e)  # the other boards are still read
                 continue
-            data = resp.json()
-            items = need_list(data, "jobs", f"greenhouse:{board}")
-            for j in items:
-                need(j.get("id") and "title" in j, f"greenhouse:{board}: job without id/title")
-                req = str(j.get("requisition_id") or "")
+            read += 1
+            answered.add(board)
+            for j in got:
+                req = j.extra["alt_ids"][0] if j.extra["alt_ids"] else ""
                 if s.get("dedupe_requisitions") and req:
                     if req in reqs:
                         continue
                     reqs.add(req)
-                jobs.append(Job(
-                    id=str(j["id"]),
-                    title=j.get("title") or "",
-                    location=(j.get("location") or {}).get("name", ""),
-                    url=j.get("absolute_url") or f"https://job-boards.greenhouse.io/{board}/jobs/{j['id']}",
-                    posted=iso_date(j.get("first_published") or j.get("updated_at")),
-                    employment_type=_employment_type(j.get("metadata")),
-                    extra={"board": board, "alt_ids": [req] if req else []},
-                ))
-            check_total(len(items), (data.get("meta") or {}).get("total"), f"greenhouse:{board}", tolerance=0)
+                jobs.append(j)
+        if errors and not read:
+            raise errors[0]
+        if ctx is not None and s.get("missing_ok"):
+            ctx.state["boards_ok"] = sorted(answered)
+        if errors:
+            degrade(ctx, "; ".join(str(e) for e in errors))
+        return jobs
+
+    def _board(self, board: str, data) -> list[Job]:
+        items = need_list(data, "jobs", f"greenhouse:{board}")
+        jobs = []
+        for j in items:
+            need(j.get("id") and "title" in j, f"greenhouse:{board}: job without id/title")
+            req = str(j.get("requisition_id") or "")
+            jobs.append(Job(
+                id=str(j["id"]),
+                title=j.get("title") or "",
+                location=(j.get("location") or {}).get("name", ""),
+                url=j.get("absolute_url") or f"https://job-boards.greenhouse.io/{board}/jobs/{j['id']}",
+                posted=iso_date(j.get("first_published") or j.get("updated_at")),
+                employment_type=_employment_type(j.get("metadata")),
+                extra={"board": board, "alt_ids": [req] if req else []},
+            ))
+        check_total(len(items), (data.get("meta") or {}).get("total"), f"greenhouse:{board}", tolerance=0)
         return jobs
 
     def detail(self, http, s, job):
