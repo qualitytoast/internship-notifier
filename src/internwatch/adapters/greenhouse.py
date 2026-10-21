@@ -1,8 +1,11 @@
 """Greenhouse job board API (https://developers.greenhouse.io/job-board.html).
 
 settings: board: <token>            e.g. stripe  (or boards: [a, b] for companies with several boards)
-          dedupe_requisitions: true the same requisition posted on several boards is reported once (C3 AI)
-          missing_ok: true          a board that answers 404 counts as empty (a company that switched its board
+          dedupe_requisitions: true the same requisition posted on several boards is reported once (C3 AI), when
+                                    the title and place match too ("Redwood City, CA" = "Redwood City, California,
+                                    United States"); a twin with another title or place (a new term, a copy in
+                                    Mexico) is kept
+          missing_ok: true         a board that answers 404 counts as empty (a company that switched its board
                                     off for now; the zero-jobs health check still flags a working board going to 0).
                                     A board that answered before and now answers 404 marks the poll degraded.
 List:   GET https://boards-api.greenhouse.io/v1/boards/<board>/jobs        → {"jobs": [...], "meta": {"total": N}}
@@ -11,10 +14,22 @@ With several boards, one that fails marks the poll degraded and the others are s
 """
 from __future__ import annotations
 
+import re
+
+from ..locations import countries
 from ..models import CheckerError, Job
 from .base import Checker, check_total, degrade, html_text, iso_date, need, need_list, register
 
 API = "https://boards-api.greenhouse.io/v1/boards/{board}/jobs"
+
+
+def _alnum(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", text.lower())
+
+
+def _place(location: str) -> tuple:
+    """Where a posting is, however the board spells it: its cities (the first part of each location) and countries."""
+    return frozenset(_alnum(p.split(",")[0]) for p in location.split(";")), countries(location)[0]
 
 
 def _employment_type(meta) -> str:
@@ -40,7 +55,7 @@ class Greenhouse(Checker):
 
     def fetch(self, http, s, ctx=None):
         jobs: list[Job] = []
-        reqs: set[str] = set()
+        reqs: set[tuple] = set()
         # boards that answered before (kept between polls): a 404 from one of them is news, not a board switched off
         answered = set(ctx.state.get("boards_ok") or []) if ctx is not None else set()
         errors: list[CheckerError] = []
@@ -63,9 +78,10 @@ class Greenhouse(Checker):
             for j in got:
                 req = j.extra["alt_ids"][0] if j.extra["alt_ids"] else ""
                 if s.get("dedupe_requisitions") and req:
-                    if req in reqs:
+                    key = (req, _alnum(j.title), _place(j.location))
+                    if key in reqs:
                         continue
-                    reqs.add(req)
+                    reqs.add(key)
                 jobs.append(j)
         if errors and not read:
             raise errors[0]

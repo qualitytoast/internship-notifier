@@ -82,6 +82,35 @@ def test_greenhouse_board_with_a_bad_response_keeps_the_others():
     assert "greenhouse:samsaradach" in ctx.degraded
 
 
+def _c3_twin(title: str, location: str):
+    """An edit that lists, just before C3 AI's real 'Software Engineer - Intern (Summer 2027)' (req 1400), a posting
+    with the same requisition id but `title` and `location`."""
+    def edit(e):
+        if e["url"].endswith("/boards/c3iot/jobs"):
+            d = json.loads(e["text"])
+            real = next(j for j in d["jobs"] if j.get("requisition_id") == "1400")
+            d["jobs"].insert(d["jobs"].index(real), dict(real, id=1, title=title, location={"name": location}))
+            d["meta"]["total"] += 1
+            e["text"] = json.dumps(d)
+    return edit
+
+
+@pytest.mark.parametrize("title, location", [
+    ("Software Engineer - Intern (Summer 2026)", "Redwood City, California, United States"),  # an older term
+    ("Software Engineer - Intern (Summer 2027)", "Guadalajara, Jalisco, Mexico"),             # a copy abroad
+])
+def test_greenhouse_requisition_twin_with_another_title_or_place_is_kept(title, location):
+    ids = {j.id for j in replay("c3-ai", _c3_twin(title, location))}
+    assert {"1", "8739037002"} <= ids  # the twin no longer hides the real Summer 2027 Redwood City posting
+    assert "8739036002" not in ids     # c3ascend's copy of it (same title, "Redwood City, CA ") is still one posting
+
+
+def test_greenhouse_requisition_twin_with_same_title_and_place_is_dropped():
+    ids = {j.id for j in replay("c3-ai", _c3_twin("Software Engineer  - Intern (Summer 2027)", "Redwood City, CA"))}
+    assert "1" in ids and "8739037002" not in ids  # the first one wins, as before
+    assert len(replay("c3-ai")) == cassette("c3-ai").meta["count"]
+
+
 # Ashby --------------------------------------------------------------------------------------
 
 def test_ashby_one_failing_board_keeps_the_other_boards_jobs():
