@@ -485,3 +485,38 @@ def test_after_a_cut_short_first_read_the_rest_comes_once_as_already_open(make_c
     assert not db.get("partial_seed:acme")
     s = r.run(once)
     assert s.new_matches == 1 and db.job("acme", "4")["baseline"] == 0
+
+
+def _tmobile_facets(change):
+    """An edit for replay(): rewrite the timeType facet on each partition's first page."""
+    def edit(e):
+        if '"offset":0' in (e.get("body") or "").replace(" ", ""):
+            d = json.loads(e["text"])
+            for f in d.get("facets") or []:
+                if f.get("facetParameter") == "timeType":
+                    change(f["values"])
+            e["text"] = json.dumps(d)
+    return edit
+
+
+def test_tmobile_partitions_that_miss_a_new_time_type_are_reported():
+    from test_adapter_fixes import replay
+    ctx = FetchContext()
+    jobs = replay("t-mobile", _tmobile_facets(lambda v: v.append({"id": "seasonal", "descriptor": "Seasonal",
+                                                                     "count": 15})), ctx=ctx)
+    assert len(jobs) == 2533 and "no partition reads timeType Seasonal (15 jobs)" in ctx.degraded
+
+
+def test_tmobile_partitions_short_of_the_counts_are_reported_but_normal_drift_is_not():
+    from test_adapter_fixes import replay
+
+    def bump(by):
+        def change(vals):
+            vals[0]["count"] += by
+        return change
+    ctx = FetchContext()
+    replay("t-mobile", _tmobile_facets(bump(30)), ctx=ctx)             # within the 1.5% tolerance: normal churn
+    assert not ctx.degraded
+    replay("t-mobile", _tmobile_facets(bump(200)), ctx=ctx)            # 200 jobs nobody read
+    assert "partitioned by timeType" in ctx.degraded
+    replay("t-mobile", _tmobile_facets(bump(200)))                     # no context: silent, as before

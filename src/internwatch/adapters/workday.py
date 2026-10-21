@@ -142,7 +142,7 @@ class Workday(Checker):
         if not need_soft(parts, f"{where}: {total}+ jobs hit Workday's {CAP} cap and no facet splits them; "
                                 f"set `partitions` in companies.yaml", ctx):
             return total, set()  # the jobs the capped search returned are kept
-        reported, got = self._read_parts(http, s, site, facets, parts, out, ctx, depth)
+        reported, got, _ = self._read_parts(http, s, site, facets, parts, out, ctx, depth)
         if not (ctx is not None and ctx.quick):
             try:  # jobs without a value for the facet are in none of its partitions
                 check_total(len(got), known, f"{where} partitioned by {next(iter(parts[0]))}")
@@ -151,17 +151,18 @@ class Workday(Checker):
         return reported, got
 
     def _read_parts(self, http, s, site, facets: dict, parts: list[dict], out: dict, ctx,
-                    depth: int = 0) -> tuple[int, set]:
+                    depth: int = 0) -> tuple[int, set, list]:
         """Read each partition (`facets` plus one part). One that reaches the cap itself is split once more by a facet
         from its own first page; a part of that split still at the cap keeps what it returned and marks the poll
-        degraded. Returns (sum of the partitions' totals, ids read)."""
+        degraded. Returns (sum of the partitions' totals, ids read, each partition's first page)."""
         where = f"workday:{s['tenant']}/{site}"
         quick = ctx is not None and ctx.quick
-        reported, got = 0, set()
+        reported, got, firsts = 0, set(), []
         for part in parts:
             sub = {**facets, **part}
             total, first, seen = self._search(http, s, site, sub, out, ctx, stop_early=quick)
             got |= seen
+            firsts.append(first)
             if total < CAP:
                 reported += total
                 if not quick:
@@ -173,7 +174,28 @@ class Workday(Checker):
                 need_soft(False, f"{where}: partition {sub} reports {total} jobs (cap {CAP}); split it further "
                                  f"in companies.yaml", ctx)
                 reported += total
-        return reported, got
+        return reported, got, firsts
+
+    def _check_partitions(self, s, site, parts: list[dict], firsts: list, got: set, ctx) -> None:
+        """Configured partitions (T-Mobile: one search per time type) must still cover the site. Each first page counts
+        every value of the partitioned facet: a value no partition selects (a new time type), or fewer jobs read than
+        those counts (beyond the usual tolerance), marks the poll degraded."""
+        names = {name for p in parts for name in p}
+        if len(names) != 1 or not firsts:
+            return
+        name = next(iter(names))
+        chosen = {v for p in parts for v in p[name]}
+        vals = [v for f in _facets(firsts[0]) if f.get("facetParameter") == name for v in f.get("values") or []
+                if v.get("id") and isinstance(v.get("count"), int)]
+        where = f"workday:{s['tenant']}/{site}"
+        missing = [v for v in vals if v["id"] not in chosen and v["count"]]
+        if missing:
+            degrade(ctx, f"{where}: no partition reads {name} " +
+                    ", ".join(f"{v.get('descriptor') or v['id']} ({v['count']} jobs)" for v in missing))
+        try:
+            check_total(len(got), sum(v["count"] for v in vals), f"{where} partitioned by {name}")
+        except ShapeError as e:
+            degrade(ctx, str(e))
 
     def fetch(self, http, s, ctx=None):
         out: dict[str, Job] = {}
@@ -200,7 +222,10 @@ class Workday(Checker):
             where = f"workday:{s['tenant']}/{site}"
             parts = [dict(p) for p in s.get("partitions") or []]
             if parts:
-                reported += self._read_parts(http, s, site, s.get("facets", {}), parts, out, ctx)[0]
+                n, got, firsts = self._read_parts(http, s, site, s.get("facets", {}), parts, out, ctx)
+                reported += n
+                if not quick:
+                    self._check_partitions(s, site, parts, firsts, got, ctx)
             else:
                 total, first, seen = self._search(http, s, site, s.get("facets", {}), out, ctx, stop_early=quick)
                 if total >= CAP:  # capped: read it again one facet value at a time
