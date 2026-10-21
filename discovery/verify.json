@@ -920,9 +920,9 @@
   "requests": 20
  },
  "rockwell-automation": {
-  "jobs": 478,
-  "students": 67,
-  "matched": 48,
+  "jobs": 483,
+  "students": 69,
+  "matched": 49,
   "at": "2026-10-21T04:17:59Z",
   "duration": 23.9,
   "requests": 25

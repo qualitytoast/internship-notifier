@@ -167,7 +167,7 @@ OVERRIDES: dict[str, dict] = {
     "hubspot": {"checker": "multi", "settings": {"sources": [
         {"checker": "hubspot", "settings": {}}, {"checker": "ripplematch", "settings": {"company_id": 708}}]}},
     # Rockwell posts some co-ops and internships only on RippleMatch (found by checking every company's RippleMatch
-    # page); many others are on both under slightly different titles, so title duplicates are skipped.
+    # page); many others are on both, so a RippleMatch role with a Workday role's title is skipped.
     "rockwell-automation": {"checker": "multi", "verified": {"explained":
         "both Workday career sites plus the co-ops and internships Rockwell posts only on RippleMatch"},
         "settings": {"dedupe": True, "dedupe_titles": True, "sources": [

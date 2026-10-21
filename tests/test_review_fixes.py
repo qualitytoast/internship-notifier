@@ -123,13 +123,16 @@ def test_multi_source_that_recovers_reports_its_backlog_as_baseline(monkeypatch)
 
 
 def test_multi_source_skips_a_later_sources_title_duplicate(monkeypatch):
-    srcs = [_Src([job("w1", "Co-op, Delivery - Projects (LCS)"), job("w2", "Software Engineer Intern - Summer 2027")]),
-            _Src([job("r1", "Co-Op, Delivery - Projects"),                       # the same role, title without "(LCS)"
-                  job("r2", "Co-op, Embedded Software Engineer (Spring or Fall 2027)"),
-                  job("r3", "Software Engineer Intern - Summer 2028")])]         # a term outside brackets still counts
+    srcs = [_Src([job("w1", "Co-op, Delivery - Projects (LCS)"), job("w2", "Software Engineer Intern - Summer 2027"),
+                  job("w3", "Technical Sales Specialist (Canada)"), job("w4", "Intern, Field Service (LCS)")]),
+            _Src([job("r1", "CO-OP: Delivery – Projects (LCS)"),       # the same title apart from case and punctuation
+                  job("r2", "Co-Op, Delivery - Projects"),             # text in brackets counts...
+                  job("r3", "Technical Sales Specialist"),             # ... it can name another place (the US role)
+                  job("r4", "Software Engineer Intern - Summer 2028"), # and so does a term outside brackets
+                  job("r5", "Intern, Field Service LCS")])]            # differed when brackets were ignored: still kept
     monkeypatch.setattr(Multi, "_sources", lambda self, s: [(i, x, {}) for i, x in enumerate(srcs)])
     jobs = Multi().fetch(None, {"dedupe_titles": True}, FetchContext())
-    assert [j.id for j in jobs] == ["w1", "w2", "fake:r2", "fake:r3"]
+    assert [j.id for j in jobs] == ["w1", "w2", "w3", "w4", "fake:r2", "fake:r3", "fake:r4", "fake:r5"]
 
 
 def test_long_lists_are_attached_not_clipped(make_cfg):

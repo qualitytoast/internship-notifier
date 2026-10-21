@@ -105,7 +105,7 @@ Rules for changing things: CLAUDE.md.
   - smartrecruiters {company}, workable {account}, icims {portal}, jibe {host}, phenom {base_url, ref_num},
     avature {list_url, page_size}, gem, rippling, jobvite, pinpoint, recruiterbox, ripplematch
   - multi {sources, dedupe, dedupe_titles}: later sources' ids are prefixed with `<checker>:`; dedupe_titles skips
-    a later source's role whose title matches an earlier one apart from text in brackets. Sources are remembered
+    a later source's role whose title matches an earlier one apart from case and punctuation. Sources are remembered
     by checker and settings, and a source's first answer is its baseline, emailed once as "already open".
 - **Custom checkers** (`src/internwatch/checkers/`): google, meta (GraphQL + sitemap fallback), amazon and
   apple (complete student slices), atlassian, goldman, citadel, shopify, epic_careers, talentbrew (Intuit),
@@ -157,7 +157,7 @@ Rules for changing things: CLAUDE.md.
 - **Second boards:** Klaviyo, Toast and Twilio have Greenhouse campus boards (klaviyocampus, toastcampus,
   twiliostudents). Expedia has a second Workday site, `private`, which robots.txt allows and SimplifyJobs
   links to. Plaid and Rockwell Automation post some student roles only on RippleMatch, which is read for them
-  (Rockwell's roles that are also on Workday under a bracket-suffixed title are skipped).
+  (Rockwell's roles that are also on Workday under the same title are skipped).
 - **Not double-counted:** Epic Games' and Google's translated postings, and C3 AI's re-posted Ascend
   requisitions.
 - **Palo Alto Networks:** robots.txt disallows the HTML job pages but not the JSON API the checker uses, which

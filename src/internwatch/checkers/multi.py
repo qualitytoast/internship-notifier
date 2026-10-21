@@ -6,9 +6,9 @@ settings:
     - {checker: ripplematch, settings: {company_id: 676}}
   dedupe: true   a later source's job is dropped when its id or requisition id (alt_ids) was already seen
                  (Autodesk: the same requisitions on Eightfold and Workday)
-  dedupe_titles: true   ... or when its title matches an earlier source's job apart from text in brackets,
-                 case and punctuation (Rockwell: "Co-Op, Delivery - Projects" on RippleMatch is Workday's
-                 "Co-op, Delivery - Projects (LCS)"); terms outside brackets still count
+  dedupe_titles: true   ... or when its title matches an earlier source's job apart from case and punctuation;
+                 text in brackets counts, since it can name another place or term (Rockwell: RippleMatch's
+                 "Technical Sales Specialist" is the US role, not Workday's "Technical Sales Specialist (Canada)")
 Ids from the first source are kept as they are; later sources' ids are prefixed with "<checker>:" so they can
 never collide. If one source fails, the others are still read and their new postings emailed, and the check
 is reported as degraded (a health alert after repeated failures); if every source fails, the check fails.
@@ -31,9 +31,10 @@ log = logging.getLogger(__name__)
 
 
 def _bare_title(title: str) -> str:
-    """The title without text in brackets, case or punctuation: "Co-op, Delivery - Projects (LCS)" →
-    "co op delivery projects"."""
-    return " ".join(re.sub(r"[^a-z0-9]+", " ", re.sub(r"\([^)]*\)|\[[^\]]*\]", " ", title.lower())).split())
+    """The title's words and brackets, without case or other punctuation: "Co-op, Delivery - Projects (LCS)" →
+    "co op delivery projects ( lcs )". The brackets stay so that "Co-op (LCS)" still differs from "Co-op LCS", as
+    it did when bracketed text was ignored (until October 2026): no posting kept then is dropped now."""
+    return " ".join(re.findall(r"[a-z0-9]+|[()\[\]]", title.lower()))
 
 
 def _source_ids(sources) -> list[str]:
