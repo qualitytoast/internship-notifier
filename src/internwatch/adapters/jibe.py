@@ -12,7 +12,7 @@ Never send internal=true (adds internal-only postings). See discovery/notes/docu
 from __future__ import annotations
 
 from ..models import Job
-from .base import Checker, check_total, html_text, iso_date, need, need_list, register
+from .base import Checker, check_total, html_text, iso_date, need, need_list, register, report_skipped
 
 PAGE = 100
 
@@ -28,7 +28,7 @@ class Jibe(Checker):
         url = f"https://{s['host']}/api/jobs"
         where = f"jibe:{s['host']}"
         out: dict[str, Job] = {}
-        page, total = 1, None
+        page, total, bad = 1, None, 0
         while True:
             d = http.get_json(url, params={"page": page, "limit": PAGE, "internal": "false", **(s.get("params") or {})},
                               headers={"Accept": "application/json"})
@@ -38,7 +38,9 @@ class Jibe(Checker):
                 need(isinstance(total, int), f"{where}: no totalCount")
             for it in items:
                 j = it.get("data") if isinstance(it, dict) else None
-                need(isinstance(j, dict) and (j.get("slug") or j.get("req_id")) and "title" in j, f"{where}: job without slug/title")
+                if not (isinstance(j, dict) and (j.get("slug") or j.get("req_id")) and "title" in j):
+                    bad += 1  # a posting caught mid-edit: skipped, and reported below
+                    continue
                 jid = str(j.get("slug") or j.get("req_id"))
                 if jid in out:
                     continue
@@ -55,9 +57,10 @@ class Jibe(Checker):
                     employment_type=etype, extra={"alt_ids": [str(j["req_id"])] if j.get("req_id") else []},
                 )
             page += 1
-            if not items or len(out) >= total or page > 200:
+            if not items or len(out) + bad >= total or page > 200:
                 break
         if ctx is not None:
             ctx.reported_total = total
-        check_total(len(out), total, where)
+        check_total(len(out) + bad, total, where)
+        report_skipped(ctx, bad, len(out), f"{where}: skipped {bad} jobs without slug/title")
         return list(out.values())

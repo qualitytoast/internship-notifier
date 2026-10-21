@@ -259,3 +259,11 @@ def check_total_soft(got: int, total, where: str, ctx: FetchContext | None, tole
         if ctx is None:
             raise
         degrade(ctx, str(e))
+
+
+def report_skipped(ctx: FetchContext | None, skipped: int, kept: int, message: str) -> None:
+    """Items without an id or title were skipped (postings caught mid-edit): the poll keeps the others and is marked
+    degraded. When nothing usable is left the format changed, and it fails (as it does without a context)."""
+    if skipped:
+        need(kept, message)
+        need_soft(False, message, ctx)

@@ -18,7 +18,7 @@ from __future__ import annotations
 
 from ..models import CheckTimeout, Job
 from .base import (Checker, FetchContext, check_total, dedupe, degrade, html_text, iso_date, join_locations, need,
-                   need_list, register)
+                   need_list, register, report_skipped)
 
 PAGE = 10
 
@@ -58,7 +58,7 @@ class Eightfold(Checker):
                 count = data["data"].get("count")
             if total is None:
                 total = count
-            page = [self._job(s, p, v2) for p in items]
+            page = [j for j in (self._job(s, p, v2) for p in items) if j is not None]
             jobs += page
             start += PAGE
             if not items or (isinstance(total, int) and start >= total):
@@ -68,8 +68,11 @@ class Eightfold(Checker):
             need(start <= 20000, f"{where}: runaway pagination")
         return jobs, total
 
-    def _job(self, s, p, v2: bool) -> Job:
-        need(p.get("id") and (p.get("name") or p.get("posting_name")), f"eightfold:{s['domain']}: position without id/name")
+    def _job(self, s, p, v2: bool) -> Job | None:
+        if not (isinstance(p, dict) and p.get("id") and (p.get("name") or p.get("posting_name"))):
+            # a posting caught mid-edit: skipped, and reported by fetch (once, though later passes see it again)
+            self.malformed.add(str(p.get("id") or p) if isinstance(p, dict) else str(p))
+            return None
         if v2:
             locs = p.get("locations") or [p.get("location")]
             url = p.get("canonicalPositionUrl") or f"https://{s['host']}/careers/job/{p['id']}"
@@ -96,6 +99,7 @@ class Eightfold(Checker):
     def fetch(self, http, s, ctx=None):
         # The v2 API ignores sort_by=timestamp, so only PCSX sites can stop early.
         quick = ctx is not None and ctx.quick and s.get("api") != "v2"
+        self.malformed: set[str] = set()
         student: list[Job] = []
         for q in s.get("quick_queries") or []:  # the site's own student filters, every poll, first: a long full walk
             student += self._list(http, s, q, ctx, stop_early=False)[0]  # that runs out of time can't hide them
@@ -109,16 +113,18 @@ class Eightfold(Checker):
         except CheckTimeout as e:
             if ctx is None:
                 raise
+            total = None  # a walk cut short: no count to check
             done = " (the internship filters were read in full)" if student else ""
             degrade(ctx, f"eightfold:{s['domain']}: the full listing stopped after {len(dedupe(jobs))} jobs{done}: {e}")
-            return dedupe(jobs + student)
         if ctx is not None and isinstance(total, int):
             ctx.reported_total = total
-        jobs += student
+        jobs = dedupe(jobs + student)
         if not quick:
             tol = int(total * float(s["count_tolerance"])) if s.get("count_tolerance") and isinstance(total, int) else None
-            check_total(len(dedupe(jobs)), total, f"eightfold:{s['domain']}", tolerance=tol)
-        return dedupe(jobs)
+            check_total(len(jobs) + len(self.malformed), total, f"eightfold:{s['domain']}", tolerance=tol)
+        bad = len(self.malformed)
+        report_skipped(ctx, bad, len(jobs), f"eightfold:{s['domain']}: skipped {bad} positions without id/name")
+        return jobs
 
     def detail(self, http, s, job):
         if s.get("api") == "v2":

@@ -23,7 +23,7 @@ import json
 import re
 
 from ..models import Job
-from .base import Checker, check_total, html_text, iso_date, join_locations, need, register
+from .base import Checker, check_total, html_text, iso_date, join_locations, need, register, report_skipped
 
 
 
@@ -77,9 +77,12 @@ class Phenom(Checker):
             total, items = self._call(http, s, total + 20)  # one call for everything: paging is unstable
         id_field = s.get("id_field", "jobId")
         seen: dict[str, Job] = {}
+        bad = 0
         for j in items:
-            jid = j.get(id_field) or j.get("jobSeqNo") or j.get("jobId") or j.get("reqId")
-            need(jid and "title" in j, f"{where}: job without id/title")
+            jid = isinstance(j, dict) and (j.get(id_field) or j.get("jobSeqNo") or j.get("jobId") or j.get("reqId"))
+            if not (jid and "title" in j):
+                bad += 1  # a posting caught mid-edit: skipped, and reported below
+                continue
             locs = j.get("multi_location") or [j.get("location") or j.get("cityStateCountry")]
             seen.setdefault(str(jid), Job(
                 id=str(jid),
@@ -94,7 +97,8 @@ class Phenom(Checker):
             ))
         if ctx is not None:
             ctx.reported_total = total
-        check_total(len(seen), total, where)
+        check_total(len(seen) + bad, total, where)
+        report_skipped(ctx, bad, len(seen), f"{where}: skipped {bad} jobs without id/title")
         return list(seen.values())
 
     def detail(self, http, s, job):

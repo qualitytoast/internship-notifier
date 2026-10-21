@@ -351,3 +351,59 @@ def test_eightfold_full_listing_out_of_time_keeps_the_internships_and_what_was_r
     assert "the full listing stopped after" in ctx.degraded and "time budget exhausted" in ctx.degraded
     with pytest.raises(CheckTimeout):  # no context: fails as before
         get_checker("eightfold").fetch(OutOfTime("microsoft", pages=50), settings)
+
+
+# One malformed posting ----------------------------------------------------------------------
+
+def first_response(key: str, change):
+    """An edit that applies `change(data)` to the fixture's first response (and its repeats, e.g. Eightfold's
+    second read of page 1)."""
+    first = cassette(key).exchanges[0]
+
+    def edit(e):
+        if (e["method"], e["url"], e["body"]) == (first["method"], first["url"], first["body"]):
+            d = json.loads(e["text"])
+            change(d)
+            e["text"] = json.dumps(d)
+    return edit
+
+
+def drop(item, *keys):
+    """A change that removes `keys` from the posting `item(data)` picks."""
+    def change(d):
+        for k in keys:
+            item(d).pop(k, None)
+    return change
+
+
+MALFORMED = [
+    ("akamai", drop(lambda d: d["items"][0]["requisitionList"][0], "Title"), "requisitions without Id/Title"),
+    ("brevan-howard", drop(lambda d: d["refineSearch"]["data"]["jobs"][0], "jobId", "jobSeqNo", "reqId"),
+     "jobs without id/title"),
+    ("docusign", drop(lambda d: d["jobs"][0]["data"], "title"), "jobs without slug/title"),
+    ("john-deere", drop(lambda d: d["data"]["positions"][0], "name", "posting_name"), "positions without id/name"),
+    ("liberty-mutual", drop(lambda d: d["positions"][0], "name", "posting_name"), "positions without id/name"),
+]
+
+
+@pytest.mark.parametrize("key, change, label", MALFORMED, ids=[m[0] for m in MALFORMED])
+def test_posting_without_id_or_title_is_skipped_and_reported(key, change, label):
+    ctx = FetchContext()
+    jobs = replay(key, first_response(key, change), ctx=ctx)
+    assert len(jobs) == cassette(key).meta["count"] - 1
+    assert ctx.degraded.endswith(f": skipped 1 {label}")
+    with pytest.raises(CheckerError):  # no context: fails as before
+        replay(key, first_response(key, change))
+
+
+def test_wrong_response_shape_or_no_usable_posting_still_fails():
+    def not_a_list(d):
+        d["jobs"] = {"0": d["jobs"][0]}
+    with pytest.raises(CheckerError):
+        replay("docusign", first_response("docusign", not_a_list), ctx=FetchContext())
+
+    def no_titles(d):
+        for j in d["refineSearch"]["data"]["jobs"]:
+            j.pop("title")
+    with pytest.raises(CheckerError):
+        replay("brevan-howard", first_response("brevan-howard", no_titles), ctx=FetchContext())

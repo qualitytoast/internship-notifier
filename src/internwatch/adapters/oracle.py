@@ -12,7 +12,8 @@ GET https://<host>/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyD
 from __future__ import annotations
 
 from ..models import Job
-from .base import Checker, check_total, dedupe, html_text, iso_date, join_locations, need, need_list, register
+from .base import (Checker, check_total, dedupe, html_text, iso_date, join_locations, need, need_list, register,
+                   report_skipped)
 
 PAGE = 200
 
@@ -29,7 +30,7 @@ class OracleRecruiting(Checker):
         return f"{self.api(s)} (siteNumber={s['site']})"
 
     def fetch(self, http, s, ctx=None):
-        jobs, offset, total = [], 0, None
+        jobs, offset, total, bad = [], 0, None, 0
         while True:
             finder = f"findReqs;siteNumber={s['site']},limit={PAGE},offset={offset},sortBy=POSTING_DATES_DESC"
             data = http.get_json(self.api(s), params={"onlyData": "true", "expand": "requisitionList.secondaryLocations",
@@ -41,7 +42,9 @@ class OracleRecruiting(Checker):
                 total = items[0].get("TotalJobsCount")
                 need(isinstance(total, int), f"oracle:{s['site']}: no TotalJobsCount")
             for r in reqs:
-                need(r.get("Id") and "Title" in r, f"oracle:{s['site']}: requisition without Id/Title")
+                if not (isinstance(r, dict) and r.get("Id") and "Title" in r):
+                    bad += 1  # a requisition caught mid-edit: skipped, and reported below
+                    continue
                 secondary = [x.get("Name") for x in r.get("secondaryLocations") or []]
                 tmpl = s.get("job_url") or f"https://{s['host']}/hcmUI/CandidateExperience/en/sites/{s['site']}/job/{{id}}"
                 jobs.append(Job(
@@ -58,7 +61,8 @@ class OracleRecruiting(Checker):
             if not reqs or offset >= total:
                 break
         jobs = dedupe(jobs)
-        check_total(len(jobs), total, f"oracle:{s['site']}")
+        check_total(len(jobs) + bad, total, f"oracle:{s['site']}")
+        report_skipped(ctx, bad, len(jobs), f"oracle:{s['site']}: skipped {bad} requisitions without Id/Title")
         return jobs
 
     def detail(self, http, s, job):
