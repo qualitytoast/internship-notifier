@@ -43,6 +43,12 @@ def _facets(page: dict):
                 yield v
 
 
+def _cut_short(ctx) -> None:
+    """Part of the site could not be read (see FetchContext.partial)."""
+    if ctx is not None:
+        ctx.partial = True
+
+
 def _counted(page: dict, name: str) -> int:
     """How many jobs a facet's values count on this page (0 without that facet)."""
     return max((sum(v["count"] for v in f.get("values") or [] if isinstance(v.get("count"), int))
@@ -141,6 +147,7 @@ class Workday(Checker):
         parts = self._partitions({}, first, known, skip=facets)  # never the configured partitions: they are split here
         if not need_soft(parts, f"{where}: {total}+ jobs hit Workday's {CAP} cap and no facet splits them; "
                                 f"set `partitions` in companies.yaml", ctx):
+            _cut_short(ctx)
             return total, set()  # the jobs the capped search returned are kept
         reported, got, _ = self._read_parts(http, s, site, facets, parts, out, ctx, depth)
         if not (ctx is not None and ctx.quick):
@@ -148,6 +155,7 @@ class Workday(Checker):
                 check_total(len(got), known, f"{where} partitioned by {next(iter(parts[0]))}")
             except ShapeError as e:
                 degrade(ctx, str(e))
+                _cut_short(ctx)
         return reported, got
 
     def _read_parts(self, http, s, site, facets: dict, parts: list[dict], out: dict, ctx,
@@ -173,6 +181,7 @@ class Workday(Checker):
             else:
                 need_soft(False, f"{where}: partition {sub} reports {total} jobs (cap {CAP}); split it further "
                                  f"in companies.yaml", ctx)
+                _cut_short(ctx)
                 reported += total
         return reported, got, firsts
 
@@ -192,10 +201,12 @@ class Workday(Checker):
         if missing:
             degrade(ctx, f"{where}: no partition reads {name} " +
                     ", ".join(f"{v.get('descriptor') or v['id']} ({v['count']} jobs)" for v in missing))
+            _cut_short(ctx)
         try:
             check_total(len(got), sum(v["count"] for v in vals), f"{where} partitioned by {name}")
         except ShapeError as e:
             degrade(ctx, str(e))
+            _cut_short(ctx)
 
     def fetch(self, http, s, ctx=None):
         out: dict[str, Job] = {}
@@ -207,7 +218,8 @@ class Workday(Checker):
                 raise
             # out of time (Capital One's split by location takes minutes): keep what was read, record no removals
             degrade(ctx, f"workday:{s['tenant']}: ran out of time after {len(out)} jobs: {e}")
-            ctx.partial, reported = True, 0
+            _cut_short(ctx)
+            reported = 0
         if ctx is not None and reported:
             ctx.reported_total = reported
         return list(out.values())
