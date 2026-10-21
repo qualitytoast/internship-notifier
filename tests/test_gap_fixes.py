@@ -551,3 +551,31 @@ def test_apple_rows_short_of_the_total_are_reported():
     ctx = FetchContext()
     get_checker("apple").fetch(Http(replay=Cassette(exchanges=ex)), cas.meta["settings"] or {}, ctx)
     assert "apple: internships rows" in ctx.degraded and "same page twice" not in ctx.degraded and ctx.partial
+
+
+def test_student_search_words_cover_every_strong_student_word_in_filters_yaml():
+    import re as _re
+    import yaml
+    from internwatch.adapters.base import STUDENT_SEARCH_WORDS
+    from internwatch.checkers import amazon, apple
+    norm = lambda w: _re.sub(r"[\s\-*]+", "", w.lower())                      # noqa: E731
+    strong = yaml.safe_load((Path(__file__).resolve().parents[1] / "config" / "filters.yaml").read_text())["role"]["strong"]
+    missing = [w for w in strong if norm(w) not in {norm(x) for x in STUDENT_SEARCH_WORDS}]
+    assert not missing, f"add a search word for {missing} to STUDENT_SEARCH_WORDS in adapters/base.py"
+    assert set(STUDENT_SEARCH_WORDS) <= set(amazon.KEYWORDS)
+    assert {f"keyword:{w}" for w in STUDENT_SEARCH_WORDS} <= {name for name, _ in apple.QUERIES}
+
+
+def test_a_keyword_search_over_amazons_cap_is_skipped_not_fatal():
+    from internwatch.adapters import get_checker
+
+    class Capped:
+        def post_json(self, url, json=None, headers=None):
+            if json["query"] == "students":
+                return {"found": 10000, "searchHits": [{"fields": {"icimsJobId": ["1"], "title": ["Students Intern"]}}]}
+            return {"found": 0, "searchHits": None}
+    ctx = FetchContext()
+    get_checker("amazon").fetch(Capped(), {"keywords": ["students", "intern"]}, ctx)
+    assert "keyword search keyword:students matches 10000+ jobs" in ctx.degraded
+    with pytest.raises(Exception):                                   # no context: fails as before
+        get_checker("amazon").fetch(Capped(), {"keywords": ["students"]}, None)

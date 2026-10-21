@@ -69,7 +69,7 @@ def run_checker(cfg: Config, c: Company, *, mode: str = "full", known=(), state:
     http = Http(http_settings(cfg), gate=gate or make_gate(cfg), record=record, replay=replay,
                 min_interval=(c.settings or {}).get("min_interval"),
                 deadline=min(budget_end, deadline) if deadline else budget_end)
-    ctx = FetchContext(mode=mode, known=frozenset(known), state=dict(state or {}))
+    ctx = FetchContext(mode=mode, known=frozenset(known), state=dict(state or {}), program_words=tuple(c.role_keywords))
     out = Outcome(company=c, mode=mode, started_at=started)
     try:
         checker = get_checker(c.checker)

@@ -7,15 +7,16 @@ The site has ~6,000 rows (one per posting × location), so the checker reads, un
   1. the Students team's Internships sub-team (every US internship is on it; its rows count as internships even
      when the title has no student word), then the rest of the Students team (retail student roles, academies,
      new grads: judged by title like any other job)
-  2. exact-word searches "intern", "internship", "student", "co-op" and the freshman/sophomore words (student
-     titles filed under functional teams abroad; unquoted 'intern' would prefix-match 'international')
+  2. exact-word searches for every student word and freshman/sophomore phrase in config/filters.yaml and the
+     company's program names (student titles filed under functional teams abroad; unquoted 'intern' would
+     prefix-match 'international')
 Detail: GET https://jobs.apple.com/api/v1/jobDetails/<positionId>?locale=en-us → description, employmentType.
 See discovery/notes/apple.md.
 """
 from __future__ import annotations
 
-from ..adapters.base import (UNDERCLASS_SEARCH_WORDS, Checker, check_total_soft, degrade, html_text, iso_date,
-                             join_locations, need, register)
+from ..adapters.base import (STUDENT_SEARCH_WORDS, UNDERCLASS_SEARCH_WORDS, Checker, check_total_soft, degrade,
+                             html_text, iso_date, join_locations, need, register)
 from ..models import Job
 
 API = "https://jobs.apple.com/api/v1/search"
@@ -24,7 +25,7 @@ HEADERS = {"Content-Type": "application/json", "Accept": "*/*", "Origin": "https
 QUERIES = [("internships", {"query": "", "filters": {"teams": [{"team": "teamsAndSubTeams-STDNT", "subTeam": "subTeam-INTRN"}]}}),
            ("students-team", {"query": "", "filters": {"teams": [{"team": "teamsAndSubTeams-STDNT"}]}})] + [
     (f"keyword:{w}", {"query": f'"{w}"', "filters": {}})
-    for w in ("intern", "internship", "student", "co-op", *UNDERCLASS_SEARCH_WORDS)]
+    for w in dict.fromkeys([*STUDENT_SEARCH_WORDS, *UNDERCLASS_SEARCH_WORDS])]
 PAGE = 20
 
 
@@ -48,7 +49,9 @@ class Apple(Checker):
         quick = ctx is not None and ctx.quick
         out: dict[str, Job] = {}
         slice_rows = 0
-        for name, q in QUERIES:
+        programs = [(f"keyword:{w}", {"query": f'"{w}"', "filters": {}}) for w in (ctx.program_words if ctx else ())
+                    if f"keyword:{w}" not in {n for n, _ in QUERIES}]  # the company's own program names
+        for name, q in QUERIES + programs:
             page, total, prev, stuck = 1, None, None, False
             got: set[str] = set()  # distinct rows the search returned (a page can repeat rows of another)
             while True:

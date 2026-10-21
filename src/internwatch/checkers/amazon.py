@@ -22,8 +22,8 @@ from __future__ import annotations
 import copy
 import re
 
-from ..adapters.base import (UNDERCLASS_SEARCH_WORDS, Checker, check_total_soft, degrade, html_text, iso_date,
-                             join_locations, need, register)
+from ..adapters.base import (STUDENT_SEARCH_WORDS, UNDERCLASS_SEARCH_WORDS, Checker, check_total_soft, degrade,
+                             html_text, iso_date, join_locations, need, register)
 from ..models import Job
 
 API = "https://www.amazon.jobs/api/jobs/search?is_als=true"
@@ -38,8 +38,7 @@ BIZ = [{"name": "businessCategory", "values": [{"name": "studentprograms"}, {"na
 # plural phrases up to ~200 ("discovery events"), and "internship" ~2,400, all far below the cap; most hits match
 # only in the description ("internship experience"), so a hit is kept when its title has one of these words.
 # "propel" is Amazon's freshman/sophomore program (role_keywords in companies.yaml).
-KEYWORDS = ["intern", "interns", "internship", "internships", "apprentice", "co-op", "student", "working student",
-            "summer analyst", *UNDERCLASS_SEARCH_WORDS, "propel"]
+KEYWORDS = list(dict.fromkeys([*STUDENT_SEARCH_WORDS, *UNDERCLASS_SEARCH_WORDS, "propel"]))
 HEADERS = {"Content-Type": "application/json", "Accept": "application/json", "Origin": "https://www.amazon.jobs"}
 
 
@@ -102,9 +101,10 @@ class Amazon(Checker):
         quick = ctx is not None and ctx.quick
         slice_total = 0
         words = list(s.get("keywords") or KEYWORDS)
+        words += [w for w in (ctx.program_words if ctx is not None else ()) if w not in words]  # role_keywords
         in_title = title_words(words)
         for name, body in queries(words):
-            start, found, kept, prev, stuck = 0, None, 0, None, False
+            start, found, kept, prev, stuck, capped = 0, None, 0, None, False, False
             got: set[str] = set()  # distinct postings the search returned (a page can repeat rows of another)
             title_only = bool(body["query"])  # a keyword search, not one of the structured queries
             while True:
@@ -115,6 +115,10 @@ class Amazon(Checker):
                 hits = d.get("searchHits") or []          # a query with no match answers searchHits: null
                 if found is None:
                     found = int(d.get("found") or 0)
+                    if found >= CAP and title_only and ctx is not None:  # too broad a word: skip it, not the check
+                        capped = True
+                        degrade(ctx, f"amazon: keyword search {name} matches {found}+ jobs (cap {CAP}); skipped")
+                        break
                     need(found < CAP, f"amazon: query {name} hit the {CAP} cap ({found}); the slice must be split")
                 ids = []
                 for h in hits:
@@ -138,6 +142,8 @@ class Amazon(Checker):
                 prev = ids
                 if quick and body["sort"]["sortType"] == "CREATED_DATE" and ctx.page_is_old(ids, key=name):
                     break
+            if capped:
+                continue
             if not quick and found and not stuck:
                 check_total_soft(len(got), found, f"amazon: query {name}", ctx, tolerance=max(2, found // 50))
             slice_total += kept if title_only else (found or 0)

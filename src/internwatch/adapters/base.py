@@ -42,6 +42,7 @@ class FetchContext:
                     processed (new postings are emailed) but the poll is reported as a health problem
     partial:        set with `degraded` when the walk itself was cut short (out of time, short of the total): on a
                     company's first read, the runner then shows what later reads add as "already open", not new
+    program_words:  the company's own program names (role_keywords), searched by checkers that read a student slice
     """
 
     mode: str = "full"
@@ -50,6 +51,7 @@ class FetchContext:
     reported_total: int | None = None
     degraded: str | None = None
     partial: bool = False
+    program_words: tuple = ()
     _old_streak: dict = field(default_factory=dict, repr=False)
 
     @property
@@ -130,6 +132,13 @@ UNDERCLASS_SEARCH_WORDS = ["freshman", "freshmen", "sophomore", "sophomores", "u
                            "explore program", "explore programs", "career prep", "pre-internship", "pre-internships",
                            "possibilities series", "possibilities summit", "possibilities summits",
                            "early identification", "early id", "winternship", "winternships"]
+# Student words for the same searches: every role.strong phrase in config/filters.yaml (a test checks), with plurals,
+# since Amazon's index does not stem. The company's own program names (role_keywords) are searched too.
+STUDENT_SEARCH_WORDS = ["intern", "interns", "internship", "internships", "co-op", "co-ops", "apprentice",
+                        "apprentices", "apprenticeship", "apprenticeships", "student", "students", "off-cycle",
+                        "summer analyst", "summer analysts", "summer associate", "summer associates", "externship",
+                        "externships", "industrial placement", "industrial placements", "placement year",
+                        "working student", "working students", "thrive program", "winternship", "winternships"]
 
 
 def need(cond, message: str) -> None:
