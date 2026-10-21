@@ -3,18 +3,19 @@ freshman/sophomore search words, Intuit's stale sitemap, JSON-LD location shapes
 import json
 import re
 from datetime import date, timedelta
+from urllib.parse import parse_qs
 
 import httpx
 import pytest
 import yaml
 
 from internwatch.adapters.base import UNDERCLASS_SEARCH_WORDS, FetchContext
-from internwatch.checkers import amazon, apple, talentbrew
+from internwatch.checkers import amazon, apple, meta, talentbrew
 from internwatch.checkers.amazon import Amazon
 from internwatch.checkers.meta import Meta
 from internwatch.checkers.talentbrew import TalentBrewSitemap
 from internwatch.http import Cassette, HostGate, Http, HttpSettings
-from internwatch.models import Job
+from internwatch.models import CheckerError, Job
 
 from conftest import REPO
 
@@ -145,3 +146,76 @@ def test_talentbrew_check_survives_an_address_given_as_text():
     http = mock_http(lambda req: httpx.Response(200, text=sitemap() if req.url.path == "/sitemap.xml" else page))
     jobs = TalentBrewSitemap().fetch(http, {**TB, "detail_limit": 5}, FetchContext())
     assert [(j.title, j.location) for j in jobs] == [("Software Engineer Intern - Summer 2027", "Mountain View, CA, US")]
+
+
+# Meta -----------------------------------------------------------------------------------------------
+
+def meta_handler(interns=None, sitemap_ids=(), titled=(), slow=()):
+    """metacareers.com: two GraphQL jobs ("11" is an internship without a student word in its title), a jobs
+    sitemap with `sitemap_ids`, and job pages that have a JobPosting only for the ids in `titled`."""
+    def handler(req):
+        path = req.url.path
+        if path == "/jobsearch/":
+            return httpx.Response(200, text='<script>["LSD",[],{"token":"tok"}]</script>')
+        if path == "/graphql":
+            roles = json.loads(parse_qs(req.content.decode())["variables"][0])["search_input"]["roles"]
+            if roles and interns is not None:
+                return httpx.Response(**interns)
+            jobs = [{"id": "11", "title": "Software Engineer, Product"}, {"id": "12", "title": "Data Engineer"}]
+            return httpx.Response(200, json={"data": {"job_search_with_featured_jobs_v2": {
+                "all_jobs": jobs[:1] if roles else jobs, "featured_jobs": []}}})
+        if path == "/jobsearch/sitemap.xml":
+            return httpx.Response(200, text="".join(f"<loc>https://www.metacareers.com/profile/job_details/{i}/</loc>"
+                                                    for i in sitemap_ids))
+        jid = path.rstrip("/").split("/")[-1]
+        if jid in slow:
+            raise httpx.ReadTimeout("slow page")
+        if jid in titled:
+            return httpx.Response(200, text=jsonld_page({"@type": "JobPosting", "title": f"Software Engineer Intern {jid}"}))
+        return httpx.Response(200, text="<html>This job is no longer available</html>")
+    return handler
+
+
+def test_meta_marks_internships_from_the_second_query():
+    jobs = {j.id: j for j in Meta().fetch(mock_http(meta_handler()), {}, FetchContext())}
+    assert jobs["11"].employment_type == "Internship" and jobs["12"].employment_type == ""
+
+
+@pytest.mark.parametrize("failure", [{"status_code": 500}, {"status_code": 200, "json": {"errors": [{"message": "x"}]}}],
+                         ids=["http-error", "graphql-error"])
+def test_meta_keeps_the_complete_list_when_only_the_internship_query_fails(failure):
+    ctx = FetchContext()
+    jobs = Meta().fetch(mock_http(meta_handler(interns=failure, sitemap_ids=["99"])), {}, ctx)
+    assert sorted(j.id for j in jobs) == ["11", "12"]           # all jobs, not the sitemap fallback's few
+    assert "Internship query failed" in ctx.degraded
+    with pytest.raises(CheckerError):                           # without a context it cannot be flagged: fails
+        Meta().fetch(mock_http(meta_handler(interns=failure)), {})
+
+
+def test_meta_fallback_reads_the_newest_ids_first(monkeypatch):
+    ids = ["999999999999999", "1000000000000000", "10000000000000000"]  # as text, "999…" sorts first
+    monkeypatch.setattr(meta, "FALLBACK_DETAIL_LIMIT", 1)
+    jobs = Meta()._sitemap(mock_http(meta_handler(sitemap_ids=ids, titled=ids)), FetchContext())
+    assert [j.id for j in jobs] == ["10000000000000000"]
+
+
+def test_meta_fallback_stops_retrying_ids_whose_page_gives_no_title(monkeypatch):
+    # the two newest ids never give a title; without a limit they would take both detail slots every run
+    monkeypatch.setattr(meta, "FALLBACK_DETAIL_LIMIT", 2)
+    ids = ["1000000000000003", "1000000000000002", "1000000000000001"]
+    state: dict = {}
+    for run in range(4):
+        ctx = FetchContext(state=state)
+        jobs = Meta()._sitemap(mock_http(meta_handler(sitemap_ids=ids, titled=[ids[2]])), ctx)
+        assert [j.id for j in jobs] == ([] if run < 3 else [ids[2]])
+        state = json.loads(json.dumps(ctx.state))                # saved between polls as JSON
+    assert state["sitemap_misses"] == {ids[0]: 3, ids[1]: 3}
+    ctx = FetchContext(state=state, known=frozenset({ids[2]}))
+    Meta()._sitemap(mock_http(meta_handler(sitemap_ids=ids[1:])), ctx)   # ids[0] closed: forgotten
+    assert ctx.state["sitemap_misses"] == {ids[1]: 3}
+
+
+def test_meta_fallback_does_not_count_a_timeout_against_an_id():
+    ctx = FetchContext()
+    Meta()._sitemap(mock_http(meta_handler(sitemap_ids=["5", "4"], slow=["5"])), ctx)
+    assert ctx.state["sitemap_misses"] == {"4": 1}

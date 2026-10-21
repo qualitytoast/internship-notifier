@@ -9,7 +9,8 @@ Detail: GET https://www.metacareers.com/profile/job_details/<id>/ → JSON-LD Jo
 settings: doc_id (persisted query id; Meta can rotate it). If the GraphQL answer stops parsing, the checker
 falls back to the jobs sitemap (ids only) plus detail pages for unknown ids, and reports itself degraded so
 you get a health alert asking for the new doc_id (copy it from your browser's devtools: the POST /graphql
-with fb_api_req_friendly_name=CareersJobSearchResultsV2DataQuery). See discovery/notes/meta.md.
+with fb_api_req_friendly_name=CareersJobSearchResultsV2DataQuery). If only step 3 fails, every job from step 2
+is kept (internships are then judged by title alone) and the poll is reported degraded. See discovery/notes/meta.md.
 """
 from __future__ import annotations
 
@@ -17,7 +18,7 @@ import json
 import re
 
 from ..adapters.base import Checker, html_text, iso_date, join_locations, need, register
-from ..models import CheckerError, FetchError, Job, ShapeError
+from ..models import CheckerError, CheckTimeout, FetchError, Job, ShapeError
 
 BASE = "https://www.metacareers.com"
 DOC_ID = "27129360303422352"
@@ -30,6 +31,8 @@ SEARCH = {"q": None, "divisions": [], "offices": [], "roles": [], "leadership_le
           "saved_searches": [], "sub_teams": [], "teams": [], "is_leadership": False, "is_remote_only": False,
           "sort_by_new": False, "results_per_page": None}
 FALLBACK_DETAIL_LIMIT = 60
+FALLBACK_MAX_MISSES = 3     # runs an id's page may give no title before the fallback stops asking for it
+FALLBACK_MISS_CAP = 300     # ids whose misses are remembered in ctx.state (the newest)
 
 
 def job_url(jid: str) -> str:
@@ -97,7 +100,14 @@ class Meta(Checker):
                 url=job_url(item["id"]), department=" / ".join((item.get("teams") or []) + (item.get("sub_teams") or [])[:2]),
             ))
         need(jobs, "meta: GraphQL returned no jobs")
-        interns = self._search(http, s, lsd, ["Internship"])
+        try:
+            interns = self._search(http, s, lsd, ["Internship"])
+        except (FetchError, ShapeError) as e:
+            if ctx is None:
+                raise
+            # the job list itself is complete: keep it rather than fall back to the sitemap
+            ctx.degraded = f"meta: the Internship query failed ({e}); internships were judged by title only."
+            return list(jobs.values())
         for item in interns["all_jobs"]:
             j = jobs.get(str(item.get("id")))
             if j is not None:
@@ -105,20 +115,32 @@ class Meta(Checker):
         return list(jobs.values())
 
     def _sitemap(self, http, ctx) -> list[Job]:
-        """Fallback: new ids from the jobs sitemap, read one by one (known jobs are left untouched)."""
+        """Fallback: new ids from the jobs sitemap, newest first, read one by one (known jobs are left untouched).
+        An id whose page gives no title is tried again next run, for FALLBACK_MAX_MISSES runs: a few unreadable
+        ids at the top must not use up the detail budget of every run."""
         xml = http.get_text(BASE + "/jobsearch/sitemap.xml")
-        ids = sorted(set(re.findall(r"/profile/job_details/(\d+)/", xml)), reverse=True)
+        ids = sorted(set(re.findall(r"/profile/job_details/(\d+)/", xml)), key=int, reverse=True)
         need(ids, "meta: sitemap fallback has no job ids either")
         known = ctx.known if ctx is not None else frozenset()
+        misses = dict(ctx.state.get("sitemap_misses") or {}) if ctx is not None else {}
+        unknown = [i for i in ids if i not in known]
         jobs = []
-        for jid in [i for i in ids if i not in known][:FALLBACK_DETAIL_LIMIT]:
+        for jid in [i for i in unknown if misses.get(i, 0) < FALLBACK_MAX_MISSES][:FALLBACK_DETAIL_LIMIT]:
             j = Job(id=jid, title="", url=job_url(jid))
             try:
                 self.detail(http, {}, j)
+            except CheckTimeout:
+                continue  # out of time (or a page that keeps timing out): not counted against the id
             except CheckerError:
-                continue
-            if j.title:  # unread ids are tried again next run
+                pass
+            if j.title:
                 jobs.append(j)
+                misses.pop(jid, None)
+            else:
+                misses[jid] = misses.get(jid, 0) + 1
+        if ctx is not None:  # keep the misses of ids still unread (not closed or known), the newest
+            waiting = sorted(set(misses) & set(unknown), key=int, reverse=True)[:FALLBACK_MISS_CAP]
+            ctx.state["sitemap_misses"] = {i: misses[i] for i in waiting}
         return jobs
 
     def fetch(self, http, s, ctx=None):
