@@ -253,7 +253,7 @@ companies:
   locations: [US, CA]
   role_keywords: [explore]
   big: true
-  timeout_minutes: 20
+  timeout_minutes: 30
   verified: {page_total: 2411}
 - key: stripe
   name: Stripe
@@ -556,7 +556,7 @@ companies:
     count_tolerance: 0.05
   role_keywords: [ignite]
   big: true
-  timeout_minutes: 20
+  timeout_minutes: 30
   verified: {page_total: 2757}
 - key: visa
   name: Visa

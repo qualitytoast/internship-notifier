@@ -78,11 +78,11 @@ PROGRAM_KEYWORDS: dict[str, list[str]] = {
 
 # Hand-tuned settings on top of discovery (each comes from a discovery note).
 OVERRIDES: dict[str, dict] = {
-    "microsoft": {"big": True, "timeout_minutes": 20, "settings": {
+    "microsoft": {"big": True, "timeout_minutes": 30, "settings": {
         "host": "apply.careers.microsoft.com", "domain": "microsoft.com", "api": "pcsx", "min_interval": 3.0,
         "quick_queries": [{"filter_employment_type": "internship"}, {"filter_seniority": "Intern"}],
         "count_tolerance": 0.05}},  # Microsoft re-dates postings all day; a 13-minute walk drifts (see notes)
-    "nvidia": {"big": True, "timeout_minutes": 20, "settings": {"host": "jobs.nvidia.com", "domain": "nvidia.com",
+    "nvidia": {"big": True, "timeout_minutes": 30, "settings": {"host": "jobs.nvidia.com", "domain": "nvidia.com",
                "api": "pcsx", "min_interval": 3.0, "quick_queries": [{"filter_job_type": "intern (fixed term)"}],
                "count_tolerance": 0.05}},
     "two-sigma": {"settings": {"list_url": "https://careers.twosigma.com/careers/OpenRoles/", "page_size": 10,
