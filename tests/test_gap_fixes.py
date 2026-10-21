@@ -643,3 +643,45 @@ def test_a_complete_reseed_clears_an_old_partial_seed_flag(make_cfg):
 def test_an_excluded_title_word_with_a_tech_department_and_a_tech_word_is_unsure(rules, title, department, matched):
     m = ev(rules, title, "Boston, MA", department=department)
     assert m.matched == matched and (not matched or "field?" in m.tags)
+
+
+@pytest.mark.parametrize("path,title", [
+    ("/job/Module-Equipment-Technician_JR0288155-1", "Module Equipment Technician"),
+    ("/job/US-California-Santa-Clara/Software-Engineering-Intern--Summer-2027-_JR0288138",
+     "Software Engineering Intern Summer 2027"),
+])
+def test_a_workday_posting_without_a_title_is_read_from_its_link(path, title):
+    from internwatch.adapters.workday import _title_from_path
+    assert _title_from_path(path) == title
+
+
+def test_intels_untitled_posting_arrives_and_one_stray_entry_raises_no_alert():
+    from test_adapter_fixes import replay
+    ctx = FetchContext()
+    jobs = replay("intel", ctx=ctx)
+    assert any(j.url.endswith("/Module-Equipment-Technician_JR0288155-1") and j.title == "Module Equipment Technician"
+               for j in jobs) and not ctx.degraded
+    ctx = FetchContext()
+    replay("geico", ctx=ctx)                                        # one entry without a link: skipped quietly
+    assert not ctx.degraded
+
+
+def _drop_links(n):
+    """An edit for replay(): the first n postings of the first page come back without a link."""
+    def edit(e):
+        if '"offset":0' in (e.get("body") or "").replace(" ", ""):
+            d = json.loads(e["text"])
+            for p in (d.get("jobPostings") or [])[:n]:
+                p.pop("externalPath", None)
+            e["text"] = json.dumps(d)
+    return edit
+
+
+def test_more_than_two_postings_without_a_link_are_reported():
+    from test_adapter_fixes import cassette, replay
+    ctx = FetchContext()
+    jobs = replay("crowdstrike", _drop_links(2), ctx=ctx)
+    assert len(jobs) == cassette("crowdstrike").meta["count"] - 2 and not ctx.degraded
+    ctx = FetchContext()
+    replay("crowdstrike", _drop_links(3), ctx=ctx)
+    assert "skipped 3 postings without a link" in ctx.degraded and ctx.partial

@@ -43,6 +43,13 @@ def _facets(page: dict):
                 yield v
 
 
+def _title_from_path(path: str) -> str:
+    """A posting listed without its title, read from its link: "/job/Module-Equipment-Technician_JR0288155-1" →
+    "Module Equipment Technician" (the last part, without the requisition after "_")."""
+    slug = path.rstrip("/").rsplit("/", 1)[-1].rsplit("_", 1)[0]
+    return " ".join(slug.replace("-", " ").split())
+
+
 def _cut_short(ctx) -> None:
     """Part of the site could not be read (see FetchContext.partial)."""
     if ctx is not None:
@@ -91,16 +98,17 @@ class Workday(Checker):
                 need(isinstance(total, int), f"{where}: no total in first page")
             page_ids = []
             for p in items:
-                if not (p.get("externalPath") and p.get("title")):
-                    self.malformed += 1  # a posting caught mid-edit; too many of them means the format changed
-                    need(self.malformed <= max(3, total // 50), f"{where}: {self.malformed} postings without externalPath/title")
+                path = p.get("externalPath")
+                title = p.get("title") or (_title_from_path(path) if path else "")  # Intel lists one without a title
+                if not (path and title):
+                    self.malformed += 1  # no link to read or open; too many of them means the format changed
+                    need(self.malformed <= max(3, total // 50), f"{where}: {self.malformed} postings without externalPath")
                     continue
-                path = p["externalPath"]
                 jid = f"{site}:{path}" if len(self.sites(s)) > 1 else path
                 page_ids.append(jid)
                 if jid not in out:
                     out[jid] = Job(
-                        id=jid, title=p.get("title") or "", location=p.get("locationsText") or "",
+                        id=jid, title=title, location=p.get("locationsText") or "",
                         url=self.public_url(s, site, path), posted=relative_posted(p.get("postedOn")),
                         employment_type=p.get("timeType") or "",
                         extra={"site": site, "path": path,
@@ -220,6 +228,9 @@ class Workday(Checker):
             degrade(ctx, f"workday:{s['tenant']}: ran out of time after {len(out)} jobs: {e}")
             _cut_short(ctx)
             reported = 0
+        if self.malformed > 2:  # one or two stray entries (GEICO lists one) are normal; more are worth a look
+            degrade(ctx, f"workday:{s['tenant']}: skipped {self.malformed} postings without a link")
+            _cut_short(ctx)
         if ctx is not None and reported:
             ctx.reported_total = reported
         return list(out.values())
