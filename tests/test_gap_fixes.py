@@ -487,7 +487,7 @@ def test_tmobile_partitions_that_miss_a_new_time_type_are_reported():
     ctx = FetchContext()
     jobs = replay("t-mobile", _tmobile_facets(lambda v: v.append({"id": "seasonal", "descriptor": "Seasonal",
                                                                      "count": 15})), ctx=ctx)
-    assert len(jobs) == 2533 and "no partition reads timeType Seasonal (15 jobs)" in ctx.degraded
+    assert len(jobs) == 2533 and "no partition reads timeType Seasonal (15 jobs)" in ctx.degraded and ctx.partial
 
 
 def test_tmobile_partitions_short_of_the_counts_are_reported_but_normal_drift_is_not():
@@ -501,7 +501,7 @@ def test_tmobile_partitions_short_of_the_counts_are_reported_but_normal_drift_is
     replay("t-mobile", _tmobile_facets(bump(30)), ctx=ctx)             # within the 1.5% tolerance: normal churn
     assert not ctx.degraded
     replay("t-mobile", _tmobile_facets(bump(200)), ctx=ctx)            # 200 jobs nobody read
-    assert "partitioned by timeType" in ctx.degraded
+    assert "partitioned by timeType" in ctx.degraded and ctx.partial
     replay("t-mobile", _tmobile_facets(bump(200)))                     # no context: silent, as before
 
 
@@ -617,3 +617,16 @@ def test_multi_passes_not_modified_up_and_logs_a_crash(monkeypatch, caplog):
     with caplog.at_level("WARNING"):
         _multi(monkeypatch, [_Src([job("a", "A")], kind="a", settings={"x": 1}), _Crashy(kind="b", settings={"y": 2})])
     assert any("source b crashed" in r.message and r.exc_info for r in caplog.records)
+
+
+def test_a_complete_reseed_clears_an_old_partial_seed_flag(make_cfg):
+    cfg = make_cfg([company("acme")])
+    db = DB(cfg.settings.path("db"))
+    seed, later = [job("1", "Ops Analyst")], [job("1", "Ops Analyst"), job("2", "Software Engineer Intern")]
+    r = Runner(cfg, db=db, checker_fn=FakeChecker({"acme": [seed, later]}))
+    r.online = lambda: True
+    db.set("partial_seed:acme", "2026-10-01T00:00:00Z")            # left over from an earlier cut-short seed
+    r.run(DAILY)                                                    # complete seeding read (e.g. after a reseed)
+    assert not db.get("partial_seed:acme")
+    s = r.run(DAILY)
+    assert s.new_matches == 1 and db.job("acme", "2")["baseline"] == 0

@@ -404,8 +404,8 @@ class Runner:
                 db.update_state(c.key, seeded_at=now)
                 s.seeded.append(c.key)
                 new_matches = 0
-                if o.partial:  # cut short: the rest of what is open now must not arrive later as "new"
-                    db.set(f"partial_seed:{c.key}", now)
+                # cut short: the rest of what is open now must not arrive later as "new" (a complete re-seed clears it)
+                db.set(f"partial_seed:{c.key}", now if o.partial else "")
             elif partial_seed and o.ok and not o.partial and o.mode == "full" and not o.unchanged:
                 db.set(f"partial_seed:{c.key}", "")  # a complete read: from now on new postings are new
         lo, hi = self.retry_minutes if not o.ok else self.poll_minutes
