@@ -206,6 +206,18 @@ def test_refilter_notify_emails_seeded_roles_that_match_after_a_filter_fix(make_
     assert [r["job_id"] for r in db.unnotified_matches()] == (["1"] if notify else [])
 
 
+def test_refilter_never_takes_back_a_match(make_cfg, capsys):
+    from argparse import Namespace
+    from internwatch import cli
+    cfg = make_cfg([company("acme", name="Acme")])
+    db = DB(cfg.settings.path("db"))
+    db.upsert_jobs("acme", [job("1", "Marketing Intern")], iso())      # matched under some earlier, looser rules
+    db.conn.execute("UPDATE jobs SET matched=1, notified_at=NULL WHERE job_id='1'")
+    cli.cmd_refilter(cfg, Namespace(notify=True))
+    assert db.job("acme", "1")["matched"] == 1 and [r["job_id"] for r in db.unnotified_matches()] == ["1"]
+    assert "1 existing matches the current filters would reject were kept" in capsys.readouterr().out
+
+
 def test_emails_only_delivers_what_failed_without_checking(make_cfg, monkeypatch):
     monkeypatch.setattr("internwatch.mailer.time.sleep", lambda s: None)
     cfg = make_cfg([company("acme", name="Acme")])

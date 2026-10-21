@@ -80,7 +80,8 @@ Rules for changing things: CLAUDE.md.
 - **Keyword syntax:** whole words, case-insensitive; a space or hyphen inside is optional; a trailing `*`
   matches any ending; plurals are automatic except for 2-letter words.
 - **After editing:** `internwatch refilter` marks open jobs that now match as already notified. With
-  `--notify` they go out with the next run, including ones recorded as a baseline.
+  `--notify` they go out with the next run, including ones recorded as a baseline. It only ever adds matches:
+  a stored match is never taken back, even if the current filters would reject it.
 
 ## Companies (config/companies.yaml)
 - **Generated:** `discovery/build_config.py` builds it from `discovery/results/*.json` plus its ALIASES,

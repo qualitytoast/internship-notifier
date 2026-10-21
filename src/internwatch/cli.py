@@ -11,7 +11,7 @@
   internwatch test-filters "<title>" [--location …]   see how the filters decide a title
   internwatch record [company…]   record test fixtures (offline replays for pytest)
   internwatch coverage            regenerate COVERAGE.md
-  internwatch refilter            re-apply config/filters.yaml to every stored job
+  internwatch refilter            re-apply config/filters.yaml to every stored job (only ever adds matches)
   internwatch daemon              run forever, every 15 minutes (Docker)
 """
 from __future__ import annotations
@@ -351,7 +351,7 @@ def cmd_coverage(cfg: Config, a) -> int:
 def cmd_refilter(cfg: Config, a) -> int:
     db = DB(cfg.settings.path("db"))
     comps = {c.key: c for c in cfg.companies}
-    changed = newly = 0
+    added = newly = kept = 0
     now = iso()
     with db.tx():
         for r in db.q("SELECT * FROM jobs WHERE source='checker'"):
@@ -361,18 +361,24 @@ def cmd_refilter(cfg: Config, a) -> int:
             j = Job(id=r["job_id"], title=r["title"], location=r["location"], url=r["url"], posted=r["posted"],
                     snippet=r["snippet"], department=r["department"], employment_type=r["employment_type"])
             m = evaluate(j, cfg.rules, category=c.category, locations=c.locations, extra_role_keywords=c.extra_role_re)
-            if bool(m.matched) != bool(r["matched"]):
-                changed += 1
-                if m.matched and r["removed_at"] is None:
+            if r["matched"] and not m.matched:
+                # Additions only: a stored match is never taken back (its stored details may be poorer than the
+                # ones it was first judged with, e.g. a job type read from the posting's page).
+                kept += 1
+                continue
+            if m.matched and not r["matched"]:
+                added += 1
+                if r["removed_at"] is None:
                     # It was in no email so far (it did not match), even if it was recorded as already notified
                     # when its company was first seeded. --notify sends it with the next run.
                     newly += 1
                     db.conn.execute("UPDATE jobs SET notified_at=? WHERE company=? AND job_id=?",
                                     (None if a.notify else (r["notified_at"] or now), r["company"], r["job_id"]))
             db.set_match(r["company"], r["job_id"], m, is_student_role(j, cfg.rules, c.extra_role_re))
-    print(f"re-evaluated; {changed} jobs changed match status, {newly} open ones now match"
+    print(f"re-evaluated; {added} jobs now match, {newly} of them open"
           + (" (they go out with the next run's email)" if a.notify
-             else " (marked as already notified; use --notify to email them with the next run)"))
+             else " (marked as already notified; use --notify to email them with the next run)")
+          + (f"; {kept} existing matches the current filters would reject were kept as matches" if kept else ""))
     return 0
 
 
@@ -475,7 +481,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     sub.add_parser("coverage", help="regenerate COVERAGE.md").set_defaults(fn=cmd_coverage)
 
-    rf = sub.add_parser("refilter", help="re-apply filters.yaml to every stored job")
+    rf = sub.add_parser("refilter", help="re-apply filters.yaml to every stored job (only ever adds matches)")
     rf.add_argument("--notify", action="store_true", help="email open jobs that now match")
     rf.set_defaults(fn=cmd_refilter)
 
