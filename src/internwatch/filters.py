@@ -37,10 +37,21 @@ _UNDERCLASS_TEXT = re.compile(
     r"\b(?:freshm[ae]n|sophomores?|underclass(?:m[ae]n)?|rising (?:sophomores?|juniors?)|"
     r"(?:first|second|1st|2nd)[\s\-]+year (?:students?|undergrad\w*|college|university)|"
     r"(?:first|1st)[\s\-]*(?:and|or|&|/|\+)[\s\-]*(?:second|2nd)[\s\-]*years?)\b", re.I)
-# "…, PhD Student Science Recruiting" (Amazon), "… - Campus Recruiting 2027": the hiring program, not the job
+# "…, PhD Student Science Recruiting", "…, Amazon University Talent Acquisition" (Amazon), "… - Campus Recruiting
+# 2027": the hiring program, not the job
 _PROGRAM_LABEL = re.compile(
-    r"(?<=[,\-–—|(/:])\s*(?:(?:ph\.?d|undergrad\w*|graduate|master['’]?s?|mba)\s+)?(?:student\s+)?"
-    r"(?:science|campus|university|college|early[\s\-]careers?|student|intern\w*)\s+recruit(?:ing|ment)\b", re.I)
+    r"(?<=[,\-–—|(/:])\s*(?:(?:(?:ph\.?d|undergrad\w*|graduate|master['’]?s?|mba)\s+)?(?:student\s+)?"
+    r"(?:science|campus|university|college|early[\s\-]careers?|student|intern\w*)\s+recruit(?:ing|ment)"
+    r"|(?:amazon\s+)?university\s+talent\s+(?:acquisition|attraction))\b", re.I)
+_MONTH = r"(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?"
+_DATE = rf"(?:{_S}|{_MONTH})\s*,?\s*(20\d\d)"
+# a graduation date written like a term: "Graduating Spring 2029", "Expected Graduation: May 2029", "Grad Date Dec
+# 2028 - Jun 2029", "May 2029 grads"
+_GRAD_DATE = re.compile(
+    rf"\b(?:class\s+of|(?:expected\s+)?grad(?:uat(?:es?|ing|ion))?(?:\s+date)?)\s*(?:in\s+|:\s*|-\s*)?{_DATE}"
+    rf"(?:\s*(?:-|–|—|to|through|or)\s*{_DATE})?|\b{_DATE}\s+grad(?:uate)?s?\b", re.I)
+# an academic year written as a range: "2026-27", "Winter 2026/2027", "Fall 2026/27"
+_ACADEMIC_YEAR = re.compile(rf"\b(?:({_S})\s*)?20(\d\d)\s*[-–/]\s*(?:20)?(\d\d)(?!\d)", re.I)
 
 
 def kw_regex(words: list[str]) -> re.Pattern | None:
@@ -164,6 +175,35 @@ class TermResult:
 
 
 def decide_term(title: str, snippet: str, rules: Rules) -> TermResult:
+    res = _decide_term(title, snippet, rules)
+    if res.ok:
+        return res
+    # Before rejecting, read the title once more without what only looks like a term: a graduation date
+    # ("Graduating Spring 2029") and an academic year written as a range ("Winter 2026/2027", "2026-27" →
+    # both years). This can only rescue a title, never reject one the rule above accepts.
+    alt = _without_grad_dates(_ACADEMIC_YEAR.sub(_academic_years, title), rules)
+    if alt != title:
+        again = _decide_term(alt, snippet, rules)
+        if again.ok:
+            return again
+    return res
+
+
+def _academic_years(m: re.Match) -> str:
+    season, a, b = m.group(1), int(m.group(2)), int(m.group(3))
+    if b != a + 1:  # "2026-12" is not an academic year
+        return m.group(0)
+    return f"{season} 20{a:02d} / {season} 20{b:02d}" if season else f"20{a:02d} 20{b:02d}"
+
+
+def _without_grad_dates(title: str, rules: Rules) -> str:
+    """Drop graduation dates in or after your window ("Graduating Spring 2029"); earlier ones ("Graduating Spring
+    2026") stay and still reject, like "Class of 2026"."""
+    first = min(rules.include_years, default=0)
+    return _GRAD_DATE.sub(lambda m: " " if min(int(y) for y in m.groups() if y) >= first else m.group(0), title)
+
+
+def _decide_term(title: str, snippet: str, rules: Rules) -> TermResult:
     terms, years = extract_terms(title, title=True)
     if rules.include_years:  # "Class of 2029" is a graduation year: it never rejects the role
         grad = {int(y) for m in _GRAD_YEAR.finditer(title) for y in m.groups() if y}
@@ -205,7 +245,8 @@ class Decision:
 
 
 def decide_role(title: str, employment_type: str, rules: Rules, extra: re.Pattern | None = None) -> Decision:
-    if _search(rules.staff_about, title) or (_search(rules.staff_words, title) and _search(rules.staff_context, title)):
+    staff = _PROGRAM_LABEL.sub(" ", title)  # "Area Manager Intern …, University Recruiting" is not a recruiting job
+    if _search(rules.staff_about, staff) or (_search(rules.staff_words, staff) and _search(rules.staff_context, staff)):
         return Decision(False, reason="staff role about internships")
     hit = _search(rules.role_strong, title) or _search(extra, title)
     if hit:

@@ -71,7 +71,8 @@ fields:
           natural language, llm, llms, generative, genai, reinforcement learning, perception, autonomy,
           autonomous, robotics, neural, speech recognition, mlops, ml ops, ai ml]
   Research: [research engineer, research engineering, research scientist, researcher, research intern,
-             research internship, applied scientist, applied research, applied science, research science]
+             research internship, research co op, applied scientist, applied research, applied science,
+             research science]
   Data: [data scien*, data engineer*, data analy*, data platform, data infrastructure, analytics engineer*,
          analytics, statistics, statistician, big data, business intelligence, data intern, data and analytics]
   SWE: [software, swe, sde, sdet, developer, developers, programmer, programming, coding, full stack, frontend,
@@ -81,7 +82,8 @@ fields:
         tools engineer*, test engineer*, qa engineer*, quality engineer*, automation engineer*, gameplay,
         game programmer, graphics, rendering, engine programmer, technology analyst, technology intern,
         tech intern, engineering analyst, computer science, cs, computing, api, apis, database*,
-        networking engineer*, network software, solutions architect, simulation, forward deployed]
+        networking engineer*, network software, solutions architect, simulation, forward deployed,
+        cybersecurity, cyber security, information technology]
   # Departments (from the hiring system) that imply a field when the title is generic ("Summer Intern").
   departments:
     SWE: [engineering, software, technology, product engineering, platform, infrastructure, it engineering,

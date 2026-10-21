@@ -65,7 +65,8 @@ Rules for changing things: CLAUDE.md.
   - Matches: Spring/Summer/Fall 2027–2028, or a bare 2027/2028 in the title. Winter 2027/2028 is unsure.
   - A missing term never rejects. Another term in the title (Summer 2026) rejects; terms only in the
     description never do.
-  - Graduation years ("Class of 2029", "2029 grads") are never read as terms.
+  - Graduation years and dates ("Class of 2029", "2029 grads", "Graduating Spring 2029") are never read as
+    terms. An academic year ("2026-27", "Winter 2026/2027") counts as both of its years.
 - **Field:**
   - Keyword lists in order Quant, ML/AI, Research, Data, SWE; the first match names the tag. The department
     decides generic titles.
