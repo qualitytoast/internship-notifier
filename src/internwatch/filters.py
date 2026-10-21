@@ -52,6 +52,8 @@ _GRAD_DATE = re.compile(
     rf"(?:\s*(?:-|–|—|to|through|or)\s*{_DATE})?|\b{_DATE}\s+grad(?:uate)?s?\b", re.I)
 # an academic year written as a range: "2026-27", "Winter 2026/2027", "Fall 2026/27"
 _ACADEMIC_YEAR = re.compile(rf"\b(?:({_S})\s*)?20(\d\d)\s*[-–/]\s*(?:20)?(\d\d)(?!\d)", re.I)
+# where a title's first part ends: a spaced dash, a comma, a bracket, a bar or a colon (not the hyphen in "Co-op")
+_FIRST_SEGMENT = re.compile(r"\s+[-–—]\s+|\s*[,(|:]")
 
 
 def kw_regex(words: list[str]) -> re.Pattern | None:
@@ -246,7 +248,11 @@ class Decision:
 
 def decide_role(title: str, employment_type: str, rules: Rules, extra: re.Pattern | None = None) -> Decision:
     staff = _PROGRAM_LABEL.sub(" ", title)  # "Area Manager Intern …, University Recruiting" is not a recruiting job
-    if _search(rules.staff_about, staff) or (_search(rules.staff_words, staff) and _search(rules.staff_context, staff)):
+    # A title that starts as a student role ("Software Engineer Intern, Partner Programs") is not a staff job running
+    # a program ("Senior Program Specialist - Intern & Keep Warm Programs"); the explicit staff phrases still count.
+    first = _FIRST_SEGMENT.split(title, 1)[0]
+    if _search(rules.staff_about, staff) or (not (_search(rules.role_strong, first) or _search(extra, first))
+                                             and _search(rules.staff_words, staff) and _search(rules.staff_context, staff)):
         return Decision(False, reason="staff role about internships")
     hit = _search(rules.role_strong, title) or _search(extra, title)
     if hit:

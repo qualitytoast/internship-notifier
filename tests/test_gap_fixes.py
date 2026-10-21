@@ -266,3 +266,19 @@ def test_crosscheck_title_match_needs_a_current_posting(memdb, stored, removed_d
 def test_amazon_keyword_hits_are_kept_by_their_title(title, kept):
     from internwatch.checkers.amazon import KEYWORDS, title_words
     assert bool(title_words(KEYWORDS).search(title)) == kept
+
+
+# ---------------------------------------------------------------------------------------------
+# second audit (October 21)
+
+@pytest.mark.parametrize("title,matched", [
+    ("Software Engineer Intern, Partner Programs", True),          # starts as a student role
+    ("Co-op Student, Partner Programs", True),                     # "Co-op" is not split at its hyphen
+    ("Data Science Intern (Partner Programs)", True),
+    ("Senior Program Specialist - Intern & Keep Warm Programs", False),   # a staff job running a program
+    ("Principal Programs Lead - Intern Program", False),
+    ("Intern Program Manager, University Programs", False),        # explicit staff phrase
+    ("University Recruiter, Campus Recruiting", False),
+])
+def test_staff_rule_only_applies_when_the_title_does_not_start_as_a_student_role(rules, title, matched):
+    assert ev(rules, title).matched == matched
