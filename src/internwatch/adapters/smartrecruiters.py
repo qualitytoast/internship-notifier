@@ -73,7 +73,8 @@ class SmartRecruiters(Checker):
                     "page": page})
                 got = _jobs_in(BeautifulSoup(frag, "lxml"), name, out)
                 if not got:
-                    problems.append(f"group '{name}' ended at {seen} of {qty} jobs")
+                    if seen < qty - 2:  # a count off by a posting or two that closed during the walk is normal
+                        problems.append(f"group '{name}' ended at {seen} of {qty} jobs")
                     break
                 seen += got
                 page += 1
