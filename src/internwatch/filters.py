@@ -302,6 +302,11 @@ def evaluate(job: Job, rules: Rules, *, category: str = "", locations: list[str]
     return Match(True, unsure, term.term, shown_field, tags, reasons, needs_detail)
 
 
+def vague_location(location: str) -> bool:
+    """An empty location or a listing's placeholder ("3 Locations", "Multiple Locations")."""
+    return not location or bool(_MULTI_LOC.match(location))
+
+
 def is_student_role(job: Job, rules: Rules, extra_role_keywords: re.Pattern | None = None) -> bool:
     """Cheap pre-check used for counts ("intern roles seen") and to decide which jobs need details."""
     return decide_role(job.title, job.employment_type, rules, extra_role_keywords).ok

@@ -152,6 +152,36 @@ def test_interrupted_processing_leaves_nothing_half_saved(make_cfg, monkeypatch)
     assert s.new_matches == 1 and db.job("acme", "2")["notified_at"]   # picked up and emailed next run
 
 
+def test_edited_posting_is_judged_again_and_never_loses_a_match(make_cfg):
+    cfg = make_cfg([company("acme", name="Acme")])
+    db = DB(cfg.settings.path("db"))
+    swe, old = job("1", "Software Engineer Intern"), job("2", "Quant Research Intern - Summer 2026")
+    r = Runner(cfg, db=db, checker_fn=FakeChecker({"acme": [
+        [swe], [swe, old],
+        [job("1", "Marketing Intern"), job("2", "Quant Research Intern - Summer 2027")]]}))  # both retitled
+    force = RunOptions(crosscheck=False, send=False, scheduled_mail=False, force=True)
+    r.run(force)                                    # seeds Acme
+    r.run(force)                                    # job 2 appears for Summer 2026: rejected
+    assert not db.job("acme", "2")["matched"]
+    s = r.run(force)                                # the company edits it to Summer 2027
+    assert s.new_matches == 1 and db.job("acme", "2")["matched"] and db.job("acme", "2")["notified_at"]
+    assert db.job("acme", "1")["matched"]           # an edit never takes back a match
+
+
+def test_edit_judged_with_the_known_location_not_the_listings_placeholder(make_cfg):
+    cfg = make_cfg([company("acme", name="Acme")])
+    db = DB(cfg.settings.path("db"))
+    seed = job("0", "Data Analyst")
+    r = Runner(cfg, db=db, checker_fn=FakeChecker({"acme": [
+        [seed], [seed, job("2", "Software Engineer Intern - Summer 2026", location="London, UK")],
+        [seed, job("2", "Software Engineer Intern - Summer 2027", location="3 Locations")]]}))
+    force = RunOptions(crosscheck=False, send=False, scheduled_mail=False, force=True)
+    r.run(force)
+    r.run(force)
+    s = r.run(force)                                # retitled, but still London: not one of your US roles
+    assert s.new_matches == 0 and not db.job("acme", "2")["matched"]
+
+
 @pytest.mark.parametrize("notify", [True, False])
 def test_refilter_notify_emails_seeded_roles_that_match_after_a_filter_fix(make_cfg, notify):
     from argparse import Namespace

@@ -17,7 +17,9 @@ Rules for changing things: CLAUDE.md.
   - `docker compose up -d --build`: `internwatch daemon`.
 - **What "new" means:** a job ID never seen before, not the posting date. A skipped morning loses only a role
   that was posted and removed in between. A company's first successful check records its open postings as a
-  baseline, sent as one "Now watching" summary instead of per-role emails.
+  baseline, sent as one "Now watching" summary instead of per-role emails. A posting that didn't match and is
+  later edited (new title, location or type) or comes back after being removed is judged again, and emailed if it
+  now matches; a match is never taken back.
 - **Secrets:** `.env` (gitignored; template in `.env.example`) holds SMTP_USER, SMTP_PASSWORD (Gmail app
   password), EMAIL_FROM, HEALTHCHECKS_PING_URL and ORACLE_SSH_*. The recipient is `email.to` in
   `config/settings.yaml`. SMTP uses certifi, because python.org Python ships without a CA bundle.

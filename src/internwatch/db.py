@@ -156,11 +156,15 @@ class DB:
     def job(self, company: str, job_id: str) -> sqlite3.Row | None:
         return self.one("SELECT * FROM jobs WHERE company=? AND job_id=?", company, job_id)
 
-    def upsert_jobs(self, company: str, jobs: list[Job], now: str) -> tuple[list[str], list[str]]:
-        """Insert unseen jobs, refresh seen ones. Returns (new_ids, reappeared_ids)."""
-        new, back = [], []
+    def upsert_jobs(self, company: str, jobs: list[Job], now: str) -> tuple[list[str], dict[str, sqlite3.Row]]:
+        """Insert unseen jobs, refresh seen ones. Returns (new_ids, recheck): recheck maps each known job that
+        doesn't match and came back after being removed, or was edited (a new title, location or employment type;
+        an empty value in the listing is not an edit), to its row before this update, so the filters can look at it
+        again with the best details known (a listing's "3 Locations" vs the real ones read from the job page)."""
+        new, recheck = [], {}
         existing = {r["job_id"]: r for r in self.q(
-            "SELECT job_id, removed_at FROM jobs WHERE company=?", company)}
+            "SELECT job_id, removed_at, title, location, department, employment_type, snippet, matched FROM jobs"
+            " WHERE company=?", company)}
         with self.tx() as c:
             for j in jobs:
                 row = existing.get(j.id)
@@ -172,15 +176,18 @@ class DB:
                          j.snippet, now, now, json.dumps(j.extra.get("alt_ids", []))))
                     new.append(j.id)
                 else:
-                    if row["removed_at"]:
-                        back.append(j.id)
+                    edited = (j.title or "") != (row["title"] or "") or any(
+                        new_v and new_v != (old_v or "") for new_v, old_v in
+                        ((j.location, row["location"]), (j.employment_type, row["employment_type"])))
+                    if not row["matched"] and (row["removed_at"] or edited):
+                        recheck[j.id] = row
                     c.execute(
                         "UPDATE jobs SET title=?, location=?, url=?, posted=COALESCE(?, posted), department=?,"
                         " employment_type=?, snippet=CASE WHEN ?<>'' THEN ? ELSE snippet END, last_seen=?,"
                         " removed_at=NULL, reappeared=reappeared + ? WHERE company=? AND job_id=?",
                         (j.title, j.location, j.url, j.posted, j.department, j.employment_type, j.snippet,
                          j.snippet, now, 1 if row["removed_at"] else 0, company, j.id))
-        return new, back
+        return new, recheck
 
     def mark_removed(self, company: str, seen_ids: set[str], now: str) -> int:
         open_ids = {r["job_id"] for r in self.q(

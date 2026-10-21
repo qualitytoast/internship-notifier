@@ -30,12 +30,12 @@ from .adapters.base import FetchContext, dedupe
 from .config import Company, Config
 from .crosscheck import CrossCheck
 from .db import DB, iso, parse_iso, utcnow
-from .filters import evaluate, is_student_role
+from .filters import evaluate, is_student_role, vague_location
 from .health import Outcome, assess
 from .heartbeat import Heartbeat
 from .http import HostGate, Http, HttpSettings
 from .mailer import Mailer
-from .models import CheckerError, NotModified, ShapeError
+from .models import CheckerError, Job, NotModified, ShapeError
 
 log = logging.getLogger(__name__)
 
@@ -338,8 +338,23 @@ class Runner:
         with db.tx():
             if o.ok and not o.unchanged:
                 jobs = o.jobs or []
-                new_ids, _back = db.upsert_jobs(c.key, jobs, now)
+                new_ids, recheck = db.upsert_jobs(c.key, jobs, now)
                 by_id = {j.id: j for j in jobs}
+                for jid, old in ({} if seeding else recheck).items():
+                    # A known posting that didn't match was edited (e.g. "Summer 2026" retitled "Summer 2027") or came
+                    # back after being removed: judge it again. This only ever adds a match, never takes one back.
+                    # Details the listing leaves out or blurs ("3 Locations") come from what was known before.
+                    j = by_id[jid]
+                    j = Job(id=jid, title=j.title,
+                            location=(old["location"] or j.location) if vague_location(j.location) else j.location,
+                            url=j.url, posted=j.posted, department=j.department or old["department"] or "",
+                            employment_type=j.employment_type or old["employment_type"] or "",
+                            snippet=j.snippet or old["snippet"] or "")
+                    m = evaluate(j, rules, category=c.category, locations=c.locations, extra_role_keywords=c.extra_role_re)
+                    db.set_match(c.key, jid, m, is_student_role(j, rules, c.extra_role_re))
+                    if m.matched:
+                        db.conn.execute("UPDATE jobs SET notified_at=NULL WHERE company=? AND job_id=?", (c.key, jid))
+                        new_matches += 1
                 for jid in new_ids:
                     j = by_id[jid]
                     m = evaluate(j, rules, category=c.category, locations=c.locations, extra_role_keywords=c.extra_role_re)
