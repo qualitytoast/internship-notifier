@@ -22,7 +22,7 @@ import json
 import re
 
 from ..adapters import get_checker
-from ..adapters.base import Checker, need, register
+from ..adapters.base import Checker, degrade, need, register
 from ..models import CheckerError
 
 
@@ -70,8 +70,11 @@ class Multi(Checker):
         for i, checker, st in sources:
             try:
                 got = checker.fetch(http, st, ctx)
-            except CheckerError as e:
-                errors.append(f"{checker.type}: {e}")
+            except Exception as e:  # noqa: BLE001 — one source failing or crashing must not hide the others
+                errors.append(f"{checker.type}: {e}" if isinstance(e, CheckerError)
+                              else f"{checker.type}: crashed: {type(e).__name__}: {e}")
+                if ctx is not None:
+                    ctx.reported_total = None  # a total from the failed source must not count for the next one
                 if len(errors) == len(sources):
                     raise
                 continue
@@ -101,7 +104,7 @@ class Multi(Checker):
             if total:
                 ctx.reported_total = total
             if errors:
-                ctx.degraded = "; ".join(errors)[:900]
+                degrade(ctx, "; ".join(errors))
         elif errors:
             raise CheckerError("; ".join(errors))
         return jobs

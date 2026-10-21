@@ -356,3 +356,21 @@ def test_a_429_wait_never_runs_past_the_check_deadline(monkeypatch):
     with pytest.raises((FetchError, CheckTimeout)):
         h.get("https://x.test/jobs")
     assert sleeps and max(sleeps) <= 10
+
+
+class _Crashy(_Src):
+    def fetch(self, http, s, ctx=None):
+        raise ValueError("unexpected page shape")
+
+
+def test_a_crashing_source_keeps_the_other_sources_jobs(monkeypatch):
+    workday = _Src([job("w1", "Software Engineer Intern")], kind="workday", settings={"t": 1})
+    jobs, ctx = _multi(monkeypatch, [workday, _Crashy(kind="ripplematch", settings={"c": 2})])
+    assert [j.id for j in jobs] == ["w1"] and "ripplematch: crashed: ValueError" in ctx.degraded
+    jobs, ctx = _multi(monkeypatch, [_Crashy(kind="ripplematch", settings={"c": 2}), workday])
+    assert [j.id for j in jobs] == ["workday:w1"] and "crashed" in ctx.degraded   # first source crashing too
+
+
+def test_every_source_crashing_still_fails_the_check(monkeypatch):
+    with pytest.raises(ValueError):
+        _multi(monkeypatch, [_Crashy(kind="a", settings={"x": 1}), _Crashy(kind="b", settings={"y": 2})])
