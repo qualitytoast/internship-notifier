@@ -12,6 +12,9 @@ You may run `.venv/bin/internwatch refilter --notify` on the real `data/internwa
 that lets more roles match, so roles already stored that now match go out with the next email. List those roles
 for me when you do.
 
+Never run `refilter` without `--notify`, on the real database or a copy of it that may replace it. Without
+`--notify` it marks the roles that now match as already emailed, so they never reach me.
+
 ## Changes that could make the filters stricter
 
 The filters must never quietly stop sending a kind of role they used to send. If a change risks a single role that
