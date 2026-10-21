@@ -311,3 +311,48 @@ def test_more_graduation_wordings_are_not_read_as_terms(rules, title, matched):
 def test_us_state_codes_that_are_also_country_codes(location, country):
     from internwatch.locations import countries
     assert sorted(countries(location)[0]) == [country]
+
+
+def _rate_limited_client(monkeypatch, retry_after=None, deadline=None):
+    import httpx
+    import internwatch.http as hmod
+    sleeps = []
+    monkeypatch.setattr(hmod.time, "sleep", lambda s: sleeps.append(round(s, 2)))
+    monkeypatch.setattr(hmod.random, "random", lambda: 0.5)          # backoff jitter factor 1.0
+    calls = []
+
+    def handler(req):
+        if req.url.path == "/robots.txt":
+            return httpx.Response(404)
+        calls.append(req.url.path)
+        return httpx.Response(429, headers={"retry-after": str(retry_after)} if retry_after else {})
+
+    h = hmod.Http(hmod.HttpSettings(backoff_base=2, min_interval=0, retries=3), gate=hmod.HostGate(), deadline=deadline)
+    h._client = httpx.Client(transport=httpx.MockTransport(handler))
+    return h, calls, sleeps
+
+
+def test_429_keeps_every_wait_between_attempts_but_not_after_the_last(monkeypatch):
+    from internwatch.models import FetchError
+    h, calls, sleeps = _rate_limited_client(monkeypatch)
+    with pytest.raises(FetchError, match="429"):
+        h.get("https://x.test/jobs")
+    assert len(calls) == 4                                   # the same 4 attempts
+    assert sleeps == [30, 2.0, 60, 6.0, 90, 18.0]            # waits before attempts 2-4; none after the 4th
+
+
+def test_retry_after_is_honoured_except_after_the_last_attempt(monkeypatch):
+    from internwatch.models import FetchError
+    h, calls, sleeps = _rate_limited_client(monkeypatch, retry_after=5)
+    with pytest.raises(FetchError):
+        h.get("https://x.test/jobs")
+    assert len(calls) == 4 and sleeps == [5, 2.0, 5, 6.0, 5, 18.0]
+
+
+def test_a_429_wait_never_runs_past_the_check_deadline(monkeypatch):
+    import time as _t
+    from internwatch.models import CheckTimeout, FetchError
+    h, calls, sleeps = _rate_limited_client(monkeypatch, deadline=_t.monotonic() + 10)
+    with pytest.raises((FetchError, CheckTimeout)):
+        h.get("https://x.test/jobs")
+    assert sleeps and max(sleeps) <= 10

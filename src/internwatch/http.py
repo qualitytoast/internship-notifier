@@ -362,9 +362,15 @@ class Http:
                 last_err = f"HTTP {r.status_code} for {method} {url[:160]}"
                 ra = r.headers.get("retry-after", "")
                 if ra.isdigit():
-                    time.sleep(min(int(ra), 60))
+                    wait = min(int(ra), 60)
                 elif r.status_code == 429:
-                    time.sleep(min(30.0 * (attempt + 1), 90))  # rate limited without a hint: back off hard
+                    wait = min(30.0 * (attempt + 1), 90)  # rate limited without a hint: back off hard
+                else:
+                    wait = 0
+                if self.deadline is not None:
+                    wait = min(wait, max(0.0, self.deadline - time.monotonic()))
+                if wait and attempt < self.s.retries:  # no wait when no attempt follows
+                    time.sleep(wait)
                 continue
             if self.record is not None:
                 self.record.add(method, full, bkey, resp)
