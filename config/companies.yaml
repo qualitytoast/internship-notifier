@@ -197,7 +197,7 @@ companies:
   checker: oracle
   settings: {host: iaziqy.fa.ocs.oraclecloud.com, site: UberCareers}
   locations: [US, CA]
-  role_keywords: [uberstar]
+  role_keywords: [uber star]
   verified: {page_total: 702, explained: ORC is the system of record and a superset of the jobs.uber.com copy (hourly sync;}
 - key: pinterest
   name: Pinterest
@@ -220,6 +220,7 @@ companies:
   careers_url: ['https://careers.linkedin.com/', 'https://www.linkedin.com/jobs/search-results/?currentJobId=4444658212&keywords=jobs&origin=JOB_SEARCH_PAGE_JOB_FILTER&referralSearchId=h8qRCFetE9BYzhDNBT%2BGGw%3D%3D&geoId=103644278&f_C=1337%2C2587638%2C39939&f_SAL=f_SA_id_226001%3A275001']
   checker: smartrecruiters
   settings: {company: LinkedIn3}
+  role_keywords: [first play]
   verified: {page_total: null, feed: careers.smartrecruiters.com/LinkedIn3, explained: 'LinkedIn''s SmartRecruiters career page; linkedin.com,
       which also lists its jobs, disallows all crawlers, so the two can''t be compared'}
 - key: bloomberg
@@ -250,7 +251,7 @@ companies:
     - {filter_seniority: Intern}
     count_tolerance: 0.05
   locations: [US, CA]
-  role_keywords: [explore microsoft]
+  role_keywords: [explore]
   big: true
   timeout_minutes: 20
   verified: {page_total: 2411}
@@ -1126,7 +1127,7 @@ companies:
   careers_url: ['https://www.citadel.com/careers/open-opportunities/']
   checker: citadel
   settings: {base_url: 'https://www.citadel.com', min_interval: 10.0}
-  role_keywords: [discover citadel]
+  role_keywords: [discover citadel, launch]
   verified: {page_total: 63}
 - key: citadel-securities
   name: Citadel Securities

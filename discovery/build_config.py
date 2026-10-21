@@ -55,23 +55,24 @@ ALIASES = {
 # config/filters.yaml; these are each company's own program names.
 PROGRAM_KEYWORDS: dict[str, list[str]] = {
     "nvidia": ["ignite"],
-    "microsoft": ["explore microsoft"],
+    "microsoft": ["explore"],
     "google": ["student training in engineering", "associate software developer"],
     "meta": ["meta university"],
     "amazon": ["propel"],
-    "uber": ["uberstar"],
+    "uber": ["uber star"],
     "duolingo": ["thrive"],
     "capital-one": ["teip", "first gen focus"],
     "salesforce": ["tech launchpad"],
     "paypal": ["career academy"],
     "goldman-sachs": ["possibilities", "emerging leaders"],
-    "citadel": ["discover citadel"],
+    "citadel": ["discover citadel", "launch"],
     "citadel-securities": ["discover citadel", "ignite"],
     "jane-street": ["fttp", "jsip", "insight", "focus", "bridge"],
     "two-sigma": ["mentor connect"],
     "hudson-river-trading": ["witti", "women in trading"],
     "five-rings": ["link"],
     "liberty-mutual": ["claim your career"],
+    "linkedin": ["first play"],
     "electronic-arts": ["pathfinder"],
 }
 

@@ -39,7 +39,7 @@ rows are yours.
 |---|---|---|---|---|---|
 | Amazon | Propel | not stated | Amazon job site | emailed if posted ("propel") | no 2027 posting found |
 | Bloomberg | First Year Insights | Fr | bloomberg.com program page | not watched (emailed if posted on the job site) | no 2027 listing |
-| Capital One | Technology Internship Program (formerly Technology Early Internship Program, TEIP) | early college | Capital One job site | emailed | "Technology Internship Program - Summer 2027" posted |
+| Capital One | Technology Internship Program (formerly Technology Early Internship Program, TEIP) | early college | Capital One job site | emailed | not posted yet (not on the job site or SimplifyJobs on Oct 20, 2026) |
 | Capital One | Early Internship Program (10 weeks, McLean) and Analyst Early Internship (AEIP) | So | Capital One job site | emailed | AEIP closed; Early Internship not posted yet |
 | Capital One | First Gen Focus | Fr + So | capitalone.eightfold.ai events | not watched (events, not jobs) | — |
 | Citadel | Launch: 11-week engineering internship | So | Citadel job site | emailed if posted | not posted for 2027 |

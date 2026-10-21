@@ -63,3 +63,19 @@ def test_program_labels_neither_make_a_staff_job_nor_exclude(rules, title):
 def test_real_staff_jobs_about_interns_still_reject(rules):
     assert not ev(rules, "Senior Program Specialist - Intern & Keep Warm Programs").matched
     assert not ev(rules, "University Recruiter, Campus Recruiting").matched
+
+
+@pytest.mark.parametrize("key,title", [
+    ("linkedin", "LinkedIn First Play Program - Software Engineering"),
+    ("citadel", "Launch: Software Engineering (US)"),
+    ("uber", "2027 Uber STAR Program, Software Engineering"),
+    ("uber", "UberSTAR Software Engineering"),
+    ("microsoft", "Explore - Software Engineering"),
+])
+def test_named_sophomore_programs_count_without_the_word_intern(rules, key, title):
+    from pathlib import Path
+    from internwatch.config import load_companies
+    c = next(c for c in load_companies(Path(__file__).resolve().parents[1] / "config" / "companies.yaml") if c.key == key)
+    m = evaluate(Job(id="x", title=title, location="New York, NY"), rules, category=c.category, locations=c.locations,
+                 extra_role_keywords=c.extra_role_re)
+    assert m.matched and "freshman/sophomore" in m.tags, m.reasons
