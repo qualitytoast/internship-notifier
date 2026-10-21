@@ -173,6 +173,8 @@ Rules for changing things: CLAUDE.md.
   cross-check covers it, and COVERAGE.md lists its fallback.
 - **Big sites:** Microsoft, NVIDIA, Amazon, T-Mobile and Synopsys. Amazon (22k jobs, search capped at 10k) and
   Apple are read through their complete student slices.
+- **Count tolerances:** a full scan may come up short by 5% at Microsoft and NVIDIA (their internship filters are
+  read in full) and by 4% on Autodesk's Eightfold source (`count_tolerance`); elsewhere 1.5%, at least 2 jobs.
 
 ## Layout
 - `config/`: settings.yaml, companies.yaml, filters.yaml
