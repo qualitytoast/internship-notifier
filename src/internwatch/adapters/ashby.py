@@ -6,13 +6,14 @@ settings: board: <organization hosted jobs page name>   e.g. openai, mistral.ai,
 GET https://api.ashbyhq.com/posting-api/job-board/<board>?includeCompensation=false → {"jobs": [...]}
 hosted: GET https://jobs.ashbyhq.com/<board> → window.__appData = {jobBoard: {jobPostings: [...], teams: [...]}}
 (jobs.ashbyhq.com/api/* is disallowed by robots.txt; the public API and the hosted page are allowed.)
+With several boards, one that fails marks the poll degraded and the others are still read; all failing fails.
 """
 from __future__ import annotations
 
 import json
 
-from ..models import Job
-from .base import Checker, iso_date, join_locations, need, need_list, register
+from ..models import CheckerError, Job
+from .base import Checker, degrade, iso_date, join_locations, need, need_list, register
 
 API = "https://api.ashbyhq.com/posting-api/job-board/{board}?includeCompensation=false"
 HOSTED = "https://jobs.ashbyhq.com/{board}"
@@ -37,12 +38,25 @@ class Ashby(Checker):
 
     def fetch(self, http, s, ctx=None):
         jobs, seen = [], set()
-        for board in self.boards(s):
+        boards = self.boards(s)
+        errors: list[CheckerError] = []
+        for board in boards:
             one = {**s, "board": board}
-            for j in (self._hosted(http, one) if s.get("mode") == "hosted" else self._api(http, one)):
+            try:
+                got = self._hosted(http, one) if s.get("mode") == "hosted" else self._api(http, one)
+            except CheckerError as e:
+                if ctx is None:
+                    raise
+                errors.append(e)  # the other boards are still read
+                continue
+            for j in got:
                 if j.id not in seen:
                     seen.add(j.id)
                     jobs.append(j)
+        if len(errors) == len(boards):
+            raise errors[0]
+        if errors:
+            degrade(ctx, "; ".join(str(e) for e in errors))
         return jobs
 
     def _hosted(self, http, s):

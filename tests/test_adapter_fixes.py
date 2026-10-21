@@ -80,3 +80,17 @@ def test_greenhouse_board_with_a_bad_response_keeps_the_others():
     jobs = replay("samsara", bad, ctx=ctx)
     assert jobs and all(j.extra["board"] == "samsara" for j in jobs)
     assert "greenhouse:samsaradach" in ctx.degraded
+
+
+# Ashby --------------------------------------------------------------------------------------
+
+def test_ashby_one_failing_board_keeps_the_other_boards_jobs():
+    full = replay("sierra")
+    ctx = FetchContext()
+    jobs = replay("sierra", gone("/job-board/sierra-jp?includeCompensation=false"), ctx=ctx)
+    assert 0 < len(jobs) < len(full) and "sierra-jp" in ctx.degraded
+    with pytest.raises(FetchError):
+        replay("sierra", gone("/job-board/sierra-jp?includeCompensation=false"))
+    with pytest.raises(CheckerError):
+        replay("sierra", gone("/job-board/sierra-jp?includeCompensation=false",
+                              "/job-board/Sierra?includeCompensation=false"), ctx=FetchContext())
