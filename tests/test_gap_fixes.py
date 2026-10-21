@@ -571,3 +571,13 @@ def test_a_long_untracked_list_is_capped_in_the_body_and_attached(make_cfg):
     assert names["untracked-roles.csv"].decode().count("\n") == 41            # header + every role
     short = emails.digest(cfg, [], untracked[:10], [], [], morning=True)
     assert len(short) == 3                                                    # no attachment for a short list
+
+
+@pytest.mark.parametrize("title", [
+    "Software Engineer Intern - Summer 2026 (Grad 2027/2028)",    # accepted by the first rescue: must stay accepted
+    "Summer 2026 Intern (Grad 2027/2028)",
+    "Intern 2026 (Graduating 2027/2028)",
+    "Software Engineer Intern (Summer 2026) - Grad 2027/28",
+])
+def test_the_wider_graduation_rescue_never_drops_a_title_the_first_one_accepted(rules, title):
+    assert ev(rules, title, "Austin, TX").matched

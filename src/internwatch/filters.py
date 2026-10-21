@@ -50,6 +50,12 @@ _DATE = rf"(?:(?:{_S}|{_MONTH})\s*,?\s*)?(20\d\d)"
 _GRAD_DATE = re.compile(
     rf"\b(?:class(?:\s+of)?|(?:expected\s+)?grad(?:uat(?:es?|ing|ion)|s)?(?:\s+(?:date|year))?)\s*(?:in\s+|:\s*|-\s*)?"
     rf"{_DATE}(?:\s*(?:-|–|—|/|&|to|through|or|and)\s*{_DATE})?|\b{_DATE}\s+grad(?:uate)?s?\b", re.I)
+# the graduation rescue as first written (a season or month before the year, academic years expanded first): tried
+# second, so a title it rescued stays rescued ("Summer 2026 Intern (Grad 2027/2028)" → its years 2027, 2028)
+_SEASON_DATE = rf"(?:{_S}|{_MONTH})\s*,?\s*(20\d\d)"
+_GRAD_SEASON = re.compile(
+    rf"\b(?:class\s+of|(?:expected\s+)?grad(?:uat(?:es?|ing|ion))?(?:\s+date)?)\s*(?:in\s+|:\s*|-\s*)?{_SEASON_DATE}"
+    rf"(?:\s*(?:-|–|—|to|through|or)\s*{_SEASON_DATE})?|\b{_SEASON_DATE}\s+grad(?:uate)?s?\b", re.I)
 # an academic year written as a range: "2026-27", "Winter 2026/2027", "Fall 2026/27"
 _ACADEMIC_YEAR = re.compile(rf"\b(?:({_S})\s*)?20(\d\d)\s*[-–/]\s*(?:20)?(\d\d)(?!\d)", re.I)
 # where a title's first part ends: a spaced dash, a comma, a bracket, a bar or a colon (not the hyphen in "Co-op")
@@ -183,11 +189,12 @@ def decide_term(title: str, snippet: str, rules: Rules) -> TermResult:
     # Before rejecting, read the title once more without what only looks like a term: a graduation date
     # ("Graduating Spring 2029") and an academic year written as a range ("Winter 2026/2027", "2026-27" →
     # both years). This can only rescue a title, never reject one the rule above accepts.
-    alt = _ACADEMIC_YEAR.sub(_academic_years, _without_grad_dates(title, rules))
-    if alt != title:
-        again = _decide_term(alt, snippet, rules)
-        if again.ok:
-            return again
+    for alt in dict.fromkeys((_ACADEMIC_YEAR.sub(_academic_years, _without_grad_dates(title, rules)),
+                              _without_grad_dates(_ACADEMIC_YEAR.sub(_academic_years, title), rules, _GRAD_SEASON))):
+        if alt != title:
+            again = _decide_term(alt, snippet, rules)
+            if again.ok:
+                return again
     return res
 
 
@@ -198,11 +205,11 @@ def _academic_years(m: re.Match) -> str:
     return f"{season} 20{a:02d} / {season} 20{b:02d}" if season else f"20{a:02d} 20{b:02d}"
 
 
-def _without_grad_dates(title: str, rules: Rules) -> str:
+def _without_grad_dates(title: str, rules: Rules, rx: re.Pattern = _GRAD_DATE) -> str:
     """Drop graduation dates in or after your window ("Graduating Spring 2029"); earlier ones ("Graduating Spring
     2026") stay and still reject, like "Class of 2026"."""
     first = min(rules.include_years, default=0)
-    return _GRAD_DATE.sub(lambda m: " " if min(int(y) for y in m.groups() if y) >= first else m.group(0), title)
+    return rx.sub(lambda m: " " if min(int(y) for y in m.groups() if y) >= first else m.group(0), title)
 
 
 def _decide_term(title: str, snippet: str, rules: Rules) -> TermResult:
