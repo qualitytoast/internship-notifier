@@ -257,8 +257,9 @@ def decide_role(title: str, employment_type: str, rules: Rules, extra: re.Patter
     staff = _PROGRAM_LABEL.sub(" ", title)  # "Area Manager Intern …, University Recruiting" is not a recruiting job
     # A title that starts as a student role ("Software Engineer Intern, Partner Programs") is not a staff job running
     # a program ("Senior Program Specialist - Intern & Keep Warm Programs"); the explicit staff phrases still count.
-    first = _FIRST_SEGMENT.split(title, 1)[0]
-    if _search(rules.staff_about, staff) or (not (_search(rules.role_strong, first) or _search(extra, first))
+    first = _FIRST_SEGMENT.split(title, 1)[0]  # "Intern Programs Manager - …" starts as a staff job, though
+    student_first = (_search(rules.role_strong, first) or _search(extra, first)) and not _search(rules.staff_words, first)
+    if _search(rules.staff_about, staff) or (not student_first
                                              and _search(rules.staff_words, staff) and _search(rules.staff_context, staff)):
         return Decision(False, reason="staff role about internships")
     hit = _search(rules.role_strong, title) or _search(extra, title)

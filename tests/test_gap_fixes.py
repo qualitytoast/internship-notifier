@@ -279,6 +279,9 @@ def test_amazon_keyword_hits_are_kept_by_their_title(title, kept):
     ("Principal Programs Lead - Intern Program", False),
     ("Intern Program Manager, University Programs", False),        # explicit staff phrase
     ("University Recruiter, Campus Recruiting", False),
+    ("Intern Programs Manager - Campus Relations", False),          # the first part names a staff job
+    ("Student Programs Coordinator, University Relations", False),
+    ("Internship Program Specialist, Early Talent Programs", False),
 ])
 def test_staff_rule_only_applies_when_the_title_does_not_start_as_a_student_role(rules, title, matched):
     assert ev(rules, title).matched == matched
