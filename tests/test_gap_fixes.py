@@ -310,6 +310,8 @@ def test_more_graduation_wordings_are_not_read_as_terms(rules, title, matched):
     ("Bengaluru, Karnataka, IN", "IN"), ("London, ON", "CA"), ("Dublin, CA", "US"), ("Paris, TX", "US"),
     ("Toronto, Ontario, CA", "CA"), ("Vancouver, British Columbia, CA", "CA"), ("Valletta, Malta, MT", "MT"),
     ("Panama City, Panama, PA", "PA"), ("Doha, Doha Municipality, QA", "QA"),
+    ("Curitiba, Brazil, PR", "BR"), ("Walldorf, Baden-Württemberg, DE", "DE"), ("Mysuru, Karnataka, IN", "IN"),
+    ("Whitehorse, Yukon, CA", "CA"), ("Brandenburg, KY", "US"), ("Bremen, GA", "US"), ("Delhi, NY", "US"),
 ])
 def test_us_state_codes_that_are_also_country_codes(location, country):
     from internwatch.locations import countries

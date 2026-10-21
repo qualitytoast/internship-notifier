@@ -19,7 +19,8 @@ US_STATES = {
 US_CODES = set(US_STATES.values())
 CA_PROVINCES = {"ontario": "ON", "british columbia": "BC", "quebec": "QC", "québec": "QC", "alberta": "AB",
                 "manitoba": "MB", "saskatchewan": "SK", "nova scotia": "NS", "new brunswick": "NB",
-                "newfoundland": "NL", "prince edward island": "PE"}
+                "newfoundland": "NL", "prince edward island": "PE", "yukon": "YT", "northwest territories": "NT",
+                "nunavut": "NU"}
 CA_CODES = set(CA_PROVINCES.values())
 
 US_WORDS = ["united states", "united states of america", "usa", "u.s.", "u.s.a.", "us",
@@ -49,10 +50,20 @@ OTHER_WORDS = {
     "GB": ["united kingdom", "uk", "u.k.", "england", "scotland", "wales", "london", "manchester", "edinburgh",
            "glasgow", "bristol", "cambridge, uk", "cambridge, england", "oxford", "belfast", "leeds", "reading, uk"],
     "IE": ["ireland", "dublin", "cork"], "DE": ["germany", "berlin", "munich", "münchen", "hamburg", "frankfurt",
-                                                  "stuttgart", "cologne", "düsseldorf", "dusseldorf"],
+                                                  "stuttgart", "cologne", "düsseldorf", "dusseldorf",
+                                                  # states, so "Walldorf, Baden-Württemberg, DE" is not Delaware
+                                                  "baden-württemberg", "baden-wurttemberg", "bavaria", "bayern", "hesse",
+                                                  "hessen", "lower saxony", "niedersachsen", "north rhine-westphalia",
+                                                  "nordrhein-westfalen", "rhineland-palatinate", "rheinland-pfalz",
+                                                  "saxony", "sachsen", "saxony-anhalt", "sachsen-anhalt",
+                                                  "schleswig-holstein", "thuringia", "thüringen", "brandenburg",
+                                                  "mecklenburg-vorpommern", "saarland", "bremen"],
     "FR": ["france", "paris", "lyon", "grenoble", "sophia antipolis"], "NL": ["netherlands", "amsterdam", "rotterdam", "eindhoven", "utrecht"],
     "IN": ["india", "bangalore", "bengaluru", "hyderabad", "pune", "chennai", "gurgaon", "gurugram", "noida",
-           "mumbai", "delhi", "new delhi", "kolkata", "ahmedabad", "kochi", "trivandrum", "jaipur"],
+           "mumbai", "delhi", "new delhi", "kolkata", "ahmedabad", "kochi", "trivandrum", "jaipur",
+           # states, so "Mysuru, Karnataka, IN" is not Indiana
+           "karnataka", "maharashtra", "telangana", "tamil nadu", "kerala", "gujarat", "haryana", "uttar pradesh",
+           "west bengal", "rajasthan", "andhra pradesh", "madhya pradesh", "odisha", "punjab"],
     "CN": ["china", "shanghai", "beijing", "shenzhen", "guangzhou", "hangzhou", "chengdu", "nanjing", "suzhou", "wuhan", "xi'an"],
     "HK": ["hong kong"], "SG": ["singapore"], "JP": ["japan", "tokyo", "osaka"], "KR": ["korea", "seoul"],
     "TW": ["taiwan", "taipei", "hsinchu"], "AU": ["australia", "sydney", "melbourne", "brisbane", "perth"],
@@ -244,7 +255,9 @@ def _part_countries(part: str) -> set[str]:
             scan = part[: part.rfind(",")]
     last = part.strip().rsplit(",", 1)
     state = last[1].strip() if len(last) == 2 else ""
-    if strong and state in US_CODES and ISO2.get(state) not in strong and not tail_foreign:
+    town = part.split(",", 1)[0].lower()  # the country must name the town itself ("Curitiba, Brazil, PR" stays Brazil)
+    in_town = {cc for cc, r in _OTHER_RES.items() if cc != "EMEA" for m in r.findall(town) if m in COUNTRY_NAMES}
+    if strong and strong <= in_town and state in US_CODES and ISO2.get(state) not in strong and not tail_foreign:
         weak |= strong  # a town named after a country, then a state: "Malta, NY", "Lebanon, NH", "Panama City, FL"
         strong = set()
     codes = {m.upper() for m in _STATE_CODE_RE.findall(scan)}
