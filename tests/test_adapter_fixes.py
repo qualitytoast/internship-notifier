@@ -177,3 +177,39 @@ def test_smartrecruiters_search_total_far_above_collected_is_reported():
     for key in ("servicenow", "linkedin"):  # the recorded polls collect more than totalFound: healthy
         ctx = FetchContext()
         assert len(replay(key, ctx=ctx)) == cassette(key).meta["count"] and ctx.degraded is None
+
+
+# Avature ------------------------------------------------------------------------------------
+
+EA_TOTAL = r'aria-label="(\d+) results"'
+
+
+def ea(**extra) -> dict:
+    return {**cassette("electronic-arts").meta["settings"], **extra}
+
+
+def test_avature_ea_total_regex_reads_the_portal_total():
+    ctx = FetchContext()
+    jobs = replay("electronic-arts", settings=ea(total_regex=EA_TOTAL), ctx=ctx)
+    assert len(jobs) == cassette("electronic-arts").meta["count"] == ctx.reported_total == 364
+    assert ctx.degraded is None
+
+
+def test_avature_short_walk_is_reported_and_its_jobs_kept():
+    def short_page(e):  # one card fewer on page 3 ends the walk there
+        if e["url"].endswith("jobOffset=40&jobRecordsPerPage=20"):
+            i = e["text"].find('<article class="article article--result')
+            e["text"] = e["text"][:i] + e["text"][e["text"].find('<article class="article article--result', i + 10):]
+    ctx = FetchContext()
+    jobs = replay("electronic-arts", short_page, settings=ea(total_regex=EA_TOTAL), ctx=ctx)
+    assert len(jobs) == 59 and "collected 59 jobs but the source reports 364" in ctx.degraded
+    with pytest.raises(CheckerError):  # no context: fails as before
+        replay("electronic-arts", short_page, settings=ea(total_regex=EA_TOTAL))
+
+
+def test_avature_total_missing_from_the_page_is_reported_and_jobs_kept():
+    ctx = FetchContext()
+    jobs = replay("electronic-arts", settings=ea(total_regex=r'data-total="(\d+)"'), ctx=ctx)
+    assert len(jobs) == 364 and "total not found on the page" in ctx.degraded
+    with pytest.raises(CheckerError):
+        replay("electronic-arts", settings=ea(total_regex=r'data-total="(\d+)"'))

@@ -8,7 +8,8 @@ settings:
                [location, department, employment_type]), or
                a mapping name → CSS selector (Synopsys: {employment_type: .list-item-hireType, posted: .list-item-posted})
              default: {location: .list-item-location}
-  total_regex:        regex whose group 1 is the portal's total (e.g. 'aria-label="(\d+) results"')
+  total_regex:        regex whose group 1 is the portal's total (e.g. 'aria-label="(\d+) results"'); a full scan
+                      that collects fewer (or a page without the total) marks the poll degraded, keeping its jobs
   newest_first_query: query string that sorts newest first (used by quick scans of big portals)
 List:   GET <list_url>?jobOffset=N → article.article--result cards linking to …/JobDetail/<slug>/<id>
 Detail: GET the job page → description, and City / State / Country fields when the card has no location
@@ -23,7 +24,7 @@ from urllib.parse import parse_qsl, urljoin
 from bs4 import BeautifulSoup
 
 from ..models import Job
-from .base import Checker, check_total, html_text, iso_date, join_locations, need, register
+from .base import Checker, check_total_soft, html_text, iso_date, join_locations, need, need_soft, register
 
 DETAIL_HREF = re.compile(r"/JobDetail/(?:[^/?#]+/)?(\d+)(?:[/?#]|$)")
 DEFAULT_FIELDS = {"location": ".list-item-location"}
@@ -87,8 +88,8 @@ class Avature(Checker):
                      f"avature:{url}: page has no job cards")
                 if total_rx is not None:
                     m = total_rx.search(html)
-                    need(m, f"avature:{url}: total not found on the page (total_regex)")
-                    total = int(m.group(1).replace(",", ""))
+                    if need_soft(m, f"avature:{url}: total not found on the page (total_regex)", ctx):
+                        total = int(m.group(1).replace(",", ""))
             new = [j for j in jobs if j.id not in out]
             for j in new:
                 out[j.id] = j
@@ -103,7 +104,7 @@ class Avature(Checker):
         if ctx is not None and total is not None:
             ctx.reported_total = total
         if not quick and total is not None:
-            check_total(len(out), total, f"avature:{url}")
+            check_total_soft(len(out), total, f"avature:{url}", ctx)
         return list(out.values())
 
     def detail(self, http, s, job):
