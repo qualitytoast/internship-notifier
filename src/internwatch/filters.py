@@ -297,6 +297,13 @@ def decide_field(title: str, department: str, category: str, rules: Rules) -> De
         keep = next((m for m in _all(rules.keep_unsure, title) if _outside(m, ex)), None)
         if keep:  # "Policy Engineering Intern", "Finance Engineer Intern"
             return Decision(True, "unsure", True, f"title mentions '{ex[0].group(0)}' (excluded) and '{keep.group(0)}'")
+        tech = next((name for name, rx in rules.dept_fields if _search(rx, department)), None) if department else None
+        hint = next((m for _, rx in rules.dept_fields for m in _all(rx, title) if _outside(m, ex)), None)
+        if tech and hint and not (_search(rules.exclude_strong, department) or _search(rules.exclude, department)):
+            # the department and a word of the title both point to a field: "Technology Strategy & Transformation
+            # Internship" in Liberty Mutual's Technology department (not "Manufacturing Engineering": one phrase)
+            return Decision(True, "unsure", True, f"title mentions '{ex[0].group(0)}' (excluded) but the department "
+                                                  f"is {tech} ({department[:40]})")
         return Decision(False, reason=f"excluded field '{ex[0].group(0)}'")
     if department:
         for name, rx in rules.dept_fields:

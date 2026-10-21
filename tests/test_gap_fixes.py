@@ -630,3 +630,16 @@ def test_a_complete_reseed_clears_an_old_partial_seed_flag(make_cfg):
     assert not db.get("partial_seed:acme")
     s = r.run(DAILY)
     assert s.new_matches == 1 and db.job("acme", "2")["baseline"] == 0
+
+
+@pytest.mark.parametrize("title,department,matched", [
+    ("Technology Strategy & Transformation Internship (Summer 2027)", "Technology", True),   # Liberty Mutual
+    ("Part-Time Student - Manufacturing Engineering - Waterloo, IA", "Engineering", False),  # tech word inside the phrase
+    ("Materials Regulatory Compliance (MRC) Intern", "Internship - Engineering, Tech & Design", False),  # no tech word
+    ("CEGIU Demo Data Strategy Intern - OVIP", "Sales", False),                               # department not a field
+    ("Marketing Intern", "Marketing Technology", False),                                     # department excluded too
+    ("Technology Strategy & Transformation Internship (Summer 2027)", "", False),             # no department: as before
+])
+def test_an_excluded_title_word_with_a_tech_department_and_a_tech_word_is_unsure(rules, title, department, matched):
+    m = ev(rules, title, "Boston, MA", department=department)
+    assert m.matched == matched and (not matched or "field?" in m.tags)
