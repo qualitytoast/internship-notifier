@@ -8,24 +8,55 @@ settings:
                  (Autodesk: the same requisitions on Eightfold and Workday)
   dedupe_titles: true   ... or when its title matches an earlier source's job apart from text in brackets,
                  case and punctuation (Rockwell: "Co-Op, Delivery - Projects" on RippleMatch is Workday's
-                 "Co-op, Delivery - Projects (LCS)"); terms outside brackets still count
+                 "Co-op, Delivery - Projects (LCS)"); a different year, a place in brackets ("(Canada)") or
+                 postings in different countries keep both
 Ids from the first source are kept as they are; later sources' ids are prefixed with "<checker>:" so they can
 never collide. If one source fails, the others are still read and their new postings emailed, and the check
 is reported as degraded (a health alert after repeated failures); if every source fails, the check fails.
+A source's first answer (it was failing since the company was first read, or it was just added) is its baseline:
+those postings go out once in the next email's "already open" section, not as new.
 """
 from __future__ import annotations
 
+import hashlib
+import json
 import re
 
 from ..adapters import get_checker
 from ..adapters.base import Checker, need, register
-from ..models import CheckerError
+from ..locations import countries
+from ..models import CheckerError, Job
+
+_BRACKETS = re.compile(r"\(([^)]*)\)|\[([^\]]*)\]")
+_YEAR = re.compile(r"20\d\d")
 
 
 def _bare_title(title: str) -> str:
     """The title without text in brackets, case or punctuation: "Co-op, Delivery - Projects (LCS)" →
     "co op delivery projects"."""
-    return " ".join(re.sub(r"[^a-z0-9]+", " ", re.sub(r"\([^)]*\)|\[[^\]]*\]", " ", title.lower())).split())
+    return " ".join(re.sub(r"[^a-z0-9]+", " ", _BRACKETS.sub(" ", title.lower())).split())
+
+
+def _same_role(a: Job, b: Job) -> bool:
+    """Two same-titled postings from different sources are one role unless their brackets or locations say
+    otherwise: "(Summer 2026)" vs "(Summer 2027)", "… (Canada)" vs a US posting, Pune vs Milwaukee."""
+    if set(_YEAR.findall(a.title)) != set(_YEAR.findall(b.title)):
+        return False
+    if any(countries(x)[0] for t in (a.title, b.title) for x in sum(_BRACKETS.findall(t), ()) if x):
+        return False
+    ca, cb = countries(a.location)[0], countries(b.location)[0]
+    return not ca or not cb or bool(ca & cb)
+
+
+def _source_ids(sources) -> list[str]:
+    """Each source's name in the saved state: its checker and settings, so inserting or reordering sources in
+    companies.yaml can't make one source look like another (identical sources get #2, #3…)."""
+    out, seen = [], {}
+    for _, checker, st in sources:
+        sid = f"{checker.type}:{hashlib.sha1(json.dumps(st, sort_keys=True, default=str).encode()).hexdigest()[:10]}"
+        seen[sid] = seen.get(sid, 0) + 1
+        out.append(sid if seen[sid] == 1 else f"{sid}#{seen[sid]}")
+    return out
 
 
 @register
@@ -42,11 +73,16 @@ class Multi(Checker):
         return " + ".join(f"{c.type}: {c.describe(st)}" for _, c, st in self._sources(s))
 
     def fetch(self, http, s, ctx=None):
-        jobs, total, seen, titles, errors = [], 0, set(), set(), []
+        jobs, total, seen, titles, errors = [], 0, set(), {}, []
         sources = self._sources(s)
+        ids = _source_ids(sources)
         # sources that answered before; None on the company's very first check (everything is a baseline then)
-        prev = set(ctx.state.get("ok_sources", [])) if ctx is not None and "ok_sources" in ctx.state else None
-        ok_now: set[int] = set()
+        prev = None
+        if ctx is not None and "ok_source_ids" in ctx.state:
+            prev = set(ctx.state["ok_source_ids"])
+        elif ctx is not None and "ok_sources" in ctx.state:  # saved by list position before October 2026
+            prev = {ids[i] for i in ctx.state["ok_sources"] if isinstance(i, int) and i < len(ids)}
+        ok_now: set[str] = set()
         for i, checker, st in sources:
             try:
                 got = checker.fetch(http, st, ctx)
@@ -55,9 +91,9 @@ class Multi(Checker):
                 if len(errors) == len(sources):
                     raise
                 continue
-            ok_now.add(i)
-            if prev is not None and i not in prev:
-                for j in got:  # first answer from a source that was failing: existing postings, not new ones
+            ok_now.add(ids[i])
+            if prev is not None and ids[i] not in prev:
+                for j in got:  # this source's first answer: what it lists was open before (shown once, not as new)
                     j.extra["baseline"] = True
             if ctx is not None and ctx.reported_total is not None:
                 total += ctx.reported_total
@@ -67,16 +103,17 @@ class Multi(Checker):
                 if i and s.get("dedupe") and keys & seen:
                     continue
                 bare = _bare_title(j.title)
-                if i and s.get("dedupe_titles") and bare in titles:
+                if i and s.get("dedupe_titles") and any(k < i and _same_role(j, e) for k, e in titles.get(bare, ())):
                     continue
                 seen |= keys
-                titles.add(bare)
+                titles.setdefault(bare, []).append((i, j))
                 if i:
                     j.id = f"{checker.type}:{j.id}"
                 j.extra["source"] = i
                 jobs.append(j)
         if ctx is not None:
-            ctx.state["ok_sources"] = sorted((prev or set()) | ok_now)
+            ctx.state.pop("ok_sources", None)
+            ctx.state["ok_source_ids"] = sorted((prev or set()) | ok_now)
             if total:
                 ctx.reported_total = total
             if errors:

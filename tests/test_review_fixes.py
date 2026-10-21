@@ -114,7 +114,7 @@ def test_multi_source_that_recovers_reports_its_backlog_as_baseline(monkeypatch)
     monkeypatch.setattr(Multi, "_sources", lambda self, s: [(i, x, {}) for i, x in enumerate(srcs)])
     ctx = FetchContext()
     jobs = Multi().fetch(None, {}, ctx)
-    assert [j.id for j in jobs] == ["a"] and ctx.degraded and ctx.state["ok_sources"] == [0]
+    assert [j.id for j in jobs] == ["a"] and ctx.degraded and len(ctx.state["ok_source_ids"]) == 1
     srcs[1] = _Src([job("b", "B")])
     ctx2 = FetchContext(state=ctx.state)
     jobs = Multi().fetch(None, {}, ctx2)

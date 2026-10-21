@@ -19,7 +19,8 @@ Rules for changing things: CLAUDE.md.
   that was posted and removed in between. A company's first successful check records its open postings as a
   baseline, sent as one "Now watching" summary instead of per-role emails. A posting that didn't match and is
   later edited (new title, location or type) or comes back after being removed is judged again, and emailed if it
-  now matches; a match is never taken back.
+  now matches; a match is never taken back. A matching posting is emailed again when its id comes back for a new
+  round: open again after at least 14 days closed ("reopened"), or retitled for another term ("new term").
 - **Secrets:** `.env` (gitignored; template in `.env.example`) holds SMTP_USER, SMTP_PASSWORD (Gmail app
   password), EMAIL_FROM, HEALTHCHECKS_PING_URL and ORACLE_SSH_*. The recipient is `email.to` in
   `config/settings.yaml`. SMTP uses certifi, because python.org Python ships without a CA bundle.
@@ -32,7 +33,10 @@ Rules for changing things: CLAUDE.md.
   - `[InternWatch HEALTH]`: problems, recoveries, possible misses.
   - `[InternWatch COVERAGE]`: weekly on Monday.
 - **Each row:** company, title linked to the posting, location, term ("unspecified" if none), posted date,
-  field tag, `unsure` tags with the reason, `freshman/sophomore`, "repost", "via Simplify".
+  field tag, `unsure` tags with the reason, `freshman/sophomore`, "repost", "reopened", "new term", "via Simplify".
+- **Already open:** roles that were open before InternWatch could judge them but were never emailed (a
+  multi-source company's source read for the first time, or a role matching after `refilter --notify`) come once,
+  in their own section after the new ones.
 - **More than 50 roles:** the 50 surest are in the body, and everything is attached as matching-roles.html and
   .csv.
 - **Delivery:** every email is also saved in `data/outbox/`. An email that fails to send is retried on the
@@ -101,7 +105,9 @@ Rules for changing things: CLAUDE.md.
   - smartrecruiters {company}, workable {account}, icims {portal}, jibe {host}, phenom {base_url, ref_num},
     avature {list_url, page_size}, gem, rippling, jobvite, pinpoint, recruiterbox, ripplematch
   - multi {sources, dedupe, dedupe_titles}: later sources' ids are prefixed with `<checker>:`; dedupe_titles skips
-    a later source's role whose title matches an earlier one apart from text in brackets.
+    a later source's role whose title matches an earlier one apart from text in brackets, unless a year, a place
+    in brackets or the countries differ. Sources are remembered by checker and settings, and a source's first
+    answer is its baseline, emailed once as "already open".
 - **Custom checkers** (`src/internwatch/checkers/`): google, meta (GraphQL + sitemap fallback), amazon and
   apple (complete student slices), atlassian, goldman, citadel, shopify, epic_careers, talentbrew (Intuit),
   hubspot, blocked.

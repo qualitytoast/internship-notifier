@@ -75,7 +75,8 @@ def _group(rows) -> "OrderedDict[str, list]":
 
 
 def _tag_html(t: str) -> str:
-    style = TAG_UNSURE if t.endswith("?") or t.startswith("unsure") else (TAG_OTHER if t in ("PhD", "Master's", "repost", "via Simplify") else TAG_FIELD)
+    style = TAG_UNSURE if t.endswith("?") or t.startswith("unsure") else (
+        TAG_OTHER if t in ("PhD", "Master's", "repost", "via Simplify", "reopened", "new term") else TAG_FIELD)
     label = {"field?": "unsure: field", "location?": "unsure: location", "term?": "unsure: term", "role?": "unsure: role type"}.get(t, t)
     return f'<span style="{style}">{escape(label)}</span>'
 
@@ -165,7 +166,21 @@ def _csv(cfg: Config, rows) -> str:
     return buf.getvalue()
 
 
-def _sections_capped(cfg: Config, rows, what: str = "matching roles"):
+def _already_open(rows) -> tuple[list, list]:
+    """(new, already open). Already open: recorded as a baseline, so open before InternWatch could judge it, and
+    not emailed yet: a multi-source company's newly read source, or a role that matches after a filter change
+    (`refilter --notify`)."""
+    new, old = [], []
+    for r in rows:
+        (old if "baseline" in r.keys() and r["baseline"] else new).append(r)
+    return new, old
+
+
+ALREADY_OPEN_NOTE = ("Open before InternWatch could judge them (a source read for the first time, or your filters "
+                     "changed), so not new, but never emailed before.")
+
+
+def _sections_capped(cfg: Config, rows, what: str = "matching roles", stem: str = "matching-roles"):
     """Company sections for the email body (at most MAX_BODY_ROWS, surest first) + attachments with everything."""
     if len(rows) <= MAX_BODY_ROWS:
         h, t = _company_sections(cfg, rows)
@@ -176,14 +191,14 @@ def _sections_capped(cfg: Config, rows, what: str = "matching roles"):
     groups = sorted(_group(rows).items(), key=lambda kv: names.get(kv[0], kv[0]).lower())
     counts = ", ".join(f"{escape(names.get(k, k))} ({len(v)})" for k, v in groups)
     note = (f'<p style="{STYLE_P}"><b>{len(rows)} {what}</b> is too many for one email: the {MAX_BODY_ROWS} surest are below, '
-            f"and the complete list is attached (<b>matching-roles.html</b> opens in a browser, <b>matching-roles.csv</b> "
+            f"and the complete list is attached (<b>{stem}.html</b> opens in a browser, <b>{stem}.csv</b> "
             f"in a spreadsheet).</p><p style=\"{STYLE_P}\"><b>By company:</b> {counts}</p>"
             f'<h3 style="{STYLE_H}">The {MAX_BODY_ROWS} surest</h3>')
     full_html, _ = _company_sections(cfg, rows)
-    files = [("matching-roles.html", _wrap(f"All {len(rows)} {what}", full_html).encode(), "text/html"),
-             ("matching-roles.csv", _csv(cfg, rows).encode(), "text/csv")]
+    files = [(f"{stem}.html", _wrap(f"All {len(rows)} {what}", full_html).encode(), "text/html"),
+             (f"{stem}.csv", _csv(cfg, rows).encode(), "text/csv")]
     text_note = (f"{len(rows)} {what}: the {MAX_BODY_ROWS} surest are listed below; the complete list is attached "
-                 f"(matching-roles.html / matching-roles.csv).\n\n")
+                 f"({stem}.html / {stem}.csv).\n\n")
     return note + h, text_note + t, files
 
 
@@ -194,14 +209,22 @@ def _with_files(built: tuple[str, str, str], files) -> tuple:
 # ---------------------------------------------------------------------------------------------
 
 def new_postings(cfg: Config, rows) -> tuple[str, str, str]:
+    rows, opened = _already_open(rows)
     n = len(rows)
-    subject = f"{_prefix(cfg)} {n} new: {_subject_companies(cfg, rows)}"
+    subject = (f"{_prefix(cfg)} {n} new: {_subject_companies(cfg, rows)}" + (f" (+{len(opened)} already open)" if opened else "")
+               if rows else f"{_prefix(cfg)} {len(opened)} already open: {_subject_companies(cfg, opened)}")
     body_html, body_text, files = _sections_capped(cfg, rows, "new matching roles")
     unsure = sum(1 for r in rows if r["unsure"])
     note = (f'<p style="{STYLE_P}">{n} new matching role{"s" if n != 1 else ""} found just now'
             + (f", {unsure} tagged <b>unsure</b> (included because a rule could not decide)" if unsure else "") + ".</p>")
-    html = _wrap(f"{n} new internship posting{'s' if n != 1 else ''}", note + body_html)
     text = f"{n} new matching role(s).\n\n{body_text}"
+    if opened:
+        h, t, more = _sections_capped(cfg, opened, "already-open roles", "already-open-roles")
+        body_html += (f'<h3 style="{STYLE_H}">Already open ({len(opened)})</h3><p style="{STYLE_P}">{ALREADY_OPEN_NOTE}</p>' + h)
+        text += f"\n\nALREADY OPEN ({len(opened)}): {ALREADY_OPEN_NOTE}\n{t}"
+        files = (files or []) + (more or [])
+    html = _wrap(f"{n} new internship posting{'s' if n != 1 else ''}" if n else "Already-open internship postings",
+                 (note if n else "") + body_html)
     return _with_files((subject, text, html), files)
 
 
@@ -237,9 +260,11 @@ def watching_summary(cfg: Config, rows, keys: list[str]) -> tuple[str, str, str]
 def digest(cfg: Config, new_rows, untracked: list[dict], misses: list[dict], open_problems: list[dict], *,
            morning: bool = False) -> tuple[str, str, str]:
     """The daily digest, or with morning=True the single email of `internwatch run --daily` (new since last run)."""
+    new_rows, opened = _already_open(new_rows)
     n = len(new_rows)
     if morning:
         subject = (f"{_prefix(cfg)} {_today(cfg)}: " + (f"{n} new: {_subject_companies(cfg, new_rows)}" if n else "no new roles")
+                   + (f"; {len(opened)} already open" if opened else "")
                    + (f"; {len(untracked)} at untracked companies" if untracked else ""))
         window, title = "since the last check", f"Your morning check — {_today(cfg)}"
     else:
@@ -253,6 +278,11 @@ def digest(cfg: Config, new_rows, untracked: list[dict], misses: list[dict], ope
     else:
         parts_html.append(f'<p style="{STYLE_P}">No new matching roles {window}.</p>')
         parts_text.append(f"No new matching roles {window}.")
+    if opened:
+        h, t, more = _sections_capped(cfg, opened, "already-open roles", "already-open-roles")
+        parts_html.append(f'<h3 style="{STYLE_H}">Already open ({len(opened)})</h3><p style="{STYLE_P}">{ALREADY_OPEN_NOTE}</p>' + h)
+        parts_text.append(f"ALREADY OPEN ({len(opened)}): {ALREADY_OPEN_NOTE}\n{t}")
+        files = (files or []) + (more or [])
     if untracked:
         rows = "".join(
             f'<tr><td style="{STYLE_TD}"><b>{escape(u["company"])}</b></td>'

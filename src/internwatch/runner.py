@@ -29,7 +29,7 @@ from .adapters import get_checker
 from .adapters.base import FetchContext, dedupe
 from .config import Company, Config
 from .crosscheck import CrossCheck
-from .db import DB, iso, parse_iso, utcnow
+from .db import DB, iso, parse_iso, reopened, utcnow
 from .filters import evaluate, is_student_role, vague_location
 from .health import Outcome, assess
 from .heartbeat import Heartbeat
@@ -93,6 +93,9 @@ def run_checker(cfg: Config, c: Company, *, mode: str = "full", known=(), state:
                     out.details_fetched += 1
                 except CheckerError as e:  # a missing description never hides the job itself
                     out.detail_errors.append(f"{j.id}: {e}")
+                except Exception as e:  # noqa: BLE001 — nor does a job page the parser can't handle
+                    log.warning("%s: detail %s crashed: %s: %s", c.key, j.id, type(e).__name__, e)
+                    out.detail_errors.append(f"{j.id}: {type(e).__name__}: {e}")
         out.jobs = jobs
         out.reported_total = ctx.reported_total
         out.state = ctx.state
@@ -351,9 +354,18 @@ class Runner:
                             employment_type=j.employment_type or old["employment_type"] or "",
                             snippet=j.snippet or old["snippet"] or "")
                     m = evaluate(j, rules, category=c.category, locations=c.locations, extra_role_keywords=c.extra_role_re)
+                    if old["matched"]:
+                        # Already emailed once: again only for a new round of the same posting, i.e. open again after
+                        # a while or retitled for another term (its id reused); otherwise the stored match stays.
+                        again = reopened(old["removed_at"], now)
+                        if not m.matched or not (again or (m.term not in ("unspecified", "unclear")
+                                                          and m.term != old["term"])):
+                            continue
+                        m.tags.append("reopened" if again else "new term")
                     db.set_match(c.key, jid, m, is_student_role(j, rules, c.extra_role_re))
                     if m.matched:
-                        db.conn.execute("UPDATE jobs SET notified_at=NULL WHERE company=? AND job_id=?", (c.key, jid))
+                        db.conn.execute("UPDATE jobs SET notified_at=NULL, baseline=0 WHERE company=? AND job_id=?",
+                                        (c.key, jid))
                         new_matches += 1
                 for jid in new_ids:
                     j = by_id[jid]
@@ -362,10 +374,12 @@ class Runner:
                     if not m.matched or seeding:
                         continue
                     if j.extra.get("baseline"):
-                        # a source of a multi-source company answered for the first time: its postings are a baseline
-                        db.conn.execute("UPDATE jobs SET notified_at=?, baseline=1 WHERE company=? AND job_id=?", (now, c.key, jid))
+                        # A source of a multi-source company answered for the first time (it was failing, or was just
+                        # added): its postings were open before, so they are not new, but they were never shown
+                        # either. They go out once, in the next email's "already open" section.
+                        db.conn.execute("UPDATE jobs SET baseline=1 WHERE company=? AND job_id=?", (c.key, jid))
                         continue
-                    twin = db.simplify_twin(c.key, j.title)
+                    twin = db.simplify_twin(c.key, j.title, now)
                     if twin:
                         # already emailed from the SimplifyJobs cross-check while this checker was down: not twice
                         db.conn.execute("UPDATE jobs SET notified_at=?, repost_of=? WHERE company=? AND job_id=?",

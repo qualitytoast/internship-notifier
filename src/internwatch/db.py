@@ -102,6 +102,15 @@ def norm_title(t: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", (t or "").lower()).strip()
 
 
+REOPEN_DAYS = 14   # a matching posting closed this long and open again is emailed again ("reopened")
+TWIN_DAYS = 14     # how long a role emailed "via Simplify" stands in for the checker's own copy of it
+
+
+def reopened(removed_at: str | None, now: str) -> bool:
+    """Closed for REOPEN_DAYS or more: not a scan that briefly missed it (Microsoft, NVIDIA)."""
+    return bool(removed_at) and parse_iso(now) - parse_iso(removed_at) >= timedelta(days=REOPEN_DAYS)
+
+
 class DB:
     def __init__(self, path: Path | str):
         self.path = str(path)
@@ -160,10 +169,12 @@ class DB:
         """Insert unseen jobs, refresh seen ones. Returns (new_ids, recheck): recheck maps each known job that
         doesn't match and came back after being removed, or was edited (a new title, location or employment type;
         an empty value in the listing is not an edit), to its row before this update, so the filters can look at it
-        again with the best details known (a listing's "3 Locations" vs the real ones read from the job page)."""
+        again with the best details known (a listing's "3 Locations" vs the real ones read from the job page).
+        A matching job is in recheck when it was retitled or comes back after REOPEN_DAYS: the same id reused for
+        another round of the posting (Summer 2027 → Summer 2028; Citadel's ids are title slugs)."""
         new, recheck = [], {}
         existing = {r["job_id"]: r for r in self.q(
-            "SELECT job_id, removed_at, title, location, department, employment_type, snippet, matched FROM jobs"
+            "SELECT job_id, removed_at, title, location, department, employment_type, snippet, matched, term FROM jobs"
             " WHERE company=?", company)}
         with self.tx() as c:
             for j in jobs:
@@ -180,6 +191,8 @@ class DB:
                         new_v and new_v != (old_v or "") for new_v, old_v in
                         ((j.location, row["location"]), (j.employment_type, row["employment_type"])))
                     if not row["matched"] and (row["removed_at"] or edited):
+                        recheck[j.id] = row
+                    elif row["matched"] and (reopened(row["removed_at"], now) or (j.title or "") != (row["title"] or "")):
                         recheck[j.id] = row
                     c.execute(
                         "UPDATE jobs SET title=?, location=?, url=?, posted=COALESCE(?, posted), department=?,"
@@ -217,11 +230,13 @@ class DB:
                 return r["job_id"]
         return None
 
-    def simplify_twin(self, company: str, title: str) -> str | None:
-        """An open job learned from the SimplifyJobs cross-check (checker down) with the same title, already emailed."""
+    def simplify_twin(self, company: str, title: str, now: str) -> str | None:
+        """An open job learned from the SimplifyJobs cross-check (checker down) with the same title, already emailed,
+        in the last TWIN_DAYS: an older one never gets closed, and must not swallow a later posting of that title."""
         t = norm_title(title)
+        since = iso(parse_iso(now) - timedelta(days=TWIN_DAYS))
         for r in self.q("SELECT job_id, title FROM jobs WHERE company=? AND source='simplify' AND removed_at IS NULL "
-                        "AND notified_at IS NOT NULL", company):
+                        "AND notified_at IS NOT NULL AND first_seen>=?", company, since):
             if norm_title(r["title"]) == t:
                 return r["job_id"]
         return None
