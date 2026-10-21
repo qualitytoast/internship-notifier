@@ -5,7 +5,7 @@ settings: board: <token>            e.g. stripe  (or boards: [a, b] for companie
                                     the title and place match too ("Redwood City, CA" = "Redwood City, California,
                                     United States"); a twin with another title or place (a new term, a copy in
                                     Mexico) is kept
-          missing_ok: true         a board that answers 404 counts as empty (a company that switched its board
+          missing_ok: true          a board that answers 404 counts as empty (a company that switched its board
                                     off for now; the zero-jobs health check still flags a working board going to 0).
                                     A board that answered before and now answers 404 marks the poll degraded.
 List:   GET https://boards-api.greenhouse.io/v1/boards/<board>/jobs        → {"jobs": [...], "meta": {"total": N}}
