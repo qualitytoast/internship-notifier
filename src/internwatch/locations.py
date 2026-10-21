@@ -176,6 +176,9 @@ _ISO_TAIL_RE = re.compile(r",\s*[A-Z]{2}\s*,\s*([A-Z]{2})\s*$")
 # a country code (that would otherwise read as a state code: IL, IN, GA …).
 _REGION_TAIL_RE = re.compile(r"^[^,]+,\s*([^,]{3,}?)\s*,\s*([A-Z]{2})\s*$")
 ISO2.update({cc: cc for cc in OTHER_WORDS if len(cc) == 2 and cc != "EMEA"})
+# words that name a region abroad, so a final code after them is a country even when it is also a US state code
+_FOREIGN_REGION = re.compile(r"\b(?:district|municipality|province|prefecture|governorate|voivodeship|oblast|canton|"
+                             r"region|department)\b", re.I)
 
 
 
@@ -231,10 +234,19 @@ def _part_countries(part: str) -> set[str]:
     else:
         rt = _REGION_TAIL_RE.match(part.strip())
         if (rt and rt.group(2) in ISO2 and rt.group(1).strip().lower() not in US_STATES
-                and rt.group(1).strip().upper() not in US_CODES):
+                and rt.group(1).strip().upper() not in US_CODES
+                # a code that is also a US state ("Hunt Valley, Cockeysville, MD") is that state unless something
+                # foreign appears ("Chisinau, Chisinau Municipality, MD", "Tel Aviv-Yafo, Tel Aviv District, IL")
+                and not (rt.group(2) in US_CODES
+                         and not (strong or weak or is_ca or _FOREIGN_REGION.search(rt.group(1))))):
             out.add(ISO2[rt.group(2)])
             tail_foreign = ISO2[rt.group(2)] != "US"
             scan = part[: part.rfind(",")]
+    last = part.strip().rsplit(",", 1)
+    state = last[1].strip() if len(last) == 2 else ""
+    if strong and state in US_CODES and ISO2.get(state) not in strong and not tail_foreign:
+        weak |= strong  # a town named after a country, then a state: "Malta, NY", "Lebanon, NH", "Panama City, FL"
+        strong = set()
     codes = {m.upper() for m in _STATE_CODE_RE.findall(scan)}
     if is_ca:
         out.add("CA")

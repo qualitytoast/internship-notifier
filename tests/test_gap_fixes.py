@@ -295,3 +295,19 @@ def test_staff_rule_only_applies_when_the_title_does_not_start_as_a_student_role
 ])
 def test_more_graduation_wordings_are_not_read_as_terms(rules, title, matched):
     assert ev(rules, title, "Austin, TX").matched == matched
+
+
+@pytest.mark.parametrize("location,country", [
+    # US places that read as foreign before
+    ("Hunt Valley, Cockeysville, MD", "US"), ("University Park, State College, PA", "US"), ("Malta, NY", "US"),
+    ("Lebanon, NH", "US"), ("West Jordan, UT", "US"), ("Panama City, FL", "US"), ("Jamaica, Queens, NY", "US"),
+    ("Carmel, Hamilton County, IN", "US"), ("Pleasanton, Alameda County, CA", "US"),
+    # guards: these must not move
+    ("Chisinau, Chisinau Municipality, MD", "MD"), ("Tel Aviv-Yafo, Tel Aviv District, IL", "IL"),
+    ("Bengaluru, Karnataka, IN", "IN"), ("London, ON", "CA"), ("Dublin, CA", "US"), ("Paris, TX", "US"),
+    ("Toronto, Ontario, CA", "CA"), ("Vancouver, British Columbia, CA", "CA"), ("Valletta, Malta, MT", "MT"),
+    ("Panama City, Panama, PA", "PA"), ("Doha, Doha Municipality, QA", "QA"),
+])
+def test_us_state_codes_that_are_also_country_codes(location, country):
+    from internwatch.locations import countries
+    assert sorted(countries(location)[0]) == [country]
