@@ -10,7 +10,7 @@ Amazon tags student roles with structured fields, so the checker reads, unioned 
   2. businessCategory ∈ {studentprograms, university}, minus query 1          (~190)
   3. keyword searches (intern, interns, internship(s), apprentice, co-op, student, …, the freshman/sophomore
      words, "propel") over everything outside 1 and 2 (title-only student roles, e.g. RME apprentices)
-     (~0–200 each; "internship" ~2,400, as it also matches descriptions)
+     (~0–200 each; "internship" matches ~2,400 descriptions, so only its hits titled intern are kept)
 Discovery showed this union contains every student title on the site (see discovery/notes/amazon.md).
 Only the "a-confidential-job" business category is excluded: the default isConfidential=1 exclusion hides
 public internships. Apply links (account.amazon.jobs) are robots-disallowed: linked, never fetched.
@@ -20,6 +20,7 @@ settings: {} (all defaults); `keywords` overrides the keyword list.
 from __future__ import annotations
 
 import copy
+import re
 
 from ..adapters.base import UNDERCLASS_SEARCH_WORDS, Checker, html_text, iso_date, join_locations, need, register
 from ..models import Job
@@ -37,6 +38,10 @@ BIZ = [{"name": "businessCategory", "values": [{"name": "studentprograms"}, {"na
 # below the cap. "propel" is Amazon's freshman/sophomore program (role_keywords in companies.yaml).
 KEYWORDS = ["intern", "interns", "internship", "internships", "apprentice", "co-op", "student", "working student",
             "summer analyst", *UNDERCLASS_SEARCH_WORDS, "propel"]
+# these find unflagged "… Internship" titles, but mostly match descriptions ("internship experience"): only hits
+# whose title says intern are kept
+TITLE_ONLY = {"interns", "internship", "internships"}
+INTERN_TITLE = re.compile(r"\bintern", re.I)
 HEADERS = {"Content-Type": "application/json", "Accept": "application/json", "Origin": "https://www.amazon.jobs"}
 
 
@@ -93,7 +98,8 @@ class Amazon(Checker):
         quick = ctx is not None and ctx.quick
         slice_total = 0
         for name, body in queries(list(s.get("keywords") or KEYWORDS)):
-            start, found, seen = 0, None, 0
+            start, found, seen, kept = 0, None, 0, 0
+            title_only = body["query"] in TITLE_ONLY
             while True:
                 b = copy.deepcopy(body)
                 b["start"] = start
@@ -107,6 +113,9 @@ class Amazon(Checker):
                 for h in hits:
                     j = self._job(h.get("fields") or {})
                     ids.append(j.id)
+                    if title_only and not INTERN_TITLE.search(j.title):
+                        continue
+                    kept += 1
                     out.setdefault(j.id, j)
                 seen += len(hits)
                 start += PAGE
@@ -116,7 +125,7 @@ class Amazon(Checker):
                     break
             if not quick and found:
                 need(seen + max(2, found // 50) >= found, f"amazon: query {name} returned {seen} of {found}")
-            slice_total += found or 0
+            slice_total += kept if title_only else (found or 0)
         if ctx is not None:
             ctx.reported_total = slice_total
         return list(out.values())
