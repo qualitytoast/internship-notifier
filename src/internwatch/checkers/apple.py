@@ -7,14 +7,14 @@ The site has ~6,000 rows (one per posting × location), so the checker reads, un
   1. the Students team's Internships sub-team (every US internship is on it; its rows count as internships even
      when the title has no student word), then the rest of the Students team (retail student roles, academies,
      new grads: judged by title like any other job)
-  2. exact-word searches "intern", "internship", "student", "co-op" (student titles filed under functional teams
-     abroad; unquoted 'intern' would prefix-match 'international')
+  2. exact-word searches "intern", "internship", "student", "co-op" and the freshman/sophomore words (student
+     titles filed under functional teams abroad; unquoted 'intern' would prefix-match 'international')
 Detail: GET https://jobs.apple.com/api/v1/jobDetails/<positionId>?locale=en-us → description, employmentType.
 See discovery/notes/apple.md.
 """
 from __future__ import annotations
 
-from ..adapters.base import Checker, html_text, iso_date, join_locations, need, register
+from ..adapters.base import UNDERCLASS_SEARCH_WORDS, Checker, html_text, iso_date, join_locations, need, register
 from ..models import Job
 
 API = "https://jobs.apple.com/api/v1/search"
@@ -22,7 +22,8 @@ HEADERS = {"Content-Type": "application/json", "Accept": "*/*", "Origin": "https
            "Referer": "https://jobs.apple.com/en-us/search", "locale": "en_US", "browserLocale": "en-us"}
 QUERIES = [("internships", {"query": "", "filters": {"teams": [{"team": "teamsAndSubTeams-STDNT", "subTeam": "subTeam-INTRN"}]}}),
            ("students-team", {"query": "", "filters": {"teams": [{"team": "teamsAndSubTeams-STDNT"}]}})] + [
-    (f"keyword:{w}", {"query": f'"{w}"', "filters": {}}) for w in ("intern", "internship", "student", "co-op")]
+    (f"keyword:{w}", {"query": f'"{w}"', "filters": {}})
+    for w in ("intern", "internship", "student", "co-op", *UNDERCLASS_SEARCH_WORDS)]
 PAGE = 20
 
 

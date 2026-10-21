@@ -48,12 +48,12 @@
   "requests": 2
  },
  "amazon": {
-  "jobs": 887,
-  "students": 639,
-  "matched": 52,
-  "at": "2026-10-20T15:09:46Z",
-  "duration": 10.2,
-  "requests": 11
+  "jobs": 998,
+  "students": 641,
+  "matched": 67,
+  "at": "2026-10-21T03:12:45Z",
+  "duration": 27.2,
+  "requests": 28
  },
  "amd": {
   "jobs": 1286,
@@ -80,12 +80,12 @@
   "requests": 1
  },
  "apple": {
-  "jobs": 256,
+  "jobs": 257,
   "students": 137,
   "matched": 20,
-  "at": "2026-10-20T15:09:46Z",
-  "duration": 35.3,
-  "requests": 36
+  "at": "2026-10-21T03:12:45Z",
+  "duration": 51.3,
+  "requests": 52
  },
  "applied-intuition": {
   "jobs": 328,

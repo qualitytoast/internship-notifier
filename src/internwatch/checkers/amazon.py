@@ -8,8 +8,8 @@ Any search reports at most 10,000 hits and the site has ~22,000 jobs, so "read e
 Amazon tags student roles with structured fields, so the checker reads, unioned by job id:
   1. isIntern=1 OR employeeClass ∈ {Intern, Apprentice}                       (~600)
   2. businessCategory ∈ {studentprograms, university}, minus query 1          (~190)
-  3. keyword searches (intern, apprentice, co-op, student, …) over everything
-     outside 1 and 2 (title-only student roles, e.g. RME apprentices)        (~10–40 each)
+  3. keyword searches (intern, apprentice, co-op, student, …, the freshman/sophomore words, "propel") over
+     everything outside 1 and 2 (title-only student roles, e.g. RME apprentices) (~0–60 each)
 Discovery showed this union contains every student title on the site (see discovery/notes/amazon.md).
 Only the "a-confidential-job" business category is excluded: the default isConfidential=1 exclusion hides
 public internships. Apply links (account.amazon.jobs) are robots-disallowed: linked, never fetched.
@@ -20,7 +20,7 @@ from __future__ import annotations
 
 import copy
 
-from ..adapters.base import Checker, html_text, iso_date, join_locations, need, register
+from ..adapters.base import UNDERCLASS_SEARCH_WORDS, Checker, html_text, iso_date, join_locations, need, register
 from ..models import Job
 
 API = "https://www.amazon.jobs/api/jobs/search?is_als=true"
@@ -31,8 +31,10 @@ FLAGS = [{"name": "isIntern", "values": [{"name": "1"}]},
          {"name": "employeeClass", "values": [{"name": "Intern"}, {"name": "Apprentice"}]}]
 BIZ = [{"name": "businessCategory", "values": [{"name": "studentprograms"}, {"name": "university"}]}]
 # Exact-word searches (the index does not stem; broader words like "internship" match thousands of
-# descriptions). Each returns 1-40 rows outside the structured slice.
-KEYWORDS = ["intern", "apprentice", "co-op", "student", "working student", "summer analyst"]
+# descriptions). Each returns 1-40 rows outside the structured slice (pre-internship: ~60). "propel" is
+# Amazon's freshman/sophomore program (role_keywords in companies.yaml).
+KEYWORDS = ["intern", "apprentice", "co-op", "student", "working student", "summer analyst",
+            *UNDERCLASS_SEARCH_WORDS, "propel"]
 HEADERS = {"Content-Type": "application/json", "Accept": "application/json", "Origin": "https://www.amazon.jobs"}
 
 

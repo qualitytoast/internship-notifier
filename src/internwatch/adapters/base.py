@@ -112,6 +112,13 @@ class Checker:
 # ---------------------------------------------------------------------------------------------
 # helpers shared by checkers
 
+# Freshman/sophomore words for checkers that can only read a site's student slice through its search
+# (Amazon, Apple); they mirror role.underclassmen in config/filters.yaml. Each matches a few dozen jobs at most.
+UNDERCLASS_SEARCH_WORDS = ["sophomore", "sophomores", "freshman", "freshmen", "underclassmen", "first year",
+                           "second year", "rising junior", "rising sophomore", "discovery program", "insight program",
+                           "explore program", "career prep", "pre-internship", "winternship", "early insight"]
+
+
 def need(cond, message: str) -> None:
     if not cond:
         raise ShapeError(message)
