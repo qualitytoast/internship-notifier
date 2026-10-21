@@ -579,3 +579,17 @@ def test_a_keyword_search_over_amazons_cap_is_skipped_not_fatal():
     assert "keyword search keyword:students matches 10000+ jobs" in ctx.degraded
     with pytest.raises(Exception):                                   # no context: fails as before
         get_checker("amazon").fetch(Capped(), {"keywords": ["students"]}, None)
+
+
+def test_a_long_untracked_list_is_capped_in_the_body_and_attached(make_cfg):
+    from internwatch import emails
+    cfg = make_cfg([company("acme")])
+    untracked = [{"company": f"Co{i:02d}", "title": f"SWE Intern {i}", "location": "NYC", "category": "Software Engineering",
+                  "url": f"https://x/{i}"} for i in range(40)]
+    subject, text, html, files = emails.digest(cfg, [], untracked, [], [], morning=True)
+    assert "SWE Intern 24" in html and "SWE Intern 25" not in html and "and 15 more" in html and "and 15 more" in text
+    names = {f[0]: f[1] for f in files}
+    assert "SWE Intern 39" in names["untracked-roles.html"].decode()
+    assert names["untracked-roles.csv"].decode().count("\n") == 41            # header + every role
+    short = emails.digest(cfg, [], untracked[:10], [], [], morning=True)
+    assert len(short) == 3                                                    # no attachment for a short list

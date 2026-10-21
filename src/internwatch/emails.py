@@ -202,6 +202,27 @@ def _sections_capped(cfg: Config, rows, what: str = "matching roles", stem: str 
     return note + h, text_note + t, files
 
 
+UNTRACKED_BODY_ROWS = 25  # the morning email lists this many roles at untracked companies; the rest are attached
+
+
+def _untracked_table(rows) -> str:
+    trs = "".join(
+        f'<tr><td style="{STYLE_TD}"><b>{escape(u["company"])}</b></td>'
+        f'<td style="{STYLE_TD}"><a href="{escape(u["url"] or "#")}" style="color:#0969da">{escape(u["title"])}</a></td>'
+        f'<td style="{STYLE_TD}">{escape(u.get("location") or "")}</td><td style="{STYLE_TD}">{escape(u.get("category") or "")}</td></tr>'
+        for u in rows)
+    return (f'<table style="{STYLE_TABLE}"><tr><th style="{STYLE_TH}">Company</th><th style="{STYLE_TH}">Role</th>'
+            f'<th style="{STYLE_TH}">Location</th><th style="{STYLE_TH}">Category</th></tr>{trs}</table>')
+
+
+def _untracked_csv(rows) -> str:
+    buf = io.StringIO()
+    w = csv.writer(buf)
+    w.writerow(["company", "title", "location", "category", "url"])
+    for u in rows:
+        w.writerow([_cell(u.get(k)) for k in ("company", "title", "location", "category", "url")])
+    return buf.getvalue()
+
 def _with_files(built: tuple[str, str, str], files) -> tuple:
     return built + (files,) if files else built
 
@@ -284,18 +305,20 @@ def digest(cfg: Config, new_rows, untracked: list[dict], misses: list[dict], ope
         parts_text.append(f"ALREADY OPEN ({len(opened)}): {ALREADY_OPEN_NOTE}\n{t}")
         files = (files or []) + (more or [])
     if untracked:
-        rows = "".join(
-            f'<tr><td style="{STYLE_TD}"><b>{escape(u["company"])}</b></td>'
-            f'<td style="{STYLE_TD}"><a href="{escape(u["url"] or "#")}" style="color:#0969da">{escape(u["title"])}</a></td>'
-            f'<td style="{STYLE_TD}">{escape(u.get("location") or "")}</td><td style="{STYLE_TD}">{escape(u.get("category") or "")}</td></tr>'
-            for u in untracked)
+        shown, more = untracked[:UNTRACKED_BODY_ROWS], len(untracked) - UNTRACKED_BODY_ROWS
         parts_html.append(f'<h3 style="{STYLE_H}">Untracked companies on the SimplifyJobs lists ({len(untracked)})</h3>'
                           f'<p style="{STYLE_P}">New roles from companies you do not track yet. Add one with '
-                          f'<code>internwatch add "&lt;name&gt;" &lt;careers-url&gt;</code>.</p>'
-                          f'<table style="{STYLE_TABLE}"><tr><th style="{STYLE_TH}">Company</th><th style="{STYLE_TH}">Role</th>'
-                          f'<th style="{STYLE_TH}">Location</th><th style="{STYLE_TH}">Category</th></tr>{rows}</table>')
+                          f'<code>internwatch add "&lt;name&gt;" &lt;careers-url&gt;</code>.</p>' + _untracked_table(shown)
+                          + (f'<p style="{STYLE_P}">… and {more} more in the attached <b>untracked-roles.html</b> / '
+                             f'<b>untracked-roles.csv</b>.</p>' if more > 0 else ""))
         parts_text.append("UNTRACKED COMPANIES (SimplifyJobs)\n" + "\n".join(
-            f"  • {u['company']}: {u['title']} — {u.get('location') or ''}\n    {u['url']}" for u in untracked))
+            f"  • {u['company']}: {u['title']} — {u.get('location') or ''}\n    {u['url']}" for u in shown)
+            + (f"\n  … and {more} more in untracked-roles.html / untracked-roles.csv" if more > 0 else ""))
+        if more > 0:  # a long list would push the email past Gmail's ~102 KB clipping
+            files = (files or []) + [
+                ("untracked-roles.html", _wrap(f"All {len(untracked)} roles at untracked companies",
+                                               _untracked_table(untracked)).encode(), "text/html"),
+                ("untracked-roles.csv", _untracked_csv(untracked).encode(), "text/csv")]
     if misses or open_problems:
         items = [f"{m['company']}: possible miss “{m['title']}”" for m in misses] + \
                 [f"{p['name']}: {p['summary']}" for p in open_problems]
