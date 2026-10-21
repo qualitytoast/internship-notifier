@@ -2,14 +2,16 @@
 freshman/sophomore search words, Intuit's stale sitemap, JSON-LD location shapes, and Meta's fallbacks."""
 import json
 import re
+from datetime import date, timedelta
 
 import httpx
 import yaml
 
 from internwatch.adapters.base import UNDERCLASS_SEARCH_WORDS, FetchContext
-from internwatch.checkers import amazon, apple
+from internwatch.checkers import amazon, apple, talentbrew
 from internwatch.checkers.amazon import Amazon
-from internwatch.http import HostGate, Http, HttpSettings
+from internwatch.checkers.talentbrew import TalentBrewSitemap
+from internwatch.http import Cassette, HostGate, Http, HttpSettings
 
 from conftest import REPO
 
@@ -49,3 +51,47 @@ def test_underclass_search_words_cover_every_filters_yaml_phrase():
     assert not missing, f"add a search word for {missing} to UNDERCLASS_SEARCH_WORDS in adapters/base.py"
     assert set(UNDERCLASS_SEARCH_WORDS) <= set(amazon.KEYWORDS)
     assert {f"keyword:{w}" for w in UNDERCLASS_SEARCH_WORDS} <= {name for name, _ in apple.QUERIES}
+
+
+# Intuit (TalentBrew sitemap) ----------------------------------------------------------------------
+
+SITEMAP_URL = "https://jobs.example.com/sitemap.xml"
+TB = {"sitemap_url": SITEMAP_URL, "org_id": 99, "detail_limit": 0}
+
+
+def sitemap(lastmod: str = "2026-10-01T23:20:08.3029216Z") -> str:
+    return ('<urlset><url><loc>https://jobs.example.com/job/austin/software-engineer-intern/99/1</loc>'
+            f'<lastmod>{lastmod}</lastmod></url></urlset>')
+
+
+def test_sitemap_age_is_counted_from_the_newest_lastmod():
+    xml = sitemap("2026-10-01T23:20:08.3029216Z") + "<lastmod>2026-10-15</lastmod><lastmod>2026-13-45</lastmod>"
+    assert talentbrew.sitemap_age_days(xml, date(2026, 10, 20)) == 5
+    assert talentbrew.sitemap_age_days("<urlset><loc>x</loc></urlset>", date(2026, 10, 20)) is None
+
+
+def test_stale_sitemap_is_reported_degraded_and_its_jobs_still_read(monkeypatch):
+    http = mock_http(lambda req: httpx.Response(200, text=sitemap()))
+    monkeypatch.setattr(talentbrew, "utc_today", lambda: date(2026, 10, 4))       # 3 days: fresh enough
+    ctx = FetchContext()
+    assert len(TalentBrewSitemap().fetch(http, TB, ctx)) == 1 and ctx.degraded is None
+    monkeypatch.setattr(talentbrew, "utc_today", lambda: date(2026, 10, 20))      # not rebuilt for 19 days
+    ctx = FetchContext()
+    assert [j.id for j in TalentBrewSitemap().fetch(http, TB, ctx)] == ["1"]
+    assert "19 days old" in ctx.degraded
+    ctx = FetchContext()
+    TalentBrewSitemap().fetch(http, {**TB, "max_sitemap_age_days": 30}, ctx)
+    assert ctx.degraded is None
+    assert len(TalentBrewSitemap().fetch(http, TB, None)) == 1                    # no context: nothing to flag
+
+
+def test_intuit_replay_is_fresh_when_recorded_and_stale_days_later(monkeypatch):
+    # "today" is pinned to the recording, so this keeps passing as the recorded sitemap ages
+    cas = Cassette.load(REPO / "tests" / "fixtures" / "cassettes" / "intuit.json.gz")
+    recorded = date.fromisoformat(cas.meta["recorded_at"][:10])
+    s = {**cas.meta["settings"], "detail_limit": 0}
+    for days, degraded in ((0, False), (4, True)):
+        monkeypatch.setattr(talentbrew, "utc_today", lambda: recorded + timedelta(days=days))
+        ctx = FetchContext()
+        jobs = TalentBrewSitemap().fetch(Http(replay=cas), s, ctx)
+        assert len(jobs) == cas.meta["count"] and bool(ctx.degraded) == degraded

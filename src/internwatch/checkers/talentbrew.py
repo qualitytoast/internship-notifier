@@ -9,22 +9,42 @@ settings:
   sitemap_url: https://jobs.intuit.com/sitemap.xml
   org_id: 27595
   detail_limit: 40        job pages read per poll (new student-looking jobs only)
+  max_sitemap_age_days: 3 every <lastmod> is the sitemap's build time: older than this, the site may have stopped
+                          rebuilding it, and the poll is reported degraded (its jobs are still read)
 See discovery/notes/intuit.md.
 """
 from __future__ import annotations
 
 import json
 import re
+from datetime import date, datetime, timezone
 
 from ..adapters.base import Checker, html_text, iso_date, join_locations, need, register
 from ..models import CheckerError, Job
 
 STUDENTISH = re.compile(r"intern|co-?op|student|apprentic|campus|universit|graduate|summer|fall-20|spring-20|winter-20",
                         re.I)
+LASTMOD_RE = re.compile(r"<lastmod>\s*([^<\s]+)\s*</lastmod>")
 
 
 def _words(slug: str) -> str:
     return re.sub(r"\s+", " ", slug.replace("-", " ")).strip().title()
+
+
+def utc_today() -> date:
+    """A function so tests can pin the date while a recorded sitemap ages."""
+    return datetime.now(timezone.utc).date()
+
+
+def sitemap_age_days(xml: str, today: date) -> int | None:
+    """Days since the newest <lastmod> in the sitemap (None when it has none)."""
+    stamps = []
+    for value in LASTMOD_RE.findall(xml):
+        try:
+            stamps.append(date.fromisoformat(iso_date(value) or ""))
+        except ValueError:
+            continue
+    return (today - max(stamps)).days if stamps else None
 
 
 @register
@@ -44,6 +64,10 @@ class TalentBrewSitemap(Checker):
             url, city, slug, jid = m.groups()
             jobs.setdefault(jid, Job(id=jid, title=_words(slug), location=_words(city), url=url))
         need(jobs, f"talentbrew:{s['sitemap_url']}: no job URLs in the sitemap")
+        age, limit = sitemap_age_days(xml, utc_today()), int(s.get("max_sitemap_age_days", 3))
+        if age is not None and age > limit and ctx is not None:
+            ctx.degraded = (f"talentbrew:{s['sitemap_url']}: the newest <lastmod> is {age} days old (limit {limit}); "
+                            "the sitemap may have stopped updating, so new jobs could be missing from it")
         known = ctx.known if ctx is not None else frozenset()
         budget = int(s.get("detail_limit", 40))
         for j in jobs.values():
