@@ -1,6 +1,7 @@
 """Regression tests for the adapter gaps found in the coverage audit: a failing or vanished board, a partly read
 listing, a capped Workday partition, a malformed posting. Each must keep the jobs that were read and mark the poll
 degraded (reported as a health problem, no removals recorded) instead of hiding everything or nothing being noticed."""
+import collections
 import copy
 import json
 
@@ -213,3 +214,100 @@ def test_avature_total_missing_from_the_page_is_reported_and_jobs_kept():
     assert len(jobs) == 364 and "total not found on the page" in ctx.degraded
     with pytest.raises(CheckerError):
         replay("electronic-arts", settings=ea(total_regex=r'data-total="(\d+)"'))
+
+
+# Workday ------------------------------------------------------------------------------------
+
+class WorkdaySite:
+    """A Workday CXS site in memory. Each job is a dict of facet → value; a search applies the facets, reports at most
+    2000 jobs and wraps around to page 1 past offset 2000, as the real API does. Location facets are nested inside
+    locationMainGroup, as on real sites."""
+
+    def __init__(self, jobs: list[dict]):
+        self.jobs, self.searches = jobs, []
+
+    def post_json(self, url, json=None, headers=None):
+        applied = json["appliedFacets"]
+        if json["offset"] == 0:
+            self.searches.append(applied)
+        rows = [j for j in self.jobs if all(j.get(k) in ids for k, ids in applied.items())]
+        offset = json["offset"] if json["offset"] < 2000 else 0
+        page = [{"title": j["title"], "externalPath": j["path"]} for j in rows[offset:offset + json["limit"]]]
+        flat, nested = [], []
+        for name in sorted({k for j in rows for k in j} - {"title", "path"}):
+            counts = collections.Counter(j[name] for j in rows if j.get(name))
+            values = [{"id": v, "descriptor": v, "count": n} for v, n in counts.items()]
+            (nested if name.startswith("location") else flat).append({"facetParameter": name, "values": values})
+        facets = flat + ([{"facetParameter": "locationMainGroup", "values": nested}] if nested else [])
+        return {"total": min(len(rows), 2000), "jobPostings": page, "facets": facets}
+
+
+def wd_jobs(n: int, start: int = 0, **facets) -> list[dict]:
+    """`n` jobs; each facet is a function of the job's number giving its value (None: no value)."""
+    return [{"title": f"Job {i}", "path": f"/job/Job-{i}", **{k: f(i) for k, f in facets.items()}}
+            for i in range(start, start + n)]
+
+
+WD = {"host": "x.wd1.myworkdayjobs.com", "tenant": "x", "site": "Ext"}
+
+
+def test_workday_auto_partition_prefers_a_facet_that_covers_every_job():
+    # 2,100 jobs: 150 have no time type (the facet adds up to 1,950), every one has a job family group
+    site = WorkdaySite(wd_jobs(2100, timeType=lambda i: "FT" if i < 1800 else "PT" if i < 1950 else None,
+                               jobFamilyGroup=lambda i: "A" if i % 2 else "B"))
+    ctx = FetchContext()
+    jobs = get_checker("workday").fetch(site, WD, ctx)
+    assert len(jobs) == 2100 and ctx.degraded is None and ctx.reported_total == 2100
+    assert {next(iter(f)) for f in site.searches[1:]} == {"jobFamilyGroup"}  # not timeType, which loses 100 jobs
+
+
+def test_workday_auto_partition_judges_coverage_by_the_real_size_not_the_capped_total():
+    # the capped total says 2000; the worker types count all 2,100 jobs, the time types only 2,050
+    site = WorkdaySite(wd_jobs(2100, timeType=lambda i: "FT" if i < 1900 else "PT" if i < 2050 else None,
+                               workerSubType=lambda i: "Regular" if i < 1900 else "Intern"))
+    ctx = FetchContext()
+    assert len(get_checker("workday").fetch(site, WD, ctx)) == 2100 and ctx.degraded is None
+    assert {next(iter(f)) for f in site.searches[1:]} == {"workerSubType"}
+
+
+def test_workday_auto_partition_without_a_covering_facet_is_reported():
+    site = WorkdaySite(wd_jobs(2100, timeType=lambda i: "FT" if i < 1500 else "PT" if i < 1800 else None))
+    ctx = FetchContext()
+    jobs = get_checker("workday").fetch(site, WD, ctx)
+    assert len(jobs) == 2000  # the capped search's 2000 plus what the time types reach; 100 can't be read
+    assert ctx.degraded.startswith("workday:x/Ext partitioned by timeType: collected 1800 jobs but the source "
+                                   "reports 2000")
+    assert len(get_checker("workday").fetch(site, WD)) == 2000  # no context: as before, no error
+
+
+TMO = {**WD, "partitions": [{"timeType": ["FT"]}, {"timeType": ["PT"]}]}
+STATES = lambda i: ("CA", "TX", "NY")[i % 3]  # noqa: E731
+
+
+def test_workday_capped_partition_is_split_by_a_facet_from_its_own_page():
+    # T-Mobile: Part time (1,892 in October) grows past the cap; its first page counts jobs per state
+    site = WorkdaySite(wd_jobs(641, timeType=lambda i: "FT", locationRegionStateProvince=STATES)
+                       + wd_jobs(2100, start=641, timeType=lambda i: "PT", locationRegionStateProvince=STATES))
+    ctx = FetchContext()
+    jobs = get_checker("workday").fetch(site, TMO, ctx)
+    assert len(jobs) == 2741 and ctx.degraded is None and ctx.reported_total == 2741
+    assert {"timeType": ["PT"], "locationRegionStateProvince": ["CA"]} in site.searches
+
+
+def test_workday_capped_partition_that_cannot_be_split_keeps_what_was_read():
+    site = WorkdaySite(wd_jobs(641, timeType=lambda i: "FT") + wd_jobs(2100, start=641, timeType=lambda i: "PT"))
+    ctx = FetchContext()
+    jobs = get_checker("workday").fetch(site, TMO, ctx)
+    assert len(jobs) == 641 + 2000  # Full time (where the interns are) is not thrown away
+    assert "{'timeType': ['PT']}: 2000+ jobs hit Workday's 2000 cap and no facet splits them" in ctx.degraded
+    with pytest.raises(CheckerError):  # no context: fails as before
+        get_checker("workday").fetch(site, TMO)
+
+
+def test_workday_capped_site_that_no_facet_splits_keeps_what_was_read():
+    site = WorkdaySite(wd_jobs(2100))
+    ctx = FetchContext()
+    assert len(get_checker("workday").fetch(site, WD, ctx)) == 2000
+    assert "no facet splits them" in ctx.degraded
+    with pytest.raises(CheckerError):
+        get_checker("workday").fetch(site, WD)
