@@ -255,3 +255,14 @@ def test_crosscheck_title_match_needs_a_current_posting(memdb, stored, removed_d
     hit, how = find_in_db(memdb, "acme", Row("summer", "k", "Acme", listed, "New York, NY", "https://x/jobs/999", "",
                                              "Software Engineering"))
     assert (hit is not None) == found and (how == "title" if found else how == "")
+
+
+@pytest.mark.parametrize("title,kept", [
+    ("Data Engineer Internship - 2027 (US)", True),         # unflagged, outside the student categories
+    ("Mechatronic Apprentice I, RIC6 RME", True),
+    ("2027 Discovery-Program: Software Engineering", True),
+    ("Senior Vendor Manager, US Apparel", False),           # "discovery events" only in its description
+])
+def test_amazon_keyword_hits_are_kept_by_their_title(title, kept):
+    from internwatch.checkers.amazon import KEYWORDS, title_words
+    assert bool(title_words(KEYWORDS).search(title)) == kept

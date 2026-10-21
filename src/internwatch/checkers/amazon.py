@@ -9,8 +9,8 @@ Amazon tags student roles with structured fields, so the checker reads, unioned 
   1. isIntern=1 OR employeeClass ∈ {Intern, Apprentice}                       (~600)
   2. businessCategory ∈ {studentprograms, university}, minus query 1          (~190)
   3. keyword searches (intern, interns, internship(s), apprentice, co-op, student, …, the freshman/sophomore
-     words, "propel") over everything outside 1 and 2 (title-only student roles, e.g. RME apprentices)
-     (~0–200 each; "internship" matches ~2,400 descriptions, so only its hits titled intern are kept)
+     words, "propel") over everything outside 1 and 2, keeping hits whose title has a searched word (title-only
+     student roles, e.g. RME apprentices; the index also matches descriptions)
 Discovery showed this union contains every student title on the site (see discovery/notes/amazon.md).
 Only the "a-confidential-job" business category is excluded: the default isConfidential=1 exclusion hides
 public internships. Apply links (account.amazon.jobs) are robots-disallowed: linked, never fetched.
@@ -34,14 +34,11 @@ FLAGS = [{"name": "isIntern", "values": [{"name": "1"}]},
 BIZ = [{"name": "businessCategory", "values": [{"name": "studentprograms"}, {"name": "university"}]}]
 # Exact-word searches: the index does not stem, so "intern" misses an unflagged "… Internship" outside the
 # student categories, and each form is searched. Most return 0-60 rows outside the structured slice, a few
-# plural phrases up to ~200 ("discovery events"), and "internship" ~2,400 (it matches descriptions), all far
-# below the cap. "propel" is Amazon's freshman/sophomore program (role_keywords in companies.yaml).
+# plural phrases up to ~200 ("discovery events"), and "internship" ~2,400, all far below the cap; most hits match
+# only in the description ("internship experience"), so a hit is kept when its title has one of these words.
+# "propel" is Amazon's freshman/sophomore program (role_keywords in companies.yaml).
 KEYWORDS = ["intern", "interns", "internship", "internships", "apprentice", "co-op", "student", "working student",
             "summer analyst", *UNDERCLASS_SEARCH_WORDS, "propel"]
-# these find unflagged "… Internship" titles, but mostly match descriptions ("internship experience"): only hits
-# whose title says intern are kept
-TITLE_ONLY = {"interns", "internship", "internships"}
-INTERN_TITLE = re.compile(r"\bintern", re.I)
 HEADERS = {"Content-Type": "application/json", "Accept": "application/json", "Origin": "https://www.amazon.jobs"}
 
 
@@ -74,6 +71,12 @@ def queries(keywords: list[str]) -> list[tuple[str, dict]]:
     return out
 
 
+def title_words(words: list[str]) -> re.Pattern:
+    """Any of the searched words at a word start in a title ("intern" also covers Internship; a space or hyphen
+    inside a phrase may be either)."""
+    phrases = (r"[\s\-]?".join(re.escape(t) for t in re.split(r"[\s\-]+", w.strip()) if t) for w in words)
+    return re.compile(r"\b(?:" + "|".join(p for p in phrases if p) + ")", re.I)
+
 @register
 class Amazon(Checker):
     type = "amazon"
@@ -97,9 +100,11 @@ class Amazon(Checker):
         out: dict[str, Job] = {}
         quick = ctx is not None and ctx.quick
         slice_total = 0
-        for name, body in queries(list(s.get("keywords") or KEYWORDS)):
+        words = list(s.get("keywords") or KEYWORDS)
+        in_title = title_words(words)
+        for name, body in queries(words):
             start, found, seen, kept = 0, None, 0, 0
-            title_only = body["query"] in TITLE_ONLY
+            title_only = bool(body["query"])  # a keyword search, not one of the structured queries
             while True:
                 b = copy.deepcopy(body)
                 b["start"] = start
@@ -113,7 +118,7 @@ class Amazon(Checker):
                 for h in hits:
                     j = self._job(h.get("fields") or {})
                     ids.append(j.id)
-                    if title_only and not INTERN_TITLE.search(j.title):
+                    if title_only and not in_title.search(j.title):
                         continue
                     kept += 1
                     out.setdefault(j.id, j)

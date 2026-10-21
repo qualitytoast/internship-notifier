@@ -187,7 +187,7 @@ OVERRIDES: dict[str, dict] = {
     "wolverine": {"settings": {"subdomain": "wolve", "host": "careers.wolve.com"}},
     "amazon": {"settings": {}, "big": True, "verified": {"page_total": None, "explained":
         "reads the complete student slice (intern/apprentice flags + student business categories + keyword sweep, "
-        "~1,900 jobs, ~650 of them student roles); the site's 22,117 jobs exceed its 10,000-hit search cap and the page "
+        "~850 jobs, ~650 of them student roles); the site's 22,117 jobs exceed its 10,000-hit search cap and the page "
         "shows no total"}},
 }
 
