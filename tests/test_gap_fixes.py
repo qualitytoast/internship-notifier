@@ -392,3 +392,19 @@ def test_each_source_is_read_at_its_own_pace(monkeypatch):
     monkeypatch.setattr(Multi, "_sources", lambda self, _: [(i, x, x.settings) for i, x in enumerate(srcs)])
     Multi().fetch(http, {}, FetchContext())
     assert seen == {"workday": None, "eightfold": 2.5} and http.min_interval is None   # restored afterwards
+
+
+def test_a_short_microsoft_scan_keeps_its_jobs_and_is_reported():
+    from internwatch.models import ShapeError
+    from test_adapter_fixes import cassette, replay
+
+    def cut(e):  # the full listing's page at start=500 comes back empty: the walk stops there
+        if "query=&" in e["url"] and e["url"].endswith("&start=500"):
+            e["text"] = '{"status": 200, "data": {"positions": [], "count": 2411}}'
+    ctx = FetchContext()
+    jobs = replay("microsoft", cut, ctx=ctx)
+    total = cassette("microsoft").meta["count"]
+    assert 500 <= len(jobs) < total * 0.9 and "pagination incomplete" in ctx.degraded
+    assert any("intern" in j.title.lower() for j in jobs)          # the internship filters were kept
+    with pytest.raises(ShapeError):                                # without a context: fails as before
+        replay("microsoft", cut)

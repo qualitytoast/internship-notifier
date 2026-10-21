@@ -17,7 +17,7 @@ robots.txt on Eightfold hosts explicitly allows /api/pcsx and /api/apply.
 from __future__ import annotations
 
 from ..models import CheckTimeout, Job
-from .base import (Checker, FetchContext, check_total, dedupe, degrade, html_text, iso_date, join_locations, need,
+from .base import (Checker, FetchContext, check_total_soft, dedupe, degrade, html_text, iso_date, join_locations, need,
                    need_list, register, report_skipped)
 
 PAGE = 10
@@ -121,7 +121,8 @@ class Eightfold(Checker):
         jobs = dedupe(jobs + student)
         if not quick:
             tol = int(total * float(s["count_tolerance"])) if s.get("count_tolerance") and isinstance(total, int) else None
-            check_total(len(jobs) + len(self.malformed), total, f"eightfold:{s['domain']}", tolerance=tol)
+            # a short walk keeps what it read (the internship filters were read in full first): degraded, not failed
+            check_total_soft(len(jobs) + len(self.malformed), total, f"eightfold:{s['domain']}", ctx, tolerance=tol)
         bad = len(self.malformed)
         report_skipped(ctx, bad, len(jobs), f"eightfold:{s['domain']}: skipped {bad} positions without id/name")
         return jobs
