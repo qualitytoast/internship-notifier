@@ -586,3 +586,34 @@ def test_a_long_untracked_list_is_capped_in_the_body_and_attached(make_cfg):
 ])
 def test_the_wider_graduation_rescue_never_drops_a_title_the_first_one_accepted(rules, title):
     assert ev(rules, title, "Austin, TX").matched
+
+
+def test_a_new_sources_cut_short_first_answer_leaves_the_rest_already_open(monkeypatch):
+    workday = _Src([job("w1", "A")], kind="workday", settings={"t": 1})
+
+    class Partial(_Src):
+        def fetch(self, http, s, ctx=None):
+            ctx.partial = True                                      # read cut short (out of time)
+            return super().fetch(http, s, ctx)
+    _, ctx = _multi(monkeypatch, [workday])                         # the company had one source
+    partial = Partial([job("r1", "B")], kind="ripplematch", settings={"c": 2})
+    jobs, ctx2 = _multi(monkeypatch, [workday, partial], ctx.state)  # a new source, first answer cut short
+    assert next(j for j in jobs if j.id == "ripplematch:r1").extra.get("baseline") and ctx2.partial
+    assert len(ctx2.state["ok_source_ids"]) == 1                    # not yet answered
+    full = _Src([job("r1", "B"), job("r2", "C")], kind="ripplematch", settings={"c": 2})
+    jobs, ctx3 = _multi(monkeypatch, [workday, full], ctx2.state)    # its complete read: the rest is a baseline too
+    assert next(j for j in jobs if j.id == "ripplematch:r2").extra.get("baseline") and not ctx3.partial
+    assert len(ctx3.state["ok_source_ids"]) == 2
+
+
+def test_multi_passes_not_modified_up_and_logs_a_crash(monkeypatch, caplog):
+    from internwatch.models import NotModified
+
+    class Unchanged(_Src):
+        def fetch(self, http, s, ctx=None):
+            raise NotModified("https://x/feed.xml")
+    with pytest.raises(NotModified):
+        _multi(monkeypatch, [_Src([job("a", "A")], kind="a", settings={"x": 1}), Unchanged(kind="b", settings={"y": 2})])
+    with caplog.at_level("WARNING"):
+        _multi(monkeypatch, [_Src([job("a", "A")], kind="a", settings={"x": 1}), _Crashy(kind="b", settings={"y": 2})])
+    assert any("source b crashed" in r.message and r.exc_info for r in caplog.records)

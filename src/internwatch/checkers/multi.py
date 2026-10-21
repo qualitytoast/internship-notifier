@@ -19,12 +19,15 @@ from __future__ import annotations
 
 import hashlib
 import json
+import logging
 import re
 from contextlib import contextmanager
 
 from ..adapters import get_checker
 from ..adapters.base import Checker, degrade, need, register
-from ..models import CheckerError
+from ..models import CheckerError, NotModified
+
+log = logging.getLogger(__name__)
 
 
 def _bare_title(title: str) -> str:
@@ -81,18 +84,30 @@ class Multi(Checker):
             prev = {ids[i] for i in ctx.state["ok_sources"] if isinstance(i, int) and i < len(ids)}
         ok_now: set[str] = set()
         for i, checker, st in sources:
+            was_partial = ctx is not None and ctx.partial
+            if ctx is not None:
+                ctx.partial = False  # this source's own flag
             try:
                 with _pacing(http, st):
                     got = checker.fetch(http, st, ctx)
+            except NotModified:
+                raise  # unchanged: the runner keeps the stored list, as before
             except Exception as e:  # noqa: BLE001 — one source failing or crashing must not hide the others
+                if not isinstance(e, CheckerError):
+                    log.warning("multi: source %s crashed", checker.type, exc_info=True)
                 errors.append(f"{checker.type}: {e}" if isinstance(e, CheckerError)
                               else f"{checker.type}: crashed: {type(e).__name__}: {e}")
                 if ctx is not None:
                     ctx.reported_total = None  # a total from the failed source must not count for the next one
+                    ctx.partial = was_partial
                 if len(errors) == len(sources):
                     raise
                 continue
-            ok_now.add(ids[i])
+            partial = ctx is not None and ctx.partial
+            if ctx is not None:
+                ctx.partial = was_partial or partial
+            if not (partial and prev is not None and ids[i] not in prev):
+                ok_now.add(ids[i])  # a cut-short first answer is not the source's baseline yet: the rest comes later
             if prev is not None and ids[i] not in prev:
                 for j in got:  # this source's first answer: what it lists was open before (shown once, not as new)
                     j.extra["baseline"] = True
