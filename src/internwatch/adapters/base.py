@@ -113,10 +113,20 @@ class Checker:
 # helpers shared by checkers
 
 # Freshman/sophomore words for checkers that can only read a site's student slice through its search
-# (Amazon, Apple); they mirror role.underclassmen in config/filters.yaml. Each matches a few dozen jobs at most.
-UNDERCLASS_SEARCH_WORDS = ["sophomore", "sophomores", "freshman", "freshmen", "underclassmen", "first year",
-                           "second year", "rising junior", "rising sophomore", "discovery program", "insight program",
-                           "explore program", "career prep", "pre-internship", "winternship", "early insight"]
+# (Amazon, Apple), in the order of role.underclassmen in config/filters.yaml. They must cover every phrase there
+# (a test checks): a "*" phrase by its stem and plural, since Amazon's index does not stem. Most match no job;
+# the broadest match ~200 (Amazon, in descriptions).
+UNDERCLASS_SEARCH_WORDS = ["freshman", "freshmen", "sophomore", "sophomores", "underclassman", "underclassmen",
+                           "first year", "first years", "second year", "second years", "1st year", "2nd year",
+                           "rising sophomore", "rising sophomores", "rising junior", "rising juniors",
+                           "early insight", "early insights", "insight program", "insight programs", "insight day",
+                           "insight days", "insight week", "insight weeks", "insight event", "insight events",
+                           "insight series", "discovery program", "discovery programs", "discovery day",
+                           "discovery days", "discovery event", "discovery events", "discovery summit",
+                           "discovery summits", "discovery series", "exploration program", "exploration programs",
+                           "explore program", "explore programs", "career prep", "pre-internship", "pre-internships",
+                           "possibilities series", "possibilities summit", "possibilities summits",
+                           "early identification", "early id", "winternship", "winternships"]
 
 
 def need(cond, message: str) -> None:

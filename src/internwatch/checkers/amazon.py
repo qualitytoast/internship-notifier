@@ -8,8 +8,9 @@ Any search reports at most 10,000 hits and the site has ~22,000 jobs, so "read e
 Amazon tags student roles with structured fields, so the checker reads, unioned by job id:
   1. isIntern=1 OR employeeClass ∈ {Intern, Apprentice}                       (~600)
   2. businessCategory ∈ {studentprograms, university}, minus query 1          (~190)
-  3. keyword searches (intern, apprentice, co-op, student, …, the freshman/sophomore words, "propel") over
-     everything outside 1 and 2 (title-only student roles, e.g. RME apprentices) (~0–60 each)
+  3. keyword searches (intern, interns, internship(s), apprentice, co-op, student, …, the freshman/sophomore
+     words, "propel") over everything outside 1 and 2 (title-only student roles, e.g. RME apprentices)
+     (~0–200 each; "internship" ~2,400, as it also matches descriptions)
 Discovery showed this union contains every student title on the site (see discovery/notes/amazon.md).
 Only the "a-confidential-job" business category is excluded: the default isConfidential=1 exclusion hides
 public internships. Apply links (account.amazon.jobs) are robots-disallowed: linked, never fetched.
@@ -30,11 +31,12 @@ CONFIDENTIAL = {"name": "businessCategory", "values": [{"name": "a-confidential-
 FLAGS = [{"name": "isIntern", "values": [{"name": "1"}]},
          {"name": "employeeClass", "values": [{"name": "Intern"}, {"name": "Apprentice"}]}]
 BIZ = [{"name": "businessCategory", "values": [{"name": "studentprograms"}, {"name": "university"}]}]
-# Exact-word searches (the index does not stem; broader words like "internship" match thousands of
-# descriptions). Each returns 1-40 rows outside the structured slice (pre-internship: ~60). "propel" is
-# Amazon's freshman/sophomore program (role_keywords in companies.yaml).
-KEYWORDS = ["intern", "apprentice", "co-op", "student", "working student", "summer analyst",
-            *UNDERCLASS_SEARCH_WORDS, "propel"]
+# Exact-word searches: the index does not stem, so "intern" misses an unflagged "… Internship" outside the
+# student categories, and each form is searched. Most return 0-60 rows outside the structured slice, a few
+# plural phrases up to ~200 ("discovery events"), and "internship" ~2,400 (it matches descriptions), all far
+# below the cap. "propel" is Amazon's freshman/sophomore program (role_keywords in companies.yaml).
+KEYWORDS = ["intern", "interns", "internship", "internships", "apprentice", "co-op", "student", "working student",
+            "summer analyst", *UNDERCLASS_SEARCH_WORDS, "propel"]
 HEADERS = {"Content-Type": "application/json", "Accept": "application/json", "Origin": "https://www.amazon.jobs"}
 
 
