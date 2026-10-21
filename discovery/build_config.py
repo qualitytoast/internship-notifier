@@ -163,6 +163,16 @@ OVERRIDES: dict[str, dict] = {
             {"checker": "workday", "settings": {"host": "expedia.wd108.myworkdayjobs.com", "tenant": "expedia", "site": "private"}}]}},
     "hubspot": {"checker": "multi", "settings": {"sources": [
         {"checker": "hubspot", "settings": {}}, {"checker": "ripplematch", "settings": {"company_id": 708}}]}},
+    # Rockwell posts some co-ops and internships only on RippleMatch (found by checking every company's RippleMatch
+    # page); many others are on both under slightly different titles, so title duplicates are skipped.
+    "rockwell-automation": {"checker": "multi", "verified": {"explained":
+        "both Workday career sites plus the co-ops and internships Rockwell posts only on RippleMatch"},
+        "settings": {"dedupe": True, "dedupe_titles": True, "sources": [
+            {"checker": "workday", "settings": {"host": "rockwellautomation.wd1.myworkdayjobs.com",
+                                                "tenant": "rockwellautomation",
+                                                "sites": ["External_Rockwell_Automation",
+                                                          "External-Rockwell-Automation-Early-Careers"]}},
+            {"checker": "ripplematch", "settings": {"company_id": 671}}]}},
     # Plaid posts its student roles (the Summer 2027 SWE internship) only on RippleMatch, linked from its careers page
     "plaid": {"checker": "multi", "verified": {"explained":
         "Ashby board (no student roles) plus the student roles Plaid posts only on RippleMatch"}, "settings": {"sources": [

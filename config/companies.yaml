@@ -783,13 +783,19 @@ companies:
   name: Rockwell Automation
   category: industrial
   careers_url: ['https://www.rockwellautomation.com/en-us/careers.html', 'https://rockwellautomation.wd1.myworkdayjobs.com/External-Rockwell-Automation-Early-Careers']
-  checker: workday
+  checker: multi
   settings:
-    host: rockwellautomation.wd1.myworkdayjobs.com
-    tenant: rockwellautomation
-    sites: [External_Rockwell_Automation, External-Rockwell-Automation-Early-Careers]
-  verified: {page_total: 445, explained: 'Both sites are needed: the early-careers site has 2 interns not on the main site and the main
-      site has 6 not on early careers.'}
+    dedupe: true
+    dedupe_titles: true
+    sources:
+    - checker: workday
+      settings:
+        host: rockwellautomation.wd1.myworkdayjobs.com
+        tenant: rockwellautomation
+        sites: [External_Rockwell_Automation, External-Rockwell-Automation-Early-Careers]
+    - checker: ripplematch
+      settings: {company_id: 671}
+  verified: {page_total: 445, explained: both Workday career sites plus the co-ops and internships Rockwell posts only on RippleMatch}
 - key: unity
   name: Unity
   category: gaming

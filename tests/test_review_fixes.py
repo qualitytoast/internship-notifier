@@ -122,6 +122,16 @@ def test_multi_source_that_recovers_reports_its_backlog_as_baseline(monkeypatch)
     assert b.extra.get("baseline") and not ctx2.degraded
 
 
+def test_multi_source_skips_a_later_sources_title_duplicate(monkeypatch):
+    srcs = [_Src([job("w1", "Co-op, Delivery - Projects (LCS)"), job("w2", "Software Engineer Intern - Summer 2027")]),
+            _Src([job("r1", "Co-Op, Delivery - Projects"),                       # the same role, title without "(LCS)"
+                  job("r2", "Co-op, Embedded Software Engineer (Spring or Fall 2027)"),
+                  job("r3", "Software Engineer Intern - Summer 2028")])]         # a term outside brackets still counts
+    monkeypatch.setattr(Multi, "_sources", lambda self, s: [(i, x, {}) for i, x in enumerate(srcs)])
+    jobs = Multi().fetch(None, {"dedupe_titles": True}, FetchContext())
+    assert [j.id for j in jobs] == ["w1", "w2", "fake:r2", "fake:r3"]
+
+
 def test_long_lists_are_attached_not_clipped(make_cfg):
     cfg = make_cfg([company("acme", name="Acme")])
     rows = [{"company": "acme", "job_id": str(i), "title": f"SWE Intern {i}", "location": "NY", "url": f"https://x/{i}",

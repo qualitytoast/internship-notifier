@@ -920,12 +920,12 @@
   "requests": 20
  },
  "rockwell-automation": {
-  "jobs": 448,
-  "students": 51,
-  "matched": 35,
-  "at": "2026-10-20T15:09:46Z",
-  "duration": 25.2,
-  "requests": 23
+  "jobs": 478,
+  "students": 67,
+  "matched": 48,
+  "at": "2026-10-21T04:17:59Z",
+  "duration": 23.9,
+  "requests": 25
  },
  "salesforce": {
   "jobs": 1583,
