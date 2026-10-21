@@ -17,7 +17,7 @@ from __future__ import annotations
 import json
 import re
 
-from ..adapters.base import Checker, html_text, iso_date, join_locations, need, register
+from ..adapters.base import Checker, html_text, iso_date, join_locations, need, place_text, register
 from ..models import CheckerError, CheckTimeout, FetchError, Job, ShapeError
 
 BASE = "https://www.metacareers.com"
@@ -38,18 +38,6 @@ FALLBACK_MISS_CAP = 300     # ids whose misses are remembered in ctx.state (the 
 def job_url(jid: str) -> str:
     return f"{BASE}/profile/job_details/{jid}/"
 
-
-def _place_text(place) -> str:
-    """One schema.org jobLocation entry → "City, Region, Country". The Place may be a single object or plain
-    text, its address an object or plain text, and addressCountry a Country object."""
-    a = place.get("address") if isinstance(place, dict) else place
-    if isinstance(a, str):
-        return a.strip()
-    if not isinstance(a, dict):
-        return ""
-    parts = [a.get(k) for k in ("addressLocality", "addressRegion", "addressCountry")]
-    parts = [p.get("name") if isinstance(p, dict) else p for p in parts]
-    return ", ".join(p.strip() for p in parts if isinstance(p, str) and p.strip())
 
 
 @register
@@ -172,7 +160,7 @@ class Meta(Checker):
             if et and not job.employment_type:
                 job.employment_type = ", ".join(et) if isinstance(et, list) else str(et)
             places = d.get("jobLocation") or []
-            locs = [_place_text(p) for p in (places if isinstance(places, list) else [places])]
+            locs = [place_text(p) for p in (places if isinstance(places, list) else [places])]
             if locs and not job.location:
                 job.location = "; ".join(x for x in locs if x)
             break
