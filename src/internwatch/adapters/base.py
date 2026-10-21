@@ -231,3 +231,31 @@ def join_locations(*parts) -> str:
         elif str(p).strip() and str(p).strip() not in out:
             out.append(str(p).strip())
     return "; ".join(out)
+
+
+def degrade(ctx: FetchContext | None, message: str) -> None:
+    """Part of the feed failed (or could not be verified), but what was read is good: the poll's jobs are still
+    processed and new ones emailed, while the poll is reported as a health problem and records no removals
+    (FetchContext.degraded). Several problems in one poll are joined. Without a context it does nothing."""
+    if ctx is not None:
+        ctx.degraded = (f"{ctx.degraded}; {message}" if ctx.degraded else message)[:900]
+
+
+def need_soft(cond, message: str, ctx: FetchContext | None) -> bool:
+    """`need` for a problem that leaves the jobs already read intact: with a context the poll is marked degraded and
+    keeps its jobs; without one it raises ShapeError as before. Returns whether `cond` held."""
+    if not cond:
+        if ctx is None:
+            raise ShapeError(message)
+        degrade(ctx, message)
+    return bool(cond)
+
+
+def check_total_soft(got: int, total, where: str, ctx: FetchContext | None, tolerance: int | None = None) -> None:
+    """`check_total` that keeps the jobs read: a shortfall marks the poll degraded (raises without a context)."""
+    try:
+        check_total(got, total, where, tolerance)
+    except ShapeError as e:
+        if ctx is None:
+            raise
+        degrade(ctx, str(e))
