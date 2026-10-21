@@ -5,17 +5,19 @@ settings:
   domain: microsoft.com
   api:    pcsx (default, /api/pcsx/search) | v2 (older /api/apply/v2/jobs, e.g. Netflix, Liberty Mutual)
   params: {…}            extra query params for every request (optional)
-  quick_queries: [{…}]   extra param sets fully read during quick scans (e.g. the site's internship filter)
+  quick_queries: [{…}]   extra param sets fully read on every poll, before the full listing (e.g. the site's
+                         internship filter)
   count_tolerance: 0.03  allowed shortfall vs the reported total for sites whose sort order drifts while paging
 
 Both APIs return 10 jobs per page (no larger page size is accepted), PCSX results are sorted newest-first
 with sort_by=timestamp, which makes incremental "quick" scans safe for very large sites (v2 ignores it).
+A full listing that runs out of time keeps what it read, and the poll is marked degraded.
 robots.txt on Eightfold hosts explicitly allows /api/pcsx and /api/apply.
 """
 from __future__ import annotations
 
-from ..models import Job
-from .base import (Checker, FetchContext, check_total, dedupe, html_text, iso_date, join_locations, need,
+from ..models import CheckTimeout, Job
+from .base import (Checker, FetchContext, check_total, dedupe, degrade, html_text, iso_date, join_locations, need,
                    need_list, register)
 
 PAGE = 10
@@ -33,10 +35,12 @@ class Eightfold(Checker):
         return f"https://{s['host']}/api/pcsx/search?domain={s['domain']}"
 
     # one listing (all pages) ---------------------------------------------------------------
-    def _list(self, http, s, extra: dict, ctx: FetchContext | None, stop_early: bool) -> tuple[list[Job], int | None]:
+    def _list(self, http, s, extra: dict, ctx: FetchContext | None, stop_early: bool,
+              jobs: list[Job] | None = None) -> tuple[list[Job], int | None]:
+        """Pages are added to `jobs` (a new list by default) as they arrive, so a walk cut short keeps what it read."""
         v2 = s.get("api") == "v2"
         url = f"https://{s['host']}/api/apply/v2/jobs" if v2 else f"https://{s['host']}/api/pcsx/search"
-        jobs: list[Job] = []
+        jobs = [] if jobs is None else jobs
         start, total = 0, None
         while True:
             params = {"domain": s["domain"], "query": "", "location": "", "start": start, "sort_by": "timestamp",
@@ -92,17 +96,25 @@ class Eightfold(Checker):
     def fetch(self, http, s, ctx=None):
         # The v2 API ignores sort_by=timestamp, so only PCSX sites can stop early.
         quick = ctx is not None and ctx.quick and s.get("api") != "v2"
-        jobs, total = self._list(http, s, {}, ctx, stop_early=quick)
+        student: list[Job] = []
+        for q in s.get("quick_queries") or []:  # the site's own student filters, every poll, first: a long full walk
+            student += self._list(http, s, q, ctx, stop_early=False)[0]  # that runs out of time can't hide them
+        jobs: list[Job] = []
+        try:
+            total = self._list(http, s, {}, ctx, stop_early=quick, jobs=jobs)[1]
+            if not quick and isinstance(total, int) and len(dedupe(jobs)) < total and s.get("api") != "v2":
+                # postings re-dated during a long walk jump to page 1 after it was read: read the top again
+                seen = FetchContext(mode="quick", known=frozenset(j.id for j in jobs))
+                self._list(http, s, {}, seen, stop_early=True, jobs=jobs)
+        except CheckTimeout as e:
+            if ctx is None:
+                raise
+            done = " (the internship filters were read in full)" if student else ""
+            degrade(ctx, f"eightfold:{s['domain']}: the full listing stopped after {len(dedupe(jobs))} jobs{done}: {e}")
+            return dedupe(jobs + student)
         if ctx is not None and isinstance(total, int):
             ctx.reported_total = total
-        if not quick and isinstance(total, int) and len(dedupe(jobs)) < total and s.get("api") != "v2":
-            # postings re-dated during a long walk jump to page 1 after it was read: read the top again
-            seen = FetchContext(mode="quick", known=frozenset(j.id for j in jobs))
-            more, _ = self._list(http, s, {}, seen, stop_early=True)
-            jobs += more
-        for q in s.get("quick_queries") or []:  # the site's own student filters, every poll
-            more, _ = self._list(http, s, q, ctx, stop_early=False)
-            jobs += more
+        jobs += student
         if not quick:
             tol = int(total * float(s["count_tolerance"])) if s.get("count_tolerance") and isinstance(total, int) else None
             check_total(len(dedupe(jobs)), total, f"eightfold:{s['domain']}", tolerance=tol)

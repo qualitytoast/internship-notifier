@@ -10,7 +10,7 @@ import pytest
 from internwatch.adapters import get_checker
 from internwatch.adapters.base import FetchContext
 from internwatch.http import Cassette, Http
-from internwatch.models import CheckerError, FetchError
+from internwatch.models import CheckerError, CheckTimeout, FetchError
 
 from conftest import REPO
 
@@ -311,3 +311,43 @@ def test_workday_capped_site_that_no_facet_splits_keeps_what_was_read():
     assert "no facet splits them" in ctx.degraded
     with pytest.raises(CheckerError):
         get_checker("workday").fetch(site, WD)
+
+
+# Eightfold ----------------------------------------------------------------------------------
+
+class OutOfTime:
+    """Replays a fixture, but the check's time budget runs out after `pages` pages of the full listing (requests
+    without a filter_ parameter), as on a slow day for Microsoft's 2,400-job walk."""
+
+    def __init__(self, key: str, pages: int):
+        self.http, self.pages, self.calls = Http(replay=cassette(key)), pages, []
+
+    def get_json(self, url, params=None, **kw):
+        listing = not any(k.startswith("filter_") for k in params or {})
+        self.calls.append("listing" if listing else "filter")
+        if listing:
+            if self.pages == 0:
+                raise CheckTimeout(f"time budget exhausted before GET {url}")
+            self.pages -= 1
+        return self.http.get_json(url, params=params, **kw)
+
+
+def test_eightfold_reads_the_internship_filters_before_the_full_listing():
+    http = OutOfTime("microsoft", pages=10_000)
+    jobs = get_checker("eightfold").fetch(http, cassette("microsoft").meta["settings"], FetchContext())
+    assert len(jobs) == cassette("microsoft").meta["count"]
+    first_listing = http.calls.index("listing")
+    assert first_listing > 0 and "filter" not in http.calls[first_listing:]
+
+
+def test_eightfold_full_listing_out_of_time_keeps_the_internships_and_what_was_read():
+    settings = cassette("microsoft").meta["settings"]
+    ctx0 = FetchContext()
+    student = get_checker("eightfold").fetch(OutOfTime("microsoft", pages=0), settings, ctx0)
+    assert student and "stopped after 0 jobs (the internship filters were read in full)" in ctx0.degraded
+    ctx = FetchContext()
+    jobs = get_checker("eightfold").fetch(OutOfTime("microsoft", pages=50), settings, ctx)
+    assert {j.id for j in student} < {j.id for j in jobs} and len(jobs) >= 490
+    assert "the full listing stopped after" in ctx.degraded and "time budget exhausted" in ctx.degraded
+    with pytest.raises(CheckTimeout):  # no context: fails as before
+        get_checker("eightfold").fetch(OutOfTime("microsoft", pages=50), settings)
