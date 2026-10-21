@@ -1298,6 +1298,7 @@ companies:
     list_url: https://jobs.ea.com/en_US/careers/Home/
     page_size: 20
     params: {jobRecordsPerPage: 20}
+    total_regex: aria-label="(\d+) results"
     fields: {location: span.list-item-location, employment_type: span.list-item-workerType, department: span.list-item-department}
   role_keywords: [pathfinder]
   verified: {page_total: 362}

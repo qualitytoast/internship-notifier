@@ -96,7 +96,7 @@ OVERRIDES: dict[str, dict] = {
         "total_regex": r'list-controls__text__legend"\s+aria-label="(\d+) results"',
         "newest_first_query": "jobSort=postedDate&jobSortDirection=DESC"}},
     "electronic-arts": {"settings": {"list_url": "https://jobs.ea.com/en_US/careers/Home/", "page_size": 20,
-                                     "params": {"jobRecordsPerPage": 20},
+                                     "params": {"jobRecordsPerPage": 20}, "total_regex": r'aria-label="(\d+) results"',
                                      "fields": {"location": "span.list-item-location", "employment_type": "span.list-item-workerType",
                                                 "department": "span.list-item-department"}}},
     "whatnot": {"settings": {"board": "whatnot", "mode": "hosted"}},
