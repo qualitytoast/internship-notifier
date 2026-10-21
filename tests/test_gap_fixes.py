@@ -282,3 +282,16 @@ def test_amazon_keyword_hits_are_kept_by_their_title(title, kept):
 ])
 def test_staff_rule_only_applies_when_the_title_does_not_start_as_a_student_role(rules, title, matched):
     assert ev(rules, title).matched == matched
+
+
+@pytest.mark.parametrize("title,matched", [
+    ("Software Engineer Intern (Grad 2029)", True),
+    ("Software Engineer Intern - Expected Graduation: 2029", True),
+    ("Software Engineer Intern, Class 2029", True),
+    ("Software Engineer Intern (Graduating in 2029 or 2030)", True),
+    ("Software Engineer Intern (Graduating 2029-2030)", True),
+    ("Software Engineer Intern (Graduating in 2026)", False),     # graduates before your window: still rejects
+    ("Software Engineer Intern, Class 2026", False),
+])
+def test_more_graduation_wordings_are_not_read_as_terms(rules, title, matched):
+    assert ev(rules, title, "Austin, TX").matched == matched

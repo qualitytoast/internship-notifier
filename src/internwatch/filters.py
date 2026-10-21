@@ -44,12 +44,12 @@ _PROGRAM_LABEL = re.compile(
     r"(?:science|campus|university|college|early[\s\-]careers?|student|intern\w*)\s+recruit(?:ing|ment)"
     r"|(?:amazon\s+)?university\s+talent\s+(?:acquisition|attraction))\b", re.I)
 _MONTH = r"(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?"
-_DATE = rf"(?:{_S}|{_MONTH})\s*,?\s*(20\d\d)"
-# a graduation date written like a term: "Graduating Spring 2029", "Expected Graduation: May 2029", "Grad Date Dec
-# 2028 - Jun 2029", "May 2029 grads"
+_DATE = rf"(?:(?:{_S}|{_MONTH})\s*,?\s*)?(20\d\d)"
+# a graduation date or year written like a term: "Graduating Spring 2029", "Expected Graduation: May 2029", "Grad
+# Date Dec 2028 - Jun 2029", "May 2029 grads", "Grad 2029", "Class 2029", "Graduating in 2029 or 2030"
 _GRAD_DATE = re.compile(
-    rf"\b(?:class\s+of|(?:expected\s+)?grad(?:uat(?:es?|ing|ion))?(?:\s+date)?)\s*(?:in\s+|:\s*|-\s*)?{_DATE}"
-    rf"(?:\s*(?:-|–|—|to|through|or)\s*{_DATE})?|\b{_DATE}\s+grad(?:uate)?s?\b", re.I)
+    rf"\b(?:class(?:\s+of)?|(?:expected\s+)?grad(?:uat(?:es?|ing|ion)|s)?(?:\s+(?:date|year))?)\s*(?:in\s+|:\s*|-\s*)?"
+    rf"{_DATE}(?:\s*(?:-|–|—|/|&|to|through|or|and)\s*{_DATE})?|\b{_DATE}\s+grad(?:uate)?s?\b", re.I)
 # an academic year written as a range: "2026-27", "Winter 2026/2027", "Fall 2026/27"
 _ACADEMIC_YEAR = re.compile(rf"\b(?:({_S})\s*)?20(\d\d)\s*[-–/]\s*(?:20)?(\d\d)(?!\d)", re.I)
 # where a title's first part ends: a spaced dash, a comma, a bracket, a bar or a colon (not the hyphen in "Co-op")
@@ -183,7 +183,7 @@ def decide_term(title: str, snippet: str, rules: Rules) -> TermResult:
     # Before rejecting, read the title once more without what only looks like a term: a graduation date
     # ("Graduating Spring 2029") and an academic year written as a range ("Winter 2026/2027", "2026-27" →
     # both years). This can only rescue a title, never reject one the rule above accepts.
-    alt = _without_grad_dates(_ACADEMIC_YEAR.sub(_academic_years, title), rules)
+    alt = _ACADEMIC_YEAR.sub(_academic_years, _without_grad_dates(title, rules))
     if alt != title:
         again = _decide_term(alt, snippet, rules)
         if again.ok:
