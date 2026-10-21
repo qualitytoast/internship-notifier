@@ -135,3 +135,45 @@ def test_ashby_one_failing_board_keeps_the_other_boards_jobs():
     with pytest.raises(CheckerError):
         replay("sierra", gone("/job-board/sierra-jp?includeCompensation=false",
                               "/job-board/Sierra?includeCompensation=false"), ctx=FetchContext())
+
+
+# SmartRecruiters ----------------------------------------------------------------------------
+
+def blank(*parts):
+    """An edit that empties the responses whose URL contains one of `parts` (a 200 page with nothing on it)."""
+    def edit(e):
+        if any(p in e["url"] for p in parts):
+            e["text"] = "<div></div>"
+    return edit
+
+
+def test_smartrecruiters_group_page_without_groups_is_reported():
+    ctx = FetchContext()
+    jobs = replay("servicenow", blank("/ServiceNow/api/groups?page=11"), ctx=ctx)
+    assert 0 < len(jobs) < cassette("servicenow").meta["count"]
+    assert "group page 11 has no groups" in ctx.degraded
+    assert "collected 515 postings but the search reports 668" in ctx.degraded
+    assert len(replay("servicenow", blank("/ServiceNow/api/groups?page=11"))) == len(jobs)  # no context: as before
+
+
+@pytest.mark.parametrize("page, kept", [(4, 670), (2, 650)])
+def test_smartrecruiters_more_pages_that_run_dry_are_reported_and_jobs_kept(page, kept):
+    ctx = FetchContext()
+    jobs = replay("servicenow", blank(f"/ServiceNow/api/more?page={page}&type=location&value=San+Diego"), ctx=ctx)
+    assert len(jobs) == kept and "group 'San Diego, CALIFORNIA' ended at" in ctx.degraded
+    if page == 2:  # more than the 3% the groups' data-qty allows: still kept, and reported
+        assert "collected 650 postings but the page lists 679" in ctx.degraded
+        with pytest.raises(CheckerError):  # no context: fails as before
+            replay("servicenow", blank("/ServiceNow/api/more?page=2&type=location&value=San+Diego"))
+
+
+def test_smartrecruiters_search_total_far_above_collected_is_reported():
+    def inflate(e):
+        if "/sr-jobs/search" in e["url"]:
+            e["text"] = json.dumps(dict(json.loads(e["text"]), totalFound=1000))
+    ctx = FetchContext()
+    assert len(replay("servicenow", inflate, ctx=ctx)) == 679
+    assert ctx.degraded == "smartrecruiters:ServiceNow: collected 679 postings but the search reports 1000"
+    for key in ("servicenow", "linkedin"):  # the recorded polls collect more than totalFound: healthy
+        ctx = FetchContext()
+        assert len(replay(key, ctx=ctx)) == cassette(key).meta["count"] and ctx.degraded is None

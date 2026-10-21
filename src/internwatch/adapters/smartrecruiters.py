@@ -9,6 +9,8 @@ settings: company: ServiceNow     (identifier in careers.smartrecruiters.com/<co
 4. union with GET https://jobs.smartrecruiters.com/sr-jobs/search?limit=100&company=<company> (newest 100, JSON),
    which also catches postings dropped by the unstable ordering inside a group
 Detail: GET https://jobs.smartrecruiters.com/<company>/<id>-<slug>  (schema.org microdata)
+A group page without groups, a group whose "more" pages run dry before its data-qty, fewer postings than the groups'
+data-qty, or fewer than 95% of the search's totalFound marks the poll degraded (the jobs read are kept).
 See discovery/notes/servicenow.md.
 """
 from __future__ import annotations
@@ -18,7 +20,7 @@ import re
 from bs4 import BeautifulSoup
 
 from ..models import Job
-from .base import Checker, html_text, iso_date, join_locations, need, register
+from .base import Checker, degrade, html_text, iso_date, join_locations, need, need_soft, register
 
 HOSTED = "https://careers.smartrecruiters.com"
 SEARCH = "https://jobs.smartrecruiters.com/sr-jobs/search"
@@ -51,8 +53,9 @@ class SmartRecruiters(Checker):
     def describe(self, s):
         return f"{HOSTED}/{s['company']} (hosted career page) + {SEARCH}?company={s['company']}"
 
-    def _groups(self, http, html: str, out: dict, where: str) -> tuple[int, int]:
-        """Parse a page of groups; follow each group's 'more' pages. Returns (groups, sum of data-qty)."""
+    def _groups(self, http, html: str, out: dict, where: str, problems: list) -> tuple[int, int]:
+        """Parse a page of groups; follow each group's 'more' pages. Returns (groups, sum of data-qty).
+        A group whose 'more' pages run dry before its data-qty is noted in `problems`."""
         soup = BeautifulSoup(html, "lxml")
         groups = qty_sum = 0
         for sec in soup.select("section.js-group"):
@@ -70,6 +73,7 @@ class SmartRecruiters(Checker):
                     "page": page})
                 got = _jobs_in(BeautifulSoup(frag, "lxml"), name, out)
                 if not got:
+                    problems.append(f"group '{name}' ended at {seen} of {qty} jobs")
                     break
                 seen += got
                 page += 1
@@ -79,22 +83,30 @@ class SmartRecruiters(Checker):
         company = s["company"]
         where = f"smartrecruiters:{company}"
         out: dict[str, Job] = {}
+        problems: list[str] = []
         html = http.get_text(f"{HOSTED}/{company}")
         soup = BeautifulSoup(html, "lxml")
         loader = soup.select_one("div.js-openings-load")
         need(loader is not None or soup.select("section.js-group") or "opening-job" in html,
              f"{where}: hosted career page has no job groups")
-        groups, qty = self._groups(http, html, out, where)
+        groups, qty = self._groups(http, html, out, where, problems)
         pages = int(loader.get("data-groups-pages") or 1) if loader is not None else 1
         more = loader.get("data-more") if loader is not None else None
         for page in range(1, pages if more else 1):
-            g, q = self._groups(http, http.get_text(HOSTED + more, params={"page": page}), out, where)
+            g, q = self._groups(http, http.get_text(HOSTED + more, params={"page": page}), out, where, problems)
+            if not g:  # its groups' data-qty is missing from `qty` too, so the count check below can't see the loss
+                problems.append(f"group page {page} has no groups")
             groups, qty = groups + g, qty + q
         found = self._search(http, company, out)
+        if isinstance(found, int) and len(out) < found * 0.95:
+            problems.append(f"collected {len(out)} postings but the search reports {found}")
         if ctx is not None:
             ctx.reported_total = qty or found
         if qty:
-            need(len(out) >= qty * 0.97 - 2, f"{where}: collected {len(out)} postings but the page lists {qty}")
+            need_soft(len(out) >= qty * 0.97 - 2, f"{where}: collected {len(out)} postings but the page lists {qty}",
+                      ctx)
+        if problems:
+            degrade(ctx, f"{where}: " + "; ".join(problems))
         return list(out.values())
 
     def _search(self, http, company: str, out: dict) -> int | None:
