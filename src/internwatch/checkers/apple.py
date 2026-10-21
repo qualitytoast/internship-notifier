@@ -14,7 +14,8 @@ See discovery/notes/apple.md.
 """
 from __future__ import annotations
 
-from ..adapters.base import UNDERCLASS_SEARCH_WORDS, Checker, html_text, iso_date, join_locations, need, register
+from ..adapters.base import (UNDERCLASS_SEARCH_WORDS, Checker, check_total_soft, degrade, html_text, iso_date,
+                             join_locations, need, register)
 from ..models import Job
 
 API = "https://jobs.apple.com/api/v1/search"
@@ -48,7 +49,8 @@ class Apple(Checker):
         out: dict[str, Job] = {}
         slice_rows = 0
         for name, q in QUERIES:
-            page, total, rows = 1, None, 0
+            page, total, prev, stuck = 1, None, None, False
+            got: set[str] = set()  # distinct rows the search returned (a page can repeat rows of another)
             while True:
                 body = {**q, "page": page, "locale": "en-us", "sort": "newest",
                         "format": {"longDate": "MMMM D, YYYY", "mediumDate": "MMM D, YYYY"}}
@@ -58,11 +60,13 @@ class Apple(Checker):
                 items = res.get("searchResults") or []
                 if total is None:
                     total = int(res.get("totalRecords") or 0)
-                ids = []
+                ids, rows_here = [], []
                 for r in items:
                     need(r.get("id") and r.get("postingTitle"), f"apple: row without id/title ({name})")
                     pos = str(r.get("positionId") or r["id"])
                     ids.append(pos)
+                    rows_here.append(str(r["id"]))
+                    got.add(str(r["id"]))
                     loc = (r.get("locations") or [{}])[0]
                     where = ", ".join(x for x in (loc.get("name"), loc.get("stateProvince"), loc.get("countryName")) if x)
                     team = r.get("team") or {}
@@ -76,14 +80,21 @@ class Apple(Checker):
                         j.location = join_locations(j.location.split("; "), where)
                         if name == "internships" and not j.employment_type:
                             j.employment_type = "Intern (Apple Internships team)"
-                rows += len(items)
                 page += 1
-                if not items or rows >= total or page > 400:
+                if not items or (page - 1) * PAGE >= total or page > 400:  # the pages cover the reported total
                     break
+                if rows_here == prev:  # the same page twice in a row: paging is stuck, the rest can't be read
+                    stuck = True
+                    degrade(ctx, f"apple: {name} returned the same page twice at page {page - 1}; "
+                                 f"read {len(got)} of {total} rows")
+                    if ctx is not None:
+                        ctx.partial = True
+                    break
+                prev = rows_here
                 if quick and ctx.page_is_old(ids, key=name):
                     break
-            if not quick:
-                need(rows + max(2, total // 50) >= total, f"apple: {name} returned {rows} of {total} rows")
+            if not quick and not stuck:
+                check_total_soft(len(got), total, f"apple: {name} rows", ctx, tolerance=max(2, total // 50))
             slice_rows += total
         if ctx is not None:
             ctx.reported_total = slice_rows

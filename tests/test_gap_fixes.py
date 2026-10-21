@@ -520,3 +520,34 @@ def test_tmobile_partitions_short_of_the_counts_are_reported_but_normal_drift_is
     replay("t-mobile", _tmobile_facets(bump(200)), ctx=ctx)            # 200 jobs nobody read
     assert "partitioned by timeType" in ctx.degraded
     replay("t-mobile", _tmobile_facets(bump(200)))                     # no context: silent, as before
+
+
+def test_amazon_stuck_paging_is_reported_and_stops():
+    import copy
+    from internwatch.adapters import get_checker
+    from internwatch.http import Cassette, Http
+    from test_adapter_fixes import cassette
+    cas = cassette("amazon")
+    ex = copy.deepcopy(cas.exchanges)
+    flags = [e for e in ex if '"jobTypeFacets":[{"name":"isIntern"' in (e.get("body") or "")]
+    by_start = {json.loads(e["body"])["start"]: e for e in flags}
+    by_start[200]["text"] = by_start[0]["text"]                  # page 2 of the flagged-intern search repeats page 1
+    ctx = FetchContext()
+    jobs = get_checker("amazon").fetch(Http(replay=Cassette(exchanges=ex)), cas.meta["settings"] or {}, ctx)
+    assert "returned the same page twice" in ctx.degraded and ctx.partial
+    assert len(jobs) < cas.meta["count"]
+
+
+def test_apple_rows_short_of_the_total_are_reported():
+    import copy
+    from internwatch.adapters import get_checker
+    from internwatch.http import Cassette, Http
+    from test_adapter_fixes import cassette
+    cas = cassette("apple")
+    ex = copy.deepcopy(cas.exchanges)
+    team = [e for e in ex if '"subTeam":"subTeam-INTRN"' in (e.get("body") or "")]
+    by_page = {json.loads(e["body"])["page"]: e for e in team}
+    by_page[3]["text"] = by_page[1]["text"]       # page 3 repeats page 1 (not in a row): 20 rows never read
+    ctx = FetchContext()
+    get_checker("apple").fetch(Http(replay=Cassette(exchanges=ex)), cas.meta["settings"] or {}, ctx)
+    assert "apple: internships rows" in ctx.degraded and "same page twice" not in ctx.degraded and ctx.partial

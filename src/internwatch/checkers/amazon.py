@@ -22,7 +22,8 @@ from __future__ import annotations
 import copy
 import re
 
-from ..adapters.base import UNDERCLASS_SEARCH_WORDS, Checker, html_text, iso_date, join_locations, need, register
+from ..adapters.base import (UNDERCLASS_SEARCH_WORDS, Checker, check_total_soft, degrade, html_text, iso_date,
+                             join_locations, need, register)
 from ..models import Job
 
 API = "https://www.amazon.jobs/api/jobs/search?is_als=true"
@@ -103,7 +104,8 @@ class Amazon(Checker):
         words = list(s.get("keywords") or KEYWORDS)
         in_title = title_words(words)
         for name, body in queries(words):
-            start, found, seen, kept = 0, None, 0, 0
+            start, found, kept, prev, stuck = 0, None, 0, None, False
+            got: set[str] = set()  # distinct postings the search returned (a page can repeat rows of another)
             title_only = bool(body["query"])  # a keyword search, not one of the structured queries
             while True:
                 b = copy.deepcopy(body)
@@ -118,18 +120,26 @@ class Amazon(Checker):
                 for h in hits:
                     j = self._job(h.get("fields") or {})
                     ids.append(j.id)
+                    got.add(j.id)
                     if title_only and not in_title.search(j.title):
                         continue
                     kept += 1
                     out.setdefault(j.id, j)
-                seen += len(hits)
                 start += PAGE
                 if not hits or start >= found:
                     break
+                if ids == prev:  # the same page twice in a row: paging is stuck, the rest can't be read
+                    stuck = True
+                    degrade(ctx, f"amazon: query {name} returned the same page twice at {start}; "
+                                 f"read {len(got)} of {found}")
+                    if ctx is not None:
+                        ctx.partial = True
+                    break
+                prev = ids
                 if quick and body["sort"]["sortType"] == "CREATED_DATE" and ctx.page_is_old(ids, key=name):
                     break
-            if not quick and found:
-                need(seen + max(2, found // 50) >= found, f"amazon: query {name} returned {seen} of {found}")
+            if not quick and found and not stuck:
+                check_total_soft(len(got), found, f"amazon: query {name}", ctx, tolerance=max(2, found // 50))
             slice_total += kept if title_only else (found or 0)
         if ctx is not None:
             ctx.reported_total = slice_total
