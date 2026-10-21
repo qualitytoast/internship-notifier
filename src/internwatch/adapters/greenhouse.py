@@ -32,14 +32,24 @@ def _place(location: str) -> tuple:
     return frozenset(_alnum(p.split(",")[0]) for p in location.split(";")), countries(location)[0]
 
 
+# metadata fields that can say a posting is an internship ("Worker Sub Type: Intern", "Job Level: Intern", …)
+TYPE_FIELDS = ("employment type", "employee type", "job type", "worker type", "position type", "time type", "req type",
+               "worker sub", "job level", "job profile", "career page", "careersite", "careers page", "job family")
+
+
 def _employment_type(meta) -> str:
+    """The values of every matching field, not just the first: Datadog's "Time Type" says "Full time" while its
+    "Early Career Time Type" says "Internship"."""
+    vals: list[str] = []
     for m in meta or []:
         name = str(m.get("name", "")).lower()
-        if any(k in name for k in ("employment type", "employee type", "job type", "worker type", "position type",
-                                   "time type", "req type")):
+        if any(k in name for k in TYPE_FIELDS):
             v = m.get("value")
-            return ", ".join(v) if isinstance(v, list) else str(v or "")
-    return ""
+            for x in v if isinstance(v, list) else [v]:
+                x = str(x or "").strip()
+                if x and x not in vals:
+                    vals.append(x)
+    return ", ".join(vals)
 
 
 @register

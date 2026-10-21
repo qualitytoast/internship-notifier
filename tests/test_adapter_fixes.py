@@ -111,6 +111,18 @@ def test_greenhouse_requisition_twin_with_same_title_and_place_is_dropped():
     assert len(replay("c3-ai")) == cassette("c3-ai").meta["count"]
 
 
+def test_greenhouse_employment_type_reads_every_matching_metadata_field():
+    from internwatch.adapters.greenhouse import _employment_type
+    meta = [{"name": "Time Type", "value": "Full time"}, {"name": "Early Career Time Type", "value": "Internship"},
+            {"name": "Worker Sub-Type", "value": "Intern"}, {"name": "Job Level", "value": ["Intern", "5"]},
+            {"name": "Employment Type", "value": "Full time"}, {"name": "Job Family", "value": None},
+            {"name": "Location Type", "value": "Hybrid"}]
+    assert _employment_type(meta) == "Full time, Internship, Intern, 5"
+    assert _employment_type(None) == "" and _employment_type([{"name": "Job Type", "value": None}]) == ""
+    types = [j.employment_type for j in replay("datadog")]
+    assert types.count("Full time, Internship") == 8  # was just "Full time"
+
+
 # Ashby --------------------------------------------------------------------------------------
 
 def test_ashby_one_failing_board_keeps_the_other_boards_jobs():
