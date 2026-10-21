@@ -157,20 +157,6 @@ def test_state_saved_by_position_is_migrated(monkeypatch):
     assert "ok_sources" not in ctx.state and len(ctx.state["ok_source_ids"]) == 2
 
 
-def test_title_dedupe_keeps_roles_that_differ_by_place_or_year(monkeypatch):
-    workday = _Src([job("w1", "Intern, Software Engineering (Canada)", "Toronto, ON, Canada"),
-                    job("w2", "Co-op, Software Engineering (Summer 2026)", "Milwaukee, WI"),
-                    job("w3", "Intern, Data Science", "Pune, India"),
-                    job("w4", "Co-op, Delivery - Projects (LCS)", "Mayfield Heights, Ohio, United States")],
-                   kind="workday", settings={"t": 1})
-    ripple = _Src([job("r1", "Intern, Software Engineering", "Milwaukee, WI, USA"),
-                   job("r2", "Co-op, Software Engineering (Summer 2027)", "Milwaukee, WI, USA"),
-                   job("r3", "Intern, Data Science", "Milwaukee, WI, USA"),
-                   job("r4", "Co-Op, Delivery - Projects", "Mayfield Heights, OH, USA")],    # the same role
-                  kind="ripplematch", settings={"c": 2})
-    jobs, _ = _multi(monkeypatch, [workday, ripple], s={"dedupe_titles": True})
-    assert {j.id for j in jobs} == {"w1", "w2", "w3", "w4", "ripplematch:r1", "ripplematch:r2", "ripplematch:r3"}
-
 
 def test_a_matched_id_reused_for_the_next_cycle_is_emailed_again(make_cfg):
     cfg = make_cfg([company("acme")])

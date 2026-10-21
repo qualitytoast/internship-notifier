@@ -105,9 +105,8 @@ Rules for changing things: CLAUDE.md.
   - smartrecruiters {company}, workable {account}, icims {portal}, jibe {host}, phenom {base_url, ref_num},
     avature {list_url, page_size}, gem, rippling, jobvite, pinpoint, recruiterbox, ripplematch
   - multi {sources, dedupe, dedupe_titles}: later sources' ids are prefixed with `<checker>:`; dedupe_titles skips
-    a later source's role whose title matches an earlier one apart from text in brackets, unless a year, a place
-    in brackets or the countries differ. Sources are remembered by checker and settings, and a source's first
-    answer is its baseline, emailed once as "already open".
+    a later source's role whose title matches an earlier one apart from text in brackets. Sources are remembered
+    by checker and settings, and a source's first answer is its baseline, emailed once as "already open".
 - **Custom checkers** (`src/internwatch/checkers/`): google, meta (GraphQL + sitemap fallback), amazon and
   apple (complete student slices), atlassian, goldman, citadel, shopify, epic_careers, talentbrew (Intuit),
   hubspot, blocked.
