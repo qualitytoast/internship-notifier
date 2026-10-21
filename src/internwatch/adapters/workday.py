@@ -195,6 +195,8 @@ class Workday(Checker):
                         check_total(len(seen), total, where)
             for facets in (s.get("quick_queries") or []) if quick else []:
                 self._search(http, s, site, facets, out, ctx, stop_early=False)
+        if self.malformed:  # postings caught mid-edit were skipped: say so, and record no removals this time
+            degrade(ctx, f"workday:{s['tenant']}: skipped {self.malformed} postings without a path or title")
         if ctx is not None and reported:
             ctx.reported_total = reported
         return list(out.values())

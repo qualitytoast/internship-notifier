@@ -408,3 +408,25 @@ def test_a_short_microsoft_scan_keeps_its_jobs_and_is_reported():
     assert any("intern" in j.title.lower() for j in jobs)          # the internship filters were kept
     with pytest.raises(ShapeError):                                # without a context: fails as before
         replay("microsoft", cut)
+
+
+def _drop_first_path():
+    """An edit for replay(): the first listed posting comes back without its path (caught mid-edit)."""
+    done = []
+
+    def edit(e):
+        if "/jobs" in e["url"] and '"offset":0' in (e.get("body") or "").replace(" ", "") and not done:
+            d = json.loads(e["text"])
+            if d.get("jobPostings"):
+                d["jobPostings"][0].pop("externalPath", None)
+                e["text"] = json.dumps(d)
+                done.append(1)
+    return edit
+
+
+def test_workday_reports_postings_it_had_to_skip():
+    from test_adapter_fixes import cassette, replay
+    ctx = FetchContext()
+    jobs = replay("crowdstrike", _drop_first_path(), ctx=ctx)
+    assert len(jobs) == cassette("crowdstrike").meta["count"] - 1 and "skipped 1 postings" in ctx.degraded
+    assert len(replay("crowdstrike", _drop_first_path())) == len(jobs)   # no context: silent, as before
