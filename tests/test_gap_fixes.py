@@ -430,3 +430,58 @@ def test_workday_reports_postings_it_had_to_skip():
     jobs = replay("crowdstrike", _drop_first_path(), ctx=ctx)
     assert len(jobs) == cassette("crowdstrike").meta["count"] - 1 and "skipped 1 postings" in ctx.degraded
     assert len(replay("crowdstrike", _drop_first_path())) == len(jobs)   # no context: silent, as before
+
+
+class _TimesOut:
+    """An Http that runs out of time after `after` searches."""
+    def __init__(self, inner, after):
+        self.inner, self.after, self.n = inner, after, 0
+
+    def post_json(self, *a, **kw):
+        from internwatch.models import CheckTimeout
+        self.n += 1
+        if self.n > self.after:
+            raise CheckTimeout("check ran past its time budget")
+        return self.inner.post_json(*a, **kw)
+
+    def __getattr__(self, name):
+        return getattr(self.inner, name)
+
+
+def test_workday_out_of_time_keeps_what_it_read():
+    from internwatch.adapters import get_checker
+    from internwatch.http import Http
+    from internwatch.models import CheckTimeout
+    from test_adapter_fixes import cassette
+    cas = cassette("crowdstrike")
+    ctx = FetchContext()
+    jobs = get_checker("workday").fetch(_TimesOut(Http(replay=cas), 3), cas.meta["settings"], ctx)
+    assert len(jobs) == 60 and "ran out of time after 60 jobs" in ctx.degraded and ctx.partial
+    with pytest.raises(CheckTimeout):                                  # no context: fails as before
+        get_checker("workday").fetch(_TimesOut(Http(replay=cas), 3), cas.meta["settings"], None)
+
+
+def test_after_a_cut_short_first_read_the_rest_comes_once_as_already_open(make_cfg):
+    from internwatch.health import Outcome
+    cfg = make_cfg([company("acme")])
+    first = [job("1", "Ops Analyst"), job("2", "Software Engineer Intern")]
+    full = first + [job("3", "Data Science Intern")]                    # open all along, missed by the first read
+    later = full + [job("4", "Machine Learning Intern")]                 # genuinely new
+    script = iter([(first, True), (full, False), (later, False)])
+
+    def checker_fn(cfg, c, **kw):
+        jobs, partial = next(script)
+        return Outcome(company=c, mode="full", jobs=list(jobs), started_at=iso(), state={},
+                       degraded="ran out of time" if partial else None, partial=partial)
+    db = DB(cfg.settings.path("db"))
+    r = Runner(cfg, db=db, checker_fn=checker_fn)
+    r.online = lambda: True
+    once = RunOptions(force=True, send=False, crosscheck=False, scheduled_mail=False)   # one pass, no same-run retry
+    r.run(once)                                            # seeded from a cut-short read
+    assert db.get("partial_seed:acme")
+    r.run(once)                                            # the complete read
+    html = Path(db.one("SELECT path FROM emails WHERE kind='new' ORDER BY id DESC")["path"]).with_suffix(".html").read_text()
+    assert db.job("acme", "3")["baseline"] == 1 and "Already open (1)" in html
+    assert not db.get("partial_seed:acme")
+    s = r.run(once)
+    assert s.new_matches == 1 and db.job("acme", "4")["baseline"] == 0

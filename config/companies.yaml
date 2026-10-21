@@ -104,6 +104,7 @@ companies:
   checker: workday
   settings: {host: capitalone.wd12.myworkdayjobs.com, tenant: capitalone, site: Capital_One}
   role_keywords: [teip, first gen focus]
+  timeout_minutes: 20
   verified: {page_total: 1841, explained: 'Workday Capital_One is the union of three Radancy TalentBrew country sites (US 1841, CA 52,
       UK 79);'}
 - key: hugging-face

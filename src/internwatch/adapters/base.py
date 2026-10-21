@@ -40,6 +40,8 @@ class FetchContext:
                     still compare counts
     degraded:       set by a checker that had to use its fallback source: the jobs it returns are still
                     processed (new postings are emailed) but the poll is reported as a health problem
+    partial:        set with `degraded` when the walk itself was cut short (out of time, short of the total): on a
+                    company's first read, the runner then shows what later reads add as "already open", not new
     """
 
     mode: str = "full"
@@ -47,6 +49,7 @@ class FetchContext:
     state: dict = field(default_factory=dict)
     reported_total: int | None = None
     degraded: str | None = None
+    partial: bool = False
     _old_streak: dict = field(default_factory=dict, repr=False)
 
     @property
@@ -272,6 +275,7 @@ def check_total_soft(got: int, total, where: str, ctx: FetchContext | None, tole
         if ctx is None:
             raise
         degrade(ctx, str(e))
+        ctx.partial = True
 
 
 def report_skipped(ctx: FetchContext | None, skipped: int, kept: int, message: str) -> None:

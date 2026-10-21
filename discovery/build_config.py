@@ -78,6 +78,8 @@ PROGRAM_KEYWORDS: dict[str, list[str]] = {
 
 # Hand-tuned settings on top of discovery (each comes from a discovery note).
 OVERRIDES: dict[str, dict] = {
+    # a capped Workday site split by location takes ~500 requests (Capital One passes 2,000 jobs soon)
+    "capital-one": {"timeout_minutes": 20},
     "microsoft": {"big": True, "timeout_minutes": 30, "settings": {
         "host": "apply.careers.microsoft.com", "domain": "microsoft.com", "api": "pcsx", "min_interval": 3.0,
         "quick_queries": [{"filter_employment_type": "internship"}, {"filter_seniority": "Intern"}],

@@ -100,6 +100,7 @@ def run_checker(cfg: Config, c: Company, *, mode: str = "full", known=(), state:
         out.reported_total = ctx.reported_total
         out.state = ctx.state
         out.degraded = ctx.degraded
+        out.partial = ctx.partial
     except NotModified:
         out.unchanged, out.state = True, ctx.state
     except CheckerError as e:
@@ -333,6 +334,7 @@ class Runner:
         now = iso()
         st = db.state(c.key)
         seeding = st["seeded_at"] is None
+        partial_seed = bool(db.get(f"partial_seed:{c.key}"))  # the company's first read was cut short
         new_ids: list[str] = []
         new_matches = 0
         # All of a company's writes (its jobs, their filter decisions, health, seeding) commit together: if the run
@@ -373,10 +375,11 @@ class Runner:
                     db.set_match(c.key, jid, m, is_student_role(j, rules, c.extra_role_re))
                     if not m.matched or seeding:
                         continue
-                    if j.extra.get("baseline"):
+                    if j.extra.get("baseline") or partial_seed:
                         # A source of a multi-source company answered for the first time (it was failing, or was just
-                        # added): its postings were open before, so they are not new, but they were never shown
-                        # either. They go out once, in the next email's "already open" section.
+                        # added), or the company's first read was cut short: these postings were open before, so they
+                        # are not new, but they were never shown either. They go out once, in the next email's
+                        # "already open" section.
                         db.conn.execute("UPDATE jobs SET baseline=1 WHERE company=? AND job_id=?", (c.key, jid))
                         continue
                     twin = db.simplify_twin(c.key, j.title, now)
@@ -401,6 +404,10 @@ class Runner:
                 db.update_state(c.key, seeded_at=now)
                 s.seeded.append(c.key)
                 new_matches = 0
+                if o.partial:  # cut short: the rest of what is open now must not arrive later as "new"
+                    db.set(f"partial_seed:{c.key}", now)
+            elif partial_seed and o.ok and not o.partial and o.mode == "full" and not o.unchanged:
+                db.set(f"partial_seed:{c.key}", "")  # a complete read: from now on new postings are new
         lo, hi = self.retry_minutes if not o.ok else self.poll_minutes
         db.update_state(c.key, last_attempt=now,
                         next_due=iso(utcnow() + timedelta(minutes=random.uniform(float(lo), float(hi)))))

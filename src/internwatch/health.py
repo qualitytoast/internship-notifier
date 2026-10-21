@@ -37,6 +37,7 @@ class Outcome:
     state: dict | None = None          # checker memory to persist (validators, tokens)
     started_at: str = ""
     degraded: str | None = None        # jobs came from the checker's fallback source (see FetchContext)
+    partial: bool = False              # the walk was cut short (see FetchContext)
 
     @property
     def ok(self) -> bool:

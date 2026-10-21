@@ -22,7 +22,7 @@ from __future__ import annotations
 
 import re
 
-from ..models import Job, ShapeError
+from ..models import CheckTimeout, Job, ShapeError
 from .base import (Checker, check_total, degrade, html_text, iso_date, need, need_list, need_soft, register,
                    relative_posted)
 
@@ -178,6 +178,22 @@ class Workday(Checker):
     def fetch(self, http, s, ctx=None):
         out: dict[str, Job] = {}
         self.malformed = 0
+        try:
+            reported = self._fetch_sites(http, s, ctx, out)
+        except CheckTimeout as e:
+            if ctx is None:
+                raise
+            # out of time (Capital One's split by location takes minutes): keep what was read, record no removals
+            degrade(ctx, f"workday:{s['tenant']}: ran out of time after {len(out)} jobs: {e}")
+            ctx.partial, reported = True, 0
+        if self.malformed:  # postings caught mid-edit were skipped: say so, and record no removals this time
+            degrade(ctx, f"workday:{s['tenant']}: skipped {self.malformed} postings without a path or title")
+        if ctx is not None and reported:
+            ctx.reported_total = reported
+        return list(out.values())
+
+    def _fetch_sites(self, http, s, ctx, out: dict) -> int:
+        """Read every site into `out`. Returns the sum of the searches' reported totals."""
         quick = ctx is not None and ctx.quick
         reported = 0
         for site in self.sites(s):
@@ -195,11 +211,7 @@ class Workday(Checker):
                         check_total(len(seen), total, where)
             for facets in (s.get("quick_queries") or []) if quick else []:
                 self._search(http, s, site, facets, out, ctx, stop_early=False)
-        if self.malformed:  # postings caught mid-edit were skipped: say so, and record no removals this time
-            degrade(ctx, f"workday:{s['tenant']}: skipped {self.malformed} postings without a path or title")
-        if ctx is not None and reported:
-            ctx.reported_total = reported
-        return list(out.values())
+        return reported
 
     def detail(self, http, s, job):
         site, path = job.extra.get("site") or self.sites(s)[0], job.extra.get("path") or job.id

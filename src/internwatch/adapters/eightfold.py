@@ -114,6 +114,7 @@ class Eightfold(Checker):
             if ctx is None:
                 raise
             total = None  # a walk cut short: no count to check
+            ctx.partial = True
             done = " (the internship filters were read in full)" if student else ""
             degrade(ctx, f"eightfold:{s['domain']}: the full listing stopped after {len(dedupe(jobs))} jobs{done}: {e}")
         if ctx is not None and isinstance(total, int):
