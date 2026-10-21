@@ -122,7 +122,12 @@ OVERRIDES: dict[str, dict] = {
                                                     "sites": ["External_Career_Site", "Futureforce_Internships"],
                                                     "min_interval": 5.0}, "timeout_minutes": 15},
     "t-mobile": {"big": True, "timeout_minutes": 15},
-    "linkedin": {"checker": "blocked"},
+    # linkedin.com disallows all crawlers, but LinkedIn's hiring account on SmartRecruiters has a public career page
+    # whose robots.txt allows reading (found in an open list of employer job boards). linkedin.com is never fetched.
+    "linkedin": {"checker": "smartrecruiters", "status": "active", "settings": {"company": "LinkedIn3"},
+                 "verified": {"feed": "careers.smartrecruiters.com/LinkedIn3", "explained":
+                              "LinkedIn's SmartRecruiters career page; linkedin.com, which also lists its jobs, disallows "
+                              "all crawlers, so the two can't be compared"}},
     # Phenom copies backed by the real hiring system as the first source (fresher, and either keeps working alone)
     "rocket": {"checker": "multi", "settings": {"dedupe": True, "sources": [
         {"checker": "workday", "settings": {"host": "quickenloans.wd5.myworkdayjobs.com", "tenant": "quickenloans",

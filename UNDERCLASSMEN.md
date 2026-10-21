@@ -26,7 +26,7 @@ rows are yours.
 | SIG | Discovery Programs: Trading System Engineer, Quantitative Trading & Strategy Development, Equity + Macro Research, Growth Equity, Operations, Capital Markets | So | Nov 16, 2026 for some | emailed (6 US programs in your next email) |
 | Point72 | Academy Coffee Chats — Class of 2029 (US) | So | open | emailed (next email) |
 | Five Rings | LINK 2027: Software Development Intensive Program (5 days, NYC) | So | no deadline | emailed |
-| LinkedIn | First Play (12-week paid SWE internship) | Fr + So | expected late Nov 2026 | not watched (LinkedIn is blocked; set up LinkedIn job alerts) |
+| LinkedIn | First Play (12-week paid SWE internship) | Fr + So | expected late Nov 2026 | emailed if posted on LinkedIn's SmartRecruiters page, where its other internships are |
 | Jane Street | Bridge (graduating 2029) | Fr + So | London Jan 3, 2027 | not watched |
 | Jane Street | FTTP: First-Year Trading and Technology Program (NYC, London) | Fr | Jan 31, 2027 | not watched |
 | Two Sigma | First-Year Software Engineering Internship (NYC) | Fr | last round opened Jan 28; expect ~Jan 2027 | emailed |
@@ -56,7 +56,7 @@ rows are yours.
 | IMC | Women in Trading and Technology Program | women students (year not stated) | IMC job site | not caught (no student word; not confirmed as freshman/sophomore) | 2026 edition seen |
 | Jane Street | INSIGHT, FOCUS, FTTP, Bridge, SEE (CS and math in finance, express interest) | Fr, So | janestreet.com program pages | not watched | see above |
 | Liberty Mutual | Claim Your Career (fall undergraduate program) | So + juniors | Liberty Mutual job site | emailed | Fall 2026 edition seen |
-| LinkedIn | First Play | Fr + So | linkedin.com | not watched (blocked) | expected late Nov 2026 |
+| LinkedIn | First Play | Fr + So | linkedin.com and LinkedIn's SmartRecruiters page | emailed if posted on the SmartRecruiters page | expected late Nov 2026 |
 | Meta | Meta University | Fr + So | — | — | ended (final class 2025) |
 | Microsoft | Explore Program (Second-Year Students): 12-week rotational SWE/PM internship | So | Microsoft job site | emailed | open the first week of each month, Oct–Dec 2026 |
 | Microsoft | New Technologists: 7-week training program | Fr + So | newtechnologists.com | not watched | — |

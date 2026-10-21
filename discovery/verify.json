@@ -647,6 +647,14 @@
   "duration": 48.1,
   "requests": 20
  },
+ "linkedin": {
+  "jobs": 231,
+  "students": 2,
+  "matched": 1,
+  "at": "2026-10-21T03:32:44Z",
+  "duration": 21.1,
+  "requests": 22
+ },
  "lyft": {
   "jobs": 181,
   "students": 20,

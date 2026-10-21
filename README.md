@@ -1,6 +1,6 @@
 # InternWatch
 
-Watches 168 companies' careers sites (166 polled; LinkedIn and Wayfair blocked by robots.txt) through their
+Watches 168 companies' careers sites (167 polled; Wayfair blocked: its site refuses automated clients) through their
 hiring systems' official feeds and emails new internships that pass `config/filters.yaml`. Python 3.12+,
 httpx, SQLite. Per-company checkers and evidence: COVERAGE.md. Freshman/sophomore programs: UNDERCLASSMEN.md.
 Rules for changing things: CLAUDE.md.
@@ -153,8 +153,11 @@ Rules for changing things: CLAUDE.md.
 - **Capstone:** both `capstone` (Investment Advisors) and `capstone-dc` are watched.
 - **Not watched:** Instabase's Greenhouse board is off, so it counts as 0 jobs (missing_ok). Rocket's India
   locale is skipped. xAI was removed on request.
-- **Blocked:** LinkedIn and Wayfair are never polled. They're covered by the SimplifyJobs cross-check, and
-  COVERAGE.md lists their fallbacks. The bookmark's other LinkedIn ids (2587638, 39939) couldn't be identified.
+- **LinkedIn:** linkedin.com disallows all crawlers and is never fetched. LinkedIn is read through its public
+  SmartRecruiters career page (LinkedIn3), which allows it. The bookmark's other LinkedIn ids (2587638, 39939)
+  couldn't be identified.
+- **Blocked:** Wayfair (bot challenge; private Greenhouse and Workday boards) is never polled. The SimplifyJobs
+  cross-check covers it, and COVERAGE.md lists its fallback.
 - **Big sites:** Microsoft, NVIDIA, Amazon, T-Mobile and Synopsys. Amazon (22k jobs, search capped at 10k) and
   Apple are read through their complete student slices.
 

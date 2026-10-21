@@ -218,13 +218,10 @@ companies:
   name: LinkedIn
   category: big-tech
   careers_url: ['https://careers.linkedin.com/', 'https://www.linkedin.com/jobs/search-results/?currentJobId=4444658212&keywords=jobs&origin=JOB_SEARCH_PAGE_JOB_FILTER&referralSearchId=h8qRCFetE9BYzhDNBT%2BGGw%3D%3D&geoId=103644278&f_C=1337%2C2587638%2C39939&f_SAL=f_SA_id_226001%3A275001']
-  checker: blocked
-  status: blocked
-  blocked_reason: LinkedIn's own jobs exist only on www.linkedin.com, whose robots.txt disallows all automated access (and its header
-    prohibits it without permission). careers.linkedin.com has no job data; the Lever 'linkedin' board is a partner test sandbox.
-  fallback: Create a LinkedIn job alert in your own account for f_C=1337,9202023,2561065,2587638,290903,39939 with f_E=1 (Internship)
-    and US geoId 103644278; SimplifyJobs cross-check covers LinkedIn roles if listed.
-  verified: {page_total: null}
+  checker: smartrecruiters
+  settings: {company: LinkedIn3}
+  verified: {page_total: null, feed: careers.smartrecruiters.com/LinkedIn3, explained: 'LinkedIn''s SmartRecruiters career page; linkedin.com,
+      which also lists its jobs, disallows all crawlers, so the two can''t be compared'}
 - key: bloomberg
   name: Bloomberg
   category: fintech
