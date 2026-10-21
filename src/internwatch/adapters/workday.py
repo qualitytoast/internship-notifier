@@ -208,8 +208,6 @@ class Workday(Checker):
             # out of time (Capital One's split by location takes minutes): keep what was read, record no removals
             degrade(ctx, f"workday:{s['tenant']}: ran out of time after {len(out)} jobs: {e}")
             ctx.partial, reported = True, 0
-        if self.malformed:  # postings caught mid-edit were skipped: say so, and record no removals this time
-            degrade(ctx, f"workday:{s['tenant']}: skipped {self.malformed} postings without a path or title")
         if ctx is not None and reported:
             ctx.reported_total = reported
         return list(out.values())
