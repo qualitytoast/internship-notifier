@@ -5,13 +5,16 @@ import re
 from datetime import date, timedelta
 
 import httpx
+import pytest
 import yaml
 
 from internwatch.adapters.base import UNDERCLASS_SEARCH_WORDS, FetchContext
 from internwatch.checkers import amazon, apple, talentbrew
 from internwatch.checkers.amazon import Amazon
+from internwatch.checkers.meta import Meta
 from internwatch.checkers.talentbrew import TalentBrewSitemap
 from internwatch.http import Cassette, HostGate, Http, HttpSettings
+from internwatch.models import Job
 
 from conftest import REPO
 
@@ -21,6 +24,10 @@ def mock_http(handler) -> Http:
     h = Http(HttpSettings(retries=0, backoff_base=0, min_interval=0, respect_robots=False), gate=HostGate())
     h._client = httpx.Client(transport=httpx.MockTransport(handler))
     return h
+
+
+def jsonld_page(obj) -> str:
+    return f'<html><script type="application/ld+json">{json.dumps(obj)}</script></html>'
 
 
 # Amazon -------------------------------------------------------------------------------------------
@@ -95,3 +102,46 @@ def test_intuit_replay_is_fresh_when_recorded_and_stale_days_later(monkeypatch):
         ctx = FetchContext()
         jobs = TalentBrewSitemap().fetch(Http(replay=cas), s, ctx)
         assert len(jobs) == cas.meta["count"] and bool(ctx.degraded) == degraded
+
+
+# JSON-LD shapes (a crash here escaped the CheckerError handling and failed the whole company) -----
+
+MENLO = {"@type": "Place", "address": {"addressLocality": "Menlo Park", "addressRegion": "CA", "addressCountry": "US"}}
+PLACES = {
+    "list of Places": ([MENLO], "Menlo Park, CA, US"),
+    "mixed list": ([MENLO, {"@type": "Place", "address": "Seattle, WA"}], "Menlo Park, CA, US; Seattle, WA"),
+    "single Place object": ({"@type": "Place", "address": {"addressLocality": "Menlo Park", "addressCountry": "US"}},
+                            "Menlo Park, US"),
+    "address as text": ([{"@type": "Place", "address": "Menlo Park, CA, US"}], "Menlo Park, CA, US"),
+    "Country object": ({"@type": "Place", "address": {"addressLocality": "Austin", "addressRegion": "TX",
+                                                      "addressCountry": {"@type": "Country", "name": "US"}}},
+                       "Austin, TX, US"),
+    "Place as text": ("Remote, US", "Remote, US"),
+    "nothing usable": ([{"@type": "Place"}, 7, None, {"address": ["x"]}], ""),
+}
+
+
+@pytest.mark.parametrize("checker", [Meta(), TalentBrewSitemap()], ids=["meta", "talentbrew"])
+@pytest.mark.parametrize("shape", list(PLACES))
+def test_every_jsonld_location_shape_is_read(checker, shape):
+    places, want = PLACES[shape]
+    page = jsonld_page({"@type": "JobPosting", "title": "Software Engineer Intern", "jobLocation": places})
+    j = checker.detail(mock_http(lambda req: httpx.Response(200, text=page)), {},
+                       Job(id="1", title="", url="https://jobs.example.com/job/1"))
+    assert (j.title, j.location) == ("Software Engineer Intern", want)
+
+
+def test_meta_reads_a_jobposting_inside_a_jsonld_list():
+    page = jsonld_page([{"@type": "Organization"}, {"@type": "JobPosting", "title": "Data Science Intern",
+                                                    "jobLocation": {"address": "New York, NY"}}])
+    j = Meta().detail(mock_http(lambda req: httpx.Response(200, text=page)), {},
+                      Job(id="1", title="", url="https://jobs.example.com/job/1"))
+    assert (j.title, j.location) == ("Data Science Intern", "New York, NY")
+
+
+def test_talentbrew_check_survives_an_address_given_as_text():
+    page = jsonld_page({"@type": "JobPosting", "title": "Software Engineer Intern - Summer 2027",
+                        "jobLocation": {"@type": "Place", "address": "Mountain View, CA, US"}})
+    http = mock_http(lambda req: httpx.Response(200, text=sitemap() if req.url.path == "/sitemap.xml" else page))
+    jobs = TalentBrewSitemap().fetch(http, {**TB, "detail_limit": 5}, FetchContext())
+    assert [(j.title, j.location) for j in jobs] == [("Software Engineer Intern - Summer 2027", "Mountain View, CA, US")]

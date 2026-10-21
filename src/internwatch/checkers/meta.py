@@ -36,6 +36,19 @@ def job_url(jid: str) -> str:
     return f"{BASE}/profile/job_details/{jid}/"
 
 
+def _place_text(place) -> str:
+    """One schema.org jobLocation entry → "City, Region, Country". The Place may be a single object or plain
+    text, its address an object or plain text, and addressCountry a Country object."""
+    a = place.get("address") if isinstance(place, dict) else place
+    if isinstance(a, str):
+        return a.strip()
+    if not isinstance(a, dict):
+        return ""
+    parts = [a.get(k) for k in ("addressLocality", "addressRegion", "addressCountry")]
+    parts = [p.get("name") if isinstance(p, dict) else p for p in parts]
+    return ", ".join(p.strip() for p in parts if isinstance(p, str) and p.strip())
+
+
 @register
 class Meta(Checker):
     type = "meta"
@@ -125,6 +138,8 @@ class Meta(Checker):
                 d = json.loads(m.group(1))
             except ValueError:
                 continue
+            if isinstance(d, list):  # several objects in one script
+                d = next((x for x in d if isinstance(x, dict) and x.get("@type") == "JobPosting"), None)
             if not isinstance(d, dict) or d.get("@type") != "JobPosting":
                 continue
             if d.get("title") and not job.title:
@@ -134,10 +149,8 @@ class Meta(Checker):
             et = d.get("employmentType")
             if et and not job.employment_type:
                 job.employment_type = ", ".join(et) if isinstance(et, list) else str(et)
-            locs = []
-            for loc in d.get("jobLocation") or []:
-                a = (loc or {}).get("address") or {}
-                locs.append(", ".join(x for x in (a.get("addressLocality"), a.get("addressRegion"), a.get("addressCountry")) if x))
+            places = d.get("jobLocation") or []
+            locs = [_place_text(p) for p in (places if isinstance(places, list) else [places])]
             if locs and not job.location:
                 job.location = "; ".join(x for x in locs if x)
             break
