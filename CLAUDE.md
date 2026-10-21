@@ -6,6 +6,12 @@ Watches company careers sites and emails new internships. See README.md for how 
 
 Use the `commit-and-push` skill: commit with a short message saying what you did, then push.
 
+## Refilter
+
+You may run `.venv/bin/internwatch refilter --notify` on the real `data/internwatch.db`. Use it after a change
+that lets more roles match, so roles already stored that now match go out with the next email. List those roles
+for me when you do.
+
 ## Changes that could make the filters stricter
 
 The filters must never quietly stop sending a kind of role they used to send. If a change risks a single role that
