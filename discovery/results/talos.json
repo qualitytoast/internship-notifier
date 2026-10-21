@@ -1,0 +1,21 @@
+{
+  "key": "talos",
+  "name": "Talos",
+  "careers_url": "https://www.talos.com/working/open-roles",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "Talos-Trading"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/Talos-Trading?includeCompensation=false",
+  "feed_total": 16,
+  "page_total": 16,
+  "page_total_how": "Playwright render of https://www.talos.com/careers (redirects to /working/open-roles): the page fetches api.ashbyhq.com/posting-api/job-board/Talos-Trading and lists 16 links to jobs.ashbyhq.com/Talos-Trading/<id>, identical to the feed ids",
+  "intern_total": 5,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com/robots.txt answers HTTP 401, so no robots.txt applies); careers page ALLOW",
+  "notes": "Board 'Talos-Trading', as the page uses it. In my test the posting API also accepted 'talos-trading' and returned the same 16 jobs. GH talos and talostrading return 0. Interns: 4 Software Engineer Intern roles (London, NY) and Quantitative Analyst Intern (London, NYC).",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

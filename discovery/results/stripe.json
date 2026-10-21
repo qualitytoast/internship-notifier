@@ -1,0 +1,21 @@
+{
+  "key": "stripe",
+  "name": "Stripe",
+  "careers_url": "https://stripe.com/careers/search",
+  "hiring_system": "greenhouse (custom Next.js front on stripe.com)",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "stripe"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/stripe/jobs",
+  "feed_total": 726,
+  "page_total": 676,
+  "page_total_how": "Playwright render of https://stripe.com/careers/search (0 filters): 20 job x location rows per page, '1 of 62'. The page's __NEXT_DATA__ jobIndexData.listings has 676 jobs (1,236 job x location rows = 62 pages); all 676 are in the feed. The other 50 feed jobs are not listed on stripe.com: their absolute_url (stripe.com/jobs/search?gh_jid=<id>) falls back to the search page, while a listed id redirects to /careers/listing/<slug>/<id>.",
+  "intern_total": 15,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (boards-api.greenhouse.io: no matching rule)",
+  "notes": "Feed is a superset of the site; the 50 unlisted are full-time (22 in Greenhouse department 'Global Operations', the rest scattered), none student, so tracking the whole feed is safe. The page's own employmentType 'Intern' count is 15, the same 15 we count (SWE, PhD DS, Data Analyst interns, a High School Internship, an Apprenticeship). See notes/stripe.md.",
+  "checked_at": "2026-10-20T00:37:53Z"
+}

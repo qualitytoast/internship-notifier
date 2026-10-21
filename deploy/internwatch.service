@@ -1,0 +1,15 @@
+[Unit]
+Description=InternWatch: one polling run (all due careers sites, cross-check, emails)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=@USER@
+WorkingDirectory=@APP@
+Environment=INTERNWATCH_HOME=@APP@
+ExecStart=@APP@/.venv/bin/internwatch run
+# A normal run takes a few minutes; the once-a-day full scans of the biggest sites take up to ~15.
+TimeoutStartSec=30min
+Nice=10
+# Logs: journalctl -u internwatch   (also @APP@/data/logs/internwatch.log)

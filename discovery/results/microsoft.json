@@ -1,0 +1,32 @@
+{
+  "key": "microsoft",
+  "name": "Microsoft",
+  "careers_url": "https://apply.careers.microsoft.com/careers?domain=microsoft.com&hl=en",
+  "hiring_system": "eightfold",
+  "checker": "eightfold",
+  "settings": {
+    "host": "apply.careers.microsoft.com",
+    "domain": "microsoft.com",
+    "api": "pcsx",
+    "min_interval": 3.0,
+    "quick_queries": [
+      {
+        "filter_employment_type": "internship"
+      },
+      {
+        "filter_seniority": "Intern"
+      }
+    ]
+  },
+  "feed": "GET https://apply.careers.microsoft.com/api/pcsx/search?domain=microsoft.com&query=&location=&start=N&sort_by=timestamp",
+  "feed_total": 2411,
+  "page_total": 2411,
+  "page_total_how": "Playwright render of the unfiltered careers page: '2411 jobs', 'Page 1 of 242'",
+  "intern_total": 96,
+  "status": "verified",
+  "robots": "ALLOW (Allow: /api/pcsx)",
+  "notes": "10 per page, 429 at ~1 req/s: pace 3 s. Quick scans (internship + seniority=Intern queries + newest-first pages) every poll, full sweep daily. Both bookmarks (US, Canada) are covered: locations US+CA.",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-19T23:55:00Z"
+}

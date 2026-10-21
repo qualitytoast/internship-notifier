@@ -1,0 +1,5635 @@
+{
+ "openai": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "openai",
+    "url": "https://boards-api.greenhouse.io/v1/boards/openai/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "openai",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/openai",
+    "total": 807,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "openai",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/openai",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [
+    "openai"
+   ],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "databricks": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "databricks",
+    "url": "https://boards-api.greenhouse.io/v1/boards/databricks/jobs",
+    "total": 899,
+    "intern": 13,
+    "sample_interns": [
+     "PhD GenAI Research Scientist Intern",
+     "Product Design Intern (2027 Start)",
+     "Product Management Intern (2027) - Amsterdam",
+     "Product Management Intern (2027) - Belgrade",
+     "Product Management Intern (2027) - Berlin",
+     "Product Management Intern (Summer 2027)"
+    ]
+   },
+   {
+    "ats": "gem",
+    "token": "databricks",
+    "url": "https://api.gem.com/job_board/v0/databricks/job_posts/",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "cohere": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "cohere",
+    "url": "https://boards-api.greenhouse.io/v1/boards/cohere/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "cohere",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/cohere",
+    "total": 115,
+    "intern": 3,
+    "sample_interns": [
+     "Software Engineer Intern (Winter 2027)",
+     "Research Internship (Winter 2027)",
+     "Machine Learning Intern/Co-op  (Winter 2027)"
+    ]
+   },
+   {
+    "ats": "workable",
+    "token": "cohere",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/cohere",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [
+    "cohere"
+   ],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "wolfram": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "wolfram",
+    "url": "https://boards-api.greenhouse.io/v1/boards/wolfram/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "amazon": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "amazon",
+    "url": "https://boards-api.greenhouse.io/v1/boards/amazon/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "amazon",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/amazon",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "capital-one": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "capitalone",
+    "url": "https://boards-api.greenhouse.io/v1/boards/capitalone/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "capital-one",
+    "url": "https://boards-api.greenhouse.io/v1/boards/capital-one/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "capital",
+    "url": "https://boards-api.greenhouse.io/v1/boards/capital/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "lever",
+    "token": "capital",
+    "url": "https://api.lever.co/v0/postings/capital?mode=json",
+    "total": 58,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "capitalone",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/capitalone",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "capital-one",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/capital-one",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "capital",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/capital",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "oracle": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "oracle",
+    "url": "https://boards-api.greenhouse.io/v1/boards/oracle/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "oracle",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/oracle",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "scale-ai": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "scaleai",
+    "url": "https://boards-api.greenhouse.io/v1/boards/scaleai/jobs",
+    "total": 181,
+    "intern": 4,
+    "sample_interns": [
+     "Machine Learning Research Intern (Summer 2027)",
+     "Software Engineering Intern (Summer 2027) ",
+     "Software Engineering Intern (Summer 2027) ",
+     "Software Engineering Intern (Summer 2027) "
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "scale-ai",
+    "url": "https://boards-api.greenhouse.io/v1/boards/scale-ai/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "scale",
+    "url": "https://boards-api.greenhouse.io/v1/boards/scale/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "scale",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/scale",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "anyscale": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "anyscale",
+    "url": "https://boards-api.greenhouse.io/v1/boards/anyscale/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "lever",
+    "token": "anyscale",
+    "url": "https://api.lever.co/v0/postings/anyscale?mode=json",
+    "total": 1,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "anyscale",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/anyscale",
+    "total": 20,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [
+    "anyscale"
+   ],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "pinecone": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "pinecone",
+    "url": "https://boards-api.greenhouse.io/v1/boards/pinecone/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "pinecone",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/pinecone",
+    "total": 5,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [
+    "pinecone"
+   ],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "groq": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "groq",
+    "url": "https://boards-api.greenhouse.io/v1/boards/groq/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "gem",
+    "token": "groq",
+    "url": "https://api.gem.com/job_board/v0/groq/job_posts/",
+    "total": 36,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": [
+    "groq"
+   ]
+  }
+ },
+ "temporal": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "temporal",
+    "url": "https://boards-api.greenhouse.io/v1/boards/temporal/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "temporaltechnologies",
+    "url": "https://boards-api.greenhouse.io/v1/boards/temporaltechnologies/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "temporal",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/temporal",
+    "total": 70,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "grafana-labs": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "grafanalabs",
+    "url": "https://boards-api.greenhouse.io/v1/boards/grafanalabs/jobs",
+    "total": 137,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "grafana-labs",
+    "url": "https://boards-api.greenhouse.io/v1/boards/grafana-labs/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "grafana",
+    "url": "https://boards-api.greenhouse.io/v1/boards/grafana/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "grafana",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/grafana",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "grafanalabs"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "apple": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "apple",
+    "url": "https://boards-api.greenhouse.io/v1/boards/apple/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "apple",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/apple",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "meta": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "meta",
+    "url": "https://boards-api.greenhouse.io/v1/boards/meta/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "meta",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/meta",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "uber": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "uber",
+    "url": "https://boards-api.greenhouse.io/v1/boards/uber/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "uber",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/uber",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "pinterest": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "pinterest",
+    "url": "https://boards-api.greenhouse.io/v1/boards/pinterest/jobs",
+    "total": 154,
+    "intern": 13,
+    "sample_interns": [
+     "Machine Learning Intern 2027 (Dublin)",
+     "Machine Learning Intern 2027 (Toronto)",
+     "Machine Learning Intern 2027 (Zurich)",
+     "Master's Data Science Internship 2027 (USA)",
+     "Master's Machine Learning Internship 2027 (USA)",
+     "PhD Data Science Internship 2027 (USA)"
+    ]
+   },
+   {
+    "ats": "workable",
+    "token": "pinterest",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/pinterest",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "coreweave": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "weights_and_biases",
+    "url": "https://boards-api.greenhouse.io/v1/boards/weights_and_biases/jobs",
+    "total": 7,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "coreweave",
+    "url": "https://boards-api.greenhouse.io/v1/boards/coreweave/jobs",
+    "total": 315,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "wandb",
+    "url": "https://boards-api.greenhouse.io/v1/boards/wandb/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "weightsandbiases",
+    "url": "https://boards-api.greenhouse.io/v1/boards/weightsandbiases/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "gem",
+    "token": "coreweave",
+    "url": "https://api.gem.com/job_board/v0/coreweave/job_posts/",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "weights_and_biases"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "linkedin": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "linkedin",
+    "url": "https://boards-api.greenhouse.io/v1/boards/linkedin/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "lever",
+    "token": "linkedin",
+    "url": "https://api.lever.co/v0/postings/linkedin?mode=json",
+    "total": 23,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "linkedin",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/linkedin",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "gem",
+    "token": "linkedin",
+    "url": "https://api.gem.com/job_board/v0/linkedin/job_posts/",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "hugging-face": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "huggingface",
+    "url": "https://boards-api.greenhouse.io/v1/boards/huggingface/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "hugging-face",
+    "url": "https://boards-api.greenhouse.io/v1/boards/hugging-face/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "hugging",
+    "url": "https://boards-api.greenhouse.io/v1/boards/hugging/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "huggingface",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/huggingface",
+    "total": 6,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "hugging-face",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/hugging-face",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [
+    "huggingface",
+    "cdn-cgi"
+   ],
+   "gem": []
+  }
+ },
+ "microsoft": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "microsoft",
+    "url": "https://boards-api.greenhouse.io/v1/boards/microsoft/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "microsoft",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/microsoft",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "stripe": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "stripe",
+    "url": "https://boards-api.greenhouse.io/v1/boards/stripe/jobs",
+    "total": 726,
+    "intern": 15,
+    "sample_interns": [
+     "Data Analyst, Intern",
+     "Data Analyst, Intern",
+     "Financial Data Analyst Intern, Technical Operations",
+     "High School Internship, Software Engineering (Summer 2027)",
+     "Integration Reliability Engineer Intern, Technical Operations",
+     "Operations Associate, Apprenticeship"
+    ]
+   },
+   {
+    "ats": "workable",
+    "token": "stripe",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/stripe",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "duolingo": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "duolingo",
+    "url": "https://boards-api.greenhouse.io/v1/boards/duolingo/jobs",
+    "total": 63,
+    "intern": 4,
+    "sample_interns": [
+     "Data Scientist, Intern",
+     "Data Scientist, Intern (PhD)",
+     "Illustrator, Intern",
+     "Product Manager, MBA Intern"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "duolingo"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "roblox": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "roblox",
+    "url": "https://boards-api.greenhouse.io/v1/boards/roblox/jobs",
+    "total": 262,
+    "intern": 5,
+    "sample_interns": [
+     "[2027] Applied Scientist - PhD Intern",
+     "[2027] Data Scientist - PhD Intern",
+     "[Summer 2027] Product Design Intern",
+     "[Summer 2027] Product Management Intern",
+     "[Summer 2027] Software Engineer Intern"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "dropbox": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "dropbox",
+    "url": "https://boards-api.greenhouse.io/v1/boards/dropbox/jobs",
+    "total": 18,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "dropbox",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/dropbox",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "synopsys": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "synopsys",
+    "url": "https://boards-api.greenhouse.io/v1/boards/synopsys/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "autodesk": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "autodesk",
+    "url": "https://boards-api.greenhouse.io/v1/boards/autodesk/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "autodesk",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/autodesk",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "toast": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "toast",
+    "url": "https://boards-api.greenhouse.io/v1/boards/toast/jobs",
+    "total": 315,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "toast",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/toast",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "t-mobile": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "tmobile",
+    "url": "https://boards-api.greenhouse.io/v1/boards/tmobile/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "t-mobile",
+    "url": "https://boards-api.greenhouse.io/v1/boards/t-mobile/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "t",
+    "url": "https://boards-api.greenhouse.io/v1/boards/t/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "tmobile",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/tmobile",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "t-mobile",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/t-mobile",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "t",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/t",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "liberty-mutual": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "libertymutual",
+    "url": "https://boards-api.greenhouse.io/v1/boards/libertymutual/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "liberty-mutual",
+    "url": "https://boards-api.greenhouse.io/v1/boards/liberty-mutual/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "liberty",
+    "url": "https://boards-api.greenhouse.io/v1/boards/liberty/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "liberty-mutual",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/liberty-mutual",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "liberty",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/liberty",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "bloomberg": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "bloomberg",
+    "url": "https://boards-api.greenhouse.io/v1/boards/bloomberg/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "bloomberg",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/bloomberg",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "workday": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "workday",
+    "url": "https://boards-api.greenhouse.io/v1/boards/workday/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "workday",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/workday",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "ebay": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "ebay",
+    "url": "https://boards-api.greenhouse.io/v1/boards/ebay/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "ebay",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/ebay",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "servicenow": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "servicenow",
+    "url": "https://boards-api.greenhouse.io/v1/boards/servicenow/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "palo-alto-networks": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "paloaltonetworks",
+    "url": "https://boards-api.greenhouse.io/v1/boards/paloaltonetworks/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "palo-alto-networks",
+    "url": "https://boards-api.greenhouse.io/v1/boards/palo-alto-networks/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "palo",
+    "url": "https://boards-api.greenhouse.io/v1/boards/palo/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "palo-alto-networks",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/palo-alto-networks",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "applied-intuition": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "appliedintuition",
+    "url": "https://boards-api.greenhouse.io/v1/boards/appliedintuition/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "applied-intuition",
+    "url": "https://boards-api.greenhouse.io/v1/boards/applied-intuition/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "applied",
+    "url": "https://boards-api.greenhouse.io/v1/boards/applied/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "applied",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/applied",
+    "total": 330,
+    "intern": 5,
+    "sample_interns": [
+     "Research Intern - Reinforcement Learning, Self-Driving",
+     "Research Intern - 3D Vision and Generation, Self-Driving",
+     "Research Intern - Robotic Hardware, Simulation and Data",
+     "Research Intern - Reinforcement Learning, Robotics",
+     "Research Intern - World-Action Foundation Model, Robotics"
+    ]
+   },
+   {
+    "ats": "workable",
+    "token": "applied",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/applied",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [
+    "applied"
+   ],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "procore": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "procoretechnologies",
+    "url": "https://boards-api.greenhouse.io/v1/boards/procoretechnologies/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "procore",
+    "url": "https://boards-api.greenhouse.io/v1/boards/procore/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "procore",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/procore",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "twitch": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "twitch",
+    "url": "https://boards-api.greenhouse.io/v1/boards/twitch/jobs",
+    "total": 54,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "twitch",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/twitch",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "gem",
+    "token": "twitch",
+    "url": "https://api.gem.com/job_board/v0/twitch/job_posts/",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "figma": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "figma",
+    "url": "https://boards-api.greenhouse.io/v1/boards/figma/jobs",
+    "total": 140,
+    "intern": 8,
+    "sample_interns": [
+     "Data Engineer Intern (2027)",
+     "Data Science Intern (2027)",
+     "PhD Intern, AI Applied Scientist (2027)",
+     "PhD Intern, Data Science (2027)",
+     "PhD Intern, Software Engineer - Graphics (2027)",
+     "Product Design Intern (2027)"
+    ]
+   },
+   {
+    "ats": "ashby",
+    "token": "figma",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/figma",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "figma",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/figma",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "figma"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "chan-zuckerberg": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "chanzuckerberginitiative",
+    "url": "https://boards-api.greenhouse.io/v1/boards/chanzuckerberginitiative/jobs",
+    "total": 7,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "czi",
+    "url": "https://boards-api.greenhouse.io/v1/boards/czi/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "chanzuckerberg",
+    "url": "https://boards-api.greenhouse.io/v1/boards/chanzuckerberg/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "chan-zuckerberg-initiative",
+    "url": "https://boards-api.greenhouse.io/v1/boards/chan-zuckerberg-initiative/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "chan",
+    "url": "https://boards-api.greenhouse.io/v1/boards/chan/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "chan-zuckerberg-initiative",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/chan-zuckerberg-initiative",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "chan",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/chan",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "chanzuckerberginitiative"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "coinbase": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "coinbase",
+    "url": "https://boards-api.greenhouse.io/v1/boards/coinbase/jobs",
+    "total": 227,
+    "intern": 26,
+    "sample_interns": [
+     "Accelerations Programs Intern",
+     "Accounting Intern",
+     "Analytics Engineer Intern",
+     "Associate Product Manager Intern",
+     "Business Controller Intern",
+     "Credit Risk Intern"
+    ]
+   },
+   {
+    "ats": "workable",
+    "token": "coinbase",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/coinbase",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "rippling": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "rippling",
+    "url": "https://boards-api.greenhouse.io/v1/boards/rippling/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "rippling",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/rippling",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "ramp": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "ramp",
+    "url": "https://boards-api.greenhouse.io/v1/boards/ramp/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "ramp",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/ramp",
+    "total": 167,
+    "intern": 5,
+    "sample_interns": [
+     "Applied Scientist Intern",
+     "Software Engineering Intern, Frontend",
+     "Software Engineering Intern, Backend",
+     "Software Engineering Intern, Android",
+     "Software Engineering Intern, iOS"
+    ]
+   },
+   {
+    "ats": "workable",
+    "token": "ramp",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/ramp",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [
+    "ramp"
+   ],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "akamai": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "akamai",
+    "url": "https://boards-api.greenhouse.io/v1/boards/akamai/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "akamai",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/akamai",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "expedia": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "expedia",
+    "url": "https://boards-api.greenhouse.io/v1/boards/expedia/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "expediagroup",
+    "url": "https://boards-api.greenhouse.io/v1/boards/expediagroup/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "expedia-group",
+    "url": "https://boards-api.greenhouse.io/v1/boards/expedia-group/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "expedia",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/expedia",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "expedia-group",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/expedia-group",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "booking": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "booking",
+    "url": "https://boards-api.greenhouse.io/v1/boards/booking/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "bookingcom",
+    "url": "https://boards-api.greenhouse.io/v1/boards/bookingcom/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "booking-com",
+    "url": "https://boards-api.greenhouse.io/v1/boards/booking-com/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "booking",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/booking",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "squarespace": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "squarespace",
+    "url": "https://boards-api.greenhouse.io/v1/boards/squarespace/jobs",
+    "total": 26,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "squarespace",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/squarespace",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "epic-systems": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "epic",
+    "url": "https://boards-api.greenhouse.io/v1/boards/epic/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "epic",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/epic",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "wayfair": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "wayfair",
+    "url": "https://boards-api.greenhouse.io/v1/boards/wayfair/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "wayfair",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/wayfair",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "notion": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "notion",
+    "url": "https://boards-api.greenhouse.io/v1/boards/notion/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "notion",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/notion",
+    "total": 133,
+    "intern": 3,
+    "sample_interns": [
+     "Software Engineer Intern (Winter 2027)",
+     "Software Engineer Intern (Summer 2027)",
+     "Software Engineer Intern, Mobile (Winter 2027)"
+    ]
+   },
+   {
+    "ats": "workable",
+    "token": "notion",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/notion",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [
+    "notion"
+   ],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "nvidia": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "nvidia",
+    "url": "https://boards-api.greenhouse.io/v1/boards/nvidia/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "nvidia",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/nvidia",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "waymo": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "waymo",
+    "url": "https://boards-api.greenhouse.io/v1/boards/waymo/jobs",
+    "total": 366,
+    "intern": 64,
+    "sample_interns": [
+     "2027 Summer Intern, BS, Depot Automation",
+     "2027 Summer Intern, BS/MS, Embedded, Software Engineer",
+     "2027 Summer Intern, BS/MS, Global Supply Management (GSM)",
+     "2027 Summer Intern, BS/MS, Scenes",
+     "2027 Summer Intern, BS/MS, Software Engineering, Commercialization",
+     "2027 Summer Intern, BS/MS, Software Engineering, Commercialization"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "google": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "google",
+    "url": "https://boards-api.greenhouse.io/v1/boards/google/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "visa": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "visa",
+    "url": "https://boards-api.greenhouse.io/v1/boards/visa/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "visa",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/visa",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "c3-ai": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "c3ascend",
+    "url": "https://boards-api.greenhouse.io/v1/boards/c3ascend/jobs",
+    "total": 3,
+    "intern": 3,
+    "sample_interns": [
+     "AI Product Manager - MBA Intern (Summer 2027)",
+     "Data Science - Intern (Summer 2027)",
+     "Software Engineer - Intern (Summer 2027)"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "c3iot",
+    "url": "https://boards-api.greenhouse.io/v1/boards/c3iot/jobs",
+    "total": 94,
+    "intern": 5,
+    "sample_interns": [
+     "AI Product Manager - MBA Intern (Summer 2027)",
+     "Data Science - Intern (Summer 2027)",
+     "QA Engineer - Intern (Summer 2027)",
+     "Software Engineer - Intern (Summer 2027)",
+     "Software Engineer - Intern (Summer 2027)"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "c3ai",
+    "url": "https://boards-api.greenhouse.io/v1/boards/c3ai/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "c3-ai",
+    "url": "https://boards-api.greenhouse.io/v1/boards/c3-ai/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "c3",
+    "url": "https://boards-api.greenhouse.io/v1/boards/c3/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "c3",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/c3",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "c3ascend"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "cloudflare": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "cloudflare",
+    "url": "https://boards-api.greenhouse.io/v1/boards/cloudflare/jobs",
+    "total": 436,
+    "intern": 3,
+    "sample_interns": [
+     "Software Engineer Intern (2027)",
+     "Software Engineer Intern (2027)",
+     "Software Engineer Intern (2027) - Austin, TX"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "cloudflare"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "spotify": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "spotify",
+    "url": "https://boards-api.greenhouse.io/v1/boards/spotify/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "lever",
+    "token": "spotify",
+    "url": "https://api.lever.co/v0/postings/spotify?mode=json",
+    "total": 82,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "spotify",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/spotify",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "block": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "block",
+    "url": "https://boards-api.greenhouse.io/v1/boards/block/jobs",
+    "total": 218,
+    "intern": 2,
+    "sample_interns": [
+     "Applied Research Intern, Proactive Intelligence & Customer World Models (PhD / Graduate Co-op)",
+     "Applied Research Intern, Proactive Intelligence & Customer World Models (PhD / Graduate Co-op)"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "squareup",
+    "url": "https://boards-api.greenhouse.io/v1/boards/squareup/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "square",
+    "url": "https://boards-api.greenhouse.io/v1/boards/square/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "square",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/square",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "plaid": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "plaid",
+    "url": "https://boards-api.greenhouse.io/v1/boards/plaid/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "plaid",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/plaid",
+    "total": 132,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "plaid",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/plaid",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "nuro": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "nuro",
+    "url": "https://boards-api.greenhouse.io/v1/boards/nuro/jobs",
+    "total": 107,
+    "intern": 2,
+    "sample_interns": [
+     "Social Media Intern",
+     "Software Engineer, AI Platform - Intern"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "adobe": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "adobe",
+    "url": "https://boards-api.greenhouse.io/v1/boards/adobe/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "adobe",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/adobe",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "verkada": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "verkada",
+    "url": "https://boards-api.greenhouse.io/v1/boards/verkada/jobs",
+    "total": 318,
+    "intern": 8,
+    "sample_interns": [
+     "Backend Software Engineering Intern 2027",
+     "Embedded Software Engineering Intern 2027",
+     "Frontend Software Engineering Intern 2027",
+     "Hardware Engineer (Winter Co-op)",
+     "Mobile Software Engineering Intern 2027",
+     "Security Software Engineering Intern 2027"
+    ]
+   },
+   {
+    "ats": "ashby",
+    "token": "verkada",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/verkada",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "verkada"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "hubspot": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "hubspot",
+    "url": "https://boards-api.greenhouse.io/v1/boards/hubspot/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "hubspotjobs",
+    "url": "https://boards-api.greenhouse.io/v1/boards/hubspotjobs/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "hubspot",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/hubspot",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "gem",
+    "token": "hubspot",
+    "url": "https://api.gem.com/job_board/v0/hubspot/job_posts/",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "klaviyo": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "klaviyo",
+    "url": "https://boards-api.greenhouse.io/v1/boards/klaviyo/jobs",
+    "total": 159,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "klaviyo",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/klaviyo",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "workable",
+    "token": "klaviyo",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/klaviyo",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "smartsheet": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "smartsheet",
+    "url": "https://boards-api.greenhouse.io/v1/boards/smartsheet/jobs",
+    "total": 92,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "rocket": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "rocketcompanies",
+    "url": "https://boards-api.greenhouse.io/v1/boards/rocketcompanies/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "rocket-companies",
+    "url": "https://boards-api.greenhouse.io/v1/boards/rocket-companies/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "rocket",
+    "url": "https://boards-api.greenhouse.io/v1/boards/rocket/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "pitchbook": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "pitchbookdata",
+    "url": "https://boards-api.greenhouse.io/v1/boards/pitchbookdata/jobs",
+    "total": 23,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "pitchbook",
+    "url": "https://boards-api.greenhouse.io/v1/boards/pitchbook/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "pitchbookdata"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "nutanix": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "nutanix",
+    "url": "https://boards-api.greenhouse.io/v1/boards/nutanix/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "netflix": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "netflix",
+    "url": "https://boards-api.greenhouse.io/v1/boards/netflix/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "paypal": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "paypal",
+    "url": "https://boards-api.greenhouse.io/v1/boards/paypal/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "docusign": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "docusign",
+    "url": "https://boards-api.greenhouse.io/v1/boards/docusign/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "lever",
+    "token": "docusign",
+    "url": "https://api.lever.co/v0/postings/docusign?mode=json",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "intuit": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "intuit",
+    "url": "https://boards-api.greenhouse.io/v1/boards/intuit/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "remitly": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "remitly",
+    "url": "https://boards-api.greenhouse.io/v1/boards/remitly/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "twilio": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "twilio",
+    "url": "https://boards-api.greenhouse.io/v1/boards/twilio/jobs",
+    "total": 134,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "benchling": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "benchling",
+    "url": "https://boards-api.greenhouse.io/v1/boards/benchling/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "benchling",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/benchling",
+    "total": 55,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [
+    "benchling"
+   ],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "general-motors": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "generalmotors",
+    "url": "https://boards-api.greenhouse.io/v1/boards/generalmotors/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "general-motors",
+    "url": "https://boards-api.greenhouse.io/v1/boards/general-motors/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "general",
+    "url": "https://boards-api.greenhouse.io/v1/boards/general/jobs",
+    "total": 1,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "lyft": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "lyft",
+    "url": "https://boards-api.greenhouse.io/v1/boards/lyft/jobs",
+    "total": 183,
+    "intern": 20,
+    "sample_interns": [
+     "Applied Scientist Intern, PhD (Summer 2027)",
+     "Business Systems Engineer Intern, Finance Technology (Summer 2027)",
+     "Content Design Intern (Summer 2027)",
+     "Data Analyst Intern (Summer 2027)",
+     "Data Engineer Intern (Summer 2027)",
+     "Data Science Intern, Algorithms (Summer 2027 - SF/NYC)"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "rockwell-automation": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "rockwellautomation",
+    "url": "https://boards-api.greenhouse.io/v1/boards/rockwellautomation/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "rockwell-automation",
+    "url": "https://boards-api.greenhouse.io/v1/boards/rockwell-automation/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "rockwell",
+    "url": "https://boards-api.greenhouse.io/v1/boards/rockwell/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "unity": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "unity3d",
+    "url": "https://boards-api.greenhouse.io/v1/boards/unity3d/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "unity",
+    "url": "https://boards-api.greenhouse.io/v1/boards/unity/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "gem",
+    "token": "unity",
+    "url": "https://api.gem.com/job_board/v0/unity/job_posts/",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "qualtrics": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "qualtrics",
+    "url": "https://boards-api.greenhouse.io/v1/boards/qualtrics/jobs",
+    "total": 79,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "qualtrics",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/qualtrics",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "salesforce": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "salesforce",
+    "url": "https://boards-api.greenhouse.io/v1/boards/salesforce/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "samsara": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "samsara",
+    "url": "https://boards-api.greenhouse.io/v1/boards/samsara/jobs",
+    "total": 266,
+    "intern": 5,
+    "sample_interns": [
+     "Account Development Representative Intern - Atlanta",
+     "Account Development Representative Intern - Phoenix",
+     "Electrical Engineering Co-Op",
+     "Firmware Engineer Co-Op",
+     "Software Engineering Internship - San Francisco "
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "aurora": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "aurorainnovation",
+    "url": "https://boards-api.greenhouse.io/v1/boards/aurorainnovation/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "aurora",
+    "url": "https://boards-api.greenhouse.io/v1/boards/aurora/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "aurora-innovation",
+    "url": "https://boards-api.greenhouse.io/v1/boards/aurora-innovation/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "datadog": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "datadog",
+    "url": "https://boards-api.greenhouse.io/v1/boards/datadog/jobs",
+    "total": 430,
+    "intern": 8,
+    "sample_interns": [
+     "Applied Science Intern",
+     "IT Support Technician Intern",
+     "Product Management Intern",
+     "Product Management Intern",
+     "Research Science Intern (PhD)",
+     "Software Engineering Intern"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "airbnb": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "airbnb",
+    "url": "https://boards-api.greenhouse.io/v1/boards/airbnb/jobs",
+    "total": 177,
+    "intern": 1,
+    "sample_interns": [
+     "Strategic Finance & Analytics Intern (MBA)"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "yelp": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "yelp",
+    "url": "https://boards-api.greenhouse.io/v1/boards/yelp/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "mongodb": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "mongodb",
+    "url": "https://boards-api.greenhouse.io/v1/boards/mongodb/jobs",
+    "total": 396,
+    "intern": 1,
+    "sample_interns": [
+     "2027 - Software Engineer Intern, Dublin - 6 Month Internship"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "crowdstrike": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "crowdstrike",
+    "url": "https://boards-api.greenhouse.io/v1/boards/crowdstrike/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "okta": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "okta",
+    "url": "https://boards-api.greenhouse.io/v1/boards/okta/jobs",
+    "total": 389,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "gem",
+    "token": "okta",
+    "url": "https://api.gem.com/job_board/v0/okta/job_posts/",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "affirm": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "affirm",
+    "url": "https://boards-api.greenhouse.io/v1/boards/affirm/jobs",
+    "total": 215,
+    "intern": 3,
+    "sample_interns": [
+     "IT Engineer Intern (Early Careers Summer 2027)",
+     "Software Engineer Intern (Summer 2027)",
+     "Software Engineer (Machine Learning) Intern (Summer 2027)"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "affirm"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "atlassian": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "atlassian",
+    "url": "https://boards-api.greenhouse.io/v1/boards/atlassian/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "grubhub": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "grubhub",
+    "url": "https://boards-api.greenhouse.io/v1/boards/grubhub/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "geico": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "geico",
+    "url": "https://boards-api.greenhouse.io/v1/boards/geico/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "dell": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "delltechnologies",
+    "url": "https://boards-api.greenhouse.io/v1/boards/delltechnologies/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "dell-technologies",
+    "url": "https://boards-api.greenhouse.io/v1/boards/dell-technologies/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "dell",
+    "url": "https://boards-api.greenhouse.io/v1/boards/dell/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "doordash": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "doordashusa",
+    "url": "https://boards-api.greenhouse.io/v1/boards/doordashusa/jobs",
+    "total": 453,
+    "intern": 6,
+    "sample_interns": [
+     "Electrical Engineer, Intern - Labs (Summer 2027)",
+     "Machine Learning Intern (Masters) - Summer 2027",
+     "Machine Learning Intern (PhD) - Summer 2027",
+     "Product Design, Intern (Summer 2027)",
+     "Software Engineer, Intern - Labs (Summer 2027)",
+     "Software Engineer, Intern (Summer 2027) - US"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "doordash",
+    "url": "https://boards-api.greenhouse.io/v1/boards/doordash/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "gem",
+    "token": "doordash",
+    "url": "https://api.gem.com/job_board/v0/doordash/job_posts/",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "american-family": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "americanfamilyinsurance",
+    "url": "https://boards-api.greenhouse.io/v1/boards/americanfamilyinsurance/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "american-family-insurance",
+    "url": "https://boards-api.greenhouse.io/v1/boards/american-family-insurance/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "american",
+    "url": "https://boards-api.greenhouse.io/v1/boards/american/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "zendesk": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "zendesk",
+    "url": "https://boards-api.greenhouse.io/v1/boards/zendesk/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "gem",
+    "token": "zendesk",
+    "url": "https://api.gem.com/job_board/v0/zendesk/job_posts/",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "fidelity": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "fidelityinvestments",
+    "url": "https://boards-api.greenhouse.io/v1/boards/fidelityinvestments/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "fidelity-investments",
+    "url": "https://boards-api.greenhouse.io/v1/boards/fidelity-investments/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "fidelity",
+    "url": "https://boards-api.greenhouse.io/v1/boards/fidelity/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "intel": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "intel",
+    "url": "https://boards-api.greenhouse.io/v1/boards/intel/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "amd": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "amd",
+    "url": "https://boards-api.greenhouse.io/v1/boards/amd/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "robinhood": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "robinhood",
+    "url": "https://boards-api.greenhouse.io/v1/boards/robinhood/jobs",
+    "total": 151,
+    "intern": 2,
+    "sample_interns": [
+     "Fraud Operations Intern (Summer 2027)",
+     "Investment Analyst MBA Intern, Robinhood Ventures (Summer 2027)"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "robinhood"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "cisco": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "cisco",
+    "url": "https://boards-api.greenhouse.io/v1/boards/cisco/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "snowflake": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "snowflake",
+    "url": "https://boards-api.greenhouse.io/v1/boards/snowflake/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "snowflakecomputing",
+    "url": "https://boards-api.greenhouse.io/v1/boards/snowflakecomputing/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "snowflake",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/snowflake",
+    "total": 361,
+    "intern": 6,
+    "sample_interns": [
+     "Software Engineer Intern - Berlin (2026)",
+     "Software Engineer Intern - Zurich (2026)",
+     "SDR Intern - Munich ",
+     "SDR Intern - London",
+     "Product Marketing, AI-Powered Data Engineering Intern (Spring 2027)",
+     "Software Engineer Intern - Berlin (2027)"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [
+    "snowflake"
+   ],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "sig": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "susquehanna",
+    "url": "https://boards-api.greenhouse.io/v1/boards/susquehanna/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "john-deere": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "johndeere",
+    "url": "https://boards-api.greenhouse.io/v1/boards/johndeere/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "john-deere",
+    "url": "https://boards-api.greenhouse.io/v1/boards/john-deere/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "john",
+    "url": "https://boards-api.greenhouse.io/v1/boards/john/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "wolverine": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "wolverinetrading",
+    "url": "https://boards-api.greenhouse.io/v1/boards/wolverinetrading/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "wolverine",
+    "url": "https://boards-api.greenhouse.io/v1/boards/wolverine/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "wolverine-trading",
+    "url": "https://boards-api.greenhouse.io/v1/boards/wolverine-trading/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "radix": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "radixuniversity",
+    "url": "https://boards-api.greenhouse.io/v1/boards/radixuniversity/jobs",
+    "total": 8,
+    "intern": 1,
+    "sample_interns": [
+     "Quantitative Technologist (C++ Intern) "
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "radix",
+    "url": "https://boards-api.greenhouse.io/v1/boards/radix/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "radixtrading",
+    "url": "https://boards-api.greenhouse.io/v1/boards/radixtrading/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "radix-trading",
+    "url": "https://boards-api.greenhouse.io/v1/boards/radix-trading/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "radixuniversity"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "squarepoint": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "squarepointcapital",
+    "url": "https://boards-api.greenhouse.io/v1/boards/squarepointcapital/jobs",
+    "total": 91,
+    "intern": 6,
+    "sample_interns": [
+     "Campus Recruitment Specialist ",
+     "Intern Quant Researcher",
+     "Intern Software Developer - London - 2027",
+     "Intern Software Developer - Montreal - 2027",
+     "Intern Software Developer - Singapore - 2027",
+     "Intern Software Developer - Warsaw 2027"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "squarepoint",
+    "url": "https://boards-api.greenhouse.io/v1/boards/squarepoint/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "squarepoint-capital",
+    "url": "https://boards-api.greenhouse.io/v1/boards/squarepoint-capital/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "squarepointcapital"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "capstone": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "capstoneinvestmentadvisors",
+    "url": "https://boards-api.greenhouse.io/v1/boards/capstoneinvestmentadvisors/jobs",
+    "total": 16,
+    "intern": 8,
+    "sample_interns": [
+     "Summer 2027 - Execution Tech Internship ",
+     "Summer 2027 - Investment Internship LDN",
+     "Summer 2027 - Investment Internship NYC",
+     "Summer 2027 - Marketing & Communications Internship ",
+     "Summer 2027 - Quant Internship",
+     "Summer 2027 - Risk Internship "
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "capstone-investment-advisors",
+    "url": "https://boards-api.greenhouse.io/v1/boards/capstone-investment-advisors/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "capstone",
+    "url": "https://boards-api.greenhouse.io/v1/boards/capstone/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "xtx-markets": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "xtxmarketstechnologies",
+    "url": "https://boards-api.greenhouse.io/v1/boards/xtxmarketstechnologies/jobs",
+    "total": 7,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "xtxmarkets",
+    "url": "https://boards-api.greenhouse.io/v1/boards/xtxmarkets/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "xtx",
+    "url": "https://boards-api.greenhouse.io/v1/boards/xtx/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "xtx-markets",
+    "url": "https://boards-api.greenhouse.io/v1/boards/xtx-markets/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "xtxmarketstechnologies"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "instabase": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "instabase",
+    "url": "https://boards-api.greenhouse.io/v1/boards/instabase/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "instabase"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "yext": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "yext",
+    "url": "https://boards-api.greenhouse.io/v1/boards/yext/jobs",
+    "total": 24,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "gem",
+    "token": "yext",
+    "url": "https://api.gem.com/job_board/v0/yext/job_posts/",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "yext"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "workiva": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "workiva",
+    "url": "https://boards-api.greenhouse.io/v1/boards/workiva/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "immuta": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "immuta",
+    "url": "https://boards-api.greenhouse.io/v1/boards/immuta/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "lever",
+    "token": "immuta",
+    "url": "https://api.lever.co/v0/postings/immuta?mode=json",
+    "total": 14,
+    "intern": 5,
+    "sample_interns": [
+     "Full-Stack Engineering Internship - Summer 2027",
+     "Platform & Site Reliability Engineering Internship - Summer 2027",
+     "Product Engineering Intern - Summer 2027",
+     "Product Research Internship - Summer 2027",
+     "UX Design Internship - Summer 2027"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [
+    "immuta"
+   ],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "ukg": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "ukg",
+    "url": "https://boards-api.greenhouse.io/v1/boards/ukg/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "goldman-sachs": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "goldmansachs",
+    "url": "https://boards-api.greenhouse.io/v1/boards/goldmansachs/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "goldman-sachs",
+    "url": "https://boards-api.greenhouse.io/v1/boards/goldman-sachs/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "goldman",
+    "url": "https://boards-api.greenhouse.io/v1/boards/goldman/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "citadel": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "citadel",
+    "url": "https://boards-api.greenhouse.io/v1/boards/citadel/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "citadel-securities": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "citadelsecurities",
+    "url": "https://boards-api.greenhouse.io/v1/boards/citadelsecurities/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "citadel-securities",
+    "url": "https://boards-api.greenhouse.io/v1/boards/citadel-securities/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "citadel",
+    "url": "https://boards-api.greenhouse.io/v1/boards/citadel/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "jane-street": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "janestreet",
+    "url": "https://boards-api.greenhouse.io/v1/boards/janestreet/jobs",
+    "total": 221,
+    "intern": 5,
+    "sample_interns": [
+     "Campus Recruiter",
+     "Campus Recruiter, Early Careers Partnerships & Initiatives",
+     "Campus Recruiter, Early Careers Partnerships & Initiatives ",
+     "Campus Recruiter, Machine Learning and Quantitative Research",
+     "Campus Recruiter, Technology"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "jane-street",
+    "url": "https://boards-api.greenhouse.io/v1/boards/jane-street/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "jane",
+    "url": "https://boards-api.greenhouse.io/v1/boards/jane/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "jane",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/jane",
+    "total": 24,
+    "intern": 1,
+    "sample_interns": [
+     "Revenue Cycle Management Intern"
+    ]
+   },
+   {
+    "ats": "gem",
+    "token": "jane-street",
+    "url": "https://api.gem.com/job_board/v0/jane-street/job_posts/",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "imc": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "imc",
+    "url": "https://boards-api.greenhouse.io/v1/boards/imc/jobs",
+    "total": 171,
+    "intern": 23,
+    "sample_interns": [
+     "2027 EU Campus Programme Talent Community",
+     "Deep Learning Research Intern - 2027 - Sydney",
+     "Deep Learning Research Intern - Summer 2027 - Amsterdam",
+     "Deep Learning Research Intern - Summer 2027 - New York",
+     "EU Campus - Aarhus Hackahton IMCity",
+     "Hardware Machine Learning PhD Research Internship"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "imctrading",
+    "url": "https://boards-api.greenhouse.io/v1/boards/imctrading/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "imc-trading",
+    "url": "https://boards-api.greenhouse.io/v1/boards/imc-trading/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "two-sigma": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "twosigma",
+    "url": "https://boards-api.greenhouse.io/v1/boards/twosigma/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "two-sigma",
+    "url": "https://boards-api.greenhouse.io/v1/boards/two-sigma/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "two",
+    "url": "https://boards-api.greenhouse.io/v1/boards/two/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "hudson-river-trading": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "hrttalentcommunity",
+    "url": "https://boards-api.greenhouse.io/v1/boards/hrttalentcommunity/jobs",
+    "total": 3,
+    "intern": 2,
+    "sample_interns": [
+     "Campus Talent Community",
+     "FPGA Verification and Developer (Internships and Campus Full-time)"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "wehrtyou",
+    "url": "https://boards-api.greenhouse.io/v1/boards/wehrtyou/jobs",
+    "total": 86,
+    "intern": 10,
+    "sample_interns": [
+     "Algorithm Development (Quant Research & Trading) Internship \u2013 Summer 2027",
+     "Algorithm Development (Quant Research & Trading) PhD Internship \u2013 Summer 2027",
+     "Campus Recruiter",
+     "Campus Recruiter",
+     "Campus Recruiter",
+     "Campus Sourcer "
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "hudsonrivertrading",
+    "url": "https://boards-api.greenhouse.io/v1/boards/hudsonrivertrading/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "hrt",
+    "url": "https://boards-api.greenhouse.io/v1/boards/hrt/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "hudson-river-trading",
+    "url": "https://boards-api.greenhouse.io/v1/boards/hudson-river-trading/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "hudson",
+    "url": "https://boards-api.greenhouse.io/v1/boards/hudson/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "hrt",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/hrt",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "hrttalentcommunity"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "five-rings": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "fiveringsllc",
+    "url": "https://boards-api.greenhouse.io/v1/boards/fiveringsllc/jobs",
+    "total": 17,
+    "intern": 10,
+    "sample_interns": [
+     "Campus Full Time 2027 - Quantitative Trader",
+     "Campus Full Time 2027 - Quantitative Trader - Amsterdam",
+     "Campus Full Time 2027 - Quantitative Trader - London",
+     "Campus Full Time 2027 - Software Developer",
+     "Campus Full Time 2027 - Software Developer - London",
+     "Campus Full Time 2027 - Trading Operations Engineer"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "fiverings",
+    "url": "https://boards-api.greenhouse.io/v1/boards/fiverings/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "five-rings",
+    "url": "https://boards-api.greenhouse.io/v1/boards/five-rings/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "five",
+    "url": "https://boards-api.greenhouse.io/v1/boards/five/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "fiveringsllc"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "point72": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "point72",
+    "url": "https://boards-api.greenhouse.io/v1/boards/point72/jobs",
+    "total": 215,
+    "intern": 18,
+    "sample_interns": [
+     "2027 Point72 Academy Investment Analyst Summer Internship Program - Hong Kong",
+     "2027 Point72 Academy Investment Analyst Summer Internship Program - Japan",
+     "2027 Point72 Academy Investment Analyst Summer Internship Program - Japan (BCF)",
+     "2027 Summer Internship - Fundamental Researcher, Canvas",
+     "2027 Summer Internship - Investment Services",
+     "2027 Summer Internship - MS/PhD Data Scientist, Proprietary Research"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "point72"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "dv-trading": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "dvtrading",
+    "url": "https://boards-api.greenhouse.io/v1/boards/dvtrading/jobs",
+    "total": 74,
+    "intern": 20,
+    "sample_interns": [
+     "2027 Quantitative Research Intern (DV Equities)",
+     "2027 Software Developer Intern  (DV Equities)",
+     "AI Engineer Intern - Summer 2027",
+     "Client Platforms Engineer Intern - Summer 2027",
+     "Client Platforms Engineer Intern - Summer 2027",
+     "Client Platforms Engineer Intern - Summer 2027"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "dvtradingllc",
+    "url": "https://boards-api.greenhouse.io/v1/boards/dvtradingllc/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "dv-trading",
+    "url": "https://boards-api.greenhouse.io/v1/boards/dv-trading/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "dv",
+    "url": "https://boards-api.greenhouse.io/v1/boards/dv/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "voleon": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "thevoleongroup",
+    "url": "https://boards-api.greenhouse.io/v1/boards/thevoleongroup/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "voleon",
+    "url": "https://boards-api.greenhouse.io/v1/boards/voleon/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "the-voleon-group",
+    "url": "https://boards-api.greenhouse.io/v1/boards/the-voleon-group/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "the",
+    "url": "https://boards-api.greenhouse.io/v1/boards/the/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "lever",
+    "token": "voleon",
+    "url": "https://api.lever.co/v0/postings/voleon?mode=json",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "voleon",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/voleon",
+    "total": 59,
+    "intern": 2,
+    "sample_interns": [
+     "Software Engineer Intern - (Summer 2027)",
+     "Research Intern (London)"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "brevan-howard": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "brevanhoward",
+    "url": "https://boards-api.greenhouse.io/v1/boards/brevanhoward/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "brevan-howard",
+    "url": "https://boards-api.greenhouse.io/v1/boards/brevan-howard/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "brevan",
+    "url": "https://boards-api.greenhouse.io/v1/boards/brevan/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "walleye": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "walleyecapital",
+    "url": "https://boards-api.greenhouse.io/v1/boards/walleyecapital/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "walleye",
+    "url": "https://boards-api.greenhouse.io/v1/boards/walleye/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "walleye-capital",
+    "url": "https://boards-api.greenhouse.io/v1/boards/walleye-capital/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "aqr": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "aqr",
+    "url": "https://boards-api.greenhouse.io/v1/boards/aqr/jobs",
+    "total": 56,
+    "intern": 8,
+    "sample_interns": [
+     "2027 Business Development Summer Analyst ",
+     "2027 Engineering Summer Analyst",
+     "2027 Portfolio Implementation Summer Analyst",
+     "2027 Quantitative Prediction Markets Research Summer Analyst",
+     "2027 Research and Portfolio Management Engineering Summer Analyst",
+     "2027 Research Product Specialist Summer Analyst"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "aqrcapitalmanagement",
+    "url": "https://boards-api.greenhouse.io/v1/boards/aqrcapitalmanagement/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "aqr"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "zoox": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "zoox",
+    "url": "https://boards-api.greenhouse.io/v1/boards/zoox/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "lever",
+    "token": "zoox",
+    "url": "https://api.lever.co/v0/postings/zoox?mode=json",
+    "total": 238,
+    "intern": 14,
+    "sample_interns": [
+     "Contract  Student Worker - Data Analyst (Part-time)",
+     "Contract Student  Worker: Analyst (Full-time)",
+     "Contract Student Worker  \u2013 Firmware Engineer (FW Thermal/Body)",
+     "Contract Student Worker - Autonomy Safety Data Engineer",
+     "Contract Student Worker - Charging Infrastructure Partnerships",
+     "Contract Student Worker - Data Analyst (20 hrs/wk)"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [
+    "zoox"
+   ],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "graviton": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "gravitonresearchcapital",
+    "url": "https://boards-api.greenhouse.io/v1/boards/gravitonresearchcapital/jobs",
+    "total": 24,
+    "intern": 2,
+    "sample_interns": [
+     "Quantitative Researcher - 2027 Summer Internship ",
+     "Quantitative Researcher PhD - 2027 Internship "
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "graviton",
+    "url": "https://boards-api.greenhouse.io/v1/boards/graviton/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "graviton-research-capital",
+    "url": "https://boards-api.greenhouse.io/v1/boards/graviton-research-capital/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "geneva-trading": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "genevatrading",
+    "url": "https://boards-api.greenhouse.io/v1/boards/genevatrading/jobs",
+    "total": 14,
+    "intern": 6,
+    "sample_interns": [
+     "C++ Developer (Intern) ",
+     " PMO Data Engineering Intern ",
+     "Python Developer Intern",
+     "Quantitative Trading Internship \u2013 Summer 2027",
+     "Systems Support Analyst Intern",
+     "Trade Support Engineer Intern "
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "genevatradingusa",
+    "url": "https://boards-api.greenhouse.io/v1/boards/genevatradingusa/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "geneva-trading",
+    "url": "https://boards-api.greenhouse.io/v1/boards/geneva-trading/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "geneva",
+    "url": "https://boards-api.greenhouse.io/v1/boards/geneva/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "jump-trading": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "talent_community",
+    "url": "https://boards-api.greenhouse.io/v1/boards/talent_community/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "jumptrading",
+    "url": "https://boards-api.greenhouse.io/v1/boards/jumptrading/jobs",
+    "total": 101,
+    "intern": 40,
+    "sample_interns": [
+     "Campus AI/ML Researcher (Intern)",
+     "Campus AI Research Engineer \u2013 Deep Learning (Full-Time)",
+     "Campus AI Research Engineer - Deep Learning (Intern)",
+     "Campus AI Research Engineer (Full-Time)",
+     "Campus AI Research Engineer (Intern)",
+     "Campus AI Research Engineer \u2013 Research Automation (Intern)"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "jump-trading",
+    "url": "https://boards-api.greenhouse.io/v1/boards/jump-trading/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "jump",
+    "url": "https://boards-api.greenhouse.io/v1/boards/jump/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "jump",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/jump",
+    "total": 4,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "talent_community"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "seven-research": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "sevenresearch",
+    "url": "https://boards-api.greenhouse.io/v1/boards/sevenresearch/jobs",
+    "total": 9,
+    "intern": 4,
+    "sample_interns": [
+     "Algorithmic Developer - Summer Intern",
+     "Core Developer - Summer Intern",
+     "Deep Learning Researcher - Summer Intern",
+     "Quantitative Researcher - Summer Intern"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "seven-research",
+    "url": "https://boards-api.greenhouse.io/v1/boards/seven-research/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "seven",
+    "url": "https://boards-api.greenhouse.io/v1/boards/seven/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [
+    "sevenresearch"
+   ],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "voloridge": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "voloridge",
+    "url": "https://boards-api.greenhouse.io/v1/boards/voloridge/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "voloridgeinvestmentmanagement",
+    "url": "https://boards-api.greenhouse.io/v1/boards/voloridgeinvestmentmanagement/jobs",
+    "total": 11,
+    "intern": 3,
+    "sample_interns": [
+     "Quantitative Developer Intern 2027",
+     "Quantitative Research Intern 2027",
+     "Quantitative Trading Intern 2027"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "voloridge-investment-management",
+    "url": "https://boards-api.greenhouse.io/v1/boards/voloridge-investment-management/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "transmarket-group": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "transmarketgroup",
+    "url": "https://boards-api.greenhouse.io/v1/boards/transmarketgroup/jobs",
+    "total": 18,
+    "intern": 3,
+    "sample_interns": [
+     "Algorithmic Trader Intern",
+     "DevOps/SRE Intern",
+     "Quantitative Trader Intern"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "tmg",
+    "url": "https://boards-api.greenhouse.io/v1/boards/tmg/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "transmarket-group",
+    "url": "https://boards-api.greenhouse.io/v1/boards/transmarket-group/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "transmarket",
+    "url": "https://boards-api.greenhouse.io/v1/boards/transmarket/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "gts": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "gts",
+    "url": "https://boards-api.greenhouse.io/v1/boards/gts/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "globaltradingsystems",
+    "url": "https://boards-api.greenhouse.io/v1/boards/globaltradingsystems/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "gtsllc",
+    "url": "https://boards-api.greenhouse.io/v1/boards/gtsllc/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "kirin": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "kirin",
+    "url": "https://boards-api.greenhouse.io/v1/boards/kirin/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "kirin",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/kirin",
+    "total": 27,
+    "intern": 1,
+    "sample_interns": [
+     "VC Intern \u98ce\u9669\u6295\u8d44\u5b9e\u4e60\u751f"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "electronic-arts": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "electronicarts",
+    "url": "https://boards-api.greenhouse.io/v1/boards/electronicarts/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "ea",
+    "url": "https://boards-api.greenhouse.io/v1/boards/ea/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "electronic-arts",
+    "url": "https://boards-api.greenhouse.io/v1/boards/electronic-arts/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "electronic",
+    "url": "https://boards-api.greenhouse.io/v1/boards/electronic/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "epic-games": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "epicgames",
+    "url": "https://boards-api.greenhouse.io/v1/boards/epicgames/jobs",
+    "total": 135,
+    "intern": 23,
+    "sample_interns": [
+     "Backend Services Programmer Intern",
+     "Communications Intern",
+     "Data Science Intern",
+     "Engine Programmer Intern",
+     "Engine Programmer Intern",
+     "Frontend Programmer Intern"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "epic-games",
+    "url": "https://boards-api.greenhouse.io/v1/boards/epic-games/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "epic",
+    "url": "https://boards-api.greenhouse.io/v1/boards/epic/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "shopify": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "shopify",
+    "url": "https://boards-api.greenhouse.io/v1/boards/shopify/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "riot-games": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "riotgames",
+    "url": "https://boards-api.greenhouse.io/v1/boards/riotgames/jobs",
+    "total": 173,
+    "intern": 1,
+    "sample_interns": [
+     "Software Engineering Intern - Summer 2027 (Remote)"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "riot-games",
+    "url": "https://boards-api.greenhouse.io/v1/boards/riot-games/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "riot",
+    "url": "https://boards-api.greenhouse.io/v1/boards/riot/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "xai": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "xai",
+    "url": "https://boards-api.greenhouse.io/v1/boards/xai/jobs",
+    "total": 307,
+    "intern": 4,
+    "sample_interns": [
+     "Spring 2027 Business Operations Internship/Co-op",
+     "Spring 2027 Software Engineering Internship/Co-op",
+     "Summer 2027 Business Operations Internship/Co-op",
+     "Summer 2027 Software Engineering Internship/Co-op"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "red-hat": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "redhat",
+    "url": "https://boards-api.greenhouse.io/v1/boards/redhat/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "red-hat",
+    "url": "https://boards-api.greenhouse.io/v1/boards/red-hat/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "red",
+    "url": "https://boards-api.greenhouse.io/v1/boards/red/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "the-trade-desk": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "thetradedesk",
+    "url": "https://boards-api.greenhouse.io/v1/boards/thetradedesk/jobs",
+    "total": 103,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "the-trade-desk",
+    "url": "https://boards-api.greenhouse.io/v1/boards/the-trade-desk/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "the",
+    "url": "https://boards-api.greenhouse.io/v1/boards/the/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "together-ai": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "togetherai",
+    "url": "https://boards-api.greenhouse.io/v1/boards/togetherai/jobs",
+    "total": 78,
+    "intern": 11,
+    "sample_interns": [
+     "Hardware Security Engineer Intern (Summer 2027)",
+     "Research Intern, Frontier Agents (Summer 2027)",
+     "Research Intern, Frontier Agents (Winter 2027)",
+     "Research Intern, Frontier Speculative Decoding (Summer 2027)",
+     "Research Intern, Frontier Speculative Decoding (Winter 2027)",
+     "Research Intern, Inference (Summer 2027)"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "together",
+    "url": "https://boards-api.greenhouse.io/v1/boards/together/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "together-ai",
+    "url": "https://boards-api.greenhouse.io/v1/boards/together-ai/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "decagon": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "decagon",
+    "url": "https://boards-api.greenhouse.io/v1/boards/decagon/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "decagonai",
+    "url": "https://boards-api.greenhouse.io/v1/boards/decagonai/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "decagon",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/decagon",
+    "total": 135,
+    "intern": 1,
+    "sample_interns": [
+     "Engineering Intern (Summer 2027)"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "abridge": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "abridge",
+    "url": "https://boards-api.greenhouse.io/v1/boards/abridge/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "abridge",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/abridge",
+    "total": 44,
+    "intern": 1,
+    "sample_interns": [
+     "Member of Technical Staff, Intern"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "glean": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "gleanwork",
+    "url": "https://boards-api.greenhouse.io/v1/boards/gleanwork/jobs",
+    "total": 134,
+    "intern": 1,
+    "sample_interns": [
+     "Software Engineer, Intern (Summer 2027)"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "glean",
+    "url": "https://boards-api.greenhouse.io/v1/boards/glean/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "sierra": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "sierra",
+    "url": "https://boards-api.greenhouse.io/v1/boards/sierra/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "sierraai",
+    "url": "https://boards-api.greenhouse.io/v1/boards/sierraai/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "sierra",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/sierra",
+    "total": 187,
+    "intern": 2,
+    "sample_interns": [
+     "Software Engineer Intern, Agent (Summer 2027)",
+     "Software Engineer Intern, Agent (Summer 2027)"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "harvey": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "harvey",
+    "url": "https://boards-api.greenhouse.io/v1/boards/harvey/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "harveyai",
+    "url": "https://boards-api.greenhouse.io/v1/boards/harveyai/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "harvey",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/harvey",
+    "total": 341,
+    "intern": 3,
+    "sample_interns": [
+     "Software Engineering Intern (Summer 2027)",
+     "Law School Student Ambassador",
+     "Software Engineering Intern (Summer 2027)"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "deepgram": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "deepgram",
+    "url": "https://boards-api.greenhouse.io/v1/boards/deepgram/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "deepgram",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/deepgram",
+    "total": 91,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "mistral-ai": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "mistral",
+    "url": "https://boards-api.greenhouse.io/v1/boards/mistral/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "mistralai",
+    "url": "https://boards-api.greenhouse.io/v1/boards/mistralai/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "mistral-ai",
+    "url": "https://boards-api.greenhouse.io/v1/boards/mistral-ai/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "lever",
+    "token": "mistral",
+    "url": "https://api.lever.co/v0/postings/mistral?mode=json",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "sigma-computing": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "sigmacomputing",
+    "url": "https://boards-api.greenhouse.io/v1/boards/sigmacomputing/jobs",
+    "total": 75,
+    "intern": 6,
+    "sample_interns": [
+     "AI/ML PhD Intern (Summer 2027)",
+     "AI/ML PhD Intern (Summer 2027)",
+     "Software Engineering Intern (Summer 2027)",
+     "Software Engineering Intern (Summer 2027)",
+     "Technical Writer Intern (Summer 2027)",
+     "Technical Writer Intern (Summer 2027)"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "sigma-computing",
+    "url": "https://boards-api.greenhouse.io/v1/boards/sigma-computing/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "sigma",
+    "url": "https://boards-api.greenhouse.io/v1/boards/sigma/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "tanium": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "tanium",
+    "url": "https://boards-api.greenhouse.io/v1/boards/tanium/jobs",
+    "total": 73,
+    "intern": 7,
+    "sample_interns": [
+     "Cloud Security Intern",
+     "Revenue Operations Intern",
+     "Sales Intern \u2013\u00a0Summer 2027",
+     "Sales Intern \u2013\u00a0Summer 2027",
+     "Software Engineering Intern \u2013\u00a0Summer 2027",
+     "Technical Support Engineer (TSE) Intern"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "semgrep": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "semgrep",
+    "url": "https://boards-api.greenhouse.io/v1/boards/semgrep/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "r2c",
+    "url": "https://boards-api.greenhouse.io/v1/boards/r2c/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "semgrep",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/semgrep",
+    "total": 12,
+    "intern": 1,
+    "sample_interns": [
+     "Software Engineer Intern"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "whatnot": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "whatnot",
+    "url": "https://boards-api.greenhouse.io/v1/boards/whatnot/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "seatgeek": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "seatgeek",
+    "url": "https://boards-api.greenhouse.io/v1/boards/seatgeek/jobs",
+    "total": 37,
+    "intern": 3,
+    "sample_interns": [
+     "Data Analyst - Internship",
+     "Security Engineer - Internship",
+     "Software Engineer - Internship"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "talos": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "talostrading",
+    "url": "https://boards-api.greenhouse.io/v1/boards/talostrading/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "talos",
+    "url": "https://boards-api.greenhouse.io/v1/boards/talos/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "mercury": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "mercury",
+    "url": "https://boards-api.greenhouse.io/v1/boards/mercury/jobs",
+    "total": 77,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "mercury",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/mercury",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "postman": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "postman",
+    "url": "https://boards-api.greenhouse.io/v1/boards/postman/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "brex": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "brex",
+    "url": "https://boards-api.greenhouse.io/v1/boards/brex/jobs",
+    "total": 261,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "cockroach-labs": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "cockroachlabs",
+    "url": "https://boards-api.greenhouse.io/v1/boards/cockroachlabs/jobs",
+    "total": 17,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "cockroach-labs",
+    "url": "https://boards-api.greenhouse.io/v1/boards/cockroach-labs/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "cockroach",
+    "url": "https://boards-api.greenhouse.io/v1/boards/cockroach/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "1password": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "1password",
+    "url": "https://boards-api.greenhouse.io/v1/boards/1password/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "onepassword",
+    "url": "https://boards-api.greenhouse.io/v1/boards/onepassword/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "ashby",
+    "token": "1password",
+    "url": "https://api.ashbyhq.com/posting-api/job-board/1password",
+    "total": 76,
+    "intern": 4,
+    "sample_interns": [
+     "Finance Intern - Corporate Accounting & Tax - Winter 2027",
+     "Finance Intern - Finance Operations - Winter 2027",
+     "Finance Intern - Technical Accounting & Treasury - Winter 2027",
+     "Data Intern  - Product Analytics - Winter 2027"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "ccc": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "cccis",
+    "url": "https://boards-api.greenhouse.io/v1/boards/cccis/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "cccintelligentsolutions",
+    "url": "https://boards-api.greenhouse.io/v1/boards/cccintelligentsolutions/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "ccc-intelligent-solutions",
+    "url": "https://boards-api.greenhouse.io/v1/boards/ccc-intelligent-solutions/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "ccc",
+    "url": "https://boards-api.greenhouse.io/v1/boards/ccc/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "uber-freight": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "uberfreight",
+    "url": "https://boards-api.greenhouse.io/v1/boards/uberfreight/jobs",
+    "total": 68,
+    "intern": 3,
+    "sample_interns": [
+     "Account Management Intern - Summer 2027",
+     "Finance Operations Intern - Summer 2027",
+     "TM Operations Intern - Summer 2027"
+    ]
+   },
+   {
+    "ats": "greenhouse",
+    "token": "uber-freight",
+    "url": "https://boards-api.greenhouse.io/v1/boards/uber-freight/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "uber",
+    "url": "https://boards-api.greenhouse.io/v1/boards/uber/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "waabi": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "waabi",
+    "url": "https://boards-api.greenhouse.io/v1/boards/waabi/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "lever",
+    "token": "waabi",
+    "url": "https://api.lever.co/v0/postings/waabi?mode=json",
+    "total": 94,
+    "intern": 3,
+    "sample_interns": [
+     "2027 Intern, PhD Research Scientist",
+     "Research Internship/Co-op",
+     "Safety Methodologies Internship/Co-op 2027"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ },
+ "veeva": {
+  "hits": [
+   {
+    "ats": "greenhouse",
+    "token": "veeva",
+    "url": "https://boards-api.greenhouse.io/v1/boards/veeva/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "veevasystems",
+    "url": "https://boards-api.greenhouse.io/v1/boards/veevasystems/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "greenhouse",
+    "token": "veeva-systems",
+    "url": "https://boards-api.greenhouse.io/v1/boards/veeva-systems/jobs",
+    "total": 0,
+    "intern": 0,
+    "sample_interns": []
+   },
+   {
+    "ats": "lever",
+    "token": "veeva",
+    "url": "https://api.lever.co/v0/postings/veeva?mode=json",
+    "total": 935,
+    "intern": 3,
+    "sample_interns": [
+     "Implementation Consultant Intern",
+     "Intern Technical Consultant",
+     "Technology Consulting Intern - Entry-Level"
+    ]
+   }
+  ],
+  "capture_tokens": {
+   "greenhouse": [],
+   "lever": [],
+   "ashby": [],
+   "workable": [],
+   "gem": []
+  }
+ }
+}

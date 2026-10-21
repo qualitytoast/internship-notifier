@@ -1,0 +1,27 @@
+{
+  "key": "coreweave",
+  "name": "CoreWeave (Weights & Biases)",
+  "careers_url": "https://coreweave.com/careers",
+  "hiring_system": "greenhouse (5 boards: US, Europe, Canada, APAC, Weights & Biases)",
+  "checker": "greenhouse",
+  "settings": {
+    "boards": [
+      "coreweave",
+      "coreweaveu",
+      "coreweaveca",
+      "coreweaveapac",
+      "weights_and_biases"
+    ]
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/{coreweave,coreweaveu,coreweaveca,coreweaveapac,weights_and_biases}/jobs",
+  "feed_total": 428,
+  "page_total": 428,
+  "page_total_how": "Playwright renders (no filters): coreweave.com/careers '315 Jobs', /careers/eu '81 Jobs', /careers/ca '2 Jobs', /careers/apac '23 Jobs', /careers/weights-biases '7 Jobs'. Each page loads boards-api.greenhouse.io/v1/boards/<board>/jobs?content=true and its /careers/job?gh_jid=<id>&board=<board> links equal that board's feed ids.",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (boards-api.greenhouse.io: no matching rule)",
+  "notes": "The careers sub-nav ('Openings in the US / Europe / Canada / APAC / at Weights & Biases') is the source of the board list; tracking only coreweave + weights_and_biases would miss 106 jobs. Requisitions 1853 and 2160 are posted on both coreweave and coreweaveca (different job ids/locations). No student roles on any board today. See notes/coreweave.md.",
+  "checked_at": "2026-10-20T00:37:53Z"
+}

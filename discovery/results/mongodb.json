@@ -1,0 +1,21 @@
+{
+  "key": "mongodb",
+  "name": "MongoDB",
+  "careers_url": "https://www.mongodb.com/company/careers/see-jobs",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "mongodb"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/mongodb/jobs",
+  "feed_total": 396,
+  "page_total": 396,
+  "page_total_how": "Playwright render of https://www.mongodb.com/company/careers/see-jobs: pager 1..40 at 10 per page; pages 1-39 full, page 40 has 6 = 396. The page's GreenhouseV2 component is configured with feed api.greenhouse.io/v1/boards/mongodb/jobs?content=true, grnhsDept 0",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule; boards-api.greenhouse.io/robots.txt only disallows /embed/)",
+  "notes": "The Students & Graduates page uses the same board (grnhsDept 1). Job URLs www.mongodb.com/careers/job/?gh_jid=<id>; employment-type metadata 'Intern' is set.",
+  "checked_at": "2026-10-20T00:39:59Z"
+}

@@ -1,0 +1,21 @@
+{
+  "key": "squarepoint",
+  "name": "Squarepoint Capital",
+  "careers_url": "https://www.squarepoint-capital.com/open-opportunities",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "squarepointcapital"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/squarepointcapital/jobs",
+  "feed_total": 91,
+  "page_total": 91,
+  "page_total_how": "Playwright render of https://www.squarepoint-capital.com/open-opportunities with no filters (2026-10-20): 91 opportunity-details?id=<greenhouse id> links, id set equal to the API; the page itself fetches boards-api.greenhouse.io/v1/boards/squarepointcapital/jobs?content=true",
+  "intern_total": 5,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for boards-api.greenhouse.io; www.squarepoint-capital.com Allow: /",
+  "notes": "The bookmark had ?lvl=Internship (5 roles). Interns: Intern Quant Researcher (multi-city incl. New York) and Intern Software Developer London/Montreal/Singapore/Warsaw 2027; 1 with a US location.",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

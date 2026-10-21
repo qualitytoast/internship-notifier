@@ -1,0 +1,19 @@
+{
+  "key": "docusign",
+  "name": "DocuSign",
+  "careers_url": "https://careers.docusign.com/careers-home/jobs",
+  "hiring_system": "jibe (over iCIMS: uscareers/emeacareers/latamcareers/indiacareers/apjcareers/canadacareers-docusign.icims.com)",
+  "checker": "jibe",
+  "settings": {"host": "careers.docusign.com", "use_employment_type": true},
+  "feed": "GET https://careers.docusign.com/api/jobs?page=N&limit=100&internal=false (limit max 100; totalCount on every page; job = jobs[].data)",
+  "feed_total": 260,
+  "page_total": 259,
+  "page_total_how": "Playwright render of https://careers.docusign.com/careers-home/jobs (2026-10-20T00:10Z) showed '259 Results' / '1 – 10 of 259'; the page's own /api/jobs call said totalCount 259 while direct API calls before and after said 260 (live churn of 1).",
+  "intern_total": 17,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (Allow: /); crawl-delay: 5",
+  "notes": "Defines the shared jibe adapter (see notes/docusign.md). Never send internal=true (adds 9 internal-only postings). The bookmark's category 'University & New Grad' is gone (0 results); interns are category 'University' = tags1 'Intern' = employment_type INTERN (17, all US).",
+  "checked_at": "2026-10-20T00:20:00Z"
+}

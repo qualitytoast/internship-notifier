@@ -1,0 +1,21 @@
+{
+  "key": "imc",
+  "name": "IMC Trading",
+  "careers_url": "https://www.imc.com/eu/search-careers",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "imc"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/imc/jobs",
+  "feed_total": 171,
+  "page_total": 160,
+  "page_total_how": "Playwright render of https://www.imc.com/eu/search-careers (default Location 'All') showed 'Showing 10 of 160 jobs'; /us/search-careers defaults to 'Chicago, New York' (54), /ap/ to 'Seoul, Sydney' (35), /in/ to 'Mumbai' (17)",
+  "intern_total": 19,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for boards-api.greenhouse.io; www.imc.com Allow: /",
+  "notes": "Greenhouse is a superset of the site: 171 − 160 = 11 = 8 talent-community/event/interest-form postings without 'Worker Sub Type' + 1 unlisted Sydney role (absent from the page payload) + 2 flagged 'Is Hidden Job?' = true. The bookmark /us/careers/jobs is a 404; job pages are /us/careers/jobs/<id>. Metadata 'Worker Sub Type' (Intern 17, Working Student 2) is not read by the adapter's employment-type lookup ('worker sub type' ≠ 'worker type'); titles carry intern/student anyway. 8 US internships (Chicago/New York).",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

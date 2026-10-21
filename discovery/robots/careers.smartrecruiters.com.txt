@@ -1,0 +1,811 @@
+# status 200
+<!DOCTYPE html><html lang="en"><head><!--[if IE]>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<![endif]--><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="google-site-verification" content="Jf2xiNAVuDLbSvVgIAWwA_AhdS52vsM-1yUsd_bHqGM"><link rel="shortcut icon" href="https://av-www.smartrecruiters.com/sr-logo/1.0.16/winston/favicon.ico" sizes="32x32"/><link rel="icon" type="image/svg+xml" href="https://av-www.smartrecruiters.com/sr-logo/1.0.16/winston/favicon.svg"/><link rel="apple-touch-icon" href="https://av-www.smartrecruiters.com/sr-logo/1.0.16/winston/apple-touch-icon.png"/><title>SmartRecruiters Job Search</title><base href="/"><link rel="stylesheet" href="https://css-www.smartrecruiters.com/sr-jobs/static/sr-jobs-client-app/styles.89b9528ce2429b1a.css"><!-- OneTrust Cookies Consent Notice start--><script type="text/javascript" src="https://cdn-ukwest.onetrust.com/consent/84a6b101-f480-412f-88ba-6a73ba1787bd/OtAutoBlock.js"></script><script type="text/javascript" src="https://cdn-ukwest.onetrust.com/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="84a6b101-f480-412f-88ba-6a73ba1787bd"></script><script type="text/javascript">function cleanInactiveCookies() {
+  var config = Optanon.GetDomainData();
+  var allPossibleGroups = config.Groups.filter(function (group) {
+    return group.hasOwnProperty('ShowInPopup') && group.ShowInPopup == true;
+  });
+  var activeGroups = OptanonActiveGroups.split(',').filter(function (item) {
+    return item.length > 0
+  })
+  var inactiveGroups = allPossibleGroups.filter(function (item) {
+    return item.hasOwnProperty('OptanonGroupId') && activeGroups.indexOf(item.OptanonGroupId) < 0;
+  });
+  inactiveGroups.forEach(function (group) {
+    group.Cookies.forEach(function (cookie) {
+      if (cookie.hasOwnProperty('Name') && document.cookie.indexOf(cookie.Name) > -1) {
+        document.cookie = cookie.Name + "=; Expires=Thu, 01 Jan 1970 00:00:00 UTC; Path=/";
+      }
+    });
+  });
+}
+function OptanonWrapper() {
+  cleanInactiveCookies();
+  Optanon.OnConsentChanged(cleanInactiveCookies)
+}</script><!-- OneTrust Cookies Consent Notice end--><script class="optanon-category-C0002" type="text/plain">var _prum = [['id', '542ea79fabe53de42bffc798'], ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+  var s = document.getElementsByTagName('script')[0], p = document.createElement('script');
+  p.async = 'async';
+  p.src = '//rum-static.pingdom.net/prum.min.js';
+  s.parentNode.insertBefore(p, s);
+})();</script><script class="optanon-category-C0002" type="text/plain">/* empiric version 2.3.40 */
+var empiric = (function (exports) {
+  'use strict';
+
+  function _arrayLikeToArray(r, a) {
+    (null == a || a > r.length) && (a = r.length);
+    for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
+    return n;
+  }
+  function _arrayWithHoles(r) {
+    if (Array.isArray(r)) return r;
+  }
+  function _arrayWithoutHoles(r) {
+    if (Array.isArray(r)) return _arrayLikeToArray(r);
+  }
+  function _assertThisInitialized(e) {
+    if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    return e;
+  }
+  function _callSuper(t, o, e) {
+    return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e));
+  }
+  function _classCallCheck(a, n) {
+    if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function");
+  }
+  function _construct(t, e, r) {
+    if (_isNativeReflectConstruct()) return Reflect.construct.apply(null, arguments);
+    var o = [null];
+    o.push.apply(o, e);
+    var p = new (t.bind.apply(t, o))();
+    return r && _setPrototypeOf(p, r.prototype), p;
+  }
+  function _defineProperties(e, r) {
+    for (var t = 0; t < r.length; t++) {
+      var o = r[t];
+      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o);
+    }
+  }
+  function _createClass(e, r, t) {
+    return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+      writable: !1
+    }), e;
+  }
+  function _defineProperty(e, r, t) {
+    return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+      value: t,
+      enumerable: !0,
+      configurable: !0,
+      writable: !0
+    }) : e[r] = t, e;
+  }
+  function _getPrototypeOf(t) {
+    return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) {
+      return t.__proto__ || Object.getPrototypeOf(t);
+    }, _getPrototypeOf(t);
+  }
+  function _inherits(t, e) {
+    if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
+    t.prototype = Object.create(e && e.prototype, {
+      constructor: {
+        value: t,
+        writable: !0,
+        configurable: !0
+      }
+    }), Object.defineProperty(t, "prototype", {
+      writable: !1
+    }), e && _setPrototypeOf(t, e);
+  }
+  function _isNativeFunction(t) {
+    try {
+      return -1 !== Function.toString.call(t).indexOf("[native code]");
+    } catch (n) {
+      return "function" == typeof t;
+    }
+  }
+  function _isNativeReflectConstruct() {
+    try {
+      var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+    } catch (t) {}
+    return (_isNativeReflectConstruct = function () {
+      return !!t;
+    })();
+  }
+  function _iterableToArray(r) {
+    if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r);
+  }
+  function _iterableToArrayLimit(r, l) {
+    var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+    if (null != t) {
+      var e,
+        n,
+        i,
+        u,
+        a = [],
+        f = !0,
+        o = !1;
+      try {
+        if (i = (t = t.call(r)).next, 0 === l) {
+          if (Object(t) !== t) return;
+          f = !1;
+        } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
+      } catch (r) {
+        o = !0, n = r;
+      } finally {
+        try {
+          if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return;
+        } finally {
+          if (o) throw n;
+        }
+      }
+      return a;
+    }
+  }
+  function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+  function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+  function ownKeys(e, r) {
+    var t = Object.keys(e);
+    if (Object.getOwnPropertySymbols) {
+      var o = Object.getOwnPropertySymbols(e);
+      r && (o = o.filter(function (r) {
+        return Object.getOwnPropertyDescriptor(e, r).enumerable;
+      })), t.push.apply(t, o);
+    }
+    return t;
+  }
+  function _objectSpread2(e) {
+    for (var r = 1; r < arguments.length; r++) {
+      var t = null != arguments[r] ? arguments[r] : {};
+      r % 2 ? ownKeys(Object(t), !0).forEach(function (r) {
+        _defineProperty(e, r, t[r]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) {
+        Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
+      });
+    }
+    return e;
+  }
+  function _possibleConstructorReturn(t, e) {
+    if (e && ("object" == typeof e || "function" == typeof e)) return e;
+    if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined");
+    return _assertThisInitialized(t);
+  }
+  function _setPrototypeOf(t, e) {
+    return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) {
+      return t.__proto__ = e, t;
+    }, _setPrototypeOf(t, e);
+  }
+  function _slicedToArray(r, e) {
+    return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest();
+  }
+  function _toConsumableArray(r) {
+    return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread();
+  }
+  function _toPrimitive(t, r) {
+    if ("object" != typeof t || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+      var i = e.call(t, r || "default");
+      if ("object" != typeof i) return i;
+      throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return ("string" === r ? String : Number)(t);
+  }
+  function _toPropertyKey(t) {
+    var i = _toPrimitive(t, "string");
+    return "symbol" == typeof i ? i : i + "";
+  }
+  function _unsupportedIterableToArray(r, a) {
+    if (r) {
+      if ("string" == typeof r) return _arrayLikeToArray(r, a);
+      var t = {}.toString.call(r).slice(8, -1);
+      return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0;
+    }
+  }
+  function _wrapNativeSuper(t) {
+    var r = "function" == typeof Map ? new Map() : void 0;
+    return _wrapNativeSuper = function (t) {
+      if (null === t || !_isNativeFunction(t)) return t;
+      if ("function" != typeof t) throw new TypeError("Super expression must either be null or a function");
+      if (void 0 !== r) {
+        if (r.has(t)) return r.get(t);
+        r.set(t, Wrapper);
+      }
+      function Wrapper() {
+        return _construct(t, arguments, _getPrototypeOf(this).constructor);
+      }
+      return Wrapper.prototype = Object.create(t.prototype, {
+        constructor: {
+          value: Wrapper,
+          enumerable: !1,
+          writable: !0,
+          configurable: !0
+        }
+      }), _setPrototypeOf(Wrapper, t);
+    }, _wrapNativeSuper(t);
+  }
+
+  var TRACKING_ENDPOINT_PATH = '/sink/';
+
+  /**
+   * Builds baseUrl based on a given application alias.
+   * @param host - current location host
+   * @returns {string}
+   */
+  var baseUrlFromAlias = function baseUrlFromAlias(host) {
+    var fallback = 'rum.int';
+    var envMappings = [['rum', ['www', 'prod', 'my', 'jobs', 'join', 'partners', 'track', 'onboarding']], ['rum.cert', ['cert', 'sandbox', 'my.sandbox', 'onboarding.sandbox']]];
+    var supportedDomains = ['smartrecruiters.com', 'smartr.me'];
+    var toDomainWithTLD = function toDomainWithTLD() {
+      var host = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+      return host.split('.').slice(-2).join('.');
+    };
+    var toSubdomain = function toSubdomain() {
+      var host = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+      return host.replace(".".concat(toDomainWithTLD(host)), '');
+    };
+    var toApiOrigin = function toApiOrigin(subdomain) {
+      return "https://".concat(subdomain, ".smartrecruiters.com");
+    };
+    var isSupportedDomain = function isSupportedDomain(host) {
+      return supportedDomains.indexOf(toDomainWithTLD(host)) > -1;
+    };
+    var anyStartsWithSubdomain = function anyStartsWithSubdomain(collection) {
+      return function (key) {
+        return collection.some(function (it) {
+          return key === it;
+        });
+      };
+    };
+    var apiSubdomainByEnv = function apiSubdomainByEnv(subdomain) {
+      return envMappings.reduce(function (acc, _ref) {
+        var _ref2 = _slicedToArray(_ref, 2),
+          apiSubdomain = _ref2[0],
+          envs = _ref2[1];
+        return anyStartsWithSubdomain(envs)(subdomain) ? apiSubdomain : acc;
+      }, fallback);
+    };
+    return isSupportedDomain(host) ? toApiOrigin(apiSubdomainByEnv(toSubdomain(host))) : undefined;
+  };
+
+  /**
+   * Builds tracking endpoint url based on provided arguments.
+   * @param {String} [optional] baseUrl Base url for the tracking app
+   * @param {String} [optional] endpointPath The tracking endpoint path
+   * @param {Object} [optional] appAlias An application alias (sub-domain) name, to use for dynamic
+   * @return {*} String
+   */
+  var buildURL = function buildURL(_ref3) {
+    var baseUrl = _ref3.baseUrl,
+      _ref3$endpointPath = _ref3.endpointPath,
+      endpointPath = _ref3$endpointPath === void 0 ? TRACKING_ENDPOINT_PATH : _ref3$endpointPath,
+      host = _ref3.host;
+    if (baseUrl) {
+      return "".concat(baseUrl).concat(endpointPath);
+    }
+    return "".concat(baseUrlFromAlias(host)).concat(endpointPath);
+  };
+
+  var initTa = function initTa(_ref) {
+    var apiUrl = _ref.apiUrl;
+    if (!window || !document) {
+      throw new Error('TA should be called in browser context!');
+    }
+    var host = window.location.host;
+    return buildURL({
+      apiUrl: apiUrl,
+      host: host
+    });
+  };
+
+  var Logger = /*#__PURE__*/function () {
+    function Logger(verbose) {
+      _classCallCheck(this, Logger);
+      this.verbose = verbose || false;
+    }
+    return _createClass(Logger, null, [{
+      key: "info",
+      value: function info(msg) {
+        // eslint-disable-next-line no-console
+        return console && console.log(msg);
+      }
+    }, {
+      key: "warn",
+      value: function warn(msg) {
+        // eslint-disable-next-line no-console
+        return console && console.warn(msg);
+      }
+    }, {
+      key: "error",
+      value: function error(msg) {
+        // eslint-disable-next-line no-console
+        return console && console.error(msg);
+      }
+    }]);
+  }();
+
+  var getEmployee = function getEmployee() {
+    var employee = window.SRCONST && window.SRCONST.employee ? window.SRCONST.employee : {};
+    var companyId = employee.companyId,
+      id = employee.id,
+      role = employee.role;
+    return {
+      companyId: companyId,
+      employeeId: id,
+      employeeRole: role
+    };
+  };
+
+  var TenantType = {
+    COMPANY: 'COMPANY',
+    PARTNER: 'PARTNER',
+    CANDIDATE: 'CANDIDATE',
+    SR_ADMIN: 'SR_ADMIN'
+  };
+
+  var AuthorType = {
+    SYSTEM: 'SYSTEM',
+    EMPLOYEE: 'EMPLOYEE',
+    CANDIDATE: 'CANDIDATE',
+    PARTNER: 'PARTNER',
+    EXTERNAL: 'EXTERNAL',
+    SR_ADMIN: 'SR_ADMIN'
+  };
+
+  /**
+   * @typedef {Object} EmpiricConfig
+   * @property {boolean} [isInitialized] - Whether Empiric has been initialized
+   * @property {boolean} [dummyMode] - Whether to run in dummy mode (no actual tracking)
+   * @property {boolean} [dot] - Enable dot tracking
+   * @property {boolean} [ta] - Enable tracking API
+   * @property {boolean} [keepDeviceIdInPersistentCookie] - Store device ID in persistent cookie
+   * @property {string} [trackingApiUrl] - Tracking API URL
+   * @property {string} [authorId] - Author/user ID
+   * @property {string} [authorType] - Author type (e.g., EMPLOYEE)
+   * @property {string} [tenantId] - Tenant/company ID
+   * @property {string} [tenantType] - Tenant type (e.g., COMPANY)
+   */
+
+  var DEFAULT_ID = 'ANONYMOUS';
+  var defaultEmpiricConfig = {
+    isInitialized: false,
+    dummyMode: false,
+    dot: true,
+    ta: true,
+    keepDeviceIdInPersistentCookie: false,
+    trackingApiUrl: undefined,
+    authorId: getEmployee().employeeId || DEFAULT_ID,
+    authorType: AuthorType.EMPLOYEE,
+    tenantId: getEmployee().companyId || DEFAULT_ID,
+    tenantType: TenantType.COMPANY
+  };
+  var configInit = function configInit() {
+    /*
+     * We want to allow reinitialization of empiric if authorID and tenantID are equal to DEFAULT_ID
+     * We can get authorId/tenantID from SRCONST that got loaded later for some reason
+     * Worst case scenario, we will get back to defaultEmpiricConfig state
+     * Author: Marcin Czarkowski (25/01/2023)
+     */
+
+    // eslint-disable-next-line max-len
+    if (window.empiricConfig && (window.empiricConfig.authorId !== DEFAULT_ID || window.empiricConfig.tenantId !== DEFAULT_ID)) {
+      return;
+    }
+    window.empiricConfig = _objectSpread2({}, defaultEmpiricConfig);
+  };
+
+  /**
+   * @returns {EmpiricConfig}
+   */
+  var getEmpiricConfig = function getEmpiricConfig() {
+    return window.empiricConfig;
+  };
+
+  /**
+   * @param {Partial<EmpiricConfig>} config
+   * @returns {EmpiricConfig}
+   */
+  var setEmpiricConfig = function setEmpiricConfig(config) {
+    window.empiricConfig = _objectSpread2(_objectSpread2({}, window.empiricConfig), config);
+    return window.empiricConfig;
+  };
+  configInit();
+
+  /**
+   * @param {Partial<import('./config').EmpiricConfig>} [customConfig]
+   * @returns {import('./config').EmpiricConfig|undefined}
+   */
+  var init = function init(customConfig) {
+    var empiricConfig = setEmpiricConfig(customConfig);
+    if (empiricConfig.isInitialized) {
+      Logger.info('Empiric already initialized');
+      return;
+    }
+    if (empiricConfig.dummyMode) {
+      Logger.info('Init Empiric in dummy mode.');
+      return;
+    }
+    empiricConfig.isInitialized = true;
+    try {
+      if (empiricConfig.ta) {
+        setEmpiricConfig({
+          trackingApiUrl: initTa({})
+        });
+      }
+      return empiricConfig;
+    } catch (e) {
+      Logger.error(e);
+    }
+  };
+
+  var EmpiricError = /*#__PURE__*/function (_Error) {
+    function EmpiricError(message, err) {
+      var _this;
+      _classCallCheck(this, EmpiricError);
+      _this = _callSuper(this, EmpiricError);
+      _this.message = "".concat(_this.constructor.name, ": ").concat(message);
+      _this.name = _this.constructor.name;
+      _this.err = err;
+      return _this;
+    }
+    _inherits(EmpiricError, _Error);
+    return _createClass(EmpiricError);
+  }(/*#__PURE__*/_wrapNativeSuper(Error));
+
+  var getTrackingOptions = function getTrackingOptions() {
+    if (!window.SRCONST) {
+      throw new EmpiricError('SRCONST unavailable. ' + 'SRCONST must be available on window object before running initForBO');
+    }
+    if (!window.SRCONST.externalServicesConfig) {
+      throw new EmpiricError('Please update @sr/connect version in order to use externalServicesConfig from SRCONST');
+    }
+    var _window$SRCONST$exter = window.SRCONST.externalServicesConfig,
+      ta = _window$SRCONST$exter.ta,
+      trackingAvailable = _window$SRCONST$exter.trackingAvailable;
+    return {
+      dummyMode: !trackingAvailable,
+      ta: ta
+    };
+  };
+
+  /**
+   * @param {Partial<import('./config').EmpiricConfig>} [customConfig]
+   * @returns {import('./config').EmpiricConfig|undefined}
+   */
+  var initForBO = function initForBO() {
+    var customConfig = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var trackingConfig = getTrackingOptions();
+    var config = _objectSpread2(_objectSpread2({}, trackingConfig), customConfig);
+    return init(config);
+  };
+
+  /**
+   * @return {*} void
+   */
+  var send = function send() {
+    Logger.warn('empiric.send is deprecated and does not store tracing events anymore.' + ' Please use empiric.sendTrackingEvent');
+  };
+
+  /**
+   * Builds request data payload compatible with `trackingApi` endpoint.
+   * @param {String} eventCategory The name of the event category associated with the event
+   * @param {String} eventName The name of the event
+   * @param {Object} eventAttributes An object containing event attributes for the given event
+   * @param {Object} additionalAttributes An object containing additional attributes like deviceId sessionId
+   * @param {Object} empiricConfig Object containing common setup for the tracker
+   * @return {Object} The payload object
+   */
+  var buildPayload = function buildPayload(_ref, empiricConfig) {
+    var eventCategory = _ref.eventCategory,
+      eventName = _ref.eventName,
+      _ref$eventAttributes = _ref.eventAttributes,
+      eventAttributes = _ref$eventAttributes === void 0 ? {} : _ref$eventAttributes,
+      _ref$additionalAttrib = _ref.additionalAttributes,
+      additionalAttributes = _ref$additionalAttrib === void 0 ? {} : _ref$additionalAttrib;
+    return {
+      authorId: empiricConfig.authorId,
+      authorType: empiricConfig.authorType,
+      eventCategory: eventCategory,
+      eventDate: eventAttributes.eventTimestamp || Date.now(),
+      eventName: eventName,
+      tenantId: empiricConfig.tenantId,
+      tenantType: empiricConfig.tenantType || TenantType.COMPANY,
+      attributes: _objectSpread2(_objectSpread2({}, eventAttributes), additionalAttributes)
+    };
+  };
+
+  var oneYear = 365 * 24 * 3600 * 1000;
+
+  /**
+   * Utility class for storing value in cookie
+   */
+  var CookieStorage = /*#__PURE__*/function () {
+    /**
+     * Constructor for cookie storage
+     * @param cookieName under which value will be stored
+     * @param cookieSettings settings for storage
+     * @param cookieSettings.secure sets whether cookie should be secure (false should be made only for tests)
+     * @param cookieSettings.session determines whether cookie will be session one or persistent for a year
+     */
+    function CookieStorage(cookieName, cookieSettings) {
+      _classCallCheck(this, CookieStorage);
+      var settings = _objectSpread2({
+        secure: true,
+        session: true
+      }, cookieSettings);
+      this.cookieName = cookieName;
+      this.secureAttribute = settings.secure ? 'secure;' : '';
+      this.expiresAttribute = settings.session ? '' : "expires=".concat(new Date(Date.now() + oneYear).toUTCString());
+    }
+    return _createClass(CookieStorage, [{
+      key: "loadValue",
+      value: function loadValue() {
+        var _this = this;
+        return document.cookie.split(';').reduce(function (prev, c) {
+          var _c$split = c.split('='),
+            _c$split2 = _slicedToArray(_c$split, 2),
+            cookieName = _c$split2[0],
+            cookieValue = _c$split2[1];
+          return cookieName.trim() === _this.cookieName ? cookieValue : prev;
+        }, undefined);
+      }
+    }, {
+      key: "saveValue",
+      value: function saveValue(cookieValue) {
+        document.cookie = "".concat(this.cookieName, "=").concat(cookieValue, ";samesite=lax;").concat(this.secureAttribute).concat(this.expiresAttribute);
+      }
+    }]);
+  }();
+
+  var base64Chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
+
+  /**
+   * Generates random id string
+   * @returns {string} pseudorandom id of size 22
+   */
+  var randomId = function randomId() {
+    return _toConsumableArray(Array(22).keys()).map(function () {
+      return base64Chars.charAt(Math.floor(Math.random() * 64));
+    }).join('');
+  };
+
+  /**
+   * Constant for name of cookie used to store device id
+   * @type {string}
+   */
+  var SR_TRACKING_COOKIE_NAME = 'sr_ta_did';
+
+  /**
+   * Constant for name of cookie used to store session id
+   * @type {string}
+   */
+  var SR_DWH_SESSION_ID_COOKIE_NAME = 'sr_dwh_session_id';
+
+  /**
+   * Calculates device id. Either generate new string value and store it before returns or loads saved value.
+   * @param config settings for device id calculation
+   * @param config.session determines whether generated device it will same during session
+   * or for year (assuming no cache clean)
+   * @param config.secure sets whether value stored in https context (false should be made only for tests)
+   * @returns {string} loaded or generated device id
+   */
+  var generateDeviceId = function generateDeviceId(config) {
+    var cookieSettings = _objectSpread2({
+      secure: true,
+      session: true
+    }, config);
+    var cookieStorage = new CookieStorage(SR_TRACKING_COOKIE_NAME, cookieSettings);
+    var existingCookie = cookieStorage.loadValue();
+    if (existingCookie) {
+      return existingCookie;
+    }
+    return randomId();
+  };
+  var storeDeviceId = function storeDeviceId(deviceId, config) {
+    var cookieSettings = _objectSpread2({
+      secure: true,
+      session: true
+    }, config);
+    var cookieStorage = new CookieStorage(SR_TRACKING_COOKIE_NAME, cookieSettings);
+    cookieStorage.saveValue(deviceId);
+  };
+  var getSessionId = function getSessionId() {
+    var cookieStorage = new CookieStorage(SR_DWH_SESSION_ID_COOKIE_NAME, {});
+    var existingCookie = cookieStorage.loadValue();
+    if (existingCookie) {
+      return existingCookie;
+    }
+    return null;
+  };
+
+  function getAdditionalAttributes(empiricConfig, passDeviceId) {
+    var additionalAttributes = {};
+    if (passDeviceId) {
+      var deviceId = generateDeviceId({
+        session: !empiricConfig.keepDeviceIdInPersistentCookie
+      });
+      var config = {
+        session: !empiricConfig.keepDeviceIdInPersistentCookie
+      };
+      storeDeviceId(deviceId, config);
+      additionalAttributes.deviceId = deviceId;
+    }
+    var sessionId = getSessionId();
+    if (sessionId) {
+      additionalAttributes.sessionId = sessionId;
+    }
+    return additionalAttributes;
+  }
+  function sendRequest(empiricConfig, eventCategory, eventName, eventAttributes, passDeviceId) {
+    var additionalAttributes = getAdditionalAttributes(empiricConfig, passDeviceId);
+    request(empiricConfig.trackingApiUrl, buildPayload({
+      eventCategory: eventCategory,
+      eventName: eventName,
+      eventAttributes: eventAttributes,
+      additionalAttributes: additionalAttributes
+    }, empiricConfig));
+  }
+
+  /**
+   * Sends tracking events to `tracking-api`.
+   * @param {String} eventCategory The name of the event category associated with the event
+   * @param {String} eventName The name of the event
+   * @param {Object} eventAttributes An object containing additional attributes for the given event
+   * @param {Boolean} passDeviceId Flag indicating necessity of passing device id in event attributes
+   * @return {*} Void
+   */
+  var trackingApi = function trackingApi(eventCategory, eventName) {
+    var eventAttributes = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+    var passDeviceId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+    sendRequest(getEmpiricConfig(), eventCategory, eventName, eventAttributes, passDeviceId);
+  };
+  function request(url, payload) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', url, true);
+    xhr.addEventListener('error', function () {
+      if (xhr.status >= 400 && xhr.status < 500) {
+        // eslint-disable-next-line no-console
+        console.warn("BAD_REQUEST, invalid event payload: ".concat(JSON.stringify(payload)));
+      } else {
+        // eslint-disable-next-line no-console
+        console.error("Unable to send event to ".concat(url));
+      }
+    });
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(payload));
+  }
+
+  var noCategory = 'NO_CATEGORY';
+
+  /**
+   * @typedef {Object} TrackingEventParams
+   * @property {string} name - Event name (required)
+   * @property {string} [category] - Event category
+   * @property {Object} [props] - Additional properties
+   */
+
+  /**
+   * @param {TrackingEventParams} [params] - Tracking event parameters
+   * @param {boolean} [passDeviceId] - Whether to pass device ID
+   * @returns {string|undefined}
+   * @throws {Error} If `params.name` is missing
+   */
+  var sendTrackingEvent = function sendTrackingEvent() {
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      name = _ref.name,
+      _ref$category = _ref.category,
+      category = _ref$category === void 0 ? noCategory : _ref$category,
+      _ref$props = _ref.props,
+      props = _ref$props === void 0 ? {} : _ref$props;
+    var passDeviceId = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+    var empiricConfig = getEmpiricConfig();
+    if (!name) {
+      throw new Error('EmpiricError: Cannot sendTrackingEvent without event name.');
+    }
+    if (empiricConfig.dummyMode) {
+      return "sendTrackingEvent ".concat(name, " in dummy mode");
+    }
+    try {
+      if (empiricConfig.ta) {
+        trackingApi(category, name, props, passDeviceId);
+      }
+    } catch (e) {
+      Logger.error(e);
+    }
+  };
+
+  var PageViewEventCategory = {
+    BACKOFFICE_PAGE_VIEW: 'Backoffice Page View',
+    CANDIDATE_PORTAL_PAGE_VIEW: 'Candidate Portal Page View',
+    PARTNER_PORTAL_PAGE_VIEW: 'Partner Portal Page View',
+    NEW_HIRE_PORTAL_PAGE_VIEW: 'New Hire Portal Page View',
+    OTHER_PAGE_VIEW: 'Other Page View',
+    SR_ADMIN_PAGE_VIEW: 'SrAdmin Page View'
+  };
+
+  var getWindowLocation = function getWindowLocation() {
+    return window.location;
+  };
+
+  function defaultTo(value, defaultValue) {
+    return value ? value : defaultValue;
+  }
+
+  var NO_USER_AGENT = 'empiric_no_user_agent';
+  var getUserAgent = function getUserAgent() {
+    return window.navigator && window.navigator.userAgent ? window.navigator.userAgent : NO_USER_AGENT;
+  };
+
+  var PAGE_VISIT_EVENT_NAME = 'Page Visited';
+  var UNDEFINED_PAGE_NAME = 'UNDEFINED_PAGE_NAME';
+
+  /**
+   * @typedef {Object} PageVisitEventParams
+   * @property {string} [category] - Page view event category
+   * @property {string} [pageName] - Page name
+   */
+
+  /**
+   * @param {PageVisitEventParams} [params] - Page visit event parameters
+   * @returns {{name: string, category: string, props: Object}}
+   */
+  var sendPageVisitEvent = function sendPageVisitEvent() {
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      category = _ref.category,
+      pageName = _ref.pageName;
+    var _getWindowLocation = getWindowLocation(),
+      hash = _getWindowLocation.hash,
+      host = _getWindowLocation.host,
+      href = _getWindowLocation.href,
+      origin = _getWindowLocation.origin,
+      pathname = _getWindowLocation.pathname;
+    if (!category || !pageName) {
+      Logger.warn('Warning: You are sending page visit event without category/pageName. ' + 'Check Empiric documentation.');
+    }
+    var event = {
+      name: PAGE_VISIT_EVENT_NAME,
+      category: defaultTo(category, PageViewEventCategory.OTHER_PAGE_VIEW),
+      props: {
+        pageName: defaultTo(pageName, UNDEFINED_PAGE_NAME),
+        hash: hash,
+        host: host,
+        href: href,
+        origin: origin,
+        pathname: pathname,
+        userAgent: getUserAgent()
+      }
+    };
+    sendTrackingEvent(event);
+    return event;
+  };
+
+  exports.AuthorType = AuthorType;
+  exports.PageViewEventCategory = PageViewEventCategory;
+  exports.TenantType = TenantType;
+  exports.init = init;
+  exports.initForBO = initForBO;
+  exports.send = send;
+  exports.sendPageVisitEvent = sendPageVisitEvent;
+  exports.sendTrackingEvent = sendTrackingEvent;
+
+  Object.defineProperty(exports, '__esModule', { value: true });
+
+  return exports;
+
+})({});
+if (typeof module !== 'undefined' && typeof require !== 'undefined') { module.exports = empiric;}
+//# sourceMappingURL=empiric.js.map
+</script><script class="optanon-category-C0002" type="text/plain">window.empiric.init({
+  dummyMode: false,
+  ga: false,
+  dot: false,
+  ta: true,
+  authorId: '[ANONYMOUS]',
+  tenantId: '[ANONYMOUS]',
+  tenantType: 'CANDIDATE',
+  authorType: 'CANDIDATE'
+})</script></head><body class="spl-bg-page spl-overflow-y-scroll"><div class="site"><header class="site-header"><div class="spl-wrapper"><h1 class="header-title--hideOffscreen">SmartRecruiters Jobs</h1><img class="sr-header-logo" src="https://av-www.smartrecruiters.com/sr-logo/1.0.16/sr-sap/wordmark.svg" alt="logo SmartRecruiters"></div></header><main class="site-container"><app-root></app-root></main><footer class="site-footer spl-bg-secondary spl-border-t spl-border-solid spl-border-primary spl-py-3"><div class="spl-wrapper"><div class="site-copyrights"><span class="sr-footer">Powered by<img class="sr-footer-logo" src="https://av-www.smartrecruiters.com/sr-logo/1.0.16/sr-sap/wordmark.svg" alt="logo SmartRecruiters"></span><!-- OneTrust Cookies Settings button--><button class="ot-sdk-show-settings spl-bg-transparent spl-border-none spl-p-0 spl-m-0 spl-cursor-pointer spl-float-right"></button></div></div></footer></div><script type="module" crossorigin="anonymous" src="https://js-www.smartrecruiters.com/sr-jobs/static/sr-jobs-client-app/main.82524db3b920d9f1.js"></script><script type="module" crossorigin="anonymous" src="https://js-www.smartrecruiters.com/sr-jobs/static/sr-jobs-client-app/polyfills.07931f6a1ef76c2e.js"></script><script type="module" crossorigin="anonymous" src="https://js-www.smartrecruiters.com/sr-jobs/static/sr-jobs-client-app/runtime.0773c0b5c2a9e35c.js"></script><script type="module" crossorigin="anonymous" src="https://js-www.smartrecruiters.com/sr-jobs/static/sr-jobs-client-app/vendor.96c8d46c6931f7e9.js"></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4d3ee896da11107',t:'MTc5MjQ1NjQxMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

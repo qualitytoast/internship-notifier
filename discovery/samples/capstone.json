@@ -1,0 +1,640 @@
+{
+ "_note": "Two different companies. greenhouse_capstoneinvestmentadvisors: raw GET boards-api.greenhouse.io/v1/boards/capstoneinvestmentadvisors/jobs (Capstone Investment Advisors, capstoneco.com). workday_capstonedc: raw POST capstonedc.wd501.myworkdayjobs.com/wday/cxs/capstonedc/Capstone/jobs body {appliedFacets:{},limit:20,offset:0,searchText:''} (Capstone DC policy firm, capstonedc.com; the bookmarked site).",
+ "observed": "2026-10-20T00:37:34Z",
+ "greenhouse_capstoneinvestmentadvisors": {
+  "jobs": [
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/capstoneinvestmentadvisors/jobs/8817742002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6528971002,
+    "location": {
+     "name": "New York, New York"
+    },
+    "metadata": null,
+    "id": 8817742002,
+    "updated_at": "2026-09-17T15:35:56-04:00",
+    "requisition_id": "294",
+    "title": "Associate, Treasury Quant - #294",
+    "company_name": "Capstone Investment Advisors",
+    "first_published": "2026-09-17T15:35:56-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/capstoneinvestmentadvisors/jobs/8871713002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 6552327002,
+    "location": {
+     "name": "London, England"
+    },
+    "metadata": null,
+    "id": 8871713002,
+    "updated_at": "2026-10-06T15:01:30-04:00",
+    "requisition_id": "301",
+    "title": " Desktop Support",
+    "company_name": "Capstone Investment Advisors",
+    "first_published": "2026-10-06T15:01:30-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/capstoneinvestmentadvisors/jobs/8790908002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 6390226002,
+    "location": {
+     "name": "New York, New York"
+    },
+    "metadata": null,
+    "id": 8790908002,
+    "updated_at": "2026-09-23T11:41:56-04:00",
+    "requisition_id": "274",
+    "title": "Enterprise Software Engineer",
+    "company_name": "Capstone Investment Advisors",
+    "first_published": "2026-09-09T16:18:20-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/capstoneinvestmentadvisors/jobs/8814670002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 6390226002,
+    "location": {
+     "name": "London, England"
+    },
+    "metadata": null,
+    "id": 8814670002,
+    "updated_at": "2026-09-23T11:41:56-04:00",
+    "requisition_id": "274",
+    "title": "Enterprise Software Engineer",
+    "company_name": "Capstone Investment Advisors",
+    "first_published": "2026-09-16T11:48:46-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/capstoneinvestmentadvisors/jobs/8831940002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 6535470002,
+    "location": {
+     "name": "London, England"
+    },
+    "metadata": null,
+    "id": 8831940002,
+    "updated_at": "2026-10-14T10:55:54-04:00",
+    "requisition_id": "298",
+    "title": "Management Accounting ",
+    "company_name": "Capstone Investment Advisors",
+    "first_published": "2026-09-22T15:27:06-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/capstoneinvestmentadvisors/jobs/8757422002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 6502941002,
+    "location": {
+     "name": "London, England"
+    },
+    "metadata": null,
+    "id": 8757422002,
+    "updated_at": "2026-10-08T12:11:42-04:00",
+    "requisition_id": "291",
+    "title": "Senior Risk Engineer",
+    "company_name": "Capstone Investment Advisors",
+    "first_published": "2026-08-28T13:19:58-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/capstoneinvestmentadvisors/jobs/8487462002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 6390226002,
+    "location": {
+     "name": "London, England"
+    },
+    "metadata": null,
+    "id": 8487462002,
+    "updated_at": "2026-09-23T11:41:56-04:00",
+    "requisition_id": "274",
+    "title": "Software Engineer, Treasury",
+    "company_name": "Capstone Investment Advisors",
+    "first_published": "2026-03-31T13:28:41-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/capstoneinvestmentadvisors/jobs/8387489002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 6254460002,
+    "location": {
+     "name": "London, England"
+    },
+    "metadata": null,
+    "id": 8387489002,
+    "updated_at": "2026-09-15T18:32:23-04:00",
+    "requisition_id": "248",
+    "title": "Sr Quantitative Analyst",
+    "company_name": "Capstone Investment Advisors",
+    "first_published": "2026-01-22T15:27:37-05:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/capstoneinvestmentadvisors/jobs/8882130002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6556954002,
+    "location": {
+     "name": "New York, New York"
+    },
+    "metadata": null,
+    "id": 8882130002,
+    "updated_at": "2026-10-09T15:13:07-04:00",
+    "requisition_id": "303",
+    "title": "Summer 2027 - Execution Tech Internship ",
+    "company_name": "Capstone Investment Advisors",
+    "first_published": "2026-10-09T15:13:07-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/capstoneinvestmentadvisors/jobs/8828058002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6533667002,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 8828058002,
+    "updated_at": "2026-09-30T15:42:21-04:00",
+    "requisition_id": "297",
+    "title": "Summer 2027 - Investment Internship LDN",
+    "company_name": "Capstone Investment Advisors",
+    "first_published": "2026-09-21T16:18:00-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/capstoneinvestmentadvisors/jobs/8827973002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6533629002,
+    "location": {
+     "name": "New York, New York"
+    },
+    "metadata": null,
+    "id": 8827973002,
+    "updated_at": "2026-09-21T16:18:37-04:00",
+    "requisition_id": "295",
+    "title": "Summer 2027 - Investment Internship NYC",
+    "company_name": "Capstone Investment Advisors",
+    "first_published": "2026-09-21T15:59:09-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/capstoneinvestmentadvisors/jobs/8888414002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6559775002,
+    "location": {
+     "name": "New York, New York"
+    },
+    "metadata": null,
+    "id": 8888414002,
+    "updated_at": "2026-10-14T11:57:24-04:00",
+    "requisition_id": "307",
+    "title": "Summer 2027 - Marketing & Communications Internship ",
+    "company_name": "Capstone Investment Advisors",
+    "first_published": "2026-10-14T11:57:24-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/capstoneinvestmentadvisors/jobs/8859054002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6546437002,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 8859054002,
+    "updated_at": "2026-10-09T15:17:44-04:00",
+    "requisition_id": "299",
+    "title": "Summer 2027 - Quant Internship",
+    "company_name": "Capstone Investment Advisors",
+    "first_published": "2026-09-30T15:41:10-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/capstoneinvestmentadvisors/jobs/8888123002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6559705002,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 8888123002,
+    "updated_at": "2026-10-14T10:44:26-04:00",
+    "requisition_id": "306",
+    "title": "Summer 2027 - Risk Internship ",
+    "company_name": "Capstone Investment Advisors",
+    "first_published": "2026-10-14T10:44:26-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/capstoneinvestmentadvisors/jobs/8867730002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6550462002,
+    "location": {
+     "name": "London, New York"
+    },
+    "metadata": null,
+    "id": 8867730002,
+    "updated_at": "2026-10-05T05:45:16-04:00",
+    "requisition_id": "300",
+    "title": "Summer 2027 - Risk Tech Internship",
+    "company_name": "Capstone Investment Advisors",
+    "first_published": "2026-10-05T05:45:16-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/capstoneinvestmentadvisors/jobs/8888090002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6559695002,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 8888090002,
+    "updated_at": "2026-10-14T10:12:31-04:00",
+    "requisition_id": "305",
+    "title": "Summer 2027 - Tech Enterprise Internship",
+    "company_name": "Capstone Investment Advisors",
+    "first_published": "2026-10-14T10:12:31-04:00",
+    "language": "en",
+    "application_deadline": null
+   }
+  ],
+  "meta": {
+   "total": 16
+  }
+ },
+ "workday_capstonedc": {
+  "total": 14,
+  "jobPostings": [
+   {
+    "title": "Associate, Outreach & Events",
+    "externalPath": "/job/Washington-DC/Associate--Outreach---Events_JR100040",
+    "locationsText": "2 Locations",
+    "postedOn": "Posted 14 Days Ago",
+    "bulletFields": [
+     "JR100040"
+    ]
+   },
+   {
+    "title": "Research Analyst Associate Program (Summer 2027 Start)",
+    "externalPath": "/job/Washington-DC/Research-Analyst-Associate-Program--Summer-2027-Start-_JR100039",
+    "locationsText": "Washington, DC",
+    "postedOn": "Posted 21 Days Ago",
+    "bulletFields": [
+     "JR100039"
+    ]
+   },
+   {
+    "title": "Senior Associate, Energy Policy & Investments (Environmentals)",
+    "externalPath": "/job/New-York-NY/Senior-Associate--Energy-Policy---Investments--Environmentals-_JR100038",
+    "locationsText": "New York, NY",
+    "postedOn": "Posted 25 Days Ago",
+    "bulletFields": [
+     "JR100038"
+    ]
+   },
+   {
+    "title": "Senior Associate, Energy Policy & Investment (Oil & Gas)",
+    "externalPath": "/job/Washington-DC/Senior-Associate--Energy-Policy---Investment_JR100037",
+    "locationsText": "Washington, DC",
+    "postedOn": "Posted 28 Days Ago",
+    "bulletFields": [
+     "JR100037"
+    ]
+   },
+   {
+    "title": "Senior Associate, European Energy Policy & Investment",
+    "externalPath": "/job/Paris/Senior-Associate--European-Energy-Policy---Investment_JR100036",
+    "locationsText": "2 Locations",
+    "postedOn": "Posted 30+ Days Ago",
+    "bulletFields": [
+     "JR100036"
+    ]
+   },
+   {
+    "title": "Senior Associate, Healthcare Policy & Investment",
+    "externalPath": "/job/Washington-DC/Senior-Associate--Healthcare-Policy---Investment_JR100033",
+    "locationsText": "Washington, DC",
+    "postedOn": "Posted 30+ Days Ago",
+    "bulletFields": [
+     "JR100033"
+    ]
+   },
+   {
+    "title": "Associate, Financial Services Investment & Policy",
+    "externalPath": "/job/Washington-DC/Associate--Financial-Services-Investment---Policy_JR100031",
+    "locationsText": "Washington, DC",
+    "postedOn": "Posted 30+ Days Ago",
+    "bulletFields": [
+     "JR100031"
+    ]
+   },
+   {
+    "title": "Vice President, Private Equity Business Development, Energy",
+    "externalPath": "/job/Washington-DC/Vice-President--Private-Equity-Business-Development--Energy_JR100030",
+    "locationsText": "2 Locations",
+    "postedOn": "Posted 30+ Days Ago",
+    "bulletFields": [
+     "JR100030"
+    ]
+   },
+   {
+    "title": "Senior Vice President, EU Electricity, Utilities, and Renewables Policy",
+    "externalPath": "/job/Brussels/Senior-Vice-President--European-Energy--Policy---Investment_JR100026",
+    "locationsText": "2 Locations",
+    "postedOn": "Posted 30+ Days Ago",
+    "bulletFields": [
+     "JR100026"
+    ]
+   },
+   {
+    "title": "Vice President, Accounting",
+    "externalPath": "/job/Washington-DC/Vice-President--Accounting_JR100024",
+    "locationsText": "2 Locations",
+    "postedOn": "Posted 30+ Days Ago",
+    "bulletFields": [
+     "JR100024"
+    ]
+   },
+   {
+    "title": "Director, Energy, Commercial Due Diligence",
+    "externalPath": "/job/Washington-DC/Director--Energy--Commercial-Due-Diligence_JR100010",
+    "locationsText": "Washington, DC",
+    "postedOn": "Posted 30+ Days Ago",
+    "bulletFields": [
+     "JR100010"
+    ]
+   },
+   {
+    "title": "Director, Energy Policy & Investment, Power & Utilities",
+    "externalPath": "/job/Washington-DC/Director--Energy-Policy---Investment--Power---Utilities_JR100005",
+    "locationsText": "Washington, DC",
+    "postedOn": "Posted 30+ Days Ago",
+    "bulletFields": [
+     "JR100005"
+    ]
+   },
+   {
+    "title": "Senior Vice President, Commercial Due Diligence, Aerospace & Defense",
+    "externalPath": "/job/Washington-DC/Senior-Vice-President--Commercial-Due-Diligence--Aerospace---Defense_JR100020",
+    "locationsText": "Washington, DC",
+    "postedOn": "Posted 30+ Days Ago",
+    "bulletFields": [
+     "JR100020"
+    ]
+   },
+   {
+    "title": "Senior Associate, Healthcare Policy & Investment (Pharma)",
+    "externalPath": "/job/Washington-DC/Senior-Associate--Healthcare-Policy---Investment--Pharma-_JR100023",
+    "locationsText": "Washington, DC",
+    "postedOn": "Posted 30+ Days Ago",
+    "bulletFields": [
+     "JR100023"
+    ]
+   }
+  ],
+  "facets": [
+   {
+    "facetParameter": "workerSubType",
+    "descriptor": "Job Type",
+    "values": [
+     {
+      "descriptor": "Regular",
+      "id": "fa0b787176211000d317b79f6f080000",
+      "count": 14
+     }
+    ]
+   },
+   {
+    "facetParameter": "timeType",
+    "descriptor": "Time Type",
+    "values": [
+     {
+      "descriptor": "Full time",
+      "id": "483a13e491421001b703c898ecae0000",
+      "count": 14
+     }
+    ]
+   },
+   {
+    "facetParameter": "locationMainGroup",
+    "values": [
+     {
+      "facetParameter": "locations",
+      "descriptor": "Locations",
+      "values": [
+       {
+        "descriptor": "Brussels",
+        "id": "f6a9f2ae3cd51001b4a003a551540000",
+        "count": 1
+       },
+       {
+        "descriptor": "London",
+        "id": "3bddf47a1c2e1001717156022af40000",
+        "count": 2
+       },
+       {
+        "descriptor": "New York",
+        "id": "fa0b787176211000d35f38492b870000",
+        "count": 1
+       },
+       {
+        "descriptor": "New York, NY",
+        "id": "eccd1a5f284c10021922f9c136dc0000",
+        "count": 3
+       },
+       {
+        "descriptor": "Paris",
+        "id": "3bddf47a1c2e100171715b68952e0000",
+        "count": 1
+       },
+       {
+        "descriptor": "Washington, DC",
+        "id": "e5e85f35ecfb1000e9a91a175b120000",
+        "count": 11
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "userAuthenticated": false
+ }
+}

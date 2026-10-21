@@ -1,0 +1,21 @@
+{
+  "key": "cloudflare",
+  "name": "Cloudflare",
+  "careers_url": "https://www.cloudflare.com/careers/jobs/",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "cloudflare"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/cloudflare/jobs",
+  "feed_total": 436,
+  "page_total": 436,
+  "page_total_how": "Playwright render of https://www.cloudflare.com/careers/jobs/ (no filters) showed 'Showing 25 of 436 roles'; the page itself fetches boards-api.greenhouse.io/v1/boards/cloudflare/jobs",
+  "intern_total": 3,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule; boards-api.greenhouse.io/robots.txt only disallows /embed/)",
+  "notes": "Page loads the board API directly. location.name is often just 'In-Office'/'Hybrid' (city sometimes only in the title), so use offices[] from the detail call for the real location.",
+  "checked_at": "2026-10-20T00:39:24Z"
+}

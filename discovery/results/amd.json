@@ -1,0 +1,19 @@
+{
+  "key": "amd",
+  "name": "AMD",
+  "careers_url": "https://careers.amd.com/careers-home/jobs",
+  "hiring_system": "jibe (over iCIMS: careers-amd, global-external-amd, canadacareers-amd, campus-amd, campuscanada-amd, globalcampus-amd)",
+  "checker": "jibe",
+  "settings": {"host": "careers.amd.com", "use_employment_type": false},
+  "feed": "GET https://careers.amd.com/api/jobs?page=N&limit=100&internal=false (13 pages; totalCount on every page)",
+  "feed_total": 1281,
+  "page_total": 1281,
+  "page_total_how": "Playwright render of https://careers.amd.com/careers-home/jobs (2026-10-20T00:18Z) showed '1281 Results' / 'of 1281'; the bookmark's students site https://careers.amd.com/students/jobs showed '110 Results' = API with categories=Student / Intern / Temp (110).",
+  "intern_total": 111,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (Allow: /); crawl-delay: 5",
+  "notes": "The /students site is the same Jibe API filtered by categories='Student / Intern / Temp' (110); track the unfiltered feed (it also holds 93338 'Engineering Placement Intern' filed under Engineering). Interns have employment_type null; tags4 names the iCIMS portal (Campus US/Canada/Global = 111). ~3.3 MB per 100 jobs, 13 requests at 5 s.",
+  "checked_at": "2026-10-20T00:18:00Z"
+}

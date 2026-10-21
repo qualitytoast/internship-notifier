@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://cccis.wd1.myworkdayjobs.com/broadbean_external/siteMap.xml
+Sitemap: https://cccis.wd1.myworkdayjobs.com/CCCIS/siteMap.xml
+
+User-agent: *
+Allow: /broadbean_external/
+Allow: /CCCIS/
+Disallow: /refreshFacet/

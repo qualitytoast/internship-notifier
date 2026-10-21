@@ -1,0 +1,21 @@
+{
+  "key": "seven-research",
+  "name": "Seven Research",
+  "careers_url": "https://www.sevenresearch.com/careers",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "sevenresearch"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/sevenresearch/jobs",
+  "feed_total": 9,
+  "page_total": 9,
+  "page_total_how": "Plain GET of https://www.sevenresearch.com/careers (2026-10-20): 9 unique job-boards.greenhouse.io/sevenresearch/jobs/<id> links equal to the API ids; the hosted board showed '9 jobs' (capture 2026-10-19)",
+  "intern_total": 4,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for boards-api.greenhouse.io; www.sevenresearch.com no matching rule",
+  "notes": "Company careers page found (the seed was the hosted Greenhouse board). 4 'Summer Intern' roles in New York (Algorithmic Developer, Core Developer, Deep Learning Researcher, Quantitative Researcher).",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

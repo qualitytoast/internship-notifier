@@ -1,0 +1,21 @@
+{
+  "key": "zoox",
+  "name": "Zoox",
+  "careers_url": "https://zoox.com/careers",
+  "hiring_system": "lever",
+  "checker": "lever",
+  "settings": {
+    "site": "zoox"
+  },
+  "feed": "GET https://api.lever.co/v0/postings/zoox?mode=json",
+  "feed_total": 239,
+  "page_total": 238,
+  "page_total_how": "Playwright render of https://zoox.com/careers showed 'Showing 5 out of 238 jobs'; the page fetches api.lever.co/v0/postings/zoox?limit=999 (238 then, 239 at the final fetch 30 min later)",
+  "intern_total": 14,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (Allow: /; api.lever.co/robots.txt asks Crawl-delay: 1)",
+  "notes": "All 14 student roles are titled 'Contract Student Worker ...' (commitment 'Contract'); none say 'intern' today. The response is ~2.4 MB (descriptions).",
+  "checked_at": "2026-10-20T00:39:55Z"
+}

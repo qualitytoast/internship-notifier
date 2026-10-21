@@ -1,0 +1,82 @@
+# status 200
+# Default - Allow all crawlers
+User-agent: *
+Disallow:
+
+# OpenAI (ChatGPT)
+User-agent: GPTBot
+Disallow:
+
+User-agent: ChatGPT-User
+Disallow:
+
+# Anthropic (Claude)
+User-agent: anthropic-ai
+Disallow:
+
+User-agent: Claude-Web
+Disallow:
+
+# Common Crawl (used by many AI models for training)
+User-agent: CCBot
+Disallow:
+
+# Google AI
+User-agent: Google-Extended
+Disallow:
+
+User-agent: GoogleOther
+Disallow:
+
+# Perplexity
+User-agent: PerplexityBot
+Disallow:
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Disallow:
+
+User-agent: FacebookBot
+Disallow:
+
+# Bytedance (TikTok)
+User-agent: Bytespider
+Disallow:
+
+# Apple
+User-agent: Applebot-Extended
+Disallow:
+
+# Cohere
+User-agent: cohere-ai
+Disallow:
+
+# Amazon
+User-agent: Amazonbot
+Disallow:
+
+# Diffbot
+User-agent: Diffbot
+Disallow:
+
+# Other AI crawlers
+User-agent: anthropic-ai
+Disallow:
+
+User-agent: ClaudeBot
+Disallow:
+
+User-agent: omgili
+Disallow:
+
+User-agent: omgilibot
+Disallow:
+
+User-agent: YouBot
+Disallow:
+
+User-agent: Timpibot
+Disallow:
+
+
+Sitemap: https://www.abridge.com/sitemap.xml

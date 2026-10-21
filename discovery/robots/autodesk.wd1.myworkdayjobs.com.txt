@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://autodesk.wd1.myworkdayjobs.com/Ext/siteMap.xml
+Sitemap: https://autodesk.wd1.myworkdayjobs.com/uni/siteMap.xml
+
+User-agent: *
+Allow: /Ext/
+Allow: /uni/
+Disallow: /refreshFacet/

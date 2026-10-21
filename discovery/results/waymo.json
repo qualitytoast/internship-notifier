@@ -1,0 +1,21 @@
+{
+  "key": "waymo",
+  "name": "Waymo",
+  "careers_url": "https://careers.withwaymo.com/jobs/search",
+  "hiring_system": "greenhouse (behind a Clinch front)",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "waymo"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/waymo/jobs?content=true",
+  "feed_total": 366,
+  "page_total": 366,
+  "page_total_how": "Playwright render of https://careers.withwaymo.com/jobs/search (2026-10-20T00:34Z) showed 'Displaying 1 - 30 of 366 in total'; the bookmark's employment-type (intern) view showed 'of 64' = the 64 intern titles on the board.",
+  "intern_total": 64,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW boards-api.greenhouse.io (no matching rule); careers.withwaymo.com disallows /api/ and /*?gh_jid=* (Crawl-delay 5)",
+  "notes": "Clinch front answers the first page load with HTTP 202 + an AWS WAF JS challenge (a real browser passes it); the Greenhouse board is the open source and matches exactly. The board's absolute_url (https://careers.withwaymo.com/jobs?gh_jid=<id>) is robots-disallowed: use it only as an email link, never fetch it (or link https://job-boards.greenhouse.io/waymo/jobs/<id>).",
+  "checked_at": "2026-10-20T00:35:00Z"
+}

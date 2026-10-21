@@ -1,0 +1,603 @@
+{
+ "_note": "captured 2026-10-20 (UTC); trimmed",
+ "greenhouse_jobs": {
+  "request": "GET https://boards-api.greenhouse.io/v1/boards/twilio/jobs",
+  "response": {
+   "jobs": [
+    {
+     "absolute_url": "https://job-boards.greenhouse.io/twilio/jobs/8023560",
+     "data_compliance": [
+      {
+       "type": "gdpr",
+       "requires_consent": false,
+       "requires_processing_consent": false,
+       "requires_retention_consent": false,
+       "retention_period": null,
+       "demographic_data_consent_applies": true
+      }
+     ],
+     "internal_job_id": 3478436,
+     "location": {
+      "name": "Remote - Ireland"
+     },
+     "metadata": [
+      {
+       "id": 259693,
+       "name": "Job Code",
+       "value": "NP2IT6582-1",
+       "value_type": "single_select"
+      }
+     ],
+     "id": 8023560,
+     "updated_at": "2026-10-19T10:32:30-04:00",
+     "requisition_id": "50551",
+     "title": "Security Engineer, Incident Response",
+     "company_name": "Twilio",
+     "first_published": "2026-07-10T12:12:13-04:00",
+     "language": "en",
+     "application_deadline": null
+    },
+    {
+     "absolute_url": "https://job-boards.greenhouse.io/twilio/jobs/8055481",
+     "data_compliance": [
+      {
+       "type": "gdpr",
+       "requires_consent": false,
+       "requires_processing_consent": false,
+       "requires_retention_consent": false,
+       "retention_period": null,
+       "demographic_data_consent_applies": true
+      }
+     ],
+     "internal_job_id": 3478436,
+     "location": {
+      "name": "Remote - United Kingdom"
+     },
+     "metadata": [
+      {
+       "id": 259693,
+       "name": "Job Code",
+       "value": "NP2IT6582-1",
+       "value_type": "single_select"
+      }
+     ],
+     "id": 8055481,
+     "updated_at": "2026-10-19T10:32:30-04:00",
+     "requisition_id": "50551",
+     "title": "Security Engineer, Incident Response",
+     "company_name": "Twilio",
+     "first_published": "2026-07-10T16:10:04-04:00",
+     "language": "en",
+     "application_deadline": null
+    },
+    {
+     "absolute_url": "https://job-boards.greenhouse.io/twilio/jobs/8177722",
+     "data_compliance": [
+      {
+       "type": "gdpr",
+       "requires_consent": false,
+       "requires_processing_consent": false,
+       "requires_retention_consent": false,
+       "retention_period": null,
+       "demographic_data_consent_applies": true
+      }
+     ],
+     "internal_job_id": 3539011,
+     "location": {
+      "name": "Remote - US"
+     },
+     "metadata": [
+      {
+       "id": 259693,
+       "name": "Job Code",
+       "value": "SP3SLS633-N",
+       "value_type": "single_select"
+      }
+     ],
+     "id": 8177722,
+     "updated_at": "2026-10-19T20:19:27-04:00",
+     "requisition_id": "51015",
+     "title": "Account Executive 3",
+     "company_name": "Twilio",
+     "first_published": "2026-09-04T11:07:38-04:00",
+     "language": "en",
+     "application_deadline": null
+    },
+    {
+     "absolute_url": "https://job-boards.greenhouse.io/twilio/jobs/7781659",
+     "data_compliance": [
+      {
+       "type": "gdpr",
+       "requires_consent": false,
+       "requires_processing_consent": false,
+       "requires_retention_consent": false,
+       "retention_period": null,
+       "demographic_data_consent_applies": true
+      }
+     ],
+     "internal_job_id": 3405783,
+     "location": {
+      "name": "Remote - India"
+     },
+     "metadata": [
+      {
+       "id": 259693,
+       "name": "Job Code",
+       "value": "TP2EG5332-1",
+       "value_type": "single_select"
+      }
+     ],
+     "id": 7781659,
+     "updated_at": "2026-10-19T10:34:15-04:00",
+     "requisition_id": "50323",
+     "title": "Applications Engineer 2",
+     "company_name": "Twilio",
+     "first_published": "2026-06-30T01:16:56-04:00",
+     "language": "en",
+     "application_deadline": null
+    },
+    {
+     "absolute_url": "https://job-boards.greenhouse.io/twilio/jobs/8261245",
+     "data_compliance": [
+      {
+       "type": "gdpr",
+       "requires_consent": false,
+       "requires_processing_consent": false,
+       "requires_retention_consent": false,
+       "retention_period": null,
+       "demographic_data_consent_applies": true
+      }
+     ],
+     "internal_job_id": 3574598,
+     "location": {
+      "name": "Remote - Mexico"
+     },
+     "metadata": [
+      {
+       "id": 259693,
+       "name": "Job Code",
+       "value": "NP2FI4872-1",
+       "value_type": "single_select"
+      }
+     ],
+     "id": 8261245,
+     "updated_at": "2026-10-19T10:28:05-04:00",
+     "requisition_id": "51079",
+     "title": "Billing Operations Analyst 1",
+     "company_name": "Twilio",
+     "first_published": "2026-10-07T10:02:20-04:00",
+     "language": "en",
+     "application_deadline": null
+    }
+   ],
+   "meta": {
+    "total": 134
+   }
+  }
+ },
+ "eightfold_search_page1": {
+  "request": "GET https://jobs.twilio.com/api/pcsx/search?domain=twilio.com&query=&location=&start=0",
+  "response": {
+   "status": 200,
+   "error": {
+    "message": "",
+    "body": ""
+   },
+   "data": {
+    "positions": [
+     {
+      "id": 1099556644791,
+      "displayJobId": "50919",
+      "name": "Fraud Specialist, Supplier Operations & Governance ",
+      "locations": [
+       "Remote - Canada"
+      ],
+      "standardizedLocations": [
+       "CA"
+      ],
+      "postedTs": 0,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Carrier Relations/Carrier Ops",
+      "creationTs": 1792187402,
+      "isHot": 0,
+      "workLocationOption": "remote_local",
+      "locationFlexibility": null,
+      "atsJobId": "3585989",
+      "positionUrl": "/careers/job/1099556644791",
+      "efcustomTextDepartmentObject": [
+       "Carrier Relations/Carrier Ops"
+      ]
+     },
+     {
+      "id": 1099556617600,
+      "displayJobId": "51153",
+      "name": "Principal Pricing and Monetization Manager",
+      "locations": [
+       "Remote - US"
+      ],
+      "standardizedLocations": [
+       "US"
+      ],
+      "postedTs": 0,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Marketing",
+      "creationTs": 1792062244,
+      "isHot": 0,
+      "workLocationOption": "remote_local",
+      "locationFlexibility": null,
+      "atsJobId": "3583297",
+      "positionUrl": "/careers/job/1099556617600",
+      "efcustomTextDepartmentObject": [
+       "Marketing"
+      ]
+     },
+     {
+      "id": 1099556601439,
+      "displayJobId": "51172",
+      "name": "Executive Business Partner",
+      "locations": [
+       "Remote - Colombia"
+      ],
+      "standardizedLocations": [
+       "CO"
+      ],
+      "postedTs": 0,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Administration ",
+      "creationTs": 1791997801,
+      "isHot": 0,
+      "workLocationOption": "remote_local",
+      "locationFlexibility": null,
+      "atsJobId": "3582302",
+      "positionUrl": "/careers/job/1099556601439",
+      "efcustomTextDepartmentObject": [
+       "Administration "
+      ]
+     },
+     {
+      "id": 1099556594691,
+      "displayJobId": "51467",
+      "name": "Strategy & Operations Manager",
+      "locations": [
+       "Remote - US"
+      ],
+      "standardizedLocations": [
+       "US"
+      ],
+      "postedTs": 0,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Carrier Relations/Carrier Ops",
+      "creationTs": 1791978505,
+      "isHot": 0,
+      "workLocationOption": "remote_local",
+      "locationFlexibility": null,
+      "atsJobId": "3581949",
+      "positionUrl": "/careers/job/1099556594691",
+      "efcustomTextDepartmentObject": [
+       "Carrier Relations/Carrier Ops"
+      ]
+     },
+     {
+      "id": 1099556584496,
+      "displayJobId": "51157",
+      "name": "Counsel, Commercial",
+      "locations": [
+       "Remote - US"
+      ],
+      "standardizedLocations": [
+       "US"
+      ],
+      "postedTs": 0,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Legal",
+      "creationTs": 1791932070,
+      "isHot": 0,
+      "workLocationOption": "remote_local",
+      "locationFlexibility": null,
+      "atsJobId": "3581516",
+      "positionUrl": "/careers/job/1099556584496",
+      "efcustomTextDepartmentObject": [
+       "Legal"
+      ]
+     }
+    ],
+    "filterDef": {
+     "facets": {
+      "locations": [
+       [
+        "Remote",
+        999999
+       ],
+       [
+        "United States",
+        56
+       ],
+       [
+        "India",
+        13
+       ],
+       [
+        "WH, Ireland",
+        13
+       ],
+       [
+        "United Kingdom",
+        13
+       ],
+       [
+        "Colombia",
+        11
+       ]
+      ]
+     },
+     "smartFilters": [
+      {
+       "type": "multi_select",
+       "filterName": "job_location",
+       "title": "Location",
+       "options": [
+        {
+         "label": "REMOTE - US",
+         "value": "remote - us"
+        },
+        {
+         "label": "REMOTE - INDIA",
+         "value": "remote - india"
+        },
+        {
+         "label": "REMOTE - IRELAND",
+         "value": "remote - ireland"
+        },
+        {
+         "label": "REMOTE - UNITED KINGDOM",
+         "value": "remote - united kingdom"
+        },
+        {
+         "label": "REMOTE - COLOMBIA",
+         "value": "remote - colombia"
+        },
+        {
+         "label": "REMOTE - CANADA",
+         "value": "remote - canada"
+        },
+        {
+         "label": "REMOTE - SINGAPORE",
+         "value": "remote - singapore"
+        },
+        {
+         "label": "REMOTE - MEXICO",
+         "value": "remote - mexico"
+        },
+        {
+         "label": "REMOTE - ESTONIA",
+         "value": "remote - estonia"
+        },
+        {
+         "label": "REMOTE - SPAIN",
+         "value": "remote - spain"
+        },
+        {
+         "label": "REMOTE - JAPAN",
+         "value": "remote - japan"
+        },
+        {
+         "label": "REMOTE - AUSTRALIA",
+         "value": "remote - australia"
+        },
+        {
+         "label": "REMOTE - BRAZIL",
+         "value": "remote - brazil"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 200,
+       "translateOptions": false,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select",
+       "filterName": "work_location_option",
+       "title": "Location Type",
+       "options": [
+        {
+         "label": "Remote",
+         "value": "remote_local"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 10,
+       "translateOptions": false,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select",
+       "filterName": "custom_department",
+       "title": "Department",
+       "options": [
+        {
+         "label": "ENGINEERING",
+         "value": "engineering"
+        },
+        {
+         "label": "SALES",
+         "value": "sales"
+        },
+        {
+         "label": "CUSTOMER SUPPORT",
+         "value": "customer support"
+        },
+        {
+         "label": "MARKETING",
+         "value": "marketing"
+        },
+        {
+         "label": "PRODUCT MANAGEMENT",
+         "value": "product management"
+        },
+        {
+         "label": "SERVICES",
+         "value": "services"
+        },
+        {
+         "label": "SOLUTIONS ENGINEERING",
+         "value": "solutions engineering"
+        },
+        {
+         "label": "ACCOUNTING",
+         "value": "accounting"
+        },
+        {
+         "label": "SALES OPERATIONS",
+         "value": "sales operations"
+        },
+        {
+         "label": "PEOPLE TEAM",
+         "value": "people team"
+        },
+        {
+         "label": "SECURITY",
+         "value": "security"
+        },
+        {
+         "label": "CARRIER RELATIONS/CARRIER OPS",
+         "value": "carrier relations/carrier ops"
+        },
+        {
+         "label": "FINANCE",
+         "value": "finance"
+        },
+        {
+         "label": "SALES DEVELOPMENT",
+         "value": "sales development"
+        },
+        {
+         "label": "ADMINISTRATION ",
+         "value": "administration "
+        },
+        {
+         "label": "BUSINESS OPERATIONS",
+         "value": "business operations"
+        },
+        {
+         "label": "CUSTOMER SUCCESS",
+         "value": "customer success"
+        },
+        {
+         "label": "DOTORG",
+         "value": "dotorg"
+        },
+        {
+         "label": "ENTERPRISE SALES",
+         "value": "enterprise sales"
+        },
+        {
+         "label": "IT",
+         "value": "it"
+        },
+        {
+         "label": "LEGAL",
+         "value": "legal"
+        },
+        {
+         "label": "OPS (FRAUD, COMPLIANCE, BIZ, PROD, ANALYST)",
+         "value": "ops (fraud, compliance, biz, prod, analyst)"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 50,
+       "translateOptions": false,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select",
+       "filterName": "seniority",
+       "title": "Seniority",
+       "options": [
+        {
+         "label": "Mid/Senior",
+         "value": "2"
+        },
+        {
+         "label": "Director/Executive",
+         "value": "3"
+        },
+        {
+         "label": "Entry",
+         "value": "1"
+        },
+        {
+         "label": "Intern",
+         "value": "0"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 10,
+       "translateOptions": false,
+       "allowFreeText": false
+      }
+     ],
+     "allFilters": [
+      {
+       "type": "multi_select_suggest",
+       "filterName": "skills",
+       "title": "Skills",
+       "options": [
+        {
+         "label": "Data Analysis",
+         "value": "Data Analysis"
+        },
+        {
+         "label": "Problem Solving",
+         "value": "Problem Solving"
+        },
+        {
+         "label": "Customer Service",
+         "value": "Customer Service"
+        },
+        {
+         "label": "Cross Functional Collaboration",
+         "value": "Cross Functional Collaboration"
+        },
+        {
+         "label": "Project Management",
+         "value": "Project Management"
+        },
+        {
+         "label": "Troubleshooting",
+         "value": "Troubleshooting"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 10,
+       "translateOptions": false,
+       "allowFreeText": false
+      }
+     ]
+    },
+    "count": 133,
+    "sortBy": "timestamp",
+    "appliedFilters": {},
+    "debug": {},
+    "savedSearchMetadata": {
+     "savedSearchParamsHash": null,
+     "isSavedSearchActive": false
+    },
+    "resultsMetaData": {
+     "usedFuzzSearch": false,
+     "mocTitle": null
+    }
+   },
+   "metadata": null
+  }
+ }
+}

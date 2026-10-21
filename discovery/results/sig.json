@@ -1,0 +1,19 @@
+{
+  "key": "sig",
+  "name": "Susquehanna (SIG)",
+  "careers_url": "https://careers.sig.com/jobs",
+  "hiring_system": "jibe (over iCIMS careers-sig.icims.com)",
+  "checker": "jibe",
+  "settings": {"host": "careers.sig.com", "use_employment_type": false},
+  "feed": "GET https://careers.sig.com/api/jobs?page=N&limit=100&internal=false (3 pages)",
+  "feed_total": 286,
+  "page_total": 286,
+  "page_total_how": "Playwright render of https://careers.sig.com/jobs (2026-10-20T00:13Z) showed '286 Results' / '1 – 10 of 286'; the page's own /api/jobs call returned totalCount 286.",
+  "intern_total": 63,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (Allow: /); crawl-delay: 5",
+  "notes": "Interns = category 'Interns + Co-ops' (63, all intern/co-op titles); 13 more 'Student Discovery Program' events. employment_type is wrong here (INTERN on 22 experienced/new-grad roles, null/PER_DIEM on most internships): the adapter must not pass it to the filter. tags3 holds the start term ('June 2027 Start').",
+  "checked_at": "2026-10-20T00:13:00Z"
+}

@@ -1,0 +1,915 @@
+{
+ "_note": "captured 2026-10-20 (UTC); trimmed: first N jobPostings of offset 0 plus the facets block, other pages omitted",
+ "workday_jobs": {
+  "request": "POST https://paypal.wd1.myworkdayjobs.com/wday/cxs/paypal/jobs/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":0,\"searchText\":\"\"}",
+  "response": {
+   "total": 340,
+   "jobPostings": [
+    {
+     "title": "Sr. Technical Program Manager- Automation and Simplification",
+     "externalPath": "/job/San-Jose-California-United-States-of-America/Sr-Lead-Product-Manager--Enterprise-AI-Accelerations_R0137369-1",
+     "locationsText": "San Jose, California, United States of America",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "R0137369"
+     ]
+    },
+    {
+     "title": "Sr Staff Backend Engineer - Venmo Product",
+     "externalPath": "/job/San-Jose-California-United-States-of-America/Sr-Staff-Software-Engineer--BE-Python_R0136939-1",
+     "locationsText": "2 Locations",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "R0136939"
+     ]
+    },
+    {
+     "title": "Sr Product Manager",
+     "externalPath": "/job/San-Jose-California-United-States-of-America/Sr-Product-Manager_R0138386-1",
+     "locationsText": "3 Locations",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "R0138386"
+     ]
+    },
+    {
+     "title": "Sr Product Manager",
+     "externalPath": "/job/New-York-City-New-York-United-States-of-America/Sr-Product-Manager_R0138365",
+     "locationsText": "2 Locations",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "R0138365"
+     ]
+    },
+    {
+     "title": "Staff Collaboration Engineer – Slack",
+     "externalPath": "/job/Scottsdale-Arizona-United-States-of-America/Staff-systems---Cloud-Engineer_R0137886",
+     "locationsText": "Scottsdale, Arizona, United States of America",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "R0137886"
+     ]
+    }
+   ],
+   "facets": [
+    {
+     "facetParameter": "jobFamilyGroup",
+     "descriptor": "Job Category",
+     "values": [
+      {
+       "descriptor": "Sales Job Family Group",
+       "id": "faedd7c80dd5102a1e368bfc4124ca2c",
+       "count": 94
+      },
+      {
+       "descriptor": "Technology Job Family Group",
+       "id": "b00c2f6141401001c5f81018e4210000",
+       "count": 76
+      },
+      {
+       "descriptor": "Product Job Family Group",
+       "id": "83d6d96d27f71001c5f643e351300000",
+       "count": 35
+      },
+      {
+       "descriptor": "Corporate & Business Services Job Family Group",
+       "id": "5c46fd75a99d1001c5da1af8b8910000",
+       "count": 25
+      },
+      {
+       "descriptor": "Finance Job Family Group",
+       "id": "faedd7c80dd5102a1e36823e6f7dca26",
+       "count": 25
+      },
+      {
+       "descriptor": "Risk & Compliance Management Job Family Group",
+       "id": "90d60b76b4f01001c5cd5553705d0000",
+       "count": 18
+      },
+      {
+       "descriptor": "Marketing Job Family Group",
+       "id": "d0381ce52dfc01c9f3b0fa2ca301557c",
+       "count": 16
+      },
+      {
+       "descriptor": "Legal Job Family Group",
+       "id": "faedd7c80dd5102a1e3695b7161cca48",
+       "count": 16
+      },
+      {
+       "descriptor": "Services & Support Job Family Group",
+       "id": "787ba46799031001c5f69130f58d0000",
+       "count": 12
+      },
+      {
+       "descriptor": "Leadership Job Family Group",
+       "id": "dc2e73cf57fa1001c5fa68ced8c80000",
+       "count": 11
+      },
+      {
+       "descriptor": "Strategy & Development Job Family Group",
+       "id": "5c46fd75a99d1001c5da35fb61bd0000",
+       "count": 6
+      },
+      {
+       "descriptor": "Human Resources Job Family Group",
+       "id": "faedd7c80dd5102a1e3688aca126ca2a",
+       "count": 5
+      },
+      {
+       "descriptor": "Communications & External Affairs Job Family Group",
+       "id": "8e29adcff4fe1001c5f6ed9b78a90000",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "jobFamilies",
+     "descriptor": "Job Families",
+     "values": [
+      {
+       "descriptor": "Software Engineering",
+       "id": "aacf3285c80f1001c4c166891c570000",
+       "count": 45
+      },
+      {
+       "descriptor": "Large Enterprise Commercial",
+       "id": "5c46fd75a99d1001c4b305c550ac0000",
+       "count": 33
+      },
+      {
+       "descriptor": "Product Management",
+       "id": "faedd7c80dd5102a1d9ae74f0861ea38",
+       "count": 30
+      },
+      {
+       "descriptor": "Small & Medium Business",
+       "id": "b889023740cf1001c4a6f738acd90000",
+       "count": 29
+      },
+      {
+       "descriptor": "Legal Counsel",
+       "id": "faedd7c80dd5102a1d993e2763d2e8be",
+       "count": 14
+      },
+      {
+       "descriptor": "Cybersecurity Engineering",
+       "id": "8e29adcff4fe1001c4d03f18a78f0000",
+       "count": 12
+      },
+      {
+       "descriptor": "Sales Development",
+       "id": "faedd7c80dd5102a1d994a26972be8ca",
+       "count": 9
+      },
+      {
+       "descriptor": "Product Growth",
+       "id": "5c46fd75a99d1001c4b2b38088d30000",
+       "count": 9
+      },
+      {
+       "descriptor": "Sales Support",
+       "id": "787ba46799031001c4cf8ddebfef0000",
+       "count": 9
+      },
+      {
+       "descriptor": "Business Operations",
+       "id": "14928883eae201e54c17a1bb6501bc04",
+       "count": 9
+      },
+      {
+       "descriptor": "Product Sales",
+       "id": "c781ec4bb18e1002055d00b1d3c50000",
+       "count": 8
+      },
+      {
+       "descriptor": "Marketing",
+       "id": "c09a4b00d5ca01014fe99d36071f0000",
+       "count": 8
+      },
+      {
+       "descriptor": "Treasury",
+       "id": "faedd7c80dd5102a1d9902c682bae888",
+       "count": 8
+      },
+      {
+       "descriptor": "Accounting",
+       "id": "faedd7c80dd5102a1d98c9442e43e852",
+       "count": 7
+      },
+      {
+       "descriptor": "Financial Planning & Analysis",
+       "id": "6f79b005b46d1001c4af86f5e5b60000",
+       "count": 6
+      },
+      {
+       "descriptor": "Partnerships",
+       "id": "98a2f5792a61012ccc7850a465014e06",
+       "count": 6
+      },
+      {
+       "descriptor": "Ad Sales",
+       "id": "faedd7c80dd5102a1d99d503c6ade94d",
+       "count": 6
+      },
+      {
+       "descriptor": "Audit",
+       "id": "faedd7c80dd5102a1d98e8d89482e872",
+       "count": 5
+      },
+      {
+       "descriptor": "Experience Research",
+       "id": "1e060d04ab2b1001c4d113efe2e40000",
+       "count": 4
+      },
+      {
+       "descriptor": "Executive Assistant",
+       "id": "1e060d04ab2b1001c4d074b98bc10000",
+       "count": 4
+      },
+      {
+       "descriptor": "Technical Program Management",
+       "id": "b00c2f6141401001c4d191682d9b0000",
+       "count": 4
+      },
+      {
+       "descriptor": "Performance Marketing",
+       "id": "97fd05ddabac010150c0356e26f80000",
+       "count": 4
+      },
+      {
+       "descriptor": "Corporate Strategy",
+       "id": "faedd7c80dd5102a1d9af8592b25ea46",
+       "count": 4
+      },
+      {
+       "descriptor": "Risk Management",
+       "id": "faedd7c80dd5102a1d9a11adf948e985",
+       "count": 4
+      },
+      {
+       "descriptor": "Risk Operations",
+       "id": "faedd7c80dd5102a1d9970e07972e8f5",
+       "count": 3
+      },
+      {
+       "descriptor": "Enterprise Servicing",
+       "id": "aacf3285c80f1001c4c0de0ab9930000",
+       "count": 3
+      },
+      {
+       "descriptor": "Cybersecurity Threat Analysis",
+       "id": "e141d9caad831001c49eb0b5d18a0000",
+       "count": 3
+      },
+      {
+       "descriptor": "System & Cloud Engineering",
+       "id": "787ba46799031001c4d01588360e0000",
+       "count": 3
+      },
+      {
+       "descriptor": "Strategic Sourcing",
+       "id": "6f79b005b46d1001c4af72882d010000",
+       "count": 3
+      },
+      {
+       "descriptor": "Business Process",
+       "id": "faedd7c80dd5102a1d992591a0d9e8aa",
+       "count": 3
+      },
+      {
+       "descriptor": "Entity Management",
+       "id": "18f4ea36abe80120741482856501ef03",
+       "count": 3
+      },
+      {
+       "descriptor": "Program Management",
+       "id": "faedd7c80dd5102a1d99f72f7cb1e96b",
+       "count": 3
+      },
+      {
+       "descriptor": "Data Science",
+       "id": "faedd7c80dd5102a1d99f311e73ae967",
+       "count": 3
+      },
+      {
+       "descriptor": "Compliance",
+       "id": "0f9ef1ad94f01000cc237baed93e0000",
+       "count": 2
+      },
+      {
+       "descriptor": "Global Strategic Accounts",
+       "id": "5c73a309cd331001c4bf4d8505150000",
+       "count": 2
+      },
+      {
+       "descriptor": "Corporate Development",
+       "id": "5c46fd75a99d1001c4b33c7150380000",
+       "count": 2
+      },
+      {
+       "descriptor": "Machine Learning Engineering",
+       "id": "83d6d96d27f71001c4cf81c2fb370000",
+       "count": 2
+      },
+      {
+       "descriptor": "Cybersecurity Risk",
+       "id": "b889023740cf1001c4a755bf05880000",
+       "count": 2
+      },
+      {
+       "descriptor": "Marketing Planning & Operations",
+       "id": "8d4308fe56cb010150be66bb68060000",
+       "count": 2
+      },
+      {
+       "descriptor": "Tax",
+       "id": "faedd7c80dd5102a1d98fcb08561e886",
+       "count": 2
+      },
+      {
+       "descriptor": "Product Marketing",
+       "id": "faedd7c80dd5102a1d9aea17bbe5ea3a",
+       "count": 2
+      },
+      {
+       "descriptor": "Executive Management",
+       "id": "faedd7c80dd5102a1d99fef86e4ce973",
+       "count": 2
+      },
+      {
+       "descriptor": "Lead Development",
+       "id": "b889023740cf1001c4a6ee351c6f0000",
+       "count": 1
+      },
+      {
+       "descriptor": "Aviation",
+       "id": "b889023740cf1001c4a5f850dfb40000",
+       "count": 1
+      },
+      {
+       "descriptor": "Enterprise Systems",
+       "id": "b00c2f6141401001c4d14eb939cf0000",
+       "count": 1
+      },
+      {
+       "descriptor": "Communications",
+       "id": "b00c2f6141401001c4cfbe12dff60000",
+       "count": 1
+      },
+      {
+       "descriptor": "Pricing",
+       "id": "05ee506542f001dbaba98633a401c97f",
+       "count": 1
+      },
+      {
+       "descriptor": "Internal Controls",
+       "id": "8ca194056bf101aa1770528a65014e02",
+       "count": 1
+      },
+      {
+       "descriptor": "Collections",
+       "id": "8ca194056bf10139c369138965014602",
+       "count": 1
+      },
+      {
+       "descriptor": "Paralegal",
+       "id": "faedd7c80dd5102a1d991634ec3ce89c",
+       "count": 1
+      },
+      {
+       "descriptor": "Talent Acquisition",
+       "id": "98a2f5792a61014efb4a38a365014206",
+       "count": 1
+      },
+      {
+       "descriptor": "Legal Operations",
+       "id": "e37b1c9bef81016e8f521bac6501ee04",
+       "count": 1
+      },
+      {
+       "descriptor": "Facilities",
+       "id": "e37b1c9bef810131dd4d2faa6501e004",
+       "count": 1
+      },
+      {
+       "descriptor": "Compensation",
+       "id": "faedd7c80dd5102a1d9abd49764cea14",
+       "count": 1
+      },
+      {
+       "descriptor": "Benefits",
+       "id": "faedd7c80dd5102a1d9a866aa1ade9ea",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "workerSubType",
+     "descriptor": "Job Type",
+     "values": [
+      {
+       "descriptor": "Regular",
+       "id": "faedd7c80dd5102a186258300a47d47e",
+       "count": 339
+      },
+      {
+       "descriptor": "Fixed Term (Fixed Term)",
+       "id": "faedd7c80dd5102a18625bc72901d480",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "locationMainGroup",
+     "values": [
+      {
+       "facetParameter": "locations",
+       "descriptor": "Locations",
+       "values": [
+        {
+         "descriptor": "Amsterdam, North Holland, Netherlands",
+         "id": "bcdc9518960a01fa808fe7aa2d245499",
+         "count": 1
+        },
+        {
+         "descriptor": "Arizona, United States of America (Virtual)",
+         "id": "bcdc9518960a0188ea6cceab2d24e899",
+         "count": 1
+        },
+        {
+         "descriptor": "Austin, Texas, United States of America",
+         "id": "bcdc9518960a01fd3226f8ab2d24049a",
+         "count": 101
+        },
+        {
+         "descriptor": "Bangalore, Karnataka, India",
+         "id": "bcdc9518960a0115db738aaa2d241899",
+         "count": 12
+        },
+        {
+         "descriptor": "Beijing, China",
+         "id": "bcdc9518960a01345a6be6ab2d24f899",
+         "count": 2
+        },
+        {
+         "descriptor": "Berlin, Berlin, Germany",
+         "id": "5d027c17363a1001ac107a57b7730000",
+         "count": 17
+        },
+        {
+         "descriptor": "Brandenburg, Germany (Virtual)",
+         "id": "bcdc9518960a01de280f59a92d246098",
+         "count": 1
+        },
+        {
+         "descriptor": "Central Singapore, Singapore",
+         "id": "bcdc9518960a016e43bdacab2d24d499",
+         "count": 18
+        },
+        {
+         "descriptor": "Chennai, Tamil Nadu, India",
+         "id": "bcdc9518960a01a46ac477aa2d240c99",
+         "count": 3
+        },
+        {
+         "descriptor": "Chicago, Illinois, United States of America",
+         "id": "bcdc9518960a013d33bc4bac2d243c9a",
+         "count": 85
+        },
+        {
+         "descriptor": "Dublin, County Dublin, Ireland",
+         "id": "bcdc9518960a016d630671aa2d240899",
+         "count": 7
+        },
+        {
+         "descriptor": "Germany (Virtual)",
+         "id": "8397f970c45c0173c8d076b1f600524e",
+         "count": 9
+        },
+        {
+         "descriptor": "Illinois, United States of America (Virtual)",
+         "id": "bcdc9518960a0107cd73aaac2d247c9a",
+         "count": 2
+        },
+        {
+         "descriptor": "London, County London, England, United Kingdom",
+         "id": "bcdc9518960a014df8c64baa2d24f098",
+         "count": 24
+        },
+        {
+         "descriptor": "Luxembourg City, Luxembourg, Luxembourg",
+         "id": "bcdc9518960a01a8af470dab2d246c99",
+         "count": 11
+        },
+        {
+         "descriptor": "Madrid, Spain",
+         "id": "bcdc9518960a0169a4b264aa2d240099",
+         "count": 3
+        },
+        {
+         "descriptor": "Mexico City, Ciudad de Mexico, Mexico",
+         "id": "bcdc9518960a01ddefb5a4ac2d24789a",
+         "count": 4
+        },
+        {
+         "descriptor": "Milan, Milano, Italy",
+         "id": "bcdc9518960a01d910e9bbaa2d243899",
+         "count": 6
+        },
+        {
+         "descriptor": "New York, United States of America (Virtual)",
+         "id": "bcdc9518960a010e823762ab2d24a499",
+         "count": 3
+        },
+        {
+         "descriptor": "New York City, New York, United States of America",
+         "id": "bcdc9518960a01ed60c3fdab2d24089a",
+         "count": 81
+        },
+        {
+         "descriptor": "Northern California, United States of America (Virtual)",
+         "id": "bcdc9518960a0133caf007aa2d24c498",
+         "count": 3
+        },
+        {
+         "descriptor": "Omaha, Nebraska, United States of America",
+         "id": "bcdc9518960a01ccaa1510ac2d24149a",
+         "count": 42
+        },
+        {
+         "descriptor": "Paris, France",
+         "id": "bcdc9518960a01e754cf57aa2d24f898",
+         "count": 7
+        },
+        {
+         "descriptor": "Pennsylvania, United States of America (Virtual)",
+         "id": "bcdc9518960a01ad2ef53cab2d248c99",
+         "count": 1
+        },
+        {
+         "descriptor": "San Jose, California, United States of America",
+         "id": "bcdc9518960a0193885068ab2d24a899",
+         "count": 116
+        },
+        {
+         "descriptor": "Sao Paulo, Brazil",
+         "id": "bcdc9518960a01ff33bcd4a92d24a498",
+         "count": 3
+        },
+        {
+         "descriptor": "Scottsdale, Arizona, United States of America",
+         "id": "bcdc9518960a01ea70ec76ab2d24b099",
+         "count": 59
+        },
+        {
+         "descriptor": "Shanghai, China",
+         "id": "bcdc9518960a017f54398da92d247898",
+         "count": 1
+        },
+        {
+         "descriptor": "Sydney, New South Wales, Australia",
+         "id": "bcdc9518960a01dcddf46aaa2d240499",
+         "count": 4
+        },
+        {
+         "descriptor": "Tel Aviv, Tel Aviv District, Israel",
+         "id": "bcdc9518960a01e6bcbbc1aa2d243c99",
+         "count": 3
+        },
+        {
+         "descriptor": "Texas, United States of America (Virtual)",
+         "id": "bcdc9518960a01c3b2cdc1a92d249898",
+         "count": 3
+        },
+        {
+         "descriptor": "Tokyo, Tokyo Prefecture, Japan",
+         "id": "bcdc9518960a01c6ffd0afaa2d243099",
+         "count": 7
+        },
+        {
+         "descriptor": "Toronto, Ontario, Canada",
+         "id": "bcdc9518960a019b87f6b4a92d249098",
+         "count": 1
+        },
+        {
+         "descriptor": "Utah, United States of America (Virtual)",
+         "id": "bcdc9518960a010a964775ac2d24589a",
+         "count": 8
+        },
+        {
+         "descriptor": "Washington DC, District of Columbia, United States of America",
+         "id": "bcdc9518960a01bccca257ac2d24449a",
+         "count": 9
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "eightfold_search_page1": {
+  "request": "GET https://paypal.eightfold.ai/api/pcsx/search?domain=paypal.com&query=&location=&start=0",
+  "response": {
+   "status": 200,
+   "error": {
+    "message": "",
+    "body": ""
+   },
+   "data": {
+    "positions": [
+     {
+      "id": 274922786699,
+      "displayJobId": "R0138315",
+      "name": "Sr Software Engineer - Python",
+      "locations": [
+       "Bangalore, Karnataka, India"
+      ],
+      "standardizedLocations": [
+       "Bengaluru, KA, IN"
+      ],
+      "postedTs": 1792368000,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Software Engineering",
+      "creationTs": 1790640000,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "R0138315",
+      "positionUrl": "/careers/job/274922786699"
+     },
+     {
+      "id": 274922832145,
+      "displayJobId": "R0138312",
+      "name": "Staff Software Engineer",
+      "locations": [
+       "San Jose, California, United States of America",
+       "Austin, Texas, United States of America"
+      ],
+      "standardizedLocations": [
+       "San Jose, CA, US",
+       "Austin, TX, US"
+      ],
+      "postedTs": 1792368000,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Software Engineering",
+      "creationTs": 1790640000,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "R0138312",
+      "positionUrl": "/careers/job/274922832145"
+     },
+     {
+      "id": 274922834662,
+      "displayJobId": "R0138405",
+      "name": "Sr Account Manager, Large Enterprise Commercial",
+      "locations": [
+       "Central Singapore, Singapore"
+      ],
+      "standardizedLocations": [
+       "Singapore, SG"
+      ],
+      "postedTs": 1792368000,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Large Enterprise Commercial",
+      "creationTs": 1791504000,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "R0138405",
+      "positionUrl": "/careers/job/274922834662"
+     },
+     {
+      "id": 274922889760,
+      "displayJobId": "R0138383",
+      "name": "Staff Machine Learning Engineer",
+      "locations": [
+       "San Jose, California, United States of America"
+      ],
+      "standardizedLocations": [
+       "San Jose, CA, US"
+      ],
+      "postedTs": 1792368000,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Machine Learning Engineering",
+      "creationTs": 1791244800,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "R0138383",
+      "positionUrl": "/careers/job/274922889760"
+     },
+     {
+      "id": 274922905780,
+      "displayJobId": "R0138483",
+      "name": "Sr Manager, Financial and Strategy Communications",
+      "locations": [
+       "New York City, New York, United States of America"
+      ],
+      "standardizedLocations": [
+       "New York, NY, US"
+      ],
+      "postedTs": 1792368000,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Communications",
+      "creationTs": 1791936000,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "R0138483",
+      "positionUrl": "/careers/job/274922905780"
+     }
+    ],
+    "filterDef": {
+     "facets": {
+      "locations": [
+       [
+        "Remote",
+        999999
+       ],
+       [
+        "Current Location",
+        999998
+       ],
+       [
+        "San Jose, CA, United States",
+        111
+       ],
+       [
+        "Austin, TX, United States",
+        98
+       ],
+       [
+        "Chicago, IL, United States",
+        83
+       ],
+       [
+        "New York, NY, United States",
+        78
+       ]
+      ]
+     },
+     "smartFilters": [],
+     "allFilters": [
+      {
+       "type": "multi_select",
+       "filterName": "employment_type",
+       "title": "Employment Type",
+       "options": [
+        {
+         "label": "Full Time",
+         "value": "full time"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 10,
+       "translateOptions": false,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select_facet_search",
+       "filterName": "skills",
+       "title": "Skills",
+       "options": [
+        {
+         "label": "Teamwork",
+         "value": "Teamwork"
+        },
+        {
+         "label": "Cross Functional Skills",
+         "value": "Cross Functional Skills"
+        },
+        {
+         "label": "Collaboration",
+         "value": "Collaboration"
+        },
+        {
+         "label": "Revenue Management",
+         "value": "Revenue Management"
+        },
+        {
+         "label": "Alignment",
+         "value": "Alignment"
+        },
+        {
+         "label": "Artificial Intelligence",
+         "value": "Artificial Intelligence"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 10,
+       "translateOptions": false,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select",
+       "filterName": "brand",
+       "title": "Brand",
+       "options": [
+        {
+         "label": "PayPal",
+         "value": "paypal"
+        },
+        {
+         "label": "Venmo",
+         "value": "venmo"
+        },
+        {
+         "label": "paidy",
+         "value": "paidy"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 10,
+       "translateOptions": false,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select",
+       "filterName": "work_location_option",
+       "title": "Workplace Type",
+       "options": [
+        {
+         "label": "On-site",
+         "value": "onsite"
+        },
+        {
+         "label": "hybrid",
+         "value": "hybrid"
+        },
+        {
+         "label": "Virtual",
+         "value": "remote_local"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 10,
+       "translateOptions": false,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select_facet_search",
+       "filterName": "job_category",
+       "title": "Job Category",
+       "options": [
+        {
+         "label": "Software Engineering",
+         "value": "Software Engineering"
+        },
+        {
+         "label": "Large Enterprise Commercial",
+         "value": "Large Enterprise Commercial"
+        },
+        {
+         "label": "Product Management",
+         "value": "Product Management"
+        },
+        {
+         "label": "Small & Medium Business",
+         "value": "Small & Medium Business"
+        },
+        {
+         "label": "Legal Counsel",
+         "value": "Legal Counsel"
+        },
+        {
+         "label": "Cybersecurity Engineering",
+         "value": "Cybersecurity Engineering"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 10,
+       "translateOptions": false,
+       "allowFreeText": false
+      }
+     ]
+    },
+    "count": 331,
+    "sortBy": "timestamp",
+    "appliedFilters": {},
+    "debug": {},
+    "savedSearchMetadata": {
+     "savedSearchParamsHash": null,
+     "isSavedSearchActive": false
+    },
+    "resultsMetaData": {
+     "usedFuzzSearch": false,
+     "mocTitle": null
+    }
+   },
+   "metadata": null
+  }
+ }
+}

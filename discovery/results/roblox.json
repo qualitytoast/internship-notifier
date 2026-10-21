@@ -1,0 +1,21 @@
+{
+  "key": "roblox",
+  "name": "Roblox",
+  "careers_url": "https://careers.roblox.com/jobs",
+  "hiring_system": "greenhouse (custom Next.js front on careers.roblox.com)",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "roblox"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/roblox/jobs",
+  "feed_total": 262,
+  "page_total": 262,
+  "page_total_how": "Plain GET (HTTP/1.1, browser UA) of https://careers.roblox.com/jobs: server-rendered 'Showing 262 results', and the HTML embeds all 262 Greenhouse ids. Headless Chromium (the capture and my render) fails with net::ERR_HTTP2_PROTOCOL_ERROR on this CloudFront host, so there is no browser observation.",
+  "intern_total": 5,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (boards-api.greenhouse.io: no matching rule)",
+  "notes": "absolute_url = https://careers.roblox.com/jobs/<id>?gh_jid=<id>, so the site is this board's front. The bookmark ?type=internship is only a filter; the 5 interns ([Summer 2027] SWE/PM/Product Design, [2027] PhD Applied Scientist / Data Scientist) are on the main board.",
+  "checked_at": "2026-10-20T00:37:53Z"
+}

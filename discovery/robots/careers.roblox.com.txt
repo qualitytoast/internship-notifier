@@ -1,0 +1,5 @@
+# status 200
+User-Agent: *
+Allow: /
+
+Sitemap: https://careers.roblox.com/sitemap.xml

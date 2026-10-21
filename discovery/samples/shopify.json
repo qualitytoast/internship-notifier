@@ -1,0 +1,346 @@
+{
+ "_sample_note": "Decoded excerpt, not raw: GET https://www.shopify.com/careers (HTML, ~585 KB) embeds a React Router turbo-stream in window.__reactRouterContext.streamController.enqueue(\"...\"). Decoded with the flat-array rules in notes/shopify.md; path [0].loaderData['($locale)/careers'].jobPostingsWithJobs, first 5 of 119 entries. The page's job objects also carry hiringTeam/author fields (staff names); they are deliberately left out here and must not be stored.",
+ "jobPostingsWithJobs": [
+  {
+   "jobPosting": {
+    "id": "1affb074-f055-4f5a-a97e-80d97d77da6e",
+    "title": "Account Executive, SMB",
+    "jobId": "e8e8fc1e-3996-473d-b941-0845fbd271f2",
+    "status": "Published",
+    "departmentName": "Shopify",
+    "teamName": "Commercial",
+    "locationName": "Americas",
+    "locationExternalName": null,
+    "workplaceType": "Remote",
+    "employmentType": "FullTime",
+    "isListed": true,
+    "publishedDate": "2026-10-15",
+    "applicationDeadline": null,
+    "externalLink": "https://www.shopify.com/careers?ashby_jid=1affb074-f055-4f5a-a97e-80d97d77da6e",
+    "applyLink": "https://www.shopify.com/careers?ashby_jid=1affb074-f055-4f5a-a97e-80d97d77da6e",
+    "locationIds": {
+     "primaryLocationId": "d5deb7cd-0044-464c-a5da-c1c50f57dcac",
+     "secondaryLocationIds": []
+    },
+    "compensationTierSummary": null,
+    "shouldDisplayCompensationOnJobBoard": false,
+    "updatedAt": "2026-10-15T12:25:18.065Z"
+   },
+   "job": {
+    "id": "e8e8fc1e-3996-473d-b941-0845fbd271f2",
+    "title": "Commercial - Account Executive SMB - C5 - One Craft - NORAM",
+    "status": "Open",
+    "employmentType": "FullTime",
+    "jobPostingIds": [
+     "1affb074-f055-4f5a-a97e-80d97d77da6e"
+    ],
+    "createdAt": "2024-05-08T09:16:31.977Z",
+    "openedAt": "2024-05-08T09:16:54.208Z",
+    "customFields": [
+     {
+      "title": "Discipline",
+      "valueLabel": "Commercial"
+     },
+     {
+      "title": "Scope",
+      "valueLabel": "C5"
+     },
+     {
+      "title": "Subdiscipline",
+      "valueLabel": "Sales Acceleration"
+     },
+     {
+      "title": "Group",
+      "valueLabel": "Sales"
+     },
+     {
+      "title": "Time Type",
+      "valueLabel": "Full time"
+     },
+     {
+      "title": "Track",
+      "valueLabel": "Crafter"
+     },
+     {
+      "title": "Job Type",
+      "valueLabel": "OS"
+     }
+    ]
+   }
+  },
+  {
+   "jobPosting": {
+    "id": "69bdefc2-b2f5-4277-996b-7b677bcf1c0a",
+    "title": "Account Executive, SMB, German-speaking",
+    "jobId": "a168122f-bbd5-4712-9ecc-a6fb71740043",
+    "status": "Published",
+    "departmentName": "Shopify",
+    "teamName": "Commercial",
+    "locationName": "Ireland",
+    "locationExternalName": null,
+    "workplaceType": "Remote",
+    "employmentType": "FullTime",
+    "isListed": true,
+    "publishedDate": "2026-08-17",
+    "applicationDeadline": null,
+    "externalLink": "https://www.shopify.com/careers?ashby_jid=69bdefc2-b2f5-4277-996b-7b677bcf1c0a",
+    "applyLink": "https://www.shopify.com/careers?ashby_jid=69bdefc2-b2f5-4277-996b-7b677bcf1c0a",
+    "locationIds": {
+     "primaryLocationId": "2bd4a94d-0fc9-48cf-ad33-81ef82de062e",
+     "secondaryLocationIds": [
+      "1fe5c4bd-aa67-49d5-b5c2-59f0a8045763"
+     ]
+    },
+    "compensationTierSummary": null,
+    "shouldDisplayCompensationOnJobBoard": false,
+    "updatedAt": "2026-08-26T08:45:55.810Z"
+   },
+   "job": {
+    "id": "a168122f-bbd5-4712-9ecc-a6fb71740043",
+    "title": "Commercial - Sales Acquisition - AE - SMB - C5 - EMEA - DACH",
+    "status": "Open",
+    "employmentType": "FullTime",
+    "jobPostingIds": [
+     "69bdefc2-b2f5-4277-996b-7b677bcf1c0a",
+     "c2cc67e7-f34b-4f71-99f9-67e4102f752c"
+    ],
+    "createdAt": "2026-08-13T08:32:57.173Z",
+    "openedAt": "2026-08-13T08:54:21.175Z",
+    "customFields": [
+     {
+      "title": "Discipline",
+      "valueLabel": "Commercial"
+     },
+     {
+      "title": "Scope",
+      "valueLabel": "Crafter Pipeline"
+     },
+     {
+      "title": "Subdiscipline",
+      "valueLabel": "Sales Acquisition"
+     },
+     {
+      "title": "Group",
+      "valueLabel": "Template"
+     },
+     {
+      "title": "Time Type",
+      "valueLabel": "Full time"
+     },
+     {
+      "title": "Track",
+      "valueLabel": "Crafter"
+     },
+     {
+      "title": "Job Type",
+      "valueLabel": "OS"
+     }
+    ]
+   }
+  },
+  {
+   "jobPosting": {
+    "id": "c9e3d85f-e24b-4652-bd38-3749d7d5cddf",
+    "title": "Account Executive, SMB - Italian speaking",
+    "jobId": "349c1325-825b-4928-a31f-17a08446e86f",
+    "status": "Published",
+    "departmentName": "Shopify",
+    "teamName": "Commercial",
+    "locationName": "Ireland",
+    "locationExternalName": null,
+    "workplaceType": "Remote",
+    "employmentType": "FullTime",
+    "isListed": true,
+    "publishedDate": "2026-10-15",
+    "applicationDeadline": null,
+    "externalLink": "https://www.shopify.com/careers?ashby_jid=c9e3d85f-e24b-4652-bd38-3749d7d5cddf",
+    "applyLink": "https://www.shopify.com/careers?ashby_jid=c9e3d85f-e24b-4652-bd38-3749d7d5cddf",
+    "locationIds": {
+     "primaryLocationId": "2bd4a94d-0fc9-48cf-ad33-81ef82de062e",
+     "secondaryLocationIds": [
+      "1fe5c4bd-aa67-49d5-b5c2-59f0a8045763"
+     ]
+    },
+    "compensationTierSummary": null,
+    "shouldDisplayCompensationOnJobBoard": false,
+    "updatedAt": "2026-10-15T07:43:39.469Z"
+   },
+   "job": {
+    "id": "349c1325-825b-4928-a31f-17a08446e86f",
+    "title": "Commercial - Sales Acquisition - AE - SMB - C5 - EMEA - Italy",
+    "status": "Open",
+    "employmentType": "FullTime",
+    "jobPostingIds": [
+     "2e751bea-f144-48b6-879f-61878c675b5c",
+     "c9e3d85f-e24b-4652-bd38-3749d7d5cddf"
+    ],
+    "createdAt": "2026-10-15T07:12:33.797Z",
+    "openedAt": "2026-10-15T07:19:44.298Z",
+    "customFields": [
+     {
+      "title": "Discipline",
+      "valueLabel": "Commercial"
+     },
+     {
+      "title": "Scope",
+      "valueLabel": "Crafter Pipeline"
+     },
+     {
+      "title": "Subdiscipline",
+      "valueLabel": "Sales Acquisition"
+     },
+     {
+      "title": "Group",
+      "valueLabel": "Template"
+     },
+     {
+      "title": "Time Type",
+      "valueLabel": "Full time"
+     },
+     {
+      "title": "Track",
+      "valueLabel": "Crafter"
+     },
+     {
+      "title": "Job Type",
+      "valueLabel": "OS"
+     }
+    ]
+   }
+  },
+  {
+   "jobPosting": {
+    "id": "ef12f6c3-34f8-4e9e-9d92-c549f16a3848",
+    "title": "Affiliate Marketing Lead, Shop",
+    "jobId": "01fe1f59-5724-4763-9ad3-a4a3e853e6e6",
+    "status": "Published",
+    "departmentName": "Shopify",
+    "teamName": "Shopify",
+    "locationName": "Americas",
+    "locationExternalName": null,
+    "workplaceType": "Remote",
+    "employmentType": "FullTime",
+    "isListed": true,
+    "publishedDate": "2026-10-16",
+    "applicationDeadline": null,
+    "externalLink": "https://www.shopify.com/careers?ashby_jid=ef12f6c3-34f8-4e9e-9d92-c549f16a3848",
+    "applyLink": "https://www.shopify.com/careers?ashby_jid=ef12f6c3-34f8-4e9e-9d92-c549f16a3848",
+    "locationIds": {
+     "primaryLocationId": "d5deb7cd-0044-464c-a5da-c1c50f57dcac",
+     "secondaryLocationIds": []
+    },
+    "compensationTierSummary": null,
+    "shouldDisplayCompensationOnJobBoard": false,
+    "updatedAt": "2026-10-16T14:43:12.029Z"
+   },
+   "job": {
+    "id": "01fe1f59-5724-4763-9ad3-a4a3e853e6e6",
+    "title": "Affiliate Marketing Lead, Shop",
+    "status": "Open",
+    "employmentType": "FullTime",
+    "jobPostingIds": [
+     "ef12f6c3-34f8-4e9e-9d92-c549f16a3848"
+    ],
+    "createdAt": "2026-09-21T20:07:57.185Z",
+    "openedAt": "2026-09-21T20:09:07.661Z",
+    "customFields": [
+     {
+      "title": "Discipline",
+      "valueLabel": "Growth"
+     },
+     {
+      "title": "Scope",
+      "valueLabel": "Crafter Pipeline"
+     },
+     {
+      "title": "Subdiscipline",
+      "valueLabel": "Growth Marketing"
+     },
+     {
+      "title": "Group",
+      "valueLabel": "Template"
+     },
+     {
+      "title": "Time Type",
+      "valueLabel": "Full time"
+     },
+     {
+      "title": "Track",
+      "valueLabel": "Crafter"
+     },
+     {
+      "title": "Job Type",
+      "valueLabel": "OS"
+     }
+    ]
+   }
+  },
+  {
+   "jobPosting": {
+    "id": "62d779d3-51c8-4b0a-ab2e-1a440276bb37",
+    "title": "Applied Machine Learning Engineering Managers",
+    "jobId": "1de454a9-f795-4334-93ff-f4a118dc6629",
+    "status": "Published",
+    "departmentName": "Shopify",
+    "teamName": "Engineering",
+    "locationName": "Americas",
+    "locationExternalName": null,
+    "workplaceType": "Remote",
+    "employmentType": "FullTime",
+    "isListed": true,
+    "publishedDate": "2026-03-26",
+    "applicationDeadline": null,
+    "externalLink": "https://www.shopify.com/careers?ashby_jid=62d779d3-51c8-4b0a-ab2e-1a440276bb37",
+    "applyLink": "https://www.shopify.com/careers?ashby_jid=62d779d3-51c8-4b0a-ab2e-1a440276bb37",
+    "locationIds": {
+     "primaryLocationId": "d5deb7cd-0044-464c-a5da-c1c50f57dcac",
+     "secondaryLocationIds": []
+    },
+    "compensationTierSummary": null,
+    "shouldDisplayCompensationOnJobBoard": false,
+    "updatedAt": "2026-03-26T19:24:07.360Z"
+   },
+   "job": {
+    "id": "1de454a9-f795-4334-93ff-f4a118dc6629",
+    "title": "Engineering - Applied ML Engineering - Manager Pipeline Q2 2026",
+    "status": "Open",
+    "employmentType": "FullTime",
+    "jobPostingIds": [
+     "62d779d3-51c8-4b0a-ab2e-1a440276bb37"
+    ],
+    "createdAt": "2026-03-26T15:28:25.923Z",
+    "openedAt": "2026-03-26T19:20:53.246Z",
+    "customFields": [
+     {
+      "title": "Discipline",
+      "valueLabel": "Engineering"
+     },
+     {
+      "title": "Scope",
+      "valueLabel": "M4"
+     },
+     {
+      "title": "Subdiscipline",
+      "valueLabel": "Management - Applied ML Engineering"
+     },
+     {
+      "title": "Group",
+      "valueLabel": "Template"
+     },
+     {
+      "title": "Time Type",
+      "valueLabel": "Full time"
+     },
+     {
+      "title": "Track",
+      "valueLabel": "Manager"
+     },
+     {
+      "title": "Job Type",
+      "valueLabel": "Pipeline"
+     }
+    ]
+   }
+  }
+ ]
+}

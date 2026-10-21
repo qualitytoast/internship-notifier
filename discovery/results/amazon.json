@@ -1,0 +1,32 @@
+{
+  "key": "amazon",
+  "name": "Amazon",
+  "careers_url": "https://www.amazon.jobs/en/search",
+  "hiring_system": "custom (amazon.jobs search API; JobCreator/iCIMS ids)",
+  "checker": "custom:amazon",
+  "settings": {
+    "endpoint": "https://www.amazon.jobs/api/jobs/search?is_als=true",
+    "exclude_base": [{"name": "businessCategory", "values": [{"name": "a-confidential-job"}]}],
+    "page_size": 200,
+    "queries": [
+      {"jobTypeFacets": [{"name": "isIntern", "values": [{"name": "1"}]}, {"name": "employeeClass", "values": [{"name": "Intern"}, {"name": "Apprentice"}]}]},
+      {"filterFacets": [{"name": "businessCategory", "values": [{"name": "studentprograms"}, {"name": "university"}]}], "exclude": ["FLAGS"]},
+      {"query": "intern", "exclude": ["FLAGS", "BIZ"], "sort": "SCORE"},
+      {"query": "apprentice", "exclude": ["FLAGS", "BIZ"], "sort": "SCORE"},
+      {"query": "co-op", "exclude": ["FLAGS", "BIZ"]},
+      {"query": "student", "exclude": ["FLAGS", "BIZ"]}
+    ],
+    "job_url": "https://www.amazon.jobs/en/jobs/{icimsJobId}"
+  },
+  "feed": "POST https://www.amazon.jobs/api/jobs/search?is_als=true (JSON body, size<=200, start=N); union of 4-6 student-slice queries (flags OR, student business categories, keyword 'intern'/'apprentice' on the complement)",
+  "feed_total": 22117,
+  "page_total": 10000,
+  "page_total_how": "No site total is printed: Playwright render of https://www.amazon.jobs/en/search (no filters) showed pager '1 2 3 ... 1000' x 10 = the 10,000 search cap, equal to the API's hits/found=10000. True size 22,117 from uncapped facet sums (scheduleTypeId/employeeClass/category all agree). Bookmark page showed '37 OPEN JOBS' = API found 37 for the same body.",
+  "intern_total": 635,
+  "status": "needs-custom",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for /api/jobs/search, /en/search.json and /en/jobs/<id>; account.amazon.jobs (apply) is Disallow: / -> link only",
+  "notes": "Every query caps at 10,000 (found/hits and offset+size), but facet counts are exact, so read the student slice: isIntern=1 OR employeeClass Intern/Apprentice (606) + businessCategory studentprograms/university (599, overlap 408) + keyword 'intern'/'apprentice' on the complement (adds 1 intern + 26 apprentices, all US). Do not exclude isConfidential (the new API default hides 209 public jobs incl. 2 internships). Full-site audit: partition by category (37 values, max 3,225), ~130 requests.",
+  "checked_at": "2026-10-20T00:41:15Z"
+}

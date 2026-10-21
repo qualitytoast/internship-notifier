@@ -1,0 +1,21 @@
+{
+  "key": "aurora",
+  "name": "Aurora Innovation",
+  "careers_url": "https://aurora.tech/careers",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "aurora-operations-inc"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/aurora-operations-inc?includeCompensation=true",
+  "feed_total": 101,
+  "page_total": 99,
+  "page_total_how": "Playwright render of https://aurora.tech/careers (2026-10-20T00:12Z): the list shows 8 jobs plus 'Load more'; the Departments facet counts on the page sum to 99, equal to the page's data file /api/jobs-index (99 jobs). The Ashby API and the hosted board jobs.ashbyhq.com/aurora-operations-inc both list 101.",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com has no robots.txt; aurora.tech Allow: /)",
+  "notes": "The 2 Ashby-only postings are second postings of jobs already on aurora.tech: 'Senior Software Engineer, Motion Controls' (65a32061, twin fcb5715b) and 'Senior Software Engineer, Geometric Generation' (2e895957, twin b557e5a3), with the same locations and >=99% identical text. aurora.tech shows one posting per Ashby job (jobId is unique in its index). Ashby is the complete superset.",
+  "checked_at": "2026-10-20T00:13:00Z"
+}

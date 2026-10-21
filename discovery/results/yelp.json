@@ -1,0 +1,28 @@
+{
+  "key": "yelp",
+  "name": "Yelp",
+  "careers_url": "https://www.yelp.careers/us/en/search-results",
+  "hiring_system": "icims (uscareers-yelp) + phenom copy",
+  "checker": "multi",
+  "settings": {
+    "base_url": "https://www.yelp.careers",
+    "ref_num": "YELPUS",
+    "lang": "en_us",
+    "country": "us",
+    "site_type": "external",
+    "page_name": "search-results",
+    "job_path": "/us/en/job/{jobId}/{slug}",
+    "page_size": 500
+  },
+  "feed": "GET https://uscareers-yelp.icims.com/jobs/search?ss=1&in_iframe=1&pr=N + Phenom POST https://www.yelp.careers/widgets",
+  "feed_total": 20,
+  "page_total": 20,
+  "page_total_how": "Playwright render of https://www.yelp.careers/us/en/search-results (2026-10-20T00:24Z) showed '20 Results'. iCIMS cross-check: uscareers-yelp 17 + cancareers-yelp 2 = 19; the extra Phenom job 14077 is HTTP 410 'no longer open' on iCIMS.",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW /widgets, /us/en/search-results, /us/en/job/* (no matching rule; */apply, */px-widgets disallowed); ALLOW both iCIMS /jobs/search?ss=1&in_iframe=1 (no matching rule)",
+  "notes": "Phenom chosen over iCIMS: JSON, one call, covers both portals; it can lag on closures (1 stale job today). The de_de locale repeats the same 20 jobs: fetch en_us only. iCIMS HTML lists are an equal cross-check (icims adapter, 2 portals). Second source added 2026-10-20: iCIMS US portal first (16; it already drops closed jobs), Phenom adds the Canada roles (3).",
+  "checked_at": "2026-10-20T00:26:00Z"
+}

@@ -1,0 +1,109 @@
+[
+ {
+  "portalJobPost": {
+   "portalId": 111,
+   "portalUrl": "https://careers-americas.icims.com/jobs/26266/software-engineer-intern%2c-2027-summer-u.s./job",
+   "id": 26266,
+   "updatedDate": "2026-09-18 04:09 PM"
+  },
+  "id": 26266,
+  "portalId": 111,
+  "title": "Software Engineer Intern, 2027 Summer U.S.",
+  "locations": [
+   "San Francisco - United States -   San Francisco, California 94104 United States",
+   "Seattle - United States -   Seattle, Washington  United States"
+  ],
+  "category": "Interns",
+  "overview": "<p><strong>Working at Atlassian</strong></p><p>Atlassians can choose where they work – whether in an office, from home, or a combination of the two. That way, Atlassians have more control over supporting their family, personal goals, and other priorities. We can hire people in any country where we h…[truncated]",
+  "responsibilities": "<p>From day one, you will be a valued part of our development team, trusted to make changes to code that directly impact our products, while gaining deep technical knowledge in full lifecycle product development. You will report to Senior Engineers on your team and dream up and code new features tha…[truncated]",
+  "qualifications": "<p><strong>Minimum Qualifications</strong></p><ul><li><p>Able to commit to a 12-week full-time (40hrs/week) program during Summer 2027.</p></li><li><p>Currently enrolled full-time in a Bachelors or Masters degree program in Computer Science or related technical field and returning to the program aft…[truncated]",
+  "applyUrl": "https://careers-americas.icims.com/jobs/26266/software-engineer-intern%2c-2027-summer-u.s./job?mode=apply",
+  "compensation": "<p><strong>Compensation</strong><br/>At Atlassian, we strive to design equitable, explainable, and competitive compensation programs. We follow consistent hiring practices and account for each candidate's skills, knowledge, and experience when setting base pay within the range.</p><p>In the <strong>…[truncated]"
+ },
+ {
+  "portalJobPost": {
+   "portalId": 251,
+   "portalUrl": "https://campus-americas.icims.com/jobs/26272/data-engineer-intern%2c-2027-summer-u.s./job",
+   "id": 26272,
+   "updatedDate": "2026-10-06 09:35 PM"
+  },
+  "id": 26272,
+  "portalId": 251,
+  "title": "Data Engineer Intern, 2027 Summer U.S.",
+  "locations": [
+   "Seattle - United States -   Seattle, Washington  United States",
+   "Remote - Remote"
+  ],
+  "category": "Interns",
+  "overview": "<p><strong>Working at Atlassian</strong><br/>Atlassians have the flexibility to work where they can collaborate most effectively with their team, whether at home, one of our global offices, or both. We hire in any country where we have a legal entity. Learn how we work at <a href=\"https://go.atlassi…[truncated]",
+  "responsibilities": "<p>Data Engineering is a multi-faceted role, where you can have focused or broad set of responsibilities, including:</p><ul><li><p>Define metrics</p></li><li><p>Instrument logging</p></li><li><p>Acquire/ingest data</p></li><li><p>Architect &amp; modeling data</p></li><li><p>Transform data</p></li><l…[truncated]",
+  "qualifications": "<ul><li><p>Experience programming with Python, or other related object-oriented programming languages</p></li><li><p>Have an interest in software engineering demonstrated by previous internships, work experience, projects, or publications</p></li><li><p>Knowledge of data structures, in particular ho…[truncated]",
+  "applyUrl": "https://campus-americas.icims.com/jobs/26272/data-engineer-intern%2c-2027-summer-u.s./job?mode=apply"
+ },
+ {
+  "portalJobPost": {
+   "portalId": 251,
+   "portalUrl": "https://campus-americas.icims.com/jobs/25813/software-engineer%2c-2027-graduate-u.s./job",
+   "id": 25813,
+   "updatedDate": "2026-09-29 10:34 PM"
+  },
+  "id": 25813,
+  "portalId": 251,
+  "title": "Software Engineer, 2027 Graduate U.S.",
+  "locations": [
+   "Seattle - United States -   Seattle, Washington  United States"
+  ],
+  "category": "Graduates",
+  "overview": "<p><strong>Working at Atlassian</strong><br/>Atlassians have the flexibility to work where they can collaborate most effectively with their team, whether at home, one of our global offices, or both. We hire in any country where we have a legal entity. Learn how we work at <a href=\"https://go.atlassi…[truncated]",
+  "responsibilities": "<ul><li><p><strong>Build Production-Ready Features</strong>: Develop scalable code for Atlassian's products (Jira, Confluence, Trello) used by millions of teams worldwide, contributing to reliable systems that power global collaboration</p></li><li><p><strong>Own End-to-End Projects</strong>: Take o…[truncated]",
+  "qualifications": "<p><strong>Minimum Qualifications</strong></p><ul><li><p>Currently enrolled full time in a<span style=\"color: rgb(191, 38, 0);\"> </span>Bachelors or Masters degree program in Computer Science or related technical field and are graduating by <strong>August 2027.</strong></p></li><li><p><strong>Progra…[truncated]",
+  "applyUrl": "https://campus-americas.icims.com/jobs/25813/software-engineer%2c-2027-graduate-u.s./job?mode=apply",
+  "payRanges": "<p>In The <strong>United States</strong>, we have three geographic pay zones. For this role, our current base pay ranges for new hires in each zone are:</p>\n<p><strong>Zone A</strong>: $122,400 - $159,800</p>\n<p><strong>Zone B</strong>: $110,160 - $143,820</p>\n<p><strong>Zone C</strong>: $101,592 - …[truncated]",
+  "compensation": "<p data-compensation='true'>At Atlassian, we strive to design equitable, explainable, and competitive compensation programs. We follow consistent hiring practices and account for each candidate's skills, knowledge, and experience when setting base pay within the range.</p><p>Please visit <a href=\"ht…[truncated]"
+ },
+ {
+  "portalJobPost": {
+   "portalId": 111,
+   "portalUrl": "https://careers-americas.icims.com/jobs/26762/senior-ml-system-engineer/job",
+   "id": 26762,
+   "updatedDate": "2026-09-30 08:20 PM"
+  },
+  "id": 26762,
+  "portalId": 111,
+  "title": "Senior ML System Engineer",
+  "type": "Full-Time",
+  "locations": [
+   "Remote - Americas - Remote",
+   "Remote - Remote",
+   "San Francisco - United States -   San Francisco, California 94104 United States",
+   "Austin - United States -   Austin, Texas 78702 United States",
+   "Mountain View - United States or Remote -   Mountain View, California 94041 United States",
+   "New York - United States -   New York, New York 10003 United States"
+  ],
+  "category": "Engineering",
+  "overview": "<p><strong>Working at Atlassian</strong><br/>Atlassians can choose where they work – whether in an office, from home, or a combination of the two. That way, Atlassians have more control over supporting their family, personal goals, and other priorities. We can hire people in any country where we hav…[truncated]",
+  "responsibilities": "<p>As a Senior ML System Engineer in the Rovo GenAI Platform team, you will build and maintain the core infrastructure to allow machine learning engineers and data scientists to develop, train, evaluate, deploy, and operate Machine Learning models and pipelines, and power the GenAI products in Atlas…[truncated]",
+  "qualifications": "<h2>On your first day, we’ll expect you to have</h2><ul><li><p>5+ years of experience as a software developer.</p></li><li><p>Fluency in at least one modern object-oriented programming language (preferably Java/Kotlin and Python).</p></li><li><p>Experience with Continuous Delivery and Continuous Int…[truncated]",
+  "applyUrl": "https://careers-americas.icims.com/jobs/26762/senior-ml-system-engineer/job?mode=apply",
+  "payRanges": "<p>In The <strong>United States</strong>, we have three geographic pay zones. For this role, our current base pay ranges for new hires in each zone are:</p>\n<p><strong>Zone A</strong>: $206,100 - $269,075</p>\n<p><strong>Zone B</strong>: $185,490 - $242,168</p>\n<p><strong>Zone C</strong>: $171,063 - …[truncated]",
+  "compensation": "<p><strong>Compensation</strong></p><p>At Atlassian, we strive to design equitable, explainable, and competitive compensation programs. To support this goal, the baseline of our range is higher than that of the typical market range, but in turn we expect to hire most candidates near this baseline. B…[truncated]"
+ },
+ {
+  "portalJobPost": {
+   "portalId": 242,
+   "portalUrl": "https://careers-apac-atlassian.icims.com/jobs/26753/principal-software-engineer/job",
+   "id": 26753,
+   "updatedDate": "2026-10-07 06:05 AM"
+  },
+  "id": 26753,
+  "portalId": 242,
+  "title": "Principal Software Engineer",
+  "type": "Full-Time",
+  "locations": [],
+  "category": "Engineering",
+  "overview": "<h3>Working at Atlassian India</h3><p>Atlassian's mission \"to unleash the potential of every team\" is the guiding light behind what we do. Our products, including Jira, Confluence and Bitbucket, help teams everywhere work better together, from NASA to Cochlear.</p><p>Our office is in Bengaluru, but …[truncated]",
+  "responsibilities": "<p>As a Principal Engineer, you will set the technical direction for Atlassian's Kubernetes, compute and AI/ML infrastructure platform. You will lead engineers across several teams on our hardest problems, and take large, cross-team initiatives from design to launch.</p><h3>What you'll do</h3><ul><l…[truncated]",
+  "qualifications": "<ul><li><p>10+ years building and operating large-scale cloud infrastructure or platform-as-a-service systems.</p></li><li><p>Deep, hands-on Kubernetes expertise from running it in production at scale: internals, networking, multi-tenancy, and building operators and CRDs.</p></li><li><p>Strong exper…[truncated]",
+  "applyUrl": "https://careers-apac-atlassian.icims.com/jobs/26753/principal-software-engineer/job?mode=apply"
+ }
+]

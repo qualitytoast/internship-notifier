@@ -1,0 +1,21 @@
+{
+  "key": "hugging-face",
+  "name": "Hugging Face",
+  "careers_url": "https://apply.workable.com/huggingface/",
+  "hiring_system": "workable",
+  "checker": "workable",
+  "settings": {
+    "account": "huggingface"
+  },
+  "feed": "POST https://apply.workable.com/api/v3/accounts/huggingface/jobs {\"query\":\"\",\"department\":[],\"location\":[],\"workplace\":[],\"worktype\":[]}",
+  "feed_total": 6,
+  "page_total": 6,
+  "page_total_how": "Playwright render of https://apply.workable.com/huggingface/: the page auto-applies a geo filter ('We've detected your location and are showing jobs in United States') and lists 5; after 'Clear filters' it lists 6 job links = the 6 feed shortcodes. The page's own /api/v1/accounts/huggingface/jobs/count returns {\"total\":6,\"incountry\":3}.",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (apply.workable.com: no matching rule)",
+  "notes": "huggingface.co/careers redirects here (huggingface.co/jobs is the Hub's login-only jobs product, not careers). Always POST with empty filters: the browser's second POST adds location=[US] and drops EMEA jobs.",
+  "checked_at": "2026-10-20T00:37:53Z"
+}

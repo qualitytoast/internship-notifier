@@ -1,0 +1,7 @@
+# status 200
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+
+Sitemap: https://semgrep.dev/assets/sitemap
+
+Sitemap: https://semgrep.dev/docs/sitemap.xml

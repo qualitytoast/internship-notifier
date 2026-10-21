@@ -1,0 +1,27 @@
+{
+  "key": "brevan-howard",
+  "name": "Brevan Howard",
+  "careers_url": "https://careers.brevanhoward.com/gb/en/search-results",
+  "hiring_system": "phenom (over Workday)",
+  "checker": "phenom",
+  "settings": {
+    "base_url": "https://careers.brevanhoward.com",
+    "ref_num": "BHABHAGB",
+    "lang": "en_gb",
+    "country": "gb",
+    "site_type": "external",
+    "page_name": "search-results",
+    "job_path": "/gb/en/job/{jobId}/{slug}"
+  },
+  "feed": "POST https://careers.brevanhoward.com/widgets (ddoKey=refineSearch, size=100)",
+  "feed_total": 26,
+  "page_total": 26,
+  "page_total_how": "Playwright render of search-results: 'Available jobs 26 results found'; sitemap 26; Workday CXS 26 (same ids)",
+  "intern_total": 16,
+  "status": "verified",
+  "robots": "ALLOW (no matching rule)",
+  "notes": "Workday site is robots-hidden by the tenant; Phenom is the intended route.",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-19T23:55:00Z"
+}

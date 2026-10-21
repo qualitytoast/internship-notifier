@@ -1,0 +1,13 @@
+# secrets
+.env
+# runtime state (database, outbox copies of every email, logs, robots cache)
+data/
+# local environments and build artefacts
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+# raw discovery captures (137 MB of page dumps; the distilled evidence is in discovery/notes, results, samples)
+discovery/captures/
+discovery/capture_run.log

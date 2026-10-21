@@ -1,0 +1,23 @@
+{
+  "key": "general-motors",
+  "name": "General Motors",
+  "careers_url": "https://search-careers.gm.com/en/jobs/",
+  "hiring_system": "workday (behind an Umbraco 'jobboard' marketing site)",
+  "checker": "workday",
+  "settings": {
+    "host": "generalmotors.wd5.myworkdayjobs.com",
+    "tenant": "generalmotors",
+    "site": "Careers_GM"
+  },
+  "feed": "POST https://generalmotors.wd5.myworkdayjobs.com/wday/cxs/generalmotors/Careers_GM/jobs (limit 20, offset paging; 42 pages)",
+  "feed_total": 830,
+  "page_total": 821,
+  "page_total_how": "Playwright render of https://search-careers.gm.com/en/jobs/ 'Showing 1 to 20 of 821 matching jobs' (same at 18:50 and 19:17 local). With ?country=United+States+of+America the site shows 700 vs CXS US 709; outside the US the totals agree (821-700 = 121 = 830-709).",
+  "intern_total": 68,
+  "status": "verified",
+  "robots": "ALLOW (no matching rule; robots allows /Careers_GM/, disallows only /refreshFacet/)",
+  "notes": "The marketing site omits 9 US postings: exactly the 700 'General Motors LLC' US jobs are shown, while CXS also has 3 'Cruise LLC' postings and 6 US postings with no hiring company. CXS is complete. Intern signal: workerSubType facet (Intern 58, Co-Op 8, Apprentice 1) or jobFamily 'Student Intern' (66); titles give 68. Careers_TEI (2 jobs) duplicates Careers_GM; Careers_GM_Private is empty.",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-20T00:20:00Z"
+}

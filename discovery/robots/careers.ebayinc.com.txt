@@ -1,0 +1,8 @@
+# status 200
+User-Agent: *
+Crawl-delay: 2
+Disallow: /akamai-sureroute-test-object.html
+Disallow: /server-error
+Disallow: /server-error/
+
+Sitemap: https://careers.ebayinc.com/sitemap.xml

@@ -1,0 +1,21 @@
+{
+  "key": "pinecone",
+  "name": "Pinecone",
+  "careers_url": "https://www.pinecone.io/careers/",
+  "hiring_system": "ashby (custom front on pinecone.io)",
+  "checker": "ashby",
+  "settings": {
+    "board": "pinecone"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/pinecone?includeCompensation=false",
+  "feed_total": 5,
+  "page_total": 5,
+  "page_total_how": "Playwright render of https://www.pinecone.io/careers/ (filter 'All'): the 'Open Roles' list has 5 jobs linking /careers/<ashby id>/ = the feed's 5 ids.",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com: robots.txt returns 401 = no robots.txt, allow all; jobs.ashbyhq.com/api/ is disallowed and not used)",
+  "notes": "The capture's '6744840 Open Roles' count was a false hit (Tel Aviv postcode next to the heading). The site links pinecone.io/careers/<id>/; the feed's jobUrl is jobs.ashbyhq.com/pinecone/<id>.",
+  "checked_at": "2026-10-20T00:37:53Z"
+}

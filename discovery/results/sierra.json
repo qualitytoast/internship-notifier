@@ -1,0 +1,24 @@
+{
+  "key": "sierra",
+  "name": "Sierra",
+  "careers_url": "https://sierra.ai/careers",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "boards": [
+      "Sierra",
+      "sierra-jp"
+    ]
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/Sierra?includeCompensation=false + GET https://api.ashbyhq.com/posting-api/job-board/sierra-jp?includeCompensation=false",
+  "feed_total": 197,
+  "page_total": 197,
+  "page_total_how": "Playwright render of https://sierra.ai/careers (server-rendered) listed 197 unique job links: 187 to jobs.ashbyhq.com/Sierra/<id> and 10 to jobs.ashbyhq.com/sierra-jp/<id>, matching the two feeds id for id",
+  "intern_total": 2,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com/robots.txt answers HTTP 401, so no robots.txt applies); careers page ALLOW",
+  "notes": "TWO Ashby boards: Sierra (187) and sierra-jp (10 Tokyo roles with Japanese titles). The ashby adapter only takes one `board`, so it needs `boards: [...]` support (as greenhouse has) or two entries. See discovery/notes/sierra.md.",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

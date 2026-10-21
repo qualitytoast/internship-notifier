@@ -1,0 +1,133 @@
+{
+ "data": {
+  "job_search_with_featured_jobs_v2": {
+   "all_jobs": [
+    {
+     "id": "4455569504707135",
+     "title": "Research Scientist Intern, On-Device AI Model Optimization (PhD)",
+     "locations": [
+      "Menlo Park, CA",
+      "Burlingame, CA"
+     ],
+     "teams": [
+      "AI Research"
+     ],
+     "sub_teams": [
+      "Artificial Intelligence"
+     ]
+    },
+    {
+     "id": "4723409617931131",
+     "title": "Research Scientist Intern, Multimodal LLM and Speech-to-Speech Translation (PhD)",
+     "locations": [
+      "Redmond, WA"
+     ],
+     "teams": [
+      "Internship - PhD",
+      "Research"
+     ],
+     "sub_teams": [
+      "Research"
+     ]
+    },
+    {
+     "id": "28245852058411164",
+     "title": "Network Production Engineer (University Grad)",
+     "locations": [
+      "Menlo Park, CA"
+     ],
+     "teams": [
+      "Infrastructure"
+     ],
+     "sub_teams": [
+      "Network Engineering"
+     ]
+    },
+    {
+     "id": "1842433873407112",
+     "title": "Product Manager, Evals & Improvement",
+     "locations": [
+      "Menlo Park, CA",
+      "New York, NY"
+     ],
+     "teams": [
+      "Product Management"
+     ],
+     "sub_teams": [
+      "Product Strategy"
+     ]
+    },
+    {
+     "id": "1113155727752607",
+     "title": "Content Policy Associate Manager, Actor & Behavioral Policy",
+     "locations": [],
+     "teams": [
+      "Communications & Public Policy"
+     ],
+     "sub_teams": [
+      "Public Policy"
+     ]
+    },
+    {
+     "id": "1650887963003826",
+     "title": "Research Engineer - FAIR, SGT",
+     "locations": [
+      "Paris, France"
+     ],
+     "teams": [
+      "AI Research",
+      "Artificial Intelligence"
+     ],
+     "sub_teams": [
+      "Artificial Intelligence",
+      "Engineering"
+     ]
+    }
+   ],
+   "featured_jobs": [
+    {
+     "id": "1690022942358388",
+     "title": "Critical Facility Engineer",
+     "locations": [
+      "Henrico, VA",
+      "Mesa, AZ",
+      "Kansas City, MO",
+      "Ashburn, VA",
+      "Temple, TX",
+      "Rayville, LA",
+      "Gallatin, TN",
+      "Menlo Park, CA",
+      "Montgomery, AL",
+      "Jeffersonville, IN",
+      "Papillion, NE",
+      "Beaver Dam, WI",
+      "Prineville, OR",
+      "Cheyenne, WY",
+      "Lebanon, IN",
+      "Goodyear, AZ",
+      "El Paso, TX",
+      "Bowling Green, OH",
+      "Cedar Rapids, IA",
+      "DeKalb, IL",
+      "New Albany, OH",
+      "Tulsa, OK",
+      "Huntsville, AL",
+      "Rosemount, MN",
+      "Eagle Mountain, UT"
+     ],
+     "teams": [
+      "Data Center"
+     ],
+     "sub_teams": [
+      "Data Center Operations"
+     ]
+    }
+   ],
+   "featured_jobs_title": "Featured Jobs",
+   "all_jobs_title": "All Jobs"
+  }
+ },
+ "extensions": {
+  "is_final": true
+ }
+}

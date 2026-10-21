@@ -1,0 +1,21 @@
+{
+  "key": "sigma-computing",
+  "name": "Sigma Computing",
+  "careers_url": "https://www.sigmacomputing.com/company/careers",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "sigmacomputing"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/sigmacomputing/jobs",
+  "feed_total": 75,
+  "page_total": 75,
+  "page_total_how": "Playwright render of https://www.sigmacomputing.com/careers (redirects to /company/careers) listed 75 links to job-boards.greenhouse.io/sigmacomputing/jobs/<id>, identical to the feed ids",
+  "intern_total": 6,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule; boards-api.greenhouse.io only disallows /embed/); careers page ALLOW (Allow: /)",
+  "notes": "Interns: AI/ML PhD, Software Engineering and Technical Writer (Summer 2027), each in SF and NY.",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

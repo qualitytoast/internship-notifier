@@ -1,0 +1,19 @@
+{
+  "key": "adobe",
+  "name": "Adobe",
+  "careers_url": "https://careers.adobe.com/us/en/search-results",
+  "hiring_system": "workday (tenant adobe, wd5; Phenom ADOBUS front)",
+  "checker": "workday",
+  "settings": {"host": "adobe.wd5.myworkdayjobs.com", "tenant": "adobe", "site": "external_experienced"},
+  "feed": "POST https://adobe.wd5.myworkdayjobs.com/wday/cxs/adobe/external_experienced/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 305,
+  "page_total": 305,
+  "page_total_how": "Playwright render of https://adobe.wd5.myworkdayjobs.com/external_experienced (2026-10-20T00:45Z) showed '305 JOBS FOUND'. The Phenom front careers.adobe.com/us/en/search-results shows '300 results' (refineSearch totalHits 300): it lacks 6 live Workday jobs (e.g. R171338 Frame.io PM) and still lists R170591, which Workday no longer publishes (403).",
+  "intern_total": 21,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW CXS /wday/cxs/adobe/external_experienced/jobs (no matching rule); site path Allow: /external_experienced/",
+  "notes": "Only public Workday site is external_experienced (the one robots.txt lists); external_university exists but CXS answers 403 permission denied; campus roles (jobFamilyGroup University = workerSubType Intern (Fixed Term) = 21) are on external_experienced. Phenom is incomplete and its size=100 paging returned duplicates (238 unique of 300).",
+  "checked_at": "2026-10-20T00:47:00Z"
+}

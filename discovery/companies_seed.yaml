@@ -1,0 +1,171 @@
+# Discovery input: every company from the brief, with the bookmark URL(s) or a starting careers URL.
+# source: bookmark | added
+companies:
+  - {key: databricks, name: Databricks, category: ai, source: bookmark, urls: ["https://www.databricks.com/company/careers/open-positions?department=University%20Recruiting&location=all"]}
+  - {key: openai, name: OpenAI, category: ai, source: bookmark, urls: ["https://openai.com/careers/search/?l=6252b4ed-714d-469a-a970-7a13101bac9d%2Cbbd9f7fe-aae5-476a-9108-f25aea8f6cd2%2Ce8062547-b090-4206-8f1e-7329e0014e98%2C07ed9191-5bc6-421b-9883-f1ac2e276ad7%2C16c48b76-8036-4fe3-a18f-e9d357395713%2Cd9ccdc8b-a098-476b-8d89-e8609e0d963d"]}
+  - {key: cohere, name: Cohere, category: ai, source: bookmark, urls: ["https://jobs.ashbyhq.com/cohere?employmentType=Intern"]}
+  - {key: scale-ai, name: Scale AI, category: ai, source: bookmark, urls: ["https://scale.com/careers?department=University#jobs"]}
+  - {key: wolfram, name: Wolfram, category: software, source: bookmark, urls: ["https://www.wolfram.com/company/careers/opportunities/"]}
+  - {key: amazon, name: Amazon, category: big-tech, source: bookmark, urls: ["https://www.amazon.jobs/content/en/career-programs/university/internships-for-students?country%5B%5D=US&employment-type%5B%5D=Intern#jobs-search"]}
+  - {key: oracle, name: Oracle, category: big-tech, source: bookmark, urls: ["https://careers.oracle.com/en/sites/jobsearch/jobs?keyword=Internship&lastSelectedFacet=locations&mode=location&selectedFlexFieldsFacets=%22AttributeChar13%7CCampus%22&selectedLocationsFacet=300000000106749%3B300000000149325"]}
+  - {key: capital-one, name: Capital One, category: fintech, source: bookmark, urls: ["https://www.capitalonecareers.com/search-jobs?acm=ALL&alrpm=ALL&ascf=[%7B%22key%22:%22custom_fields.Campus%22,%22value%22:%22Internships%22%7D]"]}
+  - {key: hugging-face, name: Hugging Face, category: ai, source: bookmark, urls: ["https://apply.workable.com/huggingface/#jobs"]}
+  - {key: coreweave, name: CoreWeave (Weights & Biases), category: ai, source: bookmark, urls: ["https://coreweave.com/careers/weights-biases"]}
+  - {key: anyscale, name: Anyscale, category: ai, source: bookmark, urls: ["https://jobs.ashbyhq.com/anyscale"]}
+  - {key: groq, name: Groq, category: ai, source: bookmark, urls: ["https://jobs.gem.com/groq"]}
+  - {key: pinecone, name: Pinecone, category: ai, source: bookmark, urls: ["https://www.pinecone.io/careers/#open-roles"]}
+  - {key: grafana-labs, name: Grafana Labs, category: software, source: bookmark, urls: ["https://job-boards.greenhouse.io/grafanalabs?keyword=intern"]}
+  - {key: temporal, name: Temporal, category: software, source: bookmark, urls: ["https://temporal.io/careers#become-a-temporalite"]}
+  - {key: apple, name: Apple, category: big-tech, source: bookmark, urls: ["https://jobs.apple.com/en-us/search?location=united-states-USA&team=internships-STDNT-INTRN"]}
+  - {key: meta, name: Meta, category: big-tech, source: bookmark, urls: ["https://www.metacareers.com/jobsearch/?roles[0]=Internship"]}
+  - {key: uber, name: Uber, category: big-tech, source: bookmark, urls: ["https://jobs.uber.com/en/jobs/?team=University&countries=Canada&countries=United+States"]}
+  - {key: pinterest, name: Pinterest, category: software, source: bookmark, urls: ["https://www.pinterestcareers.com/jobs/?search=Intern&pagesize=20#results"]}
+  - {key: duolingo, name: Duolingo, category: software, source: bookmark, urls: ["https://careers.duolingo.com/?type=Thrive%20Program#careers", "https://careers.duolingo.com/?type=Intern#careers"]}
+  - {key: linkedin, name: LinkedIn, category: big-tech, source: bookmark, urls: ["https://www.linkedin.com/jobs/search-results/?currentJobId=4444658212&keywords=jobs&origin=JOB_SEARCH_PAGE_JOB_FILTER&referralSearchId=h8qRCFetE9BYzhDNBT%2BGGw%3D%3D&geoId=103644278&f_C=1337%2C2587638%2C39939&f_SAL=f_SA_id_226001%3A275001", "https://careers.linkedin.com/"]}
+  - {key: bloomberg, name: Bloomberg, category: fintech, source: bookmark, urls: ["https://bloomberg.avature.net/careers/SearchJobs/?1686=%5B55479%5D&1686_format=2312&listFilterMode=1&jobRecordsPerPage=12"]}
+  - {key: microsoft, name: Microsoft, category: big-tech, source: bookmark, urls: ["https://apply.careers.microsoft.com/careers?hl=en&start=0&location=Canada&pid=1970393556866710&sort_by=distance&filter_include_remote=1&filter_include_relocation=0&filter_employment_type=internship", "https://apply.careers.microsoft.com/careers?hl=en&start=0&location=United+States&pid=1970393556983238&sort_by=timestamp&filter_include_remote=1&filter_include_relocation=0&filter_employment_type=internship"]}
+  - {key: stripe, name: Stripe, category: fintech, source: bookmark, urls: ["https://stripe.com/careers/search?locations=North+America&employment_types=Intern"]}
+  - {key: roblox, name: Roblox, category: gaming, source: bookmark, urls: ["https://careers.roblox.com/jobs?type=internship"]}
+  - {key: dropbox, name: Dropbox, category: software, source: bookmark, urls: ["https://www.dropbox.jobs/en/jobs/?search=intern&pagesize=20#results"]}
+  - {key: synopsys, name: Synopsys, category: semiconductors, source: bookmark, urls: ["https://careers.synopsys.com/category/interns-temp-jobs/44408/8675664/1"]}
+  - {key: liberty-mutual, name: Liberty Mutual, category: finance-insurance, source: bookmark, urls: ["https://libertymutual.eightfold.ai/careers?query=intern&domain=libertymutual.com"]}
+  - {key: autodesk, name: Autodesk, category: software, source: bookmark, urls: ["https://autodesk.wd1.myworkdayjobs.com/uni?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a30a87ed25634629aa6c3958aa2b91ea"]}
+  - {key: toast, name: Toast, category: fintech, source: bookmark, urls: ["https://careers.toasttab.com/jobs/search/search-page-campus"]}
+  - {key: procore, name: Procore, category: software, source: bookmark, urls: ["https://careers.procore.com/jobs/search?page=1&country_codes%5B%5D=CA&country_codes%5B%5D=US&dropdown_field_1_uids%5B%5D=bbb6f64252a7db61b48dd4f3433bcbb6&dropdown_field_1_uids%5B%5D=278991b7bdc1f54af2392b39a79e01d9&dropdown_field_1_uids%5B%5D=0d0cbe641e5c4224021f3f2f0b4134e7&query="]}
+  - {key: t-mobile, name: T-Mobile, category: telecom, source: bookmark, urls: ["https://careers.t-mobile.com/internship?keyword=intern"]}
+  - {key: servicenow, name: ServiceNow, category: software, source: bookmark, urls: ["https://careers.servicenow.com/jobs/?search=intern&pagesize=20#results"]}
+  - {key: workday, name: Workday, category: software, source: bookmark, urls: ["https://workday.wd5.myworkdayjobs.com/Workday_Early_Career/?source=Careers_Website_ec"]}
+  - {key: ebay, name: eBay, category: software, source: bookmark, urls: ["https://jobs.ebayinc.com/us/en/jobs-in-california"]}
+  - {key: palo-alto-networks, name: Palo Alto Networks, category: security, source: bookmark, urls: ["https://jobs.paloaltonetworks.com/en/search-jobs/intern/47263/1"]}
+  - {key: applied-intuition, name: Applied Intuition, category: autonomy, source: bookmark, urls: ["https://www.appliedintuition.com/careers#jobs-list"]}
+  - {key: twitch, name: Twitch, category: software, source: bookmark, urls: ["https://careers.twitch.com/en/early-career"]}
+  - {key: figma, name: Figma, category: software, source: bookmark, urls: ["https://www.figma.com/careers/#job-openings"]}
+  - {key: chan-zuckerberg, name: Chan Zuckerberg Initiative, category: software, source: bookmark, urls: ["https://chanzuckerberg.com/careers/career-opportunities/?"]}
+  - {key: coinbase, name: Coinbase, category: fintech, source: bookmark, urls: ["https://www.coinbase.com/careers/positions?search=intern"]}
+  - {key: rippling, name: Rippling, category: software, source: bookmark, urls: ["https://www.rippling.com/careers/open-roles?search=intern"]}
+  - {key: ramp, name: Ramp, category: fintech, source: bookmark, urls: ["https://ramp.com/emerging-talent#jobs"]}
+  - {key: akamai, name: Akamai, category: software, source: bookmark, urls: ["https://jobs.akamai.com/en/sites/CX_1/jobs?keyword=intern&mode=location"]}
+  - {key: expedia, name: Expedia Group, category: software, source: bookmark, urls: ["https://careers.expediagroup.com/jobs/?keyword=intern&filter%5Bcategory%5D=&filter%5Bjobfamily%5D=&filter%5Bcountry%5D=&filter%5Bstate%5D=&filter%5Bcity%5D="]}
+  - {key: booking, name: Booking.com, category: software, source: bookmark, urls: ["https://jobs.booking.com/booking/jobs?keywords=intern&sortBy=relevance&page=1"]}
+  - {key: squarespace, name: Squarespace, category: software, source: bookmark, urls: ["https://www.squarespace.com/careers/early-career"]}
+  - {key: epic-systems, name: Epic (Epic Systems), category: software, source: bookmark, urls: ["https://careers.epic.com/jobs/?q=aW50ZXJu"]}
+  - {key: wayfair, name: Wayfair, category: software, source: bookmark, urls: ["https://www.wayfair.com/careers/jobs?keywords=intern&locationIds=&stateIds=&countryIds=&currentPage=1"]}
+  - {key: c3-ai, name: C3 AI, category: ai, source: bookmark, urls: ["https://c3.ai/careers"]}
+  - {key: notion, name: Notion, category: software, source: bookmark, urls: ["https://www.notion.com/careers"]}
+  - {key: google, name: Google, category: big-tech, source: bookmark, urls: ["https://www.google.com/about/careers/applications/jobs/results/?category=DATA_CENTER_OPERATIONS&category=DEVELOPER_RELATIONS&category=HARDWARE_ENGINEERING&category=INFORMATION_TECHNOLOGY&category=MANUFACTURING_SUPPLY_CHAIN&category=NETWORK_ENGINEERING&category=PRODUCT_MANAGEMENT&category=PROGRAM_MANAGEMENT&category=SOFTWARE_ENGINEERING&category=TECHNICAL_INFRASTRUCTURE_ENGINEERING&category=TECHNICAL_SOLUTIONS&category=TECHNICAL_WRITING&category=USER_EXPERIENCE&jex=ENTRY_LEVEL&target_level=INTERN_AND_APPRENTICE&sort_by=date"]}
+  - {key: nvidia, name: NVIDIA, category: semiconductors, source: bookmark, urls: ["https://jobs.nvidia.com/careers?start=0&location=United+States&pid=893397488381&sort_by=timestamp&filter_include_remote=1&filter_include_relocation=0&filter_job_type=intern+%28fixed+term%29"]}
+  - {key: visa, name: Visa, category: fintech, source: bookmark, urls: ["https://visa.wd5.myworkdayjobs.com/en-US/Visa_Early_Careers?q=intern&locationCountry=bc33aa3152ec42d4995f4791a106ed09"]}
+  - {key: waymo, name: Waymo, category: autonomy, source: bookmark, urls: ["https://careers.withwaymo.com/jobs/search?page=1&employment_type_uids%5B%5D=fa4c4a8317c6c87309f488cb0d63aa7c&query="]}
+  - {key: spotify, name: Spotify, category: software, source: bookmark, urls: ["https://www.lifeatspotify.com/jobs?j=internship"]}
+  - {key: cloudflare, name: Cloudflare, category: software, source: bookmark, urls: ["https://www.cloudflare.com/careers/jobs/?department=Early+Talent"]}
+  - {key: block, name: Block, category: fintech, source: bookmark, urls: ["https://block.xyz/careers/jobs?employeeTypes[]=Intern"]}
+  - {key: adobe, name: Adobe, category: software, source: bookmark, urls: ["https://careers.adobe.com/us/en/search-results"]}
+  - {key: plaid, name: Plaid, category: fintech, source: bookmark, urls: ["https://plaid.com/careers/?search=intern#search"]}
+  - {key: nuro, name: Nuro, category: autonomy, source: bookmark, urls: ["https://www.nuro.ai/early-career#careers-listing"]}
+  - {key: verkada, name: Verkada, category: hardware, source: bookmark, urls: ["https://www.verkada.com/careers/"]}
+  - {key: hubspot, name: HubSpot, category: software, source: bookmark, urls: ["https://www.hubspot.com/careers/jobs?q=intern&page=1"]}
+  - {key: klaviyo, name: Klaviyo, category: software, source: bookmark, urls: ["https://www.klaviyo.com/careers/search-jobs?team=Engineering&page=&keywords=intern"]}
+  - {key: rocket, name: Rocket Companies, category: fintech, source: bookmark, urls: ["https://careers.rocket.com/us/en/search-results?keywords=intern"]}
+  - {key: smartsheet, name: Smartsheet, category: software, source: bookmark, urls: ["https://www.smartsheet.com/careers-list?location=&department=&position=intern"]}
+  - {key: pitchbook, name: PitchBook, category: fintech, source: bookmark, urls: ["https://job-boards.greenhouse.io/pitchbookdata?keyword=intern"]}
+  - {key: nutanix, name: Nutanix, category: software, source: bookmark, urls: ["https://careers.nutanix.com/en/jobs/?search=&type=Internship&pagesize=20#results"]}
+  - {key: veeva, name: Veeva Systems, category: software, source: bookmark, urls: ["https://careers.veeva.com/job-search-results/?search=intern&remote=false&ts=&regions=United+States%2CCanada&office_locations="]}
+  - {key: netflix, name: Netflix, category: big-tech, source: bookmark, urls: ["https://explore.jobs.netflix.net/careers?query=intern&pid=790315673635&domain=netflix.com&sort_by=relevance&triggerGoButton=true"]}
+  - {key: docusign, name: DocuSign, category: software, source: bookmark, urls: ["https://careers.docusign.com/careers-home/jobs?categories=University%20%26%20New%20Grad"]}
+  - {key: paypal, name: PayPal, category: fintech, source: bookmark, urls: ["https://paypal.eightfold.ai/careers?domain=paypal.com&query=intern&start=0&pid=274921487587&sort_by=relevance"]}
+  - {key: intuit, name: Intuit, category: fintech, source: bookmark, urls: ["https://jobs.intuit.com/search-jobs/intern/27595/1"]}
+  - {key: remitly, name: Remitly, category: fintech, source: bookmark, urls: ["https://careers.remitly.com/job-search-results/?keyword=intern&category="]}
+  - {key: doordash, name: DoorDash, category: software, source: bookmark, urls: ["https://careersatdoordash.com/university-careers/"]}
+  - {key: twilio, name: Twilio, category: software, source: bookmark, urls: ["https://jobs.twilio.com/careers?query=intern&start=0&pid=1099553875542&sort_by=relevance"]}
+  - {key: benchling, name: Benchling, category: software, source: bookmark, urls: ["https://www.benchling.com/careers"]}
+  - {key: general-motors, name: General Motors, category: autonomy, source: bookmark, urls: ["https://search-careers.gm.com/en/jobs/?search=intern&country=Canada&country=United+States+of+America&team=Students+%26+Recent+Graduates&pagesize=20#results"]}
+  - {key: lyft, name: Lyft, category: software, source: bookmark, urls: ["https://www.lyft.com/careers#openings?search=intern"]}
+  - {key: rockwell-automation, name: Rockwell Automation, category: industrial, source: bookmark, urls: ["https://rockwellautomation.wd1.myworkdayjobs.com/External-Rockwell-Automation-Early-Careers"]}
+  - {key: unity, name: Unity, category: gaming, source: bookmark, urls: ["https://unity.com/careers/positions?type=internship"]}
+  - {key: zoox, name: Zoox, category: autonomy, source: bookmark, urls: ["https://zoox.com/careers#job-search-bottom"]}
+  - {key: qualtrics, name: Qualtrics, category: software, source: bookmark, urls: ["https://www.qualtrics.com/careers/us/en/c/engineering-product-ux-design-jobs"]}
+  - {key: samsara, name: Samsara, category: software, source: bookmark, urls: ["https://www.samsara.com/company/careers/roles?type=Intern"]}
+  - {key: salesforce, name: Salesforce, category: big-tech, source: bookmark, urls: ["https://www.salesforce.com/company/careers/jobs/?jobtype=Intern&pagesize=20&country=United+States+of+America&country=Canada&page=1"]}
+  - {key: aurora, name: Aurora Innovation, category: autonomy, source: bookmark, urls: ["https://aurora.tech/careers?departments=Software+Engineering"]}
+  - {key: datadog, name: Datadog, category: software, source: bookmark, urls: ["https://careers.datadoghq.com/all-jobs/?time_type%5B0%5D=Early%20Career"]}
+  - {key: airbnb, name: Airbnb, category: big-tech, source: bookmark, urls: ["https://careers.airbnb.com/positions/?_departments=early-career-program-intern"]}
+  - {key: yelp, name: Yelp, category: software, source: bookmark, urls: ["https://www.yelp.careers/us/en/search-results?keywords=intern"]}
+  - {key: atlassian, name: Atlassian, category: software, source: bookmark, urls: ["https://www.atlassian.com/company/careers/all-jobs?team=Interns&location=&search="]}
+  - {key: mongodb, name: MongoDB, category: software, source: bookmark, urls: ["https://www.mongodb.com/company/careers/see-jobs"]}
+  - {key: okta, name: Okta, category: security, source: bookmark, urls: ["https://www.okta.com/company/careers/job-listing/?keywords=intern&department=All&location=All"]}
+  - {key: crowdstrike, name: CrowdStrike, category: security, source: bookmark, urls: ["https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers?Job_Family=1408861ee6e2015adbe3e7f6b000de0b"]}
+  - {key: affirm, name: Affirm, category: fintech, source: bookmark, urls: ["https://www.affirm.com/careers#jobOpenings"]}
+  - {key: dell, name: Dell Technologies, category: hardware, source: bookmark, urls: ["https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/jobs?keyword=intern&mode=location"]}
+  - {key: grubhub, name: Grubhub (Wonder), category: software, source: bookmark, urls: ["https://wonder.wd1.myworkdayjobs.com/en-US/Grubhub_Careers?q=intern"]}
+  - {key: geico, name: GEICO, category: finance-insurance, source: bookmark, urls: ["https://geico.wd1.myworkdayjobs.com/en-US/External/details/Cybersecurity-Intern---HYBRID_R0046381?jobFamilyGroup=da128ce5a1dc103e7c099155ab532262"]}
+  - {key: american-family, name: American Family Insurance, category: finance-insurance, source: bookmark, urls: ["https://amfam.wd1.myworkdayjobs.com/en-US/AmFamGroupInternCareers?source=AFMIC%20Website"]}
+  - {key: zendesk, name: Zendesk, category: software, source: bookmark, urls: ["https://zendesk.wd1.myworkdayjobs.com/zendesk?q=intern"]}
+  - {key: fidelity, name: Fidelity Investments, category: finance-insurance, source: bookmark, urls: ["https://jobs.fidelity.com/en/jobs/?search=intern&pagesize=20&origin=filtered#results"]}
+  - {key: intel, name: Intel, category: semiconductors, source: bookmark, urls: ["https://intel.wd1.myworkdayjobs.com/External?workerSubType=dc8bf79476611087dfde99931439ae75&locations=1e4a4eb3adf1016541777876bf8111cf&locations=1e4a4eb3adf10146fd5c5276bf81eece&locations=1e4a4eb3adf1011246675c76bf81f8ce&locations=1e4a4eb3adf10118b1dfe877bf8162d0&locations=1e4a4eb3adf1018c4bf78f77bf8112d0&locations=1e4a4eb3adf101b8aec18a77bf810dd0&locations=1e4a4eb3adf1019f4237e975bf81b3ce"]}
+  - {key: amd, name: AMD, category: semiconductors, source: bookmark, urls: ["https://careers.amd.com/students/jobs?page=1&sortBy=posted_date&descending=true"]}
+  - {key: snowflake, name: Snowflake, category: software, source: bookmark, urls: ["https://careers.snowflake.com/us/en/search-results?keywords=intern"]}
+  - {key: robinhood, name: Robinhood, category: fintech, source: bookmark, urls: ["https://careers.robinhood.com/"]}
+  - {key: cisco, name: Cisco, category: big-tech, source: bookmark, urls: ["https://careers.cisco.com/global/en/internships-and-co-ops"]}
+  - {key: john-deere, name: John Deere, category: industrial, source: bookmark, urls: ["https://careers.deere.com/careers?start=0&location=united+states&pid=137482622279&sort_by=timestamp&filter_include_remote=1&filter_include_relocation=0&filter_seniority=0"]}
+  - {key: sig, name: Susquehanna (SIG), category: quant, source: bookmark, urls: ["https://careers.sig.com/intern-co-op/jobs?categories=Interns%20%2B%20Co-ops&page=1&city=Chicago%7CNew%20York%7CRichmond%7CBala%20Cynwyd%20(Philadelphia%20Area)"]}
+  - {key: squarepoint, name: Squarepoint Capital, category: quant, source: bookmark, urls: ["https://www.squarepoint-capital.com/open-opportunities?lvl=Internship"]}
+  - {key: wolverine, name: Wolverine Trading, category: quant, source: bookmark, urls: ["https://www.wolve.com/open-positions"]}
+  - {key: radix, name: Radix Trading, category: quant, source: bookmark, urls: ["https://job-boards.greenhouse.io/radixuniversity"]}
+  - {key: capstone, name: Capstone Investment Advisors, category: quant, source: bookmark, urls: ["https://capstonedc.wd501.myworkdayjobs.com/Capstone?q=intern"]}
+  - {key: xtx-markets, name: XTX Markets, category: quant, source: bookmark, urls: ["https://www.xtxmarkets.com/careers/"]}
+  - {key: goldman-sachs, name: Goldman Sachs, category: finance-insurance, source: bookmark, urls: ["https://www.goldmansachs.com/careers/students/programs-and-internships?0=gscom%3Aprogram-type%2Finternship&1=gscom%3Aprogram-region-careers%2Famericas"]}
+  - {key: instabase, name: Instabase, category: ai, source: bookmark, urls: ["https://www.instabase.com/careers/jobs"]}
+  - {key: yext, name: Yext, category: software, source: bookmark, urls: ["https://www.yext.com/careers/open-positions"]}
+  - {key: immuta, name: Immuta, category: software, source: bookmark, urls: ["https://www.immuta.com/careers#open-positions"]}
+  - {key: workiva, name: Workiva, category: software, source: bookmark, urls: ["https://workiva.wd503.myworkdayjobs.com/careers?workerSubType=831d1538442f014d2d2badf7c52a6e07"]}
+  - {key: ukg, name: UKG, category: software, source: bookmark, urls: ["https://apply.ukg.com/careers?query=intern&start=0&pid=893393901539&sort_by=relevance"]}
+  # ---- companies to add (no bookmark) ----
+  - {key: jane-street, name: Jane Street, category: quant, source: added, urls: ["https://www.janestreet.com/join-jane-street/open-roles/"]}
+  - {key: citadel, name: Citadel, category: quant, source: added, urls: ["https://www.citadel.com/careers/open-opportunities/"]}
+  - {key: citadel-securities, name: Citadel Securities, category: quant, source: added, urls: ["https://www.citadelsecurities.com/careers/open-opportunities/"]}
+  - {key: two-sigma, name: Two Sigma, category: quant, source: added, urls: ["https://careers.twosigma.com/careers/SearchJobs"]}
+  - {key: imc, name: IMC Trading, category: quant, source: added, urls: ["https://www.imc.com/us/careers/jobs"]}
+  - {key: hudson-river-trading, name: Hudson River Trading, category: quant, source: added, urls: ["https://www.hudsonrivertrading.com/careers/"]}
+  - {key: five-rings, name: Five Rings, category: quant, source: added, urls: ["https://fiverings.com/careers/"]}
+  - {key: dv-trading, name: DV Trading, category: quant, source: added, urls: ["https://www.dvtrading.co/careers"]}
+  - {key: point72, name: Point72, category: quant, source: added, urls: ["https://careers.point72.com/"]}
+  - {key: voleon, name: The Voleon Group, category: quant, source: added, urls: ["https://voleon.com/careers/"]}
+  - {key: brevan-howard, name: Brevan Howard, category: quant, source: added, urls: ["https://www.brevanhoward.com/careers/"]}
+  - {key: walleye, name: Walleye Capital, category: quant, source: added, urls: ["https://www.walleyecapital.com/careers/"]}
+  - {key: aqr, name: AQR, category: quant, source: added, urls: ["https://careers.aqr.com/"]}
+  - {key: graviton, name: Graviton Research Capital, category: quant, source: added, urls: ["https://www.gravitontrading.com/careers.html"]}
+  - {key: geneva-trading, name: Geneva Trading, category: quant, source: added, urls: ["https://genevatrading.com/careers/"]}
+  - {key: jump-trading, name: Jump Trading, category: quant, source: added, urls: ["https://www.jumptrading.com/careers/"]}
+  - {key: seven-research, name: Seven Research, category: quant, source: added, urls: ["https://job-boards.greenhouse.io/sevenresearch"]}
+  - {key: voloridge, name: Voloridge Investment Management, category: quant, source: added, urls: ["https://www.voloridge.com/careers/"]}
+  - {key: transmarket-group, name: TransMarket Group, category: quant, source: added, urls: ["https://www.transmarketgroup.com/careers/"]}
+  - {key: gts, name: GTS, category: quant, source: added, urls: ["https://www.gts.com/careers/"]}
+  - {key: kirin, name: Kirin, category: quant, source: added, urls: ["https://jobs.ashbyhq.com/kirin"]}
+  - {key: electronic-arts, name: Electronic Arts, category: gaming, source: added, urls: ["https://jobs.ea.com/"]}
+  - {key: epic-games, name: Epic Games, category: gaming, source: added, urls: ["https://www.epicgames.com/site/en-US/careers/jobs"]}
+  - {key: riot-games, name: Riot Games, category: gaming, source: added, urls: ["https://www.riotgames.com/en/work-with-us/jobs"]}
+  - {key: shopify, name: Shopify, category: software, source: added, urls: ["https://www.shopify.com/careers"]}
+  - {key: red-hat, name: Red Hat, category: software, source: added, urls: ["https://redhat.wd5.myworkdayjobs.com/jobs"]}
+  - {key: the-trade-desk, name: The Trade Desk, category: software, source: added, urls: ["https://careers.thetradedesk.com/"]}
+  - {key: together-ai, name: Together AI, category: ai, source: added, urls: ["https://www.together.ai/careers"]}
+  - {key: glean, name: Glean, category: ai, source: added, urls: ["https://www.glean.com/careers"]}
+  - {key: decagon, name: Decagon, category: ai, source: added, urls: ["https://decagon.ai/careers"]}
+  - {key: sierra, name: Sierra, category: ai, source: added, urls: ["https://sierra.ai/careers"]}
+  - {key: abridge, name: Abridge, category: ai, source: added, urls: ["https://www.abridge.com/careers"]}
+  - {key: harvey, name: Harvey, category: ai, source: added, urls: ["https://www.harvey.ai/careers"]}
+  - {key: waabi, name: Waabi, category: ai, source: added, urls: ["https://waabi.ai/careers/"]}
+  - {key: mistral-ai, name: Mistral AI, category: ai, source: added, urls: ["https://mistral.ai/careers"]}
+  - {key: deepgram, name: Deepgram, category: ai, source: added, urls: ["https://deepgram.com/careers"]}
+  - {key: sigma-computing, name: Sigma Computing, category: software, source: added, urls: ["https://www.sigmacomputing.com/careers"]}
+  - {key: semgrep, name: Semgrep, category: security, source: added, urls: ["https://semgrep.dev/careers"]}
+  - {key: tanium, name: Tanium, category: security, source: added, urls: ["https://www.tanium.com/careers/"]}
+  - {key: whatnot, name: Whatnot, category: software, source: added, urls: ["https://www.whatnot.com/careers"]}
+  - {key: seatgeek, name: SeatGeek, category: software, source: added, urls: ["https://seatgeek.com/jobs"]}
+  - {key: talos, name: Talos, category: fintech, source: added, urls: ["https://www.talos.com/careers"]}
+  - {key: brex, name: Brex, category: fintech, source: added, urls: ["https://www.brex.com/careers"]}
+  - {key: mercury, name: Mercury, category: fintech, source: added, urls: ["https://mercury.com/jobs"]}
+  - {key: postman, name: Postman, category: software, source: added, urls: ["https://www.postman.com/company/careers/"]}
+  - {key: cockroach-labs, name: Cockroach Labs, category: software, source: added, urls: ["https://www.cockroachlabs.com/careers/"]}
+  - {key: 1password, name: 1Password, category: security, source: added, urls: ["https://1password.com/careers"]}
+  - {key: ccc, name: CCC Intelligent Solutions, category: software, source: added, urls: ["https://www.cccis.com/careers"]}
+  - {key: uber-freight, name: Uber Freight, category: software, source: added, urls: ["https://www.uberfreight.com/careers/"]}

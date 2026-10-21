@@ -1,0 +1,21 @@
+{
+  "key": "mistral-ai",
+  "name": "Mistral AI",
+  "careers_url": "https://mistral.ai/careers/",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "mistral.ai"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/mistral.ai?includeCompensation=false",
+  "feed_total": 216,
+  "page_total": 216,
+  "page_total_how": "https://mistral.ai/careers/ 'Apply now' links to https://jobs.ashbyhq.com/mistral.ai. A Playwright render of that page showed 'Open Positions (216)' with 216 job links identical to the feed ids",
+  "intern_total": 4,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com/robots.txt answers HTTP 401, so no robots.txt applies); careers page ALLOW (Allow: /), jobs.ashbyhq.com/mistral.ai ALLOW",
+  "notes": "The board name contains a dot: 'mistral.ai'. Ashby 'mistral' returns 404, Lever 'mistral' returns [] (an old, empty site) and the GH tokens return 0. Of the 4 intern titles, only 2 have employmentType Intern. The other 2 are typed FullTime ('IP & Licensing - Intern', 'Applied Scientist (Internship in Paris or London)'), so match on titles.",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

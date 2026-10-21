@@ -1,0 +1,7 @@
+# status 200
+Sitemap: https://wd1.myworkdaysite.com/recruiting/fmr/FidelityCareers/siteMap.xml
+
+User-agent: *
+Allow: /FidelityCareers/
+Disallow: /targeted/
+Disallow: /refreshFacet/

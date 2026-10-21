@@ -1,0 +1,43 @@
+{
+  "key": "autodesk",
+  "name": "Autodesk",
+  "careers_url": "https://jobs.autodesk.com/careers",
+  "hiring_system": "eightfold (career site jobs.autodesk.com) + workday (ATS; public sites uni and Ext)",
+  "checker": "multi",
+  "settings": {
+    "checkers": [
+      {
+        "checker": "eightfold",
+        "settings": {
+          "host": "jobs.autodesk.com",
+          "domain": "autodesk.com",
+          "api": "pcsx",
+          "min_interval": 2.5
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "autodesk.wd1.myworkdayjobs.com",
+          "tenant": "autodesk",
+          "sites": [
+            "uni",
+            "Ext"
+          ]
+        }
+      }
+    ],
+    "dedupe_by": "alt_ids"
+  },
+  "feed": "GET https://jobs.autodesk.com/api/pcsx/search?domain=autodesk.com&query=&location=&start=N&sort_by=timestamp (10/page) + POST https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/uni/jobs + POST https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/Ext/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 401,
+  "page_total": 386,
+  "page_total_how": "Playwright render of https://jobs.autodesk.com/careers (autodesk.com/careers 'Search jobs' target) showed '386 jobs', 'Page 1 of 39' = PCSX data.count 386. The Workday pages also match their feeds: /uni '37 JOBS FOUND', /Ext '310 JOBS FOUND'. feed_total 401 = unique requisitions over all three feeds (386 on Eightfold + 15 only on Workday).",
+  "intern_total": 30,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW: jobs.autodesk.com/api/pcsx/search (Allow: /api/pcsx); autodesk.wd1 CXS URLs (no matching rule; robots.txt Allow: /Ext/, /uni/)",
+  "notes": "The two systems differ: 88 requisitions are only on Eightfold (2 interns) and 15 only on Workday (1 apprentice, 1 uni-only role), so watch both and dedupe by requisition id (Eightfold displayJobId = Workday bulletFields[0], e.g. 26WD100617). No 'multi' wrapper exists yet: add one or configure two entries. Eightfold paging is unstable (day-granular postedTs): one full scan returned 8 duplicates and missed 8 jobs. See notes/autodesk.md.",
+  "checked_at": "2026-10-20T03:19:24Z"
+}

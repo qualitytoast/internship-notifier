@@ -1,0 +1,24 @@
+{
+  "key": "john-deere",
+  "name": "John Deere",
+  "careers_url": "https://careers.deere.com/careers",
+  "hiring_system": "eightfold (PCSX, native apply; no Workday tenant) + legacy SAP SuccessFactors RMK board jobs.deere.com with 76 SuccessFactors-only items",
+  "checker": "eightfold",
+  "settings": {
+    "host": "careers.deere.com",
+    "domain": "johndeere.com",
+    "api": "pcsx",
+    "min_interval": 2.0
+  },
+  "feed": "GET https://careers.deere.com/api/pcsx/search?domain=johndeere.com&query=&location=&start=N&sort_by=timestamp (10/page, 34 pages); second board: GET https://jobs.deere.com/sitemap.xml (RSS 2.0, 423 items, keep links containing /successfactors/job/ = 76)",
+  "feed_total": 334,
+  "page_total": 334,
+  "page_total_how": "Playwright render of https://careers.deere.com/careers (no filters) showed '334 jobs' / 'of 34'; all 34 API pages read = 334 unique ids. jobs.deere.com search shows 'Results 1 - 25 of 347' (Eightfold copies + SuccessFactors items)",
+  "intern_total": 86,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (careers.deere.com: Allow: /api/pcsx; jobs.deere.com/sitemap.xml: no matching rule; jobs.deere.com/services/ RSS and /applybutton/ are BLOCK)",
+  "notes": "Read the whole Eightfold board each poll (34 req); seniority=Intern (filter_seniority=0, 26) misses 60 student roles ('Part-Time Student' x41, Stagiaire, Student Placement, Ausbildung). Optional custom reader for jobs.deere.com RSS: 76 SuccessFactors-only items not on careers.deere.com (36 German Ausbildung/Schuelerpraktikum items = 20 titles, 35 US hourly, 5 CN); 5.6 MB, ttl 720, poll every 6-12 h.",
+  "checked_at": "2026-10-20T00:33:39Z"
+}

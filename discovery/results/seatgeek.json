@@ -1,0 +1,21 @@
+{
+  "key": "seatgeek",
+  "name": "SeatGeek",
+  "careers_url": "https://seatgeek.com/jobs",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "seatgeek"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/seatgeek/jobs",
+  "feed_total": 37,
+  "page_total": 37,
+  "page_total_how": "seatgeek.com/jobs answers headless Chromium with 403 and a DataDome CAPTCHA, which I did not bypass. job-boards.greenhouse.io/seatgeek 302-redirects to seatgeek.com/jobs. A Playwright render of the GH embed view https://job-boards.greenhouse.io/embed/job_board?for=seatgeek (robots ALLOW) showed '37 jobs' with 37 links seatgeek.com/jobs/<id>?gh_jid=<id>, identical to the feed ids",
+  "intern_total": 3,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule; boards-api.greenhouse.io only disallows /embed/); seatgeek.com robots.txt is itself 403 (DataDome), but the checker never touches seatgeek.com",
+  "notes": "The front-end is bot-protected, so the checker must only call the GH API, which is open. Every absolute_url points to seatgeek.com/jobs/<id>?gh_jid=<id>, which confirms the site renders this board. See discovery/notes/seatgeek.md.",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

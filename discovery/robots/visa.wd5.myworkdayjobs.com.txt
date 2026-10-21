@@ -1,0 +1,9 @@
+# status 200
+Sitemap: https://visa.wd5.myworkdayjobs.com/Visa/siteMap.xml
+Sitemap: https://visa.wd5.myworkdayjobs.com/Visa_Early_Careers/siteMap.xml
+
+User-agent: *
+Allow: /Visa/
+Allow: /Visa_Early_Careers/
+Disallow: /Visa_Talent_Portal/
+Disallow: /refreshFacet/

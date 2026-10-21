@@ -1,0 +1,26 @@
+{
+  "key": "salesforce",
+  "name": "Salesforce",
+  "careers_url": "https://www.salesforce.com/company/careers/jobs/",
+  "hiring_system": "workday (tenant salesforce, wd12; 9 career sites)",
+  "checker": "workday",
+  "settings": {
+    "host": "salesforce.wd12.myworkdayjobs.com",
+    "tenant": "salesforce",
+    "sites": [
+      "External_Career_Site",
+      "Futureforce_Internships"
+    ]
+  },
+  "feed": "POST https://salesforce.wd12.myworkdayjobs.com/wday/cxs/salesforce/{External_Career_Site,Futureforce_Internships}/jobs",
+  "feed_total": 1588,
+  "page_total": 1588,
+  "page_total_how": "Playwright render of the two Workday career sites: '1563 JOBS FOUND' (External_Career_Site) + '25 JOBS FOUND' (Futureforce_Internships) = 1588 = checker",
+  "intern_total": 55,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "Re-test the workday settings above from the deployment host at a low rate (about 1 request / 5 s); if it answers, it is the complete official feed (earlier 200s: Futureforce_Internships total 25; External_Career_Site with searchText 'intern' total 803, a fuzzy match, so the site holds at least 803 jobs). Otherwise Workday job-alert emails for External_Career_Site / Futureforce_Internships and the SimplifyJobs cross-check.",
+  "robots": "ALLOW (no matching rule; robots.txt allows all 9 sites, disallows /refreshFacet/)",
+  "notes": "The HTTP 429s seen during discovery were temporary per-IP rate limiting; paced at 5 s/request it answers normally. www.salesforce.com/company/careers (Akamai) is not needed.",
+  "checked_at": "2026-10-20T03:55:00Z"
+}

@@ -1,0 +1,23 @@
+{
+  "key": "capital-one",
+  "name": "Capital One",
+  "careers_url": "https://www.capitalonecareers.com/search-jobs",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "capitalone.wd12.myworkdayjobs.com",
+    "tenant": "capitalone",
+    "site": "Capital_One"
+  },
+  "feed": "POST https://capitalone.wd12.myworkdayjobs.com/wday/cxs/capitalone/Capital_One/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 1966,
+  "page_total": 1841,
+  "page_total_how": "Server-rendered https://www.capitalonecareers.com/search-jobs shows '1841 Jobs' (data-total-results=1841; jobs_sitemap.xml has 1841 job URLs). The same Workday site also feeds capitalonecareers.ca/search-jobs (52) and jobs.capitalone.co.uk/search-jobs (79): 1841+52+79 = 1972 vs Workday 1966 (Workday CA+UK location filter = 129; ~6 jobs listed on two country sites or syncing)",
+  "intern_total": 7,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for /wday/cxs/capitalone/Capital_One/jobs and job details; Workday robots only disallows /refreshFacet/. capitalonecareers.com disallows /search-jobs/ (TalentBrew AJAX pager), so TalentBrew is not a usable full feed",
+  "notes": "Workday Capital_One is the union of three Radancy TalentBrew country sites (US 1841, CA 52, UK 79); campus/intern jobs are on the same site (no separate campus site). The bookmark's Campus=Internships filter is empty today although Workday has 7 interns (workerSubType=Intern: 5 US, 2 Toronto). Total 1966 is just under Workday's 2000 cap: alert if total == 2000 and partition by jobFamilyGroup.",
+  "checked_at": "2026-10-20T00:30:08Z"
+}

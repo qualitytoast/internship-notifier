@@ -1,0 +1,5 @@
+# status 200
+Sitemap: https://www.xtxmarkets.com/sitemap.xml
+
+User-agent: *
+Allow: /

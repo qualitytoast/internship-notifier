@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://procore.wd12.myworkdayjobs.com/Procore_External_Careers/siteMap.xml
+
+User-agent: *
+Allow: /Procore_External_Careers/
+Disallow: /refreshFacet/

@@ -1,0 +1,556 @@
+{
+ "_note": "captured 2026-10-20 (UTC); trimmed: first N jobPostings of offset 0 plus the facets block, other pages omitted",
+ "Grubhub_Careers": {
+  "request": "POST https://wonder.wd1.myworkdayjobs.com/wday/cxs/wonder/Grubhub_Careers/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":0,\"searchText\":\"\"}",
+  "response": {
+   "total": 36,
+   "jobPostings": [
+    {
+     "title": "Senior Manager, Logistics — Cost & Speed",
+     "externalPath": "/job/New-York-NY/Senior-Manager--Logistics---Cost---Speed_JR101424",
+     "timeType": "Full time",
+     "locationsText": "New York, NY",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "JR101424"
+     ]
+    },
+    {
+     "title": "Staff Machine Learning Engineer",
+     "externalPath": "/job/New-York-NY/Staff-Machine-Learning-Engineer_JR101417-1",
+     "timeType": "Full time",
+     "locationsText": "New York, NY",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "JR101417"
+     ]
+    },
+    {
+     "title": "NetSuite Engineer, Finance Systems",
+     "externalPath": "/job/Chicago/NetSuite-Engineer--Finance-Systems_JR101422",
+     "timeType": "Full time",
+     "locationsText": "Chicago",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "JR101422"
+     ]
+    },
+    {
+     "title": "Senior Associate, Finance",
+     "externalPath": "/job/Chicago/Senior-Manager--Finance_JR101017",
+     "timeType": "Full time",
+     "locationsText": "Chicago",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "JR101017"
+     ]
+    }
+   ],
+   "facets": [
+    {
+     "facetParameter": "jobFamilyGroup",
+     "descriptor": "Job Category",
+     "values": [
+      {
+       "descriptor": "Finance",
+       "id": "057ad3002e211001ef5e00e6c98d0000",
+       "count": 3
+      },
+      {
+       "descriptor": "Information Technology",
+       "id": "057ad3002e211001ef5e5695da200000",
+       "count": 2
+      },
+      {
+       "descriptor": "Logistics",
+       "id": "057ad3002e211001ef5e1b6241f70000",
+       "count": 2
+      },
+      {
+       "descriptor": "Marketing",
+       "id": "057ad3002e211001ef5e22004a250000",
+       "count": 1
+      },
+      {
+       "descriptor": "People",
+       "id": "057ad3002e211001ef5e361edeaa0000",
+       "count": 1
+      },
+      {
+       "descriptor": "Product",
+       "id": "057ad3002e211001ef5e3c231db60000",
+       "count": 3
+      },
+      {
+       "descriptor": "Sales",
+       "id": "057ad3002e211001ef5e5d31b6e80000",
+       "count": 15
+      },
+      {
+       "descriptor": "Software",
+       "id": "057ad3002e211001ef5e2f83203f0000",
+       "count": 9
+      }
+     ]
+    },
+    {
+     "facetParameter": "workerSubType",
+     "descriptor": "Job Type",
+     "values": [
+      {
+       "descriptor": "Regular",
+       "id": "e09e1f6daade1000d4e7750720db0000",
+       "count": 36
+      }
+     ]
+    },
+    {
+     "facetParameter": "timeType",
+     "descriptor": "Full/Part-time",
+     "values": [
+      {
+       "descriptor": "Full time",
+       "id": "646f33ced7511009ecaeeda598e50003",
+       "count": 36
+      }
+     ]
+    },
+    {
+     "facetParameter": "locationMainGroup",
+     "values": [
+      {
+       "facetParameter": "locations",
+       "descriptor": "Locations",
+       "values": [
+        {
+         "descriptor": "Boston",
+         "id": "057ad3002e211001a59f3f33139b0000",
+         "count": 2
+        },
+        {
+         "descriptor": "Chicago",
+         "id": "057ad3002e211001a59f59389ec90000",
+         "count": 13
+        },
+        {
+         "descriptor": "District of Columbia",
+         "id": "057ad3002e211001a59f895b7a110000",
+         "count": 2
+        },
+        {
+         "descriptor": "New York, NY",
+         "id": "301ecf43a9591000d4fdf7ee27640000",
+         "count": 19
+        },
+        {
+         "descriptor": "Remote, USA",
+         "id": "906ad227847c1002060adf0939310000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Arizona Tier 3",
+         "id": "057ad3002e211001a5a08ec638c40000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - California Tier 1",
+         "id": "e09e1f6daade1000d52f432ba30c0000",
+         "count": 2
+        },
+        {
+         "descriptor": "Remote - California Tier 2",
+         "id": "057ad3002e211001a5a0a7efdc990000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - District of Columbia Tier 1",
+         "id": "e09e1f6daade1000d52f88312a040000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Georgia Tier 2",
+         "id": "057ad3002e211001a5a1ad8e62ed0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Massachusetts Tier 1",
+         "id": "e09e1f6daade1000d52efca1a22e0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Missouri Tier 3",
+         "id": "057ad3002e211001a5a49e1bb20e0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - New York Tier 1",
+         "id": "e09e1f6daade1000d52f8230fe800000",
+         "count": 3
+        },
+        {
+         "descriptor": "Remote - Oregon Tier 2",
+         "id": "057ad3002e211001a5a7424633810000",
+         "count": 2
+        },
+        {
+         "descriptor": "Remote - Texas Tier 2",
+         "id": "057ad3002e211001a5a869318c3a0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Spyce",
+         "id": "bb298fac0601100110a1b3ce64a90000",
+         "count": 1
+        },
+        {
+         "descriptor": "Swedesboro",
+         "id": "9f09b95b4d3110010ef7c3d951370000",
+         "count": 1
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "WG": {
+  "request": "POST https://wonder.wd1.myworkdayjobs.com/wday/cxs/wonder/WG/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":0,\"searchText\":\"\"}",
+  "response": {
+   "total": 78,
+   "jobPostings": [
+    {
+     "title": "Senior Manager, Logistics — Cost & Speed",
+     "externalPath": "/job/New-York-NY/Senior-Manager--Logistics---Cost---Speed_JR101424-1",
+     "timeType": "Full time",
+     "locationsText": "New York, NY",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "JR101424"
+     ]
+    },
+    {
+     "title": "Staff Machine Learning Engineer",
+     "externalPath": "/job/New-York-NY/Staff-Machine-Learning-Engineer_JR101417-2",
+     "timeType": "Full time",
+     "locationsText": "New York, NY",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "JR101417"
+     ]
+    },
+    {
+     "title": "Senior Staff Machine Learning Engineer",
+     "externalPath": "/job/New-York-NY/Senior-Staff-Machine-Learning-Engineer_JR101278-2",
+     "timeType": "Full time",
+     "locationsText": "New York, NY",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "JR101278"
+     ]
+    },
+    {
+     "title": "NetSuite Engineer, Finance Systems",
+     "externalPath": "/job/Chicago/NetSuite-Engineer--Finance-Systems_JR101422-1",
+     "timeType": "Full time",
+     "locationsText": "Chicago",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "JR101422"
+     ]
+    },
+    {
+     "title": "Procurement Intern",
+     "externalPath": "/job/New-York-NY/Procurement-Intern_JR101333",
+     "timeType": "Full time",
+     "locationsText": "New York, NY",
+     "postedOn": "Posted 30+ Days Ago",
+     "bulletFields": [
+      "JR101333"
+     ]
+    },
+    {
+     "title": "Supply Chain Analytics Intern",
+     "externalPath": "/job/New-York-NY/Supply-Chain-Analytics-Intern_JR101320",
+     "timeType": "Full time",
+     "locationsText": "New York, NY",
+     "postedOn": "Posted 30+ Days Ago",
+     "bulletFields": [
+      "JR101320"
+     ]
+    },
+    {
+     "title": "Sourcing Associate Intern",
+     "externalPath": "/job/Parsippany-NJ/Sourcing-Associate-Intern_JR101322",
+     "timeType": "Full time",
+     "locationsText": "Parsippany, NJ",
+     "postedOn": "Posted 30+ Days Ago",
+     "bulletFields": [
+      "JR101322"
+     ]
+    }
+   ],
+   "facets": [
+    {
+     "facetParameter": "jobFamilyGroup",
+     "descriptor": "Job Category",
+     "values": [
+      {
+       "descriptor": "Administration",
+       "id": "057ad3002e211001ef5ddfc627050000",
+       "count": 1
+      },
+      {
+       "descriptor": "Communications & Government Relations",
+       "id": "057ad3002e211001ef5de6ffb4c10000",
+       "count": 1
+      },
+      {
+       "descriptor": "Data, BI & Analytics",
+       "id": "057ad3002e211001ef5dfa457b730000",
+       "count": 1
+      },
+      {
+       "descriptor": "Finance",
+       "id": "057ad3002e211001ef5e00e6c98d0000",
+       "count": 14
+      },
+      {
+       "descriptor": "Food Production & Operations",
+       "id": "057ad3002e211001ef5e078803060000",
+       "count": 1
+      },
+      {
+       "descriptor": "General Management",
+       "id": "057ad3002e211001ef5e0d8d63b20000",
+       "count": 1
+      },
+      {
+       "descriptor": "Information Technology",
+       "id": "057ad3002e211001ef5e5695da200000",
+       "count": 6
+      },
+      {
+       "descriptor": "Logistics",
+       "id": "057ad3002e211001ef5e1b6241f70000",
+       "count": 5
+      },
+      {
+       "descriptor": "Marketing",
+       "id": "057ad3002e211001ef5e22004a250000",
+       "count": 4
+      },
+      {
+       "descriptor": "People",
+       "id": "057ad3002e211001ef5e361edeaa0000",
+       "count": 2
+      },
+      {
+       "descriptor": "Product",
+       "id": "057ad3002e211001ef5e3c231db60000",
+       "count": 11
+      },
+      {
+       "descriptor": "Robotics",
+       "id": "bb298fac06011000d289120d72860000",
+       "count": 1
+      },
+      {
+       "descriptor": "Sales",
+       "id": "057ad3002e211001ef5e5d31b6e80000",
+       "count": 15
+      },
+      {
+       "descriptor": "Software",
+       "id": "057ad3002e211001ef5e2f83203f0000",
+       "count": 15
+      }
+     ]
+    },
+    {
+     "facetParameter": "workerSubType",
+     "descriptor": "Job Type",
+     "values": [
+      {
+       "descriptor": "Intern (Fixed Term)",
+       "id": "e09e1f6daade1000d4e775a112090000",
+       "count": 6
+      },
+      {
+       "descriptor": "Regular",
+       "id": "e09e1f6daade1000d4e7750720db0000",
+       "count": 72
+      }
+     ]
+    },
+    {
+     "facetParameter": "timeType",
+     "descriptor": "Full/Part-time",
+     "values": [
+      {
+       "descriptor": "Full time",
+       "id": "646f33ced7511009ecaeeda598e50003",
+       "count": 78
+      }
+     ]
+    },
+    {
+     "facetParameter": "locationMainGroup",
+     "values": [
+      {
+       "facetParameter": "locations",
+       "descriptor": "Locations",
+       "values": [
+        {
+         "descriptor": "Boston",
+         "id": "057ad3002e211001a59f3f33139b0000",
+         "count": 12
+        },
+        {
+         "descriptor": "Chicago",
+         "id": "057ad3002e211001a59f59389ec90000",
+         "count": 13
+        },
+        {
+         "descriptor": "District of Columbia",
+         "id": "057ad3002e211001a59f895b7a110000",
+         "count": 2
+        },
+        {
+         "descriptor": "HQ",
+         "id": "e09e1f6daade1000d52f1fc5bebe0000",
+         "count": 1
+        },
+        {
+         "descriptor": "New York, NY",
+         "id": "301ecf43a9591000d4fdf7ee27640000",
+         "count": 43
+        },
+        {
+         "descriptor": "Parsippany, NJ",
+         "id": "301ecf43a9591000d4fe528569860000",
+         "count": 3
+        },
+        {
+         "descriptor": "Remote, USA",
+         "id": "906ad227847c1002060adf0939310000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Arizona Tier 3",
+         "id": "057ad3002e211001a5a08ec638c40000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - California Tier 1",
+         "id": "e09e1f6daade1000d52f432ba30c0000",
+         "count": 2
+        },
+        {
+         "descriptor": "Remote - California Tier 2",
+         "id": "057ad3002e211001a5a0a7efdc990000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Connecticut Tier 1",
+         "id": "e09e1f6daade1000d52f08a311050000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Delaware Tier 2",
+         "id": "057ad3002e211001a5a177aff8bb0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - District of Columbia Tier 1",
+         "id": "e09e1f6daade1000d52f88312a040000",
+         "count": 2
+        },
+        {
+         "descriptor": "Remote - Georgia Tier 2",
+         "id": "057ad3002e211001a5a1ad8e62ed0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Illinois Tier 1",
+         "id": "e09e1f6daade1000d52f003bb3030000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Maine Tier 1",
+         "id": "ab5d855b45e210015ffdf7cf1fa60000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Maryland Tier 1",
+         "id": "e09e1f6daade1000d52f6efd6e390000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Maryland Tier 2",
+         "id": "057ad3002e211001a5a3ce3e3ed20000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Massachusetts Tier 1",
+         "id": "e09e1f6daade1000d52efca1a22e0000",
+         "count": 3
+        },
+        {
+         "descriptor": "Remote - Missouri Tier 3",
+         "id": "057ad3002e211001a5a49e1bb20e0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - New Hampshire Tier 1",
+         "id": "bbb3fde74ab31001f1f4fd7d2d320000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - New York Tier 1",
+         "id": "e09e1f6daade1000d52f8230fe800000",
+         "count": 3
+        },
+        {
+         "descriptor": "Remote - NYC Tier 1",
+         "id": "79eaea83d8e91000d81af80c2e880000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Oregon Tier 2",
+         "id": "057ad3002e211001a5a7424633810000",
+         "count": 2
+        },
+        {
+         "descriptor": "Remote - Pennsylvania Tier 1",
+         "id": "e09e1f6daade1000d52f35f7aaca0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Texas Tier 2",
+         "id": "057ad3002e211001a5a869318c3a0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Virginia Tier 2",
+         "id": "057ad3002e211001a5a8ca5305510000",
+         "count": 1
+        },
+        {
+         "descriptor": "Spyce",
+         "id": "bb298fac0601100110a1b3ce64a90000",
+         "count": 10
+        },
+        {
+         "descriptor": "Swedesboro",
+         "id": "9f09b95b4d3110010ef7c3d951370000",
+         "count": 2
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

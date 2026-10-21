@@ -1,0 +1,13 @@
+# status 200
+User-agent: *
+
+Disallow: /api
+Disallow: /*/applicant_document_uploader
+Disallow: /*/book_slot
+Disallow: /*/checkr_candidates
+Disallow: /*/applications/
+
+Disallow: /portal
+Allow: /portal/password
+Allow: /portal/sign_up
+Allow: /portal/sign_in

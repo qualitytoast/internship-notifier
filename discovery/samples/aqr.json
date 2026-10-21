@@ -1,0 +1,3764 @@
+{
+ "_note": "app_search: raw POST https://careers.aqr.com/api/appSearch (page size 100, after GET /sanctum/csrf-cookie; X-XSRF-TOKEN header). greenhouse: raw GET boards-api.greenhouse.io/v1/boards/aqr/jobs. The 56 ids (last URL segment of app_search results) equal the 56 Greenhouse ids.",
+ "observed": "2026-10-20T00:37:34Z",
+ "app_search": {
+  "meta": {
+   "alerts": [],
+   "warnings": [],
+   "precision": 5,
+   "engine": {
+    "name": "jobs-production",
+    "type": "default"
+   },
+   "page": {
+    "current": 1,
+    "total_pages": 1,
+    "total_results": 56,
+    "size": 100
+   },
+   "request_id": "95MxH3koQtSPEZjc11i3sw"
+  },
+  "results": [
+   {
+    "title": {
+     "raw": "Vice President Business Development - Hong Kong"
+    },
+    "location": {
+     "raw": "Hong Kong, CN"
+    },
+    "url": {
+     "raw": "business-development/hong-kong-cn/vice-president-business-development-hong-kong/7984690"
+    },
+    "category": {
+     "raw": "Business Development"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3778507"
+    },
+    "_meta": {
+     "id": "3778507",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Operations - Tax Operations - Analyst"
+    },
+    "location": {
+     "raw": "Bengaluru"
+    },
+    "url": {
+     "raw": "operations/bengaluru/operations-tax-operations-analyst/7894372"
+    },
+    "category": {
+     "raw": "Operations"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3747207"
+    },
+    "_meta": {
+     "id": "3747207",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Salesforce Portal Support"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "operations/greenwich-ct/salesforce-portal-support/8112443"
+    },
+    "category": {
+     "raw": "Operations"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3832396"
+    },
+    "_meta": {
+     "id": "3832396",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Research and Portfolio Management Engineering - Vice President"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "engineering/greenwich-ct/research-and-portfolio-management-engineering-vice-president/8088190"
+    },
+    "category": {
+     "raw": "Engineering"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3817088"
+    },
+    "_meta": {
+     "id": "3817088",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Engineering - Portfolio Analytics - Java Developer - Associate"
+    },
+    "location": {
+     "raw": "Bengaluru"
+    },
+    "url": {
+     "raw": "engineering/bengaluru/engineering-portfolio-analytics-java-developer-associate/7546806"
+    },
+    "category": {
+     "raw": "Engineering"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3678948"
+    },
+    "_meta": {
+     "id": "3678948",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Electronic Trader Analyst"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "global-trading/greenwich-ct/electronic-trader-analyst/8164315"
+    },
+    "category": {
+     "raw": "Global Trading"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3840369"
+    },
+    "_meta": {
+     "id": "3840369",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Compliance - Compliance Marketing Review - Associate"
+    },
+    "location": {
+     "raw": "Bengaluru"
+    },
+    "url": {
+     "raw": "compliance/bengaluru/compliance-compliance-marketing-review-associate/7543967"
+    },
+    "category": {
+     "raw": "Compliance"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3657494"
+    },
+    "_meta": {
+     "id": "3657494",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Trading Operations Analyst/Associate"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "operations/greenwich-ct/trading-operations-analyst-associate/8105044"
+    },
+    "category": {
+     "raw": "Operations"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3815076"
+    },
+    "_meta": {
+     "id": "3815076",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Operations - Tax Operations - Associate"
+    },
+    "location": {
+     "raw": "Bengaluru"
+    },
+    "url": {
+     "raw": "operations/bengaluru/operations-tax-operations-associate/7831584"
+    },
+    "category": {
+     "raw": "Operations"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3747208"
+    },
+    "_meta": {
+     "id": "3747208",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Global Stock Selection Research - Analyst/Associate"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "research/greenwich-ct/global-stock-selection-research-analyst-associate/7558085"
+    },
+    "category": {
+     "raw": "Research"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3670951"
+    },
+    "_meta": {
+     "id": "3670951",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Compliance - Compliance Client Reporting- Associate"
+    },
+    "location": {
+     "raw": "Bengaluru"
+    },
+    "url": {
+     "raw": "compliance/bengaluru/compliance-compliance-client-reporting-associate/7543949"
+    },
+    "category": {
+     "raw": "Compliance"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3657493"
+    },
+    "_meta": {
+     "id": "3657493",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Client Services – Alternative Investments"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "operations/greenwich-ct/client-services-alternative-investments/7276809"
+    },
+    "category": {
+     "raw": "Operations"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3827811"
+    },
+    "_meta": {
+     "id": "3827811",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Discretionary Macro - Vice President"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "research/greenwich-ct/discretionary-macro-vice-president/8221812"
+    },
+    "category": {
+     "raw": "Research"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3857768"
+    },
+    "_meta": {
+     "id": "3857768",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Business Development - Business Management - Analyst"
+    },
+    "location": {
+     "raw": "Bengaluru"
+    },
+    "url": {
+     "raw": "business-development/bengaluru/business-development-business-management-analyst/8043192"
+    },
+    "category": {
+     "raw": "Business Development"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3790985"
+    },
+    "_meta": {
+     "id": "3790985",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "2027 PhD Summer Associate, Machine Learning Research"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "open-positions/greenwich-ct/2027-phd-summer-associate-machine-learning-research/8224708"
+    },
+    "category": {
+     "raw": "University Jobs"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3857695"
+    },
+    "_meta": {
+     "id": "3857695",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "2027 Research and Portfolio Management Engineering Summer Analyst"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "open-positions/greenwich-ct/2027-research-and-portfolio-management-engineering-summer-analyst/7957728"
+    },
+    "category": {
+     "raw": "University Jobs"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3762254"
+    },
+    "_meta": {
+     "id": "3762254",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Associate, Compliance Marketing Review"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "compliance/greenwich-ct/associate-compliance-marketing-review/8220131"
+    },
+    "category": {
+     "raw": "Compliance"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3856203"
+    },
+    "_meta": {
+     "id": "3856203",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "AQR MBA Discovery - Early Engagement Program"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "open-positions/greenwich-ct/aqr-mba-discovery-early-engagement-program/8274263"
+    },
+    "category": {
+     "raw": "University Jobs"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3876451"
+    },
+    "_meta": {
+     "id": "3876451",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Engineering - Quant Research Development - GSS - Analyst"
+    },
+    "location": {
+     "raw": "Bengaluru"
+    },
+    "url": {
+     "raw": "engineering/bengaluru/engineering-quant-research-development-gss-analyst/8112238"
+    },
+    "category": {
+     "raw": "Engineering"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3833637"
+    },
+    "_meta": {
+     "id": "3833637",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Compliance - Compliance Testing - Associate"
+    },
+    "location": {
+     "raw": "Bengaluru"
+    },
+    "url": {
+     "raw": "compliance/bengaluru/compliance-compliance-testing-associate/8064109"
+    },
+    "category": {
+     "raw": "Compliance"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3865772"
+    },
+    "_meta": {
+     "id": "3865772",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Data Scientist, Machine Learning"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "engineering/greenwich-ct/data-scientist-machine-learning/8088184"
+    },
+    "category": {
+     "raw": "Engineering"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3837564"
+    },
+    "_meta": {
+     "id": "3837564",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Global Stock Selection - Implementation Researcher"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "research/greenwich-ct/global-stock-selection-implementation-researcher/8094484"
+    },
+    "category": {
+     "raw": "Research"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3849621"
+    },
+    "_meta": {
+     "id": "3849621",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Registered Funds Compliance, Associate / Vice President"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "compliance/greenwich-ct/registered-funds-compliance-associate-vice-president/8220128"
+    },
+    "category": {
+     "raw": "Compliance"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3861964"
+    },
+    "_meta": {
+     "id": "3861964",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Quantitative Research – Prediction Markets Analyst"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "research/greenwich-ct/quantitative-research-prediction-markets-analyst/8018219"
+    },
+    "category": {
+     "raw": "Research"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3829068"
+    },
+    "_meta": {
+     "id": "3829068",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "2027 Trading Analyst"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "open-positions/greenwich-ct/2027-trading-analyst/8156709"
+    },
+    "category": {
+     "raw": "University Jobs"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3832587"
+    },
+    "_meta": {
+     "id": "3832587",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "2027 Business Development Analyst - US Wealth"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "open-positions/greenwich-ct/2027-business-development-analyst-us-wealth/8144359"
+    },
+    "category": {
+     "raw": "University Jobs"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3828835"
+    },
+    "_meta": {
+     "id": "3828835",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "2027 Research Product Specialist Summer Analyst"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "open-positions/greenwich-ct/2027-research-product-specialist-summer-analyst/8123095"
+    },
+    "category": {
+     "raw": "University Jobs"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3821196"
+    },
+    "_meta": {
+     "id": "3821196",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "2027 Business Development Summer Analyst "
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "open-positions/greenwich-ct/2027-business-development-summer-analyst-/7926659"
+    },
+    "category": {
+     "raw": "University Jobs"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3754843"
+    },
+    "_meta": {
+     "id": "3754843",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Business Development Strategy Associate"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "business-development/greenwich-ct/business-development-strategy-associate/8249152"
+    },
+    "category": {
+     "raw": "Business Development"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3871782"
+    },
+    "_meta": {
+     "id": "3871782",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Desktop Support Engineer"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "engineering/greenwich-ct/desktop-support-engineer/7475434"
+    },
+    "category": {
+     "raw": "Engineering"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3805198"
+    },
+    "_meta": {
+     "id": "3805198",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Research & Portfolio Management Engineering - Associate"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "engineering/greenwich-ct/research-portfolio-management-engineering-associate/8088187"
+    },
+    "category": {
+     "raw": "Engineering"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3817089"
+    },
+    "_meta": {
+     "id": "3817089",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Global Stock Selection Research – Technical Signals"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "research/greenwich-ct/global-stock-selection-research-technical-signals/7574743"
+    },
+    "category": {
+     "raw": "Research"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3721119"
+    },
+    "_meta": {
+     "id": "3721119",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Legal and Compliance Infrastructure Data, Associate/Vice President"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "compliance/greenwich-ct/legal-and-compliance-infrastructure-data-associate-vice-president/8220134"
+    },
+    "category": {
+     "raw": "Compliance"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3863565"
+    },
+    "_meta": {
+     "id": "3863565",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Junior Project Manager / Business Analyst"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "engineering/greenwich-ct/junior-project-manager-business-analyst/7270996"
+    },
+    "category": {
+     "raw": "Engineering"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3773832"
+    },
+    "_meta": {
+     "id": "3773832",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Research & Portfolio Management Engineer - Specialized Investments Group"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "engineering/greenwich-ct/research-portfolio-management-engineer-specialized-investments-group/7943790"
+    },
+    "category": {
+     "raw": "Engineering"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3763292"
+    },
+    "_meta": {
+     "id": "3763292",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Managed Futures & Commodities Research Analyst"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "research/greenwich-ct/managed-futures-commodities-research-analyst/8161372"
+    },
+    "category": {
+     "raw": "Research"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3835490"
+    },
+    "_meta": {
+     "id": "3835490",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Portfolio Analytics Engineer - Vice President "
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "engineering/greenwich-ct/portfolio-analytics-engineer-vice-president-/8003642"
+    },
+    "category": {
+     "raw": "Engineering"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3778747"
+    },
+    "_meta": {
+     "id": "3778747",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Global Stock Selection Researcher – Alternative Data "
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "research/greenwich-ct/global-stock-selection-researcher-alternative-data-/8255819"
+    },
+    "category": {
+     "raw": "Research"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3868737"
+    },
+    "_meta": {
+     "id": "3868737",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "2027 Quantitative Prediction Markets Research Summer Analyst"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "open-positions/greenwich-ct/2027-quantitative-prediction-markets-research-summer-analyst/8122378"
+    },
+    "category": {
+     "raw": "University Jobs"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3820786"
+    },
+    "_meta": {
+     "id": "3820786",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "2027 Research Summer Analyst"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "open-positions/greenwich-ct/2027-research-summer-analyst/7895583"
+    },
+    "category": {
+     "raw": "University Jobs"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3754847"
+    },
+    "_meta": {
+     "id": "3754847",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "2027 Portfolio Implementation Summer Analyst"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "open-positions/greenwich-ct/2027-portfolio-implementation-summer-analyst/7895562"
+    },
+    "category": {
+     "raw": "University Jobs"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3754845"
+    },
+    "_meta": {
+     "id": "3754845",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Associate Tax Counsel"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "legal/greenwich-ct/associate-tax-counsel/7475431"
+    },
+    "category": {
+     "raw": "Legal"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3686042"
+    },
+    "_meta": {
+     "id": "3686042",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Associate, Securities Valuation"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "operations/greenwich-ct/associate-securities-valuation/7904683"
+    },
+    "category": {
+     "raw": "Operations"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3806629"
+    },
+    "_meta": {
+     "id": "3806629",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Investment Compliance VP"
+    },
+    "location": {
+     "raw": "Bengaluru"
+    },
+    "url": {
+     "raw": "compliance/bengaluru/investment-compliance-vp/8223056"
+    },
+    "category": {
+     "raw": "Compliance"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3880326"
+    },
+    "_meta": {
+     "id": "3880326",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Business Services Analyst"
+    },
+    "location": {
+     "raw": "Bengaluru"
+    },
+    "url": {
+     "raw": "business-development/bengaluru/business-services-analyst/8289123"
+    },
+    "category": {
+     "raw": "Business Development"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3880363"
+    },
+    "_meta": {
+     "id": "3880363",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "ESG Business Development Analyst – EMEA"
+    },
+    "location": {
+     "raw": "London"
+    },
+    "url": {
+     "raw": "business-development/london/esg-business-development-analyst-emea/8164028"
+    },
+    "category": {
+     "raw": "Business Development"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3840539"
+    },
+    "_meta": {
+     "id": "3840539",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Market Risk, Vice President"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "risk/greenwich-ct/market-risk-vice-president/8220146"
+    },
+    "category": {
+     "raw": "Risk"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3864801"
+    },
+    "_meta": {
+     "id": "3864801",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Global Regulatory Reporting & Compliance Associate / VP"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "compliance/greenwich-ct/global-regulatory-reporting-compliance-associate-vp/7852417"
+    },
+    "category": {
+     "raw": "Compliance"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3743928"
+    },
+    "_meta": {
+     "id": "3743928",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Compliance - Core compliance- Associate"
+    },
+    "location": {
+     "raw": "Bengaluru"
+    },
+    "url": {
+     "raw": "compliance/bengaluru/compliance-core-compliance-associate/7475235"
+    },
+    "category": {
+     "raw": "Compliance"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3731422"
+    },
+    "_meta": {
+     "id": "3731422",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Application Support Engineer"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "engineering/greenwich-ct/application-support-engineer/8007349"
+    },
+    "category": {
+     "raw": "Engineering"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3878323"
+    },
+    "_meta": {
+     "id": "3878323",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "2027 Engineering Summer Analyst"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "open-positions/greenwich-ct/2027-engineering-summer-analyst/7926647"
+    },
+    "category": {
+     "raw": "University Jobs"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3754844"
+    },
+    "_meta": {
+     "id": "3754844",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Business Development Associate - Dubai"
+    },
+    "location": {
+     "raw": "Dubai, United Arab Emirates"
+    },
+    "url": {
+     "raw": "business-development/dubai-united-arab-emirates/business-development-associate-dubai/7845714"
+    },
+    "category": {
+     "raw": "Business Development"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3739837"
+    },
+    "_meta": {
+     "id": "3739837",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Business Development Analyst - U.S. Wealth"
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "business-development/greenwich-ct/business-development-analyst-u-s-wealth/7738975"
+    },
+    "category": {
+     "raw": "Business Development"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3719326"
+    },
+    "_meta": {
+     "id": "3719326",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Engineering - Quant Research Development - GSS - Associate"
+    },
+    "location": {
+     "raw": "Bengaluru"
+    },
+    "url": {
+     "raw": "engineering/bengaluru/engineering-quant-research-development-gss-associate/7493464"
+    },
+    "category": {
+     "raw": "Engineering"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3731286"
+    },
+    "_meta": {
+     "id": "3731286",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "Engineering - Security Engineer - Associate"
+    },
+    "location": {
+     "raw": "Bengaluru"
+    },
+    "url": {
+     "raw": "engineering/bengaluru/engineering-security-engineer-associate/8230054"
+    },
+    "category": {
+     "raw": "Engineering"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3869032"
+    },
+    "_meta": {
+     "id": "3869032",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   },
+   {
+    "title": {
+     "raw": "AQR Arbitrage - 2027 Research Summer Analyst "
+    },
+    "location": {
+     "raw": "Greenwich, CT"
+    },
+    "url": {
+     "raw": "open-positions/greenwich-ct/aqr-arbitrage-2027-research-summer-analyst-/8156993"
+    },
+    "category": {
+     "raw": "University Jobs"
+    },
+    "job_type": {
+     "raw": "Onsite"
+    },
+    "id": {
+     "raw": "3832589"
+    },
+    "_meta": {
+     "id": "3832589",
+     "engine": "jobs-production",
+     "score": 1
+    }
+   }
+  ],
+  "search_url": "https://ongig-ebdb.ent.us-west-2.aws.found.io/api/as/v1/engines/jobs-production/search.json",
+  "search_key_set": true,
+  "curl_http_code": 200,
+  "search_engine": "jobs-production",
+  "search_hostname": "https://ongig-ebdb.ent.us-west-2.aws.found.io",
+  "cached": false
+ },
+ "greenhouse": {
+  "jobs": [
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8144359&gh_jid=8144359",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3524533,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8144359,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "390",
+    "title": "2027 Business Development Analyst - US Wealth",
+    "company_name": "AQR",
+    "first_published": "2026-08-20T12:14:19-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7926659&gh_jid=7926659",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3444993,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7926659,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "375",
+    "title": "2027 Business Development Summer Analyst ",
+    "company_name": "AQR",
+    "first_published": "2026-05-15T07:47:47-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7926647&gh_jid=7926647",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3444989,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7926647,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "374",
+    "title": "2027 Engineering Summer Analyst",
+    "company_name": "AQR",
+    "first_published": "2026-05-15T07:48:02-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8224708&gh_jid=8224708",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3559522,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": false,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8224708,
+    "updated_at": "2026-09-25T11:33:25-04:00",
+    "requisition_id": "401",
+    "title": "2027 PhD Summer Associate, Machine Learning Research",
+    "company_name": "AQR",
+    "first_published": "2026-09-22T18:25:41-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7895562&gh_jid=7895562",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3432066,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7895562,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "368",
+    "title": "2027 Portfolio Implementation Summer Analyst",
+    "company_name": "AQR",
+    "first_published": "2026-05-15T07:48:48-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8122378&gh_jid=8122378",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3517970,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": false,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8122378,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "387",
+    "title": "2027 Quantitative Prediction Markets Research Summer Analyst",
+    "company_name": "AQR",
+    "first_published": "2026-08-11T14:53:47-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7957728&gh_jid=7957728",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 3454997,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Quant Research Dev"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7957728,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "378",
+    "title": "2027 Research and Portfolio Management Engineering Summer Analyst",
+    "company_name": "AQR",
+    "first_published": "2026-05-26T10:43:20-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8123095&gh_jid=8123095",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3518220,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8123095,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "388",
+    "title": "2027 Research Product Specialist Summer Analyst",
+    "company_name": "AQR",
+    "first_published": "2026-08-11T20:07:13-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7895583&gh_jid=7895583",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3432074,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": false,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7895583,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "369",
+    "title": "2027 Research Summer Analyst",
+    "company_name": "AQR",
+    "first_published": "2026-05-15T07:49:11-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8156709&gh_jid=8156709",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3530369,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": false,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8156709,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "391",
+    "title": "2027 Trading Analyst",
+    "company_name": "AQR",
+    "first_published": "2026-08-25T12:37:22-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8007349&gh_jid=8007349",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3471926,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Production Eng"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8007349,
+    "updated_at": "2026-10-14T17:12:21-04:00",
+    "requisition_id": "P60794",
+    "title": "Application Support Engineer",
+    "company_name": "AQR",
+    "first_published": "2026-10-14T17:10:59-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8156993&gh_jid=8156993",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3530430,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8156993,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "392",
+    "title": "AQR Arbitrage - 2027 Research Summer Analyst ",
+    "company_name": "AQR",
+    "first_published": "2026-08-25T13:03:33-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8274263&gh_jid=8274263",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3579906,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8274263,
+    "updated_at": "2026-10-13T10:18:08-04:00",
+    "requisition_id": "404",
+    "title": "AQR MBA Discovery - Early Engagement Program",
+    "company_name": "AQR",
+    "first_published": "2026-10-13T08:28:38-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8220131&gh_jid=8220131",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3557604,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Compliance Rptg & Mktg Review"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8220131,
+    "updated_at": "2026-09-22T14:37:40-04:00",
+    "requisition_id": "P60867",
+    "title": "Associate, Compliance Marketing Review",
+    "company_name": "AQR",
+    "first_published": "2026-09-21T19:44:33-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7904683&gh_jid=7904683",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3436254,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Asset Servicing"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7904683,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60759",
+    "title": "Associate, Securities Valuation",
+    "company_name": "AQR",
+    "first_published": "2026-07-23T11:49:52-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7475431&gh_jid=7475431",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3318716,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Legal"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7475431,
+    "updated_at": "2026-10-12T15:24:56-04:00",
+    "requisition_id": "P60643",
+    "title": "Associate Tax Counsel",
+    "company_name": "AQR",
+    "first_published": "2026-02-17T10:21:18-05:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7738975&gh_jid=7738975",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3394901,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "US Wealth"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7738975,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60691",
+    "title": "Business Development Analyst - U.S. Wealth",
+    "company_name": "AQR",
+    "first_published": "2026-03-31T11:03:50-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7845714&gh_jid=7845714",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3419981,
+    "location": {
+     "name": "Dubai, United Arab Emirates"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Dubai"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7845714,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60718",
+    "title": "Business Development Associate - Dubai",
+    "company_name": "AQR",
+    "first_published": "2026-04-27T09:49:50-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8043192&gh_jid=8043192",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 3486205,
+    "location": {
+     "name": "Bengaluru"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "US Wealth"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8043192,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60812",
+    "title": "Business Development - Business Management - Analyst",
+    "company_name": "AQR",
+    "first_published": "2026-07-02T07:45:50-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8249152&gh_jid=8249152",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3569054,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "US Wealth"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8249152,
+    "updated_at": "2026-10-12T16:05:18-04:00",
+    "requisition_id": "P60980",
+    "title": "Business Development Strategy Associate",
+    "company_name": "AQR",
+    "first_published": "2026-10-07T14:39:23-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8289123&gh_jid=8289123",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 3584877,
+    "location": {
+     "name": "Bengaluru"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "BD General"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8289123,
+    "updated_at": "2026-10-16T14:22:22-04:00",
+    "requisition_id": "P60999",
+    "title": "Business Services Analyst",
+    "company_name": "AQR",
+    "first_published": "2026-10-16T11:13:41-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7276809&gh_jid=7276809",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3256842,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Client Srvcs and Info Mgmt"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7276809,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60552",
+    "title": "Client Services – Alternative Investments",
+    "company_name": "AQR",
+    "first_published": "2026-08-19T14:51:20-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7543949&gh_jid=7543949",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 3318687,
+    "location": {
+     "name": "Bengaluru"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Compliance"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7543949,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60623",
+    "title": "Compliance - Compliance Client Reporting- Associate",
+    "company_name": "AQR",
+    "first_published": "2026-01-16T03:31:31-05:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7543967&gh_jid=7543967",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 3318680,
+    "location": {
+     "name": "Bengaluru"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Compliance"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7543967,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60626",
+    "title": "Compliance - Compliance Marketing Review - Associate",
+    "company_name": "AQR",
+    "first_published": "2026-01-16T03:45:43-05:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8064109&gh_jid=8064109",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 3494362,
+    "location": {
+     "name": "Bengaluru"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Testing and Assurance"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8064109,
+    "updated_at": "2026-10-01T03:37:06-04:00",
+    "requisition_id": "P60303",
+    "title": "Compliance - Compliance Testing - Associate",
+    "company_name": "AQR",
+    "first_published": "2026-09-11T11:28:31-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7475235&gh_jid=7475235",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 3318686,
+    "location": {
+     "name": "Bengaluru"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Compliance"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7475235,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60627",
+    "title": "Compliance - Core compliance- Associate",
+    "company_name": "AQR",
+    "first_published": "2026-04-16T10:50:37-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8088184&gh_jid=8088184",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3504257,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Market Data & Technology Services"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8088184,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60831",
+    "title": "Data Scientist, Machine Learning",
+    "company_name": "AQR",
+    "first_published": "2026-08-31T09:48:47-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7475434&gh_jid=7475434",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3318717,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Desktop Support"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7475434,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60642",
+    "title": "Desktop Support Engineer",
+    "company_name": "AQR",
+    "first_published": "2026-07-21T16:47:58-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8221812&gh_jid=8221812",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3558307,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Global Asset Allocation"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": false,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8221812,
+    "updated_at": "2026-09-24T10:34:05-04:00",
+    "requisition_id": "P54013",
+    "title": "Discretionary Macro - Vice President",
+    "company_name": "AQR",
+    "first_published": "2026-09-23T00:00:58-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8164315&gh_jid=8164315",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3533300,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Execution"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8164315,
+    "updated_at": "2026-09-25T16:22:43-04:00",
+    "requisition_id": "P59834",
+    "title": "Electronic Trader Analyst",
+    "company_name": "AQR",
+    "first_published": "2026-09-02T16:46:24-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7546806&gh_jid=7546806",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 2958091,
+    "location": {
+     "name": "Bengaluru"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "PI Analytics Eng"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7546806,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60149",
+    "title": "Engineering - Portfolio Analytics - Java Developer - Associate",
+    "company_name": "AQR",
+    "first_published": "2026-01-19T04:56:26-05:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8112238&gh_jid=8112238",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 3514000,
+    "location": {
+     "name": "Bengaluru"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "QRD GSS Eng"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8112238,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P59753",
+    "title": "Engineering - Quant Research Development - GSS - Analyst",
+    "company_name": "AQR",
+    "first_published": "2026-08-26T06:57:28-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7493464&gh_jid=7493464",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 3324206,
+    "location": {
+     "name": "Bengaluru"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "QRD GSS Eng"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7493464,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P59023",
+    "title": "Engineering - Quant Research Development - GSS - Associate",
+    "company_name": "AQR",
+    "first_published": "2026-04-16T06:51:25-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8230054&gh_jid=8230054",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 3561483,
+    "location": {
+     "name": "Bengaluru"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Security"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8230054,
+    "updated_at": "2026-10-05T12:57:52-04:00",
+    "requisition_id": "P60528",
+    "title": "Engineering - Security Engineer - Associate",
+    "company_name": "AQR",
+    "first_published": "2026-10-05T12:57:52-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8164028&gh_jid=8164028",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3533165,
+    "location": {
+     "name": "London"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "BD - ESG"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8164028,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60856",
+    "title": "ESG Business Development Analyst – EMEA",
+    "company_name": "AQR",
+    "first_published": "2026-09-02T23:11:31-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7852417&gh_jid=7852417",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3421508,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Regulatory Reporting"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7852417,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P56484",
+    "title": "Global Regulatory Reporting & Compliance Associate / VP",
+    "company_name": "AQR",
+    "first_published": "2026-05-01T10:53:35-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8094484&gh_jid=8094484",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 3506577,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Global Stock Selection (GSS)"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8094484,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60833",
+    "title": "Global Stock Selection - Implementation Researcher",
+    "company_name": "AQR",
+    "first_published": "2026-09-14T12:12:24-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7558085&gh_jid=7558085",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 3344213,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Global Stock Selection (GSS)"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7558085,
+    "updated_at": "2026-10-05T09:26:08-04:00",
+    "requisition_id": "P60655",
+    "title": "Global Stock Selection Research - Analyst/Associate",
+    "company_name": "AQR",
+    "first_published": "2026-02-02T14:01:55-05:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8255819&gh_jid=8255819",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 3572513,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Global Stock Selection (GSS)"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8255819,
+    "updated_at": "2026-10-05T09:03:26-04:00",
+    "requisition_id": "P60982",
+    "title": "Global Stock Selection Researcher – Alternative Data ",
+    "company_name": "AQR",
+    "first_published": "2026-10-05T09:03:26-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7574743&gh_jid=7574743",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 3349376,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Global Stock Selection (GSS)"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7574743,
+    "updated_at": "2026-10-13T09:04:05-04:00",
+    "requisition_id": "P60660",
+    "title": "Global Stock Selection Research – Technical Signals",
+    "company_name": "AQR",
+    "first_published": "2026-04-02T10:50:46-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8223056&gh_jid=8223056",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 3558842,
+    "location": {
+     "name": "Bengaluru"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Investment Management"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8223056,
+    "updated_at": "2026-10-16T14:28:21-04:00",
+    "requisition_id": "P60869",
+    "title": "Investment Compliance VP",
+    "company_name": "AQR",
+    "first_published": "2026-10-16T10:35:35-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7270996&gh_jid=7270996",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3254712,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Eng Program Management"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7270996,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60549",
+    "title": "Junior Project Manager / Business Analyst",
+    "company_name": "AQR",
+    "first_published": "2026-06-09T15:33:25-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8220134&gh_jid=8220134",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3557605,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Business and Regulatory Change"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8220134,
+    "updated_at": "2026-09-29T14:51:45-04:00",
+    "requisition_id": "P60864",
+    "title": "Legal and Compliance Infrastructure Data, Associate/Vice President",
+    "company_name": "AQR",
+    "first_published": "2026-09-29T14:50:46-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8161372&gh_jid=8161372",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 3532226,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Managed Futures & Commodities"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8161372,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P59837",
+    "title": "Managed Futures & Commodities Research Analyst",
+    "company_name": "AQR",
+    "first_published": "2026-08-28T11:04:25-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8220146&gh_jid=8220146",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3557609,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Market Risk"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8220146,
+    "updated_at": "2026-09-30T15:54:15-04:00",
+    "requisition_id": "P60866",
+    "title": "Market Risk, Vice President",
+    "company_name": "AQR",
+    "first_published": "2026-09-30T15:54:15-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7894372&gh_jid=7894372",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 3431646,
+    "location": {
+     "name": "Bengaluru"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Tax SMA and Manila Operations"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7894372,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60254",
+    "title": "Operations - Tax Operations - Analyst",
+    "company_name": "AQR",
+    "first_published": "2026-05-06T03:30:12-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7831584&gh_jid=7831584",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 3416936,
+    "location": {
+     "name": "Bengaluru"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Tax SMA and Manila Operations"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7831584,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60714",
+    "title": "Operations - Tax Operations - Associate",
+    "company_name": "AQR",
+    "first_published": "2026-05-06T03:35:06-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8003642&gh_jid=8003642",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3470267,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "QRD PI Eng"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8003642,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60791",
+    "title": "Portfolio Analytics Engineer - Vice President ",
+    "company_name": "AQR",
+    "first_published": "2026-06-16T12:33:40-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8018219&gh_jid=8018219",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 3476198,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Prediction and Sports Analytics"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8018219,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60809",
+    "title": "Quantitative Research – Prediction Markets Analyst",
+    "company_name": "AQR",
+    "first_published": "2026-08-20T15:23:11-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8220128&gh_jid=8220128",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3557603,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Investment Management"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8220128,
+    "updated_at": "2026-09-28T13:50:26-04:00",
+    "requisition_id": "P60863",
+    "title": "Registered Funds Compliance, Associate / Vice President",
+    "company_name": "AQR",
+    "first_published": "2026-09-28T13:48:15-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8088190&gh_jid=8088190",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3504259,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "QRD GSS Eng"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8088190,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60830",
+    "title": "Research and Portfolio Management Engineering - Vice President",
+    "company_name": "AQR",
+    "first_published": "2026-08-06T11:53:23-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8088187&gh_jid=8088187",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3504258,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "QRD GSS Eng"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8088187,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60829",
+    "title": "Research & Portfolio Management Engineering - Associate",
+    "company_name": "AQR",
+    "first_published": "2026-08-06T11:54:40-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7943790&gh_jid=7943790",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3450732,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "QRD SIG Eng"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7943790,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P59819",
+    "title": "Research & Portfolio Management Engineer - Specialized Investments Group",
+    "company_name": "AQR",
+    "first_published": "2026-05-27T08:14:27-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8112443&gh_jid=8112443",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3514059,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Tax SMA and Manila Operations"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8112443,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60841",
+    "title": "Salesforce Portal Support",
+    "company_name": "AQR",
+    "first_published": "2026-08-25T10:24:16-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=8105044&gh_jid=8105044",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3511289,
+    "location": {
+     "name": "Greenwich, CT"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Portfolio Mgmt Middle Office"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": true,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 8105044,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "2018040",
+    "title": "Trading Operations Analyst/Associate",
+    "company_name": "AQR",
+    "first_published": "2026-08-04T09:14:56-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://careers.aqr.com/jobs?gh_jid=7984690&gh_jid=7984690",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 3464991,
+    "location": {
+     "name": "Hong Kong, CN"
+    },
+    "metadata": [
+     {
+      "id": 155668,
+      "name": "Cost Center Group",
+      "value": [
+       "Hong Kong"
+      ],
+      "value_type": "multi_select"
+     },
+     {
+      "id": 182709,
+      "name": "Post Job?",
+      "value": null,
+      "value_type": "yes_no"
+     }
+    ],
+    "id": 7984690,
+    "updated_at": "2026-09-21T02:46:06-04:00",
+    "requisition_id": "P60787",
+    "title": "Vice President Business Development - Hong Kong",
+    "company_name": "AQR",
+    "first_published": "2026-06-16T08:36:37-04:00",
+    "language": "en",
+    "application_deadline": null
+   }
+  ],
+  "meta": {
+   "total": 56
+  }
+ }
+}

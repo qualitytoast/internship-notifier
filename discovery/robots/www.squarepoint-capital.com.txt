@@ -1,0 +1,10 @@
+# status 200
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://squarepoint-capital.com
+
+# Sitemaps
+Sitemap: https://squarepoint-capital.com/sitemap.xml

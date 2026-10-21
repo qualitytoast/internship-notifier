@@ -1,0 +1,5 @@
+# status 200
+User-agent: *
+Allow: /
+Sitemap: https://www.databricks.com/webshared/sitemaps/sitemap-index.xml
+Host: https://www.databricks.com

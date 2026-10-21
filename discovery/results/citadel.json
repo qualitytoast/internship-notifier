@@ -1,0 +1,27 @@
+{
+  "key": "citadel",
+  "name": "Citadel",
+  "careers_url": "https://www.citadel.com/careers/open-opportunities/",
+  "hiring_system": "custom",
+  "checker": "custom:citadel_sitemap",
+  "settings": {
+    "base_url": "https://www.citadel.com",
+    "sitemap": "/career-sitemap.xml",
+    "detail_prefix": "/careers/details/",
+    "min_interval_s": 10,
+    "title_from": "slug",
+    "location_from": "slug_region_hint",
+    "posted_from": "first_seen"
+  },
+  "feed": "GET https://www.citadel.com/career-sitemap.xml",
+  "feed_total": 63,
+  "page_total": 63,
+  "page_total_how": "Playwright render of https://www.citadel.com/careers/open-opportunities/ on 2026-10-20 showed 'Viewing 10 of 63' (the 2026-10-19 capture also showed 'of 63'); all cards seen are in the sitemap",
+  "intern_total": 28,
+  "status": "needs-custom",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for /career-sitemap.xml and /sitemap_index.xml; robots.txt also has a group-less 'Crawl-delay: 10' that the RFC 9309 matcher ignores — honour it",
+  "notes": "WordPress site (in-house 'gild' application form, no external ATS). Only the Yoast career sitemap is reachable over plain HTTP; listing, detail pages, admin-ajax, wp-json and /feed/ get a Cloudflare interactive challenge (do not evade). id = slug; title derived from slug (strip only the WordPress -2..-99 suffix, keep years like -2028); location = slug region hint; no posted date (lastmod is rewritten on every sync). The site's own Internships filter shows 28, equal to the slug-title regex. Full spec in discovery/notes/citadel.md; same checker as citadel-securities.",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

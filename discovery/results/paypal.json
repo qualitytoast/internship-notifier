@@ -1,0 +1,23 @@
+{
+  "key": "paypal",
+  "name": "PayPal",
+  "careers_url": "https://careers.pypl.com/",
+  "hiring_system": "eightfold (career site paypal.eightfold.ai) over workday (ATS, site 'jobs')",
+  "checker": "workday",
+  "settings": {
+    "host": "paypal.wd1.myworkdayjobs.com",
+    "tenant": "paypal",
+    "site": "jobs"
+  },
+  "feed": "POST https://paypal.wd1.myworkdayjobs.com/wday/cxs/paypal/jobs/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 340,
+  "page_total": 340,
+  "page_total_how": "Playwright renders of https://paypal.wd1.myworkdayjobs.com/jobs and https://wd1.myworkdaysite.com/recruiting/paypal/jobs both showed '340 JOBS FOUND' (= CXS total). The Eightfold page linked from careers.pypl.com showed '330 jobs' after 'Clear All' removed the geo-IP location filter it adds by default (= PCSX count 330).",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for the paypal.wd1 CXS URL (robots.txt Allow: /jobs/); paypal.eightfold.ai/api/pcsx also ALLOW",
+  "notes": "The Eightfold site's 330 requisitions are all on the Workday site; Workday has 10 more (330 + 10 = 340, none only on Eightfold). Workday is therefore the more complete feed and also cheaper (20 per page). Alternative: eightfold {host: paypal.eightfold.ai, domain: paypal.com, api: pcsx}. No internships open today. See notes/paypal.md.",
+  "checked_at": "2026-10-20T03:19:24Z"
+}

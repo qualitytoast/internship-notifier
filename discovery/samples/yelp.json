@@ -1,0 +1,2352 @@
+{
+ "refineSearch": {
+  "status": 200,
+  "hits": 20,
+  "totalHits": 20,
+  "data": {
+   "jobs": [
+    {
+     "cityState": "Chicago, Illinois",
+     "country": "United States",
+     "ml_skills": [
+      "outbound sales",
+      "crm",
+      "customer relationship management",
+      "salesforce",
+      "pipeline management",
+      "quota attainment",
+      "product recommendation",
+      "objection handling",
+      "closing techniques",
+      "upselling",
+      "google suite",
+      "email proficiency",
+      "task prioritization",
+      "independent work",
+      "interpersonal skills",
+      "client outreach",
+      "advisory sales",
+      "macbook",
+      "high-speed internet",
+      "feedback implementation"
+     ],
+     "category_raw": "Sales & Customer Success - Small Business Sales",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "Take on the role of Inside Sales Representative and help small business owners achieve their goals through Yelp’s advertising programs. Engage directly with business owners over the phone, providing tailored solutions and managing a high volume of outbound calls. Ideal for candidates with strong interpersonal skills and customer-facing experience.",
+     "state": "Illinois",
+     "siteType": "external",
+     "longitude": "-87.65005",
+     "multi_category": [
+      "Sales & Customer Success"
+     ],
+     "reqId": "14067",
+     "jobId": "14067",
+     "city": "Chicago",
+     "latitude": "41.85003",
+     "industry": "Software",
+     "locale": "en_US",
+     "multi_location": [
+      "Dallas, Texas, United States",
+      "Houston, Texas, United States",
+      "St. Louis, Missouri, United States",
+      "Oklahoma City, Oklahoma, United States",
+      "Austin, Texas, United States",
+      "Indianapolis, Indiana, United States",
+      "Milwaukee, Wisconsin, United States",
+      "Kansas City, Missouri, United States",
+      "Chicago, Illinois, United States"
+     ],
+     "title": "Inside Sales Representative (Remote - Central Region)",
+     "jobSeqNo": "YELPUS14067EXTERNALENUS",
+     "postedDate": "2026-09-17T00:00:00.000+0000",
+     "dateCreated": "2026-09-17T20:29:16.193+0000",
+     "cityStateCountry": "Chicago, Illinois, United States",
+     "address": "Chicago -   Chicago, Illinois  United States ",
+     "jobVisibility": [
+      "external"
+     ],
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/14067/inside-sales-representative-%28remote---central-region%29/job",
+     "location": "Chicago, Illinois, United States",
+     "category": "Sales & Customer Success",
+     "ml_job_parser": {
+      "descriptionTeaser": "Take on the role of Inside Sales Representative and help small business owners achieve their goals through Yelp’s advertising programs. Engage directly with business owners over the phone, providing tailored solutions and managing a high volume of outbound calls. Ideal for candidates with strong interpersonal skills and customer-facing experience.",
+      "descriptionTeaser_first200": "Summary. *Please note that while this role will operate remotely, it is required that the candidate resides in the Central Region of the United States. Yelp was created to connect people with great...",
+      "descriptionTeaser_keyword": "Summary. * Please note that while this role will operate remotely, it is required that the candidate resides in the Central Region of the United States. Yelp was created to connect people with great l...",
+      "descriptionTeaser_ats": "Summary*Please note that while this role will operate remotely, it is required that the candidate resides in the Central Region of the United States.&nbsp;&nbsp;Yelp was created to connect people with"
+     },
+     "externalApply": true,
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": -96.80667,
+        "lat": 32.78306
+       },
+       "location": "Dallas, Texas, United States"
+      },
+      {
+       "latlong": {
+        "lon": -95.36327,
+        "lat": 29.76328
+       },
+       "location": "Houston, Texas, United States"
+      },
+      {
+       "latlong": {
+        "lon": -90.19789,
+        "lat": 38.62727
+       },
+       "location": "St. Louis, Missouri, United States"
+      },
+      {
+       "latlong": {
+        "lon": -97.51643,
+        "lat": 35.46756
+       },
+       "location": "Oklahoma City, Oklahoma, United States"
+      },
+      {
+       "latlong": {
+        "lon": -97.74306,
+        "lat": 30.26715
+       },
+       "location": "Austin, Texas, United States"
+      },
+      {
+       "latlong": {
+        "lon": -86.15804,
+        "lat": 39.76838
+       },
+       "location": "Indianapolis, Indiana, United States"
+      },
+      {
+       "latlong": {
+        "lon": -87.90647,
+        "lat": 43.0389
+       },
+       "location": "Milwaukee, Wisconsin, United States"
+      },
+      {
+       "latlong": {
+        "lon": -94.57857,
+        "lat": 39.09973
+       },
+       "location": "Kansas City, Missouri, United States"
+      },
+      {
+       "latlong": {
+        "lon": -87.65005,
+        "lat": 41.85003
+       },
+       "location": "Chicago, Illinois, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Sales & Customer Success"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "ml_skills": [
+      "outbound sales management",
+      "team leadership",
+      "cold calling",
+      "salesforce crm",
+      "coaching and mentoring",
+      "performance analysis",
+      "sales strategy",
+      "consultative selling",
+      "kpi management",
+      "chatbench",
+      "proposal writing",
+      "data-driven decision making",
+      "sales training",
+      "account management",
+      "client communication",
+      "organizational skills",
+      "time management"
+     ],
+     "category_raw": "Sales & Customer Success - Small Business Sales",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "We are looking for an experienced Sales Manager to lead outbound sales teams focused on selling Yelp’s advertising solutions to small local businesses. Drive high-volume cold calling and coach your team to exceed sales goals. Ideal for candidates with strong leadership in outbound sales and a passion for developing high-performing teams.",
+     "state": "Remote",
+     "siteType": "external",
+     "multi_category": [
+      "Sales & Customer Success"
+     ],
+     "reqId": "13781",
+     "city": "Remote",
+     "latitude": "0.0",
+     "industry": "Software",
+     "multi_location": [
+      "Atlanta, Georgia, United States",
+      "Chicago, Illinois, United States",
+      "Kansas City, Missouri, United States",
+      "Tampa, Florida, United States",
+      "Dallas, Texas, United States",
+      "Boston, Massachusetts, United States",
+      "Minneapolis, Minnesota, United States",
+      "St. Louis, Missouri, United States",
+      "Philadelphia, Pennsylvania, United States",
+      "Raleigh-Durham, North Carolina, United States",
+      "Austin, Texas, United States",
+      "Kansas City, Missouri, United States",
+      "Remote, Remote, United States"
+     ],
+     "address": "Remote -   Remote, Remote  United States ",
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/13781/sales-manager---smb-outbound-sales---%28remote%29/job",
+     "ml_job_parser": {
+      "descriptionTeaser": "We are looking for an experienced Sales Manager to lead outbound sales teams focused on selling Yelp’s advertising solutions to small local businesses. Drive high-volume cold calling and coach your team to exceed sales goals. Ideal for candidates with strong leadership in outbound sales and a passion for developing high-performing teams.",
+      "descriptionTeaser_first200": "Summary. *Please note that while this role will operate remotely, it is required that the candidate resides in the East or Midwest Region of the United States. This includes candidates in East or C...",
+      "descriptionTeaser_keyword": "Summary. * Please note that while this role will operate remotely, it is required that the candidate resides in the East or Midwest Region of the United States. This includes candidates in East or Cen...",
+      "descriptionTeaser_ats": "Summary*Please note that while this role will operate remotely, it is required that the candidate resides in the East or Midwest Region of the United States. This includes candidates in East or Centra"
+     },
+     "externalApply": true,
+     "cityState": "Remote, Remote",
+     "country": "United States",
+     "longitude": "0.0",
+     "jobId": "13781",
+     "locale": "en_US",
+     "title": "Sales Manager - SMB Outbound Sales - (Remote)",
+     "jobSeqNo": "YELPUS13781EXTERNALENUS",
+     "postedDate": "2026-02-19T00:00:00.000+0000",
+     "dateCreated": "2026-02-19T20:27:56.046+0000",
+     "cityStateCountry": "Remote, Remote, United States",
+     "jobVisibility": [
+      "external"
+     ],
+     "location": "Remote, Remote, United States",
+     "category": "Sales & Customer Success",
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": -84.38798,
+        "lat": 33.749
+       },
+       "location": "Atlanta, Georgia, United States"
+      },
+      {
+       "latlong": {
+        "lon": -87.65005,
+        "lat": 41.85003
+       },
+       "location": "Chicago, Illinois, United States"
+      },
+      {
+       "latlong": {
+        "lon": -94.57857,
+        "lat": 39.09973
+       },
+       "location": "Kansas City, Missouri, United States"
+      },
+      {
+       "latlong": {
+        "lon": -82.45843,
+        "lat": 27.94752
+       },
+       "location": "Tampa, Florida, United States"
+      },
+      {
+       "latlong": {
+        "lon": -96.80667,
+        "lat": 32.78306
+       },
+       "location": "Dallas, Texas, United States"
+      },
+      {
+       "latlong": {
+        "lon": -71.05977,
+        "lat": 42.35843
+       },
+       "location": "Boston, Massachusetts, United States"
+      },
+      {
+       "latlong": {
+        "lon": -93.26384,
+        "lat": 44.97997
+       },
+       "location": "Minneapolis, Minnesota, United States"
+      },
+      {
+       "latlong": {
+        "lon": -90.19789,
+        "lat": 38.62727
+       },
+       "location": "St. Louis, Missouri, United States"
+      },
+      {
+       "latlong": {
+        "lon": -75.16362,
+        "lat": 39.95238
+       },
+       "location": "Philadelphia, Pennsylvania, United States"
+      },
+      {
+       "latlong": {
+        "lon": -89.926262,
+        "lat": 35.21196
+       },
+       "location": "Raleigh-Durham, North Carolina, United States"
+      },
+      {
+       "latlong": {
+        "lon": -97.74306,
+        "lat": 30.26715
+       },
+       "location": "Austin, Texas, United States"
+      },
+      {
+       "latlong": {
+        "lon": -94.57857,
+        "lat": 39.09973
+       },
+       "location": "Kansas City, Missouri, United States"
+      },
+      {
+       "latlong": {
+        "lon": 5e-324,
+        "lat": 5e-324
+       },
+       "location": "Remote, Remote, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Sales & Customer Success"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "cityState": "Detroit, Michigan",
+     "country": "United States",
+     "ml_skills": [
+      "outbound sales",
+      "crm",
+      "customer relationship management",
+      "salesforce",
+      "pipeline management",
+      "quota attainment",
+      "product recommendation",
+      "objection handling",
+      "closing techniques",
+      "upselling",
+      "google suite",
+      "email proficiency",
+      "task prioritization",
+      "independent work",
+      "interpersonal skills",
+      "client needs analysis",
+      "adaptability",
+      "feedback acceptance"
+     ],
+     "category_raw": "Sales & Customer Success - Small Business Sales",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "We are seeking an Inside Sales Representative to engage with small business owners in the Eastern Region, providing tailored advertising solutions and driving results through outbound calls. This remote role requires strong interpersonal skills and a high volume of client outreach. Ideal for candidates with customer-facing experience and a passion for sales.",
+     "state": "Michigan",
+     "siteType": "external",
+     "longitude": "-83.04575",
+     "multi_category": [
+      "Sales & Customer Success"
+     ],
+     "reqId": "13979",
+     "jobId": "13979",
+     "city": "Detroit",
+     "latitude": "42.33143",
+     "industry": "Software",
+     "locale": "en_US",
+     "multi_location": [
+      "Atlanta, Georgia, United States",
+      "Charlotte, North Carolina, United States",
+      "Grand Rapids, Michigan, United States",
+      "Harrisburg, Pennsylvania, United States",
+      "Orlando, Florida, United States",
+      "Cleveland, Ohio, United States",
+      "Arlington, Virginia, United States",
+      "Asheville, North Carolina, United States",
+      "Buffalo, New York, United States",
+      "Charleston, South Carolina, United States",
+      "Gainesville, Florida, United States",
+      "Fort Lauderdale, Florida, United States",
+      "Detroit, Michigan, United States"
+     ],
+     "title": "Inside Sales Representative  (Remote - Eastern Region)",
+     "jobSeqNo": "YELPUS13979EXTERNALENUS",
+     "postedDate": "2026-06-24T00:00:00.000+0000",
+     "dateCreated": "2026-08-20T20:28:56.291+0000",
+     "cityStateCountry": "Detroit, Michigan, United States",
+     "address": "Detroit -   Detroit, Michigan  United States ",
+     "jobVisibility": [
+      "external"
+     ],
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/13979/inside-sales-representative--%28remote---eastern-region%29/job",
+     "location": "Detroit, Michigan, United States",
+     "category": "Sales & Customer Success",
+     "ml_job_parser": {
+      "descriptionTeaser": "We are seeking an Inside Sales Representative to engage with small business owners in the Eastern Region, providing tailored advertising solutions and driving results through outbound calls. This remote role requires strong interpersonal skills and a high volume of client outreach. Ideal for candidates with customer-facing experience and a passion for sales.",
+      "descriptionTeaser_first200": "Summary. *Please note that while this role will operate remotely, it is required that the candidate resides in the Eastern Region of the United States. This includes candidates residing in Eastern ...",
+      "descriptionTeaser_keyword": "Summary. * Please note that while this role will operate remotely, it is required that the candidate resides in the Eastern Region of the United States. This includes candidates residing in Eastern Ti...",
+      "descriptionTeaser_ats": "Summary*Please note that while this role will operate remotely, it is required that the candidate resides in the Eastern Region of the United States. This includes candidates residing in Eastern Time "
+     },
+     "externalApply": true,
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": -84.38798,
+        "lat": 33.749
+       },
+       "location": "Atlanta, Georgia, United States"
+      },
+      {
+       "latlong": {
+        "lon": -80.84313,
+        "lat": 35.22709
+       },
+       "location": "Charlotte, North Carolina, United States"
+      },
+      {
+       "latlong": {
+        "lon": -85.66809,
+        "lat": 42.96336
+       },
+       "location": "Grand Rapids, Michigan, United States"
+      },
+      {
+       "latlong": {
+        "lon": -76.88442,
+        "lat": 40.2737
+       },
+       "location": "Harrisburg, Pennsylvania, United States"
+      },
+      {
+       "latlong": {
+        "lon": -81.37924,
+        "lat": 28.53834
+       },
+       "location": "Orlando, Florida, United States"
+      },
+      {
+       "latlong": {
+        "lon": -81.69541,
+        "lat": 41.4995
+       },
+       "location": "Cleveland, Ohio, United States"
+      },
+      {
+       "latlong": {
+        "lon": -77.10428,
+        "lat": 38.88101
+       },
+       "location": "Arlington, Virginia, United States"
+      },
+      {
+       "latlong": {
+        "lon": -82.55402,
+        "lat": 35.60095
+       },
+       "location": "Asheville, North Carolina, United States"
+      },
+      {
+       "latlong": {
+        "lon": -78.87837,
+        "lat": 42.88645
+       },
+       "location": "Buffalo, New York, United States"
+      },
+      {
+       "latlong": {
+        "lon": -79.93275,
+        "lat": 32.77632
+       },
+       "location": "Charleston, South Carolina, United States"
+      },
+      {
+       "latlong": {
+        "lon": -82.32483,
+        "lat": 29.65163
+       },
+       "location": "Gainesville, Florida, United States"
+      },
+      {
+       "latlong": {
+        "lon": -80.14338,
+        "lat": 26.12231
+       },
+       "location": "Fort Lauderdale, Florida, United States"
+      },
+      {
+       "latlong": {
+        "lon": -83.04575,
+        "lat": 42.33143
+       },
+       "location": "Detroit, Michigan, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Sales & Customer Success"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "ml_skills": [
+      "digital advertising sales",
+      "cpc advertising models",
+      "api integration",
+      "salesforce",
+      "google ads",
+      "facebook ads",
+      "performance-based media",
+      "sales forecasting",
+      "pipeline management",
+      "account management",
+      "consultative selling",
+      "presentation skills",
+      "storytelling",
+      "powerpoint",
+      "excel",
+      "agency relationship management",
+      "cross-functional collaboration",
+      "sales pipeline management",
+      "revenue target achievement",
+      "local services ads"
+     ],
+     "category_raw": "Sales & Customer Success - Multi Location",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "Exciting opportunity for a driven sales professional to join Yelp’s Partner Sales team, focusing on identifying and closing new agency partnerships in digital advertising. Engage directly with digital marketing agencies, pitching Yelp’s advertising solutions and building strong relationships. Ideal for candidates with significant digital advertising sales experience and a passion for the fast-paced, high-impact environment.",
+     "state": "Remote",
+     "siteType": "external",
+     "multi_category": [
+      "Sales & Customer Success"
+     ],
+     "reqId": "14014",
+     "city": "Remote",
+     "latitude": "0.0",
+     "industry": "Software",
+     "multi_location": [
+      "Albany, New York, United States",
+      "Asheville, North Carolina, United States",
+      "Austin, Texas, United States",
+      "Baltimore, Maryland, United States",
+      "Baton Rouge, Louisiana, United States",
+      "Birmingham, Alabama, United States",
+      "Remote, Remote, United States",
+      "Fort Wayne, Indiana, United States",
+      "Grand Rapids, Michigan, United States",
+      "Champaign-Urbana, Illinois, United States",
+      "Charleston, South Carolina, United States",
+      "Bronx, New York, United States",
+      "Buffalo, New York, United States",
+      "Cape Coral-Fort Myers, Florida, United States",
+      "Charlotte, North Carolina, United States",
+      "Chattanooga, Tennessee, United States",
+      "Cleveland, Ohio, United States",
+      "Columbia, Missouri, United States",
+      "Remote, Remote, United States"
+     ],
+     "address": "Remote -   Remote, Remote  United States ",
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/14014/senior-partner-account-executive---digital-advertising---east-midwest-region-%28remote--us%29/job",
+     "ml_job_parser": {
+      "descriptionTeaser": "Exciting opportunity for a driven sales professional to join Yelp’s Partner Sales team, focusing on identifying and closing new agency partnerships in digital advertising. Engage directly with digital marketing agencies, pitching Yelp’s advertising solutions and building strong relationships. Ideal for candidates with significant digital advertising sales experience and a passion for the fast-paced, high-impact environment.",
+      "descriptionTeaser_first200": "Summary. Yelp is on the hunt for a driven, high-energy sales professional to join our fast-growing Partner Sales team. This is not your typical Account Executive role, this is a pure hunter positio...",
+      "descriptionTeaser_keyword": "Summary. Yelp is on the hunt for a driven, high-energy sales professional to join our fast-growing Partner Sales team. This is not your typical Account Executive role, this is a pure hunter position f...",
+      "descriptionTeaser_ats": "SummaryYelp is on the hunt for a driven, high-energy sales professional to join our fast-growing Partner Sales team. This is not your typical Account Executive role, this is a pure hunter position foc"
+     },
+     "externalApply": true,
+     "cityState": "Remote, Remote",
+     "country": "United States",
+     "longitude": "0.0",
+     "jobId": "14014",
+     "locale": "en_US",
+     "title": "Senior Partner Account Executive - Digital Advertising - East/Midwest Region (Remote- US)",
+     "jobSeqNo": "YELPUS14014EXTERNALENUS",
+     "postedDate": "2026-08-03T00:00:00.000+0000",
+     "dateCreated": "2026-08-07T20:47:57.683+0000",
+     "cityStateCountry": "Remote, Remote, United States",
+     "jobVisibility": [
+      "external"
+     ],
+     "location": "Remote, Remote, United States",
+     "category": "Sales & Customer Success",
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": -73.75623,
+        "lat": 42.65258
+       },
+       "location": "Albany, New York, United States"
+      },
+      {
+       "latlong": {
+        "lon": -82.55402,
+        "lat": 35.60095
+       },
+       "location": "Asheville, North Carolina, United States"
+      },
+      {
+       "latlong": {
+        "lon": -97.74306,
+        "lat": 30.26715
+       },
+       "location": "Austin, Texas, United States"
+      },
+      {
+       "latlong": {
+        "lon": -76.61219,
+        "lat": 39.29038
+       },
+       "location": "Baltimore, Maryland, United States"
+      },
+      {
+       "latlong": {
+        "lon": -91.18747,
+        "lat": 30.44332
+       },
+       "location": "Baton Rouge, Louisiana, United States"
+      },
+      {
+       "latlong": {
+        "lon": -86.80249,
+        "lat": 33.52066
+       },
+       "location": "Birmingham, Alabama, United States"
+      },
+      {
+       "latlong": {
+        "lon": 5e-324,
+        "lat": 5e-324
+       },
+       "location": "Remote, Remote, United States"
+      },
+      {
+       "latlong": {
+        "lon": -85.12886,
+        "lat": 41.1306
+       },
+       "location": "Fort Wayne, Indiana, United States"
+      },
+      {
+       "latlong": {
+        "lon": -85.66809,
+        "lat": 42.96336
+       },
+       "location": "Grand Rapids, Michigan, United States"
+      },
+      {
+       "latlong": {
+        "lon": -88.24338,
+        "lat": 40.11642
+       },
+       "location": "Champaign-Urbana, Illinois, United States"
+      },
+      {
+       "latlong": {
+        "lon": -79.93275,
+        "lat": 32.77632
+       },
+       "location": "Charleston, South Carolina, United States"
+      },
+      {
+       "latlong": {
+        "lon": -73.86641,
+        "lat": 40.84985
+       },
+       "location": "Bronx, New York, United States"
+      },
+      {
+       "latlong": {
+        "lon": -78.87837,
+        "lat": 42.88645
+       },
+       "location": "Buffalo, New York, United States"
+      },
+      {
+       "latlong": {
+        "lon": -81.94953,
+        "lat": 26.56285
+       },
+       "location": "Cape Coral-Fort Myers, Florida, United States"
+      },
+      {
+       "latlong": {
+        "lon": -80.84313,
+        "lat": 35.22709
+       },
+       "location": "Charlotte, North Carolina, United States"
+      },
+      {
+       "latlong": {
+        "lon": -85.30968,
+        "lat": 35.04563
+       },
+       "location": "Chattanooga, Tennessee, United States"
+      },
+      {
+       "latlong": {
+        "lon": -81.69541,
+        "lat": 41.4995
+       },
+       "location": "Cleveland, Ohio, United States"
+      },
+      {
+       "latlong": {
+        "lon": -92.33407,
+        "lat": 38.95171
+       },
+       "location": "Columbia, Missouri, United States"
+      },
+      {
+       "latlong": {
+        "lon": 5e-324,
+        "lat": 5e-324
+       },
+       "location": "Remote, Remote, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Sales & Customer Success"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "cityState": "Columbus, Ohio",
+     "country": "United States",
+     "ml_skills": [
+      "event planning",
+      "social media management",
+      "yelp management",
+      "marketing",
+      "business development",
+      "content curation",
+      "relationship building",
+      "copywriting",
+      "visual asset creation",
+      "canva",
+      "video curation",
+      "instagram management",
+      "newsletter curation",
+      "local business research",
+      "stakeholder engagement",
+      "written communication",
+      "verbal communication",
+      "video editing",
+      "local business networking",
+      "autonomous work"
+     ],
+     "category_raw": "General & Administrative - Community",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "Become part of our team as a Community Manager in Columbus, where you will lead local events and build strong relationships with business owners. Utilize your event planning and social media expertise to highlight local businesses and support the Yelp Elite Squad. Ideal for candidates with professional experience in event planning, social media, or marketing.",
+     "state": "Ohio",
+     "siteType": "external",
+     "longitude": "-82.99879",
+     "multi_category": [
+      "Community"
+     ],
+     "reqId": "14076",
+     "jobId": "14076",
+     "city": "Columbus",
+     "latitude": "39.96118",
+     "industry": "Software",
+     "locale": "en_US",
+     "multi_location": [
+      "Columbus, Ohio, United States"
+     ],
+     "title": "Community Manager, Columbus",
+     "jobSeqNo": "YELPUS14076EXTERNALENUS",
+     "postedDate": "2026-10-08T00:00:00.000+0000",
+     "dateCreated": "2026-10-08T20:27:16.063+0000",
+     "cityStateCountry": "Columbus, Ohio, United States",
+     "address": "Columbus -   Columbus, Ohio  United States ",
+     "jobVisibility": [
+      "external"
+     ],
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/14076/community-manager%2c-columbus/job",
+     "location": "Columbus, Ohio, United States",
+     "category": "Community",
+     "ml_job_parser": {
+      "descriptionTeaser": "Become part of our team as a Community Manager in Columbus, where you will lead local events and build strong relationships with business owners. Utilize your event planning and social media expertise to highlight local businesses and support the Yelp Elite Squad. Ideal for candidates with professional experience in event planning, social media, or marketing.",
+      "descriptionTeaser_first200": "Summary. Do you love Columbus? Are you the go-to person when it comes to planning a night out, always ready with a recommendation for the city’s most seasoned finds and hidden hotspots? As the Colu...",
+      "descriptionTeaser_keyword": "Summary. Do you love Columbus? Are you the go-to person when it comes to planning a night out, always ready with a recommendation for the city’s most seasoned finds and hidden hotspots? As the Columbu...",
+      "descriptionTeaser_ats": "SummaryDo you love Columbus? Are you the go-to person when it comes to planning a night out, always ready with a recommendation for the city&rsquo;s most seasoned finds and hidden hotspots?&nbsp;As th"
+     },
+     "externalApply": true,
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": -82.99879,
+        "lat": 39.96118
+       },
+       "location": "Columbus, Ohio, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Community"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "cityState": "Toronto, Ontario",
+     "country": "Canada",
+     "ml_skills": [
+      "product management",
+      "auction optimization",
+      "sql",
+      "python",
+      "statistical modeling",
+      "machine learning",
+      "experimental design",
+      "causal inference",
+      "applied statistics",
+      "algorithm development",
+      "data analysis",
+      "search ranking",
+      "monetization platforms",
+      "data visualization",
+      "cross-functional leadership",
+      "stakeholder management",
+      "technical communication",
+      "problem solving",
+      "requirements definition",
+      "product roadmap",
+      "budget pacing",
+      "pricing mechanisms",
+      "system design"
+     ],
+     "category_raw": "Engineering & Product - Product Management",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "We are seeking a Principal Product Manager to lead the strategy and execution of Yelp's core ad auction and measurement systems. Drive product roadmaps, optimise auction algorithms, and collaborate with engineering and data science teams. Ideal for experienced technical product managers with expertise in auctions and advanced analytical skills.",
+     "state": "Ontario",
+     "siteType": "external",
+     "longitude": "-79.4163",
+     "multi_category": [
+      "Product Management"
+     ],
+     "reqId": "14003",
+     "jobId": "14003",
+     "city": "Toronto",
+     "latitude": "43.70011",
+     "industry": "Software",
+     "locale": "en_US",
+     "multi_location": [
+      "Vancouver, British Columbia, Canada",
+      "Calgary, Alberta, Canada",
+      "Montreal, Quebec, Canada",
+      "Remote, Remote, Canada",
+      "Toronto, Ontario, Canada"
+     ],
+     "title": "Principal Product Manager - Ads Auction and Measurements (Remote - Canada)",
+     "jobSeqNo": "YELPUS14003EXTERNALENUS",
+     "postedDate": "2026-07-27T00:00:00.000+0000",
+     "dateCreated": "2026-07-27T20:43:38.865+0000",
+     "cityStateCountry": "Toronto, Ontario, Canada",
+     "address": "Toronto -   Toronto, Ontario  Canada ",
+     "jobVisibility": [
+      "external"
+     ],
+     "applyUrl": "https://cancareers-yelp.icims.com/jobs/14003/principal-product-manager---ads-auction-and-measurements-%28remote---canada%29/job",
+     "location": "Toronto, Ontario, Canada",
+     "category": "Product Management",
+     "ml_job_parser": {
+      "descriptionTeaser": "We are seeking a Principal Product Manager to lead the strategy and execution of Yelp's core ad auction and measurement systems. Drive product roadmaps, optimise auction algorithms, and collaborate with engineering and data science teams. Ideal for experienced technical product managers with expertise in auctions and advanced analytical skills.",
+      "descriptionTeaser_ats": "SummaryYelp connects people with great local businesses. Our platform is powered by a vibrant community contributing reviews and engaging with local businesses daily. We monetize primarily through adv",
+      "descriptionTeaser_keyword": "Summary. Yelp connects people with great local businesses. Our platform is powered by a vibrant community contributing reviews and engaging with local businesses daily. We monetize primarily through a...",
+      "descriptionTeaser_first200": "Summary. Yelp connects people with great local businesses. Our platform is powered by a vibrant community contributing reviews and engaging with local businesses daily. We monetize primarily throug..."
+     },
+     "externalApply": true,
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": -123.11934,
+        "lat": 49.24966
+       },
+       "location": "Vancouver, British Columbia, Canada"
+      },
+      {
+       "latlong": {
+        "lon": -114.08529,
+        "lat": 51.05011
+       },
+       "location": "Calgary, Alberta, Canada"
+      },
+      {
+       "latlong": {
+        "lon": -73.58781,
+        "lat": 45.50884
+       },
+       "location": "Montreal, Quebec, Canada"
+      },
+      {
+       "latlong": {
+        "lon": 5e-324,
+        "lat": 5e-324
+       },
+       "location": "Remote, Remote, Canada"
+      },
+      {
+       "latlong": {
+        "lon": -79.4163,
+        "lat": 43.70011
+       },
+       "location": "Toronto, Ontario, Canada"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Product Management"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "cityState": "Toronto, Ontario",
+     "country": "Canada",
+     "ml_skills": [
+      "python",
+      "machine learning",
+      "neural networks",
+      "large language models",
+      "pytorch",
+      "tensorflow",
+      "xgboost",
+      "sklearn",
+      "sql",
+      "computer vision",
+      "embeddings",
+      "spark mllib",
+      "prompt engineering",
+      "model deployment",
+      "model pipeline automation",
+      "mentoring",
+      "infrastructure best practices",
+      "openai",
+      "bedrock",
+      "text understanding",
+      "visual understanding",
+      "data wrangling",
+      "statistical modeling",
+      "business idea development"
+     ],
+     "category_raw": "Engineering & Product - Engineering",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "Exciting opportunity for a Senior Machine Learning Engineer to drive impactful projects in content and contributor intelligence. Lead end-to-end ML development, mentor junior engineers, and collaborate on large-scale datasets. Ideal for experienced professionals with expertise in neural networks, LLMs, and Python.",
+     "state": "Ontario",
+     "siteType": "external",
+     "longitude": "-79.4163",
+     "multi_category": [
+      "Engineering"
+     ],
+     "reqId": "14080",
+     "jobId": "14080",
+     "city": "Toronto",
+     "latitude": "43.70011",
+     "industry": "Software",
+     "locale": "en_US",
+     "multi_location": [
+      "Vancouver, British Columbia, Canada",
+      "Toronto, Ontario, Canada"
+     ],
+     "title": "Senior Machine Learning Engineer - Content and Contributor Intelligence (Remote - CAN)",
+     "jobSeqNo": "YELPUS14080EXTERNALENUS",
+     "postedDate": "2026-10-19T00:00:00.000+0000",
+     "dateCreated": "2026-10-19T20:27:16.814+0000",
+     "cityStateCountry": "Toronto, Ontario, Canada",
+     "address": "Toronto -   Toronto, Ontario  Canada ",
+     "jobVisibility": [
+      "external"
+     ],
+     "applyUrl": "https://cancareers-yelp.icims.com/jobs/14080/senior-machine-learning-engineer---content-and-contributor-intelligence-%28remote---can%29/job",
+     "location": "Toronto, Ontario, Canada",
+     "category": "Engineering",
+     "ml_job_parser": {
+      "descriptionTeaser": "Exciting opportunity for a Senior Machine Learning Engineer to drive impactful projects in content and contributor intelligence. Lead end-to-end ML development, mentor junior engineers, and collaborate on large-scale datasets. Ideal for experienced professionals with expertise in neural networks, LLMs, and Python.",
+      "descriptionTeaser_first200": "Summary. Yelp engineering culture is driven by our values: we’re a cooperative team that values individual authenticity and encourages creative solutions to problems. All new engineers deploy worki...",
+      "descriptionTeaser_keyword": "Summary. Yelp engineering culture is driven by our values: we’re a cooperative team that values individual authenticity and encourages creative solutions to problems. All new engineers deploy working...",
+      "descriptionTeaser_ats": "SummaryYelp engineering culture is driven by our values: we&rsquo;re a cooperative team that values individual authenticity and encourages creative solutions to problems. All new engineers deploy work"
+     },
+     "externalApply": true,
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": -123.11934,
+        "lat": 49.24966
+       },
+       "location": "Vancouver, British Columbia, Canada"
+      },
+      {
+       "latlong": {
+        "lon": -79.4163,
+        "lat": 43.70011
+       },
+       "location": "Toronto, Ontario, Canada"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Engineering"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "ml_skills": [
+      "event planning",
+      "social media management",
+      "local business promotion",
+      "yelp community engagement",
+      "newsletter content creation",
+      "relationship building",
+      "written communication",
+      "verbal communication",
+      "instagram",
+      "twitter",
+      "yelp elite squad collaboration",
+      "local market knowledge",
+      "autonomous work"
+     ],
+     "category_raw": "General & Administrative - Community",
+     "type": "Regular (Part-Time)",
+     "descriptionTeaser": "Join us as a Community Ambassador in Oklahoma City, where you will lead local events, engage with Yelp Elite Squad, and help grow the Yelp community. This role blends event planning, social media, and marketing, ideal for those with strong communication skills and a passion for local engagement.",
+     "state": "Oklahoma",
+     "siteType": "external",
+     "multi_category": [
+      "Community"
+     ],
+     "reqId": "13992",
+     "city": "Oklahoma City",
+     "latitude": "35.46756",
+     "industry": "Software",
+     "multi_location": [
+      "Oklahoma City, Oklahoma, United States"
+     ],
+     "address": "Oklahoma City -   Oklahoma City, Oklahoma  United States ",
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/13992/community-ambassador---oklahoma-city/job",
+     "ml_job_parser": {
+      "descriptionTeaser": "Join us as a Community Ambassador in Oklahoma City, where you will lead local events, engage with Yelp Elite Squad, and help grow the Yelp community. This role blends event planning, social media, and marketing, ideal for those with strong communication skills and a passion for local engagement.",
+      "descriptionTeaser_first200": "Summary. Do you love Oklahoma City? Are you the go-to person when it comes to planning a night out, always ready with a recommendation for the city’s most seasoned finds and hidden hotspots? As the...",
+      "descriptionTeaser_keyword": "Summary. Do you love Oklahoma City? Are you the go-to person when it comes to planning a night out, always ready with a recommendation for the city’s most seasoned finds and hidden hotspots? As the Ok...",
+      "descriptionTeaser_ats": "SummaryDo you love Oklahoma City? Are you the go-to person when it comes to planning a night out, always ready with a recommendation for the city&rsquo;s most seasoned finds and hidden hotspots?&nbsp;"
+     },
+     "externalApply": true,
+     "cityState": "Oklahoma City, Oklahoma",
+     "country": "United States",
+     "longitude": "-97.51643",
+     "jobId": "13992",
+     "locale": "en_US",
+     "title": "Community Ambassador - Oklahoma City",
+     "jobSeqNo": "YELPUS13992EXTERNALENUS",
+     "postedDate": "2026-07-14T00:00:00.000+0000",
+     "dateCreated": "2026-07-15T00:56:51.332+0000",
+     "cityStateCountry": "Oklahoma City, Oklahoma, United States",
+     "jobVisibility": [
+      "external"
+     ],
+     "location": "Oklahoma City, Oklahoma, United States",
+     "category": "Community",
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": -97.51643,
+        "lat": 35.46756
+       },
+       "location": "Oklahoma City, Oklahoma, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Community"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "cityState": "Remote, Remote",
+     "country": "United States",
+     "ml_skills": [
+      "saas sales",
+      "enterprise sales",
+      "restaurant technology ecosystem",
+      "pos systems",
+      "reservations management",
+      "voice ai platforms",
+      "pipeline management",
+      "contract negotiation",
+      "franchise group sales",
+      "corporate decision maker sales",
+      "stakeholder management",
+      "cross-functional collaboration",
+      "product roadmap development",
+      "restaurant operations expertise",
+      "ai/voice platform sales",
+      "multi-location account management",
+      "data-driven decision making",
+      "business development",
+      "franchise conference participation",
+      "pos integration"
+     ],
+     "category_raw": "Sales & Customer Success - Yelp Restaurants",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "We are seeking a strategic Enterprise Account Executive to drive sales of AI-powered solutions for multi-location restaurant accounts. Manage the full sales cycle, build strategic pipelines, and collaborate with cross-functional teams. Ideal for experienced SaaS professionals with a strong background in enterprise hospitality sales.",
+     "state": "Remote",
+     "siteType": "external",
+     "longitude": "0.0",
+     "multi_category": [
+      "Sales & Customer Success"
+     ],
+     "reqId": "14046",
+     "jobId": "14046",
+     "city": "Remote",
+     "latitude": "0.0",
+     "industry": "Software",
+     "locale": "en_US",
+     "multi_location": [
+      "Los Angeles, California, United States",
+      "New York City, New York, United States",
+      "Boston, Massachusetts, United States",
+      "Miami, Florida, United States",
+      "Orlando, Florida, United States",
+      "Jersey City, New Jersey, United States",
+      "Atlanta, Georgia, United States",
+      "Remote, Remote, United States"
+     ],
+     "title": "Enterprise Account Executive, AI SaaS Sales (Remote - US)",
+     "jobSeqNo": "YELPUS14046EXTERNALENUS",
+     "postedDate": "2026-08-27T00:00:00.000+0000",
+     "dateCreated": "2026-08-27T20:29:56.639+0000",
+     "cityStateCountry": "Remote, Remote, United States",
+     "address": "Remote -   Remote, Remote  United States ",
+     "jobVisibility": [
+      "external"
+     ],
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/14046/enterprise-account-executive%2c-ai-saas-sales-%28remote---us%29/job",
+     "location": "Remote, Remote, United States",
+     "category": "Sales & Customer Success",
+     "ml_job_parser": {
+      "descriptionTeaser": "We are seeking a strategic Enterprise Account Executive to drive sales of AI-powered solutions for multi-location restaurant accounts. Manage the full sales cycle, build strategic pipelines, and collaborate with cross-functional teams. Ideal for experienced SaaS professionals with a strong background in enterprise hospitality sales.",
+      "descriptionTeaser_first200": "Summary. *Please note that while this is a remote position, it is required that the candidate resides within 50 miles of a major airport. States included in Yelp's defined regions include. For West...",
+      "descriptionTeaser_keyword": "Summary. * Please note that while this is a remote position, it is required that the candidate resides within 50 miles of a major airport. States included in Yelp's defined regions include. For West:...",
+      "descriptionTeaser_ats": "Summary*Please note that while this is a remote position, it is required that the candidate resides&nbsp;within 50 miles of a major airport. States included in Yelp's defined&nbsp; regions include:&nb"
+     },
+     "externalApply": true,
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": -118.24368,
+        "lat": 34.05223
+       },
+       "location": "Los Angeles, California, United States"
+      },
+      {
+       "latlong": {
+        "lon": -74.00597,
+        "lat": 40.71427
+       },
+       "location": "New York City, New York, United States"
+      },
+      {
+       "latlong": {
+        "lon": -71.05977,
+        "lat": 42.35843
+       },
+       "location": "Boston, Massachusetts, United States"
+      },
+      {
+       "latlong": {
+        "lon": -80.19366,
+        "lat": 25.77427
+       },
+       "location": "Miami, Florida, United States"
+      },
+      {
+       "latlong": {
+        "lon": -81.37924,
+        "lat": 28.53834
+       },
+       "location": "Orlando, Florida, United States"
+      },
+      {
+       "latlong": {
+        "lon": -74.07764,
+        "lat": 40.72816
+       },
+       "location": "Jersey City, New Jersey, United States"
+      },
+      {
+       "latlong": {
+        "lon": -84.38798,
+        "lat": 33.749
+       },
+       "location": "Atlanta, Georgia, United States"
+      },
+      {
+       "latlong": {
+        "lon": 5e-324,
+        "lat": 5e-324
+       },
+       "location": "Remote, Remote, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Sales & Customer Success"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "cityState": "San Francisco, California",
+     "country": "United States",
+     "category_raw": "Engineering & Product - Product Management",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "We are expanding our team: As Principal Product Manager for Ads Auction and Measurements, you will lead the strategy and execution of Yelp's core ad auction systems, driving innovation in auction dynamics and measurement. Ideal candidates bring extensive technical product management experience in online advertising and a strong background in auction theory and data analysis.",
+     "state": "California",
+     "siteType": "external",
+     "longitude": "-122.41942",
+     "multi_category": [
+      "Product Management"
+     ],
+     "reqId": "14002",
+     "jobId": "14002",
+     "city": "San Francisco",
+     "latitude": "37.77493",
+     "industry": "Software",
+     "locale": "en_US",
+     "multi_location": [
+      "New York City, New York, United States",
+      "Los Angeles, California, United States",
+      "Austin, Texas, United States",
+      "Remote, Remote, United States",
+      "San Francisco, California, United States"
+     ],
+     "title": "Principal Product Manager - Ads Auction and Measurements (Remote - United States)",
+     "jobSeqNo": "YELPUS14002EXTERNALENUS",
+     "postedDate": "2026-07-27T00:00:00.000+0000",
+     "dateCreated": "2026-07-27T20:43:38.868+0000",
+     "cityStateCountry": "San Francisco, California, United States",
+     "address": "San Francisco -   San Francisco, California  United States ",
+     "jobVisibility": [
+      "external"
+     ],
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/14002/principal-product-manager---ads-auction-and-measurements-%28remote---united-states%29/job",
+     "location": "San Francisco, California, United States",
+     "category": "Product Management",
+     "externalApply": true,
+     "ml_skills": [
+      "product management",
+      "auction optimization",
+      "sql",
+      "python",
+      "statistical modeling",
+      "machine learning",
+      "a/b testing",
+      "experimental design",
+      "causal inference",
+      "applied statistics",
+      "algorithm development",
+      "system optimization",
+      "data analysis",
+      "search ranking",
+      "monetization platforms",
+      "adtech",
+      "cross-functional leadership",
+      "stakeholder management",
+      "technical communication",
+      "problem solving",
+      "data visualization",
+      "r",
+      "budget pacing",
+      "pricing mechanisms",
+      "user experience optimization"
+     ],
+     "ml_job_parser": {
+      "descriptionTeaser": "We are expanding our team: As Principal Product Manager for Ads Auction and Measurements, you will lead the strategy and execution of Yelp's core ad auction systems, driving innovation in auction dynamics and measurement. Ideal candidates bring extensive technical product management experience in online advertising and a strong background in auction theory and data analysis.",
+      "descriptionTeaser_keyword": "Summary. Yelp connects people with great local businesses. Our platform is powered by a vibrant community contributing reviews and engaging with local businesses daily. We monetize primarily through a...",
+      "descriptionTeaser_ats": "SummaryYelp connects people with great local businesses. Our platform is powered by a vibrant community contributing reviews and engaging with local businesses daily. We monetize primarily through adv",
+      "descriptionTeaser_first200": "Summary. Yelp connects people with great local businesses. Our platform is powered by a vibrant community contributing reviews and engaging with local businesses daily. We monetize primarily throug..."
+     },
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": -74.00597,
+        "lat": 40.71427
+       },
+       "location": "New York City, New York, United States"
+      },
+      {
+       "latlong": {
+        "lon": -118.24368,
+        "lat": 34.05223
+       },
+       "location": "Los Angeles, California, United States"
+      },
+      {
+       "latlong": {
+        "lon": -97.74306,
+        "lat": 30.26715
+       },
+       "location": "Austin, Texas, United States"
+      },
+      {
+       "latlong": {
+        "lon": 5e-324,
+        "lat": 5e-324
+       },
+       "location": "Remote, Remote, United States"
+      },
+      {
+       "latlong": {
+        "lon": -122.41942,
+        "lat": 37.77493
+       },
+       "location": "San Francisco, California, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Product Management"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "cityState": "San Francisco, California",
+     "country": "United States",
+     "ml_skills": [
+      "python",
+      "machine learning",
+      "neural networks",
+      "large language models",
+      "pytorch",
+      "tensorflow",
+      "xgboost",
+      "sklearn",
+      "sql",
+      "computer vision",
+      "spark mllib",
+      "embedding techniques",
+      "prompt engineering",
+      "model deployment",
+      "model pipeline automation",
+      "mentoring",
+      "infrastructure best practices",
+      "data wrangling",
+      "statistical modeling",
+      "model evaluation",
+      "openai",
+      "bedrock",
+      "text understanding",
+      "visual understanding"
+     ],
+     "category_raw": "Engineering & Product - Engineering",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "Exciting opportunity for a Senior Machine Learning Engineer to drive impactful projects in content and contributor intelligence. Lead end-to-end ML development, mentor junior engineers, and apply advanced tools to enhance user and business listings. Ideal for experienced professionals with strong Python skills and expertise in neural networks, LLMs, and large language models.",
+     "state": "California",
+     "siteType": "external",
+     "longitude": "-122.41942",
+     "multi_category": [
+      "Engineering"
+     ],
+     "reqId": "13815",
+     "jobId": "13815",
+     "city": "San Francisco",
+     "latitude": "37.77493",
+     "industry": "Software",
+     "locale": "en_US",
+     "multi_location": [
+      "Austin, Texas, United States",
+      "Remote, Remote, United States",
+      "San Francisco, California, United States"
+     ],
+     "title": "Senior Machine Learning Engineer - Content and Contributor Intelligence (Hybrid - United States)",
+     "jobSeqNo": "YELPUS13815EXTERNALENUS",
+     "postedDate": "2026-03-11T00:00:00.000+0000",
+     "dateCreated": "2026-03-18T20:29:06.553+0000",
+     "cityStateCountry": "San Francisco, California, United States",
+     "address": "San Francisco -   San Francisco, California  United States ",
+     "jobVisibility": [
+      "external"
+     ],
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/13815/senior-machine-learning-engineer---content-and-contributor-intelligence-%28hybrid---united-states%29/job",
+     "location": "San Francisco, California, United States",
+     "category": "Engineering",
+     "ml_job_parser": {
+      "descriptionTeaser": "Exciting opportunity for a Senior Machine Learning Engineer to drive impactful projects in content and contributor intelligence. Lead end-to-end ML development, mentor junior engineers, and apply advanced tools to enhance user and business listings. Ideal for experienced professionals with strong Python skills and expertise in neural networks, LLMs, and large language models.",
+      "descriptionTeaser_first200": "Summary. Yelp engineering culture is driven by our values: we’re a cooperative team that values individual authenticity and encourages creative solutions to problems. All new engineers deploy worki...",
+      "descriptionTeaser_keyword": "Summary. Yelp engineering culture is driven by our values: we’re a cooperative team that values individual authenticity and encourages creative solutions to problems. All new engineers deploy working...",
+      "descriptionTeaser_ats": "SummaryYelp engineering culture is driven by our values: we&rsquo;re a cooperative team that values individual authenticity and encourages creative solutions to problems. All new engineers deploy work"
+     },
+     "externalApply": true,
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": -97.74306,
+        "lat": 30.26715
+       },
+       "location": "Austin, Texas, United States"
+      },
+      {
+       "latlong": {
+        "lon": 5e-324,
+        "lat": 5e-324
+       },
+       "location": "Remote, Remote, United States"
+      },
+      {
+       "latlong": {
+        "lon": -122.41942,
+        "lat": 37.77493
+       },
+       "location": "San Francisco, California, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Engineering"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "cityState": "Tucson, Arizona",
+     "country": "United States",
+     "ml_skills": [
+      "event planning",
+      "social media management",
+      "marketing",
+      "business development",
+      "content curation",
+      "relationship building",
+      "copywriting",
+      "visual asset creation",
+      "canva",
+      "video curation",
+      "instagram",
+      "newsletter curation",
+      "local business research",
+      "stakeholder engagement",
+      "written communication",
+      "verbal communication",
+      "yelp elite squad compliance",
+      "local business networking",
+      "video editing",
+      "local business collections"
+     ],
+     "category_raw": "General & Administrative - Community",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "Exciting opportunity for a Community Manager to lead local events and build strong relationships with Tucson locals. Oversee Yelp events, curate local business listings, and support the Yelp Elite Squad. Ideal for candidates with event planning, social media, and marketing experience, and a passion for connecting with local businesses.",
+     "state": "Arizona",
+     "siteType": "external",
+     "longitude": "-110.92648",
+     "multi_category": [
+      "Community"
+     ],
+     "reqId": "14063",
+     "jobId": "14063",
+     "city": "Tucson",
+     "latitude": "32.22174",
+     "industry": "Software",
+     "locale": "en_US",
+     "multi_location": [
+      "Tucson, Arizona, United States"
+     ],
+     "title": "Community Manager, Tucson",
+     "jobSeqNo": "YELPUS14063EXTERNALENUS",
+     "postedDate": "2026-09-14T00:00:00.000+0000",
+     "dateCreated": "2026-09-14T20:28:51.346+0000",
+     "cityStateCountry": "Tucson, Arizona, United States",
+     "address": "Tucson -   Tucson, Arizona  United States ",
+     "jobVisibility": [
+      "external"
+     ],
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/14063/community-manager%2c-tucson/job",
+     "location": "Tucson, Arizona, United States",
+     "category": "Community",
+     "ml_job_parser": {
+      "descriptionTeaser": "Exciting opportunity for a Community Manager to lead local events and build strong relationships with Tucson locals. Oversee Yelp events, curate local business listings, and support the Yelp Elite Squad. Ideal for candidates with event planning, social media, and marketing experience, and a passion for connecting with local businesses.",
+      "descriptionTeaser_first200": "Summary. Do you love Tucson? Are you the go-to person when it comes to planning a night out, always ready with a recommendation for the city’s most seasoned finds and hidden hotspots? As the Tucson...",
+      "descriptionTeaser_keyword": "Summary. Do you love Tucson? Are you the go-to person when it comes to planning a night out, always ready with a recommendation for the city’s most seasoned finds and hidden hotspots? As the Tucson, A...",
+      "descriptionTeaser_ats": "SummaryDo you love Tucson? Are you the go-to person when it comes to planning a night out, always ready with a recommendation for the city’s most seasoned finds and hidden hotspots? As the"
+     },
+     "externalApply": true,
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": -110.92648,
+        "lat": 32.22174
+       },
+       "location": "Tucson, Arizona, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Community"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "cityState": "Phoenix, Arizona",
+     "country": "United States",
+     "ml_skills": [
+      "outbound sales",
+      "crm",
+      "customer relationship management",
+      "salesforce",
+      "pipeline management",
+      "quota attainment",
+      "product recommendation",
+      "objection handling",
+      "closing techniques",
+      "upselling",
+      "google suite",
+      "email proficiency",
+      "high-speed internet",
+      "task prioritization",
+      "independent work",
+      "interpersonal skills",
+      "client outreach",
+      "advisory sales",
+      "macbook",
+      "feedback implementation"
+     ],
+     "category_raw": "Sales & Customer Success - Small Business Sales",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "Take on the role of Inside Sales Representative, engaging with small business owners to deliver tailored Yelp advertising solutions. Utilize your outbound phone skills to educate clients and drive results. Ideal for candidates with strong interpersonal abilities and customer-facing experience.",
+     "state": "Arizona",
+     "siteType": "external",
+     "longitude": "-112.07404",
+     "multi_category": [
+      "Sales & Customer Success"
+     ],
+     "reqId": "14036",
+     "jobId": "14036",
+     "city": "Phoenix",
+     "latitude": "33.44838",
+     "industry": "Software",
+     "locale": "en_US",
+     "multi_location": [
+      "Tucson, Arizona, United States",
+      "Reno, Nevada, United States",
+      "Las Vegas, Nevada, United States",
+      "Phoenix, Arizona, United States"
+     ],
+     "title": "Inside Sales Representative  (Remote - Western Region)",
+     "jobSeqNo": "YELPUS14036EXTERNALENUS",
+     "postedDate": "2026-08-19T00:00:00.000+0000",
+     "dateCreated": "2026-08-20T20:28:56.286+0000",
+     "cityStateCountry": "Phoenix, Arizona, United States",
+     "address": "Phoenix -   Phoenix, Arizona  United States ",
+     "jobVisibility": [
+      "external"
+     ],
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/14036/inside-sales-representative--%28remote---western-region%29/job",
+     "location": "Phoenix, Arizona, United States",
+     "category": "Sales & Customer Success",
+     "ml_job_parser": {
+      "descriptionTeaser": "Take on the role of Inside Sales Representative, engaging with small business owners to deliver tailored Yelp advertising solutions. Utilize your outbound phone skills to educate clients and drive results. Ideal for candidates with strong interpersonal abilities and customer-facing experience.",
+      "descriptionTeaser_first200": "Summary. We are currently accepting applications from candidates located in the following Western U.S. states: Arizona, Idaho, Montana, Nevada, New Mexico, Utah, and Wyoming. At this time, we are u...",
+      "descriptionTeaser_keyword": "Summary. We are currently accepting applications from candidates located in the following Western U.S. states: Arizona, Idaho, Montana, Nevada, New Mexico, Utah, and Wyoming. At this time, we are unab...",
+      "descriptionTeaser_ats": "SummaryWe are currently accepting applications from candidates located in the following Western U.S. states: Arizona, Idaho, Montana, Nevada, New Mexico, Utah, and Wyoming. At this time, we are unable"
+     },
+     "externalApply": true,
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": -110.92648,
+        "lat": 32.22174
+       },
+       "location": "Tucson, Arizona, United States"
+      },
+      {
+       "latlong": {
+        "lon": -119.8138,
+        "lat": 39.52963
+       },
+       "location": "Reno, Nevada, United States"
+      },
+      {
+       "latlong": {
+        "lon": -115.13722,
+        "lat": 36.17497
+       },
+       "location": "Las Vegas, Nevada, United States"
+      },
+      {
+       "latlong": {
+        "lon": -112.07404,
+        "lat": 33.44838
+       },
+       "location": "Phoenix, Arizona, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Sales & Customer Success"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "ml_skills": [
+      "growth marketing",
+      "lifecycle marketing",
+      "onboarding program optimization",
+      "re-engagement strategy",
+      "content strategy",
+      "segmentation",
+      "audience segmentation",
+      "campaign performance measurement",
+      "data analysis",
+      "paid media channels",
+      "ai tools",
+      "marketing technology",
+      "cross-functional collaboration",
+      "project management",
+      "organizational skills",
+      "strategic thinking",
+      "problem solving",
+      "multitasking",
+      "executive communication",
+      "performance optimization",
+      "behavioral signals development",
+      "urgency-driven content development",
+      "email marketing",
+      "push notification marketing",
+      "in-product marketing",
+      "performance marketing"
+     ],
+     "category_raw": "General & Administrative - Marketing",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "We are seeking a Product Marketing Manager to drive consumer growth marketing at Yelp. Lead strategies for onboarding, retention, and acquisition across Services and Restaurant, Food & Nightlife verticals. Ideal for experienced growth marketers with strong content and data-driven skills.",
+     "state": "Remote",
+     "siteType": "external",
+     "multi_category": [
+      "Marketing"
+     ],
+     "reqId": "14029",
+     "city": "Remote",
+     "latitude": "0.0",
+     "industry": "Software",
+     "multi_location": [
+      "Remote, Remote, United States"
+     ],
+     "address": "Remote -   Remote, Remote  United States ",
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/14029/product-marketing-manager%2c-consumer-growth-marketing/job",
+     "ml_job_parser": {
+      "descriptionTeaser": "We are seeking a Product Marketing Manager to drive consumer growth marketing at Yelp. Lead strategies for onboarding, retention, and acquisition across Services and Restaurant, Food & Nightlife verticals. Ideal for experienced growth marketers with strong content and data-driven skills.",
+      "descriptionTeaser_first200": "Summary. Yelp's mission is to connect people with great local businesses. As a trusted source of information on local business, millions of people turn to Yelp every day to make decisions about whe...",
+      "descriptionTeaser_keyword": "Summary. Yelp's mission is to connect people with great local businesses. As a trusted source of information on local business, millions of people turn to Yelp every day to make decisions about where...",
+      "descriptionTeaser_ats": "SummaryYelp's mission is to connect people with great local businesses. As a trusted source of information on local business, millions of people turn to Yelp every day to make decisions about where to"
+     },
+     "externalApply": true,
+     "cityState": "Remote, Remote",
+     "country": "United States",
+     "longitude": "0.0",
+     "jobId": "14029",
+     "locale": "en_US",
+     "title": "Product Marketing Manager, Consumer Growth Marketing",
+     "jobSeqNo": "YELPUS14029EXTERNALENUS",
+     "postedDate": "2026-08-13T00:00:00.000+0000",
+     "dateCreated": "2026-08-13T20:29:04.799+0000",
+     "cityStateCountry": "Remote, Remote, United States",
+     "jobVisibility": [
+      "external"
+     ],
+     "location": "Remote, Remote, United States",
+     "category": "Marketing",
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": 5e-324,
+        "lat": 5e-324
+       },
+       "location": "Remote, Remote, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Marketing"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "ml_skills": [
+      "product strategy",
+      "monetization",
+      "cross-functional leadership",
+      "ad products",
+      "auction-based systems",
+      "revenue management",
+      "product roadmap development",
+      "stakeholder management",
+      "performance management",
+      "go-to-market strategy",
+      "data science collaboration",
+      "search engine optimization",
+      "ad delivery optimization",
+      "business case development",
+      "user experience optimization",
+      "executive communication",
+      "mentoring",
+      "talent development",
+      "partner management",
+      "search quality management",
+      "ai-powered conversational chatbots",
+      "ad auction systems",
+      "bidding teams",
+      "ad creative optimization",
+      "ad load management",
+      "serp optimization"
+     ],
+     "category_raw": "Engineering & Product - Product Management",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "We are looking for a VP of Product Management, Monetization to lead product strategy and execution for Yelp's monetization initiatives. Oversee Ad products and platform systems, drive innovation, and collaborate across engineering and data teams. Ideal for an experienced product leader with deep expertise in advertising and monetization.",
+     "state": "Remote",
+     "siteType": "external",
+     "multi_category": [
+      "Product Management"
+     ],
+     "reqId": "14009",
+     "city": "Remote",
+     "latitude": "0.0",
+     "industry": "Software",
+     "multi_location": [
+      "Remote, Remote, United States"
+     ],
+     "address": "Remote -   Remote, Remote  United States ",
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/14009/vp-of-product-management%2c-monetization/job",
+     "ml_job_parser": {
+      "descriptionTeaser": "We are looking for a VP of Product Management, Monetization to lead product strategy and execution for Yelp's monetization initiatives. Oversee Ad products and platform systems, drive innovation, and collaborate across engineering and data teams. Ideal for an experienced product leader with deep expertise in advertising and monetization.",
+      "descriptionTeaser_first200": "Summary. At Yelp, our mission is to connect people with great local businesses. We’re seeking a VP of Product Management, Monetization to lead product strategy, vision and execution for overall Yel...",
+      "descriptionTeaser_keyword": "Summary. At Yelp, our mission is to connect people with great local businesses. We’re seeking a VP of Product Management, Monetization to lead product strategy, vision and execution for overall Yelp m...",
+      "descriptionTeaser_ats": "SummaryAt Yelp, our mission is to connect people with great local businesses. We’re seeking a VP of Product Management, Monetization to lead product strategy, vision and execution for overall Ye"
+     },
+     "externalApply": true,
+     "cityState": "Remote, Remote",
+     "country": "United States",
+     "longitude": "0.0",
+     "jobId": "14009",
+     "locale": "en_US",
+     "title": "VP of Product Management, Monetization",
+     "jobSeqNo": "YELPUS14009EXTERNALENUS",
+     "postedDate": "2026-07-30T00:00:00.000+0000",
+     "dateCreated": "2026-08-01T20:28:16.811+0000",
+     "cityStateCountry": "Remote, Remote, United States",
+     "jobVisibility": [
+      "external"
+     ],
+     "location": "Remote, Remote, United States",
+     "category": "Product Management",
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": 5e-324,
+        "lat": 5e-324
+       },
+       "location": "Remote, Remote, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Product Management"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "cityState": "Remote, Remote",
+     "country": "United States",
+     "ml_skills": [
+      "marketing automation",
+      "campaign enablement",
+      "marketing technology",
+      "qa",
+      "deliverability management",
+      "web operations",
+      "braze",
+      "sfmc",
+      "marketo",
+      "audience segmentation",
+      "personalization",
+      "reporting",
+      "project management",
+      "cross-functional collaboration",
+      "team leadership",
+      "data-driven campaign execution",
+      "root cause analysis",
+      "platform troubleshooting",
+      "uat coordination",
+      "stakeholder alignment",
+      "risk mitigation",
+      "escalation management",
+      "ai-powered workflows",
+      "automation playbooks",
+      "web qa processes",
+      "cms workflows",
+      "google tag manager",
+      "google analytics",
+      "utm governance",
+      "accessibility considerations"
+     ],
+     "category_raw": "General & Administrative - Marketing",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "We are expanding our team: As Manager, Marketing Operations, you will lead a team to deliver reliable, data-driven marketing campaigns and drive operational excellence. Oversee campaign enablement, automation, and web operations, collaborating with cross-functional partners. Ideal for experienced marketing operations leaders with strong automation expertise and hands-on leadership skills.",
+     "state": "Remote",
+     "siteType": "external",
+     "longitude": "0.0",
+     "multi_category": [
+      "Marketing"
+     ],
+     "reqId": "14074",
+     "jobId": "14074",
+     "city": "Remote",
+     "latitude": "0.0",
+     "industry": "Software",
+     "locale": "en_US",
+     "multi_location": [
+      "Remote, Remote, United States"
+     ],
+     "title": "Manager, Marketing Operations",
+     "jobSeqNo": "YELPUS14074EXTERNALENUS",
+     "postedDate": "2026-10-02T00:00:00.000+0000",
+     "dateCreated": "2026-10-02T16:28:20.997+0000",
+     "cityStateCountry": "Remote, Remote, United States",
+     "address": "Remote -   Remote, Remote  United States ",
+     "jobVisibility": [
+      "external"
+     ],
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/14074/manager%2c-marketing-operations/job",
+     "location": "Remote, Remote, United States",
+     "category": "Marketing",
+     "ml_job_parser": {
+      "descriptionTeaser": "We are expanding our team: As Manager, Marketing Operations, you will lead a team to deliver reliable, data-driven marketing campaigns and drive operational excellence. Oversee campaign enablement, automation, and web operations, collaborating with cross-functional partners. Ideal for experienced marketing operations leaders with strong automation expertise and hands-on leadership skills.",
+      "descriptionTeaser_first200": "Summary. You are a thoughtful marketing operations leader who enjoys building scalable systems, developing high-performing teams, and turning complex marketing needs into clear, efficient execution...",
+      "descriptionTeaser_keyword": "Summary. You are a thoughtful marketing operations leader who enjoys building scalable systems, developing high-performing teams, and turning complex marketing needs into clear, efficient execution. Y...",
+      "descriptionTeaser_ats": "SummaryYou are a thoughtful marketing operations leader who enjoys building scalable systems, developing high-performing teams, and turning complex marketing needs into clear, efficient execution. You"
+     },
+     "externalApply": true,
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": 5e-324,
+        "lat": 5e-324
+       },
+       "location": "Remote, Remote, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Marketing"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "cityState": "Remote, Remote",
+     "country": "United States",
+     "ml_skills": [
+      "api integration",
+      "oauth 2.0",
+      "api authentication",
+      "webhooks",
+      "sql",
+      "integration onboarding",
+      "troubleshooting",
+      "stakeholder management",
+      "integration health monitoring",
+      "integration playbooks",
+      "technical documentation",
+      "adoption gap analysis",
+      "performance issue resolution",
+      "marketing api integration",
+      "lead routing integration",
+      "data ingestion",
+      "collaboration",
+      "customer feedback analysis",
+      "process automation",
+      "ai-assisted development tools",
+      "javascript",
+      "python",
+      "zapier",
+      "workato"
+     ],
+     "category_raw": "General & Administrative - Solutions Engineering",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "We are currently hiring a Solutions Engineer, API Integration to lead the end-to-end integration process for Yelp's API ecosystem. Drive successful API implementations, collaborate with technical and account teams, and guide partners through onboarding. Ideal for experienced technical professionals with strong API integration expertise.",
+     "state": "Remote",
+     "siteType": "external",
+     "longitude": "0.0",
+     "multi_category": [
+      "Other"
+     ],
+     "reqId": "14073",
+     "jobId": "14073",
+     "city": "Remote",
+     "latitude": "0.0",
+     "industry": "Software",
+     "locale": "en_US",
+     "multi_location": [
+      "Remote, Remote, United States"
+     ],
+     "title": "Solutions Engineer, API Integration",
+     "jobSeqNo": "YELPUS14073EXTERNALENUS",
+     "postedDate": "2026-09-29T00:00:00.000+0000",
+     "dateCreated": "2026-10-05T16:27:51.538+0000",
+     "cityStateCountry": "Remote, Remote, United States",
+     "address": "Remote -   Remote, Remote  United States ",
+     "jobVisibility": [
+      "external"
+     ],
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/14073/solutions-engineer%2c-api-integration/job",
+     "location": "Remote, Remote, United States",
+     "category": "Other",
+     "ml_job_parser": {
+      "descriptionTeaser": "We are currently hiring a Solutions Engineer, API Integration to lead the end-to-end integration process for Yelp's API ecosystem. Drive successful API implementations, collaborate with technical and account teams, and guide partners through onboarding. Ideal for experienced technical professionals with strong API integration expertise.",
+      "descriptionTeaser_first200": "Summary. As a leader in connecting people with great local businesses, Yelp partners with a growing ecosystem of channel partners, enterprise accounts, national brands, and emerging partners that l...",
+      "descriptionTeaser_keyword": "Summary. As a leader in connecting people with great local businesses, Yelp partners with a growing ecosystem of channel partners, enterprise accounts, national brands, and emerging partners that leve...",
+      "descriptionTeaser_ats": "SummaryAs a leader in connecting people with great local businesses, Yelp partners with a growing ecosystem of channel partners, enterprise accounts, national brands, and emerging partners that levera"
+     },
+     "externalApply": true,
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": 5e-324,
+        "lat": 5e-324
+       },
+       "location": "Remote, Remote, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Other"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "ml_skills": [
+      "sql",
+      "tableau",
+      "excel modeling",
+      "a/b testing",
+      "data analysis",
+      "marketing analytics",
+      "customer segmentation",
+      "web marketing",
+      "seo",
+      "aso",
+      "performance marketing",
+      "stakeholder management",
+      "business judgment",
+      "data reporting",
+      "campaign analysis",
+      "business performance improvement",
+      "cross-functional collaboration",
+      "marketing strategy",
+      "user growth",
+      "statistical significance",
+      "experimentation"
+     ],
+     "category_raw": "General & Administrative - Marketing",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "Exciting opportunity for a Senior Marketing Analyst to drive marketing decisions and support revenue growth at Yelp. Collaborate with stakeholders to develop scalable marketing solutions and leverage analytical expertise to inform strategic decisions. Ideal for candidates with strong analytical skills and experience in business analysis within a fast-paced marketing environment.",
+     "state": "Remote",
+     "siteType": "external",
+     "multi_category": [
+      "Marketing"
+     ],
+     "reqId": "14011",
+     "city": "Remote",
+     "latitude": "0.0",
+     "industry": "Software",
+     "multi_location": [
+      "Remote, Remote, United States"
+     ],
+     "address": "Remote -   Remote, Remote  United States ",
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/14011/senior-marketing-analyst/job",
+     "ml_job_parser": {
+      "descriptionTeaser": "Exciting opportunity for a Senior Marketing Analyst to drive marketing decisions and support revenue growth at Yelp. Collaborate with stakeholders to develop scalable marketing solutions and leverage analytical expertise to inform strategic decisions. Ideal for candidates with strong analytical skills and experience in business analysis within a fast-paced marketing environment.",
+      "descriptionTeaser_first200": "Summary. Yelp’s purpose is simple: to connect people with great local businesses. Whether you’re looking for a great pizza spot or the best mechanic in your neighborhood, we know just the place. Ye...",
+      "descriptionTeaser_keyword": "Summary. Yelp’s purpose is simple: to connect people with great local businesses. Whether you’re looking for a great pizza spot or the best mechanic in your neighborhood, we know just the place. Yelp...",
+      "descriptionTeaser_ats": "SummaryYelp&rsquo;s purpose is simple: to connect people with great local businesses. Whether you&rsquo;re looking for a great pizza spot or the best mechanic in your neighborhood, we know just the pl"
+     },
+     "externalApply": true,
+     "cityState": "Remote, Remote",
+     "country": "United States",
+     "longitude": "0.0",
+     "jobId": "14011",
+     "locale": "en_US",
+     "title": "Senior Marketing Analyst",
+     "jobSeqNo": "YELPUS14011EXTERNALENUS",
+     "postedDate": "2026-07-31T00:00:00.000+0000",
+     "dateCreated": "2026-07-31T20:41:54.039+0000",
+     "cityStateCountry": "Remote, Remote, United States",
+     "jobVisibility": [
+      "external"
+     ],
+     "location": "Remote, Remote, United States",
+     "category": "Marketing",
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": 5e-324,
+        "lat": 5e-324
+       },
+       "location": "Remote, Remote, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Marketing"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "cityState": "Remote, Remote",
+     "country": "United States",
+     "ml_skills": [
+      "digital ad design",
+      "creative strategy",
+      "ad serving",
+      "conversion rate optimization",
+      "display ad analytics",
+      "figma",
+      "adobe creative suite",
+      "google web designer",
+      "html5",
+      "css",
+      "javascript",
+      "prototyping",
+      "custom html5",
+      "custom css",
+      "custom javascript",
+      "ad creative production",
+      "ad creative trafficking",
+      "ad creative rendering",
+      "technical troubleshooting",
+      "cross-functional collaboration",
+      "presentation skills",
+      "negotiation skills",
+      "client relationship management",
+      "python",
+      "scripting",
+      "technical integration",
+      "data collection",
+      "creative process improvement"
+     ],
+     "category_raw": "General & Administrative - Revenue Operations",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "We are seeking a Digital Ad Design Consultant to act as the creative authority and technical troublesholder for enterprise clients, translating brand objectives into effective digital ad strategies. This client-facing role requires deep expertise in ad design and campaign execution, ideal for experienced professionals with a strong background in digital advertising.",
+     "state": "Remote",
+     "siteType": "external",
+     "longitude": "0.0",
+     "multi_category": [
+      "General & Administrative"
+     ],
+     "reqId": "14061",
+     "jobId": "14061",
+     "city": "Remote",
+     "latitude": "0.0",
+     "industry": "Software",
+     "locale": "en_US",
+     "multi_location": [
+      "Remote, Remote, United States"
+     ],
+     "title": "Digital Ad Design Consultant - Multi Location Sales (US Remote)",
+     "jobSeqNo": "YELPUS14061EXTERNALENUS",
+     "postedDate": "2026-09-11T00:00:00.000+0000",
+     "dateCreated": "2026-09-12T00:29:31.850+0000",
+     "cityStateCountry": "Remote, Remote, United States",
+     "address": "Remote -   Remote, Remote  United States ",
+     "jobVisibility": [
+      "external"
+     ],
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/14061/digital-ad-design-consultant---multi-location-sales-%28us-remote%29/job",
+     "location": "Remote, Remote, United States",
+     "category": "General & Administrative",
+     "ml_job_parser": {
+      "descriptionTeaser": "We are seeking a Digital Ad Design Consultant to act as the creative authority and technical troublesholder for enterprise clients, translating brand objectives into effective digital ad strategies. This client-facing role requires deep expertise in ad design and campaign execution, ideal for experienced professionals with a strong background in digital advertising.",
+      "descriptionTeaser_first200": "Summary. As the Technical Ad Producer, you will act as the primary creative consultant and technical troubleshooter for our Enterprise partners, serving as the bridge between client brand objective...",
+      "descriptionTeaser_keyword": "Summary. As the Technical Ad Producer, you will act as the primary creative consultant and technical troubleshooter for our Enterprise partners, serving as the bridge between client brand objectives,...",
+      "descriptionTeaser_ats": "SummaryAs the Technical Ad Producer, you will act as the primary creative consultant and technical troubleshooter for our Enterprise partners, serving as the bridge between client brand objectives, in"
+     },
+     "externalApply": true,
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": 5e-324,
+        "lat": 5e-324
+       },
+       "location": "Remote, Remote, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "General & Administrative"
+      }
+     ],
+     "badge": ""
+    },
+    {
+     "ml_skills": [
+      "sales enablement",
+      "team leadership",
+      "curriculum development",
+      "program management",
+      "enablement program design",
+      "cross-functional collaboration",
+      "sales strategy alignment",
+      "data-driven decision making",
+      "performance metrics reporting",
+      "stakeholder management",
+      "ai enablement",
+      "sales enablement tools",
+      "learning program development",
+      "sales enablement operations",
+      "sales enablement measurement",
+      "sales enablement metrics",
+      "sales enablement program launch",
+      "sales enablement program scaling"
+     ],
+     "category_raw": "Sales & Customer Success - Multi Location",
+     "type": "Regular (Full-Time)",
+     "descriptionTeaser": "Become part of our team as a Sales Enablement Manager, leading a team of Sales Enablement Specialists to drive high-impact enablement for Emerging and Partner & Agency Sales teams. Oversee process refinement and revenue-focused initiatives, ideal for experienced people managers with a strong background in sales enablement and a passion for data-driven innovation.",
+     "state": "Remote",
+     "siteType": "external",
+     "multi_category": [
+      "Sales & Customer Success"
+     ],
+     "reqId": "14077",
+     "city": "Remote",
+     "latitude": "0.0",
+     "industry": "Software",
+     "multi_location": [
+      "Remote, Remote, United States"
+     ],
+     "address": "Remote -   Remote, Remote  United States ",
+     "applyUrl": "https://uscareers-yelp.icims.com/jobs/14077/sales-enablement-manager%2c-multi-location-sales---us---remote/job",
+     "ml_job_parser": {
+      "descriptionTeaser": "Become part of our team as a Sales Enablement Manager, leading a team of Sales Enablement Specialists to drive high-impact enablement for Emerging and Partner & Agency Sales teams. Oversee process refinement and revenue-focused initiatives, ideal for experienced people managers with a strong background in sales enablement and a passion for data-driven innovation.",
+      "descriptionTeaser_first200": "Summary. Yelp is seeking a Sales Enablement Manager to lead our team of Sales Enablement Specialists supporting the Emerging and Partner & Agency Sales teams. This position is both strategic and ha...",
+      "descriptionTeaser_keyword": "Summary. Yelp is seeking a Sales Enablement Manager to lead our team of Sales Enablement Specialists supporting the Emerging and Partner & Agency Sales teams. This position is both strategic and hands...",
+      "descriptionTeaser_ats": "SummaryYelp is seeking a Sales Enablement Manager to lead our team of Sales Enablement Specialists supporting the Emerging and Partner & Agency Sales teams. This position is both strategic and hands-o"
+     },
+     "externalApply": true,
+     "cityState": "Remote, Remote",
+     "country": "United States",
+     "longitude": "0.0",
+     "jobId": "14077",
+     "locale": "en_US",
+     "title": "Sales Enablement Manager, Multi Location Sales - US - Remote",
+     "jobSeqNo": "YELPUS14077EXTERNALENUS",
+     "postedDate": "2026-10-12T00:00:00.000+0000",
+     "dateCreated": "2026-10-13T00:27:26.248+0000",
+     "cityStateCountry": "Remote, Remote, United States",
+     "jobVisibility": [
+      "external"
+     ],
+     "location": "Remote, Remote, United States",
+     "category": "Sales & Customer Success",
+     "isMultiLocation": true,
+     "multi_location_array": [
+      {
+       "latlong": {
+        "lon": 5e-324,
+        "lat": 5e-324
+       },
+       "location": "Remote, Remote, United States"
+      }
+     ],
+     "isMultiCategory": false,
+     "multi_category_array": [
+      {
+       "category": "Sales & Customer Success"
+      }
+     ],
+     "badge": ""
+    }
+   ],
+   "aggregations": [
+    {
+     "field": "country",
+     "value": {
+      "United States": 18,
+      "Canada": 2
+     }
+    },
+    {
+     "field": "city",
+     "value": {
+      "Remote": 13,
+      "Austin": 5,
+      "Atlanta": 3,
+      "Asheville": 2,
+      "Boston": 2,
+      "Buffalo": 2,
+      "Charleston": 2,
+      "Charlotte": 2,
+      "Chicago": 2,
+      "Cleveland": 2,
+      "Dallas": 2,
+      "Grand Rapids": 2,
+      "Kansas City": 2,
+      "Los Angeles": 2,
+      "New York City": 2,
+      "Oklahoma City": 2,
+      "Orlando": 2,
+      "San Francisco": 2,
+      "St. Louis": 2,
+      "Toronto": 2,
+      "Tucson": 2,
+      "Vancouver": 2,
+      "Albany": 1,
+      "Arlington": 1,
+      "Baltimore": 1,
+      "Baton Rouge": 1,
+      "Birmingham": 1,
+      "Bronx": 1,
+      "Calgary": 1,
+      "Cape Coral-Fort Myers": 1,
+      "Champaign-Urbana": 1,
+      "Chattanooga": 1,
+      "Columbia": 1,
+      "Columbus": 1,
+      "Detroit": 1,
+      "Fort Lauderdale": 1,
+      "Fort Wayne": 1,
+      "Gainesville": 1,
+      "Harrisburg": 1,
+      "Houston": 1,
+      "Indianapolis": 1,
+      "Jersey City": 1,
+      "Las Vegas": 1,
+      "Miami": 1,
+      "Milwaukee": 1,
+      "Minneapolis": 1,
+      "Montreal": 1,
+      "Philadelphia": 1,
+      "Phoenix": 1,
+      "Raleigh-Durham": 1,
+      "Reno": 1,
+      "Tampa": 1
+     }
+    },
+    {
+     "field": "state",
+     "value": {
+      "Remote": 13,
+      "Texas": 5,
+      "Florida": 4,
+      "New York": 4,
+      "California": 3,
+      "Georgia": 3,
+      "Illinois": 3,
+      "Missouri": 3,
+      "North Carolina": 3,
+      "Ohio": 3,
+      "Arizona": 2,
+      "British Columbia": 2,
+      "Indiana": 2,
+      "Massachusetts": 2,
+      "Michigan": 2,
+      "Oklahoma": 2,
+      "Ontario": 2,
+      "Pennsylvania": 2,
+      "South Carolina": 2,
+      "Alabama": 1,
+      "Alberta": 1,
+      "Louisiana": 1,
+      "Maryland": 1,
+      "Minnesota": 1,
+      "Nevada": 1,
+      "New Jersey": 1,
+      "Quebec": 1,
+      "Tennessee": 1,
+      "Virginia": 1,
+      "Wisconsin": 1
+     }
+    },
+    {
+     "field": "type",
+     "value": {
+      "Regular (Full-Time)": 19,
+      "Regular (Part-Time)": 1
+     }
+    },
+    {
+     "field": "category",
+     "value": {
+      "Sales & Customer Success": 7,
+      "Community": 3,
+      "Marketing": 3,
+      "Product Management": 3,
+      "Engineering": 2,
+      "General & Administrative": 1,
+      "Other": 1
+     }
+    }
+   ],
+   "SEARCH_CONFIG": {
+    "contextualSearch": false,
+    "isSuggestionsEnabled": true
+   },
+   "suggestions": {},
+   "ui_skills_selection": null
+  },
+  "eid": {
+   "trialIndex": -1,
+   "eid": "6ad6b3542ce6c1476d01d357",
+   "searchType": "allJobs",
+   "isMultiLingualVectorApplied": false,
+   "query": "",
+   "variant": 0,
+   "banditId": "",
+   "keywordLanguage": "en"
+  }
+ }
+}

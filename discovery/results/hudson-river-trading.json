@@ -1,0 +1,24 @@
+{
+  "key": "hudson-river-trading",
+  "name": "Hudson River Trading",
+  "careers_url": "https://www.hudsonrivertrading.com/careers/",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "boards": [
+      "wehrtyou",
+      "hrttalentcommunity"
+    ]
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/wehrtyou/jobs + GET https://boards-api.greenhouse.io/v1/boards/hrttalentcommunity/jobs",
+  "feed_total": 89,
+  "page_total": 88,
+  "page_total_how": "Playwright render of /careers/ (2026-10-20): 86 /hrt-job/ cards whose titles equal wehrtyou's + 2 'Join Today' talent-community cards linking hrttalentcommunity; the 3rd talent posting (FPGA, 2022) is not linked there",
+  "intern_total": 7,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for boards-api.greenhouse.io",
+  "notes": "wehrtyou (86) is the real job list (absolute_url → hudsonrivertrading.com/careers/job/?gh_jid=). hrttalentcommunity (3) holds evergreen talent pools from 2021–2022, one titled 'FPGA Verification and Developer (Internships and Campus Full-time)'; keeping it is optional. wehrtyou metadata 'Employment Type' = Intern for its 6 internships (all with a US office).",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

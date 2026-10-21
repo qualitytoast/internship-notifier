@@ -1,0 +1,1515 @@
+{
+ "_note": "Trimmed samples (the full Greenhouse list is 370 KB and main.json 680 KB). greenhouse_jobs: 10 raw job objects from GET boards-api.greenhouse.io/v1/boards/janestreet/jobs (6 'Summer Internship' + 4 others). main_json: 5 raw items from GET www.janestreet.com/jobs/main.json, overview cut to 300 chars. internships_json: the whole GET www.janestreet.com/jobs/internships.json (49 closed program rows, no ids).",
+ "observed": "2026-10-20T00:37:34Z",
+ "greenhouse_meta": {
+  "total": 221
+ },
+ "greenhouse_jobs": [
+  {
+   "absolute_url": "https://www.janestreet.com/join-jane-street/apply/8596771002?gh_jid=8596771002",
+   "data_compliance": [
+    {
+     "type": "gdpr",
+     "requires_consent": false,
+     "requires_processing_consent": false,
+     "requires_retention_consent": false,
+     "retention_period": null,
+     "demographic_data_consent_applies": false
+    }
+   ],
+   "education": "education_optional",
+   "internal_job_id": 6433585002,
+   "location": {
+    "name": "Hong Kong, Hong Kong"
+   },
+   "metadata": [
+    {
+     "id": 4246316002,
+     "name": "Employment Type",
+     "value": "Summer Internship",
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453104002,
+     "name": "Event Date",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 4453107002,
+     "name": "Event Location",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453108002,
+     "name": "Event Time",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453114002,
+     "name": "Event Type",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453115002,
+     "name": "Event Continent",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453117002,
+     "name": "Event URL",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 19843245002,
+     "name": "Duration",
+     "value": "May-August",
+     "value_type": "single_select"
+    },
+    {
+     "id": 20495683002,
+     "name": "Event Registration Deadline",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 24844645002,
+     "name": "Min salary",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 24844702002,
+     "name": "Max salary",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 31769182002,
+     "name": "Workday Job Profile",
+     "value": "ML Research Intern",
+     "value_type": "single_select"
+    }
+   ],
+   "id": 8596771002,
+   "updated_at": "2026-10-19T08:39:27-04:00",
+   "requisition_id": "R-1546",
+   "title": "ꓟachine ꓡearning ꓣesearcher",
+   "company_name": "Jane Street",
+   "first_published": "2026-06-22T16:14:59-04:00",
+   "language": "en",
+   "application_deadline": null
+  },
+  {
+   "absolute_url": "https://www.janestreet.com/join-jane-street/apply/8810604002?gh_jid=8810604002",
+   "data_compliance": [
+    {
+     "type": "gdpr",
+     "requires_consent": false,
+     "requires_processing_consent": false,
+     "requires_retention_consent": false,
+     "retention_period": null,
+     "demographic_data_consent_applies": false
+    }
+   ],
+   "education": "education_optional",
+   "internal_job_id": 6526076002,
+   "location": {
+    "name": "Hong Kong, Hong Kong"
+   },
+   "metadata": [
+    {
+     "id": 4246316002,
+     "name": "Employment Type",
+     "value": "Summer Internship",
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453104002,
+     "name": "Event Date",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 4453107002,
+     "name": "Event Location",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453108002,
+     "name": "Event Time",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453114002,
+     "name": "Event Type",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453115002,
+     "name": "Event Continent",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453117002,
+     "name": "Event URL",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 19843245002,
+     "name": "Duration",
+     "value": "May-August",
+     "value_type": "single_select"
+    },
+    {
+     "id": 20495683002,
+     "name": "Event Registration Deadline",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 24844645002,
+     "name": "Min salary",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 24844702002,
+     "name": "Max salary",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 31769182002,
+     "name": "Workday Job Profile",
+     "value": "Technology Intern",
+     "value_type": "single_select"
+    }
+   ],
+   "id": 8810604002,
+   "updated_at": "2026-10-19T08:39:27-04:00",
+   "requisition_id": "R-1831",
+   "title": "Cybersecurity Engineer",
+   "company_name": "Jane Street",
+   "first_published": "2026-09-16T09:12:13-04:00",
+   "language": "en",
+   "application_deadline": null
+  },
+  {
+   "absolute_url": "https://www.janestreet.com/join-jane-street/apply/8632723002?gh_jid=8632723002",
+   "data_compliance": [
+    {
+     "type": "gdpr",
+     "requires_consent": false,
+     "requires_processing_consent": false,
+     "requires_retention_consent": false,
+     "retention_period": null,
+     "demographic_data_consent_applies": false
+    }
+   ],
+   "education": "education_optional",
+   "internal_job_id": 6447773002,
+   "location": {
+    "name": "New York, New York, United States"
+   },
+   "metadata": [
+    {
+     "id": 4246316002,
+     "name": "Employment Type",
+     "value": "Summer Internship",
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453104002,
+     "name": "Event Date",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 4453107002,
+     "name": "Event Location",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453108002,
+     "name": "Event Time",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453114002,
+     "name": "Event Type",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453115002,
+     "name": "Event Continent",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453117002,
+     "name": "Event URL",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 19843245002,
+     "name": "Duration",
+     "value": "May-August",
+     "value_type": "single_select"
+    },
+    {
+     "id": 20495683002,
+     "name": "Event Registration Deadline",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 24844645002,
+     "name": "Min salary",
+     "value": "300,000",
+     "value_type": "short_text"
+    },
+    {
+     "id": 24844702002,
+     "name": "Max salary",
+     "value": "300,000",
+     "value_type": "short_text"
+    },
+    {
+     "id": 31769182002,
+     "name": "Workday Job Profile",
+     "value": "Technology Intern",
+     "value_type": "single_select"
+    }
+   ],
+   "id": 8632723002,
+   "updated_at": "2026-10-19T08:39:27-04:00",
+   "requisition_id": "R-1616",
+   "title": "Cybersecurity Engineer",
+   "company_name": "Jane Street",
+   "first_published": "2026-07-15T07:16:20-04:00",
+   "language": "en",
+   "application_deadline": null
+  },
+  {
+   "absolute_url": "https://www.janestreet.com/join-jane-street/apply/8631973002?gh_jid=8631973002",
+   "data_compliance": [
+    {
+     "type": "gdpr",
+     "requires_consent": false,
+     "requires_processing_consent": false,
+     "requires_retention_consent": false,
+     "retention_period": null,
+     "demographic_data_consent_applies": false
+    }
+   ],
+   "education": "education_optional",
+   "internal_job_id": 6447469002,
+   "location": {
+    "name": "New York, New York, United States"
+   },
+   "metadata": [
+    {
+     "id": 4246316002,
+     "name": "Employment Type",
+     "value": "Summer Internship",
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453104002,
+     "name": "Event Date",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 4453107002,
+     "name": "Event Location",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453108002,
+     "name": "Event Time",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453114002,
+     "name": "Event Type",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453115002,
+     "name": "Event Continent",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453117002,
+     "name": "Event URL",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 19843245002,
+     "name": "Duration",
+     "value": "May-August",
+     "value_type": "single_select"
+    },
+    {
+     "id": 20495683002,
+     "name": "Event Registration Deadline",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 24844645002,
+     "name": "Min salary",
+     "value": "250,000",
+     "value_type": "short_text"
+    },
+    {
+     "id": 24844702002,
+     "name": "Max salary",
+     "value": "250,000",
+     "value_type": "short_text"
+    },
+    {
+     "id": 31769182002,
+     "name": "Workday Job Profile",
+     "value": "Technology Intern",
+     "value_type": "single_select"
+    }
+   ],
+   "id": 8631973002,
+   "updated_at": "2026-10-19T08:39:27-04:00",
+   "requisition_id": "R-1615",
+   "title": "Data Engineer",
+   "company_name": "Jane Street",
+   "first_published": "2026-07-13T20:19:37-04:00",
+   "language": "en",
+   "application_deadline": null
+  },
+  {
+   "absolute_url": "https://www.janestreet.com/join-jane-street/apply/8347286002?gh_jid=8347286002",
+   "data_compliance": [
+    {
+     "type": "gdpr",
+     "requires_consent": false,
+     "requires_processing_consent": false,
+     "requires_retention_consent": false,
+     "retention_period": null,
+     "demographic_data_consent_applies": false
+    }
+   ],
+   "education": "education_optional",
+   "internal_job_id": 6333691002,
+   "location": {
+    "name": "New York, New York, United States"
+   },
+   "metadata": [
+    {
+     "id": 4246316002,
+     "name": "Employment Type",
+     "value": "Summer Internship",
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453104002,
+     "name": "Event Date",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 4453107002,
+     "name": "Event Location",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453108002,
+     "name": "Event Time",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453114002,
+     "name": "Event Type",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453115002,
+     "name": "Event Continent",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453117002,
+     "name": "Event URL",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 19843245002,
+     "name": "Duration",
+     "value": "May-August",
+     "value_type": "single_select"
+    },
+    {
+     "id": 20495683002,
+     "name": "Event Registration Deadline",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 24844645002,
+     "name": "Min salary",
+     "value": "250,000",
+     "value_type": "short_text"
+    },
+    {
+     "id": 24844702002,
+     "name": "Max salary",
+     "value": "250,000",
+     "value_type": "short_text"
+    },
+    {
+     "id": 31769182002,
+     "name": "Workday Job Profile",
+     "value": "Fundamental Intern",
+     "value_type": "single_select"
+    }
+   ],
+   "id": 8347286002,
+   "updated_at": "2026-10-19T13:24:49-04:00",
+   "requisition_id": "R-1302",
+   "title": "Fundamental Research Analyst",
+   "company_name": "Jane Street",
+   "first_published": "2025-12-19T15:07:28-05:00",
+   "language": "en",
+   "application_deadline": null
+  },
+  {
+   "absolute_url": "https://www.janestreet.com/join-jane-street/apply/8651323002?gh_jid=8651323002",
+   "data_compliance": [
+    {
+     "type": "gdpr",
+     "requires_consent": false,
+     "requires_processing_consent": false,
+     "requires_retention_consent": false,
+     "retention_period": null,
+     "demographic_data_consent_applies": false
+    }
+   ],
+   "education": "education_optional",
+   "internal_job_id": 6455109002,
+   "location": {
+    "name": "London, England, United Kingdom"
+   },
+   "metadata": [
+    {
+     "id": 4246316002,
+     "name": "Employment Type",
+     "value": "Summer Internship",
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453104002,
+     "name": "Event Date",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 4453107002,
+     "name": "Event Location",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453108002,
+     "name": "Event Time",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453114002,
+     "name": "Event Type",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453115002,
+     "name": "Event Continent",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453117002,
+     "name": "Event URL",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 19843245002,
+     "name": "Duration",
+     "value": "June-September",
+     "value_type": "single_select"
+    },
+    {
+     "id": 20495683002,
+     "name": "Event Registration Deadline",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 24844645002,
+     "name": "Min salary",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 24844702002,
+     "name": "Max salary",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 31769182002,
+     "name": "Workday Job Profile",
+     "value": "Technology Intern",
+     "value_type": "single_select"
+    }
+   ],
+   "id": 8651323002,
+   "updated_at": "2026-10-19T08:39:27-04:00",
+   "requisition_id": "R-1647",
+   "title": "Hardware Engineer (FPGA/ASIC)",
+   "company_name": "Jane Street",
+   "first_published": "2026-08-03T04:37:45-04:00",
+   "language": "en",
+   "application_deadline": null
+  },
+  {
+   "absolute_url": "https://www.janestreet.com/join-jane-street/apply/8631912002?gh_jid=8631912002",
+   "data_compliance": [
+    {
+     "type": "gdpr",
+     "requires_consent": false,
+     "requires_processing_consent": false,
+     "requires_retention_consent": false,
+     "retention_period": null,
+     "demographic_data_consent_applies": false
+    }
+   ],
+   "education": "education_optional",
+   "internal_job_id": 6447439002,
+   "location": {
+    "name": "New York, New York, United States"
+   },
+   "metadata": [
+    {
+     "id": 4246316002,
+     "name": "Employment Type",
+     "value": "Full-Time: Experienced",
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453104002,
+     "name": "Event Date",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 4453107002,
+     "name": "Event Location",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453108002,
+     "name": "Event Time",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453114002,
+     "name": "Event Type",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453115002,
+     "name": "Event Continent",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453117002,
+     "name": "Event URL",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 19843245002,
+     "name": "Duration",
+     "value": "Permanent",
+     "value_type": "single_select"
+    },
+    {
+     "id": 20495683002,
+     "name": "Event Registration Deadline",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 24844645002,
+     "name": "Min salary",
+     "value": "100,000",
+     "value_type": "short_text"
+    },
+    {
+     "id": 24844702002,
+     "name": "Max salary",
+     "value": "120,000",
+     "value_type": "short_text"
+    },
+    {
+     "id": 31769182002,
+     "name": "Workday Job Profile",
+     "value": "Accounting Specialist",
+     "value_type": "single_select"
+    }
+   ],
+   "id": 8631912002,
+   "updated_at": "2026-10-19T08:39:27-04:00",
+   "requisition_id": "6351",
+   "title": "Accounting Coordinator",
+   "company_name": "Jane Street",
+   "first_published": "2026-08-19T17:15:50-04:00",
+   "language": "en",
+   "application_deadline": null
+  },
+  {
+   "absolute_url": "https://www.janestreet.com/join-jane-street/apply/8596771002?gh_jid=8596771002",
+   "data_compliance": [
+    {
+     "type": "gdpr",
+     "requires_consent": false,
+     "requires_processing_consent": false,
+     "requires_retention_consent": false,
+     "retention_period": null,
+     "demographic_data_consent_applies": false
+    }
+   ],
+   "education": "education_optional",
+   "internal_job_id": 6433585002,
+   "location": {
+    "name": "Hong Kong, Hong Kong"
+   },
+   "metadata": [
+    {
+     "id": 4246316002,
+     "name": "Employment Type",
+     "value": "Summer Internship",
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453104002,
+     "name": "Event Date",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 4453107002,
+     "name": "Event Location",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453108002,
+     "name": "Event Time",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453114002,
+     "name": "Event Type",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453115002,
+     "name": "Event Continent",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453117002,
+     "name": "Event URL",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 19843245002,
+     "name": "Duration",
+     "value": "May-August",
+     "value_type": "single_select"
+    },
+    {
+     "id": 20495683002,
+     "name": "Event Registration Deadline",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 24844645002,
+     "name": "Min salary",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 24844702002,
+     "name": "Max salary",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 31769182002,
+     "name": "Workday Job Profile",
+     "value": "ML Research Intern",
+     "value_type": "single_select"
+    }
+   ],
+   "id": 8596771002,
+   "updated_at": "2026-10-19T08:39:27-04:00",
+   "requisition_id": "R-1546",
+   "title": "ꓟachine ꓡearning ꓣesearcher",
+   "company_name": "Jane Street",
+   "first_published": "2026-06-22T16:14:59-04:00",
+   "language": "en",
+   "application_deadline": null
+  },
+  {
+   "absolute_url": "https://www.janestreet.com/join-jane-street/apply/8836991002?gh_jid=8836991002",
+   "data_compliance": [
+    {
+     "type": "gdpr",
+     "requires_consent": false,
+     "requires_processing_consent": false,
+     "requires_retention_consent": false,
+     "retention_period": null,
+     "demographic_data_consent_applies": false
+    }
+   ],
+   "education": "education_optional",
+   "internal_job_id": 6537856002,
+   "location": {
+    "name": "New York, New York, United States"
+   },
+   "metadata": [
+    {
+     "id": 4246316002,
+     "name": "Employment Type",
+     "value": "Full-Time: Experienced",
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453104002,
+     "name": "Event Date",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 4453107002,
+     "name": "Event Location",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453108002,
+     "name": "Event Time",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453114002,
+     "name": "Event Type",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453115002,
+     "name": "Event Continent",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453117002,
+     "name": "Event URL",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 19843245002,
+     "name": "Duration",
+     "value": "Permanent",
+     "value_type": "single_select"
+    },
+    {
+     "id": 20495683002,
+     "name": "Event Registration Deadline",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 24844645002,
+     "name": "Min salary",
+     "value": "200,000",
+     "value_type": "short_text"
+    },
+    {
+     "id": 24844702002,
+     "name": "Max salary",
+     "value": "300,000",
+     "value_type": "short_text"
+    },
+    {
+     "id": 31769182002,
+     "name": "Workday Job Profile",
+     "value": "Architect",
+     "value_type": "single_select"
+    }
+   ],
+   "id": 8836991002,
+   "updated_at": "2026-10-19T08:39:27-04:00",
+   "requisition_id": "6552",
+   "title": "Architect ",
+   "company_name": "Jane Street",
+   "first_published": "2026-09-24T17:24:47-04:00",
+   "language": "en",
+   "application_deadline": null
+  },
+  {
+   "absolute_url": "https://www.janestreet.com/join-jane-street/apply/8213653002?gh_jid=8213653002",
+   "data_compliance": [
+    {
+     "type": "gdpr",
+     "requires_consent": false,
+     "requires_processing_consent": false,
+     "requires_retention_consent": false,
+     "retention_period": null,
+     "demographic_data_consent_applies": false
+    }
+   ],
+   "education": "education_optional",
+   "internal_job_id": 6255104002,
+   "location": {
+    "name": "New York, New York, United States"
+   },
+   "metadata": [
+    {
+     "id": 4246316002,
+     "name": "Employment Type",
+     "value": "Full-Time: Experienced",
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453104002,
+     "name": "Event Date",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 4453107002,
+     "name": "Event Location",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453108002,
+     "name": "Event Time",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 4453114002,
+     "name": "Event Type",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453115002,
+     "name": "Event Continent",
+     "value": null,
+     "value_type": "single_select"
+    },
+    {
+     "id": 4453117002,
+     "name": "Event URL",
+     "value": null,
+     "value_type": "short_text"
+    },
+    {
+     "id": 19843245002,
+     "name": "Duration",
+     "value": "Permanent",
+     "value_type": "single_select"
+    },
+    {
+     "id": 20495683002,
+     "name": "Event Registration Deadline",
+     "value": null,
+     "value_type": "date"
+    },
+    {
+     "id": 24844645002,
+     "name": "Min salary",
+     "value": "250,000",
+     "value_type": "short_text"
+    },
+    {
+     "id": 24844702002,
+     "name": "Max salary",
+     "value": "300,000",
+     "value_type": "short_text"
+    },
+    {
+     "id": 31769182002,
+     "name": "Workday Job Profile",
+     "value": "Hardware Engineer",
+     "value_type": "single_select"
+    }
+   ],
+   "id": 8213653002,
+   "updated_at": "2026-10-19T08:39:27-04:00",
+   "requisition_id": "5880",
+   "title": "ASIC Engineer",
+   "company_name": "Jane Street",
+   "first_published": "2025-10-29T10:54:57-04:00",
+   "language": "en",
+   "application_deadline": null
+  }
+ ],
+ "main_json": [
+  {
+   "id": 8631912002,
+   "position": "Accounting Coordinator",
+   "category": "Finance and Operations",
+   "availability": "Full-Time: Experienced",
+   "city": "NYC",
+   "overview": "<h3>About the Position</h3>\n<p>We are looking for an organized and discreet Accounting Coordinator to manage a variety of daily tasks and projects across our global Accounting team.&nbsp;</p>\n<p>You don’t need to be an expert in accounting to thrive in this role—we are happy to teach you what you ne...",
+   "team": "Accounting",
+   "duration": "Permanent",
+   "min_salary": "100,000",
+   "max_salary": "120,000"
+  },
+  {
+   "id": 8596771002,
+   "position": "ꓟachine ꓡearning ꓣesearcher",
+   "category": "Trading, Research, and Machine Learning",
+   "availability": "Summer Internship",
+   "city": "HKG",
+   "overview": "<p><strong>About the position</strong></p>\n<p>Our goals are to give you a real sense of what it&#39;s like to work at Jane Street as a Machine Learning Researcher while also providing a truly unparalleled educational experience. You&#39;ll work side by side with experienced ML Researchers on project...",
+   "team": "Machine Learning",
+   "duration": "May-August",
+   "min_salary": null,
+   "max_salary": null
+  },
+  {
+   "id": 8836991002,
+   "position": "Architect ",
+   "category": "Hospitality and Building Operations",
+   "availability": "Full-Time: Experienced",
+   "city": "NYC",
+   "overview": "<h3>About the position</h3>\n<p>We’re looking for an Architect to help us design, build, and refine our global offices. Based in our New York headquarters, you will work with colleagues across three continents to design spaces that support how Jane Street works.</p>\n<p>You’ll work closely with extern...",
+   "team": "Real Estate Engineering",
+   "duration": "Permanent",
+   "min_salary": "200,000",
+   "max_salary": "300,000"
+  },
+  {
+   "id": 8213653002,
+   "position": "ASIC Engineer",
+   "category": "Technology",
+   "availability": "Full-Time: Experienced",
+   "city": "NYC",
+   "overview": "<h3>About the Position</h3>\n<p>We are looking to hire an experienced ASIC Engineer to help us design, test and deploy advanced hardware designs. As part of our Ultra Low Latency team, you’ll have the opportunity to collaborate with people in areas across the firm, including trading, networking and r...",
+   "team": "Software Engineering",
+   "duration": "Permanent",
+   "min_salary": "250,000",
+   "max_salary": "300,000"
+  },
+  {
+   "id": 8233259002,
+   "position": "ASIC Engineer",
+   "category": "Technology",
+   "availability": "Full-Time: Experienced",
+   "city": "LDN",
+   "overview": "<h3>About the position</h3>\n<p>We are looking to hire an experienced ASIC Engineer to help us design, test and deploy advanced hardware designs. As part of our Ultra Low Latency team, you’ll have the opportunity to collaborate with people in areas across the firm, including trading, networking and r...",
+   "team": "Software Engineering",
+   "duration": "Permanent",
+   "min_salary": null,
+   "max_salary": null
+  }
+ ],
+ "main_json_total": 221,
+ "internships_json": [
+  {
+   "position": "Cybersecurity Engineer",
+   "location": "NYC",
+   "department": "Cybersecurity",
+   "team": "Cybersecurity",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Data Engineer",
+   "location": "NYC",
+   "department": "Technology",
+   "team": "Software Engineering",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Hardware Engineer (FPGA/ASIC)",
+   "location": "NYC",
+   "department": "Technology",
+   "team": "Software Engineering",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Hardware Engineer (FPGA/ASIC)",
+   "location": "LDN",
+   "department": "Technology",
+   "team": "Software Engineering",
+   "duration": "June-September",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "IT Operations Engineer",
+   "location": "HKG",
+   "department": "Technology",
+   "team": "IT and Systems Engineering",
+   "duration": "December-February",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "IT Operations Engineer",
+   "location": "HKG",
+   "department": "Technology",
+   "team": "IT and Systems Engineering",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "IT Operations Engineer",
+   "location": "NYC",
+   "department": "Technology",
+   "team": "IT and Systems Engineering",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "IT Operations Engineer",
+   "location": "LDN",
+   "department": "Technology",
+   "team": "IT and Systems Engineering",
+   "duration": "June-September",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Linux Engineer",
+   "location": "HKG",
+   "department": "Technology",
+   "team": "IT and Systems Engineering",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Linux Engineer",
+   "location": "HKG",
+   "department": "Technology",
+   "team": "IT and Systems Engineering",
+   "duration": "December-February",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Linux Engineer",
+   "location": "NYC",
+   "department": "Technology",
+   "team": "IT and Systems Engineering",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Linux Engineer",
+   "location": "LDN",
+   "department": "Technology",
+   "team": "IT and Systems Engineering",
+   "duration": "June-September",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Machine Learning Engineer",
+   "location": "NYC",
+   "department": "Trading, Research, and Machine Learning",
+   "team": "Machine Learning",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Machine Learning Researcher",
+   "location": "NYC",
+   "department": "Trading, Research, and Machine Learning",
+   "team": "Machine Learning",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Machine Learning Researcher",
+   "location": "HKG",
+   "department": "Trading, Research, and Machine Learning",
+   "team": "Machine Learning",
+   "duration": "May-September",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Machine Learning Researcher",
+   "location": "LDN",
+   "department": "Trading, Research, and Machine Learning",
+   "team": "Machine Learning",
+   "duration": "June-September",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Mechanical Engineer",
+   "location": "NYC",
+   "department": "Technology",
+   "team": "IT and Systems Engineering",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Network Engineer",
+   "location": "NYC",
+   "department": "Technology",
+   "team": "Network Engineering",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Network Engineer",
+   "location": "SGP",
+   "department": "Technology",
+   "team": "Network Engineering",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Procurement Specialist",
+   "location": "HKG",
+   "department": "Technology",
+   "team": "Procurement",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Procurement Specialist",
+   "location": "NYC",
+   "department": "Technology",
+   "team": "Procurement",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Procurement Specialist",
+   "location": "LDN",
+   "department": "Technology",
+   "team": "Procurement",
+   "duration": "June-September",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Quantitative Researcher",
+   "location": "HKG",
+   "department": "Trading, Research, and Machine Learning",
+   "team": "Quantitative Research",
+   "duration": "December-February",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Quantitative Researcher",
+   "location": "HKG",
+   "department": "Trading, Research, and Machine Learning",
+   "team": "Quantitative Research",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Quantitative Researcher",
+   "location": "NYC",
+   "department": "Trading, Research, and Machine Learning",
+   "team": "Quantitative Research",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Quantitative Researcher",
+   "location": "LDN",
+   "department": "Trading, Research, and Machine Learning",
+   "team": "Quantitative Research",
+   "duration": "June-September",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Quantitative Trader",
+   "location": "HKG",
+   "department": "Trading, Research, and Machine Learning",
+   "team": "Quantitative Trading",
+   "duration": "December-February",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Quantitative Trader",
+   "location": "HKG",
+   "department": "Trading, Research, and Machine Learning",
+   "team": "Quantitative Trading",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Quantitative Trader",
+   "location": "NYC",
+   "department": "Trading, Research, and Machine Learning",
+   "team": "Quantitative Trading",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Quantitative Trader",
+   "location": "LDN",
+   "department": "Trading, Research, and Machine Learning",
+   "team": "Quantitative Trading",
+   "duration": "June-September",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Sales and Trading",
+   "location": "HKG",
+   "department": "Institutional Sales and Trading",
+   "team": "Institutional Sales and Trading",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Sales and Trading",
+   "location": "NYC",
+   "department": "Institutional Sales and Trading",
+   "team": "Institutional Sales and Trading",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Sales and Trading",
+   "location": "LDN",
+   "department": "Institutional Sales and Trading",
+   "team": "Institutional Sales and Trading",
+   "duration": "June-September",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Software Engineer",
+   "location": "HKG",
+   "department": "Technology",
+   "team": "Software Engineering",
+   "duration": "December-February",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Software Engineer",
+   "location": "NYC",
+   "department": "Technology",
+   "team": "Software Engineering",
+   "duration": "January-April",
+   "type": "Co-Op",
+   "status": "closed"
+  },
+  {
+   "position": "Software Engineer",
+   "location": "HKG",
+   "department": "Technology",
+   "team": "Software Engineering",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Software Engineer",
+   "location": "NYC",
+   "department": "Technology",
+   "team": "Software Engineering",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Software Engineer",
+   "location": "LDN",
+   "department": "Technology",
+   "team": "Software Engineering",
+   "duration": "June-September",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Software Engineer",
+   "location": "NYC",
+   "department": "Technology",
+   "team": "Software Engineering",
+   "duration": "September-December",
+   "type": "Co-Op",
+   "status": "closed"
+  },
+  {
+   "position": "Strategy and Product",
+   "location": "HKG",
+   "department": "Strategy and Product",
+   "team": "Strategy and Product",
+   "duration": "December-February",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Strategy and Product",
+   "location": "HKG",
+   "department": "Strategy and Product",
+   "team": "Strategy and Product",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Strategy and Product",
+   "location": "NYC",
+   "department": "Strategy and Product",
+   "team": "Strategy and Product",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Strategy and Product",
+   "location": "LDN",
+   "department": "Strategy and Product",
+   "team": "Strategy and Product",
+   "duration": "June-September",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Tools and Compilers Research and Development",
+   "location": "NYC",
+   "department": "Technology",
+   "team": "Software Engineering",
+   "duration": "Flexible",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Tools and Compilers Research and Development",
+   "location": "LDN",
+   "department": "Technology",
+   "team": "Software Engineering",
+   "duration": "Flexible",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Trading Desk Operations Engineer",
+   "location": "HKG",
+   "department": "Trading, Research, and Machine Learning",
+   "team": "Trading Desk Operations",
+   "duration": "December-February",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Trading Desk Operations Engineer",
+   "location": "NYC",
+   "department": "Trading, Research, and Machine Learning",
+   "team": "Trading Desk Operations",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  },
+  {
+   "position": "Trading Desk Operations Engineer",
+   "location": "NYC",
+   "department": "Trading, Research, and Machine Learning",
+   "team": "Trading Desk Operations",
+   "duration": "Permanent",
+   "type": "Full-Time: New Grad",
+   "status": "closed"
+  },
+  {
+   "position": "Windows Engineer",
+   "location": "NYC",
+   "department": "Technology",
+   "team": "IT and Systems Engineering",
+   "duration": "May-August",
+   "type": "Internship",
+   "status": "closed"
+  }
+ ]
+}

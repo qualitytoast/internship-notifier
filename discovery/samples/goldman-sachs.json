@@ -1,0 +1,496 @@
+{
+ "_about": "Goldman Sachs samples captured 2026-10-19. (1) roleSearch: POST https://api-higher.gs.com/gateway/api/v1/graphql with the request body below; response = page 0 envelope (totalCount=891, pageSize=250) with items trimmed to 3 professional roles from page 0 + 4 Americas campus roles taken from later pages. (2) role-by-id: response of the site's own GetRoleById call made by https://higher.gs.com/roles/170705 (gives apply URL + descriptionHtml). (3) programs: first 3 of 25 entries of https://www.goldmansachs.com/feeds/programs-and-internships.json (program marketing pages, not requisitions).",
+ "roleSearch_request": {
+  "method": "POST",
+  "url": "https://api-higher.gs.com/gateway/api/v1/graphql",
+  "headers": {
+   "Content-Type": "application/json",
+   "Accept": "application/json"
+  },
+  "json": {
+   "operationName": "GetRoles",
+   "query": "query GetRoles($searchQueryInput: RoleSearchQueryInput!) {\n  roleSearch(searchQueryInput: $searchQueryInput) {\n    totalCount\n    page { pageSize pageNumber hasNext }\n    items {\n      roleId corporateTitle jobTitle jobFunction division status externalJobStatus\n      locations { primary city state country corporateRegion }\n      shortDescription lastPostedDate createdDate lastModifiedDate startDate endDate\n      educationLevel gradDegreeStartDate gradDegreeEndDate skillset skills\n      jobType { code description }\n      compensation { minSalary maxSalary currency }\n      externalSource { sourceId secondarySourceId externalSourceType }\n    }\n  }\n}",
+   "variables": {
+    "searchQueryInput": {
+     "page": {
+      "pageSize": 250,
+      "pageNumber": 0
+     },
+     "sort": {
+      "sortStrategy": "POSTED_DATE",
+      "sortOrder": "DESC"
+     },
+     "experiences": [
+      "PROFESSIONAL",
+      "EARLY_CAREER",
+      "CAMPUS"
+     ],
+     "filters": [],
+     "searchTerm": ""
+    }
+   }
+  }
+ },
+ "roleSearch_response_trimmed": {
+  "data": {
+   "roleSearch": {
+    "totalCount": 891,
+    "page": {
+     "pageSize": 250,
+     "pageNumber": 0,
+     "hasNext": true
+    },
+    "items": [
+     {
+      "roleId": "139331_GS_MID_CAREER",
+      "corporateTitle": "Vice President",
+      "jobTitle": "Algo Developer, Global Banking & Markets, Electronic Trading",
+      "jobFunction": "Software Engineering",
+      "division": "Global Banking & Markets",
+      "status": "POSTED",
+      "externalJobStatus": "POSTED",
+      "locations": [
+       {
+        "primary": true,
+        "city": "New York",
+        "state": "NY",
+        "country": "United States",
+        "corporateRegion": "Americas"
+       }
+      ],
+      "shortDescription": "Goldman Sachs Electronic Trading",
+      "lastPostedDate": "2026-10-19T21:54:14.722Z",
+      "createdDate": "2026-10-19T23:30:32.099316493Z",
+      "lastModifiedDate": null,
+      "startDate": "2026-10-19T21:54:14Z",
+      "endDate": null,
+      "educationLevel": null,
+      "gradDegreeStartDate": null,
+      "gradDegreeEndDate": null,
+      "skillset": "",
+      "skills": [],
+      "jobType": null,
+      "compensation": {
+       "minSalary": 150000.0,
+       "maxSalary": 300000.0,
+       "currency": "USD"
+      },
+      "externalSource": {
+       "sourceId": "139331",
+       "secondarySourceId": "300010315470438",
+       "externalSourceType": "ORACLE"
+      }
+     },
+     {
+      "roleId": "152248_GS_MID_CAREER",
+      "corporateTitle": "Associate",
+      "jobTitle": "AWS Solutions Architect, Global Banking & Markets, Cloud Platform",
+      "jobFunction": "Software Engineering",
+      "division": "Global Banking & Markets",
+      "status": "POSTED",
+      "externalJobStatus": "POSTED",
+      "locations": [
+       {
+        "primary": true,
+        "city": "Dallas",
+        "state": "TX",
+        "country": "United States",
+        "corporateRegion": "Americas"
+       }
+      ],
+      "shortDescription": "x",
+      "lastPostedDate": "2026-10-19T21:15:43.331Z",
+      "createdDate": "2026-10-19T23:31:02.454916423Z",
+      "lastModifiedDate": null,
+      "startDate": "2026-10-19T21:15:39Z",
+      "endDate": null,
+      "educationLevel": null,
+      "gradDegreeStartDate": null,
+      "gradDegreeEndDate": null,
+      "skillset": "",
+      "skills": [],
+      "jobType": null,
+      "compensation": {
+       "minSalary": null,
+       "maxSalary": null,
+       "currency": null
+      },
+      "externalSource": {
+       "sourceId": "152248",
+       "secondarySourceId": "300013170330742",
+       "externalSourceType": "ORACLE"
+      }
+     },
+     {
+      "roleId": "169136_GS_MID_CAREER",
+      "corporateTitle": "Vice President",
+      "jobTitle": "Senior Software Engineer, Global Banking & Markets, Front Office Technology",
+      "jobFunction": "",
+      "division": "Global Banking & Markets",
+      "status": "POSTED",
+      "externalJobStatus": "POSTED",
+      "locations": [
+       {
+        "primary": true,
+        "city": "Dallas",
+        "state": "TX",
+        "country": "United States",
+        "corporateRegion": "Americas"
+       }
+      ],
+      "shortDescription": "We are seeking a highly skilled and experienced Senior FICC Automation &amp; Electronic Trading Systems Engineer to join our dynamic team. This pivotal role involves designing, developing, and optimizing a strategic, high-performance platform for real-time pricing, quoting, and lifecycle automation across various FICC derivatives products, while also ensuring robust, low-latency, and scalable electronic trading solutions. The ideal candidate will have a strong background in building large-scale distributed systems, expertise in electronic trading concepts, hands-on experience with FIX protocols, and a keen interest in leveraging AI tooling to enhance development workflows.",
+      "lastPostedDate": "2026-10-19T21:15:08.732Z",
+      "createdDate": "2026-10-19T23:31:03.589952190Z",
+      "lastModifiedDate": null,
+      "startDate": "2026-10-19T21:15:04Z",
+      "endDate": null,
+      "educationLevel": null,
+      "gradDegreeStartDate": null,
+      "gradDegreeEndDate": null,
+      "skillset": "",
+      "skills": [],
+      "jobType": null,
+      "compensation": {
+       "minSalary": null,
+       "maxSalary": null,
+       "currency": null
+      },
+      "externalSource": {
+       "sourceId": "169136",
+       "secondarySourceId": "300016756710951",
+       "externalSourceType": "ORACLE"
+      }
+     },
+     {
+      "roleId": "155950_GS_CAMPUS",
+      "corporateTitle": "Summer Analyst",
+      "jobTitle": "2027 | Americas | New York City Area | Asset Management, Quantitative Investing | Summer Analyst",
+      "jobFunction": "",
+      "division": "Asset & Wealth Management",
+      "status": "POSTED",
+      "externalJobStatus": "POSTED",
+      "locations": [
+       {
+        "primary": true,
+        "city": "New York",
+        "state": "NY",
+        "country": "United States",
+        "corporateRegion": "Americas"
+       }
+      ],
+      "shortDescription": " ",
+      "lastPostedDate": "2026-10-07T23:11:59.046Z",
+      "createdDate": "2026-10-08T22:54:17.113990943Z",
+      "lastModifiedDate": null,
+      "startDate": "2026-10-07T23:11:14Z",
+      "endDate": null,
+      "educationLevel": null,
+      "gradDegreeStartDate": null,
+      "gradDegreeEndDate": null,
+      "skillset": "",
+      "skills": [],
+      "jobType": null,
+      "compensation": {
+       "minSalary": 90000.0,
+       "maxSalary": 115000.0,
+       "currency": "USD"
+      },
+      "externalSource": {
+       "sourceId": "155950",
+       "secondarySourceId": "300014818915001",
+       "externalSourceType": "ORACLE"
+      }
+     },
+     {
+      "roleId": "183732_GS_CAMPUS",
+      "corporateTitle": "Summer Associate",
+      "jobTitle": "2027 | Americas | Chicago | Investment Banking | Summer Associate",
+      "jobFunction": "",
+      "division": "Global Banking & Markets",
+      "status": "POSTED",
+      "externalJobStatus": "POSTED",
+      "locations": [
+       {
+        "primary": true,
+        "city": "Chicago",
+        "state": "IL",
+        "country": "United States",
+        "corporateRegion": "Americas"
+       }
+      ],
+      "shortDescription": " ",
+      "lastPostedDate": "2026-10-14T12:50:06.496Z",
+      "createdDate": "2026-10-15T12:29:43.036742032Z",
+      "lastModifiedDate": null,
+      "startDate": "2026-10-15T12:30:25.038969321Z",
+      "endDate": null,
+      "educationLevel": null,
+      "gradDegreeStartDate": null,
+      "gradDegreeEndDate": null,
+      "skillset": "",
+      "skills": [],
+      "jobType": null,
+      "compensation": {
+       "minSalary": 175000.0,
+       "maxSalary": 175000.0,
+       "currency": "USD"
+      },
+      "externalSource": {
+       "sourceId": "183732",
+       "secondarySourceId": "300018776198044",
+       "externalSourceType": "ORACLE"
+      }
+     },
+     {
+      "roleId": "182565_GS_CAMPUS",
+      "corporateTitle": "Seasonal",
+      "jobTitle": "2027 | Americas | Sao Paulo | Investment Banking | Seasonal/Off Cycle Internship (Trainee)",
+      "jobFunction": "",
+      "division": "Global Banking & Markets",
+      "status": "POSTED",
+      "externalJobStatus": "POSTED",
+      "locations": [
+       {
+        "primary": true,
+        "city": "Sao Paulo",
+        "state": "Sao Paulo",
+        "country": "Brazil",
+        "corporateRegion": "Americas"
+       }
+      ],
+      "shortDescription": " ",
+      "lastPostedDate": "2026-10-05T20:34:38.025Z",
+      "createdDate": "2026-10-06T20:16:10.841437179Z",
+      "lastModifiedDate": null,
+      "startDate": "2026-10-06T20:17:37.586860822Z",
+      "endDate": null,
+      "educationLevel": null,
+      "gradDegreeStartDate": null,
+      "gradDegreeEndDate": null,
+      "skillset": "",
+      "skills": [],
+      "jobType": null,
+      "compensation": {
+       "minSalary": null,
+       "maxSalary": null,
+       "currency": "USD"
+      },
+      "externalSource": {
+       "sourceId": "182565",
+       "secondarySourceId": "300018586173625",
+       "externalSourceType": "ORACLE"
+      }
+     },
+     {
+      "roleId": "169826_GS_CAMPUS",
+      "corporateTitle": "Analyst",
+      "jobTitle": "2027 | Americas | Salt Lake City | Operations | New Analyst",
+      "jobFunction": "",
+      "division": "Operations Division",
+      "status": "POSTED",
+      "externalJobStatus": "POSTED",
+      "locations": [
+       {
+        "primary": true,
+        "city": "Salt Lake City",
+        "state": "UT",
+        "country": "United States",
+        "corporateRegion": "Americas"
+       }
+      ],
+      "shortDescription": " ",
+      "lastPostedDate": "2026-10-15T16:59:23.497Z",
+      "createdDate": "2026-10-16T17:02:01.706531805Z",
+      "lastModifiedDate": null,
+      "startDate": "2026-10-16T17:02:47.278362449Z",
+      "endDate": null,
+      "educationLevel": null,
+      "gradDegreeStartDate": null,
+      "gradDegreeEndDate": null,
+      "skillset": "",
+      "skills": [],
+      "jobType": null,
+      "compensation": {
+       "minSalary": null,
+       "maxSalary": null,
+       "currency": "USD"
+      },
+      "externalSource": {
+       "sourceId": "169826",
+       "secondarySourceId": "300016814291881",
+       "externalSourceType": "ORACLE"
+      }
+     }
+    ]
+   }
+  }
+ },
+ "roleById_request": {
+  "method": "POST",
+  "url": "https://api-higher.gs.com/gateway/api/v1/graphql",
+  "json": {
+   "operationName": "GetRoleById",
+   "variables": {
+    "externalSourceId": "170705",
+    "externalSourceFetch": true
+   },
+   "query": "query GetRoleById($externalSourceId: String!, $externalSourceFetch: Boolean) { role(externalSourceId: $externalSourceId, externalSourceFetch: $externalSourceFetch) { roleId corporateTitle jobTitle jobFunction locations { primary state country city } division descriptionHtml jobType { code description } skillset compensation { minSalary maxSalary currency } applyActive status externalSource { externalApplicationUrl applyInExternalSource sourceId secondarySourceId } } }"
+  }
+ },
+ "roleById_response": {
+  "data": {
+   "role": {
+    "roleId": "170705_GS_CAMPUS",
+    "corporateTitle": "Summer Analyst",
+    "jobTitle": "2027 | Americas | New York City Area | Executive Office, Global Marketing | Summer Analyst",
+    "jobFunction": "",
+    "locations": [
+     {
+      "primary": true,
+      "state": "NY",
+      "country": "United States",
+      "city": "New York",
+      "__typename": "RoleLocationGraphQlDTO"
+     }
+    ],
+    "division": "Executive Office Division",
+    "descriptionHtml": "\n<p><b><u>About the program</u></b></p>\n<p>Our Summer Analyst Program is a nine to ten week summer internship for students pursuing a bachelors / graduate degree. You will be fully immersed in our day-to-day activities.</p>\n<p>As a participant, you will:</p>\n<ul><li>Attend orientation where you’ll learn about our culture, as well as the benefits and responsibilities of being a member of the firm</li><li>Receive training designed to help you succeed</li><li>Have the opportunity to work on real responsibilities alongside fellow interns and our people</li></ul>\n<div>\n <b><u>Submitting Your Application</u></b>\n</div>\n<div>\n <div>\n  <ul><li>Each applicant has the opportunity to apply to up to 4 separate business / location combinations in any given recruiting year. Any additional application will be auto withdrawn. In order to apply to an additional opportunity, you must withdraw a current application that has not been turned down.</li><li>A single applicant should not create multiple email addresses to apply to additional opportunities </li></ul>\n </div>\n</div>\n<p><u><b>About the division</b></u></p>\n<p>The <a href=\"https://www.goldmansachs.com/careers/our-firm/executive-office/index.html\" target=\"_blank\" rel=\"noopener noreferrer\">Executive Office</a> plays an integral roles in setting and advancing Goldman Sachs’ corporate strategy, and in preserving the firm’s distinctive culture. We are responsible for safeguarding the firm’s relationship with alumni, clients, shareholders, policy makers, and the broader public, while ensuring that our own people remain informed about the firm’s evolving priorities. We also partner with the businesses to source high-impact opportunities in line with the firm’s social and sustainability agendas.</p>",
+    "jobType": null,
+    "skillset": null,
+    "compensation": {
+     "minSalary": 80000.0,
+     "maxSalary": 110000.0,
+     "currency": "USD",
+     "__typename": "RoleCompensationGraphQlDTO"
+    },
+    "applyActive": true,
+    "status": "POSTED",
+    "externalSource": {
+     "externalApplicationUrl": "https://hdpc.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LateralHiring/job/170705/apply/email",
+     "applyInExternalSource": true,
+     "sourceId": "170705",
+     "secondarySourceId": "300016894906081",
+     "__typename": "ExtendedExternalSourceGraphQlDTO"
+    },
+    "__typename": "ExtendedRoleGraphQlDTO"
+   }
+  }
+ },
+ "programs_feed_count": 25,
+ "programs_feed_first3": [
+  {
+   "slug": "/careers/students/programs-and-internships/americas/emerging-leaders-series",
+   "title": "Emerging Leaders Series",
+   "templateName": "landing-page-template",
+   "language": "en-US",
+   "lastModifiedDate": 1790685274102,
+   "cmsPageProps": {
+    "id": "e0eecc62-de51-4610-a015-f9a79fbfd243",
+    "programLocation": [
+     {
+      "id": "gscom:program-region-careers/americas",
+      "title": "Americas",
+      "description": "",
+      "uuid": "84c209d6-6cf3-4f61-80cf-f40ef38e6cff"
+     }
+    ],
+    "eligibilityDetails": "Undergraduate students graduating between December 2027 - June 2028",
+    "programType": [
+     {
+      "id": "gscom:program-type/undergrad-mba",
+      "title": "Undergrad & MBA",
+      "description": "",
+      "uuid": "e2567a83-ea22-406d-be8a-65f114b24852"
+     }
+    ],
+    "density": "standard"
+   },
+   "path": "/careers/students/programs-and-internships/americas/emerging-leaders-series",
+   "description": null,
+   "tags": [
+    {
+     "id": "gscom:program-region-careers/americas",
+     "name": "Americas"
+    }
+   ],
+   "thumbnailPath": null,
+   "lastModified": "Tue Sep 29 2026 12:34:34 GMT+0000",
+   "created": "Mon Oct 05 2026 03:59:49 GMT+0000"
+  },
+  {
+   "slug": "/careers/students/programs-and-internships/americas/new-analyst-program",
+   "title": "New Analyst Program",
+   "templateName": "landing-page-template",
+   "language": "en-US",
+   "lastModifiedDate": 1786973039440,
+   "cmsPageProps": {
+    "id": "82e4c227-f593-4fbc-820a-38e264ad5ccf",
+    "displayPriority": "7",
+    "programLocation": [
+     {
+      "id": "gscom:program-region-careers/americas",
+      "title": "Americas",
+      "description": "",
+      "uuid": "84c209d6-6cf3-4f61-80cf-f40ef38e6cff"
+     }
+    ],
+    "eligibilityDetails": "Students graduating with an undergraduate or graduate degree between December 2026 and July 2027.",
+    "programType": [
+     {
+      "id": "gscom:program-type/full-time",
+      "title": "Full-Time",
+      "description": "",
+      "uuid": "38413e62-3ffc-4746-ac51-42fdf45c800b"
+     }
+    ],
+    "density": "standard"
+   },
+   "path": "/careers/students/programs-and-internships/americas/new-analyst-program",
+   "description": null,
+   "tags": [
+    {
+     "id": "gscom:program-region-careers/americas",
+     "name": "Americas"
+    }
+   ],
+   "thumbnailPath": null,
+   "lastModified": "Mon Aug 17 2026 13:23:59 GMT+0000",
+   "created": "Mon Aug 17 2026 13:37:56 GMT+0000"
+  },
+  {
+   "slug": "/careers/students/programs-and-internships/americas/summer-associate-program",
+   "title": "2027 Summer Associate Program",
+   "templateName": "landing-page-template",
+   "language": "en-US",
+   "lastModifiedDate": 1786973027731,
+   "cmsPageProps": {
+    "id": "63527c73-80cd-4e39-a8bf-017dc3926ed4",
+    "displayPriority": "2",
+    "programLocation": [
+     {
+      "id": "gscom:program-region-careers/americas",
+      "title": "Americas",
+      "description": "",
+      "uuid": "84c209d6-6cf3-4f61-80cf-f40ef38e6cff"
+     }
+    ],
+    "eligibilityDetails": "The summer associate role is for candidates currently working towards an advanced degree such as MBA, PhD, JD, MD or LLM and is usually undertaken during the second or penultimate year of study.",
+    "programType": [
+     {
+      "id": "gscom:program-type/internship",
+      "title": "Internship",
+      "description": "",
+      "uuid": "ad8a1b31-2bfc-402c-8768-749ede44cdf3"
+     }
+    ],
+    "density": "standard"
+   },
+   "path": "/careers/students/programs-and-internships/americas/summer-associate-program",
+   "description": null,
+   "tags": [],
+   "thumbnailPath": null,
+   "lastModified": "Mon Aug 17 2026 13:23:47 GMT+0000",
+   "created": "Mon Aug 17 2026 13:37:57 GMT+0000"
+  }
+ ]
+}

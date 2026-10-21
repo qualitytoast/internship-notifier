@@ -1,0 +1,23 @@
+{
+  "key": "cisco",
+  "name": "Cisco",
+  "careers_url": "https://careers.cisco.com/global/en/search-results",
+  "hiring_system": "workday (cisco.wd5 / Cisco_Careers) behind a Phenom front-end (refNum CISCISGLOBAL)",
+  "checker": "workday",
+  "settings": {
+    "host": "cisco.wd5.myworkdayjobs.com",
+    "tenant": "cisco",
+    "site": "Cisco_Careers"
+  },
+  "feed": "POST https://cisco.wd5.myworkdayjobs.com/wday/cxs/cisco/Cisco_Careers/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"} (73 pages)",
+  "feed_total": 1455,
+  "page_total": 1455,
+  "page_total_how": "Playwright render of https://cisco.wd5.myworkdayjobs.com/en-US/Cisco_Careers showed '1455 JOBS'; the Phenom front-end careers.cisco.com/global/en/search-results shows '1426 results' (= refineSearch totalHits; Phenom lacks 29 Workday postings incl. 5 interns)",
+  "intern_total": 58,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (cisco.wd5.myworkdayjobs.com: no matching rule, Allow: /Cisco_Careers/; careers.cisco.com/widgets: no matching rule; */apply BLOCK)",
+  "notes": "Workday is the complete source; Phenom (phenom settings: base_url https://careers.cisco.com, ref_num CISCISGLOBAL, lang en_global, country global, site_type external, page_name search-results, job_path /global/en/job/{jobId}/{slug}, size up to 500) misses ~2% incl. 5 intern postings (4 US). The bookmarked Internships & Co-ops page (51) misses 8 of the 58 Workday interns. Alert if CXS total reaches 2000 (cap).",
+  "checked_at": "2026-10-20T00:33:39Z"
+}

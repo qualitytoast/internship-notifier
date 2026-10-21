@@ -1,0 +1,124 @@
+# Matching rules. Edit freely; run `internwatch test-filters "<title>" --location "<loc>"` to try a title.
+#
+# Keyword syntax: plain words, case-insensitive, matched as whole words. A space or hyphen inside a
+# keyword also matches "-", " " or nothing ("co op" matches "co-op", "coop", "co op").
+# A trailing "*" matches any word ending ("scien*" matches science, scientist). Plurals match automatically,
+# except for two-letter words ("hr" does not match "hrs").
+#
+# Bias: when a rule is unsure the role is INCLUDED and tagged "unsure" in the email.
+
+role:
+  # Any of these in the title (or the posting's employment type) makes it a student role.
+  strong: [intern, interns, internship, internships, co op, co ops, apprentice, apprentices, apprenticeship,
+           student, students, off cycle, summer analyst, summer analysts, summer associate, externship,
+           industrial placement, placement year, working student, thrive program, winternship, winternships]
+  # Freshman/sophomore programs, many titled without the word intern ("Discovery Program: Quantitative
+  # Trading", "Spring Insight Programme"). Each counts as a student role unless the title also has a weak_not
+  # word ("Discovery Program Manager"), and every matching role mentioning one is tagged freshman/sophomore,
+  # as is one whose description says so ("open to first- and second-year students"). Per-company program
+  # names (NVIDIA Ignite, …) are role_keywords in companies.yaml; UNDERCLASSMEN.md lists every program found.
+  underclassmen: [freshman, freshmen, sophomore, sophomores, underclassman, underclassmen, first year, second year,
+                  1st year, 2nd year, rising sophomore, rising sophomores, rising junior, rising juniors,
+                  early insight*, insight program*, insight day*, insight week*, insight event*, insight series,
+                  discovery program*, discovery day*, discovery event*, discovery summit*, discovery series,
+                  exploration program*, explore program*, career prep, pre internship*, possibilities series,
+                  possibilities summit*, early identification, early id]
+  # "Class of 2029" in a title: these graduation years mark a student program (unsure without the word intern;
+  # never with full-time words), and underclass_years are your freshman/sophomore classes this cycle (tagged).
+  # A graduation year never counts as the internship's term. Update both each fall, like the terms below.
+  class_years: [2028, 2029, 2030]
+  underclass_years: [2029, 2030]
+  # Weaker hints; they count only when no new-grad/full-time words are present.
+  weak: [campus, university, early talent, emerging talent, early in career, fellowship, fellowships]
+  # A weak hint is ignored when the title also has one of these (a campus that is a place, or a staff job).
+  weak_not: [mega campus, data center campus, datacenter campus, corporate campus, campus facilities, campus operations,
+             campus security, campus planning, campus construction, campus design, manager, director, lead, head,
+             recruiter, recruiting, coordinator, specialist, partner, principal, senior, sr, staff, president, officer]
+  # New grad / full-time markers. Ignored when a strong word is also present.
+  new_grad: [new grad, new grads, new graduate, new graduates, recent grad, recent graduate, recent graduates,
+             university grad, university graduate, college grad, college graduate, graduate program,
+             graduate scheme, graduate software, graduate engineer, graduate developer, graduate analyst,
+             graduate trainee, entry level, full time, early career program, phd graduate]
+  # Titles that mention internships but are full-time staff jobs about them.
+  staff_about_interns: [internship program manager, internship program coordinator, intern program manager,
+                        internship coordinator, internships manager, university recruiter, campus recruiter,
+                        early careers recruiter, university programs manager]
+  # A title with a student word that is really a staff job running a student program: rejected only when it
+  # has BOTH a staff word and a program word ("Senior Program Specialist - Intern & Keep Warm Programs").
+  # "Program Manager Intern" and "Summer Internship Program - Trading" are not affected.
+  staff_words: [senior, sr, principal, lead, manager, director, head, specialist, coordinator, recruiter, partner,
+                officer, administrator, advisor]
+  staff_context: [programs, initiatives, alumni, keep warm, relations, recruitment, recruiting]
+  # Employment-type values (from the hiring system) that mean a student role.
+  employment_types: [intern, internship, co op, apprentice, apprenticeship, student, temporary intern,
+                     intern fixed term, intern (fixed term)]
+
+terms:
+  # Explicit terms that count as a match.
+  include: [Spring 2027, Summer 2027, Fall 2027, Spring 2028, Summer 2028, Fall 2028]
+  # Explicit terms that are included but tagged unsure (not in your list, but inside your window).
+  unsure: [Winter 2027, Winter 2028]
+  # A bare year next to an internship word ("2027 Intern") counts as a match for these years.
+  include_years: [2027, 2028]
+  # Any other explicit term in the TITLE (e.g. "Summer 2026") rejects the role.
+  # Other terms found only in the DESCRIPTION never reject; the role is included and tagged unsure.
+
+fields:
+  # Checked in this order; the first that matches names the field tag.
+  Quant: [quant, quants, quantitative, trader, traders, trading, algorithmic, algo, market making,
+          systematic, strats, quantitative developer, quantitative research*, fpga, low latency]
+  ML/AI: [machine learning, ml, ai, artificial intelligence, deep learning, computer vision, nlp,
+          natural language, llm, llms, generative, genai, reinforcement learning, perception, autonomy,
+          autonomous, robotics, neural, speech recognition, mlops, ml ops, ai ml]
+  Research: [research engineer, research engineering, research scientist, researcher, research intern,
+             research internship, applied scientist, applied research, applied science, research science]
+  Data: [data scien*, data engineer*, data analy*, data platform, data infrastructure, analytics engineer*,
+         analytics, statistics, statistician, big data, business intelligence, data intern, data and analytics]
+  SWE: [software, swe, sde, sdet, developer, developers, programmer, programming, coding, full stack, frontend,
+        front end, backend, back end, web, mobile, ios, android, platform engineer*, infrastructure,
+        devops, dev ops, site reliability, sre, cloud, distributed systems, systems engineer*, embedded,
+        firmware, compiler, compilers, kernel, security engineer*, application engineer*, product engineer*,
+        tools engineer*, test engineer*, qa engineer*, quality engineer*, automation engineer*, gameplay,
+        game programmer, graphics, rendering, engine programmer, technology analyst, technology intern,
+        tech intern, engineering analyst, computer science, cs, computing, api, apis, database*,
+        networking engineer*, network software, solutions architect, simulation, forward deployed]
+  # Departments (from the hiring system) that imply a field when the title is generic ("Summer Intern").
+  departments:
+    SWE: [engineering, software, technology, product engineering, platform, infrastructure, it engineering,
+          security engineering, r&d, research and development, tech]
+    ML/AI: [machine learning, ai, artificial intelligence, ml, autonomy]
+    Data: [data, data science, analytics, data engineering]
+    Research: [research]
+    Quant: [quant, quantitative, trading, quantitative research, technology & trading]
+
+exclude:
+  # Rejected even if an in-field word is present. Program labels such as ", PhD Student Science Recruiting"
+  # (Amazon) or "- Campus Recruiting 2027" name the hiring program, not the job, and are ignored.
+  strong: [ux research*, user research*, market research*, equity research, design research*,
+           recruiter, recruiting, sales engineer*, sales engineering]
+  # Rejected unless an in-field word above is present. This is the list to edit.
+  fields: [hr, human resources, talent acquisition, people operations, people partner, people team, people analytics partner,
+           marketing, brand, communications, comms, public relations, pr, social media, content creator,
+           content marketing, copywriter, copywriting, editorial, journalism,
+           legal, law, lawyer, attorney, counsel, paralegal, compliance, regulatory affairs, government affairs,
+           public policy, policy,
+           sales, account executive, account manager, account management, business development, bdr, sdr,
+           customer success, customer support, customer service, customer experience,
+           accounting, accountant, tax, audit, payroll, treasury, finance, financial analyst, fp&a, controller,
+           investment banking, wealth management, private wealth, private banking, asset management sales,
+           procurement, purchasing, supply chain, logistics, facilities, real estate, workplace, office manager,
+           executive assistant, administrative, admin assistant, receptionist, events, event coordinator,
+           graphic design, visual design, brand design, motion design, video production, photography,
+           mechanical engineer*, mechanical engineering, civil engineer*, chemical engineer*,
+           manufacturing engineer*, industrial engineer*, construction, nursing, clinical, pharmacy, medical,
+           mba, law school, jd, media relations, public affairs, illustrator, illustration, industrial design,
+           fashion, merchandising, retail, store, area manager, operations manager, business operations, strategy,
+           consulting, consultant]
+  # A title with an excluded word above is still included, tagged unsure, when one of these appears outside
+  # it: "Policy Engineering Intern", "Finance Engineer Intern". "Mechanical Engineer" is one excluded phrase.
+  keep_unsure: [engineer*]
+
+location:
+  # Default countries a role must be in (per-company `locations:` in companies.yaml overrides this).
+  default: [US]
+  # A location string that is empty, just "Remote", or otherwise unrecognised is included as unsure.

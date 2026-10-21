@@ -1,0 +1,19 @@
+{
+  "key": "linkedin",
+  "name": "LinkedIn",
+  "careers_url": "https://careers.linkedin.com/",
+  "hiring_system": "LinkedIn (jobs posted only on www.linkedin.com)",
+  "checker": "blocked",
+  "settings": {},
+  "feed": "none allowed",
+  "feed_total": null,
+  "page_total": null,
+  "page_total_how": "www.linkedin.com job lists are robots-disallowed (User-agent: * Disallow: /), so not observed",
+  "intern_total": null,
+  "status": "blocked",
+  "blocked_reason": "LinkedIn's own jobs exist only on www.linkedin.com, whose robots.txt disallows all automated access (and its header prohibits it without permission). careers.linkedin.com has no job data; the Lever 'linkedin' board is a partner test sandbox.",
+  "fallback": "Create a LinkedIn job alert in your own account for f_C=1337,9202023,2561065,2587638,290903,39939 with f_E=1 (Internship) and US geoId 103644278; SimplifyJobs cross-check covers LinkedIn roles if listed.",
+  "robots": "BLOCK (Disallow: /)",
+  "notes": "Company ids 2587638 and 39939 could not be identified without violating robots; probably LinkedIn affiliate pages (e.g. LinkedIn China, LinkedIn Learning).",
+  "checked_at": "2026-10-19T23:55:00Z"
+}

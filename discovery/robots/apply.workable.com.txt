@@ -1,0 +1,4 @@
+# status 200
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Disallow: 

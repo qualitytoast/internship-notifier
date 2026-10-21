@@ -1,0 +1,26 @@
+{
+  "key": "grubhub",
+  "name": "Grubhub (Wonder)",
+  "careers_url": "https://careers.grubhub.com/",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "wonder.wd1.myworkdayjobs.com",
+    "tenant": "wonder",
+    "sites": [
+      "Grubhub_Careers",
+      "WG"
+    ]
+  },
+  "feed": "POST https://wonder.wd1.myworkdayjobs.com/wday/cxs/wonder/Grubhub_Careers/jobs + POST https://wonder.wd1.myworkdayjobs.com/wday/cxs/wonder/WG/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 81,
+  "page_total": 114,
+  "page_total_how": "Playwright renders: /Grubhub_Careers '36 JOBS FOUND' (target of careers.grubhub.com 'View openings'), /WG '78 JOBS FOUND' (target of wonder.com/careers); both = CXS totals. 114 postings = 81 requisitions (33 on both).",
+  "intern_total": 6,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for the CXS POST URL(s); the tenant robots.txt lists /WG/, /Grubhub_Careers/ as Allow",
+  "notes": "WG (Wonder Group, the parent) carries 33 of Grubhub's 36 requisitions plus 45 Wonder-only jobs, including all 6 internships (Wonder supply-chain, procurement and robotics interns; Grubhub_Careers has none). Dedupe across sites by req id (JR…). See notes/grubhub.md.",
+  "checked_at": "2026-10-20T03:19:24Z"
+}

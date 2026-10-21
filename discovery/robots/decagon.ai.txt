@@ -1,0 +1,15 @@
+# status 200
+User-agent: *
+User-agent: AdsBot-Google 
+Disallow: /admin/
+Disallow: /demo/
+Disallow: /embed/
+Disallow: /mobile/
+Disallow: /sandbox/
+Disallow: /for/
+Allow: /
+
+User-agent: AdsBot-Google
+Disallow: *.woff2
+
+Sitemap: https://decagon.ai/sitemap.xml

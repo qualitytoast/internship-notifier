@@ -1,0 +1,23 @@
+{
+  "key": "procore",
+  "name": "Procore",
+  "careers_url": "https://careers.procore.com/jobs/search",
+  "hiring_system": "workday (tenant procore, wd12; careers.procore.com is a Clinch site behind AWS WAF)",
+  "checker": "workday",
+  "settings": {
+    "host": "procore.wd12.myworkdayjobs.com",
+    "tenant": "procore",
+    "site": "Procore_External_Careers"
+  },
+  "feed": "POST https://procore.wd12.myworkdayjobs.com/wday/cxs/procore/Procore_External_Careers/jobs (limit 20, offset paging; 6 pages)",
+  "feed_total": 112,
+  "page_total": 112,
+  "page_total_how": "Playwright render of https://careers.procore.com/jobs/search (no filters, 2026-10-20): 'Displaying 1 - 30 of 112 in total' (country facets sum to 117, probably because multi-country jobs count once per country); all 30 page-1 card titles match Workday titles exactly.",
+  "intern_total": 0,
+  "status": "verified",
+  "robots": "ALLOW (no matching rule; robots.txt allows /Procore_External_Careers/, disallows /refreshFacet/)",
+  "notes": "Workday tenant found via procore.wd12.myworkdayjobs.com/robots.txt (only site: Procore_External_Careers). Clinch job pages apply through an in-page Clinch form (#apply), so they do not link to Workday directly; totals and titles match. No interns today (workerSubType: Regular 111, Fixed-Term 1). The bookmark's dropdown_field_1 filter appears to be a team filter (its 18 US results in the capture were all regular engineering/IT roles), not an intern filter.",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-20T03:30:00Z"
+}

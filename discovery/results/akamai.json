@@ -1,0 +1,23 @@
+{
+  "key": "akamai",
+  "name": "Akamai",
+  "careers_url": "https://jobs.akamai.com/en/sites/CX_1/jobs",
+  "hiring_system": "oracle (Oracle Recruiting Cloud, pod fa-extu-saasfaprod1, site CX_1; jobs.akamai.com is a vanity domain behind Akamai's own edge)",
+  "checker": "oracle",
+  "settings": {
+    "host": "fa-extu-saasfaprod1.fa.ocs.oraclecloud.com",
+    "site": "CX_1",
+    "job_url": "https://jobs.akamai.com/en/sites/CX_1/job/{id}"
+  },
+  "feed": "GET https://fa-extu-saasfaprod1.fa.ocs.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations&finder=findReqs;siteNumber=CX_1,limit=200,offset=N,sortBy=POSTING_DATES_DESC (2 pages)",
+  "feed_total": 281,
+  "page_total": 281,
+  "page_total_how": "jobs.akamai.com answers automated clients 403 'Access Denied' (Akamai edge; even robots.txt), so the same Oracle CE site was rendered on its pod host https://fa-extu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs (Playwright): 'JOBS 281 / JOB SEARCH RESULTS 281'; the page's own REST call returned TotalJobsCount 281.",
+  "intern_total": 4,
+  "status": "verified",
+  "robots": "ALLOW (pod host robots.txt is 404 = no robots)",
+  "notes": "Pod host found in the CE app's own 404 page on the vanity domain (link to https://fa-extu-saasfaprod1.fa.ocs.oraclecloud.com:443/hcmUI/CandidateExperience) and confirmed by siteSettings apiBaseUrl. /hcmRestApi on jobs.akamai.com is not proxied (returns the CE 'Page not found' HTML). WorkerType/JobType/JobFamily are empty, so interns come from titles only.",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-20T00:50:00Z"
+}

@@ -1,0 +1,19 @@
+{
+  "key": "wayfair",
+  "name": "Wayfair",
+  "careers_url": "https://www.wayfair.com/careers/jobs",
+  "hiring_system": "greenhouse (private board) behind wayfair.com",
+  "checker": "blocked",
+  "settings": {},
+  "feed": "none reachable",
+  "feed_total": null,
+  "page_total": null,
+  "page_total_how": "wayfair.com/careers answers automated clients with a PerimeterX challenge (HTTP 429), so not observable",
+  "intern_total": null,
+  "status": "blocked",
+  "blocked_reason": "Wayfair lists jobs only on wayfair.com/careers, which refuses automated clients (PerimeterX bot challenge, HTTP 429). Its Greenhouse board is not public (every board token returns 404; applications use private tracking links) and its Workday tenant is private (401).",
+  "fallback": "SimplifyJobs cross-check (Wayfair internships are listed there); also create a job alert in Wayfair's Talent Community at https://www.wayfair.com/careers",
+  "robots": "ALLOW for /careers (no matching rule), but the bot challenge refuses automated access",
+  "notes": "",
+  "checked_at": "2026-10-20T03:45:00Z"
+}

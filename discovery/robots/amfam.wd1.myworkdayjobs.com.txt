@@ -1,0 +1,11 @@
+# status 200
+Sitemap: https://amfam.wd1.myworkdayjobs.com/Careers/siteMap.xml
+Sitemap: https://amfam.wd1.myworkdayjobs.com/Agent-Staff/siteMap.xml
+
+User-agent: *
+Allow: /Careers/
+Allow: /Agent-Staff/
+Disallow: /Agent-Staff-Private/
+Disallow: /AmFamGroupInternCareers/
+Disallow: /AmFam-Private/
+Disallow: /refreshFacet/

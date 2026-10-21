@@ -1,0 +1,21 @@
+{
+  "key": "tanium",
+  "name": "Tanium",
+  "careers_url": "https://www.tanium.com/careers",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "tanium"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/tanium/jobs",
+  "feed_total": 73,
+  "page_total": 73,
+  "page_total_how": "Playwright render of https://www.tanium.com/careers shows per-category counts: G&A 11, Sales 20, Marketing 8, Customer Success 1, Product Management 7, Engineering 9, Enterprise & Professional Services 1, Global Support 1, IT & Security 2, Internships 7 and Solution Engineering 6, which sum to 73. ?category=internships listed 7 job-boards.greenhouse.io/tanium/jobs/<id> links, all in the feed",
+  "intern_total": 7,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule; boards-api.greenhouse.io only disallows /embed/); careers page ALLOW (Allow: /)",
+  "notes": "/careers/internship links to the same board, filtered (job-boards.greenhouse.io/tanium?field_1016761[]=13036991).",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

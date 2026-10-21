@@ -1,0 +1,2997 @@
+{
+ "_note": "captured 2026-10-20 (UTC); trimmed: first N jobPostings of offset 0 plus the facets block, other pages omitted",
+ "eightfold_search_page1": {
+  "request": "GET https://jobs.autodesk.com/api/pcsx/search?domain=autodesk.com&query=&location=&start=0",
+  "response": {
+   "status": 200,
+   "error": {
+    "message": "",
+    "body": ""
+   },
+   "data": {
+    "positions": [
+     {
+      "id": 1443152973955,
+      "displayJobId": "25WD93410",
+      "name": "Fusion Account Executive - Expansion Dutch speaker",
+      "locations": [
+       "EMEA - Ireland - Dublin - Windmill",
+       "Barcelona, ESP"
+      ],
+      "standardizedLocations": [
+       "Dublin, D, IE",
+       "Barcelona, CT, ES"
+      ],
+      "postedTs": 1792368000,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Commission",
+      "creationTs": 1763596800,
+      "isHot": 0,
+      "workLocationOption": "hybrid",
+      "locationFlexibility": null,
+      "atsJobId": "25WD93410",
+      "positionUrl": "/careers/job/1443152973955"
+     },
+     {
+      "id": 1443152974993,
+      "displayJobId": "26WD97119",
+      "name": "Principal Software Developer",
+      "locations": [
+       "AMER - Canada - Ontario - Remote",
+       "Montreal, QC, CAN"
+      ],
+      "standardizedLocations": [
+       "ON,CA",
+       "Montreal, QC, CA"
+      ],
+      "postedTs": 1792368000,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Non-Commission",
+      "creationTs": 1775433600,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "26WD97119",
+      "positionUrl": "/careers/job/1443152974993"
+     },
+     {
+      "id": 1443152976459,
+      "displayJobId": "26WD99677",
+      "name": "Account Executive - Expansion Czech Speaker",
+      "locations": [
+       "EMEA - Ireland - Dublin - Windmill",
+       "Dublin, IRL"
+      ],
+      "standardizedLocations": [
+       "Dublin, D, IE",
+       "Dublin, D, IE"
+      ],
+      "postedTs": 1792368000,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Commission",
+      "creationTs": 1782691200,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "26WD99677",
+      "positionUrl": "/careers/job/1443152976459"
+     },
+     {
+      "id": 1443153475094,
+      "displayJobId": "26WD100984",
+      "name": "Intern, Software Development Engineer [PSET - Product Data -  Document Management]",
+      "locations": [
+       "APAC - Singapore - Singapore - Fusionopolis",
+       "Singapore, SGP"
+      ],
+      "standardizedLocations": [
+       "Singapore, SG",
+       "SG"
+      ],
+      "postedTs": 1792368000,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Canada - Time Tracking",
+      "creationTs": 1788825600,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "26WD100984",
+      "positionUrl": "/careers/job/1443153475094"
+     },
+     {
+      "id": 1443153475107,
+      "displayJobId": "26WD100986",
+      "name": "Intern, Software Development Engineer [PSET-Access-ENG]",
+      "locations": [
+       "APAC - Singapore - Singapore - Fusionopolis",
+       "Singapore, SGP"
+      ],
+      "standardizedLocations": [
+       "Singapore, SG",
+       "SG"
+      ],
+      "postedTs": 1792368000,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Canada - Time Tracking",
+      "creationTs": 1788825600,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "26WD100986",
+      "positionUrl": "/careers/job/1443153475107"
+     }
+    ],
+    "filterDef": {
+     "facets": {
+      "locations": [
+       [
+        "Remote",
+        999999
+       ],
+       [
+        "ON, Canada",
+        68
+       ],
+       [
+        "Toronto, ON, Canada",
+        68
+       ],
+       [
+        "Montreal, QC, Canada",
+        44
+       ],
+       [
+        "Denver, CO, United States",
+        37
+       ],
+       [
+        "KA, India",
+        28
+       ]
+      ]
+     },
+     "smartFilters": [
+      {
+       "type": "multi_select",
+       "filterName": "work_location_option",
+       "title": "Location Type",
+       "options": [
+        {
+         "label": "On-Site",
+         "value": "onsite"
+        },
+        {
+         "label": "Hybrid",
+         "value": "hybrid"
+        },
+        {
+         "label": "Remote",
+         "value": "remote_local"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 10,
+       "translateOptions": false,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select",
+       "filterName": "job_category",
+       "title": "Job Category",
+       "options": [
+        {
+         "label": "Development engineering",
+         "value": "development engineering"
+        },
+        {
+         "label": "Inside sales",
+         "value": "inside sales"
+        },
+        {
+         "label": "Specialist sales",
+         "value": "specialist sales"
+        },
+        {
+         "label": "Intern fg",
+         "value": "intern fg"
+        },
+        {
+         "label": "Professional services",
+         "value": "professional services"
+        },
+        {
+         "label": "Technical customer support",
+         "value": "technical customer support"
+        },
+        {
+         "label": "Business planning & operations",
+         "value": "business planning & operations"
+        },
+        {
+         "label": "Artificial intelligence",
+         "value": "artificial intelligence"
+        },
+        {
+         "label": "Field sales",
+         "value": "field sales"
+        },
+        {
+         "label": "Technology",
+         "value": "technology"
+        },
+        {
+         "label": "Finance & accounting",
+         "value": "finance & accounting"
+        },
+        {
+         "label": "Customer success",
+         "value": "customer success"
+        },
+        {
+         "label": "Marketing",
+         "value": "marketing"
+        },
+        {
+         "label": "Renewals",
+         "value": "renewals"
+        },
+        {
+         "label": "Experience design & research",
+         "value": "experience design & research"
+        },
+        {
+         "label": "Human resources",
+         "value": "human resources"
+        },
+        {
+         "label": "Industry & business development",
+         "value": "industry & business development"
+        },
+        {
+         "label": "Cybersecurity",
+         "value": "cybersecurity"
+        },
+        {
+         "label": "Lead generation",
+         "value": "lead generation"
+        },
+        {
+         "label": "Marketing - product",
+         "value": "marketing - product"
+        },
+        {
+         "label": "Partner sales",
+         "value": "partner sales"
+        },
+        {
+         "label": "Sales operations & support",
+         "value": "sales operations & support"
+        },
+        {
+         "label": "Communications",
+         "value": "communications"
+        },
+        {
+         "label": "Contingent",
+         "value": "contingent"
+        },
+        {
+         "label": "Legal, government affairs, & public policy",
+         "value": "legal, government affairs, & public policy"
+        },
+        {
+         "label": "Customer support",
+         "value": "customer support"
+        },
+        {
+         "label": "Data management & analytics",
+         "value": "data management & analytics"
+        },
+        {
+         "label": "Digital marketing",
+         "value": "digital marketing"
+        },
+        {
+         "label": "Executive dnu (inactive); executive - commission eligible",
+         "value": "executive dnu (inactive); executive - commission eligible"
+        },
+        {
+         "label": "Intern fg; development engineering",
+         "value": "intern fg; development engineering"
+        },
+        {
+         "label": "Marketing - advertising & promotions",
+         "value": "marketing - advertising & promotions"
+        },
+        {
+         "label": "Marketing - creative",
+         "value": "marketing - creative"
+        },
+        {
+         "label": "Research",
+         "value": "research"
+        },
+        {
+         "label": "Sales - commission eligible",
+         "value": "sales - commission eligible"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 100,
+       "translateOptions": false,
+       "allowFreeText": false
+      }
+     ],
+     "allFilters": [
+      {
+       "type": "multi_select",
+       "filterName": "hiring_title",
+       "title": "Job Title",
+       "options": [
+        {
+         "label": "Speaker",
+         "value": "Speaker"
+        },
+        {
+         "label": "Executive Account",
+         "value": "Executive Account"
+        },
+        {
+         "label": "Senior Software Engineer",
+         "value": "Senior Software Engineer"
+        },
+        {
+         "label": "Senior Developer",
+         "value": "Senior Developer"
+        },
+        {
+         "label": "Technical Specialist",
+         "value": "Technical Specialist"
+        },
+        {
+         "label": "Construction",
+         "value": "Construction"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 10,
+       "translateOptions": true,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select_suggest",
+       "filterName": "skills",
+       "title": "Skills",
+       "options": [
+        {
+         "label": "Teamwork",
+         "value": "Teamwork"
+        },
+        {
+         "label": "Artificial Intelligence",
+         "value": "Artificial Intelligence"
+        },
+        {
+         "label": "Workflow",
+         "value": "Workflow"
+        },
+        {
+         "label": "Collaboration",
+         "value": "Collaboration"
+        },
+        {
+         "label": "Python",
+         "value": "Python"
+        },
+        {
+         "label": "Communication",
+         "value": "Communication"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 10,
+       "translateOptions": false,
+       "allowFreeText": false
+      },
+      {
+       "type": "latlong",
+       "filterName": "latlong_non_remote",
+       "title": "LatLong",
+       "options": [
+        {
+         "label": 68,
+         "value": "43.6524201,-79.3871006"
+        },
+        {
+         "label": 68,
+         "value": "43.653226,-79.3831843"
+        },
+        {
+         "label": 49,
+         "value": "45.5018869,-73.56739189999999"
+        },
+        {
+         "label": 37,
+         "value": "39.7392358,-104.990251"
+        },
+        {
+         "label": 31,
+         "value": "45.515232,-122.6783853"
+        },
+        {
+         "label": 28,
+         "value": "12.951092,77.6412016"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 10,
+       "translateOptions": false,
+       "allowFreeText": false
+      },
+      {
+       "type": "latlong",
+       "filterName": "latlong_remote",
+       "title": "LatLong",
+       "options": null,
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 10,
+       "translateOptions": false,
+       "allowFreeText": false
+      }
+     ]
+    },
+    "count": 386,
+    "sortBy": "timestamp",
+    "appliedFilters": {},
+    "debug": {},
+    "savedSearchMetadata": {
+     "savedSearchParamsHash": null,
+     "isSavedSearchActive": false
+    },
+    "resultsMetaData": {
+     "usedFuzzSearch": false,
+     "mocTitle": null
+    }
+   },
+   "metadata": null
+  }
+ },
+ "eightfold_position_details": {
+  "status": 200,
+  "error": {
+   "message": "",
+   "body": ""
+  },
+  "data": {
+   "id": 1443153604440,
+   "displayJobId": "26WD101095",
+   "name": "Intern, Software Engineer",
+   "locations": [
+    "EMEA - Poland - Kraków - Lubomirskiego",
+    "Kraków, POL"
+   ],
+   "standardizedLocations": [
+    "Kraków, Województwo małopolskie, PL",
+    "Kraków, Lesser Poland Voivodeship, PL"
+   ],
+   "postedTs": 1792281600,
+   "stars": 0,
+   "department": "Canada - Time Tracking",
+   "creationTs": 1789084800,
+   "jobDescription": "<div><div><div><div><div><div><div><div><div><div><div><div><div><div><p style=\"text-align:left\"><b>Job Requisition ID #</b></p></div></div></div></div></div></div></div></div></div></div></div></div></div></div><div><div><div></div></div></div>26WD101095<p style=\"text-align:inherit\"></p><p style=\"text-align:inherit\"></p><p><span style=\"color:#000000\"><b>Position Overview </b></span></p><p><span style=\"color:#000000\">We are looking for undergraduates who have the talent and ambition to become skilled software engineers. During your placement with us, we will ensure that you are challenged and given every opportunity to grow your knowledge and experience with the support of an experienced Autodesk developer.</span></p><p><span style=\"color:#000000\">The intern will be working with the team in Krakow, which develops various technologies related to frontend and backend in such products as Fusion Simulations and Autodesk CFD.</span></p><p><span style=\"color:#000000\">The internship will be focused on improvements and development in one of those products.</span></p><p><span style=\"color:#000000\">The goal of the internship project is to enhance development processes and increase the quality of the code and test automation.</span></p><br><p><span style=\"color:#000000\"><b>Responsibilities</b></span></p><ul><li style=\"color:black !important\"><span style=\"color:#000000\">As part of Krakow Autodesk, you will collaborate with one of our scrum teams, usually together with 4 or 5 developers and 1 or 2 quality assurance engineers</span></li><li style=\"color:black !important\"><span style=\"color:#000000\">You will be expected to work using your own initiative to develop innovative solutions to meet our customers’ demands for software that is of the highest quality, faster, more powerful, and more productive</span></li><li style=\"color:black !important\"><span style=\"color:#000000\">Successful candidates will get to work on real commercial development projects mentored by experienced Autodesk developers</span></li><li style=\"color:black !important\"><span style=\"color:#000000\">During your time with us, you will gain experience working on large team-based software development, learn how to write robust commercial software, and gain knowledge of the commercial development processes used at Autodesk</span></li></ul><p><span style=\"color:#000000\"><b>Minimum Qualifications</b></span></p><ul><li style=\"color:black !important\"><span style=\"color:#000000\">We are looking for bright Computer Science, Math, and Engineering students currently working towards a degree </span></li><li style=\"color:black !important\"><span style=\"color:#000000\">Ability to communicate with English-speaking stakeholders</span></li><li style=\"color:black !important\"><span style=\"color:#000000\">Knowledge of C++ or/and Python</span></li><li style=\"color:black !important\"><span style=\"color:#000000\">GIT</span></li></ul><p><span style=\"color:#000000\"><b>Preferred Qualifications</b></span></p><ul><li style=\"color:black !important\"><span style=\"color:#000000\">docker</span></li><li style=\"color:black !important\"><span style=\"color:#000000\">golang</span></li><li style=\"color:black !important\"><span style=\"color:#000000\">Knowledge related to GUI development</span></li><li style=\"color:black !important\"><span style=\"color:#000000\">Effective usage of AI tools</span></li></ul><br><br><div><div><div><div><div><div><div><p style=\"text-align:inherit\"></p><p style=\"text-align:left\"><span class=\"emphasis-2\">Learn More</span></p></div></div></div></div></div></div></div><p></p><p><b><span>About Autodesk</span></b></p><p><span>Welcome to Autodesk! Amazing things are created every day with our software – from the greenest buildings and cleanest cars to the smartest factories and biggest hit movies. We help innovators turn their ideas into reality, transforming not only how things are made, but what can be made.</span></p><p></p><p><span>We take great pride in our culture here at Autodesk – it’s at the core of everything we do. Our culture guides the way we work and treat each other, informs how we connect with customers and partners, and defines how we show up in the world.</span></p><p></p><p><span>When you’re an Autodesker, you can do meaningful work that helps build a better world designed and made for all. Ready to shape the world and your future? Join us!</span></p><p style=\"text-align:inherit\"></p><div><div><div><div><div><div><div><p style=\"text-align:left\"><b><span>Salary transparency</span></b></p></div></div></div></div></div></div></div><p style=\"text-align:left\"><span>Salary is one part of Autodesk’s competitive compensation package. Offers are based on the candidate’s experience, educational level, and geographic location.</span></p><br><p><b>Belonging</b><br>We take pride in cultivating a culture of belonging where everyone can thrive. Learn more here: <a target=\"_blank\" href=\"https://www.autodesk.com/company/global-belonging\"><span style=\"color:#0000ff\"><u>https://www.autodesk.com/company/global-belonging</u></span></a></p><br><p><b>In-Person Onboarding and Identity Verification</b></p><p>This role may require in-person onboarding and/or in-person ID verification.</p>",
+   "location": "EMEA - Poland - Kraków - Lubomirskiego",
+   "isHot": 0,
+   "workLocationOption": "onsite",
+   "locationFlexibility": null,
+   "atsJobId": "26WD101095",
+   "positionUrl": "/careers/job/1443153604440",
+   "publicUrl": "https://jobs.autodesk.com/careers/job/1443153604440",
+   "jdHighlight": [],
+   "positionExtraDetails": {
+    "videos": [],
+    "blogs": [
+     {
+      "url": "https://blogs.autodesk.com/autodesk-life/impact/national-three-peaks-challenge/",
+      "title": "A community journey: Autodesk UK takes on the National Three Peaks Challenge",
+      "description": "A group of Autodeskers participated in the National Three Peaks Challenge, the UK’s most challenging hiking trail, raising more than £33,000 for charity!",
+      "image": "https://blogs.autodesk.com/autodesk-life/wp-content/uploads/sites/160/Autodesk-National-Three-Peaks-Challenge.jpg"
+     },
+     {
+      "url": "https://blogs.autodesk.com/autodesk-life/inside-autodesk/product-management-intern/",
+      "title": "Insights from an engineering-turned-product management intern at Autodesk",
+      "description": "Meet Gurik, a Product Management Intern and former Research Engineer Intern, who shares key insights and lessons he gained throughout both of his internships.",
+      "image": "https://blogs.autodesk.com/autodesk-life/wp-content/uploads/sites/160/Gurik-Mangat.jpg"
+     },
+     {
+      "url": "https://blogs.autodesk.com/autodesk-life/inside-autodesk/developer-productivity/",
+      "title": "How cross-team collaboration boosted developer productivity at Autodesk",
+      "description": "Our EMS and DevRel teams improved developer support with unified Slack channels, AI assistance, and smart automation, enhancing efficiency and collaboration.",
+      "image": "https://blogs.autodesk.com/autodesk-life/wp-content/uploads/sites/160/DevRel-Blog-Cover.jpg"
+     },
+     {
+      "url": "https://blogs.autodesk.com/autodesk-life/inside-autodesk/software-architect/",
+      "title": "Why now is the time to be a software architect at Autodesk",
+      "description": "VP & Chief Architect Oliver Goldman reflects on his career, the power of software architecture, and why now is a pivotal moment in tech.",
+      "image": "https://blogs.autodesk.com/autodesk-life/wp-content/uploads/sites/160/TechX-2025-Unconference-Cropped.jpg"
+     },
+     {
+      "url": "https://blogs.autodesk.com/autodesk-life/culture/let-there-be-greatness/",
+      "title": "Let There Be Greatness: How small habits strengthen Autodesk’s culture",
+      "description": "Discover how small daily choices build connection, wellbeing, and a culture of shared greatness across Autodesk’s global community.",
+      "image": "https://blogs.autodesk.com/autodesk-life/wp-content/uploads/sites/160/1000407513-1-Cropped.jpg"
+     },
+     {
+      "url": "https://blogs.autodesk.com/autodesk-life/inside-autodesk/pset-product-data/",
+      "title": "Building the future: How Autodesk's PSET Product Data team drives innovation",
+      "description": "Our Product Data team creates tools for seamless data flow and secure access, enabling collaboration and sustainable impact across disciplines and industries.",
+      "image": "https://blogs.autodesk.com/autodesk-life/wp-content/uploads/sites/160/Pune-Team-16x9-1.jpg"
+     },
+     {
+      "url": "https://blogs.autodesk.com/autodesk-life/inside-autodesk/research-engineer-intern/",
+      "title": "Navigating a new domain as a Research Engineer Intern at Autodesk",
+      "description": "Bob, a Research Engineer Intern based in Melbourne, shares how innovation, trust, and personal growth have been at the forefront of his internship at Autodesk.",
+      "image": "https://blogs.autodesk.com/autodesk-life/wp-content/uploads/sites/160/Bob-La.jpg"
+     }
+    ],
+    "perks": [
+     {
+      "title": "Health and wellness",
+      "description": "We’ve got you covered! From medical, dental, and vision insurance to wellness benefits, we provide options that support a healthy life.",
+      "image": null,
+      "imageAlt": null,
+      "icon": "far fa-heart",
+      "isFavicon": true
+     },
+     {
+      "title": "Financial",
+      "description": "You invest in us, and we invest in you. We provide robust financial benefits to help you build for the future.",
+      "image": null,
+      "imageAlt": null,
+      "icon": "far fa-money-check",
+      "isFavicon": true
+     },
+     {
+      "title": "Flexibility",
+      "description": "Life Happens. We get it. That’s why we have a hybrid-first approach to flexible work and offer generous time off.",
+      "image": null,
+      "imageAlt": null,
+      "icon": "fas fa-user",
+      "isFavicon": true
+     },
+     {
+      "title": "Everyday Living",
+      "description": "Life is full of surprises! No matter where you are on life’s journey, we’ve got your back with education, family support, and mental health programs.",
+      "image": null,
+      "imageAlt": null,
+      "icon": "fas fa-plus-square",
+      "isFavicon": true
+     }
+    ],
+    "pymww": {
+     "people": [],
+     "count": 0
+    },
+    "customContent": []
+   },
+   "positionUserActions": {
+    "isSaved": false,
+    "applyAction": {
+     "status": "allowed"
+    }
+   }
+  },
+  "metadata": null
+ },
+ "workday_uni": {
+  "request": "POST https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/uni/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":0,\"searchText\":\"\"}",
+  "response": {
+   "total": 37,
+   "jobPostings": [
+    {
+     "title": "AI Market and Competitive Intelligence Analyst",
+     "externalPath": "/job/AMER---Canada---Ontario---Toronto---University-Ave/AI-Market-and-Competitive-Intelligence-Analyst_26WD100617-1",
+     "locationsText": "AMER - Canada - Ontario - Toronto - University Ave",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "26WD100617"
+     ]
+    },
+    {
+     "title": "Intern, Research - Context and Knowledge Systems for AI",
+     "externalPath": "/job/United-Kingdom---Remote/Intern--Research---Context-and-Knowledge-Systems-for-AI_26WD101097-1",
+     "locationsText": "United Kingdom - Remote",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "26WD101097"
+     ]
+    },
+    {
+     "title": "Intern, Software Engineer",
+     "externalPath": "/job/Birmingham-GBR/Intern--Software-Engineer_26WD101472",
+     "locationsText": "Birmingham, GBR",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "26WD101472"
+     ]
+    },
+    {
+     "title": "Sr. Technical Support Specialist- Autodesk Moldflow",
+     "externalPath": "/job/Pennsylvania-USA---Remote/Sr-Technical-Support-Specialist--Autodesk-Moldflow_26WD101523-2",
+     "locationsText": "3 Locations",
+     "postedOn": "Posted 3 Days Ago",
+     "bulletFields": [
+      "26WD101523"
+     ]
+    }
+   ],
+   "facets": [
+    {
+     "facetParameter": "jobFamilyGroup",
+     "descriptor": "Job Category",
+     "values": [
+      {
+       "descriptor": "Intern FG",
+       "id": "f909d7cccc2d480b8f6af996c7bf8352",
+       "count": 23
+      },
+      {
+       "descriptor": "Technical Customer Support",
+       "id": "6bf025de66fd100072a01a45a07d0000",
+       "count": 4
+      },
+      {
+       "descriptor": "Inside Sales",
+       "id": "c03e90ca73fd10015e72700dbf580000",
+       "count": 2
+      },
+      {
+       "descriptor": "Development Engineering",
+       "id": "1f75c4299c9201c0f3b5f8e6fa01c5bf",
+       "count": 2
+      },
+      {
+       "descriptor": "Industry & Business Development",
+       "id": "f2d8c7001ba81000bf78fdf1425b0000",
+       "count": 2
+      },
+      {
+       "descriptor": "Specialist Sales",
+       "id": "2d84b20d64e81001a4c3c37f5be40000",
+       "count": 2
+      },
+      {
+       "descriptor": "Contingent",
+       "id": "164c9bbd08ed016a9a5b1987090212f9",
+       "count": 1
+      },
+      {
+       "descriptor": "Artificial Intelligence",
+       "id": "cebdb69fb1cc10006a257c84e5560000",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "State_Region",
+     "descriptor": "State/Region",
+     "values": [
+      {
+       "descriptor": "Quebec",
+       "id": "ef8a53af14534128b795fd55d75ec08b",
+       "count": 6
+      },
+      {
+       "descriptor": "Ontario",
+       "id": "218a720b28a74c67b5c6d42c00bdadfa",
+       "count": 6
+      },
+      {
+       "descriptor": "Georgia",
+       "id": "dec8eabbb13d45bdb159b8e25d896110",
+       "count": 3
+      },
+      {
+       "descriptor": "Colorado",
+       "id": "a83d6eabae3b49718c4ce09eeb66fd0b",
+       "count": 2
+      },
+      {
+       "descriptor": "British Columbia",
+       "id": "cb76ca97a13347548a188f23caa96b17",
+       "count": 2
+      },
+      {
+       "descriptor": "California",
+       "id": "ec3d210e4240442e99a28fa70419aec5",
+       "count": 2
+      },
+      {
+       "descriptor": "Karnātaka",
+       "id": "701eb5584934425d930bc84b9e8b04eb",
+       "count": 1
+      },
+      {
+       "descriptor": "Texas",
+       "id": "fc77e3a1ab36487f9646d14f7242dd77",
+       "count": 1
+      },
+      {
+       "descriptor": "Tennessee",
+       "id": "00044a0287144032bca6973ac0eedb3e",
+       "count": 1
+      },
+      {
+       "descriptor": "Pennsylvania",
+       "id": "f620a79f2dc44473828b42881312de2b",
+       "count": 1
+      },
+      {
+       "descriptor": "Oregon",
+       "id": "6fcc4198762c4a7c807486c849fe94dd",
+       "count": 1
+      },
+      {
+       "descriptor": "New York",
+       "id": "9819bf0148e54f89adb255aa7bead635",
+       "count": 1
+      },
+      {
+       "descriptor": "Louisiana",
+       "id": "777facb47a8442bfba79628424812d64",
+       "count": 1
+      },
+      {
+       "descriptor": "Illinois",
+       "id": "d8bb292ed9fe44a2899a990ad569538c",
+       "count": 1
+      },
+      {
+       "descriptor": "West Midlands",
+       "id": "61562bfcf58a476ca111f1766d489305",
+       "count": 1
+      },
+      {
+       "descriptor": "Victoria",
+       "id": "ab28d9dc175e444fa11c7c0f28f52e2c",
+       "count": 1
+      },
+      {
+       "descriptor": "Queensland",
+       "id": "fe22ac414d814113b975e4944a564b13",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "workerSubType",
+     "descriptor": "Job Type",
+     "values": [
+      {
+       "descriptor": "Intern/Co-op",
+       "id": "39f5af07b0c54bc588b1a47788da7f81",
+       "count": 23
+      },
+      {
+       "descriptor": "Regular Employee",
+       "id": "f116d80c3e014c758115c336e67d241e",
+       "count": 14
+      }
+     ]
+    },
+    {
+     "facetParameter": "timeType",
+     "descriptor": "Time Type",
+     "values": [
+      {
+       "descriptor": "Full time",
+       "id": "6d5ece62cf5a4f9f9e349b55f045b5e2",
+       "count": 34
+      }
+     ]
+    },
+    {
+     "facetParameter": "locationMainGroup",
+     "values": [
+      {
+       "facetParameter": "locationCountry",
+       "descriptor": "Country",
+       "values": [
+        {
+         "descriptor": "Australia",
+         "id": "d903bb3fedad45039383f6de334ad4db",
+         "count": 1
+        },
+        {
+         "descriptor": "Canada",
+         "id": "a30a87ed25634629aa6c3958aa2b91ea",
+         "count": 10
+        },
+        {
+         "descriptor": "Germany",
+         "id": "dcc5b7608d8644b3a93716604e78e995",
+         "count": 1
+        },
+        {
+         "descriptor": "India",
+         "id": "c4f78be1a8f14da0ab49ce1162348a5e",
+         "count": 1
+        },
+        {
+         "descriptor": "Norway",
+         "id": "d07f8ca8625e4345b98a91d0558b872a",
+         "count": 1
+        },
+        {
+         "descriptor": "Philippines",
+         "id": "e56f1daf83e04bacae794ba5c5593560",
+         "count": 1
+        },
+        {
+         "descriptor": "Poland",
+         "id": "131d5ac7e3ee4d7b962bdc96e498e412",
+         "count": 1
+        },
+        {
+         "descriptor": "Singapore",
+         "id": "80938777cac5440fab50d729f9634969",
+         "count": 15
+        },
+        {
+         "descriptor": "Spain",
+         "id": "bd34c524a6a04ae6915f5d96fa086199",
+         "count": 1
+        },
+        {
+         "descriptor": "United Kingdom",
+         "id": "29247e57dbaf46fb855b224e03170bc7",
+         "count": 2
+        },
+        {
+         "descriptor": "United States of America",
+         "id": "bc33aa3152ec42d4995f4791a106ed09",
+         "count": 5
+        }
+       ]
+      },
+      {
+       "facetParameter": "locations",
+       "descriptor": "City",
+       "values": [
+        {
+         "descriptor": "AMER - Canada - Ontario - Toronto - University Ave",
+         "id": "691e7082f99c10a1630b184c74c21d4a",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - California - San Francisco - Pier 9",
+         "id": "47079ea0c757401a9643f419f6211d1c",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Colorado - Denver - Wewatta",
+         "id": "bf39c108cbfe010cc0b4c4af9b00e4de",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Georgia - Atlanta - Peachtree St NW",
+         "id": "38cdc4bf8b620116e1ca81359b0060bf",
+         "count": 2
+        },
+        {
+         "descriptor": "APAC - Australia - VIC - Melbourne - 257 Collins Street",
+         "id": "0fa3d50e33e710009de3f03d60300000",
+         "count": 1
+        },
+        {
+         "descriptor": "Bengaluru, IND",
+         "id": "33c9184ffc6401d8fc8eb2276301dc40",
+         "count": 1
+        },
+        {
+         "descriptor": "Birmingham, GBR",
+         "id": "a1635964f60b01b4bf660f456301b93e",
+         "count": 1
+        },
+        {
+         "descriptor": "Brisbane, AUS",
+         "id": "16b91b36c56301eda164510f0d019ee0",
+         "count": 1
+        },
+        {
+         "descriptor": "California, USA - Remote",
+         "id": "33c9184ffc6401f15d9ed2496301cc41",
+         "count": 1
+        },
+        {
+         "descriptor": "Colorado, USA - Remote",
+         "id": "33c9184ffc6401a0827ed8496301d141",
+         "count": 1
+        },
+        {
+         "descriptor": "EMEA - Poland - Kraków - Lubomirskiego",
+         "id": "bf39c108cbfe011f493b14848801889b",
+         "count": 1
+        },
+        {
+         "descriptor": "Georgia, USA - Remote",
+         "id": "a1635964f60b01ca2ca787666301db3f",
+         "count": 1
+        },
+        {
+         "descriptor": "Germany - Remote",
+         "id": "33c9184ffc6401040c43ba4863017241",
+         "count": 1
+        },
+        {
+         "descriptor": "Illinois, USA - Remote",
+         "id": "33c9184ffc6401fcdf820f4a6301ea41",
+         "count": 1
+        },
+        {
+         "descriptor": "Kilsyth, AUS",
+         "id": "33c9184ffc6401c12e3cdf2663018c40",
+         "count": 1
+        },
+        {
+         "descriptor": "Louisiana, USA - Remote",
+         "id": "33c9184ffc640182364d284a6301fe41",
+         "count": 1
+        },
+        {
+         "descriptor": "Melbourne, AUS",
+         "id": "a1635964f60b01173aeb77436301f63d",
+         "count": 1
+        },
+        {
+         "descriptor": "Montreal, QC, CAN",
+         "id": "a1635964f60b0106e3c598436301003e",
+         "count": 6
+        },
+        {
+         "descriptor": "New York, USA - Remote",
+         "id": "33c9184ffc640103de088d4a63012b42",
+         "count": 1
+        },
+        {
+         "descriptor": "Norway - Oslo",
+         "id": "12190962608e01230dc47f4d06012e2f",
+         "count": 1
+        },
+        {
+         "descriptor": "Pennsylvania, USA - Remote",
+         "id": "33c9184ffc6401bb4549aa4a63013542",
+         "count": 1
+        },
+        {
+         "descriptor": "Philippines - Remote",
+         "id": "a1635964f60b010508c9f4656301953f",
+         "count": 1
+        },
+        {
+         "descriptor": "Portland, OR, USA",
+         "id": "33c9184ffc64014a8740f92863014541",
+         "count": 1
+        },
+        {
+         "descriptor": "Singapore, SGP",
+         "id": "a1635964f60b017f097dca446301913e",
+         "count": 15
+        },
+        {
+         "descriptor": "Spain - Remote",
+         "id": "33c9184ffc6401d0bb41db4863018141",
+         "count": 1
+        },
+        {
+         "descriptor": "Tennessee, USA - Remote",
+         "id": "33c9184ffc6401f83587c94a63014442",
+         "count": 1
+        },
+        {
+         "descriptor": "Texas, USA - Remote",
+         "id": "33c9184ffc64010b7e98d04a63014942",
+         "count": 1
+        },
+        {
+         "descriptor": "Toronto, ON, CAN",
+         "id": "33c9184ffc6401693e5dfa2663019640",
+         "count": 5
+        },
+        {
+         "descriptor": "United Kingdom - Remote",
+         "id": "33c9184ffc64015c9fe7d44863017c41",
+         "count": 1
+        },
+        {
+         "descriptor": "Vancouver, BC, CAN",
+         "id": "dc0c7cba54ea1000a5a4d48e95d30000",
+         "count": 2
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "facetParameter": "distance",
+     "descriptor": "Distance",
+     "values": [
+      {
+       "descriptor": "10 miles",
+       "id": "a538cdb60a631000078a2c60ed1700f3",
+       "count": 1
+      },
+      {
+       "descriptor": "25 miles",
+       "id": "a538cdb60a631000078a2c6a410300f4",
+       "count": 1
+      },
+      {
+       "descriptor": "50 miles",
+       "id": "a538cdb60a631000078a2c6eadd300f5",
+       "count": 1
+      },
+      {
+       "descriptor": "100 miles",
+       "id": "a538cdb60a631000078a2c71efcc00f6",
+       "count": 1
+      },
+      {
+       "descriptor": "Any Distance",
+       "id": "a538cdb60a631000078a2c74f73b00f7",
+       "count": 1
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "workday_Ext": {
+  "request": "POST https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/Ext/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":0,\"searchText\":\"\"}",
+  "response": {
+   "total": 310,
+   "jobPostings": [
+    {
+     "title": "Executive Assistant, Global Expansion Sales",
+     "externalPath": "/job/AMER---United-States---North-Carolina---OffsiteHome/Executive-Assistant--Global-Expansion-Sales_26WD100959",
+     "locationsText": "8 Locations",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "26WD100959"
+     ]
+    },
+    {
+     "title": "Principal Software Developer",
+     "externalPath": "/job/AMER---Canada---Ontario---OffsiteHome/Principal-Software-Developer_26WD97119-1",
+     "locationsText": "AMER - Canada - Ontario - Offsite/Home",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "26WD97119"
+     ]
+    },
+    {
+     "title": "Senior Software Developer in Test SDET, Remote",
+     "externalPath": "/job/AMER---Canada---British-Columbia---Vancouver---Bentall-Centre/Senior-Software-Developer-in-Test-SDET--Remote_26WD100434-1",
+     "locationsText": "AMER - Canada - British Columbia - Vancouver - Bentall Centre",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "26WD100434"
+     ]
+    },
+    {
+     "title": "Business Operations Management Program Manager",
+     "externalPath": "/job/EMEA---Spain---Barcelona---Tower-B2/Business-Operations-Management-Program-Manager_26WD101331-1",
+     "locationsText": "2 Locations",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "26WD101331"
+     ]
+    }
+   ],
+   "facets": [
+    {
+     "facetParameter": "jobFamilyGroup",
+     "descriptor": "Job Category",
+     "values": [
+      {
+       "descriptor": "Development Engineering",
+       "id": "1f75c4299c9201c0f3b5f8e6fa01c5bf",
+       "count": 55
+      },
+      {
+       "descriptor": "Inside Sales",
+       "id": "c03e90ca73fd10015e72700dbf580000",
+       "count": 31
+      },
+      {
+       "descriptor": "Specialist Sales",
+       "id": "2d84b20d64e81001a4c3c37f5be40000",
+       "count": 27
+      },
+      {
+       "descriptor": "Professional Services",
+       "id": "618805f018ad018f5d926dc1fa0124bd",
+       "count": 24
+      },
+      {
+       "descriptor": "Intern FG",
+       "id": "f909d7cccc2d480b8f6af996c7bf8352",
+       "count": 24
+      },
+      {
+       "descriptor": "Technical Customer Support",
+       "id": "6bf025de66fd100072a01a45a07d0000",
+       "count": 15
+      },
+      {
+       "descriptor": "Business Planning & Operations",
+       "id": "f2d8c7001ba81000bf6fab2bbc660000",
+       "count": 14
+      },
+      {
+       "descriptor": "Finance & Accounting",
+       "id": "9e030a1b5b5910019dc0e3f1547c0000",
+       "count": 12
+      },
+      {
+       "descriptor": "Field Sales",
+       "id": "8ec6ff1b3aeb10010cc232ef3d0f0000",
+       "count": 11
+      },
+      {
+       "descriptor": "Artificial Intelligence",
+       "id": "cebdb69fb1cc10006a257c84e5560000",
+       "count": 10
+      },
+      {
+       "descriptor": "Technology",
+       "id": "cebdb69fb1cc10005cc6ab3438260000",
+       "count": 10
+      },
+      {
+       "descriptor": "Human Resources",
+       "id": "1f75c4299c9201f776a394e6fa01bdbf",
+       "count": 8
+      },
+      {
+       "descriptor": "Renewals",
+       "id": "8ec6ff1b3aeb10010dac4fcae01d0000",
+       "count": 8
+      },
+      {
+       "descriptor": "Customer Success",
+       "id": "618805f018ad01234a43a0c1fa012cbd",
+       "count": 7
+      },
+      {
+       "descriptor": "Experience Design & Research",
+       "id": "cebdb69fb1cc10006c6cb8d1951e0000",
+       "count": 7
+      },
+      {
+       "descriptor": "Contingent",
+       "id": "164c9bbd08ed016a9a5b1987090212f9",
+       "count": 5
+      },
+      {
+       "descriptor": "Lead Generation",
+       "id": "8ec6ff1b3aeb10010d77e6856a080000",
+       "count": 5
+      },
+      {
+       "descriptor": "Industry & Business Development",
+       "id": "f2d8c7001ba81000bf78fdf1425b0000",
+       "count": 5
+      },
+      {
+       "descriptor": "Sales - Commission Eligible",
+       "id": "4c27f213d9ee0161c22b2ea31201596e",
+       "count": 4
+      },
+      {
+       "descriptor": "Marketing",
+       "id": "618805f018ad01a81d8435c1fa011abd",
+       "count": 4
+      },
+      {
+       "descriptor": "Cybersecurity",
+       "id": "cebdb69fb1cc10006aa832992f760000",
+       "count": 4
+      },
+      {
+       "descriptor": "Partner Sales",
+       "id": "b8b6bab46c4a10010db9b36754610000",
+       "count": 4
+      },
+      {
+       "descriptor": "Sales Operations & Support",
+       "id": "1f75c4299c92014b6c413de7fa01cdbf",
+       "count": 3
+      },
+      {
+       "descriptor": "Legal, Government Affairs, & Public Policy",
+       "id": "9e030a1b5b5910019debc291623e0000",
+       "count": 2
+      },
+      {
+       "descriptor": "Applications/Systems Engineering",
+       "id": "618805f018ad0121295e43c1fa011ebd",
+       "count": 2
+      },
+      {
+       "descriptor": "Executive - Commission Eligible",
+       "id": "4c27f213d9ee01496f35d0bb1201b86e",
+       "count": 1
+      },
+      {
+       "descriptor": "Customer Support",
+       "id": "618805f018ad016fd0a716c1fa0116bd",
+       "count": 1
+      },
+      {
+       "descriptor": "Executive DNU (Inactive)",
+       "id": "2d8bd5e6c5924f38beac8da72cd46dd3",
+       "count": 1
+      },
+      {
+       "descriptor": "Communications",
+       "id": "cebdb69fb1cc10006a650c5a983d0000",
+       "count": 1
+      },
+      {
+       "descriptor": "Marketing - Product",
+       "id": "cebdb69fb1cc10006049e2d8cf900000",
+       "count": 1
+      },
+      {
+       "descriptor": "Marketing - Creative",
+       "id": "6bf025de66fd100071b30f57f7cb0000",
+       "count": 1
+      },
+      {
+       "descriptor": "Marketing - Advertising & Promotions",
+       "id": "6bf025de66fd10007185ca4ffb940000",
+       "count": 1
+      },
+      {
+       "descriptor": "Digital Marketing",
+       "id": "6bf025de66fd100069f5422b48bc0000",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "State_Region",
+     "descriptor": "State/Region",
+     "values": [
+      {
+       "descriptor": "Ontario",
+       "id": "218a720b28a74c67b5c6d42c00bdadfa",
+       "count": 60
+      },
+      {
+       "descriptor": "Quebec",
+       "id": "ef8a53af14534128b795fd55d75ec08b",
+       "count": 39
+      },
+      {
+       "descriptor": "Colorado",
+       "id": "a83d6eabae3b49718c4ce09eeb66fd0b",
+       "count": 34
+      },
+      {
+       "descriptor": "Karnātaka",
+       "id": "701eb5584934425d930bc84b9e8b04eb",
+       "count": 32
+      },
+      {
+       "descriptor": "California",
+       "id": "ec3d210e4240442e99a28fa70419aec5",
+       "count": 26
+      },
+      {
+       "descriptor": "British Columbia",
+       "id": "cb76ca97a13347548a188f23caa96b17",
+       "count": 25
+      },
+      {
+       "descriptor": "Oregon",
+       "id": "6fcc4198762c4a7c807486c849fe94dd",
+       "count": 24
+      },
+      {
+       "descriptor": "Tokyo",
+       "id": "6534030e79d54ac897646438ed66ac9a",
+       "count": 21
+      },
+      {
+       "descriptor": "Georgia",
+       "id": "dec8eabbb13d45bdb159b8e25d896110",
+       "count": 18
+      },
+      {
+       "descriptor": "Texas",
+       "id": "fc77e3a1ab36487f9646d14f7242dd77",
+       "count": 17
+      },
+      {
+       "descriptor": "Massachusetts",
+       "id": "c66d738416b74fb180376cf59cc7ec8f",
+       "count": 14
+      },
+      {
+       "descriptor": "Michigan",
+       "id": "b8372eef6b5341a39cdc95ac32790cba",
+       "count": 11
+      },
+      {
+       "descriptor": "Washington",
+       "id": "de9b48948ef8421db97ddf4ea206e931",
+       "count": 9
+      },
+      {
+       "descriptor": "Florida",
+       "id": "9c1a239b35bd4598856e5393b249b8a1",
+       "count": 9
+      },
+      {
+       "descriptor": "Pennsylvania",
+       "id": "f620a79f2dc44473828b42881312de2b",
+       "count": 8
+      },
+      {
+       "descriptor": "New York",
+       "id": "9819bf0148e54f89adb255aa7bead635",
+       "count": 8
+      },
+      {
+       "descriptor": "North Carolina",
+       "id": "1486a0a4a8464c3b9ec482d4038deb99",
+       "count": 8
+      },
+      {
+       "descriptor": "Illinois",
+       "id": "d8bb292ed9fe44a2899a990ad569538c",
+       "count": 8
+      },
+      {
+       "descriptor": "Wilayah Persekutuan Kuala Lumpur",
+       "id": "d05fe10b38264230958a4167487a6d60",
+       "count": 7
+      },
+      {
+       "descriptor": "Arizona",
+       "id": "c7b20b0d4bc04711a00900569e9afabd",
+       "count": 7
+      },
+      {
+       "descriptor": "Tennessee",
+       "id": "00044a0287144032bca6973ac0eedb3e",
+       "count": 6
+      },
+      {
+       "descriptor": "Virginia",
+       "id": "e0889a76c58d4fff9b54b80dadc49000",
+       "count": 5
+      },
+      {
+       "descriptor": "New Jersey",
+       "id": "9b56fe16bdf74b2cbad8b644cdf6015a",
+       "count": 5
+      },
+      {
+       "descriptor": "Minnesota",
+       "id": "02f3984b69ba450080e456fe733f6741",
+       "count": 5
+      },
+      {
+       "descriptor": "Louisiana",
+       "id": "777facb47a8442bfba79628424812d64",
+       "count": 5
+      },
+      {
+       "descriptor": "Idaho",
+       "id": "b1c017b8f6294b0e82773aaca1dce33e",
+       "count": 5
+      },
+      {
+       "descriptor": "District of Columbia",
+       "id": "0d2bcd0308f541938f3ae29e7cc69ae0",
+       "count": 5
+      },
+      {
+       "descriptor": "West Virginia",
+       "id": "dc5bc08fd91446bdbd108d98a19ac0ff",
+       "count": 4
+      },
+      {
+       "descriptor": "Saskatchewan",
+       "id": "00e298f324744884830f7eacb196677b",
+       "count": 4
+      },
+      {
+       "descriptor": "Vermont",
+       "id": "7df7a0cb48724af7891cb70410546897",
+       "count": 4
+      },
+      {
+       "descriptor": "Utah",
+       "id": "9bf006cfb5a44c51b84138e1a0e7d805",
+       "count": 4
+      },
+      {
+       "descriptor": "Alberta",
+       "id": "588eb24f950e4c5b93d5ad3f37aebad2",
+       "count": 4
+      },
+      {
+       "descriptor": "South Carolina",
+       "id": "1d2632a43d204a2799bcd38b57e8a26e",
+       "count": 4
+      },
+      {
+       "descriptor": "Rhode Island",
+       "id": "4c2f08af9b834f13bf4c2d41679d222d",
+       "count": 4
+      },
+      {
+       "descriptor": "Oklahoma",
+       "id": "205ef21c556342268847466c48ec5a8c",
+       "count": 4
+      },
+      {
+       "descriptor": "Ohio",
+       "id": "41493c81d9214eb190fd14067c7d974d",
+       "count": 4
+      },
+      {
+       "descriptor": "Manitoba",
+       "id": "8a973097230449ff9c006a64a8957db0",
+       "count": 4
+      },
+      {
+       "descriptor": "New Hampshire",
+       "id": "9efc91fd842142a0b0bf455e723b65a0",
+       "count": 4
+      },
+      {
+       "descriptor": "Maine",
+       "id": "b6d5367355b64eebb870b465d2e72205",
+       "count": 4
+      },
+      {
+       "descriptor": "Maryland",
+       "id": "586509e6daa741808206b095fee97e8f",
+       "count": 4
+      },
+      {
+       "descriptor": "Kentucky",
+       "id": "66d386e70a2946b695835e59cebcd7b2",
+       "count": 4
+      },
+      {
+       "descriptor": "Kansas",
+       "id": "975ef5fd66c048909a4d64b64b762836",
+       "count": 4
+      },
+      {
+       "descriptor": "Indiana",
+       "id": "28489665bcac44028a70d0642c932be4",
+       "count": 4
+      },
+      {
+       "descriptor": "Iowa",
+       "id": "a9be12393ccd460ea46d08c249ce6c8b",
+       "count": 4
+      },
+      {
+       "descriptor": "Delaware",
+       "id": "18b4cf9ddb4e4542a39614cb55b4dde7",
+       "count": 4
+      },
+      {
+       "descriptor": "Mississippi",
+       "id": "7c552cab901d4a1aa359a9cfc62850a7",
+       "count": 3
+      },
+      {
+       "descriptor": "Missouri",
+       "id": "790e3c3ddfaa4123905237a05f1df9e9",
+       "count": 3
+      },
+      {
+       "descriptor": "Newfoundland and Labrador",
+       "id": "bc68f86b471c4b29b2448a63b8f569c7",
+       "count": 3
+      },
+      {
+       "descriptor": "Alabama",
+       "id": "31475924e5494080a8a458bf4fa293ed",
+       "count": 3
+      },
+      {
+       "descriptor": "Connecticut",
+       "id": "bffb3e4c9a4a4542bc6bd075a4c26247",
+       "count": 3
+      },
+      {
+       "descriptor": "Arkansas",
+       "id": "cea6c5355e1b4983b5fd0640310385b5",
+       "count": 3
+      },
+      {
+       "descriptor": "Nova Scotia",
+       "id": "7f87ec5a66494630b4ed3080db17b649",
+       "count": 3
+      },
+      {
+       "descriptor": "Dubai",
+       "id": "1db225a7cdc64df8b1dda64a09ec71f0",
+       "count": 3
+      },
+      {
+       "descriptor": "Milano",
+       "id": "15666db5b54343c1ac41344d81e951eb",
+       "count": 3
+      },
+      {
+       "descriptor": "New Brunswick",
+       "id": "76be59a0b2e14040a3a795ff615acbef",
+       "count": 3
+      }
+     ]
+    },
+    {
+     "facetParameter": "workerSubType",
+     "descriptor": "Job Type",
+     "values": [
+      {
+       "descriptor": "Regular Employee",
+       "id": "f116d80c3e014c758115c336e67d241e",
+       "count": 277
+      },
+      {
+       "descriptor": "Intern/Co-op",
+       "id": "39f5af07b0c54bc588b1a47788da7f81",
+       "count": 24
+      },
+      {
+       "descriptor": "Fixed Term Employee",
+       "id": "cb86bec9aa5c46f2b7bcce3c900fca8c",
+       "count": 6
+      },
+      {
+       "descriptor": "Agency Temp",
+       "id": "9f3a984c83264e00add76d3c5e175e2b",
+       "count": 2
+      },
+      {
+       "descriptor": "Associate",
+       "id": "5dcf48e03df41022e390ced10cf75555",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "timeType",
+     "descriptor": "Time Type",
+     "values": [
+      {
+       "descriptor": "Full time",
+       "id": "6d5ece62cf5a4f9f9e349b55f045b5e2",
+       "count": 268
+      }
+     ]
+    },
+    {
+     "facetParameter": "locationMainGroup",
+     "values": [
+      {
+       "facetParameter": "locationCountry",
+       "descriptor": "Country",
+       "values": [
+        {
+         "descriptor": "Argentina",
+         "id": "e42ad5eac46d4cc9b367ceaef42577c5",
+         "count": 2
+        },
+        {
+         "descriptor": "Australia",
+         "id": "d903bb3fedad45039383f6de334ad4db",
+         "count": 5
+        },
+        {
+         "descriptor": "Austria",
+         "id": "d004c0d1a6c84511ab048669fcdf9fd7",
+         "count": 2
+        },
+        {
+         "descriptor": "Belgium",
+         "id": "a04ea128f43a42e59b1e6a19e8f0b374",
+         "count": 1
+        },
+        {
+         "descriptor": "Brazil",
+         "id": "1a29bb1357b240ab99a2fa755cc87c0e",
+         "count": 2
+        },
+        {
+         "descriptor": "Canada",
+         "id": "a30a87ed25634629aa6c3958aa2b91ea",
+         "count": 75
+        },
+        {
+         "descriptor": "China",
+         "id": "6cb77610a8a543aea2d6bc10457e35d4",
+         "count": 1
+        },
+        {
+         "descriptor": "Colombia",
+         "id": "e8106cd6a3534f2dba6fdee2d41db89d",
+         "count": 3
+        },
+        {
+         "descriptor": "Costa Rica",
+         "id": "99abe7e6bb3f4c108aebebf01a369ec5",
+         "count": 4
+        },
+        {
+         "descriptor": "Croatia",
+         "id": "1face6f426c14de9979a134697da0db3",
+         "count": 2
+        },
+        {
+         "descriptor": "Czechia",
+         "id": "fc078443155c4ad294201ecf5a61a499",
+         "count": 2
+        },
+        {
+         "descriptor": "Denmark",
+         "id": "49ab063f422741e2aef271de00efeac8",
+         "count": 3
+        },
+        {
+         "descriptor": "France",
+         "id": "54c5b6971ffb4bf0b116fe7651ec789a",
+         "count": 1
+        },
+        {
+         "descriptor": "Germany",
+         "id": "dcc5b7608d8644b3a93716604e78e995",
+         "count": 10
+        },
+        {
+         "descriptor": "Hong Kong",
+         "id": "d4afdeb461d446e4babd204bd102dba8",
+         "count": 1
+        },
+        {
+         "descriptor": "India",
+         "id": "c4f78be1a8f14da0ab49ce1162348a5e",
+         "count": 33
+        },
+        {
+         "descriptor": "Indonesia",
+         "id": "b31234dbcdda4da9ba8fa073c5944e36",
+         "count": 1
+        },
+        {
+         "descriptor": "Ireland",
+         "id": "04a05835925f45b3a59406a2a6b72c8a",
+         "count": 22
+        },
+        {
+         "descriptor": "Israel",
+         "id": "084562884af243748dad7c84c304d89a",
+         "count": 4
+        },
+        {
+         "descriptor": "Italy",
+         "id": "8cd04a563fd94da7b06857a79faaf815",
+         "count": 3
+        },
+        {
+         "descriptor": "Japan",
+         "id": "8b705da2becf43cfaccc091da0988ab2",
+         "count": 21
+        },
+        {
+         "descriptor": "Jordan",
+         "id": "809723fc85024f499ca856efcd8d6b34",
+         "count": 4
+        },
+        {
+         "descriptor": "Korea, Republic of",
+         "id": "7a5a2aadf9d34086a2bfbfd408bc28da",
+         "count": 2
+        },
+        {
+         "descriptor": "Malaysia",
+         "id": "972dc4ba8d454bc0b893ff84b1529077",
+         "count": 7
+        },
+        {
+         "descriptor": "Netherlands",
+         "id": "9696868b09c64d52a62ee13b052383cc",
+         "count": 3
+        },
+        {
+         "descriptor": "Norway",
+         "id": "d07f8ca8625e4345b98a91d0558b872a",
+         "count": 10
+        },
+        {
+         "descriptor": "Philippines",
+         "id": "e56f1daf83e04bacae794ba5c5593560",
+         "count": 1
+        },
+        {
+         "descriptor": "Poland",
+         "id": "131d5ac7e3ee4d7b962bdc96e498e412",
+         "count": 17
+        },
+        {
+         "descriptor": "Portugal",
+         "id": "2e8c5034deb045d49315417c347472ca",
+         "count": 1
+        },
+        {
+         "descriptor": "Romania",
+         "id": "f2e609fe92974a55a05fc1cdc2852122",
+         "count": 2
+        },
+        {
+         "descriptor": "Serbia",
+         "id": "b3f8697442124d6aaeb752a13c1e8491",
+         "count": 2
+        },
+        {
+         "descriptor": "Singapore",
+         "id": "80938777cac5440fab50d729f9634969",
+         "count": 22
+        },
+        {
+         "descriptor": "Spain",
+         "id": "bd34c524a6a04ae6915f5d96fa086199",
+         "count": 27
+        },
+        {
+         "descriptor": "Sweden",
+         "id": "6a800a4736884df5826858d435650f45",
+         "count": 3
+        },
+        {
+         "descriptor": "Thailand",
+         "id": "873d0f604e3b458c990cb4d83a5c0f14",
+         "count": 1
+        },
+        {
+         "descriptor": "Türkiye",
+         "id": "c2e3bac5bbbb47b29dfc6e8b56a1586e",
+         "count": 1
+        },
+        {
+         "descriptor": "United Arab Emirates",
+         "id": "7b4fa1f369bd4604ba3692682fcbe345",
+         "count": 3
+        },
+        {
+         "descriptor": "United Kingdom",
+         "id": "29247e57dbaf46fb855b224e03170bc7",
+         "count": 13
+        },
+        {
+         "descriptor": "United States of America",
+         "id": "bc33aa3152ec42d4995f4791a106ed09",
+         "count": 61
+        },
+        {
+         "descriptor": "Vietnam",
+         "id": "db69e8c8446c11de98360015c5e6daf6",
+         "count": 1
+        }
+       ]
+      },
+      {
+       "facetParameter": "locations",
+       "descriptor": "City",
+       "values": [
+        {
+         "descriptor": "Alabama, USA - Remote",
+         "id": "33c9184ffc640169c61ac1496301c741",
+         "count": 2
+        },
+        {
+         "descriptor": "Alberta, CAN - Remote",
+         "id": "a1635964f60b01c3860900656301183f",
+         "count": 2
+        },
+        {
+         "descriptor": "AMER - Canada - Alberta - Offsite/Home",
+         "id": "1f0f570c70d246c2b51ce22996082759",
+         "count": 2
+        },
+        {
+         "descriptor": "AMER - Canada - British Columbia - Remote",
+         "id": "a1635964f60b017cacae066563011d3f",
+         "count": 9
+        },
+        {
+         "descriptor": "AMER - Canada - British Columbia - Vancouver - 550 Robson St",
+         "id": "dc0c7cba54ea1000a61105242b2e0000",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - Canada - British Columbia - Vancouver - Bentall Centre",
+         "id": "112c067de53c1000c57425e619470000",
+         "count": 5
+        },
+        {
+         "descriptor": "AMER - Canada - Manitoba - Winnipeg - Offsite/Home",
+         "id": "69b860348f1f0100fc20481aba6a0000",
+         "count": 3
+        },
+        {
+         "descriptor": "AMER - Canada - New Brunswick - Offsite/Home",
+         "id": "ac9a4137de4846bdb08f6eeface412df",
+         "count": 3
+        },
+        {
+         "descriptor": "AMER - Canada - New Brunswick - Remote",
+         "id": "a1635964f60b015fa6e40c656301223f",
+         "count": 3
+        },
+        {
+         "descriptor": "AMER - Canada - Newfoundland and Labrador - Offsite/Home",
+         "id": "e46fc830f91410011abe810c4a4b0000",
+         "count": 3
+        },
+        {
+         "descriptor": "AMER - Canada - Nova Scotia - Offsite/Home",
+         "id": "aa2f5846c2e94d918d3b16da5e3ec4f9",
+         "count": 3
+        },
+        {
+         "descriptor": "AMER - Canada - Ontario - Offsite/Home",
+         "id": "4ab6c32a63e74cc099491abb02aac443",
+         "count": 4
+        },
+        {
+         "descriptor": "AMER - Canada - Ontario - Toronto - University Ave",
+         "id": "691e7082f99c10a1630b184c74c21d4a",
+         "count": 11
+        },
+        {
+         "descriptor": "AMER - Canada - Prince Edward Island - Offsite/Home",
+         "id": "244e46ef63651001ecb061df090d0000",
+         "count": 3
+        },
+        {
+         "descriptor": "AMER - Canada - Quebec - Montreal - 10 Rue Duke",
+         "id": "14f1c4d1b0164eb59fe47a8dc9745aa3",
+         "count": 8
+        },
+        {
+         "descriptor": "AMER - Canada - Quebec - Offsite/Home",
+         "id": "a66140b1a0f14d638a258b02285ca43e",
+         "count": 3
+        },
+        {
+         "descriptor": "AMER - Canada - Saskatchewan - Offsite/Home",
+         "id": "d07aa821f1b547d3b4f233464d87a217",
+         "count": 3
+        },
+        {
+         "descriptor": "AMER - Canada - Saskatchewan - Remote",
+         "id": "a1635964f60b018fbbc326656301313f",
+         "count": 3
+        },
+        {
+         "descriptor": "AMER - Costa Rica - SanJose - Belen",
+         "id": "c5468191c02001734123d7a15b00f079",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Alabama - Offsite/Home",
+         "id": "7b5436cb3e3c494d954393f83c85e9d4",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Arizona - Offsite/Home",
+         "id": "73b490026f5e476eb10173c1467469ce",
+         "count": 3
+        },
+        {
+         "descriptor": "AMER - United States - Arkansas - Offsite/Home",
+         "id": "3ffe7f8255ed4a0ca98d13fccdcc3455",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - California - Bay Area - Offsite/Home",
+         "id": "6bf025de66fd100163359d3009c20000",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - California - Los Angeles Area - Offsite/Home",
+         "id": "6bf025de66fd1001642728e003fb0000",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - California - Offsite/Home",
+         "id": "c350e01264fe4e238b279fe172a5826e",
+         "count": 3
+        },
+        {
+         "descriptor": "AMER - United States - California - San Francisco - One Market",
+         "id": "64c6c060eb7342c295058adc20ef1dd4",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - California - San Francisco - Pier 9",
+         "id": "47079ea0c757401a9643f419f6211d1c",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Colorado - Denver - Wewatta",
+         "id": "bf39c108cbfe010cc0b4c4af9b00e4de",
+         "count": 4
+        },
+        {
+         "descriptor": "AMER - United States - Colorado - Offsite/Home",
+         "id": "74cd081bb7eb4888b965620919b4a3c0",
+         "count": 4
+        },
+        {
+         "descriptor": "AMER - United States - Connecticut - Offsite/Home",
+         "id": "da49f3571896494bac694daa0d981686",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Delaware - Offsite/Home",
+         "id": "f7b2e404d78848719b80ae9d2a1aca4e",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - District of Columbia - Offsite/Home",
+         "id": "05197ea41e8e4a88a471a20e032b9b71",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Florida - Offsite/Home",
+         "id": "ba89314678ad4e00bea68e6e33203233",
+         "count": 5
+        },
+        {
+         "descriptor": "AMER - United States - Georgia - Atlanta - Peachtree St NW",
+         "id": "38cdc4bf8b620116e1ca81359b0060bf",
+         "count": 2
+        },
+        {
+         "descriptor": "AMER - United States - Georgia - Offsite/Home",
+         "id": "ca17354534a2408c8e3e65d7f91f3f5e",
+         "count": 4
+        },
+        {
+         "descriptor": "AMER - United States - Idaho - Offsite/Home",
+         "id": "eff82b82f62f4e368de9009b5f98bb8c",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Illinois - Offsite/Home",
+         "id": "6493558045b4406588335d5bfae84769",
+         "count": 2
+        },
+        {
+         "descriptor": "AMER - United States - Indiana - Offsite/Home",
+         "id": "2ce26139f17a4e318ce3d59d54625cea",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Iowa - Offsite/Home",
+         "id": "58bb2afd3e7f4766a99d0c937db2585d",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Kansas - Offsite/Home",
+         "id": "56b93dd65a2a42ea99d1295f4e59943e",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Kentucky - Offsite/Home",
+         "id": "0d792086005747828d952db5213b223e",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Louisiana - Offsite/Home",
+         "id": "fd226d6edceb4ac6b8edffc31412eb95",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Maine - Offsite/Home",
+         "id": "d179594caf1d46c58d0e3c27d6fc6f16",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Maryland - Offsite/Home",
+         "id": "c0ff39ce6e7a49aa9f1e802dadff105d",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Massachusetts - Boston Area - Offsite/Home",
+         "id": "6bf025de66fd100165e1cf33e7130000",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Massachusetts - Boston - Drydock",
+         "id": "64d88e2c183110301ace309bfd0d3ff6",
+         "count": 2
+        },
+        {
+         "descriptor": "AMER - United States - Massachusetts - Offsite/Home",
+         "id": "9a608d58274a4842bd0f593ed8066602",
+         "count": 3
+        },
+        {
+         "descriptor": "AMER - United States - Miami - Brickell City Centr",
+         "id": "482970d1a4d710018b44317adea20000",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Michigan - Novi",
+         "id": "99a0d0a3cc574bf6a15a42ab67fb27f2",
+         "count": 3
+        },
+        {
+         "descriptor": "AMER - United States - Michigan - Offsite/Home",
+         "id": "9860917375a041b2a8b18ffbeab434a0",
+         "count": 2
+        },
+        {
+         "descriptor": "AMER - United States - Minnesota - Offsite/Home",
+         "id": "72f395a9591041229a0cf6fcae6b4149",
+         "count": 2
+        },
+        {
+         "descriptor": "AMER - United States - Mississippi - Offsite/Home",
+         "id": "968eabcfffd649fc9855360c8586c0b1",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Missouri - Offsite/Home",
+         "id": "0b6666f5f11b43528d98907516d4d6cf",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Montana - Offsite/Home",
+         "id": "7e81d85d76dd4f8da6a6a6f5bbd9ad07",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Nebraska - Offsite/Home",
+         "id": "f531538eff2547c18c576d74cd5e942d",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Nevada - Offsite/Home",
+         "id": "e3425e5435884bb1a276ca06a0f007ac",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - New Hampshire - Offsite/Home",
+         "id": "283b6ae5c41e4e5e9cad5ec9a69c3e4a",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - New Jersey - Offsite/Home",
+         "id": "0482e22285354f99a8d8c30b84e7c639",
+         "count": 2
+        },
+        {
+         "descriptor": "AMER - United States - New Mexico - Offsite/Home",
+         "id": "d8d405b335534bdc99cc5e2caee727a6",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - New York - NYC Metro area- Offsite/Home",
+         "id": "6bf025de66fd100166678e7e5fe10000",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - New York - Offsite/Home",
+         "id": "870e95ce55ce4911bda6a619b9fa1557",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - North Carolina - Offsite/Home",
+         "id": "3ccb96b32685468c8dec36d83dbc1f70",
+         "count": 2
+        },
+        {
+         "descriptor": "AMER - United States - North Dakota - Offsite/Home",
+         "id": "d78fb7a9454f45eeaebce443d51fff13",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Ohio - Offsite/Home",
+         "id": "004872e8feb74e7c9bba80c4463452bc",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Oklahoma - Offsite/Home",
+         "id": "43cb16df51524c398c46eaa6c3bdd2c8",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Oregon - Offsite/Home",
+         "id": "01ba61f9692f44daaf4ce8b08254179c",
+         "count": 5
+        },
+        {
+         "descriptor": "AMER - United States - Oregon - Portland",
+         "id": "5dbd45c76ba901c6435d3ef27b98d278",
+         "count": 4
+        },
+        {
+         "descriptor": "AMER - United States - Pennsylvania - Offsite/Home",
+         "id": "954c267e2eb641c7963f24944aab9157",
+         "count": 3
+        },
+        {
+         "descriptor": "AMER - United States - Puerto Rico - Offsite/Home",
+         "id": "752fb23a271c4b7faee407cb1987a8ad",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Raleigh - 150 Fayetteville",
+         "id": "2cde0db9741510018559c23a619b0000",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Rhode Island - Offsite/Home",
+         "id": "48f1b53eccb44bff8e15906314b70462",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - South Carolina - Offsite/Home",
+         "id": "109bfa1a1e86423ba04923a76785e07b",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - South Dakota - Offsite/Home",
+         "id": "e7da99102ea74ccb9ad22121db6fa274",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Tennessee - Offsite/Home",
+         "id": "3eae78d0c5584c9198e58be9cfec163e",
+         "count": 2
+        },
+        {
+         "descriptor": "AMER - United States - Texas - Offsite/Home",
+         "id": "884ca74dc09643448573945e9ed3cc88",
+         "count": 4
+        },
+        {
+         "descriptor": "AMER - United States - Texas - Plano",
+         "id": "51c791dc229b48bda2e838a8cec7e8dd",
+         "count": 2
+        },
+        {
+         "descriptor": "AMER - United States - Utah - Offsite/Home",
+         "id": "4365f10aa7884d22bd7b753b1c9eaab3",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Vermont - Offsite/Home",
+         "id": "4692e26856144c59a21f3f65bd4cd9da",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Virginia - Offsite/Home",
+         "id": "adc46c0a23b24871a17c8c788fd1bed8",
+         "count": 2
+        },
+        {
+         "descriptor": "AMER - United States - Washington - Offsite/Home",
+         "id": "50929ce007694527a1954f6fb4fbdec4",
+         "count": 2
+        },
+        {
+         "descriptor": "AMER - United States -  West Virginia - Offsite/Home",
+         "id": "74806c5948584042b60587ce54e5fca4",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Wisconsin - Offsite/Home",
+         "id": "26a51c4c0b5f41f18531d8ecd1a7bae0",
+         "count": 1
+        },
+        {
+         "descriptor": "AMER - United States - Wyoming - Offsite/Home",
+         "id": "74eafb490e9644d7a9433b3d87cf2239",
+         "count": 1
+        },
+        {
+         "descriptor": "Amman, JOR",
+         "id": "a1635964f60b0112a1ed864463016e3e",
+         "count": 3
+        },
+        {
+         "descriptor": "Amsterdam, NLD",
+         "id": "a1635964f60b01a2d2459f4463017d3e",
+         "count": 1
+        },
+        {
+         "descriptor": "APAC - Australia - VIC - Melbourne - 257 Collins Street",
+         "id": "0fa3d50e33e710009de3f03d60300000",
+         "count": 1
+        },
+        {
+         "descriptor": "APAC - Hong Kong - The Executive Centre",
+         "id": "f5384140f3e910018bd8ec4951170000",
+         "count": 1
+        },
+        {
+         "descriptor": "APAC - India - Bengaluru - Sunriver",
+         "id": "b00e5e17033b1000b0bc7027b66e0000",
+         "count": 2
+        },
+        {
+         "descriptor": "APAC - India - Chennai - Cowrks",
+         "id": "2cde0db974151000a1c4abf131fd0000",
+         "count": 1
+        },
+        {
+         "descriptor": "APAC - Korea - Seoul - ASEM Tower",
+         "id": "13d62b301b0c46d78a52db3b970b99cb",
+         "count": 1
+        },
+        {
+         "descriptor": "APAC - Malaysia - Kuala Lumpur - Kuala Lumpur, Avenue 10",
+         "id": "03a4032fb17010013ad5493289c20000",
+         "count": 2
+        },
+        {
+         "descriptor": "APAC - Singapore - Singapore - Fusionopolis",
+         "id": "8f9789d57e4e428f9ba87116db1a2a7c",
+         "count": 1
+        },
+        {
+         "descriptor": "Arizona, USA - Remote",
+         "id": "a1635964f60b01ccb8705e666301d13f",
+         "count": 4
+        },
+        {
+         "descriptor": "Arkansas, USA - Remote",
+         "id": "a1635964f60b01ec4d9058666301cc3f",
+         "count": 2
+        },
+        {
+         "descriptor": "Atlanta, GA, USA",
+         "id": "33c9184ffc640122f134c42863012c41",
+         "count": 5
+        },
+        {
+         "descriptor": "Australia - Remote",
+         "id": "33c9184ffc64011c8d1e4e4863016341",
+         "count": 1
+        },
+        {
+         "descriptor": "Austria - Remote",
+         "id": "33c9184ffc6401ca5338474863015e41",
+         "count": 1
+        },
+        {
+         "descriptor": "Bangkok, THA",
+         "id": "a1635964f60b019958cdf5446301aa3e",
+         "count": 1
+        },
+        {
+         "descriptor": "Barcelona, ESP",
+         "id": "33c9184ffc6401290019452863010441",
+         "count": 15
+        },
+        {
+         "descriptor": "Belgium - Remote",
+         "id": "a1635964f60b01c7d750e6646301043f",
+         "count": 1
+        },
+        {
+         "descriptor": "Bengaluru, IND",
+         "id": "33c9184ffc6401d8fc8eb2276301dc40",
+         "count": 30
+        },
+        {
+         "descriptor": "Birmingham, GBR",
+         "id": "a1635964f60b01b4bf660f456301b93e",
+         "count": 1
+        },
+        {
+         "descriptor": "Bogota, COL",
+         "id": "a1635964f60b013475b7c5436301193e",
+         "count": 1
+        },
+        {
+         "descriptor": "Boston, MA, USA",
+         "id": "a1635964f60b01add4fd5b456301d73e",
+         "count": 4
+        },
+        {
+         "descriptor": "Brazil - Remote",
+         "id": "a1635964f60b0100e10cf36463010e3f",
+         "count": 1
+        },
+        {
+         "descriptor": "Brisbane, AUS",
+         "id": "16b91b36c56301eda164510f0d019ee0",
+         "count": 1
+        },
+        {
+         "descriptor": "Bucharest, ROU",
+         "id": "a1635964f60b01b55371b8446301873e",
+         "count": 1
+        },
+        {
+         "descriptor": "Buenos Aires, ARG",
+         "id": "a1635964f60b01968b565c436301f13d",
+         "count": 2
+        },
+        {
+         "descriptor": "California, USA - Remote",
+         "id": "33c9184ffc6401f15d9ed2496301cc41",
+         "count": 12
+        },
+        {
+         "descriptor": "Cambridge, GBR",
+         "id": "a1635964f60b01d78c6615456301be3e",
+         "count": 1
+        },
+        {
+         "descriptor": "Colombia - Remote",
+         "id": "a1635964f60b019b211839656301403f",
+         "count": 2
+        },
+        {
+         "descriptor": "Colorado, USA - Remote",
+         "id": "33c9184ffc6401a0827ed8496301d141",
+         "count": 9
+        },
+        {
+         "descriptor": "Connecticut, USA - Remote",
+         "id": "33c9184ffc640177cf70de496301d641",
+         "count": 2
+        },
+        {
+         "descriptor": "Costa Rica - Remote",
+         "id": "33c9184ffc6401e2810fae4863016d41",
+         "count": 3
+        },
+        {
+         "descriptor": "Czechia - Remote",
+         "id": "a1635964f60b017d90df45656301453f",
+         "count": 1
+        },
+        {
+         "descriptor": "Delaware, USA - Remote",
+         "id": "a1635964f60b01487c7f7b666301d63f",
+         "count": 3
+        },
+        {
+         "descriptor": "Denmark - Remote",
+         "id": "a1635964f60b01c4d576526563014a3f",
+         "count": 3
+        },
+        {
+         "descriptor": "Denver, CO, USA",
+         "id": "33c9184ffc6401122af9b02863012741",
+         "count": 20
+        },
+        {
+         "descriptor": "District of Columbia, USA - Remote",
+         "id": "33c9184ffc64019df45ce4496301db41",
+         "count": 3
+        },
+        {
+         "descriptor": "Dubai, ARE",
+         "id": "a1635964f60b01f362bb02456301af3e",
+         "count": 1
+        },
+        {
+         "descriptor": "Dublin, IRL",
+         "id": "33c9184ffc640146ddced0276301e640",
+         "count": 16
+        },
+        {
+         "descriptor": "EMEA - Austria -Offsite/Home",
+         "id": "d0027b0d980c401e91c072a97be6e5bc",
+         "count": 1
+        },
+        {
+         "descriptor": "EMEA - Croatia - Offsite/Home",
+         "id": "cb5a909bc9e701674bad6542ca00d36c",
+         "count": 2
+        },
+        {
+         "descriptor": "EMEA - Czech Republic - Offsite/Home",
+         "id": "d17aa81896b340768237d163bf9d5a43",
+         "count": 1
+        },
+        {
+         "descriptor": "EMEA - Germany - Munich - Balanstrasse",
+         "id": "a4bc7e8152e401a2b899e700dd018190",
+         "count": 2
+        },
+        {
+         "descriptor": "EMEA - Germany - Offsite/Home",
+         "id": "5c20fa8baeef4ad59ac54c770a1abe45",
+         "count": 1
+        },
+        {
+         "descriptor": "EMEA - Ireland - Dublin - Windmill",
+         "id": "d4d97ce3482b01f236693cab1601b19b",
+         "count": 5
+        },
+        {
+         "descriptor": "EMEA - Netherlands - Offsite/Home",
+         "id": "4c9b058e7ad849888ada01a8caea8134",
+         "count": 2
+        },
+        {
+         "descriptor": "EMEA - Norway - Oslo - Tjuvholmen Alle",
+         "id": "9158908287dc10014daabbaf87000000",
+         "count": 1
+        },
+        {
+         "descriptor": "EMEA - Poland - Kraków - Lubomirskiego",
+         "id": "bf39c108cbfe011f493b14848801889b",
+         "count": 9
+        },
+        {
+         "descriptor": "EMEA - Romania - Bucharest - Buzesti Street",
+         "id": "25befbb69b29100b0969e2e57706e1b5",
+         "count": 1
+        },
+        {
+         "descriptor": "EMEA - Serbia - Novi Sad - Zeleznicka 7",
+         "id": "d396fd8dbd8e1001374ae327d8130000",
+         "count": 2
+        },
+        {
+         "descriptor": "EMEA - Spain - Barcelona - Offsite/Home",
+         "id": "3c4571eb38f701008f118b1dd5410000",
+         "count": 1
+        },
+        {
+         "descriptor": "EMEA - Spain - Barcelona - Tower B2",
+         "id": "f9a7906f61d21025234fba6f0701e75a",
+         "count": 6
+        },
+        {
+         "descriptor": "EMEA - Spain - Madrid – Castellana",
+         "id": "9301b3d97e6f0136a323be6c95101f4e",
+         "count": 1
+        },
+        {
+         "descriptor": "EMEA - Spain - Madrid - Offsite/Home",
+         "id": "1b1f3296f0f44517a3ff8e3fbd6ea964",
+         "count": 1
+        },
+        {
+         "descriptor": "EMEA - Sweden - Stockholm - Gravlingen",
+         "id": "12190962608e017a00e9327e1001855d",
+         "count": 1
+        },
+        {
+         "descriptor": "EMEA - United Arab Emirates - Dubai",
+         "id": "b174ba375f604cc3a63ba9556542ca20",
+         "count": 2
+        },
+        {
+         "descriptor": "EMEA - United Kingdom - London - Agar St",
+         "id": "ae3f49975915011c57c597798f010471",
+         "count": 2
+        },
+        {
+         "descriptor": "EMEA - United Kingdom - Offsite/Home",
+         "id": "7db9bd239fd54977bd48ed1e89fb5614",
+         "count": 2
+        },
+        {
+         "descriptor": "Florida, USA - Remote",
+         "id": "33c9184ffc6401e7dc40f0496301e041",
+         "count": 3
+        },
+        {
+         "descriptor": "France - Remote",
+         "id": "a1635964f60b01e515d978656301543f",
+         "count": 1
+        },
+        {
+         "descriptor": "Georgia, USA - Remote",
+         "id": "a1635964f60b01ca2ca787666301db3f",
+         "count": 8
+        },
+        {
+         "descriptor": "Germany - Remote",
+         "id": "33c9184ffc6401040c43ba4863017241",
+         "count": 7
+        },
+        {
+         "descriptor": "Ho Chi Minh City, VNM",
+         "id": "33c9184ffc64010567fb362963015441",
+         "count": 1
+        },
+        {
+         "descriptor": "Idaho, USA - Remote",
+         "id": "a1635964f60b0113c3ad9a666301e53f",
+         "count": 4
+        },
+        {
+         "descriptor": "Illinois, USA - Remote",
+         "id": "33c9184ffc6401fcdf820f4a6301ea41",
+         "count": 6
+        },
+        {
+         "descriptor": "Indiana, USA - Remote",
+         "id": "33c9184ffc6401460f75154a6301ef41",
+         "count": 3
+        },
+        {
+         "descriptor": "India - Remote",
+         "id": "a1635964f60b019468bfa4656301723f",
+         "count": 1
+        },
+        {
+         "descriptor": "Iowa, USA - Remote",
+         "id": "a1635964f60b01b9e65a94666301e03f",
+         "count": 3
+        },
+        {
+         "descriptor": "Ireland - Remote",
+         "id": "a1635964f60b0103304698656301683f",
+         "count": 4
+        },
+        {
+         "descriptor": "Israel - Remote",
+         "id": "a1635964f60b01ff59899e6563016d3f",
+         "count": 1
+        },
+        {
+         "descriptor": "Istanbul, TUR",
+         "id": "33c9184ffc64011fe0466b2863010e41",
+         "count": 1
+        },
+        {
+         "descriptor": "Italy - Remote",
+         "id": "a1635964f60b01bdb426ab656301773f",
+         "count": 3
+        },
+        {
+         "descriptor": "Jakarta, IDN",
+         "id": "a1635964f60b01a7bc585c446301553e",
+         "count": 1
+        },
+        {
+         "descriptor": "Jordan - Remote",
+         "id": "33c9184ffc640180ffc6254963019541",
+         "count": 1
+        },
+        {
+         "descriptor": "Kansas, USA - Remote",
+         "id": "33c9184ffc640124e0e21b4a6301f441",
+         "count": 3
+        },
+        {
+         "descriptor": "Kentucky, USA - Remote",
+         "id": "33c9184ffc64010a6244224a6301f941",
+         "count": 3
+        },
+        {
+         "descriptor": "Kraków, POL",
+         "id": "a1635964f60b011541b6ab446301823e",
+         "count": 8
+        },
+        {
+         "descriptor": "Kuala Lumpur, MYS",
+         "id": "a1635964f60b01dc751893446301733e",
+         "count": 5
+        },
+        {
+         "descriptor": "London, GBR",
+         "id": "33c9184ffc640176d21c8a2863011341",
+         "count": 1
+        },
+        {
+         "descriptor": "Louisiana, USA - Remote",
+         "id": "33c9184ffc640182364d284a6301fe41",
+         "count": 4
+        },
+        {
+         "descriptor": "Madrid, ESP",
+         "id": "a1635964f60b01f4cbf2dc4463019b3e",
+         "count": 1
+        },
+        {
+         "descriptor": "Maine, USA - Remote",
+         "id": "a1635964f60b0111cc43cd666301ef3f",
+         "count": 3
+        },
+        {
+         "descriptor": "Manitoba, Canada - Remote",
+         "id": "5d3a04051f0401cec3be675d5701f9fb",
+         "count": 1
+        },
+        {
+         "descriptor": "Maryland, USA - Remote",
+         "id": "a1635964f60b013442b1c6666301ea3f",
+         "count": 3
+        },
+        {
+         "descriptor": "Massachusetts, USA - Remote",
+         "id": "33c9184ffc6401cb3df82e4a63010342",
+         "count": 6
+        },
+        {
+         "descriptor": "Michigan, USA - Remote",
+         "id": "33c9184ffc6401954e15424a63010842",
+         "count": 4
+        },
+        {
+         "descriptor": "Milano, ITA",
+         "id": "a1635964f60b0118ae786e4463015f3e",
+         "count": 2
+        },
+        {
+         "descriptor": "Minnesota, USA - Remote",
+         "id": "a1635964f60b01b241e0d9666301f43f",
+         "count": 3
+        },
+        {
+         "descriptor": "Mississippi, USA - Remote",
+         "id": "a1635964f60b018993c4e6666301fe3f",
+         "count": 2
+        },
+        {
+         "descriptor": "Missouri, USA - Remote",
+         "id": "a1635964f60b01192759e0666301f93f",
+         "count": 2
+        },
+        {
+         "descriptor": "Montana, USA - Remote",
+         "id": "a1635964f60b01bd0ae9ec6663010340",
+         "count": 2
+        },
+        {
+         "descriptor": "Montreal, QC, CAN",
+         "id": "a1635964f60b0106e3c598436301003e",
+         "count": 30
+        },
+        {
+         "descriptor": "Munich, DEU",
+         "id": "a1635964f60b01bda2e6174463013c3e",
+         "count": 2
+        },
+        {
+         "descriptor": "Nebraska, USA - Remote",
+         "id": "33c9184ffc64012836696d4a63011242",
+         "count": 2
+        },
+        {
+         "descriptor": "Netherlands - Remote",
+         "id": "a1635964f60b012ac9cedd656301863f",
+         "count": 1
+        },
+        {
+         "descriptor": "Nevada, USA - Remote",
+         "id": "33c9184ffc6401ebf296864a63012642",
+         "count": 2
+        },
+        {
+         "descriptor": "New Delhi, IND",
+         "id": "a1635964f60b0120ebc237446301413e",
+         "count": 1
+        },
+        {
+         "descriptor": "New Hampshire, USA - Remote",
+         "id": "33c9184ffc64011d08b7734a63011742",
+         "count": 3
+        },
+        {
+         "descriptor": "New Jersey, USA - Remote",
+         "id": "33c9184ffc6401f5d4c6794a63011c42",
+         "count": 3
+        },
+        {
+         "descriptor": "New Mexico, USA - Remote",
+         "id": "33c9184ffc6401dfb7e47f4a63012142",
+         "count": 1
+        },
+        {
+         "descriptor": "New York, USA - Remote",
+         "id": "33c9184ffc640103de088d4a63012b42",
+         "count": 7
+        },
+        {
+         "descriptor": "North Carolina, USA - Remote",
+         "id": "a1635964f60b01a8edeff26663010840",
+         "count": 3
+        },
+        {
+         "descriptor": "North Carolina, USD",
+         "id": "20eaa1352af01001577ce6786cad0000",
+         "count": 2
+        },
+        {
+         "descriptor": "North Dakota, USA - Remote",
+         "id": "33c9184ffc6401f3ac4e674a63010d42",
+         "count": 2
+        },
+        {
+         "descriptor": "North Sydney, AUS",
+         "id": "7e0680ceef8a1000a31708365d080000",
+         "count": 2
+        },
+        {
+         "descriptor": "Norway - Oslo",
+         "id": "12190962608e01230dc47f4d06012e2f",
+         "count": 6
+        },
+        {
+         "descriptor": "Norway - Remote",
+         "id": "33c9184ffc64019c880e52496301a941",
+         "count": 3
+        },
+        {
+         "descriptor": "Novi, MI, USA",
+         "id": "33c9184ffc640116d478d02863013141",
+         "count": 2
+        },
+        {
+         "descriptor": "Ohio, USA - Remote",
+         "id": "a1635964f60b0129e5b3246763010d40",
+         "count": 3
+        },
+        {
+         "descriptor": "Oklahoma, USA - Remote",
+         "id": "a1635964f60b013a44b82a6763011240",
+         "count": 3
+        },
+        {
+         "descriptor": "Ontario, CAN - Remote",
+         "id": "a1635964f60b01a5fe2919656301273f",
+         "count": 5
+        },
+        {
+         "descriptor": "Oregon, USA - Remote",
+         "id": "33c9184ffc6401d850e7a34a63013042",
+         "count": 9
+        },
+        {
+         "descriptor": "Pennsylvania, USA - Remote",
+         "id": "33c9184ffc6401bb4549aa4a63013542",
+         "count": 5
+        },
+        {
+         "descriptor": "Philippines - Remote",
+         "id": "a1635964f60b010508c9f4656301953f",
+         "count": 1
+        },
+        {
+         "descriptor": "Plano, TX, USA",
+         "id": "33c9184ffc640128f665252963014f41",
+         "count": 3
+        },
+        {
+         "descriptor": "Poland - Remote",
+         "id": "33c9184ffc640186110369496301ae41",
+         "count": 4
+        },
+        {
+         "descriptor": "Portland, OR, USA",
+         "id": "33c9184ffc64014a8740f92863014541",
+         "count": 11
+        },
+        {
+         "descriptor": "Portugal - Remote",
+         "id": "33c9184ffc6401615a8a6e496301b341",
+         "count": 1
+        },
+        {
+         "descriptor": "Prince Edward Island, Canada - Remote",
+         "id": "244e46ef63651001eca3fda182ed0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Pune, IND",
+         "id": "a1635964f60b01b268c04f446301503e",
+         "count": 1
+        },
+        {
+         "descriptor": "Quebec, CAN - Remote",
+         "id": "a1635964f60b01bbb6ad1f6563012c3f",
+         "count": 2
+        },
+        {
+         "descriptor": "Rhode Island, USA - Remote",
+         "id": "33c9184ffc64012c1194b64a63013a42",
+         "count": 3
+        },
+        {
+         "descriptor": "San Francisco, CA, USA",
+         "id": "33c9184ffc6401958b6b962863011841",
+         "count": 10
+        },
+        {
+         "descriptor": "Sao Paulo, BRA",
+         "id": "33c9184ffc6401d5e4edec2663019140",
+         "count": 1
+        },
+        {
+         "descriptor": "Seoul, KOR",
+         "id": "33c9184ffc6401104677fb276301f040",
+         "count": 1
+        },
+        {
+         "descriptor": "Shanghai, CHN",
+         "id": "33c9184ffc64018dd60c15276301a040",
+         "count": 1
+        },
+        {
+         "descriptor": "Sheffield, GBP",
+         "id": "47c72b76ee391001ebd6a26928210000",
+         "count": 1
+        },
+        {
+         "descriptor": "Singapore, SGP",
+         "id": "a1635964f60b017f097dca446301913e",
+         "count": 21
+        },
+        {
+         "descriptor": "Singapore - Remote",
+         "id": "33c9184ffc64018b3bad91496301bd41",
+         "count": 1
+        },
+        {
+         "descriptor": "South Carolina, USA - Remote",
+         "id": "a1635964f60b018566a44e6763011c40",
+         "count": 3
+        },
+        {
+         "descriptor": "South Dakota, USA - Remote",
+         "id": "33c9184ffc6401f54056c34a63013f42",
+         "count": 2
+        },
+        {
+         "descriptor": "Spain - Remote",
+         "id": "33c9184ffc6401d0bb41db4863018141",
+         "count": 6
+        },
+        {
+         "descriptor": "Sweden - Remote",
+         "id": "a1635964f60b01f37f4b1d666301a93f",
+         "count": 2
+        },
+        {
+         "descriptor": "Tel Aviv, ISR",
+         "id": "a1635964f60b0190c562684463015a3e",
+         "count": 3
+        },
+        {
+         "descriptor": "Tennessee, USA - Remote",
+         "id": "33c9184ffc6401f83587c94a63014442",
+         "count": 4
+        },
+        {
+         "descriptor": "Texas, USA - Remote",
+         "id": "33c9184ffc64010b7e98d04a63014942",
+         "count": 10
+        },
+        {
+         "descriptor": "Tokyo, JPN",
+         "id": "33c9184ffc64015c460ee3276301eb40",
+         "count": 21
+        },
+        {
+         "descriptor": "Toronto, ON, CAN",
+         "id": "33c9184ffc6401693e5dfa2663019640",
+         "count": 45
+        },
+        {
+         "descriptor": "United Kingdom - Remote",
+         "id": "33c9184ffc64015c9fe7d44863017c41",
+         "count": 6
+        },
+        {
+         "descriptor": "Utah, USA - Remote",
+         "id": "33c9184ffc6401eee887d64a63014e42",
+         "count": 3
+        },
+        {
+         "descriptor": "Vancouver, BC, CAN",
+         "id": "dc0c7cba54ea1000a5a4d48e95d30000",
+         "count": 12
+        },
+        {
+         "descriptor": "Vermont, USA - Remote",
+         "id": "33c9184ffc6401a7b9e4e24a63015842",
+         "count": 3
+        },
+        {
+         "descriptor": "Virginia, USA - Remote",
+         "id": "33c9184ffc640153e7a5dc4a63015342",
+         "count": 3
+        },
+        {
+         "descriptor": "Washington, DC, USA",
+         "id": "a1635964f60b01ce333749456301cd3e",
+         "count": 2
+        },
+        {
+         "descriptor": "Washington, USA - Remote",
+         "id": "33c9184ffc6401eaa6e2e84a63015d42",
+         "count": 7
+        },
+        {
+         "descriptor": "West Virginia, USA - Remote",
+         "id": "33c9184ffc64010fda0ff84a63016742",
+         "count": 3
+        },
+        {
+         "descriptor": "Wisconsin, USA - Remote",
+         "id": "33c9184ffc6401d4176eef4a63016242",
+         "count": 2
+        },
+        {
+         "descriptor": "Wyoming, USA - Remote",
+         "id": "a1635964f60b014856e98f6763012140",
+         "count": 2
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "facetParameter": "distance",
+     "descriptor": "Distance",
+     "values": [
+      {
+       "descriptor": "10 miles",
+       "id": "a538cdb60a631000078a2c60ed1700f3",
+       "count": 1
+      },
+      {
+       "descriptor": "25 miles",
+       "id": "a538cdb60a631000078a2c6a410300f4",
+       "count": 1
+      },
+      {
+       "descriptor": "50 miles",
+       "id": "a538cdb60a631000078a2c6eadd300f5",
+       "count": 1
+      },
+      {
+       "descriptor": "100 miles",
+       "id": "a538cdb60a631000078a2c71efcc00f6",
+       "count": 1
+      },
+      {
+       "descriptor": "Any Distance",
+       "id": "a538cdb60a631000078a2c74f73b00f7",
+       "count": 1
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

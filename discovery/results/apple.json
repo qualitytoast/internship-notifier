@@ -1,0 +1,32 @@
+{
+  "key": "apple",
+  "name": "Apple",
+  "careers_url": "https://jobs.apple.com/en-us/search",
+  "hiring_system": "custom (jobs.apple.com /api/v1)",
+  "checker": "custom:apple",
+  "settings": {
+    "endpoint": "https://jobs.apple.com/api/v1/search",
+    "page_size": 20,
+    "queries": [
+      {"filters": {"teams": [{"team": "teamsAndSubTeams-STDNT"}]}},
+      {"query": "\"intern\""},
+      {"query": "\"internship\""},
+      {"query": "\"student\""},
+      {"query": "\"co-op\""}
+    ],
+    "sort": "newest",
+    "job_url": "https://jobs.apple.com/en-us/details/{h}/{transformedPostingTitle}?team={teamCode}  (h = positionId if id contains REQ/PIPE, else id)",
+    "full_sweep": "optional weekly: filters {} -> 306 pages"
+  },
+  "feed": "POST https://jobs.apple.com/api/v1/search {\"query\":\"\",\"filters\":{},\"page\":N,\"locale\":\"en-us\",\"sort\":\"newest\",\"format\":{...}} (20 rows/page, no CSRF needed); student slice = Students team + exact-token queries \"intern\"/\"internship\"/\"student\" (306 rows, ~29 requests)",
+  "feed_total": 6118,
+  "page_total": 6118,
+  "page_total_how": "Playwright render of https://jobs.apple.com/en-us/search + 'Clear all': display is capped at '600+ Result(s)', but the page's own POST /api/v1/search (filters {}) returned totalRecords 6118 = feed. Exact count check below the cap: /en-us/search?team=internships-STDNT-INTRN showed '113 Result(s)' = API 113.",
+  "intern_total": 157,
+  "status": "needs-custom",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no robots.txt: 404 -> allow all) for /api/v1/search, /api/v1/jobDetails, /en-us/search, /en-us/details/...",
+  "notes": "Rows are posting x location (6118 rows); group alerts by positionId. The Students team (217) holds all 25 US intern rows but misses 38 student-titled rows abroad (functional teams), so add exact-token queries \"intern\"/\"internship\"/\"student\" (quoted; unquoted 'intern' prefix-matches 'international', 2124 rows). Bare /en-us/search geo-redirects to ?location=united-states-USA; use the API with empty filters.",
+  "checked_at": "2026-10-20T03:23:16Z"
+}

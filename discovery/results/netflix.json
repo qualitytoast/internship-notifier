@@ -1,0 +1,24 @@
+{
+  "key": "netflix",
+  "name": "Netflix",
+  "careers_url": "https://jobs.netflix.com/",
+  "hiring_system": "eightfold (v2 API)",
+  "checker": "eightfold",
+  "settings": {
+    "host": "explore.jobs.netflix.net",
+    "domain": "netflix.com",
+    "api": "v2",
+    "min_interval": 2.5
+  },
+  "feed": "GET https://explore.jobs.netflix.net/api/apply/v2/jobs?domain=netflix.com&start=N&num=10",
+  "feed_total": 397,
+  "page_total": 397,
+  "page_total_how": "jobs.netflix.com links https://explore.jobs.netflix.net/careers; Playwright render of /careers?domain=netflix.com showed '397 open jobs' = v2 count 397. Two full scans gave 396 and 395 unique ids; their union is 397. Recheck 03:19Z: 395.",
+  "intern_total": 3,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (Allow: /api/apply) for the v2 jobs URL; /careers also Allow",
+  "notes": "Each full v2 scan lost 1-2 jobs: t_create is day-granular, so jobs with the same day swap places between page requests and a scan sees duplicates and misses. Never mark a job removed after a single miss. PCSX returns 403. Netflix House (apply.netflixhouse.com, v2, domain netflixhouse.com) is a separate site with 21 venue jobs and 0 interns; an optional extra entry. See notes/netflix.md.",
+  "checked_at": "2026-10-20T03:19:24Z"
+}

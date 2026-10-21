@@ -1,0 +1,99 @@
+# status 200
+User-Agent: *
+Allow: /
+Disallow: /api/draft-mode/
+Disallow: /personalized/
+Disallow: /collections/
+
+User-Agent: GPTBot
+Allow: /
+Disallow: /api/draft-mode/
+Disallow: /personalized/
+Disallow: /collections/
+
+User-Agent: OAI-SearchBot
+Allow: /
+Disallow: /api/draft-mode/
+Disallow: /personalized/
+Disallow: /collections/
+
+User-Agent: ChatGPT-User
+Allow: /
+Disallow: /api/draft-mode/
+Disallow: /personalized/
+Disallow: /collections/
+
+User-Agent: ClaudeBot
+Allow: /
+Disallow: /api/draft-mode/
+Disallow: /personalized/
+Disallow: /collections/
+
+User-Agent: Claude-Web
+Allow: /
+Disallow: /api/draft-mode/
+Disallow: /personalized/
+Disallow: /collections/
+
+User-Agent: anthropic-ai
+Allow: /
+Disallow: /api/draft-mode/
+Disallow: /personalized/
+Disallow: /collections/
+
+User-Agent: PerplexityBot
+Allow: /
+Disallow: /api/draft-mode/
+Disallow: /personalized/
+Disallow: /collections/
+
+User-Agent: Perplexity-User
+Allow: /
+Disallow: /api/draft-mode/
+Disallow: /personalized/
+Disallow: /collections/
+
+User-Agent: Google-Extended
+Allow: /
+Disallow: /api/draft-mode/
+Disallow: /personalized/
+Disallow: /collections/
+
+User-Agent: Applebot-Extended
+Allow: /
+Disallow: /api/draft-mode/
+Disallow: /personalized/
+Disallow: /collections/
+
+User-Agent: CCBot
+Allow: /
+Disallow: /api/draft-mode/
+Disallow: /personalized/
+Disallow: /collections/
+
+User-Agent: Bytespider
+Allow: /
+Disallow: /api/draft-mode/
+Disallow: /personalized/
+Disallow: /collections/
+
+User-Agent: Amazonbot
+Allow: /
+Disallow: /api/draft-mode/
+Disallow: /personalized/
+Disallow: /collections/
+
+User-Agent: Meta-ExternalAgent
+Allow: /
+Disallow: /api/draft-mode/
+Disallow: /personalized/
+Disallow: /collections/
+
+User-Agent: cohere-ai
+Allow: /
+Disallow: /api/draft-mode/
+Disallow: /personalized/
+Disallow: /collections/
+
+Host: https://www.sigmacomputing.com
+Sitemap: https://www.sigmacomputing.com/sitemap.xml

@@ -1,0 +1,26 @@
+{
+  "key": "american-family",
+  "name": "American Family Insurance",
+  "careers_url": "https://careers.amfam.com/",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "amfam.wd1.myworkdayjobs.com",
+    "tenant": "amfam",
+    "sites": [
+      "AmFamGroupInternCareers",
+      "Careers"
+    ]
+  },
+  "feed": "POST https://amfam.wd1.myworkdayjobs.com/wday/cxs/amfam/AmFamGroupInternCareers/jobs + POST https://amfam.wd1.myworkdayjobs.com/wday/cxs/amfam/Careers/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 56,
+  "page_total": 56,
+  "page_total_how": "Playwright render of https://amfam.wd1.myworkdayjobs.com/Careers showed '32 JOBS FOUND'; the intern site count '24 JOBS' comes from the prior capture of the bookmarked page (discovery/captures/american-family). I did not re-render it because robots.txt disallows /AmFamGroupInternCareers/. No overlap between the two sites. Recheck 03:19Z: 24 + 31.",
+  "intern_total": 27,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for both CXS URLs. Caveat: amfam.wd1 robots.txt has 'Disallow: /AmFamGroupInternCareers/' (that site's HTML and job pages); the API path /wday/cxs/amfam/AmFamGroupInternCareers/jobs is not covered by it",
+  "notes": "24 of the 27 internships are only on AmFamGroupInternCareers, which careers.amfam.com/early-careers/internships/ links to. The careers.amfam.com job board mirrors only Careers + Agent-Staff, and plain HTTP gets 403 from Cloudflare there. Agent-Staff (74 agency-owner jobs) is skipped. The lead should confirm that the CXS call is acceptable given the site Disallow. See notes/american-family.md.",
+  "checked_at": "2026-10-20T03:19:24Z"
+}

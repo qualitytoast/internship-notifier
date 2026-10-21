@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://remitly.wd5.myworkdayjobs.com/Remitly_Careers/siteMap.xml
+Sitemap: https://remitly.wd5.myworkdayjobs.com/Friends_Family_Intern/siteMap.xml
+
+User-agent: *
+Allow: /Remitly_Careers/
+Allow: /Friends_Family_Intern/
+Disallow: /refreshFacet/

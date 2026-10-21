@@ -1,0 +1,23 @@
+{
+  "key": "geico",
+  "name": "GEICO",
+  "careers_url": "https://careers.geico.com/",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "geico.wd1.myworkdayjobs.com",
+    "tenant": "geico",
+    "site": "External"
+  },
+  "feed": "POST https://geico.wd1.myworkdayjobs.com/wday/cxs/geico/External/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 294,
+  "page_total": 294,
+  "page_total_how": "careers.geico.com 'See Open Jobs' links https://geico.wd1.myworkdayjobs.com/External; Playwright render showed '294 JOBS FOUND' (= CXS total).",
+  "intern_total": 5,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for the CXS POST URL(s); the tenant robots.txt lists /External/, /GEAP/, /GEAS/ as Allow",
+  "notes": "robots.txt also lists GEAS (281-282 jobs at GEICO local agent offices, 0 interns, not linked from careers.geico.com) and GEAP (0 jobs). GEAS contains a malformed posting ({\"bulletFields\":[\"R0056265\"]}, no title or externalPath) that makes the workday adapter raise, so leave GEAS out unless the adapter skips such rows. jobFamilyGroup 'Internship' = 5 = title matches. See notes/geico.md.",
+  "checked_at": "2026-10-20T03:19:24Z"
+}

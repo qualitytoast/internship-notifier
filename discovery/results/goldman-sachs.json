@@ -1,0 +1,25 @@
+{
+  "key": "goldman-sachs",
+  "name": "Goldman Sachs",
+  "careers_url": "https://higher.gs.com/campus",
+  "hiring_system": "custom (GS Higher, GraphQL over Oracle Recruiting)",
+  "checker": "goldman",
+  "settings": {
+    "experiences": [
+      "PROFESSIONAL",
+      "EARLY_CAREER",
+      "CAMPUS"
+    ]
+  },
+  "feed": "POST https://api-higher.gs.com/gateway/api/v1/graphql (GetRoles, pageSize 250)",
+  "feed_total": 891,
+  "page_total": 891,
+  "page_total_how": "higher.gs.com pages are robots-disallowed; the UI's 'Showing 20 of N' label is the same roleSearch.totalCount (672 professional + 219 campus); roleSearchCount = 891",
+  "intern_total": 178,
+  "status": "verified",
+  "robots": "ALLOW (api-higher.gs.com has no robots.txt); higher.gs.com/roles/ allowed",
+  "notes": "Student roles by corporateTitle (Summer Analyst / Summer Associate / Seasonal).",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-19T23:55:00Z"
+}

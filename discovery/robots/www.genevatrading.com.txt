@@ -1,0 +1,16 @@
+# status 200
+User-agent: Scrapy
+Allow: /
+
+User-Agent: *
+Allow: /wp-content/uploads/
+Disallow: /wp-content/plugins/
+Disallow: /wp-admin/
+Disallow: /readme.html
+Disallow: /refer/
+
+Sitemap: https://www.genevatrading.com/sitemap_index.xml
+
+# Termly scanner
+User-agent: TermlyBot
+Allow: /

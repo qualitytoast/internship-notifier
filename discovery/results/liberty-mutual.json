@@ -1,0 +1,24 @@
+{
+  "key": "liberty-mutual",
+  "name": "Liberty Mutual",
+  "careers_url": "https://jobs.libertymutualgroup.com/",
+  "hiring_system": "eightfold (v2 API); the ATS ids look like iCIMS (2026-NNNNNN)",
+  "checker": "eightfold",
+  "settings": {
+    "host": "searchjobs.libertymutualgroup.com",
+    "domain": "libertymutual.com",
+    "api": "v2",
+    "min_interval": 2.5
+  },
+  "feed": "GET https://searchjobs.libertymutualgroup.com/api/apply/v2/jobs?domain=libertymutual.com&start=N&num=10",
+  "feed_total": 196,
+  "page_total": 196,
+  "page_total_how": "Playwright render of https://libertymutual.eightfold.ai/careers?domain=libertymutual.com (same tenant as searchjobs.libertymutualgroup.com, the 'Search Jobs' target of jobs.libertymutualgroup.com) showed '196 open jobs' = v2 count 196; full enumeration returned 196 unique ids. Recheck 03:19Z: 194.",
+  "intern_total": 14,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (Allow: /api/apply) for the v2 jobs URL; /careers also Allow (both searchjobs.libertymutualgroup.com and libertymutual.eightfold.ai)",
+  "notes": "v2 only: PCSX returns 403 'PCSX is not enabled for this user.' num is ignored (10 per page). Default order is t_create descending (minute granularity, stable). canonicalPositionUrl uses the searchjobs host. The old Taleo link (lmig.taleo.net) is commented out and the host no longer resolves. See notes/liberty-mutual.md.",
+  "checked_at": "2026-10-20T03:19:24Z"
+}

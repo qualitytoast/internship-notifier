@@ -1,0 +1,23 @@
+{
+  "key": "crowdstrike",
+  "name": "CrowdStrike",
+  "careers_url": "https://www.crowdstrike.com/en-us/careers/",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "crowdstrike.wd5.myworkdayjobs.com",
+    "tenant": "crowdstrike",
+    "site": "crowdstrikecareers"
+  },
+  "feed": "POST https://crowdstrike.wd5.myworkdayjobs.com/wday/cxs/crowdstrike/crowdstrikecareers/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 348,
+  "page_total": 348,
+  "page_total_how": "Playwright render of https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers showed '348 JOBS FOUND' (= CXS total). Recheck 03:19Z: 350.",
+  "intern_total": 6,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for the CXS POST URL(s); the tenant robots.txt lists only /crowdstrikecareers/ as Allow",
+  "notes": "Single public site; the university-interns page links the same site filtered by Job_Family 1408861ee6e2015adbe3e7f6b000de0b. workerSubType 'Intern (Fixed Term)' = 6 = title matches (all Summer 2027).",
+  "checked_at": "2026-10-20T03:19:24Z"
+}

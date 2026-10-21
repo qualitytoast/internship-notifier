@@ -1,0 +1,10 @@
+# status 200
+Sitemap: https://quickenloans.wd5.myworkdayjobs.com/rocket_careers/siteMap.xml
+Sitemap: https://quickenloans.wd5.myworkdayjobs.com/rocket_professional/siteMap.xml
+Sitemap: https://quickenloans.wd5.myworkdayjobs.com/rocket_india/siteMap.xml
+
+User-agent: *
+Allow: /rocket_careers/
+Allow: /rocket_professional/
+Allow: /rocket_india/
+Disallow: /refreshFacet/

@@ -1,0 +1,11 @@
+# status 200
+# llms.txt: https://chanzuckerberg.com/llms.txt
+
+# START YOAST BLOCK
+# ---------------------------
+User-agent: *
+Disallow:
+
+Sitemap: https://chanzuckerberg.com/sitemap_index.xml
+# ---------------------------
+# END YOAST BLOCK

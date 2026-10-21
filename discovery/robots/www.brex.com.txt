@@ -1,0 +1,9 @@
+# status 200
+User-agent: Twitterbot
+Allow: /
+User-agent: *
+Disallow: /partners/
+Disallow: /lp/
+Disallow: /api/
+Sitemap: https://www.brex.com/sitemap/sitemap.xml
+Host: https://www.brex.com

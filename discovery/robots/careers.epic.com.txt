@@ -1,0 +1,9 @@
+# status 200
+# 1 robots.txt for http://careers.epic.com/
+
+User-agent: *
+Disallow: /admin/
+Disallow: /docs/
+Disallow: /cms/
+Disallow: /content-folder-proxy/
+Allow: /

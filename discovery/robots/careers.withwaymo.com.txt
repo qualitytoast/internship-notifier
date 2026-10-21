@@ -1,0 +1,16 @@
+# status 200
+# Waymo Robots Txt
+
+User-agent: bedrockbot
+Disallow: /
+
+User-agent: *
+Disallow: /v1/candidate_details
+Disallow: /me/
+Disallow: /api/
+Disallow: /pages/*/blocks/
+Disallow: /*?gh_jid=*
+
+Crawl-delay: 5
+
+Sitemap: https://careers.withwaymo.com/sitemap.xml

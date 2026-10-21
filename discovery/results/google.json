@@ -1,0 +1,19 @@
+{
+  "key": "google",
+  "name": "Google",
+  "careers_url": "https://www.google.com/about/careers/applications/jobs/results",
+  "hiring_system": "custom (Google careers portal)",
+  "checker": "google",
+  "settings": {},
+  "feed": "GET https://www.google.com/about/careers/applications/jobs/feed.xml (If-Modified-Since)",
+  "feed_total": 3773,
+  "page_total": 3643,
+  "page_total_how": "GET of the unfiltered results page: '3,643 jobs matched' = 3,638 en-US feed jobs + 5 evergreen placeholders not in the feed; the other 135 feed jobs are translated (ja/zh/fr) twins the English page doesn't count",
+  "intern_total": 93,
+  "status": "verified",
+  "robots": "ALLOW (no matching rule); results?page= is disallowed and never used",
+  "notes": "One 4.4 MB gzipped XML per poll; 304 when unchanged. jobtype=INTERN plus title rules; translated twins share no id.",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-19T23:55:00Z"
+}

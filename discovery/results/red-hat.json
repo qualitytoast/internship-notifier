@@ -1,0 +1,23 @@
+{
+  "key": "red-hat",
+  "name": "Red Hat",
+  "careers_url": "https://www.redhat.com/en/jobs",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "redhat.wd5.myworkdayjobs.com",
+    "tenant": "redhat",
+    "site": "jobs"
+  },
+  "feed": "POST https://redhat.wd5.myworkdayjobs.com/wday/cxs/redhat/jobs/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 174,
+  "page_total": 174,
+  "page_total_how": "redhat.com/en/jobs 'Search all Red Hat jobs' links https://redhat.wd5.myworkdayjobs.com/jobs/; Playwright render of /Jobs showed '174 JOBS FOUND' (= CXS total; 'jobs' and 'Jobs' both return the same 174).",
+  "intern_total": 42,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for the CXS POST URL(s); the tenant robots.txt lists only /Jobs/ as Allow",
+  "notes": "174 is all Red Hat lists: robots.txt has one site, and redhat.com links nothing else (no student site, no IBM link). 42 internships (19 in Brno, CZ; the rest US and APAC sales, engineering and marketing). Facet names are anonymised (a-e), so use titles. See notes/red-hat.md.",
+  "checked_at": "2026-10-20T03:19:24Z"
+}

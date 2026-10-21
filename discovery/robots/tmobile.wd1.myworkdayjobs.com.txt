@@ -1,0 +1,8 @@
+# status 200
+
+User-agent: *
+Disallow: /External/
+Disallow: /Alumni/
+Disallow: /ContractorConversion/
+Disallow: /MergersandAcquisitions/
+Disallow: /refreshFacet/

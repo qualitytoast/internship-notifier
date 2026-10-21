@@ -1,0 +1,6 @@
+# status 200
+
+User-agent: *
+Disallow:
+Disallow: /admin
+Sitemap: https://www.brevanhoward.com/sitemap.xml

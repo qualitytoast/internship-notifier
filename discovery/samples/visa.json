@@ -1,0 +1,1551 @@
+{
+ "_note": "captured 2026-10-20 (UTC); trimmed: first N jobPostings of offset 0 plus the facets block, other pages omitted",
+ "Visa_Early_Careers": {
+  "request": "POST https://visa.wd5.myworkdayjobs.com/wday/cxs/visa/Visa_Early_Careers/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":0,\"searchText\":\"\"}",
+  "response": {
+   "total": 31,
+   "jobPostings": [
+    {
+     "title": "Data Science Intern",
+     "externalPath": "/job/GB---London-United-Kingdom/VCA-Intern--IDS-_REF086121W",
+     "locationsText": "GB - London, United Kingdom",
+     "postedOn": "Posted Today",
+     "remoteType": "Hybrid",
+     "bulletFields": [
+      "REF086121W"
+     ]
+    },
+    {
+     "title": "Data Science Graduate",
+     "externalPath": "/job/PL---Warsaw-Poland/Data-Science-Graduate_REF089534W",
+     "locationsText": "PL - Warsaw, Poland",
+     "postedOn": "Posted 4 Days Ago",
+     "remoteType": "Hybrid",
+     "bulletFields": [
+      "REF089534W"
+     ]
+    },
+    {
+     "title": "Manager, Client Consulting",
+     "externalPath": "/job/MY---Kuala-Lumpur-Malaysia/Manager--Client-Consulting_REF089371W",
+     "locationsText": "MY - Kuala Lumpur, Malaysia",
+     "postedOn": "Posted 4 Days Ago",
+     "bulletFields": [
+      "REF089371W"
+     ]
+    },
+    {
+     "title": "Data Science Graduate",
+     "externalPath": "/job/GB---London-United-Kingdom/Data-Science-Graduate_REF089498W",
+     "locationsText": "GB - London, United Kingdom",
+     "postedOn": "Posted 5 Days Ago",
+     "remoteType": "Hybrid",
+     "bulletFields": [
+      "REF089498W"
+     ]
+    },
+    {
+     "title": "Client Services Intern",
+     "externalPath": "/job/MX---Mexico-City-Mexico/Client-Services-Intern_REF086153W",
+     "locationsText": "MX - Mexico City, Mexico",
+     "postedOn": "Posted 6 Days Ago",
+     "remoteType": "Hybrid",
+     "bulletFields": [
+      "REF086153W"
+     ]
+    },
+    {
+     "title": "Risk Intern",
+     "externalPath": "/job/PA---Panama-City-Panama/Risk-Intern_REF086150W",
+     "locationsText": "PA - Panama City, Panama",
+     "postedOn": "Posted 6 Days Ago",
+     "remoteType": "Hybrid",
+     "bulletFields": [
+      "REF086150W"
+     ]
+    }
+   ],
+   "facets": [
+    {
+     "facetParameter": "remoteType",
+     "descriptor": "Workplace Type",
+     "values": [
+      {
+       "descriptor": "Hybrid",
+       "id": "f8f7c27e45a11001f3f49cf199e40000",
+       "count": 25
+      }
+     ]
+    },
+    {
+     "facetParameter": "jobFamilyGroup",
+     "descriptor": "Teams",
+     "values": [
+      {
+       "descriptor": "Corporate Services & Administration",
+       "id": "2745bc1368021016adc536dbe6223b91",
+       "count": 23
+      },
+      {
+       "descriptor": "Consulting",
+       "id": "e45df974e3571000b87f22dbd0f40000",
+       "count": 4
+      },
+      {
+       "descriptor": "Product & Design",
+       "id": "2745bc1368021016adc549cafd9a3ba5",
+       "count": 2
+      },
+      {
+       "descriptor": "Sales",
+       "id": "2745bc1368021016adc54d0fd02a3ba9",
+       "count": 1
+      },
+      {
+       "descriptor": "Engineering & Technology",
+       "id": "e8c806498390105c6260a580252a0363",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "jobFamily",
+     "descriptor": "Roles",
+     "values": [
+      {
+       "descriptor": "Intern",
+       "id": "2745bc1368021016a99151158b7a3a64",
+       "count": 23
+      },
+      {
+       "descriptor": "Client Consulting",
+       "id": "2745bc1368021016a991e695ab8a3b0a",
+       "count": 4
+      },
+      {
+       "descriptor": "Specialist Seller - Sales Executive",
+       "id": "a060926dbd8c1000ce64068b54660000",
+       "count": 1
+      },
+      {
+       "descriptor": "Software Engineering",
+       "id": "2745bc1368021016a991f65e710a3b1e",
+       "count": 1
+      },
+      {
+       "descriptor": "Research",
+       "id": "0d0d6d4885ac102c8249955c60056479",
+       "count": 1
+      },
+      {
+       "descriptor": "Product Dev/Mgmt Support",
+       "id": "2745bc1368021016a991d991f5923afa",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "timeType",
+     "descriptor": "Time Type",
+     "values": [
+      {
+       "descriptor": "Full time",
+       "id": "3d32d47be90110109faf15aa8b2200bf",
+       "count": 31
+      }
+     ]
+    },
+    {
+     "facetParameter": "locationMainGroup",
+     "values": [
+      {
+       "facetParameter": "locationCountry",
+       "descriptor": "Location Country",
+       "values": [
+        {
+         "descriptor": "Azerbaijan",
+         "id": "db69b812446c11de98360015c5e6daf6",
+         "count": 2
+        },
+        {
+         "descriptor": "Brazil",
+         "id": "1a29bb1357b240ab99a2fa755cc87c0e",
+         "count": 1
+        },
+        {
+         "descriptor": "Czechia",
+         "id": "fc078443155c4ad294201ecf5a61a499",
+         "count": 1
+        },
+        {
+         "descriptor": "Guatemala",
+         "id": "db3b4b80df0f4287b262e5564c10edfa",
+         "count": 1
+        },
+        {
+         "descriptor": "India",
+         "id": "c4f78be1a8f14da0ab49ce1162348a5e",
+         "count": 1
+        },
+        {
+         "descriptor": "Japan",
+         "id": "8b705da2becf43cfaccc091da0988ab2",
+         "count": 1
+        },
+        {
+         "descriptor": "Kazakhstan",
+         "id": "db69ebac446c11de98360015c5e6daf6",
+         "count": 2
+        },
+        {
+         "descriptor": "Malaysia",
+         "id": "972dc4ba8d454bc0b893ff84b1529077",
+         "count": 1
+        },
+        {
+         "descriptor": "Mexico",
+         "id": "e2adff9272454660ac4fdb56fc70bb51",
+         "count": 3
+        },
+        {
+         "descriptor": "Morocco",
+         "id": "7aaca3f6fc774f16802a4df4718a5b53",
+         "count": 5
+        },
+        {
+         "descriptor": "Panama",
+         "id": "a390372e575c41ecb7240c51ce9067bd",
+         "count": 2
+        },
+        {
+         "descriptor": "Poland",
+         "id": "131d5ac7e3ee4d7b962bdc96e498e412",
+         "count": 1
+        },
+        {
+         "descriptor": "Saudi Arabia",
+         "id": "50423b5190ad49bb89e94cd58dfaad69",
+         "count": 1
+        },
+        {
+         "descriptor": "Ukraine",
+         "id": "a4051ef996ac40778d4c79e3f2dedfd2",
+         "count": 2
+        },
+        {
+         "descriptor": "United Kingdom",
+         "id": "29247e57dbaf46fb855b224e03170bc7",
+         "count": 3
+        },
+        {
+         "descriptor": "United States of America",
+         "id": "bc33aa3152ec42d4995f4791a106ed09",
+         "count": 4
+        }
+       ]
+      },
+      {
+       "facetParameter": "locations",
+       "descriptor": "Locations",
+       "values": [
+        {
+         "descriptor": "AZ - Baku, Azerbaijan",
+         "id": "6a6b666e8c601001fe427b9e4f750000",
+         "count": 2
+        },
+        {
+         "descriptor": "BR - Brasilia, Brazil",
+         "id": "6a6b666e8c601001fe42555669670000",
+         "count": 1
+        },
+        {
+         "descriptor": "CZ - Prague, Czech Republic",
+         "id": "6a6b666e8c601001fe41d745849f0000",
+         "count": 1
+        },
+        {
+         "descriptor": "GB - Belfast, United Kingdom",
+         "id": "6a6b666e8c601001fe41597c94220000",
+         "count": 1
+        },
+        {
+         "descriptor": "GB - London, United Kingdom",
+         "id": "6a6b666e8c601001fe41480604e20000",
+         "count": 2
+        },
+        {
+         "descriptor": "GT - Guatemala City, Guatemala",
+         "id": "6a6b666e8c601001fe41216d62940000",
+         "count": 1
+        },
+        {
+         "descriptor": "IN - Bengaluru, India",
+         "id": "6a6b666e8c601001fe40e79f253d0000",
+         "count": 1
+        },
+        {
+         "descriptor": "JP - Tokyo, Japan",
+         "id": "6a6b666e8c601001fe40b462d4800000",
+         "count": 1
+        },
+        {
+         "descriptor": "KZ - Almaty, Kazakhstan",
+         "id": "6a6b666e8c601001fe40899d21700000",
+         "count": 2
+        },
+        {
+         "descriptor": "MA - Casablanca, Morocco",
+         "id": "6a6b666e8c601001fe40721fd68b0000",
+         "count": 5
+        },
+        {
+         "descriptor": "MX - Mexico City, Mexico",
+         "id": "6a6b666e8c601001fe404fc6dbf80000",
+         "count": 3
+        },
+        {
+         "descriptor": "MY - Kuala Lumpur, Malaysia",
+         "id": "6a6b666e8c601001fe404755e98c0000",
+         "count": 1
+        },
+        {
+         "descriptor": "PA - Panama City, Panama",
+         "id": "6a6b666e8c601001fe401c9a44260000",
+         "count": 2
+        },
+        {
+         "descriptor": "PL - Warsaw, Poland",
+         "id": "6a6b666e8c601001fe3feedf1d4c0000",
+         "count": 1
+        },
+        {
+         "descriptor": "SA - Riyadh, Saudi Arabia",
+         "id": "6a6b666e8c601001fe3fc5594bcd0000",
+         "count": 1
+        },
+        {
+         "descriptor": "UA - Kyiv, Ukraine",
+         "id": "6a6b666e8c601001fe3f898b84550000",
+         "count": 2
+        },
+        {
+         "descriptor": "US - Austin, TX",
+         "id": "6a6b666e8c601001fe3f7810cc4d0000",
+         "count": 1
+        },
+        {
+         "descriptor": "US - Foster City, CA",
+         "id": "6a6b666e8c601001fe3f62fc882e0000",
+         "count": 3
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Visa": {
+  "request": "POST https://visa.wd5.myworkdayjobs.com/wday/cxs/visa/Visa/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":0,\"searchText\":\"\"}",
+  "response": {
+   "total": 846,
+   "jobPostings": [
+    {
+     "title": "Sr. Manager, SMB Product & Benefits Strategy",
+     "externalPath": "/job/US---Miami-FL/Sr-Manager--SMB-Product---Benefits-Strategy_REF089602W",
+     "locationsText": "US - Miami, FL",
+     "postedOn": "Posted Today",
+     "remoteType": "Hybrid",
+     "bulletFields": [
+      "REF089602W"
+     ]
+    },
+    {
+     "title": "Senior Manager - Business Development",
+     "externalPath": "/job/AU---Sydney-Australia/Senior-Manager---Business-Development_REF089589W",
+     "locationsText": "AU - Sydney, Australia",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "REF089589W"
+     ]
+    },
+    {
+     "title": "Director, Account Executive",
+     "externalPath": "/job/US---Remote---Illinois/Director--Account-Executive_REF089483W",
+     "locationsText": "US - Remote - Illinois",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "REF089483W"
+     ]
+    },
+    {
+     "title": "Analyst, Software Test Engineering",
+     "externalPath": "/job/CO---Bogota-Colombia/Analyst--Software-Test-Engineering_REF089077W",
+     "locationsText": "CO - Bogota, Colombia",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "REF089077W"
+     ]
+    }
+   ],
+   "facets": [
+    {
+     "facetParameter": "remoteType",
+     "descriptor": "Workplace Type",
+     "values": [
+      {
+       "descriptor": "Hybrid",
+       "id": "f8f7c27e45a11001f3f49cf199e40000",
+       "count": 144
+      },
+      {
+       "descriptor": "Fully Onsite",
+       "id": "5e1dcc7de3551001f3dddb4aae590000",
+       "count": 15
+      },
+      {
+       "descriptor": "Fully Remote",
+       "id": "f8f7c27e45a11001f3f4a55cd89d0000",
+       "count": 4
+      }
+     ]
+    },
+    {
+     "facetParameter": "jobFamilyGroup",
+     "descriptor": "Teams",
+     "values": [
+      {
+       "descriptor": "Engineering & Technology",
+       "id": "e8c806498390105c6260a580252a0363",
+       "count": 224
+      },
+      {
+       "descriptor": "Sales",
+       "id": "2745bc1368021016adc54d0fd02a3ba9",
+       "count": 130
+      },
+      {
+       "descriptor": "Consulting",
+       "id": "e45df974e3571000b87f22dbd0f40000",
+       "count": 94
+      },
+      {
+       "descriptor": "Product & Design",
+       "id": "2745bc1368021016adc549cafd9a3ba5",
+       "count": 88
+      },
+      {
+       "descriptor": "Client Services",
+       "id": "2745bc1368021016adc53acf19523b95",
+       "count": 85
+      },
+      {
+       "descriptor": "Marketing & Communications",
+       "id": "2745bc1368021016adc5461b18e23ba1",
+       "count": 61
+      },
+      {
+       "descriptor": "Strategy & Planning",
+       "id": "2745bc1368021016adc54ea8b3f23bab",
+       "count": 35
+      },
+      {
+       "descriptor": "Finance",
+       "id": "2745bc1368021016adc53f696daa3b99",
+       "count": 30
+      },
+      {
+       "descriptor": "Legal & Regulatory Affairs",
+       "id": "2745bc1368021016adc542cae4423b9d",
+       "count": 29
+      },
+      {
+       "descriptor": "Corporate Services & Administration",
+       "id": "2745bc1368021016adc536dbe6223b91",
+       "count": 28
+      },
+      {
+       "descriptor": "Risk",
+       "id": "2745bc1368021016adc54b6dc0ba3ba7",
+       "count": 19
+      },
+      {
+       "descriptor": "Data Science & Analytics",
+       "id": "d48eccdc23121000b8a44df0bd370000",
+       "count": 15
+      },
+      {
+       "descriptor": "People & Culture",
+       "id": "2745bc1368021016adc5412980b23b9b",
+       "count": 8
+      }
+     ]
+    },
+    {
+     "facetParameter": "jobFamily",
+     "descriptor": "Roles",
+     "values": [
+      {
+       "descriptor": "Software Engineering",
+       "id": "2745bc1368021016a991f65e710a3b1e",
+       "count": 128
+      },
+      {
+       "descriptor": "Client Consulting",
+       "id": "2745bc1368021016a991e695ab8a3b0a",
+       "count": 72
+      },
+      {
+       "descriptor": "Product Development/Management",
+       "id": "2745bc1368021016a991db09dc0a3afc",
+       "count": 62
+      },
+      {
+       "descriptor": "Marketing",
+       "id": "2745bc1368021016a991a22e1a9a3ac8",
+       "count": 57
+      },
+      {
+       "descriptor": "Generalist Seller - Account Executive",
+       "id": "a060926dbd8c1000cef010e6d6e80000",
+       "count": 45
+      },
+      {
+       "descriptor": "Specialist Seller - Sales Executive",
+       "id": "a060926dbd8c1000ce64068b54660000",
+       "count": 34
+      },
+      {
+       "descriptor": "Client Success",
+       "id": "2ce6facc687d010e9ae52131023f0000",
+       "count": 25
+      },
+      {
+       "descriptor": "Professional Services Consulting",
+       "id": "75b6cc40a3751043f777b3763a0b1db1",
+       "count": 22
+      },
+      {
+       "descriptor": "Implementations",
+       "id": "ef01101febe401c634936e8a397b1550",
+       "count": 22
+      },
+      {
+       "descriptor": "Data Engineering",
+       "id": "ad45ef80fd47018bd5538fe7856817d3",
+       "count": 22
+      },
+      {
+       "descriptor": "Risk Management",
+       "id": "2745bc1368021016a991e2314f9a3b04",
+       "count": 19
+      },
+      {
+       "descriptor": "Solutions Management",
+       "id": "afddc98f18d101de3c35f3d3b1628d31",
+       "count": 18
+      },
+      {
+       "descriptor": "Cyber Security Engineering",
+       "id": "03432a8f4d9c01a2bffcb3b5921d4d35",
+       "count": 15
+      },
+      {
+       "descriptor": "Compliance",
+       "id": "89faec33dfd310ec2b606e025e52dfc2",
+       "count": 13
+      },
+      {
+       "descriptor": "Data Science",
+       "id": "31f1c52f685c018679c336da4b46da8e",
+       "count": 12
+      },
+      {
+       "descriptor": "Attorney",
+       "id": "2745bc1368021016a99199e9020a3abe",
+       "count": 12
+      },
+      {
+       "descriptor": "Financial Analysis",
+       "id": "2745bc1368021016a9917835e6fa3a96",
+       "count": 11
+      },
+      {
+       "descriptor": "Digital Sales – Digital Sales Representative",
+       "id": "d2416baaf9ed1001abda20271f250000",
+       "count": 11
+      },
+      {
+       "descriptor": "Systems Engineering",
+       "id": "2745bc1368021016a991a83acf5a3ad0",
+       "count": 10
+      },
+      {
+       "descriptor": "Sales/Business Development",
+       "id": "2745bc1368021016a991e39b3bf23b06",
+       "count": 10
+      },
+      {
+       "descriptor": "Software Test Engineering",
+       "id": "2745bc1368021016a991fc4c76523b26",
+       "count": 9
+      },
+      {
+       "descriptor": "Prog/Project Management",
+       "id": "2745bc1368021016a991a0b447f23ac6",
+       "count": 9
+      },
+      {
+       "descriptor": "Generalist Seller - Business Development Executive",
+       "id": "a060926dbd8c1000cee8f9734cb10000",
+       "count": 9
+      },
+      {
+       "descriptor": "Cyber Security Analyst",
+       "id": "2745bc1368021016a991b40fb9b23ae0",
+       "count": 9
+      },
+      {
+       "descriptor": "Controller",
+       "id": "2745bc1368021016a99175256ec23a92",
+       "count": 9
+      },
+      {
+       "descriptor": "Client Care Operations",
+       "id": "03432a8f4d9c0102f9dfa410ed1c6d89",
+       "count": 9
+      },
+      {
+       "descriptor": "Strategic Planning",
+       "id": "2745bc1368021016a991eec991c23b14",
+       "count": 8
+      },
+      {
+       "descriptor": "Client Care V",
+       "id": "03432a8f4d9c01c854e7fff2a11ca337",
+       "count": 8
+      },
+      {
+       "descriptor": "Business Strategy & Operations",
+       "id": "8912d5666928010e9ad5a2a1a5cc0000",
+       "count": 8
+      },
+      {
+       "descriptor": "Business Planning",
+       "id": "2745bc1368021016a9919b7e7ad23ac0",
+       "count": 8
+      },
+      {
+       "descriptor": "Admin. Support",
+       "id": "2745bc1368021016a991542a6c9a3a68",
+       "count": 8
+      },
+      {
+       "descriptor": "Technical Solutions",
+       "id": "cd34908266e2010d997410db02700000",
+       "count": 7
+      },
+      {
+       "descriptor": "Specialist Seller - Business Development Executive",
+       "id": "a060926dbd8c1000ce76e22cbaa10000",
+       "count": 7
+      },
+      {
+       "descriptor": "Product/Project Management (Technical)",
+       "id": "2745bc1368021016a991f958196a3b22",
+       "count": 7
+      },
+      {
+       "descriptor": "Network & Security Engineering",
+       "id": "2745bc1368021016a991c15cf0123af2",
+       "count": 6
+      },
+      {
+       "descriptor": "Sales Support",
+       "id": "2745bc1368021016a991e51adee23b08",
+       "count": 5
+      },
+      {
+       "descriptor": "Pricing",
+       "id": "2745bc1368021016a991f1f8dc9a3b18",
+       "count": 5
+      },
+      {
+       "descriptor": "Network & Application Operations",
+       "id": "2745bc1368021016a991bcdde8023aec",
+       "count": 5
+      },
+      {
+       "descriptor": "Intern",
+       "id": "2745bc1368021016a99151158b7a3a64",
+       "count": 5
+      },
+      {
+       "descriptor": "Systems Analysis",
+       "id": "2745bc1368021016a991f4f1f08a3b1c",
+       "count": 4
+      },
+      {
+       "descriptor": "Strategic Sourcing",
+       "id": "2745bc1368021016a991b29fc6623ade",
+       "count": 4
+      },
+      {
+       "descriptor": "Service Experience",
+       "id": "88449a39b143010d996dfd5048860000",
+       "count": 4
+      },
+      {
+       "descriptor": "Sales Engineering",
+       "id": "6d733a9a7975010e68a5966a1d4d19d7",
+       "count": 4
+      },
+      {
+       "descriptor": "Research",
+       "id": "0d0d6d4885ac102c8249955c60056479",
+       "count": 4
+      },
+      {
+       "descriptor": "Mergers & Acquisitions",
+       "id": "2745bc1368021016a991f0819a323b16",
+       "count": 4
+      },
+      {
+       "descriptor": "Corporate Communications",
+       "id": "2745bc1368021016a9915d9404123a74",
+       "count": 4
+      },
+      {
+       "descriptor": "Work Station Support",
+       "id": "2745bc1368021016a991b9f431aa3ae8",
+       "count": 3
+      },
+      {
+       "descriptor": "Regulatory Affairs",
+       "id": "2745bc1368021016a9919856f05a3abc",
+       "count": 3
+      },
+      {
+       "descriptor": "Data & Insights",
+       "id": "8912d5666928010e9aea804cb1960000",
+       "count": 3
+      },
+      {
+       "descriptor": "CS Compliance & Risk Management",
+       "id": "2ce6facc687d010e9aeb6972f7b90000",
+       "count": 3
+      },
+      {
+       "descriptor": "Applications/Sales Engineering",
+       "id": "2745bc1368021016a991e98092923b0e",
+       "count": 3
+      },
+      {
+       "descriptor": "Site Reliability Engineering",
+       "id": "b7106cb62669100c686bc832c23b0000",
+       "count": 2
+      },
+      {
+       "descriptor": "Machine Learning",
+       "id": "ad45ef80fd4701f3e09a4bdd856804d3",
+       "count": 2
+      },
+      {
+       "descriptor": "Digital Sales – Business Development Representative",
+       "id": "4922e189c6b21001f2875be2e8e80000",
+       "count": 2
+      },
+      {
+       "descriptor": "Client Care Q",
+       "id": "03432a8f4d9c0106405474eca11c8d37",
+       "count": 2
+      }
+     ]
+    },
+    {
+     "facetParameter": "timeType",
+     "descriptor": "Time Type",
+     "values": [
+      {
+       "descriptor": "Full time",
+       "id": "3d32d47be90110109faf15aa8b2200bf",
+       "count": 846
+      }
+     ]
+    },
+    {
+     "facetParameter": "locationMainGroup",
+     "values": [
+      {
+       "facetParameter": "locationCountry",
+       "descriptor": "Location Country",
+       "values": [
+        {
+         "descriptor": "Australia",
+         "id": "d903bb3fedad45039383f6de334ad4db",
+         "count": 9
+        },
+        {
+         "descriptor": "Austria",
+         "id": "d004c0d1a6c84511ab048669fcdf9fd7",
+         "count": 1
+        },
+        {
+         "descriptor": "Bangladesh",
+         "id": "db69b9fc446c11de98360015c5e6daf6",
+         "count": 2
+        },
+        {
+         "descriptor": "Brazil",
+         "id": "1a29bb1357b240ab99a2fa755cc87c0e",
+         "count": 25
+        },
+        {
+         "descriptor": "Bulgaria",
+         "id": "25f4875dc598484dbeee857eb2d81652",
+         "count": 1
+        },
+        {
+         "descriptor": "Canada",
+         "id": "a30a87ed25634629aa6c3958aa2b91ea",
+         "count": 14
+        },
+        {
+         "descriptor": "Chile",
+         "id": "53fe09ef12b9408682a1d2439823f2e0",
+         "count": 1
+        },
+        {
+         "descriptor": "China",
+         "id": "6cb77610a8a543aea2d6bc10457e35d4",
+         "count": 3
+        },
+        {
+         "descriptor": "Colombia",
+         "id": "e8106cd6a3534f2dba6fdee2d41db89d",
+         "count": 28
+        },
+        {
+         "descriptor": "Congo, Democratic Republic of the",
+         "id": "db69c26c446c11de98360015c5e6daf6",
+         "count": 3
+        },
+        {
+         "descriptor": "Côte d'Ivoire",
+         "id": "4bc79a4526e4459d93db166b02d214db",
+         "count": 7
+        },
+        {
+         "descriptor": "Czechia",
+         "id": "fc078443155c4ad294201ecf5a61a499",
+         "count": 2
+        },
+        {
+         "descriptor": "Denmark",
+         "id": "49ab063f422741e2aef271de00efeac8",
+         "count": 1
+        },
+        {
+         "descriptor": "Dominican Republic",
+         "id": "cec6aab2cee74a53a21629cd61000ea5",
+         "count": 3
+        },
+        {
+         "descriptor": "Egypt",
+         "id": "d865e83093ad42319653b08e61f7db49",
+         "count": 6
+        },
+        {
+         "descriptor": "Ethiopia",
+         "id": "db69c460446c11de98360015c5e6daf6",
+         "count": 6
+        },
+        {
+         "descriptor": "France",
+         "id": "54c5b6971ffb4bf0b116fe7651ec789a",
+         "count": 7
+        },
+        {
+         "descriptor": "Georgia",
+         "id": "db69c550446c11de98360015c5e6daf6",
+         "count": 2
+        },
+        {
+         "descriptor": "Germany",
+         "id": "dcc5b7608d8644b3a93716604e78e995",
+         "count": 12
+        },
+        {
+         "descriptor": "Ghana",
+         "id": "db69c640446c11de98360015c5e6daf6",
+         "count": 2
+        },
+        {
+         "descriptor": "Guatemala",
+         "id": "db3b4b80df0f4287b262e5564c10edfa",
+         "count": 2
+        },
+        {
+         "descriptor": "Hong Kong",
+         "id": "d4afdeb461d446e4babd204bd102dba8",
+         "count": 5
+        },
+        {
+         "descriptor": "India",
+         "id": "c4f78be1a8f14da0ab49ce1162348a5e",
+         "count": 99
+        },
+        {
+         "descriptor": "Indonesia",
+         "id": "b31234dbcdda4da9ba8fa073c5944e36",
+         "count": 2
+        },
+        {
+         "descriptor": "Italy",
+         "id": "8cd04a563fd94da7b06857a79faaf815",
+         "count": 2
+        },
+        {
+         "descriptor": "Japan",
+         "id": "8b705da2becf43cfaccc091da0988ab2",
+         "count": 22
+        },
+        {
+         "descriptor": "Jordan",
+         "id": "809723fc85024f499ca856efcd8d6b34",
+         "count": 1
+        },
+        {
+         "descriptor": "Kazakhstan",
+         "id": "db69ebac446c11de98360015c5e6daf6",
+         "count": 2
+        },
+        {
+         "descriptor": "Korea, Republic of",
+         "id": "7a5a2aadf9d34086a2bfbfd408bc28da",
+         "count": 7
+        },
+        {
+         "descriptor": "Lebanon",
+         "id": "6dfdb00cf8554fb9aab9f4ef39f830e0",
+         "count": 1
+        },
+        {
+         "descriptor": "Malaysia",
+         "id": "972dc4ba8d454bc0b893ff84b1529077",
+         "count": 5
+        },
+        {
+         "descriptor": "Mexico",
+         "id": "e2adff9272454660ac4fdb56fc70bb51",
+         "count": 6
+        },
+        {
+         "descriptor": "Mongolia",
+         "id": "db69d356446c11de98360015c5e6daf6",
+         "count": 1
+        },
+        {
+         "descriptor": "Morocco",
+         "id": "7aaca3f6fc774f16802a4df4718a5b53",
+         "count": 1
+        },
+        {
+         "descriptor": "Netherlands",
+         "id": "9696868b09c64d52a62ee13b052383cc",
+         "count": 3
+        },
+        {
+         "descriptor": "New Zealand",
+         "id": "55273a1b49934d97ae15342ef51f6b95",
+         "count": 2
+        },
+        {
+         "descriptor": "Nigeria",
+         "id": "db69d536446c11de98360015c5e6daf6",
+         "count": 4
+        },
+        {
+         "descriptor": "Pakistan",
+         "id": "567ef1bd0cc84d4e83b98d0013008264",
+         "count": 1
+        },
+        {
+         "descriptor": "Panama",
+         "id": "a390372e575c41ecb7240c51ce9067bd",
+         "count": 1
+        },
+        {
+         "descriptor": "Philippines",
+         "id": "e56f1daf83e04bacae794ba5c5593560",
+         "count": 39
+        },
+        {
+         "descriptor": "Poland",
+         "id": "131d5ac7e3ee4d7b962bdc96e498e412",
+         "count": 14
+        },
+        {
+         "descriptor": "Portugal",
+         "id": "2e8c5034deb045d49315417c347472ca",
+         "count": 1
+        },
+        {
+         "descriptor": "Romania",
+         "id": "f2e609fe92974a55a05fc1cdc2852122",
+         "count": 3
+        },
+        {
+         "descriptor": "Saudi Arabia",
+         "id": "50423b5190ad49bb89e94cd58dfaad69",
+         "count": 13
+        },
+        {
+         "descriptor": "Serbia",
+         "id": "b3f8697442124d6aaeb752a13c1e8491",
+         "count": 1
+        },
+        {
+         "descriptor": "Singapore",
+         "id": "80938777cac5440fab50d729f9634969",
+         "count": 84
+        },
+        {
+         "descriptor": "South Africa",
+         "id": "4db3c26940b944919b83612cc1193eed",
+         "count": 9
+        },
+        {
+         "descriptor": "Spain",
+         "id": "bd34c524a6a04ae6915f5d96fa086199",
+         "count": 7
+        },
+        {
+         "descriptor": "Sweden",
+         "id": "6a800a4736884df5826858d435650f45",
+         "count": 6
+        },
+        {
+         "descriptor": "Taiwan",
+         "id": "a4e08b475d6a4176853c9d1cb9854e02",
+         "count": 4
+        },
+        {
+         "descriptor": "Thailand",
+         "id": "873d0f604e3b458c990cb4d83a5c0f14",
+         "count": 8
+        },
+        {
+         "descriptor": "Türkiye",
+         "id": "c2e3bac5bbbb47b29dfc6e8b56a1586e",
+         "count": 1
+        },
+        {
+         "descriptor": "Ukraine",
+         "id": "a4051ef996ac40778d4c79e3f2dedfd2",
+         "count": 2
+        },
+        {
+         "descriptor": "United Arab Emirates",
+         "id": "7b4fa1f369bd4604ba3692682fcbe345",
+         "count": 20
+        },
+        {
+         "descriptor": "United Kingdom",
+         "id": "29247e57dbaf46fb855b224e03170bc7",
+         "count": 52
+        },
+        {
+         "descriptor": "United States of America",
+         "id": "bc33aa3152ec42d4995f4791a106ed09",
+         "count": 276
+        },
+        {
+         "descriptor": "Uzbekistan",
+         "id": "db69e7d8446c11de98360015c5e6daf6",
+         "count": 3
+        },
+        {
+         "descriptor": "Vietnam",
+         "id": "db69e8c8446c11de98360015c5e6daf6",
+         "count": 8
+        }
+       ]
+      },
+      {
+       "facetParameter": "locations",
+       "descriptor": "Locations",
+       "values": [
+        {
+         "descriptor": "AE - Dubai, United Arab Emirates",
+         "id": "6a6b666e8c601001fe42af30dac00000",
+         "count": 20
+        },
+        {
+         "descriptor": "Atlanta, GA",
+         "id": "0d363d14c5e10167597b40b61204c994",
+         "count": 5
+        },
+        {
+         "descriptor": "AT - Vienna, Austria",
+         "id": "6a6b666e8c601001fe428fa236470000",
+         "count": 1
+        },
+        {
+         "descriptor": "AU - Melbourne, Australia",
+         "id": "6a6b666e8c601001fe428ac31e1a0000",
+         "count": 4
+        },
+        {
+         "descriptor": "AU - Sydney, Australia",
+         "id": "042fef2fac0c10017cf2c0b44a450000",
+         "count": 5
+        },
+        {
+         "descriptor": "BD - Dhaka, Bangladesh",
+         "id": "6a6b666e8c601001fe426aab0f740000",
+         "count": 2
+        },
+        {
+         "descriptor": "BG - Sofia, Bulgaria",
+         "id": "6a6b666e8c601001fe425de3147b0000",
+         "count": 1
+        },
+        {
+         "descriptor": "BR - Brasilia, Brazil",
+         "id": "6a6b666e8c601001fe42555669670000",
+         "count": 2
+        },
+        {
+         "descriptor": "BR - Remote - Brazil",
+         "id": "6a6b666e8c601001fe4250823d350000",
+         "count": 10
+        },
+        {
+         "descriptor": "BR - São Paulo, Brazil",
+         "id": "6a6b666e8c601001fe4249dc91a60000",
+         "count": 13
+        },
+        {
+         "descriptor": "CA - Toronto, Canada",
+         "id": "6a6b666e8c601001fe422d6fb1360000",
+         "count": 14
+        },
+        {
+         "descriptor": "CD - Kinshasa, Democratic Republic of Congo",
+         "id": "6a6b666e8c601001fe4229295f4c0000",
+         "count": 3
+        },
+        {
+         "descriptor": "CI - Abidjan, Cote D'Ivoire",
+         "id": "6a6b666e8c601001fe421c76fbd70000",
+         "count": 7
+        },
+        {
+         "descriptor": "CL - Santiago, Chile",
+         "id": "6a6b666e8c601001fe4213e620430000",
+         "count": 1
+        },
+        {
+         "descriptor": "CN - Beijing, China",
+         "id": "6a6b666e8c601001fe420f02a3960000",
+         "count": 1
+        },
+        {
+         "descriptor": "CN - Shanghai, China",
+         "id": "6a6b666e8c601001fe41fe180ca50000",
+         "count": 1
+        },
+        {
+         "descriptor": "CN - Shenzhen, China",
+         "id": "6a6b666e8c601001fe41f89aef9c0000",
+         "count": 1
+        },
+        {
+         "descriptor": "CO - Bogota, Colombia",
+         "id": "6a6b666e8c601001fe41f0bed1d00000",
+         "count": 28
+        },
+        {
+         "descriptor": "CZ - Prague, Czech Republic",
+         "id": "6a6b666e8c601001fe41d745849f0000",
+         "count": 2
+        },
+        {
+         "descriptor": "DE - Berlin, Germany",
+         "id": "6a6b666e8c601001fe41d26ee03a0000",
+         "count": 1
+        },
+        {
+         "descriptor": "DE - Frankfurt, Germany",
+         "id": "6a6b666e8c601001fe41c160c6360000",
+         "count": 10
+        },
+        {
+         "descriptor": "DE - Munich, Germany",
+         "id": "6a6b666e8c601001fe41babd026b0000",
+         "count": 1
+        },
+        {
+         "descriptor": "DK - Copenhagen, Denmark",
+         "id": "6a6b666e8c601001fe41b066f5ca0000",
+         "count": 1
+        },
+        {
+         "descriptor": "DO - Santo Domingo, Dominican Republic",
+         "id": "6a6b666e8c601001fe41a2730eb20000",
+         "count": 2
+        },
+        {
+         "descriptor": "EG - Cairo, Egypt",
+         "id": "6a6b666e8c601001fe41949409120000",
+         "count": 6
+        },
+        {
+         "descriptor": "ES - Barcelona, Spain",
+         "id": "6a6b666e8c601001fe418df0e8100000",
+         "count": 1
+        },
+        {
+         "descriptor": "ES - Madrid, Spain",
+         "id": "6a6b666e8c601001fe41844bca1a0000",
+         "count": 6
+        },
+        {
+         "descriptor": "ET - Addis Ababa, Ethiopia",
+         "id": "6a6b666e8c601001fe417aa3b9620000",
+         "count": 6
+        },
+        {
+         "descriptor": "FR - Paris, France",
+         "id": "6a6b666e8c601001fe416759e1d90000",
+         "count": 7
+        },
+        {
+         "descriptor": "GB - Basingstoke, United Kingdom",
+         "id": "6a6b666e8c601001fe415db43b910000",
+         "count": 5
+        },
+        {
+         "descriptor": "GB - Cardiff, United Kingdom",
+         "id": "6a6b666e8c601001fe414c3c96490000",
+         "count": 1
+        },
+        {
+         "descriptor": "GB - London, United Kingdom",
+         "id": "6a6b666e8c601001fe41480604e20000",
+         "count": 45
+        },
+        {
+         "descriptor": "GB - Reading, United Kingdom",
+         "id": "6a6b666e8c601001fe4143349fe60000",
+         "count": 1
+        },
+        {
+         "descriptor": "GE - Tbilisi, Georgia",
+         "id": "6a6b666e8c601001fe412eb806790000",
+         "count": 2
+        },
+        {
+         "descriptor": "GH - Accra, Ghana",
+         "id": "6a6b666e8c601001fe412a7ec05e0000",
+         "count": 2
+        },
+        {
+         "descriptor": "GT - Guatemala City, Guatemala",
+         "id": "6a6b666e8c601001fe41216d62940000",
+         "count": 2
+        },
+        {
+         "descriptor": "HK - Hong Kong, China",
+         "id": "6a6b666e8c601001fe41190344c30000",
+         "count": 5
+        },
+        {
+         "descriptor": "ID - Jakarta, Indonesia",
+         "id": "6a6b666e8c601001fe40ffbc51210000",
+         "count": 2
+        },
+        {
+         "descriptor": "IN - Bengaluru, India",
+         "id": "6a6b666e8c601001fe40e79f253d0000",
+         "count": 87
+        },
+        {
+         "descriptor": "IN - Mumbai, India",
+         "id": "6a6b666e8c601001fe40d756c83e0000",
+         "count": 11
+        },
+        {
+         "descriptor": "IN - Remote - IND",
+         "id": "6a6b666e8c601001fe40d14e1a970000",
+         "count": 1
+        },
+        {
+         "descriptor": "IT - Milan, Italy",
+         "id": "6a6b666e8c601001fe40cbe105f80000",
+         "count": 2
+        },
+        {
+         "descriptor": "JM - Remote - Jamaica",
+         "id": "99dc0088c3d91000cf35cf2466f60000",
+         "count": 1
+        },
+        {
+         "descriptor": "JO - Amman, Jordan",
+         "id": "6a6b666e8c601001fe40be9eb6090000",
+         "count": 1
+        },
+        {
+         "descriptor": "JP - Tokyo, Japan",
+         "id": "6a6b666e8c601001fe40b462d4800000",
+         "count": 22
+        },
+        {
+         "descriptor": "KR - Seoul, South Korea",
+         "id": "6a6b666e8c601001fe408f090b710000",
+         "count": 7
+        },
+        {
+         "descriptor": "KZ - Almaty, Kazakhstan",
+         "id": "6a6b666e8c601001fe40899d21700000",
+         "count": 2
+        },
+        {
+         "descriptor": "LB - Beirut, Lebanon",
+         "id": "6a6b666e8c601001fe408397081c0000",
+         "count": 1
+        },
+        {
+         "descriptor": "MA - Casablanca, Morocco",
+         "id": "6a6b666e8c601001fe40721fd68b0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Melbourne, Australia",
+         "id": "2745bc1368021017451b2fd5000ab6a7",
+         "count": 1
+        },
+        {
+         "descriptor": "MN - Ulaanbaatar, Mongolia",
+         "id": "6a6b666e8c601001fe405e3d29b70000",
+         "count": 1
+        },
+        {
+         "descriptor": "MX - Mexico City, Mexico",
+         "id": "6a6b666e8c601001fe404fc6dbf80000",
+         "count": 6
+        },
+        {
+         "descriptor": "MY - Kuala Lumpur, Malaysia",
+         "id": "6a6b666e8c601001fe404755e98c0000",
+         "count": 5
+        },
+        {
+         "descriptor": "New York, NY",
+         "id": "2745bc1368021017451add92e8f2b5df",
+         "count": 3
+        },
+        {
+         "descriptor": "NG - Lagos, Nigeria",
+         "id": "6a6b666e8c601001fe403ee92d2c0000",
+         "count": 4
+        },
+        {
+         "descriptor": "NL - Amsterdam, Netherlands",
+         "id": "6a6b666e8c601001fe403ab27e420000",
+         "count": 3
+        },
+        {
+         "descriptor": "NZ - Auckland, New Zealand",
+         "id": "6a6b666e8c601001fe402505e4860000",
+         "count": 2
+        },
+        {
+         "descriptor": "PA - Panama City, Panama",
+         "id": "6a6b666e8c601001fe401c9a44260000",
+         "count": 1
+        },
+        {
+         "descriptor": "PH - Makati, Philippines",
+         "id": "6a6b666e8c601001fe400ff774190000",
+         "count": 9
+        },
+        {
+         "descriptor": "PH - Pasay, Philippines - Manila",
+         "id": "6a6b666e8c601001fe400b26bf8a0000",
+         "count": 30
+        },
+        {
+         "descriptor": "PK - Karachi, Pakistan",
+         "id": "6a6b666e8c601001fe40022093d60000",
+         "count": 1
+        },
+        {
+         "descriptor": "PL - Warsaw, Poland",
+         "id": "6a6b666e8c601001fe3feedf1d4c0000",
+         "count": 14
+        },
+        {
+         "descriptor": "PT - Lisbon, Portugal",
+         "id": "6a6b666e8c601001fe3fea0f4c880000",
+         "count": 1
+        },
+        {
+         "descriptor": "RO - Bucharest, Romania",
+         "id": "6a6b666e8c601001fe3fdd6e49bf0000",
+         "count": 3
+        },
+        {
+         "descriptor": "RS - Belgrade, Serbia",
+         "id": "6a6b666e8c601001fe3fd4662a650000",
+         "count": 1
+        },
+        {
+         "descriptor": "San Francisco, CA",
+         "id": "7c51a1af36ba1000f4f4d290416b0000",
+         "count": 5
+        },
+        {
+         "descriptor": "SA - Riyadh, Saudi Arabia",
+         "id": "6a6b666e8c601001fe3fc5594bcd0000",
+         "count": 13
+        },
+        {
+         "descriptor": "SE - Stockholm, Sweden",
+         "id": "6a6b666e8c601001fe3fbc4f1f2a0000",
+         "count": 6
+        },
+        {
+         "descriptor": "SG - Singapore",
+         "id": "6a6b666e8c601001fe3fb345c1690000",
+         "count": 83
+        },
+        {
+         "descriptor": "Singapore, Paya Lebar Green",
+         "id": "2745bc1368021017451b3858b3f2b6bb",
+         "count": 1
+        },
+        {
+         "descriptor": "Sydney, Australia",
+         "id": "2745bc1368021017451b16a7b7dab66b",
+         "count": 1
+        },
+        {
+         "descriptor": "TH - Bangkok, Thailand",
+         "id": "6a6b666e8c601001fe3fa1cf12b00000",
+         "count": 8
+        },
+        {
+         "descriptor": "TR - Istanbul, Turkey",
+         "id": "6a6b666e8c601001fe3f9bc7fd750000",
+         "count": 1
+        },
+        {
+         "descriptor": "TW - Taipei, Taiwan",
+         "id": "6a6b666e8c601001fe3f93318ef30000",
+         "count": 4
+        },
+        {
+         "descriptor": "UA - Kyiv, Ukraine",
+         "id": "6a6b666e8c601001fe3f898b84550000",
+         "count": 2
+        },
+        {
+         "descriptor": "US - Ashburn, VA",
+         "id": "6a6b666e8c601001fe3f807fd9e60000",
+         "count": 18
+        },
+        {
+         "descriptor": "US - Atlanta, GA",
+         "id": "6a6b666e8c601001fe3f7c49a75f0000",
+         "count": 32
+        },
+        {
+         "descriptor": "US - Austin, TX",
+         "id": "6a6b666e8c601001fe3f7810cc4d0000",
+         "count": 80
+        },
+        {
+         "descriptor": "US - Bellevue, WA",
+         "id": "6a6b666e8c601001fe3f73d78b140000",
+         "count": 14
+        },
+        {
+         "descriptor": "US - Denver, CO",
+         "id": "6a6b666e8c601001fe3f673349130000",
+         "count": 12
+        },
+        {
+         "descriptor": "US - Foster City, CA",
+         "id": "6a6b666e8c601001fe3f62fc882e0000",
+         "count": 66
+        },
+        {
+         "descriptor": "US - Los Angeles, CA",
+         "id": "6a6b666e8c601001fe3f564a8f370000",
+         "count": 1
+        },
+        {
+         "descriptor": "US - Miami, FL",
+         "id": "6a6b666e8c601001fe3f4d411e3b0000",
+         "count": 13
+        },
+        {
+         "descriptor": "US - New York, NY",
+         "id": "6a6b666e8c601001fe3f456e81ac0000",
+         "count": 12
+        },
+        {
+         "descriptor": "US - Remote - Illinois",
+         "id": "6a6b666e8c601001fe3f09cc8d6f0000",
+         "count": 2
+        },
+        {
+         "descriptor": "US - Remote - Michigan",
+         "id": "6a6b666e8c601001fe3edc101e7f0000",
+         "count": 1
+        },
+        {
+         "descriptor": "US - Remote - Ohio",
+         "id": "6a6b666e8c601001fe3eac863c070000",
+         "count": 1
+        },
+        {
+         "descriptor": "US - San Francisco, CA",
+         "id": "6a6b666e8c601001fe3e64ecb78b0000",
+         "count": 75
+        },
+        {
+         "descriptor": "US - Washington, DC",
+         "id": "6a6b666e8c601001fe3e5c7f66f60000",
+         "count": 2
+        },
+        {
+         "descriptor": "UZ - Tashkent, Uzbekistan",
+         "id": "6a6b666e8c601001fe3e4b02a8e40000",
+         "count": 3
+        },
+        {
+         "descriptor": "VN - Hanoi, Vietnam",
+         "id": "6a6b666e8c601001fe3e429462590000",
+         "count": 7
+        },
+        {
+         "descriptor": "VN - Ho Chi Minh City, Vietnam",
+         "id": "6a6b666e8c601001fe3e3e5ce4a60000",
+         "count": 1
+        },
+        {
+         "descriptor": "ZA - Johannesburg, South Africa",
+         "id": "6a6b666e8c601001fe3e2d81703a0000",
+         "count": 9
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

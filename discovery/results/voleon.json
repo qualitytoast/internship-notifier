@@ -1,0 +1,21 @@
+{
+  "key": "voleon",
+  "name": "The Voleon Group",
+  "careers_url": "https://voleon.com/jobs/",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "voleon"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/voleon?includeCompensation=false",
+  "feed_total": 59,
+  "page_total": 59,
+  "page_total_how": "Playwright render of https://voleon.com/jobs/ (2026-10-20): the embedded Ashby board (jobs.ashbyhq.com/voleon?embed=js) shows 'Open Positions (59)'",
+  "intern_total": 2,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com has no robots.txt); jobs.ashbyhq.com/api is disallowed and not used",
+  "notes": "voleon.com/careers/ is a 404; the site nav links /jobs (Ashby embed). 'Software Engineer Intern - (Summer 2027)' (Berkeley, CA) has Ashby employmentType 'Contract', so rely on the title; the other intern is 'Research Intern (London)'.",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

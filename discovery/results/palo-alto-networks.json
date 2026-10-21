@@ -1,0 +1,22 @@
+{
+  "key": "palo-alto-networks",
+  "name": "Palo Alto Networks",
+  "careers_url": "https://jobs.paloaltonetworks.com/en/search-jobs",
+  "hiring_system": "workday (tenant paloaltonetworks, wd5, site panwexternalcareers) behind a Radancy/TalentBrew front; student roles also on RippleMatch (company 676)",
+  "checker": "custom:panw",
+  "settings": {
+    "workday": {"host": "paloaltonetworks.wd5.myworkdayjobs.com", "tenant": "paloaltonetworks", "site": "panwexternalcareers"},
+    "ripplematch": {"company_id": 676, "list_url": "https://app.ripplematch.com/api/v2/public/roles/676", "job_url": "https://app.ripplematch.com/v2/public/job/{public_id}", "extra_ca": "http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt"}
+  },
+  "feed": "POST https://paloaltonetworks.wd5.myworkdayjobs.com/wday/cxs/paloaltonetworks/panwexternalcareers/jobs {appliedFacets:{}, limit:20, offset:N} (72 pages) + GET https://app.ripplematch.com/api/v2/public/roles/676",
+  "feed_total": 1431,
+  "page_total": 1320,
+  "page_total_how": "Playwright render of https://jobs.paloaltonetworks.com/en/search-jobs (2026-10-20T00:41Z) showed '1312 search results' (data-total-results 1312; JSON results endpoint 3x500 = 1312 unique); RippleMatch company page showed 'Jobs (8)'. Workday CXS total 1423 (1423 unique) + 8 RippleMatch = 1431. The 111 extra are Workday postings Radancy does not carry, incl. all 23 intern postings (JR-id spot checks both ways); the Workday HTML site (which would show its own count) is robots-disallowed, so it was not rendered.",
+  "intern_total": 27,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "Radancy list (1312, no interns) + RippleMatch if Workday CXS must be avoided",
+  "robots": "ALLOW CXS /wday/cxs/paloaltonetworks/panwexternalcareers/jobs (no matching rule) but the tenant disallows its HTML site /panwexternalcareers/; ALLOW jobs.paloaltonetworks.com/en/search-jobs* (only root /search-jobs/ is disallowed); app.ripplematch.com robots is Allow: / but robots_check reports BLOCK (TLS chain incomplete for certifi)",
+  "notes": "Workday is complete: Radancy drops ~111 postings incl. every intern posting (23, worker subtype Intern) and shows drifted titles (key by JR id). Interns: 24 on Workday + 3 RippleMatch internships (likely the same programmes). Workday total 1423 is within reach of the CXS 2000 cap: alert at >=1900 and split by facet. Judgement call: tenant hides its Workday HTML from crawlers, CXS JSON is allowed by RFC 9309.",
+  "checked_at": "2026-10-20T00:50:00Z"
+}

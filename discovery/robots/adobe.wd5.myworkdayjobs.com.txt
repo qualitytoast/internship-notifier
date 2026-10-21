@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://adobe.wd5.myworkdayjobs.com/external_experienced/siteMap.xml
+
+User-agent: *
+Allow: /external_experienced/
+Disallow: /refreshFacet/

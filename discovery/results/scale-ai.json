@@ -1,0 +1,21 @@
+{
+  "key": "scale-ai",
+  "name": "Scale AI",
+  "careers_url": "https://scale.com/careers",
+  "hiring_system": "greenhouse (custom front on scale.com)",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "scaleai"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/scaleai/jobs",
+  "feed_total": 181,
+  "page_total": 181,
+  "page_total_how": "Playwright render of https://scale.com/careers#jobs (All Departments / All Locations): '298 ROLES ACROSS 17 DEPARTMENTS'. The page shows one row per job x location: splitting each feed job's location.name on ';' gives exactly 298 rows, and its 170 distinct titles equal the feed's. The page itself loads api.greenhouse.io/v1/boards/scaleai/jobs?content=true (meta.total 181).",
+  "intern_total": 4,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (boards-api.greenhouse.io: no matching rule)",
+  "notes": "The page count (298) counts job-location rows, not jobs. Student roles sit in the Greenhouse 'University' department (bookmark was ?department=University). absolute_url = job-boards.greenhouse.io/scaleai/jobs/<id>.",
+  "checked_at": "2026-10-20T00:37:53Z"
+}

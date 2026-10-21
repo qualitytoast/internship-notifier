@@ -1,0 +1,23 @@
+# status 200
+
+
+User-agent: Googlebot
+Allow: /
+    
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+
+User-agent: *
+Disallow: 
+
+
+
+Sitemap: https://careers.point72.com/CSSitemap

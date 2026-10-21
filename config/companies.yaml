@@ -1,0 +1,1490 @@
+# Every company InternWatch watches. One entry per company; see README.md, 'Adding a company'.
+#   key, name, category      identity (category 'quant' makes generic titles count as quant roles)
+#   careers_url              official careers page first (health emails link it), then your bookmarks
+#   checker + settings       which adapter reads the site, and how (src/internwatch/adapters, checkers)
+#   locations                countries to match (default from filters.yaml: US)
+#   status: blocked          not polled (automated access disallowed); covered by the SimplifyJobs cross-check
+#   role_keywords            the company's freshman/sophomore program names (NVIDIA Ignite …): student roles
+#   big: true                huge site: newest-first quick scans every poll, a full scan once a day
+#   verified                 discovery evidence: the careers page's own job count (and why it differs)
+companies:
+- key: databricks
+  name: Databricks
+  category: ai
+  careers_url: ['https://www.databricks.com/company/careers/open-positions', 'https://www.databricks.com/company/careers/open-positions?department=University%20Recruiting&location=all']
+  checker: greenhouse
+  settings: {board: databricks}
+  verified: {page_total: 893, explained: Feed is complete (a superset of the page);}
+- key: openai
+  name: OpenAI
+  category: ai
+  careers_url: ['https://openai.com/careers/search/', 'https://openai.com/careers/search/?l=6252b4ed-714d-469a-a970-7a13101bac9d%2Cbbd9f7fe-aae5-476a-9108-f25aea8f6cd2%2Ce8062547-b090-4206-8f1e-7329e0014e98%2C07ed9191-5bc6-421b-9883-f1ac2e276ad7%2C16c48b76-8036-4fe3-a18f-e9d357395713%2Cd9ccdc8b-a098-476b-8d89-e8609e0d963d']
+  checker: ashby
+  settings: {board: openai}
+  verified: {page_total: 808}
+- key: cohere
+  name: Cohere
+  category: ai
+  careers_url: ['https://jobs.ashbyhq.com/cohere', 'https://jobs.ashbyhq.com/cohere?employmentType=Intern']
+  checker: ashby
+  settings: {board: cohere}
+  verified: {page_total: 115}
+- key: scale-ai
+  name: Scale AI
+  category: ai
+  aliases: [Scale]
+  careers_url: ['https://scale.com/careers', 'https://scale.com/careers?department=University#jobs']
+  checker: greenhouse
+  settings: {board: scaleai}
+  verified: {page_total: 181}
+- key: wolfram
+  name: Wolfram
+  category: software
+  careers_url: ['https://www.wolfram.com/company/careers/opportunities/']
+  checker: recruiterbox
+  settings: {client_id: 42716, job_url: 'https://www.wolfram.com/company/careers/opportunities/#op-{id}-{slug}'}
+  verified: {page_total: 7}
+- key: amazon
+  name: Amazon
+  category: big-tech
+  aliases: [Amazon Web Services, AWS, Amazon.com]
+  careers_url: ['https://www.amazon.jobs/en/search', 'https://www.amazon.jobs/content/en/career-programs/university/internships-for-students?country%5B%5D=US&employment-type%5B%5D=Intern#jobs-search']
+  checker: amazon
+  settings:
+    endpoint: https://www.amazon.jobs/api/jobs/search?is_als=true
+    exclude_base:
+    - name: businessCategory
+      values:
+      - {name: a-confidential-job}
+    page_size: 200
+    queries:
+    - jobTypeFacets:
+      - name: isIntern
+        values:
+        - {name: '1'}
+      - name: employeeClass
+        values:
+        - {name: Intern}
+        - {name: Apprentice}
+    - filterFacets:
+      - name: businessCategory
+        values:
+        - {name: studentprograms}
+        - {name: university}
+      exclude: [FLAGS]
+    - query: intern
+      exclude: [FLAGS, BIZ]
+      sort: SCORE
+    - query: apprentice
+      exclude: [FLAGS, BIZ]
+      sort: SCORE
+    - query: co-op
+      exclude: [FLAGS, BIZ]
+    - query: student
+      exclude: [FLAGS, BIZ]
+    job_url: https://www.amazon.jobs/en/jobs/{icimsJobId}
+  role_keywords: [propel]
+  big: true
+  verified: {page_total: null, explained: 'reads the complete student slice (intern/apprentice flags + student business categories +
+      keyword sweep, ~850 jobs); the site''s 22,117 jobs exceed its 10,000-hit search cap and the page shows no total'}
+- key: oracle
+  name: Oracle
+  category: big-tech
+  careers_url: ['https://careers.oracle.com/en/sites/jobsearch/jobs', 'https://careers.oracle.com/en/sites/jobsearch/jobs?keyword=Internship&lastSelectedFacet=locations&mode=location&selectedFlexFieldsFacets=%22AttributeChar13%7CCampus%22&selectedLocationsFacet=300000000106749%3B300000000149325']
+  checker: oracle
+  settings: {host: eeho.fa.us2.oraclecloud.com, site: CX_45001, job_url: 'https://careers.oracle.com/en/sites/jobsearch/job/{id}'}
+  verified: {page_total: 2380, explained: CX_45001 (URL name 'jobsearch') is the only ORA_ACTIVE site in the public recruitingCESites
+      list (5 others inactive);}
+- key: capital-one
+  name: Capital One
+  category: fintech
+  aliases: [Capital One]
+  careers_url: ['https://www.capitalonecareers.com/search-jobs', 'https://www.capitalonecareers.com/search-jobs?acm=ALL&alrpm=ALL&ascf=[%7B%22key%22:%22custom_fields.Campus%22,%22value%22:%22Internships%22%7D]']
+  checker: workday
+  settings: {host: capitalone.wd12.myworkdayjobs.com, tenant: capitalone, site: Capital_One}
+  role_keywords: [teip, first gen focus]
+  verified: {page_total: 1841, explained: 'Workday Capital_One is the union of three Radancy TalentBrew country sites (US 1841, CA 52,
+      UK 79);'}
+- key: hugging-face
+  name: Hugging Face
+  category: ai
+  aliases: [HuggingFace]
+  careers_url: ['https://apply.workable.com/huggingface/', 'https://apply.workable.com/huggingface/#jobs']
+  checker: workable
+  settings: {account: huggingface}
+  verified: {page_total: 6}
+- key: coreweave
+  name: CoreWeave (Weights & Biases)
+  category: ai
+  aliases: [Weights & Biases, Weights and Biases]
+  careers_url: ['https://coreweave.com/careers', 'https://coreweave.com/careers/weights-biases']
+  checker: greenhouse
+  settings:
+    boards: [coreweave, coreweaveu, coreweaveca, coreweaveapac, weights_and_biases]
+  verified: {page_total: 428}
+- key: anyscale
+  name: Anyscale
+  category: ai
+  careers_url: ['https://jobs.ashbyhq.com/anyscale']
+  checker: ashby
+  settings: {board: anyscale}
+  verified: {page_total: 20}
+- key: groq
+  name: Groq
+  category: ai
+  careers_url: ['https://jobs.gem.com/groq']
+  checker: gem
+  settings: {board: groq}
+  verified: {page_total: 36}
+- key: pinecone
+  name: Pinecone
+  category: ai
+  careers_url: ['https://www.pinecone.io/careers/', 'https://www.pinecone.io/careers/#open-roles']
+  checker: ashby
+  settings: {board: pinecone}
+  verified: {page_total: 5}
+- key: grafana-labs
+  name: Grafana Labs
+  category: software
+  careers_url: ['https://job-boards.greenhouse.io/grafanalabs', 'https://job-boards.greenhouse.io/grafanalabs?keyword=intern']
+  checker: greenhouse
+  settings: {board: grafanalabs}
+  verified: {page_total: 132}
+- key: temporal
+  name: Temporal
+  category: software
+  aliases: [Temporal Technologies]
+  careers_url: ['https://temporal.io/careers', 'https://temporal.io/careers#become-a-temporalite']
+  checker: ashby
+  settings: {board: temporal}
+  verified: {page_total: 70}
+- key: apple
+  name: Apple
+  category: big-tech
+  careers_url: ['https://jobs.apple.com/en-us/search', 'https://jobs.apple.com/en-us/search?location=united-states-USA&team=internships-STDNT-INTRN']
+  checker: apple
+  settings:
+    endpoint: https://jobs.apple.com/api/v1/search
+    page_size: 20
+    queries:
+    - filters:
+        teams:
+        - {team: teamsAndSubTeams-STDNT}
+    - {query: '"intern"'}
+    - {query: '"internship"'}
+    - {query: '"student"'}
+    - {query: '"co-op"'}
+    sort: newest
+    job_url: https://jobs.apple.com/en-us/details/{h}/{transformedPostingTitle}?team={teamCode}  (h = positionId if id contains REQ/PIPE,
+      else id)
+    full_sweep: 'optional weekly: filters {} -> 306 pages'
+  big: true
+  verified: {page_total: null, explained: 'reads the complete student slice (Students team + exact-word searches; 306 rows = 251 postings),
+      grouped by posting; the whole site is ~6,100 posting x location rows and the page shows only ''600+'''}
+- key: meta
+  name: Meta
+  category: big-tech
+  aliases: [Facebook]
+  careers_url: ['https://www.metacareers.com/jobsearch/', 'https://www.metacareers.com/jobsearch/?roles[0]=Internship']
+  checker: meta
+  settings: {doc_id: '27129360303422352'}
+  role_keywords: [meta university]
+  verified: {page_total: 1225}
+- key: uber
+  name: Uber
+  category: big-tech
+  careers_url: ['https://jobs.uber.com/en/jobs/', 'https://jobs.uber.com/en/jobs/?team=University&countries=Canada&countries=United+States']
+  checker: oracle
+  settings: {host: iaziqy.fa.ocs.oraclecloud.com, site: UberCareers}
+  locations: [US, CA]
+  role_keywords: [uberstar]
+  verified: {page_total: 702, explained: ORC is the system of record and a superset of the jobs.uber.com copy (hourly sync;}
+- key: pinterest
+  name: Pinterest
+  category: software
+  careers_url: ['https://www.pinterestcareers.com/jobs/', 'https://www.pinterestcareers.com/jobs/?search=Intern&pagesize=20#results']
+  checker: greenhouse
+  settings: {board: pinterest}
+  verified: {page_total: 154, explained: Single board;}
+- key: duolingo
+  name: Duolingo
+  category: software
+  careers_url: ['https://careers.duolingo.com/', 'https://careers.duolingo.com/?type=Thrive%20Program#careers', 'https://careers.duolingo.com/?type=Intern#careers']
+  checker: greenhouse
+  settings: {board: duolingo}
+  role_keywords: [thrive]
+  verified: {page_total: 63}
+- key: linkedin
+  name: LinkedIn
+  category: big-tech
+  careers_url: ['https://careers.linkedin.com/', 'https://www.linkedin.com/jobs/search-results/?currentJobId=4444658212&keywords=jobs&origin=JOB_SEARCH_PAGE_JOB_FILTER&referralSearchId=h8qRCFetE9BYzhDNBT%2BGGw%3D%3D&geoId=103644278&f_C=1337%2C2587638%2C39939&f_SAL=f_SA_id_226001%3A275001']
+  checker: blocked
+  status: blocked
+  blocked_reason: LinkedIn's own jobs exist only on www.linkedin.com, whose robots.txt disallows all automated access (and its header
+    prohibits it without permission). careers.linkedin.com has no job data; the Lever 'linkedin' board is a partner test sandbox.
+  fallback: Create a LinkedIn job alert in your own account for f_C=1337,9202023,2561065,2587638,290903,39939 with f_E=1 (Internship)
+    and US geoId 103644278; SimplifyJobs cross-check covers LinkedIn roles if listed.
+  verified: {page_total: null}
+- key: bloomberg
+  name: Bloomberg
+  category: fintech
+  aliases: [Bloomberg LP]
+  careers_url: ['https://bloomberg.avature.net/careers/SearchJobs', 'https://bloomberg.avature.net/careers/SearchJobs/?1686=%5B55479%5D&1686_format=2312&listFilterMode=1&jobRecordsPerPage=12']
+  checker: avature
+  settings:
+    list_url: https://bloomberg.avature.net/careers/SearchJobs/
+    page_size: 12
+    fields: {location: .list-item-location}
+    total_regex: list-controls__text__legend"\s+aria-label="(\d+) results"
+  verified: {page_total: 337}
+- key: microsoft
+  name: Microsoft
+  category: big-tech
+  careers_url: ['https://apply.careers.microsoft.com/careers?domain=microsoft.com&hl=en', 'https://apply.careers.microsoft.com/careers?hl=en&start=0&location=Canada&pid=1970393556866710&sort_by=distance&filter_include_remote=1&filter_include_relocation=0&filter_employment_type=internship',
+    'https://apply.careers.microsoft.com/careers?hl=en&start=0&location=United+States&pid=1970393556983238&sort_by=timestamp&filter_include_remote=1&filter_include_relocation=0&filter_employment_type=internship']
+  checker: eightfold
+  settings:
+    host: apply.careers.microsoft.com
+    domain: microsoft.com
+    api: pcsx
+    min_interval: 3.0
+    quick_queries:
+    - {filter_employment_type: internship}
+    - {filter_seniority: Intern}
+    count_tolerance: 0.05
+  locations: [US, CA]
+  role_keywords: [explore microsoft]
+  big: true
+  timeout_minutes: 20
+  verified: {page_total: 2411}
+- key: stripe
+  name: Stripe
+  category: fintech
+  careers_url: ['https://stripe.com/careers/search', 'https://stripe.com/careers/search?locations=North+America&employment_types=Intern']
+  checker: greenhouse
+  settings: {board: stripe}
+  locations: [US, CA]
+  verified: {page_total: 676, explained: Feed is a superset of the site;}
+- key: roblox
+  name: Roblox
+  category: gaming
+  careers_url: ['https://careers.roblox.com/jobs', 'https://careers.roblox.com/jobs?type=internship']
+  checker: greenhouse
+  settings: {board: roblox}
+  verified: {page_total: 262}
+- key: dropbox
+  name: Dropbox
+  category: software
+  careers_url: ['https://www.dropbox.jobs/en/jobs/', 'https://www.dropbox.jobs/en/jobs/?search=intern&pagesize=20#results']
+  checker: greenhouse
+  settings: {board: dropbox}
+  verified: {page_total: 18}
+- key: synopsys
+  name: Synopsys
+  category: semiconductors
+  careers_url: ['https://careers.synopsys.com/search-jobs', 'https://careers.synopsys.com/category/interns-temp-jobs/44408/8675664/1']
+  checker: avature
+  settings:
+    list_url: https://synopsys.avature.net/careers/SearchJobs/
+    page_size: 6
+    fields: {employment_type: .list-item-hireType, posted: .list-item-posted}
+    total_regex: list-controls__text__legend"\s+aria-label="(\d+) results"
+    newest_first_query: jobSort=postedDate&jobSortDirection=DESC
+  big: true
+  timeout_minutes: 10
+  verified: {page_total: 638, explained: 'Avature page size is fixed at 6 (jobRecordsPerPage ignored), so mark it big: read newest-first
+      pages each poll and do the 107-page full scan daily.'}
+- key: liberty-mutual
+  name: Liberty Mutual
+  category: finance-insurance
+  aliases: [Liberty Mutual Insurance]
+  careers_url: ['https://jobs.libertymutualgroup.com/', 'https://libertymutual.eightfold.ai/careers?query=intern&domain=libertymutual.com']
+  checker: eightfold
+  settings: {host: searchjobs.libertymutualgroup.com, domain: libertymutual.com, api: v2, min_interval: 2.5}
+  role_keywords: [claim your career]
+  verified: {page_total: 196}
+- key: autodesk
+  name: Autodesk
+  category: software
+  careers_url: ['https://jobs.autodesk.com/careers', 'https://autodesk.wd1.myworkdayjobs.com/uni?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a30a87ed25634629aa6c3958aa2b91ea']
+  checker: multi
+  settings:
+    dedupe: true
+    sources:
+    - checker: workday
+      settings:
+        host: autodesk.wd1.myworkdayjobs.com
+        tenant: autodesk
+        sites: [uni, Ext]
+    - checker: eightfold
+      settings: {host: jobs.autodesk.com, domain: autodesk.com, api: pcsx, min_interval: 2.5, count_tolerance: 0.04}
+  locations: [US, CA]
+  verified: {page_total: 386, explained: 'union of both systems: Workday''s 347 postings plus the 88 requisitions only on Eightfold;
+      the Eightfold careers page (jobs.autodesk.com) shows 386'}
+- key: toast
+  name: Toast
+  category: fintech
+  careers_url: ['https://careers.toasttab.com/jobs/search', 'https://careers.toasttab.com/jobs/search/search-page-campus']
+  checker: greenhouse
+  settings:
+    boards: [toast, toastcampus]
+    missing_ok: true
+  verified: {page_total: 308, feed: 'GET https://boards-api.greenhouse.io/v1/boards/{toast,toastcampus}/jobs'}
+- key: procore
+  name: Procore
+  category: software
+  aliases: [Procore Technologies]
+  careers_url: ['https://careers.procore.com/jobs/search', 'https://careers.procore.com/jobs/search?page=1&country_codes%5B%5D=CA&country_codes%5B%5D=US&dropdown_field_1_uids%5B%5D=bbb6f64252a7db61b48dd4f3433bcbb6&dropdown_field_1_uids%5B%5D=278991b7bdc1f54af2392b39a79e01d9&dropdown_field_1_uids%5B%5D=0d0cbe641e5c4224021f3f2f0b4134e7&query=']
+  checker: workday
+  settings: {host: procore.wd12.myworkdayjobs.com, tenant: procore, site: Procore_External_Careers}
+  locations: [US, CA]
+  verified: {page_total: 112}
+- key: t-mobile
+  name: T-Mobile
+  category: telecom
+  aliases: [TMobile]
+  careers_url: ['https://careers.t-mobile.com/jobs', 'https://careers.t-mobile.com/internship?keyword=intern']
+  checker: workday
+  settings:
+    host: tmobile.wd1.myworkdayjobs.com
+    tenant: tmobile
+    site: External
+    partitions:
+    - timeType: [00e635b327af1034ee747b165ed6005c]
+    - timeType: [00e635b327af1034ee747b132575005b]
+    quick_queries:
+    - Job_Family_Group: [426b19690b7b1036f85c59a787b10a19]
+  big: true
+  timeout_minutes: 15
+  verified: {page_total: 2510}
+- key: servicenow
+  name: ServiceNow
+  category: software
+  careers_url: ['https://careers.servicenow.com/jobs/', 'https://careers.servicenow.com/jobs/?search=intern&pagesize=20#results']
+  checker: smartrecruiters
+  settings: {company: ServiceNow}
+  verified: {page_total: 676, explained: 'Hosted career page is a superset of the site: all 20 jobs on the site''s first page and 98
+      of the 99 newest search results were in the crawl (the 99th was dropped by unstable ordering inside a location group).'}
+- key: workday
+  name: Workday
+  category: software
+  careers_url: ['https://www.workday.com/en-us/company/careers/overview.html', 'https://workday.wd5.myworkdayjobs.com/Workday_Early_Career/?source=Careers_Website_ec']
+  checker: workday
+  settings:
+    host: workday.wd5.myworkdayjobs.com
+    tenant: workday
+    sites: [Workday, Workday_Early_Career, Workday_Jobs]
+  verified: {page_total: 420, explained: Workday_Early_Career (linked from workday.com/.../early-career.html) holds 9 internships that
+      are on no other site.}
+- key: ebay
+  name: eBay
+  category: software
+  careers_url: ['https://jobs.ebayinc.com/us/en/search-results', 'https://jobs.ebayinc.com/us/en/jobs-in-california']
+  checker: multi
+  settings:
+    sources:
+    - checker: phenom
+      settings:
+        base_url: https://jobs.ebayinc.com
+        ref_num: EBAEBAUS
+        lang: en_us
+        country: us
+        page_id: page15
+        all_fields: [remote, country, state, category]
+        job_path: /us/en/job/{jobId}
+    - checker: ripplematch
+      settings: {company_id: 865}
+  verified: {page_total: 273}
+- key: palo-alto-networks
+  name: Palo Alto Networks
+  category: security
+  careers_url: ['https://jobs.paloaltonetworks.com/en/search-jobs', 'https://jobs.paloaltonetworks.com/en/search-jobs/intern/47263/1']
+  checker: multi
+  settings:
+    sources:
+    - checker: workday
+      settings: {host: paloaltonetworks.wd5.myworkdayjobs.com, tenant: paloaltonetworks, site: panwexternalcareers}
+    - checker: ripplematch
+      settings: {company_id: 676}
+  verified: {page_total: 1320, explained: 'Workday is complete: Radancy drops ~111 postings incl.'}
+- key: applied-intuition
+  name: Applied Intuition
+  category: autonomy
+  careers_url: ['https://www.appliedintuition.com/careers', 'https://www.appliedintuition.com/careers#jobs-list']
+  checker: ashby
+  settings: {board: applied}
+  verified: {page_total: 330}
+- key: twitch
+  name: Twitch
+  category: software
+  careers_url: ['https://careers.twitch.com/en/careers', 'https://careers.twitch.com/en/early-career']
+  checker: greenhouse
+  settings: {board: twitch}
+  verified: {page_total: 54}
+- key: figma
+  name: Figma
+  category: software
+  careers_url: ['https://www.figma.com/careers/', 'https://www.figma.com/careers/#job-openings']
+  checker: greenhouse
+  settings: {board: figma}
+  verified: {page_total: 141}
+- key: chan-zuckerberg
+  name: Chan Zuckerberg Initiative
+  category: software
+  aliases: [CZI, Chan Zuckerberg Biohub, Biohub]
+  careers_url: ['https://chanzuckerberg.com/careers/career-opportunities/', 'https://chanzuckerberg.com/careers/career-opportunities/?']
+  checker: greenhouse
+  settings:
+    boards: [chanzuckerberginitiative, biohub, education]
+  verified: {page_total: 24}
+- key: coinbase
+  name: Coinbase
+  category: fintech
+  careers_url: ['https://www.coinbase.com/careers/positions', 'https://www.coinbase.com/careers/positions?search=intern']
+  checker: greenhouse
+  settings: {board: coinbase}
+  verified: {page_total: 227}
+- key: rippling
+  name: Rippling
+  category: software
+  careers_url: ['https://www.rippling.com/careers/open-roles', 'https://www.rippling.com/careers/open-roles?search=intern']
+  checker: rippling
+  settings: {board: rippling}
+  verified: {page_total: 377}
+- key: ramp
+  name: Ramp
+  category: fintech
+  careers_url: ['https://ramp.com/careers', 'https://ramp.com/emerging-talent#jobs']
+  checker: ashby
+  settings: {board: ramp}
+  verified: {page_total: 167}
+- key: akamai
+  name: Akamai
+  category: software
+  aliases: [Akamai Technologies]
+  careers_url: ['https://jobs.akamai.com/en/sites/CX_1/jobs', 'https://jobs.akamai.com/en/sites/CX_1/jobs?keyword=intern&mode=location']
+  checker: oracle
+  settings: {host: fa-extu-saasfaprod1.fa.ocs.oraclecloud.com, site: CX_1, job_url: 'https://jobs.akamai.com/en/sites/CX_1/job/{id}'}
+  verified: {page_total: 281}
+- key: expedia
+  name: Expedia Group
+  category: software
+  aliases: [Expedia]
+  careers_url: ['https://careers.expediagroup.com/jobs/', 'https://careers.expediagroup.com/jobs/?keyword=intern&filter%5Bcategory%5D=&filter%5Bjobfamily%5D=&filter%5Bcountry%5D=&filter%5Bstate%5D=&filter%5Bcity%5D=']
+  checker: multi
+  settings:
+    dedupe: true
+    sources:
+    - checker: workday
+      settings: {host: expedia.wd108.myworkdayjobs.com, tenant: expedia, site: search}
+    - checker: workday
+      settings: {host: expedia.wd108.myworkdayjobs.com, tenant: expedia, site: private}
+  verified: {page_total: 166, feed: 'POST https://expedia.wd108.myworkdayjobs.com/wday/cxs/expedia/{search,private}/jobs', explained: public
+      Workday site 'search' (the careers page's 166) plus the postings only on the Workday site 'private'}
+- key: booking
+  name: Booking.com
+  category: software
+  aliases: [Booking Holdings]
+  careers_url: ['https://jobs.booking.com/booking/jobs', 'https://jobs.booking.com/booking/jobs?keywords=intern&sortBy=relevance&page=1']
+  checker: jibe
+  settings: {host: jobs.booking.com, use_employment_type: false, company_field: brand}
+  verified: {page_total: 131}
+- key: squarespace
+  name: Squarespace
+  category: software
+  careers_url: ['https://www.squarespace.com/about/careers', 'https://www.squarespace.com/careers/early-career']
+  checker: greenhouse
+  settings: {board: squarespace}
+  verified: {page_total: 26}
+- key: epic-systems
+  name: Epic (Epic Systems)
+  category: software
+  aliases: [Epic, Epic Systems]
+  careers_url: ['https://careers.epic.com/jobs/', 'https://careers.epic.com/jobs/?q=aW50ZXJu']
+  checker: epic-careers
+  settings: {url: 'https://careers.epic.com/jobs/', ids_url: 'https://careers.epic.com/cached-api/jobs/search/?searchText=', job_url: 'https://epic.avature.net/Careers/FolderDetail/{slug}/{id}',
+    default_location: 'Verona, WI, United States'}
+  verified: {page_total: 41}
+- key: wayfair
+  name: Wayfair
+  category: software
+  careers_url: ['https://www.wayfair.com/careers/jobs', 'https://www.wayfair.com/careers/jobs?keywords=intern&locationIds=&stateIds=&countryIds=&currentPage=1']
+  checker: blocked
+  status: blocked
+  blocked_reason: Wayfair lists jobs only on wayfair.com/careers, which refuses automated clients (PerimeterX bot challenge, HTTP 429).
+    Its Greenhouse board is not public (every board token returns 404; applications use private tracking links) and its Workday tenant
+    is private (401).
+  fallback: SimplifyJobs cross-check (Wayfair internships are listed there); also create a job alert in Wayfair's Talent Community at
+    https://www.wayfair.com/careers
+  verified: {page_total: null}
+- key: c3-ai
+  name: C3 AI
+  category: ai
+  aliases: [C3.ai, C3 AI]
+  careers_url: ['https://c3.ai/careers']
+  checker: greenhouse
+  settings:
+    boards: [c3iot, c3ascend]
+    dedupe_requisitions: true
+  verified: {page_total: 94}
+- key: notion
+  name: Notion
+  category: software
+  careers_url: ['https://www.notion.com/careers']
+  checker: ashby
+  settings: {board: notion}
+  verified: {page_total: 133}
+- key: google
+  name: Google
+  category: big-tech
+  aliases: [Alphabet, YouTube, DeepMind, Google DeepMind]
+  careers_url: ['https://www.google.com/about/careers/applications/jobs/results', 'https://www.google.com/about/careers/applications/jobs/results/?category=DATA_CENTER_OPERATIONS&category=DEVELOPER_RELATIONS&category=HARDWARE_ENGINEERING&category=INFORMATION_TECHNOLOGY&category=MANUFACTURING_SUPPLY_CHAIN&category=NETWORK_ENGINEERING&category=PRODUCT_MANAGEMENT&category=PROGRAM_MANAGEMENT&category=SOFTWARE_ENGINEERING&category=TECHNICAL_INFRASTRUCTURE_ENGINEERING&category=TECHNICAL_SOLUTIONS&category=TECHNICAL_WRITING&category=USER_EXPERIENCE&jex=ENTRY_LEVEL&target_level=INTERN_AND_APPRENTICE&sort_by=date']
+  checker: google
+  role_keywords: [student training in engineering, associate software developer]
+  verified: {page_total: 3643, explained: One 4.4 MB gzipped XML per poll;}
+- key: nvidia
+  name: NVIDIA
+  category: semiconductors
+  aliases: [Nvidia]
+  careers_url: ['https://jobs.nvidia.com/careers', 'https://jobs.nvidia.com/careers?start=0&location=United+States&pid=893397488381&sort_by=timestamp&filter_include_remote=1&filter_include_relocation=0&filter_job_type=intern+%28fixed+term%29']
+  checker: eightfold
+  settings:
+    host: jobs.nvidia.com
+    domain: nvidia.com
+    api: pcsx
+    min_interval: 3.0
+    quick_queries:
+    - {filter_job_type: intern (fixed term)}
+    count_tolerance: 0.05
+  role_keywords: [ignite]
+  big: true
+  timeout_minutes: 20
+  verified: {page_total: 2757}
+- key: visa
+  name: Visa
+  category: fintech
+  careers_url: ['https://corporate.visa.com/en/jobs/', 'https://visa.wd5.myworkdayjobs.com/en-US/Visa_Early_Careers?q=intern&locationCountry=bc33aa3152ec42d4995f4791a106ed09']
+  checker: workday
+  settings:
+    host: visa.wd5.myworkdayjobs.com
+    tenant: visa
+    sites: [Visa, Visa_Early_Careers]
+  verified: {page_total: 877, explained: All 23 internships are on Visa_Early_Careers;}
+- key: waymo
+  name: Waymo
+  category: autonomy
+  careers_url: ['https://careers.withwaymo.com/jobs/search', 'https://careers.withwaymo.com/jobs/search?page=1&employment_type_uids%5B%5D=fa4c4a8317c6c87309f488cb0d63aa7c&query=']
+  checker: greenhouse
+  settings: {board: waymo}
+  verified: {page_total: 366}
+- key: spotify
+  name: Spotify
+  category: software
+  careers_url: ['https://www.lifeatspotify.com/jobs', 'https://www.lifeatspotify.com/jobs?j=internship']
+  checker: lever
+  settings: {site: spotify}
+  verified: {page_total: 73, explained: lifeatspotify.com is an edited WordPress mirror of Lever.}
+- key: cloudflare
+  name: Cloudflare
+  category: software
+  careers_url: ['https://www.cloudflare.com/careers/jobs/', 'https://www.cloudflare.com/careers/jobs/?department=Early+Talent']
+  checker: greenhouse
+  settings: {board: cloudflare}
+  verified: {page_total: 436}
+- key: block
+  name: Block
+  category: fintech
+  aliases: [Square, Cash App, Afterpay, TIDAL]
+  careers_url: ['https://block.xyz/careers/jobs', 'https://block.xyz/careers/jobs?employeeTypes[]=Intern']
+  checker: greenhouse
+  settings: {board: block}
+  verified: {page_total: 219}
+- key: adobe
+  name: Adobe
+  category: software
+  careers_url: ['https://careers.adobe.com/us/en/search-results']
+  checker: workday
+  settings: {host: adobe.wd5.myworkdayjobs.com, tenant: adobe, site: external_experienced}
+  verified: {page_total: 305}
+- key: plaid
+  name: Plaid
+  category: fintech
+  careers_url: ['https://plaid.com/careers/', 'https://plaid.com/careers/?search=intern#search']
+  checker: ashby
+  settings: {board: plaid}
+  verified: {page_total: 132}
+- key: nuro
+  name: Nuro
+  category: autonomy
+  careers_url: ['https://www.nuro.ai/careers', 'https://www.nuro.ai/early-career#careers-listing']
+  checker: greenhouse
+  settings: {board: nuro}
+  verified: {page_total: 107}
+- key: verkada
+  name: Verkada
+  category: hardware
+  careers_url: ['https://www.verkada.com/careers/']
+  checker: greenhouse
+  settings: {board: verkada}
+  verified: {page_total: 318}
+- key: hubspot
+  name: HubSpot
+  category: software
+  careers_url: ['https://www.hubspot.com/careers/jobs', 'https://www.hubspot.com/careers/jobs?q=intern&page=1']
+  checker: multi
+  settings:
+    sources:
+    - checker: hubspot
+      settings: {}
+    - checker: ripplematch
+      settings: {company_id: 708}
+  verified: {page_total: 2}
+- key: klaviyo
+  name: Klaviyo
+  category: software
+  careers_url: ['https://www.klaviyo.com/careers/search-jobs', 'https://www.klaviyo.com/careers/search-jobs?team=Engineering&page=&keywords=intern']
+  checker: greenhouse
+  settings:
+    boards: [klaviyo, klaviyocampus]
+    missing_ok: true
+  verified: {page_total: 159, feed: 'GET https://boards-api.greenhouse.io/v1/boards/{klaviyo,klaviyocampus}/jobs', explained: 'the careers
+      page lists the main board (159); internships and co-ops are on a second board, klaviyocampus'}
+- key: rocket
+  name: Rocket Companies
+  category: fintech
+  aliases: [Rocket Mortgage, Rocket]
+  careers_url: ['https://careers.rocket.com/us/en/search-results', 'https://careers.rocket.com/us/en/search-results?keywords=intern']
+  checker: multi
+  settings:
+    dedupe: true
+    sources:
+    - checker: workday
+      settings: {host: quickenloans.wd5.myworkdayjobs.com, tenant: quickenloans, site: rocket_careers}
+    - checker: phenom
+      settings: {base_url: 'https://careers.rocket.com', ref_num: RCARCAUS, lang: en_us, country: us, job_path: '/us/en/job/{jobSeqNo}/{slug}'}
+  verified: {page_total: 379}
+- key: smartsheet
+  name: Smartsheet
+  category: software
+  careers_url: ['https://www.smartsheet.com/careers-list', 'https://www.smartsheet.com/careers-list?location=&department=&position=intern']
+  checker: greenhouse
+  settings: {board: smartsheet}
+  verified: {page_total: 92}
+- key: pitchbook
+  name: PitchBook
+  category: fintech
+  aliases: [PitchBook Data]
+  careers_url: ['https://pitchbook.com/careers', 'https://job-boards.greenhouse.io/pitchbookdata?keyword=intern']
+  checker: greenhouse
+  settings: {board: pitchbookdata}
+  verified: {page_total: 23}
+- key: nutanix
+  name: Nutanix
+  category: software
+  careers_url: ['https://careers.nutanix.com/en/jobs/', 'https://careers.nutanix.com/en/jobs/?search=&type=Internship&pagesize=20#results']
+  checker: jobvite
+  settings: {company_id: qKr9VfwZ, slug: nutanix, job_url: 'https://careers.nutanix.com/en/jobs/{requisitionid}/{slug}/'}
+  verified: {page_total: 283}
+- key: veeva
+  name: Veeva Systems
+  category: software
+  aliases: [Veeva]
+  careers_url: ['https://careers.veeva.com/job-search-results/', 'https://careers.veeva.com/job-search-results/?search=intern&remote=false&ts=&regions=United+States%2CCanada&office_locations=']
+  checker: lever
+  settings: {site: veeva}
+  locations: [US, CA]
+  verified: {page_total: 937, explained: 'careers.veeva.com is a cached WordPress copy of Lever: 930 ids shared;'}
+- key: netflix
+  name: Netflix
+  category: big-tech
+  careers_url: ['https://jobs.netflix.com/', 'https://explore.jobs.netflix.net/careers?query=intern&pid=790315673635&domain=netflix.com&sort_by=relevance&triggerGoButton=true']
+  checker: eightfold
+  settings: {host: explore.jobs.netflix.net, domain: netflix.com, api: v2, min_interval: 2.5}
+  verified: {page_total: 397}
+- key: docusign
+  name: DocuSign
+  category: software
+  careers_url: ['https://careers.docusign.com/careers-home/jobs', 'https://careers.docusign.com/careers-home/jobs?categories=University%20%26%20New%20Grad']
+  checker: jibe
+  settings: {host: careers.docusign.com, use_employment_type: true}
+  verified: {page_total: 259, explained: Defines the shared jibe adapter (see notes/docusign.md).}
+- key: paypal
+  name: PayPal
+  category: fintech
+  aliases: [Venmo]
+  careers_url: ['https://careers.pypl.com/', 'https://paypal.eightfold.ai/careers?domain=paypal.com&query=intern&start=0&pid=274921487587&sort_by=relevance']
+  checker: workday
+  settings: {host: paypal.wd1.myworkdayjobs.com, tenant: paypal, site: jobs}
+  role_keywords: [career academy]
+  verified: {page_total: 340}
+- key: intuit
+  name: Intuit
+  category: fintech
+  careers_url: ['https://jobs.intuit.com/search-jobs', 'https://jobs.intuit.com/search-jobs/intern/27595/1']
+  checker: talentbrew
+  settings: {sitemap_url: 'https://jobs.intuit.com/sitemap.xml', org_id: 27595, detail_limit: 40}
+  verified: {page_total: 593}
+- key: remitly
+  name: Remitly
+  category: fintech
+  careers_url: ['https://careers.remitly.com/job-search-results/', 'https://careers.remitly.com/job-search-results/?keyword=intern&category=']
+  checker: workday
+  settings:
+    host: remitly.wd5.myworkdayjobs.com
+    tenant: remitly
+    sites: [Remitly_Careers, Friends_Family_Intern]
+  verified: {page_total: 147, explained: 'Difference 156 vs 147 explained by requisition ids: 10 Workday postings (all ''Posted 30+
+      Days Ago'') are missing from the marketing index and 1 site posting (R_106784) is no longer in Workday;'}
+- key: doordash
+  name: DoorDash
+  category: software
+  careers_url: ['https://careersatdoordash.com/job-search/', 'https://careersatdoordash.com/university-careers/']
+  checker: greenhouse
+  settings:
+    boards: [doordashusa, doordashcanada, doordashquebec, doordashaustralia, doordashmexico, doordashindia, doordashinternational, sevenroomsuk]
+  verified: {page_total: 815, explained: 8 boards (the probe found only doordashusa).}
+- key: twilio
+  name: Twilio
+  category: software
+  careers_url: ['https://www.twilio.com/en-us/company/jobs', 'https://jobs.twilio.com/careers?query=intern&start=0&pid=1099553875542&sort_by=relevance']
+  checker: greenhouse
+  settings:
+    boards: [twilio, twiliostudents]
+    missing_ok: true
+  verified: {page_total: 133, explained: 'Greenhouse is the source of record: every Eightfold position has atsJobId = GH internal_job_id
+      and displayJobId = GH requisition_id (133/133 match).', feed: 'GET https://boards-api.greenhouse.io/v1/boards/{twilio,twiliostudents}/jobs'}
+- key: benchling
+  name: Benchling
+  category: software
+  careers_url: ['https://www.benchling.com/careers']
+  checker: ashby
+  settings: {board: benchling}
+  verified: {page_total: 55}
+- key: general-motors
+  name: General Motors
+  category: autonomy
+  aliases: [GM]
+  careers_url: ['https://search-careers.gm.com/en/jobs/', 'https://search-careers.gm.com/en/jobs/?search=intern&country=Canada&country=United+States+of+America&team=Students+%26+Recent+Graduates&pagesize=20#results']
+  checker: workday
+  settings: {host: generalmotors.wd5.myworkdayjobs.com, tenant: generalmotors, site: Careers_GM}
+  locations: [US, CA]
+  verified: {page_total: 821, explained: 'The marketing site omits 9 US postings: exactly the 700 ''General Motors LLC'' US jobs are
+      shown, while CXS also has 3 ''Cruise LLC'' postings and 6 US postings with no hiring company.'}
+- key: lyft
+  name: Lyft
+  category: software
+  careers_url: ['https://www.lyft.com/careers#openings', 'https://www.lyft.com/careers#openings?search=intern']
+  checker: greenhouse
+  settings: {board: lyft}
+  verified: {page_total: 183}
+- key: rockwell-automation
+  name: Rockwell Automation
+  category: industrial
+  careers_url: ['https://www.rockwellautomation.com/en-us/careers.html', 'https://rockwellautomation.wd1.myworkdayjobs.com/External-Rockwell-Automation-Early-Careers']
+  checker: workday
+  settings:
+    host: rockwellautomation.wd1.myworkdayjobs.com
+    tenant: rockwellautomation
+    sites: [External_Rockwell_Automation, External-Rockwell-Automation-Early-Careers]
+  verified: {page_total: 445, explained: 'Both sites are needed: the early-careers site has 2 interns not on the main site and the main
+      site has 6 not on early careers.'}
+- key: unity
+  name: Unity
+  category: gaming
+  aliases: [Unity Technologies]
+  careers_url: ['https://unity.com/careers/positions', 'https://unity.com/careers/positions?type=internship']
+  checker: workday
+  settings: {host: unitytech.wd1.myworkdayjobs.com, tenant: unitytech, site: Unity}
+  verified: {page_total: 127, explained: The one feed-only job is a re-posted requisition (JOBREQ-2616171-1);}
+- key: zoox
+  name: Zoox
+  category: autonomy
+  careers_url: ['https://zoox.com/careers', 'https://zoox.com/careers#job-search-bottom']
+  checker: lever
+  settings: {site: zoox}
+  verified: {page_total: 238, explained: All 14 student roles are titled 'Contract Student Worker ...' (commitment 'Contract');}
+- key: qualtrics
+  name: Qualtrics
+  category: software
+  careers_url: ['https://www.qualtrics.com/careers/us/en/search-results', 'https://www.qualtrics.com/careers/us/en/c/engineering-product-ux-design-jobs']
+  checker: greenhouse
+  settings: {board: qualtrics}
+  verified: {page_total: 79}
+- key: samsara
+  name: Samsara
+  category: software
+  careers_url: ['https://www.samsara.com/company/careers/roles', 'https://www.samsara.com/company/careers/roles?type=Intern']
+  checker: greenhouse
+  settings:
+    boards: [samsara, samsaradach]
+  verified: {page_total: 267, explained: Second board 'samsaradach' (DACH region) is merged into the page;}
+- key: salesforce
+  name: Salesforce
+  category: big-tech
+  careers_url: ['https://www.salesforce.com/company/careers/jobs/', 'https://www.salesforce.com/company/careers/jobs/?jobtype=Intern&pagesize=20&country=United+States+of+America&country=Canada&page=1']
+  checker: workday
+  settings:
+    host: salesforce.wd12.myworkdayjobs.com
+    tenant: salesforce
+    sites: [External_Career_Site, Futureforce_Internships]
+    min_interval: 5.0
+  locations: [US, CA]
+  role_keywords: [tech launchpad]
+  timeout_minutes: 15
+  verified: {page_total: 1588}
+- key: aurora
+  name: Aurora Innovation
+  category: autonomy
+  careers_url: ['https://aurora.tech/careers', 'https://aurora.tech/careers?departments=Software+Engineering']
+  checker: ashby
+  settings: {board: aurora-operations-inc}
+  verified: {page_total: 99, explained: 'The 2 Ashby-only postings are second postings of jobs already on aurora.tech: ''Senior Software
+      Engineer, Motion Controls'' (65a32061, twin fcb5715b) and ''Senior Software Engineer, Geometric Generation'' (2e895957, twin b557e5a3),
+      with the sam'}
+- key: datadog
+  name: Datadog
+  category: software
+  careers_url: ['https://careers.datadoghq.com/all-jobs/', 'https://careers.datadoghq.com/all-jobs/?time_type%5B0%5D=Early%20Career']
+  checker: greenhouse
+  settings: {board: datadog}
+  verified: {page_total: 414, explained: The board has 416 English + 11 Japanese + 3 Korean postings (field 'language').}
+- key: airbnb
+  name: Airbnb
+  category: big-tech
+  careers_url: ['https://careers.airbnb.com/positions/', 'https://careers.airbnb.com/positions/?_departments=early-career-program-intern']
+  checker: greenhouse
+  settings: {board: airbnb}
+  verified: {page_total: 177}
+- key: yelp
+  name: Yelp
+  category: software
+  careers_url: ['https://www.yelp.careers/us/en/search-results', 'https://www.yelp.careers/us/en/search-results?keywords=intern']
+  checker: multi
+  settings:
+    dedupe: true
+    sources:
+    - checker: icims
+      settings: {portal: 'https://uscareers-yelp.icims.com'}
+    - checker: phenom
+      settings: {base_url: 'https://www.yelp.careers', ref_num: YELPUS, lang: en_us, country: us, job_path: '/us/en/job/{jobId}/{slug}'}
+  verified: {page_total: 20}
+- key: atlassian
+  name: Atlassian
+  category: software
+  careers_url: ['https://www.atlassian.com/company/careers/all-jobs', 'https://www.atlassian.com/company/careers/all-jobs?team=Interns&location=&search=']
+  checker: atlassian
+  verified: {page_total: 346, explained: Feed is more current than the page;}
+- key: mongodb
+  name: MongoDB
+  category: software
+  careers_url: ['https://www.mongodb.com/company/careers/see-jobs']
+  checker: greenhouse
+  settings: {board: mongodb}
+  verified: {page_total: 396}
+- key: okta
+  name: Okta
+  category: security
+  careers_url: ['https://www.okta.com/company/careers/job-listing/', 'https://www.okta.com/company/careers/job-listing/?keywords=intern&department=All&location=All']
+  checker: greenhouse
+  settings: {board: okta}
+  verified: {page_total: 389}
+- key: crowdstrike
+  name: CrowdStrike
+  category: security
+  careers_url: ['https://www.crowdstrike.com/en-us/careers/', 'https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers?Job_Family=1408861ee6e2015adbe3e7f6b000de0b']
+  checker: workday
+  settings: {host: crowdstrike.wd5.myworkdayjobs.com, tenant: crowdstrike, site: crowdstrikecareers}
+  verified: {page_total: 348}
+- key: affirm
+  name: Affirm
+  category: fintech
+  careers_url: ['https://www.affirm.com/careers', 'https://www.affirm.com/careers#jobOpenings']
+  checker: greenhouse
+  settings: {board: affirm}
+  verified: {page_total: 215}
+- key: dell
+  name: Dell Technologies
+  category: hardware
+  aliases: [Dell]
+  careers_url: ['https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/jobs', 'https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/jobs?keyword=intern&mode=location']
+  checker: oracle
+  settings: {host: enterpriseplatform.dell.com, site: CX_1001, job_url: 'https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/{id}'}
+  verified: {page_total: 453}
+- key: grubhub
+  name: Grubhub (Wonder)
+  category: software
+  aliases: [Grubhub]
+  careers_url: ['https://careers.grubhub.com/', 'https://wonder.wd1.myworkdayjobs.com/en-US/Grubhub_Careers?q=intern']
+  checker: workday
+  settings:
+    host: wonder.wd1.myworkdayjobs.com
+    tenant: wonder
+    sites: [Grubhub_Careers, WG]
+  verified: {page_total: 114, explained: 'WG (Wonder Group, the parent) carries 33 of Grubhub''s 36 requisitions plus 45 Wonder-only
+      jobs, including all 6 internships (Wonder supply-chain, procurement and robotics interns;'}
+- key: geico
+  name: GEICO
+  category: finance-insurance
+  careers_url: ['https://careers.geico.com/', 'https://geico.wd1.myworkdayjobs.com/en-US/External/details/Cybersecurity-Intern---HYBRID_R0046381?jobFamilyGroup=da128ce5a1dc103e7c099155ab532262']
+  checker: workday
+  settings: {host: geico.wd1.myworkdayjobs.com, tenant: geico, site: External}
+  verified: {page_total: 294}
+- key: american-family
+  name: American Family Insurance
+  category: finance-insurance
+  aliases: [AmFam, American Family]
+  careers_url: ['https://careers.amfam.com/', 'https://amfam.wd1.myworkdayjobs.com/en-US/AmFamGroupInternCareers?source=AFMIC%20Website']
+  checker: workday
+  settings:
+    host: amfam.wd1.myworkdayjobs.com
+    tenant: amfam
+    sites: [AmFamGroupInternCareers, Careers]
+  verified: {page_total: 56}
+- key: zendesk
+  name: Zendesk
+  category: software
+  careers_url: ['https://www.zendesk.com/company/careers/', 'https://zendesk.wd1.myworkdayjobs.com/zendesk?q=intern']
+  checker: workday
+  settings: {host: zendesk.wd1.myworkdayjobs.com, tenant: zendesk, site: zendesk}
+  verified: {page_total: 137}
+- key: fidelity
+  name: Fidelity Investments
+  category: finance-insurance
+  aliases: [Fidelity, Fidelity Investments]
+  careers_url: ['https://jobs.fidelity.com/en/jobs/', 'https://jobs.fidelity.com/en/jobs/?search=intern&pagesize=20&origin=filtered#results']
+  checker: workday
+  settings: {host: wd1.myworkdaysite.com, tenant: fmr, site: FidelityCareers}
+  verified: {page_total: 755, explained: Only one external Workday site (FidelityCareers).}
+- key: intel
+  name: Intel
+  category: semiconductors
+  careers_url: ['https://jobs.intel.com/', 'https://intel.wd1.myworkdayjobs.com/External?workerSubType=dc8bf79476611087dfde99931439ae75&locations=1e4a4eb3adf1016541777876bf8111cf&locations=1e4a4eb3adf10146fd5c5276bf81eece&locations=1e4a4eb3adf1011246675c76bf81f8ce&locations=1e4a4eb3adf10118b1dfe877bf8162d0&locations=1e4a4eb3adf1018c4bf78f77bf8112d0&locations=1e4a4eb3adf101b8aec18a77bf810dd0&locations=1e4a4eb3adf1019f4237e975bf81b3ce']
+  checker: workday
+  settings: {host: intel.wd1.myworkdayjobs.com, tenant: intel, site: External}
+  verified: {page_total: 728, explained: Single public site.}
+- key: amd
+  name: AMD
+  category: semiconductors
+  careers_url: ['https://careers.amd.com/careers-home/jobs', 'https://careers.amd.com/students/jobs?page=1&sortBy=posted_date&descending=true']
+  checker: jibe
+  settings: {host: careers.amd.com, use_employment_type: false}
+  verified: {page_total: 1281}
+- key: snowflake
+  name: Snowflake
+  category: software
+  careers_url: ['https://careers.snowflake.com/us/en/search-results', 'https://careers.snowflake.com/us/en/search-results?keywords=intern']
+  checker: phenom
+  settings: {base_url: 'https://careers.snowflake.com', ref_num: SNCOUS, lang: en_us, country: us, site_type: external, page_name: search-results,
+    job_path: '/us/en/job/{jobSeqNo}/{slug}', id_field: jobSeqNo, page_size: 1000}
+  verified: {page_total: 368}
+- key: robinhood
+  name: Robinhood
+  category: fintech
+  careers_url: ['https://careers.robinhood.com/']
+  checker: greenhouse
+  settings:
+    boards: [robinhood, sherwoodmedia]
+  verified: {page_total: 151}
+- key: cisco
+  name: Cisco
+  category: big-tech
+  careers_url: ['https://careers.cisco.com/global/en/search-results', 'https://careers.cisco.com/global/en/internships-and-co-ops']
+  checker: workday
+  settings: {host: cisco.wd5.myworkdayjobs.com, tenant: cisco, site: Cisco_Careers}
+  verified: {page_total: 1455}
+- key: john-deere
+  name: John Deere
+  category: industrial
+  aliases: [Deere, Deere & Company]
+  careers_url: ['https://careers.deere.com/careers', 'https://careers.deere.com/careers?start=0&location=united+states&pid=137482622279&sort_by=timestamp&filter_include_remote=1&filter_include_relocation=0&filter_seniority=0']
+  checker: eightfold
+  settings: {host: careers.deere.com, domain: johndeere.com, api: pcsx, min_interval: 2.0}
+  verified: {page_total: 334}
+- key: sig
+  name: Susquehanna (SIG)
+  category: quant
+  aliases: [Susquehanna International Group, Susquehanna, SIG, Susquehanna International Group (SIG)]
+  careers_url: ['https://careers.sig.com/jobs', 'https://careers.sig.com/intern-co-op/jobs?categories=Interns%20%2B%20Co-ops&page=1&city=Chicago%7CNew%20York%7CRichmond%7CBala%20Cynwyd%20(Philadelphia%20Area)']
+  checker: jibe
+  settings: {host: careers.sig.com, use_employment_type: false}
+  verified: {page_total: 286}
+- key: squarepoint
+  name: Squarepoint Capital
+  category: quant
+  aliases: [Squarepoint]
+  careers_url: ['https://www.squarepoint-capital.com/open-opportunities', 'https://www.squarepoint-capital.com/open-opportunities?lvl=Internship']
+  checker: greenhouse
+  settings: {board: squarepointcapital}
+  verified: {page_total: 91}
+- key: wolverine
+  name: Wolverine Trading
+  category: quant
+  aliases: [Wolverine]
+  careers_url: ['https://www.wolve.com/open-positions']
+  checker: pinpoint
+  settings: {subdomain: wolve, host: careers.wolve.com}
+  verified: {page_total: 19}
+- key: radix
+  name: Radix Trading
+  category: quant
+  aliases: [Radix]
+  careers_url: ['https://www.radixtrading.com/#careers', 'https://job-boards.greenhouse.io/radixuniversity']
+  checker: greenhouse
+  settings:
+    boards: [radixexperienced, radixuniversity]
+  verified: {page_total: 15}
+- key: capstone
+  name: Capstone Investment Advisors
+  category: quant
+  aliases: [Capstone]
+  careers_url: ['https://www.capstoneco.com/careers/', 'https://capstonedc.wd501.myworkdayjobs.com/Capstone?q=intern']
+  checker: greenhouse
+  settings: {board: capstoneinvestmentadvisors}
+  verified: {page_total: 16}
+- key: capstone-dc
+  name: Capstone DC
+  category: other
+  careers_url: ['https://capstonedc.com/about/careers/', 'https://capstonedc.wd501.myworkdayjobs.com/Capstone?q=intern']
+  checker: workday
+  settings: {host: capstonedc.wd501.myworkdayjobs.com, tenant: capstonedc, site: Capstone}
+  verified: {page_total: 14}
+- key: xtx-markets
+  name: XTX Markets
+  category: quant
+  aliases: [XTX]
+  careers_url: ['https://www.xtxmarkets.com/careers/']
+  checker: greenhouse
+  settings: {board: xtxmarketstechnologies}
+  verified: {page_total: 7}
+- key: goldman-sachs
+  name: Goldman Sachs
+  category: finance-insurance
+  careers_url: ['https://higher.gs.com/campus', 'https://www.goldmansachs.com/careers/students/programs-and-internships?0=gscom%3Aprogram-type%2Finternship&1=gscom%3Aprogram-region-careers%2Famericas']
+  checker: goldman
+  settings:
+    experiences: [PROFESSIONAL, EARLY_CAREER, CAMPUS]
+  role_keywords: [possibilities, emerging leaders]
+  verified: {page_total: 891}
+- key: instabase
+  name: Instabase
+  category: ai
+  careers_url: ['https://www.instabase.com/careers/jobs']
+  checker: greenhouse
+  settings: {board: instabase, missing_ok: true}
+  verified: {page_total: 0}
+- key: yext
+  name: Yext
+  category: software
+  careers_url: ['https://www.yext.com/careers/open-positions']
+  checker: greenhouse
+  settings: {board: yext}
+  verified: {page_total: 23, explained: The page is a Yext Search copy of the board.}
+- key: immuta
+  name: Immuta
+  category: software
+  careers_url: ['https://www.immuta.com/careers', 'https://www.immuta.com/careers#open-positions']
+  checker: lever
+  settings: {site: immuta}
+  verified: {page_total: 14}
+- key: workiva
+  name: Workiva
+  category: software
+  careers_url: ['https://www.workiva.com/careers', 'https://workiva.wd503.myworkdayjobs.com/careers?workerSubType=831d1538442f014d2d2badf7c52a6e07']
+  checker: workday
+  settings:
+    host: workiva.wd503.myworkdayjobs.com
+    tenant: workiva
+    sites: [careers, parseportcareers]
+  verified: {page_total: 109}
+- key: ukg
+  name: UKG
+  category: software
+  careers_url: ['https://www.ukg.com/company/careers', 'https://apply.ukg.com/careers?query=intern&start=0&pid=893393901539&sort_by=relevance']
+  checker: eightfold
+  settings: {host: apply.ukg.com, domain: ukg.com, api: pcsx, min_interval: 2.5}
+  verified: {page_total: 248}
+- key: jane-street
+  name: Jane Street
+  category: quant
+  aliases: [Jane Street Capital]
+  careers_url: ['https://www.janestreet.com/join-jane-street/open-roles/']
+  checker: greenhouse
+  settings: {board: janestreet}
+  role_keywords: [fttp, jsip, insight, focus, bridge]
+  verified: {page_total: 221}
+- key: citadel
+  name: Citadel
+  category: quant
+  careers_url: ['https://www.citadel.com/careers/open-opportunities/']
+  checker: citadel
+  settings: {base_url: 'https://www.citadel.com', min_interval: 10.0}
+  role_keywords: [discover citadel]
+  verified: {page_total: 63}
+- key: citadel-securities
+  name: Citadel Securities
+  category: quant
+  careers_url: ['https://www.citadelsecurities.com/careers/open-opportunities/']
+  checker: citadel
+  settings: {base_url: 'https://www.citadelsecurities.com', min_interval: 10.0}
+  role_keywords: [discover citadel, ignite]
+  verified: {page_total: 79}
+- key: two-sigma
+  name: Two Sigma
+  category: quant
+  aliases: [Two Sigma Investments]
+  careers_url: ['https://careers.twosigma.com/careers/OpenRoles', 'https://careers.twosigma.com/careers/SearchJobs']
+  checker: avature
+  settings:
+    list_url: https://careers.twosigma.com/careers/OpenRoles/
+    page_size: 10
+    fields: [location, department, employment_type]
+  role_keywords: [mentor connect]
+  verified: {page_total: 63}
+- key: imc
+  name: IMC Trading
+  category: quant
+  aliases: [IMC, IMC Financial Markets]
+  careers_url: ['https://www.imc.com/eu/search-careers', 'https://www.imc.com/us/careers/jobs']
+  checker: greenhouse
+  settings: {board: imc}
+  verified: {page_total: 160, explained: 'Greenhouse is a superset of the site: 171 − 160 = 11 = 8 talent-community/event/interest-form
+      postings without ''Worker Sub Type'' + 1 unlisted Sydney role (absent from the page payload) + 2 flagged ''Is Hidden Job?'' =
+      true.'}
+- key: hudson-river-trading
+  name: Hudson River Trading
+  category: quant
+  aliases: [HRT]
+  careers_url: ['https://www.hudsonrivertrading.com/careers/']
+  checker: greenhouse
+  settings:
+    boards: [wehrtyou, hrttalentcommunity]
+  role_keywords: [witti, women in trading]
+  verified: {page_total: 88, explained: 'wehrtyou (86) is the real job list (absolute_url → hudsonrivertrading.com/careers/job/?gh_jid=).'}
+- key: five-rings
+  name: Five Rings
+  category: quant
+  careers_url: ['https://fiverings.com/careers/']
+  checker: greenhouse
+  settings: {board: fiveringsllc}
+  role_keywords: [link]
+  verified: {page_total: 17}
+- key: dv-trading
+  name: DV Trading
+  category: quant
+  aliases: [DV Group]
+  careers_url: ['https://dvtrading.co/join-dv/', 'https://www.dvtrading.co/careers']
+  checker: greenhouse
+  settings: {board: dvtrading}
+  verified: {page_total: 74}
+- key: point72
+  name: Point72
+  category: quant
+  aliases: [Cubist Systematic Strategies, Point72 Asset Management]
+  careers_url: ['https://careers.point72.com/']
+  checker: greenhouse
+  settings: {board: point72}
+  verified: {page_total: 213, explained: careers.point72.com is a Salesforce mirror of the Greenhouse board with edited titles (e.g.}
+- key: voleon
+  name: The Voleon Group
+  category: quant
+  aliases: [Voleon]
+  careers_url: ['https://voleon.com/jobs/', 'https://voleon.com/careers/']
+  checker: ashby
+  settings: {board: voleon}
+  verified: {page_total: 59}
+- key: brevan-howard
+  name: Brevan Howard
+  category: quant
+  careers_url: ['https://careers.brevanhoward.com/gb/en/search-results', 'https://www.brevanhoward.com/careers/']
+  checker: phenom
+  settings: {base_url: 'https://careers.brevanhoward.com', ref_num: BHABHAGB, lang: en_gb, country: gb, site_type: external, page_name: search-results,
+    job_path: '/gb/en/job/{jobId}/{slug}'}
+  verified: {page_total: 26}
+- key: walleye
+  name: Walleye Capital
+  category: quant
+  aliases: [Walleye]
+  careers_url: ['https://www.walleyecapital.com/careers', 'https://www.walleyecapital.com/careers/']
+  checker: greenhouse
+  settings:
+    boards: [walleyecapital-external-students, walleyecapital-external-fulltime]
+  verified: {page_total: 17}
+- key: aqr
+  name: AQR
+  category: quant
+  aliases: [AQR Capital Management]
+  careers_url: ['https://careers.aqr.com/']
+  checker: greenhouse
+  settings: {board: aqr}
+  verified: {page_total: 56}
+- key: graviton
+  name: Graviton Research Capital
+  category: quant
+  aliases: [Graviton]
+  careers_url: ['https://www.gravitontrading.com/careers.html']
+  checker: greenhouse
+  settings: {board: gravitonresearchcapital}
+  verified: {page_total: 24}
+- key: geneva-trading
+  name: Geneva Trading
+  category: quant
+  careers_url: ['https://www.genevatrading.com/careers-open-positions/', 'https://genevatrading.com/careers/']
+  checker: greenhouse
+  settings: {board: genevatrading}
+  verified: {page_total: 14}
+- key: jump-trading
+  name: Jump Trading
+  category: quant
+  aliases: [Jump]
+  careers_url: ['https://www.jumptrading.com/hr/students-new-grads', 'https://www.jumptrading.com/careers/']
+  checker: greenhouse
+  settings: {board: jumptrading}
+  verified: {page_total: 100}
+- key: seven-research
+  name: Seven Research
+  category: quant
+  careers_url: ['https://www.sevenresearch.com/careers', 'https://job-boards.greenhouse.io/sevenresearch']
+  checker: greenhouse
+  settings: {board: sevenresearch}
+  verified: {page_total: 9}
+- key: voloridge
+  name: Voloridge Investment Management
+  category: quant
+  aliases: [Voloridge]
+  careers_url: ['https://www.voloridge.com/join-our-team', 'https://www.voloridge.com/careers/']
+  checker: greenhouse
+  settings: {board: voloridgeinvestmentmanagement}
+  verified: {page_total: 11}
+- key: transmarket-group
+  name: TransMarket Group
+  category: quant
+  aliases: [TMG]
+  careers_url: ['https://www.transmarketgroup.com/careers/']
+  checker: greenhouse
+  settings: {board: transmarketgroup}
+  verified: {page_total: 18}
+- key: gts
+  name: GTS
+  category: quant
+  aliases: [Global Trading Systems]
+  careers_url: ['https://gtsx.com/careers/', 'https://www.gts.com/careers/']
+  checker: icims
+  settings: {portal: 'https://careers-gtsx.icims.com'}
+  verified: {page_total: 16}
+- key: kirin
+  name: Kirin
+  category: quant
+  careers_url: ['https://jobs.ashbyhq.com/kirin']
+  checker: ashby
+  settings: {board: kirin}
+  verified: {page_total: 27}
+- key: electronic-arts
+  name: Electronic Arts
+  category: gaming
+  aliases: [EA]
+  careers_url: ['https://jobs.ea.com/en_US/careers', 'https://jobs.ea.com/']
+  checker: avature
+  settings:
+    list_url: https://jobs.ea.com/en_US/careers/Home/
+    page_size: 20
+    params: {jobRecordsPerPage: 20}
+    fields: {location: span.list-item-location, employment_type: span.list-item-workerType, department: span.list-item-department}
+  role_keywords: [pathfinder]
+  verified: {page_total: 362}
+- key: epic-games
+  name: Epic Games
+  category: gaming
+  careers_url: ['https://www.epicgames.com/site/en-US/careers/jobs']
+  checker: greenhouse
+  settings: {board: epicgames}
+  verified: {page_total: 156, explained: 'The English board alone holds every requisition and location (67 requisitions, 135 postings:
+      one posting per location).'}
+- key: riot-games
+  name: Riot Games
+  category: gaming
+  careers_url: ['https://www.riotgames.com/en/work-with-us/jobs']
+  checker: greenhouse
+  settings: {board: riotgames}
+  verified: {page_total: 177}
+- key: shopify
+  name: Shopify
+  category: software
+  careers_url: ['https://www.shopify.com/careers']
+  checker: shopify
+  settings: {url: 'https://www.shopify.com/careers', job_url: 'https://www.shopify.com/careers/{slug}_{id}'}
+  verified: {page_total: 118}
+- key: red-hat
+  name: Red Hat
+  category: software
+  careers_url: ['https://www.redhat.com/en/jobs', 'https://redhat.wd5.myworkdayjobs.com/jobs']
+  checker: workday
+  settings: {host: redhat.wd5.myworkdayjobs.com, tenant: redhat, site: jobs}
+  verified: {page_total: 174}
+- key: the-trade-desk
+  name: The Trade Desk
+  category: software
+  careers_url: ['https://careers.thetradedesk.com/jobs', 'https://careers.thetradedesk.com/']
+  checker: greenhouse
+  settings: {board: thetradedesk}
+  verified: {page_total: 103}
+- key: together-ai
+  name: Together AI
+  category: ai
+  aliases: [Together]
+  careers_url: ['https://www.together.ai/careers']
+  checker: greenhouse
+  settings: {board: togetherai}
+  verified: {page_total: 78}
+- key: glean
+  name: Glean
+  category: ai
+  careers_url: ['https://www.glean.com/careers']
+  checker: greenhouse
+  settings: {board: gleanwork}
+  verified: {page_total: 119}
+- key: decagon
+  name: Decagon
+  category: ai
+  careers_url: ['https://decagon.ai/careers']
+  checker: ashby
+  settings: {board: decagon}
+  verified: {page_total: 135}
+- key: sierra
+  name: Sierra
+  category: ai
+  careers_url: ['https://sierra.ai/careers']
+  checker: ashby
+  settings:
+    boards: [Sierra, sierra-jp]
+  verified: {page_total: 197}
+- key: abridge
+  name: Abridge
+  category: ai
+  careers_url: ['https://www.abridge.com/careers']
+  checker: ashby
+  settings: {board: abridge}
+  verified: {page_total: 44}
+- key: harvey
+  name: Harvey
+  category: ai
+  careers_url: ['https://www.harvey.ai/careers']
+  checker: ashby
+  settings: {board: harvey}
+  verified: {page_total: 340}
+- key: waabi
+  name: Waabi
+  category: ai
+  careers_url: ['https://waabi.ai/careers/']
+  checker: lever
+  settings: {site: waabi}
+  verified: {page_total: 94}
+- key: mistral-ai
+  name: Mistral AI
+  category: ai
+  aliases: [Mistral]
+  careers_url: ['https://mistral.ai/careers/', 'https://mistral.ai/careers']
+  checker: ashby
+  settings: {board: mistral.ai}
+  verified: {page_total: 216}
+- key: deepgram
+  name: Deepgram
+  category: ai
+  careers_url: ['https://deepgram.com/careers']
+  checker: ashby
+  settings: {board: deepgram}
+  verified: {page_total: 91}
+- key: sigma-computing
+  name: Sigma Computing
+  category: software
+  careers_url: ['https://www.sigmacomputing.com/company/careers', 'https://www.sigmacomputing.com/careers']
+  checker: greenhouse
+  settings: {board: sigmacomputing}
+  verified: {page_total: 75}
+- key: semgrep
+  name: Semgrep
+  category: security
+  careers_url: ['https://semgrep.dev/about/careers/', 'https://semgrep.dev/careers']
+  checker: ashby
+  settings: {board: semgrep}
+  verified: {page_total: 12}
+- key: tanium
+  name: Tanium
+  category: security
+  careers_url: ['https://www.tanium.com/careers', 'https://www.tanium.com/careers/']
+  checker: greenhouse
+  settings: {board: tanium}
+  verified: {page_total: 73}
+- key: whatnot
+  name: Whatnot
+  category: software
+  careers_url: ['https://www.whatnot.com/careers/discover', 'https://www.whatnot.com/careers']
+  checker: ashby
+  settings: {board: whatnot, mode: hosted}
+  verified: {page_total: 149}
+- key: seatgeek
+  name: SeatGeek
+  category: software
+  careers_url: ['https://seatgeek.com/jobs']
+  checker: greenhouse
+  settings: {board: seatgeek}
+  verified: {page_total: 37}
+- key: talos
+  name: Talos
+  category: fintech
+  careers_url: ['https://www.talos.com/working/open-roles', 'https://www.talos.com/careers']
+  checker: ashby
+  settings: {board: Talos-Trading}
+  verified: {page_total: 16}
+- key: brex
+  name: Brex
+  category: fintech
+  careers_url: ['https://www.brex.com/careers']
+  checker: greenhouse
+  settings: {board: brex}
+  verified: {page_total: 261}
+- key: mercury
+  name: Mercury
+  category: fintech
+  careers_url: ['https://mercury.com/jobs']
+  checker: greenhouse
+  settings: {board: mercury}
+  verified: {page_total: 77}
+- key: postman
+  name: Postman
+  category: software
+  careers_url: ['https://www.postman.com/company/careers/open-positions/', 'https://www.postman.com/company/careers/']
+  checker: workday
+  settings: {host: postman.wd108.myworkdayjobs.com, tenant: postman, site: careers}
+  verified: {page_total: 25}
+- key: cockroach-labs
+  name: Cockroach Labs
+  category: software
+  careers_url: ['https://www.cockroachlabs.com/careers/open-positions/', 'https://www.cockroachlabs.com/careers/']
+  checker: greenhouse
+  settings: {board: cockroachlabs}
+  verified: {page_total: 17}
+- key: 1password
+  name: 1Password
+  category: security
+  careers_url: ['https://1password.com/careers']
+  checker: ashby
+  settings: {board: 1password}
+  verified: {page_total: 75}
+- key: ccc
+  name: CCC Intelligent Solutions
+  category: software
+  aliases: [CCC]
+  careers_url: ['https://www.cccis.com/about/careers', 'https://www.cccis.com/careers']
+  checker: workday
+  settings:
+    host: cccis.wd1.myworkdayjobs.com
+    tenant: cccis
+    sites: [broadbean_external, CCCIS]
+  verified: {page_total: 35}
+- key: uber-freight
+  name: Uber Freight
+  category: software
+  careers_url: ['https://www.uberfreight.com/en-US/careers', 'https://www.uberfreight.com/careers/']
+  checker: greenhouse
+  settings: {board: uberfreight}
+  verified: {page_total: 68}

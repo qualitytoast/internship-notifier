@@ -1,0 +1,21 @@
+{
+  "key": "kirin",
+  "name": "Kirin",
+  "careers_url": "https://jobs.ashbyhq.com/kirin",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "kirin"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/kirin?includeCompensation=false",
+  "feed_total": 27,
+  "page_total": 27,
+  "page_total_how": "Ashby hosted page (Playwright capture 2026-10-19) showed 'Open Positions (27)'; API returned 27 on 2026-10-20",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com has no robots.txt)",
+  "notes": "Confirmed the same org as kirin.com ('Kirin – A Trading Company'; Ashby organization 'Kirin' has publicWebsite https://kirin.com/, and Built In NYC's Kirin (NYC, founded 2025) lists the same postings). kirin.com has no careers page. The board covers the whole Kirin group (departments Italic, Sudo, Family, Courtly, Blemish, Kati, Kirin); the prediction-markets 'Quantitative Research Intern' posting has been removed and there are no trading roles today. Only intern: 'VC Intern' (Shenzhen).",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

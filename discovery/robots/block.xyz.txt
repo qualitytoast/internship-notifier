@@ -1,0 +1,10 @@
+# status 200
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://block.xyz
+
+# Sitemap
+Sitemap: https://block.xyz/sitemap.xml

@@ -1,0 +1,51 @@
+# InternWatch settings. Secrets (SMTP password, healthchecks URL, SSH) live in .env, not here.
+
+email:
+  to: "nathan.m.hung@gmail.com"        # where every email goes
+  subject_prefix: InternWatch    # subjects: [InternWatch] new roles, [InternWatch Digest], [InternWatch HEALTH], [InternWatch COVERAGE]
+  timezone: America/Chicago      # for the digest/report schedule and dates shown in emails
+  digest_hour: 8                 # daily digest goes out with the first run at/after this local hour
+  report_weekday: 0              # weekly coverage report day (0 = Monday)
+  report_hour: 8
+
+schedule:
+  # A run starts every 15 minutes (systemd timer). Each company is polled only when due; after
+  # each poll its next poll is scheduled a random 30–45 minutes later (jitter). Because runs start
+  # every 15 minutes, every site is polled every 30–60 minutes and never more often.
+  poll_minutes: [30, 45]
+  retry_minutes: [30, 40]        # after a failed poll (each request was already retried with backoff)
+  workers: 8                     # companies checked in parallel (one request at a time per host)
+  check_timeout_minutes: 8       # time budget for one company's check (per-company timeout_minutes overrides)
+  run_timeout_minutes: 25        # hard stop for a whole run (long daily full scans of big sites fit inside)
+  full_scan_hours: 24            # big sites (big: true) are read newest-first each poll, fully once a day
+  detail_fetch_limit: 40         # max description fetches per company per run (new student roles only)
+
+health:
+  alert_after_failures: 2        # consecutive failed polls before a health email (retries happen first)
+  drop_threshold: 0.5            # alert if the job count falls by more than this fraction …
+  drop_min_baseline: 6           # … from a baseline of at least this many jobs
+  reminder_hours: 24             # remind about a still-open problem this often
+
+crosscheck:
+  grace_minutes: 90              # wait this long (and for a fresh poll) before calling a Simplify role a miss
+  sources:
+    - name: summer
+      url: https://raw.githubusercontent.com/SimplifyJobs/Summer2027-Internships/dev/README.md
+      page: https://github.com/SimplifyJobs/Summer2027-Internships/blob/dev/README.md
+    - name: offseason
+      url: https://raw.githubusercontent.com/SimplifyJobs/Summer2027-Internships/dev/README-Off-Season.md
+      page: https://github.com/SimplifyJobs/Summer2027-Internships/blob/dev/README-Off-Season.md
+
+http:
+  connect_timeout: 10
+  read_timeout: 30
+  retries: 3                     # retries with exponential backoff (2 s, 6 s, 18 s + jitter)
+  min_interval: 1.0              # seconds between two requests to the same host
+  respect_robots: true
+
+paths:
+  db: data/internwatch.db
+  outbox: data/outbox            # every email is also saved here as .eml + .html
+  logs: data/logs
+  robots_cache: data/robots
+  fixtures: tests/fixtures/cassettes

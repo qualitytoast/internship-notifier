@@ -1,0 +1,534 @@
+{
+ "_note": "Recommended feed for custom:citadel_sitemap: the Yoast SEO sitemap of the WordPress 'career' post type (plain HTTP 200, not challenged). 'response.body' is the raw XML, whole. 'parsed_jobs' is the proposed mapping (id = slug, title derived from slug, location = region hint from the slug). 'page_check' compares the live listing page (Playwright render) with the derived titles. Detail pages, admin-ajax, wp-json and /feed/ return a Cloudflare interactive challenge to plain HTTP; 'browser_only_jsonld_example' is for reference only.",
+ "observed": "2026-10-20T00:37:34Z",
+ "request": {
+  "method": "GET",
+  "url": "https://www.citadel.com/career-sitemap.xml"
+ },
+ "response": {
+  "status": 200,
+  "content_type": "text/xml; charset=UTF-8",
+  "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><?xml-stylesheet type=\"text/xsl\" href=\"//www.citadel.com/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl\"?>\n<urlset xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:image=\"http://www.google.com/schemas/sitemap-image/1.1\" xsi:schemaLocation=\"http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd\" xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:xhtml=\"http://www.w3.org/1999/xhtml\">\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/business-manager-health-performance-product-operations/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/business-manager-health-performance-product-operations/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/business-manager-health-performance-product-operations/\" />\n\t\t<lastmod>2026-10-20T00:14:05+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/emea-benefits-specialist/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/emea-benefits-specialist/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/emea-benefits-specialist/\" />\n\t\t<lastmod>2026-10-20T00:14:12+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/commodities-analyst/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/commodities-analyst/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/commodities-analyst/\" />\n\t\t<lastmod>2026-10-20T00:14:12+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/commodities-portfolio-manager/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/commodities-portfolio-manager/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/commodities-portfolio-manager/\" />\n\t\t<lastmod>2026-10-20T00:14:12+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/equities-citadel-associate-program-summer-internship-2028/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/equities-citadel-associate-program-summer-internship-2028/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/equities-citadel-associate-program-summer-internship-2028/\" />\n\t\t<lastmod>2026-10-20T00:14:13+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/equities-engineering-product-frontend-engineer-new-york/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/equities-engineering-product-frontend-engineer-new-york/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/equities-engineering-product-frontend-engineer-new-york/\" />\n\t\t<lastmod>2026-10-20T00:14:13+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/equities-investment-associate-ashler-capital-global-equities-surveyor-capital/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/equities-investment-associate-ashler-capital-global-equities-surveyor-capital/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/equities-investment-associate-ashler-capital-global-equities-surveyor-capital/\" />\n\t\t<lastmod>2026-10-20T00:14:13+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/equities-citadel-associate-program-full-time-program-2027-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/equities-citadel-associate-program-full-time-program-2027-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/equities-citadel-associate-program-full-time-program-2027-us/\" />\n\t\t<lastmod>2026-10-20T00:14:13+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-c-quantitative-research-engineer/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-c-quantitative-research-engineer/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-c-quantitative-research-engineer/\" />\n\t\t<lastmod>2026-10-20T00:14:14+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/finance-accounting-intern-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/finance-accounting-intern-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/finance-accounting-intern-us/\" />\n\t\t<lastmod>2026-10-20T00:14:14+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-machine-learning-engineer/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-machine-learning-engineer/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-machine-learning-engineer/\" />\n\t\t<lastmod>2026-10-20T00:14:15+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-machine-learning-researcher/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-machine-learning-researcher/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-machine-learning-researcher/\" />\n\t\t<lastmod>2026-10-20T00:14:15+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-post-doctorate-quantitative-researcher/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-post-doctorate-quantitative-researcher/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-post-doctorate-quantitative-researcher/\" />\n\t\t<lastmod>2026-10-20T00:14:15+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-quantitative-research-engineer/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-quantitative-research-engineer/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-quantitative-research-engineer/\" />\n\t\t<lastmod>2026-10-20T00:14:15+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/human-resources-intern-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/human-resources-intern-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/human-resources-intern-us/\" />\n\t\t<lastmod>2026-10-20T00:14:16+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-quantitative-researcher/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-quantitative-researcher/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-quantitative-researcher/\" />\n\t\t<lastmod>2026-10-20T00:14:16+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/international-equities-intern-asia/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/international-equities-intern-asia/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/international-equities-intern-asia/\" />\n\t\t<lastmod>2026-10-20T00:14:17+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/investment-trading-intern-europe/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/investment-trading-intern-europe/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/investment-trading-intern-europe/\" />\n\t\t<lastmod>2026-10-20T00:14:17+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/human-resources-mba-intern-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/human-resources-mba-intern-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/human-resources-mba-intern-us/\" />\n\t\t<lastmod>2026-10-20T00:14:17+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/machine-learning-researcher-phd-graduate-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/machine-learning-researcher-phd-graduate-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/machine-learning-researcher-phd-graduate-us/\" />\n\t\t<lastmod>2026-10-20T00:14:18+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/machine-learning-researcher-phd-intern-asia/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/machine-learning-researcher-phd-intern-asia/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/machine-learning-researcher-phd-intern-asia/\" />\n\t\t<lastmod>2026-10-20T00:14:18+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/machine-learning-researcher-phd-intern-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/machine-learning-researcher-phd-intern-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/machine-learning-researcher-phd-intern-us/\" />\n\t\t<lastmod>2026-10-20T00:14:18+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/machine-learning-researcher-phd-graduate-asia/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/machine-learning-researcher-phd-graduate-asia/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/machine-learning-researcher-phd-graduate-asia/\" />\n\t\t<lastmod>2026-10-20T00:14:18+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/operations-analyst-intern-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/operations-analyst-intern-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/operations-analyst-intern-us/\" />\n\t\t<lastmod>2026-10-20T00:14:19+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/operations-analyst-intern-europe/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/operations-analyst-intern-europe/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/operations-analyst-intern-europe/\" />\n\t\t<lastmod>2026-10-20T00:14:19+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/people-operations-lead-emea/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/people-operations-lead-emea/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/people-operations-lead-emea/\" />\n\t\t<lastmod>2026-10-20T00:14:20+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-developer-data-strategies-group/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-developer-data-strategies-group/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-developer-data-strategies-group/\" />\n\t\t<lastmod>2026-10-20T00:14:20+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/operations-intern-asia/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/operations-intern-asia/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/operations-intern-asia/\" />\n\t\t<lastmod>2026-10-20T00:14:20+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-research-analyst-intern-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-research-analyst-intern-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-research-analyst-intern-us/\" />\n\t\t<lastmod>2026-10-20T00:14:21+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-research-analyst-intern-bs-ms-europe/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-research-analyst-intern-bs-ms-europe/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-research-analyst-intern-bs-ms-europe/\" />\n\t\t<lastmod>2026-10-20T00:14:21+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-research-analyst-intern-bs-ms-asia/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-research-analyst-intern-bs-ms-asia/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-research-analyst-intern-bs-ms-asia/\" />\n\t\t<lastmod>2026-10-20T00:14:21+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-research-analyst-university-graduate-asia/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-research-analyst-university-graduate-asia/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-research-analyst-university-graduate-asia/\" />\n\t\t<lastmod>2026-10-20T00:14:21+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-research-analyst-university-graduate-europe/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-research-analyst-university-graduate-europe/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-research-analyst-university-graduate-europe/\" />\n\t\t<lastmod>2026-10-20T00:14:22+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-research-engineer-phd-intern-europe/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-research-engineer-phd-intern-europe/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-research-engineer-phd-intern-europe/\" />\n\t\t<lastmod>2026-10-20T00:14:22+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-research-engineer-phd-graduate-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-research-engineer-phd-graduate-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-research-engineer-phd-graduate-us/\" />\n\t\t<lastmod>2026-10-20T00:14:22+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-research-analyst-university-graduate-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-research-analyst-university-graduate-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-research-analyst-university-graduate-us/\" />\n\t\t<lastmod>2026-10-20T00:14:22+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-research-engineer-phd-intern-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-research-engineer-phd-intern-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-research-engineer-phd-intern-us/\" />\n\t\t<lastmod>2026-10-20T00:14:23+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-researcher-data-strategies-group/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-researcher-data-strategies-group/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-researcher-data-strategies-group/\" />\n\t\t<lastmod>2026-10-20T00:14:23+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-researcher-phd-graduate-asia/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-researcher-phd-graduate-asia/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-researcher-phd-graduate-asia/\" />\n\t\t<lastmod>2026-10-20T00:14:23+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-researcher-phd-graduate-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-researcher-phd-graduate-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-researcher-phd-graduate-us/\" />\n\t\t<lastmod>2026-10-20T00:14:24+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-researcher-phd-intern-europe/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-researcher-phd-intern-europe/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-researcher-phd-intern-europe/\" />\n\t\t<lastmod>2026-10-20T00:14:24+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-researcher-phd-graduate-europe/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-researcher-phd-graduate-europe/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-researcher-phd-graduate-europe/\" />\n\t\t<lastmod>2026-10-20T00:14:24+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-researcher-phd-intern-asia/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-researcher-phd-intern-asia/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-researcher-phd-intern-asia/\" />\n\t\t<lastmod>2026-10-20T00:14:24+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-researcher-post-doctoral-intern-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-researcher-post-doctoral-intern-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-researcher-post-doctoral-intern-us/\" />\n\t\t<lastmod>2026-10-20T00:14:25+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-researcher-phd-intern-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-researcher-phd-intern-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-researcher-phd-intern-us/\" />\n\t\t<lastmod>2026-10-20T00:14:25+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-trader-equity-quantitative-research-intern-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-trader-equity-quantitative-research-intern-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-trader-equity-quantitative-research-intern-us/\" />\n\t\t<lastmod>2026-10-20T00:14:25+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/quantitative-trader-equity-quantitative-research-university-graduate-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/quantitative-trader-equity-quantitative-research-university-graduate-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/quantitative-trader-equity-quantitative-research-university-graduate-us/\" />\n\t\t<lastmod>2026-10-20T00:14:25+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/sector-data-scientist-2027-intern-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/sector-data-scientist-2027-intern-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/sector-data-scientist-2027-intern-us/\" />\n\t\t<lastmod>2026-10-20T00:14:26+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/sector-data-analyst-intern-europe/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/sector-data-analyst-intern-europe/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/sector-data-analyst-intern-europe/\" />\n\t\t<lastmod>2026-10-20T00:14:26+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/sector-data-analyst-intern-asia/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/sector-data-analyst-intern-asia/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/sector-data-analyst-intern-asia/\" />\n\t\t<lastmod>2026-10-20T00:14:26+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/recruiting-coordinator-contract/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/recruiting-coordinator-contract/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/recruiting-coordinator-contract/\" />\n\t\t<lastmod>2026-10-20T00:14:26+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/sector-data-scientist-central-team/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/sector-data-scientist-central-team/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/sector-data-scientist-central-team/\" />\n\t\t<lastmod>2026-10-20T00:14:27+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/site-reliability-engineer/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/site-reliability-engineer/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/site-reliability-engineer/\" />\n\t\t<lastmod>2026-10-20T00:14:27+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/senior-hr-business-partner/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/senior-hr-business-partner/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/senior-hr-business-partner/\" />\n\t\t<lastmod>2026-10-20T00:14:27+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/software-engineer-intern-asia/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/software-engineer-intern-asia/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/software-engineer-intern-asia/\" />\n\t\t<lastmod>2026-10-20T00:14:28+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/software-engineer-university-graduate-europe/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/software-engineer-university-graduate-europe/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/software-engineer-university-graduate-europe/\" />\n\t\t<lastmod>2026-10-20T00:14:28+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/software-engineer-intern-europe/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/software-engineer-intern-europe/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/software-engineer-intern-europe/\" />\n\t\t<lastmod>2026-10-20T00:14:28+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/software-engineer/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/software-engineer/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/software-engineer/\" />\n\t\t<lastmod>2026-10-20T00:14:28+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/software-engineer-intern-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/software-engineer-intern-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/software-engineer-intern-us/\" />\n\t\t<lastmod>2026-10-20T00:14:28+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/us-physical-gas-specialist/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/us-physical-gas-specialist/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/us-physical-gas-specialist/\" />\n\t\t<lastmod>2026-10-20T00:14:29+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/software-engineer-university-graduate-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/software-engineer-university-graduate-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/software-engineer-university-graduate-us/\" />\n\t\t<lastmod>2026-10-20T00:14:29+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/trader-fixed-income-macro-rotational-trader-intern-us/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/trader-fixed-income-macro-rotational-trader-intern-us/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/trader-fixed-income-macro-rotational-trader-intern-us/\" />\n\t\t<lastmod>2026-10-20T00:14:29+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadel.com/careers/details/trader-power-renewables-trader-flexpower-a-citadel-company-university-graduate-emea/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadel.com/careers/details/trader-power-renewables-trader-flexpower-a-citadel-company-university-graduate-emea/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadel.com/careers/details/trader-power-renewables-trader-flexpower-a-citadel-company-university-graduate-emea/\" />\n\t\t<lastmod>2026-10-20T00:14:29+00:00</lastmod>\n\t</url>\n</urlset>\n<!-- XML Sitemap generated by Yoast SEO -->"
+ },
+ "parsed_jobs": {
+  "total": 63,
+  "intern_count_title_regex": 28,
+  "jobs": [
+   {
+    "id": "business-manager-health-performance-product-operations",
+    "title": "Business Manager Health Performance Product Operations",
+    "url": "https://www.citadel.com/careers/details/business-manager-health-performance-product-operations/",
+    "location": ""
+   },
+   {
+    "id": "emea-benefits-specialist",
+    "title": "EMEA Benefits Specialist",
+    "url": "https://www.citadel.com/careers/details/emea-benefits-specialist/",
+    "location": ""
+   },
+   {
+    "id": "commodities-analyst",
+    "title": "Commodities Analyst",
+    "url": "https://www.citadel.com/careers/details/commodities-analyst/",
+    "location": ""
+   },
+   {
+    "id": "commodities-portfolio-manager",
+    "title": "Commodities Portfolio Manager",
+    "url": "https://www.citadel.com/careers/details/commodities-portfolio-manager/",
+    "location": ""
+   },
+   {
+    "id": "equities-citadel-associate-program-summer-internship-2028",
+    "title": "Equities Citadel Associate Program Summer Internship 2028",
+    "url": "https://www.citadel.com/careers/details/equities-citadel-associate-program-summer-internship-2028/",
+    "location": ""
+   },
+   {
+    "id": "equities-engineering-product-frontend-engineer-new-york",
+    "title": "Equities Engineering Product Frontend Engineer New York",
+    "url": "https://www.citadel.com/careers/details/equities-engineering-product-frontend-engineer-new-york/",
+    "location": "New York"
+   },
+   {
+    "id": "equities-investment-associate-ashler-capital-global-equities-surveyor-capital",
+    "title": "Equities Investment Associate Ashler Capital Global Equities Surveyor Capital",
+    "url": "https://www.citadel.com/careers/details/equities-investment-associate-ashler-capital-global-equities-surveyor-capital/",
+    "location": ""
+   },
+   {
+    "id": "equities-citadel-associate-program-full-time-program-2027-us",
+    "title": "Equities Citadel Associate Program Full Time Program 2027 US",
+    "url": "https://www.citadel.com/careers/details/equities-citadel-associate-program-full-time-program-2027-us/",
+    "location": "United States"
+   },
+   {
+    "id": "global-quantitative-strategies-gqs-c-quantitative-research-engineer",
+    "title": "Global Quantitative Strategies GQS C Quantitative Research Engineer",
+    "url": "https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-c-quantitative-research-engineer/",
+    "location": ""
+   },
+   {
+    "id": "finance-accounting-intern-us",
+    "title": "Finance Accounting Intern US",
+    "url": "https://www.citadel.com/careers/details/finance-accounting-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "global-quantitative-strategies-gqs-machine-learning-engineer",
+    "title": "Global Quantitative Strategies GQS Machine Learning Engineer",
+    "url": "https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-machine-learning-engineer/",
+    "location": ""
+   },
+   {
+    "id": "global-quantitative-strategies-gqs-machine-learning-researcher",
+    "title": "Global Quantitative Strategies GQS Machine Learning Researcher",
+    "url": "https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-machine-learning-researcher/",
+    "location": ""
+   },
+   {
+    "id": "global-quantitative-strategies-gqs-post-doctorate-quantitative-researcher",
+    "title": "Global Quantitative Strategies GQS Post Doctorate Quantitative Researcher",
+    "url": "https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-post-doctorate-quantitative-researcher/",
+    "location": ""
+   },
+   {
+    "id": "global-quantitative-strategies-gqs-quantitative-research-engineer",
+    "title": "Global Quantitative Strategies GQS Quantitative Research Engineer",
+    "url": "https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-quantitative-research-engineer/",
+    "location": ""
+   },
+   {
+    "id": "human-resources-intern-us",
+    "title": "Human Resources Intern US",
+    "url": "https://www.citadel.com/careers/details/human-resources-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "global-quantitative-strategies-gqs-quantitative-researcher",
+    "title": "Global Quantitative Strategies GQS Quantitative Researcher",
+    "url": "https://www.citadel.com/careers/details/global-quantitative-strategies-gqs-quantitative-researcher/",
+    "location": ""
+   },
+   {
+    "id": "international-equities-intern-asia",
+    "title": "International Equities Intern Asia",
+    "url": "https://www.citadel.com/careers/details/international-equities-intern-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "investment-trading-intern-europe",
+    "title": "Investment Trading Intern Europe",
+    "url": "https://www.citadel.com/careers/details/investment-trading-intern-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "human-resources-mba-intern-us",
+    "title": "Human Resources Mba Intern US",
+    "url": "https://www.citadel.com/careers/details/human-resources-mba-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "machine-learning-researcher-phd-graduate-us",
+    "title": "Machine Learning Researcher PhD Graduate US",
+    "url": "https://www.citadel.com/careers/details/machine-learning-researcher-phd-graduate-us/",
+    "location": "United States"
+   },
+   {
+    "id": "machine-learning-researcher-phd-intern-asia",
+    "title": "Machine Learning Researcher PhD Intern Asia",
+    "url": "https://www.citadel.com/careers/details/machine-learning-researcher-phd-intern-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "machine-learning-researcher-phd-intern-us",
+    "title": "Machine Learning Researcher PhD Intern US",
+    "url": "https://www.citadel.com/careers/details/machine-learning-researcher-phd-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "machine-learning-researcher-phd-graduate-asia",
+    "title": "Machine Learning Researcher PhD Graduate Asia",
+    "url": "https://www.citadel.com/careers/details/machine-learning-researcher-phd-graduate-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "operations-analyst-intern-us",
+    "title": "Operations Analyst Intern US",
+    "url": "https://www.citadel.com/careers/details/operations-analyst-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "operations-analyst-intern-europe",
+    "title": "Operations Analyst Intern Europe",
+    "url": "https://www.citadel.com/careers/details/operations-analyst-intern-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "people-operations-lead-emea",
+    "title": "People Operations Lead EMEA",
+    "url": "https://www.citadel.com/careers/details/people-operations-lead-emea/",
+    "location": "EMEA"
+   },
+   {
+    "id": "quantitative-developer-data-strategies-group",
+    "title": "Quantitative Developer Data Strategies Group",
+    "url": "https://www.citadel.com/careers/details/quantitative-developer-data-strategies-group/",
+    "location": ""
+   },
+   {
+    "id": "operations-intern-asia",
+    "title": "Operations Intern Asia",
+    "url": "https://www.citadel.com/careers/details/operations-intern-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "quantitative-research-analyst-intern-us",
+    "title": "Quantitative Research Analyst Intern US",
+    "url": "https://www.citadel.com/careers/details/quantitative-research-analyst-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "quantitative-research-analyst-intern-bs-ms-europe",
+    "title": "Quantitative Research Analyst Intern BS MS Europe",
+    "url": "https://www.citadel.com/careers/details/quantitative-research-analyst-intern-bs-ms-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "quantitative-research-analyst-intern-bs-ms-asia",
+    "title": "Quantitative Research Analyst Intern BS MS Asia",
+    "url": "https://www.citadel.com/careers/details/quantitative-research-analyst-intern-bs-ms-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "quantitative-research-analyst-university-graduate-asia",
+    "title": "Quantitative Research Analyst University Graduate Asia",
+    "url": "https://www.citadel.com/careers/details/quantitative-research-analyst-university-graduate-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "quantitative-research-analyst-university-graduate-europe",
+    "title": "Quantitative Research Analyst University Graduate Europe",
+    "url": "https://www.citadel.com/careers/details/quantitative-research-analyst-university-graduate-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "quantitative-research-engineer-phd-intern-europe",
+    "title": "Quantitative Research Engineer PhD Intern Europe",
+    "url": "https://www.citadel.com/careers/details/quantitative-research-engineer-phd-intern-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "quantitative-research-engineer-phd-graduate-us",
+    "title": "Quantitative Research Engineer PhD Graduate US",
+    "url": "https://www.citadel.com/careers/details/quantitative-research-engineer-phd-graduate-us/",
+    "location": "United States"
+   },
+   {
+    "id": "quantitative-research-analyst-university-graduate-us",
+    "title": "Quantitative Research Analyst University Graduate US",
+    "url": "https://www.citadel.com/careers/details/quantitative-research-analyst-university-graduate-us/",
+    "location": "United States"
+   },
+   {
+    "id": "quantitative-research-engineer-phd-intern-us",
+    "title": "Quantitative Research Engineer PhD Intern US",
+    "url": "https://www.citadel.com/careers/details/quantitative-research-engineer-phd-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "quantitative-researcher-data-strategies-group",
+    "title": "Quantitative Researcher Data Strategies Group",
+    "url": "https://www.citadel.com/careers/details/quantitative-researcher-data-strategies-group/",
+    "location": ""
+   },
+   {
+    "id": "quantitative-researcher-phd-graduate-asia",
+    "title": "Quantitative Researcher PhD Graduate Asia",
+    "url": "https://www.citadel.com/careers/details/quantitative-researcher-phd-graduate-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "quantitative-researcher-phd-graduate-us",
+    "title": "Quantitative Researcher PhD Graduate US",
+    "url": "https://www.citadel.com/careers/details/quantitative-researcher-phd-graduate-us/",
+    "location": "United States"
+   },
+   {
+    "id": "quantitative-researcher-phd-intern-europe",
+    "title": "Quantitative Researcher PhD Intern Europe",
+    "url": "https://www.citadel.com/careers/details/quantitative-researcher-phd-intern-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "quantitative-researcher-phd-graduate-europe",
+    "title": "Quantitative Researcher PhD Graduate Europe",
+    "url": "https://www.citadel.com/careers/details/quantitative-researcher-phd-graduate-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "quantitative-researcher-phd-intern-asia",
+    "title": "Quantitative Researcher PhD Intern Asia",
+    "url": "https://www.citadel.com/careers/details/quantitative-researcher-phd-intern-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "quantitative-researcher-post-doctoral-intern-us",
+    "title": "Quantitative Researcher Post Doctoral Intern US",
+    "url": "https://www.citadel.com/careers/details/quantitative-researcher-post-doctoral-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "quantitative-researcher-phd-intern-us",
+    "title": "Quantitative Researcher PhD Intern US",
+    "url": "https://www.citadel.com/careers/details/quantitative-researcher-phd-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "quantitative-trader-equity-quantitative-research-intern-us",
+    "title": "Quantitative Trader Equity Quantitative Research Intern US",
+    "url": "https://www.citadel.com/careers/details/quantitative-trader-equity-quantitative-research-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "quantitative-trader-equity-quantitative-research-university-graduate-us",
+    "title": "Quantitative Trader Equity Quantitative Research University Graduate US",
+    "url": "https://www.citadel.com/careers/details/quantitative-trader-equity-quantitative-research-university-graduate-us/",
+    "location": "United States"
+   },
+   {
+    "id": "sector-data-scientist-2027-intern-us",
+    "title": "Sector Data Scientist 2027 Intern US",
+    "url": "https://www.citadel.com/careers/details/sector-data-scientist-2027-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "sector-data-analyst-intern-europe",
+    "title": "Sector Data Analyst Intern Europe",
+    "url": "https://www.citadel.com/careers/details/sector-data-analyst-intern-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "sector-data-analyst-intern-asia",
+    "title": "Sector Data Analyst Intern Asia",
+    "url": "https://www.citadel.com/careers/details/sector-data-analyst-intern-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "recruiting-coordinator-contract",
+    "title": "Recruiting Coordinator Contract",
+    "url": "https://www.citadel.com/careers/details/recruiting-coordinator-contract/",
+    "location": ""
+   },
+   {
+    "id": "sector-data-scientist-central-team",
+    "title": "Sector Data Scientist Central Team",
+    "url": "https://www.citadel.com/careers/details/sector-data-scientist-central-team/",
+    "location": ""
+   },
+   {
+    "id": "site-reliability-engineer",
+    "title": "Site Reliability Engineer",
+    "url": "https://www.citadel.com/careers/details/site-reliability-engineer/",
+    "location": ""
+   },
+   {
+    "id": "senior-hr-business-partner",
+    "title": "Senior HR Business Partner",
+    "url": "https://www.citadel.com/careers/details/senior-hr-business-partner/",
+    "location": ""
+   },
+   {
+    "id": "software-engineer-intern-asia",
+    "title": "Software Engineer Intern Asia",
+    "url": "https://www.citadel.com/careers/details/software-engineer-intern-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "software-engineer-university-graduate-europe",
+    "title": "Software Engineer University Graduate Europe",
+    "url": "https://www.citadel.com/careers/details/software-engineer-university-graduate-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "software-engineer-intern-europe",
+    "title": "Software Engineer Intern Europe",
+    "url": "https://www.citadel.com/careers/details/software-engineer-intern-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "software-engineer",
+    "title": "Software Engineer",
+    "url": "https://www.citadel.com/careers/details/software-engineer/",
+    "location": ""
+   },
+   {
+    "id": "software-engineer-intern-us",
+    "title": "Software Engineer Intern US",
+    "url": "https://www.citadel.com/careers/details/software-engineer-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "us-physical-gas-specialist",
+    "title": "US Physical Gas Specialist",
+    "url": "https://www.citadel.com/careers/details/us-physical-gas-specialist/",
+    "location": ""
+   },
+   {
+    "id": "software-engineer-university-graduate-us",
+    "title": "Software Engineer University Graduate US",
+    "url": "https://www.citadel.com/careers/details/software-engineer-university-graduate-us/",
+    "location": "United States"
+   },
+   {
+    "id": "trader-fixed-income-macro-rotational-trader-intern-us",
+    "title": "Trader Fixed Income Macro Rotational Trader Intern US",
+    "url": "https://www.citadel.com/careers/details/trader-fixed-income-macro-rotational-trader-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "trader-power-renewables-trader-flexpower-a-citadel-company-university-graduate-emea",
+    "title": "Trader Power Renewables Trader Flexpower a Citadel Company University Graduate EMEA",
+    "url": "https://www.citadel.com/careers/details/trader-power-renewables-trader-flexpower-a-citadel-company-university-graduate-emea/",
+    "location": "EMEA"
+   }
+  ]
+ },
+ "page_check": {
+  "listing_url": "https://www.citadel.com/careers/open-opportunities/",
+  "viewing_text": "Viewing 10 of 63",
+  "internships_filter_count": 28,
+  "cards_page1": [
+   {
+    "slug": "us-physical-gas-specialist",
+    "page_title": "US Physical Gas Specialist",
+    "page_location": "Greenwich, Houston",
+    "derived_title": "US Physical Gas Specialist"
+   },
+   {
+    "slug": "site-reliability-engineer",
+    "page_title": "Site Reliability Engineer",
+    "page_location": "Hong Kong, London, New York, Singapore",
+    "derived_title": "Site Reliability Engineer"
+   },
+   {
+    "slug": "software-engineer",
+    "page_title": "Software Engineer",
+    "page_location": "Greenwich, Houston, London, New York, Singapore",
+    "derived_title": "Software Engineer"
+   },
+   {
+    "slug": "software-engineer-intern-us",
+    "page_title": "Software Engineer – Intern (US)",
+    "page_location": "Greenwich, Houston, Miami, New York",
+    "derived_title": "Software Engineer Intern US"
+   },
+   {
+    "slug": "software-engineer-university-graduate-us",
+    "page_title": "Software Engineer – University Graduate (US)",
+    "page_location": "Greenwich, Houston, Miami, New York",
+    "derived_title": "Software Engineer University Graduate US"
+   },
+   {
+    "slug": "trader-fixed-income-macro-rotational-trader-intern-us",
+    "page_title": "Trader: Fixed Income & Macro Rotational Trader – Intern (US)",
+    "page_location": "Greenwich, Miami, New York",
+    "derived_title": "Trader Fixed Income Macro Rotational Trader Intern US"
+   },
+   {
+    "slug": "software-engineer-intern-europe",
+    "page_title": "Software Engineer – Intern (Europe)",
+    "page_location": "London",
+    "derived_title": "Software Engineer Intern Europe"
+   },
+   {
+    "slug": "trader-power-renewables-trader-flexpower-a-citadel-company-university-graduate-emea",
+    "page_title": "Trader: Power & Renewables Trader – FlexPower (a Citadel company) – University Graduate (EMEA)",
+    "page_location": "Hambu",
+    "derived_title": "Trader Power Renewables Trader Flexpower a Citadel Company University Graduate EMEA"
+   },
+   {
+    "slug": "software-engineer-intern-asia",
+    "page_title": "Software Engineer – Intern (Asia)",
+    "page_location": "Hong Kong, Singapore",
+    "derived_title": "Software Engineer Intern Asia"
+   },
+   {
+    "slug": "software-engineer-university-graduate-europe",
+    "page_title": "Software Engineer – University Graduate (Europe)",
+    "page_location": "London",
+    "derived_title": "Software Engineer University Graduate Europe"
+   }
+  ]
+ },
+ "browser_only_jsonld_example": {
+  "url": "https://www.citadel.com/careers/details/software-engineer-intern-us/",
+  "note": "JobPosting JSON-LD on the detail page (headless Chromium render, 2026-10-19). datePosted equals the render date, so it is not a real posting date.",
+  "jsonld": {
+   "@context": "https://schema.org",
+   "@type": "JobPosting",
+   "title": "Software Engineer - Intern (US)",
+   "description": "At Citadel, our engineers work in small teams to turn the best ideas into high-performing and resilient technology. With short development cycles, work rapidly goes into production. As an engineer, you can create system architectures, develop platforms and build web frameworks. You’ll have access to state-of-the-art tools and apply innovative techniques including distributed computing, natural language processing, machine learning and more.\n\nAs an intern, you’ll get to challenge the impossible in technology through an 11-week program that will allow you to collaborate and connect with senior team members. In addition, you’ll get the opportunity to network and socialize with peers throughout the internship.\n\nYour Objectives:\n\nCreate technological tools that bring trading strategies to life\nDevelop high-performance, large data research platforms\nWork in small teams to build the future of finance\n\n\nYour Skills &amp; Talents:\n\nBachelor&#39;s, master&#39;s or PhD in computer science, computer engineering or related fields \nExceptional programming and design skills\nStrong analytical skills and familiarity with probability and statistics\nAbility to communicate effectively in a collaborative, complex and highly technical team environment\nIntellectual curiosity and passion for solving challenging problems using technology\n\n\nOpportunities available in New York, Miami, Greenwich, and Houston.\n\nIn addition to weekly pay, interns may be eligible for a highly competitive sign-on bonus, housing stipend or covered living accommodations, company-sponsored travel, and a variety of on-site benefits, including access to on-site fitness and wellness amenities, catered meals, and social and networking events.\n\n     In accordance with applicable law, the base salary range for this role is $4,500 to $5,800 per week.",
+   "datePosted": "2026-10-19",
+   "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Citadel",
+    "sameAs": "https://www.citadel.com/"
+   },
+   "jobBenefits": "Discretionary incentive compensation eligibility; medical and life insurance; retirement and tax-free savings plans; additional healthcare programs.",
+   "directApply": true,
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "name": "Software Engineer - Intern (US)",
+    "url": "https://www.citadel.com/careers/details/software-engineer-intern-us/"
+   },
+   "employmentType": "internship",
+   "jobLocation": [
+    {
+     "@type": "Place",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "425 Park Avenue",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "10022",
+      "addressCountry": "US"
+     }
+    },
+    {
+     "@type": "Place",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "830 Brickell Plaza",
+      "addressLocality": "Miami",
+      "addressRegion": "FL",
+      "postalCode": "33131",
+      "addressCountry": "US"
+     }
+    },
+    {
+     "@type": "Place",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "33 Benedict Place, 3rd Floor",
+      "addressLocality": "Greenwich",
+      "addressRegion": "CT",
+      "postalCode": "06830",
+      "addressCountry": "US"
+     }
+    },
+    {
+     "@type": "Place",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "700 Louisiana St., Suite 4600",
+      "addressLocality": "Houston",
+      "addressRegion": "TX",
+      "postalCode": "77002",
+      "addressCountry": "US"
+     }
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,1270 @@
+{
+ "_about": "Raw responses captured 2026-10-19/20 (UTC). pcsx = careers.deere.com Eightfold API (main board, recommended); rmk_rss = jobs.deere.com/sitemap.xml (SAP SuccessFactors RMK RSS 2.0 feed, 5.6 MB, 423 items) — 3 items shown, descriptions truncated.",
+ "pcsx_search_unfiltered_page1": {
+  "request": "GET https://careers.deere.com/api/pcsx/search?domain=johndeere.com&query=&location=&start=0&sort_by=timestamp",
+  "response": {
+   "status": 200,
+   "error": {
+    "message": "",
+    "body": ""
+   },
+   "data": {
+    "positions": [
+     {
+      "id": 137483679574,
+      "displayJobId": "124782",
+      "name": "Marketing Specialist - MTY",
+      "locations": [
+       "Garza Garcia,Nuevo León,Mexico"
+      ],
+      "standardizedLocations": [
+       "San Pedro Garza García, N.L., MX"
+      ],
+      "postedTs": 1792450957,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Marketing and Sales (CA)",
+      "creationTs": 1790702694,
+      "isHot": 0,
+      "workLocationOption": "hybrid",
+      "locationFlexibility": "flexible_within_country",
+      "atsJobId": "124782",
+      "positionUrl": "/careers/job/137483679574"
+     },
+     {
+      "id": 137483923115,
+      "displayJobId": "125313",
+      "name": "Pessoa Engenheira Plena (Product Verification & Validation) - Indaiatuba/SP",
+      "locations": [
+       "INDAIATUBA,Sao Paulo,Brazil"
+      ],
+      "standardizedLocations": [
+       "Indaiatuba, SP, BR"
+      ],
+      "postedTs": 1792442864,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Product Engineering (CA)",
+      "creationTs": 1791987401,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "125313",
+      "positionUrl": "/careers/job/137483923115"
+     },
+     {
+      "id": 137483966158,
+      "displayJobId": "125388",
+      "name": "Part-Time Student - Factory Engineering - Moline, IL",
+      "locations": [
+       "Moline,Illinois,United States"
+      ],
+      "standardizedLocations": [
+       "Moline, IL, US"
+      ],
+      "postedTs": 1792440447,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Factory Engineering (CA)",
+      "creationTs": 1792160734,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "125388",
+      "positionUrl": "/careers/job/137483966158"
+     },
+     {
+      "id": 137483274923,
+      "displayJobId": "123988",
+      "name": "Senior Software Engineer - Torreón",
+      "locations": [
+       "Torreón,Coahuila,Mexico"
+      ],
+      "standardizedLocations": [
+       "Torreón, Coah., MX"
+      ],
+      "postedTs": 1792436697,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Technology (CA)",
+      "creationTs": 1788271935,
+      "isHot": 0,
+      "workLocationOption": "hybrid",
+      "locationFlexibility": "flexible_within_country",
+      "atsJobId": "123988",
+      "positionUrl": "/careers/job/137483274923"
+     },
+     {
+      "id": 137483969937,
+      "displayJobId": "125396",
+      "name": "HR Development Program",
+      "locations": [
+       "MOLINE,Illinois,United States"
+      ],
+      "standardizedLocations": [
+       "Moline, IL, US"
+      ],
+      "postedTs": 1792435177,
+      "solrScore": null,
+      "stars": 0,
+      "department": "People and Culture (CA)",
+      "creationTs": 1792182899,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "125396",
+      "positionUrl": "/careers/job/137483969937"
+     },
+     {
+      "id": 137483929577,
+      "displayJobId": "125316",
+      "name": "Software Developer",
+      "locations": [
+       "Urbandale, IA,Iowa,United States"
+      ],
+      "standardizedLocations": [
+       "Urbandale, IA, US"
+      ],
+      "postedTs": 1792433656,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Technology (CA)",
+      "creationTs": 1792005565,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "125316",
+      "positionUrl": "/careers/job/137483929577"
+     },
+     {
+      "id": 137483482467,
+      "displayJobId": "124421",
+      "name": "OFP Quality Engineer - Weld",
+      "locations": [
+       "East Moline,Illinois,United States"
+      ],
+      "standardizedLocations": [
+       "East Moline, IL, US"
+      ],
+      "postedTs": 1792432821,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Factory Engineering (CA)",
+      "creationTs": 1789582726,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "124421",
+      "positionUrl": "/careers/job/137483482467"
+     },
+     {
+      "id": 137483760855,
+      "displayJobId": "125020",
+      "name": "Software Engineer - MTY",
+      "locations": [
+       "Garza Garcia,Nuevo León,Mexico"
+      ],
+      "standardizedLocations": [
+       "San Pedro Garza García, N.L., MX"
+      ],
+      "postedTs": 1792431200,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Product Engineering (CA)",
+      "creationTs": 1791228643,
+      "isHot": 0,
+      "workLocationOption": "hybrid",
+      "locationFlexibility": null,
+      "atsJobId": "125020",
+      "positionUrl": "/careers/job/137483760855"
+     },
+     {
+      "id": 137483760854,
+      "displayJobId": "125019",
+      "name": "Software Engineer - MTY",
+      "locations": [
+       "Garza Garcia,Nuevo León,Mexico"
+      ],
+      "standardizedLocations": [
+       "San Pedro Garza García, N.L., MX"
+      ],
+      "postedTs": 1792430985,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Product Engineering (CA)",
+      "creationTs": 1791228613,
+      "isHot": 0,
+      "workLocationOption": "hybrid",
+      "locationFlexibility": null,
+      "atsJobId": "125019",
+      "positionUrl": "/careers/job/137483760854"
+     },
+     {
+      "id": 137483512133,
+      "displayJobId": "124503",
+      "name": "Software Controls Engineer",
+      "locations": [
+       "Coffeyville,Kansas,United States"
+      ],
+      "standardizedLocations": [
+       "Coffeyville, KS, US"
+      ],
+      "postedTs": 1792430473,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Product Engineering (CA)",
+      "creationTs": 1789750544,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "124503",
+      "positionUrl": "/careers/job/137483512133"
+     }
+    ],
+    "filterDef": {
+     "facets": {
+      "locations": [
+       [
+        "Remote",
+        999999
+       ],
+       [
+        "Indaiatuba, SP, Brazil",
+        27
+       ],
+       [
+        "Moline, IL, United States",
+        20
+       ],
+       [
+        "Waterloo, IA, United States",
+        16
+       ],
+       [
+        "East Moline, IL, United States",
+        11
+       ],
+       [
+        "Arc-lès-Gray, Bourgogne-Franche-Comté, France",
+        10
+       ],
+       [
+        "Bruchsal, BW, Germany",
+        10
+       ],
+       [
+        "Dubuque, IA, United States",
+        10
+       ],
+       [
+        "Poznań, Greater Poland Voivodeship, Poland",
+        9
+       ],
+       [
+        "IL, United States",
+        7
+       ],
+       [
+        "MA, BW, Germany",
+        7
+       ]
+      ]
+     },
+     "smartFilters": [],
+     "allFilters": [
+      {
+       "type": "multi_select_facet_search",
+       "filterName": "skills",
+       "title": "Your Relevant Skills",
+       "options": [
+        {
+         "label": "Teamwork",
+         "value": "Teamwork"
+        },
+        {
+         "label": "Communication",
+         "value": "Communication"
+        },
+        {
+         "label": "Microsoft Excel",
+         "value": "Microsoft Excel"
+        },
+        {
+         "label": "Show Production",
+         "value": "Show Production"
+        },
+        {
+         "label": "Microsoft Office",
+         "value": "Microsoft Office"
+        },
+        {
+         "label": "Inventory Framework",
+         "value": "Inventory Framework"
+        },
+        {
+         "label": "Operations",
+         "value": "Operations"
+        },
+        {
+         "label": "Python",
+         "value": "Python"
+        },
+        {
+         "label": "Marketing",
+         "value": "Marketing"
+        },
+        {
+         "label": "MATLAB",
+         "value": "MATLAB"
+        },
+        {
+         "label": "Mechanical Engineering",
+         "value": "Mechanical Engineering"
+        },
+        {
+         "label": "Construction Equipment",
+         "value": "Construction Equipment"
+        },
+        {
+         "label": "Customer Service",
+         "value": "Customer Service"
+        },
+        {
+         "label": "Problem Solving",
+         "value": "Problem Solving"
+        },
+        {
+         "label": "Territory Sales",
+         "value": "Territory Sales"
+        },
+        {
+         "label": "Sales Training",
+         "value": "Sales Training"
+        },
+        {
+         "label": "Manufacturing",
+         "value": "Manufacturing"
+        },
+        {
+         "label": "Negotiation",
+         "value": "Negotiation"
+        },
+        {
+         "label": "SOLIDWORKS",
+         "value": "SOLIDWORKS"
+        },
+        {
+         "label": "Assembly Language",
+         "value": "Assembly Language"
+        },
+        {
+         "label": "Budgeting",
+         "value": "Budgeting"
+        },
+        {
+         "label": "Relationship Building",
+         "value": "Relationship Building"
+        },
+        {
+         "label": "Testing",
+         "value": "Testing"
+        },
+        {
+         "label": "Revenue Management",
+         "value": "Revenue Management"
+        },
+        {
+         "label": "SAP",
+         "value": "SAP"
+        },
+        {
+         "label": "Project Management",
+         "value": "Project Management"
+        },
+        {
+         "label": "Training",
+         "value": "Training"
+        },
+        {
+         "label": "Engineering",
+         "value": "Engineering"
+        },
+        {
+         "label": "AutoCAD",
+         "value": "AutoCAD"
+        },
+        {
+         "label": "Continuous Improvement",
+         "value": "Continuous Improvement"
+        },
+        {
+         "label": "Presentation Skills",
+         "value": "Presentation Skills"
+        },
+        {
+         "label": "Programming",
+         "value": "Programming"
+        },
+        {
+         "label": "Research Methods",
+         "value": "Research Methods"
+        },
+        {
+         "label": "Computer Science",
+         "value": "Computer Science"
+        },
+        {
+         "label": "Customer Relationship Management",
+         "value": "Customer Relationship Management"
+        },
+        {
+         "label": "Leadership",
+         "value": "Leadership"
+        },
+        {
+         "label": "Planning",
+         "value": "Planning"
+        },
+        {
+         "label": "Troubleshooting",
+         "value": "Troubleshooting"
+        },
+        {
+         "label": "Cross Functional Skills",
+         "value": "Cross Functional Skills"
+        },
+        {
+         "label": "Design",
+         "value": "Design"
+        },
+        {
+         "label": "Forestry",
+         "value": "Forestry"
+        },
+        {
+         "label": "Microsoft PowerPoint",
+         "value": "Microsoft PowerPoint"
+        },
+        {
+         "label": "Sales Process",
+         "value": "Sales Process"
+        },
+        {
+         "label": "Support",
+         "value": "Support"
+        },
+        {
+         "label": "GitHub",
+         "value": "GitHub"
+        },
+        {
+         "label": "German",
+         "value": "German"
+        },
+        {
+         "label": "Reporting",
+         "value": "Reporting"
+        },
+        {
+         "label": "Collaboration",
+         "value": "Collaboration"
+        },
+        {
+         "label": "Efficiency",
+         "value": "Efficiency"
+        },
+        {
+         "label": "Microsoft Power BI",
+         "value": "Microsoft Power BI"
+        },
+        {
+         "label": "Robotics",
+         "value": "Robotics"
+        },
+        {
+         "label": "Automation",
+         "value": "Automation"
+        },
+        {
+         "label": "Business Development",
+         "value": "Business Development"
+        },
+        {
+         "label": "Equipment Sales",
+         "value": "Equipment Sales"
+        },
+        {
+         "label": "Logistics",
+         "value": "Logistics"
+        },
+        {
+         "label": "Analysis",
+         "value": "Analysis"
+        },
+        {
+         "label": "English",
+         "value": "English"
+        },
+        {
+         "label": "React",
+         "value": "React"
+        },
+        {
+         "label": "Standardization",
+         "value": "Standardization"
+        },
+        {
+         "label": "Customer Satisfaction",
+         "value": "Customer Satisfaction"
+        },
+        {
+         "label": "Documentation",
+         "value": "Documentation"
+        },
+        {
+         "label": "Electrical Engineering",
+         "value": "Electrical Engineering"
+        },
+        {
+         "label": "Fabrication",
+         "value": "Fabrication"
+        },
+        {
+         "label": "Git",
+         "value": "Git"
+        },
+        {
+         "label": "Microsoft Word",
+         "value": "Microsoft Word"
+        },
+        {
+         "label": "Time Management",
+         "value": "Time Management"
+        },
+        {
+         "label": "Welding",
+         "value": "Welding"
+        },
+        {
+         "label": "Account Management",
+         "value": "Account Management"
+        },
+        {
+         "label": "Artificial Intelligence",
+         "value": "Artificial Intelligence"
+        },
+        {
+         "label": "Continuous Integration",
+         "value": "Continuous Integration"
+        },
+        {
+         "label": "Englisch",
+         "value": "Englisch"
+        },
+        {
+         "label": "Java",
+         "value": "Java"
+        },
+        {
+         "label": "Mechanics",
+         "value": "Mechanics"
+        },
+        {
+         "label": "Pricing",
+         "value": "Pricing"
+        },
+        {
+         "label": "Reliability",
+         "value": "Reliability"
+        },
+        {
+         "label": "Sales Growth",
+         "value": "Sales Growth"
+        },
+        {
+         "label": "Simulations",
+         "value": "Simulations"
+        },
+        {
+         "label": "Validation Framework",
+         "value": "Validation Framework"
+        },
+        {
+         "label": "Workflow",
+         "value": "Workflow"
+        },
+        {
+         "label": "Agriculture",
+         "value": "Agriculture"
+        },
+        {
+         "label": "Alignment",
+         "value": "Alignment"
+        },
+        {
+         "label": "Construction",
+         "value": "Construction"
+        },
+        {
+         "label": "CAD Software",
+         "value": "CAD Software"
+        },
+        {
+         "label": "JavaScript",
+         "value": "JavaScript"
+        },
+        {
+         "label": "Microsoft Outlook",
+         "value": "Microsoft Outlook"
+        },
+        {
+         "label": "Product Support",
+         "value": "Product Support"
+        },
+        {
+         "label": "Technical Proficiency",
+         "value": "Technical Proficiency"
+        },
+        {
+         "label": "TypeScript",
+         "value": "TypeScript"
+        },
+        {
+         "label": "Academic Writing",
+         "value": "Academic Writing"
+        },
+        {
+         "label": "Coding",
+         "value": "Coding"
+        },
+        {
+         "label": "Data Analysis",
+         "value": "Data Analysis"
+        },
+        {
+         "label": "Finance",
+         "value": "Finance"
+        },
+        {
+         "label": "Financial Analysis",
+         "value": "Financial Analysis"
+        },
+        {
+         "label": "Maintenance",
+         "value": "Maintenance"
+        },
+        {
+         "label": "Node.js",
+         "value": "Node.js"
+        },
+        {
+         "label": "Process Improvement",
+         "value": "Process Improvement"
+        },
+        {
+         "label": "Product Engineering",
+         "value": "Product Engineering"
+        },
+        {
+         "label": "Sales",
+         "value": "Sales"
+        },
+        {
+         "label": "Sales and Marketing",
+         "value": "Sales and Marketing"
+        },
+        {
+         "label": "Simulink",
+         "value": "Simulink"
+        },
+        {
+         "label": "Agile",
+         "value": "Agile"
+        },
+        {
+         "label": "Docker",
+         "value": "Docker"
+        },
+        {
+         "label": "Implementation",
+         "value": "Implementation"
+        },
+        {
+         "label": "Language Skills",
+         "value": "Language Skills"
+        },
+        {
+         "label": "Machine Learning",
+         "value": "Machine Learning"
+        },
+        {
+         "label": "Manufacturing Processes",
+         "value": "Manufacturing Processes"
+        },
+        {
+         "label": "Modeling",
+         "value": "Modeling"
+        },
+        {
+         "label": "Software Engineering",
+         "value": "Software Engineering"
+        },
+        {
+         "label": "Amazon Web Services (AWS)",
+         "value": "Amazon Web Services (AWS)"
+        },
+        {
+         "label": "Bearbeitung",
+         "value": "Bearbeitung"
+        },
+        {
+         "label": "Data Analytics",
+         "value": "Data Analytics"
+        },
+        {
+         "label": "Manufacturing Engineering",
+         "value": "Manufacturing Engineering"
+        },
+        {
+         "label": "SQL",
+         "value": "SQL"
+        },
+        {
+         "label": "Auditing",
+         "value": "Auditing"
+        },
+        {
+         "label": "Databricks",
+         "value": "Databricks"
+        },
+        {
+         "label": "PostgreSQL",
+         "value": "PostgreSQL"
+        },
+        {
+         "label": "Prospecting",
+         "value": "Prospecting"
+        },
+        {
+         "label": "C++",
+         "value": "C++"
+        },
+        {
+         "label": "Compliance",
+         "value": "Compliance"
+        },
+        {
+         "label": "Customer Support",
+         "value": "Customer Support"
+        },
+        {
+         "label": "Deployments",
+         "value": "Deployments"
+        },
+        {
+         "label": "Engineering Design",
+         "value": "Engineering Design"
+        },
+        {
+         "label": "Hydraulics",
+         "value": "Hydraulics"
+        },
+        {
+         "label": "Industrial Engineering",
+         "value": "Industrial Engineering"
+        },
+        {
+         "label": "Recruiting",
+         "value": "Recruiting"
+        },
+        {
+         "label": "Root Cause Analysis",
+         "value": "Root Cause Analysis"
+        },
+        {
+         "label": "Scrum",
+         "value": "Scrum"
+        },
+        {
+         "label": "Analytics",
+         "value": "Analytics"
+        },
+        {
+         "label": "Assessments",
+         "value": "Assessments"
+        },
+        {
+         "label": "Betreuung",
+         "value": "Betreuung"
+        },
+        {
+         "label": "Business Administration",
+         "value": "Business Administration"
+        },
+        {
+         "label": "Corrective Action",
+         "value": "Corrective Action"
+        },
+        {
+         "label": "Engenharia",
+         "value": "Engenharia"
+        },
+        {
+         "label": "Hand Saw",
+         "value": "Hand Saw"
+        },
+        {
+         "label": "Innovation",
+         "value": "Innovation"
+        },
+        {
+         "label": "Linux",
+         "value": "Linux"
+        },
+        {
+         "label": "Praktikum",
+         "value": "Praktikum"
+        },
+        {
+         "label": "Spring",
+         "value": "Spring"
+        },
+        {
+         "label": "Stacks",
+         "value": "Stacks"
+        },
+        {
+         "label": "Supply Chain Management",
+         "value": "Supply Chain Management"
+        },
+        {
+         "label": "Unterstützung",
+         "value": "Unterstützung"
+        },
+        {
+         "label": "ANSYS",
+         "value": "ANSYS"
+        },
+        {
+         "label": "Algorithms",
+         "value": "Algorithms"
+        },
+        {
+         "label": "Anglais",
+         "value": "Anglais"
+        },
+        {
+         "label": "Automatisierung",
+         "value": "Automatisierung"
+        },
+        {
+         "label": "Computer Engineering",
+         "value": "Computer Engineering"
+        },
+        {
+         "label": "DevOps",
+         "value": "DevOps"
+        },
+        {
+         "label": "Fixturing",
+         "value": "Fixturing"
+        },
+        {
+         "label": "Hiring",
+         "value": "Hiring"
+        },
+        {
+         "label": "Microservices",
+         "value": "Microservices"
+        },
+        {
+         "label": "Product Design",
+         "value": "Product Design"
+        },
+        {
+         "label": "R Programming",
+         "value": "R Programming"
+        },
+        {
+         "label": "REST API",
+         "value": "REST API"
+        },
+        {
+         "label": "Windchill",
+         "value": "Windchill"
+        },
+        {
+         "label": "Análise",
+         "value": "Análise"
+        },
+        {
+         "label": "CSS",
+         "value": "CSS"
+        },
+        {
+         "label": "Engineering Technology",
+         "value": "Engineering Technology"
+        },
+        {
+         "label": "Group Policy",
+         "value": "Group Policy"
+        },
+        {
+         "label": "Human Resources",
+         "value": "Human Resources"
+        },
+        {
+         "label": "Implementação",
+         "value": "Implementação"
+        },
+        {
+         "label": "Part Inspection",
+         "value": "Part Inspection"
+        },
+        {
+         "label": "Risk Management",
+         "value": "Risk Management"
+        },
+        {
+         "label": "Sales Targets",
+         "value": "Sales Targets"
+        },
+        {
+         "label": "Sensors",
+         "value": "Sensors"
+        },
+        {
+         "label": "Software Development",
+         "value": "Software Development"
+        },
+        {
+         "label": "Strategy",
+         "value": "Strategy"
+        },
+        {
+         "label": "Supply Chain Software",
+         "value": "Supply Chain Software"
+        },
+        {
+         "label": "Systems Engineering",
+         "value": "Systems Engineering"
+        },
+        {
+         "label": "Terraform",
+         "value": "Terraform"
+        },
+        {
+         "label": "CATIA",
+         "value": "CATIA"
+        },
+        {
+         "label": "Data Science",
+         "value": "Data Science"
+        },
+        {
+         "label": "E-Procurement",
+         "value": "E-Procurement"
+        },
+        {
+         "label": "Embedded Systems",
+         "value": "Embedded Systems"
+        },
+        {
+         "label": "Entretien",
+         "value": "Entretien"
+        },
+        {
+         "label": "Ergonomics",
+         "value": "Ergonomics"
+        },
+        {
+         "label": "Face to Face Selling",
+         "value": "Face to Face Selling"
+        },
+        {
+         "label": "Frontend",
+         "value": "Frontend"
+        },
+        {
+         "label": "Gestion",
+         "value": "Gestion"
+        },
+        {
+         "label": "INGLÊS",
+         "value": "INGLÊS"
+        },
+        {
+         "label": "Lean Manufacturing",
+         "value": "Lean Manufacturing"
+        },
+        {
+         "label": "Logística",
+         "value": "Logística"
+        },
+        {
+         "label": "MANUTENÇÃO",
+         "value": "MANUTENÇÃO"
+        },
+        {
+         "label": "Product Development",
+         "value": "Product Development"
+        },
+        {
+         "label": "Product Management",
+         "value": "Product Management"
+        },
+        {
+         "label": "Product Marketing",
+         "value": "Product Marketing"
+        },
+        {
+         "label": "Production System",
+         "value": "Production System"
+        },
+        {
+         "label": "Programming Languages",
+         "value": "Programming Languages"
+        },
+        {
+         "label": "Questioning Skills",
+         "value": "Questioning Skills"
+        },
+        {
+         "label": "Seguro",
+         "value": "Seguro"
+        },
+        {
+         "label": "Tableau",
+         "value": "Tableau"
+        },
+        {
+         "label": "Agricultura",
+         "value": "Agricultura"
+        },
+        {
+         "label": "Architecture",
+         "value": "Architecture"
+        },
+        {
+         "label": "Autonomy",
+         "value": "Autonomy"
+        },
+        {
+         "label": "Berufsausbildung",
+         "value": "Berufsausbildung"
+        },
+        {
+         "label": "COMUNICAÇÃO",
+         "value": "COMUNICAÇÃO"
+        },
+        {
+         "label": "CONSTRUÇÃO",
+         "value": "CONSTRUÇÃO"
+        },
+        {
+         "label": "Control Plan",
+         "value": "Control Plan"
+        },
+        {
+         "label": "Control Systems",
+         "value": "Control Systems"
+        },
+        {
+         "label": "Coordination",
+         "value": "Coordination"
+        },
+        {
+         "label": "Customer Engagement",
+         "value": "Customer Engagement"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 10,
+       "translateOptions": false,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select",
+       "filterName": "department",
+       "title": "Department",
+       "options": [
+        {
+         "label": "Marketing and Sales (CA)",
+         "value": "Marketing and Sales (CA)"
+        },
+        {
+         "label": "Product Engineering (CA)",
+         "value": "Product Engineering (CA)"
+        },
+        {
+         "label": "Factory Engineering (CA)",
+         "value": "Factory Engineering (CA)"
+        },
+        {
+         "label": "Other (CA)",
+         "value": "Other (CA)"
+        },
+        {
+         "label": "Technology (CA)",
+         "value": "Technology (CA)"
+        },
+        {
+         "label": "Supply Chain Management (CA)",
+         "value": "Supply Chain Management (CA)"
+        },
+        {
+         "label": "Accounting and Finance (CA)",
+         "value": "Accounting and Finance (CA)"
+        },
+        {
+         "label": "Data and Analytics (CA)",
+         "value": "Data and Analytics (CA)"
+        },
+        {
+         "label": "Product and Process Mgmt (CA)",
+         "value": "Product and Process Mgmt (CA)"
+        },
+        {
+         "label": "Operations (CA)",
+         "value": "Operations (CA)"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 10,
+       "translateOptions": false,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select",
+       "filterName": "seniority",
+       "title": "Seniority",
+       "options": [
+        {
+         "label": "Mid/Senior",
+         "value": "2"
+        },
+        {
+         "label": "Entry",
+         "value": "1"
+        },
+        {
+         "label": "Intern",
+         "value": "0"
+        },
+        {
+         "label": "Director",
+         "value": "3"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 10,
+       "translateOptions": false,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select",
+       "filterName": "work_location_option",
+       "title": "Workplace Type",
+       "options": [
+        {
+         "label": "Onsite",
+         "value": "onsite"
+        },
+        {
+         "label": "Hybrid",
+         "value": "hybrid"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 10,
+       "translateOptions": false,
+       "allowFreeText": false
+      }
+     ]
+    },
+    "count": 334,
+    "sortBy": "timestamp",
+    "appliedFilters": {},
+    "debug": {},
+    "savedSearchMetadata": {
+     "savedSearchParamsHash": null,
+     "isSavedSearchActive": false
+    },
+    "resultsMetaData": {
+     "usedFuzzSearch": false,
+     "mocTitle": null
+    }
+   },
+   "metadata": null
+  }
+ },
+ "pcsx_position_details": {
+  "request": "GET https://careers.deere.com/api/pcsx/position_details?position_id=137482769306&domain=johndeere.com&hl=en",
+  "response": {
+   "status": 200,
+   "error": {
+    "message": "",
+    "body": ""
+   },
+   "data": {
+    "id": 137482769306,
+    "displayJobId": "123547",
+    "name": "2027 Intern - Electrification Engineering",
+    "locations": [
+     "Fargo,North Dakota,United States"
+    ],
+    "standardizedLocations": [
+     "Fargo, ND, US"
+    ],
+    "postedTs": 1792177272,
+    "stars": 0,
+    "department": "Product Engineering (CA)",
+    "creationTs": 1786646921,
+    "jobDescription": "<p>There are over 7 billion people on this planet. And by 2050, there will be 2 billion more... many moving into urban centers at an unprecedented rate. Making sure there is enough food, fiber and infrastructure for our rapidly growing world is what we're all about at John Deere. And it's why we're investing in our people and our technology like never before! Here the world's brightest minds are tackling the world's biggest challenges. If you believe one person can make the world a better place, we'll put you to work. RIGHT NOW.</p><h5> </h5><p><em> John Deere is an equal opportunity employer, including disabled &amp; veterans. </em></p><p><em> </em></p><p><em><span style=\"font-size:14.0px\"><span style=\"font-family:Arial, Helvetica, sans-serif\"><strong>Primary Location:</strong> United States (US) - North Dakota  - Fargo  <br><strong>Function:</strong> Product Engineering (CA)<br><strong>Title: </strong>2027 Intern - Electrification Engineering - 123547</span></span></em> <br><em><span style=\"font-size:14.0px\"><span style=\"font-family:Arial, Helvetica, sans-serif\"><strong>Onsite/Remote:</strong>Onsite Position</span></span></em></p><p> </p><p><em><span style=\"color:#ff0000\"><span style=\"font-size:14.0px\"><span style=\"font-family:Arial, Helvetica, sans-serif\"></span></span></span></em>  </p><p><em><span style=\"color:#ff0000\"><span style=\"font-size:14.0px\"><span style=\"font-family:Arial, Helvetica, sans-serif\"></span></span></span></em> </p><div><div style=\"padding: 10px 0px;border: 1px solid transparent;\"><div style=\"font-size:16px;word-wrap: break-word;\"><h2 style=\"font-size: 1em; margin: 0px\"><b>Your Responsibilities</b></h2>\r</div><div><p>The 2027 Summer Internship Program is for students enrolled in major fields of study that align with full-time employment opportunities at John Deere. Our internship experiences are offered in the summer months, usually lasting 12 weeks. Available locations for Electrification Engineering interns include Cary, NC; and Fargo, ND.</p><p> </p><p>An electrification intern supports product analysis, design, and/or testing activities for electric drive components and systems used on vehicles worldwide. Specific activities vary by position but will include one or more of the following responsibilities:</p><p> </p><ul><li>Electric machine development inclusive of design, analysis, and testing of 250W - 200kW+ surface permanent magnet motors and internal permanent magnet motors, electromagnetic design, thermal design, high speed structural design, position sensing, and mechanical design. Cary, NC and Fargo, ND based.</li><li>Power electronics hardware development inclusive of design, analysis, and testing of inverters, converters, chargers, topology, power stage, sensing, thermals, power passive components, and packaging. Cary, NC and Fargo, ND based.</li><li>Control systems for motor drives and converters inclusive of simulation, implementation, and system testing of new algorithms, control system parameters, physical system modeling, system identification, signal estimation, and advanced diagnostics/prognostics. Cary, NC and Fargo, ND based.</li></ul><p> </p><p><strong>Visa sponsorship is not available for this position.</strong></p></div></div><div style=\"padding: 10px 0px;border: 1px solid transparent;\"><div style=\"font-size:16px;word-wrap: break-word;\"><h2 style=\"font-size: 1em; margin: 0px\"><b>What Skills You Need</b></h2>\r</div><div><ul type=\"disc\"><li style=\"font-family: arial, helvetica, sans-serif; font-size: 10pt;\"><ul><li>Excellent communication skills.</li><li>Working knowledge and hands-on experience testing electrical components using standard lab equipment such as oscilloscopes, multimeters, and power supplies.</li><li>Familiarity with a symbolic programming language such as Simulink or LabView.</li><li>Experience using modeling tools such as Matlab/Simulink or circuit analysis software.</li><li>Experience with electric machines, inverters/converters/chargers, electric vehicle systems, or electric drive control systems.</li><li>Completion of your junior year of studies is required by the time of the internship. Graduate students are preferred for advanced engineering topics.</li><li>Strong candidates will have course work or research with a concentration in electric machines, power electronics, hybrid vehicles, AI, ML, or dynamics and control.</li><li>Minimum required cumulative GPA of 2.8 on a 4.0 scale. (3.4 or higher preferred)</li><li>Willing to travel and relocate to any John Deere location in the U.S. Locations may include: North Carolina; North Dakota.</li></ul></li></ul></div></div></div><div class=\"WordSection1\"><p><strong>What You'll Get</strong></p><p>At John Deere, you are empowered to create a career that will take you to where you want to go while working in an inclusive team environment. Here, you'll enjoy the freedom to explore new projects, the support to think outside the box and the advanced tools and technology that foster innovation and achievement. Additionally, we offer a comprehensive reward package to help you get started on your new career path, including:</p><ul><li>Flexible work arrangements</li><li>Highly competitive base pay </li><li>Savings &amp; Retirement benefits (401K and Defined Contribution)</li><li>Healthcare benefits with a generous company contribution in the Health Savings Account</li><li>Adoption assistance</li><li>Employee Assistance Programs</li><li>Tuition assistance</li><li>Fitness subsidies and on-site gyms at specific Deere locations</li><li>Charitable contribution match</li><li>Employee Purchase Plan &amp; numerous discount programs for personal use</li><li>Vacation and Holiday Pay</li></ul><p>   -   + Benefits</p><p style=\"margin-left:3.0px\">Follow this link to learn more about our Total Rewards Package <a href=\"https://bit.ly/3XCd8fL\" target=\"_blank\" rel=\"noopener\">https://bit.ly/3XCd8fL</a> </p><p style=\"margin-left:3.0px\"><span style=\"font-size:12.0px\"><span style=\"font-family:Aptos, sans-serif\">Must be 18 years of age or older to apply</span></span></p></div><p><span style=\"font-size:9.0px\">The information contained herein is not intended to be an exhaustive list of all responsibilities and qualifications required of individuals performing the job. The qualifications detailed in this job description are not considered the minimum requirements necessary to perform the job, but rather as guidelines.</span></p><p> </p><p><span style=\"font-size:9.0px\">The terms of the applicable benefit plans, and all company actions administering or interpreting these plans, continue to control. Deere &amp; Company reserves the right to suspend, amend, modify, or terminate the Plan(s) in any manner at any time, including the right to modify or eliminate any cost-sharing between the company and participants. Changes, which can be made at any time, are made by action of the company's board of directors, or to the extent authorized by resolution of its board of directors, or by the Deere &amp; Company Compensation Committee. In the event of a conflict between the language of the official Plan Documents and this document, the language of the official Plan Documents will control.</span></p><p> </p><p> </p><p><span style=\"font-size:9.0px\">ACA Section 1557 Nondiscrimination Notice</span></p><p><span style=\"font-size:9.0px\"><span style=\"font-family:Aptos, sans-serif\"><em>The John Deere Health Benefit Plans for Salaried Employees and The John Deere Benefit Plan for Wage Employees comply with applicable Federal civil rights laws and do not discriminate on the basis of race, religion, color, national origin, sex, age, sexual orientation, gender identity or expression, status as a protected veteran, or status as a qualified individual with disability.</em></span></span></p><p> </p>",
+    "location": "Fargo,North Dakota,United States",
+    "isHot": 0,
+    "workLocationOption": "onsite",
+    "locationFlexibility": null,
+    "atsJobId": "123547",
+    "positionUrl": "/careers/job/137482769306",
+    "publicUrl": "https://careers.deere.com/careers/job/137482769306",
+    "jdHighlight": [],
+    "positionExtraDetails": {
+     "videos": [],
+     "blogs": [],
+     "perks": [],
+     "pymww": {
+      "people": [],
+      "count": 0
+     },
+     "customContent": []
+    },
+    "positionUserActions": {
+     "isSaved": false,
+     "applyAction": {
+      "status": "allowed"
+     }
+    }
+   },
+   "metadata": null
+  }
+ },
+ "rmk_rss_items": {
+  "request": "GET https://jobs.deere.com/sitemap.xml",
+  "channel": {
+   "title": "Jobs at John Deere",
+   "language": "en_US",
+   "ttl": "720",
+   "items": 423
+  },
+  "items_xml": [
+   "<item xmlns:g=\"http://base.google.com/ns/1.0\"><title>Engineer, Crawler Sheetmetal (Dubuque, IA, Iowa, US, 52001)</title><description>&amp;lt;p&amp;gt;There are over 7 billion people on this planet. And by 2050, there will be 2 billion more... many moving into urban centers at an unprecedented rate. Making sure there is enough food, fiber and infrastructure for our rapidly growing world is what we&amp;apos;re all about at John Deere. And it&amp;apos;s why we&amp;apos;re investing in our people and our technology like never before! Here the world&amp;apos;s brightest minds are tackling the world&amp;apos;s biggest challenges. If you believe one person can make the world a better place, we&amp;apos;ll put you to work. RIGHT NO…[truncated]</description><link>https://jobs.deere.com/eightfold/job/Dubuque%2C-IA-Engineer%2C-Crawler-Sheetmetal-Iowa-52001/1424556600/</link><guid isPermaLink=\"false\">1424556600</guid><g:id>1424556600</g:id><g:expiration_date>2026-11-19</g:expiration_date><g:employer>John Deere</g:employer><g:job_function>Product Engineering (CA)</g:job_function><g:location>Dubuque, IA, Iowa, US, 52001</g:location></item>",
+   "<item xmlns:g=\"http://base.google.com/ns/1.0\"><title>Ausbildung zum Elektroniker für Betriebstechnik (m/w/d) Werk Bruchsal 2027 (Bruchsal, BW, DE, 76646)</title><description>&amp;lt;p style=&amp;quot;text-align:justify&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size:12.0px;color:black&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-family:Arial, Helvetica, sans-serif&amp;quot;&amp;gt;Willkommen bei John Deere, dem Innovationsführer von Land-, Forst-, und Baumaschinen sowie Maschinen für Rasen- und Grundstückspflege. Mit weltweit rund 70.000 Beschäftigten entwickeln und produzieren wir vernetzte und technologisch fortschrittliche Maschinen mit einem Gesamtumsatz von 35,5 Mrd. US$. Wenn du Teil des Teams wirst, wächst du nicht nur individuell, sondern lei…[truncated]</description><link>https://jobs.deere.com/successfactors/job/Bruchsal-Ausbildung-zum-Elektroniker-f%C3%BCr-Betriebstechnik-%28mwd%29-Werk-Bruchsal-2027-BW-76646/1408079300/</link><guid isPermaLink=\"false\">1408079300</guid><g:id>1408079300</g:id><g:expiration_date>2026-11-19</g:expiration_date><g:employer>John Deere</g:employer><g:job_function>Fertigung/Betrieb </g:job_function><g:location>Bruchsal, BW, DE, 76646</g:location></item>",
+   "<item xmlns:g=\"http://base.google.com/ns/1.0\"><title>John Deere Horicon Works - Production Assembly (Horicon, Wisconsin, US, 53032)</title><description>&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;font-size:12.0px&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-family:Arial, Helvetica, sans-serif&amp;quot;&amp;gt; At John Deere, we run so life can leap forward. This powerful purpose is our promise to humankind that we will dream, design, and deliver breakthrough products that sustain our world for generations to come. The world is counting on us to feed billions of people and build vital infrastructures in villages, towns and megacities. And we live up to the legacy our founder forged in a one-room blacksmith&amp;apos;s shop nearly two ce…[truncated]</description><link>https://jobs.deere.com/successfactors/job/Horicon-John-Deere-Horicon-Works-Production-Assembly-Wisc-53032/1390608600/</link><guid isPermaLink=\"false\">1390608600</guid><g:id>1390608600</g:id><g:expiration_date>2026-11-19</g:expiration_date><g:employer>John Deere</g:employer><g:job_function>Production/Maintenance</g:job_function><g:location>Horicon, Wisconsin, US, 53032</g:location></item>"
+  ]
+ }
+}

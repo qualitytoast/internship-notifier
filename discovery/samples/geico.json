@@ -1,0 +1,626 @@
+{
+ "_note": "captured 2026-10-20 (UTC); trimmed: first N jobPostings of offset 0 plus the facets block, other pages omitted",
+ "External": {
+  "request": "POST https://geico.wd1.myworkdayjobs.com/wday/cxs/geico/External/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":0,\"searchText\":\"\"}",
+  "response": {
+   "total": 294,
+   "jobPostings": [
+    {
+     "title": "Senior Internal Security Investigator (Remote)",
+     "externalPath": "/job/Remote-United-States/Senior-Internal-Security-Investigator--Remote-_R0066296-1",
+     "timeType": "Full time",
+     "locationsText": "Remote (United States)",
+     "postedOn": "Posted Today",
+     "remoteType": "Remote",
+     "bulletFields": [
+      "R0066296"
+     ]
+    },
+    {
+     "title": "Sr Staff Software Engineer - (Platform Engineering/Java/Distributed Systems) - *HYBRID*",
+     "externalPath": "/job/Renton-WA/Sr-Staff-Platform-Engineer----Temporal-SRE-Open-Source-----HYBRID-_R0064179",
+     "timeType": "Full time",
+     "locationsText": "2 Locations",
+     "postedOn": "Posted Today",
+     "remoteType": "Hybrid",
+     "bulletFields": [
+      "R0064179"
+     ]
+    },
+    {
+     "title": "Commercial Lead Security Investigator",
+     "externalPath": "/job/Richardson-TX/Commercial-Lead-Security-Investigator_R0065009-1",
+     "timeType": "Full time",
+     "locationsText": "2 Locations",
+     "postedOn": "Posted 6 Days Ago",
+     "bulletFields": [
+      "R0065009"
+     ]
+    },
+    {
+     "title": "Auto Damage Adjuster (Field)",
+     "externalPath": "/job/Trenton-NJ/Auto-Damage-Adjuster--Field-_R0064961",
+     "timeType": "Full time",
+     "locationsText": "Trenton, NJ",
+     "postedOn": "Posted 10 Days Ago",
+     "remoteType": "Remote",
+     "bulletFields": [
+      "R0064961"
+     ]
+    },
+    {
+     "title": "Auto Damage Adjuster (Field)",
+     "externalPath": "/job/Jacksonville-FL/Auto-Damage-Trainee--Field-_R0065798",
+     "timeType": "Full time",
+     "locationsText": "Jacksonville, FL",
+     "postedOn": "Posted 11 Days Ago",
+     "remoteType": "Remote",
+     "bulletFields": [
+      "R0065798"
+     ]
+    }
+   ],
+   "facets": [
+    {
+     "facetParameter": "remoteType",
+     "descriptor": "Remote Type",
+     "values": [
+      {
+       "descriptor": "Hybrid",
+       "id": "cd9ffbaee24b1001e8b91494f59f0000",
+       "count": 125
+      },
+      {
+       "descriptor": "Remote",
+       "id": "cd9ffbaee24b1001e8b91494f59f0001",
+       "count": 103
+      }
+     ]
+    },
+    {
+     "facetParameter": "jobFamilyGroup",
+     "descriptor": "Job Category",
+     "values": [
+      {
+       "descriptor": "Technology",
+       "id": "da128ce5a1dc103e7c09aaa3fe312266",
+       "count": 105
+      },
+      {
+       "descriptor": "Auto Damage",
+       "id": "da128ce5a1dc103e7c08ce497733223c",
+       "count": 64
+      },
+      {
+       "descriptor": "Legal",
+       "id": "da128ce5a1dc103e7c09883b6a69225e",
+       "count": 35
+      },
+      {
+       "descriptor": "Marketing",
+       "id": "da128ce5a1dc103e7c09d5b25f9b2270",
+       "count": 10
+      },
+      {
+       "descriptor": "Claims Liability",
+       "id": "da128ce5a1dc103e7c09c21b3c10226c",
+       "count": 8
+      },
+      {
+       "descriptor": "Agency",
+       "id": "da128ce5a1dc103e7c098cea5dc82260",
+       "count": 8
+      },
+      {
+       "descriptor": "Talent",
+       "id": "ae79925ebd2b0102286d7567eb01d3a6",
+       "count": 6
+      },
+      {
+       "descriptor": "Product",
+       "id": "a35ed0a458b310010910c29142fd0000",
+       "count": 6
+      },
+      {
+       "descriptor": "Internship",
+       "id": "da128ce5a1dc103e7c099155ab532262",
+       "count": 5
+      },
+      {
+       "descriptor": "Controllers",
+       "id": "da128ce5a1dc103e7c095dff8c072252",
+       "count": 5
+      },
+      {
+       "descriptor": "SIU",
+       "id": "da128ce5a1dc103e7c0a4c431ef0228c",
+       "count": 4
+      },
+      {
+       "descriptor": "People",
+       "id": "da128ce5a1dc103e7c09681bd6362254",
+       "count": 4
+      },
+      {
+       "descriptor": "Sales",
+       "id": "da128ce5a1dc103e7c08e65c411c223e",
+       "count": 4
+      },
+      {
+       "descriptor": "Boat Operations",
+       "id": "0364bd6484100136135f34e6dc236dc6",
+       "count": 3
+      },
+      {
+       "descriptor": "Claims Home Office",
+       "id": "da128ce5a1dc103e7c091e289d24224a",
+       "count": 3
+      },
+      {
+       "descriptor": "PPM/Reserving",
+       "id": "ef62153ec48201538d885fb59b013d62",
+       "count": 3
+      },
+      {
+       "descriptor": "RAD",
+       "id": "27e713fec23c0105408911130e0135ee",
+       "count": 3
+      },
+      {
+       "descriptor": "Staff Counsel",
+       "id": "da128ce5a1dc103e7c0a64d74f712290",
+       "count": 2
+      },
+      {
+       "descriptor": "Planning",
+       "id": "da128ce5a1dc103e7c0a19e2d9b42280",
+       "count": 2
+      },
+      {
+       "descriptor": "Claims PIP",
+       "id": "da128ce5a1dc103e7c0a12caa2d7227e",
+       "count": 2
+      },
+      {
+       "descriptor": "Communications",
+       "id": "da128ce5a1dc103e7c09360126b82250",
+       "count": 2
+      },
+      {
+       "descriptor": "Service",
+       "id": "da128ce5a1dc103e7c08f0922fa72240",
+       "count": 2
+      },
+      {
+       "descriptor": "Rotation",
+       "id": "da128ce5a1dc103e7c0a3ed6ad582288",
+       "count": 1
+      },
+      {
+       "descriptor": "NPMC",
+       "id": "da128ce5a1dc103e7c09f8f34e852278",
+       "count": 1
+      },
+      {
+       "descriptor": "Commercial Operations",
+       "id": "da128ce5a1dc103e7c092f21218e224e",
+       "count": 1
+      },
+      {
+       "descriptor": "Support/Clerical",
+       "id": "da128ce5a1dc103e7c09250222d4224c",
+       "count": 1
+      },
+      {
+       "descriptor": "Centralized Services",
+       "id": "da128ce5a1dc103e7c0912a2c4bd2248",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "locationMainGroup",
+     "values": [
+      {
+       "facetParameter": "locations",
+       "descriptor": "Locations",
+       "values": [
+        {
+         "descriptor": "Albany, NY",
+         "id": "1d96ffb7bce6016e8e371c4ef301a0c9",
+         "count": 1
+        },
+        {
+         "descriptor": "Albuquerque, NM",
+         "id": "7f9f219be12701525eabed07f3015dd6",
+         "count": 2
+        },
+        {
+         "descriptor": "Atlanta, GA",
+         "id": "fccc8262c7bc0108883a552ef301c358",
+         "count": 1
+        },
+        {
+         "descriptor": "Austin, TX",
+         "id": "ead034f9a0d9011a281a42e4f2015466",
+         "count": 4
+        },
+        {
+         "descriptor": "Baltimore, MD",
+         "id": "7f9f219be127015ace66d808f30180d6",
+         "count": 1
+        },
+        {
+         "descriptor": "Beachwood, OH",
+         "id": "4001f7135e7a1001ea785fc238f10000",
+         "count": 9
+        },
+        {
+         "descriptor": "Beaumont, TX",
+         "id": "fccc8262c7bc01cf5ee7b02ef301cd58",
+         "count": 2
+        },
+        {
+         "descriptor": "Bethesda, MD",
+         "id": "ead034f9a0d9015a172b9ce6f2018b66",
+         "count": 135
+        },
+        {
+         "descriptor": "Boise, ID",
+         "id": "fccc8262c7bc01f3ae6eff2ef301e658",
+         "count": 2
+        },
+        {
+         "descriptor": "Charleston, SC",
+         "id": "fccc8262c7bc0163ac00a22ff3010e59",
+         "count": 2
+        },
+        {
+         "descriptor": "Charlotte, NC",
+         "id": "1d96ffb7bce601aa0bd0d64ff301d7c9",
+         "count": 1
+        },
+        {
+         "descriptor": "Chicago, IL",
+         "id": "fccc8262c7bc014f9eceaf38f301175a",
+         "count": 19
+        },
+        {
+         "descriptor": "Cleveland, OH",
+         "id": "ead034f9a0d9011a634ad4e6f2019566",
+         "count": 3
+        },
+        {
+         "descriptor": "Dallas, TX",
+         "id": "f1a55262d74b017c9494d6479b017c55",
+         "count": 29
+        },
+        {
+         "descriptor": "Detroit, MI",
+         "id": "1d96ffb7bce601df7f1ecf50f301ffc9",
+         "count": 2
+        },
+        {
+         "descriptor": "Falls Church, VA",
+         "id": "7f9f219be127019b58ecb30bf301d5d6",
+         "count": 1
+        },
+        {
+         "descriptor": "Fort Lauderdale, FL",
+         "id": "fccc8262c7bc016dd593cc39f301495a",
+         "count": 1
+        },
+        {
+         "descriptor": "Fredericksburg, VA",
+         "id": "ead034f9a0d901adae9aa6e8f201e566",
+         "count": 8
+        },
+        {
+         "descriptor": "Getzville, NY",
+         "id": "7f9f219be127019f241d8513f301edd7",
+         "count": 7
+        },
+        {
+         "descriptor": "Houston, TX",
+         "id": "fccc8262c7bc01ef9df85332f3016359",
+         "count": 5
+        },
+        {
+         "descriptor": "Indianapolis, IN",
+         "id": "1d96ffb7bce601e6bacb8652f30122ca",
+         "count": 2
+        },
+        {
+         "descriptor": "Jacksonville, FL",
+         "id": "1d96ffb7bce601cdd584ac52f30127ca",
+         "count": 1
+        },
+        {
+         "descriptor": "Katy, TX",
+         "id": "fccc8262c7bc01c3c5fbbe38f301215a",
+         "count": 6
+        },
+        {
+         "descriptor": "Killeen, TX",
+         "id": "7f9f219be12701626c3c150df301fdd6",
+         "count": 2
+        },
+        {
+         "descriptor": "Knoxville, TN",
+         "id": "ead034f9a0d9017b3847a1e9f2010d67",
+         "count": 1
+        },
+        {
+         "descriptor": "Lakeland, FL",
+         "id": "1d96ffb7bce60105e2971853f30136ca",
+         "count": 5
+        },
+        {
+         "descriptor": "Lansing, MI",
+         "id": "7f9f219be12701aeec38660df30107d7",
+         "count": 2
+        },
+        {
+         "descriptor": "Los Angeles, CA",
+         "id": "7f9f219be127018cac9bc10df30116d7",
+         "count": 3
+        },
+        {
+         "descriptor": "Macon, GA",
+         "id": "1d96ffb7bce601d4b5b4bf59f30117cb",
+         "count": 2
+        },
+        {
+         "descriptor": "Manchester, NH",
+         "id": "7f9f219be127011f6e46e90df30120d7",
+         "count": 2
+        },
+        {
+         "descriptor": "Marlton, NJ",
+         "id": "ead034f9a0d90133262b43f1f2010268",
+         "count": 2
+        },
+        {
+         "descriptor": "Melville, NY",
+         "id": "fccc8262c7bc01f18ee8a838f301125a",
+         "count": 4
+        },
+        {
+         "descriptor": "Memphis, TN",
+         "id": "ead034f9a0d9013dfda098eaf2013067",
+         "count": 1
+        },
+        {
+         "descriptor": "Miami, FL",
+         "id": "ead034f9a0d90148556792f0f201e967",
+         "count": 3
+        },
+        {
+         "descriptor": "Middletown, NY",
+         "id": "fccc8262c7bc016292e59c3af301625a",
+         "count": 1
+        },
+        {
+         "descriptor": "Midland, TX",
+         "id": "bd2946712d3c0164eebd28ecee0194a3",
+         "count": 2
+        },
+        {
+         "descriptor": "Milwaukee, WI",
+         "id": "1d96ffb7bce601781826ee53f30154ca",
+         "count": 1
+        },
+        {
+         "descriptor": "Nashville, TN",
+         "id": "ead034f9a0d9011ef5a908ebf2013567",
+         "count": 1
+        },
+        {
+         "descriptor": "New Haven, CT",
+         "id": "fccc8262c7bc016d9d0d4634f301a459",
+         "count": 2
+        },
+        {
+         "descriptor": "New York City, NY",
+         "id": "ead034f9a0d9017d49a02cebf2013f67",
+         "count": 48
+        },
+        {
+         "descriptor": "Orlando, FL",
+         "id": "1d96ffb7bce601347823d554f30168ca",
+         "count": 1
+        },
+        {
+         "descriptor": "Palo Alto, CA",
+         "id": "3a3a4edee5bf1001ea7afbdc00190000",
+         "count": 66
+        },
+        {
+         "descriptor": "Philadelphia, PA",
+         "id": "7f9f219be127016c572d5b0ff30161d7",
+         "count": 2
+        },
+        {
+         "descriptor": "Piscataway, NJ",
+         "id": "1d96ffb7bce601d60528b559f30112cb",
+         "count": 1
+        },
+        {
+         "descriptor": "Pittsburgh, PA",
+         "id": "1d96ffb7bce601c45ac24255f3017cca",
+         "count": 1
+        },
+        {
+         "descriptor": "Poway, CA",
+         "id": "7f9f219be12701a81e1cc012f301d9d7",
+         "count": 3
+        },
+        {
+         "descriptor": "Remote (United States)",
+         "id": "3e1fcc5387b10100fe96f2c58a520000",
+         "count": 23
+        },
+        {
+         "descriptor": "Renton, WA",
+         "id": "ead034f9a0d901e24d879af0f201ee67",
+         "count": 12
+        },
+        {
+         "descriptor": "Richardson, TX",
+         "id": "7f9f219be127013e447c2613f301e3d7",
+         "count": 37
+        },
+        {
+         "descriptor": "Sacramento, CA",
+         "id": "ead034f9a0d90142985596ecf2017167",
+         "count": 3
+        },
+        {
+         "descriptor": "Salt Lake City, UT",
+         "id": "1d96ffb7bce6013574181356f30195ca",
+         "count": 2
+        },
+        {
+         "descriptor": "San Antonio, TX",
+         "id": "fccc8262c7bc015de7f10036f301db59",
+         "count": 2
+        },
+        {
+         "descriptor": "San Diego, CA",
+         "id": "ead034f9a0d901c290e7faecf2017b67",
+         "count": 1
+        },
+        {
+         "descriptor": "San Francisco, CA",
+         "id": "ead034f9a0d901df3ee402edf2018067",
+         "count": 7
+        },
+        {
+         "descriptor": "San Jose, CA",
+         "id": "1d96ffb7bce601bd56155a56f3019aca",
+         "count": 4
+        },
+        {
+         "descriptor": "San Rafael, CA",
+         "id": "1d96ffb7bce60186040d7556f301a4ca",
+         "count": 2
+        },
+        {
+         "descriptor": "Santa Ana, CA",
+         "id": "ead034f9a0d901fcd63655eff201cb67",
+         "count": 1
+        },
+        {
+         "descriptor": "Santa Cruz, CA",
+         "id": "fccc8262c7bc012337b97036f301ea59",
+         "count": 2
+        },
+        {
+         "descriptor": "Seattle, WA",
+         "id": "1d96ffb7bce60173a914c756f301bdca",
+         "count": 52
+        },
+        {
+         "descriptor": "Springfield, IL",
+         "id": "1d96ffb7bce601babd8d0157f301c7ca",
+         "count": 1
+        },
+        {
+         "descriptor": "State College, PA",
+         "id": "1d96ffb7bce601bd55fe2e57f301d1ca",
+         "count": 2
+        },
+        {
+         "descriptor": "Syracuse, NY",
+         "id": "7f9f219be1270139b1307211f30193d7",
+         "count": 1
+        },
+        {
+         "descriptor": "Tampa, FL",
+         "id": "1d96ffb7bce6013c1535ca59f3011ccb",
+         "count": 10
+        },
+        {
+         "descriptor": "Trenton, NJ",
+         "id": "ead034f9a0d901cf56791feef2019467",
+         "count": 2
+        },
+        {
+         "descriptor": "Tucson, AZ",
+         "id": "fccc8262c7bc01f6b59f5b39f3013f5a",
+         "count": 4
+        },
+        {
+         "descriptor": "Virginia Beach, VA",
+         "id": "1d96ffb7bce601e1bb24c358f301feca",
+         "count": 3
+        },
+        {
+         "descriptor": "Washington, DC",
+         "id": "ead034f9a0d9011acfe46ceef2019e67",
+         "count": 1
+        },
+        {
+         "descriptor": "Westbury, NY",
+         "id": "ead034f9a0d9019c1b5138eff201c167",
+         "count": 7
+        },
+        {
+         "descriptor": "West Orange, NJ",
+         "id": "7f9f219be12701f63e4e9113f301f2d7",
+         "count": 4
+        },
+        {
+         "descriptor": "Wichita, KS",
+         "id": "7f9f219be12701164a8f1b12f301bbd7",
+         "count": 2
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "facetParameter": "distance",
+     "descriptor": "Distance",
+     "values": [
+      {
+       "descriptor": "10 miles",
+       "id": "90f08123dea81000c4523e9c79340000",
+       "count": 1
+      },
+      {
+       "descriptor": "25 miles",
+       "id": "90f08123dea81000c4523e9c79340001",
+       "count": 1
+      },
+      {
+       "descriptor": "50 miles",
+       "id": "90f08123dea81000c4523e9c79340002",
+       "count": 1
+      },
+      {
+       "descriptor": "100 miles",
+       "id": "90f08123dea81000c4523e9c79340003",
+       "count": 1
+      },
+      {
+       "descriptor": "Any Distance",
+       "id": "90f08123dea81000c4523e9c79340004",
+       "count": 1
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "GEAS_malformed_posting": {
+  "site": "GEAS",
+  "posting": [
+   {
+    "bulletFields": [
+     "R0056265"
+    ]
+   }
+  ]
+ }
+}

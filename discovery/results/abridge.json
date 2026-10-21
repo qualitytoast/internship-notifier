@@ -1,0 +1,21 @@
+{
+  "key": "abridge",
+  "name": "Abridge",
+  "careers_url": "https://www.abridge.com/careers",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "abridge"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/abridge?includeCompensation=false",
+  "feed_total": 44,
+  "page_total": 44,
+  "page_total_how": "Playwright: https://www.abridge.com/careers redirects to https://jobs.ashbyhq.com/Abridge, which showed 'Open Positions (44)' (Full time 43, Intern 1) with 44 job links identical to the feed ids",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com/robots.txt answers HTTP 401, so no robots.txt applies); careers page and jobs.ashbyhq.com/Abridge ALLOW",
+  "notes": "The careers URL is just a redirect to the hosted Ashby board (page name 'Abridge'; the API also accepts 'abridge').",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

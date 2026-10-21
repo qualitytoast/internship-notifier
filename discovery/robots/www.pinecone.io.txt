@@ -1,0 +1,20 @@
+# status 200
+# *
+User-agent: *
+Disallow: /admin/*
+Disallow: /partners/referral-agreement.pdf
+Disallow: /partners/affiliate-agreement.pdf
+Disallow: /pinecone-brand.pdf
+
+Disallow: /lp/pinecone-vector-database
+Disallow: /lp/pinecone-vector-database-enterprise
+
+Disallow: /legal/vat-registration-numbers
+
+Allow: /api/og/*
+
+# Host
+Host: https://www.pinecone.io
+
+# Sitemaps
+Sitemap: https://www.pinecone.io/sitemap.xml

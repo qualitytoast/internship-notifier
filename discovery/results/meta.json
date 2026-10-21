@@ -1,0 +1,21 @@
+{
+  "key": "meta",
+  "name": "Meta",
+  "careers_url": "https://www.metacareers.com/jobsearch/",
+  "hiring_system": "custom (Meta candidate portal, GraphQL)",
+  "checker": "meta",
+  "settings": {
+    "doc_id": "27129360303422352"
+  },
+  "feed": "GET /jobsearch/ (lsd token) + POST https://www.metacareers.com/graphql doc_id=27129360303422352 (CareersJobSearchResultsV2DataQuery)",
+  "feed_total": 1225,
+  "page_total": 1225,
+  "page_total_how": "Playwright render of /jobsearch/: '1224 Items' + 1 featured job; the jobsearch sitemap also lists 1,225 ids",
+  "intern_total": 62,
+  "status": "verified",
+  "robots": "ALLOW (no matching rule) for /jobsearch/, /graphql and /jobsearch/sitemap.xml",
+  "notes": "Needs sec-fetch-* headers; one POST returns every job. roles=[Internship] query flags interns. Sitemap is the fallback/cross-check if the doc_id rotates.",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-19T23:55:00Z"
+}

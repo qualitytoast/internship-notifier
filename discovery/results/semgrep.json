@@ -1,0 +1,21 @@
+{
+  "key": "semgrep",
+  "name": "Semgrep",
+  "careers_url": "https://semgrep.dev/about/careers/",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "semgrep"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/semgrep?includeCompensation=false",
+  "feed_total": 12,
+  "page_total": 12,
+  "page_total_how": "Playwright render of https://semgrep.dev/careers (redirects to /about/careers/): the embedded Ashby iframe jobs.ashbyhq.com/semgrep?embed=js showed 'Open Positions (12)' (Full time 11, Intern 1) with 12 links semgrep.dev/about/careers/?ashby_jid=<id>, identical to the feed ids",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com/robots.txt answers HTTP 401, so no robots.txt applies); careers page ALLOW",
+  "notes": "The embed itself calls jobs.ashbyhq.com/api/non-user-graphql, which robots.txt disallows (/api/). The checker must use the posting API. The one intern posting is 'Software Engineer Intern' (San Francisco).",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

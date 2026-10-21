@@ -1,0 +1,1073 @@
+{
+ "_note": "Raw GET https://api.ashbyhq.com/posting-api/job-board/kirin?includeCompensation=false. Ashby org name 'Kirin', publicWebsite https://kirin.com/ (from the hosted page's embedded app data).",
+ "observed": "2026-10-20T00:37:34Z",
+ "response": {
+  "jobs": [
+   {
+    "id": "48752bdd-cdf6-46c8-aebf-b891a48a13e5",
+    "title": "Remote Wedding Officiant",
+    "department": "Courtly",
+    "team": "Courtly",
+    "employmentType": "PartTime",
+    "location": "Provo",
+    "secondaryLocations": [
+     {
+      "location": "Lehi",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Utah",
+        "addressCountry": "United States",
+        "addressLocality": "Lehi"
+       }
+      }
+     },
+     {
+      "location": "Park City",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Utah",
+        "addressCountry": "United States",
+        "addressLocality": "Park City"
+       }
+      }
+     },
+     {
+      "location": "Salt Lake City",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Utah",
+        "addressCountry": "USA",
+        "addressLocality": "Salt Lake City"
+       }
+      }
+     }
+    ],
+    "publishedAt": "2026-03-28T00:51:55.264+00:00",
+    "isListed": true,
+    "isRemote": null,
+    "workplaceType": null,
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Utah",
+      "addressCountry": "United States",
+      "addressLocality": "Provo"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/48752bdd-cdf6-46c8-aebf-b891a48a13e5",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/48752bdd-cdf6-46c8-aebf-b891a48a13e5/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">Courtly is the leader in online marriage—making it possible for any couple around the world to get legally married online, 24/7. From obtaining a marriage license to performing the ceremony, Courtly is bringing the aisle online for couples in the 21st century—regardless of their nationality, sexuality, or physical location.</p><p style=\"min-height:1.5em\">As a small, distributed team, we care deeply about building a culture around trust, diversity, and performance. You will have significant independence and are expected to have the autonomy to think on your feet and speak/act thoughtfully on behalf of the company.</p><p style=\"min-height:1.5em\">Our network of licensed officiants remotely attend and perform marriage ceremonies for couples around the world. Experience officiating weddings is not required.</p><p style=\"min-height:1.5em\">You will learn how to use our technology to officiate weddings in a remote-first manner and Courtly will provide a steady stream of ceremonies for you to officiate and earn money from. The ideal candidate is outgoing and compassionate and is motivated by making couples feel extra special on their big day.</p><p style=\"min-height:1.5em\"><strong>Requirements</strong></p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">To officiate for Courtly, you must live in Utah County and be at least 21 years old</p></li><li><p style=\"min-height:1.5em\">Strong proficiency in technology</p></li><li><p style=\"min-height:1.5em\">You’ll need to submit a valid ID, photo, and proof of residency</p></li><li><p style=\"min-height:1.5em\">Proficient in public speaking and hosting, excellent verbal communication skills</p></li><li><p style=\"min-height:1.5em\">Experience officiating weddings not required</p></li></ul><p style=\"min-height:1.5em\"><strong>Responsibilities</strong></p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Remotely attend couple's wedding ceremony through video conference</p></li><li><p style=\"min-height:1.5em\">Follow pre-approved script and lead ceremony including vows, ring exchanges, and more</p></li><li><p style=\"min-height:1.5em\">Correctly sign and file marriage license within 24 hours after virtual ceremony</p></li></ul><p style=\"min-height:1.5em\">Courtly is an equal opportunity employer and we value diversity. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status. We don't care about where you went to college, your degree, your age, or what fancy names you might have on your resume. Instead, we're looking for good people: good at work and with a good heart 💖</p><p style=\"min-height:1.5em\"></p>",
+    "descriptionPlain": "Courtly is the leader in online marriage—making it possible for any couple around the world to get legally married online, 24/7. From obtaining a marriage license to performing the ceremony, Courtly is bringing the aisle online for couples in the 21st century—regardless of their nationality, sexuality, or physical location.\n\nAs a small, distributed team, we care deeply about building a culture around trust, diversity, and performance. You will have significant independence and are expected to have the autonomy to think on your feet and speak/act thoughtfully on behalf of the company.\n\nOur network of licensed officiants remotely attend and perform marriage ceremonies for couples around the world. Experience officiating weddings is not required.\n\nYou will learn how to use our technology to officiate weddings in a remote-first manner and Courtly will provide a steady stream of ceremonies for you to officiate and earn money from. The ideal candidate is outgoing and compassionate and is motivated by making couples feel extra special on their big day.\n\nRequirements\n\n - To officiate for Courtly, you must live in Utah County and be at least 21 years old\n\n - Strong proficiency in technology\n\n - You’ll need to submit a valid ID, photo, and proof of residency\n\n - Proficient in public speaking and hosting, excellent verbal communication skills\n\n - Experience officiating weddings not required\n\nResponsibilities\n\n - Remotely attend couple's wedding ceremony through video conference\n\n - Follow pre-approved script and lead ceremony including vows, ring exchanges, and more\n\n - Correctly sign and file marriage license within 24 hours after virtual ceremony\n\nCourtly is an equal opportunity employer and we value diversity. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status. We don't care about where you went to college, your degree, your age, or what fancy names you might have on your resume. Instead, we're looking for good people: good at work and with a good heart 💖\n\n"
+   },
+   {
+    "id": "be434eb5-5af1-4307-9a77-c08a9a93918b",
+    "title": "Video Editor",
+    "department": "Kati",
+    "team": "Kati",
+    "employmentType": "PartTime",
+    "location": "Manila",
+    "secondaryLocations": [],
+    "publishedAt": "2023-12-30T18:04:51.483+00:00",
+    "isListed": true,
+    "isRemote": true,
+    "workplaceType": "Remote",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Manila",
+      "addressCountry": "Philippines",
+      "addressLocality": "Manila"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/be434eb5-5af1-4307-9a77-c08a9a93918b",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/be434eb5-5af1-4307-9a77-c08a9a93918b/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">You will craft and optimize short-form videos that bring the artist’s music to life and grow their social media presence.</p><p style=\"min-height:1.5em\"><strong>Responsibilities</strong></p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Edit raw footage into engaging short-form videos using CapCut or equivalent</p></li><li><p style=\"min-height:1.5em\">Adapt and format content for Instagram, TikTok, YouTube Shorts, etc., following each platform’s best practices</p></li><li><p style=\"min-height:1.5em\">Collaborate with the artist and marketing team to ensure videos align with brand vision and musical themes</p></li><li><p style=\"min-height:1.5em\">Iterate quickly on feedback to maintain high visual quality and storytelling impact</p></li></ul><p style=\"min-height:1.5em\"><strong>Requirements</strong></p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">2+ years of short-form video editing experience, with a portfolio of social-media content</p></li><li><p style=\"min-height:1.5em\">Proficiency in CapCut or similar editing software</p></li><li><p style=\"min-height:1.5em\">Solid understanding of technical and format requirements for major social platforms</p></li><li><p style=\"min-height:1.5em\">Strong remote communication and time-management skills</p></li></ul><p style=\"min-height:1.5em\"></p>",
+    "descriptionPlain": "You will craft and optimize short-form videos that bring the artist’s music to life and grow their social media presence.\n\nResponsibilities\n\n - Edit raw footage into engaging short-form videos using CapCut or equivalent\n\n - Adapt and format content for Instagram, TikTok, YouTube Shorts, etc., following each platform’s best practices\n\n - Collaborate with the artist and marketing team to ensure videos align with brand vision and musical themes\n\n - Iterate quickly on feedback to maintain high visual quality and storytelling impact\n\nRequirements\n\n - 2+ years of short-form video editing experience, with a portfolio of social-media content\n\n - Proficiency in CapCut or similar editing software\n\n - Solid understanding of technical and format requirements for major social platforms\n\n - Strong remote communication and time-management skills\n\n"
+   },
+   {
+    "id": "5acaa20b-4468-4973-b4ce-90a5bcb2d25c",
+    "title": "Freelance Designer - Brand, Visual, Graphic / 自由设计师 - 品牌、视觉、平面",
+    "department": "Italic",
+    "team": "Italic",
+    "employmentType": "PartTime",
+    "location": "Shenzhen",
+    "secondaryLocations": [
+     {
+      "location": "Hong Kong",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Hong Kong",
+        "addressCountry": "Hong Kong",
+        "addressLocality": "Hong Kong"
+       }
+      }
+     },
+     {
+      "location": "Shanghai",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Zhejiang",
+        "addressCountry": "China",
+        "addressLocality": "Shanghai"
+       }
+      }
+     }
+    ],
+    "publishedAt": "2024-11-09T21:11:34.535+00:00",
+    "isListed": true,
+    "isRemote": false,
+    "workplaceType": "OnSite",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Guangdong",
+      "addressCountry": "China",
+      "addressLocality": "Shenzhen"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/5acaa20b-4468-4973-b4ce-90a5bcb2d25c",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/5acaa20b-4468-4973-b4ce-90a5bcb2d25c/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">We're seeking a Visual Designer to create engaging digital content for our client's marketing and social media needs. You'll be responsible for designing eye-catching visuals while maintaining brand consistency.</p><p style=\"min-height:1.5em\"><strong>Responsibilities</strong></p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Create social media graphics and marketing visuals</p></li><li><p style=\"min-height:1.5em\">Design digital marketing materials (email banners, web assets)</p></li><li><p style=\"min-height:1.5em\">Develop presentations and sales collateral</p></li><li><p style=\"min-height:1.5em\">Maintain visual consistency across all materials</p></li><li><p style=\"min-height:1.5em\">Support marketing team with design needs</p></li><li><p style=\"min-height:1.5em\">Create digital ads and promotional materials</p></li><li><p style=\"min-height:1.5em\">Design marketing campaign assets</p></li><li><p style=\"min-height:1.5em\">Collaborate on brand style guides and visual standards</p></li><li><p style=\"min-height:1.5em\">Support product photography and image editing</p></li><li><p style=\"min-height:1.5em\">Create infographics and data visualizations when needed</p></li></ul><p style=\"min-height:1.5em\"><strong>Requirements</strong></p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Proficiency in Figma</p></li><li><p style=\"min-height:1.5em\">2+ years of experience in visual design</p></li><li><p style=\"min-height:1.5em\">Strong portfolio showing digital design work</p></li><li><p style=\"min-height:1.5em\">Expert in Adobe Creative Suite (Photoshop, Illustrator)</p></li><li><p style=\"min-height:1.5em\">Experience with social media design</p></li><li><p style=\"min-height:1.5em\">Good eye for typography and layout</p></li><li><p style=\"min-height:1.5em\">Ability to follow brand guidelines</p></li><li><p style=\"min-height:1.5em\">Strong communication skills in English</p></li><li><p style=\"min-height:1.5em\">Experience working remotely</p></li><li><p style=\"min-height:1.5em\">Understanding of digital marketing formats</p></li><li><p style=\"min-height:1.5em\">Ability to work independently and manage multiple projects</p></li></ul><p style=\"min-height:1.5em\"></p><p style=\"min-height:1.5em\">我们正在寻找一名视觉设计师，为客户的营销和社交媒体需求创作吸引人的数字内容。你将负责设计引人注目的视觉作品，并确保品牌风格的一致性。</p><p style=\"min-height:1.5em\"></p><p style=\"min-height:1.5em\">工作职责：</p><p style=\"min-height:1.5em\">• 制作社交媒体图形和营销视觉内容</p><p style=\"min-height:1.5em\">• 设计数字营销材料（电子邮件横幅、网站素材）</p><p style=\"min-height:1.5em\">• 开发演示文稿和销售辅助材料</p><p style=\"min-height:1.5em\">• 确保所有设计素材的视觉一致性</p><p style=\"min-height:1.5em\">• 支持营销团队的各种设计需求</p><p style=\"min-height:1.5em\">• 创建数字广告和促销材料</p><p style=\"min-height:1.5em\">• 设计营销活动相关的视觉素材</p><p style=\"min-height:1.5em\">• 协作制定品牌风格指南和视觉标准</p><p style=\"min-height:1.5em\">• 支持产品摄影与图片编辑</p><p style=\"min-height:1.5em\">• 根据需要创建信息图表和数据可视化内容</p><p style=\"min-height:1.5em\"></p><p style=\"min-height:1.5em\">职位要求：</p><p style=\"min-height:1.5em\">• 2年以上视觉设计相关工作经验</p><p style=\"min-height:1.5em\">• 拥有强大的数字设计作品集</p><p style=\"min-height:1.5em\">• 精通Adobe创意套件（Photoshop、Illustrator）</p><p style=\"min-height:1.5em\">• 拥有社交媒体设计经验</p><p style=\"min-height:1.5em\">• 具备优秀的字体排版和布局能力</p><p style=\"min-height:1.5em\">• 能够严格遵循品牌指南</p><p style=\"min-height:1.5em\">• 具备良好的英文沟通能力</p><p style=\"min-height:1.5em\">• 拥有远程工作的经验</p><p style=\"min-height:1.5em\">• 熟练使用Figma</p><p style=\"min-height:1.5em\">• 了解数字营销内容格式</p><p style=\"min-height:1.5em\">• 能够独立工作并同时管理多个项目</p><p style=\"min-height:1.5em\">• 具有演示文稿设计经验（PowerPoint、Google Slides）</p>",
+    "descriptionPlain": "We're seeking a Visual Designer to create engaging digital content for our client's marketing and social media needs. You'll be responsible for designing eye-catching visuals while maintaining brand consistency.\n\nResponsibilities\n\n - Create social media graphics and marketing visuals\n\n - Design digital marketing materials (email banners, web assets)\n\n - Develop presentations and sales collateral\n\n - Maintain visual consistency across all materials\n\n - Support marketing team with design needs\n\n - Create digital ads and promotional materials\n\n - Design marketing campaign assets\n\n - Collaborate on brand style guides and visual standards\n\n - Support product photography and image editing\n\n - Create infographics and data visualizations when needed\n\nRequirements\n\n - Proficiency in Figma\n\n - 2+ years of experience in visual design\n\n - Strong portfolio showing digital design work\n\n - Expert in Adobe Creative Suite (Photoshop, Illustrator)\n\n - Experience with social media design\n\n - Good eye for typography and layout\n\n - Ability to follow brand guidelines\n\n - Strong communication skills in English\n\n - Experience working remotely\n\n - Understanding of digital marketing formats\n\n - Ability to work independently and manage multiple projects\n\n\n\n我们正在寻找一名视觉设计师，为客户的营销和社交媒体需求创作吸引人的数字内容。你将负责设计引人注目的视觉作品，并确保品牌风格的一致性。\n\n\n\n工作职责：\n\n• 制作社交媒体图形和营销视觉内容\n\n• 设计数字营销材料（电子邮件横幅、网站素材）\n\n• 开发演示文稿和销售辅助材料\n\n• 确保所有设计素材的视觉一致性\n\n• 支持营销团队的各种设计需求\n\n• 创建数字广告和促销材料\n\n• 设计营销活动相关的视觉素材\n\n• 协作制定品牌风格指南和视觉标准\n\n• 支持产品摄影与图片编辑\n\n• 根据需要创建信息图表和数据可视化内容\n\n\n\n职位要求：\n\n• 2年以上视觉设计相关工作经验\n\n• 拥有强大的数字设计作品集\n\n• 精通Adobe创意套件（Photoshop、Illustrator）\n\n• 拥有社交媒体设计经验\n\n• 具备优秀的字体排版和布局能力\n\n• 能够严格遵循品牌指南\n\n• 具备良好的英文沟通能力\n\n• 拥有远程工作的经验\n\n• 熟练使用Figma\n\n• 了解数字营销内容格式\n\n• 能够独立工作并同时管理多个项目\n\n• 具有演示文稿设计经验（PowerPoint、Google Slides）"
+   },
+   {
+    "id": "38cf1212-972e-4970-91d6-99e1b5c66e2b",
+    "title": "Freelance CG Artist - Product Rendering & Video",
+    "department": "Sudo",
+    "team": "Sudo",
+    "employmentType": "Contract",
+    "location": "Seoul",
+    "secondaryLocations": [
+     {
+      "location": "San Francisco",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "California",
+        "addressCountry": "united states",
+        "addressLocality": "San Francisco"
+       }
+      }
+     },
+     {
+      "location": "Buenos Aires",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "Argentina",
+        "addressLocality": "Buenos Aires"
+       }
+      }
+     },
+     {
+      "location": "New York City",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "New York",
+        "addressCountry": "United States",
+        "addressLocality": "New York City"
+       }
+      }
+     },
+     {
+      "location": "Los Angeles",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "California",
+        "addressCountry": "United States",
+        "addressLocality": "Los Angeles"
+       }
+      }
+     },
+     {
+      "location": "Shenzhen",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Guangdong",
+        "addressCountry": "China",
+        "addressLocality": "Shenzhen"
+       }
+      }
+     }
+    ],
+    "publishedAt": "2026-05-23T18:58:04.098+00:00",
+    "isListed": true,
+    "isRemote": true,
+    "workplaceType": "Remote",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Seoul",
+      "addressCountry": "South Korea",
+      "addressLocality": "Seoul"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/38cf1212-972e-4970-91d6-99e1b5c66e2b",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/38cf1212-972e-4970-91d6-99e1b5c66e2b/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">We are a startup building AI agents and consumer devices. Users prompt agents to take actions across their tools, and use our custom devices to capture intent on the go. We are a small team based in Shenzhen and New York and our founder previously started a unicorn company in Silicon Valley.</p><p style=\"min-height:1.5em\">We are looking for a few freelance CG artists to help create high-quality product images and videos for our smart ring. You will work from product references, CAD/STP files, CMF direction, and factory samples to produce polished renders, short videos, turntables, and motion assets for website, ads, social, investor materials, and product decision-making.</p><p style=\"min-height:1.5em\">This is a freelance role. We care most about taste, speed, realism, motion sense, and the ability to turn loose direction into strong visual output without heavy hand-holding.</p><h2>Responsibilities</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Create photorealistic renders of a small consumer hardware product, primarily a smart ring.</p></li><li><p style=\"min-height:1.5em\">Produce product images and videos for website, ads, social, pitch decks, and internal design reviews.</p></li><li><p style=\"min-height:1.5em\">Create short product videos, turntables, motion tests, launch visuals, and social/ad clips.</p></li><li><p style=\"min-height:1.5em\">Animate camera moves, product reveals, material transitions, LED states, charging moments, and simple interaction concepts.</p></li><li><p style=\"min-height:1.5em\">Build realistic material studies across ceramic, metal, resin, glass, plastic, LED, and charging/contact details.</p></li><li><p style=\"min-height:1.5em\">Create multiple CMF and finish explorations quickly from loose references.</p></li><li><p style=\"min-height:1.5em\">Work with CAD/STP files, product photos, factory drawings, and reference images.</p></li><li><p style=\"min-height:1.5em\">Set up clean lighting, camera angles, surfaces, and compositions that make a small wearable product feel premium.</p></li><li><p style=\"min-height:1.5em\">Deliver organized source files and export-ready still/video assets in clean, reusable formats.</p></li><li><p style=\"min-height:1.5em\">Iterate quickly based on feedback from product, marketing, and hardware teams.</p></li></ul><h2>Requirements</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Strong portfolio of product rendering work, ideally consumer electronics, wearables, jewelry, watches, rings, or small hardware.</p></li><li><p style=\"min-height:1.5em\">Strong portfolio of product video, animation, motion graphics, or short 3D product ads.</p></li><li><p style=\"min-height:1.5em\">Excellent sense of lighting, materials, composition, scale, and product detail.</p></li><li><p style=\"min-height:1.5em\">Experience with Blender, Cinema 4D, KeyShot, Redshift, Octane, V-Ray, After Effects, Premiere, DaVinci Resolve, or similar rendering/video tools.</p></li><li><p style=\"min-height:1.5em\">Comfortable working from imperfect inputs: CAD files, rough product references, factory samples, and written direction.</p></li><li><p style=\"min-height:1.5em\">Able to move quickly and produce polished outputs without a large creative team around you.</p></li><li><p style=\"min-height:1.5em\">Strong file organization and ability to deliver final images, final videos, and editable project files.</p></li><li><p style=\"min-height:1.5em\">Good written communication and responsiveness.</p></li></ul><h2>Helpful but not required</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Experience rendering jewelry, ceramic, titanium, PVD finishes, transparent/translucent materials, or compact electronics.</p></li><li><p style=\"min-height:1.5em\">Ability to combine 3D renders with AI video/image tools where useful.</p></li><li><p style=\"min-height:1.5em\">Familiarity with DFM, CMF, industrial design, or factory communication.</p></li><li><p style=\"min-height:1.5em\">Experience using AI image/video tools as part of a rendering or concept workflow.</p></li><li><p style=\"min-height:1.5em\">Ability to lightly retouch or composite final outputs in Photoshop.</p></li></ul><h2>What we care about</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Can you make a tiny object look expensive, real, desirable, and dynamic?</p></li><li><p style=\"min-height:1.5em\">Can you create several visual directions fast, not just one perfect render slowly?</p></li><li><p style=\"min-height:1.5em\">Can you create motion that explains the product without making it feel like a generic tech ad?</p></li><li><p style=\"min-height:1.5em\">Can you understand product constraints without needing every detail specified?</p></li><li><p style=\"min-height:1.5em\">Can your work help us make product and marketing decisions, not just look nice?</p></li></ul><h2>Application questions</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Portfolio: link to your best product rendering and product video work.</p></li><li><p style=\"min-height:1.5em\">Tools: what software/render engines/video tools do you use?</p></li><li><p style=\"min-height:1.5em\">Hardware experience: have you rendered jewelry, wearables, consumer electronics, or small physical products before?</p></li><li><p style=\"min-height:1.5em\">Workflow: if we give you a STEP file, product references, and CMF notes, what is your usual process from intake to final stills and video?</p></li><li><p style=\"min-height:1.5em\">Motion: what types of product videos can you make well: turntables, short ads, product reveals, material studies, UI/device interaction, or something else?</p></li><li><p style=\"min-height:1.5em\">Speed: how quickly can you usually turn around a first pass for 3-5 product render or video directions?</p></li><li><p style=\"min-height:1.5em\">Availability: how many freelance hours per week can you take on?</p></li></ul>",
+    "descriptionPlain": "We are a startup building AI agents and consumer devices. Users prompt agents to take actions across their tools, and use our custom devices to capture intent on the go. We are a small team based in Shenzhen and New York and our founder previously started a unicorn company in Silicon Valley.\n\nWe are looking for a few freelance CG artists to help create high-quality product images and videos for our smart ring. You will work from product references, CAD/STP files, CMF direction, and factory samples to produce polished renders, short videos, turntables, and motion assets for website, ads, social, investor materials, and product decision-making.\n\nThis is a freelance role. We care most about taste, speed, realism, motion sense, and the ability to turn loose direction into strong visual output without heavy hand-holding.\n\n\nRESPONSIBILITIES\n\n - Create photorealistic renders of a small consumer hardware product, primarily a smart ring.\n\n - Produce product images and videos for website, ads, social, pitch decks, and internal design reviews.\n\n - Create short product videos, turntables, motion tests, launch visuals, and social/ad clips.\n\n - Animate camera moves, product reveals, material transitions, LED states, charging moments, and simple interaction concepts.\n\n - Build realistic material studies across ceramic, metal, resin, glass, plastic, LED, and charging/contact details.\n\n - Create multiple CMF and finish explorations quickly from loose references.\n\n - Work with CAD/STP files, product photos, factory drawings, and reference images.\n\n - Set up clean lighting, camera angles, surfaces, and compositions that make a small wearable product feel premium.\n\n - Deliver organized source files and export-ready still/video assets in clean, reusable formats.\n\n - Iterate quickly based on feedback from product, marketing, and hardware teams.\n\n\nREQUIREMENTS\n\n - Strong portfolio of product rendering work, ideally consumer electronics, wearables, jewelry, watches, rings, or small hardware.\n\n - Strong portfolio of product video, animation, motion graphics, or short 3D product ads.\n\n - Excellent sense of lighting, materials, composition, scale, and product detail.\n\n - Experience with Blender, Cinema 4D, KeyShot, Redshift, Octane, V-Ray, After Effects, Premiere, DaVinci Resolve, or similar rendering/video tools.\n\n - Comfortable working from imperfect inputs: CAD files, rough product references, factory samples, and written direction.\n\n - Able to move quickly and produce polished outputs without a large creative team around you.\n\n - Strong file organization and ability to deliver final images, final videos, and editable project files.\n\n - Good written communication and responsiveness.\n\n\nHELPFUL BUT NOT REQUIRED\n\n - Experience rendering jewelry, ceramic, titanium, PVD finishes, transparent/translucent materials, or compact electronics.\n\n - Ability to combine 3D renders with AI video/image tools where useful.\n\n - Familiarity with DFM, CMF, industrial design, or factory communication.\n\n - Experience using AI image/video tools as part of a rendering or concept workflow.\n\n - Ability to lightly retouch or composite final outputs in Photoshop.\n\n\nWHAT WE CARE ABOUT\n\n - Can you make a tiny object look expensive, real, desirable, and dynamic?\n\n - Can you create several visual directions fast, not just one perfect render slowly?\n\n - Can you create motion that explains the product without making it feel like a generic tech ad?\n\n - Can you understand product constraints without needing every detail specified?\n\n - Can your work help us make product and marketing decisions, not just look nice?\n\n\nAPPLICATION QUESTIONS\n\n - Portfolio: link to your best product rendering and product video work.\n\n - Tools: what software/render engines/video tools do you use?\n\n - Hardware experience: have you rendered jewelry, wearables, consumer electronics, or small physical products before?\n\n - Workflow: if we give you a STEP file, product references, and CMF notes, what is your usual process from intake to final stills and video?\n\n - Motion: what types of product videos can you make well: turntables, short ads, product reveals, material studies, UI/device interaction, or something else?\n\n - Speed: how quickly can you usually turn around a first pass for 3-5 product render or video directions?\n\n - Availability: how many freelance hours per week can you take on?"
+   },
+   {
+    "id": "72245ec9-a742-4b0e-a420-f94f23e051aa",
+    "title": "AI 智能体平台软件工程师 / Software Engineer – AI Agent Platform",
+    "department": "Italic",
+    "team": "Italic",
+    "employmentType": "FullTime",
+    "location": "Shenzhen",
+    "secondaryLocations": [
+     {
+      "location": "Hong Kong",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Hong Kong",
+        "addressCountry": "Hong Kong",
+        "addressLocality": "Hong Kong"
+       }
+      }
+     }
+    ],
+    "publishedAt": "2025-07-03T23:34:10.387+00:00",
+    "isListed": true,
+    "isRemote": false,
+    "workplaceType": "OnSite",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Guangdong",
+      "addressCountry": "China",
+      "addressLocality": "Shenzhen"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/72245ec9-a742-4b0e-a420-f94f23e051aa",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/72245ec9-a742-4b0e-a420-f94f23e051aa/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">我们是一家正在打造 AI 智能体和消费级硬件设备的初创公司。用户可以让智能体跨工具执行任务，也可以通过定制设备随时捕捉意图。团队位于深圳和纽约，创始人曾在硅谷创办一家独角兽公司。</p><p style=\"min-height:1.5em\">我们正在深圳招聘一名 AI 智能体平台软件工程师，负责连接模型、工具、权限、任务执行和用户产品体验。</p><p style=\"min-height:1.5em\">工作职责</p><p style=\"min-height:1.5em\">• 构建智能体编排、工具调用、任务状态、重试和人工确认流程。</p><p style=\"min-height:1.5em\">• 集成第三方 API、OAuth、事件和后台任务。</p><p style=\"min-height:1.5em\">• 开发可靠的前端、后端、数据库和观测系统。</p><p style=\"min-height:1.5em\">• 改善延迟、成功率、成本、安全和故障排查体验。</p><p style=\"min-height:1.5em\">• 与产品团队快速迭代并将原型推进到生产。</p><p style=\"min-height:1.5em\">任职要求</p><p style=\"min-height:1.5em\">• 常驻深圳，4 年以上全栈或后端产品工程经验。</p><p style=\"min-height:1.5em\">• 熟练使用 TypeScript/Node.js、Python 或同类技术栈。</p><p style=\"min-height:1.5em\">• 有 LLM、工具调用、队列、分布式任务或第三方集成经验。</p><p style=\"min-height:1.5em\">• 能独立交付，重视可靠性、权限和清晰的用户体验。</p><p style=\"min-height:1.5em\">English</p><p style=\"min-height:1.5em\">We are a startup building AI agents and consumer devices. Users prompt agents to take actions across their tools, while custom devices capture intent on the go. We are a small team in Shenzhen and New York; our founder previously started a Silicon Valley unicorn.</p><p style=\"min-height:1.5em\">We are hiring a Software Engineer in Shenzhen to build the platform connecting models, tools, permissions, task execution, and the user experience.</p><p style=\"min-height:1.5em\">Responsibilities</p><p style=\"min-height:1.5em\">• Build agent orchestration, tool calls, task state, retries, and human-confirmation flows.</p><p style=\"min-height:1.5em\">• Integrate third-party APIs, OAuth, events, and background jobs.</p><p style=\"min-height:1.5em\">• Develop reliable frontend, backend, database, and observability systems.</p><p style=\"min-height:1.5em\">• Improve latency, success rate, cost, safety, and debugging.</p><p style=\"min-height:1.5em\">Requirements</p><p style=\"min-height:1.5em\">• Based in Shenzhen with 4+ years of full-stack or backend product engineering experience.</p><p style=\"min-height:1.5em\">• Strong TypeScript/Node.js, Python, or comparable stack experience.</p><p style=\"min-height:1.5em\">• Experience with LLMs, tool calling, queues, distributed jobs, or third-party integrations.</p><p style=\"min-height:1.5em\">• Independent delivery and strong judgment around reliability, permissions, and UX.</p>",
+    "descriptionPlain": "我们是一家正在打造 AI 智能体和消费级硬件设备的初创公司。用户可以让智能体跨工具执行任务，也可以通过定制设备随时捕捉意图。团队位于深圳和纽约，创始人曾在硅谷创办一家独角兽公司。\n\n我们正在深圳招聘一名 AI 智能体平台软件工程师，负责连接模型、工具、权限、任务执行和用户产品体验。\n\n工作职责\n\n• 构建智能体编排、工具调用、任务状态、重试和人工确认流程。\n\n• 集成第三方 API、OAuth、事件和后台任务。\n\n• 开发可靠的前端、后端、数据库和观测系统。\n\n• 改善延迟、成功率、成本、安全和故障排查体验。\n\n• 与产品团队快速迭代并将原型推进到生产。\n\n任职要求\n\n• 常驻深圳，4 年以上全栈或后端产品工程经验。\n\n• 熟练使用 TypeScript/Node.js、Python 或同类技术栈。\n\n• 有 LLM、工具调用、队列、分布式任务或第三方集成经验。\n\n• 能独立交付，重视可靠性、权限和清晰的用户体验。\n\nEnglish\n\nWe are a startup building AI agents and consumer devices. Users prompt agents to take actions across their tools, while custom devices capture intent on the go. We are a small team in Shenzhen and New York; our founder previously started a Silicon Valley unicorn.\n\nWe are hiring a Software Engineer in Shenzhen to build the platform connecting models, tools, permissions, task execution, and the user experience.\n\nResponsibilities\n\n• Build agent orchestration, tool calls, task state, retries, and human-confirmation flows.\n\n• Integrate third-party APIs, OAuth, events, and background jobs.\n\n• Develop reliable frontend, backend, database, and observability systems.\n\n• Improve latency, success rate, cost, safety, and debugging.\n\nRequirements\n\n• Based in Shenzhen with 4+ years of full-stack or backend product engineering experience.\n\n• Strong TypeScript/Node.js, Python, or comparable stack experience.\n\n• Experience with LLMs, tool calling, queues, distributed jobs, or third-party integrations.\n\n• Independent delivery and strong judgment around reliability, permissions, and UX."
+   },
+   {
+    "id": "314ab7f3-356c-4a6a-a0db-fece5138ba37",
+    "title": "Amazon Account Manager 亚马逊运营经理",
+    "department": "Italic",
+    "team": "Italic",
+    "employmentType": "FullTime",
+    "location": "Shenzhen",
+    "secondaryLocations": [],
+    "publishedAt": "2026-07-01T01:49:49.594+00:00",
+    "isListed": true,
+    "isRemote": false,
+    "workplaceType": "OnSite",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Guangdong",
+      "addressCountry": "China",
+      "addressLocality": "Shenzhen"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/314ab7f3-356c-4a6a-a0db-fece5138ba37",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/314ab7f3-356c-4a6a-a0db-fece5138ba37/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">Italic 正在深圳招聘一名亚马逊账户经理，负责管理 Italic 的亚马逊店铺日常运营、销售表现和账户健康。这个岗位适合有亚马逊运营经验、数据驱动、执行力强的人，能够把 Listing、广告、库存、绩效和平台合规管理得清楚有序。</p><h2><strong>工作职责</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">管理亚马逊 Seller Central 日常运营，包括 Listing 创建与优化、变体管理、A+ 内容、品牌旗舰店维护。</p></li><li><p style=\"min-height:1.5em\">监控账户健康、绩效通知、政策合规和申诉处理，确保账户安全。</p></li><li><p style=\"min-height:1.5em\">制定并执行广告策略（SP、SB、SD），管理预算、竞价、关键词和投放效果。</p></li><li><p style=\"min-height:1.5em\">跟踪销售数据、转化率、ACOS、TACOS、库存周转等关键指标，输出周报和月度复盘。</p></li><li><p style=\"min-height:1.5em\">协调 FBA 库存计划、补货节奏、IPI 分数和超龄库存清理，与物流团队对接入库发货。</p></li><li><p style=\"min-height:1.5em\">管理促销活动（Coupon、Deal、Prime Day、黑五网一等大促报名与执行）。</p></li><li><p style=\"min-height:1.5em\">监控竞品、价格、排名和评论变化，及时调整策略。</p></li><li><p style=\"min-height:1.5em\">处理 Buyer-Seller Messages、A-to-Z 索赔、退货和差评跟进，维护店铺声誉。</p></li><li><p style=\"min-height:1.5em\">整理并维护运营 SOP、广告操作手册和问题处理流程，降低交接成本。</p></li><li><p style=\"min-height:1.5em\">及时反馈 Listing 被 suppressed、广告异常、库存断货风险和账户警告等运营风险。</p></li></ul><h2><strong>任职要求</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">常驻深圳，能够与内部团队（产品、物流、品牌）紧密协作。</p></li><li><p style=\"min-height:1.5em\">2 年以上亚马逊 Seller Central 运营经验，熟悉后台操作全流程。</p></li><li><p style=\"min-height:1.5em\">有实际的 Amazon PPC 广告投放和优化经验，能独立管理广告预算。</p></li><li><p style=\"min-height:1.5em\">熟练使用 Excel / Google Sheets 进行数据分析和报表输出。</p></li><li><p style=\"min-height:1.5em\">书面沟通清晰，能够用英文处理亚马逊客服和卖家支持 Case。</p></li><li><p style=\"min-height:1.5em\">有较强的数据和结果导向意识，能从数据中发现问题并提出解决方案。</p></li><li><p style=\"min-height:1.5em\">有条理，稳定可靠，希望寻找长期稳定的工作。</p></li><li><p style=\"min-height:1.5em\">能够在 Listing 优化、广告管理、库存协调和绩效监控之间灵活切换。</p></li></ul><h2><strong>加分项</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">有品牌备案、透明计划、Project Zero 或 IP 保护相关经验。</p></li><li><p style=\"min-height:1.5em\">使用过 Helium 10、Jungle Scout、Keepa、Sellerboard 等第三方工具。</p></li><li><p style=\"min-height:1.5em\">熟悉 FBA 费用结构、入库配置、Shipment ID 追踪和索赔流程。</p></li><li><p style=\"min-height:1.5em\">中英文沟通能力出色。</p></li><li><p style=\"min-height:1.5em\">有家居、生活用品或 DTC 品牌的亚马逊运营经验。</p></li><li><p style=\"min-height:1.5em\">了解 Shopify 与亚马逊的多渠道协作模式。</p></li></ul><p style=\"min-height:1.5em\">Italic is looking for an Amazon Account Manager in Shenzhen to manage day-to-day operations, sales performance, and account health for Italic's Amazon store. This role is for someone with Amazon operations experience, a data-driven mindset, and the ability to keep listings, advertising, inventory, and platform compliance well-organized.</p><h2><strong>Responsibilities</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Manage day-to-day Amazon Seller Central operations, including listing creation and optimization, variation management, A+ content, and Brand Store maintenance.</p></li><li><p style=\"min-height:1.5em\">Monitor account health, performance notifications, policy compliance, and appeal handling to keep the account secure.</p></li><li><p style=\"min-height:1.5em\">Plan and execute advertising strategies (SP, SB, SD), managing budgets, bids, keywords, and campaign performance.</p></li><li><p style=\"min-height:1.5em\">Track sales data, conversion rates, ACOS, TACOS, inventory turnover, and other key metrics; produce weekly and monthly performance reports.</p></li><li><p style=\"min-height:1.5em\">Coordinate FBA inventory planning, replenishment timing, IPI scores, and aging inventory clearance; align with the logistics team on inbound shipments.</p></li><li><p style=\"min-height:1.5em\">Manage promotions (coupons, deals, Prime Day, Black Friday / Cyber Monday registration and execution).</p></li><li><p style=\"min-height:1.5em\">Monitor competitors, pricing, rankings, and review changes; adjust strategies promptly.</p></li><li><p style=\"min-height:1.5em\">Handle Buyer-Seller Messages, A-to-Z claims, returns, and negative review follow-ups to protect store reputation.</p></li><li><p style=\"min-height:1.5em\">Organize and maintain operational SOPs, advertising playbooks, and issue-resolution workflows to reduce handoff friction.</p></li><li><p style=\"min-height:1.5em\">Flag operational risks early, including suppressed listings, advertising anomalies, stockout warnings, and account health alerts.</p></li></ul><h2><strong>Requirements</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Based in Shenzhen and able to work closely with internal teams (product, logistics, brand).</p></li><li><p style=\"min-height:1.5em\">2+ years of Amazon Seller Central operations experience with familiarity across the full backend workflow.</p></li><li><p style=\"min-height:1.5em\">Hands-on Amazon PPC advertising experience with the ability to independently manage campaign budgets.</p></li><li><p style=\"min-height:1.5em\">Proficient with Excel / Google Sheets for data analysis and reporting.</p></li><li><p style=\"min-height:1.5em\">Clear written communication; able to handle Amazon customer service and Seller Support cases in English.</p></li><li><p style=\"min-height:1.5em\">Strong data-driven and results-oriented mindset; able to identify problems in the data and propose solutions.</p></li><li><p style=\"min-height:1.5em\">Organized, reliable, and looking for a stable long-term role.</p></li><li><p style=\"min-height:1.5em\">Comfortable switching between listing optimization, advertising management, inventory coordination, and performance monitoring.</p></li></ul><h2><strong>Helpful but Not Required</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Experience with Brand Registry, Transparency, Project Zero, or IP protection.</p></li><li><p style=\"min-height:1.5em\">Experience with third-party tools such as Helium 10, Jungle Scout, Keepa, or Sellerboard.</p></li><li><p style=\"min-height:1.5em\">Familiarity with FBA fee structures, inbound placement, shipment ID tracking, and reimbursement claims.</p></li><li><p style=\"min-height:1.5em\">Strong Mandarin and English communication skills.</p></li><li><p style=\"min-height:1.5em\">Experience running Amazon operations for home goods, lifestyle, or DTC brands.</p></li><li><p style=\"min-height:1.5em\">Understanding of Shopify-Amazon multi-channel collaboration.</p></li></ul>",
+    "descriptionPlain": "Italic 正在深圳招聘一名亚马逊账户经理，负责管理 Italic 的亚马逊店铺日常运营、销售表现和账户健康。这个岗位适合有亚马逊运营经验、数据驱动、执行力强的人，能够把 Listing、广告、库存、绩效和平台合规管理得清楚有序。\n\n\n工作职责\n\n - 管理亚马逊 Seller Central 日常运营，包括 Listing 创建与优化、变体管理、A+ 内容、品牌旗舰店维护。\n\n - 监控账户健康、绩效通知、政策合规和申诉处理，确保账户安全。\n\n - 制定并执行广告策略（SP、SB、SD），管理预算、竞价、关键词和投放效果。\n\n - 跟踪销售数据、转化率、ACOS、TACOS、库存周转等关键指标，输出周报和月度复盘。\n\n - 协调 FBA 库存计划、补货节奏、IPI 分数和超龄库存清理，与物流团队对接入库发货。\n\n - 管理促销活动（Coupon、Deal、Prime Day、黑五网一等大促报名与执行）。\n\n - 监控竞品、价格、排名和评论变化，及时调整策略。\n\n - 处理 Buyer-Seller Messages、A-to-Z 索赔、退货和差评跟进，维护店铺声誉。\n\n - 整理并维护运营 SOP、广告操作手册和问题处理流程，降低交接成本。\n\n - 及时反馈 Listing 被 suppressed、广告异常、库存断货风险和账户警告等运营风险。\n\n\n任职要求\n\n - 常驻深圳，能够与内部团队（产品、物流、品牌）紧密协作。\n\n - 2 年以上亚马逊 Seller Central 运营经验，熟悉后台操作全流程。\n\n - 有实际的 Amazon PPC 广告投放和优化经验，能独立管理广告预算。\n\n - 熟练使用 Excel / Google Sheets 进行数据分析和报表输出。\n\n - 书面沟通清晰，能够用英文处理亚马逊客服和卖家支持 Case。\n\n - 有较强的数据和结果导向意识，能从数据中发现问题并提出解决方案。\n\n - 有条理，稳定可靠，希望寻找长期稳定的工作。\n\n - 能够在 Listing 优化、广告管理、库存协调和绩效监控之间灵活切换。\n\n\n加分项\n\n - 有品牌备案、透明计划、Project Zero 或 IP 保护相关经验。\n\n - 使用过 Helium 10、Jungle Scout、Keepa、Sellerboard 等第三方工具。\n\n - 熟悉 FBA 费用结构、入库配置、Shipment ID 追踪和索赔流程。\n\n - 中英文沟通能力出色。\n\n - 有家居、生活用品或 DTC 品牌的亚马逊运营经验。\n\n - 了解 Shopify 与亚马逊的多渠道协作模式。\n\nItalic is looking for an Amazon Account Manager in Shenzhen to manage day-to-day operations, sales performance, and account health for Italic's Amazon store. This role is for someone with Amazon operations experience, a data-driven mindset, and the ability to keep listings, advertising, inventory, and platform compliance well-organized.\n\n\nRESPONSIBILITIES\n\n - Manage day-to-day Amazon Seller Central operations, including listing creation and optimization, variation management, A+ content, and Brand Store maintenance.\n\n - Monitor account health, performance notifications, policy compliance, and appeal handling to keep the account secure.\n\n - Plan and execute advertising strategies (SP, SB, SD), managing budgets, bids, keywords, and campaign performance.\n\n - Track sales data, conversion rates, ACOS, TACOS, inventory turnover, and other key metrics; produce weekly and monthly performance reports.\n\n - Coordinate FBA inventory planning, replenishment timing, IPI scores, and aging inventory clearance; align with the logistics team on inbound shipments.\n\n - Manage promotions (coupons, deals, Prime Day, Black Friday / Cyber Monday registration and execution).\n\n - Monitor competitors, pricing, rankings, and review changes; adjust strategies promptly.\n\n - Handle Buyer-Seller Messages, A-to-Z claims, returns, and negative review follow-ups to protect store reputation.\n\n - Organize and maintain operational SOPs, advertising playbooks, and issue-resolution workflows to reduce handoff friction.\n\n - Flag operational risks early, including suppressed listings, advertising anomalies, stockout warnings, and account health alerts.\n\n\nREQUIREMENTS\n\n - Based in Shenzhen and able to work closely with internal teams (product, logistics, brand).\n\n - 2+ years of Amazon Seller Central operations experience with familiarity across the full backend workflow.\n\n - Hands-on Amazon PPC advertising experience with the ability to independently manage campaign budgets.\n\n - Proficient with Excel / Google Sheets for data analysis and reporting.\n\n - Clear written communication; able to handle Amazon customer service and Seller Support cases in English.\n\n - Strong data-driven and results-oriented mindset; able to identify problems in the data and propose solutions.\n\n - Organized, reliable, and looking for a stable long-term role.\n\n - Comfortable switching between listing optimization, advertising management, inventory coordination, and performance monitoring.\n\n\nHELPFUL BUT NOT REQUIRED\n\n - Experience with Brand Registry, Transparency, Project Zero, or IP protection.\n\n - Experience with third-party tools such as Helium 10, Jungle Scout, Keepa, or Sellerboard.\n\n - Familiarity with FBA fee structures, inbound placement, shipment ID tracking, and reimbursement claims.\n\n - Strong Mandarin and English communication skills.\n\n - Experience running Amazon operations for home goods, lifestyle, or DTC brands.\n\n - Understanding of Shopify-Amazon multi-channel collaboration."
+   },
+   {
+    "id": "4c17509b-b62d-45cc-b009-56c0c0e750bb",
+    "title": "Logistics Coordinator 运营助理",
+    "department": "Italic",
+    "team": "Italic",
+    "employmentType": "FullTime",
+    "location": "Shenzhen",
+    "secondaryLocations": [],
+    "publishedAt": "2026-07-01T01:52:42.973+00:00",
+    "isListed": true,
+    "isRemote": false,
+    "workplaceType": "OnSite",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Guangdong",
+      "addressCountry": "China",
+      "addressLocality": "Shenzhen"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/4c17509b-b62d-45cc-b009-56c0c0e750bb",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/4c17509b-b62d-45cc-b009-56c0c0e750bb/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">Italic 正在深圳招聘一名物流协调 / 运营助理，支持日常物流、库存、履约和运营工作。这个岗位适合可靠、细心、执行力强的人，能够把发货进度、库存更新、供应商跟进和内部表格管理得清楚有序。</p><h2><strong>工作职责</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">跟踪发货、配送状态、库存更新和履约问题。</p></li><li><p style=\"min-height:1.5em\">与仓库、3PL、承运商、供应商和内部团队沟通协调。</p></li><li><p style=\"min-height:1.5em\">协助排查订单、发货、库存、退货和配送异常。</p></li><li><p style=\"min-height:1.5em\">保持物流和运营表格准确、及时更新。</p></li><li><p style=\"min-height:1.5em\">整理库存、未完成发货、延迟订单和运营问题等简单报表。</p></li><li><p style=\"min-height:1.5em\">跟进采购订单、入库发货、补货时间和仓库交接。</p></li><li><p style=\"min-height:1.5em\">支持库存对账、缺货跟踪和库存过高问题跟踪。</p></li><li><p style=\"min-height:1.5em\">记录重复性流程，让交接更清楚，减少错误。</p></li><li><p style=\"min-height:1.5em\">及时反馈延期、信息缺失、供应商问题和运营风险。</p></li></ul><h2><strong>任职要求</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">常驻深圳，能够与本地供应商、仓库、物流合作方和内部团队紧密协作。</p></li><li><p style=\"min-height:1.5em\">细心、可靠，有持续跟进和闭环意识。</p></li><li><p style=\"min-height:1.5em\">熟练使用表格和运营跟踪表。</p></li><li><p style=\"min-height:1.5em\">书面沟通清晰，能够主动跟进供应商或团队成员。</p></li><li><p style=\"min-height:1.5em\">能够长期处理重复性运营工作，并保持准确性。</p></li><li><p style=\"min-height:1.5em\">遇到订单、发货或库存问题时，有实际解决问题的意识。</p></li><li><p style=\"min-height:1.5em\">有条理，稳定可靠，希望寻找长期稳定的工作。</p></li><li><p style=\"min-height:1.5em\">能够在物流、库存、履约和行政运营任务之间灵活切换。</p></li></ul><h2><strong>加分项</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">有物流、电商运营、履约、库存、仓库协调或行政运营经验。</p></li><li><p style=\"min-height:1.5em\">使用过 Shopify、3PL 系统、承运商工具、Google Sheets、Airtable、ERP/WMS 或库存系统。</p></li><li><p style=\"min-height:1.5em\">熟悉采购订单、入库发货、退货、库存对账或供应商协调。</p></li><li><p style=\"min-height:1.5em\">具备中英文沟通能力。</p></li><li><p style=\"min-height:1.5em\">有与中国本地供应商、仓库或物流合作方协作的经验。</p></li></ul><p style=\"min-height:1.5em\">Italic is looking for a Logistics Coordinator in Shenzhen to support day-to-day logistics, inventory, fulfillment, and operations work. This role is for someone reliable, detail-oriented, and comfortable keeping shipments, inventory updates, vendor follow-ups, and internal trackers organized.</p><h2><strong>Responsibilities</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Track shipments, delivery status, inventory updates, and fulfillment issues.</p></li><li><p style=\"min-height:1.5em\">Coordinate with warehouses, 3PLs, carriers, suppliers, and internal team members.</p></li><li><p style=\"min-height:1.5em\">Help investigate order, shipment, stock, return, and delivery exceptions.</p></li><li><p style=\"min-height:1.5em\">Keep logistics and operations trackers accurate and up to date.</p></li><li><p style=\"min-height:1.5em\">Prepare simple reports on inventory, open shipments, delayed orders, and operational issues.</p></li><li><p style=\"min-height:1.5em\">Follow up on purchase orders, inbound shipments, replenishment timing, and warehouse handoffs.</p></li><li><p style=\"min-height:1.5em\">Support inventory reconciliation, stockout tracking, and overstock issue tracking.</p></li><li><p style=\"min-height:1.5em\">Document recurring workflows so handoffs are clearer and mistakes are reduced.</p></li><li><p style=\"min-height:1.5em\">Flag delays, missing information, vendor issues, and operational risks early.</p></li></ul><h2><strong>Requirements</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Based in Shenzhen and able to work closely with local suppliers, warehouses, logistics partners, and internal teams.</p></li><li><p style=\"min-height:1.5em\">Strong attention to detail and consistent follow-through.</p></li><li><p style=\"min-height:1.5em\">Comfortable using spreadsheets and operational trackers.</p></li><li><p style=\"min-height:1.5em\">Clear written communication and ability to follow up with vendors or teammates.</p></li><li><p style=\"min-height:1.5em\">Able to handle routine operational tasks without losing accuracy.</p></li><li><p style=\"min-height:1.5em\">Practical problem-solving mindset when orders, shipments, or inventory have issues.</p></li><li><p style=\"min-height:1.5em\">Organized, reliable, and looking for a stable long-term role.</p></li><li><p style=\"min-height:1.5em\">Comfortable working across logistics, inventory, fulfillment, and admin tasks.</p></li></ul><h2><strong>Helpful but not required</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Experience in logistics, ecommerce operations, fulfillment, inventory, warehouse coordination, or admin operations.</p></li><li><p style=\"min-height:1.5em\">Experience with Shopify, 3PL portals, carrier tools, Google Sheets, Airtable, ERP/WMS tools, or inventory systems.</p></li><li><p style=\"min-height:1.5em\">Familiarity with purchase orders, inbound shipments, returns, inventory reconciliation, or vendor coordination.</p></li><li><p style=\"min-height:1.5em\">Mandarin and English communication ability.</p></li><li><p style=\"min-height:1.5em\">Experience working with China-based suppliers, warehouses, or logistics partners.</p></li></ul>",
+    "descriptionPlain": "Italic 正在深圳招聘一名物流协调 / 运营助理，支持日常物流、库存、履约和运营工作。这个岗位适合可靠、细心、执行力强的人，能够把发货进度、库存更新、供应商跟进和内部表格管理得清楚有序。\n\n\n工作职责\n\n - 跟踪发货、配送状态、库存更新和履约问题。\n\n - 与仓库、3PL、承运商、供应商和内部团队沟通协调。\n\n - 协助排查订单、发货、库存、退货和配送异常。\n\n - 保持物流和运营表格准确、及时更新。\n\n - 整理库存、未完成发货、延迟订单和运营问题等简单报表。\n\n - 跟进采购订单、入库发货、补货时间和仓库交接。\n\n - 支持库存对账、缺货跟踪和库存过高问题跟踪。\n\n - 记录重复性流程，让交接更清楚，减少错误。\n\n - 及时反馈延期、信息缺失、供应商问题和运营风险。\n\n\n任职要求\n\n - 常驻深圳，能够与本地供应商、仓库、物流合作方和内部团队紧密协作。\n\n - 细心、可靠，有持续跟进和闭环意识。\n\n - 熟练使用表格和运营跟踪表。\n\n - 书面沟通清晰，能够主动跟进供应商或团队成员。\n\n - 能够长期处理重复性运营工作，并保持准确性。\n\n - 遇到订单、发货或库存问题时，有实际解决问题的意识。\n\n - 有条理，稳定可靠，希望寻找长期稳定的工作。\n\n - 能够在物流、库存、履约和行政运营任务之间灵活切换。\n\n\n加分项\n\n - 有物流、电商运营、履约、库存、仓库协调或行政运营经验。\n\n - 使用过 Shopify、3PL 系统、承运商工具、Google Sheets、Airtable、ERP/WMS 或库存系统。\n\n - 熟悉采购订单、入库发货、退货、库存对账或供应商协调。\n\n - 具备中英文沟通能力。\n\n - 有与中国本地供应商、仓库或物流合作方协作的经验。\n\nItalic is looking for a Logistics Coordinator in Shenzhen to support day-to-day logistics, inventory, fulfillment, and operations work. This role is for someone reliable, detail-oriented, and comfortable keeping shipments, inventory updates, vendor follow-ups, and internal trackers organized.\n\n\nRESPONSIBILITIES\n\n - Track shipments, delivery status, inventory updates, and fulfillment issues.\n\n - Coordinate with warehouses, 3PLs, carriers, suppliers, and internal team members.\n\n - Help investigate order, shipment, stock, return, and delivery exceptions.\n\n - Keep logistics and operations trackers accurate and up to date.\n\n - Prepare simple reports on inventory, open shipments, delayed orders, and operational issues.\n\n - Follow up on purchase orders, inbound shipments, replenishment timing, and warehouse handoffs.\n\n - Support inventory reconciliation, stockout tracking, and overstock issue tracking.\n\n - Document recurring workflows so handoffs are clearer and mistakes are reduced.\n\n - Flag delays, missing information, vendor issues, and operational risks early.\n\n\nREQUIREMENTS\n\n - Based in Shenzhen and able to work closely with local suppliers, warehouses, logistics partners, and internal teams.\n\n - Strong attention to detail and consistent follow-through.\n\n - Comfortable using spreadsheets and operational trackers.\n\n - Clear written communication and ability to follow up with vendors or teammates.\n\n - Able to handle routine operational tasks without losing accuracy.\n\n - Practical problem-solving mindset when orders, shipments, or inventory have issues.\n\n - Organized, reliable, and looking for a stable long-term role.\n\n - Comfortable working across logistics, inventory, fulfillment, and admin tasks.\n\n\nHELPFUL BUT NOT REQUIRED\n\n - Experience in logistics, ecommerce operations, fulfillment, inventory, warehouse coordination, or admin operations.\n\n - Experience with Shopify, 3PL portals, carrier tools, Google Sheets, Airtable, ERP/WMS tools, or inventory systems.\n\n - Familiarity with purchase orders, inbound shipments, returns, inventory reconciliation, or vendor coordination.\n\n - Mandarin and English communication ability.\n\n - Experience working with China-based suppliers, warehouses, or logistics partners."
+   },
+   {
+    "id": "de1e5f17-db31-4730-85e3-6923a5f8e057",
+    "title": "Freelance AI Artist - Image & Brand ",
+    "department": "Italic",
+    "team": "Italic",
+    "employmentType": "Contract",
+    "location": "Buenos Aires",
+    "secondaryLocations": [
+     {
+      "location": "Chile",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Santiago",
+        "addressCountry": "Chile",
+        "addressLocality": "Santiago"
+       }
+      }
+     },
+     {
+      "location": "Turkey",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Istanbul",
+        "addressCountry": "Turkey",
+        "addressLocality": "Istanbul"
+       }
+      }
+     },
+     {
+      "location": "Mexico City",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Mexico City",
+        "addressCountry": "Mexico",
+        "addressLocality": "Mexico City"
+       }
+      }
+     }
+    ],
+    "publishedAt": "2025-11-13T19:03:49.169+00:00",
+    "isListed": true,
+    "isRemote": true,
+    "workplaceType": "Remote",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Buenos Aires",
+      "addressCountry": "Argentina",
+      "addressLocality": "Buenos Aires"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/de1e5f17-db31-4730-85e3-6923a5f8e057",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/de1e5f17-db31-4730-85e3-6923a5f8e057/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\"><strong>We’re looking for someone who lives and breathes AI image and video gen</strong></p><p style=\"min-height:1.5em\">You should know the current image/video gen landscape cold, understand how to coax specific looks out of different systems, and be able to turn loose ideas into production-quality images and videos fast. You’ll work closely with our marketing and product teams to shape the visual identity of the brand using cutting-edge AI tools.</p><p style=\"min-height:1.5em\">If you enjoy rapid experimentation, pushing new models to their limits, and building repeatable pipelines that deliver consistent, high-quality output, you’ll fit perfectly.</p><p style=\"min-height:1.5em\"><strong>Requirements</strong></p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Deep experience with modern image and video models (Kling, Nano Banana, Seedream, Hailuo, Sora 2, etc)</p></li><li><p style=\"min-height:1.5em\">Strong familiarity with inference providers (Fal, Replicate, Krea, Florafauna, Weavy, etc) and their capabilities</p></li><li><p style=\"min-height:1.5em\">Ability to design and refine prompts, workflows, and pipelines to achieve specific visual styles through LoRAs and other methods</p></li><li><p style=\"min-height:1.5em\">Proven ability to deliver polished, on-brand assets quickly without heavy direction</p></li><li><p style=\"min-height:1.5em\">Strong sense of visual identity, composition, and storytelling</p></li></ul><p style=\"min-height:1.5em\"><strong>Helpful but not required</strong></p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Technical / software engineering background</p></li><li><p style=\"min-height:1.5em\">Fluency with ComfyUI (self-hosted or Runpod/etc) </p></li><li><p style=\"min-height:1.5em\">Prompting with json is a plus</p></li></ul><p style=\"min-height:1.5em\"><strong>Responsibilities</strong></p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Produce high-quality photos and videos for ads, website, social, and product needs</p></li><li><p style=\"min-height:1.5em\">Continuously test new models and workflows and apply improvements to our creative pipelines</p></li><li><p style=\"min-height:1.5em\">Maintain consistency and quality across all AI-generated assets</p></li><li><p style=\"min-height:1.5em\">Collaborate with marketing to align creative output with performance goals and brand direction</p></li><li><p style=\"min-height:1.5em\">Organize and deliver production-ready files in clean, reusable formats</p></li></ul><p style=\"min-height:1.5em\"></p>",
+    "descriptionPlain": "We’re looking for someone who lives and breathes AI image and video gen\n\nYou should know the current image/video gen landscape cold, understand how to coax specific looks out of different systems, and be able to turn loose ideas into production-quality images and videos fast. You’ll work closely with our marketing and product teams to shape the visual identity of the brand using cutting-edge AI tools.\n\nIf you enjoy rapid experimentation, pushing new models to their limits, and building repeatable pipelines that deliver consistent, high-quality output, you’ll fit perfectly.\n\nRequirements\n\n - Deep experience with modern image and video models (Kling, Nano Banana, Seedream, Hailuo, Sora 2, etc)\n\n - Strong familiarity with inference providers (Fal, Replicate, Krea, Florafauna, Weavy, etc) and their capabilities\n\n - Ability to design and refine prompts, workflows, and pipelines to achieve specific visual styles through LoRAs and other methods\n\n - Proven ability to deliver polished, on-brand assets quickly without heavy direction\n\n - Strong sense of visual identity, composition, and storytelling\n\nHelpful but not required\n\n - Technical / software engineering background\n\n - Fluency with ComfyUI (self-hosted or Runpod/etc) \n\n - Prompting with json is a plus\n\nResponsibilities\n\n - Produce high-quality photos and videos for ads, website, social, and product needs\n\n - Continuously test new models and workflows and apply improvements to our creative pipelines\n\n - Maintain consistency and quality across all AI-generated assets\n\n - Collaborate with marketing to align creative output with performance goals and brand direction\n\n - Organize and deliver production-ready files in clean, reusable formats\n\n"
+   },
+   {
+    "id": "f3ee27f7-aa1c-4645-b367-62c5c6c7b664",
+    "title": "VC Intern 风险投资实习生",
+    "department": "Kirin",
+    "team": "Kirin",
+    "employmentType": "Intern",
+    "location": "Shenzhen",
+    "secondaryLocations": [
+     {
+      "location": "Hong Kong",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Hong Kong",
+        "addressCountry": "Hong Kong",
+        "addressLocality": "Hong Kong"
+       }
+      }
+     }
+    ],
+    "publishedAt": "2025-12-27T19:36:19.667+00:00",
+    "isListed": true,
+    "isRemote": true,
+    "workplaceType": "Hybrid",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Guangdong",
+      "addressCountry": "China",
+      "addressLocality": "Shenzhen"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/f3ee27f7-aa1c-4645-b367-62c5c6c7b664",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/f3ee27f7-aa1c-4645-b367-62c5c6c7b664/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">You will focus on sourcing and evaluating China-based and cross-border startups building for global markets. This is a hands-on role centered on founder outreach, first calls, and early investment judgment.</p><p style=\"min-height:1.5em\"><strong>Responsibilities</strong></p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Source early-stage startups in China and Greater China with global or cross-border ambitions</p></li><li><p style=\"min-height:1.5em\">Proactively reach out to founders via WeChat, email, LinkedIn, and warm intros</p></li><li><p style=\"min-height:1.5em\">Own first-touch founder conversations and run intro calls independently</p></li><li><p style=\"min-height:1.5em\">Screen companies on market size, global relevance, product quality, traction, and team</p></li><li><p style=\"min-height:1.5em\">Support deal evaluation through research, comparable analysis, and short investment memos</p></li><li><p style=\"min-height:1.5em\">Track pipeline, notes, and follow-ups in a structured and reliable way</p></li></ul><p style=\"min-height:1.5em\"><strong>Requirements</strong></p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Based in Shenzhen with deep familiarity with the China startup ecosystem</p></li><li><p style=\"min-height:1.5em\">Fluent Mandarin and strong English. Able to evaluate companies targeting global markets</p></li><li><p style=\"min-height:1.5em\">Comfortable talking to founders and asking direct, thoughtful questions</p></li><li><p style=\"min-height:1.5em\">Strong judgment, high curiosity, and bias for action</p></li><li><p style=\"min-height:1.5em\">Able to form an independent view and clearly explain why a deal is interesting or not</p></li></ul><p style=\"min-height:1.5em\"><strong>Nice to have</strong></p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Experience with cross-border business, overseas expansion, or global GTM</p></li><li><p style=\"min-height:1.5em\">Background in startups, venture, PE, IB, consulting, or strategy</p></li><li><p style=\"min-height:1.5em\">Existing network among Chinese founders building for the US, Europe, or SEA</p></li></ul><p style=\"min-height:1.5em\"></p><h2><strong>风险投资实习生</strong></h2><p style=\"min-height:1.5em\">你将专注于发掘和评估中国及跨境创业公司，尤其是面向海外和全球市场的项目。本岗位以创始人外联、一线沟通和早期投资判断为核心，偏执行、强实战。</p><p style=\"min-height:1.5em\"><strong>职责</strong></p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">主动挖掘中国及大中华区的早期创业公司，重点关注跨境或全球化方向</p></li><li><p style=\"min-height:1.5em\">通过微信、邮件、LinkedIn、活动及熟人介绍等方式与创始人建立联系</p></li><li><p style=\"min-height:1.5em\">独立完成与创始人的首次沟通和电话会议，并输出清晰的会议纪要</p></li><li><p style=\"min-height:1.5em\">从市场空间、产品、商业模式、增长情况和团队等维度进行初步筛选</p></li><li><p style=\"min-height:1.5em\">支持项目尽调，包括行业研究、可比公司分析和简要投资备忘录撰写</p></li><li><p style=\"min-height:1.5em\">维护和更新项目管道，确保信息结构化、可追踪</p></li></ul><p style=\"min-height:1.5em\"><strong>要求</strong></p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">常驻深圳，熟悉中国创业和科技生态</p></li><li><p style=\"min-height:1.5em\">普通话流利，英文能力强，能评估面向海外市场的公司</p></li><li><p style=\"min-height:1.5em\">善于与创始人沟通，敢问关键问题，不回避难点</p></li><li><p style=\"min-height:1.5em\">具备强执行力和主人翁意识，能主动推进事情</p></li><li><p style=\"min-height:1.5em\">有独立判断能力，能清楚表达为什么看好或不看好一个项目</p></li></ul><p style=\"min-height:1.5em\"><strong>加分项</strong></p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">有跨境业务、出海或海外市场相关经验</p></li><li><p style=\"min-height:1.5em\">有创业公司、VC、PE、投行或咨询背景</p></li><li><p style=\"min-height:1.5em\">在中国出海或全球化创业者中有一定人脉</p></li></ul><p style=\"min-height:1.5em\">这个岗位非常适合希望深入了解“中国走向全球”的早期投资逻辑，并真正参与项目筛选和判断的人。</p>",
+    "descriptionPlain": "You will focus on sourcing and evaluating China-based and cross-border startups building for global markets. This is a hands-on role centered on founder outreach, first calls, and early investment judgment.\n\nResponsibilities\n\n - Source early-stage startups in China and Greater China with global or cross-border ambitions\n\n - Proactively reach out to founders via WeChat, email, LinkedIn, and warm intros\n\n - Own first-touch founder conversations and run intro calls independently\n\n - Screen companies on market size, global relevance, product quality, traction, and team\n\n - Support deal evaluation through research, comparable analysis, and short investment memos\n\n - Track pipeline, notes, and follow-ups in a structured and reliable way\n\nRequirements\n\n - Based in Shenzhen with deep familiarity with the China startup ecosystem\n\n - Fluent Mandarin and strong English. Able to evaluate companies targeting global markets\n\n - Comfortable talking to founders and asking direct, thoughtful questions\n\n - Strong judgment, high curiosity, and bias for action\n\n - Able to form an independent view and clearly explain why a deal is interesting or not\n\nNice to have\n\n - Experience with cross-border business, overseas expansion, or global GTM\n\n - Background in startups, venture, PE, IB, consulting, or strategy\n\n - Existing network among Chinese founders building for the US, Europe, or SEA\n\n\n\n\n风险投资实习生\n\n你将专注于发掘和评估中国及跨境创业公司，尤其是面向海外和全球市场的项目。本岗位以创始人外联、一线沟通和早期投资判断为核心，偏执行、强实战。\n\n职责\n\n - 主动挖掘中国及大中华区的早期创业公司，重点关注跨境或全球化方向\n\n - 通过微信、邮件、LinkedIn、活动及熟人介绍等方式与创始人建立联系\n\n - 独立完成与创始人的首次沟通和电话会议，并输出清晰的会议纪要\n\n - 从市场空间、产品、商业模式、增长情况和团队等维度进行初步筛选\n\n - 支持项目尽调，包括行业研究、可比公司分析和简要投资备忘录撰写\n\n - 维护和更新项目管道，确保信息结构化、可追踪\n\n要求\n\n - 常驻深圳，熟悉中国创业和科技生态\n\n - 普通话流利，英文能力强，能评估面向海外市场的公司\n\n - 善于与创始人沟通，敢问关键问题，不回避难点\n\n - 具备强执行力和主人翁意识，能主动推进事情\n\n - 有独立判断能力，能清楚表达为什么看好或不看好一个项目\n\n加分项\n\n - 有跨境业务、出海或海外市场相关经验\n\n - 有创业公司、VC、PE、投行或咨询背景\n\n - 在中国出海或全球化创业者中有一定人脉\n\n这个岗位非常适合希望深入了解“中国走向全球”的早期投资逻辑，并真正参与项目筛选和判断的人。"
+   },
+   {
+    "id": "b4042a28-1a7f-48a5-8ffa-24008ae1c27e",
+    "title": "Freelance Industrial Designer ",
+    "department": "Sudo",
+    "team": "Sudo",
+    "employmentType": "PartTime",
+    "location": "Seoul",
+    "secondaryLocations": [
+     {
+      "location": "Shenzhen",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Guangdong",
+        "addressCountry": "China",
+        "addressLocality": "Shenzhen"
+       }
+      }
+     },
+     {
+      "location": "Hong Kong",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Hong Kong",
+        "addressCountry": "Hong Kong",
+        "addressLocality": "Hong Kong"
+       }
+      }
+     },
+     {
+      "location": "Shanghai",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Zhejiang",
+        "addressCountry": "China",
+        "addressLocality": "Shanghai"
+       }
+      }
+     }
+    ],
+    "publishedAt": "2026-02-09T09:44:17.803+00:00",
+    "isListed": true,
+    "isRemote": true,
+    "workplaceType": "Remote",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Seoul",
+      "addressCountry": "South Korea",
+      "addressLocality": "Seoul"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/b4042a28-1a7f-48a5-8ffa-24008ae1c27e",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/b4042a28-1a7f-48a5-8ffa-24008ae1c27e/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">We are a startup building AI agents and consumer devices. Users prompt agents to take actions across their tools, and use our custom devices to capture intent on the go. We are a small team based in Shenzhen and New York and our founder previously started a unicorn company in Silicon Valley.</p><p style=\"min-height:1.5em\">We are looking for a freelance industrial designer working on the physical design of consumer hardware products.</p><p style=\"min-height:1.5em\"></p><h3>Responsibilities</h3><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Design the physical form and details of consumer hardware (primarily the smart ring)</p></li><li><p style=\"min-height:1.5em\">Work closely with engineers to balance aesthetics, structure, and manufacturability</p></li><li><p style=\"min-height:1.5em\">Iterate quickly and deliver production-ready outputs (CAD, renders, CMF)</p></li><li><p style=\"min-height:1.5em\">Support factory communication when needed</p></li></ul><h3>Requirements</h3><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Background in industrial design or related field</p></li><li><p style=\"min-height:1.5em\">Experience designing consumer electronics or small hardware</p></li><li><p style=\"min-height:1.5em\">Understanding of materials and basic manufacturing processes</p></li><li><p style=\"min-height:1.5em\">Able to work independently and move quickly</p></li></ul><p style=\"min-height:1.5em\"></p><p style=\"min-height:1.5em\"></p><p style=\"min-height:1.5em\">我们是一家构建 AI 智能体和消费级硬件设备的创业公司。用户可以通过提示让智能体在各类工具中执行任务，并通过我们的自研设备在移动中随时捕捉和输入意图。我们是一支位于深圳和纽约的小团队，创始人曾在硅谷创办过独角兽公司。</p><p style=\"min-height:1.5em\">我们正在寻找一位自由职业工业设计师，负责消费电子产品的外观设计。</p><h3>工作职责</h3><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">负责消费级硬件产品的外观与细节设计（主要为智能戒指）</p></li><li><p style=\"min-height:1.5em\">与工程团队紧密协作，平衡美观、结构与可制造性</p></li><li><p style=\"min-height:1.5em\">快速迭代设计并输出可量产的成果（CAD、渲染、CMF）</p></li><li><p style=\"min-height:1.5em\">在需要时支持与工厂的沟通与设计验证</p></li></ul><h3>任职要求</h3><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">工业设计或相关专业背景</p></li><li><p style=\"min-height:1.5em\">有消费电子或小型硬件产品设计经验</p></li><li><p style=\"min-height:1.5em\">理解材料特性及基础制造工艺</p></li><li><p style=\"min-height:1.5em\">能够独立工作并快速推进设计迭代</p></li></ul>",
+    "descriptionPlain": "We are a startup building AI agents and consumer devices. Users prompt agents to take actions across their tools, and use our custom devices to capture intent on the go. We are a small team based in Shenzhen and New York and our founder previously started a unicorn company in Silicon Valley.\n\nWe are looking for a freelance industrial designer working on the physical design of consumer hardware products.\n\n\n\n\nRESPONSIBILITIES\n\n - Design the physical form and details of consumer hardware (primarily the smart ring)\n\n - Work closely with engineers to balance aesthetics, structure, and manufacturability\n\n - Iterate quickly and deliver production-ready outputs (CAD, renders, CMF)\n\n - Support factory communication when needed\n\n\nREQUIREMENTS\n\n - Background in industrial design or related field\n\n - Experience designing consumer electronics or small hardware\n\n - Understanding of materials and basic manufacturing processes\n\n - Able to work independently and move quickly\n\n\n\n\n\n我们是一家构建 AI 智能体和消费级硬件设备的创业公司。用户可以通过提示让智能体在各类工具中执行任务，并通过我们的自研设备在移动中随时捕捉和输入意图。我们是一支位于深圳和纽约的小团队，创始人曾在硅谷创办过独角兽公司。\n\n我们正在寻找一位自由职业工业设计师，负责消费电子产品的外观设计。\n\n\n工作职责\n\n - 负责消费级硬件产品的外观与细节设计（主要为智能戒指）\n\n - 与工程团队紧密协作，平衡美观、结构与可制造性\n\n - 快速迭代设计并输出可量产的成果（CAD、渲染、CMF）\n\n - 在需要时支持与工厂的沟通与设计验证\n\n\n任职要求\n\n - 工业设计或相关专业背景\n\n - 有消费电子或小型硬件产品设计经验\n\n - 理解材料特性及基础制造工艺\n\n - 能够独立工作并快速推进设计迭代"
+   },
+   {
+    "id": "81d15b14-fdea-41ea-b10e-245b61e0b75a",
+    "title": "Email Marketing Manager",
+    "department": "Italic",
+    "team": "Italic",
+    "employmentType": "FullTime",
+    "location": "Shenzhen",
+    "secondaryLocations": [
+     {
+      "location": "Buenos Aires",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "Argentina",
+        "addressLocality": "Buenos Aires"
+       }
+      }
+     },
+     {
+      "location": "Colombia - Bogota",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Bogota",
+        "addressCountry": "Colombia",
+        "addressLocality": "Bogota"
+       }
+      }
+     }
+    ],
+    "publishedAt": "2026-03-25T17:49:04.384+00:00",
+    "isListed": true,
+    "isRemote": true,
+    "workplaceType": "Remote",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Guangdong",
+      "addressCountry": "China",
+      "addressLocality": "Shenzhen"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/81d15b14-fdea-41ea-b10e-245b61e0b75a",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/81d15b14-fdea-41ea-b10e-245b61e0b75a/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">We are looking for a data-driven, creative, and highly technical <strong>Lifecycle Manager</strong> to own our customer retention strategy. Your primary playground will be <strong>Klaviyo</strong>, and your North Star metric will be <strong>Customer Lifetime Value (LTV)</strong>.</p><p style=\"min-height:1.5em\">This isn't a role for a generalist—we need someone who has lived and breathed e-commerce, understands the nuances of a high-growth brand, and knows how to turn a one-time buyer into a lifelong advocate.</p><h3><strong>What You’ll Do</strong></h3><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\"><strong>Klaviyo Mastery:</strong> Own the full execution of our email and SMS strategy. This includes sophisticated segmentation, high-converting automated flows (Welcome, Abandoned Cart, Post-Purchase, Win-back), and a high-frequency campaign calendar.</p></li><li><p style=\"min-height:1.5em\"><strong>LTV Optimization:</strong> Analyze customer cohorts to identify churn points and opportunities for upsells or cross-sells. You will be responsible for moving the needle on repeat purchase rates and average order value (AOV).</p></li><li><p style=\"min-height:1.5em\"><strong>A/B Testing &amp; Optimization:</strong> Maintain a rigorous testing roadmap. You’ll constantly experiment with subject lines, send times, content blocks, and incentive structures to squeeze every ounce of ROI out of our list.</p></li><li><p style=\"min-height:1.5em\"><strong>Personalization &amp; Segmentation:</strong> Move beyond \"batch and blast.\" Use predictive analytics and behavioral data to deliver the right message to the right person at the right time.</p></li><li><p style=\"min-height:1.5em\"><strong>Collaboration:</strong> Work closely with the Creative team to ensure every touchpoint is on-brand and high-converting, and with the Product team to align lifecycle triggers with the on-site experience.</p></li><li><p style=\"min-height:1.5em\"><strong>Reporting:</strong> Deliver weekly and monthly reports on channel performance, attribution, and health of the subscriber base.</p></li></ul><h3><strong>Who You Are</strong></h3><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\"><strong>E-comm Native:</strong> You have <strong>3+ years of experience</strong> working in-house for a direct-to-consumer (DTC) or e-commerce brand. You understand the unique challenges of inventory cycles, seasonal peaks, and customer psychology.</p></li><li><p style=\"min-height:1.5em\"><strong>Klaviyo Expert:</strong> You don't just \"know\" Klaviyo; you’re a power user. You understand custom properties, event-based triggers, and how to integrate Klaviyo with the rest of our tech stack (Shopify, Gorgias, etc.).</p></li><li><p style=\"min-height:1.5em\"><strong>Analytical Mindset:</strong> You are comfortable in a spreadsheet. You can calculate LTV, Paybakc period, etc in your sleep and use data to tell a story.</p></li><li><p style=\"min-height:1.5em\"><strong>Copy &amp; Creative Eye:</strong> While you don't need to be a designer, you know what \"good\" looks like. You can write punchy, brand-aligned copy that drives action.</p></li><li><p style=\"min-height:1.5em\"><strong>Self-Starter:</strong> You are comfortable in a fast-paced environment where you own your results. You don't wait for a brief; you find the opportunity and build the solution.</p></li></ul><h3><strong>Requirements</strong></h3><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Proven track record of increasing Retention/LTV at a growth-stage e-commerce brand.</p></li><li><p style=\"min-height:1.5em\">Deep technical proficiency in <strong>Klaviyo</strong> (Certification is a plus).</p></li><li><p style=\"min-height:1.5em\">Experience with <strong>Shopify</strong></p></li><li><p style=\"min-height:1.5em\">Familiarity with SMS marketing platforms (Attentive, Postscript, or Klaviyo SMS).</p></li><li><p style=\"min-height:1.5em\">Strong understanding of deliverability, list hygiene, and GDPR/CCPA compliance.</p></li></ul>",
+    "descriptionPlain": "We are looking for a data-driven, creative, and highly technical Lifecycle Manager to own our customer retention strategy. Your primary playground will be Klaviyo, and your North Star metric will be Customer Lifetime Value (LTV).\n\nThis isn't a role for a generalist—we need someone who has lived and breathed e-commerce, understands the nuances of a high-growth brand, and knows how to turn a one-time buyer into a lifelong advocate.\n\n\nWHAT YOU’LL DO\n\n - Klaviyo Mastery: Own the full execution of our email and SMS strategy. This includes sophisticated segmentation, high-converting automated flows (Welcome, Abandoned Cart, Post-Purchase, Win-back), and a high-frequency campaign calendar.\n\n - LTV Optimization: Analyze customer cohorts to identify churn points and opportunities for upsells or cross-sells. You will be responsible for moving the needle on repeat purchase rates and average order value (AOV).\n\n - A/B Testing & Optimization: Maintain a rigorous testing roadmap. You’ll constantly experiment with subject lines, send times, content blocks, and incentive structures to squeeze every ounce of ROI out of our list.\n\n - Personalization & Segmentation: Move beyond \"batch and blast.\" Use predictive analytics and behavioral data to deliver the right message to the right person at the right time.\n\n - Collaboration: Work closely with the Creative team to ensure every touchpoint is on-brand and high-converting, and with the Product team to align lifecycle triggers with the on-site experience.\n\n - Reporting: Deliver weekly and monthly reports on channel performance, attribution, and health of the subscriber base.\n\n\nWHO YOU ARE\n\n - E-comm Native: You have 3+ years of experience working in-house for a direct-to-consumer (DTC) or e-commerce brand. You understand the unique challenges of inventory cycles, seasonal peaks, and customer psychology.\n\n - Klaviyo Expert: You don't just \"know\" Klaviyo; you’re a power user. You understand custom properties, event-based triggers, and how to integrate Klaviyo with the rest of our tech stack (Shopify, Gorgias, etc.).\n\n - Analytical Mindset: You are comfortable in a spreadsheet. You can calculate LTV, Paybakc period, etc in your sleep and use data to tell a story.\n\n - Copy & Creative Eye: While you don't need to be a designer, you know what \"good\" looks like. You can write punchy, brand-aligned copy that drives action.\n\n - Self-Starter: You are comfortable in a fast-paced environment where you own your results. You don't wait for a brief; you find the opportunity and build the solution.\n\n\nREQUIREMENTS\n\n - Proven track record of increasing Retention/LTV at a growth-stage e-commerce brand.\n\n - Deep technical proficiency in Klaviyo (Certification is a plus).\n\n - Experience with Shopify\n\n - Familiarity with SMS marketing platforms (Attentive, Postscript, or Klaviyo SMS).\n\n - Strong understanding of deliverability, list hygiene, and GDPR/CCPA compliance."
+   },
+   {
+    "id": "4777b966-628c-4d35-a71c-711bdb2ffd56",
+    "title": "Personal Assistant - NYC",
+    "department": "Family",
+    "team": "Family",
+    "employmentType": "PartTime",
+    "location": "New York City",
+    "secondaryLocations": [],
+    "publishedAt": "2026-06-06T03:56:17.757+00:00",
+    "isListed": true,
+    "isRemote": false,
+    "workplaceType": "OnSite",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "New York",
+      "addressCountry": "United States",
+      "addressLocality": "New York City"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/4777b966-628c-4d35-a71c-711bdb2ffd56",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/4777b966-628c-4d35-a71c-711bdb2ffd56/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">We are looking for a reliable, organized Personal Assistant in New York City to help a couple based in the West Village with day-to-day logistics, errands, scheduling, and personal coordination. The couple works from home most days, and this role is needed a few days per week rather than full time.</p><p style=\"min-height:1.5em\">There are no children in the household; this is a practical support role for someone who is detail-oriented, responsive, discreet, and comfortable handling a mix of in-person errands and light administrative coordination.</p><p style=\"min-height:1.5em\">You should be comfortable working around a private household, coordinating with both people clearly, and keeping small tasks from becoming distractions. The right person has good judgment, protects privacy, follows through without needing constant reminders, and can keep a running list of open items moving.</p><p style=\"min-height:1.5em\"></p><h2><strong>Responsibilities</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Help a couple with personal scheduling, reminders, appointments, reservations, and follow-ups</p></li><li><p style=\"min-height:1.5em\">Run errands and coordinate local logistics around the West Village and greater New York City a few days per week</p></li><li><p style=\"min-height:1.5em\">Help with purchases, returns, deliveries, household supplies, and simple personal admin</p></li><li><p style=\"min-height:1.5em\">Coordinate with building staff, vendors, service providers, cleaners, repair people, and external contacts</p></li><li><p style=\"min-height:1.5em\">Track open tasks, confirm details, and make sure loose ends are closed</p></li><li><p style=\"min-height:1.5em\">Prepare simple notes, lists, summaries, and updates when needed</p></li><li><p style=\"min-height:1.5em\">Handle personal information, home access, and scheduling details with discretion and care</p></li></ul><h2><strong>Requirements</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Based in or near New York City and able to handle regular in-person tasks in the West Village</p></li><li><p style=\"min-height:1.5em\">Available a few days per week for errands, household coordination, and light admin support</p></li><li><p style=\"min-height:1.5em\">Comfortable supporting a couple who works from home most days</p></li><li><p style=\"min-height:1.5em\">Highly organized, responsive, punctual, and consistent with follow-through</p></li><li><p style=\"min-height:1.5em\">Good written communication and clear, concise updates</p></li><li><p style=\"min-height:1.5em\">Strong judgment, discretion, and respect for privacy</p></li><li><p style=\"min-height:1.5em\">Comfortable using common tools like email, calendar, messaging apps, spreadsheets, and task lists</p></li></ul><h2><strong>Helpful but not required</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Experience as a personal assistant, household assistant, family assistant, executive assistant, operations assistant, or similar support role</p></li><li><p style=\"min-height:1.5em\">Familiarity with West Village or downtown Manhattan errands, vendors, transportation, and service providers</p></li><li><p style=\"min-height:1.5em\">Comfort helping with light household operations, travel coordination, or event logistics</p></li></ul>",
+    "descriptionPlain": "We are looking for a reliable, organized Personal Assistant in New York City to help a couple based in the West Village with day-to-day logistics, errands, scheduling, and personal coordination. The couple works from home most days, and this role is needed a few days per week rather than full time.\n\nThere are no children in the household; this is a practical support role for someone who is detail-oriented, responsive, discreet, and comfortable handling a mix of in-person errands and light administrative coordination.\n\nYou should be comfortable working around a private household, coordinating with both people clearly, and keeping small tasks from becoming distractions. The right person has good judgment, protects privacy, follows through without needing constant reminders, and can keep a running list of open items moving.\n\n\n\n\nRESPONSIBILITIES\n\n - Help a couple with personal scheduling, reminders, appointments, reservations, and follow-ups\n\n - Run errands and coordinate local logistics around the West Village and greater New York City a few days per week\n\n - Help with purchases, returns, deliveries, household supplies, and simple personal admin\n\n - Coordinate with building staff, vendors, service providers, cleaners, repair people, and external contacts\n\n - Track open tasks, confirm details, and make sure loose ends are closed\n\n - Prepare simple notes, lists, summaries, and updates when needed\n\n - Handle personal information, home access, and scheduling details with discretion and care\n\n\nREQUIREMENTS\n\n - Based in or near New York City and able to handle regular in-person tasks in the West Village\n\n - Available a few days per week for errands, household coordination, and light admin support\n\n - Comfortable supporting a couple who works from home most days\n\n - Highly organized, responsive, punctual, and consistent with follow-through\n\n - Good written communication and clear, concise updates\n\n - Strong judgment, discretion, and respect for privacy\n\n - Comfortable using common tools like email, calendar, messaging apps, spreadsheets, and task lists\n\n\nHELPFUL BUT NOT REQUIRED\n\n - Experience as a personal assistant, household assistant, family assistant, executive assistant, operations assistant, or similar support role\n\n - Familiarity with West Village or downtown Manhattan errands, vendors, transportation, and service providers\n\n - Comfort helping with light household operations, travel coordination, or event logistics"
+   },
+   {
+    "id": "bc6b48a6-b061-4462-a173-1410326d99df",
+    "title": "硬件采购经理 Hardware Sourcing Manager",
+    "department": "Sudo",
+    "team": "Sudo",
+    "employmentType": "FullTime",
+    "location": "Shenzhen",
+    "secondaryLocations": [
+     {
+      "location": "Guangzhou",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Guangdong",
+        "addressCountry": "China",
+        "addressLocality": "Guangzhou"
+       }
+      }
+     }
+    ],
+    "publishedAt": "2026-07-12T23:07:26.985+00:00",
+    "isListed": true,
+    "isRemote": false,
+    "workplaceType": "OnSite",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Guangdong",
+      "addressCountry": "China",
+      "addressLocality": "Shenzhen"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/bc6b48a6-b061-4462-a173-1410326d99df",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/bc6b48a6-b061-4462-a173-1410326d99df/application",
+    "descriptionHtml": "<h2>职位概述</h2><p style=\"min-height:1.5em\">我们是一家在深圳和纽约运营的初创公司，正在打造 AI 智能体和消费级硬件设备。用户可以通过智能体在不同工具中执行操作，我们也在开发能够随时捕捉用户意图的定制设备。团队规模精简，创始人曾创办一家硅谷独角兽公司。</p><p style=\"min-height:1.5em\">我们正在寻找一位硬件采购经理，负责为多个客户项目寻找、评估并协调大湾区的硬件工厂、设备供应商和制造合作伙伴。你将经常前往深圳、东莞、广州、珠海、佛山及周边产业带，把客户需求推进为可执行的打样、生产和交付计划。</p><h2>工作内容</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">走访硬件工厂、组装厂、模具厂、电子元器件供应商和设备供应商。</p></li><li><p style=\"min-height:1.5em\">根据不同客户的产品需求、预算、质量标准和时间表筛选供应商。</p></li><li><p style=\"min-height:1.5em\">收集报价、规格、认证、产能、起订量、交期和付款条件，整理中英文对比和建议。</p></li><li><p style=\"min-height:1.5em\">协调 NDA、RFQ、打样、工程验证、工厂审核、试产、量产、质量检查、包装和物流。</p></li><li><p style=\"min-height:1.5em\">现场检查样品、生产线和关键工艺，拍摄照片和视频，并及时汇报。</p></li><li><p style=\"min-height:1.5em\">同时推进多个客户项目，跟踪风险、决策、截止时间和下一步行动。</p></li><li><p style=\"min-height:1.5em\">与客户、工程师、工业设计师、工厂负责人和物流合作伙伴保持清晰沟通。</p></li></ul><h2>任职要求</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">常驻深圳或大湾区，能够频繁前往深圳、东莞、广州、珠海、佛山及周边工厂。</p></li><li><p style=\"min-height:1.5em\">有消费电子、智能硬件、IoT、可穿戴设备、电子元器件、模具或组装采购经验。</p></li><li><p style=\"min-height:1.5em\">能够独立完成供应商搜寻、询价、谈判、工厂走访、样品跟进和项目协调。</p></li><li><p style=\"min-height:1.5em\">理解打样、BOM、DFM、EVT、DVT、PVT 等硬件开发和制造流程。</p></li><li><p style=\"min-height:1.5em\">中文沟通能力强，并能使用英文进行客户更新、书面总结和会议沟通。</p></li><li><p style=\"min-height:1.5em\">做事有条理、反应快，能够同时管理多个客户项目。</p></li></ul><h2>加分项</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">在大湾区拥有成熟的硬件工厂、电子市场、模具、SMT、组装或设备供应商网络。</p></li><li><p style=\"min-height:1.5em\">有从概念、样品到量产和交付的完整项目经验。</p></li><li><p style=\"min-height:1.5em\">熟悉质量体系、工厂审核、产品认证、进出口或跨境物流。</p></li></ul><h2>申请说明</h2><p style=\"min-height:1.5em\">请说明你做过的硬件或设备采购项目、你熟悉的工厂和产业带、你能够覆盖的大湾区城市，以及你如何同时协调多个客户项目。如有相关项目案例，请附上链接。</p><h2>Role Overview</h2><p style=\"min-height:1.5em\">We are a startup building AI agents and consumer devices. Users prompt agents to take actions across their tools, while our custom devices capture intent on the go. We are a small team in Shenzhen and New York, and our founder previously started a Silicon Valley unicorn.</p><p style=\"min-height:1.5em\">We are looking for a Hardware Sourcing Manager to identify, evaluate, and coordinate hardware factories, device suppliers, and manufacturing partners for projects across multiple clients. You will travel frequently throughout the Greater Bay Area, including Shenzhen, Dongguan, Guangzhou, Zhuhai, Foshan, and nearby manufacturing hubs.</p><h2>Responsibilities</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Visit hardware factories, assembly plants, tooling shops, component suppliers, and equipment vendors.</p></li><li><p style=\"min-height:1.5em\">Source suppliers against each client's product requirements, budget, quality bar, and timeline.</p></li><li><p style=\"min-height:1.5em\">Collect quotes, specifications, certifications, capacity, MOQs, lead times, and payment terms, then produce clear comparisons in English and Chinese.</p></li><li><p style=\"min-height:1.5em\">Coordinate NDAs, RFQs, prototypes, engineering validation, factory audits, pilot runs, mass production, quality inspections, packaging, and logistics.</p></li><li><p style=\"min-height:1.5em\">Inspect samples and production lines in person and document findings with organized photos, videos, and written updates.</p></li><li><p style=\"min-height:1.5em\">Run several client projects in parallel and track owners, risks, decisions, deadlines, and next actions.</p></li><li><p style=\"min-height:1.5em\">Communicate clearly with clients, engineers, industrial designers, factory managers, and logistics partners.</p></li></ul><h2>Requirements</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Based in Shenzhen or the Greater Bay Area and able to travel frequently across Shenzhen, Dongguan, Guangzhou, Zhuhai, Foshan, and nearby cities.</p></li><li><p style=\"min-height:1.5em\">Hands-on sourcing experience in consumer electronics, smart hardware, IoT, wearables, components, tooling, or assembly.</p></li><li><p style=\"min-height:1.5em\">Able to independently source vendors, run RFQs, negotiate terms, conduct factory visits, and coordinate projects.</p></li><li><p style=\"min-height:1.5em\">Working knowledge of prototyping, BOMs, DFM, EVT, DVT, and PVT.</p></li><li><p style=\"min-height:1.5em\">Strong Chinese and working English for client updates, written summaries, and meetings.</p></li><li><p style=\"min-height:1.5em\">Organized, responsive, and comfortable managing multiple clients and changing priorities.</p></li></ul><h2>Helpful but not required</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">An existing network of hardware factories, electronics markets, tooling, SMT, assembly, or equipment suppliers in the Greater Bay Area.</p></li><li><p style=\"min-height:1.5em\">Experience taking a product from concept and prototype through mass production and delivery.</p></li><li><p style=\"min-height:1.5em\">Familiarity with quality systems, factory audits, product certifications, import and export, or cross-border logistics.</p></li></ul><h2>How to apply</h2><p style=\"min-height:1.5em\">Please describe hardware or device sourcing projects you have handled, the factories and manufacturing categories you know, the Greater Bay Area cities you can cover, and how you coordinate several client projects at once. Include relevant project links where available.</p>",
+    "descriptionPlain": "职位概述\n\n我们是一家在深圳和纽约运营的初创公司，正在打造 AI 智能体和消费级硬件设备。用户可以通过智能体在不同工具中执行操作，我们也在开发能够随时捕捉用户意图的定制设备。团队规模精简，创始人曾创办一家硅谷独角兽公司。\n\n我们正在寻找一位硬件采购经理，负责为多个客户项目寻找、评估并协调大湾区的硬件工厂、设备供应商和制造合作伙伴。你将经常前往深圳、东莞、广州、珠海、佛山及周边产业带，把客户需求推进为可执行的打样、生产和交付计划。\n\n\n工作内容\n\n - 走访硬件工厂、组装厂、模具厂、电子元器件供应商和设备供应商。\n\n - 根据不同客户的产品需求、预算、质量标准和时间表筛选供应商。\n\n - 收集报价、规格、认证、产能、起订量、交期和付款条件，整理中英文对比和建议。\n\n - 协调 NDA、RFQ、打样、工程验证、工厂审核、试产、量产、质量检查、包装和物流。\n\n - 现场检查样品、生产线和关键工艺，拍摄照片和视频，并及时汇报。\n\n - 同时推进多个客户项目，跟踪风险、决策、截止时间和下一步行动。\n\n - 与客户、工程师、工业设计师、工厂负责人和物流合作伙伴保持清晰沟通。\n\n\n任职要求\n\n - 常驻深圳或大湾区，能够频繁前往深圳、东莞、广州、珠海、佛山及周边工厂。\n\n - 有消费电子、智能硬件、IoT、可穿戴设备、电子元器件、模具或组装采购经验。\n\n - 能够独立完成供应商搜寻、询价、谈判、工厂走访、样品跟进和项目协调。\n\n - 理解打样、BOM、DFM、EVT、DVT、PVT 等硬件开发和制造流程。\n\n - 中文沟通能力强，并能使用英文进行客户更新、书面总结和会议沟通。\n\n - 做事有条理、反应快，能够同时管理多个客户项目。\n\n\n加分项\n\n - 在大湾区拥有成熟的硬件工厂、电子市场、模具、SMT、组装或设备供应商网络。\n\n - 有从概念、样品到量产和交付的完整项目经验。\n\n - 熟悉质量体系、工厂审核、产品认证、进出口或跨境物流。\n\n\n申请说明\n\n请说明你做过的硬件或设备采购项目、你熟悉的工厂和产业带、你能够覆盖的大湾区城市，以及你如何同时协调多个客户项目。如有相关项目案例，请附上链接。\n\n\nROLE OVERVIEW\n\nWe are a startup building AI agents and consumer devices. Users prompt agents to take actions across their tools, while our custom devices capture intent on the go. We are a small team in Shenzhen and New York, and our founder previously started a Silicon Valley unicorn.\n\nWe are looking for a Hardware Sourcing Manager to identify, evaluate, and coordinate hardware factories, device suppliers, and manufacturing partners for projects across multiple clients. You will travel frequently throughout the Greater Bay Area, including Shenzhen, Dongguan, Guangzhou, Zhuhai, Foshan, and nearby manufacturing hubs.\n\n\nRESPONSIBILITIES\n\n - Visit hardware factories, assembly plants, tooling shops, component suppliers, and equipment vendors.\n\n - Source suppliers against each client's product requirements, budget, quality bar, and timeline.\n\n - Collect quotes, specifications, certifications, capacity, MOQs, lead times, and payment terms, then produce clear comparisons in English and Chinese.\n\n - Coordinate NDAs, RFQs, prototypes, engineering validation, factory audits, pilot runs, mass production, quality inspections, packaging, and logistics.\n\n - Inspect samples and production lines in person and document findings with organized photos, videos, and written updates.\n\n - Run several client projects in parallel and track owners, risks, decisions, deadlines, and next actions.\n\n - Communicate clearly with clients, engineers, industrial designers, factory managers, and logistics partners.\n\n\nREQUIREMENTS\n\n - Based in Shenzhen or the Greater Bay Area and able to travel frequently across Shenzhen, Dongguan, Guangzhou, Zhuhai, Foshan, and nearby cities.\n\n - Hands-on sourcing experience in consumer electronics, smart hardware, IoT, wearables, components, tooling, or assembly.\n\n - Able to independently source vendors, run RFQs, negotiate terms, conduct factory visits, and coordinate projects.\n\n - Working knowledge of prototyping, BOMs, DFM, EVT, DVT, and PVT.\n\n - Strong Chinese and working English for client updates, written summaries, and meetings.\n\n - Organized, responsive, and comfortable managing multiple clients and changing priorities.\n\n\nHELPFUL BUT NOT REQUIRED\n\n - An existing network of hardware factories, electronics markets, tooling, SMT, assembly, or equipment suppliers in the Greater Bay Area.\n\n - Experience taking a product from concept and prototype through mass production and delivery.\n\n - Familiarity with quality systems, factory audits, product certifications, import and export, or cross-border logistics.\n\n\nHOW TO APPLY\n\nPlease describe hardware or device sourcing projects you have handled, the factories and manufacturing categories you know, the Greater Bay Area cities you can cover, and how you coordinate several client projects at once. Include relevant project links where available."
+   },
+   {
+    "id": "6437c893-3b2a-410f-a109-716704cba347",
+    "title": "家具采购与物流代理 - 佛山 / Furniture Sourcing & Logistics Agent - Foshan",
+    "department": "Family",
+    "team": "Family",
+    "employmentType": "FullTime",
+    "location": "Shenzhen",
+    "secondaryLocations": [
+     {
+      "location": "Guangzhou",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Guangdong",
+        "addressCountry": "China",
+        "addressLocality": "Guangzhou"
+       }
+      }
+     }
+    ],
+    "publishedAt": "2026-07-01T23:31:09.526+00:00",
+    "isListed": true,
+    "isRemote": true,
+    "workplaceType": "Remote",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Guangdong",
+      "addressCountry": "China",
+      "addressLocality": "Shenzhen"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/6437c893-3b2a-410f-a109-716704cba347",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/6437c893-3b2a-410f-a109-716704cba347/application",
+    "descriptionHtml": "<h2>职位概况</h2><p style=\"min-height:1.5em\">我们正在寻找一位位于佛山或周边地区的兼职合同制家具采购与物流代理，协助一个定制住宅项目完成家具、家居材料及相关物流的实地采购工作。你将根据设计师和业主家庭的需求，走访佛山及周边家具市场、展厅、工厂、仓库和供应商，收集报价、照片、视频和规格信息，并协助推进下单、付款、验货、包装、运输和交付安排。</p><h2>工作内容</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">走访佛山及周边城市的家具市场、展厅、工厂、仓库和供应商。</p></li><li><p style=\"min-height:1.5em\">根据设计需求、预算、尺寸、材质和时间要求寻找合适家具选项。</p></li><li><p style=\"min-height:1.5em\">拍摄清晰照片和视频，收集报价，确认规格，并整理选项供业主审核。</p></li><li><p style=\"min-height:1.5em\">在合适情况下协助谈价和确认条款，帮助筛选可靠供应商。</p></li><li><p style=\"min-height:1.5em\">协调下单、付款、验货、包装、本地运输、出口或国内物流以及交付时间。</p></li><li><p style=\"min-height:1.5em\">用英文和中文与业主家庭、设计师、供应商和物流方清晰沟通。</p></li><li><p style=\"min-height:1.5em\">用简单共享表格或文档跟踪价格、联系人、决策和下一步事项。</p></li></ul><h2>任职要求</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">常驻佛山，或能够经常前往佛山家具市场和供应商处。</p></li><li><p style=\"min-height:1.5em\">中文沟通能力强；具备用于更新、总结和电话沟通的英文能力。</p></li><li><p style=\"min-height:1.5em\">有家具采购、室内设计采购、出口物流、买手或采购代理等实地采购经验。</p></li><li><p style=\"min-height:1.5em\">对质量、材质、饰面、尺寸和实际交付细节有判断力。</p></li><li><p style=\"min-height:1.5em\">能够独立走访供应商，快速推进，并提供有条理的更新。</p></li><li><p style=\"min-height:1.5em\">做事可靠透明，能谨慎处理报价、付款、时间线和供应商沟通。</p></li></ul><h2>加分项</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">在佛山、乐从、顺德或周边家具产业带有现成供应商资源。</p></li><li><p style=\"min-height:1.5em\">有定制家具、住宅装修项目或国际运输经验。</p></li><li><p style=\"min-height:1.5em\">能够检查样品、饰面、软包、木材、石材、金属、灯具或相关家居材料。</p></li></ul><h2>申请问题</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">请简要说明你与家具采购、供应商协调或物流相关的经验。</p></li><li><p style=\"min-height:1.5em\">请说明你通常能前往佛山家具市场或供应商处的频率。</p></li><li><p style=\"min-height:1.5em\">如有相关项目照片、供应商案例、采购表格或作品集，请附上链接。</p></li></ul><h2>Role Overview</h2><p style=\"min-height:1.5em\">We are looking for a part-time contract furniture sourcing and logistics agent based in Foshan or nearby. This is a one-time project for a custom family home after the design is complete. You will help source furniture and related home materials, visit suppliers in person, collect quotes and specifications, and coordinate the practical details from selection through ordering, inspection, packing, transport, and delivery.</p><h2>Responsibilities</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Visit furniture markets, showrooms, factories, warehouses, and suppliers in Foshan and nearby cities.</p></li><li><p style=\"min-height:1.5em\">Source furniture options that match the design brief, budget, dimensions, materials, and timing.</p></li><li><p style=\"min-height:1.5em\">Take clear photos and videos, collect quotes, confirm specifications, and organize options for review.</p></li><li><p style=\"min-height:1.5em\">Negotiate pricing and terms when appropriate, and help identify reliable suppliers.</p></li><li><p style=\"min-height:1.5em\">Coordinate ordering, payments, inspections, packing, local transport, export or domestic logistics, and delivery timing.</p></li><li><p style=\"min-height:1.5em\">Communicate clearly in English and Chinese with the family, designers, vendors, and logistics providers.</p></li><li><p style=\"min-height:1.5em\">Track details in a simple shared spreadsheet or document so decisions, prices, contacts, and next steps stay organized.</p></li></ul><h2>Requirements</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Based in Foshan or able to travel frequently to Foshan furniture markets and suppliers.</p></li><li><p style=\"min-height:1.5em\">Strong spoken and written Chinese; working English for updates, summaries, and calls.</p></li><li><p style=\"min-height:1.5em\">Experience in furniture sourcing, interior design procurement, export logistics, buying agency work, or similar hands-on sourcing work.</p></li><li><p style=\"min-height:1.5em\">Good eye for quality, materials, finishes, dimensions, and practical delivery details.</p></li><li><p style=\"min-height:1.5em\">Comfortable moving quickly, visiting suppliers independently, and sending organized updates.</p></li><li><p style=\"min-height:1.5em\">Reliable, transparent, and careful with pricing, payments, timelines, and vendor communication.</p></li></ul><h2>Helpful but not required</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Existing supplier contacts in Foshan, Lecong, Shunde, or nearby furniture hubs.</p></li><li><p style=\"min-height:1.5em\">Experience with custom furniture, home renovation projects, or international shipping.</p></li><li><p style=\"min-height:1.5em\">Ability to inspect samples, finishes, upholstery, wood, stone, metalwork, lighting, or related home materials.</p></li></ul><h2>Application questions</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Please apply with a short note about your relevant sourcing, furniture, supplier coordination, or logistics experience.</p></li><li><p style=\"min-height:1.5em\">Please mention how often you can visit Foshan furniture markets or suppliers.</p></li><li><p style=\"min-height:1.5em\">If available, include links to relevant project photos, supplier examples, procurement sheets, or portfolio materials.</p></li></ul>",
+    "descriptionPlain": "职位概况\n\n我们正在寻找一位位于佛山或周边地区的兼职合同制家具采购与物流代理，协助一个定制住宅项目完成家具、家居材料及相关物流的实地采购工作。你将根据设计师和业主家庭的需求，走访佛山及周边家具市场、展厅、工厂、仓库和供应商，收集报价、照片、视频和规格信息，并协助推进下单、付款、验货、包装、运输和交付安排。\n\n\n工作内容\n\n - 走访佛山及周边城市的家具市场、展厅、工厂、仓库和供应商。\n\n - 根据设计需求、预算、尺寸、材质和时间要求寻找合适家具选项。\n\n - 拍摄清晰照片和视频，收集报价，确认规格，并整理选项供业主审核。\n\n - 在合适情况下协助谈价和确认条款，帮助筛选可靠供应商。\n\n - 协调下单、付款、验货、包装、本地运输、出口或国内物流以及交付时间。\n\n - 用英文和中文与业主家庭、设计师、供应商和物流方清晰沟通。\n\n - 用简单共享表格或文档跟踪价格、联系人、决策和下一步事项。\n\n\n任职要求\n\n - 常驻佛山，或能够经常前往佛山家具市场和供应商处。\n\n - 中文沟通能力强；具备用于更新、总结和电话沟通的英文能力。\n\n - 有家具采购、室内设计采购、出口物流、买手或采购代理等实地采购经验。\n\n - 对质量、材质、饰面、尺寸和实际交付细节有判断力。\n\n - 能够独立走访供应商，快速推进，并提供有条理的更新。\n\n - 做事可靠透明，能谨慎处理报价、付款、时间线和供应商沟通。\n\n\n加分项\n\n - 在佛山、乐从、顺德或周边家具产业带有现成供应商资源。\n\n - 有定制家具、住宅装修项目或国际运输经验。\n\n - 能够检查样品、饰面、软包、木材、石材、金属、灯具或相关家居材料。\n\n\n申请问题\n\n - 请简要说明你与家具采购、供应商协调或物流相关的经验。\n\n - 请说明你通常能前往佛山家具市场或供应商处的频率。\n\n - 如有相关项目照片、供应商案例、采购表格或作品集，请附上链接。\n\n\nROLE OVERVIEW\n\nWe are looking for a part-time contract furniture sourcing and logistics agent based in Foshan or nearby. This is a one-time project for a custom family home after the design is complete. You will help source furniture and related home materials, visit suppliers in person, collect quotes and specifications, and coordinate the practical details from selection through ordering, inspection, packing, transport, and delivery.\n\n\nRESPONSIBILITIES\n\n - Visit furniture markets, showrooms, factories, warehouses, and suppliers in Foshan and nearby cities.\n\n - Source furniture options that match the design brief, budget, dimensions, materials, and timing.\n\n - Take clear photos and videos, collect quotes, confirm specifications, and organize options for review.\n\n - Negotiate pricing and terms when appropriate, and help identify reliable suppliers.\n\n - Coordinate ordering, payments, inspections, packing, local transport, export or domestic logistics, and delivery timing.\n\n - Communicate clearly in English and Chinese with the family, designers, vendors, and logistics providers.\n\n - Track details in a simple shared spreadsheet or document so decisions, prices, contacts, and next steps stay organized.\n\n\nREQUIREMENTS\n\n - Based in Foshan or able to travel frequently to Foshan furniture markets and suppliers.\n\n - Strong spoken and written Chinese; working English for updates, summaries, and calls.\n\n - Experience in furniture sourcing, interior design procurement, export logistics, buying agency work, or similar hands-on sourcing work.\n\n - Good eye for quality, materials, finishes, dimensions, and practical delivery details.\n\n - Comfortable moving quickly, visiting suppliers independently, and sending organized updates.\n\n - Reliable, transparent, and careful with pricing, payments, timelines, and vendor communication.\n\n\nHELPFUL BUT NOT REQUIRED\n\n - Existing supplier contacts in Foshan, Lecong, Shunde, or nearby furniture hubs.\n\n - Experience with custom furniture, home renovation projects, or international shipping.\n\n - Ability to inspect samples, finishes, upholstery, wood, stone, metalwork, lighting, or related home materials.\n\n\nAPPLICATION QUESTIONS\n\n - Please apply with a short note about your relevant sourcing, furniture, supplier coordination, or logistics experience.\n\n - Please mention how often you can visit Foshan furniture markets or suppliers.\n\n - If available, include links to relevant project photos, supplier examples, procurement sheets, or portfolio materials."
+   },
+   {
+    "id": "65598ef8-6eb5-4c07-8ab9-ac432163fbf6",
+    "title": "家具采购代理 - 佛山 / Furniture Shopping Agent - Foshan",
+    "department": "Family",
+    "team": "Family",
+    "employmentType": "FullTime",
+    "location": "Shenzhen",
+    "secondaryLocations": [],
+    "publishedAt": "2026-07-01T23:35:31.506+00:00",
+    "isListed": true,
+    "isRemote": false,
+    "workplaceType": "OnSite",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Guangdong",
+      "addressCountry": "China",
+      "addressLocality": "Shenzhen"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/65598ef8-6eb5-4c07-8ab9-ac432163fbf6",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/65598ef8-6eb5-4c07-8ab9-ac432163fbf6/application",
+    "descriptionHtml": "<h2>职位概况</h2><p style=\"min-height:1.5em\">我们正在寻找一位位于佛山或周边地区的兼职合同制家具采购与物流代理，协助一个定制住宅项目完成家具、家居材料及相关物流的实地采购工作。你将根据设计师和业主家庭的需求，走访佛山及周边家具市场、展厅、工厂、仓库和供应商，收集报价、照片、视频和规格信息，并协助推进下单、付款、验货、包装、运输和交付安排。</p><h2>工作内容</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">走访佛山及周边城市的家具市场、展厅、工厂、仓库和供应商。</p></li><li><p style=\"min-height:1.5em\">根据设计需求、预算、尺寸、材质和时间要求寻找合适家具选项。</p></li><li><p style=\"min-height:1.5em\">拍摄清晰照片和视频，收集报价，确认规格，并整理选项供业主审核。</p></li><li><p style=\"min-height:1.5em\">在合适情况下协助谈价和确认条款，帮助筛选可靠供应商。</p></li><li><p style=\"min-height:1.5em\">协调下单、付款、验货、包装、本地运输、出口或国内物流以及交付时间。</p></li><li><p style=\"min-height:1.5em\">用英文和中文与业主家庭、设计师、供应商和物流方清晰沟通。</p></li><li><p style=\"min-height:1.5em\">用简单共享表格或文档跟踪价格、联系人、决策和下一步事项。</p></li></ul><h2>任职要求</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">常驻佛山，或能够经常前往佛山家具市场和供应商处。</p></li><li><p style=\"min-height:1.5em\">中文沟通能力强；具备用于更新、总结和电话沟通的英文能力。</p></li><li><p style=\"min-height:1.5em\">有家具采购、室内设计采购、出口物流、买手或采购代理等实地采购经验。</p></li><li><p style=\"min-height:1.5em\">对质量、材质、饰面、尺寸和实际交付细节有判断力。</p></li><li><p style=\"min-height:1.5em\">能够独立走访供应商，快速推进，并提供有条理的更新。</p></li><li><p style=\"min-height:1.5em\">做事可靠透明，能谨慎处理报价、付款、时间线和供应商沟通。</p></li></ul><h2>加分项</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">在佛山、乐从、顺德或周边家具产业带有现成供应商资源。</p></li><li><p style=\"min-height:1.5em\">有定制家具、住宅装修项目或国际运输经验。</p></li><li><p style=\"min-height:1.5em\">能够检查样品、饰面、软包、木材、石材、金属、灯具或相关家居材料。</p></li></ul><h2>申请问题</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">请简要说明你与家具采购、供应商协调或物流相关的经验。</p></li><li><p style=\"min-height:1.5em\">请说明你通常能前往佛山家具市场或供应商处的频率。</p></li><li><p style=\"min-height:1.5em\">如有相关项目照片、供应商案例、采购表格或作品集，请附上链接。</p></li></ul><h2>Role Overview</h2><p style=\"min-height:1.5em\">We are looking for a part-time contract furniture sourcing and logistics agent based in Foshan or nearby. This is a one-time project for a custom family home after the design is complete. You will help source furniture and related home materials, visit suppliers in person, collect quotes and specifications, and coordinate the practical details from selection through ordering, inspection, packing, transport, and delivery.</p><h2>Responsibilities</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Visit furniture markets, showrooms, factories, warehouses, and suppliers in Foshan and nearby cities.</p></li><li><p style=\"min-height:1.5em\">Source furniture options that match the design brief, budget, dimensions, materials, and timing.</p></li><li><p style=\"min-height:1.5em\">Take clear photos and videos, collect quotes, confirm specifications, and organize options for review.</p></li><li><p style=\"min-height:1.5em\">Negotiate pricing and terms when appropriate, and help identify reliable suppliers.</p></li><li><p style=\"min-height:1.5em\">Coordinate ordering, payments, inspections, packing, local transport, export or domestic logistics, and delivery timing.</p></li><li><p style=\"min-height:1.5em\">Communicate clearly in English and Chinese with the family, designers, vendors, and logistics providers.</p></li><li><p style=\"min-height:1.5em\">Track details in a simple shared spreadsheet or document so decisions, prices, contacts, and next steps stay organized.</p></li></ul><h2>Requirements</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Based in Foshan or able to travel frequently to Foshan furniture markets and suppliers.</p></li><li><p style=\"min-height:1.5em\">Strong spoken and written Chinese; working English for updates, summaries, and calls.</p></li><li><p style=\"min-height:1.5em\">Experience in furniture sourcing, interior design procurement, export logistics, buying agency work, or similar hands-on sourcing work.</p></li><li><p style=\"min-height:1.5em\">Good eye for quality, materials, finishes, dimensions, and practical delivery details.</p></li><li><p style=\"min-height:1.5em\">Comfortable moving quickly, visiting suppliers independently, and sending organized updates.</p></li><li><p style=\"min-height:1.5em\">Reliable, transparent, and careful with pricing, payments, timelines, and vendor communication.</p></li></ul><h2>Helpful but not required</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Existing supplier contacts in Foshan, Lecong, Shunde, or nearby furniture hubs.</p></li><li><p style=\"min-height:1.5em\">Experience with custom furniture, home renovation projects, or international shipping.</p></li><li><p style=\"min-height:1.5em\">Ability to inspect samples, finishes, upholstery, wood, stone, metalwork, lighting, or related home materials.</p></li></ul><h2>Application questions</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Please apply with a short note about your relevant sourcing, furniture, supplier coordination, or logistics experience.</p></li><li><p style=\"min-height:1.5em\">Please mention how often you can visit Foshan furniture markets or suppliers.</p></li><li><p style=\"min-height:1.5em\">If available, include links to relevant project photos, supplier examples, procurement sheets, or portfolio materials.</p></li></ul>",
+    "descriptionPlain": "职位概况\n\n我们正在寻找一位位于佛山或周边地区的兼职合同制家具采购与物流代理，协助一个定制住宅项目完成家具、家居材料及相关物流的实地采购工作。你将根据设计师和业主家庭的需求，走访佛山及周边家具市场、展厅、工厂、仓库和供应商，收集报价、照片、视频和规格信息，并协助推进下单、付款、验货、包装、运输和交付安排。\n\n\n工作内容\n\n - 走访佛山及周边城市的家具市场、展厅、工厂、仓库和供应商。\n\n - 根据设计需求、预算、尺寸、材质和时间要求寻找合适家具选项。\n\n - 拍摄清晰照片和视频，收集报价，确认规格，并整理选项供业主审核。\n\n - 在合适情况下协助谈价和确认条款，帮助筛选可靠供应商。\n\n - 协调下单、付款、验货、包装、本地运输、出口或国内物流以及交付时间。\n\n - 用英文和中文与业主家庭、设计师、供应商和物流方清晰沟通。\n\n - 用简单共享表格或文档跟踪价格、联系人、决策和下一步事项。\n\n\n任职要求\n\n - 常驻佛山，或能够经常前往佛山家具市场和供应商处。\n\n - 中文沟通能力强；具备用于更新、总结和电话沟通的英文能力。\n\n - 有家具采购、室内设计采购、出口物流、买手或采购代理等实地采购经验。\n\n - 对质量、材质、饰面、尺寸和实际交付细节有判断力。\n\n - 能够独立走访供应商，快速推进，并提供有条理的更新。\n\n - 做事可靠透明，能谨慎处理报价、付款、时间线和供应商沟通。\n\n\n加分项\n\n - 在佛山、乐从、顺德或周边家具产业带有现成供应商资源。\n\n - 有定制家具、住宅装修项目或国际运输经验。\n\n - 能够检查样品、饰面、软包、木材、石材、金属、灯具或相关家居材料。\n\n\n申请问题\n\n - 请简要说明你与家具采购、供应商协调或物流相关的经验。\n\n - 请说明你通常能前往佛山家具市场或供应商处的频率。\n\n - 如有相关项目照片、供应商案例、采购表格或作品集，请附上链接。\n\n\nROLE OVERVIEW\n\nWe are looking for a part-time contract furniture sourcing and logistics agent based in Foshan or nearby. This is a one-time project for a custom family home after the design is complete. You will help source furniture and related home materials, visit suppliers in person, collect quotes and specifications, and coordinate the practical details from selection through ordering, inspection, packing, transport, and delivery.\n\n\nRESPONSIBILITIES\n\n - Visit furniture markets, showrooms, factories, warehouses, and suppliers in Foshan and nearby cities.\n\n - Source furniture options that match the design brief, budget, dimensions, materials, and timing.\n\n - Take clear photos and videos, collect quotes, confirm specifications, and organize options for review.\n\n - Negotiate pricing and terms when appropriate, and help identify reliable suppliers.\n\n - Coordinate ordering, payments, inspections, packing, local transport, export or domestic logistics, and delivery timing.\n\n - Communicate clearly in English and Chinese with the family, designers, vendors, and logistics providers.\n\n - Track details in a simple shared spreadsheet or document so decisions, prices, contacts, and next steps stay organized.\n\n\nREQUIREMENTS\n\n - Based in Foshan or able to travel frequently to Foshan furniture markets and suppliers.\n\n - Strong spoken and written Chinese; working English for updates, summaries, and calls.\n\n - Experience in furniture sourcing, interior design procurement, export logistics, buying agency work, or similar hands-on sourcing work.\n\n - Good eye for quality, materials, finishes, dimensions, and practical delivery details.\n\n - Comfortable moving quickly, visiting suppliers independently, and sending organized updates.\n\n - Reliable, transparent, and careful with pricing, payments, timelines, and vendor communication.\n\n\nHELPFUL BUT NOT REQUIRED\n\n - Existing supplier contacts in Foshan, Lecong, Shunde, or nearby furniture hubs.\n\n - Experience with custom furniture, home renovation projects, or international shipping.\n\n - Ability to inspect samples, finishes, upholstery, wood, stone, metalwork, lighting, or related home materials.\n\n\nAPPLICATION QUESTIONS\n\n - Please apply with a short note about your relevant sourcing, furniture, supplier coordination, or logistics experience.\n\n - Please mention how often you can visit Foshan furniture markets or suppliers.\n\n - If available, include links to relevant project photos, supplier examples, procurement sheets, or portfolio materials."
+   },
+   {
+    "id": "48194fc1-a82e-4a03-becb-5225635c5245",
+    "title": "Brand Partnerships Manager 品牌合作经理",
+    "department": "Blemish",
+    "team": "Blemish",
+    "employmentType": "FullTime",
+    "location": "Hong Kong",
+    "secondaryLocations": [
+     {
+      "location": "Beijing",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Beijing",
+        "addressCountry": "China",
+        "addressLocality": "Beijing"
+       }
+      }
+     },
+     {
+      "location": "Shenzhen",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Guangdong",
+        "addressCountry": "China",
+        "addressLocality": "Shenzhen"
+       }
+      }
+     },
+     {
+      "location": "Shanghai",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Zhejiang",
+        "addressCountry": "China",
+        "addressLocality": "Shanghai"
+       }
+      }
+     },
+     {
+      "location": "Hangzhou",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Zhejiang",
+        "addressCountry": "China",
+        "addressLocality": "Hangzhou"
+       }
+      }
+     }
+    ],
+    "publishedAt": "2026-07-09T23:57:28.642+00:00",
+    "isListed": true,
+    "isRemote": null,
+    "workplaceType": null,
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Hong Kong",
+      "addressCountry": "Hong Kong",
+      "addressLocality": "Hong Kong"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/48194fc1-a82e-4a03-becb-5225635c5245",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/48194fc1-a82e-4a03-becb-5225635c5245/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\"><strong>Italic 正在深圳招聘一名商务拓展与合作经理</strong>，负责接触和筛选中国品牌，推动他们通过 Italic 进入美国市场。这个岗位会和中国品牌方、工厂、创始人及渠道团队沟通，判断品牌和产品是否适合美国消费者，并推动从初次接触、商业方案、样品评估到合作落地的全过程。</p><p style=\"min-height:1.5em\">我们希望候选人有 <strong>3-5 年</strong>零售、电商、品牌方、平台或分销相关的 BD、商务拓展、销售或合作伙伴经验。这个角色适合喜欢主动开拓、能把复杂合作讲清楚、并且能在中美商业语境之间切换的人。</p><h2>工作职责</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">主动寻找、接触和跟进适合进入美国市场的中国消费品牌，重点关注家居、生活方式、服饰配件、美妆个护、消费电子及其他高潜力品类。</p></li><li><p style=\"min-height:1.5em\">向品牌方清楚介绍 Italic 的美国市场分销、渠道和品牌增长机会，判断对方的需求、能力和合作意向。</p></li><li><p style=\"min-height:1.5em\">建立并维护品牌候选名单、联系人、跟进状态、样品进度、商业条款和下一步行动。</p></li><li><p style=\"min-height:1.5em\">和品牌方讨论基础合作条款，包括产品范围、供货能力、价格区间、渠道限制、市场支持和美国分销安排。</p></li><li><p style=\"min-height:1.5em\">协调内部团队评估品牌和产品机会，包括产品质量、价格竞争力、供应稳定性、包装、合规风险和美国市场适配度。</p></li><li><p style=\"min-height:1.5em\">推动从冷启动外联、初次会议、样品寄送、资料收集、商业沟通到合作落地的完整流程。</p></li><li><p style=\"min-height:1.5em\">整理市场和品牌情报，持续发现中国品牌出海、跨境电商、DTC、Amazon、TikTok Shop 和零售渠道中的新机会。</p></li><li><p style=\"min-height:1.5em\">和深圳及美国团队保持清晰沟通，及时同步进展、风险、阻塞点和需要决策的事项。</p></li></ul><h2>任职要求</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">常驻深圳，能够线下拜访品牌方、供应商、展会或合作伙伴。</p></li><li><p style=\"min-height:1.5em\"><strong>3-5 年</strong> BD、商务拓展、销售、渠道合作、品牌合作或平台招商经验，优先考虑零售、电商、消费品牌、跨境电商或分销相关背景。</p></li><li><p style=\"min-height:1.5em\">有主动开发客户或合作伙伴的经验，能独立完成外联、会议沟通、跟进和推进。</p></li><li><p style=\"min-height:1.5em\">理解中国品牌出海到美国市场时常见的问题，包括定位、渠道、定价、包装、合规、库存和品牌信任。</p></li><li><p style=\"min-height:1.5em\">沟通清楚、反应快，能够把 Italic 的合作模式讲得具体、有说服力。</p></li><li><p style=\"min-height:1.5em\">有较强的商业判断力，能快速判断一个品牌是否值得继续推进。</p></li><li><p style=\"min-height:1.5em\">做事有条理，能长期维护大量线索、联系人和合作进度。</p></li><li><p style=\"min-height:1.5em\">普通话流利，能用英文进行书面沟通；如果能进行英文商务会议更好。</p></li></ul><h2>加分项</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">有跨境电商、Amazon、Shopify、TikTok Shop、海外分销或美国零售渠道经验。</p></li><li><p style=\"min-height:1.5em\">有消费品品牌方、贸易公司、平台招商、渠道销售或品牌代理经验。</p></li><li><p style=\"min-height:1.5em\">熟悉深圳、广州、东莞、义乌、杭州等地的品牌、供应链或展会资源。</p></li><li><p style=\"min-height:1.5em\">做过品牌出海、美国市场进入、分销代理、渠道合作或商务谈判。</p></li><li><p style=\"min-height:1.5em\">能用 CRM、表格或其他工具清晰管理线索和销售漏斗。</p></li></ul><p style=\"min-height:1.5em\"><strong>Italic is hiring a Business Development &amp; Partnerships Manager in Shenzhen</strong> to identify and work with Chinese brands that want to enter the U.S. market, with Italic acting as their U.S. distributor. This role owns outreach, qualification, relationship management, commercial discussion, sample coordination, and the handoff from promising brand lead to active partnership.</p><p style=\"min-height:1.5em\">We are looking for someone with 3-5 years of BD, partnerships, sales, channel, retail, e-commerce, brand, or distribution experience. The right person is proactive, commercially sharp, organized, and comfortable moving between Chinese brand teams and a U.S.-market strategy.</p><h2>Responsibilities</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Source, contact, and follow up with Chinese consumer brands that may be a fit for U.S. market entry through Italic.</p></li><li><p style=\"min-height:1.5em\">Explain Italic's U.S. distribution and market-entry opportunity clearly to founders, brand teams, factories, and channel partners.</p></li><li><p style=\"min-height:1.5em\">Build and maintain a pipeline of target brands, contacts, follow-up status, samples, commercial terms, and next steps.</p></li><li><p style=\"min-height:1.5em\">Discuss early partnership terms, including product scope, supply capacity, pricing, channel restrictions, market support, and U.S. distribution needs.</p></li><li><p style=\"min-height:1.5em\">Coordinate internal review of brand and product opportunities across product quality, pricing, supply reliability, packaging, compliance risk, and U.S. market fit.</p></li><li><p style=\"min-height:1.5em\">Own the full early-stage BD workflow from outbound outreach and first calls to sample collection, materials review, commercial discussion, and partnership handoff.</p></li><li><p style=\"min-height:1.5em\">Track market and brand intelligence across Chinese consumer brands, cross-border e-commerce, DTC, Amazon, TikTok Shop, and retail channels.</p></li><li><p style=\"min-height:1.5em\">Keep the Shenzhen and U.S. teams aligned with clear updates on progress, risks, blockers, and decisions needed.</p></li></ul><h2>Requirements</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Based in Shenzhen and able to meet brands, suppliers, trade-show contacts, and partners in person.</p></li><li><p style=\"min-height:1.5em\"><strong>3-5 years</strong> of experience in BD, partnerships, sales, channel partnerships, brand partnerships, marketplace development, retail, e-commerce, consumer brands, cross-border commerce, or distribution.</p></li><li><p style=\"min-height:1.5em\">Experience proactively sourcing and developing customers or partners from initial outreach through follow-up and next-step execution.</p></li><li><p style=\"min-height:1.5em\">Good understanding of the challenges Chinese brands face when entering the U.S. market, including positioning, channel strategy, pricing, packaging, compliance, inventory, and trust.</p></li><li><p style=\"min-height:1.5em\">Clear communicator who can make Italic's partnership model feel concrete and credible.</p></li><li><p style=\"min-height:1.5em\">Strong commercial judgment and the ability to quickly assess whether a brand is worth pursuing.</p></li><li><p style=\"min-height:1.5em\">Organized enough to manage a large volume of leads, contacts, and partnership conversations over time.</p></li><li><p style=\"min-height:1.5em\">Fluent Mandarin and strong written English; spoken business English is a plus.</p></li></ul><h2>Helpful but Not Required</h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Experience with cross-border e-commerce, Amazon, Shopify, TikTok Shop, overseas distribution, or U.S. retail channels.</p></li><li><p style=\"min-height:1.5em\">Experience at a consumer brand, trading company, marketplace, channel sales team, or brand agency.</p></li><li><p style=\"min-height:1.5em\">Familiarity with brand, supply-chain, or trade-show networks in Shenzhen, Guangzhou, Dongguan, Yiwu, Hangzhou, or similar cities.</p></li><li><p style=\"min-height:1.5em\">Experience with brand internationalization, U.S. market entry, distribution agreements, channel partnerships, or commercial negotiation.</p></li><li><p style=\"min-height:1.5em\">Ability to manage a lead pipeline clearly in a CRM, spreadsheet, or similar workflow tool.</p></li></ul>",
+    "descriptionPlain": "Italic 正在深圳招聘一名商务拓展与合作经理，负责接触和筛选中国品牌，推动他们通过 Italic 进入美国市场。这个岗位会和中国品牌方、工厂、创始人及渠道团队沟通，判断品牌和产品是否适合美国消费者，并推动从初次接触、商业方案、样品评估到合作落地的全过程。\n\n我们希望候选人有 3-5 年零售、电商、品牌方、平台或分销相关的 BD、商务拓展、销售或合作伙伴经验。这个角色适合喜欢主动开拓、能把复杂合作讲清楚、并且能在中美商业语境之间切换的人。\n\n\n工作职责\n\n - 主动寻找、接触和跟进适合进入美国市场的中国消费品牌，重点关注家居、生活方式、服饰配件、美妆个护、消费电子及其他高潜力品类。\n\n - 向品牌方清楚介绍 Italic 的美国市场分销、渠道和品牌增长机会，判断对方的需求、能力和合作意向。\n\n - 建立并维护品牌候选名单、联系人、跟进状态、样品进度、商业条款和下一步行动。\n\n - 和品牌方讨论基础合作条款，包括产品范围、供货能力、价格区间、渠道限制、市场支持和美国分销安排。\n\n - 协调内部团队评估品牌和产品机会，包括产品质量、价格竞争力、供应稳定性、包装、合规风险和美国市场适配度。\n\n - 推动从冷启动外联、初次会议、样品寄送、资料收集、商业沟通到合作落地的完整流程。\n\n - 整理市场和品牌情报，持续发现中国品牌出海、跨境电商、DTC、Amazon、TikTok Shop 和零售渠道中的新机会。\n\n - 和深圳及美国团队保持清晰沟通，及时同步进展、风险、阻塞点和需要决策的事项。\n\n\n任职要求\n\n - 常驻深圳，能够线下拜访品牌方、供应商、展会或合作伙伴。\n\n - 3-5 年 BD、商务拓展、销售、渠道合作、品牌合作或平台招商经验，优先考虑零售、电商、消费品牌、跨境电商或分销相关背景。\n\n - 有主动开发客户或合作伙伴的经验，能独立完成外联、会议沟通、跟进和推进。\n\n - 理解中国品牌出海到美国市场时常见的问题，包括定位、渠道、定价、包装、合规、库存和品牌信任。\n\n - 沟通清楚、反应快，能够把 Italic 的合作模式讲得具体、有说服力。\n\n - 有较强的商业判断力，能快速判断一个品牌是否值得继续推进。\n\n - 做事有条理，能长期维护大量线索、联系人和合作进度。\n\n - 普通话流利，能用英文进行书面沟通；如果能进行英文商务会议更好。\n\n\n加分项\n\n - 有跨境电商、Amazon、Shopify、TikTok Shop、海外分销或美国零售渠道经验。\n\n - 有消费品品牌方、贸易公司、平台招商、渠道销售或品牌代理经验。\n\n - 熟悉深圳、广州、东莞、义乌、杭州等地的品牌、供应链或展会资源。\n\n - 做过品牌出海、美国市场进入、分销代理、渠道合作或商务谈判。\n\n - 能用 CRM、表格或其他工具清晰管理线索和销售漏斗。\n\nItalic is hiring a Business Development & Partnerships Manager in Shenzhen to identify and work with Chinese brands that want to enter the U.S. market, with Italic acting as their U.S. distributor. This role owns outreach, qualification, relationship management, commercial discussion, sample coordination, and the handoff from promising brand lead to active partnership.\n\nWe are looking for someone with 3-5 years of BD, partnerships, sales, channel, retail, e-commerce, brand, or distribution experience. The right person is proactive, commercially sharp, organized, and comfortable moving between Chinese brand teams and a U.S.-market strategy.\n\n\nRESPONSIBILITIES\n\n - Source, contact, and follow up with Chinese consumer brands that may be a fit for U.S. market entry through Italic.\n\n - Explain Italic's U.S. distribution and market-entry opportunity clearly to founders, brand teams, factories, and channel partners.\n\n - Build and maintain a pipeline of target brands, contacts, follow-up status, samples, commercial terms, and next steps.\n\n - Discuss early partnership terms, including product scope, supply capacity, pricing, channel restrictions, market support, and U.S. distribution needs.\n\n - Coordinate internal review of brand and product opportunities across product quality, pricing, supply reliability, packaging, compliance risk, and U.S. market fit.\n\n - Own the full early-stage BD workflow from outbound outreach and first calls to sample collection, materials review, commercial discussion, and partnership handoff.\n\n - Track market and brand intelligence across Chinese consumer brands, cross-border e-commerce, DTC, Amazon, TikTok Shop, and retail channels.\n\n - Keep the Shenzhen and U.S. teams aligned with clear updates on progress, risks, blockers, and decisions needed.\n\n\nREQUIREMENTS\n\n - Based in Shenzhen and able to meet brands, suppliers, trade-show contacts, and partners in person.\n\n - 3-5 years of experience in BD, partnerships, sales, channel partnerships, brand partnerships, marketplace development, retail, e-commerce, consumer brands, cross-border commerce, or distribution.\n\n - Experience proactively sourcing and developing customers or partners from initial outreach through follow-up and next-step execution.\n\n - Good understanding of the challenges Chinese brands face when entering the U.S. market, including positioning, channel strategy, pricing, packaging, compliance, inventory, and trust.\n\n - Clear communicator who can make Italic's partnership model feel concrete and credible.\n\n - Strong commercial judgment and the ability to quickly assess whether a brand is worth pursuing.\n\n - Organized enough to manage a large volume of leads, contacts, and partnership conversations over time.\n\n - Fluent Mandarin and strong written English; spoken business English is a plus.\n\n\nHELPFUL BUT NOT REQUIRED\n\n - Experience with cross-border e-commerce, Amazon, Shopify, TikTok Shop, overseas distribution, or U.S. retail channels.\n\n - Experience at a consumer brand, trading company, marketplace, channel sales team, or brand agency.\n\n - Familiarity with brand, supply-chain, or trade-show networks in Shenzhen, Guangzhou, Dongguan, Yiwu, Hangzhou, or similar cities.\n\n - Experience with brand internationalization, U.S. market entry, distribution agreements, channel partnerships, or commercial negotiation.\n\n - Ability to manage a lead pipeline clearly in a CRM, spreadsheet, or similar workflow tool."
+   },
+   {
+    "id": "0c5e791c-84ad-4739-bf1c-460624863a0c",
+    "title": "亚马逊平台运营经理 / Amazon Marketplace Operations Manager",
+    "department": "Italic",
+    "team": "Italic",
+    "employmentType": "FullTime",
+    "location": "Shenzhen",
+    "secondaryLocations": [],
+    "publishedAt": "2026-07-25T00:07:03.892+00:00",
+    "isListed": true,
+    "isRemote": false,
+    "workplaceType": "OnSite",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Guangdong",
+      "addressCountry": "China",
+      "addressLocality": "Shenzhen"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/0c5e791c-84ad-4739-bf1c-460624863a0c",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/0c5e791c-84ad-4739-bf1c-460624863a0c/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">Italic 正在深圳招聘一名亚马逊平台运营经理，负责 Seller Central 的日常经营、账户健康、Listing 质量、FBA 库存、促销节奏和跨团队执行。</p><p style=\"min-height:1.5em\">工作职责</p><p style=\"min-height:1.5em\">• 管理 Listing 创建与优化、变体、A+ 内容和品牌旗舰店。</p><p style=\"min-height:1.5em\">• 监控账户健康、绩效通知、合规问题和申诉，及时闭环异常。</p><p style=\"min-height:1.5em\">• 跟踪销售、转化率、ACOS、TACOS、库存周转和缺货风险，输出周报。</p><p style=\"min-height:1.5em\">• 协调 FBA 补货、入仓、IPI、超龄库存和大促备货。</p><p style=\"min-height:1.5em\">• 维护运营 SOP，并与产品、物流和品牌团队推动落地。</p><p style=\"min-height:1.5em\">任职要求</p><p style=\"min-height:1.5em\">• 常驻深圳，2 年以上 Amazon Seller Central 实操经验。</p><p style=\"min-height:1.5em\">• 熟悉 Listing、账户健康、FBA 库存和促销的完整工作流。</p><p style=\"min-height:1.5em\">• 熟练使用 Excel 或 Google Sheets，能从数据中发现问题。</p><p style=\"min-height:1.5em\">• 能用英文处理 Seller Support Case，工作有条理、稳定可靠。</p><p style=\"min-height:1.5em\">English</p><p style=\"min-height:1.5em\">Italic is hiring an Amazon Marketplace Operations Manager in Shenzhen to run Seller Central operations, account health, listing quality, FBA inventory, promotions, and cross-functional execution.</p><p style=\"min-height:1.5em\">Responsibilities</p><p style=\"min-height:1.5em\">• Manage listings, variations, A+ content, Brand Store maintenance, and account health.</p><p style=\"min-height:1.5em\">• Track sales, conversion, ACOS, TACOS, inventory turns, and stockout risk; produce useful weekly reports.</p><p style=\"min-height:1.5em\">• Coordinate FBA replenishment, inbound shipments, IPI, aged inventory, and peak-event readiness.</p><p style=\"min-height:1.5em\">• Maintain clear SOPs and close issues with product, logistics, and brand teams.</p><p style=\"min-height:1.5em\">Requirements</p><p style=\"min-height:1.5em\">• Based in Shenzhen with 2+ years of hands-on Seller Central experience.</p><p style=\"min-height:1.5em\">• Strong Excel or Google Sheets skills and clear written English for Seller Support cases.</p><p style=\"min-height:1.5em\">• Organized, reliable, and able to independently own operating details.</p>",
+    "descriptionPlain": "Italic 正在深圳招聘一名亚马逊平台运营经理，负责 Seller Central 的日常经营、账户健康、Listing 质量、FBA 库存、促销节奏和跨团队执行。\n\n工作职责\n\n• 管理 Listing 创建与优化、变体、A+ 内容和品牌旗舰店。\n\n• 监控账户健康、绩效通知、合规问题和申诉，及时闭环异常。\n\n• 跟踪销售、转化率、ACOS、TACOS、库存周转和缺货风险，输出周报。\n\n• 协调 FBA 补货、入仓、IPI、超龄库存和大促备货。\n\n• 维护运营 SOP，并与产品、物流和品牌团队推动落地。\n\n任职要求\n\n• 常驻深圳，2 年以上 Amazon Seller Central 实操经验。\n\n• 熟悉 Listing、账户健康、FBA 库存和促销的完整工作流。\n\n• 熟练使用 Excel 或 Google Sheets，能从数据中发现问题。\n\n• 能用英文处理 Seller Support Case，工作有条理、稳定可靠。\n\nEnglish\n\nItalic is hiring an Amazon Marketplace Operations Manager in Shenzhen to run Seller Central operations, account health, listing quality, FBA inventory, promotions, and cross-functional execution.\n\nResponsibilities\n\n• Manage listings, variations, A+ content, Brand Store maintenance, and account health.\n\n• Track sales, conversion, ACOS, TACOS, inventory turns, and stockout risk; produce useful weekly reports.\n\n• Coordinate FBA replenishment, inbound shipments, IPI, aged inventory, and peak-event readiness.\n\n• Maintain clear SOPs and close issues with product, logistics, and brand teams.\n\nRequirements\n\n• Based in Shenzhen with 2+ years of hands-on Seller Central experience.\n\n• Strong Excel or Google Sheets skills and clear written English for Seller Support cases.\n\n• Organized, reliable, and able to independently own operating details."
+   },
+   {
+    "id": "0acab5e4-bc54-4c60-bc27-822cf3d3152b",
+    "title": "亚马逊广告与增长经理 / Amazon PPC & Growth Manager",
+    "department": "Italic",
+    "team": "Italic",
+    "employmentType": "FullTime",
+    "location": "Shenzhen",
+    "secondaryLocations": [],
+    "publishedAt": "2026-07-25T00:07:06.314+00:00",
+    "isListed": true,
+    "isRemote": false,
+    "workplaceType": "OnSite",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Guangdong",
+      "addressCountry": "China",
+      "addressLocality": "Shenzhen"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/0acab5e4-bc54-4c60-bc27-822cf3d3152b",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/0acab5e4-bc54-4c60-bc27-822cf3d3152b/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">Italic 正在深圳招聘一名亚马逊广告与增长经理，重点负责 Amazon PPC、关键词策略、预算效率和促销增长。这个岗位不是纯执行，需要能把广告数据与 Listing、价格、库存和利润联系起来。</p><p style=\"min-height:1.5em\">工作职责</p><p style=\"min-height:1.5em\">• 规划并优化 Sponsored Products、Sponsored Brands 和 Sponsored Display。</p><p style=\"min-height:1.5em\">• 管理预算、竞价、搜索词、否定关键词和商品投放。</p><p style=\"min-height:1.5em\">• 跟踪 ACOS、TACOS、ROAS、CTR、CVR、自然排名和贡献利润。</p><p style=\"min-height:1.5em\">• 建立广告测试计划，评估新词、新素材、新 ASIN 和促销增量。</p><p style=\"min-height:1.5em\">• 与内容、运营和库存团队协作，避免广告增长造成缺货或利润损失。</p><p style=\"min-height:1.5em\">任职要求</p><p style=\"min-height:1.5em\">• 常驻深圳，2 年以上 Amazon PPC 实操经验。</p><p style=\"min-height:1.5em\">• 能展示实际账户、预算规模、优化方法和量化结果。</p><p style=\"min-height:1.5em\">• 熟练使用 Seller Central、Advertising Console 和数据表格。</p><p style=\"min-height:1.5em\">• 理解 Listing 转化、FBA 库存、定价和促销之间的关系。</p><p style=\"min-height:1.5em\">English</p><p style=\"min-height:1.5em\">Italic is hiring an Amazon PPC &amp; Growth Manager in Shenzhen to own paid search, keyword strategy, budget efficiency, and promotional growth across Amazon.</p><p style=\"min-height:1.5em\">Responsibilities</p><p style=\"min-height:1.5em\">• Build and optimize SP, SB, and SD campaigns across bids, search terms, negatives, and product targeting.</p><p style=\"min-height:1.5em\">• Report on ACOS, TACOS, ROAS, CTR, CVR, organic rank, and contribution margin.</p><p style=\"min-height:1.5em\">• Run a disciplined testing roadmap for keywords, creative, ASINs, and promotional offers.</p><p style=\"min-height:1.5em\">• Coordinate with listing, inventory, and merchandising owners so growth remains profitable and in stock.</p><p style=\"min-height:1.5em\">Requirements</p><p style=\"min-height:1.5em\">• Based in Shenzhen with 2+ years of hands-on Amazon PPC experience.</p><p style=\"min-height:1.5em\">• Able to discuss real account structures, budget levels, optimization decisions, and measured outcomes.</p><p style=\"min-height:1.5em\">• Strong analytical skills and practical understanding of listing conversion, pricing, and FBA inventory.</p>",
+    "descriptionPlain": "Italic 正在深圳招聘一名亚马逊广告与增长经理，重点负责 Amazon PPC、关键词策略、预算效率和促销增长。这个岗位不是纯执行，需要能把广告数据与 Listing、价格、库存和利润联系起来。\n\n工作职责\n\n• 规划并优化 Sponsored Products、Sponsored Brands 和 Sponsored Display。\n\n• 管理预算、竞价、搜索词、否定关键词和商品投放。\n\n• 跟踪 ACOS、TACOS、ROAS、CTR、CVR、自然排名和贡献利润。\n\n• 建立广告测试计划，评估新词、新素材、新 ASIN 和促销增量。\n\n• 与内容、运营和库存团队协作，避免广告增长造成缺货或利润损失。\n\n任职要求\n\n• 常驻深圳，2 年以上 Amazon PPC 实操经验。\n\n• 能展示实际账户、预算规模、优化方法和量化结果。\n\n• 熟练使用 Seller Central、Advertising Console 和数据表格。\n\n• 理解 Listing 转化、FBA 库存、定价和促销之间的关系。\n\nEnglish\n\nItalic is hiring an Amazon PPC & Growth Manager in Shenzhen to own paid search, keyword strategy, budget efficiency, and promotional growth across Amazon.\n\nResponsibilities\n\n• Build and optimize SP, SB, and SD campaigns across bids, search terms, negatives, and product targeting.\n\n• Report on ACOS, TACOS, ROAS, CTR, CVR, organic rank, and contribution margin.\n\n• Run a disciplined testing roadmap for keywords, creative, ASINs, and promotional offers.\n\n• Coordinate with listing, inventory, and merchandising owners so growth remains profitable and in stock.\n\nRequirements\n\n• Based in Shenzhen with 2+ years of hands-on Amazon PPC experience.\n\n• Able to discuss real account structures, budget levels, optimization decisions, and measured outcomes.\n\n• Strong analytical skills and practical understanding of listing conversion, pricing, and FBA inventory."
+   },
+   {
+    "id": "4214ab46-706f-4ada-87f4-7ab6559e0e38",
+    "title": "智能硬件供应商开发经理 / Smart Hardware Supplier Development Manager",
+    "department": "Sudo",
+    "team": "Sudo",
+    "employmentType": "FullTime",
+    "location": "Shenzhen",
+    "secondaryLocations": [
+     {
+      "location": "Guangzhou",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Guangdong",
+        "addressCountry": "China",
+        "addressLocality": "Guangzhou"
+       }
+      }
+     }
+    ],
+    "publishedAt": "2026-07-25T00:07:08.818+00:00",
+    "isListed": true,
+    "isRemote": false,
+    "workplaceType": "OnSite",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Guangdong",
+      "addressCountry": "China",
+      "addressLocality": "Shenzhen"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/4214ab46-706f-4ada-87f4-7ab6559e0e38",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/4214ab46-706f-4ada-87f4-7ab6559e0e38/application",
+    "descriptionHtml": "<h2>我们正在深圳招聘一名智能硬件供应商开发经理，为小型 AI 设备和消费电子产品寻找、评估并管理供应商。你将把不完整的产品需求转化为可报价、可打样、可量产的供应方案。</h2><p style=\"min-height:1.5em\">工作职责</p><p style=\"min-height:1.5em\">• 寻找并评估结构件、电子件、模具、表面处理、包装和整机供应商。</p><p style=\"min-height:1.5em\">• 管理 RFQ、成本拆解、比价、谈判、样品和供应商准入。</p><p style=\"min-height:1.5em\">• 与工业设计、机械、电子和工厂团队审查图纸、BOM、工艺与交期。</p><p style=\"min-height:1.5em\">• 跟进试产和量产问题，推动质量、成本和交付改进。</p><p style=\"min-height:1.5em\">• 建立供应商数据库、风险分级、双供策略和清晰的采购记录。</p><p style=\"min-height:1.5em\">任职要求</p><p style=\"min-height:1.5em\">• 常驻深圳，3 年以上消费电子或智能硬件供应商开发经验。</p><p style=\"min-height:1.5em\">• 熟悉珠三角供应链，能独立找厂、验厂、询价和谈判。</p><p style=\"min-height:1.5em\">• 能看懂 CAD/STP、2D 图纸和 BOM，并与工程师讨论 DFM。</p><p style=\"min-height:1.5em\">• 中英文沟通清晰，执行力强，愿意频繁跑工厂。</p><p style=\"min-height:1.5em\">English</p><p style=\"min-height:1.5em\">We are hiring a Smart Hardware Supplier Development Manager in Shenzhen to source and qualify suppliers for compact AI devices and consumer electronics.</p><p style=\"min-height:1.5em\">Responsibilities</p><p style=\"min-height:1.5em\">• Source mechanical, electronic, tooling, finishing, packaging, and assembly partners.</p><p style=\"min-height:1.5em\">• Own RFQs, cost breakdowns, negotiations, samples, qualification, and supplier records.</p><p style=\"min-height:1.5em\">• Review CAD/STP files, drawings, BOMs, processes, and lead times with design, engineering, and factories.</p><p style=\"min-height:1.5em\">• Drive quality, cost, delivery, dual-source, and production-risk improvements.</p><p style=\"min-height:1.5em\">Requirements</p><p style=\"min-height:1.5em\">• Based in Shenzhen with 3+ years of supplier development experience in consumer electronics or smart hardware.</p><p style=\"min-height:1.5em\">• Strong Pearl River Delta factory network and hands-on RFQ, audit, and negotiation experience.</p><p style=\"min-height:1.5em\">• Able to read CAD/STP, drawings, and BOMs and discuss DFM with engineers.</p>",
+    "descriptionPlain": "我们正在深圳招聘一名智能硬件供应商开发经理，为小型 AI 设备和消费电子产品寻找、评估并管理供应商。你将把不完整的产品需求转化为可报价、可打样、可量产的供应方案。\n\n工作职责\n\n• 寻找并评估结构件、电子件、模具、表面处理、包装和整机供应商。\n\n• 管理 RFQ、成本拆解、比价、谈判、样品和供应商准入。\n\n• 与工业设计、机械、电子和工厂团队审查图纸、BOM、工艺与交期。\n\n• 跟进试产和量产问题，推动质量、成本和交付改进。\n\n• 建立供应商数据库、风险分级、双供策略和清晰的采购记录。\n\n任职要求\n\n• 常驻深圳，3 年以上消费电子或智能硬件供应商开发经验。\n\n• 熟悉珠三角供应链，能独立找厂、验厂、询价和谈判。\n\n• 能看懂 CAD/STP、2D 图纸和 BOM，并与工程师讨论 DFM。\n\n• 中英文沟通清晰，执行力强，愿意频繁跑工厂。\n\nEnglish\n\nWe are hiring a Smart Hardware Supplier Development Manager in Shenzhen to source and qualify suppliers for compact AI devices and consumer electronics.\n\nResponsibilities\n\n• Source mechanical, electronic, tooling, finishing, packaging, and assembly partners.\n\n• Own RFQs, cost breakdowns, negotiations, samples, qualification, and supplier records.\n\n• Review CAD/STP files, drawings, BOMs, processes, and lead times with design, engineering, and factories.\n\n• Drive quality, cost, delivery, dual-source, and production-risk improvements.\n\nRequirements\n\n• Based in Shenzhen with 3+ years of supplier development experience in consumer electronics or smart hardware.\n\n• Strong Pearl River Delta factory network and hands-on RFQ, audit, and negotiation experience.\n\n• Able to read CAD/STP, drawings, and BOMs and discuss DFM with engineers."
+   },
+   {
+    "id": "ab17a10f-8a9c-41a4-8218-28487b175726",
+    "title": "消费电子 NPI 与采购经理 / Consumer Electronics NPI & Sourcing Manager",
+    "department": "Sudo",
+    "team": "Sudo",
+    "employmentType": "FullTime",
+    "location": "Shenzhen",
+    "secondaryLocations": [
+     {
+      "location": "Guangzhou",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Guangdong",
+        "addressCountry": "China",
+        "addressLocality": "Guangzhou"
+       }
+      }
+     }
+    ],
+    "publishedAt": "2026-07-25T00:07:11.603+00:00",
+    "isListed": true,
+    "isRemote": false,
+    "workplaceType": "OnSite",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Guangdong",
+      "addressCountry": "China",
+      "addressLocality": "Shenzhen"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/ab17a10f-8a9c-41a4-8218-28487b175726",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/ab17a10f-8a9c-41a4-8218-28487b175726/application",
+    "descriptionHtml": "<h2>我们正在深圳招聘一名消费电子 NPI 与采购经理，负责把新产品从工程样机推进到可稳定量产。这个岗位连接设计、工程、供应商和工厂，重点是试产节奏、BOM 成本、物料齐套、质量和交付。</h2><p style=\"min-height:1.5em\">工作职责</p><p style=\"min-height:1.5em\">• 制定 EVT、DVT、PVT 和量产爬坡的采购及物料计划。</p><p style=\"min-height:1.5em\">• 管理 BOM 报价、成本目标、长交期物料、替代料和采购风险。</p><p style=\"min-height:1.5em\">• 跟进模具、样品、试产、工程变更和量产问题闭环。</p><p style=\"min-height:1.5em\">• 与工程和供应商审查 DFM、质量标准、测试要求与交期。</p><p style=\"min-height:1.5em\">• 建立 NPI 看板，清楚呈现成本、进度、缺料和关键风险。</p><p style=\"min-height:1.5em\">任职要求</p><p style=\"min-height:1.5em\">• 常驻深圳，3 年以上消费电子 NPI、项目采购或供应链项目经验。</p><p style=\"min-height:1.5em\">• 熟悉 EVT/DVT/PVT、BOM、ECN、模具和试产工作流。</p><p style=\"min-height:1.5em\">• 能看懂图纸和规格，能在成本、质量与速度之间做判断。</p><p style=\"min-height:1.5em\">• Excel/Sheets 熟练，中英文沟通清晰，能独立推动多方交付。</p><p style=\"min-height:1.5em\">English</p><p style=\"min-height:1.5em\">We are hiring a Consumer Electronics NPI &amp; Sourcing Manager in Shenzhen to take new devices from engineering prototype through stable mass production.</p><p style=\"min-height:1.5em\">Responsibilities</p><p style=\"min-height:1.5em\">• Own sourcing and material readiness across EVT, DVT, PVT, and ramp.</p><p style=\"min-height:1.5em\">• Manage BOM quotes, cost targets, long-lead parts, alternates, samples, tooling, and change orders.</p><p style=\"min-height:1.5em\">• Close production issues with engineering, suppliers, and factories; maintain a clear NPI risk dashboard.</p><p style=\"min-height:1.5em\">• Review DFM, quality standards, test requirements, and lead times.</p><p style=\"min-height:1.5em\">Requirements</p><p style=\"min-height:1.5em\">• Based in Shenzhen with 3+ years in consumer-electronics NPI, project sourcing, or supply-chain program management.</p><p style=\"min-height:1.5em\">• Fluent in EVT/DVT/PVT, BOM, ECN, tooling, and pilot-build workflows.</p><p style=\"min-height:1.5em\">• Strong spreadsheet skills and the judgment to balance cost, quality, schedule, and risk.</p>",
+    "descriptionPlain": "我们正在深圳招聘一名消费电子 NPI 与采购经理，负责把新产品从工程样机推进到可稳定量产。这个岗位连接设计、工程、供应商和工厂，重点是试产节奏、BOM 成本、物料齐套、质量和交付。\n\n工作职责\n\n• 制定 EVT、DVT、PVT 和量产爬坡的采购及物料计划。\n\n• 管理 BOM 报价、成本目标、长交期物料、替代料和采购风险。\n\n• 跟进模具、样品、试产、工程变更和量产问题闭环。\n\n• 与工程和供应商审查 DFM、质量标准、测试要求与交期。\n\n• 建立 NPI 看板，清楚呈现成本、进度、缺料和关键风险。\n\n任职要求\n\n• 常驻深圳，3 年以上消费电子 NPI、项目采购或供应链项目经验。\n\n• 熟悉 EVT/DVT/PVT、BOM、ECN、模具和试产工作流。\n\n• 能看懂图纸和规格，能在成本、质量与速度之间做判断。\n\n• Excel/Sheets 熟练，中英文沟通清晰，能独立推动多方交付。\n\nEnglish\n\nWe are hiring a Consumer Electronics NPI & Sourcing Manager in Shenzhen to take new devices from engineering prototype through stable mass production.\n\nResponsibilities\n\n• Own sourcing and material readiness across EVT, DVT, PVT, and ramp.\n\n• Manage BOM quotes, cost targets, long-lead parts, alternates, samples, tooling, and change orders.\n\n• Close production issues with engineering, suppliers, and factories; maintain a clear NPI risk dashboard.\n\n• Review DFM, quality standards, test requirements, and lead times.\n\nRequirements\n\n• Based in Shenzhen with 3+ years in consumer-electronics NPI, project sourcing, or supply-chain program management.\n\n• Fluent in EVT/DVT/PVT, BOM, ECN, tooling, and pilot-build workflows.\n\n• Strong spreadsheet skills and the judgment to balance cost, quality, schedule, and risk."
+   },
+   {
+    "id": "8357b10a-1438-4d2d-8740-6f30ab775e12",
+    "title": "电商履约与库存协调员 / E-commerce Fulfillment & Inventory Coordinator",
+    "department": "Italic",
+    "team": "Italic",
+    "employmentType": "FullTime",
+    "location": "Shenzhen",
+    "secondaryLocations": [],
+    "publishedAt": "2026-07-25T00:07:22.624+00:00",
+    "isListed": true,
+    "isRemote": false,
+    "workplaceType": "OnSite",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Guangdong",
+      "addressCountry": "China",
+      "addressLocality": "Shenzhen"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/8357b10a-1438-4d2d-8740-6f30ab775e12",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/8357b10a-1438-4d2d-8740-6f30ab775e12/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">Italic 正在深圳招聘一名电商履约与库存协调员，负责把订单、库存、补货和异常处理连接起来，确保 Shopify、仓库和 3PL 数据准确、发货及时。</p><p style=\"min-height:1.5em\">工作职责</p><p style=\"min-height:1.5em\">• 每日监控订单、库存、缺货、积压、取消和履约时效。</p><p style=\"min-height:1.5em\">• 对账 Shopify、ERP/WMS、3PL 和承运商数据，修复差异。</p><p style=\"min-height:1.5em\">• 建立补货计划和库存预警，跟踪周转、库龄和安全库存。</p><p style=\"min-height:1.5em\">• 处理丢件、破损、退货、地址异常和客户升级问题。</p><p style=\"min-height:1.5em\">• 输出周报并维护清晰的 SOP、责任人和问题闭环记录。</p><p style=\"min-height:1.5em\">任职要求</p><p style=\"min-height:1.5em\">• 常驻深圳，2 年以上电商履约、库存或供应链运营经验。</p><p style=\"min-height:1.5em\">• 熟练使用 Excel 或 Google Sheets；能做查找、透视表和基础数据清洗。</p><p style=\"min-height:1.5em\">• 熟悉 Shopify 订单流，了解 WMS、ERP、3PL 或承运商系统。</p><p style=\"min-height:1.5em\">• 细致可靠，能在大量日常异常中抓住优先级。</p><p style=\"min-height:1.5em\">English</p><p style=\"min-height:1.5em\">Italic is hiring an E-commerce Fulfillment &amp; Inventory Coordinator in Shenzhen to keep orders, inventory, replenishment, and exception handling accurate across Shopify, warehouses, and 3PL partners.</p><p style=\"min-height:1.5em\">Responsibilities</p><p style=\"min-height:1.5em\">• Monitor orders, inventory, stockouts, backlog, cancellations, and fulfillment SLA daily.</p><p style=\"min-height:1.5em\">• Reconcile Shopify, ERP/WMS, 3PL, and carrier data and resolve discrepancies.</p><p style=\"min-height:1.5em\">• Maintain replenishment plans, stock alerts, aging, turns, and safety-stock reporting.</p><p style=\"min-height:1.5em\">• Close lost, damaged, returned, address-exception, and customer-escalation cases.</p><p style=\"min-height:1.5em\">Requirements</p><p style=\"min-height:1.5em\">• Based in Shenzhen with 2+ years in e-commerce fulfillment, inventory, or supply-chain operations.</p><p style=\"min-height:1.5em\">• Strong Excel or Google Sheets skills, including lookups, pivots, and basic data cleaning.</p><p style=\"min-height:1.5em\">• Familiarity with Shopify and at least one WMS, ERP, 3PL, or carrier system.</p>",
+    "descriptionPlain": "Italic 正在深圳招聘一名电商履约与库存协调员，负责把订单、库存、补货和异常处理连接起来，确保 Shopify、仓库和 3PL 数据准确、发货及时。\n\n工作职责\n\n• 每日监控订单、库存、缺货、积压、取消和履约时效。\n\n• 对账 Shopify、ERP/WMS、3PL 和承运商数据，修复差异。\n\n• 建立补货计划和库存预警，跟踪周转、库龄和安全库存。\n\n• 处理丢件、破损、退货、地址异常和客户升级问题。\n\n• 输出周报并维护清晰的 SOP、责任人和问题闭环记录。\n\n任职要求\n\n• 常驻深圳，2 年以上电商履约、库存或供应链运营经验。\n\n• 熟练使用 Excel 或 Google Sheets；能做查找、透视表和基础数据清洗。\n\n• 熟悉 Shopify 订单流，了解 WMS、ERP、3PL 或承运商系统。\n\n• 细致可靠，能在大量日常异常中抓住优先级。\n\nEnglish\n\nItalic is hiring an E-commerce Fulfillment & Inventory Coordinator in Shenzhen to keep orders, inventory, replenishment, and exception handling accurate across Shopify, warehouses, and 3PL partners.\n\nResponsibilities\n\n• Monitor orders, inventory, stockouts, backlog, cancellations, and fulfillment SLA daily.\n\n• Reconcile Shopify, ERP/WMS, 3PL, and carrier data and resolve discrepancies.\n\n• Maintain replenishment plans, stock alerts, aging, turns, and safety-stock reporting.\n\n• Close lost, damaged, returned, address-exception, and customer-escalation cases.\n\nRequirements\n\n• Based in Shenzhen with 2+ years in e-commerce fulfillment, inventory, or supply-chain operations.\n\n• Strong Excel or Google Sheets skills, including lookups, pivots, and basic data cleaning.\n\n• Familiarity with Shopify and at least one WMS, ERP, 3PL, or carrier system."
+   },
+   {
+    "id": "7cc2e61e-16d7-4b4a-883e-307ee7e7ce0f",
+    "title": "3PL 与物流运营协调员 / 3PL & Logistics Operations Coordinator",
+    "department": "Italic",
+    "team": "Italic",
+    "employmentType": "FullTime",
+    "location": "Shenzhen",
+    "secondaryLocations": [],
+    "publishedAt": "2026-07-25T00:07:25.609+00:00",
+    "isListed": true,
+    "isRemote": false,
+    "workplaceType": "OnSite",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Guangdong",
+      "addressCountry": "China",
+      "addressLocality": "Shenzhen"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/7cc2e61e-16d7-4b4a-883e-307ee7e7ce0f",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/7cc2e61e-16d7-4b4a-883e-307ee7e7ce0f/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">Italic 正在深圳招聘一名 3PL 与物流运营协调员，重点负责第三方仓库、承运商和跨境物流伙伴的日常绩效、账单、异常和改善项目。</p><p style=\"min-height:1.5em\">工作职责</p><p style=\"min-height:1.5em\">• 管理 3PL 日常沟通、入库、出库、退货和库存调整。</p><p style=\"min-height:1.5em\">• 跟踪准时发货、准确率、收货周期、丢损率和异常关闭时间。</p><p style=\"min-height:1.5em\">• 审核仓储、操作和运输账单，发现重复收费或费率偏差。</p><p style=\"min-height:1.5em\">• 处理旺季容量、承运商延误、海关、丢件和库存差异。</p><p style=\"min-height:1.5em\">• 维护 SLA 记分卡、问题日志、会议节奏和改善计划。</p><p style=\"min-height:1.5em\">任职要求</p><p style=\"min-height:1.5em\">• 常驻深圳，2 年以上 3PL、仓储、跨境物流或履约运营经验。</p><p style=\"min-height:1.5em\">• 能用 Excel/Sheets 对账、分析费用和建立运营看板。</p><p style=\"min-height:1.5em\">• 沟通直接、跟进强，能推动外部伙伴按时关闭问题。</p><p style=\"min-height:1.5em\">• 有英语邮件和会议能力。</p><p style=\"min-height:1.5em\">English</p><p style=\"min-height:1.5em\">Italic is hiring a 3PL &amp; Logistics Operations Coordinator in Shenzhen to manage daily performance, billing, exceptions, and improvement work across third-party warehouses and carriers.</p><p style=\"min-height:1.5em\">Responsibilities</p><p style=\"min-height:1.5em\">• Coordinate inbound, outbound, returns, and inventory adjustments with 3PL partners.</p><p style=\"min-height:1.5em\">• Track on-time shipment, accuracy, receiving cycle time, loss and damage, and exception closure.</p><p style=\"min-height:1.5em\">• Audit warehousing, handling, and freight invoices for duplicates and rate discrepancies.</p><p style=\"min-height:1.5em\">• Manage peak capacity, carrier delays, customs issues, lost parcels, and inventory variances.</p><p style=\"min-height:1.5em\">• Maintain SLA scorecards, issue logs, operating reviews, and corrective-action plans.</p><p style=\"min-height:1.5em\">Requirements</p><p style=\"min-height:1.5em\">• Based in Shenzhen with 2+ years in 3PL, warehousing, cross-border logistics, or fulfillment operations.</p><p style=\"min-height:1.5em\">• Strong Excel/Sheets skills for reconciliation, cost analysis, and dashboards.</p><p style=\"min-height:1.5em\">• Clear English communication and persistent external-partner follow-through.</p>",
+    "descriptionPlain": "Italic 正在深圳招聘一名 3PL 与物流运营协调员，重点负责第三方仓库、承运商和跨境物流伙伴的日常绩效、账单、异常和改善项目。\n\n工作职责\n\n• 管理 3PL 日常沟通、入库、出库、退货和库存调整。\n\n• 跟踪准时发货、准确率、收货周期、丢损率和异常关闭时间。\n\n• 审核仓储、操作和运输账单，发现重复收费或费率偏差。\n\n• 处理旺季容量、承运商延误、海关、丢件和库存差异。\n\n• 维护 SLA 记分卡、问题日志、会议节奏和改善计划。\n\n任职要求\n\n• 常驻深圳，2 年以上 3PL、仓储、跨境物流或履约运营经验。\n\n• 能用 Excel/Sheets 对账、分析费用和建立运营看板。\n\n• 沟通直接、跟进强，能推动外部伙伴按时关闭问题。\n\n• 有英语邮件和会议能力。\n\nEnglish\n\nItalic is hiring a 3PL & Logistics Operations Coordinator in Shenzhen to manage daily performance, billing, exceptions, and improvement work across third-party warehouses and carriers.\n\nResponsibilities\n\n• Coordinate inbound, outbound, returns, and inventory adjustments with 3PL partners.\n\n• Track on-time shipment, accuracy, receiving cycle time, loss and damage, and exception closure.\n\n• Audit warehousing, handling, and freight invoices for duplicates and rate discrepancies.\n\n• Manage peak capacity, carrier delays, customs issues, lost parcels, and inventory variances.\n\n• Maintain SLA scorecards, issue logs, operating reviews, and corrective-action plans.\n\nRequirements\n\n• Based in Shenzhen with 2+ years in 3PL, warehousing, cross-border logistics, or fulfillment operations.\n\n• Strong Excel/Sheets skills for reconciliation, cost analysis, and dashboards.\n\n• Clear English communication and persistent external-partner follow-through."
+   },
+   {
+    "id": "c567966b-133d-4e45-b1d1-4d279d5f9f15",
+    "title": "3D 产品可视化设计师 / 3D Product Visualization Artist",
+    "department": "Sudo",
+    "team": "Sudo",
+    "employmentType": "Contract",
+    "location": "Seoul",
+    "secondaryLocations": [
+     {
+      "location": "San Francisco",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "California",
+        "addressCountry": "united states",
+        "addressLocality": "San Francisco"
+       }
+      }
+     },
+     {
+      "location": "Buenos Aires",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "Argentina",
+        "addressLocality": "Buenos Aires"
+       }
+      }
+     },
+     {
+      "location": "New York City",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "New York",
+        "addressCountry": "United States",
+        "addressLocality": "New York City"
+       }
+      }
+     },
+     {
+      "location": "Los Angeles",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "California",
+        "addressCountry": "United States",
+        "addressLocality": "Los Angeles"
+       }
+      }
+     },
+     {
+      "location": "Shenzhen",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Guangdong",
+        "addressCountry": "China",
+        "addressLocality": "Shenzhen"
+       }
+      }
+     }
+    ],
+    "publishedAt": "2026-07-25T00:07:29.702+00:00",
+    "isListed": true,
+    "isRemote": true,
+    "workplaceType": "Remote",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Seoul",
+      "addressCountry": "South Korea",
+      "addressLocality": "Seoul"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/c567966b-133d-4e45-b1d1-4d279d5f9f15",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/c567966b-133d-4e45-b1d1-4d279d5f9f15/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">我们正在招聘一名 3D 产品可视化设计师，为 AI 消费硬件制作高质量静帧、产品页面图、广告素材和发布视觉。你会从 CAD/STP、CMF 方向和不完整的设计输入出发，快速产出可信、精致、可复用的渲染资产。</p><p style=\"min-height:1.5em\">工作职责</p><p style=\"min-height:1.5em\">• 清理 CAD/STP 模型并建立适合渲染的场景、材质、灯光和摄像机。</p><p style=\"min-height:1.5em\">• 制作白底产品图、生活方式场景、细节特写、分解图和电商 PDP 资产。</p><p style=\"min-height:1.5em\">• 准确表达塑料、金属、玻璃、织物、半透明和表面处理。</p><p style=\"min-height:1.5em\">• 根据工厂样品和反馈快速调整 CMF、比例和细节。</p><p style=\"min-height:1.5em\">• 交付有组织的源文件、纹理和可复用场景。</p><p style=\"min-height:1.5em\">任职要求</p><p style=\"min-height:1.5em\">• 提供消费电子或产品可视化作品集。</p><p style=\"min-height:1.5em\">• 熟练使用 Blender、Cinema 4D、3ds Max、KeyShot、Octane、Redshift 或同类工具。</p><p style=\"min-height:1.5em\">• 能处理 CAD/STP 输入，理解 PBR 材质、色彩管理和合成。</p><p style=\"min-height:1.5em\">• 品味好、速度快，能在输入不完整时独立推进。</p><p style=\"min-height:1.5em\">English</p><p style=\"min-height:1.5em\">We are hiring a 3D Product Visualization Artist to create polished stills, PDP imagery, campaign assets, and launch visuals for AI consumer hardware.</p><p style=\"min-height:1.5em\">Responsibilities</p><p style=\"min-height:1.5em\">• Prepare CAD/STP models and build production-ready scenes, materials, lighting, and cameras.</p><p style=\"min-height:1.5em\">• Create clean packshots, lifestyle scenes, detail views, exploded views, and e-commerce assets.</p><p style=\"min-height:1.5em\">• Render plastic, metal, glass, fabric, transparency, and surface finishes accurately.</p><p style=\"min-height:1.5em\">• Iterate quickly from factory samples and CMF feedback; deliver organized reusable source files.</p><p style=\"min-height:1.5em\">Requirements</p><p style=\"min-height:1.5em\">• A strong consumer-electronics or product-visualization portfolio.</p><p style=\"min-height:1.5em\">• Fluency in Blender, Cinema 4D, 3ds Max, KeyShot, Octane, Redshift, or comparable tools.</p><p style=\"min-height:1.5em\">• Experience with CAD/STP inputs, PBR materials, color management, and compositing.</p><p style=\"min-height:1.5em\">• Excellent taste, speed, independence, and comfort working from imperfect inputs.</p>",
+    "descriptionPlain": "我们正在招聘一名 3D 产品可视化设计师，为 AI 消费硬件制作高质量静帧、产品页面图、广告素材和发布视觉。你会从 CAD/STP、CMF 方向和不完整的设计输入出发，快速产出可信、精致、可复用的渲染资产。\n\n工作职责\n\n• 清理 CAD/STP 模型并建立适合渲染的场景、材质、灯光和摄像机。\n\n• 制作白底产品图、生活方式场景、细节特写、分解图和电商 PDP 资产。\n\n• 准确表达塑料、金属、玻璃、织物、半透明和表面处理。\n\n• 根据工厂样品和反馈快速调整 CMF、比例和细节。\n\n• 交付有组织的源文件、纹理和可复用场景。\n\n任职要求\n\n• 提供消费电子或产品可视化作品集。\n\n• 熟练使用 Blender、Cinema 4D、3ds Max、KeyShot、Octane、Redshift 或同类工具。\n\n• 能处理 CAD/STP 输入，理解 PBR 材质、色彩管理和合成。\n\n• 品味好、速度快，能在输入不完整时独立推进。\n\nEnglish\n\nWe are hiring a 3D Product Visualization Artist to create polished stills, PDP imagery, campaign assets, and launch visuals for AI consumer hardware.\n\nResponsibilities\n\n• Prepare CAD/STP models and build production-ready scenes, materials, lighting, and cameras.\n\n• Create clean packshots, lifestyle scenes, detail views, exploded views, and e-commerce assets.\n\n• Render plastic, metal, glass, fabric, transparency, and surface finishes accurately.\n\n• Iterate quickly from factory samples and CMF feedback; deliver organized reusable source files.\n\nRequirements\n\n• A strong consumer-electronics or product-visualization portfolio.\n\n• Fluency in Blender, Cinema 4D, 3ds Max, KeyShot, Octane, Redshift, or comparable tools.\n\n• Experience with CAD/STP inputs, PBR materials, color management, and compositing.\n\n• Excellent taste, speed, independence, and comfort working from imperfect inputs."
+   },
+   {
+    "id": "050965a9-25bb-46bd-b67b-b3c50b765f71",
+    "title": "消费硬件 CG 动态设计师 / CG Motion Designer – Consumer Hardware",
+    "department": "Sudo",
+    "team": "Sudo",
+    "employmentType": "Contract",
+    "location": "Seoul",
+    "secondaryLocations": [
+     {
+      "location": "San Francisco",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "California",
+        "addressCountry": "united states",
+        "addressLocality": "San Francisco"
+       }
+      }
+     },
+     {
+      "location": "Buenos Aires",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "Argentina",
+        "addressLocality": "Buenos Aires"
+       }
+      }
+     },
+     {
+      "location": "New York City",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "New York",
+        "addressCountry": "United States",
+        "addressLocality": "New York City"
+       }
+      }
+     },
+     {
+      "location": "Los Angeles",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "California",
+        "addressCountry": "United States",
+        "addressLocality": "Los Angeles"
+       }
+      }
+     },
+     {
+      "location": "Shenzhen",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Guangdong",
+        "addressCountry": "China",
+        "addressLocality": "Shenzhen"
+       }
+      }
+     }
+    ],
+    "publishedAt": "2026-07-25T00:07:32.441+00:00",
+    "isListed": true,
+    "isRemote": true,
+    "workplaceType": "Remote",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Seoul",
+      "addressCountry": "South Korea",
+      "addressLocality": "Seoul"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/050965a9-25bb-46bd-b67b-b3c50b765f71",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/050965a9-25bb-46bd-b67b-b3c50b765f71/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">我们正在招聘一名消费硬件 CG 动态设计师，为 AI 设备制作产品发布视频、功能演示、社交短片和广告动态素材。这个岗位更重视运动设计、镜头节奏和清晰讲解产品，而不只是静帧渲染。</p><p style=\"min-height:1.5em\">工作职责</p><p style=\"min-height:1.5em\">• 从 CAD/STP 和静态资产建立动画友好的模型、材质与场景。</p><p style=\"min-height:1.5em\">• 制作产品转台、爆炸动画、功能演示、UI 合成和 6–30 秒短视频。</p><p style=\"min-height:1.5em\">• 设计镜头、节奏、转场和声音配合，让复杂功能一眼看懂。</p><p style=\"min-height:1.5em\">• 为不同渠道输出横版、竖版和方形版本，并建立可复用模板。</p><p style=\"min-height:1.5em\">• 与产品、品牌和增长团队快速迭代脚本、分镜和成片。</p><p style=\"min-height:1.5em\">任职要求</p><p style=\"min-height:1.5em\">• 提供产品动画、消费电子或 CG 广告作品集。</p><p style=\"min-height:1.5em\">• 熟练使用 Blender/C4D 与 After Effects、Premiere 或同类工具。</p><p style=\"min-height:1.5em\">• 理解渲染、合成、运动曲线、色彩和交付规格。</p><p style=\"min-height:1.5em\">• 能独立从不完整 brief 推进，速度快、品味好、源文件整洁。</p><p style=\"min-height:1.5em\">English</p><p style=\"min-height:1.5em\">We are hiring a CG Motion Designer for consumer hardware to create launch films, feature explainers, social clips, and performance-ad motion assets for AI devices.</p><p style=\"min-height:1.5em\">Responsibilities</p><p style=\"min-height:1.5em\">• Turn CAD/STP and still assets into animation-ready models, materials, and scenes.</p><p style=\"min-height:1.5em\">• Create product turntables, exploded animations, feature demos, UI composites, and 6–30 second clips.</p><p style=\"min-height:1.5em\">• Design camera movement, pacing, transitions, and sound sync so product value is immediately clear.</p><p style=\"min-height:1.5em\">• Deliver horizontal, vertical, and square versions and maintain reusable templates and source files.</p><p style=\"min-height:1.5em\">Requirements</p><p style=\"min-height:1.5em\">• A portfolio of product animation, consumer-electronics CG, or motion advertising.</p><p style=\"min-height:1.5em\">• Strong Blender or Cinema 4D skills plus After Effects, Premiere, or comparable tools.</p><p style=\"min-height:1.5em\">• Good command of rendering, compositing, motion curves, color, and delivery specs.</p><p style=\"min-height:1.5em\">• Fast, tasteful, independent, and comfortable working from an incomplete brief.</p>",
+    "descriptionPlain": "我们正在招聘一名消费硬件 CG 动态设计师，为 AI 设备制作产品发布视频、功能演示、社交短片和广告动态素材。这个岗位更重视运动设计、镜头节奏和清晰讲解产品，而不只是静帧渲染。\n\n工作职责\n\n• 从 CAD/STP 和静态资产建立动画友好的模型、材质与场景。\n\n• 制作产品转台、爆炸动画、功能演示、UI 合成和 6–30 秒短视频。\n\n• 设计镜头、节奏、转场和声音配合，让复杂功能一眼看懂。\n\n• 为不同渠道输出横版、竖版和方形版本，并建立可复用模板。\n\n• 与产品、品牌和增长团队快速迭代脚本、分镜和成片。\n\n任职要求\n\n• 提供产品动画、消费电子或 CG 广告作品集。\n\n• 熟练使用 Blender/C4D 与 After Effects、Premiere 或同类工具。\n\n• 理解渲染、合成、运动曲线、色彩和交付规格。\n\n• 能独立从不完整 brief 推进，速度快、品味好、源文件整洁。\n\nEnglish\n\nWe are hiring a CG Motion Designer for consumer hardware to create launch films, feature explainers, social clips, and performance-ad motion assets for AI devices.\n\nResponsibilities\n\n• Turn CAD/STP and still assets into animation-ready models, materials, and scenes.\n\n• Create product turntables, exploded animations, feature demos, UI composites, and 6–30 second clips.\n\n• Design camera movement, pacing, transitions, and sound sync so product value is immediately clear.\n\n• Deliver horizontal, vertical, and square versions and maintain reusable templates and source files.\n\nRequirements\n\n• A portfolio of product animation, consumer-electronics CG, or motion advertising.\n\n• Strong Blender or Cinema 4D skills plus After Effects, Premiere, or comparable tools.\n\n• Good command of rendering, compositing, motion curves, color, and delivery specs.\n\n• Fast, tasteful, independent, and comfortable working from an incomplete brief."
+   },
+   {
+    "id": "aea7c738-cc49-4814-9347-b177876b060e",
+    "title": "Part-Time Property Manager - NYC",
+    "department": "Family",
+    "team": "Family",
+    "employmentType": "PartTime",
+    "location": "New York City",
+    "secondaryLocations": [],
+    "publishedAt": "2026-09-13T03:30:28.791+00:00",
+    "isListed": true,
+    "isRemote": null,
+    "workplaceType": null,
+    "address": {
+     "postalAddress": {
+      "addressRegion": "New York",
+      "addressCountry": "United States",
+      "addressLocality": "New York City"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/aea7c738-cc49-4814-9347-b177876b060e",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/aea7c738-cc49-4814-9347-b177876b060e/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">We are seeking a reliable and organized Part-Time Property Manager to support a couple based in the West Village, New York City, with household management, logistics, light administration, and property coordination. This role requires on-site presence a few days per week, providing practical support in a calm, private residence with no children. The right candidate is detail-oriented, discreet, resourceful, and comfortable independently managing property-related tasks and local errands.</p><div style=\"min-height:1.2em;margin-top:0px;margin-bottom:0px\"> </div><p style=\"min-height:1.5em\"><strong>Key Responsibilities</strong></p><div style=\"min-height:1.2em;margin-top:0px;margin-bottom:0px\"> </div><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Oversee property upkeep, basic maintenance requests, and coordinate with building staff and service providers (e.g., cleaners, vendors, repair professionals).</p></li><li><p style=\"min-height:1.5em\">Manage household logistics including scheduling appointments, deliveries, supplies, and small repairs.</p></li><li><p style=\"min-height:1.5em\">Run local errands in the West Village and around New York City (e.g., purchasing supplies, handling returns, accepting deliveries).</p></li><li><p style=\"min-height:1.5em\">Track ongoing maintenance needs, vendor appointments, and any open property-related tasks; ensure timely follow-through.</p></li><li><p style=\"min-height:1.5em\">Provide regular updates, notes, and summaries regarding household status, maintenance tracking, and vendor scheduling.</p></li><li><p style=\"min-height:1.5em\">Maintain records of home access, keyholders, and scheduling details with complete discretion and professionalism.</p></li></ul><div style=\"min-height:1.2em;margin-top:0px;margin-bottom:0px\"> </div><p style=\"min-height:1.5em\"><strong>Requirements</strong></p><div style=\"min-height:1.2em;margin-top:0px;margin-bottom:0px\"> </div><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Based in or near New York City and able to handle regular in-person tasks in the West Village.</p></li><li><p style=\"min-height:1.5em\">Available for property and household coordination.</p></li><li><p style=\"min-height:1.5em\">Comfortable managing a private residence for a couple who works from home most days.</p></li><li><p style=\"min-height:1.5em\">Highly organized, reliable, proactive, and consistent with detail-oriented follow-through.</p></li><li><p style=\"min-height:1.5em\">Effective written communicator with an ability to summarize updates clearly and concisely.</p></li><li><p style=\"min-height:1.5em\">Strong sense of judgment, professionalism, discretion, and respect for privacy.</p></li><li><p style=\"min-height:1.5em\">Proficient with standard productivity tools (email, calendars, messaging apps, spreadsheets, task trackers).</p></li></ul><div style=\"min-height:1.2em;margin-top:0px;margin-bottom:0px\"> </div><p style=\"min-height:1.5em\"><strong>Nice to Have</strong></p><div style=\"min-height:1.2em;margin-top:0px;margin-bottom:0px\"> </div><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Experience as a property manager, building manager, personal/household assistant, family assistant, operations assistant, or similar support role.</p></li><li><p style=\"min-height:1.5em\">Familiarity with West Village or downtown Manhattan operations, vendors, and transportation options.</p></li><li><p style=\"min-height:1.5em\">Experience facilitating travel, supporting household operations, or coordinating small events.</p></li></ul><div style=\"min-height:1.2em;margin-top:0px;margin-bottom:0px\"> </div><p style=\"min-height:1.5em\"></p>",
+    "descriptionPlain": "We are seeking a reliable and organized Part-Time Property Manager to support a couple based in the West Village, New York City, with household management, logistics, light administration, and property coordination. This role requires on-site presence a few days per week, providing practical support in a calm, private residence with no children. The right candidate is detail-oriented, discreet, resourceful, and comfortable independently managing property-related tasks and local errands.\n\n \n\nKey Responsibilities\n\n \n\n - Oversee property upkeep, basic maintenance requests, and coordinate with building staff and service providers (e.g., cleaners, vendors, repair professionals).\n\n - Manage household logistics including scheduling appointments, deliveries, supplies, and small repairs.\n\n - Run local errands in the West Village and around New York City (e.g., purchasing supplies, handling returns, accepting deliveries).\n\n - Track ongoing maintenance needs, vendor appointments, and any open property-related tasks; ensure timely follow-through.\n\n - Provide regular updates, notes, and summaries regarding household status, maintenance tracking, and vendor scheduling.\n\n - Maintain records of home access, keyholders, and scheduling details with complete discretion and professionalism.\n\n \n\nRequirements\n\n \n\n - Based in or near New York City and able to handle regular in-person tasks in the West Village.\n\n - Available for property and household coordination.\n\n - Comfortable managing a private residence for a couple who works from home most days.\n\n - Highly organized, reliable, proactive, and consistent with detail-oriented follow-through.\n\n - Effective written communicator with an ability to summarize updates clearly and concisely.\n\n - Strong sense of judgment, professionalism, discretion, and respect for privacy.\n\n - Proficient with standard productivity tools (email, calendars, messaging apps, spreadsheets, task trackers).\n\n \n\nNice to Have\n\n \n\n - Experience as a property manager, building manager, personal/household assistant, family assistant, operations assistant, or similar support role.\n\n - Familiarity with West Village or downtown Manhattan operations, vendors, and transportation options.\n\n - Experience facilitating travel, supporting household operations, or coordinating small events.\n\n \n\n"
+   },
+   {
+    "id": "375f4b17-32d1-410e-9e18-2e311462e092",
+    "title": "Freelance Property Manager - NYC",
+    "department": "Family",
+    "team": "Family",
+    "employmentType": "PartTime",
+    "location": "New York City",
+    "secondaryLocations": [],
+    "publishedAt": "2026-09-13T03:30:37.062+00:00",
+    "isListed": true,
+    "isRemote": null,
+    "workplaceType": null,
+    "address": {
+     "postalAddress": {
+      "addressRegion": "New York",
+      "addressCountry": "United States",
+      "addressLocality": "New York City"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/375f4b17-32d1-410e-9e18-2e311462e092",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/375f4b17-32d1-410e-9e18-2e311462e092/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">We are seeking a reliable and organized Part-Time Property Manager to support a couple based in the West Village, New York City, with household management, logistics, light administration, and property coordination. This role requires on-site presence a few days per week, providing practical support in a calm, private residence with no children. The right candidate is detail-oriented, discreet, resourceful, and comfortable independently managing property-related tasks and local errands.</p><div style=\"min-height:1.2em;margin-top:0px;margin-bottom:0px\"> </div><p style=\"min-height:1.5em\"><strong>Key Responsibilities</strong></p><div style=\"min-height:1.2em;margin-top:0px;margin-bottom:0px\"> </div><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Oversee property upkeep, basic maintenance requests, and coordinate with building staff and service providers (e.g., cleaners, vendors, repair professionals).</p></li><li><p style=\"min-height:1.5em\">Manage household logistics including scheduling appointments, deliveries, supplies, and small repairs.</p></li><li><p style=\"min-height:1.5em\">Run local errands in the West Village and around New York City (e.g., purchasing supplies, handling returns, accepting deliveries).</p></li><li><p style=\"min-height:1.5em\">Track ongoing maintenance needs, vendor appointments, and any open property-related tasks; ensure timely follow-through.</p></li><li><p style=\"min-height:1.5em\">Provide regular updates, notes, and summaries regarding household status, maintenance tracking, and vendor scheduling.</p></li><li><p style=\"min-height:1.5em\">Maintain records of home access, keyholders, and scheduling details with complete discretion and professionalism.</p></li></ul><div style=\"min-height:1.2em;margin-top:0px;margin-bottom:0px\"> </div><p style=\"min-height:1.5em\"><strong>Requirements</strong></p><div style=\"min-height:1.2em;margin-top:0px;margin-bottom:0px\"> </div><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Based in or near New York City and able to handle regular in-person tasks in the West Village.</p></li><li><p style=\"min-height:1.5em\">Available for property and household coordination.</p></li><li><p style=\"min-height:1.5em\">Comfortable managing a private residence for a couple who works from home most days.</p></li><li><p style=\"min-height:1.5em\">Highly organized, reliable, proactive, and consistent with detail-oriented follow-through.</p></li><li><p style=\"min-height:1.5em\">Effective written communicator with an ability to summarize updates clearly and concisely.</p></li><li><p style=\"min-height:1.5em\">Strong sense of judgment, professionalism, discretion, and respect for privacy.</p></li><li><p style=\"min-height:1.5em\">Proficient with standard productivity tools (email, calendars, messaging apps, spreadsheets, task trackers).</p></li></ul><div style=\"min-height:1.2em;margin-top:0px;margin-bottom:0px\"> </div><p style=\"min-height:1.5em\"><strong>Nice to Have</strong></p><div style=\"min-height:1.2em;margin-top:0px;margin-bottom:0px\"> </div><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Experience as a property manager, building manager, personal/household assistant, family assistant, operations assistant, or similar support role.</p></li><li><p style=\"min-height:1.5em\">Familiarity with West Village or downtown Manhattan operations, vendors, and transportation options.</p></li><li><p style=\"min-height:1.5em\">Experience facilitating travel, supporting household operations, or coordinating small events.</p></li></ul><div style=\"min-height:1.2em;margin-top:0px;margin-bottom:0px\"> </div><p style=\"min-height:1.5em\"></p>",
+    "descriptionPlain": "We are seeking a reliable and organized Part-Time Property Manager to support a couple based in the West Village, New York City, with household management, logistics, light administration, and property coordination. This role requires on-site presence a few days per week, providing practical support in a calm, private residence with no children. The right candidate is detail-oriented, discreet, resourceful, and comfortable independently managing property-related tasks and local errands.\n\n \n\nKey Responsibilities\n\n \n\n - Oversee property upkeep, basic maintenance requests, and coordinate with building staff and service providers (e.g., cleaners, vendors, repair professionals).\n\n - Manage household logistics including scheduling appointments, deliveries, supplies, and small repairs.\n\n - Run local errands in the West Village and around New York City (e.g., purchasing supplies, handling returns, accepting deliveries).\n\n - Track ongoing maintenance needs, vendor appointments, and any open property-related tasks; ensure timely follow-through.\n\n - Provide regular updates, notes, and summaries regarding household status, maintenance tracking, and vendor scheduling.\n\n - Maintain records of home access, keyholders, and scheduling details with complete discretion and professionalism.\n\n \n\nRequirements\n\n \n\n - Based in or near New York City and able to handle regular in-person tasks in the West Village.\n\n - Available for property and household coordination.\n\n - Comfortable managing a private residence for a couple who works from home most days.\n\n - Highly organized, reliable, proactive, and consistent with detail-oriented follow-through.\n\n - Effective written communicator with an ability to summarize updates clearly and concisely.\n\n - Strong sense of judgment, professionalism, discretion, and respect for privacy.\n\n - Proficient with standard productivity tools (email, calendars, messaging apps, spreadsheets, task trackers).\n\n \n\nNice to Have\n\n \n\n - Experience as a property manager, building manager, personal/household assistant, family assistant, operations assistant, or similar support role.\n\n - Familiarity with West Village or downtown Manhattan operations, vendors, and transportation options.\n\n - Experience facilitating travel, supporting household operations, or coordinating small events.\n\n \n\n"
+   },
+   {
+    "id": "9fe7ce71-d5e6-4703-92a9-27813aab1274",
+    "title": "自由职业交互设计师 / Freelance UI Designer",
+    "department": "Italic",
+    "team": "Italic",
+    "employmentType": "PartTime",
+    "location": "Shenzhen",
+    "secondaryLocations": [
+     {
+      "location": "Hong Kong",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Hong Kong",
+        "addressCountry": "Hong Kong",
+        "addressLocality": "Hong Kong"
+       }
+      }
+     },
+     {
+      "location": "Shanghai",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Zhejiang",
+        "addressCountry": "China",
+        "addressLocality": "Shanghai"
+       }
+      }
+     }
+    ],
+    "publishedAt": "2026-09-24T04:32:26.300+00:00",
+    "isListed": true,
+    "isRemote": false,
+    "workplaceType": "OnSite",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Guangdong",
+      "addressCountry": "China",
+      "addressLocality": "Shenzhen"
+     }
+    },
+    "jobUrl": "https://jobs.ashbyhq.com/kirin/9fe7ce71-d5e6-4703-92a9-27813aab1274",
+    "applyUrl": "https://jobs.ashbyhq.com/kirin/9fe7ce71-d5e6-4703-92a9-27813aab1274/application",
+    "descriptionHtml": "<p style=\"min-height:1.5em\">我们正在深圳招聘一名自由职业交互设计师，为 AI 智能体和消费硬件设计清晰、快速、令人愉悦的产品体验。你会从不完整的产品想法出发，完成用户流程、原型、视觉细节和工程交付。</p><p style=\"min-height:1.5em\">工作职责</p><p style=\"min-height:1.5em\">• 在 Figma 中设计用户流程、线框图、高保真界面和可点击原型。</p><p style=\"min-height:1.5em\">• 定义跨 Web、移动端和设备界面的交互模式与组件。</p><p style=\"min-height:1.5em\">• 用快速原型验证复杂的智能体行为、状态和错误恢复。</p><p style=\"min-height:1.5em\">• 与工程师紧密协作，提供清晰规格、资产和迭代反馈。</p><p style=\"min-height:1.5em\">• 维护可复用的设计系统和整洁源文件。</p><p style=\"min-height:1.5em\">任职要求</p><p style=\"min-height:1.5em\">• 提供优秀的消费产品或 AI 产品交互设计作品集。</p><p style=\"min-height:1.5em\">• 熟练使用 Figma，理解组件、变量、原型和设计系统。</p><p style=\"min-height:1.5em\">• 品味好、速度快，能在输入不完整时独立做判断。</p><p style=\"min-height:1.5em\">• 自由职业/合同制，能与深圳和纽约团队协作。</p><p style=\"min-height:1.5em\">English</p><p style=\"min-height:1.5em\">We are hiring a freelance Interaction Designer in Shenzhen to design clear, fast, and delightful experiences for AI agents and consumer devices.</p><p style=\"min-height:1.5em\">Responsibilities</p><p style=\"min-height:1.5em\">• Create flows, wireframes, polished UI, and clickable prototypes in Figma.</p><p style=\"min-height:1.5em\">• Define interaction patterns and components across web, mobile, and device interfaces.</p><p style=\"min-height:1.5em\">• Prototype complex agent states, transitions, and error recovery before engineering investment.</p><p style=\"min-height:1.5em\">• Deliver clear specs, assets, reusable components, and organized source files.</p><p style=\"min-height:1.5em\">Requirements</p><p style=\"min-height:1.5em\">• A strong portfolio of consumer-product or AI interaction work.</p><p style=\"min-height:1.5em\">• Advanced Figma skills across components, variables, prototyping, and design systems.</p><p style=\"min-height:1.5em\">• Excellent taste, speed, independence, and comfort with imperfect inputs.</p><p style=\"min-height:1.5em\">• Freelance/contract availability and ability to collaborate with Shenzhen and New York.</p>",
+    "descriptionPlain": "我们正在深圳招聘一名自由职业交互设计师，为 AI 智能体和消费硬件设计清晰、快速、令人愉悦的产品体验。你会从不完整的产品想法出发，完成用户流程、原型、视觉细节和工程交付。\n\n工作职责\n\n• 在 Figma 中设计用户流程、线框图、高保真界面和可点击原型。\n\n• 定义跨 Web、移动端和设备界面的交互模式与组件。\n\n• 用快速原型验证复杂的智能体行为、状态和错误恢复。\n\n• 与工程师紧密协作，提供清晰规格、资产和迭代反馈。\n\n• 维护可复用的设计系统和整洁源文件。\n\n任职要求\n\n• 提供优秀的消费产品或 AI 产品交互设计作品集。\n\n• 熟练使用 Figma，理解组件、变量、原型和设计系统。\n\n• 品味好、速度快，能在输入不完整时独立做判断。\n\n• 自由职业/合同制，能与深圳和纽约团队协作。\n\nEnglish\n\nWe are hiring a freelance Interaction Designer in Shenzhen to design clear, fast, and delightful experiences for AI agents and consumer devices.\n\nResponsibilities\n\n• Create flows, wireframes, polished UI, and clickable prototypes in Figma.\n\n• Define interaction patterns and components across web, mobile, and device interfaces.\n\n• Prototype complex agent states, transitions, and error recovery before engineering investment.\n\n• Deliver clear specs, assets, reusable components, and organized source files.\n\nRequirements\n\n• A strong portfolio of consumer-product or AI interaction work.\n\n• Advanced Figma skills across components, variables, prototyping, and design systems.\n\n• Excellent taste, speed, independence, and comfort with imperfect inputs.\n\n• Freelance/contract availability and ability to collaborate with Shenzhen and New York."
+   }
+  ],
+  "apiVersion": "1"
+ }
+}

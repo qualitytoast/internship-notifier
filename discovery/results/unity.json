@@ -1,0 +1,23 @@
+{
+  "key": "unity",
+  "name": "Unity",
+  "careers_url": "https://unity.com/careers/positions",
+  "hiring_system": "workday (tenant unitytech, site Unity)",
+  "checker": "workday",
+  "settings": {
+    "host": "unitytech.wd1.myworkdayjobs.com",
+    "tenant": "unitytech",
+    "site": "Unity"
+  },
+  "feed": "POST https://unitytech.wd1.myworkdayjobs.com/wday/cxs/unitytech/Unity/jobs",
+  "feed_total": 128,
+  "page_total": 127,
+  "page_total_how": "unity.com/careers/positions (plain GET, 200) embeds every job's Workday link: 127 unique requisitions, all in the feed",
+  "intern_total": 1,
+  "status": "verified",
+  "robots": "ALLOW (no matching rule)",
+  "notes": "The one feed-only job is a re-posted requisition (JOBREQ-2616171-1); Greenhouse 'unity3d' is retired.",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-20T03:45:00Z"
+}

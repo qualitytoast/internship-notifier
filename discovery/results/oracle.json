@@ -1,0 +1,23 @@
+{
+  "key": "oracle",
+  "name": "Oracle",
+  "careers_url": "https://careers.oracle.com/en/sites/jobsearch/jobs",
+  "hiring_system": "oracle (Oracle Recruiting Cloud; one active site CX_45001)",
+  "checker": "oracle",
+  "settings": {
+    "host": "eeho.fa.us2.oraclecloud.com",
+    "site": "CX_45001",
+    "job_url": "https://careers.oracle.com/en/sites/jobsearch/job/{id}"
+  },
+  "feed": "GET https://eeho.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations&finder=findReqs;siteNumber=CX_45001,limit=200,offset=N,sortBy=POSTING_DATES_DESC (12 pages)",
+  "feed_total": 2377,
+  "page_total": 2380,
+  "page_total_how": "Playwright render of https://careers.oracle.com/en/sites/jobsearch/jobs (no filters) showed '2380 Job'; the page's own API call and every list page reported TotalJobsCount 2380, but full enumeration returned 2377 unique ids (server lists 3 fewer rows than its count; no duplicates)",
+  "intern_total": 18,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW: eeho.fa.us2.oraclecloud.com robots.txt is 404 (allow-all); careers.oracle.com/robots.txt is an HTML 'Page not found' page served with 200 (no rules)",
+  "notes": "CX_45001 (URL name 'jobsearch') is the only ORA_ACTIVE site in the public recruitingCESites list (5 others inactive); campus/intern roles are on it, tagged by flex fields AttributeChar4=Student/Intern (18) and AttributeChar13=Campus (21), which list rows do not carry (16 of the 18 have 'Intern' in the title; an optional selectedFlexFieldsFacets query tags them). Keyword 'intern' matches 2229 jobs (internal/international). TotalJobsCount runs 3 above the listable rows, right at the adapter's tolerance=3: raise it.",
+  "checked_at": "2026-10-20T00:24:52Z"
+}

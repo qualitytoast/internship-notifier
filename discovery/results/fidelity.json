@@ -1,0 +1,23 @@
+{
+  "key": "fidelity",
+  "name": "Fidelity Investments",
+  "careers_url": "https://jobs.fidelity.com/en/jobs/",
+  "hiring_system": "workday (behind an Umbraco 'jobboard' marketing site)",
+  "checker": "workday",
+  "settings": {
+    "host": "wd1.myworkdaysite.com",
+    "tenant": "fmr",
+    "site": "FidelityCareers"
+  },
+  "feed": "POST https://wd1.myworkdaysite.com/wday/cxs/fmr/FidelityCareers/jobs (limit 20, offset paging; 38 pages)",
+  "feed_total": 760,
+  "page_total": 755,
+  "page_total_how": "Playwright renders of the three site cultures: /en/jobs/ '709 open roles', /ie/jobs/ '33 open roles', /in/jobs/ '13 open roles' = 755. CXS by country: US 711, Ireland 33, India 12, UK 2, Japan 1, Germany 1. The 4 UK/JP/DE jobs are on no culture of the marketing site; the rest is +-2 churn.",
+  "intern_total": 7,
+  "status": "verified",
+  "robots": "ALLOW (wd1.myworkdaysite.com robots.txt answers 422 = no robots; fmr.wd1.myworkdayjobs.com allows /FidelityCareers/)",
+  "notes": "Only one external Workday site (FidelityCareers). No intern facet and timeType is 'Full time' for all 760, so interns come from titles only. Some reposted requisitions have a '-1' path suffix and stale slugs (e.g. .../Intern_2136759-1).",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-20T00:16:00Z"
+}

@@ -1,0 +1,21 @@
+{
+  "key": "gts",
+  "name": "GTS",
+  "careers_url": "https://gtsx.com/careers/",
+  "hiring_system": "icims",
+  "checker": "icims",
+  "settings": {
+    "portal": "https://careers-gtsx.icims.com"
+  },
+  "feed": "GET https://careers-gtsx.icims.com/jobs/search?ss=1&in_iframe=1&pr=N (HTML)",
+  "feed_total": 16,
+  "page_total": 16,
+  "page_total_how": "16 cards under 'Search Results Page 1 of 1'; sitemap.xml 16 job URLs",
+  "intern_total": 0,
+  "status": "verified",
+  "robots": "ALLOW (no matching rule)",
+  "notes": "Domain is gtsx.com; gts.com does not resolve.",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-19T23:55:00Z"
+}

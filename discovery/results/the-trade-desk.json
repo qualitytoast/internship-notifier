@@ -1,0 +1,21 @@
+{
+  "key": "the-trade-desk",
+  "name": "The Trade Desk",
+  "careers_url": "https://careers.thetradedesk.com/jobs",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "thetradedesk"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/thetradedesk/jobs",
+  "feed_total": 103,
+  "page_total": 103,
+  "page_total_how": "Playwright render of https://careers.thetradedesk.com/jobs showed '103 jobs' (10 per page); the visible /jobs/<id>/<slug> ids are Greenhouse thetradedesk ids",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule; boards-api.greenhouse.io only disallows /embed/); careers page ALLOW",
+  "notes": "Custom careers site rendered server-side from the GH board (the browser makes no Greenhouse call). No internships posted now; the careers sitemap has no early-career page.",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

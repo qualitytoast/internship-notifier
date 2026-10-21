@@ -1,0 +1,8 @@
+# status 200
+User-Agent: *
+Disallow: /mydata
+Disallow: /admin
+Disallow: /companies
+Disallow: /postings/db1e2258-8120-47b4-bfa2-4b7ca7e2bd09
+
+Sitemap: https://careers.wolve.com/sitemap

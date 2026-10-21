@@ -1,0 +1,645 @@
+{
+ "_note": "captured 2026-10-20 (UTC); trimmed: first N jobPostings of offset 0 plus the facets block, other pages omitted",
+ "AmFamGroupInternCareers": {
+  "request": "POST https://amfam.wd1.myworkdayjobs.com/wday/cxs/amfam/AmFamGroupInternCareers/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":0,\"searchText\":\"\"}",
+  "response": {
+   "total": 24,
+   "jobPostings": [
+    {
+     "title": "Summer 2027 Intern - Claims",
+     "externalPath": "/job/WI-Madison/Summer-2027-Intern---Claims_R39421",
+     "locationsText": "WI Madison",
+     "postedOn": "Posted 3 Days Ago",
+     "remoteType": "Hybrid",
+     "bulletFields": [
+      "R39421",
+      "AFICS American Family Insurance Claims Services, Inc."
+     ]
+    },
+    {
+     "title": "Summer 2027 Intern- Enterprise Platform Functions",
+     "externalPath": "/job/MA-Boston/Summer-2027-Intern--Enterprise-Platform-Functions_R39434",
+     "locationsText": "2 Locations",
+     "postedOn": "Posted 3 Days Ago",
+     "remoteType": "Hybrid",
+     "bulletFields": [
+      "R39434",
+      "AFMIC American Family Mutual Insurance Company, S.I."
+     ]
+    },
+    {
+     "title": "Summer 2027 Intern - Collaboration and Communication Technology",
+     "externalPath": "/job/WI-Madison/Intern---Collaboration-and-Communication-Technology_R39525",
+     "locationsText": "WI Madison",
+     "postedOn": "Posted 4 Days Ago",
+     "remoteType": "On-site",
+     "bulletFields": [
+      "R39525",
+      "AFMIC American Family Mutual Insurance Company, S.I."
+     ]
+    },
+    {
+     "title": "Summer 2027 Intern - Cybersecurity",
+     "externalPath": "/job/WI-Madison/Cybersecurity-Intern_R39591",
+     "locationsText": "2 Locations",
+     "postedOn": "Posted 5 Days Ago",
+     "remoteType": "On-site",
+     "bulletFields": [
+      "R39591",
+      "AFMIC American Family Mutual Insurance Company, S.I."
+     ]
+    },
+    {
+     "title": "Summer 2027 Media and Advertising MBA Intern",
+     "externalPath": "/job/WI-Madison/Summer-2027-Media-and-Advertising-MBA-Intern_R39436",
+     "locationsText": "WI Madison",
+     "postedOn": "Posted 6 Days Ago",
+     "remoteType": "Hybrid",
+     "bulletFields": [
+      "R39436",
+      "AFMIC American Family Mutual Insurance Company, S.I."
+     ]
+    },
+    {
+     "title": "Summer Internship 2027- Web Develper Intern",
+     "externalPath": "/job/WI-Madison/Web-Develper-Intern_R39373",
+     "locationsText": "WI Madison",
+     "postedOn": "Posted 6 Days Ago",
+     "remoteType": "Hybrid",
+     "bulletFields": [
+      "R39373",
+      "AFMIC American Family Mutual Insurance Company, S.I."
+     ]
+    }
+   ],
+   "facets": [
+    {
+     "facetParameter": "hiringCompany",
+     "descriptor": "Operating Company",
+     "values": [
+      {
+       "descriptor": "AFMIC American Family Mutual Insurance Company, S.I.",
+       "id": "6eca43c9839c103ab30d9de31e5f07ab",
+       "count": 21
+      },
+      {
+       "descriptor": "AFICS American Family Insurance Claims Services, Inc.",
+       "id": "a96aa3c8e79f012db5dae961bb003838",
+       "count": 3
+      }
+     ]
+    },
+    {
+     "facetParameter": "remoteType",
+     "descriptor": "Remote Type",
+     "values": [
+      {
+       "descriptor": "Hybrid",
+       "id": "9a0bbd5031a01001ef7bc9e645740000",
+       "count": 16
+      },
+      {
+       "descriptor": "On-site",
+       "id": "9a0bbd5031a01001ef7bc94c50cd0000",
+       "count": 8
+      }
+     ]
+    },
+    {
+     "facetParameter": "workerSubType",
+     "descriptor": "Job Type",
+     "values": [
+      {
+       "descriptor": "Intern",
+       "id": "6eca43c9839c103a9192b4a96c40ab8c",
+       "count": 24
+      }
+     ]
+    },
+    {
+     "facetParameter": "timeType",
+     "descriptor": "Time Type",
+     "values": [
+      {
+       "descriptor": "Full time",
+       "id": "6eca43c9839c10390e86bac3d19009f8",
+       "count": 23
+      },
+      {
+       "descriptor": "Part time",
+       "id": "6eca43c9839c10390e86bac1aa8a09f7",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "locationMainGroup",
+     "values": [
+      {
+       "facetParameter": "locations",
+       "descriptor": "Locations",
+       "values": [
+        {
+         "descriptor": "AF-MA Boston Office Congress St",
+         "id": "b4d3723772a310015dafd82553d90000",
+         "count": 1
+        },
+        {
+         "descriptor": "AZ Chandler",
+         "id": "d957ae1a95d910947e7bcf487e8dfc5a",
+         "count": 1
+        },
+        {
+         "descriptor": "MA Boston",
+         "id": "53e68efb0adc01ab69e8ad4d7b173567",
+         "count": 6
+        },
+        {
+         "descriptor": "MO St Louis",
+         "id": "7b05ce36ca16108c888217777c662681",
+         "count": 1
+        },
+        {
+         "descriptor": "WI Madison",
+         "id": "909ef5632b380149729320e63565dd40",
+         "count": 22
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Careers": {
+  "request": "POST https://amfam.wd1.myworkdayjobs.com/wday/cxs/amfam/Careers/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":0,\"searchText\":\"\"}",
+  "response": {
+   "total": 32,
+   "jobPostings": [
+    {
+     "title": "Senior User Experience Designer (Hybrid)",
+     "externalPath": "/job/WI-Madison/Senior-User-Experience-Designer--Hybrid-_R39660",
+     "locationsText": "2 Locations",
+     "postedOn": "Posted Today",
+     "remoteType": "Hybrid",
+     "bulletFields": [
+      "R39660",
+      "AFMIC American Family Mutual Insurance Company, S.I."
+     ]
+    },
+    {
+     "title": "Litigation Paralegal",
+     "externalPath": "/job/OR-Portland/Litigation-Paralegal_R39668-2",
+     "locationsText": "4 Locations",
+     "postedOn": "Posted Today",
+     "remoteType": "Remote",
+     "bulletFields": [
+      "R39668",
+      "AFMIC American Family Mutual Insurance Company, S.I."
+     ]
+    },
+    {
+     "title": "Actuarial Specialist/Senior Actuarial Specialist (Hybrid)",
+     "externalPath": "/job/WI-Madison/Actuarial-Specialist-Senior-Actuarial-Specialist--Hybrid-_R39657",
+     "locationsText": "2 Locations",
+     "postedOn": "Posted 3 Days Ago",
+     "remoteType": "Hybrid",
+     "bulletFields": [
+      "R39657",
+      "AFMIC American Family Mutual Insurance Company, S.I."
+     ]
+    },
+    {
+     "title": "Lead Vendor Management Specialist",
+     "externalPath": "/job/WI-Madison/Lead-Vendor-Management-Specialist_R39665",
+     "locationsText": "2 Locations",
+     "postedOn": "Posted 3 Days Ago",
+     "remoteType": "Hybrid",
+     "bulletFields": [
+      "R39665",
+      "AFMIC American Family Mutual Insurance Company, S.I."
+     ]
+    }
+   ],
+   "facets": [
+    {
+     "facetParameter": "hiringCompany",
+     "descriptor": "Operating Company",
+     "values": [
+      {
+       "descriptor": "AFMIC American Family Mutual Insurance Company, S.I.",
+       "id": "6eca43c9839c103ab30d9de31e5f07ab",
+       "count": 23
+      },
+      {
+       "descriptor": "AFICS American Family Insurance Claims Services, Inc.",
+       "id": "a96aa3c8e79f012db5dae961bb003838",
+       "count": 9
+      }
+     ]
+    },
+    {
+     "facetParameter": "jobFamily",
+     "descriptor": "Job Category",
+     "values": [
+      {
+       "descriptor": "Technical Engineering",
+       "id": "3f4aa02e75041001f3a31376d4740000",
+       "count": 9
+      },
+      {
+       "descriptor": "Claims Adjusting Services",
+       "id": "067f8a9ce7d31001f3c4e40ee2e30000",
+       "count": 8
+      },
+      {
+       "descriptor": "Intern",
+       "id": "a2b55078a0b01001f3a1900366150000",
+       "count": 3
+      },
+      {
+       "descriptor": "Product",
+       "id": "95380d755d4c1001f3bdf278aa910000",
+       "count": 3
+      },
+      {
+       "descriptor": "Corporate Strategy",
+       "id": "d2a9fc13e3321001f3ab1fc4aeed0000",
+       "count": 1
+      },
+      {
+       "descriptor": "Technical Services",
+       "id": "c8d93d3e1ad61001f38da415be210000",
+       "count": 1
+      },
+      {
+       "descriptor": "Vendor Management",
+       "id": "3f4aa02e75041001f3a3bf9d0bed0000",
+       "count": 1
+      },
+      {
+       "descriptor": "User Experience",
+       "id": "3f4aa02e75041001f3a39f1a5ba10000",
+       "count": 1
+      },
+      {
+       "descriptor": "Legal Support",
+       "id": "1da42ebf0e901001f3a5a304292e0000",
+       "count": 1
+      },
+      {
+       "descriptor": "Claims Operations",
+       "id": "95380d755d4c1001f3bdb155d6230000",
+       "count": 1
+      },
+      {
+       "descriptor": "Cybersecurity",
+       "id": "c8d93d3e1ad61001f38d72b29cef0000",
+       "count": 1
+      },
+      {
+       "descriptor": "Treasury",
+       "id": "3f4aa02e75041001f3a16b4a459d0000",
+       "count": 1
+      },
+      {
+       "descriptor": "Actuary - Property and Casualty",
+       "id": "d2a9fc13e3321001f3a8b0262c7a0000",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "workerSubType",
+     "descriptor": "Worker Type",
+     "values": [
+      {
+       "descriptor": "Regular",
+       "id": "6eca43c9839c103a9192b0a025d4ab8a",
+       "count": 29
+      },
+      {
+       "descriptor": "Intern",
+       "id": "6eca43c9839c103a9192b4a96c40ab8c",
+       "count": 3
+      }
+     ]
+    },
+    {
+     "facetParameter": "timeType",
+     "descriptor": "Full-time/Part-time",
+     "values": [
+      {
+       "descriptor": "Full time",
+       "id": "6eca43c9839c10390e86bac3d19009f8",
+       "count": 31
+      },
+      {
+       "descriptor": "Part time",
+       "id": "6eca43c9839c10390e86bac1aa8a09f7",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "remoteType",
+     "descriptor": "Remote Type",
+     "values": [
+      {
+       "descriptor": "Hybrid",
+       "id": "9a0bbd5031a01001ef7bc9e645740000",
+       "count": 20
+      },
+      {
+       "descriptor": "Remote",
+       "id": "9edb1a0a5d971001f3c89d3304730000",
+       "count": 7
+      },
+      {
+       "descriptor": "Remote",
+       "id": "9a0bbd5031a01001ef7bc9e645740001",
+       "count": 3
+      },
+      {
+       "descriptor": "On-site",
+       "id": "9a0bbd5031a01001ef7bc94c50cd0000",
+       "count": 2
+      }
+     ]
+    },
+    {
+     "facetParameter": "Location",
+     "descriptor": "Locations",
+     "values": [
+      {
+       "descriptor": "WI Madison",
+       "id": "909ef5632b380149729320e63565dd40",
+       "count": 23
+      },
+      {
+       "descriptor": "MA Boston",
+       "id": "53e68efb0adc01ab69e8ad4d7b173567",
+       "count": 16
+      },
+      {
+       "descriptor": "GA Atlanta",
+       "id": "d957ae1a95d910948134e14e56973b59",
+       "count": 3
+      },
+      {
+       "descriptor": "AF-CO Denver-West Regional Ofc",
+       "id": "d360d85fc23d100012ae55486c700000",
+       "count": 3
+      },
+      {
+       "descriptor": "CO Denver",
+       "id": "348eb29f804801b096c71aa05405a53a",
+       "count": 3
+      },
+      {
+       "descriptor": "AF-MA Boston Office Congress St",
+       "id": "b4d3723772a310015dafd82553d90000",
+       "count": 2
+      },
+      {
+       "descriptor": "AZ Phoenix",
+       "id": "d957ae1a95d910947f169b79b3890230",
+       "count": 2
+      },
+      {
+       "descriptor": "NH Keene",
+       "id": "2b0e13fe78fd012f01e3d6f45501ecb5",
+       "count": 2
+      },
+      {
+       "descriptor": "AF-AZ Phoenix Office",
+       "id": "6eca43c9839c103ab1bdbdcc74db05cc",
+       "count": 2
+      },
+      {
+       "descriptor": "MN Minneapolis",
+       "id": "d957ae1a95d910948a7957980221dd19",
+       "count": 2
+      },
+      {
+       "descriptor": "AF-MN Hopkins Office",
+       "id": "94dbd91a9d711001aff67d204ae50000",
+       "count": 2
+      },
+      {
+       "descriptor": "IN Merrillville",
+       "id": "f90581366e1901538e2c10db9f01ab3d",
+       "count": 1
+      },
+      {
+       "descriptor": "AF-NH Keene 55 West St Office",
+       "id": "c2047867d73a0115b4a7b5d41a01d8e4",
+       "count": 1
+      },
+      {
+       "descriptor": "IN Crown Point",
+       "id": "9175129478a6010362d3a9d00c058731",
+       "count": 1
+      },
+      {
+       "descriptor": "OH Cleveland",
+       "id": "c6d58b1628a00117511eaff8ac091cd5",
+       "count": 1
+      },
+      {
+       "descriptor": "IN Schererville",
+       "id": "c4b4f2e966f00105c85f2ebfb489111a",
+       "count": 1
+      },
+      {
+       "descriptor": "OR Newberg",
+       "id": "38de0d3fa68701fcbd38f957e487d5b9",
+       "count": 1
+      },
+      {
+       "descriptor": "MO St Joseph",
+       "id": "38de0d3fa687010f4ce7e67d59874346",
+       "count": 1
+      },
+      {
+       "descriptor": "AF-MO St Joseph-Ctrl Reg Ofc",
+       "id": "6eca43c9839c103ab1bda3baa64f05a9",
+       "count": 1
+      },
+      {
+       "descriptor": "OR Portland",
+       "id": "d957ae1a95d91094ccb5f282695a6ed1",
+       "count": 1
+      },
+      {
+       "descriptor": "OR Beaverton",
+       "id": "d957ae1a95d91094cc6d80ad22026c1e",
+       "count": 1
+      },
+      {
+       "descriptor": "MO Kansas City",
+       "id": "d957ae1a95d910948e7424926a4021bd",
+       "count": 1
+      },
+      {
+       "descriptor": "AF-NH Keene Office",
+       "id": "ce6fc3a70f50100120b6ef4a00a50000",
+       "count": 1
+      },
+      {
+       "descriptor": "GA Douglasville",
+       "id": "9f1bfd5c94491000b424d0fc66130000",
+       "count": 1
+      },
+      {
+       "descriptor": "GA South Fluton",
+       "id": "9f1bfd5c94491000b401d9870a4a0000",
+       "count": 1
+      },
+      {
+       "descriptor": "GA Peachtree City",
+       "id": "60a23a5945011000b3cc798998890000",
+       "count": 1
+      },
+      {
+       "descriptor": "GA Newnan",
+       "id": "1e83f2ae85bc100209b7c0cd34020000",
+       "count": 1
+      },
+      {
+       "descriptor": "IL Chicago",
+       "id": "d957ae1a95d9109483659e4b90f053e0",
+       "count": 1
+      },
+      {
+       "descriptor": "OH Lorain",
+       "id": "1ea3a39176181000ca9f4aa045ab0000",
+       "count": 1
+      },
+      {
+       "descriptor": "PA Philadelphia",
+       "id": "a96aa3c8e79f0128c56229afc70015c3",
+       "count": 1
+      },
+      {
+       "descriptor": "MD Baltimore",
+       "id": "a96aa3c8e79f01cff0325376c700c2c0",
+       "count": 1
+      },
+      {
+       "descriptor": "IN Indianapolis",
+       "id": "9b9cf516430b01ef60eb7418fc005899",
+       "count": 1
+      },
+      {
+       "descriptor": "OR Tigard",
+       "id": "3673dc37b51601dc73dbac63ba00e4b7",
+       "count": 1
+      },
+      {
+       "descriptor": "MI Detroit",
+       "id": "2230151badf0019c2086a12ec2004ce2",
+       "count": 1
+      },
+      {
+       "descriptor": "NC Raleigh",
+       "id": "d60c396afc5001e76e09637cf1017507",
+       "count": 1
+      },
+      {
+       "descriptor": "IN Highland",
+       "id": "9e9ddf67846501dec549eca4d3275451",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "Location_State",
+     "descriptor": "Location State",
+     "values": [
+      {
+       "descriptor": "Wisconsin",
+       "id": "96f29b3353ac4653b1a860751618e36b",
+       "count": 23
+      },
+      {
+       "descriptor": "Massachusetts",
+       "id": "c66d738416b74fb180376cf59cc7ec8f",
+       "count": 18
+      },
+      {
+       "descriptor": "Colorado",
+       "id": "a83d6eabae3b49718c4ce09eeb66fd0b",
+       "count": 6
+      },
+      {
+       "descriptor": "Arizona",
+       "id": "c7b20b0d4bc04711a00900569e9afabd",
+       "count": 4
+      },
+      {
+       "descriptor": "New Hampshire",
+       "id": "9efc91fd842142a0b0bf455e723b65a0",
+       "count": 4
+      },
+      {
+       "descriptor": "Minnesota",
+       "id": "02f3984b69ba450080e456fe733f6741",
+       "count": 4
+      },
+      {
+       "descriptor": "Missouri",
+       "id": "790e3c3ddfaa4123905237a05f1df9e9",
+       "count": 3
+      },
+      {
+       "descriptor": "Georgia",
+       "id": "dec8eabbb13d45bdb159b8e25d896110",
+       "count": 3
+      },
+      {
+       "descriptor": "Pennsylvania",
+       "id": "f620a79f2dc44473828b42881312de2b",
+       "count": 1
+      },
+      {
+       "descriptor": "Oregon",
+       "id": "6fcc4198762c4a7c807486c849fe94dd",
+       "count": 1
+      },
+      {
+       "descriptor": "Ohio",
+       "id": "41493c81d9214eb190fd14067c7d974d",
+       "count": 1
+      },
+      {
+       "descriptor": "North Carolina",
+       "id": "1486a0a4a8464c3b9ec482d4038deb99",
+       "count": 1
+      },
+      {
+       "descriptor": "Michigan",
+       "id": "b8372eef6b5341a39cdc95ac32790cba",
+       "count": 1
+      },
+      {
+       "descriptor": "Maryland",
+       "id": "586509e6daa741808206b095fee97e8f",
+       "count": 1
+      },
+      {
+       "descriptor": "Indiana",
+       "id": "28489665bcac44028a70d0642c932be4",
+       "count": 1
+      },
+      {
+       "descriptor": "Illinois",
+       "id": "d8bb292ed9fe44a2899a990ad569538c",
+       "count": 1
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

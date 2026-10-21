@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers/siteMap.xml
+
+User-agent: *
+Allow: /crowdstrikecareers/
+Disallow: /refreshFacet/

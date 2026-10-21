@@ -1,0 +1,2006 @@
+{
+ "_note": "Raw GET https://boards-api.greenhouse.io/v1/boards/dvtrading/jobs.",
+ "observed": "2026-10-20T00:37:34Z",
+ "response": {
+  "jobs": [
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4736954005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4455932005,
+    "location": {
+     "name": "Hong Kong"
+    },
+    "metadata": null,
+    "id": 4736954005,
+    "updated_at": "2026-09-28T23:59:05-04:00",
+    "requisition_id": "416",
+    "title": "2027 Quantitative Researcher Graduate (DV Equities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-24T00:16:05-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4733877005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4454599005,
+    "location": {
+     "name": "Hong Kong"
+    },
+    "metadata": null,
+    "id": 4733877005,
+    "updated_at": "2026-09-17T02:04:50-04:00",
+    "requisition_id": "407",
+    "title": "2027 Quantitative Research Intern (DV Equities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-15T22:59:27-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4719106005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4446979005,
+    "location": {
+     "name": "New York"
+    },
+    "metadata": null,
+    "id": 4719106005,
+    "updated_at": "2026-09-11T11:01:22-04:00",
+    "requisition_id": "375",
+    "title": "2027 Quantitative Trader Graduate (DV Equities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-11T10:41:48-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4691298005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4433314005,
+    "location": {
+     "name": "Hong Kong"
+    },
+    "metadata": null,
+    "id": 4691298005,
+    "updated_at": "2026-09-17T02:05:23-04:00",
+    "requisition_id": "327",
+    "title": "2027 Quantitative Trader Graduate (DV Equities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-05-04T17:50:58-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4733880005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4454601005,
+    "location": {
+     "name": "Hong Kong"
+    },
+    "metadata": null,
+    "id": 4733880005,
+    "updated_at": "2026-09-17T02:06:33-04:00",
+    "requisition_id": "408",
+    "title": "2027 Software Developer Intern  (DV Equities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-15T23:39:37-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4732429005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4453819005,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 4732429005,
+    "updated_at": "2026-09-09T15:13:24-04:00",
+    "requisition_id": "401",
+    "title": "AI Engineer Intern - Summer 2027",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-09T15:13:24-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4729740005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4452393005,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 4729740005,
+    "updated_at": "2026-10-15T12:54:51-04:00",
+    "requisition_id": "396",
+    "title": "Audit & Financial Reporting Manager ",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-01T14:39:40-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4734954005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4455042005,
+    "location": {
+     "name": "Hong Kong"
+    },
+    "metadata": null,
+    "id": 4734954005,
+    "updated_at": "2026-09-17T10:20:48-04:00",
+    "requisition_id": "412",
+    "title": "Business Development (Asia)",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-17T10:20:48-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4734952005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4455040005,
+    "location": {
+     "name": "Hong Kong"
+    },
+    "metadata": null,
+    "id": 4734952005,
+    "updated_at": "2026-09-17T10:26:13-04:00",
+    "requisition_id": "410",
+    "title": "Chief of Staff (DV Equities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-17T10:21:05-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4727563005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4451246005,
+    "location": {
+     "name": "Hong Kong"
+    },
+    "metadata": null,
+    "id": 4727563005,
+    "updated_at": "2026-09-24T11:42:28-04:00",
+    "requisition_id": "394",
+    "title": "Client Platforms Engineer",
+    "company_name": "DV Trading",
+    "first_published": "2026-08-25T15:46:13-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4720069005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4447494005,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 4720069005,
+    "updated_at": "2026-08-06T13:15:35-04:00",
+    "requisition_id": "386",
+    "title": "Client Platforms Engineer",
+    "company_name": "DV Trading",
+    "first_published": "2026-08-06T13:15:35-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4732697005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4453964005,
+    "location": {
+     "name": "New York"
+    },
+    "metadata": null,
+    "id": 4732697005,
+    "updated_at": "2026-10-01T16:59:09-04:00",
+    "requisition_id": "403",
+    "title": "Client Platforms Engineer Intern - Summer 2027",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-10T10:08:34-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4732700005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4453964005,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 4732700005,
+    "updated_at": "2026-09-10T13:36:57-04:00",
+    "requisition_id": "403",
+    "title": "Client Platforms Engineer Intern - Summer 2027",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-10T10:11:10-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4732683005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4453964005,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 4732683005,
+    "updated_at": "2026-10-01T16:58:57-04:00",
+    "requisition_id": "403",
+    "title": "Client Platforms Engineer Intern - Summer 2027",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-10T10:06:46-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4695141005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4435716005,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 4695141005,
+    "updated_at": "2026-08-05T11:14:34-04:00",
+    "requisition_id": "350",
+    "title": "C++ Software Developer (DV Equities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-05-14T10:15:15-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4721260005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4448083005,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 4721260005,
+    "updated_at": "2026-08-14T17:26:40-04:00",
+    "requisition_id": "387",
+    "title": "C++ Software Engineer (DV Commodities - London)",
+    "company_name": "DV Trading",
+    "first_published": "2026-08-14T17:26:40-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4721259005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4448083005,
+    "location": {
+     "name": "New York"
+    },
+    "metadata": null,
+    "id": 4721259005,
+    "updated_at": "2026-08-05T14:27:16-04:00",
+    "requisition_id": "387",
+    "title": "C++ Software Engineer (DV Commodities - New York)",
+    "company_name": "DV Trading",
+    "first_published": "2026-08-04T16:52:44-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4741016005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4458028005,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 4741016005,
+    "updated_at": "2026-10-06T14:03:39-04:00",
+    "requisition_id": "418",
+    "title": "Database Engineer Intern - Summer 2027",
+    "company_name": "DV Trading",
+    "first_published": "2026-10-06T14:01:57-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4742962005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4458888005,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 4742962005,
+    "updated_at": "2026-10-12T14:32:17-04:00",
+    "requisition_id": "422",
+    "title": "Data Center Engineer Intern - Summer 2027",
+    "company_name": "DV Trading",
+    "first_published": "2026-10-12T14:32:17-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4738302005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4456647005,
+    "location": {
+     "name": "Hong Kong"
+    },
+    "metadata": null,
+    "id": 4738302005,
+    "updated_at": "2026-09-28T23:58:05-04:00",
+    "requisition_id": "417",
+    "title": "Data Engineer (DV Equities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-28T23:58:05-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4730886005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4452973005,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 4730886005,
+    "updated_at": "2026-09-09T15:14:09-04:00",
+    "requisition_id": "398",
+    "title": "DevOps Engineer Intern - Summer 2027",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-09T15:08:19-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4694946005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4435606005,
+    "location": {
+     "name": "Hong Kong"
+    },
+    "metadata": null,
+    "id": 4694946005,
+    "updated_at": "2026-09-17T02:02:38-04:00",
+    "requisition_id": "349",
+    "title": "Equity Research  Analyst （DV Equities）",
+    "company_name": "DV Trading",
+    "first_published": "2026-05-13T10:34:36-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4018000005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 4021261005,
+    "location": {
+     "name": "Chicago; Dubai, Dubai, United Arab Emirates; London; New York"
+    },
+    "metadata": null,
+    "id": 4018000005,
+    "updated_at": "2026-08-05T11:14:34-04:00",
+    "requisition_id": "26",
+    "title": "Experienced Trader",
+    "company_name": "DV Trading",
+    "first_published": "2022-05-12T11:15:08-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4702373005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4438992005,
+    "location": {
+     "name": "Singapore"
+    },
+    "metadata": null,
+    "id": 4702373005,
+    "updated_at": "2026-08-07T10:53:31-04:00",
+    "requisition_id": "355",
+    "title": "Experienced Trader",
+    "company_name": "DV Trading",
+    "first_published": "2026-06-24T10:52:29-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4674275005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4176997005,
+    "location": {
+     "name": "Dubai, Dubai, United Arab Emirates; Singapore"
+    },
+    "metadata": null,
+    "id": 4674275005,
+    "updated_at": "2026-08-05T11:14:34-04:00",
+    "requisition_id": "49",
+    "title": "Experienced Trader (DV Commodities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-03-17T15:58:36-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4219811005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4176997005,
+    "location": {
+     "name": "New York"
+    },
+    "metadata": null,
+    "id": 4219811005,
+    "updated_at": "2026-08-05T11:14:34-04:00",
+    "requisition_id": "49",
+    "title": "Experienced Trader (DV Commodities)",
+    "company_name": "DV Trading",
+    "first_published": "2023-04-19T12:38:01-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4674252005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4176997005,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 4674252005,
+    "updated_at": "2026-08-05T11:14:34-04:00",
+    "requisition_id": "49",
+    "title": "Experienced Trader (DV Commodities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-03-17T15:52:59-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4722749005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4448827005,
+    "location": {
+     "name": "New York"
+    },
+    "metadata": null,
+    "id": 4722749005,
+    "updated_at": "2026-08-25T17:26:43-04:00",
+    "requisition_id": "390",
+    "title": "Futures & Options Trading Analyst Intern - Summer 2027",
+    "company_name": "DV Trading",
+    "first_published": "2026-08-25T17:26:43-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4671558005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4424006005,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 4671558005,
+    "updated_at": "2026-08-05T11:14:34-04:00",
+    "requisition_id": "294",
+    "title": "Global Currency Hedge Trader",
+    "company_name": "DV Trading",
+    "first_published": "2026-03-10T15:13:53-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4742955005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4458884005,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 4742955005,
+    "updated_at": "2026-10-12T14:18:28-04:00",
+    "requisition_id": "421",
+    "title": "Graduate Software Engineer (DV Commodities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-10-12T14:18:28-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4719126005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4446991005,
+    "location": {
+     "name": "New York"
+    },
+    "metadata": null,
+    "id": 4719126005,
+    "updated_at": "2026-10-07T11:54:57-04:00",
+    "requisition_id": "382",
+    "title": "Graduate Software Engineer (DV Commodities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-08-10T18:22:11-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4734953005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4455041005,
+    "location": {
+     "name": "Hong Kong"
+    },
+    "metadata": null,
+    "id": 4734953005,
+    "updated_at": "2026-09-17T10:20:30-04:00",
+    "requisition_id": "411",
+    "title": "Institutional Sales and Trading (DV Equities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-17T10:20:30-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4742897005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4458849005,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 4742897005,
+    "updated_at": "2026-10-12T10:32:15-04:00",
+    "requisition_id": "420",
+    "title": "Junior Fixed Income Relative Value Trader",
+    "company_name": "DV Trading",
+    "first_published": "2026-10-12T10:32:15-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4725689005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4450278005,
+    "location": {
+     "name": "Remote"
+    },
+    "metadata": null,
+    "id": 4725689005,
+    "updated_at": "2026-08-19T11:28:01-04:00",
+    "requisition_id": "392",
+    "title": "Junior Quantitative Trader ",
+    "company_name": "DV Trading",
+    "first_published": "2026-08-19T11:28:01-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4708586005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4442000005,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 4708586005,
+    "updated_at": "2026-09-09T16:15:02-04:00",
+    "requisition_id": "362",
+    "title": "Junior Trader - Fixed Income",
+    "company_name": "DV Trading",
+    "first_published": "2026-07-07T09:51:46-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4686253005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4431124005,
+    "location": {
+     "name": "Singapore"
+    },
+    "metadata": null,
+    "id": 4686253005,
+    "updated_at": "2026-08-05T11:14:34-04:00",
+    "requisition_id": "310",
+    "title": "Junior Trader/Trading Assistant",
+    "company_name": "DV Trading",
+    "first_published": "2026-04-27T14:16:36-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4736720005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4455797005,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 4736720005,
+    "updated_at": "2026-10-15T12:15:23-04:00",
+    "requisition_id": "415",
+    "title": "Junior Trading Operations Analyst ",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-22T14:30:11-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4721555005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4448228005,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 4721555005,
+    "updated_at": "2026-08-14T13:43:49-04:00",
+    "requisition_id": "388",
+    "title": "Junior Trading Operations Analyst ",
+    "company_name": "DV Trading",
+    "first_published": "2026-08-05T11:53:05-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4693230005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4432559005,
+    "location": {
+     "name": "New York"
+    },
+    "metadata": null,
+    "id": 4693230005,
+    "updated_at": "2026-08-05T11:14:34-04:00",
+    "requisition_id": "319",
+    "title": "Portfolio Manager",
+    "company_name": "DV Trading",
+    "first_published": "2026-05-07T11:20:03-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4723943005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4432559005,
+    "location": {
+     "name": "Singapore"
+    },
+    "metadata": null,
+    "id": 4723943005,
+    "updated_at": "2026-08-13T10:58:59-04:00",
+    "requisition_id": "319",
+    "title": "Portfolio Manager",
+    "company_name": "DV Trading",
+    "first_published": "2026-08-13T10:58:59-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4689334005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4432559005,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 4689334005,
+    "updated_at": "2026-08-05T11:14:34-04:00",
+    "requisition_id": "319",
+    "title": "Portfolio Manager",
+    "company_name": "DV Trading",
+    "first_published": "2026-05-07T11:20:02-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4693231005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4432559005,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 4693231005,
+    "updated_at": "2026-08-05T11:14:34-04:00",
+    "requisition_id": "319",
+    "title": "Portfolio Manager",
+    "company_name": "DV Trading",
+    "first_published": "2026-05-07T11:20:03-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4693232005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4432559005,
+    "location": {
+     "name": "Remote"
+    },
+    "metadata": null,
+    "id": 4693232005,
+    "updated_at": "2026-08-05T11:14:34-04:00",
+    "requisition_id": "319",
+    "title": "Portfolio Manager",
+    "company_name": "DV Trading",
+    "first_published": "2026-05-07T11:20:04-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4718028005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4446462005,
+    "location": {
+     "name": "Singapore"
+    },
+    "metadata": null,
+    "id": 4718028005,
+    "updated_at": "2026-08-05T11:14:34-04:00",
+    "requisition_id": "374",
+    "title": "Quantitative Researcher",
+    "company_name": "DV Trading",
+    "first_published": "2026-07-30T11:08:54-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4719984005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4447457005,
+    "location": {
+     "name": "Dubai, Dubai, United Arab Emirates"
+    },
+    "metadata": null,
+    "id": 4719984005,
+    "updated_at": "2026-09-30T13:52:55-04:00",
+    "requisition_id": "385",
+    "title": "Quantitative Researcher ",
+    "company_name": "DV Trading",
+    "first_published": "2026-07-30T13:01:31-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4733876005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4454598005,
+    "location": {
+     "name": "Hong Kong"
+    },
+    "metadata": null,
+    "id": 4733876005,
+    "updated_at": "2026-09-28T23:57:40-04:00",
+    "requisition_id": "406",
+    "title": "Quantitative Researcher - Experienced (DV Equities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-15T23:40:28-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4733133005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4454211005,
+    "location": {
+     "name": "New York"
+    },
+    "metadata": null,
+    "id": 4733133005,
+    "updated_at": "2026-09-14T10:21:26-04:00",
+    "requisition_id": "404",
+    "title": "Quantitative Research Intern - Summer 2027 (DV Equities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-11T10:45:34-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4719118005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4446986005,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 4719118005,
+    "updated_at": "2026-08-10T14:02:36-04:00",
+    "requisition_id": "379",
+    "title": "Quantitative Risk Intern - Summer 2027",
+    "company_name": "DV Trading",
+    "first_published": "2026-08-04T14:55:54-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4744268005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4459473005,
+    "location": {
+     "name": "New York"
+    },
+    "metadata": null,
+    "id": 4744268005,
+    "updated_at": "2026-10-15T15:03:30-04:00",
+    "requisition_id": "425",
+    "title": "Quantitative Software Engineer (DV Commodities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-10-15T15:03:30-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4744284005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4459480005,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 4744284005,
+    "updated_at": "2026-10-15T15:05:02-04:00",
+    "requisition_id": "426",
+    "title": "Quantitative Software Engineer (DV Commodities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-10-15T15:05:02-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4691295005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4433311005,
+    "location": {
+     "name": "Hong Kong"
+    },
+    "metadata": null,
+    "id": 4691295005,
+    "updated_at": "2026-09-17T02:06:01-04:00",
+    "requisition_id": "326",
+    "title": "Quantitative Trading Intern (DV Equities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-05-04T17:50:45-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4702083005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4438849005,
+    "location": {
+     "name": "New York"
+    },
+    "metadata": null,
+    "id": 4702083005,
+    "updated_at": "2026-09-24T11:11:15-04:00",
+    "requisition_id": "353",
+    "title": "Quantitative Trading Intern - Summer 2027 (DV Equities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-11T10:38:34-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4680204005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4428309005,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 4680204005,
+    "updated_at": "2026-08-05T11:14:34-04:00",
+    "requisition_id": "303",
+    "title": "Relative Value Trader",
+    "company_name": "DV Trading",
+    "first_published": "2026-04-02T10:16:26-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4732225005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4453686005,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 4732225005,
+    "updated_at": "2026-10-01T16:44:11-04:00",
+    "requisition_id": "399",
+    "title": "Risk Developer",
+    "company_name": "DV Trading",
+    "first_published": "2026-10-01T16:44:11-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4732145005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4453686005,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 4732145005,
+    "updated_at": "2026-10-01T16:44:08-04:00",
+    "requisition_id": "399",
+    "title": "Risk Developer",
+    "company_name": "DV Trading",
+    "first_published": "2026-10-01T16:44:08-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4656611005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 4417480005,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 4656611005,
+    "updated_at": "2026-09-25T13:14:13-04:00",
+    "requisition_id": "284",
+    "title": "Sales Execution Trader ",
+    "company_name": "DV Trading",
+    "first_published": "2026-02-03T10:36:44-05:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4736603005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4455719005,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 4736603005,
+    "updated_at": "2026-09-22T09:52:06-04:00",
+    "requisition_id": "413",
+    "title": "Security Engineer Intern - Summer 2027",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-22T09:52:06-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4624792005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_optional",
+    "internal_job_id": 4402329005,
+    "location": {
+     "name": "Remote"
+    },
+    "metadata": null,
+    "id": 4624792005,
+    "updated_at": "2026-09-11T10:30:07-04:00",
+    "requisition_id": "269",
+    "title": "Senior FPGA Engineer (DV Equities)",
+    "company_name": "DV Trading",
+    "first_published": "2025-10-30T10:06:41-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4732224005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4453715005,
+    "location": {
+     "name": "Chicago; London; New York"
+    },
+    "metadata": null,
+    "id": 4732224005,
+    "updated_at": "2026-09-15T14:20:23-04:00",
+    "requisition_id": "400",
+    "title": "Senior Systems Engineer",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-10T15:17:42-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4713581005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4444257005,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 4713581005,
+    "updated_at": "2026-09-11T11:44:55-04:00",
+    "requisition_id": "368",
+    "title": "Senior Trading Operations Analyst ",
+    "company_name": "DV Trading",
+    "first_published": "2026-07-09T13:22:11-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4693324005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4434501005,
+    "location": {
+     "name": "Hong Kong"
+    },
+    "metadata": null,
+    "id": 4693324005,
+    "updated_at": "2026-09-17T01:59:37-04:00",
+    "requisition_id": "343",
+    "title": "Software Developer - Experienced (DV Equities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-05-07T15:31:01-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4733138005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4454214005,
+    "location": {
+     "name": "New York"
+    },
+    "metadata": null,
+    "id": 4733138005,
+    "updated_at": "2026-09-14T10:23:33-04:00",
+    "requisition_id": "405",
+    "title": "Software Developer Intern - Summer 2027 (DV Equities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-11T10:48:29-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4719125005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4446990005,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 4719125005,
+    "updated_at": "2026-08-10T18:43:54-04:00",
+    "requisition_id": "381",
+    "title": "Software Engineer Intern - Summer 2027 (DV Commodities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-08-10T18:43:54-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4719119005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4446987005,
+    "location": {
+     "name": "New York"
+    },
+    "metadata": null,
+    "id": 4719119005,
+    "updated_at": "2026-08-10T18:41:14-04:00",
+    "requisition_id": "380",
+    "title": "Software Engineer Intern - Summer 2027 (DV Commodities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-08-10T18:40:33-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4691575005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4433459005,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 4691575005,
+    "updated_at": "2026-08-05T11:14:34-04:00",
+    "requisition_id": "331",
+    "title": "Trade Desk Support Engineer",
+    "company_name": "DV Trading",
+    "first_published": "2026-05-04T15:30:44-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4692987005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4434318005,
+    "location": {
+     "name": "Toronto"
+    },
+    "metadata": null,
+    "id": 4692987005,
+    "updated_at": "2026-08-05T11:14:34-04:00",
+    "requisition_id": "342",
+    "title": "Trader",
+    "company_name": "DV Trading",
+    "first_published": "2026-05-20T12:51:36-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4697820005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4434318005,
+    "location": {
+     "name": "New York"
+    },
+    "metadata": null,
+    "id": 4697820005,
+    "updated_at": "2026-08-05T11:14:34-04:00",
+    "requisition_id": "342",
+    "title": "Trader",
+    "company_name": "DV Trading",
+    "first_published": "2026-05-20T12:51:38-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4697819005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4434318005,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 4697819005,
+    "updated_at": "2026-08-05T11:14:34-04:00",
+    "requisition_id": "342",
+    "title": "Trader",
+    "company_name": "DV Trading",
+    "first_published": "2026-05-20T12:51:38-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4722091005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4448496005,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 4722091005,
+    "updated_at": "2026-08-19T11:27:54-04:00",
+    "requisition_id": "389",
+    "title": "Trader ",
+    "company_name": "DV Trading",
+    "first_published": "2026-08-19T11:27:54-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4727919005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4451413005,
+    "location": {
+     "name": "Hong Kong; Singapore"
+    },
+    "metadata": null,
+    "id": 4727919005,
+    "updated_at": "2026-09-24T11:40:55-04:00",
+    "requisition_id": "395",
+    "title": "Trade Support Engineer",
+    "company_name": "DV Trading",
+    "first_published": "2026-08-27T14:07:12-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4736694005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4455781005,
+    "location": {
+     "name": "New York"
+    },
+    "metadata": null,
+    "id": 4736694005,
+    "updated_at": "2026-09-22T13:26:01-04:00",
+    "requisition_id": "414",
+    "title": "Trade Support Engineer (New York)",
+    "company_name": "DV Trading",
+    "first_published": "2026-09-22T13:26:01-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4719135005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4446996005,
+    "location": {
+     "name": "London"
+    },
+    "metadata": null,
+    "id": 4719135005,
+    "updated_at": "2026-08-12T11:30:01-04:00",
+    "requisition_id": "384",
+    "title": "Trading Intern - Summer 2027 (DV Commodities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-08-12T10:25:45-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4719134005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 4446995005,
+    "location": {
+     "name": "New York"
+    },
+    "metadata": null,
+    "id": 4719134005,
+    "updated_at": "2026-08-17T14:05:41-04:00",
+    "requisition_id": "383",
+    "title": "Trading Intern - Summer 2027 (DV Commodities)",
+    "company_name": "DV Trading",
+    "first_published": "2026-08-17T14:04:12-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/dvtrading/jobs/4656627005",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 4417482005,
+    "location": {
+     "name": "New York"
+    },
+    "metadata": null,
+    "id": 4656627005,
+    "updated_at": "2026-09-18T12:28:31-04:00",
+    "requisition_id": "286",
+    "title": "Vice President/Director - US Futures & Asset Manager Coverage ",
+    "company_name": "DV Trading",
+    "first_published": "2026-02-03T10:43:51-05:00",
+    "language": "en",
+    "application_deadline": null
+   }
+  ],
+  "meta": {
+   "total": 74
+  }
+ }
+}

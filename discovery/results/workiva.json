@@ -1,0 +1,26 @@
+{
+  "key": "workiva",
+  "name": "Workiva",
+  "careers_url": "https://www.workiva.com/careers",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "workiva.wd503.myworkdayjobs.com",
+    "tenant": "workiva",
+    "sites": [
+      "careers",
+      "parseportcareers"
+    ]
+  },
+  "feed": "POST https://workiva.wd503.myworkdayjobs.com/wday/cxs/workiva/careers/jobs + POST https://workiva.wd503.myworkdayjobs.com/wday/cxs/workiva/parseportcareers/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 109,
+  "page_total": 109,
+  "page_total_how": "Playwright renders: /careers '108 JOBS FOUND' (workiva.com 'View Open Positions' target), /parseportcareers '1 JOB FOUND'; both = CXS totals, no overlap.",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for the CXS POST URL(s); the tenant robots.txt lists /careers/, /parseportcareers/ as Allow",
+  "notes": "Data centre wd503. parseportcareers is the site of the ParsePort subsidiary (1 job, not on the main site); cheap to include. 1 intern (Marketing Intern - JAPAC), workerSubType 'Intern (Fixed Term)' agrees. See notes/workiva.md.",
+  "checked_at": "2026-10-20T03:19:24Z"
+}

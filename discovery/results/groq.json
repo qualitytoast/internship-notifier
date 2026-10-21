@@ -1,0 +1,21 @@
+{
+  "key": "groq",
+  "name": "Groq",
+  "careers_url": "https://jobs.gem.com/groq",
+  "hiring_system": "gem",
+  "checker": "gem",
+  "settings": {
+    "board": "groq"
+  },
+  "feed": "POST https://jobs.gem.com/api/public/graphql/batch (JobBoardList, boardId=groq)",
+  "feed_total": 36,
+  "page_total": 36,
+  "page_total_how": "Playwright render of https://jobs.gem.com/groq: 36 job links jobs.gem.com/groq/<extId> = the feed's 36 extIds (the page itself calls the same graphql/batch JobBoardList).",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (jobs.gem.com: robots.txt 404 = allow all)",
+  "notes": "groq.com/careers redirects to the homepage, whose nav 'Careers' links to jobs.gem.com/groq.",
+  "checked_at": "2026-10-20T00:37:53Z"
+}

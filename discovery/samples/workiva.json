@@ -1,0 +1,527 @@
+{
+ "_note": "captured 2026-10-20 (UTC); trimmed: first N jobPostings of offset 0 plus the facets block, other pages omitted",
+ "careers": {
+  "request": "POST https://workiva.wd503.myworkdayjobs.com/wday/cxs/workiva/careers/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":0,\"searchText\":\"\"}",
+  "response": {
+   "total": 108,
+   "jobPostings": [
+    {
+     "title": "Principal Experience Designer - Visual Design & Design Systems",
+     "externalPath": "/job/USA---Remote/Principal-Experience-Designer---Visual-Design---Design-Systems_R12635",
+     "locationsText": "USA - Remote",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "R12635"
+     ]
+    },
+    {
+     "title": "Senior Software Engineer - Product",
+     "externalPath": "/job/Ames/Senior-Software-Engineer_R12414",
+     "locationsText": "Ames",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "R12414"
+     ]
+    },
+    {
+     "title": "Strategic Account Executive - Expansions Team",
+     "externalPath": "/job/Remote---OH/Strategic-Account-Executive---Expansions-Team_R12674",
+     "locationsText": "4 Locations",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "R12674"
+     ]
+    },
+    {
+     "title": "Product Support Engineer",
+     "externalPath": "/job/Amsterdam/Product-Support-Engineer_R12565",
+     "locationsText": "2 Locations",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "R12565"
+     ]
+    },
+    {
+     "title": "Solutions Architect-GRC",
+     "externalPath": "/job/Amsterdam/Solutions-Architect_R12322",
+     "locationsText": "2 Locations",
+     "postedOn": "Posted 3 Days Ago",
+     "bulletFields": [
+      "R12322"
+     ]
+    }
+   ],
+   "facets": [
+    {
+     "facetParameter": "jobFamilyGroup",
+     "descriptor": "Job Category",
+     "values": [
+      {
+       "descriptor": "Sales",
+       "id": "75715069c97201860082d95ab32bce1a",
+       "count": 56
+      },
+      {
+       "descriptor": "Marketing and Communications",
+       "id": "75715069c9720102ea1fd85ab32bca1a",
+       "count": 12
+      },
+      {
+       "descriptor": "Engineering",
+       "id": "75715069c9720196b19bd65ab32bc01a",
+       "count": 10
+      },
+      {
+       "descriptor": "Client Services",
+       "id": "75715069c97201407041da5ab32bd21a",
+       "count": 8
+      },
+      {
+       "descriptor": "Product",
+       "id": "86041ab70970100112bdedd3900a0000",
+       "count": 7
+      },
+      {
+       "descriptor": "Customer Training and Support",
+       "id": "75715069c97201ac6a00d65ab32bbc1a",
+       "count": 4
+      },
+      {
+       "descriptor": "Business Technology",
+       "id": "75715069c97201dc0bcfd75ab32bc81a",
+       "count": 3
+      },
+      {
+       "descriptor": "Finance and Accounting",
+       "id": "75715069c97201954d2ed75ab32bc41a",
+       "count": 3
+      },
+      {
+       "descriptor": "Sales Support and Operations",
+       "id": "75715069c9720179deedd95ab32bd01a",
+       "count": 2
+      },
+      {
+       "descriptor": "Human Resources",
+       "id": "75715069c972012cff7ad75ab32bc61a",
+       "count": 1
+      },
+      {
+       "descriptor": "Data and Analytics",
+       "id": "75715069c9720118a94dd65ab32bbe1a",
+       "count": 1
+      },
+      {
+       "descriptor": "Corporate Services",
+       "id": "75715069c9720161b6f3d45ab32bba1a",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "workerSubType",
+     "descriptor": "Job Type",
+     "values": [
+      {
+       "descriptor": "Regular",
+       "id": "831d1538442f011f4cfeacf7c52a6d07",
+       "count": 100
+      },
+      {
+       "descriptor": "Employer of Record",
+       "id": "7e70b119cfd5015c35cbd1edb5013bb0",
+       "count": 6
+      },
+      {
+       "descriptor": "Temporary (Fixed Term)",
+       "id": "831d1538442f01f60e58adf7c52a6f07",
+       "count": 1
+      },
+      {
+       "descriptor": "Intern (Fixed Term)",
+       "id": "831d1538442f014d2d2badf7c52a6e07",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "timeType",
+     "descriptor": "Time Type",
+     "values": [
+      {
+       "descriptor": "Full time",
+       "id": "42bdb7ba896b010e31794a60db299a00",
+       "count": 84
+      },
+      {
+       "descriptor": "Part time",
+       "id": "42bdb7ba896b017eae644a60db299900",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "locationMainGroup",
+     "values": [
+      {
+       "facetParameter": "locations",
+       "descriptor": "Locations",
+       "values": [
+        {
+         "descriptor": "Ames",
+         "id": "75715069c972017531fd4714f32b975e",
+         "count": 3
+        },
+        {
+         "descriptor": "Amsterdam",
+         "id": "75715069c972017e39644914f32b9c5e",
+         "count": 11
+        },
+        {
+         "descriptor": "Barcelona",
+         "id": "b7be8993eb1301d2623a4bed5f014849",
+         "count": 1
+        },
+        {
+         "descriptor": "Bozeman",
+         "id": "75715069c9720172dedd4a14f32ba15e",
+         "count": 1
+        },
+        {
+         "descriptor": "Canada - Remote",
+         "id": "57a493ba692901e358bb84abc900777a",
+         "count": 2
+        },
+        {
+         "descriptor": "Charleston",
+         "id": "75715069c97201d09d6f4c14f32ba65e",
+         "count": 1
+        },
+        {
+         "descriptor": "Copenhagen",
+         "id": "4c39bee75c9c0101fb05faa3c62f0000",
+         "count": 5
+        },
+        {
+         "descriptor": "Denver",
+         "id": "75715069c972010772aec813f32be45c",
+         "count": 1
+        },
+        {
+         "descriptor": "Hong Kong",
+         "id": "75715069c972016eea35cf13f32bee5c",
+         "count": 1
+        },
+        {
+         "descriptor": "London",
+         "id": "75715069c97201ea3766d013f32bf35c",
+         "count": 16
+        },
+        {
+         "descriptor": "Madrid",
+         "id": "40a197ec85d901d8503d6dea0001574d",
+         "count": 1
+        },
+        {
+         "descriptor": "Paris",
+         "id": "75715069c972013f9452d413f32b025d",
+         "count": 4
+        },
+        {
+         "descriptor": "Remote - AB",
+         "id": "75715069c9720166c114df13f32b2a5d",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - AZ",
+         "id": "75715069c97201b867f4fe13f32b9d5d",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - BC",
+         "id": "75715069c97201d26d51e013f32b2f5d",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Belgium",
+         "id": "dffeaf860d351000c4cfec89e1920000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Brazil",
+         "id": "b7be8993eb13017035fdaa7901023317",
+         "count": 2
+        },
+        {
+         "descriptor": "Remote - CA",
+         "id": "75715069c97201f6408b0114f32ba75d",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - CO",
+         "id": "75715069c97201f1e2e70214f32bac5d",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Colombia",
+         "id": "d65af943f0f91000bd46249a73df0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - France",
+         "id": "75715069c972013b938df213f32b705d",
+         "count": 2
+        },
+        {
+         "descriptor": "Remote - GER BE",
+         "id": "39fe8004f33a0105d34f3229b0014e71",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - GER BW",
+         "id": "39fe8004f33a01a3ae526ffbaf012b71",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Germany",
+         "id": "0c6bc01592a81001f33009fc6c740000",
+         "count": 4
+        },
+        {
+         "descriptor": "Remote - Hong Kong",
+         "id": "75715069c97201f77f24f713f32b7f5d",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - IL",
+         "id": "75715069c972012c54391014f32bcf5d",
+         "count": 2
+        },
+        {
+         "descriptor": "Remote - Ireland",
+         "id": "75715069c9720155668ef813f32b845d",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Italy",
+         "id": "beb4fade45d30100bd3af845d9e70000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Mexico",
+         "id": "bb37993242bc100157b094a212200000",
+         "count": 3
+        },
+        {
+         "descriptor": "Remote - MI",
+         "id": "75715069c972014ad2921f14f32bfc5d",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Netherlands",
+         "id": "75715069c97201a98d38f113f32b6b5d",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - OH",
+         "id": "75715069c97201ffbc593014f32b3d5e",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - ON",
+         "id": "75715069c9720186372bfb13f32b8e5d",
+         "count": 2
+        },
+        {
+         "descriptor": "Remote - PA",
+         "id": "75715069c972016b2e693414f32b4c5e",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - Sweden",
+         "id": "b7be8993eb1301f07ca01332a3019997",
+         "count": 5
+        },
+        {
+         "descriptor": "Remote - Switzerland",
+         "id": "5b2641055e3f1000c87ba022ba0a0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Remote - UK",
+         "id": "75715069c972011bf4d6dd13f32b255d",
+         "count": 7
+        },
+        {
+         "descriptor": "Sault Ste. Marie",
+         "id": "75715069c972014e7125d813f32b115d",
+         "count": 1
+        },
+        {
+         "descriptor": "Singapore",
+         "id": "75715069c97201481f4fdb13f32b1b5d",
+         "count": 5
+        },
+        {
+         "descriptor": "Stockholm",
+         "id": "40a197ec85d9010d5b979ac900012e4d",
+         "count": 2
+        },
+        {
+         "descriptor": "Stockholm",
+         "id": "1f4552f5a15d100210a6a0d0090e0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Sydney",
+         "id": "75715069c97201daaa94dc13f32b205d",
+         "count": 4
+        },
+        {
+         "descriptor": "Toronto",
+         "id": "76090b140af81000bb0f765ce6090000",
+         "count": 2
+        },
+        {
+         "descriptor": "USA - Remote",
+         "id": "57a493ba6929014c2e93af43c2007b6c",
+         "count": 47
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "facetParameter": "distance",
+     "descriptor": "Distance",
+     "values": [
+      {
+       "descriptor": "10 miles",
+       "id": "1b48ea1fba3201e929217693b4051c3b",
+       "count": 1
+      },
+      {
+       "descriptor": "25 miles",
+       "id": "1b48ea1fba3201beed2f7693b4051d3b",
+       "count": 1
+      },
+      {
+       "descriptor": "50 miles",
+       "id": "1b48ea1fba320197cc317693b4051e3b",
+       "count": 1
+      },
+      {
+       "descriptor": "100 miles",
+       "id": "1b48ea1fba3201fe68337693b4051f3b",
+       "count": 1
+      },
+      {
+       "descriptor": "Any Distance",
+       "id": "1b48ea1fba32016af4347693b405203b",
+       "count": 1
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "parseportcareers": {
+  "request": "POST https://workiva.wd503.myworkdayjobs.com/wday/cxs/workiva/parseportcareers/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":0,\"searchText\":\"\"}",
+  "response": {
+   "total": 1,
+   "jobPostings": [
+    {
+     "title": "Solution Consultant",
+     "externalPath": "/job/USA---Remote/Solution-Consultant_R12651",
+     "locationsText": "USA - Remote",
+     "postedOn": "Posted 3 Days Ago",
+     "bulletFields": [
+      "R12651"
+     ]
+    }
+   ],
+   "facets": [
+    {
+     "facetParameter": "jobFamilyGroup",
+     "descriptor": "Job Category",
+     "values": [
+      {
+       "descriptor": "Sales",
+       "id": "75715069c97201860082d95ab32bce1a",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "workerSubType",
+     "descriptor": "Job Type",
+     "values": [
+      {
+       "descriptor": "Regular",
+       "id": "831d1538442f011f4cfeacf7c52a6d07",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "timeType",
+     "descriptor": "Time Type",
+     "values": [
+      {
+       "descriptor": "Full time",
+       "id": "42bdb7ba896b010e31794a60db299a00",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "locationMainGroup",
+     "values": [
+      {
+       "facetParameter": "locations",
+       "descriptor": "Locations",
+       "values": [
+        {
+         "descriptor": "USA - Remote",
+         "id": "57a493ba6929014c2e93af43c2007b6c",
+         "count": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "facetParameter": "distance",
+     "descriptor": "Distance",
+     "values": [
+      {
+       "descriptor": "10 miles",
+       "id": "1b48ea1fba3201e929217693b4051c3b",
+       "count": 1
+      },
+      {
+       "descriptor": "25 miles",
+       "id": "1b48ea1fba3201beed2f7693b4051d3b",
+       "count": 1
+      },
+      {
+       "descriptor": "50 miles",
+       "id": "1b48ea1fba320197cc317693b4051e3b",
+       "count": 1
+      },
+      {
+       "descriptor": "100 miles",
+       "id": "1b48ea1fba3201fe68337693b4051f3b",
+       "count": 1
+      },
+      {
+       "descriptor": "Any Distance",
+       "id": "1b48ea1fba32016af4347693b405203b",
+       "count": 1
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

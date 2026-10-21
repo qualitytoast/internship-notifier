@@ -1,0 +1,19 @@
+{
+  "key": "atlassian",
+  "name": "Atlassian",
+  "careers_url": "https://www.atlassian.com/company/careers/all-jobs",
+  "hiring_system": "icims (6 portals) via Atlassian listings endpoint",
+  "checker": "atlassian",
+  "settings": {},
+  "feed": "GET https://www.atlassian.com/endpoint/careers/listings (If-None-Match)",
+  "feed_total": 337,
+  "page_total": 346,
+  "page_total_how": "Playwright render of /all-jobs: '346 JOBS' from a stale CMS copy; 14 page-only ids return HTTP 410 on iCIMS, 5 feed-only ids are new and live",
+  "intern_total": 12,
+  "status": "verified",
+  "robots": "ALLOW (no matching rule)",
+  "notes": "Feed is more current than the page; dedupe 19 duplicate rows by id; interns = category 'Interns'.",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-19T23:55:00Z"
+}

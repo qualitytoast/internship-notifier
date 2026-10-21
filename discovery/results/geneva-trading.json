@@ -1,0 +1,21 @@
+{
+  "key": "geneva-trading",
+  "name": "Geneva Trading",
+  "careers_url": "https://www.genevatrading.com/careers-open-positions/",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "genevatrading"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/genevatrading/jobs",
+  "feed_total": 14,
+  "page_total": 14,
+  "page_total_how": "Playwright render of https://www.genevatrading.com/careers-open-positions/ (2026-10-20): Greenhouse embed frame (for=genevatrading) says '14 jobs' with 14 links equal to the API ids",
+  "intern_total": 6,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for boards-api.greenhouse.io",
+  "notes": "The seed genevatrading.com/careers/ redirects to /career-in-trading/ (info page); its 'Apply Now' goes to /careers-open-positions/. Jobs: 10 'Chicago Office', 3 Dublin, 1 London; all 6 internships are Chicago (C++ Developer, PMO Data Engineering, Python Developer, Quantitative Trading – Summer 2027, Systems Support Analyst, Trade Support Engineer).",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

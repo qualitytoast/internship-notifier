@@ -1,0 +1,21 @@
+{
+  "key": "applied-intuition",
+  "name": "Applied Intuition",
+  "careers_url": "https://www.appliedintuition.com/careers",
+  "hiring_system": "ashby (custom Next.js front)",
+  "checker": "ashby",
+  "settings": {
+    "board": "applied"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/applied?includeCompensation=false",
+  "feed_total": 330,
+  "page_total": 330,
+  "page_total_how": "Playwright render of https://www.appliedintuition.com/careers#jobs-list (no filters): 330 distinct jobs.ashbyhq.com/applied/<id> links = the feed's 330 ids.",
+  "intern_total": 5,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com: robots.txt returns 401 = no robots.txt, allow all; jobs.ashbyhq.com/api/ is disallowed and not used)",
+  "notes": "Ashby board name is 'applied'. Interns: 5 'Research Intern - ...' roles (employmentType Intern).",
+  "checked_at": "2026-10-20T00:37:53Z"
+}

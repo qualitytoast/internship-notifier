@@ -1,0 +1,7 @@
+# status 200
+Sitemap: https://ebay.wd5.myworkdayjobs.com/TCGPlayer_External_Career/siteMap.xml
+
+User-agent: *
+Allow: /TCGPlayer_External_Career/
+Disallow: /apply/
+Disallow: /refreshFacet/

@@ -1,0 +1,6 @@
+# status 200
+User-Agent: *
+Allow: /
+Disallow: /brand/
+
+Sitemap: https://www.appliedintuition.com/sitemap.xml

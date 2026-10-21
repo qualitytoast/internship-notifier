@@ -1,0 +1,21 @@
+{
+  "key": "klaviyo",
+  "name": "Klaviyo",
+  "careers_url": "https://www.klaviyo.com/careers/search-jobs",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "klaviyo"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/klaviyo/jobs",
+  "feed_total": 159,
+  "page_total": 159,
+  "page_total_how": "Playwright render of https://www.klaviyo.com/careers/search-jobs (no filters) showed 'Showing 1 - 20 of 159 matching jobs'",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule; boards-api.greenhouse.io/robots.txt only disallows /embed/)",
+  "notes": "Server-rendered from the board (no Greenhouse call in the browser); job URLs www.klaviyo.com/careers/jobs/<id>?gh_jid=<id>. No interns today.",
+  "checked_at": "2026-10-20T00:39:28Z"
+}

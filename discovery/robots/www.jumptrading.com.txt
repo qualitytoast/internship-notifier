@@ -1,0 +1,5 @@
+# status 200
+# adavies: permit all crawlers to access all content.
+User-agent: *
+Disallow:
+Sitemap: https://www.jumptrading.com/sitemap.xml

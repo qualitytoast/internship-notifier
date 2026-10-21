@@ -1,0 +1,27 @@
+{
+  "key": "workday",
+  "name": "Workday",
+  "careers_url": "https://www.workday.com/en-us/company/careers/overview.html",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "workday.wd5.myworkdayjobs.com",
+    "tenant": "workday",
+    "sites": [
+      "Workday",
+      "Workday_Early_Career",
+      "Workday_Jobs"
+    ]
+  },
+  "feed": "POST https://workday.wd5.myworkdayjobs.com/wday/cxs/workday/Workday/jobs + POST https://workday.wd5.myworkdayjobs.com/wday/cxs/workday/Workday_Early_Career/jobs + POST https://workday.wd5.myworkdayjobs.com/wday/cxs/workday/Workday_Jobs/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 418,
+  "page_total": 420,
+  "page_total_how": "Playwright renders: https://workday.wd5.myworkdayjobs.com/Workday '386 JOBS FOUND', /Workday_Early_Career '12 JOBS FOUND', /Workday_Jobs '22 JOBS FOUND' (each equals its CXS total). 420 postings = 418 requisitions (2 are on both Early_Career and Workday).",
+  "intern_total": 10,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for the CXS POST URL(s); the tenant robots.txt lists /Workday/, /Workday_Early_Career/, /Workday_Executive_Site/, /Workday_Jobs/ as Allow",
+  "notes": "Workday_Early_Career (linked from workday.com/.../early-career.html) holds 9 internships that are on no other site. Workday_Jobs (22 US roles) shares no requisition with the main site, so it is watched too; Workday_Executive_Site (1 VP role) is skipped. The title rule also hits 4 'Workday Student' product-consultant roles on the main site (false positives). See notes/workday.md.",
+  "checked_at": "2026-10-20T03:19:24Z"
+}

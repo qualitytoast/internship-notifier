@@ -1,0 +1,27 @@
+{
+  "key": "citadel-securities",
+  "name": "Citadel Securities",
+  "careers_url": "https://www.citadelsecurities.com/careers/open-opportunities/",
+  "hiring_system": "custom",
+  "checker": "custom:citadel_sitemap",
+  "settings": {
+    "base_url": "https://www.citadelsecurities.com",
+    "sitemap": "/career-sitemap.xml",
+    "detail_prefix": "/careers/details/",
+    "min_interval_s": 10,
+    "title_from": "slug",
+    "location_from": "slug_region_hint",
+    "posted_from": "first_seen"
+  },
+  "feed": "GET https://www.citadelsecurities.com/career-sitemap.xml",
+  "feed_total": 79,
+  "page_total": 79,
+  "page_total_how": "Playwright render of https://www.citadelsecurities.com/careers/open-opportunities/ on 2026-10-20 showed 'Viewing 10 of 79' (same in the 2026-10-19 capture)",
+  "intern_total": 23,
+  "status": "needs-custom",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW: plain-HTTP robots.txt is a 403 Cloudflare challenge (4xx = allow under RFC 9309; matcher says 'no robots.txt'); the real file seen in a browser has only 'Crawl-delay: 10' and 'Disallow: /cdn-cgi/' — honour the 10 s delay",
+  "notes": "Same WordPress/Cloudflare setup as citadel.com: sitemap_index.xml and career-sitemap.xml return 200 to plain HTTP; robots.txt and detail pages return a Cloudflare interactive challenge (do not evade). Duplicate-slug posts exist (c-software-engineer and c-software-engineer-2, site-reliability-engineer-2, quantitative-research-analyst-intern-bs-ms-europe-2): keep both ids, strip only the -2 from the title. Site's Internships filter shows 23, equal to the slug-title regex. Spec in discovery/notes/citadel.md.",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

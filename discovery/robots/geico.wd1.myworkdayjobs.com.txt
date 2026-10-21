@@ -1,0 +1,10 @@
+# status 200
+Sitemap: https://geico.wd1.myworkdayjobs.com/External/siteMap.xml
+Sitemap: https://geico.wd1.myworkdayjobs.com/GEAP/siteMap.xml
+Sitemap: https://geico.wd1.myworkdayjobs.com/GEAS/siteMap.xml
+
+User-agent: *
+Allow: /External/
+Allow: /GEAP/
+Allow: /GEAS/
+Disallow: /refreshFacet/

@@ -1,0 +1,27 @@
+{
+  "key": "intuit",
+  "name": "Intuit",
+  "careers_url": "https://jobs.intuit.com/search-jobs",
+  "hiring_system": "radancy (TalentBrew site; ATS is Avature, apply-only, no public list)",
+  "checker": "custom:talentbrew_sitemap",
+  "settings": {
+    "sitemap_url": "https://jobs.intuit.com/sitemap.xml",
+    "job_url_regex": "^https://jobs\\.intuit\\.com/job/(?P<city>[^/]+)/(?P<slug>[^/]+)/27595/(?P<id>\\d+)$",
+    "title_from": "slug",
+    "detail": "jsonld_jobposting",
+    "detail_only_new": true,
+    "total_check_url": "https://jobs.intuit.com/search-jobs",
+    "never_fetch_prefix": "https://jobs.intuit.com/search-jobs/"
+  },
+  "feed": "GET https://jobs.intuit.com/sitemap.xml (593 /job/ URLs) + GET <job url> (JSON-LD JobPosting) for new ids",
+  "feed_total": 593,
+  "page_total": 593,
+  "page_total_how": "GET https://jobs.intuit.com/search-jobs (server-rendered, robots-allowed) shows '<h1>593 jobs found</h1>', data-total-results=\"593\", 40 pages x 15; the 15 page-1 jobs are all in the sitemap",
+  "intern_total": 37,
+  "status": "needs-custom",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW sitemap.xml, /job/..., /search-jobs and /search-jobs?p=N; BLOCK everything under /search-jobs/ (Disallow: /search-jobs/), incl. the bookmark /search-jobs/intern/27595/1 and the AJAX pager /search-jobs/results; intuit.avature.net/externalCareers ALLOW (apply links only)",
+  "notes": "Radancy TalentBrew (org 27595) over Avature: apply links go to intuit.avature.net/externalCareers/JobApplication?pipelineId=<Job ID>, but Avature has no public job list (SearchJobs/JobDetail 404, portal sitemap has no jobs), and the pages have no Workday links. Fallback list if the sitemap lags: /search-jobs?p=1..40 (allowed, ~2 MB/page). intern_total = 37 title slugs (35 Intern + 2 Co-op; Summer 2027 33); the bookmark's keyword search said 43 because it matches descriptions. Sitemap lastmod is the build time (~2 h old), not per job.",
+  "checked_at": "2026-10-20T00:24:52Z"
+}

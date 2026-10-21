@@ -1,0 +1,29 @@
+{
+  "key": "nvidia",
+  "name": "NVIDIA",
+  "careers_url": "https://jobs.nvidia.com/careers",
+  "hiring_system": "eightfold (PCSX on jobs.nvidia.com; system of record Workday nvidia.wd5 / NVIDIAExternalCareerSite)",
+  "checker": "eightfold",
+  "settings": {
+    "host": "jobs.nvidia.com",
+    "domain": "nvidia.com",
+    "api": "pcsx",
+    "min_interval": 3.0,
+    "quick_queries": [
+      {
+        "filter_job_type": "intern (fixed term)"
+      }
+    ]
+  },
+  "feed": "GET https://jobs.nvidia.com/api/pcsx/search?domain=nvidia.com&query=&location=&start=N&sort_by=timestamp (10/page, 276 pages); quick query &filter_job_type=intern+%28fixed+term%29 (176, 18 pages)",
+  "feed_total": 2757,
+  "page_total": 2757,
+  "page_total_how": "Playwright render of https://jobs.nvidia.com/careers (no filters) showed '2757 jobs' / 'of 276'; Workday CXS facet sums 2752 (its total field is capped at 2000)",
+  "intern_total": 176,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (jobs.nvidia.com: Allow: /api/pcsx, Allow: /careers; nvidia.wd5.myworkdayjobs.com /wday/cxs/: no matching rule; /api/suggest and /NVIDIAExternalCareerSiteResearch/ are BLOCK)",
+  "notes": "Big site: use big: true (newest-first quick scans + intern job-type quick query, daily 276-page full scan) and >=3 s host spacing. Do NOT use the plain workday adapter: NVIDIA's CXS total is capped at 2000 and offset 2000 wraps to page 1 (would silently drop ~750 jobs). Intern = job type 'Intern (Fixed Term)' (176 on both systems; 1 Workday-only intern JR2025645 not yet on Eightfold, so the Workday intern facet is a cheap 9-request cross-check).",
+  "checked_at": "2026-10-20T00:33:39Z"
+}

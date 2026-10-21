@@ -1,0 +1,530 @@
+{
+ "_note": "xtxcareers_api: raw GET https://api.xtxcareers.com/jobs.json (what www.xtxmarkets.com/careers/ loads; a cached copy of the Greenhouse board with content). greenhouse: raw GET boards-api.greenhouse.io/v1/boards/xtxmarketstechnologies/jobs. Same 7 ids.",
+ "observed": "2026-10-20T00:37:34Z",
+ "xtxcareers_api": {
+  "jobs": [
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/xtxmarketstechnologies/jobs/7831489003",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5807083003,
+    "location": {
+     "name": "Singapore, Central, Singapore"
+    },
+    "metadata": null,
+    "id": 7831489003,
+    "updated_at": "2026-10-13T07:04:37-04:00",
+    "requisition_id": "252",
+    "title": "C++ Software Engineer",
+    "company_name": "XTX Markets",
+    "first_published": "2026-08-19T06:20:58-04:00",
+    "language": "en",
+    "application_deadline": null,
+    "content": "&lt;p&gt;&lt;strong&gt;The Firm&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;XTX Markets is a leading algorithmic trading firm which uses state-of-the-art machine learning technology to produce price forecasts for over 53,000 financial instruments across equities, fixed income, currencies, commodities, and crypto. It uses those forecasts to trade on exchanges and alternative trading venues, and to offer differentiated liquidity directly to clients worldwide. The firm trades over USD $250bn a day across 35 countries and has over 300 employees based in London, Singapore, New York, Paris, Bristol, Mumbai, Yerevan and Kajaani.&lt;/p&gt;\n&lt;p&gt;We leverage the talent of our team, modern computational techniques, and state-of-the-art research infrastructure to analyse large data sets across markets quickly and efficiently, maximizing the effectiveness of our proprietary trading algorithms. We are actively seeking new methods and ideas. The models that drive our trading strategies have evolved considerably over the last 10 years, from econometric methods that gave our company its name, to trees, to neural networks, to modern deep learning architectures.&lt;/p&gt;\n&lt;p&gt;XTX Markets has an unrivalled level of computational resources in the trading industry, with a growing research cluster currently containing over 25,000 GPUs with more than 1 exabyte of usable storage. Teams across the firm include world-class researchers, developers and technologists with backgrounds in pure math, programming, physics, computer science and machine learning. The firm is also constructing a large-scale data centre in Finland to future-proof its significant computational capabilities.&lt;/p&gt;\n&lt;p&gt;At XTX Markets, technology is our business, and we are a diverse organization which attracts outstanding talent from across all industry backgrounds. We are focused on teamwork, and our people collaborate on all aspects of the business, working openly and with respect for each other, our clients and the market. Our culture is non-hierarchical and one where everyone is valued. We strive for excellence in everything we do.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;The Role &lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;We are hiring a software engineer to join our exchange trading development team (ETD) which builds and maintains most of XTX’s proprietary trading technology. We take trading ideas from our Quant Research team and turn them into reality using the most appropriate technology. On the software side we are responsible for everything from interpreting arriving market data to dispatching our orders. We also design our infrastructure and select which hardware to run on. This unusually wide scope gives us the ability to make cross-domain optimisations unavailable to our competitors, where the same work is often spread across multiple teams.&lt;/p&gt;\n&lt;p&gt;Exchanges run on their own schedules; we need our system to be ready every time trading starts. This results in a dynamic work environment where issues often have to be dealt with in a timely manner. In addition to smaller-scale projects we regularly undertake larger-scope projects to improve the system or unlock new opportunities. Everything we build is for our own use, and we use what we build to trade over USD $250 billion worth of assets every day, all in a completely automated manner.&lt;/p&gt;\n&lt;p&gt;We use the right tool for the job but most of our work is done using C++ and Python. Members of the team also regularly branch out into other technologies such as FPGA and GPU programming.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Essential Attributes&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;You should have a strong knowledge of modern C++ (C++11 onwards). We have the advantage of a completely post-2011 codebase and have been eager to adopt new features where appropriate.&lt;/li&gt;\n&lt;li&gt;We expect a strong understanding of what really is going on inside a computer when your code is running, for example caching, paging and system calls, as well as how these work and why they work like that. Knowledge of the execution pipeline in a modern CPU is even better: when are instructions executed out of order, why would they be, how is the branch target predicted for an indirect call? A lot of our code is very high performance, and the only way to achieve that is by understanding what’s really going on when it’s executed.&lt;/li&gt;\n&lt;li&gt;You should have a good familiarity with common algorithms and data structures and their performance trade-offs, as well as the ability to reason about the running time of algorithms that you haven’t seen before. Although traditionally this would be covered in a computer science degree most of our existing team are self-taught, so a computer science degree is not necessarily a prerequisite.&lt;/li&gt;\n&lt;li&gt;You will often have to work independently designing complex systems that need to run uninterrupted for long periods of time, so practical experience designing and implementing software systems is a plus.&lt;/li&gt;\n&lt;li&gt;All our development is in a Linux environment, in fact many of us run Linux on our desktops also, so familiarity with the Linux command line and common tools is a plus but by no means a necessity.&lt;/li&gt;\n&lt;li&gt;Prior finance knowledge is not required.&lt;/li&gt;\n&lt;/ul&gt;",
+    "departments": [
+     {
+      "id": 4033112003,
+      "name": "Tradingdev ETD Tech",
+      "child_ids": [],
+      "parent_id": null
+     }
+    ],
+    "offices": [
+     {
+      "id": 4022422003,
+      "name": "Singapore",
+      "location": "Singapore, Central, Singapore",
+      "child_ids": [],
+      "parent_id": null
+     }
+    ],
+    "ai_disclaimer": "<p>We use Greenhouse’s AI-powered Talent Matching tool to compare your application against our job requirements.</p>",
+    "include_ai_disclaimer": false,
+    "ai_opt_out_request_url": "http://app3.greenhouse.io/ai_opt_out_request/job_post/7831489003/ai_opt_out"
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/xtxmarketstechnologies/jobs/7645996003",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5724052003,
+    "location": {
+     "name": "Singapore, Central, Singapore"
+    },
+    "metadata": null,
+    "id": 7645996003,
+    "updated_at": "2026-06-23T09:35:44-04:00",
+    "requisition_id": "234",
+    "title": "Datacentre Operations Engineer",
+    "company_name": "XTX Markets",
+    "first_published": "2026-03-09T12:32:38-04:00",
+    "language": "en",
+    "application_deadline": null,
+    "content": "&lt;p&gt;&lt;strong&gt;The Firm&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;XTX Markets is a leading algorithmic trading firm which uses state-of-the-art machine learning technology to produce price forecasts for over 53,000 financial instruments across equities, fixed income, currencies, commodities, and crypto. It uses those forecasts to trade on exchanges and alternative trading venues, and to offer differentiated liquidity directly to clients worldwide. The firm trades over $250bn a day across 35 countries and has over 300 employees based in London, Singapore, New York, Paris, Bristol, Mumbai, Yerevan and Kajaani.&lt;/p&gt;\n&lt;p&gt;We leverage the talent of our team, modern computational techniques, and state-of-the-art research infrastructure to analyse large data sets across markets quickly and efficiently, maximizing the effectiveness of our proprietary trading algorithms. We are actively seeking new methods and ideas. The models that drive our trading strategies have evolved considerably over the last 10 years, from econometric methods that gave our company its name, to trees, to neural networks, to modern deep learning architectures.&lt;/p&gt;\n&lt;p&gt;XTX Markets has an unrivalled level of computational resources in the trading industry, with a growing research cluster currently containing well over 25,000 GPUs with more than 1 exabyte of usable storage. Teams across the firm include world-class researchers, developers and technologists with backgrounds in pure math, programming, physics, computer science and machine learning. The firm is also constructing a large-scale data centre in Finland to future-proof its significant computational capabilities.&lt;/p&gt;\n&lt;p&gt;At XTX Markets, technology is our business, and we are a diverse organization which attracts outstanding talent from across all industry backgrounds. We are focused on teamwork, and our people collaborate on all aspects of the business, working openly and with respect for each other, our clients and the market. Our culture is non-hierarchical and one where everyone is valued. We strive for excellence in everything we do.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;The Role&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;We are expanding our Datacentre Operations team in Singapore and are seeking an experienced datacentre engineer, ideally with a background in networking and/or systems administration, and proven low-latency trading infrastructure experience, to help run the physical layer of XTX’s datacentre infrastructure.&lt;/p&gt;\n&lt;p&gt;The role combines hands-on physical datacentre work including server racking, cabling, power management, component integration, supporting network deployment, APAC colocation project management in close collaboration with the Trading Development and Procurement teams.&lt;/p&gt;\n&lt;p&gt;The position is based in our Singapore office but will require occasional international travel to datacentres predominantly based Asia.&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Responsibilities&lt;/strong&gt;&amp;nbsp;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;You will&amp;nbsp;lead and execute deployment of physical infrastructure in APAC datacentres primarily, and support&amp;nbsp;datacentre&amp;nbsp;operations&amp;nbsp;activities globally.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;You will&amp;nbsp;supervise and execute&amp;nbsp;large projects (e.g.,&amp;nbsp;colocation&amp;nbsp;setup and expansions,&amp;nbsp;moving&amp;nbsp;large amounts&amp;nbsp;of equipment between sites) and&amp;nbsp;maintain&amp;nbsp;our datacentres (e.g., replacing failed components).&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;You will&amp;nbsp;be responsible for&amp;nbsp;installing and&amp;nbsp;maintaining&amp;nbsp;a&amp;nbsp;well-ordered datacentre infrastructure (e.g., designing, installing, and&amp;nbsp;maintaining&amp;nbsp;labelled, structured cabling, or power, space and cooling capacity monitoring and expansion).&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;You will perform server integration work&amp;nbsp;(e.g. fitting PCIe cards, NICs, etc&amp;nbsp;into servers), hardware refreshes and failed&amp;nbsp;component&amp;nbsp;replacements.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;You will coordinate with third parties regarding infrastructure&amp;nbsp;support.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Produce and&amp;nbsp;maintain&amp;nbsp;operational runbooks, install guides, test&amp;nbsp;plans&amp;nbsp;and post-change verification; review and approve changes.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Assist&amp;nbsp;with inventory and&amp;nbsp;logistics&amp;nbsp;tasks as needed to support deployments (secondary responsibility, not a primary focus).&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Essential Attributes&lt;/strong&gt;&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;5+ years working in datacentres or infrastructure operations.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Hands-on experience with switches/routers and low-latency network design (experience with Cisco, Mellanox, and Arista preferred).&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Proven experience building/operating low-latency trading infrastructure and APAC colocation&amp;nbsp;projects.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Network routing knowledge: BGP, OSPF and multicast routing (implementation and troubleshooting).&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Comfortable working inside servers:&amp;nbsp;component&amp;nbsp;installs, PCIe cards, firmware updates, and hardware diagnostics (experience with Dell servers a plus).&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Hands-on experience with fibre optics, transceivers (SFP/SFP+/QSFP/DWDM)&amp;nbsp;and optical networking fundamentals.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Strong change management,&amp;nbsp;documentation&amp;nbsp;and verification discipline.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Excellent communication skills for vendor coordination, exchange/Broker&amp;nbsp;integration&amp;nbsp;and remote-hands instruction.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Due to the nature of our trading, some work would necessarily have to happen during weekends, as such flexibility to work on Saturdays (with time-off in lieu) or a willingness to work a shifted week (for example Tuesday through Saturday) would be necessary.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Fluent in both Mandarin &amp;amp; English.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;",
+    "departments": [
+     {
+      "id": 4065740003,
+      "name": "Datacentre",
+      "child_ids": [],
+      "parent_id": null
+     }
+    ],
+    "offices": [
+     {
+      "id": 4022422003,
+      "name": "Singapore",
+      "location": "Singapore, Central, Singapore",
+      "child_ids": [],
+      "parent_id": null
+     }
+    ],
+    "ai_disclaimer": "<p>We use Greenhouse’s AI-powered Talent Matching tool to compare your application against our job requirements.</p>",
+    "include_ai_disclaimer": true,
+    "ai_opt_out_request_url": "http://app3.greenhouse.io/ai_opt_out_request/job_post/7645996003/ai_opt_out"
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/xtxmarketstechnologies/jobs/7990993003",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5884189003,
+    "location": {
+     "name": "Finland"
+    },
+    "metadata": null,
+    "id": 7990993003,
+    "updated_at": "2026-10-13T07:06:20-04:00",
+    "requisition_id": "259",
+    "title": "Datacentre Operations Specialist",
+    "company_name": "XTX Markets",
+    "first_published": "2026-09-10T07:03:21-04:00",
+    "language": "en",
+    "application_deadline": null,
+    "content": "&lt;p&gt;&lt;strong&gt;The Firm&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;XTX Markets is a leading algorithmic trading firm which uses state-of-the-art machine learning technology to produce price forecasts for over 53,000 financial instruments across equities, fixed income, currencies, commodities and crypto. It uses those forecasts to trade on exchanges and alternative trading venues, and to offer differentiated liquidity directly to clients worldwide. The firm trades over $250bn a day across 35 countries and has over 300 employees based in London, New York, Singapore, Paris, Bristol, Mumbai, Yerevan and Kajaani.&lt;/p&gt;\n&lt;p&gt;We leverage the talent of the people who work here, modern computational techniques and state-of-the-art research infrastructure to analyse large data sets across markets quickly and efficiently, to maximize the effectiveness of our proprietary trading algorithms. We are actively seeking new methods and ideas. The models that drive our trading strategies have evolved considerably over the last 10 years, from econometric methods that gave our company its name, to trees, to neural networks, to modern deep learning architectures.&lt;/p&gt;\n&lt;p&gt;XTX Markets has an unrivalled level of computational resources in the trading industry, with a growing research cluster currently containing over 25,000 GPUs and more than 1 exabyte of usable storage, connected by a high throughput network layer.&lt;/p&gt;\n&lt;p&gt;Having conducted a thorough review of the XTX’s long-term research objectives, and the compute power required to support it, we have committed to construct a fully owned and managed data centre campus to house the HPC Cluster in Kajaani, Finland, designed with flexibility and capacity in mind allowing for future scalability without constraints or impediments.&lt;/p&gt;\n&lt;p&gt;At XTX Markets technology is our business and we are a diverse organization which attracts outstanding talent from across all industry backgrounds. We are focused on teamwork and our people collaborate on all aspects of the business, working openly and with respect for each other, our clients and the market. Our culture is non-hierarchical and one where everyone is valued. We strive for excellence in everything we do.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;The Role&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;We are seeking a highly skilled and experienced Datacentre Operations Specialist to support the datacentre operations of our multi-megawatt colocation in Kajaani.&lt;/p&gt;\n&lt;p&gt;This includes the ongoing construction phases, and mechanical, cooling, electrical and automation commissioning.&lt;/p&gt;\n&lt;p&gt;The role is full-time, permanent, with the primary work location in Kajaani.&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;Due to the nature of our research activities, on-call availability outside of shift hours is required, which may include weekend and public holiday work (in both cases, with time off in lieu). Overtime may be necessary during peak operational periods or for planned maintenance and upgrading activities.&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Key Responsibilities&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;DC Operations&lt;/strong&gt;&amp;nbsp;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Responsible for day-to-day datacentre infrastructure operations for the datacentre campus including automation, electrical, mechanical and datacentre running processes.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Ensure 24/7 uptime and availability of the datacentre infrastructure.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Co-operate with other engineering teams, facility maintenance, and technical teams to address operational issues promptly.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Develop and implement standard operating procedures (SOPs) for data centre operations.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Infrastructure Deployment, Maintenance and Upkeep&lt;/strong&gt;&amp;nbsp;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Responsible for the operation and maintenance of well-ordered datacentre infrastructure and related systems (electricity, mechanical, liquid cooling, automation etc.).&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Handling and resolving technical issues and requests related to DC infrastructure.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Schedule and coordinate regular maintenance activities, including DC infrastructure equipment inspections and repairs.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Implement preventive maintenance programs to minimize downtime and ensure optimal performance.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Communicating with stakeholders about planned maintenance, downtime, or changes in operations.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Capacity Planning and Scalability&lt;/strong&gt;&amp;nbsp;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Support space and cooling capacity planning to anticipate future growth and scalability requirements.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Support evaluation of current infrastructure utilization and planning for expansion or upgrades as needed.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Work closely with stakeholders to assess business needs and align infrastructure resources accordingly.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Energy Efficiency and Sustainability&lt;/strong&gt;&amp;nbsp;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Support initiatives to optimize energy efficiency, costs, and reduce environmental impact.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Team Development&lt;/strong&gt;&amp;nbsp;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Proactively enhancing a culture of collaboration, accountability, and continuous improvement within the data centre team.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Essential Attributes&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Strong problem-solving and troubleshooting skills.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Ability to handle multiple tasks while maintaining attention to detail.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Comfortability with working in a fast-paced environment.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Outgoing and able to build rapport with colleagues, stakeholders, and vendors.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Proficient in both spoken and written English and Finnish.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Experience&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Master&#39;s or Bachelor&#39;s degree in Electrical, Mechanical or Automation Engineering, or related field preferred.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;3+ years of datacentre experience or related industrial operations management.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;In-depth knowledge of data centre infrastructure processes including power distribution, cooling systems (including Direct Liquid Cooling), automation/building management systems, fire tracing, and security technologies.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;Strong understanding of industry standards and best practices.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;An ideal candidate would also be interested in participating in datacentre infrastructure design, which would involve selecting, specifying, or customizing the best datacentre solutions for IT equipment (power, cooling etc.).&lt;/li&gt;\n&lt;li&gt;Ability to work effectively under pressure and prioritize tasks in a fast-paced environment.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Valid B Driving License.&lt;/li&gt;\n&lt;/ul&gt;",
+    "departments": [
+     {
+      "id": 4065740003,
+      "name": "Datacentre",
+      "child_ids": [],
+      "parent_id": null
+     }
+    ],
+    "offices": [
+     {
+      "id": 4054137003,
+      "name": "Finland",
+      "location": null,
+      "child_ids": [],
+      "parent_id": null
+     }
+    ],
+    "ai_disclaimer": "<p>We use Greenhouse’s AI-powered Talent Matching tool to compare your application against our job requirements.</p>",
+    "include_ai_disclaimer": false,
+    "ai_opt_out_request_url": "http://app3.greenhouse.io/ai_opt_out_request/job_post/7990993003/ai_opt_out"
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/xtxmarketstechnologies/jobs/8003372003",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5889363003,
+    "location": {
+     "name": "Finland"
+    },
+    "metadata": null,
+    "id": 8003372003,
+    "updated_at": "2026-10-13T07:06:49-04:00",
+    "requisition_id": "262",
+    "title": "Quality Engineer, Data Center Operations ",
+    "company_name": "XTX Markets",
+    "first_published": "2026-09-23T11:11:58-04:00",
+    "language": "en",
+    "application_deadline": null,
+    "content": "&lt;p&gt;&lt;strong&gt;The Firm&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;XTX Markets is a leading algorithmic trading firm which uses state-of-the-art machine learning technology to produce price forecasts for over 53,000 financial instruments across equities, fixed income, currencies, commodities, and crypto. It uses those forecasts to trade on exchanges and alternative trading venues, and to offer differentiated liquidity directly to clients worldwide. The firm trades over USD $250bn a day across 35 countries and has over 300 employees based in London, Singapore, New York, Paris, Bristol, Mumbai, Yerevan and Kajaani.&lt;/p&gt;\n&lt;p&gt;We leverage the talent of our team, modern computational techniques, and state-of-the-art research infrastructure to analyse large data sets across markets quickly and efficiently, maximizing the effectiveness of our proprietary trading algorithms. We are actively seeking new methods and ideas. The models that drive our trading strategies have evolved considerably over the last 10 years, from econometric methods that gave our company its name, to trees, to neural networks, to modern deep learning architectures.&lt;/p&gt;\n&lt;p&gt;XTX Markets has an unrivalled level of computational resources in the trading industry, with a growing research cluster currently containing over 25,000 GPUs with more than 1 exabyte of usable storage. Teams across the firm include world-class researchers, developers and technologists with backgrounds in pure math, programming, physics, computer science and machine learning. The firm is also constructing a large-scale data centre in Finland to future-proof its significant computational capabilities.&lt;/p&gt;\n&lt;p&gt;At XTX Markets, technology is our business, and we are a diverse organization which attracts outstanding talent from across all industry backgrounds. We are focused on teamwork, and our people collaborate on all aspects of the business, working openly and with respect for each other, our clients and the market. Our culture is non-hierarchical and one where everyone is valued. We strive for excellence in everything we do.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;The Role&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;The Quality Engineer, Data Center Operations is responsible for ensuring operational excellence, reliability, quality assurance and continuous improvement across data center operations.&lt;/p&gt;\n&lt;p&gt;The role establishes and maintains effective quality-management practices, monitors operational performance, supports the transition of new infrastructure into live operations, drives corrective actions and lessons learned, and supports compliance with applicable national and European Union legislation, regulations and standards.&lt;/p&gt;\n&lt;p&gt;Working closely with data center operations, engineering, environmental, health and safety, security, sustainability, legal, and management teams, the Quality Engineer ensures that operational processes are consistently documented, measured, controlled, challenged and improved.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Operational Quality Management&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Develop, implement, and maintain an effective and proportionate quality-management framework for data center operations.&lt;/li&gt;\n&lt;li&gt;Ensure that operational procedures, including MOPs, SOPs and EOPs, work instructions, control measures, and technical documentation are accurate, consistent, and up to date.&lt;/li&gt;\n&lt;li&gt;Monitor compliance with approved operational processes, service requirements, quality standards, and internal policies.&lt;/li&gt;\n&lt;li&gt;Conduct regular operational quality reviews, inspections, process assessments, and internal audits.&lt;/li&gt;\n&lt;li&gt;Identify quality-related risks, process gaps, recurring incidents and alarms, and improvement opportunities.&lt;/li&gt;\n&lt;li&gt;Support operational readiness activities, including commissioning, handover and transition of new or expanded data center infrastructure into live operations.&lt;/li&gt;\n&lt;li&gt;Monitor supply-chain partners and on-site contractors to ensure adherence to quality benchmarks and agreed operational standards.&lt;/li&gt;\n&lt;li&gt;Review the quality and effectiveness of maintenance activities and operational change-management processes.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Regulatory Compliance and Reporting&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Work with Legal and other relevant functions to understand applicable national and European Union regulatory requirements affecting data center operations.&lt;/li&gt;\n&lt;li&gt;Translate applicable regulatory requirements into practical operational controls, procedures, reporting processes, and evidence requirements in conjunction with the relevant functional owners.&lt;/li&gt;\n&lt;li&gt;Coordinate and assure the quality, completeness and timely provision of data required for statutory, regulatory, sustainability, environmental, energy-efficiency, and operational reporting, with accountability for individual submissions remaining with the relevant functional owner.&lt;/li&gt;\n&lt;li&gt;Maintain a structured register of applicable regulations, reporting obligations, responsible owners, deadlines, and supporting evidence.&lt;/li&gt;\n&lt;li&gt;Ensure that operational reporting and supporting data are accurate, complete, traceable, and provided within the required timeframes.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Performance Monitoring and Data Quality&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Define, collect, validate, and filter operational data from multiple data center systems and sources.&lt;/li&gt;\n&lt;li&gt;Define, maintain, and develop operational quality metrics, key performance indicators, and reporting dashboards.&lt;/li&gt;\n&lt;li&gt;Coordinate reporting tools implementation projects.&lt;/li&gt;\n&lt;li&gt;Monitor operational performance in areas such as availability, reliability, incidents, maintenance, alarms, energy efficiency, environmental performance, capacity, service quality, and corrective actions.&lt;/li&gt;\n&lt;li&gt;Prepare regular quality and operational-performance reports for site management and other stakeholders.&lt;/li&gt;\n&lt;li&gt;Provide management with clear analysis, findings, risks, and recommendations based on operational data and performance trends.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Incident Management and Corrective Actions&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Support the investigation of operational incidents, quality deviations, process failures, and non-conformities.&lt;/li&gt;\n&lt;li&gt;Facilitate or participate in root-cause analyses using appropriate quality and problem-solving methods.&lt;/li&gt;\n&lt;li&gt;Coordinate corrective and preventive actions and ensure that agreed actions are assigned, documented, implemented, and verified.&lt;/li&gt;\n&lt;li&gt;Monitor recurring incidents and alarms and systemic issues to identify opportunities for long-term improvement.&lt;/li&gt;\n&lt;li&gt;Maintain records of incidents, audit findings, non-conformities, corrective actions, and lessons learned.&lt;/li&gt;\n&lt;li&gt;Support the effective communication and implementation of lessons learned across relevant operational teams and other XTX data centers.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Continuous Improvement&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Promote a culture of operational excellence, accountability, standardisation, and continuous improvement.&lt;/li&gt;\n&lt;li&gt;Lead or support improvement initiatives that increase operational reliability, efficiency, compliance, safety, and service quality.&lt;/li&gt;\n&lt;li&gt;Use operational data, audits, incidents, and stakeholder feedback to prioritise improvement activities.&lt;/li&gt;\n&lt;li&gt;Share best practices and help embed improved processes into day-to-day operations and standardise effective practices across XTX data centers.&lt;/li&gt;\n&lt;li&gt;Proactively challenge existing processes and ways of working where data, incidents or operational experience indicate that a safer, more reliable or more efficient approach is available.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Documentation and Change Control&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Maintain effective document-control and records-management practices for operational documentation.&lt;/li&gt;\n&lt;li&gt;Review procedures, MOPs, SOPs, EOPs, reports, risk assessments, operating instructions, and quality records.&lt;/li&gt;\n&lt;li&gt;Ensure that documents have clear ownership, approval, version control, review dates, and retention requirements.&lt;/li&gt;\n&lt;li&gt;Participate in operational change-management processes and assess the quality, compliance, reporting, reliability, operational risk and documentation impacts of proposed changes.&lt;/li&gt;\n&lt;li&gt;Verify that operational changes are appropriately assessed, approved, communicated, implemented, tested where appropriate, and documented.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Role Objective&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;The objective of the role is to provide management and operational teams with reliable assurance that data center operations are controlled, compliant, measurable, reliable and continuously improving.&lt;/p&gt;\n&lt;p&gt;The Quality Engineer helps ensure that the organization can demonstrate operational excellence through accurate data, effective processes, robust documentation, timely reporting, and verifiable evidence.&lt;/p&gt;\n&lt;p&gt;The role is expected to actively identify weaknesses and improvement opportunities, challenge existing practices where appropriate, and use operational data, incidents and lessons learned to drive measurable improvements in reliability and operational performance across XTX&#39;s data centers.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Essential Qualifications &amp;amp; Experience&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Bachelor’s or master’s degree in engineering, quality management, industrial management, information technology, energy, environmental management, or another relevant field.&lt;/li&gt;\n&lt;li&gt;Relevant professional experience in quality engineering, operational excellence, compliance, technical reporting, or continuous improvement within a mission-critical or highly regulated operational environment.&lt;/li&gt;\n&lt;li&gt;Experience in data centers, critical infrastructure, energy, telecommunications, utilities, industrial facilities, or another highly regulated operational environment is strongly preferred.&lt;/li&gt;\n&lt;li&gt;Demonstrated experience in operational performance measurement, internal auditing, incident/root-cause investigation and corrective-action management.&lt;/li&gt;\n&lt;li&gt;Experience with quality-management systems and recognised management-system standards is an advantage.&lt;/li&gt;\n&lt;li&gt;Understanding of critical infrastructure operations, operational risk, business continuity, energy efficiency, environmental performance, and information security is beneficial.&lt;/li&gt;\n&lt;li&gt;Experience working with operational data, reporting tools, dashboards, maintenance-management systems, or document-management systems is preferred.&lt;/li&gt;\n&lt;li&gt;Proficient in English and at least B1 (intermediate) level in Finnish.&lt;/li&gt;\n&lt;/ul&gt;",
+    "departments": [
+     {
+      "id": 4065740003,
+      "name": "Datacentre",
+      "child_ids": [],
+      "parent_id": null
+     }
+    ],
+    "offices": [
+     {
+      "id": 4054137003,
+      "name": "Finland",
+      "location": null,
+      "child_ids": [],
+      "parent_id": null
+     }
+    ],
+    "ai_disclaimer": "<p>We use Greenhouse’s AI-powered Talent Matching tool to compare your application against our job requirements.</p>",
+    "include_ai_disclaimer": false,
+    "ai_opt_out_request_url": "http://app3.greenhouse.io/ai_opt_out_request/job_post/8003372003/ai_opt_out"
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/xtxmarketstechnologies/jobs/7989054003",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5883320003,
+    "location": {
+     "name": "London, England, United Kingdom"
+    },
+    "metadata": null,
+    "id": 7989054003,
+    "updated_at": "2026-10-13T10:28:57-04:00",
+    "requisition_id": "258",
+    "title": "Realtime Analytics and Controls Developer",
+    "company_name": "XTX Markets",
+    "first_published": "2026-10-01T11:10:02-04:00",
+    "language": "en",
+    "application_deadline": null,
+    "content": "&lt;p&gt;&lt;strong&gt;The Firm&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;XTX Markets is a leading algorithmic trading firm which uses state-of-the-art machine learning technology to produce price forecasts for 53,000 financial instruments across equities, fixed income, currencies, commodities and crypto. It uses those forecasts to trade on exchanges and alternative trading venues, and to offer differentiated liquidity directly to clients worldwide. The firm trades over $250bn a day across 35 countries and has over 300 employees based in London, Singapore, New York, Paris, Bristol, Mumbai, Yerevan and Kajaani.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;We leverage the talent of the people who work here, modern computational techniques and state-of-the-art research infrastructure to analyse large data sets across markets quickly and efficiently, to maximize the effectiveness of our proprietary trading algorithms. We are actively seeking new methods and ideas. The models that drive our trading strategies have evolved considerably over the last 10 years, from econometric methods that gave our company its name, to trees, to neural networks, to modern deep learning architectures.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;XTX Markets has an unrivalled level of computational resources in the trading industry, with a growing research cluster currently containing over 25,000 GPUs with 1 exabyte of usable storage. Teams across the firm include world-class researchers, developers and technologists with backgrounds in pure math, programming, physics, computer science and machine learning. The firm is also constructing a large-scale data centre in Finland to future-proof its significant computational capabilities.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;At XTX Markets technology is our business and we are a diverse organization which attracts outstanding talent from across all industry backgrounds. We are focused on teamwork, and our people collaborate on all aspects of the business, working openly and with respect for each other, our clients and the market. Our culture is non-hierarchical and one where everyone is valued. We strive for excellence in everything we do.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;The Role&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;As a Realtime Analytics and Controls Developer, you will be responsible for the mission control panel for one of the largest trading systems in the world ($250bn-300bn/day). Your work will have a company-wide impact, with users including Trading Desk, Trading Developers, Quants, CEO, Distribution and Risk.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;The goal is to provide clarity about what our trading system (hundreds of thousands of strategies) is doing at any given moment and how it is performing. We supply both high-level and incredibly detailed views, as both are crucial for efficient decision making and spotting issues. In addition to visibility, we are also responsible for trading control mechanisms – e.g., tweaking limits, starting trading strategies or emergency stopping. These actions are necessary for continued trading, and sometimes need to be taken within minutes, with millions of pounds at stake.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;Realtime Analytics and Controls is a small specialist team which works directly with multiple front office groups. You will be expected to also contribute to the shared software platform that supports this group.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;This is one of our most people-oriented engineering roles. You should expect to collaborate regularly with your colleagues who are the primary customers of your software, to understand how your design decisions affect their day-to-day work.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Responsibilities&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Communicate regularly with internal users about their needs and ideas.&lt;/li&gt;\n&lt;li&gt;Understand workflows of all teams involved in trading.&lt;/li&gt;\n&lt;li&gt;Design, implement and maintain software, including:\n&lt;ul&gt;\n&lt;li&gt;An Ingestion mechanism for large volumes of data from trading systems.&lt;/li&gt;\n&lt;li&gt;Internal frameworks for data processing and presentation.&lt;/li&gt;\n&lt;li&gt;In-memory query engines.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;li&gt;Present the data in a clear, useful, and accurate way, in collaboration with frontend developers.&lt;/li&gt;\n&lt;li&gt;Maintain calculation of trading metrics.&lt;/li&gt;\n&lt;li&gt;Build software that can reliably run 24/7.&lt;/li&gt;\n&lt;li&gt;Participating in the on-call rota.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Essential Attributes&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Pragmatic with strong ability to communicate with technical stakeholders: understanding users’ needs, soliciting features / requirements from them and prioritising effectively according to business needs.&lt;/li&gt;\n&lt;li&gt;Algorithmically literate and able to write efficient code.&lt;/li&gt;\n&lt;li&gt;Familiar with distributed systems – able to reason about consistency, delays etc.&lt;/li&gt;\n&lt;li&gt;Minimum of 5 years’ experience coding in a professional environment with Java or C++.&lt;/li&gt;\n&lt;li&gt;Willing to learn Kotlin.&lt;/li&gt;\n&lt;li&gt;Skilled in writing automated tests.&lt;/li&gt;\n&lt;li&gt;Passionate about reducing complexity.&lt;/li&gt;\n&lt;li&gt;Deeply caring about correctness and reliability.&lt;/li&gt;\n&lt;li&gt;Proactive about taking responsibility.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Desirable Attributes&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Familiar with high throughput JVM techniques.&lt;/li&gt;\n&lt;li&gt;Experience with binary protocols.&lt;/li&gt;\n&lt;li&gt;Proficient in working with databases.&lt;/li&gt;\n&lt;li&gt;Experienced in working with high stakes systems.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&lt;strong&gt;&lt;br&gt;Benefits&lt;br&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Onsite gym, sauna, and fitness classes at no charge. &lt;a href=&quot;https://www.peldonrose.com/projects/xtx-markets-wellbeing&quot;&gt;&lt;strong&gt;(Wellbeing Space)&lt;/strong&gt;&lt;/a&gt;.&lt;/li&gt;\n&lt;li&gt;Extensive medical benefits including an on-site doctor and therapist at no charge.&lt;/li&gt;\n&lt;li&gt;Breakfast and lunch provided daily.&lt;/li&gt;\n&lt;li&gt;Various supports for caregivers, including emergency dependent care.&lt;/li&gt;\n&lt;li&gt;Beautiful Kings Cross office: https://vimeo.com/257888726&lt;/li&gt;\n&lt;li&gt;25 days paid holiday per year + statutory holiday and paid sick days.&lt;/li&gt;\n&lt;li&gt;Generous Pension contributions.&lt;/li&gt;\n&lt;/ul&gt;",
+    "departments": [
+     {
+      "id": 4033111003,
+      "name": "Trading OTC Tech",
+      "child_ids": [],
+      "parent_id": null
+     }
+    ],
+    "offices": [
+     {
+      "id": 4022420003,
+      "name": "XTX Research",
+      "location": "London, England, United Kingdom",
+      "child_ids": [],
+      "parent_id": null
+     }
+    ],
+    "ai_disclaimer": "<p>We use Greenhouse’s AI-powered Talent Matching tool to compare your application against our job requirements.</p>",
+    "include_ai_disclaimer": false,
+    "ai_opt_out_request_url": "http://app3.greenhouse.io/ai_opt_out_request/job_post/7989054003/ai_opt_out"
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/xtxmarketstechnologies/jobs/7835362003",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5808906003,
+    "location": {
+     "name": "London, England, United Kingdom"
+    },
+    "metadata": null,
+    "id": 7835362003,
+    "updated_at": "2026-10-05T04:57:36-04:00",
+    "requisition_id": "253",
+    "title": "Software Developer - Shared Engineering ",
+    "company_name": "XTX Markets",
+    "first_published": "2026-08-07T08:39:31-04:00",
+    "language": "en",
+    "application_deadline": null,
+    "content": "&lt;p&gt;&lt;strong&gt;The Firm &lt;br&gt;&lt;br&gt;&lt;/strong&gt;XTX Markets is a leading algorithmic trading firm which uses state-of-the-art machine learning technology to produce price forecasts for over 53,000 financial instruments across equities, fixed income, currencies, commodities and crypto. It uses those forecasts to trade on exchanges and alternative trading venues, and to offer differentiated liquidity directly to clients worldwide. The firm trades over $250bn a day across 35 countries and has over 300 employees based in London, Singapore, New York, Paris, Bristol, Mumbai, Yerevan and Kajaani.&amp;nbsp; &lt;br&gt;&lt;br&gt;We leverage the talent of the people who work here, modern computational techniques and state-of-the-art research infrastructure to analyse large data sets across markets quickly and efficiently, to maximize the effectiveness of our proprietary trading algorithms. We are actively seeking new methods and ideas. The models that drive our trading strategies have evolved considerably over the last 10 years, from econometric methods that gave our company its name, to trees, to neural networks, to modern deep learning architectures. &lt;br&gt;&lt;br&gt;XTX Markets has an unrivalled level of computational resources in the trading industry, with a growing research cluster currently containing well over 25,000 GPUs with more than 1 exabyte of usable storage. Teams across the firm include world-class researchers, developers and technologists with backgrounds in pure math, programming, physics, computer science and machine learning. The firm is also constructing a large-scale data centre in Finland to future-proof its significant computational capabilities. &lt;br&gt;&lt;br&gt;At XTX Markets technology is our business and we are a diverse organization which attracts outstanding talent from across all industry backgrounds. We are focused on teamwork and our people collaborate on all aspects of the business, working openly and with respect for each other, our clients and the market. Our culture is non-hierarchical and one where everyone is valued. We strive for excellence in everything we do.&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;br&gt;&lt;strong&gt;The Role&lt;/strong&gt; &lt;br&gt;&lt;br&gt;Shared Engineering is a mixed-discipline platform team of around a dozen engineers (network engineers, Linux engineers, and software developers). The team owns the foundations that the firm&#39;s engineering runs on such as alerting, job scheduling, host inventory/monitoring, and the internal developer tooling for our monorepo. This includes shared libraries, build systems and CI/CD infrastructure. &lt;br&gt;&lt;br&gt;Our aim is to give the firm&#39;s engineers leverage: fewer manual steps, delivery that is fast and predictable, and teams who can self-serve rather than raising a ticket and waiting. We have many initiatives in flight at once, so judgement about which thing to work on matters nearly as much as building it well. &lt;br&gt;&lt;br&gt;This is a software-developer role on the team focused on developer experience and platform software: building the tools, services, and libraries that make everyone else&#39;s engineering faster and more reliable. A growing part of that remit is how the firm&#39;s engineers adopt AI and coding-assistant tooling. Recent work includes our self-service network configuration tools, sandboxing and gateway services for coding assistants, and pulling host inventory data into a single source of truth. &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Responsibilities&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Working primarily in Go, build and own platform services and internal tooling end-to-end, from design through to production.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Improve developer experience by reducing friction in the build/CI/CD path, strengthen shared libraries.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Help shape how the wider firm adopts AI/coding-assistant tooling safely and effectively, integrating it into workflows and building guardrails and tooling around it.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Collaborate with the network and Linux engineers to understand what the infrastructure needs in order to scale and be managed, then expose it cleanly in software.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Mentor and share knowledge, improving teammates&#39; skills and making sure others can maintain and build on the systems you develop.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Review and raise standards by thoughtful code review, sensible judgement on where to block versus where to let things flow, and a pragmatic sense of the right work to be doing right now.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Take part in on-call once up-to-speed, troubleshooting problems that span several technical domains across current and legacy infrastructure.&amp;nbsp;&lt;br&gt;&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&lt;strong&gt;Essential attributes&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;3+ years&#39; of experience, with strong software-engineering fundamentals and production experience owning services end-to-end. Go is what you&#39;d write day to day, but we care more about the fundamentals than the language: strong backgrounds in other statically typed languages are welcome.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Comfortable on Linux, with an understanding of the OS your software runs on (processes, networking basics, packaging, systemd), even if you&#39;re not a systems engineer.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Solid grasp of build systems, CI/CD, and release pipelines. You&#39;ve worked in a monorepo or a serious build/release setup and made it better.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;A track record of delivering: shipping, closing out, and not letting scope or polish stall a deliverable.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Good written and verbal communication, and the collaborative instinct to treat non-developer engineers as first-class colleagues.&amp;nbsp;&lt;br&gt;&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&lt;strong&gt;Desirable attributes &lt;br&gt;&lt;br&gt;&lt;/strong&gt;Things we&#39;d like to see. You won&#39;t have all of them, and that&#39;s fine.&amp;nbsp;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Interest or hands-on experience in developer experience and AI/coding-assistant tooling. Building or integrating LLMs into a real engineering workflow is a plus, but curiosity about how these tools change work practices counts too.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Experience with infrastructure/platform software: inventory/asset systems, monitoring, alerting, scheduling, container orchestration or similar backend platform work.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;APIs, data pipelines and schema management: designing clean service APIs and moving data between systems reliably.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Infrastructure-as-code and cloud fluency. We use Terraform and AWS as required, but experience with Azure or GCP is just as relevant.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;The role is not managing hardware, networks or datacenters. However, you will collaborate closely with teams that do, so experience in these areas is valuable.&lt;/li&gt;\n&lt;/ul&gt;",
+    "departments": [
+     {
+      "id": 4178053003,
+      "name": "Shared Engineering",
+      "child_ids": [],
+      "parent_id": null
+     }
+    ],
+    "offices": [
+     {
+      "id": 4022421003,
+      "name": "XTX Technologies",
+      "location": "London, England, United Kingdom",
+      "child_ids": [],
+      "parent_id": null
+     }
+    ],
+    "ai_disclaimer": "<p>We use Greenhouse’s AI-powered Talent Matching tool to compare your application against our job requirements.</p>",
+    "include_ai_disclaimer": false,
+    "ai_opt_out_request_url": "http://app3.greenhouse.io/ai_opt_out_request/job_post/7835362003/ai_opt_out"
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/xtxmarketstechnologies/jobs/7827774003",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5805696003,
+    "location": {
+     "name": "London, England, United Kingdom"
+    },
+    "metadata": null,
+    "id": 7827774003,
+    "updated_at": "2026-08-05T12:31:14-04:00",
+    "requisition_id": "251",
+    "title": "Technology Procurement Specialist",
+    "company_name": "XTX Markets",
+    "first_published": "2026-08-05T08:17:40-04:00",
+    "language": "en",
+    "application_deadline": null,
+    "content": "&lt;p&gt;&lt;strong&gt;The Firm&lt;br&gt;&lt;br&gt;&lt;/strong&gt;&lt;br&gt;XTX Markets is a leading algorithmic trading firm which uses state-of-the-art machine learning technology to produce price forecasts for over 53,000 financial instruments across equities, fixed income, currencies, commodities and crypto. It uses those forecasts to trade on exchanges and alternative trading venues, and to offer differentiated liquidity directly to clients worldwide. The firm trades over $250bn a day across 35 countries and has over 300 employees based in London, Singapore, New York, Paris, Bristol, Mumbai, Yerevan and Kajaani.&amp;nbsp; &lt;br&gt;&lt;br&gt;We leverage the talent of the people who work here, modern computational techniques and state-of-the-art research infrastructure to analyse large data sets across markets quickly and efficiently, to maximize the effectiveness of our proprietary trading algorithms. We are actively seeking new methods and ideas. The models that drive our trading strategies have evolved considerably over the last 10 years, from econometric methods that gave our company its name, to trees, to neural networks, to modern deep learning architectures. &lt;br&gt;&lt;br&gt;XTX Markets has an unrivalled level of computational resources in the trading industry, with a growing research cluster currently containing over 25,000 GPUs with more than 1 exabyte of usable storage. Teams across the firm include world-class researchers, developers and technologists with backgrounds in pure math, programming, physics, computer science and machine learning. The firm is also constructing a large-scale data centre in Finland to future-proof its significant computational capabilities. &lt;br&gt;&lt;br&gt;At XTX Markets technology is our business and we are a diverse organization which attracts outstanding talent from across all industry backgrounds. We are focused on teamwork and our people collaborate on all aspects of the business, working openly and with respect for each other, our clients and the market. Our culture is non-hierarchical and one where everyone is valued. We strive for excellence in everything we do.&amp;nbsp;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;The Role&lt;br&gt;&lt;br&gt;&lt;/strong&gt;The technology and market data procurement department is responsible for achieving value for the firm in the execution of a budget in the hundreds of millions of pounds annually.&lt;br&gt;&lt;br&gt;This role supports the research, evaluation, sourcing, procurement, and commercial management of technology products and services across the entire firm.&lt;br&gt;&lt;br&gt;A key aspect of the role is staying up to date with emerging technologies, market trends and vendor capabilities, providing technology guidance and strategic recommendations to engineering, infrastructure and business development teams to support the firm’s technology decisions.&lt;br&gt;&lt;br&gt;The portfolio includes IT hardware, enterprise software, cloud services, market data, network and connectivity services, datacentre and colocation services, professional services and emerging technologies. You will get broad exposure to a wide range of cutting-edge technology deployments.&lt;br&gt;&lt;br&gt;You will work closely with engineering, infrastructure, and business stakeholders to understand their requirements, evaluate technical and commercial options, negotiate with suppliers, and support implementation. We are seeking someone who combines sound commercial judgement with the technical aptitude to research unfamiliar technologies, assess vendor proposals and manage initiatives from initial requirements through contract, delivery and lifecycle management.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Responsibilities&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Research, evaluate, negotiate and procure technology products and services across hardware, software, cloud, market data, network and connectivity, datacentre and colocation, professional services and emerging technologies.&lt;/li&gt;\n&lt;li&gt;Lead structured sourcing processes, including requirements definition, RFIs, RFPs, vendor due diligence, proposal evaluation, commercial negotiation, contract review, purchase approvals and implementation handover.&lt;/li&gt;\n&lt;li&gt;Work with engineering, infrastructure, information security, legal, finance and business teams to define requirements and assess technical options, vendor roadmaps, licensing and commercial models, support arrangements, implementation risks and total cost of ownership.&lt;/li&gt;\n&lt;li&gt;Support the procurement and delivery of complex infrastructure projects, including compute, GPU, storage, network, power, cooling, datacentre capacity and exchange connectivity requirements.&lt;/li&gt;\n&lt;li&gt;Manage supplier relationships across OEMs, resellers, software and cloud providers, market data vendors, network carriers, datacentre and colocation providers and professional services firms.&lt;/li&gt;\n&lt;li&gt;Support the commercial and procurement workstreams of technology implementation projects, including supplier coordination, delivery planning, risk management, acceptance and operational handover.&lt;/li&gt;\n&lt;li&gt;Manage hardware and enterprise software asset lifecycles, including renewals, maintenance, support, utilisation, refresh planning and decommissioning.&lt;/li&gt;\n&lt;li&gt;Conduct cost reconciliation, spend analysis, budget tracking, vendor reporting and financial data administration.&lt;/li&gt;\n&lt;li&gt;Improve procurement processes, documentation, governance and stakeholder workflows.&lt;br&gt;&lt;br&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&lt;strong&gt;Essential Attributes&lt;br&gt;&lt;br&gt;&lt;/strong&gt;If you resonate with some or all the following, we encourage you to apply:&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Approximately 3 to 6 years of experience in technology procurement, strategic sourcing, vendor management, solutions architecture, technical project delivery, infrastructure sourcing or a related role.&lt;/li&gt;\n&lt;li&gt;Strong technical aptitude and a practical understanding of enterprise technology environments, with the ability to assess requirements, dependencies, implementation considerations and supplier proposals.&lt;/li&gt;\n&lt;li&gt;Experience sourcing or delivering complex infrastructure, high-performance compute, GPU, datacentre, colocation, low-latency network or direct-liquid-cooled technology&lt;/li&gt;\n&lt;li&gt;Broad knowledge of technology products or services across several categories, such as hardware, software, cloud, data, telecommunications, datacentre services or professional services.&lt;/li&gt;\n&lt;li&gt;Ability to quickly develop knowledge of unfamiliar or emerging technologies and engage credibly with specialist engineering and business stakeholders.&lt;/li&gt;\n&lt;li&gt;Commercially astute, with experience running structured sourcing and negotiation processes and evaluating commercial models, contractual terms, supplier risk and total cost of ownership.&lt;/li&gt;\n&lt;li&gt;Proven project management and organisational skills, with the ability to manage multiple concurrent initiatives and balance technical, commercial, logistical, operational and risk considerations.&lt;/li&gt;\n&lt;li&gt;Effective communicator with strong stakeholder and vendor management skills, capable of translating technical concepts for non-technical stakeholders and commercial constraints for technical stakeholders.&lt;/li&gt;\n&lt;li&gt;Articulate, analytical and numerate, with strong verbal and written reasoning skills and a bachelor&#39;s degree in an analytical, technical, engineering, scientific, financial or quantitative discipline, or equivalent practical experience.&lt;/li&gt;\n&lt;li&gt;Experience working in financial services, trading, research computing or another technically demanding environment would be advantageous.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Benefits &lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Onsite gym, sauna, and fitness classes at no charge.&amp;nbsp;&lt;a href=&quot;https://www.peldonrose.com/projects/xtx-markets-wellbeing&quot;&gt;(Wellbeing Space)&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;Extensive medical benefits including an on-site doctor and therapist at no charge.&lt;/li&gt;\n&lt;li&gt;Breakfast and lunch provided daily.&lt;/li&gt;\n&lt;li&gt;Various supports for caregivers, including emergency dependent care.&lt;/li&gt;\n&lt;li&gt;Beautiful Kings Cross office:&amp;nbsp;&lt;a href=&quot;https://www.peldonrose.com/projects/xtx-markets-2023&quot;&gt;(Office Tour)&lt;/a&gt;.&lt;/li&gt;\n&lt;li&gt;25 days paid holiday per year + statutory holiday and paid sick days.&lt;/li&gt;\n&lt;li&gt;Generous Pension contributions.&amp;nbsp;&lt;/li&gt;\n&lt;/ul&gt;",
+    "departments": [
+     {
+      "id": 4155952003,
+      "name": "Procurement",
+      "child_ids": [],
+      "parent_id": null
+     }
+    ],
+    "offices": [
+     {
+      "id": 4022421003,
+      "name": "XTX Technologies",
+      "location": "London, England, United Kingdom",
+      "child_ids": [],
+      "parent_id": null
+     }
+    ],
+    "ai_disclaimer": "<p>We use Greenhouse’s AI-powered Talent Matching tool to compare your application against our job requirements.</p>",
+    "include_ai_disclaimer": false,
+    "ai_opt_out_request_url": "http://app3.greenhouse.io/ai_opt_out_request/job_post/7827774003/ai_opt_out"
+   }
+  ],
+  "meta": {
+   "total": 7
+  },
+  "updated": "2026-10-20T00:15:33.865Z"
+ },
+ "greenhouse": {
+  "jobs": [
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/xtxmarketstechnologies/jobs/7831489003",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5807083003,
+    "location": {
+     "name": "Singapore, Central, Singapore"
+    },
+    "metadata": null,
+    "id": 7831489003,
+    "updated_at": "2026-10-13T07:04:37-04:00",
+    "requisition_id": "252",
+    "title": "C++ Software Engineer",
+    "company_name": "XTX Markets",
+    "first_published": "2026-08-19T06:20:58-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/xtxmarketstechnologies/jobs/7645996003",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5724052003,
+    "location": {
+     "name": "Singapore, Central, Singapore"
+    },
+    "metadata": null,
+    "id": 7645996003,
+    "updated_at": "2026-06-23T09:35:44-04:00",
+    "requisition_id": "234",
+    "title": "Datacentre Operations Engineer",
+    "company_name": "XTX Markets",
+    "first_published": "2026-03-09T12:32:38-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/xtxmarketstechnologies/jobs/7990993003",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5884189003,
+    "location": {
+     "name": "Finland"
+    },
+    "metadata": null,
+    "id": 7990993003,
+    "updated_at": "2026-10-13T07:06:20-04:00",
+    "requisition_id": "259",
+    "title": "Datacentre Operations Specialist",
+    "company_name": "XTX Markets",
+    "first_published": "2026-09-10T07:03:21-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/xtxmarketstechnologies/jobs/8003372003",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5889363003,
+    "location": {
+     "name": "Finland"
+    },
+    "metadata": null,
+    "id": 8003372003,
+    "updated_at": "2026-10-13T07:06:49-04:00",
+    "requisition_id": "262",
+    "title": "Quality Engineer, Data Center Operations ",
+    "company_name": "XTX Markets",
+    "first_published": "2026-09-23T11:11:58-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/xtxmarketstechnologies/jobs/7989054003",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5883320003,
+    "location": {
+     "name": "London, England, United Kingdom"
+    },
+    "metadata": null,
+    "id": 7989054003,
+    "updated_at": "2026-10-13T10:28:57-04:00",
+    "requisition_id": "258",
+    "title": "Realtime Analytics and Controls Developer",
+    "company_name": "XTX Markets",
+    "first_published": "2026-10-01T11:10:02-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/xtxmarketstechnologies/jobs/7835362003",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5808906003,
+    "location": {
+     "name": "London, England, United Kingdom"
+    },
+    "metadata": null,
+    "id": 7835362003,
+    "updated_at": "2026-10-05T04:57:36-04:00",
+    "requisition_id": "253",
+    "title": "Software Developer - Shared Engineering ",
+    "company_name": "XTX Markets",
+    "first_published": "2026-08-07T08:39:31-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/xtxmarketstechnologies/jobs/7827774003",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5805696003,
+    "location": {
+     "name": "London, England, United Kingdom"
+    },
+    "metadata": null,
+    "id": 7827774003,
+    "updated_at": "2026-08-05T12:31:14-04:00",
+    "requisition_id": "251",
+    "title": "Technology Procurement Specialist",
+    "company_name": "XTX Markets",
+    "first_published": "2026-08-05T08:17:40-04:00",
+    "language": "en",
+    "application_deadline": null
+   }
+  ],
+  "meta": {
+   "total": 7
+  }
+ }
+}

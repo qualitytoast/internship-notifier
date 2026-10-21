@@ -1,0 +1,39 @@
+# status 200
+# llms.txt: https://biohub.org/llms.txt
+
+# START YOAST BLOCK
+# ---------------------------
+User-agent: *
+Disallow:
+
+Sitemap: https://biohub.org/sitemap_index.xml
+Sitemap: https://www.czbiohub.org/sitemap_index.xml
+Sitemap: https://biohub.org/royer/sitemap_index.xml
+Sitemap: https://biohub.org/comp-imaging/sitemap_index.xml
+Sitemap: https://biohub.org/genomics/sitemap_index.xml
+Sitemap: https://biohub.org/rapid-response/sitemap_index.xml
+Sitemap: https://biohub.org/leonetti/sitemap_index.xml
+Sitemap: https://biohub.org/mass-spec/sitemap_index.xml
+Sitemap: https://biohub.org/balla/sitemap_index.xml
+Sitemap: https://biohub.org/bioengineering/sitemap_index.xml
+Sitemap: https://biohub.org/arias/sitemap_index.xml
+Sitemap: https://biohub.org/jacobo/sitemap_index.xml
+Sitemap: https://biohub.org/pak/sitemap_index.xml
+Sitemap: https://biohub.org/software-engineering/sitemap_index.xml
+Sitemap: https://biohub.org/mass-spec-omics/sitemap_index.xml
+Sitemap: https://biohub.org/spatiotemporal-omics/sitemap_index.xml
+Sitemap: https://biohub.org/ebook/sitemap_index.xml
+Sitemap: https://biohub.org/scientific-compute/sitemap_index.xml
+Sitemap: https://biohub.org/tissue-models/sitemap_index.xml
+Sitemap: https://biohub.org/functional-immunogenomics/sitemap_index.xml
+Sitemap: https://biohub.org/cardiac-biointerface-engineering/sitemap_index.xml
+Sitemap: https://biohub.org/biomimetronics/sitemap_index.xml
+Sitemap: https://biohub.org/immune-cell-dynamics/sitemap_index.xml
+Sitemap: https://biohub.org/single-cell-technology-platform/sitemap_index.xml
+Sitemap: https://biohub.org/immune-cell-engineering/sitemap_index.xml
+Sitemap: https://biohub.org/proteoform-spatial-biology/sitemap_index.xml
+Sitemap: https://biohub.org/synthetic-spatial-omics/sitemap_index.xml
+Sitemap: https://biohub.org/dynamic-structural-cell-biology/sitemap_index.xml
+Sitemap: https://biohub.org/ai-comp-biology/sitemap_index.xml
+# ---------------------------
+# END YOAST BLOCK

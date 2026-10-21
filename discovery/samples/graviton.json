@@ -1,0 +1,1083 @@
+{
+ "_note": "site_data: GET https://www.gravitontrading.com/data/greenhouse_jobs.json (what the careers page iframe renders; a scraped copy of the Greenhouse embed board; 'details' cut to 400 chars). greenhouse: raw GET boards-api.greenhouse.io/v1/boards/gravitonresearchcapital/jobs. Same 24 ids.",
+ "observed": "2026-10-20T00:37:34Z",
+ "site_data": {
+  "scraped_at": "2026-10-20T00:15:13+00:00",
+  "source": {
+   "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+  },
+  "board": {
+   "title": "Current openings at Graviton Research Capital LLP",
+   "name": "Graviton Research Capital LLP",
+   "departments": {
+    "4002120002": "Core Engineering",
+    "4077289002": "Finance",
+    "4064018002": "Human Resources",
+    "4076298002": "Network Engineering",
+    "4002121002": "Quantitative Trading",
+    "4081150002": "Risk Management",
+    "4056811002": "Trade Support"
+   },
+   "offices": {
+    "4130949002": "Amsterdam",
+    "4000941002": "Gurgaon",
+    "4140295002": "London",
+    "4139396002": "New York",
+    "4135861002": "Noida",
+    "4006084002": "Singapore"
+   },
+   "filters": {
+    "include_department_filter": true,
+    "include_office_filter": true
+   },
+   "sections": [
+    {
+     "department_id": "4002120002",
+     "department": "Core Engineering",
+     "gh_jids": [
+      "5099344002",
+      "8764240002",
+      "4004920002",
+      "8147013002",
+      "8745037002"
+     ]
+    },
+    {
+     "department_id": "4077289002",
+     "department": "Finance",
+     "gh_jids": [
+      "8593672002"
+     ]
+    },
+    {
+     "department_id": "4064018002",
+     "department": "Human Resources",
+     "gh_jids": [
+      "8773000002"
+     ]
+    },
+    {
+     "department_id": "4076298002",
+     "department": "Network Engineering",
+     "gh_jids": [
+      "8620641002",
+      "8788938002",
+      "8794534002"
+     ]
+    },
+    {
+     "department_id": "4002121002",
+     "department": "Quantitative Trading",
+     "gh_jids": [
+      "8156976002",
+      "8862376002",
+      "8456543002",
+      "8547628002",
+      "4004918002",
+      "8768396002",
+      "8899670002",
+      "8899673002",
+      "8899671002",
+      "4114667002",
+      "4121745002",
+      "4004919002"
+     ]
+    },
+    {
+     "department_id": "4081150002",
+     "department": "Risk Management",
+     "gh_jids": [
+      "8899523002"
+     ]
+    },
+    {
+     "department_id": "4056811002",
+     "department": "Trade Support",
+     "gh_jids": [
+      "8781321002"
+     ]
+    }
+   ],
+   "parse_source": "remix"
+  },
+  "jobs": [
+   {
+    "title": "Software Engineer",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/5099344002",
+    "gh_jid": "5099344002",
+    "location_text": "Gurugram, Haryana, India",
+    "department_id": "4002120002",
+    "department": "Core Engineering",
+    "office_id": null,
+    "office": null,
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/5099344002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/5099344002\", \"title\": \"Software Engineer\", \"location_text\": \"Gurugram, Haryana, India\", \"gh_jid\": \"5099344002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Software Engineer\", \"og:descrip..."
+   },
+   {
+    "title": "Software Engineer (2027 Graduate)",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8764240002",
+    "gh_jid": "8764240002",
+    "location_text": "Gurugram, Haryana, India",
+    "department_id": "4002120002",
+    "department": "Core Engineering",
+    "office_id": null,
+    "office": null,
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8764240002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8764240002\", \"title\": \"Software Engineer (2027 Graduate)\", \"location_text\": \"Gurugram, Haryana, India\", \"gh_jid\": \"8764240002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Software Engine..."
+   },
+   {
+    "title": "Software Engineer (C++)",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4004920002",
+    "gh_jid": "4004920002",
+    "location_text": "Gurugram, Haryana, India",
+    "department_id": "4002120002",
+    "department": "Core Engineering",
+    "office_id": null,
+    "office": null,
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4004920002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4004920002\", \"title\": \"Software Engineer (C++)\", \"location_text\": \"Gurugram, Haryana, India\", \"gh_jid\": \"4004920002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Software Engineer (C++)\",..."
+   },
+   {
+    "title": "Software Engineer- Python",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8147013002",
+    "gh_jid": "8147013002",
+    "location_text": "Gurugram, Haryana, India",
+    "department_id": "4002120002",
+    "department": "Core Engineering",
+    "office_id": null,
+    "office": null,
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8147013002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8147013002\", \"title\": \"Software Engineer- Python\", \"location_text\": \"Gurugram, Haryana, India\", \"gh_jid\": \"8147013002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Software Engineer- Pyth..."
+   },
+   {
+    "title": "Technical Program Manager",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8745037002",
+    "gh_jid": "8745037002",
+    "location_text": "Gurugram, Haryana, India",
+    "department_id": "4002120002",
+    "department": "Core Engineering",
+    "office_id": null,
+    "office": null,
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8745037002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8745037002\", \"title\": \"Technical Program Manager\", \"location_text\": \"Gurugram, Haryana, India\", \"gh_jid\": \"8745037002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Technical Program Manag..."
+   },
+   {
+    "title": "Middle Office Operations Analyst",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8593672002",
+    "gh_jid": "8593672002",
+    "location_text": "Singapore",
+    "department_id": "4077289002",
+    "department": "Finance",
+    "office_id": "4006084002",
+    "office": "Singapore",
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8593672002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8593672002\", \"title\": \"Middle Office Operations Analyst\", \"location_text\": \"Singapore\", \"gh_jid\": \"8593672002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Middle Office Operations Analys..."
+   },
+   {
+    "title": "University Recruiter",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8773000002",
+    "gh_jid": "8773000002",
+    "location_text": "Gurugram, Haryana, India",
+    "department_id": "4064018002",
+    "department": "Human Resources",
+    "office_id": null,
+    "office": null,
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8773000002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8773000002\", \"title\": \"University Recruiter\", \"location_text\": \"Gurugram, Haryana, India\", \"gh_jid\": \"8773000002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"University Recruiter\", \"og:d..."
+   },
+   {
+    "title": "Data Center Engineer",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8620641002",
+    "gh_jid": "8620641002",
+    "location_text": "Noida, Uttar Pradesh, India",
+    "department_id": "4076298002",
+    "department": "Network Engineering",
+    "office_id": "4135861002",
+    "office": "Noida",
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8620641002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8620641002\", \"title\": \"Data Center Engineer\", \"location_text\": \"Noida, Uttar Pradesh, India\", \"gh_jid\": \"8620641002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Data Center Engineer\", \"o..."
+   },
+   {
+    "title": "Network Engineer",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8788938002",
+    "gh_jid": "8788938002",
+    "location_text": "Gurugram, Haryana, India",
+    "department_id": "4076298002",
+    "department": "Network Engineering",
+    "office_id": null,
+    "office": null,
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8788938002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8788938002\", \"title\": \"Network Engineer\", \"location_text\": \"Gurugram, Haryana, India\", \"gh_jid\": \"8788938002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Network Engineer\", \"og:descripti..."
+   },
+   {
+    "title": "VPN Engineer",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8794534002",
+    "gh_jid": "8794534002",
+    "location_text": "Gurugram, Haryana, India",
+    "department_id": "4076298002",
+    "department": "Network Engineering",
+    "office_id": null,
+    "office": null,
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8794534002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8794534002\", \"title\": \"VPN Engineer\", \"location_text\": \"Gurugram, Haryana, India\", \"gh_jid\": \"8794534002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"VPN Engineer\", \"og:description\": \"Gu..."
+   },
+   {
+    "title": "Central Execution Trader",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8156976002",
+    "gh_jid": "8156976002",
+    "location_text": "Singapore",
+    "department_id": "4002121002",
+    "department": "Quantitative Trading",
+    "office_id": "4006084002",
+    "office": "Singapore",
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8156976002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8156976002\", \"title\": \"Central Execution Trader\", \"location_text\": \"Singapore\", \"gh_jid\": \"8156976002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Central Execution Trader\", \"og:descript..."
+   },
+   {
+    "title": "Graduate Central Execution Trader",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8862376002",
+    "gh_jid": "8862376002",
+    "location_text": "Singapore",
+    "department_id": "4002121002",
+    "department": "Quantitative Trading",
+    "office_id": "4006084002",
+    "office": "Singapore",
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8862376002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8862376002\", \"title\": \"Graduate Central Execution Trader\", \"location_text\": \"Singapore\", \"gh_jid\": \"8862376002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Graduate Central Execution Tra..."
+   },
+   {
+    "title": "Machine Learning Researcher",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8456543002",
+    "gh_jid": "8456543002",
+    "location_text": "Gurugram, Haryana, India",
+    "department_id": "4002121002",
+    "department": "Quantitative Trading",
+    "office_id": null,
+    "office": null,
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8456543002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8456543002\", \"title\": \"Machine Learning Researcher\", \"location_text\": \"Gurugram, Haryana, India\", \"gh_jid\": \"8456543002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Machine Learning Rese..."
+   },
+   {
+    "title": "Quantitative Analyst - Risk",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8547628002",
+    "gh_jid": "8547628002",
+    "location_text": "Gurugram, Haryana, India",
+    "department_id": "4002121002",
+    "department": "Quantitative Trading",
+    "office_id": null,
+    "office": null,
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8547628002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8547628002\", \"title\": \"Quantitative Analyst - Risk\", \"location_text\": \"Gurugram, Haryana, India\", \"gh_jid\": \"8547628002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Quantitative Analyst ..."
+   },
+   {
+    "title": "Quantitative Researcher",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4004918002",
+    "gh_jid": "4004918002",
+    "location_text": "Gurugram, Haryana, India",
+    "department_id": "4002121002",
+    "department": "Quantitative Trading",
+    "office_id": null,
+    "office": null,
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4004918002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4004918002\", \"title\": \"Quantitative Researcher\", \"location_text\": \"Gurugram, Haryana, India\", \"gh_jid\": \"4004918002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Quantitative Researcher\",..."
+   },
+   {
+    "title": "Quantitative Researcher (2027 Graduate)",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8768396002",
+    "gh_jid": "8768396002",
+    "location_text": "Gurugram, Haryana, India",
+    "department_id": "4002121002",
+    "department": "Quantitative Trading",
+    "office_id": null,
+    "office": null,
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8768396002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8768396002\", \"title\": \"Quantitative Researcher (2027 Graduate)\", \"location_text\": \"Gurugram, Haryana, India\", \"gh_jid\": \"8768396002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Quantitat..."
+   },
+   {
+    "title": "Quantitative Researcher - 2027 Graduates",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8899670002",
+    "gh_jid": "8899670002",
+    "location_text": "Amsterdam, North Holland, Netherlands; London, England, United Kingdom; New York; Singapore",
+    "department_id": "4002121002",
+    "department": "Quantitative Trading",
+    "office_id": "4130949002",
+    "office": "Amsterdam",
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8899670002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8899670002\", \"title\": \"Quantitative Researcher - 2027 Graduates\", \"location_text\": \"Amsterdam, North Holland, Netherlands; London, England, United Kingdom; New York; Singapore\", \"gh_jid\": \"8899670002\", \"meta\": {\"viewport\": \"width=device-..."
+   },
+   {
+    "title": "Quantitative Researcher - 2027 Summer Internship",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8899673002",
+    "gh_jid": "8899673002",
+    "location_text": "Amsterdam, North Holland, Netherlands; London, England, United Kingdom; New York; Singapore",
+    "department_id": "4002121002",
+    "department": "Quantitative Trading",
+    "office_id": "4130949002",
+    "office": "Amsterdam",
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8899673002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8899673002\", \"title\": \"Quantitative Researcher - 2027 Summer Internship\", \"location_text\": \"Amsterdam, North Holland, Netherlands; London, England, United Kingdom; New York; Singapore\", \"gh_jid\": \"8899673002\", \"meta\": {\"viewport\": \"width..."
+   },
+   {
+    "title": "Quantitative Researcher PhD - 2027 Internship",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8899671002",
+    "gh_jid": "8899671002",
+    "location_text": "Amsterdam, North Holland, Netherlands; London, England, United Kingdom; Singapore",
+    "department_id": "4002121002",
+    "department": "Quantitative Trading",
+    "office_id": "4130949002",
+    "office": "Amsterdam",
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8899671002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8899671002\", \"title\": \"Quantitative Researcher PhD - 2027 Internship\", \"location_text\": \"Amsterdam, North Holland, Netherlands; London, England, United Kingdom; Singapore\", \"gh_jid\": \"8899671002\", \"meta\": {\"viewport\": \"width=device-width..."
+   },
+   {
+    "title": "Quantitative Researcher (Singapore)",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4114667002",
+    "gh_jid": "4114667002",
+    "location_text": "Graviton Research Capital (Singapore) Pte. Ltd",
+    "department_id": "4002121002",
+    "department": "Quantitative Trading",
+    "office_id": "4006084002",
+    "office": "Singapore",
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4114667002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4114667002\", \"title\": \"Quantitative Researcher (Singapore)\", \"location_text\": \"Graviton Research Capital (Singapore) Pte. Ltd\", \"gh_jid\": \"4114667002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:..."
+   },
+   {
+    "title": "Quantitative Trader - Singapore",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4121745002",
+    "gh_jid": "4121745002",
+    "location_text": "Singapore",
+    "department_id": "4002121002",
+    "department": "Quantitative Trading",
+    "office_id": "4006084002",
+    "office": "Singapore",
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4121745002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4121745002\", \"title\": \"Quantitative Trader - Singapore\", \"location_text\": \"Singapore\", \"gh_jid\": \"4121745002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Quantitative Trader  - Singapore..."
+   },
+   {
+    "title": "Senior Quantitative Trader",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4004919002",
+    "gh_jid": "4004919002",
+    "location_text": "Gurugram, Haryana, India",
+    "department_id": "4002121002",
+    "department": "Quantitative Trading",
+    "office_id": null,
+    "office": null,
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4004919002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4004919002\", \"title\": \"Senior Quantitative Trader\", \"location_text\": \"Gurugram, Haryana, India\", \"gh_jid\": \"4004919002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Senior Quantitative Tr..."
+   },
+   {
+    "title": "Market Risk Manager",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8899523002",
+    "gh_jid": "8899523002",
+    "location_text": "Singapore",
+    "department_id": "4081150002",
+    "department": "Risk Management",
+    "office_id": "4006084002",
+    "office": "Singapore",
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8899523002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8899523002\", \"title\": \"Market Risk Manager\", \"location_text\": \"Singapore\", \"gh_jid\": \"8899523002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Market Risk Manager \", \"og:description\": \"Si..."
+   },
+   {
+    "title": "Application Reliability Engineer",
+    "url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8781321002",
+    "gh_jid": "8781321002",
+    "location_text": "Gurugram, Haryana, India",
+    "department_id": "4056811002",
+    "department": "Trade Support",
+    "office_id": null,
+    "office": null,
+    "source": {
+     "board_url": "https://boards.greenhouse.io/embed/job_board?for=gravitonresearchcapital"
+    },
+    "details": "{\"url\": \"https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8781321002\", \"canonical_url\": \"http://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8781321002\", \"title\": \"Application Reliability Engineer\", \"location_text\": \"Gurugram, Haryana, India\", \"gh_jid\": \"8781321002\", \"meta\": {\"viewport\": \"width=device-width,initial-scale=1\", \"og:type\": \"article\", \"og:title\": \"Application Reli..."
+   }
+  ],
+  "counts": {
+   "jobs": 24,
+   "details_fetched": 24,
+   "details_errors": 0
+  }
+ },
+ "greenhouse": {
+  "jobs": [
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8781321002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 6512961002,
+    "location": {
+     "name": "Gurugram, Haryana, India"
+    },
+    "metadata": null,
+    "id": 8781321002,
+    "updated_at": "2026-10-15T01:01:00-04:00",
+    "requisition_id": "235",
+    "title": "Application Reliability Engineer",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2026-09-04T04:40:33-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8156976002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 6232385002,
+    "location": {
+     "name": "Singapore"
+    },
+    "metadata": null,
+    "id": 8156976002,
+    "updated_at": "2026-10-15T01:00:59-04:00",
+    "requisition_id": "131",
+    "title": "Central Execution Trader",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2025-09-08T06:04:56-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8620641002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 6442718002,
+    "location": {
+     "name": "Noida, Uttar Pradesh, India"
+    },
+    "metadata": null,
+    "id": 8620641002,
+    "updated_at": "2026-10-06T09:48:32-04:00",
+    "requisition_id": "207",
+    "title": "Data Center Engineer",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2026-10-06T09:48:32-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8862376002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 6523726002,
+    "location": {
+     "name": "Singapore"
+    },
+    "metadata": null,
+    "id": 8862376002,
+    "updated_at": "2026-10-15T01:01:00-04:00",
+    "requisition_id": null,
+    "title": "Graduate Central Execution Trader ",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2026-10-01T22:07:12-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8456543002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 6377995002,
+    "location": {
+     "name": "Gurugram, Haryana, India"
+    },
+    "metadata": null,
+    "id": 8456543002,
+    "updated_at": "2026-10-15T01:00:59-04:00",
+    "requisition_id": "188",
+    "title": "Machine Learning Researcher",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2026-03-10T07:26:22-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8899523002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 6340022002,
+    "location": {
+     "name": "Singapore"
+    },
+    "metadata": null,
+    "id": 8899523002,
+    "updated_at": "2026-10-18T22:27:15-04:00",
+    "requisition_id": "164",
+    "title": "Market Risk Manager ",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2026-10-18T22:27:15-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8593672002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 6352619002,
+    "location": {
+     "name": "Singapore"
+    },
+    "metadata": null,
+    "id": 8593672002,
+    "updated_at": "2026-09-23T11:09:31-04:00",
+    "requisition_id": "174",
+    "title": "Middle Office Operations Analyst ",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2026-06-16T05:39:38-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8788938002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 6516198002,
+    "location": {
+     "name": "Gurugram, Haryana, India"
+    },
+    "metadata": null,
+    "id": 8788938002,
+    "updated_at": "2026-09-23T11:09:31-04:00",
+    "requisition_id": "242",
+    "title": "Network Engineer",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2026-09-11T03:23:41-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8547628002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 6414163002,
+    "location": {
+     "name": "Gurugram, Haryana, India"
+    },
+    "metadata": null,
+    "id": 8547628002,
+    "updated_at": "2026-09-23T11:09:31-04:00",
+    "requisition_id": "194",
+    "title": "Quantitative Analyst  - Risk",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2026-06-12T03:21:58-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4004918002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 4005650002,
+    "location": {
+     "name": "Gurugram, Haryana, India"
+    },
+    "metadata": null,
+    "id": 4004918002,
+    "updated_at": "2026-09-23T11:09:31-04:00",
+    "requisition_id": null,
+    "title": "Quantitative Researcher",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2020-09-16T05:12:07-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8768396002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6508072002,
+    "location": {
+     "name": "Gurugram, Haryana, India"
+    },
+    "metadata": null,
+    "id": 8768396002,
+    "updated_at": "2026-09-23T11:09:31-04:00",
+    "requisition_id": "231",
+    "title": "Quantitative Researcher (2027 Graduate)",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2026-09-01T02:25:45-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8899670002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6523756002,
+    "location": {
+     "name": "Amsterdam, North Holland, Netherlands; London, England, United Kingdom; New York; Singapore"
+    },
+    "metadata": null,
+    "id": 8899670002,
+    "updated_at": "2026-10-19T05:23:17-04:00",
+    "requisition_id": null,
+    "title": "Quantitative Researcher - 2027 Graduates",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2026-10-19T05:23:17-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8899673002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6503512002,
+    "location": {
+     "name": "Amsterdam, North Holland, Netherlands; London, England, United Kingdom; New York; Singapore"
+    },
+    "metadata": null,
+    "id": 8899673002,
+    "updated_at": "2026-10-19T05:34:20-04:00",
+    "requisition_id": null,
+    "title": "Quantitative Researcher - 2027 Summer Internship ",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2026-10-19T05:34:20-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8899671002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6503512002,
+    "location": {
+     "name": "Amsterdam, North Holland, Netherlands; London, England, United Kingdom; Singapore"
+    },
+    "metadata": null,
+    "id": 8899671002,
+    "updated_at": "2026-10-19T05:27:51-04:00",
+    "requisition_id": null,
+    "title": "Quantitative Researcher PhD - 2027 Internship ",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2026-10-19T05:27:51-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4114667002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 4098091002,
+    "location": {
+     "name": "Graviton Research Capital (Singapore) Pte. Ltd "
+    },
+    "metadata": null,
+    "id": 4114667002,
+    "updated_at": "2026-10-15T01:00:57-04:00",
+    "requisition_id": null,
+    "title": "Quantitative Researcher  (Singapore)",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2023-10-03T04:18:55-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4121745002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 4103744002,
+    "location": {
+     "name": "Singapore"
+    },
+    "metadata": null,
+    "id": 4121745002,
+    "updated_at": "2026-09-23T11:09:31-04:00",
+    "requisition_id": null,
+    "title": "Quantitative Trader  - Singapore ",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2020-02-13T02:51:15-05:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4004919002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 4005651002,
+    "location": {
+     "name": "Gurugram, Haryana, India"
+    },
+    "metadata": null,
+    "id": 4004919002,
+    "updated_at": "2026-09-23T11:09:31-04:00",
+    "requisition_id": null,
+    "title": "Senior Quantitative Trader",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": null,
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/5099344002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 4785563002,
+    "location": {
+     "name": "Gurugram, Haryana, India"
+    },
+    "metadata": null,
+    "id": 5099344002,
+    "updated_at": "2026-09-23T11:09:31-04:00",
+    "requisition_id": "62",
+    "title": "Software Engineer",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2021-02-23T06:33:56-05:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8764240002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6506164002,
+    "location": {
+     "name": "Gurugram, Haryana, India"
+    },
+    "metadata": null,
+    "id": 8764240002,
+    "updated_at": "2026-09-23T11:09:31-04:00",
+    "requisition_id": "226",
+    "title": "Software Engineer (2027 Graduate)",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2026-09-01T02:25:41-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/4004920002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 4005652002,
+    "location": {
+     "name": "Gurugram, Haryana, India"
+    },
+    "metadata": null,
+    "id": 4004920002,
+    "updated_at": "2026-09-23T11:09:31-04:00",
+    "requisition_id": null,
+    "title": "Software Engineer (C++)",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2023-02-17T02:29:46-05:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8147013002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 6224109002,
+    "location": {
+     "name": "Gurugram, Haryana, India"
+    },
+    "metadata": null,
+    "id": 8147013002,
+    "updated_at": "2026-10-15T01:00:58-04:00",
+    "requisition_id": "126",
+    "title": "Software Engineer- Python",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2025-09-01T04:50:35-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8745037002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 6497251002,
+    "location": {
+     "name": "Gurugram, Haryana, India"
+    },
+    "metadata": null,
+    "id": 8745037002,
+    "updated_at": "2026-10-15T01:01:00-04:00",
+    "requisition_id": "221",
+    "title": "Technical Program Manager",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2026-09-16T07:05:35-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8773000002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 6510227002,
+    "location": {
+     "name": "Gurugram, Haryana, India"
+    },
+    "metadata": null,
+    "id": 8773000002,
+    "updated_at": "2026-10-15T01:01:00-04:00",
+    "requisition_id": "234",
+    "title": "University Recruiter",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2026-09-02T08:00:49-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/gravitonresearchcapital/jobs/8794534002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 6518586002,
+    "location": {
+     "name": "Gurugram, Haryana, India"
+    },
+    "metadata": null,
+    "id": 8794534002,
+    "updated_at": "2026-09-23T11:09:31-04:00",
+    "requisition_id": "243",
+    "title": "VPN Engineer",
+    "company_name": "Graviton Research Capital LLP",
+    "first_published": "2026-09-11T05:31:29-04:00",
+    "language": "en",
+    "application_deadline": null
+   }
+  ],
+  "meta": {
+   "total": 24
+  }
+ }
+}

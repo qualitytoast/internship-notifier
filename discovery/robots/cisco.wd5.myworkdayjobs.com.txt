@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/siteMap.xml
+
+User-agent: *
+Allow: /Cisco_Careers/
+Disallow: /refreshFacet/

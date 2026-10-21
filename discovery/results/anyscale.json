@@ -1,0 +1,21 @@
+{
+  "key": "anyscale",
+  "name": "Anyscale",
+  "careers_url": "https://jobs.ashbyhq.com/anyscale",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "anyscale"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/anyscale?includeCompensation=false",
+  "feed_total": 20,
+  "page_total": 20,
+  "page_total_how": "Playwright render of https://jobs.ashbyhq.com/anyscale: 20 job links = the feed's 20 ids. www.anyscale.com/careers links only to this board (and its department filters).",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com: robots.txt returns 401 = no robots.txt, allow all; jobs.ashbyhq.com/api/ is disallowed and not used)",
+  "notes": "api.lever.co/v0/postings/anyscale still returns 1 stale posting titled 'We have moved our Careers Page to: https://jobs.ashbyhq.com/anyscale'; ignore Lever.",
+  "checked_at": "2026-10-20T00:37:53Z"
+}

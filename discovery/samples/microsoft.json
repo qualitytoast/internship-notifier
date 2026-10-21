@@ -1,0 +1,827 @@
+{
+ "_about": "Microsoft careers (Eightfold PCSX) samples captured 2026-10-19 ~18:47-18:51 CDT with a plain GET (browser User-Agent, no cookies/CSRF). See discovery/notes/microsoft.md.",
+ "search_unfiltered_page1": {
+  "request": "GET https://apply.careers.microsoft.com/api/pcsx/search?domain=microsoft.com&query=&location=&start=0&sort_by=timestamp",
+  "response": {
+   "status": 200,
+   "error": {
+    "message": "",
+    "body": ""
+   },
+   "data": {
+    "positions": [
+     {
+      "id": 1970393557041840,
+      "displayJobId": "200062319",
+      "name": "Director, Partner Marketing Strategy",
+      "locations": [
+       "United States, Multiple Locations, Multiple Locations"
+      ],
+      "standardizedLocations": [
+       "US"
+      ],
+      "postedTs": 1792452501,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Partner Marketing",
+      "creationTs": 1792117903,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "200062319",
+      "positionUrl": "/careers/job/1970393557041840"
+     },
+     {
+      "id": 1970393556982568,
+      "displayJobId": "200052236",
+      "name": "Technical Program Manager, E2E Portfolio/Strategy Management",
+      "locations": [
+       "United States, Multiple Locations, Multiple Locations"
+      ],
+      "standardizedLocations": [
+       "US"
+      ],
+      "postedTs": 1792452294,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Technical Program Management",
+      "creationTs": 1787850214,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "200052236",
+      "positionUrl": "/careers/job/1970393556982568"
+     },
+     {
+      "id": 1970393557041557,
+      "displayJobId": "200062183",
+      "name": "Senior Packaging Engineer",
+      "locations": [
+       "United States, Washington, Redmond"
+      ],
+      "standardizedLocations": [
+       "Redmond, WA, US"
+      ],
+      "postedTs": 1792451882,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Hardware Engineering",
+      "creationTs": 1792084904,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "200062183",
+      "positionUrl": "/careers/job/1970393557041557"
+     },
+     {
+      "id": 1970393557026658,
+      "displayJobId": "200060547",
+      "name": "Special Projects Estimating Lead",
+      "locations": [
+       "United States, Washington, Redmond",
+       "United States, Arizona, Phoenix",
+       "United States, Texas, San Antonio",
+       "United States, District of Columbia, Washington D.C.",
+       "United States, Georgia, Atlanta"
+      ],
+      "standardizedLocations": [
+       "Redmond, WA, US",
+       "Phoenix, AZ, US",
+       "San Antonio, TX, US",
+       "Washington, DC, US",
+       "Atlanta, GA, US"
+      ],
+      "postedTs": 1792451687,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Construction Project Management",
+      "creationTs": 1791399032,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "200060547",
+      "positionUrl": "/careers/job/1970393557026658"
+     },
+     {
+      "id": 1970393556950320,
+      "displayJobId": "200045966",
+      "name": "Senior Technical Program Manager",
+      "locations": [
+       "United States, Washington, Redmond"
+      ],
+      "standardizedLocations": [
+       "Redmond, WA, US"
+      ],
+      "postedTs": 1792451657,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Technical Program Management",
+      "creationTs": 1785290096,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "200045966",
+      "positionUrl": "/careers/job/1970393556950320"
+     },
+     {
+      "id": 1970393557041667,
+      "displayJobId": "200062240",
+      "name": "Enablement Lead",
+      "locations": [
+       "United States, Multiple Locations, Multiple Locations"
+      ],
+      "standardizedLocations": [
+       "US"
+      ],
+      "postedTs": 1792451767,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Sales Strategy Enablement",
+      "creationTs": 1792097122,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "200062240",
+      "positionUrl": "/careers/job/1970393557041667"
+     },
+     {
+      "id": 1970393557038875,
+      "displayJobId": "200061406",
+      "name": "Program Manager, Release & Value Delivery, Q2C",
+      "locations": [
+       "United States, Nevada, Reno",
+       "United States, Washington, Redmond"
+      ],
+      "standardizedLocations": [
+       "Reno, NV, US",
+       "Redmond, WA, US"
+      ],
+      "postedTs": 1792451772,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Business Program Management",
+      "creationTs": 1791812891,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "200061406",
+      "positionUrl": "/careers/job/1970393557038875"
+     },
+     {
+      "id": 1970393556952129,
+      "displayJobId": "200046165",
+      "name": "Senior Technical Program Manager",
+      "locations": [
+       "United States, Washington, Redmond"
+      ],
+      "standardizedLocations": [
+       "Redmond, WA, US"
+      ],
+      "postedTs": 1792451619,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Technical Program Management",
+      "creationTs": 1785366053,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "200046165",
+      "positionUrl": "/careers/job/1970393556952129"
+     },
+     {
+      "id": 1970393557002692,
+      "displayJobId": "200057087",
+      "name": "Principal Quantum Systems Modeling Engineer",
+      "locations": [
+       "United States, California, Santa Barbara",
+       "United States, Washington, Redmond"
+      ],
+      "standardizedLocations": [
+       "Santa Barbara, CA, US",
+       "Redmond, WA, US"
+      ],
+      "postedTs": 1792451402,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Quantum Engineering",
+      "creationTs": 1789772190,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "200057087",
+      "positionUrl": "/careers/job/1970393557002692"
+     },
+     {
+      "id": 1970393557041543,
+      "displayJobId": "200062172",
+      "name": "Finance Director,  AI Applications, OPEX FP&A Lead",
+      "locations": [
+       "United States, Washington, Redmond"
+      ],
+      "standardizedLocations": [
+       "Redmond, WA, US"
+      ],
+      "postedTs": 1792451502,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Financial Analysis",
+      "creationTs": 1792083723,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "200062172",
+      "positionUrl": "/careers/job/1970393557041543"
+     }
+    ],
+    "filterDef": {
+     "facets": {
+      "locations": [
+       [
+        "Remote",
+        999999
+       ],
+       [
+        "Redmond, WA, United States",
+        801
+       ],
+       [
+        "United States",
+        283
+       ],
+       [
+        "Mountain View, CA, United States",
+        253
+       ],
+       [
+        "Bengaluru, KA, India",
+        129
+       ],
+       [
+        "Atlanta, GA, United States",
+        113
+       ],
+       [
+        "Tokyo, Japan",
+        100
+       ],
+       [
+        "Hyderabad, TS, India",
+        99
+       ],
+       [
+        "New York, NY, United States",
+        98
+       ],
+       [
+        "Austin, TX, United States",
+        75
+       ],
+       [
+        "Singapore",
+        72
+       ]
+      ]
+     },
+     "smartFilters": [
+      {
+       "type": "multi_select",
+       "filterName": "work_site",
+       "title": "Work site",
+       "options": [
+        {
+         "label": "3 DAYS / WEEK IN-OFFICE",
+         "value": "3 days / week in-office"
+        },
+        {
+         "label": "FULLY ON-SITE",
+         "value": "fully on-site"
+        },
+        {
+         "label": "0 DAYS / WEEK IN-OFFICE – REMOTE",
+         "value": "0 days / week in-office – remote"
+        },
+        {
+         "label": "4 DAYS / WEEK IN-OFFICE",
+         "value": "4 days / week in-office"
+        },
+        {
+         "label": "2 DAYS / WEEK IN-OFFICE",
+         "value": "2 days / week in-office"
+        },
+        {
+         "label": "1 DAY / WEEK IN-OFFICE",
+         "value": "1 day / week in-office"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 50,
+       "translateOptions": true,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select",
+       "filterName": "seniority",
+       "title": "Experience level",
+       "options": [
+        {
+         "label": "SENIOR",
+         "value": "Senior"
+        },
+        {
+         "label": "MID-LEVEL",
+         "value": "Mid-Level"
+        },
+        {
+         "label": "MANAGER",
+         "value": "Manager"
+        },
+        {
+         "label": "DIRECTOR",
+         "value": "Director"
+        },
+        {
+         "label": "ENTRY",
+         "value": "Entry"
+        },
+        {
+         "label": "INTERN",
+         "value": "Intern"
+        },
+        {
+         "label": "VICE PRESIDENT",
+         "value": "Vice President"
+        },
+        {
+         "label": "CXO",
+         "value": "CXO"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 50,
+       "translateOptions": true,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select",
+       "filterName": "profession",
+       "title": "Profession",
+       "options": [
+        {
+         "label": "SOFTWARE ENGINEERING",
+         "value": "software engineering"
+        },
+        {
+         "label": "SALES",
+         "value": "sales"
+        },
+        {
+         "label": "DATA CENTER",
+         "value": "data center"
+        },
+        {
+         "label": "CUSTOMER SUCCESS",
+         "value": "customer success"
+        },
+        {
+         "label": "HARDWARE ENGINEERING",
+         "value": "hardware engineering"
+        },
+        {
+         "label": "TECHNOLOGY SALES",
+         "value": "technology sales"
+        },
+        {
+         "label": "RESEARCH, APPLIED, & DATA SCIENCES",
+         "value": "research, applied, & data sciences"
+        },
+        {
+         "label": "PROGRAM MANAGEMENT",
+         "value": "program management"
+        },
+        {
+         "_trimmed": "23 more options removed"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 50,
+       "translateOptions": true,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select",
+       "filterName": "career_discipline",
+       "title": "Discipline",
+       "options": [
+        {
+         "label": "SOFTWARE ENGINEERING",
+         "value": "Software Engineering"
+        },
+        {
+         "label": "CLOUD SOLUTION ARCHITECTURE",
+         "value": "Cloud Solution Architecture"
+        },
+        {
+         "label": "PRODUCT MANAGEMENT",
+         "value": "Product Management"
+        },
+        {
+         "label": "TECHNICAL PROGRAM MANAGEMENT",
+         "value": "Technical Program Management"
+        },
+        {
+         "label": "SOLUTION ENGINEERING",
+         "value": "Solution Engineering"
+        },
+        {
+         "label": "SOLUTION AREA SPECIALISTS",
+         "value": "Solution Area Specialists"
+        },
+        {
+         "label": "SILICON ENGINEERING",
+         "value": "Silicon Engineering"
+        },
+        {
+         "label": "CONSTRUCTION PROJECT MANAGEMENT",
+         "value": "Construction Project Management"
+        },
+        {
+         "_trimmed": "42 more options removed"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 50,
+       "translateOptions": true,
+       "allowFreeText": false
+      }
+     ],
+     "allFilters": [
+      {
+       "type": "multi_select",
+       "filterName": "roletype",
+       "title": "Role type",
+       "options": [
+        {
+         "label": "INDIVIDUAL CONTRIBUTOR",
+         "value": "individual contributor"
+        },
+        {
+         "label": "PEOPLE MANAGER",
+         "value": "people manager"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 50,
+       "translateOptions": true,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select",
+       "filterName": "employment_type",
+       "title": "Employment type",
+       "options": [
+        {
+         "label": "FULL-TIME",
+         "value": "full-time"
+        },
+        {
+         "label": "INTERNSHIP",
+         "value": "internship"
+        },
+        {
+         "label": "POST DOC RESEARCH",
+         "value": "post doc research"
+        },
+        {
+         "label": "PART-TIME",
+         "value": "part-time"
+        },
+        {
+         "label": "TEMP/CONTRACT",
+         "value": "temp/contract"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 50,
+       "translateOptions": true,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select_suggest",
+       "filterName": "skills",
+       "title": "Skills",
+       "options": [
+        {
+         "label": "PROBLEM SOLVING",
+         "value": "Problem Solving"
+        },
+        {
+         "label": "DECISION MAKING",
+         "value": "Decision Making"
+        },
+        {
+         "label": "CONFLICT RESOLUTION",
+         "value": "Conflict Resolution"
+        },
+        {
+         "label": "ORAL COMMUNICATION",
+         "value": "Oral Communication"
+        },
+        {
+         "label": "NEGOTIATION",
+         "value": "Negotiation"
+        },
+        {
+         "label": "WRITTEN COMMUNICATION",
+         "value": "Written Communication"
+        },
+        {
+         "label": "ENGLISH LANGUAGE PROFICIENCY",
+         "value": "English Language Proficiency"
+        },
+        {
+         "label": "PROJECT MANAGEMENT",
+         "value": "Project Management"
+        },
+        {
+         "_trimmed": "42 more options removed"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 50,
+       "translateOptions": true,
+       "allowFreeText": false
+      },
+      {
+       "type": "multi_select",
+       "filterName": "hiring_title",
+       "title": "Job title",
+       "options": [
+        {
+         "label": "SENIOR SOFTWARE ENGINEER",
+         "value": "senior software engineer"
+        },
+        {
+         "label": "PRINCIPAL SOFTWARE ENGINEER",
+         "value": "principal software engineer"
+        },
+        {
+         "label": "DATA CENTER TECHNICIAN",
+         "value": "data center technician"
+        },
+        {
+         "label": "PRINCIPAL PRODUCT MANAGER",
+         "value": "principal product manager"
+        },
+        {
+         "label": "CRITICAL ENVIRONMENT TECHNICIAN",
+         "value": "critical environment technician"
+        },
+        {
+         "label": "SENIOR PRODUCT MANAGER",
+         "value": "senior product manager"
+        },
+        {
+         "label": "SOFTWARE ENGINEER II",
+         "value": "software engineer ii"
+        },
+        {
+         "label": "LOGISTICS TECHNICIAN",
+         "value": "logistics technician"
+        },
+        {
+         "_trimmed": "42 more options removed"
+        }
+       ],
+       "tooltip": null,
+       "extraData": {},
+       "displayCount": 50,
+       "translateOptions": true,
+       "allowFreeText": false
+      }
+     ]
+    },
+    "count": 2411,
+    "sortBy": "timestamp",
+    "appliedFilters": {},
+    "debug": {},
+    "savedSearchMetadata": {
+     "savedSearchParamsHash": null,
+     "isSavedSearchActive": false
+    },
+    "resultsMetaData": {
+     "usedFuzzSearch": false
+    }
+   },
+   "metadata": null
+  }
+ },
+ "search_internship_worldwide_page1": {
+  "request": "GET https://apply.careers.microsoft.com/api/pcsx/search?domain=microsoft.com&query=&location=&start=0&sort_by=timestamp&filter_employment_type=internship",
+  "response": {
+   "status": 200,
+   "error": {
+    "message": "",
+    "body": ""
+   },
+   "data": {
+    "positions": [
+     {
+      "id": 1970393557043740,
+      "displayJobId": "200062674",
+      "name": "Research Intern - Algorithms Group: Generative Modeling",
+      "locations": [
+       "United States, Washington, Redmond"
+      ],
+      "standardizedLocations": [
+       "Redmond, WA, US"
+      ],
+      "postedTs": 1792446696,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Research Sciences",
+      "creationTs": 1792444978,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "200062674",
+      "positionUrl": "/careers/job/1970393557043740"
+     },
+     {
+      "id": 1970393557043754,
+      "displayJobId": "200062675",
+      "name": "Research Intern - Extended Perception Interaction Cognition (EPIC)",
+      "locations": [
+       "United States, Washington, Redmond"
+      ],
+      "standardizedLocations": [
+       "Redmond, WA, US"
+      ],
+      "postedTs": 1792446614,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Research Sciences",
+      "creationTs": 1792445448,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "200062675",
+      "positionUrl": "/careers/job/1970393557043754"
+     },
+     {
+      "id": 1970393556999329,
+      "displayJobId": "200055979",
+      "name": "Business Program Management INTERN",
+      "locations": [
+       "United States, Washington, Redmond"
+      ],
+      "standardizedLocations": [
+       "Redmond, WA, US"
+      ],
+      "postedTs": 1792446274,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Business Program Management",
+      "creationTs": 1789510914,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "200055979",
+      "positionUrl": "/careers/job/1970393556999329"
+     },
+     {
+      "id": 1970393556972272,
+      "displayJobId": "200049562",
+      "name": "Business Program Mgr - BBBEE Internship (PwD Opportunities)",
+      "locations": [
+       "South Africa, Gauteng, Johannesburg"
+      ],
+      "standardizedLocations": [
+       "Johannesburg, GP, ZA"
+      ],
+      "postedTs": 1792400789,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Business Program Management",
+      "creationTs": 1787039731,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "200049562",
+      "positionUrl": "/careers/job/1970393556972272"
+     },
+     {
+      "id": 1970393556997800,
+      "displayJobId": "200055606",
+      "name": "Applied Sciences INTERN",
+      "locations": [
+       "India, Multiple Locations, Multiple Locations"
+      ],
+      "standardizedLocations": [
+       "IN"
+      ],
+      "postedTs": 1792389057,
+      "solrScore": null,
+      "stars": 0,
+      "department": "Applied Sciences",
+      "creationTs": 1789370262,
+      "isHot": 0,
+      "workLocationOption": "onsite",
+      "locationFlexibility": null,
+      "atsJobId": "200055606",
+      "positionUrl": "/careers/job/1970393556997800"
+     }
+    ],
+    "count": 86,
+    "sortBy": "timestamp",
+    "appliedFilters": {
+     "employmentType": [
+      "internship"
+     ]
+    },
+    "debug": {},
+    "savedSearchMetadata": {
+     "savedSearchParamsHash": null,
+     "isSavedSearchActive": false
+    },
+    "resultsMetaData": {
+     "usedFuzzSearch": false
+    },
+    "_trimmed": "positions trimmed to the first 5 of the 10 returned"
+   },
+   "metadata": null
+  }
+ },
+ "position_details": {
+  "request": "GET https://apply.careers.microsoft.com/api/pcsx/position_details?position_id=1970393557043740&domain=microsoft.com&hl=en",
+  "response": {
+   "status": 200,
+   "error": {
+    "message": "",
+    "body": ""
+   },
+   "data": {
+    "id": 1970393557043740,
+    "displayJobId": "200062674",
+    "name": "Research Intern - Algorithms Group: Generative Modeling",
+    "locations": [
+     "United States, Washington, Redmond"
+    ],
+    "standardizedLocations": [
+     "Redmond, WA, US"
+    ],
+    "postedTs": 1792446696,
+    "stars": 0,
+    "department": "Research Sciences",
+    "creationTs": 1792444978,
+    "jobDescription": "<b>Overview</b><br><p>Research Internships at Microsoft provide a dynamic environment for research careers with a network of world-class research labs led by globally-recognized scientists and engineers, who pursue innovation in a range of scientific and technical disciplines to help solve complex challenges in diverse fields, including computing, healthcare, economics, and the environment.<br><br></p><p> </p><p>The Algorithms group at MSR Redmond is looking for Research Interns to advance research in generative modeling. Opportunities include fundamental algorithmic innovation to enhance the efficiency and generation quality of existing models (e.g., diffusion models, image auto-regressive models, language models) and the design of next-generation generative modeling techniques (see examples below).</p><p> </p><ul><li><a href=\"https://www.microsoft.com/en-us/research/publication/latent-zoning-network-a-unified-principle-for-generative-modeling-representation-learning-and-classification/\" target=\"_blank\" rel=\"noopener noreferrer\">Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification (NeurIPS 2025) </a></li><li><a href=\"https://www.microsoft.com/en-us/research/publication/distilled-decoding-1-one-step-sampling-of-image-auto-regressive-models-with-flow-matching/\" target=\"_blank\" rel=\"noopener noreferrer\">Distilled Decoding 1: One-step Sampling of Image Auto-regressive Models with Flow Matching (ICLR 2025)</a> </li><li><a href=\"https://www.microsoft.com/en-us/research/publication/distilled-decoding-2-one-step-sampling-of-image-auto-regressive-models-with-conditional-score-distillation/\" target=\"_blank\" rel=\"noopener noreferrer\">Distilled Decoding 2: One-step Sampling of Image Auto-regressive Models with Conditional Score Distillation (NeurIPS 2025)</a></li><li><a href=\"https://arxiv.org/abs/2607.26246\" target=\"_blank\" rel=\"noopener noreferrer\">Weak-to-Strong On-Policy Distillation</a></li><li><a href=\"https://www.microsoft.com/en-us/research/publication/can-llms-learn-by-teaching-a-preliminary-study/\" target=\"_blank\" rel=\"noopener noreferrer\">Can LLMs Learn by Teaching for Better Reasoning? A Preliminary Study (NeurIPS 2024) </a></li></ul><p> </p><p>Our researchers and Research Interns have been conducting influential research published in top-tier venues such as NeurIPS, ICML, ICLR. For more details on our research group and projects, please see: <a href=\"https://www.microsoft.com/en-us/research/group/algorithms-redmond/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.microsoft.com/en-us/research/group/algorithms-redmond/</a></p><p> </p><p> </p><p>For the fullest consideration, please apply by January 1, 2027.</p><br><br><b>Responsibilities</b><br><p>Research Interns put inquiry and theory into practice. Alongside fellow doctoral candidates and some of the world’s best researchers, Research Interns learn, collaborate, and network for life. Research Interns not only advance their own careers, but they also contribute to exciting research and development strides. During the 12-week internship, Research Interns are paired with mentors and expected to collaborate with other Research Interns and researchers, present findings, and contribute to the vibrant life of the community. Research internships are available in all areas of research, and are offered year-round, though they typically begin in the summer.</p><br><br><b>Qualifications</b><br><p><strong>Required Qualifications</strong></p><ul><li>Currently enrolled in a master's degree program in Computer Science, Mathematics, Electrical Engineering, or a related STEM field. </li></ul><p> </p><p> </p><p><strong>Other Requirements</strong></p><ul><li>Research Interns are expected to be physically located in their manager’s Microsoft worksite location for the duration of their internship.</li><li>In addition to the qualifications below, you’ll need to submit a minimum of two reference letters for this position as well as a cover letter and any relevant work or research samples. After you submit your application, a request for letters may be sent to your list of references on your behalf. Note that reference letters cannot be requested until after you have submitted your application, and furthermore, that they might not be automatically requested for all candidates. You may wish to alert your letter writers in advance, so they will be ready to submit your letter. </li></ul><p> </p><p> </p><p><strong>Preferred Qualifications</strong></p><ul><li>Currently enrolled in a Doctorate Degree program in Computer Science, Mathematics, Electrical Engineering, or a related STEM field.</li><li>Publications at top theoretical CS or ML conferences (NeurIPS, ICML, ICLR, etc.) or top journals. </li><li>Familiarity with frameworks such as PyTorch. </li><li>Experience with training large foundation models such as diffusion models, image auto-regressive models, and large language models.</li></ul><p> </p><p> </p><p> </p><p>Applied Sciences IC2 - The base pay range for this internship is USD $5,690 - $11,210 per month.</p><p>There is a different range applicable to specific work locations, within the San Francisco Bay area and New York City metropolitan area, and the base pay range for this role in those locations is USD $7,410 - $12,250 per month.</p><p> </p><p> </p><p>Applied Sciences IC3 - The base pay range for this internship is USD $6,810 - $13,480 per month.</p><p>There is a different range applicable to specific work locations, within the San Francisco Bay area and New York City metropolitan area, and the base pay range for this role in those locations is USD $8,920 - $14,610 per month.</p><p> </p><p>Certain roles may be eligible for benefits and other compensation. Find additional benefits and pay information here: <a href=\"https://careers.microsoft.com/us/en/us-intern-pay\">https://careers.microsoft.com/us/en/us-intern-pay</a></p><p> </p><p> </p><p> </p><p>Microsoft accepts applications and processes offers for these roles on an ongoing basis throughout the academic calendar (September - April).</p> <br><p>This position will be open for a minimum of 5 days, with applications accepted on an ongoing basis until the position is filled.</p><br><hr><br><p>Microsoft is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to age, ancestry, citizenship, color, family or medical care leave, gender identity or expression, genetic information, immigration status, marital status, medical condition, national origin, physical or mental disability, political affiliation, protected veteran or military status, race, ethnicity, religion, sex (including pregnancy), sexual orientation, or any other characteristic protected by applicable local laws, regulations and ordinances. If you need assistance with religious accommodations and/or a reasonable accommodation due to a disability during the application process, read more about <a href=\"https://careers.microsoft.com/v2/global/en/accessibility.html\"><b><u>requesting accommodations.</u></b></a></p> ",
+    "location": "United States, Washington, Redmond",
+    "isHot": 0,
+    "workLocationOption": "onsite",
+    "locationFlexibility": null,
+    "atsJobId": "200062674",
+    "positionUrl": "/careers/job/1970393557043740",
+    "publicUrl": "https://apply.careers.microsoft.com/careers/job/1970393557043740",
+    "efcustomTextWorkSite": [
+     "3 days / week in-office"
+    ],
+    "efcustomTextRequiredTravel": [
+     "Less than 25%"
+    ],
+    "efcustomTextCurrentProfession": [
+     "Research, Applied, & Data Sciences"
+    ],
+    "efcustomTextTaDisciplineName": [
+     "Research Sciences"
+    ],
+    "efcustomTextRoletype": [
+     "Individual Contributor"
+    ],
+    "efcustomTextEmploymentType": [
+     "Internship"
+    ],
+    "jdHighlight": [],
+    "positionExtraDetails": {
+     "videos": "<trimmed: list>",
+     "blogs": "<trimmed: list>",
+     "perks": "<trimmed: list>",
+     "pymww": "<trimmed: dict>",
+     "customContent": "<trimmed: list>"
+    },
+    "positionUserActions": {
+     "isSaved": false,
+     "applyAction": {
+      "status": "log_in"
+     }
+    }
+   },
+   "metadata": null
+  }
+ }
+}

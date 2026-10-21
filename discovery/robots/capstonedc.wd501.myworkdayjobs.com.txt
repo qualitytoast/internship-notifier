@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://capstonedc.wd501.myworkdayjobs.com/Capstone/siteMap.xml
+
+User-agent: *
+Allow: /Capstone/
+Disallow: /refreshFacet/

@@ -1,0 +1,26 @@
+{
+  "key": "rockwell-automation",
+  "name": "Rockwell Automation",
+  "careers_url": "https://www.rockwellautomation.com/en-us/careers.html",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "rockwellautomation.wd1.myworkdayjobs.com",
+    "tenant": "rockwellautomation",
+    "sites": [
+      "External_Rockwell_Automation",
+      "External-Rockwell-Automation-Early-Careers"
+    ]
+  },
+  "feed": "POST https://rockwellautomation.wd1.myworkdayjobs.com/wday/cxs/rockwellautomation/External_Rockwell_Automation/jobs + POST https://rockwellautomation.wd1.myworkdayjobs.com/wday/cxs/rockwellautomation/External-Rockwell-Automation-Early-Careers/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 419,
+  "page_total": 445,
+  "page_total_how": "Playwright renders: /External_Rockwell_Automation '416 JOBS FOUND' (target of the careers page 'View jobs'), /External-Rockwell-Automation-Early-Careers '29 JOBS FOUND' (linked from the EDGE student-programs page); both = CXS totals. 445 postings = 419 requisitions (26 on both). Recheck 03:19Z: 417 + 29.",
+  "intern_total": 29,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for the CXS POST URL(s); the tenant robots.txt lists /External_Rockwell_Automation/, /External-Rockwell-Automation-Early-Careers/, /External-ERGs/ as Allow",
+  "notes": "Both sites are needed: the early-careers site has 2 interns not on the main site and the main site has 6 not on early careers. External-ERGs (4 jobs) is a subset of the main site and is skipped. Dedupe across sites by bulletFields req id (R26-NNNN). See notes/rockwell-automation.md.",
+  "checked_at": "2026-10-20T03:19:24Z"
+}

@@ -1,0 +1,5 @@
+# status 200
+User-agent: *
+Allow: /
+Sitemap: http://careers.docusign.com/sitemap.xml
+crawl-delay: 5

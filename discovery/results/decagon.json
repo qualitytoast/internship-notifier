@@ -1,0 +1,21 @@
+{
+  "key": "decagon",
+  "name": "Decagon",
+  "careers_url": "https://decagon.ai/careers",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "decagon"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/decagon?includeCompensation=false",
+  "feed_total": 135,
+  "page_total": 135,
+  "page_total_how": "Playwright render of https://decagon.ai/careers: the page fetches api.ashbyhq.com/posting-api/job-board/decagon and lists 135 links to jobs.ashbyhq.com/decagon/<id>, identical to the feed ids",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com/robots.txt answers HTTP 401, so no robots.txt applies); careers page ALLOW (Allow: /)",
+  "notes": "Plain Ashby board; all 135 postings are listed (isListed true).",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

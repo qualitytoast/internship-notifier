@@ -1,0 +1,21 @@
+{
+  "key": "cohere",
+  "name": "Cohere",
+  "careers_url": "https://jobs.ashbyhq.com/cohere",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "cohere"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/cohere?includeCompensation=false",
+  "feed_total": 115,
+  "page_total": 115,
+  "page_total_how": "Playwright render of https://jobs.ashbyhq.com/cohere (no filters): 115 distinct job links = the feed's 115 ids. cohere.com/careers only links to this board.",
+  "intern_total": 3,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com: robots.txt returns 401 = no robots.txt, allow all; jobs.ashbyhq.com/api/ is disallowed and not used)",
+  "notes": "Bookmark was ?employmentType=Intern; track the whole board. Interns (employmentType Intern, all Winter 2027): Software Engineer Intern, Research Internship, Machine Learning Intern/Co-op.",
+  "checked_at": "2026-10-20T00:37:53Z"
+}

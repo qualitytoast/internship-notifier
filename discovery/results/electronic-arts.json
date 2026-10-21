@@ -1,0 +1,26 @@
+{
+  "key": "electronic-arts",
+  "name": "Electronic Arts",
+  "careers_url": "https://jobs.ea.com/en_US/careers",
+  "hiring_system": "avature (portal 'careers' on jobs.ea.com = ea.avature.net)",
+  "checker": "avature",
+  "settings": {
+    "list_url": "https://jobs.ea.com/en_US/careers/Home/?jobRecordsPerPage=20",
+    "page_size": 20,
+    "card": "article.article--result",
+    "title": "h3 a.link_result",
+    "fields": {"location": "span.list-item-location", "role_id": "span.list-item-id", "employment_type": "span.list-item-workerType", "department": "span.list-item-department"},
+    "id_from_url": "/(\\d+)$"
+  },
+  "feed": "GET https://jobs.ea.com/en_US/careers/Home/?jobRecordsPerPage=20&jobOffset=N (HTML, 20 per page, 19 pages)",
+  "feed_total": 362,
+  "page_total": 362,
+  "page_total_how": "The list page's own counter '1-20 of 362 results' (plain GET, same HTML as the Playwright capture, which read '363 results' a few hours earlier); 362 unique job ids across all 19 pages.",
+  "intern_total": 45,
+  "status": "verified",
+  "robots": "ALLOW (Allow: /*/careers; only *qtvc= is disallowed)",
+  "notes": "Page size is fixed at 20 (jobRecordsPerPage=100 still returns 20). Worker type 'Intern - Temporary Employee' marks 42 interns; 3 more are 'Opportunity for Students' temporary roles. Sitemap jobs.ea.com/en_US/careers/sitemap.xml is empty, so the pager is the only list. Cards have different span classes from Two Sigma's Avature skin.",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-20T00:45:00Z"
+}

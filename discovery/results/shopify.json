@@ -1,0 +1,24 @@
+{
+  "key": "shopify",
+  "name": "Shopify",
+  "careers_url": "https://www.shopify.com/careers",
+  "hiring_system": "ashby",
+  "checker": "custom:shopify-careers",
+  "settings": {
+    "url": "https://www.shopify.com/careers",
+    "loader_key": "($locale)/careers",
+    "list_path": "jobPostingsWithJobs[].jobPosting",
+    "job_url": "https://www.shopify.com/careers/{slug}_{id}"
+  },
+  "feed": "GET https://www.shopify.com/careers (HTML; React Router turbo-stream in window.__reactRouterContext.streamController.enqueue(...), loaderData['($locale)/careers'].jobPostingsWithJobs)",
+  "feed_total": 119,
+  "page_total": 118,
+  "page_total_how": "Job links counted on the live pages fetched in the same minute as the feed (2026-10-20T00:25Z): 34 on /careers plus 84 on /careers/disciplines/{engineering-data 50 (rendered client-side from its own embedded list), design 0, product 1, commercial 33}. The one embedded posting not linked anywhere is the evergreen 'Designers' pipeline posting (published 2024-10-07). A Playwright render of /careers a few minutes later showed 33 links because one role ('Tax Lead, Controversy') had been removed by then.",
+  "intern_total": 0,
+  "status": "needs-custom",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW /careers, /careers/disciplines/*, /careers/<slug>_<id> (no matching rule); BLOCK /careers/search?* and *.data$ (not used)",
+  "notes": "Ashby posting API has no 'shopify' board (404); /careers embeds every posting (all disciplines) in its turbo-stream loader data, so one GET covers the whole site. Internships are announced on internships.shopify.com but posted as normal postings on /careers (none open today; the Winter 2027 one is 410 Gone). Never store job.hiringTeam/author (staff names).",
+  "checked_at": "2026-10-20T00:26:00Z"
+}

@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://zendesk.wd1.myworkdayjobs.com/zendesk/siteMap.xml
+
+User-agent: *
+Allow: /zendesk/
+Disallow: /refreshFacet/

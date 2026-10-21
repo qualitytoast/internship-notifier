@@ -1,0 +1,22 @@
+{
+  "key": "bloomberg",
+  "name": "Bloomberg",
+  "careers_url": "https://bloomberg.avature.net/careers/SearchJobs",
+  "hiring_system": "avature",
+  "checker": "avature",
+  "settings": {
+    "list_url": "https://bloomberg.avature.net/careers/SearchJobs/",
+    "page_size": 12
+  },
+  "feed": "GET https://bloomberg.avature.net/careers/SearchJobs/?jobRecordsPerPage=12&jobOffset=N (HTML, 12 cards per page, newest first)",
+  "feed_total": 337,
+  "page_total": 337,
+  "page_total_how": "Server-rendered legend '1-12 of 337 results' (div.list-controls__text__legend aria-label='337 results'); walked all 29 pages (offsets 0-336, 2026-10-20T00:17-00:20Z) = 337 unique JobDetail ids; careers/sitemap.xml also lists 337 JobDetail ids (1 id of churn).",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (Allow: /careers); never add qtvc= (Disallow: /careers/*qtvc=)",
+  "notes": "Page size is fixed at 12: jobRecordsPerPage=100/500 is ignored, with or without listFilterMode=1. The RSS feed (/careers/SearchJobs/feed/) always returns the same 20 oldest items (Jun 2025 to Mar 2026), so it is unusable. No interns are posted today: the bookmark's Experience Level filter (1686=[55479]) gives 0 results, and 22 '2027 …' graduate programmes are listed. /AIResearchInternship is only an interest form.",
+  "checked_at": "2026-10-20T00:21:00Z"
+}

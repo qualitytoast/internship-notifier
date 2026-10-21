@@ -1,0 +1,21 @@
+{
+  "key": "plaid",
+  "name": "Plaid",
+  "careers_url": "https://plaid.com/careers/",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "plaid"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/plaid?includeCompensation=false",
+  "feed_total": 132,
+  "page_total": 132,
+  "page_total_how": "Playwright render of https://plaid.com/careers/ (no filters): 132 unique 'See role' links to /careers/openings/<dept>/<location>/<slug>/; a job page applies at jobs.ashbyhq.com/plaid/<uuid>/application",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com/robots.txt returns 401 = unavailable, allow-all under RFC 9309)",
+  "notes": "plaid.com renders its own job pages from Ashby; use Ashby jobUrl (jobs.ashbyhq.com/plaid/<uuid>) as the link. Greenhouse/Workable 'plaid' tokens are empty. No interns posted today (bookmark searched 'intern').",
+  "checked_at": "2026-10-20T00:39:25Z"
+}

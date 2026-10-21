@@ -1,0 +1,21 @@
+{
+  "key": "spotify",
+  "name": "Spotify",
+  "careers_url": "https://www.lifeatspotify.com/jobs",
+  "hiring_system": "lever",
+  "checker": "lever",
+  "settings": {
+    "site": "spotify"
+  },
+  "feed": "GET https://api.lever.co/v0/postings/spotify?mode=json",
+  "feed_total": 82,
+  "page_total": 73,
+  "page_total_how": "Playwright render of https://www.lifeatspotify.com/jobs (2026-10-20T00:14Z) showed '73 jobs in all locations in all categories in all job types' (its data: api.lifeatspotify.com/wp-json/animal/v1/job/search, 73 entries). Spotify's Lever hosted board https://jobs.lever.co/spotify listed 82 postings, equal to the API.",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.lever.co and jobs.lever.co: Allow: /, Crawl-delay: 1)",
+  "notes": "lifeatspotify.com is an edited WordPress mirror of Lever. It leaves out 7 Lever postings (created May to Oct 2026, while newer ones do appear, so this is not sync lag). It also merges or splits same-title multi-city postings differently: 82 Lever postings, 73 site entries. Lever is complete. Site slugs are not Lever ids.",
+  "checked_at": "2026-10-20T00:15:00Z"
+}

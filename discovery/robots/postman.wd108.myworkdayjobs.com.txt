@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://postman.wd108.myworkdayjobs.com/careers/siteMap.xml
+
+User-agent: *
+Allow: /careers/
+Disallow: /refreshFacet/

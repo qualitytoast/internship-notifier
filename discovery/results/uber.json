@@ -1,0 +1,22 @@
+{
+  "key": "uber",
+  "name": "Uber",
+  "careers_url": "https://jobs.uber.com/en/jobs/",
+  "hiring_system": "oracle",
+  "checker": "oracle",
+  "settings": {
+    "host": "iaziqy.fa.ocs.oraclecloud.com",
+    "site": "UberCareers"
+  },
+  "feed": "GET https://iaziqy.fa.ocs.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations&finder=findReqs;siteNumber=UberCareers,limit=200,offset=N,sortBy=POSTING_DATES_DESC (4 pages)",
+  "feed_total": 703,
+  "page_total": 702,
+  "page_total_how": "Playwright render of https://jobs.uber.com/en/jobs/ (no filters): pager '1 2 3 4 ... 71' x 10/page; SSR payload totalJobs 702; /en/jobs/sitemap.xml also 702. Gap explained id by id: 2 ORC-only (301657, 302569, missing from jobs.uber.com in both sessions) and 1 stale front-end leftover (160314, ExternalPostedStartDate null on ORC).",
+  "intern_total": 11,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no robots.txt on iaziqy.fa.ocs.oraclecloud.com: 404 -> allow all); jobs.uber.com robots 'Allow: /' but its API is Cloudflare-challenged for scripts, so it is not used",
+  "notes": "ORC is the system of record and a superset of the jobs.uber.com copy (hourly sync; front-end API pagination is unreliable). limit caps at 200; list rows have no type/department, so interns come from titles (11, all EU/JP; RequisitionType=University in details). ORC keyword 'intern' is useless (324, matches internal/international).",
+  "checked_at": "2026-10-20T03:27:24Z"
+}

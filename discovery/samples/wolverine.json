@@ -1,0 +1,958 @@
+{
+ "_note": "Raw GET https://careers.wolve.com/postings.json (Pinpoint custom domain; robots allows it). wolve.pinpointhq.com/postings.json returns the same 19 ids but its robots.txt is 'Disallow: /'.",
+ "observed": "2026-10-20T00:37:34Z",
+ "response": {
+  "data": [
+   {
+    "id": "446898",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $100,000-$140,000 contingent on experience. Wolverine Trading's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": null,
+    "compensation_minimum": null,
+    "compensation_maximum": null,
+    "compensation_currency": null,
+    "compensation_frequency": null,
+    "compensation_visible": false,
+    "deadline_at": null,
+    "description": "<div><!--block-->At Wolverine Trading we’re looking for a Low-Level C++ Software Engineer to work at the intersection of hardware and software. Your focus will be on improving the performance of our critical and ultra-low latency trading systems, working on all parts of the trading systems stack.</div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<ul><li><!--block-->Develop and improve performance-critical C++ applications, ensuring ultra-low latency and high throughput</li><li><!--block-->Collaborate with FPGA engineers, hardware specialists, and systems teams to push performance boundaries</li><li><!--block-->Analyze and resolve real-time system issues, improving the reliability and stability of our trading platforms</li><li><!--block-->Build tools to monitor, profile, and analyze the performance of systems at every level</li></ul>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<ul><li><!--block-->Bachelor's degree in Computer Science, Computer Engineering, or equivalent</li><li><!--block-->A minimum of 2+ years of professional C++ experience with a focus on high-performance applications</li><li><!--block-->Strong grasp of data structures, algorithms, and modern C++ practices (C++17/20)&nbsp;</li><li><!--block-->Experience and aptitude in multi-threaded programming and performance tuning</li><li><!--block-->Ability to analyze experimental results and optimize system performance</li><li><!--block-->Effective communication skills, with the ability to effectively engage both technical and non-technical stakeholders</li><li><!--block-->Most importantly: a drive to make things better</li></ul>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "C++ Software Engineer",
+    "url": "https://careers.wolve.com/en/postings/856f5215-88c8-4c1b-bd47-5106b33ed37f",
+    "path": "/en/postings/856f5215-88c8-4c1b-bd47-5106b33ed37f",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "455116",
+     "requisition_id": "RID-0032",
+     "department": {
+      "id": "67772",
+      "name": "Technology"
+     },
+     "division": {
+      "id": "11966",
+      "name": "Wolverine Trading"
+     },
+     "structure_custom_group_one": {
+      "id": "11101",
+      "name": "Engineering",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   },
+   {
+    "id": "450735",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $150,000 - $200,000 contingent on experience. Wolverine Tradings's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": "",
+    "compensation_minimum": null,
+    "compensation_maximum": null,
+    "compensation_currency": null,
+    "compensation_frequency": null,
+    "compensation_visible": true,
+    "deadline_at": null,
+    "description": "<div><!--block-->Wolverine has an opportunity for an experienced quantitative trader/researcher to join a growing options market-making desk within a well-established firm. The ideal candidate has a passion for defining exchange-facing market-making algorithms and/or identifying options pricing volatility signals. You have experience defining research priorities and deriving actionable insights from large datasets within the exchange-listed options space, leveraging your deep knowledge of market microstructure.</div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<ul><li><!--block-->Grow firm profitability by influencing the development of trading algorithms and researching options pricing signals.</li><li><!--block-->Define microstructure research initiatives and shape research infrastructure.</li></ul>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<ul><li><!--block-->5+ years of experience conducting or guiding research on large sets of exchange market data and/or options pricing datasets.</li><li><!--block-->Proven track record of driving improvements on a systematic market-making desk or semi-systematic volatility trading desk—preferably at a top-tier market-making firm.</li><li><!--block-->Exposure to and a deep understanding of low-latency market-making technology, including how insights gleaned from research projects are integrated into a production trading system.</li><li><!--block-->Deep knowledge of exchange infrastructure and microstructure.</li><li><!--block-->Strong communication skills and experience collaborating with software and hardware engineers to see your research through to production.</li><li><!--block-->Strong background in statistics and/or linear algebra is a plus.</li><li><!--block-->Experience with C++ or a similar programming language is a plus.</li></ul>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "Systematic Options Trader",
+    "url": "https://careers.wolve.com/en/postings/649d44ec-fd43-42ef-8efb-1826f498cde2",
+    "path": "/en/postings/649d44ec-fd43-42ef-8efb-1826f498cde2",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "458629",
+     "requisition_id": "RID-0039",
+     "department": {
+      "id": "67776",
+      "name": "Trading"
+     },
+     "division": {
+      "id": "11966",
+      "name": "Wolverine Trading"
+     },
+     "structure_custom_group_one": {
+      "id": "10493",
+      "name": "Alternate Strategies",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   },
+   {
+    "id": "450741",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $150,000-$200,000 contingent on experience. Wolverine Trading's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": null,
+    "compensation_minimum": null,
+    "compensation_maximum": null,
+    "compensation_currency": null,
+    "compensation_frequency": null,
+    "compensation_visible": false,
+    "deadline_at": null,
+    "description": "<div><!--block-->We are looking for highly skilled and experienced individuals to join a research effort focused on generating high frequency trading alphas in the futures markets. The ideal candidate has direct experience in the alpha research process and understands the workflow from idea generation to production implementation. This opportunity will provide the right candidate the chance to have a large impact on the direction and productivity of a newly formed effort within a successful proprietary trading firm.&nbsp;</div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<ul><li><!--block-->Conduct financial data analysis on large datasets to generate profitable trading alphas.</li><li><!--block-->Define key metrics for model validation</li><li><!--block-->Back-testing and production performance monitoring</li><li><!--block-->Contribute to in-house data analysis packages and research framework development</li><li><!--block-->Acquisition of new data sets and cleaning/maintenance of new and existing data sets.</li><li><!--block-->Contribute to futures trading technology stack architecture</li></ul>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<ul><li><!--block--><strong>At least 2+ years of experience generating or implementing short term trading alphas into production trading strategies</strong></li><li><!--block--><strong>Knowledge of CME and related market microstructure required.</strong></li><li><!--block-->Advanced knowledge of modern statistical and machine learning techniques</li><li><!--block-->Proficiency in a scripting language such as Python, R, or MATLAB.</li><li><!--block-->Proficiency in at least one statistical package and one machine learning package in one of the above languages.</li><li><!--block-->Demonstrated experience working with tick data.</li><li><!--block-->Degree in a quantitative discipline such as Statistics, Computer Science, Mathematics, Engineering, etc.</li><li><!--block-->Experience developing software systems in an object-oriented language is a plus.</li></ul>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "Quantitative Trader - High Frequency Futures",
+    "url": "https://careers.wolve.com/en/postings/23967d53-ee55-4f60-81c6-9a7ab3f8eb16",
+    "path": "/en/postings/23967d53-ee55-4f60-81c6-9a7ab3f8eb16",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "458634",
+     "requisition_id": "RID-0041",
+     "department": {
+      "id": "67776",
+      "name": "Trading"
+     },
+     "division": {
+      "id": "11966",
+      "name": "Wolverine Trading"
+     },
+     "structure_custom_group_one": {
+      "id": "10493",
+      "name": "Alternate Strategies",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   },
+   {
+    "id": "452958",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $100,000-$150,000 contingent on experience. Wolverine Trading's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": "$100,000 - $150,000 / year",
+    "compensation_minimum": 100000.0,
+    "compensation_maximum": 150000.0,
+    "compensation_currency": "USD",
+    "compensation_frequency": "year",
+    "compensation_visible": true,
+    "deadline_at": null,
+    "description": "<div><!--block-->We are looking for an experienced electronic option trader who enjoys working in a team environment.&nbsp; As part of Wolverine’s Option Market Making Desk, you will be managing risk across multiple industry groups that results from electronic market making.&nbsp; You will have the opportunity to work with other traders and engineers to improve our risk management logic and processes. &nbsp;</div><div><!--block-->&nbsp;</div><div><!--block-->At Wolverine, we pride ourselves on fostering a collegial environment that encourages creative thinking through informal discussions.&nbsp; Our flat structure allows you to obtain quick feedback, and gives you the opportunity to take on increasing responsibilities. &nbsp;</div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<ul><li><!--block-->Manage risk and execution across multiple products.</li><li><!--block-->Manage parameters that affect option pricing.</li><li><!--block-->Conduct product-specific research in order to identify idiosyncratic risks.</li><li><!--block-->Identify macro catalysts within your names.</li><li><!--block-->Identify and investigate trades using our analysis tools and logs.</li><li><!--block-->Collaborate with desk engineers and traders to improve current strategies and applications.</li><li><!--block-->Must be able to work in our Chicago Loop office 5 days a week.</li></ul>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<ul><li><!--block-->2+ years of managing risk on an electronic market making desk.</li><li><!--block-->Strong communication skills and a desire to work in a team environment.</li><li><!--block-->Ability to perform trade analysis and identify solutions.</li><li><!--block-->Self-motivated, adaptable.</li><li><!--block-->Commitment to learning and innovation.</li><li><!--block-->Excellent analytical skills.</li></ul>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "Electronic Options Trader",
+    "url": "https://careers.wolve.com/en/postings/700e9e9a-c38c-4ab9-9fcb-844bf894deb1",
+    "path": "/en/postings/700e9e9a-c38c-4ab9-9fcb-844bf894deb1",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "460631",
+     "requisition_id": "RID-0043",
+     "department": {
+      "id": "67776",
+      "name": "Trading"
+     },
+     "division": {
+      "id": "11966",
+      "name": "Wolverine Trading"
+     },
+     "structure_custom_group_one": {
+      "id": "10541",
+      "name": "MM Equities",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   },
+   {
+    "id": "525572",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $80,000-$120,000 contingent on experience. Wolverine's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": null,
+    "compensation_minimum": null,
+    "compensation_maximum": null,
+    "compensation_currency": null,
+    "compensation_frequency": null,
+    "compensation_visible": false,
+    "deadline_at": null,
+    "description": "<div><!--block-->Join a small, talented team of developers at Wolverine Asset Management to solve the business's problems with technology. You'll play a key part in building new applications and extending existing functionality, gaining valuable experience while helping us pursue the best coding patterns and practices. Knowledge of finance or trading is a plus, but not required.</div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<ul><li><!--block-->Perform full-stack development of primarily desktop applications using .NET technologies and SQL Server, working alongside developers and traders in a dynamic environment</li><li><!--block-->Design, develop, and support applications that solve real business problems, applying strong troubleshooting skills to resolve software issues</li><li><!--block-->Implement and uphold best practices for software engineering policies and procedures</li></ul>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<ul><li><!--block-->A bachelor's degree in computer science/engineering (or equivalent practical experience) and working knowledge of an object-oriented language such as C# or Java, plus SQL Server or a comparable relational database</li><li><!--block-->A solid grasp of software development methodologies and of requirements gathering, testing, and implementation from both technical and business perspectives; experience with WPF and/or Windows Forms is preferred</li><li><!--block-->A proactive, self-motivated problem solver who thrives on a team, contributes confidently in planning sessions, and keeps the end-user experience front of mind</li></ul>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "Software Engineer – N-Tiered Software Developer",
+    "url": "https://careers.wolve.com/en/postings/ce3f9cb7-4219-4676-8241-5c8b7903d4c6",
+    "path": "/en/postings/ce3f9cb7-4219-4676-8241-5c8b7903d4c6",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "531047",
+     "requisition_id": "RID-0530",
+     "department": {
+      "id": "67772",
+      "name": "Technology"
+     },
+     "division": {
+      "id": "11966",
+      "name": "Wolverine Trading"
+     },
+     "structure_custom_group_one": {
+      "id": "10548",
+      "name": "RAD Team",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   },
+   {
+    "id": "543980",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $100,000-$150,000 contingent on experience. Wolverine Trading's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": null,
+    "compensation_minimum": null,
+    "compensation_maximum": null,
+    "compensation_currency": null,
+    "compensation_frequency": null,
+    "compensation_visible": false,
+    "deadline_at": null,
+    "description": "<div><!--block-->Wolverine is looking for individuals motivated to learn the inner workings of a highly automated Market Making operation and eager to solve a broad range of problems within this segment of the financial markets.<br><br>Successful candidates can expect to sit on one of our trading desks and learn Wolverine's approach to systematic Market Making, taking active ownership of a portion of our portfolio to build your knowledge base while also working on contained quantitative projects. We believe strongly that through this process of experiential learning, you will gain a broader perspective on how market makers fit into the financial system, enabling you to have more impactful long-term contributions towards the development of our automated systems and trading philosophies. This extended training period leads directly into a role in which you will shift your focus away from the direct management of our portfolio and towards driving our pricing, micro-structure strategy, and other pursuits that rely on the combination of your quantitative skillset and business understanding.</div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<ul><li><!--block-->Learn how to provide liquidity electronically to the marketplace and manage dynamic options exposures.</li><li><!--block-->Maximize market making revenues through the management of settings and processes that affect our risk accumulations.</li><li><!--block-->Conduct ad-hoc quantitative analyses within the domains of settings optimization, market microstructure research, key performance metric monitoring, and options pricing theory.</li></ul>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<ul><li><!--block-->Bachelor's degree in analytical/quantitative field of study such as statistics, economics, mathematics, or computer science</li><li><!--block-->Computer programming experience is highly desirable</li><li><!--block-->Exceptional analytical and problem-solving skills</li><li><!--block-->Strong communication skills and a desire to work in a team environment</li><li><!--block-->Self-starter and independent attitude</li><li><!--block-->Demonstrated interest in financial markets and technology (finance background is not required and Options Education will be provided)</li></ul>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "Quantitative Trading Analyst",
+    "url": "https://careers.wolve.com/en/postings/eeca5bb4-977f-4a1e-ac1b-db56de416a8c",
+    "path": "/en/postings/eeca5bb4-977f-4a1e-ac1b-db56de416a8c",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "548032",
+     "requisition_id": "RID-0536",
+     "department": {
+      "id": "67776",
+      "name": "Trading"
+     },
+     "division": {
+      "id": "11966",
+      "name": "Wolverine Trading"
+     },
+     "structure_custom_group_one": {
+      "id": "10541",
+      "name": "MM Equities",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   },
+   {
+    "id": "561219",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $80,000-$120,000 contingent on experience. Wolverine Execution Services' total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": null,
+    "compensation_minimum": null,
+    "compensation_maximum": null,
+    "compensation_currency": null,
+    "compensation_frequency": null,
+    "compensation_visible": false,
+    "deadline_at": null,
+    "description": "<div><!--block-->We're looking for a self-motivated, technically sharp engineer to support the operational health of Wolverine Execution Services' (WEX) core trading systems. You'll partner with software and hardware engineering teams to monitor real-time system performance, troubleshoot production issues, and build tools that keep pace with a growing and increasingly complex technical environment.</div><div><!--block--><br>This is a highly visible role in a fast-paced, high-stakes environment. Strong candidates are clear communicators, effective multi-taskers, and sharp problem solvers who stay focused under pressure.</div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<ul><li><!--block-->Diagnose and resolve technical operational issues on live trading systems</li><li><!--block-->Perform intraday troubleshooting of production systems, communicating status clearly to stakeholders</li><li><!--block-->Set up and maintain monitoring tools across server hardware and software, using a mix of in-house and third-party tools to ensure system stability</li><li><!--block-->Maintain production trading infrastructure, including databases, transaction servers, gateways, and web servers</li><li><!--block-->Certify new exchange links, including FIX and other protocols</li><li><!--block-->Work with vendors (exchanges, ECNs, etc.) to resolve production issues</li><li><!--block-->Collaborate with Traders, Software Developers, and Network Engineers to deploy new strategies, reconfigure existing ones, and track changes</li><li><!--block-->Partner with trading stakeholders and Software Developers to identify and implement systems and process improvements</li><li><!--block-->Create and maintain performance reports for individual clients and the system as a whole</li><li><!--block-->Document support processes, known issues, and workarounds</li></ul>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<div><!--block--><strong>Core requirements:</strong></div><ul><li><!--block-->Strong problem-solving and troubleshooting skills, with experience investigating critical issues in a live production environment</li><li><!--block-->Experience using a relational database to store, manipulate, and access data</li><li><!--block-->Ability to synthesize data from multiple sources to identify issues or trends</li><li><!--block-->Ability to work collaboratively with both technical and non-technical stakeholders</li><li><!--block-->Driven to iteratively improve systems and processes</li></ul><div><!--block--><strong>Preferred:</strong></div><ul><li><!--block-->Bachelor's degree in an engineering discipline</li><li><!--block-->Working knowledge of scripting, regular expressions, or the FIX protocol</li><li><!--block-->Familiarity with Linux scripting</li><li><!--block-->Familiarity with TCP/UDP protocols and network packet captures</li><li><!--block-->Understanding of trading industry concepts and terminology</li></ul>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "Trading Operations Engineer",
+    "url": "https://careers.wolve.com/en/postings/a7e44332-6f8f-4281-a280-48937e70a5e9",
+    "path": "/en/postings/a7e44332-6f8f-4281-a280-48937e70a5e9",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "564064",
+     "requisition_id": "RID-0543",
+     "department": {
+      "id": "67772",
+      "name": "Technology"
+     },
+     "division": {
+      "id": "13726",
+      "name": "Wolverine Execution Services "
+     },
+     "structure_custom_group_one": {
+      "id": "10560",
+      "name": "WEX Support",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   },
+   {
+    "id": "561240",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $150,000-$200,000 contingent on experience. Wolverine Trading's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": null,
+    "compensation_minimum": null,
+    "compensation_maximum": null,
+    "compensation_currency": null,
+    "compensation_frequency": null,
+    "compensation_visible": false,
+    "deadline_at": null,
+    "description": "<div><!--block-->The network team designs, implements, and supports the network infrastructure for Wolverine's proprietary real-time trading systems, including proprietary hardware platforms, with a focus on low latency. Network performance and redundancy are critical to the global trading operation. The Network Engineer will be part of a team that works with Wolverine's software engineers and traders to support the high availability of the electronic trading infrastructure.<br><br></div><div><!--block-->This is a hybrid position, with a mixture of working from home and working in our Chicago office. The candidate is expected to be local to the Metropolitan Chicago area and will periodically travel to Chicago and New Jersey area data centers.</div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<ul><li><!--block-->Design, engineer, and implement low-latency network solutions based on requirements from business stakeholders</li><li><!--block-->Own and manage strategic projects to implement and optimize low-latency, high-performance network solutions at and between data center locations</li><li><!--block-->Work with financial exchanges, brokers, and banks to implement network connectivity in shared colocation facilities</li><li><!--block-->Carry out high-level analysis and troubleshooting of the network infrastructure</li><li><!--block-->Respond to network requests and troubleshoot network failures to diagnose, isolate, and resolve complex problems, ensuring timely results and minimal disruption to operations</li><li><!--block-->Perform network maintenance and system upgrades, including patches and hotfixes to address vendor bugs and vulnerabilities</li><li><!--block-->Monitor system resource utilization and historical trends, and perform capacity planning</li><li><!--block-->Provide the technical knowledge needed to ensure safe, effective, and efficient changes to the network infrastructure</li><li><!--block-->Produce and maintain detailed technical documentation</li><li><!--block-->Participate in the team's on-call rotation</li></ul>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<ul><li><!--block-->Minimum of 6 years in a technical networking environment as a network engineer</li><li><!--block-->Deep, hands-on experience with complex network designs and principles, including L2 switching and dynamic routing (OSPF, BGP, EIGRP) in complex environments, with advanced traffic steering, filtering, and route redistribution</li><li><!--block-->Strong network security fundamentals: firewalling (ASA, Palo Alto), security zones and DMZ design, network ACLs, NAT, and site-to-site IPSec VPN</li><li><!--block-->Solid knowledge of multicast (PIM, IGMP) and best practices for deploying it, including the delivery of real-time market data feeds</li><li><!--block-->Extensive knowledge of network operating systems (IOS / NX-OS / EOS / PANOS based network devices)</li><li><!--block-->Ability to troubleshoot network latency and packet-drop issues using monitoring, diagnostic, and packet analysis tools (e.g., tcpdump, Wireshark)</li><li><!--block-->Meticulous attention to detail, with a proven ability to prioritize competing workloads and manage implementation schedules</li><li><!--block-->Strong cross-functional collaboration and the ability to work independently within a team structure</li><li><!--block-->Excellent written and verbal communication, with the ability to distill complex technical issues into clear, concise terms</li><li><!--block-->Strategic thinking balanced with sharp day-to-day execution, and a commitment to continuous improvement</li></ul><div><!--block--><strong><br>Preferred:</strong></div><ul><li><!--block-->CCIE certification</li><li><!--block-->Knowledge of exchange connectivity in financial trading environments</li><li><!--block-->Experience working with financial exchanges, brokers, and banks</li><li><!--block-->Experience with network automation; understanding of Python and Ansible</li><li><!--block-->Experience with physical planning, implementing, and supporting space, power, and structured cabling within a data center environment</li><li><!--block-->Experience troubleshooting fiber optic connectivity within and between data center locations</li></ul><div><!--block--><br><strong>Bonus Points:</strong></div><ul><li><!--block-->Hands-on experience with cloud services (AWS, GCP)</li><li><!--block-->Understanding of network time synchronization protocols</li><li><!--block-->Experience with databases and big data tools (e.g., MySQL, Splunk, InfluxDB, Grafana)</li><li><!--block-->Experience with Linux shell utilities</li></ul><div><!--block--><br></div><div><!--block-->We strive to be the experts of our own network, and this role is expected to operate with that mindset - including the willingness to invest the time needed to learn our environment in depth, and the humility to own and learn from mistakes.<br><br>We are currently only considering candidates who are presently authorized to work in the US for this position and who do not require visa sponsorship now or in the future.</div>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "Network Engineer",
+    "url": "https://careers.wolve.com/en/postings/31829199-9d5f-49ed-9b21-67a1d08ca2ab",
+    "path": "/en/postings/31829199-9d5f-49ed-9b21-67a1d08ca2ab",
+    "workplace_type": "hybrid",
+    "workplace_type_text": "Hybrid",
+    "job": {
+     "id": "564087",
+     "requisition_id": "RID-0545",
+     "department": {
+      "id": "67772",
+      "name": "Technology"
+     },
+     "division": {
+      "id": "11966",
+      "name": "Wolverine Trading"
+     },
+     "structure_custom_group_one": {
+      "id": "10543",
+      "name": "Network",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   },
+   {
+    "id": "561847",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $80,000-$120,000 contingent on experience. Wolverine Trading's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": null,
+    "compensation_minimum": null,
+    "compensation_maximum": null,
+    "compensation_currency": null,
+    "compensation_frequency": null,
+    "compensation_visible": false,
+    "deadline_at": null,
+    "description": "<div><!--block-->At Wolverine Trading, we’re looking for an Entry Level C++ Software Engineer eager to launch their career in high-performance trading technology. This role is on-site in our Chicago headquarters, where close collaboration with traders and engineers is central to our culture. You’ll join a team of experienced engineers, traders, and hardware specialists building cutting-edge systems that power our trading business. This is a unique opportunity to learn at the intersection of software, hardware, and financial markets, while working on applications where speed, efficiency, and reliability make all the difference. From day one, you’ll benefit from direct mentorship, clear growth paths, and hands-on exposure to the trading floor giving you the chance to see your work in action and quickly develop both technical and industry expertise.</div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<ul><li><!--block-->Contribute to the design, development, and testing of C++ applications that drive our trading platforms &nbsp;</li><li><!--block-->Collaborate with traders and senior engineers to understand requirements and translate them into efficient technical solutions.</li><li><!--block-->Assist in monitoring, profiling, and troubleshooting applications to improve reliability and stability.</li><li><!--block-->Gain exposure to the full lifecycle of trading system development, from idea to production support.</li></ul>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<ul><li><!--block-->Bachelor’s or Master’s Degree in Computer Science, Computer Engineering, or a related field.</li><li><!--block-->Strong knowledge of C++ and object-oriented design; familiarity with modern C++ (C++17/20) is a plus.</li><li><!--block-->Solid understanding of data structures, algorithms, and problem-solving fundamentals.</li><li><!--block-->Interest in multi-threaded programming, performance tuning, and real-time systems.</li><li><!--block-->Curiosity about financial markets and a desire to learn how technology drives trading.</li><li><!--block-->Strong communication skills and a collaborative mindset.</li><li><!--block-->A passion for tackling complex technical challenges and continuously improving.</li></ul><div><!--block-->We are currently only considering candidates who are presently authorized to work in the US for this position and who do not require visa sponsorship now or in the future.</div>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "Entry Level C++ Software Engineer",
+    "url": "https://careers.wolve.com/en/postings/2b2e514b-4709-4897-960d-77909fe33ab8",
+    "path": "/en/postings/2b2e514b-4709-4897-960d-77909fe33ab8",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "564693",
+     "requisition_id": "RID-0550",
+     "department": {
+      "id": "67772",
+      "name": "Technology"
+     },
+     "division": {
+      "id": "11966",
+      "name": "Wolverine Trading"
+     },
+     "structure_custom_group_one": {
+      "id": "11101",
+      "name": "Engineering",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   },
+   {
+    "id": "561857",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $80,000-$120,000 contingent on experience. Wolverine Trading's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": null,
+    "compensation_minimum": null,
+    "compensation_maximum": null,
+    "compensation_currency": null,
+    "compensation_frequency": null,
+    "compensation_visible": false,
+    "deadline_at": null,
+    "description": "<div><!--block-->At Wolverine Trading, we're looking for an Entry Level C++ Software Engineer eager to launch their career in high-performance trading technology. This posting is specifically for candidates graduating in Spring 2027 (April to June), with an anticipated start date in Summer 2027.<br><br></div><div><!--block-->This role is on-site in our Chicago headquarters, where close collaboration with traders and engineers is central to our culture. You'll join a team of experienced engineers, traders, and hardware specialists building cutting-edge systems that power our trading business. This is a unique opportunity to learn at the intersection of software, hardware, and financial markets, while working on applications where speed, efficiency, and reliability make all the difference. From day one, you'll benefit from direct mentorship, clear growth paths, and hands-on exposure to the trading floor, giving you the chance to see your work in action and quickly develop both technical and industry expertise.<br><br></div><div><!--block-->No prior finance or trading experience is required; our in-house education team and mentorship program will teach you the markets side of the business.<br><br><em>Graduating in December 2026 instead? Please apply to our Entry Level C++ Software Engineer (December 2026 Graduates) posting rather than this one. Candidates should apply to only one posting per recruiting cycle.</em></div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<ul><li><!--block-->Contribute to the design, development, and testing of C++ applications that drive our trading platforms.</li><li><!--block-->Collaborate with traders and senior engineers to understand requirements and translate them into efficient technical solutions.</li><li><!--block-->Assist in monitoring, profiling, and troubleshooting applications to improve reliability and stability.</li><li><!--block-->Gain exposure to the full lifecycle of trading system development, from idea to production support.</li></ul>",
+    "key_responsibilities_header": "What You'll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<ul><li><!--block-->&nbsp;Bachelor's or Master's Degree in Computer Science, Computer Engineering, or a related field, graduating in Spring 2027 (April to June 2027).</li><li><!--block-->&nbsp;Available to begin full-time employment in summer 2027.</li><li><!--block-->&nbsp;Strong knowledge of C++ and object-oriented design; familiarity with modern C++ (C++17 or later) is a plus.</li><li><!--block-->&nbsp;Solid understanding of data structures, algorithms, and problem-solving fundamentals.</li><li><!--block-->&nbsp;Interest in multi-threaded programming, performance tuning, and real-time systems.</li><li><!--block-->&nbsp;Curiosity about financial markets and a desire to learn how technology drives trading.</li><li><!--block-->&nbsp;Strong communication skills and a collaborative mindset.</li><li><!--block-->&nbsp;A passion for tackling complex technical challenges and continuously improving.</li></ul><div><!--block-->You don't need to check every box to be a great fit; if this role excites you, we encourage you to apply.<br><br></div><div><!--block-->We are currently only considering candidates who are presently authorized to work in the US for this position and who do not require visa sponsorship now or in the future.</div>",
+    "skills_knowledge_expertise_header": "What We're Looking For",
+    "title": "Entry Level C++ Software Engineer (Spring 2027 Graduates)",
+    "url": "https://careers.wolve.com/en/postings/e03d9864-a128-40ff-91b5-dfc9fd1b59d6",
+    "path": "/en/postings/e03d9864-a128-40ff-91b5-dfc9fd1b59d6",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "564693",
+     "requisition_id": "RID-0550",
+     "department": {
+      "id": "67772",
+      "name": "Technology"
+     },
+     "division": {
+      "id": "11966",
+      "name": "Wolverine Trading"
+     },
+     "structure_custom_group_one": {
+      "id": "11101",
+      "name": "Engineering",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   },
+   {
+    "id": "561870",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $80,000-$120,000 contingent on experience. Wolverine Trading's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": null,
+    "compensation_minimum": null,
+    "compensation_maximum": null,
+    "compensation_currency": null,
+    "compensation_frequency": null,
+    "compensation_visible": false,
+    "deadline_at": null,
+    "description": "<div><!--block-->At Wolverine Trading, we're looking for an Entry Level C++ Software Engineer eager to launch their career in high-performance trading technology. This posting is specifically for candidates graduating in Fall/Winter 2026, with an anticipated start date in early 2027.</div><div><!--block--><br>This role is on-site in our Chicago headquarters, where close collaboration with traders and engineers is central to our culture. You'll join a team of experienced engineers, traders, and hardware specialists building cutting-edge systems that power our trading business. This is a unique opportunity to learn at the intersection of software, hardware, and financial markets, while working on applications where speed, efficiency, and reliability make all the difference. From day one, you'll benefit from direct mentorship, clear growth paths, and hands-on exposure to the trading floor, giving you the chance to see your work in action and quickly develop both technical and industry expertise.</div><div><!--block--><br>No prior finance or trading experience is required; our in-house education team and mentorship program will teach you the markets side of the business.<br><br><em>Graduating in Spring 2027 instead? Please apply to our Entry Level C++ Software Engineer (Spring 2027 Graduates) posting rather than this one. Candidates should apply to only one posting per recruiting cycle.</em></div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<ul><li><!--block-->Contribute to the design, development, and testing of C++ applications that drive our trading platforms.</li><li><!--block-->Collaborate with traders and senior engineers to understand requirements and translate them into efficient technical solutions.</li><li><!--block-->Assist in monitoring, profiling, and troubleshooting applications to improve reliability and stability.</li><li><!--block-->Gain exposure to the full lifecycle of trading system development, from idea to production support.</li></ul>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<ul><li><!--block-->Bachelor's or Master's Degree in Computer Science, Computer Engineering, or a related field, graduating in Spring 2027 (April to June 2027).</li><li><!--block-->&nbsp;Available to begin full-time employment in summer 2027.&nbsp;</li><li><!--block-->Strong knowledge of C++ and object-oriented design; familiarity with modern C++ (C++17 or later) is a plus.</li><li><!--block-->Solid understanding of data structures, algorithms, and problem-solving fundamentals.</li><li><!--block-->Interest in multi-threaded programming, performance tuning, and real-time systems.</li><li><!--block-->Curiosity about financial markets and a desire to learn how technology drives trading.&nbsp;</li><li><!--block-->Strong communication skills and a collaborative mindset.</li><li><!--block-->A passion for tackling complex technical challenges and continuously improving</li></ul><div><!--block-->You don't need to check every box to be a great fit; if this role excites you, we encourage you to apply.<br><br></div><div><!--block-->We are currently only considering candidates who are presently authorized to work in the US for this position and who do not require visa sponsorship now or in the future.</div>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "Entry Level C++ Software Engineer (December 2026 Graduates)",
+    "url": "https://careers.wolve.com/en/postings/1f33c89b-2592-498d-b45a-1b2092cf944e",
+    "path": "/en/postings/1f33c89b-2592-498d-b45a-1b2092cf944e",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "564693",
+     "requisition_id": "RID-0550",
+     "department": {
+      "id": "67772",
+      "name": "Technology"
+     },
+     "division": {
+      "id": "11966",
+      "name": "Wolverine Trading"
+     },
+     "structure_custom_group_one": {
+      "id": "11101",
+      "name": "Engineering",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   },
+   {
+    "id": "561963",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $100,000-$140,000 contingent on experience. Wolverine Trading's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": null,
+    "compensation_minimum": null,
+    "compensation_maximum": null,
+    "compensation_currency": null,
+    "compensation_frequency": null,
+    "compensation_visible": false,
+    "deadline_at": null,
+    "description": "<div><!--block-->Build the software that powers a global electronic trading platform.<br><br></div><div><!--block-->As a Software Engineer at Wolverine Execution Services (WEX), you'll design and develop the applications and services that support our client-facing trading platform. From order management and execution to market connectivity and operational tools, you'll help build reliable, scalable software that enables institutional trading firms to operate with confidence.</div><div><!--block--><br>You'll work alongside experienced software engineers, traders, and product specialists to solve complex technical challenges and deliver solutions that have a direct impact on our clients. You'll contribute throughout the software development lifecycle; from design and implementation to testing, deployment, and ongoing enhancement.<br><br></div><div><!--block-->This role is ideal for engineers with a solid foundation in C++ who are eager to deepen their expertise in distributed systems and enterprise software development. You'll own meaningful features, participate in architectural and design discussions, and collaborate with teammates who value thoughtful engineering, maintainable code, and continuous improvement.<br><br></div><div><!--block-->At WEX, engineers are trusted to make an impact. You'll work on production systems used by financial institutions around the world while growing your technical skills through mentorship, collaboration, and hands-on experience. If you enjoy solving challenging engineering problems, building software that customers depend on, and working with a team that values curiosity and technical excellence, we'd love to hear from you.</div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<ul><li><!--block-->Collaborate with engineers, business analysts, and support personnel to build reliable and scalable trading software&nbsp;</li><li><!--block-->Contribute to system design, implementation, and code reviews&nbsp;</li><li><!--block-->Develop and enhance C++ components within the primary trading system and supporting systems&nbsp;</li><li><!--block-->Troubleshoot and improve system stability in production environments&nbsp;</li><li><!--block-->Continuously learn</li></ul>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<ul><li><!--block-->Bachelor’s degree in Computer Science, Computer Engineering, or equivalent experience&nbsp;</li><li><!--block-->2+ years of professional software development experience&nbsp;</li><li><!--block-->Experience working with C++ (professional or significant academic/project experience)&nbsp;</li><li><!--block-->Solid understanding of algorithms and data structures&nbsp;</li><li><!--block-->Exposure to multi-threaded or concurrent programming concepts&nbsp;</li><li><!--block-->Curiosity, strong problem-solving skills, and a desire to grow both technical and industry knowledge&nbsp;</li><li><!--block-->Clear communicator with both technical peers and business stakeholders</li></ul>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "C++ Software Engineer – WEX",
+    "url": "https://careers.wolve.com/en/postings/c14659a9-52a3-4f09-8ebb-763899dee310",
+    "path": "/en/postings/c14659a9-52a3-4f09-8ebb-763899dee310",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "455116",
+     "requisition_id": "RID-0032",
+     "department": {
+      "id": "67772",
+      "name": "Technology"
+     },
+     "division": {
+      "id": "11966",
+      "name": "Wolverine Trading"
+     },
+     "structure_custom_group_one": {
+      "id": "11101",
+      "name": "Engineering",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   },
+   {
+    "id": "565157",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $90,000-$120,000 contingent on experience. Wolverine Trading's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": null,
+    "compensation_minimum": null,
+    "compensation_maximum": null,
+    "compensation_currency": null,
+    "compensation_frequency": null,
+    "compensation_visible": false,
+    "deadline_at": null,
+    "description": "<div><!--block-->We are seeking an ETF Trading Support Engineer to work directly with our ETF market-making desk and technology teams.<br><br>This role focuses on configuring, analyzing, validating, and improving business logic across the trading lifecycle. You will develop a deep understanding of how market and system data translate into trading strategy improvements. You will also gain an appreciation for the operational complexities of running and maintaining production trading strategies. The work is hands-on: we are looking for someone who can build practical tools to enhance team productivity.<br><br>The role sits at the intersection of trading support and data analysis and is well suited for someone analytically minded, curious, and eager to grow in a fast-paced environment. Direct market-making experience is not required. Ideal candidates want to move closer to electronic markets and real-time decision-making and may come from finance, data analysis, technology, operations, or another quantitative field.</div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<div><!--block--><strong>Learn and Improve Trading Business Logic<br></strong><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Master the rules, configurations, and controls that drive ETF trading activity.<br><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Support product onboarding, trading eligibility, venue configuration, ETF/reference relationships, and market-data dependencies.<br><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Work with traders and stakeholders to develop strategy enhancements, controls, and workflows.</div><div><!--block--><strong><br>Analyze Production Trading Behavior<br></strong><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Use market data and order execution data to evaluate strategy behavior and develop execution quality metrics.<br><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Build repeatable analyses to identify configuration issues, data-quality problems, implementation defects, and missed opportunities.</div><div><!--block--><strong><br>Improve Automation and Controls<br></strong><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Automate data-quality checks, configuration validation, and strategy health monitoring.<br><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Support testing and feature deployments by defining expected outcomes and monitoring production results.<br><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Maintain documentation of strategy rules and configuration dependencies.</div>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<div><!--block--><strong>Required Qualifications<br></strong><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Experience working with SQL, relational data, or similar tools.<br><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Experience analyzing data and drawing clear conclusions.<br><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Experience with Python or another object-oriented programming language — enough to build lightweight tooling.<br><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Exposure to automation technology such as Airflow or other open-source alternatives.<br><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Strong problem-solving skills — able to break complex problems into logical steps.<br><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Strong attention to detail and intellectual curiosity.<br><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Clear communication with technical and non-technical colleagues.<br><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Willingness to ask questions, learn quickly, and take ownership.<br><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Comfort in a fast-moving environment with evolving requirements.</div><div><!--block--><strong><br>Preferred Qualifications</strong></div><div><!--block--><em><br>Experience in any of the following is helpful but not required:<br></em><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Tableau or comparable data visualization tools.<br><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Apache Arrow or comparable in-memory data technologies.<br><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;C# or comparable object-oriented programming languages.<br><br></div><div><!--block-->·&nbsp; &nbsp; &nbsp; &nbsp;Advanced Excel, automated testing, monitoring, or data validation.</div><div><!--block--><br><strong><br>What Success Looks Like<br></strong><br></div><div><!--block-->A successful candidate will grow into a trusted partner to traders and developers by understanding trading logic, identifying differences between intended and actual behavior, reducing manual processes through automation, and creating tools that support real trading decisions.<br><br></div><div><!--block-->Candidates are not expected to be experts in every area on day one. We value solid fundamentals, curiosity, and people who pick things up quickly.</div>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "ETF Trading Support Analyst",
+    "url": "https://careers.wolve.com/en/postings/e75bd016-2131-408f-9557-69c6e1cb2686",
+    "path": "/en/postings/e75bd016-2131-408f-9557-69c6e1cb2686",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "567881",
+     "requisition_id": "RID-0552",
+     "department": {
+      "id": "67776",
+      "name": "Trading"
+     },
+     "division": {
+      "id": "11966",
+      "name": "Wolverine Trading"
+     },
+     "structure_custom_group_one": {
+      "id": "10536",
+      "name": "Liquidity Desk",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   },
+   {
+    "id": "573681",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $150,000-$200,000 contingent on experience. Wolverine Execution Service's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": "$150,000 - $200,000 / year",
+    "compensation_minimum": 150000.0,
+    "compensation_maximum": 200000.0,
+    "compensation_currency": "USD",
+    "compensation_frequency": "year",
+    "compensation_visible": true,
+    "deadline_at": null,
+    "description": "<div><!--block-->The WEX Electronic Trading Sales and Client Relations Specialist is responsible for developing and originating new business opportunities with a primary focus on selling our Order Management System (OMS) and Execution Management Systems (EMS) to buy side trading desks. The ideal candidate has a strong track record selling OMS solutions to institutional clients and will drive OMS adoption, expansion, and cross-selling across the client base.&nbsp;</div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<div><!--block-->• Drive new OMS/EMS sales by prospecting, networking, and running the full sales cycle from initial outreach through close<br>• Manage and grow existing client accounts, identifying expansion opportunities to increase seat count and usage<br>• Collaborate with clients, product and sales teams in order to cross-sell and deliver OMS/EMS and other trading solutions<br>• Liaise with the WEX Support group to help resolve client issues<br>• Deliver product demonstrations and lead trials/evaluations for prospective clients<br>• Provide product feedback and development recommendations<br>• Schedule and maintain routine on-site visits<br>• Willingness to travel<br>• Understanding and adherence to compliance and regulatory requirements&nbsp;</div>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<div><!--block-->• 5+ years of direct experience selling OMS and/or EMS software<br>• Deep working knowledge of OMS/EMS functionality, including order routing, trade allocation, compliance workflows, and portfolio/position management<br>• Established network of Institutional Buy Side and Sell Side relationships<br>• Proven experience supporting and positioning multi-asset class OMS/EMS software (equities, options, futures) to institutional clients<br>• Fundamental knowledge of FIX connectivity and software architecture<br>• Excellent communication skills and entrepreneurial attitude<br>• Understanding of competitive landscape with the ability to articulate WEX’s benefits and differentiators<br>• Series 7, 63, &amp; 55&nbsp;</div>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "Sales and Client Relations - OMS/EMS Specialist",
+    "url": "https://careers.wolve.com/en/postings/37e7c25a-10ec-4add-835c-5a6a4f1ffac2",
+    "path": "/en/postings/37e7c25a-10ec-4add-835c-5a6a4f1ffac2",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "575661",
+     "requisition_id": "RID-0555",
+     "department": {
+      "id": "61359",
+      "name": "Marketing"
+     },
+     "division": {
+      "id": "13726",
+      "name": "Wolverine Execution Services "
+     },
+     "structure_custom_group_one": {
+      "id": "10539",
+      "name": "Marketing - WEX",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66270",
+     "city": "New York",
+     "name": "New York, NY",
+     "postal_code": "",
+     "province": "New York",
+     "street_address": ""
+    }
+   },
+   {
+    "id": "581491",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $100,000-$140,000 contingent on experience. Wolverine Trading's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": null,
+    "compensation_minimum": null,
+    "compensation_maximum": null,
+    "compensation_currency": null,
+    "compensation_frequency": null,
+    "compensation_visible": false,
+    "deadline_at": null,
+    "description": "<div><!--block-->At Wolverine Trading, we're looking for a Senior C++ Software Engineer to take ownership of the core systems that power our trading business. This role is on-site in our Chicago headquarters, where close collaboration with traders and engineers is central to our culture. You'll join a team of experienced engineers, traders, and hardware specialists building high-performance systems where speed, efficiency, and reliability make all the difference. This is an opportunity to shape architecture, drive projects from concept through production, and see the direct impact of your work on the trading floor every day. You'll be trusted with meaningful ownership from the start, with the support of a deeply technical team and clear paths to expand your influence across the firm.</div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<ul><li><!--block-->Design, develop, and maintain C++ applications central to our trading platforms, owning features from design through production support.</li><li><!--block-->Partner directly with traders and quantitative researchers to translate business needs into robust, efficient technical solutions.</li><li><!--block-->Lead performance analysis, profiling, and optimization efforts to improve throughput, latency, and stability across critical systems.</li><li><!--block-->Drive improvements to our development practices, including code review, testing, and release processes.</li></ul>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<ul><li><!--block-->Bachelor's or Master's Degree in Computer Science, Computer Engineering, or a related field.</li><li><!--block-->3+ years of professional experience developing C++ code, with a strong command of modern C++ (C++17 or later).</li><li><!--block-->Deep understanding of data structures, algorithms, memory management, and object-oriented and generic design.</li><li><!--block-->Hands-on experience with multi-threaded programming, concurrency, and performance tuning in real-time or latency-sensitive systems.</li><li><!--block-->No financial industry experience required! We welcome strong C++ engineers from any technical background, along with genuine curiosity about how technology drives trading.</li><li><!--block-->Strong communication skills, sound judgment, and a track record of delivering complex projects collaboratively.</li></ul>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "Senior C++ Software Engineer – Trading Platforms",
+    "url": "https://careers.wolve.com/en/postings/ac7d0935-5293-4754-a485-e707ee017581",
+    "path": "/en/postings/ac7d0935-5293-4754-a485-e707ee017581",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "455116",
+     "requisition_id": "RID-0032",
+     "department": {
+      "id": "67772",
+      "name": "Technology"
+     },
+     "division": {
+      "id": "11966",
+      "name": "Wolverine Trading"
+     },
+     "structure_custom_group_one": {
+      "id": "11101",
+      "name": "Engineering",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   },
+   {
+    "id": "581494",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $100,000-$140,000 contingent on experience. Wolverine Trading's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": null,
+    "compensation_minimum": null,
+    "compensation_maximum": null,
+    "compensation_currency": null,
+    "compensation_frequency": null,
+    "compensation_visible": false,
+    "deadline_at": null,
+    "description": "<div><!--block-->At Wolverine Trading, we're looking for a Senior C++ Software Engineer to build and optimize the market data and execution systems at the heart of our trading operation. This role is on-site in our Chicago headquarters, where engineers work shoulder-to-shoulder with traders and hardware specialists on systems where every microsecond counts. You'll take on some of the most technically demanding problems in the industry including processing enormous volumes of market data, connecting exchanges around the world, and executing orders at maximum speed and reliability. This is a hands-on role for an engineer who thrives on performance-critical work, wants their code running in production where its impact is immediately measurable, and is ready to help set the technical direction of a growing team.</div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<ul><li><!--block-->Build and enhance low-latency C++ components for market data processing, exchange connectivity, and order execution.</li><li><!--block-->Develop and optimize connectivity to new markets and exchange platforms, expanding the reach of our trading business.</li><li><!--block-->Analyze and tune system performance at every level from application code and lock-free data structures to network and OS-level behavior.</li><li><!--block-->Collaborate with traders, FPGA engineers, and infrastructure teams to deliver end-to-end solutions across software and hardware.</li><li><!--block-->Own production systems through the full lifecycle: design, implementation, testing, deployment, and real-time support.</li></ul>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<ul><li><!--block-->Bachelor's or Master's Degree in Computer Science, Computer Engineering, or a related field.</li><li><!--block-->3+ years of professional experience developing C++ code; exposure to low-latency, real-time, or high-throughput systems from any industry is a plus.</li><li><!--block-->Expert-level knowledge of modern C++ (C++17 or later), including templates, move semantics, and low-level performance idioms.</li><li><!--block-->Strong grasp of systems fundamentals: memory hierarchies, CPU architecture, lock-free programming, and network protocols (TCP/UDP).</li><li><!--block-->No prior trading or financial markets experience needed! We are looking for a strong technical foundation and a drive to learn the domain is what matters.</li><li><!--block-->A pragmatic, detail-oriented approach and communication skills to work effectively with both technical and trading teams.</li></ul>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "Senior C++ Software Engineer – Real Time Trading ",
+    "url": "https://careers.wolve.com/en/postings/7064aee9-b2b0-4f0c-a232-7265a53f0a1d",
+    "path": "/en/postings/7064aee9-b2b0-4f0c-a232-7265a53f0a1d",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "455116",
+     "requisition_id": "RID-0032",
+     "department": {
+      "id": "67772",
+      "name": "Technology"
+     },
+     "division": {
+      "id": "11966",
+      "name": "Wolverine Trading"
+     },
+     "structure_custom_group_one": {
+      "id": "11101",
+      "name": "Engineering",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   },
+   {
+    "id": "582534",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $80,000-$120,000 contingent on experience. Wolverine's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": null,
+    "compensation_minimum": null,
+    "compensation_maximum": null,
+    "compensation_currency": null,
+    "compensation_frequency": null,
+    "compensation_visible": false,
+    "deadline_at": null,
+    "description": "<div><!--block-->We are seeking a motivated, self-directed, and technically outstanding developers with a strong quantitative background to join our team of Software Engineers responsible for building systems that support our options trading, valuation, and risk management infrastructure. With the ever-changing demands of markets and financial technology worldwide, these systems are in a constant state of improvement and expansion.</div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<ul><li><!--block-->Engage in full cycle development of custom-built options valuation and risk management systems</li><li><!--block-->Communicate with traders, risk managers, and quantitative analysts to identify issues and develop improvements to pricing and risk systems</li><li><!--block-->Gather requirements, design solutions, iterate on implementations with peers and business advisors, participate in code reviews, and deliver products in a timely manner</li><li><!--block-->Troubleshoot and solve complex problems escalated by trading and support staff</li><li><!--block-->Provide insights on and help prioritize tasks to optimize, modernize, and improve the accuracy, performance, and scalability of our systems</li><li><!--block-->Document mathematical specifications, model assumptions, software requirements, and test cases</li></ul>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<ul><li><!--block-->Experience coding in object-oriented language such as C# (primary language used by the team), Java, or C++&nbsp;</li><li><!--block-->Experience with data analytic tools such as SQL, Pandas, Jupyter, or similar tools</li><li><!--block-->Passion for mathematics and statistics, including probability theory, stochastic calculus, numerical methods, and linear algebra</li><li><!--block-->Be organized, self-directed, and dependable</li><li><!--block-->Have excellent verbal and written communication skills, able to convey quantitative concepts and design decisions to both technical and non-technical stakeholders</li></ul>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "Software Engineer",
+    "url": "https://careers.wolve.com/en/postings/ccc46db1-222a-4254-a731-3dd3225fbbf0",
+    "path": "/en/postings/ccc46db1-222a-4254-a731-3dd3225fbbf0",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "531047",
+     "requisition_id": "RID-0530",
+     "department": {
+      "id": "67772",
+      "name": "Technology"
+     },
+     "division": {
+      "id": "11966",
+      "name": "Wolverine Trading"
+     },
+     "structure_custom_group_one": {
+      "id": "10548",
+      "name": "RAD Team",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   },
+   {
+    "id": "596352",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $80,000-$100,000 contingent on experience. Wolverine Execution Service's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": null,
+    "compensation_minimum": null,
+    "compensation_maximum": null,
+    "compensation_currency": null,
+    "compensation_frequency": null,
+    "compensation_visible": false,
+    "deadline_at": null,
+    "description": "<div><!--block-->Support existing trading systems for internal and external customers in a fast-paced growing environment.<br><br></div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<div><!--block-->• Create, modify, and maintain user logins and account configurations within WEX systems.<br>• Provide 1st level support to all trading application users; respond to support requests via phone, email and IMs<br>• Work with vendors (Exchanges, ECNs, etc.) to resolve production issues<br>• Work with developers to improve software and troubleshoot problems<br>• Maintain documentation of support processes, ongoing technical issues, and workarounds<br>• Assist with resolving clearing issues<br>• Work on special projects as necessary</div>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<div><!--block-->• Must have proven ability to manage multiple tasks effectively<br>• Must have excellent customer support and communication skills<br>• Must have an understanding of trading industry concepts and terminology<br>• A working knowledge of finance industry clearing is a plus<br>• Troubleshooting experience in financial trading applications, similar to Reuters, TT, PATS, Bloomberg, and GL Trade is a plus.<br>• Proficiency with the Windows operating system is a plus<br>• Self-motivated, energetic and results-orientated<br>• 2-3 years of Financial Services experience is preferred</div>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "Trading Application Support",
+    "url": "https://careers.wolve.com/en/postings/5836acc8-3667-4e01-a650-aae2d171a4aa",
+    "path": "/en/postings/5836acc8-3667-4e01-a650-aae2d171a4aa",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "596284",
+     "requisition_id": "RID-0582",
+     "department": {
+      "id": "61360",
+      "name": "Operations"
+     },
+     "division": {
+      "id": "13726",
+      "name": "Wolverine Execution Services "
+     },
+     "structure_custom_group_one": {
+      "id": "10547",
+      "name": "Operations - WEX",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   },
+   {
+    "id": "596784",
+    "benefits": "<div><!--block-->Our flat organizational structure promotes teamwork across the Firm and offers easy access to senior staff. While we work exceptionally well as a team in the office, our bonds are further strengthened through company events, activities and giving back. Volleyball, soccer, hockey, 5K runs, picnic, parties, and trivia nights provide friendly competition and build better relationships. By getting out of our usual environment and doing out-of-the-ordinary things together, we foster creativity and broaden our imaginations to accomplish new challenges.</div><div><!--block-->&nbsp;</div><div><!--block--><strong>Benefits:</strong></div><ul><li><!--block-->Highly competitive salary &amp; bonus opportunity</li><li><!--block-->Generous paid time off and flexible scheduling</li><li><!--block-->100% coverage of medical, dental, vision, life, and disability benefits for single coverage</li><li><!--block-->Generous Paid Parental Leave</li><li><!--block-->Retirement Plans: 401K and Roth 401K</li><li><!--block-->Profit sharing plan</li><li><!--block-->Long- and short-term disability&nbsp;</li></ul><div><!--block--><strong>Additional Perks:</strong></div><ul><li><!--block-->Free breakfast and lunch from our in-house kitchen with rotating menus (including snacks!)</li><li><!--block-->On-site gym with a subsidized membership</li><li><!--block-->Frequent company outings</li><li><!--block-->Opportunity to give back to organizations that help individuals in need in the Chicagoland area</li></ul><div><!--block--><strong>Professional Development:</strong></div><ul><li><!--block-->In-house education team – classes and resources are offered for continuous learning opportunities</li><li><!--block-->Mentorship Program through your first six months of employment</li></ul><div><!--block-->The base compensation range for this role is approximately $80,000-$120,000 contingent on experience. Wolverine Trading's total compensation model includes base salary and an annual discretionary bonus.</div>",
+    "benefits_header": "Why Join Us",
+    "compensation": null,
+    "compensation_minimum": null,
+    "compensation_maximum": null,
+    "compensation_currency": null,
+    "compensation_frequency": null,
+    "compensation_visible": false,
+    "deadline_at": null,
+    "description": "<div><!--block-->At Wolverine Trading, we’re looking for a C++ Software Engineer who is eager to launch their career in high-performance trading technology. This role is on-site in our Chicago headquarters, where close collaboration with traders and engineers is central to our culture. You’ll join a team of experienced engineers, traders, and hardware specialists building cutting-edge systems that power our trading business. This is a unique opportunity to learn at the intersection of software, hardware, and financial markets, while working on applications where speed, efficiency, and reliability make all the difference. From day one, you’ll benefit from direct mentorship, clear growth paths, and hands-on exposure to the trading floor giving you the chance to see your work in action and quickly develop both technical and industry expertise.</div>",
+    "employment_type": "full_time",
+    "employment_type_text": "Full Time",
+    "key_responsibilities": "<ul><li><!--block-->Contribute to the design, development, and testing of C++ applications that drive our trading platforms &nbsp;</li><li><!--block-->Collaborate with traders and senior engineers to understand requirements and translate them into efficient technical solutions.</li><li><!--block-->Assist in monitoring, profiling, and troubleshooting applications to improve reliability and stability.</li><li><!--block-->Gain exposure to the full lifecycle of trading system development, from idea to production support.</li></ul>",
+    "key_responsibilities_header": "What You’ll Do",
+    "reporting_to": "",
+    "skills_knowledge_expertise": "<ul><li><!--block-->Bachelor’s or Master’s Degree in Computer Science, Computer Engineering, or a related field.</li><li><!--block-->Strong knowledge of C++ and object-oriented design; familiarity with modern C++ (C++17/20) is a plus.</li><li><!--block-->Solid understanding of data structures, algorithms, and problem-solving fundamentals.</li><li><!--block-->Interest in multi-threaded programming, performance tuning, and real-time systems.</li><li><!--block-->Curiosity about financial markets and a desire to learn how technology drives trading.</li><li><!--block-->Strong communication skills and a collaborative mindset.</li><li><!--block-->A passion for tackling complex technical challenges and continuously improving.</li></ul><div><!--block-->We are currently only considering candidates who are presently authorized to work in the US for this position and who do not require visa sponsorship now or in the future.</div>",
+    "skills_knowledge_expertise_header": "What We’re Looking For",
+    "title": "C++ Software Engineer (Early Career)",
+    "url": "https://careers.wolve.com/en/postings/4b0e86a1-db36-4490-9a98-17782ffcc648",
+    "path": "/en/postings/4b0e86a1-db36-4490-9a98-17782ffcc648",
+    "workplace_type": "onsite",
+    "workplace_type_text": "Onsite",
+    "job": {
+     "id": "564693",
+     "requisition_id": "RID-0550",
+     "department": {
+      "id": "67772",
+      "name": "Technology"
+     },
+     "division": {
+      "id": "11966",
+      "name": "Wolverine Trading"
+     },
+     "structure_custom_group_one": {
+      "id": "11101",
+      "name": "Engineering",
+      "title": "Sub-Department"
+     }
+    },
+    "location": {
+     "id": "66266",
+     "city": "Chicago",
+     "name": "Chicago, IL",
+     "postal_code": "60604",
+     "province": "Illinois",
+     "street_address": "175 W. Jackson Blvd. Suite 200"
+    }
+   }
+  ]
+ }
+}

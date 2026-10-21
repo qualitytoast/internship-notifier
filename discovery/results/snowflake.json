@@ -1,0 +1,29 @@
+{
+  "key": "snowflake",
+  "name": "Snowflake",
+  "careers_url": "https://careers.snowflake.com/us/en/search-results",
+  "hiring_system": "phenom (SNCOUS, over Ashby board snowflake)",
+  "checker": "phenom",
+  "settings": {
+    "base_url": "https://careers.snowflake.com",
+    "ref_num": "SNCOUS",
+    "lang": "en_us",
+    "country": "us",
+    "site_type": "external",
+    "page_name": "search-results",
+    "job_path": "/us/en/job/{jobSeqNo}/{slug}",
+    "id_field": "jobSeqNo",
+    "page_size": 1000
+  },
+  "feed": "POST https://careers.snowflake.com/widgets (ddoKey=refineSearch, refNum=SNCOUS, lang=en_us, country=us, from=0, size=1000) -> refineSearch.totalHits / refineSearch.data.jobs[]",
+  "feed_total": 368,
+  "page_total": 368,
+  "page_total_how": "Playwright render of https://careers.snowflake.com/us/en/search-results (2026-10-20T00:38Z) showed '368 Jobs'; refineSearch size=1000 returned 368 unique jobSeqNo (re-checked 03:2xZ: 368). Ashby posting API has 361: the 7 extra are Ashby postings with isListed=false that the careers site still shows.",
+  "intern_total": 6,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW /widgets, /us/en/search-results, /us/en/job/* (no matching rule; */apply, */px-widgets disallowed); api.ashbyhq.com no robots.txt",
+  "notes": "Phenom, not the Ashby board, is complete (Ashby's public API omits unlisted postings). Phenom jobId repeats across sibling postings (356 unique of 368): key jobs by jobSeqNo. Only 1 of 6 internships is in the US (Spring 2027 Product Marketing intern, Menlo Park).",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

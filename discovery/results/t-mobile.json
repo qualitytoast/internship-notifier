@@ -1,0 +1,42 @@
+{
+  "key": "t-mobile",
+  "name": "T-Mobile",
+  "careers_url": "https://careers.t-mobile.com/jobs",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "tmobile.wd1.myworkdayjobs.com",
+    "tenant": "tmobile",
+    "site": "External",
+    "partitions": [
+      {
+        "timeType": [
+          "00e635b327af1034ee747b165ed6005c"
+        ]
+      },
+      {
+        "timeType": [
+          "00e635b327af1034ee747b132575005b"
+        ]
+      }
+    ],
+    "quick_queries": [
+      {
+        "Job_Family_Group": [
+          "426b19690b7b1036f85c59a787b10a19"
+        ]
+      }
+    ]
+  },
+  "feed": "POST https://tmobile.wd1.myworkdayjobs.com/wday/cxs/tmobile/External/jobs {\"appliedFacets\":{\"timeType\":[<Full time|Part time id>]},\"limit\":20,\"offset\":N,\"searchText\":\"\"} (two partitions: 641 + 1893)",
+  "feed_total": 2534,
+  "page_total": 2510,
+  "page_total_how": "Server-rendered https://careers.t-mobile.com/jobs: 'Showing 1 - 10 of 2510 jobs' (__PRELOAD_STATE__.jobSearch.totalJob 2510; Playwright after Next: 'Showing 11-20 of 2510'). Paradox is a scheduled copy of Workday: state counts differ in both directions and a Workday internship posted 2026-10-19 (REQ375880) was not on Paradox yet",
+  "intern_total": 2,
+  "status": "needs-custom",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for /wday/cxs/tmobile/External/jobs and details; Workday robots disallows the UI paths /External/, /Alumni/, /ContractorConversion/, /MergersandAcquisitions/ (link /en-US/External/... instead); careers.t-mobile.com robots has no rules",
+  "notes": "Workday CXS caps total at 2000 and offsets >= 2000 return page 1 again, so the plain workday adapter would silently stop at 2000 of 2534 jobs; it needs a 'partitions' setting (timeType Full time 641 + Part time 1893, each < 2000, sum checked against the facet sum). careers.t-mobile.com is a Paradox copy (2510) whose JSON API is Akamai/session-cookie gated and lags Workday. No early-career Workday site exists; Alumni/ContractorConversion/MergersandAcquisitions are audience-specific boards.",
+  "checked_at": "2026-10-20T00:31:51Z"
+}

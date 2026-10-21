@@ -1,0 +1,11 @@
+# status 200
+# llms.txt: https://learningcommons.org/llms.txt
+
+# START YOAST BLOCK
+# ---------------------------
+User-agent: *
+Disallow:
+
+Sitemap: https://learningcommons.org/sitemap_index.xml
+# ---------------------------
+# END YOAST BLOCK

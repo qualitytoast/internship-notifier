@@ -1,0 +1,8 @@
+# status 200
+# Allow crawlers on roles
+User-agent: *
+Allow: /roles/
+
+# Disallow crawlers on other pages
+User-agent: *
+Disallow: /

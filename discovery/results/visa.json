@@ -1,0 +1,26 @@
+{
+  "key": "visa",
+  "name": "Visa",
+  "careers_url": "https://corporate.visa.com/en/jobs/",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "visa.wd5.myworkdayjobs.com",
+    "tenant": "visa",
+    "sites": [
+      "Visa",
+      "Visa_Early_Careers"
+    ]
+  },
+  "feed": "POST https://visa.wd5.myworkdayjobs.com/wday/cxs/visa/Visa/jobs + POST https://visa.wd5.myworkdayjobs.com/wday/cxs/visa/Visa_Early_Careers/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 867,
+  "page_total": 877,
+  "page_total_how": "corporate.visa.com/en/jobs/ redirects to https://visa.wd5.myworkdayjobs.com/Visa; Playwright showed '846 JOBS FOUND' there and '31 JOBS FOUND' on /Visa_Early_Careers (= CXS totals). 877 postings = 867 requisitions (10 on both sites). Recheck 03:19Z: 847 + 31.",
+  "intern_total": 23,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for the CXS POST URL(s); the tenant robots.txt lists /Visa/, /Visa_Early_Careers/ (Disallow: /Visa_Talent_Portal/, not used) as Allow",
+  "notes": "All 23 internships are on Visa_Early_Careers; 18 of them exist only there (the main site has 5, all duplicates). The same requisition has a different externalPath on each site, so dedupe by bulletFields req id (REF…W). See notes/visa.md.",
+  "checked_at": "2026-10-20T03:19:24Z"
+}

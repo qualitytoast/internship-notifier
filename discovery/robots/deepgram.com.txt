@@ -1,0 +1,15 @@
+# status 200
+User-agent: *
+Disallow: /api/
+Allow: /api/feeds/
+Allow: /api/articles$
+Allow: /api/articles?*
+Allow: /api/podcasts$
+Allow: /api/podcasts?*
+Allow: /llms.txt
+
+# Host
+Host: deepgram.com
+
+# Sitemaps
+Sitemap: https://deepgram.com/sitemap.xml

@@ -1,0 +1,21 @@
+{
+  "key": "instabase",
+  "name": "Instabase",
+  "careers_url": "https://www.instabase.com/careers/jobs",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "instabase"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/instabase/jobs?content=true (currently HTTP 404 {\"status\":404,\"error\":\"Job not found\"})",
+  "feed_total": 0,
+  "page_total": 0,
+  "page_total_how": "Playwright capture of https://www.instabase.com/careers/jobs renders 'Open positions … No jobs available.'; the page's own script fetches the Greenhouse API above, which 404s (re-checked 2026-10-20T00:28Z). The static Webflow cards in the HTML are 'Lorem ipsum' template items whose Greenhouse links redirect to 'The job board you were viewing is no longer active'.",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "Board inactive: keep polling greenhouse 'instabase' (the token the page's own script uses) at the normal interval; map 404 'Job not found' to 0 jobs plus one 'board inactive' note; SimplifyJobs cross-check.",
+  "robots": "ALLOW (no matching rule on boards-api.greenhouse.io and www.instabase.com)",
+  "notes": "No live job source exists today: the Greenhouse board was switched off (search engines still index jobs from July 2026). No other ATS found (Ashby, Lever, Rippling, Workable, Greenhouse variants and two web searches). If the board comes back, the plain greenhouse adapter works unchanged.",
+  "checked_at": "2026-10-20T00:29:00Z"
+}

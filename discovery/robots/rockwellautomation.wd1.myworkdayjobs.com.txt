@@ -1,0 +1,10 @@
+# status 200
+Sitemap: https://rockwellautomation.wd1.myworkdayjobs.com/External_Rockwell_Automation/siteMap.xml
+Sitemap: https://rockwellautomation.wd1.myworkdayjobs.com/External-Rockwell-Automation-Early-Careers/siteMap.xml
+Sitemap: https://rockwellautomation.wd1.myworkdayjobs.com/External-ERGs/siteMap.xml
+
+User-agent: *
+Allow: /External_Rockwell_Automation/
+Allow: /External-Rockwell-Automation-Early-Careers/
+Allow: /External-ERGs/
+Disallow: /refreshFacet/

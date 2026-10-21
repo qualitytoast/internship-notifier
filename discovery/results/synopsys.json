@@ -1,0 +1,25 @@
+{
+  "key": "synopsys",
+  "name": "Synopsys",
+  "careers_url": "https://careers.synopsys.com/search-jobs",
+  "hiring_system": "avature",
+  "checker": "avature",
+  "settings": {
+    "list_url": "https://synopsys.avature.net/careers/SearchJobs/",
+    "page_size": 6,
+    "newest_first_query": "jobSort=postedDate&jobSortDirection=DESC",
+    "big": true,
+    "detail_for_location": true
+  },
+  "feed": "GET https://synopsys.avature.net/careers/SearchJobs/?jobOffset=N (HTML, 6 cards per page; 107 pages for a full scan)",
+  "feed_total": 639,
+  "page_total": 638,
+  "page_total_how": "Server-rendered https://careers.synopsys.com/search-jobs (Radancy) shows '638 results' (data-total-job-results=638). The Avature portal's own legend says '639 results' (aria-label), and its last page (jobOffset=636) holds 637-639. The Avature sitemap lists 639 unique JobDetail ids; the Radancy sitemap lists 638 /job/ URLs. All observed 2026-10-20T00:21-00:28Z.",
+  "intern_total": 5,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW synopsys.avature.net/careers/* (Allow: /careers); careers.synopsys.com: /search-jobs, /job/…, /sitemap.xml ALLOW, but /search-jobs/results (Radancy AJAX) BLOCK (Disallow: /search-jobs/)",
+  "notes": "Avature page size is fixed at 6 (jobRecordsPerPage ignored), so mark it big: read newest-first pages each poll and do the 107-page full scan daily. Cards have title, Job ID, Hire Type and Posted date but no location; fetch JobDetail (City/Country) for new student roles only. careers.synopsys.com is a Radancy mirror that runs about 1 job behind.",
+  "checked_at": "2026-10-20T00:29:00Z"
+}

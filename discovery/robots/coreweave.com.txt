@@ -1,0 +1,7 @@
+# status 200
+User-agent: *
+Disallow: /blog-categories/
+Disallow: /event/
+
+
+Sitemap: https://wf.coreweave.com/sitemap.xml

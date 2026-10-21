@@ -1,0 +1,10 @@
+# status 200
+Sitemap: https://generalmotors.wd5.myworkdayjobs.com/Careers_GM/siteMap.xml
+Sitemap: https://generalmotors.wd5.myworkdayjobs.com/Careers_GM_Private/siteMap.xml
+Sitemap: https://generalmotors.wd5.myworkdayjobs.com/Careers_TEI/siteMap.xml
+
+User-agent: *
+Allow: /Careers_GM/
+Allow: /Careers_GM_Private/
+Allow: /Careers_TEI/
+Disallow: /refreshFacet/

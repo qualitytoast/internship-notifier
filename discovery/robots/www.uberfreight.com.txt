@@ -1,0 +1,6 @@
+# status 200
+User-Agent: *
+Allow: /
+Disallow: /*/lp/
+
+Sitemap: https://www.uberfreight.com/sitemap.xml

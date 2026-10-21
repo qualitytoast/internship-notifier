@@ -1,0 +1,21 @@
+{
+  "key": "rippling",
+  "name": "Rippling",
+  "careers_url": "https://www.rippling.com/careers/open-roles",
+  "hiring_system": "rippling",
+  "checker": "rippling",
+  "settings": {
+    "board": "rippling"
+  },
+  "feed": "GET https://ats.rippling.com/api/v2/board/rippling/jobs?page=0&pageSize=1000 (one row per job x location; group by id). Alternative: GET https://api.rippling.com/platform/api/ats/v1/board/rippling/jobs (bare array, same rows)",
+  "feed_total": 377,
+  "page_total": 377,
+  "page_total_how": "Playwright render of https://www.rippling.com/careers/open-roles (2026-10-20T00:08Z) showed '656 roles across all departments in all locations': the page lists one card per job x location (Algolia index careers_en-US_production, nbHits 656). The board API returned the same 656 rows (v1 and v2) at 00:09Z = 377 unique job ids.",
+  "intern_total": 5,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW: ats.rippling.com (only /internal/ disallowed), api.rippling.com (robots.txt 404), www.rippling.com (Allow: /)",
+  "notes": "Rows are per location: dedupe by id and merge locations[]. Titles carry stray leading/trailing spaces. Two 'Internal Posting — …' titles contain 'Intern' as a substring, so match whole words only. Algolia briefly held one stale closed job (660 rows at 23:53Z), so prefer the board API.",
+  "checked_at": "2026-10-20T00:31:00Z"
+}

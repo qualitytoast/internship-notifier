@@ -1,0 +1,43 @@
+{
+  "key": "ebay",
+  "name": "eBay",
+  "careers_url": "https://jobs.ebayinc.com/us/en/search-results",
+  "hiring_system": "phenom",
+  "checker": "custom:ebay",
+  "settings": {
+    "phenom": {
+      "base_url": "https://jobs.ebayinc.com",
+      "ref_num": "EBAEBAUS",
+      "lang": "en_us",
+      "country": "us",
+      "site_type": "external",
+      "page_name": "search-results",
+      "page_id": "page15",
+      "all_fields": [
+        "remote",
+        "country",
+        "state",
+        "category"
+      ],
+      "job_path": "/us/en/job/{jobId}",
+      "page_size": 100
+    },
+    "ripplematch": {
+      "company_id": 865,
+      "list_url": "https://app.ripplematch.com/api/v2/public/roles/865",
+      "job_url": "https://app.ripplematch.com/v2/public/job/{public_id}",
+      "extra_ca": "http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt"
+    }
+  },
+  "feed": "POST https://jobs.ebayinc.com/widgets {ddoKey: refineSearch, refNum: EBAEBAUS, lang: en_us, country: us, pageName: search-results, from: N, size: 100} + GET https://app.ripplematch.com/api/v2/public/roles/865",
+  "feed_total": 273,
+  "page_total": 273,
+  "page_total_how": "Playwright render of https://jobs.ebayinc.com/us/en/search-results: 'Showing <span class=result-count>269</span> results' (SSR eagerLoadRefineSearch.totalHits 269, sitemap 269, Workday CXS ebay/apply total 269 with identical ids) + RippleMatch company page https://app.ripplematch.com/v2/public/company/ebay shows 'Jobs (4)' (API returns 4)",
+  "intern_total": 3,
+  "status": "needs-custom",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW jobs.ebayinc.com/widgets, /us/en/search-results, /us/en/job/*, sitemap (no matching rule; */apply disallowed); ALLOW ebay.wd5.myworkdayjobs.com/wday/cxs/ebay/apply/jobs (no matching rule; /apply/ site path disallowed); app.ripplematch.com robots.txt is 'Allow: /' but robots_check.py reports BLOCK (unreachable) because its TLS chain is incomplete for certifi",
+  "notes": "Main board: Phenom EBAEBAUS (269 jobs, 0 intern titles) mirrors Workday ebay/apply exactly. eBay's student/new-grad roles are posted on RippleMatch (company 865; 4 public roles, 2 internships), linked from careers.ebayinc.com/student-opportunities; app.ripplematch.com omits its Sectigo DV R36 intermediate, so httpx+certifi needs that cert added (or truststore). The one Workday 'Intern (Trainee)' job is R0060042 Rechtsreferendar*in (DE).",
+  "checked_at": "2026-10-20T00:28:58Z"
+}

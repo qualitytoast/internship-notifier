@@ -1,0 +1,6 @@
+# status 200
+
+User-agent: *
+Disallow: /panwexternalcareers/
+Disallow: /hidden-private-pawn-temp-gateway-147258369/
+Disallow: /refreshFacet/

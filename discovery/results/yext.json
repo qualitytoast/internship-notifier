@@ -1,0 +1,21 @@
+{
+  "key": "yext",
+  "name": "Yext",
+  "careers_url": "https://www.yext.com/careers/open-positions",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "yext"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/yext/jobs",
+  "feed_total": 24,
+  "page_total": 23,
+  "page_total_how": "Playwright render showed 23 jobs ('1 - 23 of 23'); the page queries Yext Search (liveapi.yext.com ... verticalKey=jobs), resultsCount 23, all on the board",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule; boards-api.greenhouse.io/robots.txt only disallows /embed/)",
+  "notes": "The page is a Yext Search copy of the board. The feed's 24th job is the evergreen 'General Referral' (id 657947, All Locations, since 2020), which the page hides. No interns today.",
+  "checked_at": "2026-10-20T00:40:05Z"
+}

@@ -1,0 +1,21 @@
+{
+  "key": "harvey",
+  "name": "Harvey",
+  "careers_url": "https://www.harvey.ai/careers",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "harvey"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/harvey?includeCompensation=false",
+  "feed_total": 340,
+  "page_total": 340,
+  "page_total_how": "Playwright render of https://www.harvey.ai/careers: the page loads www.harvey.ai/api/ashby/jobs (Harvey's own proxy of the Ashby board) and shows 10 roles per page with a pager ending at page 34; ?page=34 also shows 10 roles, so 34 x 10 = 340. All 20 sampled ids (pages 1 and 34) are in the feed",
+  "intern_total": 3,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com/robots.txt answers HTTP 401, so no robots.txt applies); careers page ALLOW (Allow: /)",
+  "notes": "Page job links are harvey.ai/company/careers/<ashby id>. Use the Ashby posting API, not the site proxy. Interns are 2x 'Software Engineering Intern (Summer 2027)' (NY, SF) plus 'Law School Student Ambassador' (Contract). The capture saw 341.",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

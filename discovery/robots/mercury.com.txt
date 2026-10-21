@@ -1,0 +1,11 @@
+# status 200
+User-Agent: *
+Disallow: *?_rsc=*
+Disallow: */investor-database?*
+Disallow: */perks?*
+Disallow: */raise/software-stack?*
+
+Sitemap: https://mercury.com/sitemap.xml
+Sitemap: https://mercury.com/blog/sitemap.xml
+Sitemap: https://mercury.com/perks/sitemap.xml
+Sitemap: https://mercury.com/investor-database/sitemap.xml

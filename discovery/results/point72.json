@@ -1,0 +1,21 @@
+{
+  "key": "point72",
+  "name": "Point72",
+  "careers_url": "https://careers.point72.com/",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "point72"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/point72/jobs",
+  "feed_total": 215,
+  "page_total": 213,
+  "page_total_how": "Playwright render of https://careers.point72.com/ (2026-10-20) showed '213 Open Roles' with 213 cards: 10 link to Greenhouse ids, 203 to Salesforce CSJobDetail records whose Apply link is a grnh.se short link to the Greenhouse job (one resolved: CSS-0012597 → point72/jobs/7046005002)",
+  "intern_total": 18,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for boards-api.greenhouse.io; careers.point72.com Disallow: (empty)",
+  "notes": "careers.point72.com is a Salesforce mirror of the Greenhouse board with edited titles (e.g. 'Cubist Portfolio Manager' shown as 'Quantitative Portfolio Manager'). The 2 Greenhouse postings not shown are the evergreen 'Investment Services / Market Intelligence Emerging Talent Network'. 14 of the 18 internships are in the US.",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

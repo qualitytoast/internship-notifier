@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://workiva.wd503.myworkdayjobs.com/careers/siteMap.xml
+Sitemap: https://workiva.wd503.myworkdayjobs.com/parseportcareers/siteMap.xml
+
+User-agent: *
+Allow: /careers/
+Allow: /parseportcareers/
+Disallow: /refreshFacet/

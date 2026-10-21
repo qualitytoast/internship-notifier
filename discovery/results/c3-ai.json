@@ -1,0 +1,24 @@
+{
+  "key": "c3-ai",
+  "name": "C3 AI",
+  "careers_url": "https://c3.ai/careers",
+  "hiring_system": "greenhouse (2 boards: c3iot main + c3ascend 'C3 AI Ascend Internship Program')",
+  "checker": "greenhouse",
+  "settings": {
+    "boards": [
+      "c3iot",
+      "c3ascend"
+    ]
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/{c3iot,c3ascend}/jobs",
+  "feed_total": 94,
+  "page_total": 94,
+  "page_total_how": "Playwright render of https://c3.ai/careers + click 'View all': 94 /job-description/<gh id> cards = the c3iot feed's 94 ids. Its 'Interns and Early Professionals' button links to boards.greenhouse.io/c3ascend, whose hosted page shows '3 jobs'. 97 postings in total; deduped by requisition_id = 94.",
+  "intern_total": 5,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (boards-api.greenhouse.io: no matching rule)",
+  "notes": "c3ascend repeats 3 c3iot intern postings (requisitions 1399, 1400, 1448) under different job ids, so dedupe on requisition_id (or title) to avoid double alerts. Interns: AI PM MBA, Data Science, SWE (Redwood City), SWE and QA (Guadalajara), all Summer 2027. See notes/c3-ai.md.",
+  "checked_at": "2026-10-20T00:37:53Z"
+}

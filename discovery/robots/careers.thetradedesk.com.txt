@@ -1,0 +1,7 @@
+# status 200
+sitemap: https://careers.thetradedesk.com/sitemap.xml
+User-agent: *
+Disallow: /cpresources/
+Disallow: /vendor/
+Disallow: /cache/
+Disallow: /.env

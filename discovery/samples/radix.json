@@ -1,0 +1,416 @@
+{
+ "_note": "Raw GET boards-api.greenhouse.io/v1/boards/<board>/jobs for both boards linked from radixtrading.com.",
+ "observed": "2026-10-20T00:37:34Z",
+ "radixexperienced": {
+  "jobs": [
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/radixexperienced/jobs/6954287002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5648650002,
+    "location": {
+     "name": "Radix Trading Amsterdam"
+    },
+    "metadata": null,
+    "id": 6954287002,
+    "updated_at": "2026-05-04T15:18:00-04:00",
+    "requisition_id": "98",
+    "title": "Compliance Specialist – Amsterdam",
+    "company_name": "Radix Trading Experienced Job Board",
+    "first_published": "2023-09-29T14:20:59-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/radixexperienced/jobs/8121869002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5121336002,
+    "location": {
+     "name": "Chicago, Illinois, United States; New York, New York, United States"
+    },
+    "metadata": null,
+    "id": 8121869002,
+    "updated_at": "2026-09-09T01:01:33-04:00",
+    "requisition_id": "50",
+    "title": "HPC Systems Engineer",
+    "company_name": "Radix Trading Experienced Job Board",
+    "first_published": "2025-08-15T12:21:27-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/radixexperienced/jobs/7745843002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6049237002,
+    "location": {
+     "name": "Chicago, Illinois, United States; New York, New York, United States"
+    },
+    "metadata": null,
+    "id": 7745843002,
+    "updated_at": "2026-09-09T01:01:32-04:00",
+    "requisition_id": "124",
+    "title": "Network Engineer ",
+    "company_name": "Radix Trading Experienced Job Board",
+    "first_published": "2024-11-27T14:39:58-05:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/radixexperienced/jobs/8468817002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 6382795002,
+    "location": {
+     "name": "Chicago, Illinois, United States; New York, New York, United States; Radix Trading Amsterdam"
+    },
+    "metadata": null,
+    "id": 8468817002,
+    "updated_at": "2026-09-09T01:01:33-04:00",
+    "requisition_id": "149",
+    "title": "Quantitative Business Analyst",
+    "company_name": "Radix Trading Experienced Job Board",
+    "first_published": "2026-03-19T13:41:14-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/radixexperienced/jobs/7997102002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 6163976002,
+    "location": {
+     "name": "Chicago, Illinois, United States"
+    },
+    "metadata": null,
+    "id": 7997102002,
+    "updated_at": "2026-09-09T01:01:32-04:00",
+    "requisition_id": "143",
+    "title": "Quantitative Business Strategist",
+    "company_name": "Radix Trading Experienced Job Board",
+    "first_published": "2025-05-14T11:31:46-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/radixexperienced/jobs/6629844002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5498126002,
+    "location": {
+     "name": "Chicago, Illinois, United States; New York, New York, United States; Radix Trading Amsterdam"
+    },
+    "metadata": null,
+    "id": 6629844002,
+    "updated_at": "2026-09-09T01:01:31-04:00",
+    "requisition_id": "77",
+    "title": "Quantitative Researcher",
+    "company_name": "Radix Trading Experienced Job Board",
+    "first_published": "2023-02-22T12:12:43-05:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/radixexperienced/jobs/6629869002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 5498140002,
+    "location": {
+     "name": "Chicago, Illinois, United States; New York, New York, United States; Radix Trading Amsterdam"
+    },
+    "metadata": null,
+    "id": 6629869002,
+    "updated_at": "2026-09-09T01:01:31-04:00",
+    "requisition_id": "78",
+    "title": "Quantitative Technologist",
+    "company_name": "Radix Trading Experienced Job Board",
+    "first_published": "2023-02-22T12:16:50-05:00",
+    "language": "en",
+    "application_deadline": null
+   }
+  ],
+  "meta": {
+   "total": 7
+  }
+ },
+ "radixuniversity": {
+  "jobs": [
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/radixuniversity/jobs/8080910002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "internal_job_id": 6200394002,
+    "location": {
+     "name": "Chicago, New York, Amsterdam"
+    },
+    "metadata": null,
+    "id": 8080910002,
+    "updated_at": "2026-09-09T01:01:33-04:00",
+    "requisition_id": "144",
+    "title": "Quantitative Business Analyst",
+    "company_name": "Radix Trading University Job Board",
+    "first_published": "2026-03-18T16:39:29-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/radixuniversity/jobs/8521642002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6403757002,
+    "location": {
+     "name": "Chicago, New York, Amsterdam"
+    },
+    "metadata": null,
+    "id": 8521642002,
+    "updated_at": "2026-09-09T01:01:33-04:00",
+    "requisition_id": "154",
+    "title": "Quantitative Researcher (Full-Time - Master’s/Bachelor’s)",
+    "company_name": "Radix Trading University Job Board",
+    "first_published": "2026-04-23T17:01:41-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/radixuniversity/jobs/7841874002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6092773002,
+    "location": {
+     "name": "Chicago, New York, Amsterdam"
+    },
+    "metadata": null,
+    "id": 7841874002,
+    "updated_at": "2026-09-09T01:01:32-04:00",
+    "requisition_id": "129",
+    "title": "Quantitative Researcher (Full-Time - PhD+)",
+    "company_name": "Radix Trading University Job Board",
+    "first_published": "2025-01-31T12:08:15-05:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/radixuniversity/jobs/8500265002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6395431002,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 8500265002,
+    "updated_at": "2026-09-09T01:01:33-04:00",
+    "requisition_id": "151",
+    "title": "Quantitative Technologist (C++ Intern) ",
+    "company_name": "Radix Trading University Job Board",
+    "first_published": "2026-04-09T11:35:12-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/radixuniversity/jobs/8500240002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6395425002,
+    "location": {
+     "name": "Chicago, New York, Amsterdam"
+    },
+    "metadata": null,
+    "id": 8500240002,
+    "updated_at": "2026-09-09T01:01:33-04:00",
+    "requisition_id": "150",
+    "title": "Quantitative Technologist (Full-Time - C++ Developer) ",
+    "company_name": "Radix Trading University Job Board",
+    "first_published": "2026-04-09T11:32:13-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/radixuniversity/jobs/8521641002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6403754002,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 8521641002,
+    "updated_at": "2026-09-09T01:01:33-04:00",
+    "requisition_id": "153",
+    "title": "Quantitative Technologist (Full-Time - DevOps - Night Shift)",
+    "company_name": "Radix Trading University Job Board",
+    "first_published": "2026-04-23T16:59:55-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/radixuniversity/jobs/8521638002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6403752002,
+    "location": {
+     "name": "Chicago, New York, Amsterdam"
+    },
+    "metadata": null,
+    "id": 8521638002,
+    "updated_at": "2026-09-09T01:01:33-04:00",
+    "requisition_id": "152",
+    "title": "Quantitative Technologist (Full-Time - DevOps & Systems Engineering)",
+    "company_name": "Radix Trading University Job Board",
+    "first_published": "2026-04-23T16:57:14-04:00",
+    "language": "en",
+    "application_deadline": null
+   },
+   {
+    "absolute_url": "https://job-boards.greenhouse.io/radixuniversity/jobs/8521654002",
+    "data_compliance": [
+     {
+      "type": "gdpr",
+      "requires_consent": false,
+      "requires_processing_consent": false,
+      "requires_retention_consent": false,
+      "retention_period": null,
+      "demographic_data_consent_applies": false
+     }
+    ],
+    "education": "education_required",
+    "internal_job_id": 6403763002,
+    "location": {
+     "name": "Chicago"
+    },
+    "metadata": null,
+    "id": 8521654002,
+    "updated_at": "2026-09-09T01:01:33-04:00",
+    "requisition_id": "155",
+    "title": "Quantitative Technologist (Full-Time - FPGA Engineer, PhD) ",
+    "company_name": "Radix Trading University Job Board",
+    "first_published": "2026-04-23T17:03:50-04:00",
+    "language": "en",
+    "application_deadline": null
+   }
+  ],
+  "meta": {
+   "total": 8
+  }
+ }
+}

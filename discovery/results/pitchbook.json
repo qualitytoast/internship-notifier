@@ -1,0 +1,21 @@
+{
+  "key": "pitchbook",
+  "name": "PitchBook",
+  "careers_url": "https://pitchbook.com/careers",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "pitchbookdata"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/pitchbookdata/jobs",
+  "feed_total": 23,
+  "page_total": 23,
+  "page_total_how": "pitchbook.com/careers has one 'Browse jobs' link, to https://job-boards.greenhouse.io/pitchbookdata; Playwright render of that board (no filters) showed '23 jobs' and 23 job links",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule; boards-api.greenhouse.io/robots.txt only disallows /embed/)",
+  "notes": "Only board linked; token 'pitchbook' is empty. Parent Morningstar's Workday (morningstar.wd5.myworkdayjobs.com: Americas 18 jobs, Internships 0) has no PitchBook postings. The low count looks real; no interns posted yet.",
+  "checked_at": "2026-10-20T00:39:31Z"
+}

@@ -1,0 +1,12 @@
+# status 200
+Sitemap: https://temporal.io/sitemap.xml
+# LLMs: https://temporal.io/llms.txt
+# Agent pricing: https://temporal.io/pricing.md
+
+# Allow crawling and AI usage; keep the tracking route private.
+User-agent: *
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+Allow: /
+Allow: /llms.txt
+Allow: /pricing.md
+Disallow: /comms

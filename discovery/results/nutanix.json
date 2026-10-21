@@ -1,0 +1,23 @@
+{
+  "key": "nutanix",
+  "name": "Nutanix",
+  "careers_url": "https://careers.nutanix.com/en/jobs/",
+  "hiring_system": "jobvite (company id qKr9VfwZ; careers.nutanix.com is an Umbraco 'jobboard' marketing copy)",
+  "checker": "custom:jobvite",
+  "settings": {
+    "company_id": "qKr9VfwZ",
+    "slug": "nutanix",
+    "dedupe_by": "requisitionid"
+  },
+  "feed": "GET https://app.jobvite.com/CompanyJobs/Xml.aspx?c=qKr9VfwZ (XML, all jobs in one response, 6.8 MB with descriptions)",
+  "feed_total": 283,
+  "page_total": 283,
+  "page_total_how": "Playwright render of https://careers.nutanix.com/en/jobs/ (no filters): 'Displaying 1 to 20 of 283 matching jobs'. The XML feed has 425 <job> rows = 283 unique <requisitionid> (one row per location; extra rows have ids like 'olyvAfwI-Cr5lVfww'), and the site's job ids are those requisition ids (/en/jobs/32891/... = <requisitionid>32891).",
+  "intern_total": 2,
+  "status": "needs-custom",
+  "robots": "ALLOW (app.jobvite.com: no matching rule; only /CompanyJobs/PreviewApplication.aspx is disallowed under /CompanyJobs/)",
+  "notes": "No shared Jobvite adapter exists; the XML feed is a single GET, so a small shared 'jobvite' adapter is easy (see note). Both interns have jobtype 'Evergreen' (not 'Internship'), which is why the bookmark's type=Internship filter shows no results. The checker does not need careers.nutanix.com.",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

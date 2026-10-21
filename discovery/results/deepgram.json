@@ -1,0 +1,21 @@
+{
+  "key": "deepgram",
+  "name": "Deepgram",
+  "careers_url": "https://deepgram.com/careers",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "deepgram"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/deepgram?includeCompensation=false",
+  "feed_total": 91,
+  "page_total": 91,
+  "page_total_how": "Playwright render of https://deepgram.com/careers (server-rendered) listed 91 links to jobs.ashbyhq.com/Deepgram/<id>?employmentType=FullTime, identical to the feed ids",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com/robots.txt answers HTTP 401, so no robots.txt applies); careers page ALLOW",
+  "notes": "All 91 postings are FullTime. The page appends ?employmentType=FullTime to its links, and with no Intern posting live it is unclear whether the page would hide Intern roles. The feed returns every type. No internships posted now.",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

@@ -1,0 +1,30 @@
+# status 200
+# rogerbot
+User-agent: rogerbot
+Allow: /
+Disallow: /404
+Disallow: /500
+Disallow: /unsupported
+Disallow: /favicons
+
+# dotbot
+User-agent: dotbot
+Allow: /
+Disallow: /404
+Disallow: /500
+Disallow: /unsupported
+Disallow: /favicons
+
+# *
+User-agent: *
+Allow: /
+Disallow: /404
+Disallow: /500
+Disallow: /unsupported
+Disallow: /favicons
+
+# Host
+Host: https://zoox.com
+
+# Sitemaps
+Sitemap: https://zoox.com/sitemap.xml

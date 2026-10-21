@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://capitalone.wd12.myworkdayjobs.com/Capital_One/siteMap.xml
+
+User-agent: *
+Allow: /Capital_One/
+Disallow: /refreshFacet/

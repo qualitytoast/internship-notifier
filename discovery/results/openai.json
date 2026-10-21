@@ -1,0 +1,21 @@
+{
+  "key": "openai",
+  "name": "OpenAI",
+  "careers_url": "https://openai.com/careers/search/",
+  "hiring_system": "ashby (custom front on openai.com)",
+  "checker": "ashby",
+  "settings": {
+    "board": "openai"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/openai?includeCompensation=false",
+  "feed_total": 808,
+  "page_total": 808,
+  "page_total_how": "Playwright render of https://openai.com/careers/search/ (no filters): '808 jobs' and 808 distinct jobs.ashbyhq.com/openai/<id>/application links, exactly the feed's 808 ids (all isListed).",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com: robots.txt returns 401 = no robots.txt, allow all; jobs.ashbyhq.com/api/ is disallowed and not used)",
+  "notes": "No internship postings today (employmentType: 807 FullTime, 1 Contract). The feed is ~13.5 MB because it carries full descriptions. openai.com loads Cloudflare challenge scripts but rendered normally; the checker needs only the Ashby API. The bookmark's l= location filter showed 635.",
+  "checked_at": "2026-10-20T00:37:53Z"
+}

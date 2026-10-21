@@ -1,0 +1,19 @@
+{
+  "key": "booking",
+  "name": "Booking.com",
+  "careers_url": "https://jobs.booking.com/booking/jobs",
+  "hiring_system": "jibe (tenant workingatbooking, over iCIMS external-workingatbooking + careers-holdings-workingatbooking)",
+  "checker": "jibe",
+  "settings": {"host": "jobs.booking.com", "use_employment_type": false, "company_field": "brand"},
+  "feed": "GET https://jobs.booking.com/api/jobs?page=N&limit=100&internal=false (no tags1; 2 pages)",
+  "feed_total": 131,
+  "page_total": 131,
+  "page_total_how": "Playwright renders (2026-10-20T00:15Z): https://jobs.booking.com/booking/jobs showed '89 Results' (page sends tags1=Booking.com|Transport|Booking Holdings Company Hierarchy) and https://www.bookingholdings-coe.com/bookingholdings-coe/jobs showed '42 Results' (tags1=Booking Holdings COE Company Hierarchy); 89 + 42 = 131 = feed without tags1, no overlap.",
+  "intern_total": 4,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (Allow: /); crawl-delay: 5",
+  "notes": "One Jibe tenant serves two career sites: Booking.com (brand 'Booking.com', 89) and Booking Holdings Center of Excellence (brand 'Booking Holdings', 42). Omitting tags1 returns both; keep brand per job. Use meta_data.canonical_url for brand-correct links. Interns (4, Amsterdam) are employment_type FULL_TIME, so classify by title.",
+  "checked_at": "2026-10-20T00:17:00Z"
+}

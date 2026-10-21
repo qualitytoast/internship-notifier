@@ -1,0 +1,23 @@
+{
+  "key": "dell",
+  "name": "Dell Technologies",
+  "careers_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/jobs",
+  "hiring_system": "oracle (Oracle Recruiting Cloud on Dell's vanity host enterpriseplatform.dell.com)",
+  "checker": "oracle",
+  "settings": {
+    "host": "enterpriseplatform.dell.com",
+    "site": "CX_1001",
+    "job_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/{id}"
+  },
+  "feed": "GET https://enterpriseplatform.dell.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations&finder=findReqs;siteNumber=CX_1001,limit=200,offset=N,sortBy=POSTING_DATES_DESC (3 pages)",
+  "feed_total": 453,
+  "page_total": 453,
+  "page_total_how": "Playwright render of https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/jobs (no filters) showed '453 JOB'; full enumeration returned 453 unique ids = TotalJobsCount 453",
+  "intern_total": 23,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW: enterpriseplatform.dell.com robots.txt is 404 (allow-all); jobs.dell.com/search-jobs (redirects to the ORC site) ALLOW, no matching rule",
+  "notes": "Site URL name 'careers' = siteNumber CX_1001, the only site in recruitingCESites; jobs.dell.com/search-jobs redirects here and the old Workday tenant (dell.wd1 /External) returns 422. Ids mix numeric, R###### and D##### forms (use verbatim). intern_total = ATS job function 'Interns' (selectedTitlesFacet=INTERNS, 23): 19 English intern/co-op titles + Estagio/Becario/Schuelerpraktikum/STEM Aspire; list rows have no description (detail endpoint needed).",
+  "checked_at": "2026-10-20T00:24:52Z"
+}

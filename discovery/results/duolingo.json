@@ -1,0 +1,37 @@
+{
+  "key": "duolingo",
+  "name": "Duolingo",
+  "careers_url": "https://careers.duolingo.com/",
+  "hiring_system": "greenhouse (custom React front); 3 freelance/contract roles separately on Breezy (duolingo.breezy.hr)",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "duolingo"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/duolingo/jobs",
+  "feed_total": 63,
+  "page_total": 63,
+  "page_total_how": "Playwright render of https://careers.duolingo.com/ (web fonts must load or the app renders nothing) + click 'View all jobs': 63 job links careers.duolingo.com/jobs/<gh id> = the feed's 63 ids. The page builds its list from boards-api.greenhouse.io/v1/boards/duolingo/departments (63 jobs).",
+  "intern_total": 4,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (boards-api.greenhouse.io: no matching rule)",
+  "notes": "The bookmarks' type=Intern / type=Thrive Program are derived from the Greenhouse custom field 'Req Type': 'University - Graduating Intern' -> Intern, 'University - Thrive Intern' -> Thrive Program, 'University - New Grad' -> New Grad (0 Thrive postings today), so Greenhouse covers both. Breezy (https://duolingo.breezy.hr/json) holds only freelance contract roles; the page's freelance loader is stubbed to [] and it only links out ('View freelance jobs'). Breezy is optional (custom:breezy, extra_sources below). See notes/duolingo.md.",
+  "checked_at": "2026-10-20T00:37:53Z",
+  "extra_sources": [
+    {
+      "checker": "custom:breezy",
+      "optional": true,
+      "settings": {
+        "url": "https://duolingo.breezy.hr/json"
+      },
+      "feed": "GET https://duolingo.breezy.hr/json",
+      "feed_total": 3,
+      "page_total": 3,
+      "page_total_how": "Playwright render of https://duolingo.breezy.hr/: 3 /p/<friendly_id> links = the 3 JSON ids",
+      "intern_total": 0,
+      "robots": "ALLOW (duolingo.breezy.hr: no matching rule)",
+      "why": "freelance/contract roles only (type 'Contract'); never student roles"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "key": "immuta",
+  "name": "Immuta",
+  "careers_url": "https://www.immuta.com/careers",
+  "hiring_system": "lever",
+  "checker": "lever",
+  "settings": {
+    "site": "immuta"
+  },
+  "feed": "GET https://api.lever.co/v0/postings/immuta?mode=json",
+  "feed_total": 14,
+  "page_total": 14,
+  "page_total_how": "Playwright render of https://www.immuta.com/careers#open-positions: the page fetches api.lever.co/v0/postings/immuta?mode=json&group=department (14 postings) and shows 14 job links plus a hard-coded 'Don't see a job for you?' link",
+  "intern_total": 5,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (Allow: /; api.lever.co/robots.txt asks Crawl-delay: 1)",
+  "notes": "Plain Lever site; commitment 'Intern' marks the 5 Summer 2027 internships.",
+  "checked_at": "2026-10-20T00:40:06Z"
+}

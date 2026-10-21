@@ -1,0 +1,23 @@
+{
+  "key": "remitly",
+  "name": "Remitly",
+  "careers_url": "https://careers.remitly.com/job-search-results/",
+  "hiring_system": "workday (tenant remitly, wd5; careers.remitly.com is a Symphony Talent CWS/WordPress site fed from it)",
+  "checker": "workday",
+  "settings": {
+    "host": "remitly.wd5.myworkdayjobs.com",
+    "tenant": "remitly",
+    "sites": ["Remitly_Careers", "Friends_Family_Intern"]
+  },
+  "feed": "POST https://remitly.wd5.myworkdayjobs.com/wday/cxs/remitly/{Remitly_Careers,Friends_Family_Intern}/jobs (limit 20, offset paging; 8 pages + 1)",
+  "feed_total": 156,
+  "page_total": 147,
+  "page_total_how": "The careers page renders its list client-side from Symphony Talent's API GET https://jobsapi-google.m-cloud.io/api/job/search?companyName=companies/c9a5233b-7164-44d2-98df-974dcaa42789&customAttributeFilter=is_internal=\"Remitly_Careers\" (the call seen in the Playwright capture); with no query it returns totalHits 147 (2 pages of 100 fetched, 147 refs). Workday CXS: Remitly_Careers 156 + Friends_Family_Intern 0.",
+  "intern_total": 2,
+  "status": "verified",
+  "robots": "ALLOW (no matching rule; robots.txt allows /Remitly_Careers/ and /Friends_Family_Intern/, disallows /refreshFacet/)",
+  "notes": "Difference 156 vs 147 explained by requisition ids: 10 Workday postings (all 'Posted 30+ Days Ago') are missing from the marketing index and 1 site posting (R_106784) is no longer in Workday; Workday is complete and current. Site job ids (/job/23935109/intern/) map to Workday refs via the API's 'ref' (R_106984). Friends_Family_Intern is an intern referral site, empty today.",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-20T03:25:00Z"
+}

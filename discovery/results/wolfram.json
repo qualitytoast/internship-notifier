@@ -1,0 +1,23 @@
+{
+  "key": "wolfram",
+  "name": "Wolfram",
+  "careers_url": "https://www.wolfram.com/company/careers/opportunities/",
+  "hiring_system": "recruiterbox (Trakstar Hire) careers widget, client id 42716",
+  "checker": "custom:recruiterbox",
+  "settings": {
+    "list_url": "https://app.recruiterbox.com/widget/42716/openings/",
+    "job_url": "https://www.wolfram.com/company/careers/opportunities/#op-{id}-{slug}",
+    "slug": "title.lower() -> remove '-' -> runs of whitespace to '-' -> remove [^a-z0-9-] (widget's sluggify)"
+  },
+  "feed": "GET https://app.recruiterbox.com/widget/42716/openings/",
+  "feed_total": 7,
+  "page_total": 7,
+  "page_total_how": "Playwright render of the opportunities page: the Recruiterbox widget lists 5 'Career Opportunities' + 2 'Programs' = 7 #op-<id>-<slug> links, the same 7 ids as the feed (the page makes exactly this call).",
+  "intern_total": 1,
+  "status": "needs-custom",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (app.recruiterbox.com: Allow: /)",
+  "notes": "One GET returns a plain JSON array of all openings (no paging, no auth, no total field). The only student item is 'Wolfram Student Ambassador Initiative' (team Programs; a student programme, not an internship). Wolfram's students page says internships are posted in this same widget. See notes/wolfram.md.",
+  "checked_at": "2026-10-20T00:37:53Z"
+}

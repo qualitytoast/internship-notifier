@@ -1,0 +1,315 @@
+{
+ "_note": "captured 2026-10-20 (UTC); trimmed: first N jobPostings of offset 0 plus the facets block, other pages omitted",
+ "broadbean_external": {
+  "request": "POST https://cccis.wd1.myworkdayjobs.com/wday/cxs/cccis/broadbean_external/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":0,\"searchText\":\"\"}",
+  "response": {
+   "total": 35,
+   "jobPostings": [
+    {
+     "title": "Client Solutions Advisor",
+     "externalPath": "/job/Chicago-Green-St-IL/Client-Solutions-Advisor_0014986",
+     "locationsText": "Chicago (Green St), IL",
+     "postedOn": "Posted Today",
+     "remoteType": "Remote with 75% or more travel",
+     "bulletFields": [
+      "0014986"
+     ]
+    },
+    {
+     "title": "Agentic Product Manager",
+     "externalPath": "/job/Chicago-Green-St-IL/Agentic-Product-Manager_0014990",
+     "locationsText": "2 Locations",
+     "postedOn": "Posted Today",
+     "remoteType": "Hybrid",
+     "bulletFields": [
+      "0014990"
+     ]
+    },
+    {
+     "title": "Product Client Success Manager (Fraud/Payments)",
+     "externalPath": "/job/Virtual-USA/Product-Client-Success-Manager--Fraud-Payments-_0014952-1",
+     "locationsText": "Virtual, USA",
+     "postedOn": "Posted 4 Days Ago",
+     "remoteType": "Remote with 30% travel or less",
+     "bulletFields": [
+      "0014952"
+     ]
+    },
+    {
+     "title": "Technical Product Documentation Specialist",
+     "externalPath": "/job/Chicago-Green-St-IL/Techical-Product-Documentation-Specialist_0014974",
+     "locationsText": "Chicago (Green St), IL",
+     "postedOn": "Posted 5 Days Ago",
+     "remoteType": "Hybrid",
+     "bulletFields": [
+      "0014974"
+     ]
+    },
+    {
+     "title": "Lead, Product Documentation and Knowledge Operations",
+     "externalPath": "/job/Chicago-Green-St-IL/Lead--Product-Documentation-and-Knowledge-Operations_0014975",
+     "locationsText": "2 Locations",
+     "postedOn": "Posted 5 Days Ago",
+     "remoteType": "Hybrid",
+     "bulletFields": [
+      "0014975"
+     ]
+    },
+    {
+     "title": "Vehicle Inventory Rep & Auditor",
+     "externalPath": "/job/Savannah-GA/Vehicle-Inventory-Rep---Auditor_0014979",
+     "locationsText": "Savannah, GA",
+     "postedOn": "Posted 5 Days Ago",
+     "remoteType": "Remote with 75% or more travel",
+     "bulletFields": [
+      "0014979"
+     ]
+    }
+   ],
+   "facets": [
+    {
+     "facetParameter": "JobFamilyGroup",
+     "descriptor": "Job Category",
+     "values": [
+      {
+       "descriptor": "Operations",
+       "id": "d2044f38ceca0199dec6acfcbd017a95",
+       "count": 10
+      },
+      {
+       "descriptor": "Corporate Staff",
+       "id": "d2044f38ceca010504c130efbd017295",
+       "count": 8
+      },
+      {
+       "descriptor": "Technology",
+       "id": "d2044f38ceca01914e44c60cbe017f95",
+       "count": 7
+      },
+      {
+       "descriptor": "Sales",
+       "id": "d2044f38ceca018ebc52a106be017d95",
+       "count": 6
+      },
+      {
+       "descriptor": "Client Service and Support",
+       "id": "d2044f38ceca014946a1e6d9bd016895",
+       "count": 4
+      }
+     ]
+    },
+    {
+     "facetParameter": "JobFamily",
+     "descriptor": "Job Families",
+     "values": [
+      {
+       "descriptor": "Field Inventory Rep",
+       "id": "7beb04681bea01f10fba3638be01ad9f",
+       "count": 7
+      },
+      {
+       "descriptor": "Product Management",
+       "id": "7beb04681bea01d4b1497238be01bf9f",
+       "count": 5
+      },
+      {
+       "descriptor": "Outside Sales",
+       "id": "7beb04681bea0175f7b6eb37be01979f",
+       "count": 4
+      },
+      {
+       "descriptor": "Customer Support",
+       "id": "7beb04681bea01a58d7a0038be019d9f",
+       "count": 4
+      },
+      {
+       "descriptor": "Analyst",
+       "id": "7beb04681bea01f18b8d1c38be01a59f",
+       "count": 3
+      },
+      {
+       "descriptor": "Tech Analyst",
+       "id": "7beb04681bea0194c5479337be017d9f",
+       "count": 2
+      },
+      {
+       "descriptor": "Systems Engineer",
+       "id": "7beb04681bea015b4470a137be01819f",
+       "count": 2
+      },
+      {
+       "descriptor": "Software Engineer",
+       "id": "7beb04681bea011296b59a37be017f9f",
+       "count": 2
+      },
+      {
+       "descriptor": "Consulting",
+       "id": "7beb04681bea01b9a356f237be01999f",
+       "count": 2
+      },
+      {
+       "descriptor": "Tech Designer",
+       "id": "7beb04681bea018bb183b437be01879f",
+       "count": 1
+      },
+      {
+       "descriptor": "Strategy/Development",
+       "id": "7beb04681bea0126a8626538be01bb9f",
+       "count": 1
+      },
+      {
+       "descriptor": "Marketing",
+       "id": "7beb04681bea01b910156c38be01bd9f",
+       "count": 1
+      },
+      {
+       "descriptor": "Human Resources",
+       "id": "7beb04681bea01629a805838be01b79f",
+       "count": 1
+      },
+      {
+       "descriptor": "Architect",
+       "id": "7beb04681bea015bb6afa737be01839f",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "timeType",
+     "descriptor": "Time Type",
+     "values": [
+      {
+       "descriptor": "Full time",
+       "id": "1c14fcc8432c10cb3a1146a38f3c9fd2",
+       "count": 28
+      },
+      {
+       "descriptor": "Part time",
+       "id": "1c14fcc8432c10cb3a11468cca9b9fd1",
+       "count": 7
+      }
+     ]
+    },
+    {
+     "facetParameter": "remoteType",
+     "descriptor": "Remote Type",
+     "values": [
+      {
+       "descriptor": "Hybrid",
+       "id": "5d01828c2c3110015d55d9f67fd50000",
+       "count": 14
+      },
+      {
+       "descriptor": "Remote with 75% or more travel",
+       "id": "4695e395b2c71001bae5333895450000",
+       "count": 9
+      },
+      {
+       "descriptor": "Remote with 30% travel or less",
+       "id": "5d01828c2c3110015d55db2bb92e0000",
+       "count": 4
+      },
+      {
+       "descriptor": "Remote with 50-75% travel",
+       "id": "5d01828c2c3110015d55db2bb92e0002",
+       "count": 3
+      },
+      {
+       "descriptor": "Remote",
+       "id": "5d01828c2c3110015d55da90946e0001",
+       "count": 2
+      },
+      {
+       "descriptor": "On Site",
+       "id": "5d01828c2c3110015d55da90946e0000",
+       "count": 2
+      },
+      {
+       "descriptor": "Remote with 30-50% travel",
+       "id": "5d01828c2c3110015d55db2bb92e0001",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "locationMainGroup",
+     "values": [
+      {
+       "facetParameter": "locations",
+       "descriptor": "Locations",
+       "values": [
+        {
+         "descriptor": "Bryan, TX",
+         "id": "59589de46fcc1001149ac0b0bb850000",
+         "count": 1
+        },
+        {
+         "descriptor": "Cerritos, CA",
+         "id": "1c14fcc8432c10cb78e3c181a03985b3",
+         "count": 1
+        },
+        {
+         "descriptor": "Chicago (Green St), IL",
+         "id": "112bdda335fc01bb9d3e403e0402650d",
+         "count": 28
+        },
+        {
+         "descriptor": "Davenport, IA",
+         "id": "5ec45b8fe17f01663472f2bb6401ff7e",
+         "count": 2
+        },
+        {
+         "descriptor": "Des Moines, IA",
+         "id": "90e8d26ddc6301563e565b96167885da",
+         "count": 1
+        },
+        {
+         "descriptor": "Miami, FL",
+         "id": "d20a0afb5b0510010a63dfe142d90000",
+         "count": 1
+        },
+        {
+         "descriptor": "Nashville, TN",
+         "id": "c888696c9ab41001a21d573b70b00000",
+         "count": 1
+        },
+        {
+         "descriptor": "New York, NY",
+         "id": "6bd43b302d741001fa73f77819b90000",
+         "count": 4
+        },
+        {
+         "descriptor": "Savannah, GA",
+         "id": "e767670d5d45017306aa3b4fb57aea94",
+         "count": 1
+        },
+        {
+         "descriptor": "Spartanburg, SC",
+         "id": "f47435563a6d10010e93f4a6f53e0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Tampa, FL",
+         "id": "5d69027eaf780143263b76cf65ad4183",
+         "count": 1
+        },
+        {
+         "descriptor": "Virtual, USA",
+         "id": "90e8d26ddc6301bec6aec69a8978c087",
+         "count": 7
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "CCCIS": {
+  "request": "POST https://cccis.wd1.myworkdayjobs.com/wday/cxs/cccis/CCCIS/jobs",
+  "response": {
+   "total": 0,
+   "jobPostings": []
+  }
+ }
+}

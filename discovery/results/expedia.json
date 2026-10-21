@@ -1,0 +1,23 @@
+{
+  "key": "expedia",
+  "name": "Expedia Group",
+  "careers_url": "https://careers.expediagroup.com/jobs/",
+  "hiring_system": "workday (tenant expedia, wd108, site search) behind a WordPress/Cloudflare careers site",
+  "checker": "workday",
+  "settings": {
+    "host": "expedia.wd108.myworkdayjobs.com",
+    "tenant": "expedia",
+    "site": "search"
+  },
+  "feed": "POST https://expedia.wd108.myworkdayjobs.com/wday/cxs/expedia/search/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 166,
+  "page_total": 166,
+  "page_total_how": "Re-checked 2026-10-20: Playwright render of https://expedia.wd108.myworkdayjobs.com/search showed '166 JOBS FOUND' = checker",
+  "intern_total": 5,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW CXS /wday/cxs/expedia/search/jobs (no matching rule; Allow: /search/); careers.expediagroup.com is Cloudflare-challenged for httpx, Crawl-delay 10, and Disallow: /calc-results/ (its Load-More endpoint)",
+  "notes": "Only public Workday site is 'search' (the one robots.txt lists; careers-site Apply links all go there). Never use the careers site: per-location duplicates, stale entries, Cloudflare, and its load-more API is robots-disallowed. Interns: 5 x 2027 (Seattle/Austin/San Jose).",
+  "checked_at": "2026-10-20T15:30:00Z"
+}

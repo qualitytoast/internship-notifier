@@ -1,0 +1,23 @@
+{
+  "key": "postman",
+  "name": "Postman",
+  "careers_url": "https://www.postman.com/company/careers/open-positions/",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "postman.wd108.myworkdayjobs.com",
+    "tenant": "postman",
+    "site": "careers"
+  },
+  "feed": "POST https://postman.wd108.myworkdayjobs.com/wday/cxs/postman/careers/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 25,
+  "page_total": 25,
+  "page_total_how": "Playwright render of https://www.postman.com/company/careers/open-positions/ (2026-10-19T23:50Z) showed '25 jobs found'; its data file /_mk-www-next/api-cache/careers-jobs.json (meta.source 'workday_cxs', meta.total 25) has the same 25 JR ids as Workday; CXS re-checked 2026-10-20T00:27Z: total 25.",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule on postman.wd108.myworkdayjobs.com)",
+  "notes": "Greenhouse 'postman' does not exist (404). postman.com shows a cached copy of Workday CXS (careers-jobs.json, meta.updated_at 2026-10-17), so poll Workday directly.",
+  "checked_at": "2026-10-20T00:28:00Z"
+}

@@ -1,0 +1,1521 @@
+{
+ "_note": "captured 2026-10-20 (UTC); trimmed: first N jobPostings of offset 0 plus the facets block, other pages omitted",
+ "External-Rockwell-Automation-Early-Careers": {
+  "request": "POST https://rockwellautomation.wd1.myworkdayjobs.com/wday/cxs/rockwellautomation/External-Rockwell-Automation-Early-Careers/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":0,\"searchText\":\"\"}",
+  "response": {
+   "total": 29,
+   "jobPostings": [
+    {
+     "title": "Intern, Technical Sales & Consulting (USA)",
+     "externalPath": "/job/Milwaukee-Wisconsin-United-States/Intern--Technical-Sales---Consulting--USA-_R26-5962-1",
+     "locationsText": "27 Locations",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "R26-5962"
+     ]
+    },
+    {
+     "title": "Intern, Firmware Engineering",
+     "externalPath": "/job/Milwaukee-Wisconsin-United-States/Intern--Firmware-Engineering_R26-7922",
+     "locationsText": "Milwaukee, Wisconsin, United States",
+     "postedOn": "Posted 3 Days Ago",
+     "bulletFields": [
+      "R26-7922"
+     ]
+    },
+    {
+     "title": "Intern, Customer Success Professional",
+     "externalPath": "/job/Milwaukee-Wisconsin-United-States/Intern--Customer-Success-Professional_R26-7068-2",
+     "locationsText": "Milwaukee, Wisconsin, United States",
+     "postedOn": "Posted 3 Days Ago",
+     "bulletFields": [
+      "R26-7068"
+     ]
+    },
+    {
+     "title": "Co-op, Electrical Engineer (June - Dec 2027)",
+     "externalPath": "/job/Chelmsford-Massachusetts-United-States/Co-op--Electrical-Engineer--June---Dec-2027-_R26-7706",
+     "locationsText": "Chelmsford, Massachusetts, United States",
+     "postedOn": "Posted 5 Days Ago",
+     "bulletFields": [
+      "R26-7706"
+     ]
+    },
+    {
+     "title": "Intern, Test Engineering (Milwaukee, WI)",
+     "externalPath": "/job/Milwaukee-Wisconsin-United-States/Intern--Test-Engineering--Milwaukee--WI-_R26-7553",
+     "locationsText": "Milwaukee, Wisconsin, United States",
+     "postedOn": "Posted 5 Days Ago",
+     "bulletFields": [
+      "R26-7553"
+     ]
+    },
+    {
+     "title": "Co-op, Hardware Development Engineer (June - Dec 2027)",
+     "externalPath": "/job/Mayfield-Heights-Ohio-United-States/Co-op--Hardware-Development-Engineer--June---Dec-2027-_R26-6891",
+     "locationsText": "Mayfield Heights, Ohio, United States",
+     "postedOn": "Posted 5 Days Ago",
+     "bulletFields": [
+      "R26-6891"
+     ]
+    }
+   ],
+   "facets": [
+    {
+     "facetParameter": "jobFamilyGroup",
+     "descriptor": "Job Category",
+     "values": [
+      {
+       "descriptor": "BUSINESS MANAGEMENT & ADMINISTRATION GROUP",
+       "id": "9dab781c83260136ada714d4ba02eb19",
+       "count": 23
+      },
+      {
+       "descriptor": "MARKETING & SALES GROUP",
+       "id": "9dab781c832601e13fae15d4ba02f319",
+       "count": 4
+      },
+      {
+       "descriptor": "SOFTWARE GROUP",
+       "id": "9dab781c832601a3ebe416d4ba02fb19",
+       "count": 1
+      },
+      {
+       "descriptor": "OPERATIONS & MANUFACTURING GROUP",
+       "id": "9dab781c832601d0571416d4ba02f519",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "timeType",
+     "descriptor": "Time Type",
+     "values": [
+      {
+       "descriptor": "Full time",
+       "id": "6e71e0aa4124010e18da383114095a00",
+       "count": 28
+      },
+      {
+       "descriptor": "Part time",
+       "id": "6e71e0aa412401b962c6383114095900",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "locationMainGroup",
+     "values": [
+      {
+       "facetParameter": "locationCountry",
+       "descriptor": "Country",
+       "values": [
+        {
+         "descriptor": "Canada",
+         "id": "a30a87ed25634629aa6c3958aa2b91ea",
+         "count": 4
+        },
+        {
+         "descriptor": "India",
+         "id": "c4f78be1a8f14da0ab49ce1162348a5e",
+         "count": 1
+        },
+        {
+         "descriptor": "United States of America",
+         "id": "bc33aa3152ec42d4995f4791a106ed09",
+         "count": 23
+        }
+       ]
+      },
+      {
+       "facetParameter": "locations",
+       "descriptor": "City",
+       "values": [
+        {
+         "descriptor": "Appleton, Wisconsin, United States",
+         "id": "9dab781c83260159fb704e1ffe0233c6",
+         "count": 2
+        },
+        {
+         "descriptor": "Atlanta, Georgia, United States",
+         "id": "9dab781c832601495ea6541ffe0247c6",
+         "count": 2
+        },
+        {
+         "descriptor": "Brampton, Ontario, Canada",
+         "id": "9dab781c8326018ef24e731ffe02bac6",
+         "count": 3
+        },
+        {
+         "descriptor": "Calgary, Alberta, Canada",
+         "id": "9dab781c8326017d6ce18b23fe0224d5",
+         "count": 3
+        },
+        {
+         "descriptor": "Cambridge, Ontario, Canada",
+         "id": "9dab781c8326015cd62b8d23fe0229d5",
+         "count": 3
+        },
+        {
+         "descriptor": "Charlotte, North Carolina, United States",
+         "id": "9dab781c83260129f207a123fe0274d5",
+         "count": 2
+        },
+        {
+         "descriptor": "Chelmsford, Massachusetts, United States",
+         "id": "9dab781c832601d0b7e3a623fe0288d5",
+         "count": 3
+        },
+        {
+         "descriptor": "Chicago, Illinois, United States",
+         "id": "9dab781c8326012cd4fb4a21fe0254cd",
+         "count": 2
+        },
+        {
+         "descriptor": "Cincinnati, Ohio, United States",
+         "id": "9dab781c8326013f1b5b5121fe026dcd",
+         "count": 2
+        },
+        {
+         "descriptor": "Dallas, Texas, United States",
+         "id": "9dab781c832601f09a3c7f1ffe02e7c6",
+         "count": 2
+        },
+        {
+         "descriptor": "Delta, British Columbia, Canada",
+         "id": "9dab781c832601a492e8861ffe0205c7",
+         "count": 2
+        },
+        {
+         "descriptor": "Denver, Colorado, United States",
+         "id": "9dab781c832601c37f87881ffe020ac7",
+         "count": 2
+        },
+        {
+         "descriptor": "East Setauket, New York, United States",
+         "id": "9dab781c8326016326c0961ffe0241c7",
+         "count": 1
+        },
+        {
+         "descriptor": "Eden Prairie, Minnesota, United States",
+         "id": "9dab781c8326018ded27981ffe0246c7",
+         "count": 2
+        },
+        {
+         "descriptor": "Edmonton, Alberta, Canada",
+         "id": "9dab781c832601b6b2109c1ffe0255c7",
+         "count": 2
+        },
+        {
+         "descriptor": "Houston, Texas, United States",
+         "id": "9dab781c8326019253f3d21ffe020ec8",
+         "count": 2
+        },
+        {
+         "descriptor": "India Mumbai",
+         "id": "9dab781c8326013e51d38321fe0226ce",
+         "count": 1
+        },
+        {
+         "descriptor": "Kalamazoo, Michigan, United States",
+         "id": "9dab781c8326013e4007e91ffe0263c8",
+         "count": 2
+        },
+        {
+         "descriptor": "Kansas City, Kansas, United States",
+         "id": "9dab781c83260121c53eec1ffe026dc8",
+         "count": 2
+        },
+        {
+         "descriptor": "Ladysmith, Wisconsin, United States",
+         "id": "9dab781c83260197efe4ff1ffe02b8c8",
+         "count": 2
+        },
+        {
+         "descriptor": "Los Angeles, California, United States",
+         "id": "9dab781c832601db76601620fe020dc9",
+         "count": 2
+        },
+        {
+         "descriptor": "Louisville, Kentucky, United States",
+         "id": "9dab781c832601aa61bd1720fe0212c9",
+         "count": 2
+        },
+        {
+         "descriptor": "Mayfield Heights, Ohio, United States",
+         "id": "9dab781c832601ffc7262520fe0244c9",
+         "count": 12
+        },
+        {
+         "descriptor": "Mequon, Wisconsin, United States",
+         "id": "9dab781c83260129c3fb2820fe0253c9",
+         "count": 4
+        },
+        {
+         "descriptor": "Middleton, Wisconsin, United States",
+         "id": "9dab781c832601fe88942b20fe025dc9",
+         "count": 1
+        },
+        {
+         "descriptor": "Milwaukee, Wisconsin, United States",
+         "id": "9dab781c832601e1ffb72f20fe026cc9",
+         "count": 14
+        },
+        {
+         "descriptor": "Nashville, Tennessee, United States",
+         "id": "9dab781c8326010fc7c04e20fe02cbc9",
+         "count": 2
+        },
+        {
+         "descriptor": "Parsippany, New Jersey, United States",
+         "id": "9dab781c832601fcb5c25f20fe020cca",
+         "count": 2
+        },
+        {
+         "descriptor": "Philadelphia, Pennsylvania, United States",
+         "id": "9dab781c832601b131d46420fe0220ca",
+         "count": 2
+        },
+        {
+         "descriptor": "Portland, Maine, United States",
+         "id": "9dab781c8326017c8c516a20fe0234ca",
+         "count": 2
+        },
+        {
+         "descriptor": "Portland, Oregon, United States",
+         "id": "9dab781c8326017f90936b20fe0239ca",
+         "count": 2
+        },
+        {
+         "descriptor": "Richland Center, Wisconsin, United States",
+         "id": "9dab781c832601f0adb88120fe028eca",
+         "count": 3
+        },
+        {
+         "descriptor": "San Francisco, California, United States",
+         "id": "9dab781c8326019919fa9c20fe02f7ca",
+         "count": 2
+        },
+        {
+         "descriptor": "St Louis, Missouri, United States",
+         "id": "9dab781c83260149d700c120fe026acb",
+         "count": 2
+        },
+        {
+         "descriptor": "Toronto, Ontario, Canada",
+         "id": "9dab781c832601789783d920fe02c4cb",
+         "count": 1
+        },
+        {
+         "descriptor": "Troy, Michigan, United States",
+         "id": "915bdde1888010010ea2ccb750f00000",
+         "count": 2
+        },
+        {
+         "descriptor": "Twinsburg, Ohio, United States",
+         "id": "9dab781c832601da4fbddf20fe02ddcb",
+         "count": 4
+        },
+        {
+         "descriptor": "United States of America Milwaukee (South 2nd Street)",
+         "id": "9dab781c83260119b930f022fe02fed2",
+         "count": 2
+        },
+        {
+         "descriptor": "United States of America Santa Ana",
+         "id": "9dab781c83260143b37a3a23fe02f8d3",
+         "count": 1
+        },
+        {
+         "descriptor": "Waterloo, Ontario, Canada",
+         "id": "f15b7d3132581001a0a3956e46020000",
+         "count": 1
+        },
+        {
+         "descriptor": "Weston, Florida, United States",
+         "id": "9dab781c83260169497af720fe0237cc",
+         "count": 2
+        },
+        {
+         "descriptor": "Whitestown, Indiana, United States",
+         "id": "9dab781c83260195f3fff920fe0241cc",
+         "count": 1
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "External_Rockwell_Automation": {
+  "request": "POST https://rockwellautomation.wd1.myworkdayjobs.com/wday/cxs/rockwellautomation/External_Rockwell_Automation/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":0,\"searchText\":\"\"}",
+  "response": {
+   "total": 416,
+   "jobPostings": [
+    {
+     "title": "HR Generalist",
+     "externalPath": "/job/Artegna-Italy/HR-Generalist_R26-6907-1",
+     "locationsText": "Artegna, Italy",
+     "postedOn": "Posted 3 Days Ago",
+     "bulletFields": [
+      "R26-6907"
+     ]
+    },
+    {
+     "title": "Staff Firmware Security Engineer",
+     "externalPath": "/job/Singapore-Singapore/Staff-Firmware-Security-Engineer_R26-7669",
+     "locationsText": "Singapore, Singapore",
+     "postedOn": "Posted 5 Days Ago",
+     "bulletFields": [
+      "R26-7669"
+     ]
+    },
+    {
+     "title": "Industrial Engineer",
+     "externalPath": "/job/India-Kancheepuram/Industrial-Engineer_R26-5948",
+     "locationsText": "India Kancheepuram",
+     "postedOn": "Posted 30+ Days Ago",
+     "bulletFields": [
+      "R26-5948"
+     ]
+    },
+    {
+     "title": "Portfolio Marketing Manager",
+     "externalPath": "/job/Milwaukee-Wisconsin-United-States/Portfolio-Marketing-Manager_R26-5639-1",
+     "locationsText": "Milwaukee, Wisconsin, United States",
+     "postedOn": "Posted Today",
+     "bulletFields": [
+      "R26-5639"
+     ]
+    }
+   ],
+   "facets": [
+    {
+     "facetParameter": "jobFamilyGroup",
+     "descriptor": "Job Category",
+     "values": [
+      {
+       "descriptor": "OPERATIONS & MANUFACTURING GROUP",
+       "id": "9dab781c832601d0571416d4ba02f519",
+       "count": 133
+      },
+      {
+       "descriptor": "SOFTWARE GROUP",
+       "id": "9dab781c832601a3ebe416d4ba02fb19",
+       "count": 70
+      },
+      {
+       "descriptor": "MARKETING & SALES GROUP",
+       "id": "9dab781c832601e13fae15d4ba02f319",
+       "count": 58
+      },
+      {
+       "descriptor": "PROFESSIONAL SERVICES GROUP",
+       "id": "9dab781c8326010a889d16d4ba02f919",
+       "count": 43
+      },
+      {
+       "descriptor": "BUSINESS MANAGEMENT & ADMINISTRATION GROUP",
+       "id": "9dab781c83260136ada714d4ba02eb19",
+       "count": 42
+      },
+      {
+       "descriptor": "PRODUCT DEVELOPMENT GROUP",
+       "id": "9dab781c8326017fe75716d4ba02f719",
+       "count": 33
+      },
+      {
+       "descriptor": "INFORMATION TECHNOLOGY GROUP",
+       "id": "9dab781c8326014b712915d4ba02ef19",
+       "count": 16
+      },
+      {
+       "descriptor": "HUMAN RESOURCES GROUP",
+       "id": "9dab781c8326011db1e914d4ba02ed19",
+       "count": 10
+      },
+      {
+       "descriptor": "FINANCE & ACCOUNTING GROUP",
+       "id": "9dab781c832601b8490f14d4ba02e919",
+       "count": 10
+      },
+      {
+       "descriptor": "OFFICE OF GENERAL COUNSEL GROUP",
+       "id": "9dab781c8326016c606c15d4ba02f119",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "facetParameter": "timeType",
+     "descriptor": "Time Type",
+     "values": [
+      {
+       "descriptor": "Full time",
+       "id": "6e71e0aa4124010e18da383114095a00",
+       "count": 412
+      },
+      {
+       "descriptor": "Part time",
+       "id": "6e71e0aa412401b962c6383114095900",
+       "count": 4
+      }
+     ]
+    },
+    {
+     "facetParameter": "locationMainGroup",
+     "values": [
+      {
+       "facetParameter": "locationCountry",
+       "descriptor": "Country",
+       "values": [
+        {
+         "descriptor": "Argentina",
+         "id": "e42ad5eac46d4cc9b367ceaef42577c5",
+         "count": 2
+        },
+        {
+         "descriptor": "Australia",
+         "id": "d903bb3fedad45039383f6de334ad4db",
+         "count": 5
+        },
+        {
+         "descriptor": "Belgium",
+         "id": "a04ea128f43a42e59b1e6a19e8f0b374",
+         "count": 4
+        },
+        {
+         "descriptor": "Brazil",
+         "id": "1a29bb1357b240ab99a2fa755cc87c0e",
+         "count": 8
+        },
+        {
+         "descriptor": "Canada",
+         "id": "a30a87ed25634629aa6c3958aa2b91ea",
+         "count": 21
+        },
+        {
+         "descriptor": "Chile",
+         "id": "53fe09ef12b9408682a1d2439823f2e0",
+         "count": 2
+        },
+        {
+         "descriptor": "China",
+         "id": "6cb77610a8a543aea2d6bc10457e35d4",
+         "count": 9
+        },
+        {
+         "descriptor": "Colombia",
+         "id": "e8106cd6a3534f2dba6fdee2d41db89d",
+         "count": 17
+        },
+        {
+         "descriptor": "Czechia",
+         "id": "fc078443155c4ad294201ecf5a61a499",
+         "count": 4
+        },
+        {
+         "descriptor": "Denmark",
+         "id": "49ab063f422741e2aef271de00efeac8",
+         "count": 8
+        },
+        {
+         "descriptor": "Dominican Republic",
+         "id": "cec6aab2cee74a53a21629cd61000ea5",
+         "count": 4
+        },
+        {
+         "descriptor": "France",
+         "id": "54c5b6971ffb4bf0b116fe7651ec789a",
+         "count": 5
+        },
+        {
+         "descriptor": "Germany",
+         "id": "dcc5b7608d8644b3a93716604e78e995",
+         "count": 2
+        },
+        {
+         "descriptor": "India",
+         "id": "c4f78be1a8f14da0ab49ce1162348a5e",
+         "count": 55
+        },
+        {
+         "descriptor": "Israel",
+         "id": "084562884af243748dad7c84c304d89a",
+         "count": 1
+        },
+        {
+         "descriptor": "Italy",
+         "id": "8cd04a563fd94da7b06857a79faaf815",
+         "count": 8
+        },
+        {
+         "descriptor": "Japan",
+         "id": "8b705da2becf43cfaccc091da0988ab2",
+         "count": 5
+        },
+        {
+         "descriptor": "Korea, Republic of",
+         "id": "7a5a2aadf9d34086a2bfbfd408bc28da",
+         "count": 1
+        },
+        {
+         "descriptor": "Malaysia",
+         "id": "972dc4ba8d454bc0b893ff84b1529077",
+         "count": 3
+        },
+        {
+         "descriptor": "Mexico",
+         "id": "e2adff9272454660ac4fdb56fc70bb51",
+         "count": 49
+        },
+        {
+         "descriptor": "Morocco",
+         "id": "7aaca3f6fc774f16802a4df4718a5b53",
+         "count": 1
+        },
+        {
+         "descriptor": "Netherlands",
+         "id": "9696868b09c64d52a62ee13b052383cc",
+         "count": 7
+        },
+        {
+         "descriptor": "New Zealand",
+         "id": "55273a1b49934d97ae15342ef51f6b95",
+         "count": 1
+        },
+        {
+         "descriptor": "Peru",
+         "id": "0eb156ca580c4db786a7894bdaa77450",
+         "count": 2
+        },
+        {
+         "descriptor": "Poland",
+         "id": "131d5ac7e3ee4d7b962bdc96e498e412",
+         "count": 52
+        },
+        {
+         "descriptor": "Singapore",
+         "id": "80938777cac5440fab50d729f9634969",
+         "count": 22
+        },
+        {
+         "descriptor": "South Africa",
+         "id": "4db3c26940b944919b83612cc1193eed",
+         "count": 2
+        },
+        {
+         "descriptor": "Spain",
+         "id": "bd34c524a6a04ae6915f5d96fa086199",
+         "count": 6
+        },
+        {
+         "descriptor": "Sweden",
+         "id": "6a800a4736884df5826858d435650f45",
+         "count": 1
+        },
+        {
+         "descriptor": "Switzerland",
+         "id": "187134fccb084a0ea9b4b95f23890dbe",
+         "count": 1
+        },
+        {
+         "descriptor": "Taiwan",
+         "id": "a4e08b475d6a4176853c9d1cb9854e02",
+         "count": 1
+        },
+        {
+         "descriptor": "Thailand",
+         "id": "873d0f604e3b458c990cb4d83a5c0f14",
+         "count": 2
+        },
+        {
+         "descriptor": "United Arab Emirates",
+         "id": "7b4fa1f369bd4604ba3692682fcbe345",
+         "count": 1
+        },
+        {
+         "descriptor": "United Kingdom",
+         "id": "29247e57dbaf46fb855b224e03170bc7",
+         "count": 8
+        },
+        {
+         "descriptor": "United States of America",
+         "id": "bc33aa3152ec42d4995f4791a106ed09",
+         "count": 133
+        },
+        {
+         "descriptor": "Venezuela",
+         "id": "635d2e106177441f9100b9d8688fbb39",
+         "count": 4
+        }
+       ]
+      },
+      {
+       "facetParameter": "locations",
+       "descriptor": "City",
+       "values": [
+        {
+         "descriptor": "Aabybro, Denmark",
+         "id": "5792f98d3ab51001b6a6bfb4dcfb0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Aarhus, Denmark",
+         "id": "d7c6ce7f99a5100103c2a3453a880000",
+         "count": 1
+        },
+        {
+         "descriptor": "Abu Dhabi, United Arab Emirates",
+         "id": "9dab781c8326018e4a32381ffe02f7c5",
+         "count": 1
+        },
+        {
+         "descriptor": "Adelaide, South Australia, Australia",
+         "id": "9dab781c8326016acc72391ffe02fcc5",
+         "count": 1
+        },
+        {
+         "descriptor": "Aldridge, England, United Kingdom",
+         "id": "9dab781c83260130fea9f320fe0228cc",
+         "count": 2
+        },
+        {
+         "descriptor": "Appleton, Wisconsin, United States",
+         "id": "9dab781c83260159fb704e1ffe0233c6",
+         "count": 2
+        },
+        {
+         "descriptor": "Argentina Buenos Aires",
+         "id": "9dab781c832601d79e0f8a1efe02aec3",
+         "count": 1
+        },
+        {
+         "descriptor": "Artegna, Italy",
+         "id": "9dab781c83260182f1937e23fe02f2d4",
+         "count": 5
+        },
+        {
+         "descriptor": "Atlanta, Georgia, United States",
+         "id": "9dab781c832601495ea6541ffe0247c6",
+         "count": 5
+        },
+        {
+         "descriptor": "Auckland, New Zealand",
+         "id": "9dab781c832601e28fe2551ffe024cc6",
+         "count": 1
+        },
+        {
+         "descriptor": "Austin, Texas, United States",
+         "id": "9dab781c83260114157f581ffe0256c6",
+         "count": 3
+        },
+        {
+         "descriptor": "Bakersfield, California, United States",
+         "id": "9dab781c8326015180c4591ffe025bc6",
+         "count": 1
+        },
+        {
+         "descriptor": "Ballerup, Denmark",
+         "id": "6097330b5df71000a80af09043a70000",
+         "count": 1
+        },
+        {
+         "descriptor": "Baltimore, Maryland, United States",
+         "id": "9dab781c8326015004215b1ffe0260c6",
+         "count": 1
+        },
+        {
+         "descriptor": "Bangkok, Thailand",
+         "id": "88a81619cc0301e1d2d053d5ae01923a",
+         "count": 2
+        },
+        {
+         "descriptor": "Barcelona, Spain",
+         "id": "9dab781c832601a47be25d1ffe026ac6",
+         "count": 4
+        },
+        {
+         "descriptor": "Beijing, China",
+         "id": "9dab781c8326016c2a6d631ffe027ec6",
+         "count": 1
+        },
+        {
+         "descriptor": "Belgium Brussels",
+         "id": "9dab781c83260131997e991efe02e5c3",
+         "count": 2
+        },
+        {
+         "descriptor": "Belo Horizonte, Minas Gerais, Brazil",
+         "id": "9dab781c832601f621af641ffe0283c6",
+         "count": 1
+        },
+        {
+         "descriptor": "Bengaluru, India",
+         "id": "9dab781c832601b9f1fa651ffe0288c6",
+         "count": 6
+        },
+        {
+         "descriptor": "Birmingham, Alabama, United States",
+         "id": "9dab781c8326014173006b1ffe029cc6",
+         "count": 1
+        },
+        {
+         "descriptor": "Bogota, Colombia",
+         "id": "9dab781c832601b4b54b6f1ffe02abc6",
+         "count": 9
+        },
+        {
+         "descriptor": "Brampton, Ontario, Canada",
+         "id": "9dab781c8326018ef24e731ffe02bac6",
+         "count": 3
+        },
+        {
+         "descriptor": "Brazil Sao Paulo (Verbo Divino)",
+         "id": "9dab781c8326017378aba91efe021cc4",
+         "count": 4
+        },
+        {
+         "descriptor": "Brisbane, Queensland, Australia",
+         "id": "9dab781c832601a559d7751ffe02c4c6",
+         "count": 3
+        },
+        {
+         "descriptor": "British Columbia, Canada",
+         "id": "899347afa7e510015658989d858f0000",
+         "count": 2
+        },
+        {
+         "descriptor": "Brno, Czech Republic",
+         "id": "9dab781c832601f28629771ffe02c9c6",
+         "count": 1
+        },
+        {
+         "descriptor": "Bronderslev, Denmark",
+         "id": "1aa6139748db1001b5e9b2ab3b370000",
+         "count": 7
+        },
+        {
+         "descriptor": "Buenos Aires, Argentina",
+         "id": "9dab781c8326016c345c7b1ffe02d8c6",
+         "count": 1
+        },
+        {
+         "descriptor": "Calgary, Alberta, Canada",
+         "id": "9dab781c8326017d6ce18b23fe0224d5",
+         "count": 6
+        },
+        {
+         "descriptor": "Cambridge, Ontario, Canada",
+         "id": "9dab781c8326015cd62b8d23fe0229d5",
+         "count": 13
+        },
+        {
+         "descriptor": "Canada-Ontario-Remote",
+         "id": "007922fba8a510016288945eed330000",
+         "count": 2
+        },
+        {
+         "descriptor": "Caracas, Capital District, Venezuela",
+         "id": "9dab781c83260128b2749323fe0242d5",
+         "count": 4
+        },
+        {
+         "descriptor": "Casablanca, Morocco",
+         "id": "9dab781c832601e1f7779623fe024cd5",
+         "count": 1
+        },
+        {
+         "descriptor": "Charlotte, North Carolina, United States",
+         "id": "9dab781c83260129f207a123fe0274d5",
+         "count": 2
+        },
+        {
+         "descriptor": "Chelmsford, Massachusetts, United States",
+         "id": "9dab781c832601d0b7e3a623fe0288d5",
+         "count": 6
+        },
+        {
+         "descriptor": "Chennai, India",
+         "id": "9dab781c832601ece07e4821fe024acd",
+         "count": 15
+        },
+        {
+         "descriptor": "Chicago, Illinois, United States",
+         "id": "9dab781c8326012cd4fb4a21fe0254cd",
+         "count": 5
+        },
+        {
+         "descriptor": "Chile Santiago",
+         "id": "9dab781c83260106c29a8e22fe02b9d1",
+         "count": 1
+        },
+        {
+         "descriptor": "China Shanghai (Hongmei)",
+         "id": "9dab781c8326014c79c0b222fe0236d2",
+         "count": 1
+        },
+        {
+         "descriptor": "Cincinnati, Ohio, United States",
+         "id": "9dab781c8326013f1b5b5121fe026dcd",
+         "count": 3
+        },
+        {
+         "descriptor": "Colombia Bogota",
+         "id": "9dab781c832601243deed61efe02a3c4",
+         "count": 1
+        },
+        {
+         "descriptor": "Columbus, Ohio, United States",
+         "id": "9dab781c8326015468f85b21fe0295cd",
+         "count": 1
+        },
+        {
+         "descriptor": "County Down, Northern Ireland, United Kingdom",
+         "id": "9dab781c832601727c775521fe027ccd",
+         "count": 2
+        },
+        {
+         "descriptor": "Czech Republic",
+         "id": "837a21637a151000ffd35027cb950000",
+         "count": 1
+        },
+        {
+         "descriptor": "Czech Republic Prague",
+         "id": "9dab781c832601a75705df1efe02bcc4",
+         "count": 1
+        },
+        {
+         "descriptor": "Dalian, China",
+         "id": "9dab781c83260101ccf27d1ffe02e2c6",
+         "count": 2
+        },
+        {
+         "descriptor": "Dallas, Texas, United States",
+         "id": "9dab781c832601f09a3c7f1ffe02e7c6",
+         "count": 6
+        },
+        {
+         "descriptor": "Delta, British Columbia, Canada",
+         "id": "9dab781c832601a492e8861ffe0205c7",
+         "count": 2
+        },
+        {
+         "descriptor": "Denver, Colorado, United States",
+         "id": "9dab781c832601c37f87881ffe020ac7",
+         "count": 3
+        },
+        {
+         "descriptor": "Detroit, Michigan, United States",
+         "id": "9dab781c8326012814218b1ffe0214c7",
+         "count": 2
+        },
+        {
+         "descriptor": "Dusseldorf, Germany",
+         "id": "9dab781c832601575c86951ffe023cc7",
+         "count": 2
+        },
+        {
+         "descriptor": "East Setauket, New York, United States",
+         "id": "9dab781c8326016326c0961ffe0241c7",
+         "count": 2
+        },
+        {
+         "descriptor": "Eden Prairie, Minnesota, United States",
+         "id": "9dab781c8326018ded27981ffe0246c7",
+         "count": 4
+        },
+        {
+         "descriptor": "Edmonton, Alberta, Canada",
+         "id": "9dab781c832601b6b2109c1ffe0255c7",
+         "count": 3
+        },
+        {
+         "descriptor": "Flemish Region, Belgium",
+         "id": "9dab781c832601d7c1be791ffe02d3c6",
+         "count": 2
+        },
+        {
+         "descriptor": "Gdańsk, Poland",
+         "id": "9dab781c832601c9595dab1ffe0291c7",
+         "count": 5
+        },
+        {
+         "descriptor": "Georgia, United States",
+         "id": "d4b2fa46f72e100185ef294b4a2e0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Gothenburg, Sweden",
+         "id": "9dab781c832601bd05cdb01ffe02a5c7",
+         "count": 1
+        },
+        {
+         "descriptor": "Grande Prairie, Alberta, Canada",
+         "id": "cef6ba6fdeb801c6361c562101020205",
+         "count": 1
+        },
+        {
+         "descriptor": "Guadalajara, Jalisco, Mexico",
+         "id": "9dab781c83260160c010b71ffe02bec7",
+         "count": 1
+        },
+        {
+         "descriptor": "Gurgaon, India",
+         "id": "9dab781c832601dfacabbc1ffe02d2c7",
+         "count": 2
+        },
+        {
+         "descriptor": "Hamilton, New Zealand",
+         "id": "9dab781c832601296da1c01ffe02e1c7",
+         "count": 1
+        },
+        {
+         "descriptor": "Harbin, China",
+         "id": "9dab781c832601e4d47ec91ffe02ebc7",
+         "count": 2
+        },
+        {
+         "descriptor": "Hawthorn, Victoria, Australia",
+         "id": "9dab781c832601ccf015621ffe0279c6",
+         "count": 3
+        },
+        {
+         "descriptor": "Houston, Texas, United States",
+         "id": "9dab781c8326019253f3d21ffe020ec8",
+         "count": 10
+        },
+        {
+         "descriptor": "Hyderabad, India",
+         "id": "9dab781c832601bd2077d51ffe0218c8",
+         "count": 1
+        },
+        {
+         "descriptor": "Illinois, United States",
+         "id": "d4b2fa46f72e100186b177ed122f0000",
+         "count": 1
+        },
+        {
+         "descriptor": "India Chennai OMR",
+         "id": "9dab781c832601f63d887a23fe02e3d4",
+         "count": 2
+        },
+        {
+         "descriptor": "India Kancheepuram",
+         "id": "386cc40441c4100025b512fbe0970000",
+         "count": 1
+        },
+        {
+         "descriptor": "India Kancheepuram (CUBIC Unit-1)",
+         "id": "5792f98d3ab51000a9fae20bdbbb0000",
+         "count": 1
+        },
+        {
+         "descriptor": "India Kancheepuram (CUBIC Unit-2)",
+         "id": "ae2e459a91ef1001fe66f21e1f280000",
+         "count": 1
+        },
+        {
+         "descriptor": "India Mumbai",
+         "id": "9dab781c8326013e51d38321fe0226ce",
+         "count": 1
+        },
+        {
+         "descriptor": "Indiana, United States",
+         "id": "d4b2fa46f72e100186d2b0900f830000",
+         "count": 2
+        },
+        {
+         "descriptor": "Indianapolis, Indiana, United States",
+         "id": "9dab781c8326013ebeb3d61ffe021dc8",
+         "count": 1
+        },
+        {
+         "descriptor": "India New Delhi (Noida)",
+         "id": "9dab781c832601c4d5fd8721fe0235ce",
+         "count": 15
+        },
+        {
+         "descriptor": "India Pune (Mississippi Building)",
+         "id": "9dab781c832601a9cdd68d21fe0249ce",
+         "count": 2
+        },
+        {
+         "descriptor": "Iowa, United States",
+         "id": "6da546e43fff1001874a9d92dd340000",
+         "count": 1
+        },
+        {
+         "descriptor": "Japan Osaka",
+         "id": "9dab781c832601c7cdf6bb21fe02dace",
+         "count": 1
+        },
+        {
+         "descriptor": "Johannesburg, Gauteng, South Africa",
+         "id": "386cc40441c41001e05ca1a663d80000",
+         "count": 1
+        },
+        {
+         "descriptor": "Jundiaí, São Paulo, Brazil",
+         "id": "9dab781c8326016267a4a520fe021acb",
+         "count": 1
+        },
+        {
+         "descriptor": "Kalamazoo, Michigan, United States",
+         "id": "9dab781c8326013e4007e91ffe0263c8",
+         "count": 2
+        },
+        {
+         "descriptor": "Kancheepuram, India",
+         "id": "386cc40441c4100025c855683ff50000",
+         "count": 10
+        },
+        {
+         "descriptor": "Kansas City, Kansas, United States",
+         "id": "9dab781c83260121c53eec1ffe026dc8",
+         "count": 2
+        },
+        {
+         "descriptor": "Katowice, Poland",
+         "id": "9dab781c83260174e09df21ffe0286c8",
+         "count": 45
+        },
+        {
+         "descriptor": "Kiln Farm, England, United Kingdom",
+         "id": "9dab781c832601c168e8f31ffe028bc8",
+         "count": 4
+        },
+        {
+         "descriptor": "Kitchener, Ontario, Canada",
+         "id": "c35d06b9f7351001b603590dcb5d0000",
+         "count": 2
+        },
+        {
+         "descriptor": "Kuala Lumpur, Malaysia",
+         "id": "9dab781c8326018114c9fa1ffe02a4c8",
+         "count": 3
+        },
+        {
+         "descriptor": "Ladysmith, Wisconsin, United States",
+         "id": "9dab781c83260197efe4ff1ffe02b8c8",
+         "count": 6
+        },
+        {
+         "descriptor": "Lille, France",
+         "id": "9dab781c8326013314911020fe02f9c8",
+         "count": 2
+        },
+        {
+         "descriptor": "Lima, Peru",
+         "id": "9dab781c832601dcea2d1220fe02fec8",
+         "count": 1
+        },
+        {
+         "descriptor": "Los Angeles, California, United States",
+         "id": "9dab781c832601db76601620fe020dc9",
+         "count": 3
+        },
+        {
+         "descriptor": "Louisville, Kentucky, United States",
+         "id": "9dab781c832601aa61bd1720fe0212c9",
+         "count": 2
+        },
+        {
+         "descriptor": "Lund, Sweden",
+         "id": "9dab781c832601e4748f1b20fe0221c9",
+         "count": 1
+        },
+        {
+         "descriptor": "Lyon, France",
+         "id": "9dab781c832601ed3fe01c20fe0226c9",
+         "count": 2
+        },
+        {
+         "descriptor": "Madrid, Spain",
+         "id": "9dab781c832601bc7dcf0c20fe02eac8",
+         "count": 3
+        },
+        {
+         "descriptor": "Mayfield Heights, Ohio, United States",
+         "id": "9dab781c832601ffc7262520fe0244c9",
+         "count": 42
+        },
+        {
+         "descriptor": "Medellin, Antioquia, Colombia",
+         "id": "9dab781c832601bf98137c23fe02e8d4",
+         "count": 7
+        },
+        {
+         "descriptor": "Mequon, Wisconsin, United States",
+         "id": "9dab781c83260129c3fb2820fe0253c9",
+         "count": 30
+        },
+        {
+         "descriptor": "Mexico City, Mexico",
+         "id": "9dab781c832601fe06342a20fe0258c9",
+         "count": 19
+        },
+        {
+         "descriptor": "Mexico Monterrey (Camino Vecinal, Plant 1)",
+         "id": "9dab781c8326017aedf5d221fe022fcf",
+         "count": 1
+        },
+        {
+         "descriptor": "Mexico Monterrey (Torre Aurum)",
+         "id": "9dab781c832601029faed521fe0239cf",
+         "count": 3
+        },
+        {
+         "descriptor": "Mexico Zapopan",
+         "id": "9dab781c832601b5414ce321fe026bcf",
+         "count": 1
+        },
+        {
+         "descriptor": "Michigan, United States",
+         "id": "d4b2fa46f72e10018812401924b20000",
+         "count": 2
+        },
+        {
+         "descriptor": "Middleton, Wisconsin, United States",
+         "id": "9dab781c832601fe88942b20fe025dc9",
+         "count": 1
+        },
+        {
+         "descriptor": "Milano, Italy",
+         "id": "2c1899e2e7d4018cb5f4bbe35901c854",
+         "count": 1
+        },
+        {
+         "descriptor": "Milwaukee, Wisconsin, United States",
+         "id": "9dab781c832601e1ffb72f20fe026cc9",
+         "count": 60
+        },
+        {
+         "descriptor": "Minneapolis, Minnesota, United States",
+         "id": "9dab781c8326015f51fd3020fe0271c9",
+         "count": 1
+        },
+        {
+         "descriptor": "Minnesota, United States",
+         "id": "d4b2fa46f72e10018836697ba0220000",
+         "count": 1
+        },
+        {
+         "descriptor": "Monterrey, Nuevo Leon, Mexico",
+         "id": "9dab781c832601641c043620fe0285c9",
+         "count": 23
+        },
+        {
+         "descriptor": "Munster, Indiana, United States",
+         "id": "9dab781c8326015885914620fe02adc9",
+         "count": 1
+        },
+        {
+         "descriptor": "Nantes, France",
+         "id": "9dab781c832601229c764d20fe02c6c9",
+         "count": 1
+        },
+        {
+         "descriptor": "Nashville, Tennessee, United States",
+         "id": "9dab781c8326010fc7c04e20fe02cbc9",
+         "count": 4
+        },
+        {
+         "descriptor": "Netanja, Israel",
+         "id": "9dab781c83260116820c5020fe02d0c9",
+         "count": 1
+        },
+        {
+         "descriptor": "Noida, India",
+         "id": "9dab781c832601607f545520fe02e4c9",
+         "count": 1
+        },
+        {
+         "descriptor": "Ohio, United States",
+         "id": "d4b2fa46f72e100189e6c3e0cf970000",
+         "count": 2
+        },
+        {
+         "descriptor": "Orlando, Florida, United States",
+         "id": "9dab781c8326014a93025c20fe02fdc9",
+         "count": 1
+        },
+        {
+         "descriptor": "Paris, France",
+         "id": "9dab781c8326011eca815e20fe0207ca",
+         "count": 4
+        },
+        {
+         "descriptor": "Parsippany, New Jersey, United States",
+         "id": "9dab781c832601fcb5c25f20fe020cca",
+         "count": 3
+        },
+        {
+         "descriptor": "Pennsylvania, United States",
+         "id": "d4b2fa46f72e10018a2cee7d07d80000",
+         "count": 1
+        },
+        {
+         "descriptor": "Perth, Western Australia, Australia",
+         "id": "9dab781c8326012225876320fe021bca",
+         "count": 3
+        },
+        {
+         "descriptor": "Peru Lima",
+         "id": "9dab781c8326018bb603f521fe02accf",
+         "count": 1
+        },
+        {
+         "descriptor": "Philadelphia, Pennsylvania, United States",
+         "id": "9dab781c832601b131d46420fe0220ca",
+         "count": 3
+        },
+        {
+         "descriptor": "Phoenix, Arizona, United States",
+         "id": "9dab781c832601403c246620fe0225ca",
+         "count": 1
+        },
+        {
+         "descriptor": "Poland Warsaw",
+         "id": "9dab781c83260193c27e0122fe02d9cf",
+         "count": 1
+        },
+        {
+         "descriptor": "Portland, Maine, United States",
+         "id": "9dab781c8326017c8c516a20fe0234ca",
+         "count": 2
+        },
+        {
+         "descriptor": "Portland, Oregon, United States",
+         "id": "9dab781c8326017f90936b20fe0239ca",
+         "count": 2
+        },
+        {
+         "descriptor": "Prague, Czech Republic",
+         "id": "9dab781c83260175d55a6f20fe0248ca",
+         "count": 3
+        },
+        {
+         "descriptor": "Pune, India",
+         "id": "9dab781c832601ce15337320fe0257ca",
+         "count": 17
+        },
+        {
+         "descriptor": "Queretaro, Mexico",
+         "id": "9dab781c83260179cc597720fe0266ca",
+         "count": 1
+        },
+        {
+         "descriptor": "Randburg, Gauteng, South Africa",
+         "id": "9dab781c832601194b587c20fe027aca",
+         "count": 1
+        },
+        {
+         "descriptor": "Richland Center, Wisconsin, United States",
+         "id": "9dab781c832601f0adb88120fe028eca",
+         "count": 11
+        },
+        {
+         "descriptor": "Rio de Janeiro, Brazil",
+         "id": "31172c1152e610013dcdd87e8ae50000",
+         "count": 1
+        },
+        {
+         "descriptor": "Rotterdam, Netherlands",
+         "id": "9dab781c8326019af7d68f20fe02c5ca",
+         "count": 1
+        },
+        {
+         "descriptor": "Rotterdam, South Holland, Netherlands",
+         "id": "9dab781c832601abf7309223fe023dd5",
+         "count": 6
+        },
+        {
+         "descriptor": "San Francisco, California, United States",
+         "id": "9dab781c8326019919fa9c20fe02f7ca",
+         "count": 4
+        },
+        {
+         "descriptor": "Santiago, Chile",
+         "id": "9dab781c832601f77a2ca320fe0210cb",
+         "count": 1
+        },
+        {
+         "descriptor": "Santo Domingo, Dominican Republic",
+         "id": "9dab781c8326013f1169a420fe0215cb",
+         "count": 4
+        },
+        {
+         "descriptor": "Sao Paulo, Brazil",
+         "id": "8e6e69462112100202e509b8baa50000",
+         "count": 2
+        },
+        {
+         "descriptor": "Seattle, Washington, United States",
+         "id": "9dab781c83260118df8aa820fe0224cb",
+         "count": 1
+        },
+        {
+         "descriptor": "Seoul, South Korea",
+         "id": "9dab781c8326016fc320ab20fe022ecb",
+         "count": 1
+        },
+        {
+         "descriptor": "Shanghai, China",
+         "id": "9dab781c832601884fa3ad20fe0238cb",
+         "count": 4
+        },
+        {
+         "descriptor": "Singapore, Singapore",
+         "id": "9dab781c83260149243fb420fe0251cb",
+         "count": 22
+        },
+        {
+         "descriptor": "Spain Barcelona (Calle Álava)",
+         "id": "9dab781c8326011dc2e12722fe0260d0",
+         "count": 2
+        },
+        {
+         "descriptor": "St Louis, Missouri, United States",
+         "id": "9dab781c83260149d700c120fe026acb",
+         "count": 2
+        },
+        {
+         "descriptor": "Stockholm Sweden",
+         "id": "9dab781c8326016da8a93822fe0283d0",
+         "count": 1
+        },
+        {
+         "descriptor": "Switzerland Aarau",
+         "id": "9dab781c832601945e5c3b22fe028dd0",
+         "count": 1
+        },
+        {
+         "descriptor": "Switzerland Wil",
+         "id": "9dab781c83260101793f4222fe02a6d0",
+         "count": 1
+        },
+        {
+         "descriptor": "Sydney, New South Wales, Australia",
+         "id": "90680af6c68201e30a4744a99e0129d7",
+         "count": 1
+        },
+        {
+         "descriptor": "Szczecin, Poland",
+         "id": "c9c8620d68e91001f1dca7945d3e0000",
+         "count": 6
+        },
+        {
+         "descriptor": "Taipei, Taiwan",
+         "id": "9dab781c832601ca1e5fc920fe0288cb",
+         "count": 1
+        },
+        {
+         "descriptor": "Tamil Nadu, India",
+         "id": "1aa6139748db1000a9ed44778e860000",
+         "count": 7
+        },
+        {
+         "descriptor": "Tecate, Baja California, Mexico",
+         "id": "9dab781c8326014dfdb5ce20fe029ccb",
+         "count": 7
+        },
+        {
+         "descriptor": "Tennessee, United States",
+         "id": "6da546e43fff10018aa358b5671a0000",
+         "count": 1
+        },
+        {
+         "descriptor": "Texas, United States",
+         "id": "d4b2fa46f72e10018a97fc6951a10000",
+         "count": 2
+        },
+        {
+         "descriptor": "Tokyo, Japan",
+         "id": "9dab781c83260121ed7cd520fe02b5cb",
+         "count": 4
+        },
+        {
+         "descriptor": "Toronto, Ontario, Canada",
+         "id": "786024910070014701820f7bb101c84e",
+         "count": 2
+        },
+        {
+         "descriptor": "Toronto, Ontario, Canada",
+         "id": "9dab781c832601789783d920fe02c4cb",
+         "count": 1
+        },
+        {
+         "descriptor": "Troy, Michigan, United States",
+         "id": "915bdde1888010010ea2ccb750f00000",
+         "count": 3
+        },
+        {
+         "descriptor": "Twinsburg, Ohio, United States",
+         "id": "9dab781c832601da4fbddf20fe02ddcb",
+         "count": 6
+        },
+        {
+         "descriptor": "United States of America (remote)",
+         "id": "9dab781c8326018a006b5522fe02ecd0",
+         "count": 1
+        },
+        {
+         "descriptor": "United States of America Michigan (remote)",
+         "id": "9dab781c83260185ff53e722fe02e0d2",
+         "count": 1
+        },
+        {
+         "descriptor": "United States of America Milwaukee (South 2nd Street)",
+         "id": "9dab781c83260119b930f022fe02fed2",
+         "count": 4
+        },
+        {
+         "descriptor": "United States of America Santa Ana",
+         "id": "9dab781c83260143b37a3a23fe02f8d3",
+         "count": 1
+        },
+        {
+         "descriptor": "Verona, Italy",
+         "id": "9dab781c832601eefc208123fe02fcd4",
+         "count": 2
+        },
+        {
+         "descriptor": "Virginia, United States",
+         "id": "d4b2fa46f72e10018ae16973bf600000",
+         "count": 1
+        },
+        {
+         "descriptor": "Warszawa, Poland",
+         "id": "b499d8cbed0e01953d1e543c40017831",
+         "count": 2
+        },
+        {
+         "descriptor": "Waterloo, Ontario, Canada",
+         "id": "f15b7d3132581001a0a3956e46020000",
+         "count": 2
+        },
+        {
+         "descriptor": "Weston, Florida, United States",
+         "id": "9dab781c83260169497af720fe0237cc",
+         "count": 3
+        },
+        {
+         "descriptor": "Whitestown, Indiana, United States",
+         "id": "9dab781c83260195f3fff920fe0241cc",
+         "count": 4
+        },
+        {
+         "descriptor": "Wisconsin, United States",
+         "id": "d4b2fa46f72e10018b25b805b0290000",
+         "count": 1
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

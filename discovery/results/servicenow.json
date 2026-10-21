@@ -1,0 +1,21 @@
+{
+  "key": "servicenow",
+  "name": "ServiceNow",
+  "careers_url": "https://careers.servicenow.com/jobs/",
+  "hiring_system": "smartrecruiters (company ServiceNow; careers.servicenow.com is an Umbraco 'jobboard' marketing copy)",
+  "checker": "smartrecruiters",
+  "settings": {
+    "company": "ServiceNow"
+  },
+  "feed": "GET https://careers.smartrecruiters.com/ServiceNow + /ServiceNow/api/groups?page=1..16 + /ServiceNow/api/more?type=location&value=<v>&page=N (HTML), unioned with GET https://jobs.smartrecruiters.com/sr-jobs/search?limit=100&company=ServiceNow (JSON, newest 100 + totalFound)",
+  "feed_total": 688,
+  "page_total": 676,
+  "page_total_how": "Playwright render of https://careers.servicenow.com/jobs/ (no filters): 'Displaying 1 to 20 of 676 matching jobs'. SmartRecruiters' own search index (sr-jobs/search totalFound) said 677/678 the same hour. The hosted SmartRecruiters career page sums to 688 (99 location groups, data-qty); my crawl collected 687 unique + 1 found only via sr-jobs/search.",
+  "intern_total": 5,
+  "status": "verified",
+  "robots": "ALLOW (careers.smartrecruiters.com/robots.txt serves an HTML page = no rules; jobs.smartrecruiters.com/robots.txt is 404). api.smartrecruiters.com is BLOCK (Disallow: /) and is not used.",
+  "notes": "Hosted career page is a superset of the site: all 20 jobs on the site's first page and 98 of the 99 newest search results were in the crawl (the 99th was dropped by unstable ordering inside a location group). The remaining ~11 extra postings (688 vs 676/677) could not be identified within the request budget. Crawl = 57 requests. careers.servicenow.com answers plain clients with a Cloudflare challenge (403), so its Umbraco GetJobs is not usable.",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-20T00:35:00Z"
+}

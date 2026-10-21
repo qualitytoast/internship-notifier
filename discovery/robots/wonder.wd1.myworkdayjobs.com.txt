@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://wonder.wd1.myworkdayjobs.com/WG/siteMap.xml
+Sitemap: https://wonder.wd1.myworkdayjobs.com/Grubhub_Careers/siteMap.xml
+
+User-agent: *
+Allow: /WG/
+Allow: /Grubhub_Careers/
+Disallow: /refreshFacet/

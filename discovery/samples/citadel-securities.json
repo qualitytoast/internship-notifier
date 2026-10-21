@@ -1,0 +1,560 @@
+{
+ "_note": "Recommended feed for custom:citadel_sitemap: the Yoast SEO sitemap of the WordPress 'career' post type (plain HTTP 200, not challenged). 'response.body' is the raw XML, whole. 'parsed_jobs' is the proposed mapping (id = slug, title derived from slug, location = region hint from the slug). 'page_check' compares the live listing page (Playwright render) with the derived titles. Detail pages, admin-ajax, wp-json and /feed/ return a Cloudflare interactive challenge to plain HTTP; 'browser_only_jsonld_example' is for reference only.",
+ "observed": "2026-10-20T00:37:34Z",
+ "request": {
+  "method": "GET",
+  "url": "https://www.citadelsecurities.com/career-sitemap.xml"
+ },
+ "response": {
+  "status": 200,
+  "content_type": "text/xml; charset=UTF-8",
+  "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><?xml-stylesheet type=\"text/xsl\" href=\"//www.citadelsecurities.com/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl\"?>\n<urlset xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:image=\"http://www.google.com/schemas/sitemap-image/1.1\" xsi:schemaLocation=\"http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd\" xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:xhtml=\"http://www.w3.org/1999/xhtml\">\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/client-execution-trading/</loc>\n\t\t<lastmod>2026-10-20T00:22:14+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/crypto-quantitative-developer/</loc>\n\t\t<lastmod>2026-10-20T00:22:15+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/crypto-quant-researcher/</loc>\n\t\t<lastmod>2026-10-20T00:22:15+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/c-market-data-engineer/</loc>\n\t\t<lastmod>2026-10-20T00:22:15+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/c-software-engineer-2/</loc>\n\t\t<lastmod>2026-10-20T00:22:15+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/crypto-market-feed-handlers-lead/</loc>\n\t\t<lastmod>2026-10-20T00:22:15+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/data-scientist/</loc>\n\t\t<lastmod>2026-10-20T00:22:16+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/c-software-engineer/</loc>\n\t\t<lastmod>2026-10-20T00:22:16+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/deep-learning-ml-researcher/</loc>\n\t\t<lastmod>2026-10-20T00:22:16+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/designated-market-maker-dmm-trader-intern-us/</loc>\n\t\t<lastmod>2026-10-20T00:22:16+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/fpga-engineer/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadelsecurities.com/careers/details/fpga-engineer/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadelsecurities.com/careers/details/fpga-engineer/\" />\n\t\t<lastmod>2026-10-20T00:22:17+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/fpga-engineer-intern-us/</loc>\n\t\t<lastmod>2026-10-20T00:22:17+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/full-stack-software-engineer/</loc>\n\t\t<lastmod>2026-10-20T00:22:17+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/fpga-engineer-intern-asia/</loc>\n\t\t<lastmod>2026-10-20T00:22:17+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/equities-engineering-product-frontend-engineer-new-york/</loc>\n\t\t<lastmod>2026-10-20T00:22:17+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/machine-learning-engineer/</loc>\n\t\t<lastmod>2026-10-20T00:22:18+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/machine-learning-researcher-phd-graduate-asia/</loc>\n\t\t<lastmod>2026-10-20T00:22:18+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/machine-learning-researcher/</loc>\n\t\t<lastmod>2026-10-20T00:22:18+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/kdb-q-engineer/</loc>\n\t\t<lastmod>2026-10-20T00:22:18+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/machine-learning-researcher-phd-intern-asia/</loc>\n\t\t<lastmod>2026-10-20T00:22:19+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/machine-learning-researcher-phd-graduate-europe/</loc>\n\t\t<lastmod>2026-10-20T00:22:19+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/machine-learning-researcher-phd-graduate-us/</loc>\n\t\t<lastmod>2026-10-20T00:22:19+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/machine-learning-researcher-phd-intern-us/</loc>\n\t\t<lastmod>2026-10-20T00:22:19+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-ai-technical-staff/</loc>\n\t\t<lastmod>2026-10-20T00:22:20+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/principal-data-visualization-engineer/</loc>\n\t\t<lastmod>2026-10-20T00:22:20+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/people-operations-lead-emea/</loc>\n\t\t<lastmod>2026-10-20T00:22:20+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-developer-research-engineer/</loc>\n\t\t<lastmod>2026-10-20T00:22:21+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-research-analyst-intern-bs-ms-australia/</loc>\n\t\t<lastmod>2026-10-20T00:22:21+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-research-analyst-intern-bs-ms-asia/</loc>\n\t\t<lastmod>2026-10-20T00:22:21+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-research-analyst-intern-bs-ms-europe-2/</loc>\n\t\t<lastmod>2026-10-20T00:22:21+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-research-engineer/</loc>\n\t\t<lastmod>2026-10-20T00:22:22+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-research-analyst-university-graduate-europe/</loc>\n\t\t<lastmod>2026-10-20T00:22:22+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-research-analyst-intern-bs-ms-europe/</loc>\n\t\t<lastmod>2026-10-20T00:22:22+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-research-analyst-university-graduate-asia/</loc>\n\t\t<lastmod>2026-10-20T00:22:22+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-research-engineer-phd-graduate-us/</loc>\n\t\t<lastmod>2026-10-20T00:22:22+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-research-engineer-phd-intern-us/</loc>\n\t\t<lastmod>2026-10-20T00:22:22+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-researcher-phd-graduate-asia/</loc>\n\t\t<lastmod>2026-10-20T00:22:23+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-researcher-phd-intern-asia/</loc>\n\t\t<lastmod>2026-10-20T00:22:23+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-researcher-phd-graduate-europe/</loc>\n\t\t<lastmod>2026-10-20T00:22:23+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-researcher-phd-graduate-us/</loc>\n\t\t<lastmod>2026-10-20T00:22:23+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-researcher-quantitative-research-analyst/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadelsecurities.com/careers/details/quantitative-researcher-quantitative-research-analyst/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadelsecurities.com/careers/details/quantitative-researcher-quantitative-research-analyst/\" />\n\t\t<lastmod>2026-10-20T00:22:24+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-research-phd-intern-australia/</loc>\n\t\t<lastmod>2026-10-20T00:22:24+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-researcher-phd-intern-europe/</loc>\n\t\t<lastmod>2026-10-20T00:22:24+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-researcher-phd-intern-us/</loc>\n\t\t<lastmod>2026-10-20T00:22:24+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-researcher-post-doctoral-intern-us/</loc>\n\t\t<lastmod>2026-10-20T00:22:24+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-trader/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadelsecurities.com/careers/details/quantitative-trader/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadelsecurities.com/careers/details/quantitative-trader/\" />\n\t\t<lastmod>2026-10-20T00:22:25+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-trader-university-graduate-us-miami/</loc>\n\t\t<lastmod>2026-10-20T00:22:25+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-trader-university-graduate-us-new-york/</loc>\n\t\t<lastmod>2026-10-20T00:22:25+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-trading-intern-asia/</loc>\n\t\t<lastmod>2026-10-20T00:22:25+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-trader-university-graduate-europe/</loc>\n\t\t<lastmod>2026-10-20T00:22:25+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-trader-intern-us/</loc>\n\t\t<lastmod>2026-10-20T00:22:25+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/rates-credit-c-engineer/</loc>\n\t\t<lastmod>2026-10-20T00:22:26+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/rates-sales-assistant/</loc>\n\t\t<lastmod>2026-10-20T00:22:26+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/quantitative-trading-intern-europe/</loc>\n\t\t<lastmod>2026-10-20T00:22:26+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/rates-trading-intern-europe/</loc>\n\t\t<lastmod>2026-10-20T00:22:26+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/research-engineer/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadelsecurities.com/careers/details/research-engineer/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadelsecurities.com/careers/details/research-engineer/\" />\n\t\t<lastmod>2026-10-20T00:22:27+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/recruiting-coordinator-contract/</loc>\n\t\t<lastmod>2026-10-20T00:22:27+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/recruiting-coordinator/</loc>\n\t\t<lastmod>2026-10-20T00:22:27+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/senior-options-software-engineer/</loc>\n\t\t<lastmod>2026-10-20T00:22:27+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/regulatory-reporting-engineer/</loc>\n\t\t<lastmod>2026-10-20T00:22:27+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/site-reliability-engineer/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadelsecurities.com/careers/details/site-reliability-engineer/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadelsecurities.com/careers/details/site-reliability-engineer/\" />\n\t\t<lastmod>2026-10-20T00:22:28+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/senior-research-engineer-data/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadelsecurities.com/careers/details/senior-research-engineer-data/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadelsecurities.com/careers/details/senior-research-engineer-data/\" />\n\t\t<lastmod>2026-10-20T00:22:28+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/senior-python-software-engineer/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadelsecurities.com/careers/details/senior-python-software-engineer/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadelsecurities.com/careers/details/senior-python-software-engineer/\" />\n\t\t<lastmod>2026-10-20T00:22:28+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/senior-quantitative-developer/</loc>\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.citadelsecurities.com/careers/details/senior-quantitative-developer/\" />\n\t\t<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.citadelsecurities.com/careers/details/senior-quantitative-developer/\" />\n\t\t<lastmod>2026-10-20T00:22:28+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/site-reliability-engineer-2/</loc>\n\t\t<lastmod>2026-10-20T00:22:28+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/software-engineer-intern-us/</loc>\n\t\t<lastmod>2026-10-20T00:22:29+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/software-engineer-in-test-sdet/</loc>\n\t\t<lastmod>2026-10-20T00:22:29+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/software-engineer-intern-asia/</loc>\n\t\t<lastmod>2026-10-20T00:22:29+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/software-engineer-intern-europe/</loc>\n\t\t<lastmod>2026-10-20T00:22:29+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/systematic-options-trader/</loc>\n\t\t<lastmod>2026-10-20T00:22:30+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/systematic-crypto-trader/</loc>\n\t\t<lastmod>2026-10-20T00:22:30+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/software-engineer-university-graduate-us/</loc>\n\t\t<lastmod>2026-10-20T00:22:30+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/software-engineer-university-graduate-europe/</loc>\n\t\t<lastmod>2026-10-20T00:22:30+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/systematic-trader/</loc>\n\t\t<lastmod>2026-10-20T00:22:31+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/trading-fundamental-analyst-intern-us/</loc>\n\t\t<lastmod>2026-10-20T00:22:31+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/ui-engineer-ces-client-platforms/</loc>\n\t\t<lastmod>2026-10-20T00:22:31+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/trade-support-analyst/</loc>\n\t\t<lastmod>2026-10-20T00:22:31+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/ui-engineer-global-trading-applications/</loc>\n\t\t<lastmod>2026-10-20T00:22:32+00:00</lastmod>\n\t</url>\n\t<url>\n\t\t<loc>https://www.citadelsecurities.com/careers/details/ui-engineer-contractor/</loc>\n\t\t<lastmod>2026-10-20T00:22:32+00:00</lastmod>\n\t</url>\n</urlset>\n<!-- XML Sitemap generated by Yoast SEO -->"
+ },
+ "parsed_jobs": {
+  "total": 79,
+  "intern_count_title_regex": 23,
+  "jobs": [
+   {
+    "id": "client-execution-trading",
+    "title": "Client Execution Trading",
+    "url": "https://www.citadelsecurities.com/careers/details/client-execution-trading/",
+    "location": ""
+   },
+   {
+    "id": "crypto-quantitative-developer",
+    "title": "Crypto Quantitative Developer",
+    "url": "https://www.citadelsecurities.com/careers/details/crypto-quantitative-developer/",
+    "location": ""
+   },
+   {
+    "id": "crypto-quant-researcher",
+    "title": "Crypto Quant Researcher",
+    "url": "https://www.citadelsecurities.com/careers/details/crypto-quant-researcher/",
+    "location": ""
+   },
+   {
+    "id": "c-market-data-engineer",
+    "title": "C Market Data Engineer",
+    "url": "https://www.citadelsecurities.com/careers/details/c-market-data-engineer/",
+    "location": ""
+   },
+   {
+    "id": "c-software-engineer-2",
+    "title": "C Software Engineer",
+    "url": "https://www.citadelsecurities.com/careers/details/c-software-engineer-2/",
+    "location": ""
+   },
+   {
+    "id": "crypto-market-feed-handlers-lead",
+    "title": "Crypto Market Feed Handlers Lead",
+    "url": "https://www.citadelsecurities.com/careers/details/crypto-market-feed-handlers-lead/",
+    "location": ""
+   },
+   {
+    "id": "data-scientist",
+    "title": "Data Scientist",
+    "url": "https://www.citadelsecurities.com/careers/details/data-scientist/",
+    "location": ""
+   },
+   {
+    "id": "c-software-engineer",
+    "title": "C Software Engineer",
+    "url": "https://www.citadelsecurities.com/careers/details/c-software-engineer/",
+    "location": ""
+   },
+   {
+    "id": "deep-learning-ml-researcher",
+    "title": "Deep Learning ML Researcher",
+    "url": "https://www.citadelsecurities.com/careers/details/deep-learning-ml-researcher/",
+    "location": ""
+   },
+   {
+    "id": "designated-market-maker-dmm-trader-intern-us",
+    "title": "Designated Market Maker Dmm Trader Intern US",
+    "url": "https://www.citadelsecurities.com/careers/details/designated-market-maker-dmm-trader-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "fpga-engineer",
+    "title": "FPGA Engineer",
+    "url": "https://www.citadelsecurities.com/careers/details/fpga-engineer/",
+    "location": ""
+   },
+   {
+    "id": "fpga-engineer-intern-us",
+    "title": "FPGA Engineer Intern US",
+    "url": "https://www.citadelsecurities.com/careers/details/fpga-engineer-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "full-stack-software-engineer",
+    "title": "Full Stack Software Engineer",
+    "url": "https://www.citadelsecurities.com/careers/details/full-stack-software-engineer/",
+    "location": ""
+   },
+   {
+    "id": "fpga-engineer-intern-asia",
+    "title": "FPGA Engineer Intern Asia",
+    "url": "https://www.citadelsecurities.com/careers/details/fpga-engineer-intern-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "equities-engineering-product-frontend-engineer-new-york",
+    "title": "Equities Engineering Product Frontend Engineer New York",
+    "url": "https://www.citadelsecurities.com/careers/details/equities-engineering-product-frontend-engineer-new-york/",
+    "location": "New York"
+   },
+   {
+    "id": "machine-learning-engineer",
+    "title": "Machine Learning Engineer",
+    "url": "https://www.citadelsecurities.com/careers/details/machine-learning-engineer/",
+    "location": ""
+   },
+   {
+    "id": "machine-learning-researcher-phd-graduate-asia",
+    "title": "Machine Learning Researcher PhD Graduate Asia",
+    "url": "https://www.citadelsecurities.com/careers/details/machine-learning-researcher-phd-graduate-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "machine-learning-researcher",
+    "title": "Machine Learning Researcher",
+    "url": "https://www.citadelsecurities.com/careers/details/machine-learning-researcher/",
+    "location": ""
+   },
+   {
+    "id": "kdb-q-engineer",
+    "title": "KDB Q Engineer",
+    "url": "https://www.citadelsecurities.com/careers/details/kdb-q-engineer/",
+    "location": ""
+   },
+   {
+    "id": "machine-learning-researcher-phd-intern-asia",
+    "title": "Machine Learning Researcher PhD Intern Asia",
+    "url": "https://www.citadelsecurities.com/careers/details/machine-learning-researcher-phd-intern-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "machine-learning-researcher-phd-graduate-europe",
+    "title": "Machine Learning Researcher PhD Graduate Europe",
+    "url": "https://www.citadelsecurities.com/careers/details/machine-learning-researcher-phd-graduate-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "machine-learning-researcher-phd-graduate-us",
+    "title": "Machine Learning Researcher PhD Graduate US",
+    "url": "https://www.citadelsecurities.com/careers/details/machine-learning-researcher-phd-graduate-us/",
+    "location": "United States"
+   },
+   {
+    "id": "machine-learning-researcher-phd-intern-us",
+    "title": "Machine Learning Researcher PhD Intern US",
+    "url": "https://www.citadelsecurities.com/careers/details/machine-learning-researcher-phd-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "quantitative-ai-technical-staff",
+    "title": "Quantitative AI Technical Staff",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-ai-technical-staff/",
+    "location": ""
+   },
+   {
+    "id": "principal-data-visualization-engineer",
+    "title": "Principal Data Visualization Engineer",
+    "url": "https://www.citadelsecurities.com/careers/details/principal-data-visualization-engineer/",
+    "location": ""
+   },
+   {
+    "id": "people-operations-lead-emea",
+    "title": "People Operations Lead EMEA",
+    "url": "https://www.citadelsecurities.com/careers/details/people-operations-lead-emea/",
+    "location": "EMEA"
+   },
+   {
+    "id": "quantitative-developer-research-engineer",
+    "title": "Quantitative Developer Research Engineer",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-developer-research-engineer/",
+    "location": ""
+   },
+   {
+    "id": "quantitative-research-analyst-intern-bs-ms-australia",
+    "title": "Quantitative Research Analyst Intern BS MS Australia",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-research-analyst-intern-bs-ms-australia/",
+    "location": ""
+   },
+   {
+    "id": "quantitative-research-analyst-intern-bs-ms-asia",
+    "title": "Quantitative Research Analyst Intern BS MS Asia",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-research-analyst-intern-bs-ms-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "quantitative-research-analyst-intern-bs-ms-europe-2",
+    "title": "Quantitative Research Analyst Intern BS MS Europe",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-research-analyst-intern-bs-ms-europe-2/",
+    "location": "Europe"
+   },
+   {
+    "id": "quantitative-research-engineer",
+    "title": "Quantitative Research Engineer",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-research-engineer/",
+    "location": ""
+   },
+   {
+    "id": "quantitative-research-analyst-university-graduate-europe",
+    "title": "Quantitative Research Analyst University Graduate Europe",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-research-analyst-university-graduate-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "quantitative-research-analyst-intern-bs-ms-europe",
+    "title": "Quantitative Research Analyst Intern BS MS Europe",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-research-analyst-intern-bs-ms-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "quantitative-research-analyst-university-graduate-asia",
+    "title": "Quantitative Research Analyst University Graduate Asia",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-research-analyst-university-graduate-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "quantitative-research-engineer-phd-graduate-us",
+    "title": "Quantitative Research Engineer PhD Graduate US",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-research-engineer-phd-graduate-us/",
+    "location": "United States"
+   },
+   {
+    "id": "quantitative-research-engineer-phd-intern-us",
+    "title": "Quantitative Research Engineer PhD Intern US",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-research-engineer-phd-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "quantitative-researcher-phd-graduate-asia",
+    "title": "Quantitative Researcher PhD Graduate Asia",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-researcher-phd-graduate-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "quantitative-researcher-phd-intern-asia",
+    "title": "Quantitative Researcher PhD Intern Asia",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-researcher-phd-intern-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "quantitative-researcher-phd-graduate-europe",
+    "title": "Quantitative Researcher PhD Graduate Europe",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-researcher-phd-graduate-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "quantitative-researcher-phd-graduate-us",
+    "title": "Quantitative Researcher PhD Graduate US",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-researcher-phd-graduate-us/",
+    "location": "United States"
+   },
+   {
+    "id": "quantitative-researcher-quantitative-research-analyst",
+    "title": "Quantitative Researcher Quantitative Research Analyst",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-researcher-quantitative-research-analyst/",
+    "location": ""
+   },
+   {
+    "id": "quantitative-research-phd-intern-australia",
+    "title": "Quantitative Research PhD Intern Australia",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-research-phd-intern-australia/",
+    "location": ""
+   },
+   {
+    "id": "quantitative-researcher-phd-intern-europe",
+    "title": "Quantitative Researcher PhD Intern Europe",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-researcher-phd-intern-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "quantitative-researcher-phd-intern-us",
+    "title": "Quantitative Researcher PhD Intern US",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-researcher-phd-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "quantitative-researcher-post-doctoral-intern-us",
+    "title": "Quantitative Researcher Post Doctoral Intern US",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-researcher-post-doctoral-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "quantitative-trader",
+    "title": "Quantitative Trader",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-trader/",
+    "location": ""
+   },
+   {
+    "id": "quantitative-trader-university-graduate-us-miami",
+    "title": "Quantitative Trader University Graduate US Miami",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-trader-university-graduate-us-miami/",
+    "location": "United States"
+   },
+   {
+    "id": "quantitative-trader-university-graduate-us-new-york",
+    "title": "Quantitative Trader University Graduate US New York",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-trader-university-graduate-us-new-york/",
+    "location": "United States"
+   },
+   {
+    "id": "quantitative-trading-intern-asia",
+    "title": "Quantitative Trading Intern Asia",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-trading-intern-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "quantitative-trader-university-graduate-europe",
+    "title": "Quantitative Trader University Graduate Europe",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-trader-university-graduate-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "quantitative-trader-intern-us",
+    "title": "Quantitative Trader Intern US",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-trader-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "rates-credit-c-engineer",
+    "title": "Rates Credit C Engineer",
+    "url": "https://www.citadelsecurities.com/careers/details/rates-credit-c-engineer/",
+    "location": ""
+   },
+   {
+    "id": "rates-sales-assistant",
+    "title": "Rates Sales Assistant",
+    "url": "https://www.citadelsecurities.com/careers/details/rates-sales-assistant/",
+    "location": ""
+   },
+   {
+    "id": "quantitative-trading-intern-europe",
+    "title": "Quantitative Trading Intern Europe",
+    "url": "https://www.citadelsecurities.com/careers/details/quantitative-trading-intern-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "rates-trading-intern-europe",
+    "title": "Rates Trading Intern Europe",
+    "url": "https://www.citadelsecurities.com/careers/details/rates-trading-intern-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "research-engineer",
+    "title": "Research Engineer",
+    "url": "https://www.citadelsecurities.com/careers/details/research-engineer/",
+    "location": ""
+   },
+   {
+    "id": "recruiting-coordinator-contract",
+    "title": "Recruiting Coordinator Contract",
+    "url": "https://www.citadelsecurities.com/careers/details/recruiting-coordinator-contract/",
+    "location": ""
+   },
+   {
+    "id": "recruiting-coordinator",
+    "title": "Recruiting Coordinator",
+    "url": "https://www.citadelsecurities.com/careers/details/recruiting-coordinator/",
+    "location": ""
+   },
+   {
+    "id": "senior-options-software-engineer",
+    "title": "Senior Options Software Engineer",
+    "url": "https://www.citadelsecurities.com/careers/details/senior-options-software-engineer/",
+    "location": ""
+   },
+   {
+    "id": "regulatory-reporting-engineer",
+    "title": "Regulatory Reporting Engineer",
+    "url": "https://www.citadelsecurities.com/careers/details/regulatory-reporting-engineer/",
+    "location": ""
+   },
+   {
+    "id": "site-reliability-engineer",
+    "title": "Site Reliability Engineer",
+    "url": "https://www.citadelsecurities.com/careers/details/site-reliability-engineer/",
+    "location": ""
+   },
+   {
+    "id": "senior-research-engineer-data",
+    "title": "Senior Research Engineer Data",
+    "url": "https://www.citadelsecurities.com/careers/details/senior-research-engineer-data/",
+    "location": ""
+   },
+   {
+    "id": "senior-python-software-engineer",
+    "title": "Senior Python Software Engineer",
+    "url": "https://www.citadelsecurities.com/careers/details/senior-python-software-engineer/",
+    "location": ""
+   },
+   {
+    "id": "senior-quantitative-developer",
+    "title": "Senior Quantitative Developer",
+    "url": "https://www.citadelsecurities.com/careers/details/senior-quantitative-developer/",
+    "location": ""
+   },
+   {
+    "id": "site-reliability-engineer-2",
+    "title": "Site Reliability Engineer",
+    "url": "https://www.citadelsecurities.com/careers/details/site-reliability-engineer-2/",
+    "location": ""
+   },
+   {
+    "id": "software-engineer-intern-us",
+    "title": "Software Engineer Intern US",
+    "url": "https://www.citadelsecurities.com/careers/details/software-engineer-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "software-engineer-in-test-sdet",
+    "title": "Software Engineer in Test Sdet",
+    "url": "https://www.citadelsecurities.com/careers/details/software-engineer-in-test-sdet/",
+    "location": ""
+   },
+   {
+    "id": "software-engineer-intern-asia",
+    "title": "Software Engineer Intern Asia",
+    "url": "https://www.citadelsecurities.com/careers/details/software-engineer-intern-asia/",
+    "location": "Asia"
+   },
+   {
+    "id": "software-engineer-intern-europe",
+    "title": "Software Engineer Intern Europe",
+    "url": "https://www.citadelsecurities.com/careers/details/software-engineer-intern-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "systematic-options-trader",
+    "title": "Systematic Options Trader",
+    "url": "https://www.citadelsecurities.com/careers/details/systematic-options-trader/",
+    "location": ""
+   },
+   {
+    "id": "systematic-crypto-trader",
+    "title": "Systematic Crypto Trader",
+    "url": "https://www.citadelsecurities.com/careers/details/systematic-crypto-trader/",
+    "location": ""
+   },
+   {
+    "id": "software-engineer-university-graduate-us",
+    "title": "Software Engineer University Graduate US",
+    "url": "https://www.citadelsecurities.com/careers/details/software-engineer-university-graduate-us/",
+    "location": "United States"
+   },
+   {
+    "id": "software-engineer-university-graduate-europe",
+    "title": "Software Engineer University Graduate Europe",
+    "url": "https://www.citadelsecurities.com/careers/details/software-engineer-university-graduate-europe/",
+    "location": "Europe"
+   },
+   {
+    "id": "systematic-trader",
+    "title": "Systematic Trader",
+    "url": "https://www.citadelsecurities.com/careers/details/systematic-trader/",
+    "location": ""
+   },
+   {
+    "id": "trading-fundamental-analyst-intern-us",
+    "title": "Trading Fundamental Analyst Intern US",
+    "url": "https://www.citadelsecurities.com/careers/details/trading-fundamental-analyst-intern-us/",
+    "location": "United States"
+   },
+   {
+    "id": "ui-engineer-ces-client-platforms",
+    "title": "UI Engineer CES Client Platforms",
+    "url": "https://www.citadelsecurities.com/careers/details/ui-engineer-ces-client-platforms/",
+    "location": ""
+   },
+   {
+    "id": "trade-support-analyst",
+    "title": "Trade Support Analyst",
+    "url": "https://www.citadelsecurities.com/careers/details/trade-support-analyst/",
+    "location": ""
+   },
+   {
+    "id": "ui-engineer-global-trading-applications",
+    "title": "UI Engineer Global Trading Applications",
+    "url": "https://www.citadelsecurities.com/careers/details/ui-engineer-global-trading-applications/",
+    "location": ""
+   },
+   {
+    "id": "ui-engineer-contractor",
+    "title": "UI Engineer Contractor",
+    "url": "https://www.citadelsecurities.com/careers/details/ui-engineer-contractor/",
+    "location": ""
+   }
+  ]
+ },
+ "page_check": {
+  "listing_url": "https://www.citadelsecurities.com/careers/open-opportunities/",
+  "viewing_text": "Viewing 10 of 79",
+  "internships_filter_count": 23,
+  "cards_page1": [
+   {
+    "slug": "ui-engineer-contractor",
+    "page_title": "UI Engineer (Contractor)",
+    "page_location": "New York",
+    "derived_title": "UI Engineer Contractor"
+   },
+   {
+    "slug": "ui-engineer-global-trading-applications",
+    "page_title": "UI Engineer- Global Trading Applications",
+    "page_location": "New York",
+    "derived_title": "UI Engineer Global Trading Applications"
+   },
+   {
+    "slug": "ui-engineer-ces-client-platforms",
+    "page_title": "UI Engineer – CES Client Platforms",
+    "page_location": "New York",
+    "derived_title": "UI Engineer CES Client Platforms"
+   },
+   {
+    "slug": "software-engineer-intern-asia",
+    "page_title": "Software Engineer – Intern (Asia)",
+    "page_location": "Hong Kong, Singapore",
+    "derived_title": "Software Engineer Intern Asia"
+   },
+   {
+    "slug": "senior-options-software-engineer",
+    "page_title": "Senior Options Software Engineer",
+    "page_location": "London, Miami, New York, Sydney",
+    "derived_title": "Senior Options Software Engineer"
+   },
+   {
+    "slug": "regulatory-reporting-engineer",
+    "page_title": "Regulatory Reporting Engineer",
+    "page_location": "London",
+    "derived_title": "Regulatory Reporting Engineer"
+   },
+   {
+    "slug": "software-engineer-intern-us",
+    "page_title": "Software Engineer – Intern (US)",
+    "page_location": "Miami, New York",
+    "derived_title": "Software Engineer Intern US"
+   },
+   {
+    "slug": "site-reliability-engineer-2",
+    "page_title": "Site Reliability Engineer",
+    "page_location": "Gurugram, Sydney",
+    "derived_title": "Site Reliability Engineer"
+   },
+   {
+    "slug": "software-engineer-university-graduate-us",
+    "page_title": "Software Engineer – University Graduate (US)",
+    "page_location": "Miami, New York",
+    "derived_title": "Software Engineer University Graduate US"
+   },
+   {
+    "slug": "senior-python-software-engineer",
+    "page_title": "Senior Python Software Engineer",
+    "page_location": "London, New York",
+    "derived_title": "Senior Python Software Engineer"
+   }
+  ]
+ }
+}

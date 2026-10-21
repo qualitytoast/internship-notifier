@@ -1,0 +1,24 @@
+{
+  "key": "epic-systems",
+  "name": "Epic Systems",
+  "careers_url": "https://careers.epic.com/jobs/",
+  "hiring_system": "avature",
+  "checker": "custom:epic-careers",
+  "settings": {
+    "url": "https://careers.epic.com/jobs/",
+    "ids_url": "https://careers.epic.com/cached-api/jobs/search/?searchText=",
+    "job_url": "https://epic.avature.net/Careers/FolderDetail/{slug}/{id}",
+    "default_location": "Verona, WI, United States"
+  },
+  "feed": "GET https://careers.epic.com/jobs/ (Next.js RSC flight data in self.__next_f.push: allOpenJobs[] ids + avaturePositions{id: {...}} map)",
+  "feed_total": 41,
+  "page_total": 41,
+  "page_total_how": "Playwright render of https://careers.epic.com/jobs/ (2026-10-20T00:16Z) showed 'Showing 41 positions' with 41 unique FolderDetail links; allOpenJobs = 41 = the cached-api search with an empty query (same ids, same order).",
+  "intern_total": 2,
+  "status": "needs-custom",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW careers.epic.com (Allow: /); BLOCK epic.avature.net/Careers/* (Disallow: /), so job links may be emailed but never fetched",
+  "notes": "Avature (epic.avature.net) is the system of record but its Careers portal is robots-disallowed. The careers.epic.com list page server-renders every open job's id and title in its RSC payload. The payload has no location field (Epic hires on its Verona, WI campus).",
+  "checked_at": "2026-10-20T00:17:00Z"
+}

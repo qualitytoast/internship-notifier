@@ -1,0 +1,6 @@
+# status 200
+User-Agent: *
+Allow: /
+
+Host: https://jobs.uber.com
+Sitemap: https://jobs.uber.com/sitemap.xml

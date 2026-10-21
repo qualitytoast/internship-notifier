@@ -1,0 +1,30 @@
+{
+  "key": "doordash",
+  "name": "DoorDash",
+  "careers_url": "https://careersatdoordash.com/job-search/",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "boards": [
+      "doordashusa",
+      "doordashcanada",
+      "doordashquebec",
+      "doordashaustralia",
+      "doordashmexico",
+      "doordashindia",
+      "doordashinternational",
+      "sevenroomsuk"
+    ]
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/doordashusa/jobs; GET https://boards-api.greenhouse.io/v1/boards/doordashcanada/jobs; GET https://boards-api.greenhouse.io/v1/boards/doordashquebec/jobs; GET https://boards-api.greenhouse.io/v1/boards/doordashaustralia/jobs; GET https://boards-api.greenhouse.io/v1/boards/doordashmexico/jobs; GET https://boards-api.greenhouse.io/v1/boards/doordashindia/jobs; GET https://boards-api.greenhouse.io/v1/boards/doordashinternational/jobs; GET https://boards-api.greenhouse.io/v1/boards/sevenroomsuk/jobs",
+  "feed_total": 598,
+  "page_total": 815,
+  "page_total_how": "Playwright render of https://careersatdoordash.com/job-search/ showed '1 – 25 of 815'; I walked all 33 pages of the page's own get-jobs.php pager: 815 unique jobs, which include every one of the 598 feed jobs",
+  "intern_total": 7,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule; boards-api.greenhouse.io/robots.txt only disallows /embed/); careersatdoordash.com has no robots.txt but returns a Cloudflare challenge (403) to non-browser clients; doordash.fountain.com disallows /api",
+  "notes": "8 boards (the probe found only doordashusa). The page's extra 217 are hourly roles that apply through Fountain (215 DashMart fulfillment, 1 CX agent, 1 authenticity rep) and are on no public board found; none are internships. The 7 interns on the page are all in the feeds. See notes/doordash.md.",
+  "checked_at": "2026-10-20T00:39:52Z"
+}

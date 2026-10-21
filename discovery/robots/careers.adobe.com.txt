@@ -1,0 +1,16 @@
+# status 200
+User-agent: *
+Disallow: */phenomtrack.min.js
+Disallow: */jobcart
+Disallow: */chatbot
+Disallow: */lifeatphenom
+Disallow: */workingatphenom
+Disallow: */chatbot
+Disallow: */pxhomelead
+Disallow: */pxhomeapplicant
+Disallow: */pxhomequalifiedlead
+Disallow: */pxhomevisitor
+Disallow: */pxhomestranger
+Disallow: */glassdoor
+
+Sitemap: https://careers.adobe.com/us/en/sitemap.xml

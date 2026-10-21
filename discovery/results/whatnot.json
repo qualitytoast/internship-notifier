@@ -1,0 +1,25 @@
+{
+  "key": "whatnot",
+  "name": "Whatnot",
+  "careers_url": "https://www.whatnot.com/careers/discover",
+  "hiring_system": "ashby",
+  "checker": "custom:ashby-hosted",
+  "settings": {
+    "org_slug": "whatnot",
+    "url": "https://jobs.ashbyhq.com/whatnot",
+    "json_var": "window.__appData",
+    "list_path": "jobBoard.jobPostings",
+    "job_url": "https://jobs.ashbyhq.com/whatnot/{id}"
+  },
+  "feed": "GET https://jobs.ashbyhq.com/whatnot (HTML; JSON object after 'window.__appData = ', jobBoard.jobPostings[])",
+  "feed_total": 149,
+  "page_total": 149,
+  "page_total_how": "Playwright render of https://www.whatnot.com/careers/discover in the previous discovery run (2026-10-19T23:48Z) showed 'Showing 149 matching jobs' with 149 unique /careers/roles/<id> links, exactly the 149 ids on the Ashby hosted board fetched the same minute; the board re-fetched at 2026-10-20T00:27Z still had the same 149 ids.",
+  "intern_total": 1,
+  "status": "needs-custom",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW https://jobs.ashbyhq.com/whatnot and /whatnot/<id> (no matching rule; jobs.ashbyhq.com disallows only /api/, /b/, /meeting/)",
+  "notes": "The public posting API (api.ashbyhq.com/posting-api/job-board/whatnot) returns 404 for this org, so the shared ashby adapter cannot be used as is: it needs a hosted-page mode that reads window.__appData. www.whatnot.com is behind Cloudflare + Kasada; do not poll it.",
+  "checked_at": "2026-10-20T00:28:00Z"
+}

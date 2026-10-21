@@ -1,0 +1,1338 @@
+{
+ "1password": {
+  "jobs": 75,
+  "students": 4,
+  "matched": 1,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.2,
+  "requests": 1
+ },
+ "abridge": {
+  "jobs": 44,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "adobe": {
+  "jobs": 306,
+  "students": 21,
+  "matched": 9,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 16.7,
+  "requests": 16
+ },
+ "affirm": {
+  "jobs": 215,
+  "students": 3,
+  "matched": 3,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "airbnb": {
+  "jobs": 180,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "akamai": {
+  "jobs": 282,
+  "students": 4,
+  "matched": 1,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 3.4,
+  "requests": 2
+ },
+ "amazon": {
+  "jobs": 887,
+  "students": 639,
+  "matched": 52,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 10.2,
+  "requests": 11
+ },
+ "amd": {
+  "jobs": 1286,
+  "students": 111,
+  "matched": 62,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 60.5,
+  "requests": 13
+ },
+ "american-family": {
+  "jobs": 54,
+  "students": 26,
+  "matched": 21,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 3.7,
+  "requests": 4
+ },
+ "anyscale": {
+  "jobs": 20,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.4,
+  "requests": 1
+ },
+ "apple": {
+  "jobs": 256,
+  "students": 137,
+  "matched": 20,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 35.3,
+  "requests": 36
+ },
+ "applied-intuition": {
+  "jobs": 328,
+  "students": 5,
+  "matched": 5,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.4,
+  "requests": 1
+ },
+ "aqr": {
+  "jobs": 55,
+  "students": 9,
+  "matched": 8,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "atlassian": {
+  "jobs": 336,
+  "students": 12,
+  "matched": 9,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.3,
+  "requests": 1
+ },
+ "aurora": {
+  "jobs": 101,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.2,
+  "requests": 1
+ },
+ "autodesk": {
+  "jobs": 433,
+  "students": 46,
+  "matched": 11,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 63.0,
+  "requests": 57
+ },
+ "benchling": {
+  "jobs": 55,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "block": {
+  "jobs": 219,
+  "students": 2,
+  "matched": 1,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.2,
+  "requests": 1
+ },
+ "bloomberg": {
+  "jobs": 341,
+  "students": 7,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 37.7,
+  "requests": 29
+ },
+ "booking": {
+  "jobs": 131,
+  "students": 3,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 5.3,
+  "requests": 2
+ },
+ "brevan-howard": {
+  "jobs": 26,
+  "students": 16,
+  "matched": 7,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.6,
+  "requests": 1
+ },
+ "brex": {
+  "jobs": 261,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "c3-ai": {
+  "jobs": 94,
+  "students": 5,
+  "matched": 3,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.9,
+  "requests": 2
+ },
+ "capital-one": {
+  "jobs": 1975,
+  "students": 7,
+  "matched": 3,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 98.7,
+  "requests": 99
+ },
+ "capstone": {
+  "jobs": 15,
+  "students": 8,
+  "matched": 3,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "capstone-dc": {
+  "jobs": 14,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.5,
+  "requests": 1
+ },
+ "ccc": {
+  "jobs": 36,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 2.5,
+  "requests": 3
+ },
+ "chan-zuckerberg": {
+  "jobs": 24,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 3.0,
+  "requests": 3
+ },
+ "cisco": {
+  "jobs": 1428,
+  "students": 60,
+  "matched": 35,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 71.7,
+  "requests": 72
+ },
+ "citadel": {
+  "jobs": 63,
+  "students": 28,
+  "matched": 11,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.3,
+  "requests": 1
+ },
+ "citadel-securities": {
+  "jobs": 79,
+  "students": 23,
+  "matched": 9,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.3,
+  "requests": 1
+ },
+ "cloudflare": {
+  "jobs": 437,
+  "students": 3,
+  "matched": 3,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.4,
+  "requests": 1
+ },
+ "cockroach-labs": {
+  "jobs": 17,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "cohere": {
+  "jobs": 116,
+  "students": 3,
+  "matched": 3,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.1,
+  "requests": 1
+ },
+ "coinbase": {
+  "jobs": 225,
+  "students": 26,
+  "matched": 14,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.1,
+  "requests": 1
+ },
+ "coreweave": {
+  "jobs": 425,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 8.6,
+  "requests": 5
+ },
+ "crowdstrike": {
+  "jobs": 348,
+  "students": 6,
+  "matched": 4,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 17.8,
+  "requests": 18
+ },
+ "databricks": {
+  "jobs": 899,
+  "students": 13,
+  "matched": 5,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.4,
+  "requests": 1
+ },
+ "datadog": {
+  "jobs": 432,
+  "students": 8,
+  "matched": 3,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "decagon": {
+  "jobs": 134,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "deepgram": {
+  "jobs": 91,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.4,
+  "requests": 1
+ },
+ "dell": {
+  "jobs": 460,
+  "students": 22,
+  "matched": 8,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 6.4,
+  "requests": 3
+ },
+ "docusign": {
+  "jobs": 261,
+  "students": 18,
+  "matched": 14,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 11.2,
+  "requests": 3
+ },
+ "doordash": {
+  "jobs": 596,
+  "students": 8,
+  "matched": 6,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 9.1,
+  "requests": 8
+ },
+ "dropbox": {
+  "jobs": 19,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.9,
+  "requests": 1
+ },
+ "duolingo": {
+  "jobs": 63,
+  "students": 4,
+  "matched": 2,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 2.3,
+  "requests": 1
+ },
+ "dv-trading": {
+  "jobs": 74,
+  "students": 20,
+  "matched": 13,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "ebay": {
+  "jobs": 270,
+  "students": 2,
+  "matched": 1,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.0,
+  "requests": 2
+ },
+ "electronic-arts": {
+  "jobs": 367,
+  "students": 46,
+  "matched": 11,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 29.4,
+  "requests": 19
+ },
+ "epic-games": {
+  "jobs": 139,
+  "students": 23,
+  "matched": 17,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "epic-systems": {
+  "jobs": 41,
+  "students": 2,
+  "matched": 2,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.2,
+  "requests": 1
+ },
+ "expedia": {
+  "jobs": 257,
+  "students": 14,
+  "matched": 5,
+  "at": "2026-10-20T22:30:09Z",
+  "duration": 15.3,
+  "requests": 16
+ },
+ "fidelity": {
+  "jobs": 750,
+  "students": 9,
+  "matched": 6,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 38.1,
+  "requests": 38
+ },
+ "figma": {
+  "jobs": 142,
+  "students": 8,
+  "matched": 7,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.9,
+  "requests": 1
+ },
+ "five-rings": {
+  "jobs": 17,
+  "students": 5,
+  "matched": 5,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "geico": {
+  "jobs": 292,
+  "students": 8,
+  "matched": 4,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 17.9,
+  "requests": 15
+ },
+ "general-motors": {
+  "jobs": 815,
+  "students": 69,
+  "matched": 56,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 44.1,
+  "requests": 41
+ },
+ "geneva-trading": {
+  "jobs": 14,
+  "students": 6,
+  "matched": 6,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.9,
+  "requests": 1
+ },
+ "glean": {
+  "jobs": 118,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "goldman-sachs": {
+  "jobs": 905,
+  "students": 182,
+  "matched": 25,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 3.2,
+  "requests": 4
+ },
+ "google": {
+  "jobs": 3928,
+  "students": 99,
+  "matched": 13,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.9,
+  "requests": 1
+ },
+ "grafana-labs": {
+  "jobs": 132,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:11:09Z",
+  "duration": 0.2,
+  "requests": 1
+ },
+ "graviton": {
+  "jobs": 24,
+  "students": 2,
+  "matched": 1,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "groq": {
+  "jobs": 36,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.2,
+  "requests": 1
+ },
+ "grubhub": {
+  "jobs": 111,
+  "students": 6,
+  "matched": 4,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 5.3,
+  "requests": 6
+ },
+ "gts": {
+  "jobs": 16,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.2,
+  "requests": 1
+ },
+ "harvey": {
+  "jobs": 338,
+  "students": 3,
+  "matched": 2,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.2,
+  "requests": 1
+ },
+ "hubspot": {
+  "jobs": 2,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:12:14Z",
+  "duration": 0.4,
+  "requests": 2
+ },
+ "hudson-river-trading": {
+  "jobs": 89,
+  "students": 9,
+  "matched": 9,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.9,
+  "requests": 2
+ },
+ "hugging-face": {
+  "jobs": 6,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "imc": {
+  "jobs": 169,
+  "students": 21,
+  "matched": 8,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "immuta": {
+  "jobs": 14,
+  "students": 5,
+  "matched": 5,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.6,
+  "requests": 1
+ },
+ "instabase": {
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "intel": {
+  "jobs": 732,
+  "students": 94,
+  "matched": 48,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 37.0,
+  "requests": 37
+ },
+ "intuit": {
+  "jobs": 595,
+  "students": 37,
+  "matched": 13,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 40.2,
+  "requests": 41
+ },
+ "jane-street": {
+  "jobs": 221,
+  "students": 43,
+  "matched": 16,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "john-deere": {
+  "jobs": 332,
+  "students": 56,
+  "matched": 30,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 66.5,
+  "requests": 34
+ },
+ "jump-trading": {
+  "jobs": 98,
+  "students": 30,
+  "matched": 10,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 2.0,
+  "requests": 1
+ },
+ "kirin": {
+  "jobs": 27,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "klaviyo": {
+  "jobs": 173,
+  "students": 6,
+  "matched": 4,
+  "at": "2026-10-20T22:30:09Z",
+  "duration": 3.1,
+  "requests": 2
+ },
+ "liberty-mutual": {
+  "jobs": 194,
+  "students": 19,
+  "matched": 10,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 48.1,
+  "requests": 20
+ },
+ "lyft": {
+  "jobs": 181,
+  "students": 20,
+  "matched": 6,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.7,
+  "requests": 1
+ },
+ "mercury": {
+  "jobs": 77,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.2,
+  "requests": 1
+ },
+ "meta": {
+  "jobs": 1225,
+  "students": 63,
+  "matched": 55,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 2.8,
+  "requests": 3
+ },
+ "microsoft": {
+  "jobs": 2369,
+  "students": 90,
+  "matched": 35,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 799.1,
+  "requests": 257
+ },
+ "mistral-ai": {
+  "jobs": 216,
+  "students": 4,
+  "matched": 0,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.8,
+  "requests": 1
+ },
+ "mongodb": {
+  "jobs": 397,
+  "students": 1,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "netflix": {
+  "jobs": 392,
+  "students": 3,
+  "matched": 2,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 130.1,
+  "requests": 41
+ },
+ "notion": {
+  "jobs": 135,
+  "students": 3,
+  "matched": 3,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.2,
+  "requests": 1
+ },
+ "nuro": {
+  "jobs": 107,
+  "students": 2,
+  "matched": 1,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.9,
+  "requests": 1
+ },
+ "nutanix": {
+  "jobs": 283,
+  "students": 2,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 11.8,
+  "requests": 1
+ },
+ "nvidia": {
+  "jobs": 2752,
+  "students": 175,
+  "matched": 41,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 880.4,
+  "requests": 294
+ },
+ "okta": {
+  "jobs": 392,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "openai": {
+  "jobs": 807,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.8,
+  "requests": 1
+ },
+ "oracle": {
+  "jobs": 2375,
+  "students": 24,
+  "matched": 9,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 48.1,
+  "requests": 12
+ },
+ "palo-alto-networks": {
+  "jobs": 1426,
+  "students": 28,
+  "matched": 15,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 72.1,
+  "requests": 72
+ },
+ "paypal": {
+  "jobs": 337,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 22.0,
+  "requests": 17
+ },
+ "pinecone": {
+  "jobs": 6,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 2.1,
+  "requests": 1
+ },
+ "pinterest": {
+  "jobs": 155,
+  "students": 13,
+  "matched": 7,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 2.0,
+  "requests": 1
+ },
+ "pitchbook": {
+  "jobs": 23,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "plaid": {
+  "jobs": 133,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.2,
+  "requests": 1
+ },
+ "point72": {
+  "jobs": 215,
+  "students": 20,
+  "matched": 16,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "postman": {
+  "jobs": 25,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.2,
+  "requests": 2
+ },
+ "procore": {
+  "jobs": 112,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 5.3,
+  "requests": 6
+ },
+ "qualtrics": {
+  "jobs": 79,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "radix": {
+  "jobs": 15,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.2,
+  "requests": 2
+ },
+ "ramp": {
+  "jobs": 168,
+  "students": 5,
+  "matched": 5,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.2,
+  "requests": 1
+ },
+ "red-hat": {
+  "jobs": 173,
+  "students": 42,
+  "matched": 11,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 8.8,
+  "requests": 9
+ },
+ "remitly": {
+  "jobs": 160,
+  "students": 2,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 8.9,
+  "requests": 9
+ },
+ "riot-games": {
+  "jobs": 177,
+  "students": 2,
+  "matched": 1,
+  "at": "2026-10-20T15:11:09Z",
+  "duration": 2.1,
+  "requests": 1
+ },
+ "rippling": {
+  "jobs": 372,
+  "students": 5,
+  "matched": 5,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.1,
+  "requests": 1
+ },
+ "robinhood": {
+  "jobs": 152,
+  "students": 2,
+  "matched": 1,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.1,
+  "requests": 2
+ },
+ "roblox": {
+  "jobs": 264,
+  "students": 5,
+  "matched": 5,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "rocket": {
+  "jobs": 381,
+  "students": 8,
+  "matched": 2,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 22.9,
+  "requests": 20
+ },
+ "rockwell-automation": {
+  "jobs": 448,
+  "students": 51,
+  "matched": 35,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 25.2,
+  "requests": 23
+ },
+ "salesforce": {
+  "jobs": 1583,
+  "students": 53,
+  "matched": 12,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 396.1,
+  "requests": 80
+ },
+ "samsara": {
+  "jobs": 265,
+  "students": 5,
+  "matched": 5,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 2.0,
+  "requests": 2
+ },
+ "scale-ai": {
+  "jobs": 184,
+  "students": 4,
+  "matched": 2,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.1,
+  "requests": 1
+ },
+ "seatgeek": {
+  "jobs": 37,
+  "students": 3,
+  "matched": 3,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.9,
+  "requests": 1
+ },
+ "semgrep": {
+  "jobs": 12,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.8,
+  "requests": 1
+ },
+ "servicenow": {
+  "jobs": 675,
+  "students": 5,
+  "matched": 2,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 57.1,
+  "requests": 58
+ },
+ "seven-research": {
+  "jobs": 9,
+  "students": 4,
+  "matched": 4,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 2.0,
+  "requests": 1
+ },
+ "shopify": {
+  "jobs": 120,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.2,
+  "requests": 1
+ },
+ "sierra": {
+  "jobs": 197,
+  "students": 2,
+  "matched": 1,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 2.0,
+  "requests": 2
+ },
+ "sig": {
+  "jobs": 285,
+  "students": 69,
+  "matched": 31,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 10.3,
+  "requests": 3
+ },
+ "sigma-computing": {
+  "jobs": 78,
+  "students": 6,
+  "matched": 6,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "smartsheet": {
+  "jobs": 90,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "snowflake": {
+  "jobs": 368,
+  "students": 6,
+  "matched": 1,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.5,
+  "requests": 1
+ },
+ "spotify": {
+  "jobs": 81,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.7,
+  "requests": 1
+ },
+ "squarepoint": {
+  "jobs": 92,
+  "students": 5,
+  "matched": 1,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "squarespace": {
+  "jobs": 26,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "stripe": {
+  "jobs": 728,
+  "students": 15,
+  "matched": 7,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.1,
+  "requests": 1
+ },
+ "synopsys": {
+  "jobs": 636,
+  "students": 4,
+  "matched": 4,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 106.7,
+  "requests": 106
+ },
+ "t-mobile": {
+  "jobs": 2535,
+  "students": 2,
+  "matched": 1,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 136.5,
+  "requests": 128
+ },
+ "talos": {
+  "jobs": 17,
+  "students": 5,
+  "matched": 3,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "tanium": {
+  "jobs": 75,
+  "students": 7,
+  "matched": 5,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "temporal": {
+  "jobs": 70,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 3.0,
+  "requests": 1
+ },
+ "the-trade-desk": {
+  "jobs": 103,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "toast": {
+  "jobs": 311,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T22:30:09Z",
+  "duration": 4.1,
+  "requests": 2
+ },
+ "together-ai": {
+  "jobs": 78,
+  "students": 11,
+  "matched": 11,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "transmarket-group": {
+  "jobs": 18,
+  "students": 3,
+  "matched": 3,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 2.0,
+  "requests": 1
+ },
+ "twilio": {
+  "jobs": 132,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T22:30:09Z",
+  "duration": 5.1,
+  "requests": 2
+ },
+ "twitch": {
+  "jobs": 54,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.2,
+  "requests": 1
+ },
+ "two-sigma": {
+  "jobs": 63,
+  "students": 4,
+  "matched": 4,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 8.8,
+  "requests": 7
+ },
+ "uber": {
+  "jobs": 710,
+  "students": 11,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 8.5,
+  "requests": 4
+ },
+ "uber-freight": {
+  "jobs": 68,
+  "students": 3,
+  "matched": 1,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "ukg": {
+  "jobs": 246,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 60.5,
+  "requests": 25
+ },
+ "unity": {
+  "jobs": 131,
+  "students": 2,
+  "matched": 1,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 6.4,
+  "requests": 7
+ },
+ "veeva": {
+  "jobs": 933,
+  "students": 7,
+  "matched": 2,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 2.1,
+  "requests": 1
+ },
+ "verkada": {
+  "jobs": 319,
+  "students": 12,
+  "matched": 8,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "visa": {
+  "jobs": 874,
+  "students": 28,
+  "matched": 6,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 48.1,
+  "requests": 45
+ },
+ "voleon": {
+  "jobs": 59,
+  "students": 4,
+  "matched": 4,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "voloridge": {
+  "jobs": 11,
+  "students": 3,
+  "matched": 3,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 2.0,
+  "requests": 1
+ },
+ "waabi": {
+  "jobs": 92,
+  "students": 3,
+  "matched": 3,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.9,
+  "requests": 1
+ },
+ "walleye": {
+  "jobs": 17,
+  "students": 4,
+  "matched": 4,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.2,
+  "requests": 2
+ },
+ "waymo": {
+  "jobs": 367,
+  "students": 64,
+  "matched": 56,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.6,
+  "requests": 1
+ },
+ "whatnot": {
+  "jobs": 149,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.1,
+  "requests": 1
+ },
+ "wolfram": {
+  "jobs": 7,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 0.8,
+  "requests": 1
+ },
+ "wolverine": {
+  "jobs": 19,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.7,
+  "requests": 1
+ },
+ "workday": {
+  "jobs": 409,
+  "students": 14,
+  "matched": 6,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 49.2,
+  "requests": 22
+ },
+ "workiva": {
+  "jobs": 112,
+  "students": 1,
+  "matched": 0,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 6.5,
+  "requests": 7
+ },
+ "xai": {
+  "jobs": 306,
+  "students": 4,
+  "matched": 2,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "xtx-markets": {
+  "jobs": 7,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 0.6,
+  "requests": 1
+ },
+ "yelp": {
+  "jobs": 19,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.6,
+  "requests": 2
+ },
+ "yext": {
+  "jobs": 25,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 1.0,
+  "requests": 1
+ },
+ "zendesk": {
+  "jobs": 137,
+  "students": 2,
+  "matched": 0,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 6.6,
+  "requests": 7
+ },
+ "zoox": {
+  "jobs": 239,
+  "students": 14,
+  "matched": 12,
+  "at": "2026-10-20T15:09:46Z",
+  "duration": 1.2,
+  "requests": 1
+ }
+}

@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://wd1.myworkdaysite.com/recruiting/paypal/jobs/siteMap.xml
+
+User-agent: *
+Allow: /jobs/
+Disallow: /refreshFacet/

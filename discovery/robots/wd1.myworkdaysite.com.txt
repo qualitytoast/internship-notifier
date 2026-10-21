@@ -1,0 +1,2 @@
+# status 422
+{"errorCode":"HTTP_422","errorCaseId":"66CF89MVFY32GY","httpStatus":422,"message":"","messageParams":{}}

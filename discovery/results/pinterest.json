@@ -1,0 +1,21 @@
+{
+  "key": "pinterest",
+  "name": "Pinterest",
+  "careers_url": "https://www.pinterestcareers.com/jobs/",
+  "hiring_system": "greenhouse (behind an Umbraco 'jobboard' marketing site)",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "pinterest"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/pinterest/jobs",
+  "feed_total": 155,
+  "page_total": 154,
+  "page_total_how": "Playwright render of https://www.pinterestcareers.com/jobs/ (no filters, 2026-10-19): 'Displaying 1 to 20 of 154 matching jobs'. Site job links are /jobs/<greenhouse id>/<slug>/?gh_jid=<id>, i.e. the same board; 155 vs 154 is live churn.",
+  "intern_total": 13,
+  "status": "verified",
+  "robots": "ALLOW (boards-api.greenhouse.io: no matching rule)",
+  "notes": "Single board; absolute_url points to https://www.pinterestcareers.com/jobs/?gh_jid=<id>. Interns include 2027 SWE/ML interns in USA, Dublin, Toronto, Zurich and Master's/PhD DS/ML internships (USA). The marketing site is not needed by the checker.",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-20T00:22:00Z"
+}

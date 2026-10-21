@@ -1,0 +1,9 @@
+# status 200
+Sitemap: https://www.lifeatspotify.com/sitemap.xml
+
+User-agent: *
+Disallow: /api/
+Disallow: /_next/data/
+Disallow: /*.map$
+Allow: /_next/
+Allow: /

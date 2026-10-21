@@ -1,0 +1,22 @@
+{
+  "key": "two-sigma",
+  "name": "Two Sigma",
+  "careers_url": "https://careers.twosigma.com/careers/OpenRoles",
+  "hiring_system": "avature",
+  "checker": "avature",
+  "settings": {
+    "list_url": "https://careers.twosigma.com/careers/OpenRoles/",
+    "page_size": 10
+  },
+  "feed": "GET https://careers.twosigma.com/careers/OpenRoles/?jobOffset=N (HTML, 10 per page)",
+  "feed_total": 63,
+  "page_total": 63,
+  "page_total_how": "cards counted across all 7 server-rendered pages; Playwright render of page 1 identical",
+  "intern_total": 4,
+  "status": "verified",
+  "robots": "ALLOW (Allow: /careers)",
+  "notes": "RSS feed is stale (oldest 20 only) \u2014 not used.",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-19T23:55:00Z"
+}

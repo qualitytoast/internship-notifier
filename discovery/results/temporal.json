@@ -1,0 +1,21 @@
+{
+  "key": "temporal",
+  "name": "Temporal",
+  "careers_url": "https://temporal.io/careers",
+  "hiring_system": "ashby (custom SvelteKit front on temporal.io)",
+  "checker": "ashby",
+  "settings": {
+    "board": "temporal"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/temporal?includeCompensation=false",
+  "feed_total": 70,
+  "page_total": 70,
+  "page_total_how": "Playwright render of https://temporal.io/careers: the 'Become a Temporalite' list has 70 links temporal.io/careers/<ashby id> = the feed's 70 ids.",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com: robots.txt returns 401 = no robots.txt, allow all; jobs.ashbyhq.com/api/ is disallowed and not used)",
+  "notes": "The site loads its list server-side (temporal.io/careers/__data.json) and never calls Ashby from the browser; the board name came from the probe and is confirmed by the exact id match.",
+  "checked_at": "2026-10-20T00:37:53Z"
+}

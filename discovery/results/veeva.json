@@ -1,0 +1,21 @@
+{
+  "key": "veeva",
+  "name": "Veeva Systems",
+  "careers_url": "https://careers.veeva.com/job-search-results/",
+  "hiring_system": "lever",
+  "checker": "lever",
+  "settings": {
+    "site": "veeva"
+  },
+  "feed": "GET https://api.lever.co/v0/postings/veeva?mode=json",
+  "feed_total": 935,
+  "page_total": 937,
+  "page_total_how": "Playwright render of https://careers.veeva.com/job-search-results/ (no filters) showed '937 Results'; the page embeds all of them as `let allJobs = [...]` (937 Lever ids)",
+  "intern_total": 4,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (Allow: /; api.lever.co/robots.txt asks Crawl-delay: 1)",
+  "notes": "careers.veeva.com is a cached WordPress copy of Lever: 930 ids shared; the 7 page-only ids are closed in Lever (API 404), the 5 Lever-only are new or evergreen. Lever is the current, complete source; the response is ~13 MB. See notes/veeva.md.",
+  "checked_at": "2026-10-20T00:39:43Z"
+}

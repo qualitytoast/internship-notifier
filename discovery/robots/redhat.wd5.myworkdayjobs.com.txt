@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://redhat.wd5.myworkdayjobs.com/Jobs/siteMap.xml
+
+User-agent: *
+Allow: /Jobs/
+Disallow: /refreshFacet/

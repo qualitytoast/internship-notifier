@@ -1,0 +1,21 @@
+{
+  "key": "waabi",
+  "name": "Waabi",
+  "careers_url": "https://waabi.ai/careers/",
+  "hiring_system": "lever",
+  "checker": "lever",
+  "settings": {
+    "site": "waabi"
+  },
+  "feed": "GET https://api.lever.co/v0/postings/waabi?mode=json",
+  "feed_total": 94,
+  "page_total": 94,
+  "page_total_how": "https://waabi.ai/careers links 'Explore open roles' to https://jobs.lever.co/waabi. A Playwright render of that page showed 94 .posting rows, whose ids match the feed exactly",
+  "intern_total": 3,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.lever.co: Allow: /, Crawl-delay: 1); careers page and jobs.lever.co ALLOW",
+  "notes": "Plain Lever site (global region). Interns are in Toronto: '2027 Intern, PhD Research Scientist', 'Research Internship/Co-op' and 'Safety Methodologies Internship/Co-op 2027'.",
+  "checked_at": "2026-10-20T00:40:00Z"
+}

@@ -1,0 +1,23 @@
+{
+  "key": "intel",
+  "name": "Intel",
+  "careers_url": "https://jobs.intel.com/",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "intel.wd1.myworkdayjobs.com",
+    "tenant": "intel",
+    "site": "External"
+  },
+  "feed": "POST https://intel.wd1.myworkdayjobs.com/wday/cxs/intel/External/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 727,
+  "page_total": 728,
+  "page_total_how": "jobs.intel.com redirects to an intel.wd1 External landing page; Playwright render of https://intel.wd1.myworkdayjobs.com/External showed '728 JOBS FOUND' a few minutes after the feed enumeration returned 727 (churn). Recheck 03:19Z: 729.",
+  "intern_total": 94,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (no matching rule) for the CXS POST URL(s); the tenant robots.txt lists only /External/ as Allow",
+  "notes": "Single public site. workerSubType 'Student / Intern (Fixed Term)' (id dc8bf79476611087dfde99931439ae75, the bookmark's filter) = 94; the title rule finds 93 (misses 'AI framework engineer'). 727 jobs is well under Workday's 2000 cap.",
+  "checked_at": "2026-10-20T03:19:24Z"
+}
