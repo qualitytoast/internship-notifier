@@ -146,7 +146,8 @@ Rules for changing things: CLAUDE.md.
   - Fetches the SimplifyJobs Summer2027 README and the Off-Season list (with ETag). New rows go
     pending → found / filtered / missed.
   - For blocked or failing companies, the rows are stored as "via Simplify" jobs and emailed.
-  - Matching uses job ids or requisition ids in the URL, then normalized titles.
+  - Matching uses job ids or requisition ids in the URL, then normalized titles of current postings (open, or
+    closed within 30 days; a different year never matches).
 - **Removals and scans:** a removal is recorded only after a healthy full scan. Big sites' quick scans stop
   after two consecutive pages of known jobs.
 

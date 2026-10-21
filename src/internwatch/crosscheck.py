@@ -172,6 +172,8 @@ class CompanyIndex:
 # ---------------------------------------------------------------------------------------------
 
 _TITLE_NOISE = re.compile(r"\b(?:spring|summer|fall|autumn|winter|20\d\d|with|and|the|of|for|in|at|a|an)\b|[^a-z0-9\s]")
+_YEARS = re.compile(r"\b20\d\d\b")
+TITLE_MATCH_DAYS = 30   # a posting closed longer ago than this is an earlier round, not the one Simplify lists
 
 
 def _id_in_url(ident: str, url: str) -> bool:
@@ -207,10 +209,17 @@ def find_in_db(db: DB, company: str, row: Row):
             return j, "id"
         if j["url"] and clean_url(j["url"]).lower() == url:
             return j, "url"
+    # By title only a current posting counts: the database keeps every job ever seen, and last cycle's closed
+    # "Software Engineer Intern - Summer 2027" must not stand in for a "Summer 2028" posting the checker missed.
     t = title_key(row.title)
+    years = set(_YEARS.findall(f"{row.title} {row.terms}"))
+    closed_before = iso(utcnow() - timedelta(days=TITLE_MATCH_DAYS))
     for j in candidates:
-        if title_key(j["title"]) == t:
-            return j, "title"
+        if title_key(j["title"]) != t or (j["removed_at"] and j["removed_at"] < closed_before):
+            continue
+        if years and set(_YEARS.findall(j["title"])) and not years & set(_YEARS.findall(j["title"])):
+            continue
+        return j, "title"
     return None, ""
 
 

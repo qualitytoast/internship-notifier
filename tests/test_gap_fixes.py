@@ -244,3 +244,28 @@ def test_a_detail_page_the_parser_cannot_handle_does_not_hide_the_job(make_cfg, 
     cfg = make_cfg([company("acme", checker="crashy-test")])
     o = run_checker(cfg, cfg.companies[0], detail_limit=5)
     assert o.ok and [j.id for j in o.jobs] == ["1"] and o.detail_errors
+
+
+# ---------------------------------------------------------------------------------------------
+# cross-check: a Simplify row is only "found" by title when a current posting has that title
+
+def _stored(db, jid, title, removed_days_ago=None):
+    from internwatch.models import Match
+    db.upsert_jobs("acme", [job(jid, title)], iso(utcnow() - timedelta(days=200)))
+    db.set_match("acme", jid, Match(True, field="SWE"), True)
+    if removed_days_ago is not None:
+        db.conn.execute("UPDATE jobs SET removed_at=? WHERE job_id=?", (iso(utcnow() - timedelta(days=removed_days_ago)), jid))
+
+
+@pytest.mark.parametrize("stored,removed_days_ago,listed,found", [
+    ("Software Engineer Intern - Summer 2027", 60, "Software Engineer Intern (Summer 2028)", False),  # last cycle
+    ("Software Engineer Intern - Summer 2027", None, "Software Engineer Intern (Summer 2028)", False),  # other year
+    ("Software Engineer Intern", None, "Software Engineer Intern", True),
+    ("Software Engineer Intern - Summer 2028", 5, "Software Engineer Intern (Summer 2028)", True),     # just closed
+])
+def test_crosscheck_title_match_needs_a_current_posting(memdb, stored, removed_days_ago, listed, found):
+    from internwatch.crosscheck import Row, find_in_db
+    _stored(memdb, "111", stored, removed_days_ago)
+    hit, how = find_in_db(memdb, "acme", Row("summer", "k", "Acme", listed, "New York, NY", "https://x/jobs/999", "",
+                                             "Software Engineering"))
+    assert (hit is not None) == found and (how == "title" if found else how == "")
