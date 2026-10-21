@@ -374,3 +374,21 @@ def test_a_crashing_source_keeps_the_other_sources_jobs(monkeypatch):
 def test_every_source_crashing_still_fails_the_check(monkeypatch):
     with pytest.raises(ValueError):
         _multi(monkeypatch, [_Crashy(kind="a", settings={"x": 1}), _Crashy(kind="b", settings={"y": 2})])
+
+
+def test_each_source_is_read_at_its_own_pace(monkeypatch):
+    class FakeHttp:
+        min_interval = None
+    seen = {}
+
+    class Paced(_Src):
+        def fetch(self, http, s, ctx=None):
+            seen[self.type] = http.min_interval
+            return super().fetch(http, s, ctx)
+
+    srcs = [Paced([job("w1", "A")], kind="workday", settings={"t": 1}),
+            Paced([job("e1", "B")], kind="eightfold", settings={"host": "jobs.autodesk.com", "min_interval": 2.5})]
+    http = FakeHttp()
+    monkeypatch.setattr(Multi, "_sources", lambda self, _: [(i, x, x.settings) for i, x in enumerate(srcs)])
+    Multi().fetch(http, {}, FetchContext())
+    assert seen == {"workday": None, "eightfold": 2.5} and http.min_interval is None   # restored afterwards

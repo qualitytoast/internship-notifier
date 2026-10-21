@@ -20,6 +20,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+from contextlib import contextmanager
 
 from ..adapters import get_checker
 from ..adapters.base import Checker, degrade, need, register
@@ -42,6 +43,18 @@ def _source_ids(sources) -> list[str]:
         out.append(sid if seen[sid] == 1 else f"{sid}#{seen[sid]}")
     return out
 
+
+@contextmanager
+def _pacing(http, st: dict):
+    """A source's own min_interval (Autodesk's Eightfold site asks for 2.5 s) while that source is read."""
+    old = getattr(http, "min_interval", None)
+    if http is not None and st.get("min_interval"):
+        http.min_interval = max(float(st["min_interval"]), old or 0.0)
+    try:
+        yield
+    finally:
+        if http is not None:
+            http.min_interval = old
 
 @register
 class Multi(Checker):
@@ -69,7 +82,8 @@ class Multi(Checker):
         ok_now: set[str] = set()
         for i, checker, st in sources:
             try:
-                got = checker.fetch(http, st, ctx)
+                with _pacing(http, st):
+                    got = checker.fetch(http, st, ctx)
             except Exception as e:  # noqa: BLE001 — one source failing or crashing must not hide the others
                 errors.append(f"{checker.type}: {e}" if isinstance(e, CheckerError)
                               else f"{checker.type}: crashed: {type(e).__name__}: {e}")
@@ -117,7 +131,8 @@ class Multi(Checker):
         prefix = f"{checker.type}:" if i else ""
         raw_id, job.id = job.id, job.id[len(prefix):]
         try:
-            checker.detail(http, st, job)
+            with _pacing(http, st):
+                checker.detail(http, st, job)
         finally:
             job.id = raw_id
         return job
