@@ -1,12 +1,15 @@
 """Checkers added in October 2026, replayed from their recorded fixtures with edited responses: Instabase's
-careers-page watch."""
+careers-page watch, D. E. Shaw."""
 import copy
 import json
+
+import pytest
 
 from internwatch.adapters import get_checker
 from internwatch.adapters.base import FetchContext
 from internwatch.health import assess
 from internwatch.http import Cassette, Http
+from internwatch.models import ShapeError
 from internwatch.runner import run_checker
 
 from conftest import REPO, company
@@ -94,3 +97,26 @@ def test_instabase_board_back_with_jobs_is_read_like_the_plain_greenhouse_board(
     assert [j.to_dict() for j in jobs] == [j.to_dict() for j in plain]
     assert [(j.id, j.title) for j in jobs] == [("8123456002", "Software Engineer Intern, Summer 2027")]
     assert ctx.degraded is None and ctx.state["boards_ok"] == ["instabase"]
+
+
+# D. E. Shaw ---------------------------------------------------------------------------------
+
+def test_deshaw_reads_both_listed_lists_and_not_the_internal_postings():
+    jobs = replay("de-shaw")
+    assert len(jobs) == len({j.id for j in jobs}) == 105
+    assert sum(j.extra["list"] == "internships" for j in jobs) == 12
+    assert not [j for j in jobs if "FinOp Intern" in j.title]  # internal-only: not on the page
+    j = next(j for j in jobs if j.id == "5894")
+    assert (j.title, j.location, j.employment_type, j.department) == (
+        "Software Developer Intern (New York) – Summer 2027", "New York", "Intern", "Software Development")
+    assert j.url == "https://www.deshaw.com/careers/software-developer-intern-new-york-summer-2027-5894"
+    assert "2027" in j.snippet and all(x.url == x.url.lower() for x in jobs)
+
+
+@pytest.mark.parametrize("old, new", [('"jobsFetchingError":false', '"jobsFetchingError":true'),
+                                      ('id="__NEXT_DATA__"', 'id="__NEXT_DATA_GONE__"')])
+def test_deshaw_page_that_could_not_load_its_jobs_fails_instead_of_reading_zero(old, new):
+    def edit(e):
+        e["text"] = e["text"].replace(old, new)
+    with pytest.raises(ShapeError):
+        replay("de-shaw", edit, ctx=FetchContext())

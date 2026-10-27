@@ -1674,3 +1674,12 @@ companies:
   checker: workday
   settings: {host: osv-cci.wd1.myworkdayjobs.com, tenant: osv_cci, site: CCICareers}
   verified: {page_total: 11}
+- key: de-shaw
+  name: D. E. Shaw
+  category: quant
+  aliases: [DE Shaw, D. E. Shaw & Co.]
+  careers_url: ['https://www.deshaw.com/careers']
+  checker: deshaw
+  settings:
+    match_urls: [deshaw.com/careers/]
+  verified: {page_total: 105}

@@ -351,6 +351,14 @@
   "duration": 0.1,
   "requests": 1
  },
+ "de-shaw": {
+  "jobs": 105,
+  "students": 12,
+  "matched": 5,
+  "at": "2026-10-27T03:10:29Z",
+  "duration": 0.5,
+  "requests": 1
+ },
  "decagon": {
   "jobs": 134,
   "students": 1,
