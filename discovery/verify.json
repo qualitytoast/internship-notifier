@@ -47,6 +47,14 @@
   "duration": 3.4,
   "requests": 2
  },
+ "akuna-capital": {
+  "jobs": 37,
+  "students": 8,
+  "matched": 7,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 2.1,
+  "requests": 1
+ },
  "amazon": {
   "jobs": 998,
   "students": 641,
@@ -70,6 +78,14 @@
   "at": "2026-10-20T15:09:46Z",
   "duration": 3.7,
   "requests": 4
+ },
+ "ansatz-capital": {
+  "jobs": 5,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 0.3,
+  "requests": 1
  },
  "anyscale": {
   "jobs": 20,
@@ -126,6 +142,14 @@
   "at": "2026-10-20T15:09:46Z",
   "duration": 63.0,
   "requests": 57
+ },
+ "belvedere-trading": {
+  "jobs": 17,
+  "students": 2,
+  "matched": 2,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 2.6,
+  "requests": 1
  },
  "benchling": {
   "jobs": 55,
@@ -207,6 +231,14 @@
   "duration": 0.5,
   "requests": 1
  },
+ "castleton-commodities": {
+  "jobs": 11,
+  "students": 4,
+  "matched": 0,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 0.3,
+  "requests": 1
+ },
  "ccc": {
   "jobs": 36,
   "students": 0,
@@ -222,6 +254,14 @@
   "at": "2026-10-20T15:09:46Z",
   "duration": 3.0,
   "requests": 3
+ },
+ "chicago-trading-company": {
+  "jobs": 31,
+  "students": 4,
+  "matched": 2,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 8.2,
+  "requests": 2
  },
  "cisco": {
   "jobs": 1428,
@@ -359,6 +399,14 @@
   "duration": 1.9,
   "requests": 1
  },
+ "drw": {
+  "jobs": 163,
+  "students": 15,
+  "matched": 5,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 4.1,
+  "requests": 2
+ },
  "duolingo": {
   "jobs": 63,
   "students": 4,
@@ -437,6 +485,22 @@
   "matched": 5,
   "at": "2026-10-20T15:09:47Z",
   "duration": 1.0,
+  "requests": 1
+ },
+ "flow-traders": {
+  "jobs": 47,
+  "students": 3,
+  "matched": 1,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 4.0,
+  "requests": 1
+ },
+ "garda-capital": {
+  "jobs": 10,
+  "students": 3,
+  "matched": 1,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 4.0,
   "requests": 1
  },
  "geico": {
@@ -533,6 +597,14 @@
   "matched": 2,
   "at": "2026-10-20T15:09:47Z",
   "duration": 1.2,
+  "requests": 1
+ },
+ "headlands": {
+  "jobs": 8,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 4.5,
   "requests": 1
  },
  "hubspot": {
@@ -663,6 +735,14 @@
   "duration": 1.7,
   "requests": 1
  },
+ "maven-securities": {
+  "jobs": 37,
+  "students": 4,
+  "matched": 2,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 3.6,
+  "requests": 1
+ },
  "mercury": {
   "jobs": 77,
   "students": 0,
@@ -686,6 +766,14 @@
   "at": "2026-10-20T15:09:46Z",
   "duration": 799.1,
   "requests": 257
+ },
+ "millennium": {
+  "jobs": 221,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 22.8,
+  "requests": 23
  },
  "mistral-ai": {
   "jobs": 216,
@@ -751,12 +839,28 @@
   "duration": 1.0,
   "requests": 1
  },
+ "old-mission": {
+  "jobs": 39,
+  "students": 2,
+  "matched": 1,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 0.3,
+  "requests": 1
+ },
  "openai": {
   "jobs": 807,
   "students": 1,
   "matched": 1,
   "at": "2026-10-20T15:09:46Z",
   "duration": 0.8,
+  "requests": 1
+ },
+ "optiver": {
+  "jobs": 162,
+  "students": 18,
+  "matched": 2,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 1.1,
   "requests": 1
  },
  "oracle": {
@@ -782,6 +886,22 @@
   "at": "2026-10-20T15:09:46Z",
   "duration": 22.0,
   "requests": 17
+ },
+ "pdt-partners": {
+  "jobs": 11,
+  "students": 3,
+  "matched": 3,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 4.7,
+  "requests": 1
+ },
+ "peak6": {
+  "jobs": 20,
+  "students": 3,
+  "matched": 3,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 1.4,
+  "requests": 2
  },
  "pinecone": {
   "jobs": 6,
@@ -951,6 +1071,14 @@
   "duration": 1.1,
   "requests": 1
  },
+ "schonfeld": {
+  "jobs": 66,
+  "students": 10,
+  "matched": 6,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 3.1,
+  "requests": 1
+ },
  "seatgeek": {
   "jobs": 37,
   "students": 3,
@@ -1103,6 +1231,14 @@
   "duration": 3.0,
   "requests": 1
  },
+ "tgs": {
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 12.9,
+  "requests": 1
+ },
  "the-trade-desk": {
   "jobs": 103,
   "students": 0,
@@ -1127,6 +1263,14 @@
   "duration": 1.0,
   "requests": 1
  },
+ "tower-research": {
+  "jobs": 100,
+  "students": 16,
+  "matched": 5,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 3.8,
+  "requests": 1
+ },
  "transmarket-group": {
   "jobs": 18,
   "students": 3,
@@ -1134,6 +1278,14 @@
   "at": "2026-10-20T15:09:47Z",
   "duration": 2.0,
   "requests": 1
+ },
+ "trexquant": {
+  "jobs": 33,
+  "students": 1,
+  "matched": 0,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 3.1,
+  "requests": 4
  },
  "twilio": {
   "jobs": 132,
@@ -1191,6 +1343,22 @@
   "duration": 6.4,
   "requests": 7
  },
+ "valkyrie-trading": {
+  "jobs": 6,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 0.3,
+  "requests": 1
+ },
+ "vatic-labs": {
+  "jobs": 7,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 4.0,
+  "requests": 1
+ },
  "veeva": {
   "jobs": 933,
   "students": 7,
@@ -1205,6 +1373,14 @@
   "matched": 8,
   "at": "2026-10-20T15:09:46Z",
   "duration": 1.0,
+  "requests": 1
+ },
+ "virtu": {
+  "jobs": 46,
+  "students": 17,
+  "matched": 5,
+  "at": "2026-10-27T03:04:10Z",
+  "duration": 4.0,
   "requests": 1
  },
  "visa": {

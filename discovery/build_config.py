@@ -48,6 +48,11 @@ ALIASES = {
     "bloomberg": ["Bloomberg LP"], "procore": ["Procore Technologies"], "akamai": ["Akamai Technologies"],
     "dell": ["Dell"], "capital-one": ["Capital One"], "paypal": ["Venmo"], "citadel-securities": [],
     "nvidia": ["Nvidia"], "t-mobile": ["TMobile"], "palo-alto-networks": [], "applied-intuition": [],
+    "akuna-capital": ["Akuna"], "peak6": ["PEAK6 Investments"], "old-mission": ["Old Mission"],
+    "tower-research": ["Tower Research"], "millennium": ["Millennium"],
+    "headlands": ["Headlands Tech Holdings", "Headlands Tech"], "virtu": ["Virtu"],
+    "trexquant": ["Trexquant Investment"], "schonfeld": ["Schonfeld Strategic Advisors"],
+    "castleton-commodities": ["Castleton Commodities"],
 }
 
 # Freshman/sophomore program names that can appear in a posting title without a student word (UNDERCLASSMEN.md

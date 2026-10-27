@@ -1,0 +1,21 @@
+{
+  "key": "belvedere-trading",
+  "name": "Belvedere Trading",
+  "careers_url": "https://www.belvederetrading.com/careers",
+  "hiring_system": "lever",
+  "checker": "lever",
+  "settings": {
+    "site": "belvederetrading"
+  },
+  "feed": "GET https://api.lever.co/v0/postings/belvederetrading?mode=json",
+  "feed_total": 17,
+  "page_total": 17,
+  "page_total_how": "belvederetrading.com/careers redirects to /new-graduates-campus-recruiting, which links jobs.lever.co/belvederetrading (also filtered to Intern and Full-Time); the hosted page lists 17 (2026-10-26).",
+  "intern_total": 2,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.lever.co: Allow: /)",
+  "notes": "",
+  "checked_at": "2026-10-27T03:02:51Z"
+}

@@ -1,0 +1,26 @@
+{
+  "key": "peak6",
+  "name": "PEAK6",
+  "careers_url": "https://careers.peak6.com/jobs",
+  "hiring_system": "workday (sites PEAK6 and CapMan, behind careers.peak6.com, an Ongig front)",
+  "checker": "workday",
+  "settings": {
+    "host": "peak6group.wd1.myworkdayjobs.com",
+    "tenant": "peak6group",
+    "sites": [
+      "PEAK6",
+      "CapMan"
+    ]
+  },
+  "feed": "POST https://peak6group.wd1.myworkdayjobs.com/wday/cxs/peak6group/{PEAK6,CapMan}/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 20,
+  "page_total": 19,
+  "page_total_how": "careers.peak6.com's search (/api/appSearch, 2026-10-26) lists 78 jobs across PEAK6 group brands; 19 are PEAK6 (15) and PEAK6 Capital Management (4), whose apply links go to the Workday sites PEAK6 and CapMan.",
+  "intern_total": 3,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (peak6group.wd1.myworkdayjobs.com: no matching rule (allowed))",
+  "notes": "The checker reads 1 job more than careers.peak6.com lists under PEAK6 and PEAK6 Capital Management: a role of FOCUS (an insurance brand) posted on the PEAK6 site. The group's other brands have their own Workday sites and are not watched: Apex Fintech Solutions (38 jobs), FOCUS (TFIG, 10), We Insure (7), Bruce Markets (3), Poker Power (1).",
+  "checked_at": "2026-10-27T03:02:51Z"
+}

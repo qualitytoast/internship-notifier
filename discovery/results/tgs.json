@@ -1,0 +1,21 @@
+{
+  "key": "tgs",
+  "name": "TGS Management Company",
+  "careers_url": "https://www.tgsmc.com/join-our-team/",
+  "hiring_system": "lever (tgsmc)",
+  "checker": "lever",
+  "settings": {
+    "site": "tgsmc"
+  },
+  "feed": "GET https://api.lever.co/v0/postings/tgsmc?mode=json",
+  "feed_total": 0,
+  "page_total": 0,
+  "page_total_how": "tgsmc.com/join-our-team/ links one posting, jobs.lever.co/tgsmc/eeb03bfa-4314-440b-ac4c-77ca12215752 ('TGS - Join Our Team', a full-time general application in Irvine) that the board doesn't list; jobs.lever.co/tgsmc and the API list 0 postings (2026-10-26).",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.lever.co: Allow: /)",
+  "notes": "TGS Management Company (the Irvine quant fund) posts no individual jobs publicly; the board is watched in case it starts. Not TGS the energy-data company (careers.tgs.com).",
+  "checked_at": "2026-10-27T03:02:51Z"
+}

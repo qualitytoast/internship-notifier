@@ -1,0 +1,21 @@
+{
+  "key": "schonfeld",
+  "name": "Schonfeld",
+  "careers_url": "https://www.schonfeld.com/careers/",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "schonfeld"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/schonfeld/jobs",
+  "feed_total": 66,
+  "page_total": 66,
+  "page_total_how": "The hosted board job-boards.greenhouse.io/schonfeld, which schonfeld.com/careers links, lists 66 (2026-10-26).",
+  "intern_total": 10,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (boards-api.greenhouse.io: no matching rule (allowed))",
+  "notes": "schonfeld.com sends plain HTTP clients a bot check; the checker only needs the Greenhouse API.",
+  "checked_at": "2026-10-27T03:02:51Z"
+}

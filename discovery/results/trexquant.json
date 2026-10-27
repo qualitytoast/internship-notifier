@@ -1,0 +1,21 @@
+{
+  "key": "trexquant",
+  "name": "Trexquant",
+  "careers_url": "https://www.trexquant.com/careers",
+  "hiring_system": "workable (trexquant.com's job list proxies it)",
+  "checker": "workable",
+  "settings": {
+    "account": "trexquant"
+  },
+  "feed": "POST https://apply.workable.com/api/v3/accounts/trexquant/jobs {\"query\":\"\", ...}",
+  "feed_total": 33,
+  "page_total": 33,
+  "page_total_how": "trexquant.com/careers loads trexquant.com/api/get-jobs, whose 48 entries are 33 jobs (15 repeated shortcodes); the page shows all 33 feed titles (2026-10-26).",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (apply.workable.com: no matching rule (allowed))",
+  "notes": "",
+  "checked_at": "2026-10-27T03:02:51Z"
+}

@@ -1500,3 +1500,177 @@ companies:
   checker: greenhouse
   settings: {board: uberfreight}
   verified: {page_total: 68}
+- key: drw
+  name: DRW
+  category: quant
+  careers_url: ['https://www.drw.com/work-at-drw/listings']
+  checker: greenhouse
+  settings:
+    boards: [drweng, drwuniversityjobs]
+    missing_ok: true
+  verified: {page_total: 161, explained: 'The checker reads 2 jobs more than drw.com lists: the campus board drwuniversityjobs, which
+      drw.com doesn''t show.'}
+- key: optiver
+  name: Optiver
+  category: quant
+  careers_url: ['https://www.optiver.com/join-us/jobs/']
+  checker: greenhouse
+  settings: {board: optiverus}
+  verified: {page_total: 162}
+- key: akuna-capital
+  name: Akuna Capital
+  category: quant
+  aliases: [Akuna]
+  careers_url: ['https://akunacapital.com/careers']
+  checker: greenhouse
+  settings: {board: akunacapital}
+  verified: {page_total: 37}
+- key: chicago-trading-company
+  name: Chicago Trading Company
+  category: quant
+  careers_url: ['https://www.chicagotrading.com/open-roles/', 'https://www.chicagotrading.com/early-careers-at-ctc/']
+  checker: greenhouse
+  settings:
+    boards: [chicagotrading, chicagotradingcampus]
+    missing_ok: true
+  verified: {page_total: 31}
+- key: peak6
+  name: PEAK6
+  category: quant
+  aliases: [PEAK6 Investments]
+  careers_url: ['https://careers.peak6.com/jobs']
+  checker: workday
+  settings:
+    host: peak6group.wd1.myworkdayjobs.com
+    tenant: peak6group
+    sites: [PEAK6, CapMan]
+  verified: {page_total: 19, explained: 'The checker reads 1 job more than careers.peak6.com lists under PEAK6 and PEAK6 Capital Management:
+      a role of FOCUS (an insurance brand) posted on the PEAK6 site.'}
+- key: belvedere-trading
+  name: Belvedere Trading
+  category: quant
+  careers_url: ['https://www.belvederetrading.com/careers']
+  checker: lever
+  settings: {site: belvederetrading}
+  verified: {page_total: 17}
+- key: old-mission
+  name: Old Mission Capital
+  category: quant
+  aliases: [Old Mission]
+  careers_url: ['https://www.oldmissioncapital.com/careers/']
+  checker: ashby
+  settings: {board: old-mission-capital}
+  verified: {page_total: 39}
+- key: tower-research
+  name: Tower Research Capital
+  category: quant
+  aliases: [Tower Research]
+  careers_url: ['https://www.tower-research.com/open-positions']
+  checker: greenhouse
+  settings: {board: towerresearchcapital}
+  verified: {page_total: 100}
+- key: millennium
+  name: Millennium Management
+  category: quant
+  aliases: [Millennium]
+  careers_url: ['https://career.mlp.com/careers']
+  checker: eightfold
+  settings: {host: career.mlp.com, domain: mlp.com, api: v2}
+  verified: {page_total: 221}
+- key: vatic-labs
+  name: Vatic Labs
+  category: quant
+  careers_url: ['https://www.vaticlabs.com/careers']
+  checker: greenhouse
+  settings: {board: vaticlabs}
+  verified: {page_total: 7}
+- key: headlands
+  name: Headlands Technologies
+  category: quant
+  aliases: [Headlands Tech Holdings, Headlands Tech]
+  careers_url: ['https://www.headlandstech.com/careers/']
+  checker: greenhouse
+  settings: {board: headlandstechnologiesllc}
+  verified: {page_total: 7, explained: 'The checker reads 1 job more than the careers page lists: a Legal & Compliance Associate in
+      Singapore that is on the board but not on headlandstech.com.'}
+- key: ansatz-capital
+  name: Ansatz Capital
+  category: quant
+  careers_url: ['https://jobs.lever.co/ansatzcapital']
+  checker: lever
+  settings: {site: ansatzcapital}
+  verified: {page_total: 5}
+- key: pdt-partners
+  name: PDT Partners
+  category: quant
+  careers_url: ['https://www.pdtpartners.com/careers']
+  checker: greenhouse
+  settings: {board: pdtpartners}
+  verified: {page_total: 11}
+- key: tgs
+  name: TGS Management Company
+  category: quant
+  careers_url: ['https://www.tgsmc.com/join-our-team/', 'https://jobs.lever.co/tgsmc']
+  checker: lever
+  settings: {site: tgsmc}
+  verified: {page_total: 0}
+- key: virtu
+  name: Virtu Financial
+  category: quant
+  aliases: [Virtu]
+  careers_url: ['https://www.virtu.com/careers/']
+  checker: greenhouse
+  settings: {board: virtu}
+  verified: {page_total: 46}
+- key: flow-traders
+  name: Flow Traders
+  category: quant
+  careers_url: ['https://www.flowtraders.com/careers']
+  checker: greenhouse
+  settings: {board: flowtraders}
+  verified: {page_total: 47}
+- key: valkyrie-trading
+  name: Valkyrie Trading
+  category: quant
+  careers_url: ['https://www.valkyrietrading.com/careers']
+  checker: lever
+  settings: {site: valkyrietrading}
+  verified: {page_total: 6}
+- key: maven-securities
+  name: Maven Securities
+  category: quant
+  careers_url: ['https://www.mavensecurities.com/jobs/']
+  checker: greenhouse
+  settings: {board: mavensecuritiesholdingltd}
+  verified: {page_total: 37}
+- key: garda-capital
+  name: Garda Capital Partners
+  category: quant
+  careers_url: ['https://www.gardacp.com/careers']
+  checker: greenhouse
+  settings: {board: gardacp}
+  verified: {page_total: 10}
+- key: trexquant
+  name: Trexquant
+  category: quant
+  aliases: [Trexquant Investment]
+  careers_url: ['https://www.trexquant.com/careers']
+  checker: workable
+  settings: {account: trexquant}
+  verified: {page_total: 33}
+- key: schonfeld
+  name: Schonfeld
+  category: quant
+  aliases: [Schonfeld Strategic Advisors]
+  careers_url: ['https://www.schonfeld.com/careers/']
+  checker: greenhouse
+  settings: {board: schonfeld}
+  verified: {page_total: 66}
+- key: castleton-commodities
+  name: Castleton Commodities International
+  category: quant
+  aliases: [Castleton Commodities]
+  careers_url: ['https://www.cci.com/careers/']
+  checker: workday
+  settings: {host: osv-cci.wd1.myworkdayjobs.com, tenant: osv_cci, site: CCICareers}
+  verified: {page_total: 11}

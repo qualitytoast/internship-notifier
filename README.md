@@ -1,6 +1,6 @@
 # InternWatch
 
-Watches 168 companies' careers sites (167 polled; Wayfair blocked: its site refuses automated clients) through their
+Watches 190 companies' careers sites (189 polled; Wayfair blocked: its site refuses automated clients) through their
 hiring systems' official feeds and emails new internships that pass `config/filters.yaml`. Python 3.12+,
 httpx, SQLite. Per-company checkers and evidence: COVERAGE.md. Freshman/sophomore programs: UNDERCLASSMEN.md.
 Rules for changing things: CLAUDE.md.

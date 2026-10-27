@@ -1,0 +1,21 @@
+{
+  "key": "old-mission",
+  "name": "Old Mission Capital",
+  "careers_url": "https://www.oldmissioncapital.com/careers/",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "old-mission-capital"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/old-mission-capital?includeCompensation=false",
+  "feed_total": 39,
+  "page_total": 39,
+  "page_total_how": "oldmissioncapital.com/careers/ loads the Ashby board (jobs.ashbyhq.com/api/non-user-graphql) and shows its postings; all 39 feed ids are in the page's data (2026-10-26).",
+  "intern_total": 2,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (api.ashbyhq.com: no robots.txt (allowed))",
+  "notes": "",
+  "checked_at": "2026-10-27T03:02:51Z"
+}

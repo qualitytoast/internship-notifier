@@ -169,3 +169,25 @@ companies:
   - {key: 1password, name: 1Password, category: security, source: added, urls: ["https://1password.com/careers"]}
   - {key: ccc, name: CCC Intelligent Solutions, category: software, source: added, urls: ["https://www.cccis.com/careers"]}
   - {key: uber-freight, name: Uber Freight, category: software, source: added, urls: ["https://www.uberfreight.com/careers/"]}
+  - {key: drw, name: DRW, category: quant, source: added, urls: ["https://www.drw.com/work-at-drw/listings"]}
+  - {key: optiver, name: Optiver, category: quant, source: added, urls: ["https://www.optiver.com/join-us/jobs/"]}
+  - {key: akuna-capital, name: Akuna Capital, category: quant, source: added, urls: ["https://akunacapital.com/careers"]}
+  - {key: chicago-trading-company, name: Chicago Trading Company, category: quant, source: added, urls: ["https://www.chicagotrading.com/open-roles/", "https://www.chicagotrading.com/early-careers-at-ctc/"]}
+  - {key: peak6, name: PEAK6, category: quant, source: added, urls: ["https://careers.peak6.com/jobs"]}
+  - {key: belvedere-trading, name: Belvedere Trading, category: quant, source: added, urls: ["https://www.belvederetrading.com/careers"]}
+  - {key: old-mission, name: Old Mission Capital, category: quant, source: added, urls: ["https://www.oldmissioncapital.com/careers/"]}
+  - {key: tower-research, name: Tower Research Capital, category: quant, source: added, urls: ["https://www.tower-research.com/open-positions"]}
+  - {key: millennium, name: Millennium Management, category: quant, source: added, urls: ["https://career.mlp.com/careers"]}
+  - {key: vatic-labs, name: Vatic Labs, category: quant, source: added, urls: ["https://www.vaticlabs.com/careers"]}
+  - {key: headlands, name: Headlands Technologies, category: quant, source: added, urls: ["https://www.headlandstech.com/careers/"]}
+  - {key: ansatz-capital, name: Ansatz Capital, category: quant, source: added, urls: ["https://jobs.lever.co/ansatzcapital"]}
+  - {key: pdt-partners, name: PDT Partners, category: quant, source: added, urls: ["https://www.pdtpartners.com/careers"]}
+  - {key: tgs, name: TGS Management Company, category: quant, source: added, urls: ["https://www.tgsmc.com/join-our-team/", "https://jobs.lever.co/tgsmc"]}
+  - {key: virtu, name: Virtu Financial, category: quant, source: added, urls: ["https://www.virtu.com/careers/"]}
+  - {key: flow-traders, name: Flow Traders, category: quant, source: added, urls: ["https://www.flowtraders.com/careers"]}
+  - {key: valkyrie-trading, name: Valkyrie Trading, category: quant, source: added, urls: ["https://www.valkyrietrading.com/careers"]}
+  - {key: maven-securities, name: Maven Securities, category: quant, source: added, urls: ["https://www.mavensecurities.com/jobs/"]}
+  - {key: garda-capital, name: Garda Capital Partners, category: quant, source: added, urls: ["https://www.gardacp.com/careers"]}
+  - {key: trexquant, name: Trexquant, category: quant, source: added, urls: ["https://www.trexquant.com/careers"]}
+  - {key: schonfeld, name: Schonfeld, category: quant, source: added, urls: ["https://www.schonfeld.com/careers/"]}
+  - {key: castleton-commodities, name: Castleton Commodities International, category: quant, source: added, urls: ["https://www.cci.com/careers/"]}

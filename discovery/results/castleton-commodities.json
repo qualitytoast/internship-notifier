@@ -1,0 +1,23 @@
+{
+  "key": "castleton-commodities",
+  "name": "Castleton Commodities International",
+  "careers_url": "https://www.cci.com/careers/",
+  "hiring_system": "workday (CCICareers, tenant osv_cci)",
+  "checker": "workday",
+  "settings": {
+    "host": "osv-cci.wd1.myworkdayjobs.com",
+    "tenant": "osv_cci",
+    "site": "CCICareers"
+  },
+  "feed": "POST https://osv-cci.wd1.myworkdayjobs.com/wday/cxs/osv_cci/CCICareers/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"}",
+  "feed_total": 11,
+  "page_total": 11,
+  "page_total_how": "cci.com/careers/ links osv-cci.wd1.myworkdayjobs.com/CCICareers, which shows '11 JOBS FOUND' (2026-10-26).",
+  "intern_total": 4,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (osv-cci.wd1.myworkdayjobs.com: no matching rule (allowed))",
+  "notes": "The Workday tenant is osv_cci (the host name's osv-cci answers 422).",
+  "checked_at": "2026-10-27T03:02:51Z"
+}
