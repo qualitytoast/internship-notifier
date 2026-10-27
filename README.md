@@ -109,7 +109,7 @@ Rules for changing things: CLAUDE.md.
     by checker and settings, and a source's first answer is its baseline, emailed once as "already open".
 - **Custom checkers** (`src/internwatch/checkers/`): google, meta (GraphQL + sitemap fallback), amazon and
   apple (complete student slices), atlassian, goldman, citadel, shopify, epic_careers, talentbrew (Intuit),
-  hubspot, blocked.
+  hubspot, instabase (its switched-off Greenhouse board plus a watch on the careers page for a move), blocked.
   - Writing one: a class whose `fetch()` returns `Job(...)`s, with `need(...)` raising ShapeError on anything
     unexpected. Example: `checkers/atlassian.py`.
 - **Adding a company:** `internwatch add "<Name>" <url>` detects the hiring system, runs the checker live, asks

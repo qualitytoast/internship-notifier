@@ -119,7 +119,9 @@ OVERRIDES: dict[str, dict] = {
         {"checker": "workday", "settings": {"host": "paloaltonetworks.wd5.myworkdayjobs.com",
                                             "tenant": "paloaltonetworks", "site": "panwexternalcareers"}},
         {"checker": "ripplematch", "settings": {"company_id": 676}}]}},
-    "instabase": {"settings": {"board": "instabase", "missing_ok": True}},
+    # the board answers 404 (switched off); the instabase checker also watches the careers page for a move
+    "instabase": {"checker": "instabase", "settings": {"board": "instabase", "missing_ok": True,
+                                                       "page": "https://www.instabase.com/careers/jobs"}},
     "c3-ai": {"settings": {"boards": ["c3iot", "c3ascend"], "dedupe_requisitions": True}},
     "salesforce": {"settings": {"host": "salesforce.wd12.myworkdayjobs.com", "tenant": "salesforce",
                                                     "sites": ["External_Career_Site", "Futureforce_Internships"],

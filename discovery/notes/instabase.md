@@ -69,3 +69,16 @@ This is the standard Greenhouse boards API, used by the page with `content=true`
 - Sample: `discovery/samples/instabase.html`, the raw `/careers/jobs` HTML (68 KB). It contains the inline script with the Greenhouse API URL and the "Lorem ipsum" template cards.
 - Capture: `discovery/captures/instabase/` (rendered: "No jobs available.").
 - Requests: the previous run made 18 (Greenhouse API ×3, the hosted board ×2, the Webflow page, careers, sitemap, and the Ashby/Lever/Rippling/Workable probes with their robots files). This run made 3 (robots and the Greenhouse API ×2), plus 2 web searches.
+
+## Careers-page watch (2026-10-26)
+- **Re-checked:** the board API still answers 404 and `job-boards.greenhouse.io/instabase` "Page not found". The page's
+  script still sets `API_BASE_URL` to `boards-api.greenhouse.io/v1/boards/instabase`, and the rendered page still says
+  "No jobs available." The 3 leftover cards (8042464002, 8073772002, and 8084536002 on `?bb0dd30b_page=2`) redirect
+  to the inactive board.
+- **Why a watch:** with `missing_ok`, a 404 counts as no jobs, so a move to another job site would look like "still no
+  jobs". The SimplifyJobs cross-check was the only thing that could notice.
+- **Checker `instabase`:** reads the board with the shared greenhouse adapter, then reads `/careers/jobs` and lists the
+  job sites it points at (`detect.from_text`; today only `greenhouse instabase`). Another job site, no mention of
+  the board, or an unreadable page marks the poll degraded: a health alert after two checks in a row, naming
+  what changed. Jobs on the board, if it comes back, are read exactly as before (same ids). One extra request a
+  check; robots.txt is empty.

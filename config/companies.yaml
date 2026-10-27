@@ -1080,8 +1080,8 @@ companies:
   name: Instabase
   category: ai
   careers_url: ['https://www.instabase.com/careers/jobs']
-  checker: greenhouse
-  settings: {board: instabase, missing_ok: true}
+  checker: instabase
+  settings: {board: instabase, missing_ok: true, page: 'https://www.instabase.com/careers/jobs'}
   verified: {page_total: 0}
 - key: yext
   name: Yext
