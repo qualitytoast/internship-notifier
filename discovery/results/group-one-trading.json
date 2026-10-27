@@ -1,0 +1,25 @@
+{
+  "key": "group-one-trading",
+  "name": "Group One Trading",
+  "careers_url": "https://group1.com/careers/",
+  "hiring_system": "applicantpro (group1.applicantpro.com, linked from group1.com/careers)",
+  "checker": "applicantpro",
+  "settings": {
+    "subdomain": "group1",
+    "domain_id": 489,
+    "match_urls": [
+      "group1.applicantpro.com"
+    ]
+  },
+  "feed": "GET https://group1.applicantpro.com/core/jobs/489?getParams={\"isInternal\":0}",
+  "feed_total": 11,
+  "page_total": 11,
+  "page_total_how": "group1.applicantpro.com/jobs/ (the board group1.com/careers links its openings to) says 'Number of Jobs: 11' and lists the 11 (2026-10-26).",
+  "intern_total": 3,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (group1.applicantpro.com: no matching rule (allowed))",
+  "notes": "Group One's site is group1.com (grouponetrading.com is a parked domain). robots.txt disallows only /admin/, /stats/ and /internaljobs*. The name normalizes to 'one trading', so no shorter alias ('Group One') is used for matching SimplifyJobs rows.",
+  "checked_at": "2026-10-27T03:16:10Z"
+}

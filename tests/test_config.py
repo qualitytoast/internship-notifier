@@ -12,7 +12,7 @@ REQUIRED = {
     "greenhouse": [("board", "boards")], "lever": ["site"], "ashby": [("board", "boards")], "workable": ["account"],
     "gem": ["board"], "pinpoint": ["subdomain"], "workday": ["host", "tenant", ("site", "sites")],
     "eightfold": ["host", "domain"], "oracle": ["host", "site"], "phenom": ["base_url", "ref_num"],
-    "icims": ["portal"], "avature": ["list_url"],
+    "icims": ["portal"], "avature": ["list_url"], "applicantpro": ["subdomain", "domain_id"],
 }
 
 

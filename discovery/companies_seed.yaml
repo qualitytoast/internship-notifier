@@ -193,3 +193,4 @@ companies:
   - {key: castleton-commodities, name: Castleton Commodities International, category: quant, source: added, urls: ["https://www.cci.com/careers/"]}
   - {key: de-shaw, name: D. E. Shaw, category: quant, source: added, urls: ["https://www.deshaw.com/careers"]}
   - {key: ibm, name: IBM, category: big-tech, source: added, urls: ["https://www.ibm.com/careers/search"]}
+  - {key: group-one-trading, name: Group One Trading, category: quant, source: added, urls: ["https://group1.com/careers/", "https://group1.applicantpro.com/jobs/"]}

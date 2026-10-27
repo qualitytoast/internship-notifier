@@ -1692,3 +1692,13 @@ companies:
   settings:
     match_urls: [careers.ibm.com/careers/jobdetail]
   verified: {page_total: 2216}
+- key: group-one-trading
+  name: Group One Trading
+  category: quant
+  careers_url: ['https://group1.com/careers/', 'https://group1.applicantpro.com/jobs/']
+  checker: applicantpro
+  settings:
+    subdomain: group1
+    domain_id: 489
+    match_urls: [group1.applicantpro.com]
+  verified: {page_total: 11}

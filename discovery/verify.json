@@ -583,6 +583,14 @@
   "duration": 0.2,
   "requests": 1
  },
+ "group-one-trading": {
+  "jobs": 11,
+  "students": 3,
+  "matched": 3,
+  "at": "2026-10-27T03:16:12Z",
+  "duration": 1.1,
+  "requests": 1
+ },
  "grubhub": {
   "jobs": 111,
   "students": 6,

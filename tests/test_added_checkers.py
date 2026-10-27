@@ -1,5 +1,5 @@
 """Checkers added in October 2026, replayed from their recorded fixtures with edited responses: Instabase's
-careers-page watch, D. E. Shaw, IBM."""
+careers-page watch, D. E. Shaw, IBM, ApplicantPro (Group One Trading)."""
 import copy
 import json
 
@@ -158,3 +158,27 @@ def test_every_ibm_country_name_reads_as_that_country():
     wrong = {cc: name for cc, name in COUNTRIES.items()
              if set(countries(f"Somewhere, {name}")[0]) != ({"US"} if cc in ("US", "PR") else {cc})}
     assert not wrong
+
+
+# ApplicantPro (Group One Trading) -----------------------------------------------------------
+
+def test_applicantpro_reads_the_boards_list():
+    jobs = replay("group-one-trading")
+    assert len(jobs) == len({j.id for j in jobs}) == cassette("group-one-trading").meta["count"]
+    j = next(j for j in jobs if j.id == "4200875")
+    assert (j.title, j.location, j.employment_type, j.url) == (
+        "Software Developer Intern", "Chicago, IL, USA", "Internship", "https://group1.applicantpro.com/jobs/4200875")
+    assert j.posted and j.posted[:2] == "20"
+
+
+@pytest.mark.parametrize("change", ["more jobs than listed", "error answer"])
+def test_applicantpro_short_list_or_error_fails_instead_of_reading_fewer_jobs(change):
+    def edit(e):
+        d = json.loads(e["text"])
+        if change == "more jobs than listed":
+            d["data"]["jobCount"] += 5
+        else:
+            d = {"success": False, "message": "Domain not found", "data": None}
+        e["text"] = json.dumps(d)
+    with pytest.raises(ShapeError):
+        replay("group-one-trading", edit, ctx=FetchContext())

@@ -1,6 +1,6 @@
 # InternWatch
 
-Watches 192 companies' careers sites (191 polled; Wayfair blocked: its site refuses automated clients) through their
+Watches 193 companies' careers sites (192 polled; Wayfair blocked: its site refuses automated clients) through their
 hiring systems' official feeds and emails new internships that pass `config/filters.yaml`. Python 3.12+,
 httpx, SQLite. Per-company checkers and evidence: COVERAGE.md. Freshman/sophomore programs: UNDERCLASSMEN.md.
 Rules for changing things: CLAUDE.md.
@@ -103,7 +103,8 @@ Rules for changing things: CLAUDE.md.
   - workday {host, tenant, site | sites (prefixes ids with the site), quick_queries}
   - eightfold {host, domain, api: pcsx | v2, count_tolerance}, oracle {host, site}
   - smartrecruiters {company}, workable {account}, icims {portal}, jibe {host}, phenom {base_url, ref_num},
-    avature {list_url, page_size}, gem, rippling, jobvite, pinpoint, recruiterbox, ripplematch
+    avature {list_url, page_size}, applicantpro {subdomain, domain_id}, gem, rippling, jobvite, pinpoint,
+    recruiterbox, ripplematch
   - multi {sources, dedupe, dedupe_titles}: later sources' ids are prefixed with `<checker>:`; dedupe_titles skips
     a later source's role whose title matches an earlier one apart from case and punctuation. Sources are remembered
     by checker and settings, and a source's first answer is its baseline, emailed once as "already open".
