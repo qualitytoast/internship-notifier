@@ -1683,3 +1683,12 @@ companies:
   settings:
     match_urls: [deshaw.com/careers/]
   verified: {page_total: 105}
+- key: ibm
+  name: IBM
+  category: big-tech
+  aliases: [International Business Machines]
+  careers_url: ['https://www.ibm.com/careers/search']
+  checker: ibm
+  settings:
+    match_urls: [careers.ibm.com/careers/jobdetail]
+  verified: {page_total: 2216}

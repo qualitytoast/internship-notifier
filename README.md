@@ -1,6 +1,6 @@
 # InternWatch
 
-Watches 191 companies' careers sites (190 polled; Wayfair blocked: its site refuses automated clients) through their
+Watches 192 companies' careers sites (191 polled; Wayfair blocked: its site refuses automated clients) through their
 hiring systems' official feeds and emails new internships that pass `config/filters.yaml`. Python 3.12+,
 httpx, SQLite. Per-company checkers and evidence: COVERAGE.md. Freshman/sophomore programs: UNDERCLASSMEN.md.
 Rules for changing things: CLAUDE.md.
@@ -110,7 +110,7 @@ Rules for changing things: CLAUDE.md.
 - **Custom checkers** (`src/internwatch/checkers/`): google, meta (GraphQL + sitemap fallback), amazon and
   apple (complete student slices), atlassian, goldman, citadel, shopify, epic_careers, talentbrew (Intuit),
   hubspot, instabase (its switched-off Greenhouse board plus a watch on the careers page for a move), deshaw (the
-  job list inside deshaw.com/careers), blocked.
+  job list inside deshaw.com/careers), ibm (the search service behind ibm.com/careers), blocked.
   - Writing one: a class whose `fetch()` returns `Job(...)`s, with `need(...)` raising ShapeError on anything
     unexpected. Example: `checkers/atlassian.py`.
 - **Adding a company:** `internwatch add "<Name>" <url>` detects the hiring system, runs the checker live, asks

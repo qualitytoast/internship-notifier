@@ -1,5 +1,5 @@
 """Checkers added in October 2026, replayed from their recorded fixtures with edited responses: Instabase's
-careers-page watch, D. E. Shaw."""
+careers-page watch, D. E. Shaw, IBM."""
 import copy
 import json
 
@@ -8,7 +8,9 @@ import pytest
 from internwatch.adapters import get_checker
 from internwatch.adapters.base import FetchContext
 from internwatch.health import assess
+from internwatch.checkers.ibm import COUNTRIES, place
 from internwatch.http import Cassette, Http
+from internwatch.locations import countries
 from internwatch.models import ShapeError
 from internwatch.runner import run_checker
 
@@ -120,3 +122,39 @@ def test_deshaw_page_that_could_not_load_its_jobs_fails_instead_of_reading_zero(
         e["text"] = e["text"].replace(old, new)
     with pytest.raises(ShapeError):
         replay("de-shaw", edit, ctx=FetchContext())
+
+
+# IBM ----------------------------------------------------------------------------------------
+
+def test_ibm_reads_every_page_of_the_whole_site():
+    jobs = replay("ibm")
+    assert len(jobs) == len({j.id for j in jobs}) == cassette("ibm").meta["count"] > 2000
+    j = next(j for j in jobs if j.id == "134708")
+    assert (j.title, j.location, j.employment_type) == ("2027 Software Developer Intern", "POUGHKEEPSIE, United States",
+                                                        "Internship")
+    assert j.url == "https://careers.ibm.com/careers/JobDetail?jobId=134708"
+
+
+def test_ibm_walk_cut_short_fails_instead_of_hiding_jobs():
+    def middle_page_empty(e):
+        if json.loads(e["body"])["from"] == 1000:
+            data = json.loads(e["text"])
+            data["hits"]["hits"] = []
+            e["text"] = json.dumps(data)
+    with pytest.raises(ShapeError, match="pagination incomplete"):
+        replay("ibm", middle_page_empty, ctx=FetchContext())
+
+
+@pytest.mark.parametrize("raw, shown, country", [
+    ("Ehningen, DE", "Ehningen, Germany", {"DE"}), ("Bangalore, IN", "Bangalore, India", {"IN"}),
+    ("Bogota, CO", "Bogota, Colombia", {"CO"}), ("Jakarta, ID", "Jakarta, Indonesia", {"ID"}),
+    ("Markham, CA", "Markham, Canada", {"CA"}), ("POUGHKEEPSIE, US", "POUGHKEEPSIE, United States", {"US"}),
+    ("SÃ£o Paulo, BR", "São Paulo, Brazil", {"BR"}), ("Multiple Cities", "Multiple Cities", set())])
+def test_ibm_country_codes_are_written_out_so_they_never_read_as_us_states(raw, shown, country):
+    assert place(raw) == shown and set(countries(shown)[0]) == country
+
+
+def test_every_ibm_country_name_reads_as_that_country():
+    wrong = {cc: name for cc, name in COUNTRIES.items()
+             if set(countries(f"Somewhere, {name}")[0]) != ({"US"} if cc in ("US", "PR") else {cc})}
+    assert not wrong

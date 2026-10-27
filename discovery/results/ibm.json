@@ -1,0 +1,23 @@
+{
+  "key": "ibm",
+  "name": "IBM",
+  "careers_url": "https://www.ibm.com/careers/search",
+  "hiring_system": "IBM search service (www-api.ibm.com) behind ibm.com/careers/search; job pages on careers.ibm.com (Avature)",
+  "checker": "ibm",
+  "settings": {
+    "match_urls": [
+      "careers.ibm.com/careers/jobdetail"
+    ]
+  },
+  "feed": "POST https://www-api.ibm.com/search/api/v2 {\"appId\":\"careers\",\"scopes\":[\"careers2\"],\"size\":100,\"from\":N,\"sort\":[{\"_id\":\"asc\"}], ...}",
+  "feed_total": 2216,
+  "page_total": 2216,
+  "page_total_how": "ibm.com/careers/search shows the same service's results (the page POSTs to www-api.ibm.com/search/api/v2, appId careers); its hits.total.value is the site's job count (2,216 on 2026-10-26, 246 of them level 'Internship').",
+  "intern_total": 257,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ALLOW (www-api.ibm.com: no robots.txt (allowed))",
+  "notes": "Reads the whole site: 23 requests of 100 (the service's maximum) sorted by _id, since the page's own order ties on every hit. Locations are 'City, CC' with ISO country codes, written out as country names ('Ehningen, DE' → 'Ehningen, Germany') so DE, IN, CO, ID are not read as US states; 'Multiple Cities' stays unsure. careers.ibm.com answers automated clients with an empty 202. See notes/ibm.md.",
+  "checked_at": "2026-10-27T03:13:47Z"
+}

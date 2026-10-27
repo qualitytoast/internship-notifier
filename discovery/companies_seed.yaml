@@ -192,3 +192,4 @@ companies:
   - {key: schonfeld, name: Schonfeld, category: quant, source: added, urls: ["https://www.schonfeld.com/careers/"]}
   - {key: castleton-commodities, name: Castleton Commodities International, category: quant, source: added, urls: ["https://www.cci.com/careers/"]}
   - {key: de-shaw, name: D. E. Shaw, category: quant, source: added, urls: ["https://www.deshaw.com/careers"]}
+  - {key: ibm, name: IBM, category: big-tech, source: added, urls: ["https://www.ibm.com/careers/search"]}

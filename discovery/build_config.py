@@ -54,6 +54,7 @@ ALIASES = {
     "trexquant": ["Trexquant Investment"], "schonfeld": ["Schonfeld Strategic Advisors"],
     "castleton-commodities": ["Castleton Commodities"],
     "de-shaw": ["DE Shaw", "D. E. Shaw & Co."],
+    "ibm": ["International Business Machines"],
 }
 
 # Freshman/sophomore program names that can appear in a posting title without a student word (UNDERCLASSMEN.md
