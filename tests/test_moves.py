@@ -64,8 +64,9 @@ class FakeHttp:
         return 404, ""
 
 
-def ctx(cfg, db, http=None, healthy=(), gate=None):
-    return moves.Ctx(cfg, db, gate, lambda deadline, **kw: http or FakeHttp({}), float("inf"), set(healthy))
+def ctx(cfg, db, http=None, healthy=(), gate=None, days=0):
+    return moves.Ctx(cfg, db, gate, lambda deadline, **kw: http or FakeHttp({}), float("inf"), set(healthy),
+                     now=utcnow() + timedelta(days=days))
 
 
 @pytest.fixture
@@ -736,3 +737,62 @@ def test_what_reads_like_a_student_or_program_page():
           "/careers/international/", "/what-we-do/equities/"]
     assert [u for u in yes if not moves.STUDENT.search(u)] == []
     assert [u for u in no if moves.STUDENT.search(u)] == []
+
+
+# S: parallel boards ----------------------------------------------------------------------------------------
+
+BOARDS: dict = {}
+
+
+@pytest.fixture
+def fake_board(monkeypatch):
+    from internwatch.adapters.base import REGISTRY, Checker
+
+    class FakeBoard(Checker):
+        type = "fake-board"
+
+        def fetch(self, http, s, ctx=None):
+            res = BOARDS[s["board"]]
+            if isinstance(res, Exception):
+                raise res
+            return list(res)
+    monkeypatch.setitem(REGISTRY, "fake-board", FakeBoard)
+    BOARDS.clear()
+    return BOARDS
+
+
+def test_a_matching_role_only_on_a_parallel_board(blocked_cfg, memdb, fake_board):
+    ctc = company("chicago-trading-company", checker="greenhouse", settings={"board": "chicagotradingcampus"})
+    cfg = blocked_cfg([ctc], parallel_sources=[{"company": "chicago-trading-company", "checker": "fake-board",
+                                                "settings": {"board": "ctccampusboard"}}])
+    memdb.conn.execute("INSERT INTO jobs(company, job_id, title, url, first_seen, last_seen) VALUES "
+                       "('chicago-trading-company', '1', 'Quant Trading Internship - Summer 2027', '', 't', 't')")
+    fake_board["ctccampusboard"] = [job("a1", "Associate Engineer - 2027 Start")]
+    assert moves.check_parallel(ctx(cfg, memdb)) == []  # first look
+    fake_board["ctccampusboard"] = [job("a1", "Associate Engineer - 2027 Start"),
+                                    job("a2", "Quant Trading Internship - Summer 2027"),   # a twin: stored already
+                                    job("a3", "Accountant"),                                 # not a student role
+                                    job("a4", "Software Engineering Internship - Summer 2027", "Chicago, IL")]
+    problems = moves.check_parallel(ctx(cfg, memdb, days=1))  # the next morning
+    assert len(problems) == 1 and problems[0]["kind"] == "posting elsewhere?"
+    assert "1 matching role(s)" in problems[0]["summary"] and "'Software Engineering Internship - Summer 2027'" in problems[0]["summary"]
+    assert moves.check_parallel(ctx(cfg, memdb, days=2)) == []  # once, not every morning
+    assert memdb.q("SELECT job_id FROM jobs WHERE company='chicago-trading-company'")[0]["job_id"] == "1"  # nothing stored
+
+
+def test_a_refused_parallel_board_and_boards_of_other_companies(blocked_cfg, memdb, fake_board):
+    ukg = company("ukg")
+    cfg = blocked_cfg([ukg, company("other-co")], parallel_sources=[
+        {"company": "ukg", "checker": "fake-board", "settings": {"board": "rm926"}},
+        {"company": "other-co", "checker": "fake-board", "settings": {"board": "never"}}])
+    fake_board["rm926"] = FetchError("HTTP 503 for GET x")
+    assert moves.check_parallel(ctx(cfg, memdb)) == []
+    assert memdb.get("blocked:retry:parallel:fake-board:board=rm926") == "1"
+    assert memdb.get("blocked:parallel:other-co:fake-board:board=never") is None  # never read: not one of the 31
+
+
+def test_the_real_parallel_sources_name_adapters_that_exist():
+    from internwatch.adapters import get_checker
+    from internwatch.config import load
+    for x in load().settings.get("liveness", "parallel_sources"):
+        assert get_checker(x["checker"]) is not None

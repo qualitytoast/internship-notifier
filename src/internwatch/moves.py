@@ -890,11 +890,77 @@ def observe(cfg: Config, db: DB, o) -> list[dict]:
                        "team can be a new program; check that its roles reach you.")
 
 
+# S: parallel boards ----------------------------------------------------------------------------------------
+
+def source_id(x: dict) -> str:
+    return x["checker"] + ":" + ",".join(f"{k}={v}" for k, v in sorted((x.get("settings") or {}).items()))
+
+
+def check_parallel(ctx: Ctx) -> list[dict]:
+    """S. Daily: boards next to the configured ones (a campus board, a hidden Workday site, RippleMatch), read with
+    the existing adapters but never stored. A role posted there since the first look, matching your filters (or
+    unsure) and with a title InternWatch doesn't have for the company (open, or closed within 30 days), alerts
+    once: twins of a configured board's postings and rejected roles stay quiet."""
+    from .adapters import get_checker
+    from .adapters.base import FetchContext
+    from .filters import evaluate
+    sources = {source_id(x): x for x in entries(ctx.cfg, "parallel_sources")}
+    problems: list[dict] = []
+    http = ctx.http()
+    try:
+        for sid in pick(ctx.db, "parallel", sorted(sources), 1, ctx.now):
+            if ctx.out_of_time():
+                break
+            x = sources[sid]
+            c = ctx.comps[x["company"]]
+            try:
+                jobs = get_checker(x["checker"]).fetch(http, x.get("settings") or {}, FetchContext())
+            except Exception as e:  # noqa: BLE001 — refused: tomorrow
+                if out_of_budget(e):
+                    break
+                done(ctx.db, "parallel", sid, outcome(e), ctx.now)
+                log.info("moves: parallel source %s not read: %s", sid, str(e)[:160])
+                continue
+            skey = f"blocked:parallel:{c.key}:{sid}"
+            raw = ctx.db.get(skey)
+            state = json.loads(raw) if raw else None
+            ids = {j.id for j in jobs}
+            new_state = {"ids": sorted(ids | set((state or {}).get("ids") or [])),
+                         "alerted": (state or {}).get("alerted") or []}
+            done(ctx.db, "parallel", sid, "ok", ctx.now)
+            if state is None:
+                ctx.db.set(skey, json.dumps(new_state))
+                continue  # first look: a silent baseline
+            stored = stored_titles(ctx.db, c.key)
+            found = []
+            for j in jobs:
+                t = norm_title(j.title)
+                if j.id in state["ids"] or t in stored or t in new_state["alerted"]:
+                    continue
+                m = evaluate(j, ctx.cfg.rules, category=c.category, locations=c.locations,
+                             extra_role_keywords=c.extra_role_re)
+                if m.matched:
+                    found.append((j, m))
+                    new_state["alerted"].append(t)
+            ctx.db.set(skey, json.dumps(new_state))
+            if found:
+                shown = "; ".join(f"'{j.title}' ({j.location or 'no location'}){' (unsure)' if m.unsure else ''} "
+                                  f"{j.url}" for j, m in found[:5])
+                problems.append(alert(ctx.db, c, "parallel", "posting elsewhere?",
+                                      f"{sid} lists {len(found)} matching role(s) InternWatch doesn't have: {shown}",
+                                      "InternWatch only watches this board, it doesn't read it. If it keeps posting "
+                                      "roles you want, add it to the company's config.", {skey: raw}))
+    finally:
+        http.close()
+    return problems
+
+
 # running them -----------------------------------------------------------------------------------------
 
 CHECKS: list[tuple[str, callable]] = [  # (name, fn(ctx) -> problems), cheapest first
     ("confirm", check_confirm),
     ("workday", check_workday),
+    ("parallel", check_parallel),
     ("page", check_pages),
     ("joblist", check_job_lists),
     ("programs", check_programs),

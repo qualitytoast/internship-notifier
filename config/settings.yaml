@@ -64,6 +64,18 @@ liveness:                        # boards that go dead, get abandoned or are rep
     pinterest: {url: "https://www.pinterestcareers.com/sitemap.xml"}
     servicenow: {url: "https://careers.servicenow.com/sitemap.xml"}
     uber: {url: "https://jobs.uber.com/en/jobs/sitemap.xml", any_job: true}
+  parallel_sources:              # boards next to the configured ones, read daily but never stored (moves.py S)
+    - {company: akuna-capital, checker: greenhouse, settings: {board: mit}}
+    - {company: akuna-capital, checker: greenhouse, settings: {board: optionstrading201course}}
+    - {company: akuna-capital, checker: ripplematch, settings: {company_id: 904}}
+    - {company: american-family, checker: workday,
+       settings: {host: amfam.wd1.myworkdayjobs.com, tenant: amfam, sites: [AmFam-Private, Agent-Staff-Private]}}
+    - {company: chicago-trading-company, checker: greenhouse, settings: {board: ctccampusboard}}
+    - {company: expedia, checker: ripplematch, settings: {company_id: 1153}}
+    - {company: hudson-river-trading, checker: greenhouse, settings: {board: hrtcampus}}
+    - {company: liberty-mutual, checker: icims, settings: {portal: "https://campus-libertymutual.icims.com"}}
+    - {company: seatgeek, checker: greenhouse, settings: {board: sgcampusrecruiting}}
+    - {company: ukg, checker: ripplematch, settings: {company_id: 926}}
   program_pages:                 # new student and program pages (moves.py N): sitemaps, wp:<site> page lists, feeds
     akuna-capital: ["https://akunacapital.com/page-sitemap.xml"]
     capstone: ["wp:https://www.capstoneco.com"]
