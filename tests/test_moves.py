@@ -886,3 +886,15 @@ def test_getros_copy_of_a_careers_page(blocked_cfg, memdb):
     assert [p["summary"].split(" (e.g.")[0] for p in problems] == [
         "Getro's copy of its careers page links a job site InternWatch doesn't read: greenhouse:board=sgcampus"]
     assert sorted(json.loads(memdb.get("blocked:pending:getro:seatgeek"))) == ["7700001", "8888888"]
+
+
+def test_the_status_shows_each_check_and_recent_alerts(blocked_cfg, memdb):
+    cfg = blocked_cfg([company("acme")])
+    moves.done(memdb, "page", "acme", "refused", utcnow())
+    memdb.set("live_alert:acme:page", iso())
+    memdb.set("live_alert:other:page", iso())
+    memdb.conn.row_factory = __import__("sqlite3").Row
+    out = moves.status(cfg, memdb.conn)
+    assert "watched by moves.py: 1" in out
+    assert "P  careers and WordPress pages: 0 read, last never; 0/1 reads answered in 28 days; 1 to retry" in out
+    assert "alerts in the last 28 days: 1: acme (page," in out

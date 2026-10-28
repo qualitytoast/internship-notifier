@@ -67,17 +67,50 @@ Rules for changing things: CLAUDE.md.
   - `moved?`: weekly, in daily runs (3-minute budget), each careers page is read once and the job systems it points
     at are compared with last week: a new one that isn't configured, or a configured one no longer mentioned. The
     first look is a silent baseline. About 85 of 196 pages name a job system in their HTML; the rest are built in
-    the browser or block scripts, and are left to the other checks.
+    the browser or block scripts, and are left to the other checks. The 31 companies whose page refuses scripts
+    (`liveness.blocked`) are left out: the checks below watch them instead.
   - `new site`: a Workday tenant's robots.txt (already cached by the checks, no request) lists a site that isn't
     configured. Sites on myworkdaysite.com can't be seen this way (its robots.txt answers 422).
   - `not checked`: a due company was never processed in two runs in a row (skipped at the run time limit, or
     storing its jobs failed).
-- **healthchecks.io:** pinged at the start and end of each run, so it alerts if no run happens or a run fails
+  - A health email that fails to send is not lost: the next run raises the same alerts again, `moved?`, `new site`
+    and `board drop` included (their baselines are put back).
+- **Companies whose careers page can't be read** (`src/internwatch/moves.py`; the 31 in `liveness.blocked`, and
+  only those): where else they could start posting. Daily runs, before the emails, within 150 s. Every check's
+  first look is a silent baseline; a read the site refuses (bot check, 5xx) is retried the next morning;
+  `internwatch liveness` shows each check's reads, answer rate and recent alerts.
+  - W `new site`: a new hidden site (a Disallow line in robots.txt) on their Workday tenants, or any new site on
+    Fidelity's myworkdayjobs.com host and on PitchBook's parent Morningstar. Weekly.
+  - P `moved?`: their careers page, and every WordPress page of CTC, GTS and Liberty Mutual (the page API answers
+    where the pages don't), name a job system that isn't configured. An iCIMS portal, an Avature site and an
+    Eightfold domain each count on their own. Weekly, about 5 companies a day.
+  - P/J/A/Getro `posting elsewhere?`: a job id on one of their pages (CTC's job lists, Tower's internships page), on
+    their own job list (the sitemaps of Dropbox, Pinterest, Fidelity, GM, Nutanix, ServiceNow, Uber, American
+    Family and PayPal's Eightfold copy; Akuna's job file, daily), in archive.org's copies or in Getro's copy, that
+    InternWatch has never stored and that a healthy poll on a later run still doesn't have.
+  - A: archive.org's copies of the pages of Coinbase, DoorDash, HRT, Meta, OpenAI, UKG, Whatnot and others (new
+    student pages, systems named). Copies older than 45 days, bot-check copies and pages the original site's
+    robots.txt disallows are skipped. Most companies' copies come in bursts, so this one is slow.
+  - N `new page`: a new student or program page in their sitemaps or WordPress page lists, or a new program in
+    Goldman's programs feed.
+  - G `new label`: a new experience or source type in Goldman's job API; a new student team label in Meta's own
+    poll (no request).
+  - S `posting elsewhere?`: a role matching your filters on a board next to theirs (CTC's ctccampusboard, Liberty
+    Mutual's campus iCIMS, American Family's hidden Workday sites, campus boards, RippleMatch for UKG, Expedia and
+    Akuna) that isn't a twin of one InternWatch has. These boards are watched, never stored. Daily.
+  - L `new job site?`: SimplifyJobs' full listings.json, vanshb03, speedyapply, sndsh404, zshah101's board
+    registry, Boardsweep, Trackr or RippleMatch's company list links one of them to a job system the config
+    doesn't name; or Getro's copy of SeatGeek's or OpenAI's careers page (Accel, Thrive) does. Weekly per list.
+  - What none of this sees: a place no page, list or archive copy links (a board shared only with schools), and
+    postings only on Handshake (it needs a login). Kadoa's quant list mirrors one feed per firm, so it can't reveal
+    a new place. SimplifyJobs' README (what the cross-check reads) leaves early-season roles out; its full
+    listings.json, read by L, has them.- **healthchecks.io:** pinged at the start and end of each run, so it alerts if no run happens or a run fails
   (no internet, email failure). `internwatch alert-test` sends a real alert. Nothing above can alert when no run
   happens, so set `HEALTHCHECKS_PING_URL` in `.env`.
 - **Not seen by any of this:** postings that are open but listed nowhere InternWatch reads: unlisted Ashby
   postings with no known id (Whatnot shows 89 on whatnot.com, which is bot-protected and never polled), postings
-  only on Handshake (Veeva's 2027 SWE intern) and program pages that aren't watched (Discover Citadel).
+  only on Handshake (Veeva's 2027 SWE intern) and program pages that aren't watched (Discover Citadel). For
+  Handshake, follow the employers on Handshake itself with its alerts on (Veeva, GTS, UKG, PitchBook).
 
 ## Matching (config/filters.yaml; try `internwatch test-filters "<title>" --location "<loc>"`)
 - **Role:**
@@ -207,8 +240,8 @@ Rules for changing things: CLAUDE.md.
 
 ## Layout
 - `config/`: settings.yaml, companies.yaml, filters.yaml
-- `src/internwatch/`: cli, runner, filters, locations, health, crosscheck, emails, mailer, db, http, detect,
-  report, plus `adapters/` and `checkers/`
+- `src/internwatch/`: cli, runner, filters, locations, health, liveness, moves, crosscheck, emails, mailer, db,
+  http, detect, report, plus `adapters/` and `checkers/`
 - `tests/`
 - `deploy/`
 - `discovery/`: notes, results, samples, build_config.py

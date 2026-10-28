@@ -1199,6 +1199,41 @@ CHECKS: list[tuple[str, callable]] = [  # (name, fn(ctx) -> problems), cheapest 
 ]
 
 
+LABELS = {"confirm": "unknown job ids (confirmed next day)", "workday": "W  hidden Workday sites",
+          "parallel": "S  parallel boards", "page": "P  careers and WordPress pages", "joblist": "J  own job lists",
+          "programs": "N  new student/program pages", "labels": "G  Goldman API types", "archive": "A  archive.org copies",
+          "listings": "L  third-party lists", "getro": "L  Getro copies"}
+
+
+def status(cfg: Config, conn) -> str:
+    """What these checks track, for `internwatch liveness` (read-only: conn is a read-only sqlite3 connection)."""
+    comps = blocked(cfg)
+    kv = {r["key"]: r["value"] for r in conn.execute("SELECT key, value FROM kv WHERE key LIKE 'blocked:%' "
+                                                      "OR key LIKE 'live_alert:%'")}
+    since = (utcnow() - timedelta(days=28)).date().isoformat()
+    lines = [f"companies whose careers page can't be read, watched by moves.py: {len(comps)}"]
+    for check, label in LABELS.items():
+        if check == "confirm":
+            pending = sum(len(json.loads(v or "{}")) for k, v in kv.items() if k.startswith("blocked:pending:"))
+            lines.append(f"  {label}: {pending} waiting for a healthy poll")
+            continue
+        at = [v for k, v in kv.items() if k.startswith(f"blocked:at:{check}:") and v]
+        retry = sum(1 for k, v in kv.items() if k.startswith(f"blocked:retry:{check}:") and v)
+        hist = [x for k, v in kv.items() if k.startswith(f"blocked:rate:{check}:") for x in json.loads(v or "[]")
+                if x[0] >= since]
+        rate = f"{sum(x[1] for x in hist)}/{len(hist)} reads answered in 28 days" if hist else "no reads yet"
+        lines.append(f"  {label}: {len(at)} read, last {max(at) if at else 'never'}; {rate}; {retry} to retry")
+    mine = {"page", "archive", "archive-pages", "joblist", "programs", "labels", "parallel", "getro", "workday-hidden"}
+    recent = []
+    for k, v in sorted(kv.items()):
+        parts = k.split(":", 2)
+        if parts[0] == "live_alert" and len(parts) == 3 and v and v[:10] >= since and parts[1] in comps \
+                and (parts[2] in mine or parts[2].startswith("list-")):
+            recent.append(f"{parts[1]} ({parts[2]}, {v[:10]})")
+    lines.append(f"  alerts in the last 28 days: {len(recent)}" + (f": {', '.join(recent[:12])}" if recent else ""))
+    return "\n".join(lines)
+
+
 def run(cfg: Config, db: DB, gate, make_http, budget_end: float, healthy: set) -> list[dict]:
     """Every check, each on its own: a bug or an outage in one never stops the others or the run's emails."""
     if not blocked(cfg):
