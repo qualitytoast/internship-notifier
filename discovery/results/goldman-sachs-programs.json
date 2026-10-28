@@ -1,0 +1,41 @@
+{
+  "key": "goldman-sachs-programs",
+  "name": "Goldman Sachs Programs",
+  "careers_url": "https://www.goldmansachs.com/careers/students/programs-and-internships/americas/possibilities-series",
+  "hiring_system": "program pages on goldmansachs.com; applications on Avature project pages (robots-disallowed)",
+  "checker": "program_pages",
+  "settings": {
+    "pages": [
+      {
+        "url": "https://www.goldmansachs.com/careers/students/programs-and-internships/americas/possibilities-series",
+        "title": "Goldman Sachs Possibilities Series",
+        "location": "United States"
+      },
+      {
+        "url": "https://www.goldmansachs.com/careers/students/programs-and-internships/americas/emerging-leaders-series",
+        "title": "Goldman Sachs Emerging Leaders Series",
+        "location": "United States"
+      }
+    ],
+    "section": [
+      "APPLICATION DETAILS",
+      "ELIGIBILITY"
+    ],
+    "cycle": [
+      "ELIGIBILITY",
+      "LOCATION"
+    ],
+    "closed": "applications are now closed"
+  },
+  "feed": "GET the two program pages; their APPLICATION DETAILS say 'Applications are now closed' until a round opens",
+  "feed_total": 0,
+  "page_total": 0,
+  "page_total_how": "Both pages said 'Applications are now closed' on 2026-10-27 (Emerging Leaders closed Oct 4; Possibilities expected ~Feb 2027).",
+  "intern_total": 0,
+  "robots": "ALLOW (www.goldmansachs.com: /careers/ is not disallowed)",
+  "notes": "Possibilities Series (first-years) and Emerging Leaders Series (sophomores) are applied for on recruiting360.avature.net project pages, which robots.txt disallows, and are never Higher roles, so the goldman checker can't see them. The program pages are read instead.",
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-28T01:30:00Z"
+}

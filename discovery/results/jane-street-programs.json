@@ -1,0 +1,19 @@
+{
+  "key": "jane-street-programs",
+  "name": "Jane Street Programs",
+  "careers_url": "https://www.janestreet.com/join-jane-street/programs-and-events/",
+  "hiring_system": "janestreet.com program forms (/apply-<session>), listed in /jobs/programs-endpoint.json",
+  "checker": "janestreet_programs",
+  "settings": {},
+  "feed": "GET https://www.janestreet.com/jobs/programs-endpoint.json",
+  "feed_total": 11,
+  "page_total": 11,
+  "page_total_how": "programs-endpoint.json is the list the programs-and-events page renders; 11 sessions had an apply form and a deadline still ahead on 2026-10-27 (most in London and Hong Kong).",
+  "intern_total": 11,
+  "robots": "ALLOW (www.janestreet.com: /jobs/ is not disallowed)",
+  "notes": "The programs (FTTP, FOCUS, INSIGHT, Bridge, SEE, …) are not Greenhouse posts: each session is applied for through a janestreet.com form, so the jane-street Greenhouse checker never sees them. The file also keeps past sessions, events without a form and high-school programs; only sessions taking applications are read.",
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-28T01:30:00Z"
+}

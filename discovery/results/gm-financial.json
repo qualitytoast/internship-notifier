@@ -1,0 +1,22 @@
+{
+  "key": "gm-financial",
+  "name": "GM Financial",
+  "careers_url": "https://fa-exvu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs",
+  "hiring_system": "oracle (Oracle Recruiting Cloud, pod fa-exvu-saasfaprod1, site CX_1)",
+  "checker": "oracle",
+  "settings": {
+    "host": "fa-exvu-saasfaprod1.fa.ocs.oraclecloud.com",
+    "site": "CX_1"
+  },
+  "feed": "GET https://fa-exvu-saasfaprod1.fa.ocs.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions (siteNumber=CX_1)",
+  "feed_total": 128,
+  "page_total": 128,
+  "page_total_how": "The site's own requisition search reports TotalJobsCount 128 (2026-10-27); every one was read.",
+  "intern_total": 29,
+  "robots": "ALLOW (fa-exvu-saasfaprod1.fa.ocs.oraclecloud.com)",
+  "notes": "GM's captive-finance subsidiary hires interns on its own Oracle site, separate from GM's Workday (general-motors). Found by the October 2026 audit: 28 US Summer 2027 internships open (Software Development Engineer, Data Engineer, Data Science, Cybersecurity, …).",
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-28T01:30:00Z"
+}

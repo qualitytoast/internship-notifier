@@ -213,7 +213,9 @@ companies:
   category: software
   careers_url: ['https://careers.duolingo.com/', 'https://careers.duolingo.com/?type=Thrive%20Program#careers', 'https://careers.duolingo.com/?type=Intern#careers']
   checker: greenhouse
-  settings: {boards: [duolingo, duolingounirecruitment], dedupe_requisitions: across_boards}
+  settings:
+    boards: [duolingo, duolingounirecruitment]
+    dedupe_requisitions: across_boards
   role_keywords: [thrive]
   verified: {page_total: 63}
 - key: linkedin
@@ -856,11 +858,9 @@ companies:
   settings:
     board: aurora-operations-inc
     learn_ids: true
-    watch_ids: [06daa269-c02b-43a4-88b8-b57a3ba335ef, 12284cdf-e79a-41be-a74f-2c6511f85874,
-      8bd8b0b9-143a-400d-97d0-b3f70d9ee868, 9969d1ef-4498-402f-9afe-68a970934f7c]
-  verified: {page_total: 99, explained: 'The 2 Ashby-only postings are second postings of jobs already on aurora.tech: ''Senior Software
-      Engineer, Motion Controls'' (65a32061, twin fcb5715b) and ''Senior Software Engineer, Geometric Generation'' (2e895957, twin b557e5a3),
-      with the sam'}
+    watch_ids: [06daa269-c02b-43a4-88b8-b57a3ba335ef, 12284cdf-e79a-41be-a74f-2c6511f85874, 8bd8b0b9-143a-400d-97d0-b3f70d9ee868, 9969d1ef-4498-402f-9afe-68a970934f7c]
+  verified: {page_total: 99, explained: the unlisted internships (watch_ids) are read by id besides the listed postings; 2 Ashby-only
+      postings are second postings of jobs already on aurora.tech}
 - key: datadog
   name: Datadog
   category: software
@@ -928,8 +928,13 @@ companies:
   aliases: [Dell]
   careers_url: ['https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/jobs', 'https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/jobs?keyword=intern&mode=location']
   checker: oracle
-  settings: {host: enterpriseplatform.dell.com, site: CX_1001, job_url: 'https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/{id}',
-    learn_ids: true, watch_ids: ['297770', '299057', '299054', '298782'], match_urls: [iawmqy.fa.ocs.oraclecloud.com]}
+  settings:
+    host: enterpriseplatform.dell.com
+    site: CX_1001
+    job_url: https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/{id}
+    learn_ids: true
+    watch_ids: ['297770', '299057', '299054', '298782']
+    match_urls: [iawmqy.fa.ocs.oraclecloud.com]
   verified: {page_total: 453}
 - key: grubhub
   name: Grubhub (Wonder)
@@ -982,8 +987,8 @@ companies:
       settings: {host: wd1.myworkdaysite.com, tenant: fmr, site: FidelityCareers}
     - checker: workday
       settings: {host: wd1.myworkdaysite.com, tenant: fmr, site: targeted}
-  verified: {page_total: 755, explained: 'jobs.fidelity.com lists only the FidelityCareers site; the unlinked ''targeted''
-      site (most student postings) is read too'}
+  verified: {page_total: 755, explained: jobs.fidelity.com lists only the FidelityCareers site; the unlinked 'targeted' site (most student
+      postings) is read too}
 - key: intel
   name: Intel
   category: semiconductors
@@ -1268,7 +1273,8 @@ companies:
   aliases: [Jump]
   careers_url: ['https://www.jumptrading.com/hr/students-new-grads', 'https://www.jumptrading.com/careers/']
   checker: greenhouse
-  settings: {boards: [jumptrading, jumpcrypto]}
+  settings:
+    boards: [jumptrading, jumpcrypto]
   verified: {page_total: 100}
 - key: seven-research
   name: Seven Research
@@ -1423,7 +1429,10 @@ companies:
   category: ai
   careers_url: ['https://deepgram.com/careers']
   checker: ashby
-  settings: {board: deepgram, learn_ids: true, watch_ids: [dc8693b5-72ce-4ca3-ab15-9c8434d35da1]}
+  settings:
+    board: deepgram
+    learn_ids: true
+    watch_ids: [dc8693b5-72ce-4ca3-ab15-9c8434d35da1]
   verified: {page_total: 91}
 - key: sigma-computing
   name: Sigma Computing
@@ -1535,7 +1544,8 @@ companies:
   category: quant
   careers_url: ['https://www.optiver.com/join-us/jobs/']
   checker: greenhouse
-  settings: {boards: [optiverus, optiverprivate]}
+  settings:
+    boards: [optiverus, optiverprivate]
   verified: {page_total: 162, explained: optiver.com lists the optiverus board; the unadvertised optiverprivate board is read too}
 - key: akuna-capital
   name: Akuna Capital
@@ -1602,9 +1612,13 @@ companies:
     - checker: eightfold
       settings: {host: career.mlp.com, domain: mlp.com, api: v2}
     - checker: eightfold
-      settings: {host: career.mlp.com, domain: mlp.com, api: v2, params: {microsite: campus-site}}
-  verified: {page_total: 221, explained: 'the main search on career.mlp.com; the internships are only in the campus microsite
-      (microsite=campus-site), read as a second source'}
+      settings:
+        host: career.mlp.com
+        domain: mlp.com
+        api: v2
+        params: {microsite: campus-site}
+  verified: {page_total: 221, explained: 'the main search on career.mlp.com; the internships are only in the campus microsite (microsite=campus-site),
+      read as a second source'}
 - key: vatic-labs
   name: Vatic Labs
   category: quant
@@ -1736,35 +1750,34 @@ companies:
   careers_url: ['https://www.janestreet.com/join-jane-street/programs-and-events/']
   checker: janestreet_programs
   role_keywords: [fttp, jsip, insight, focus, bridge]
-  notes: Sessions of Jane Street's student programs (applied for through janestreet.com forms, not Greenhouse).
+  verified: {page_total: 11}
 - key: goldman-sachs-programs
   name: Goldman Sachs Programs
   category: finance-insurance
-  careers_url: ['https://www.goldmansachs.com/careers/students/programs-and-internships/americas/possibilities-series',
-    'https://www.goldmansachs.com/careers/students/programs-and-internships/americas/emerging-leaders-series']
+  careers_url: ['https://www.goldmansachs.com/careers/students/programs-and-internships/americas/possibilities-series', 'https://www.goldmansachs.com/careers/students/programs-and-internships/americas/emerging-leaders-series']
   checker: program_pages
   settings:
     pages:
-    - {url: 'https://www.goldmansachs.com/careers/students/programs-and-internships/americas/possibilities-series',
-      title: Goldman Sachs Possibilities Series, location: United States}
-    - {url: 'https://www.goldmansachs.com/careers/students/programs-and-internships/americas/emerging-leaders-series',
-      title: Goldman Sachs Emerging Leaders Series, location: United States}
+    - {url: 'https://www.goldmansachs.com/careers/students/programs-and-internships/americas/possibilities-series', title: Goldman Sachs
+        Possibilities Series, location: United States}
+    - {url: 'https://www.goldmansachs.com/careers/students/programs-and-internships/americas/emerging-leaders-series', title: Goldman
+        Sachs Emerging Leaders Series, location: United States}
     section: [APPLICATION DETAILS, ELIGIBILITY]
     cycle: [ELIGIBILITY, LOCATION]
     closed: applications are now closed
   role_keywords: [possibilities, emerging leaders]
-  notes: Possibilities Series (first-years) and Emerging Leaders Series (sophomores) are applied for on Avature project
-    pages, not Higher; their program pages say when applications open.
+  verified: {page_total: 0}
 - key: gm-financial
   name: GM Financial
   category: finance-insurance
-  careers_url: https://fa-exvu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs
+  careers_url: ['https://fa-exvu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs']
   checker: oracle
   settings: {host: fa-exvu-saasfaprod1.fa.ocs.oraclecloud.com, site: CX_1}
+  verified: {page_total: 128}
 - key: priceline
   name: Priceline
   category: software
-  careers_url: https://priceline.wd1.myworkdayjobs.com/Priceline-CollegeHiring
+  careers_url: ['https://priceline.wd1.myworkdayjobs.com/Priceline-CollegeHiring']
   checker: multi
   settings:
     dedupe: true
@@ -1774,3 +1787,4 @@ companies:
       settings: {host: priceline.wd1.myworkdayjobs.com, tenant: priceline, site: Priceline-CollegeHiring}
     - checker: workday
       settings: {host: priceline.wd1.myworkdayjobs.com, tenant: priceline, site: Priceline}
+  verified: {page_total: 59}

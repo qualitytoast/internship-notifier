@@ -20,17 +20,17 @@ rows are yours.
 
 | Company | Program | For | Deadline / window | InternWatch |
 |---|---|---|---|---|
-| Jane Street | INSIGHT (Jan 4–9, 2027, NYC; women, trans and gender-expansive students) | not stated | Oct 25, 2026 | not watched |
+| Jane Street | INSIGHT (Jan 4–9, 2027, NYC; women, trans and gender-expansive students) | not stated | Oct 25, 2026 | emailed while a session takes applications (Jane Street Programs) |
 | Microsoft | Explore Program (Second-Year Students) | So | opens the first week of Nov and of Dec 2026 | emailed |
-| Jane Street | FOCUS, NYC (students facing barriers to STEM) | Fr | Nov 15, 2026 (London: Nov 8) | not watched |
+| Jane Street | FOCUS, NYC (students facing barriers to STEM) | Fr | Nov 15, 2026 (London: Nov 8) | emailed (Jane Street Programs) |
 | SIG | Discovery Programs: Trading System Engineer, Quantitative Trading & Strategy Development, Equity + Macro Research, Growth Equity, Operations, Capital Markets | So | Nov 16, 2026 for some | emailed (6 US programs in your next email) |
 | Point72 | Academy Coffee Chats — Class of 2029 (US) | So | open | emailed (next email) |
 | Five Rings | LINK 2027: Software Development Intensive Program (5 days, NYC) | So | no deadline | emailed |
 | LinkedIn | First Play (12-week paid SWE internship) | Fr + So | expected late Nov 2026 | emailed if posted on LinkedIn's SmartRecruiters page, where its other internships are |
-| Jane Street | Bridge (graduating 2029) | Fr + So | London Jan 3, 2027 | not watched |
-| Jane Street | FTTP: First-Year Trading and Technology Program (NYC, London) | Fr | Jan 31, 2027 | not watched |
+| Jane Street | Bridge (graduating 2029) | Fr + So | London Jan 3, 2027 | emailed when a US session opens (Jane Street Programs) |
+| Jane Street | FTTP: First-Year Trading and Technology Program (NYC, London) | Fr | Jan 31, 2027 | emailed (Jane Street Programs) |
 | Two Sigma | First-Year Software Engineering Internship (NYC) | Fr | last round opened Jan 28; expect ~Jan 2027 | emailed |
-| Goldman Sachs | Possibilities Series | Fr | expected ~Feb 2027 | emailed if posted on Goldman's job site |
+| Goldman Sachs | Possibilities Series | Fr | expected ~Feb 2027 | emailed when its page opens applications (Goldman Sachs Programs) |
 | Citadel / Citadel Securities | Discover Citadel: 2-day NYC program (quant research, SWE, trading) | Fr + So | US Mar 5, 2027 (EMEA Jan 29, Hong Kong Feb 14) | not watched (the program pages block automated access) |
 
 ## Every program, by company
@@ -49,12 +49,13 @@ rows are yours.
 | Electronic Arts | Pathfinder | Fr + So | — | emailed if posted ("pathfinder") | page removed |
 | Expedia | Career Discovery Program (Software Development), Career Exploration Program | not stated | Expedia's second Workday site | emailed (2027 editions) | 2026 editions seen; 2027 not posted |
 | Five Rings | LINK: Software Development Intensive | So | Five Rings job site | emailed | open |
-| Goldman Sachs | Possibilities Series (formerly Possibilities Summit) | Fr | goldmansachs.com program page | emailed if posted on Goldman's job site | expected ~Feb 2027 |
-| Goldman Sachs | Emerging Leaders Series | So | goldmansachs.com program page | emailed if posted on Goldman's job site | closed for this cycle |
+| Goldman Sachs | Possibilities Series (formerly Possibilities Summit) | Fr | goldmansachs.com program page | emailed when the page opens applications | expected ~Feb 2027 |
+| Goldman Sachs | Emerging Leaders Series | So | goldmansachs.com program page | emailed when the page opens applications | closed for this cycle |
 | Google | STEP / Associate Software Developer Intern (12 weeks) | So | Google job site | emailed if posted | no US 2027 posting; STEP reportedly cut in 2025 |
 | Hudson River Trading | WiTTI: Women in Trading & Technology Internship (2–4 weeks, January) | So (women and nonbinary students) | HRT job site | emailed | closed Oct 16, 2026 |
+| IMC | Launchpad: 2-day Chicago program that fast-tracks the next summer's SWE/quant trading internship | So | IMC job site | emailed (`launchpad`) | 2026 edition seen; 2027 expected Feb–Mar 2027 |
 | IMC | Women in Trading and Technology Program | women students (year not stated) | IMC job site | not caught (no student word; not confirmed as freshman/sophomore) | 2026 edition seen |
-| Jane Street | INSIGHT, FOCUS, FTTP, Bridge, SEE (CS and math in finance, express interest) | Fr, So | janestreet.com program pages | not watched | see above |
+| Jane Street | INSIGHT, FOCUS, FTTP, Bridge, SEE (CS and math in finance, express interest) | Fr, So | janestreet.com program pages (programs-endpoint.json) | emailed while a US session takes applications (Jane Street Programs) | see above |
 | Liberty Mutual | Claim Your Career (fall undergraduate program) | So + juniors | Liberty Mutual job site | emailed | Fall 2026 edition seen |
 | LinkedIn | First Play | Fr + So | linkedin.com and LinkedIn's SmartRecruiters page | emailed if posted on the SmartRecruiters page | expected late Nov 2026 |
 | Meta | Meta University | Fr + So | — | — | ended (final class 2025) |

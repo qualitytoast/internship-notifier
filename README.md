@@ -49,14 +49,35 @@ Rules for changing things: CLAUDE.md.
   - `error`, `timeout`
   - `blocked`: robots.txt now disallows the feed; mark the company `status: blocked`.
   - `shape`: unexpected response or incomplete pagination; the checker needs fixing.
-  - `zero`: 0 jobs after a nonzero count.
+  - `zero`: 0 jobs after a nonzero count. It stays open, with daily reminders, until jobs come back: a company
+    stuck at 0 is never reported "recovered".
   - `drop`: more than 50% fewer jobs, from a count of at least 6.
   - `degraded`: one source of a multi-source company is failing.
   - Also: a big site's daily full scan failing.
   - `possible miss`: SimplifyJobs lists an in-field role at a tracked company that the checker never saw
     although it polled afterwards (90 min grace), or saw but the filters rejected.
+- **Boards that go dead** (`src/internwatch/liveness.py`; `internwatch liveness` shows what it tracks):
+  - `board empty`: one board, Workday site, multi source, Eightfold quick query or student slice (Apple's
+    Internships team, Meta's Internship label, Amazon's interns) of a company that reads several lists 0 jobs on two
+    polls in a row after listing some, while the company total hardly moves. Open until it lists jobs again;
+    reminded weekly.
+  - `board drop`: such a source lost more than half of at least 6 jobs on two polls in a row (alerted once).
+  - `board stale`: a source listing at least 20 dated postings has had no new one for 45 days and for 3× its
+    usual gap: it may have been abandoned while the company posts elsewhere.
+  - `moved?`: weekly, in daily runs (3-minute budget), each careers page is read once and the job systems it points
+    at are compared with last week: a new one that isn't configured, or a configured one no longer mentioned. The
+    first look is a silent baseline. About 85 of 196 pages name a job system in their HTML; the rest are built in
+    the browser or block scripts, and are left to the other checks.
+  - `new site`: a Workday tenant's robots.txt (already cached by the checks, no request) lists a site that isn't
+    configured. Sites on myworkdaysite.com can't be seen this way (its robots.txt answers 422).
+  - `not checked`: a due company was never processed in two runs in a row (skipped at the run time limit, or
+    storing its jobs failed).
 - **healthchecks.io:** pinged at the start and end of each run, so it alerts if no run happens or a run fails
-  (no internet, email failure). `internwatch alert-test` sends a real alert.
+  (no internet, email failure). `internwatch alert-test` sends a real alert. Nothing above can alert when no run
+  happens, so set `HEALTHCHECKS_PING_URL` in `.env`.
+- **Not seen by any of this:** postings that are open but listed nowhere InternWatch reads: unlisted Ashby
+  postings with no known id (Whatnot shows 89 on whatnot.com, which is bot-protected and never polled), postings
+  only on Handshake (Veeva's 2027 SWE intern) and program pages that aren't watched (Discover Citadel).
 
 ## Matching (config/filters.yaml; try `internwatch test-filters "<title>" --location "<loc>"`)
 - **Role:**
@@ -99,9 +120,14 @@ Rules for changing things: CLAUDE.md.
 - **Verified:** the checker's count equals the live careers page with filters off (±3 jobs or 2%, or the
   difference is explained), and a test fixture is recorded.
 - **Adapters** (`src/internwatch/adapters/`):
-  - greenhouse {board | boards, missing_ok, dedupe_requisitions}, lever {site}, ashby {board, mode: hosted}
+  - greenhouse {board | boards, missing_ok, dedupe_requisitions: true | across_boards (only a later board's twins
+    are skipped)}, lever {site}, ashby {board, mode: hosted, watch_ids, learn_ids}
   - workday {host, tenant, site | sites (prefixes ids with the site), quick_queries}
-  - eightfold {host, domain, api: pcsx | v2, count_tolerance}, oracle {host, site}
+  - eightfold {host, domain, api: pcsx | v2, params, quick_queries, count_tolerance}, oracle {host, site, job_url,
+    watch_ids, learn_ids}
+  - watch_ids: postings read one by one because the company's own list leaves them out while they still take
+    applications (Aurora's and Deepgram's unlisted Ashby postings, Dell's delisted Oracle requisitions); a closed
+    one is dropped. learn_ids: also read the ids of the company's postings in the latest SimplifyJobs download.
   - smartrecruiters {company}, workable {account}, icims {portal}, jibe {host}, phenom {base_url, ref_num},
     avature {list_url, page_size}, applicantpro {subdomain, domain_id}, gem, rippling, jobvite, pinpoint,
     recruiterbox, ripplematch
@@ -111,7 +137,9 @@ Rules for changing things: CLAUDE.md.
 - **Custom checkers** (`src/internwatch/checkers/`): google, meta (GraphQL + sitemap fallback), amazon and
   apple (complete student slices), atlassian, goldman, citadel, shopify, epic_careers, talentbrew (Intuit),
   hubspot, instabase (its switched-off Greenhouse board plus a watch on the careers page for a move), deshaw (the
-  job list inside deshaw.com/careers), ibm (the search service behind ibm.com/careers), blocked.
+  job list inside deshaw.com/careers), ibm (the search service behind ibm.com/careers), janestreet_programs (Jane
+  Street's program sessions, applied for through janestreet.com forms), program_pages (a program page that says
+  "Applications are now closed" until a round opens: Goldman's Possibilities and Emerging Leaders Series), blocked.
   - Writing one: a class whose `fetch()` returns `Job(...)`s, with `need(...)` raising ShapeError on anything
     unexpected. Example: `checkers/atlassian.py`.
 - **Adding a company:** `internwatch add "<Name>" <url>` detects the hiring system, runs the checker live, asks
@@ -125,8 +153,8 @@ Rules for changing things: CLAUDE.md.
   `--no-crosscheck`
 - `check <key>`: `--show matches|students|all`, `--details N`, `--record`, `--json`, `--force`
 - `verify [keys]`: `--write` (verify.json + COVERAGE.md), `--record`
-- `add`, `record [keys]`, `coverage`, `refilter [--notify]`, `reseed <keys>`, `status`, `report`, `digest`,
-  `alert-test`, `test-filters`, `daemon`
+- `add`, `record [keys]`, `coverage`, `refilter [--notify]`, `reseed <keys>`, `status`, `liveness`, `report`,
+  `digest`, `alert-test`, `test-filters`, `daemon`
 - Tests (offline, from cassettes in tests/fixtures/cassettes): `.venv/bin/python -m pytest`
 
 ## Internals

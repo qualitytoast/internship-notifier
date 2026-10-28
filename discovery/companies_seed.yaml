@@ -194,3 +194,7 @@ companies:
   - {key: de-shaw, name: D. E. Shaw, category: quant, source: added, urls: ["https://www.deshaw.com/careers"]}
   - {key: ibm, name: IBM, category: big-tech, source: added, urls: ["https://www.ibm.com/careers/search"]}
   - {key: group-one-trading, name: Group One Trading, category: quant, source: added, urls: ["https://group1.com/careers/", "https://group1.applicantpro.com/jobs/"]}
+  - {key: jane-street-programs, name: Jane Street Programs, category: quant, source: added, urls: ["https://www.janestreet.com/join-jane-street/programs-and-events/"]}
+  - {key: goldman-sachs-programs, name: Goldman Sachs Programs, category: finance-insurance, source: added, urls: ["https://www.goldmansachs.com/careers/students/programs-and-internships/americas/possibilities-series", "https://www.goldmansachs.com/careers/students/programs-and-internships/americas/emerging-leaders-series"]}
+  - {key: gm-financial, name: GM Financial, category: finance-insurance, source: added, urls: ["https://fa-exvu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs"]}
+  - {key: priceline, name: Priceline, category: software, source: added, urls: ["https://priceline.wd1.myworkdayjobs.com/Priceline-CollegeHiring"]}

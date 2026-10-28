@@ -81,6 +81,12 @@ PROGRAM_KEYWORDS: dict[str, list[str]] = {
     "liberty-mutual": ["claim your career"],
     "linkedin": ["first play"],
     "electronic-arts": ["pathfinder"],
+    "imc": ["launchpad"],
+    "voloridge": ["ascend program"],
+    "jane-street-programs": ["fttp", "jsip", "insight", "focus", "bridge"],
+    "goldman-sachs-programs": ["possibilities", "emerging leaders"],
+    # research internships titled without a student word ("PhD Researcher, AI Research")
+    "autodesk": ["phd researcher"],
 }
 
 # Hand-tuned settings on top of discovery (each comes from a discovery note).
@@ -108,7 +114,39 @@ OVERRIDES: dict[str, dict] = {
                                      "params": {"jobRecordsPerPage": 20}, "total_regex": r'aria-label="(\d+) results"',
                                      "fields": {"location": "span.list-item-location", "employment_type": "span.list-item-workerType",
                                                 "department": "span.list-item-department"}}},
-    "whatnot": {"settings": {"board": "whatnot", "mode": "hosted"}},
+    # unlisted Ashby postings (whatnot.com shows 89 that its hosted board leaves out) are read by id when
+    # SimplifyJobs lists them (learn_ids); whatnot.com itself is bot-protected and never polled
+    "whatnot": {"settings": {"board": "whatnot", "mode": "hosted", "learn_ids": True}},
+    # Aurora and Deepgram keep internships open but unlisted on Ashby (the posting API leaves them out): read by id
+    "aurora": {"verified": {"explained":
+        "the unlisted internships (watch_ids) are read by id besides the listed postings; 2 Ashby-only postings are "
+        "second postings of jobs already on aurora.tech"},
+               "settings": {"board": "aurora-operations-inc", "learn_ids": True, "watch_ids": [
+        "06daa269-c02b-43a4-88b8-b57a3ba335ef", "12284cdf-e79a-41be-a74f-2c6511f85874",
+        "8bd8b0b9-143a-400d-97d0-b3f70d9ee868", "9969d1ef-4498-402f-9afe-68a970934f7c"]}},
+    "deepgram": {"settings": {"board": "deepgram", "learn_ids": True,
+                              "watch_ids": ["dc8693b5-72ce-4ca3-ab15-9c8434d35da1"]}},
+    # Dell takes internships out of its search while they still take applications (ApplyWhenNotPostedFlag)
+    "dell": {"settings": {"host": "enterpriseplatform.dell.com", "site": "CX_1001",
+                          "job_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/{id}",
+                          "learn_ids": True, "watch_ids": ["297770", "299057", "299054", "298782"],
+                          "match_urls": ["iawmqy.fa.ocs.oraclecloud.com"]}},
+    # second boards and sites found by the October 2026 audit (twins of an earlier board's postings are skipped)
+    "duolingo": {"settings": {"boards": ["duolingo", "duolingounirecruitment"], "dedupe_requisitions": "across_boards"}},
+    "optiver": {"settings": {"boards": ["optiverus", "optiverprivate"]}, "verified": {"explained":
+        "optiver.com lists the optiverus board; the unadvertised optiverprivate board is read too"}},
+    "jump-trading": {"settings": {"boards": ["jumptrading", "jumpcrypto"]}},
+    "millennium": {"checker": "multi", "verified": {"explained":
+        "the main search on career.mlp.com; the internships are only in the campus microsite (microsite=campus-site), "
+        "read as a second source"}, "settings": {"dedupe": True, "match_urls": ["career.mlp.com"], "sources": [
+            {"checker": "eightfold", "settings": {"host": "career.mlp.com", "domain": "mlp.com", "api": "v2"}},
+            {"checker": "eightfold", "settings": {"host": "career.mlp.com", "domain": "mlp.com", "api": "v2",
+                                                  "params": {"microsite": "campus-site"}}}]}},
+    "fidelity": {"checker": "multi", "verified": {"explained":
+        "jobs.fidelity.com lists only the FidelityCareers site; the unlinked 'targeted' site (most student postings) "
+        "is read too"}, "settings": {"dedupe": True, "match_urls": ["/recruiting/fmr/"], "sources": [
+            {"checker": "workday", "settings": {"host": "wd1.myworkdaysite.com", "tenant": "fmr", "site": "FidelityCareers"}},
+            {"checker": "workday", "settings": {"host": "wd1.myworkdaysite.com", "tenant": "fmr", "site": "targeted"}}]}},
     "wolfram": {"settings": {"client_id": 42716,
                              "job_url": "https://www.wolfram.com/company/careers/opportunities/#op-{id}-{slug}"}},
     "nutanix": {"settings": {"company_id": "qKr9VfwZ", "slug": "nutanix",
@@ -122,10 +160,15 @@ OVERRIDES: dict[str, dict] = {
         {"checker": "ripplematch", "settings": {"company_id": 865}}]}},
     # Workday's robots.txt for this tenant disallows the HTML site (/panwexternalcareers/) but not the CXS JSON
     # API, the only complete source (the Radancy front drops every intern posting); see notes/palo-alto-networks.md
-    "palo-alto-networks": {"checker": "multi", "settings": {"sources": [
+    # plus the unlinked hidden Workday site the October 2026 audit found (its twins of main-site postings are skipped)
+    "palo-alto-networks": {"checker": "multi", "verified": {"explained":
+        "Workday is complete: Radancy drops ~111 postings incl.; the unlinked hidden Workday site is read too"},
+        "settings": {"dedupe": True, "sources": [
         {"checker": "workday", "settings": {"host": "paloaltonetworks.wd5.myworkdayjobs.com",
                                             "tenant": "paloaltonetworks", "site": "panwexternalcareers"}},
-        {"checker": "ripplematch", "settings": {"company_id": 676}}]}},
+        {"checker": "ripplematch", "settings": {"company_id": 676}},
+        {"checker": "workday", "settings": {"host": "paloaltonetworks.wd5.myworkdayjobs.com",
+                                            "tenant": "paloaltonetworks", "site": "hidden-private-pawn-temp-gateway-147258369"}}]}},
     # the board answers 404 (switched off); the instabase checker also watches the careers page for a move
     "instabase": {"checker": "instabase", "settings": {"board": "instabase", "missing_ok": True,
                                                        "page": "https://www.instabase.com/careers/jobs"}},

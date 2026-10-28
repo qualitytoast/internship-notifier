@@ -1,0 +1,42 @@
+{
+  "key": "priceline",
+  "name": "Priceline",
+  "careers_url": "https://priceline.wd1.myworkdayjobs.com/Priceline-CollegeHiring",
+  "hiring_system": "workday (tenant priceline, wd1; sites Priceline-CollegeHiring and Priceline)",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "match_urls": [
+      "priceline.wd1.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "priceline.wd1.myworkdayjobs.com",
+          "tenant": "priceline",
+          "site": "Priceline-CollegeHiring"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "priceline.wd1.myworkdayjobs.com",
+          "tenant": "priceline",
+          "site": "Priceline"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://priceline.wd1.myworkdayjobs.com/wday/cxs/priceline/{Priceline-CollegeHiring,Priceline}/jobs",
+  "feed_total": 59,
+  "page_total": 59,
+  "page_total_how": "Workday totals of the two sites (2 + 57) on 2026-10-27.",
+  "intern_total": 2,
+  "robots": "ALLOW (Allow: /Priceline/, /Priceline-CollegeHiring/, /BookingHoldings/)",
+  "notes": "Booking Holdings' US student hiring runs through Priceline's Workday tenant (Booking.com's own site has no US internships). The college site's two SWE co-ops (NYC, January 2027) are open to Northeastern University co-op students.",
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "checked_at": "2026-10-28T01:30:00Z"
+}
