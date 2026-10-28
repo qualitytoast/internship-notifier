@@ -557,3 +557,90 @@ def test_a_bot_check_copy_is_skipped(blocked_cfg, memdb):
     c, cfg, http = archive_setup(blocked_cfg, memdb, "", ts, "<title>Just a moment...</title>")
     moves.check_archive(ctx(cfg, memdb, http, gate=FakeGate({})))
     assert json.loads(memdb.get("blocked:archive:coinbase"))["systems"] == {}
+
+
+# J: the company's own job list -----------------------------------------------------------------------------
+
+def sitemap(*locs):
+    return "<urlset>" + "".join(f"<url><loc>{u}</loc></url>" for u in locs) + "</urlset>"
+
+
+def test_job_lists_as_each_site_writes_them():
+    assert moves.job_list(sitemap("https://www.dropbox.jobs/en/jobs/6330377/infrastructure-software-engineer/",
+                                  "https://www.dropbox.jobs/en/jobs/", "https://www.dropbox.jobs/pl/jobs/6330377/x/")) == {
+        "6330377": "infrastructure software engineer"}
+    assert moves.job_list(sitemap("https://search-careers.gm.com/en/jobs/jr-202622954/site-strategy-admin-intern/")) == {
+        "jr-202622954": "site strategy admin intern"}
+    assert moves.job_list(sitemap("https://jobs.uber.com/en/jobs/303612/")) == {"303612": ""}
+    assert moves.job_list(sitemap("https://careers.amfam.com/jobs/r38296/insurance-agency-owner-burr-ridge-il/")) == {
+        "r38296": "insurance agency owner burr ridge il"}
+    pp = moves.job_list(sitemap("https://paypal.eightfold.ai/careers/job/274922526453-senior-legal-counsel-%E2%80%93-"
+                                "cybersecurity-london?domain=paypal.com&amp;microsite=paypal.com"))
+    assert list(pp) == ["274922526453"] and pp["274922526453"].startswith("senior legal counsel")
+    assert moves.job_list(json.dumps([{"id": 4730408005, "title": "Platform Engineer Intern, Summer 2027"}])) == {
+        "4730408005": "Platform Engineer Intern, Summer 2027"}
+
+
+def joblist_setup(blocked_cfg, memdb, key="dropbox", **conf):
+    c = company(key, checker="greenhouse", settings={"board": key})
+    url = f"https://{key}.example.com/sitemap.xml"
+    cfg = blocked_cfg([c], job_lists={key: {"url": url, **conf}})
+    memdb.conn.execute("INSERT INTO jobs(company, job_id, title, url, first_seen, last_seen) VALUES "
+                       f"('{key}', '6330377', 'Infrastructure Software Engineer', '', 't', 't')")
+    return c, cfg, url
+
+
+def day(cfg, memdb, http, n, healthy=()):
+    return moves.Ctx(cfg, memdb, None, lambda d, **kw: http, float("inf"), set(healthy),
+                     started=f"2026-11-0{n}T09:00:00Z", now=utcnow() + timedelta(days=7 * n))
+
+
+def test_a_job_on_the_companys_list_that_a_later_poll_still_lacks(blocked_cfg, memdb):
+    c, cfg, url = joblist_setup(blocked_cfg, memdb)
+    old = "https://x/en/jobs/6330377/infrastructure-software-engineer/"
+    closed = "https://x/en/jobs/5000001/old-intern-never-stored/"
+    http = FakeHttp({url: sitemap(old, closed)})
+    assert moves.check_job_lists(day(cfg, memdb, http, 1)) == []  # first read: 5000001 is part of the baseline
+    http.pages[url] = sitemap(old, closed, "https://x/en/jobs/9100001/software-engineer-intern-summer-2027/",
+                              "https://x/en/jobs/9100002/senior-accountant/")
+    assert moves.check_job_lists(day(cfg, memdb, http, 2, {"dropbox"})) == []
+    assert sorted(json.loads(memdb.get("blocked:pending:joblist:dropbox"))) == ["9100001", "9100002"]
+    problems = moves.check_confirm(day(cfg, memdb, http, 3, {"dropbox"}))
+    assert [p["summary"] for p in problems] == [
+        "its job list lists 1 job(s) InternWatch has never seen: 'software engineer intern summer 2027' (9100001)"]
+
+
+def test_any_job_counts_on_a_list_without_titles(blocked_cfg, memdb):
+    c, cfg, url = joblist_setup(blocked_cfg, memdb, key="uber", any_job=True)
+    http = FakeHttp({url: sitemap("https://jobs.uber.com/en/jobs/149574/")})
+    moves.check_job_lists(day(cfg, memdb, http, 1))
+    http.pages[url] = sitemap("https://jobs.uber.com/en/jobs/149574/", "https://jobs.uber.com/en/jobs/303612/")
+    moves.check_job_lists(day(cfg, memdb, http, 2, {"uber"}))
+    assert "(303612)" in moves.check_confirm(day(cfg, memdb, http, 3, {"uber"}))[0]["summary"]
+
+
+def test_a_list_with_its_own_ids_is_matched_by_title(blocked_cfg, memdb):
+    c, cfg, url = joblist_setup(blocked_cfg, memdb, key="paypal", match="title")
+    memdb.conn.execute("INSERT INTO jobs(company, job_id, title, url, first_seen, last_seen) VALUES "
+                       "('paypal', 'workday:/job/x_R1', 'Software Engineer Intern', '', 't', 't')")
+    ef = "https://paypal.eightfold.ai/careers/job/{}-{}?domain=paypal.com"
+    http = FakeHttp({url: sitemap(ef.format(1, "staff-engineer-austin"))})
+    moves.check_job_lists(day(cfg, memdb, http, 1))
+    http.pages[url] = sitemap(ef.format(1, "staff-engineer-austin"),
+                              ef.format(2, "software-engineer-intern-san-jose-california"),  # on Workday: stored
+                              ef.format(3, "data-science-intern-new-york"))                  # only on Eightfold
+    moves.check_job_lists(day(cfg, memdb, http, 2, {"paypal"}))
+    problems = moves.check_confirm(day(cfg, memdb, http, 3, {"paypal"}))
+    assert [p["summary"] for p in problems] == [
+        "its job list lists 1 job(s) InternWatch has never seen: 'data science intern new york'"]
+
+
+def test_job_lists_are_read_weekly_unless_set_daily(blocked_cfg, memdb):
+    a = company("akuna-capital")
+    keys = [a] + [company(f"co{i}") for i in range(6)]
+    lists = {"akuna-capital": {"url": "https://akuna/jobs.json", "every_days": 1},
+             **{f"co{i}": {"url": f"https://co{i}/sitemap.xml"} for i in range(6)}}
+    cfg = blocked_cfg(keys, job_lists=lists)
+    http = FakeHttp({"https://akuna/jobs.json": "[]", **{f"https://co{i}/sitemap.xml": sitemap() for i in range(6)}})
+    moves.check_job_lists(ctx(cfg, memdb, http))
+    assert sorted(u.split("/")[2] for u in http.calls) == ["akuna", "co0"]  # Akuna daily; 6 weekly ones: 1 a day

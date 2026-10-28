@@ -52,6 +52,18 @@ liveness:                        # boards that go dead, get abandoned or are rep
     liberty-mutual: https://jobs.libertymutualgroup.com
   id_pages:                      # pages that link postings by hand: their job ids are compared too (moves.py P)
     tower-research: [https://tower-research.com/internships/]
+  job_lists:                     # the job list a company publishes itself (moves.py J): weekly unless every_days says
+    # otherwise; match: title where its ids aren't InternWatch's; any_job: report any posting, not only student ones
+    akuna-capital: {url: "https://akunacapital.com/wp-content/uploads/akuna_jobs.json", every_days: 1}
+    american-family: {url: "https://careers.amfam.com/sitemap.xml"}
+    dropbox: {url: "https://www.dropbox.jobs/sitemap.xml"}
+    fidelity: {url: "https://jobs.fidelity.com/sitemap.xml"}
+    general-motors: {url: "https://search-careers.gm.com/sitemap.xml"}
+    nutanix: {url: "https://careers.nutanix.com/sitemap.xml"}
+    paypal: {url: "https://paypal.eightfold.ai/careers/sitemap.xml?domain=paypal.com", match: title}
+    pinterest: {url: "https://www.pinterestcareers.com/sitemap.xml"}
+    servicenow: {url: "https://careers.servicenow.com/sitemap.xml"}
+    uber: {url: "https://jobs.uber.com/en/jobs/sitemap.xml", any_job: true}
   archive_paths:                 # archive.org (moves.py A): `list` paths whose newly saved pages are listed (with the
     # job id in a page's URL, `ids`), and `pages` whose newest copy is read for the job systems it names
     capstone: {pages: ["https://www.capstoneco.com/careers/"]}

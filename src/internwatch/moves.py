@@ -222,8 +222,14 @@ def confirm(ctx: Ctx, check: str, label: str, any_job=False) -> list[dict]:
         pending = json.loads(raw)
         toks = stored_tokens(ctx.db, c.key)
         keep, report = {}, []
+        titles = None
         for ident, p in pending.items():
-            if is_stored(ident, toks):
+            if ident.startswith("title:"):
+                if titles is None:
+                    titles = {re.sub(r"[^a-z0-9]", "", t) for t in stored_titles(ctx.db, c.key, days=3650)}
+                if title_stored(p["title"], titles):
+                    continue  # the poll caught up with it
+            elif is_stored(ident, toks):
                 continue  # the poll caught up with it
             if p["found"] >= ctx.started or c.key not in ctx.healthy:
                 keep[ident] = p  # no healthy poll since it was seen: wait
@@ -232,7 +238,8 @@ def confirm(ctx: Ctx, check: str, label: str, any_job=False) -> list[dict]:
                 report.append((ident, p))
         ctx.db.set(k, json.dumps(keep))
         if report:
-            shown = "; ".join(f"'{p['title'] or ident}' ({ident})" for ident, p in report[:6])
+            shown = "; ".join(f"'{p['title'] or ident}'" + ("" if ident.startswith("title:") else f" ({ident})")
+                              for ident, p in report[:6])
             where = report[0][1]["where"]
             problems.append(alert(ctx.db, c, check, "posting elsewhere?",
                                   f"{label} lists {len(report)} job(s) InternWatch has never seen: {shown}",
@@ -678,12 +685,86 @@ def check_archive(ctx: Ctx) -> list[dict]:
     return problems
 
 
+# J: the company's own job list ------------------------------------------------------------------------------
+
+def job_list(text: str) -> dict[str, str]:
+    """{job id: title} from a job file (a JSON list of {id, title}) or a sitemap of job pages (title from the slug)."""
+    t = text.lstrip()
+    if t.startswith(("[", "{")):
+        data = json.loads(t)
+        items = data if isinstance(data, list) else next((v for v in data.values() if isinstance(v, list)), [])
+        return {str(x["id"]): str(x.get("title") or "") for x in items if isinstance(x, dict) and x.get("id")}
+    out = {}
+    for loc in re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", text):
+        loc = htmllib.unescape(loc)
+        m = re.search(r"/(?:jobs?|careers/job)/([\w%-]*\d[\w%-]*?)(?:/([\w%-]+))?/?(?:[?#].*)?$", loc)
+        if not m:
+            continue
+        ident, slug = m.group(1).lower(), m.group(2) or ""
+        if not slug and re.match(r"^\d+-", ident):  # Eightfold: /careers/job/<id>-<slug>
+            ident, slug = ident.split("-", 1)
+        out.setdefault(ident, re.sub(r"%[0-9a-f]{2}", " ", slug, flags=re.I).replace("-", " ").strip())
+    return out
+
+
+def title_stored(title: str, stored: set[str]) -> bool:
+    """A sitemap slug carries the title and often the place after it ("sr-legal-counsel-san-jose-…")."""
+    t = re.sub(r"[^a-z0-9]", "", title.lower())
+    return any(s and (s in t or t.startswith(s[:max(12, len(s) - 2)])) for s in stored)
+
+
+def check_job_lists(ctx: Ctx) -> list[dict]:
+    """J. The job list a company publishes itself (a sitemap of job pages, Akuna's job file), compared with every
+    job InternWatch ever stored for it: by the id in the URL, or by title where the list uses its own ids
+    (PayPal's Eightfold copy of Workday). The first read is a silent baseline; a job added since that InternWatch
+    doesn't have is noted, and confirm() reports it if a healthy poll on a later run still lacks it."""
+    lists = per_company(ctx.cfg, "job_lists")
+    problems: list[dict] = []
+    http = ctx.http()
+    try:
+        groups: dict[float, list[str]] = {}
+        for key, conf in lists.items():
+            groups.setdefault(float(conf.get("every_days", 7)), []).append(key)
+        for every, keys in sorted(groups.items()):
+            for key in pick(ctx.db, "joblist", sorted(keys), every, ctx.now):
+                if ctx.out_of_time():
+                    return problems
+                c, conf = ctx.comps[key], lists[key]
+                try:
+                    jobs = job_list(http.get_text(conf["url"], headers={"Accept": "application/json,application/xml,*/*"}))
+                except Exception as e:  # noqa: BLE001 — refused: tomorrow
+                    if out_of_budget(e):
+                        return problems
+                    done(ctx.db, "joblist", key, outcome(e), ctx.now)
+                    log.info("moves: job list of %s not read: %s", key, str(e)[:160])
+                    continue
+                skey = f"blocked:joblist:{key}"
+                raw = ctx.db.get(skey)
+                seen = set(json.loads(raw)) if raw else None
+                ctx.db.set(skey, json.dumps(sorted(set(jobs) | (seen or set()))))
+                done(ctx.db, "joblist", key, "ok", ctx.now)
+                if seen is None or not jobs:
+                    continue  # first read: a silent baseline
+                if conf.get("match") == "title":
+                    stored = {re.sub(r"[^a-z0-9]", "", t) for t in stored_titles(ctx.db, key, days=3650)}
+                    unknown = {i: t for i, t in jobs.items() if i not in seen and not title_stored(t, stored)}
+                    unknown = {f"title:{t}": t for t in unknown.values()}
+                else:
+                    toks = stored_tokens(ctx.db, key)
+                    unknown = {i: t for i, t in jobs.items() if i not in seen and not is_stored(i, toks)}
+                note_unknown(ctx.db, "joblist", c, unknown, conf["url"], ctx.started)
+    finally:
+        http.close()
+    return problems
+
+
 # running them -----------------------------------------------------------------------------------------
 
 CHECKS: list[tuple[str, callable]] = [  # (name, fn(ctx) -> problems), cheapest first
     ("confirm", check_confirm),
     ("workday", check_workday),
     ("page", check_pages),
+    ("joblist", check_job_lists),
     ("archive", check_archive),
 ]
 
