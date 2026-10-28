@@ -237,3 +237,21 @@ def test_emails_only_delivers_what_failed_without_checking(make_cfg, monkeypatch
     assert r.checker_fn.calls == calls             # no site was checked
     sent = [e["kind"] for e in db.q("SELECT kind FROM emails WHERE sent_at IS NOT NULL")]
     assert sent == ["seed", "morning"] and not db.unnotified_matches() and db.get("seed_email_pending") == ""
+
+
+def test_undelivered_drop_alert_is_raised_again(make_cfg, monkeypatch):
+    """A drop is accepted as the new baseline when it alerts; a failed health email must not lose it."""
+    monkeypatch.setattr("internwatch.mailer.time.sleep", lambda s: None)
+    cfg = make_cfg([company("acme")])
+    many = [job(str(i), f"Engineer {i}") for i in range(40)]
+    r, db = broken_runner(cfg, {"acme": [many, many[:12], many[:12], many[:12], many[:12]]})
+    force = RunOptions(crosscheck=False, send=True, scheduled_mail=False, force=True)
+    r.run(SEND)
+    r.run(force)
+    s = r.run(force)  # second poll at 12: the drop alerts, and its email fails
+    assert [p["kind"] for p in s.problems] == ["drop"] and s.email_errors
+    r.mailer = Mailer(cfg, db)
+    monkeypatch.setattr(Mailer, "_smtp_send", lambda self, msg: None)
+    s = r.run(force)
+    assert [(p["kind"], p["summary"]) for p in s.problems] == [("drop", "job count fell 70% (40 → 12)")]
+    assert r.run(force).problems == []  # delivered this time: the new count is accepted

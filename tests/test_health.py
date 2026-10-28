@@ -124,3 +124,35 @@ def test_zero_alert_survives_an_error_and_an_unsent_email(make_cfg, memdb):
     assert v.problem and v.problem["summary"] == "still returns 0 jobs"
     v = assess(cfg, memdb, Outcome(company=c, mode="quick", jobs=[], unchanged=True))  # 304: no count, still 0
     assert v.recovered is None
+
+
+def test_a_drop_alert_survives_an_unsent_email(make_cfg, memdb):
+    c = company("acme")
+    cfg = make_cfg([c])
+    assess(cfg, memdb, Outcome(company=c, jobs=jobs(40)))
+    assess(cfg, memdb, Outcome(company=c, jobs=jobs(12)))
+    v = assess(cfg, memdb, Outcome(company=c, jobs=jobs(12)))
+    assert v.problem["kind"] == "drop" and v.problem["restore_state"]["baseline_count"] == 40
+    # what _reopen_alerts does after a failed email: …
+    memdb.update_state("acme", alert_open=0, last_alert_at=None, **v.problem["restore_state"])
+    again = assess(cfg, memdb, Outcome(company=c, jobs=jobs(12)))
+    assert again.problem and again.problem["summary"] == v.problem["summary"]  # … so the drop is raised again
+    assert assess(cfg, memdb, Outcome(company=c, jobs=jobs(12))).problem is None  # delivered: accepted as before
+
+
+def test_only_a_drop_alert_carries_counts_to_put_back(make_cfg, memdb):
+    from internwatch import emails
+    c = company("acme")
+    cfg = make_cfg([c])
+    kinds = {}
+    for o in [Outcome(company=c, error_kind="fetch", error="HTTP 503")] * 2:
+        v = assess(cfg, memdb, o)
+    kinds["error"] = v.problem
+    assess(cfg, memdb, Outcome(company=c, jobs=jobs(10)))
+    for _ in range(2):
+        v = assess(cfg, memdb, Outcome(company=c, jobs=[]))
+    kinds["zero"] = v.problem
+    assert all("restore_state" not in p for p in kinds.values())
+    drop = dict(kinds["error"], kind="drop", restore_state={"baseline_count": 40, "anomaly_streak": 1, "last_count": 12})
+    plain = {k: v for k, v in drop.items() if k != "restore_state"}
+    assert emails.health(cfg, [drop], [], []) == emails.health(cfg, [plain], [], [])  # never shown in the email

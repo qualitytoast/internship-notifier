@@ -608,7 +608,7 @@ class Runner:
             if p.get("reset_kv"):
                 self.db.set(p["reset_kv"], "")
             elif p.get("key"):
-                self.db.update_state(p["key"], alert_open=0, last_alert_at=None)
+                self.db.update_state(p["key"], alert_open=0, last_alert_at=None, **(p.get("restore_state") or {}))
         for m in s.misses:
             if m.get("row_key"):
                 self.db.conn.execute("UPDATE simplify_rows SET status='pending', resolved_at=NULL WHERE source=? AND row_key=?",

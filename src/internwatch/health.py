@@ -66,9 +66,13 @@ class Verdict:
     status: str = "ok"               # ok | error | anomaly | blocked
 
 
-def _problem(c: Company, kind: str, summary: str, detail: str, since: str | None) -> dict:
-    return {"key": c.key, "name": c.name, "checker": c.checker, "kind": kind, "summary": summary,
-            "detail": detail, "since": since or iso(), "careers_url": (c.careers_url or [""])[0]}
+def _problem(c: Company, kind: str, summary: str, detail: str, since: str | None,
+             restore_state: dict | None = None) -> dict:
+    p = {"key": c.key, "name": c.name, "checker": c.checker, "kind": kind, "summary": summary,
+         "detail": detail, "since": since or iso(), "careers_url": (c.careers_url or [""])[0]}
+    if restore_state:  # company_state put back if the health email fails (runner._reopen_alerts)
+        p["restore_state"] = restore_state
+    return p
 
 
 def assess(cfg: Config, db: DB, o: Outcome) -> Verdict:
@@ -131,8 +135,12 @@ def assess(cfg: Config, db: DB, o: Outcome) -> Verdict:
     last_alert = parse_iso(st["last_alert_at"])
     if streak >= after:
         if not st["alert_open"] or (last_alert and now - last_alert >= remind):
+            # a drop is accepted as the new baseline right below: if this alert's email fails, the next poll must
+            # still see the drop, so the alert carries the counts to put back
+            restore = {"baseline_count": st["baseline_count"], "anomaly_streak": st["anomaly_streak"],
+                       "last_count": st["last_count"]} if kind == "drop" else None
             verdict.problem = _problem(c, kind, summary + (" (reminder: still failing)" if st["alert_open"] else ""),
-                                       detail, since)
+                                       detail, since, restore)
             fields.update(alert_open=1, last_alert_at=iso(now))
         if anomaly:
             # Alerted once; accept the new count as the baseline so a real shrink doesn't alert forever.

@@ -73,8 +73,8 @@ Rules for changing things: CLAUDE.md.
     configured. Sites on myworkdaysite.com can't be seen this way (its robots.txt answers 422).
   - `not checked`: a due company was never processed in two runs in a row (skipped at the run time limit, or
     storing its jobs failed).
-  - A health email that fails to send is not lost: the next run raises the same alerts again, `moved?`, `new site`
-    and `board drop` included (their baselines are put back).
+  - A health email that fails to send is not lost: the next run raises the same alerts again, `drop`, `moved?`,
+    `new site` and `board drop` included (the counts or baselines they had already moved past are put back).
 - **Companies whose careers page can't be read** (`src/internwatch/moves.py`; the 31 in `liveness.blocked`, and
   only those): where else they could start posting. Daily runs, before the emails, within 150 s. Every check's
   first look is a silent baseline; a read the site refuses (bot check, 5xx) is retried the next morning;
