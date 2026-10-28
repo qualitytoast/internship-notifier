@@ -609,7 +609,7 @@ def test_a_job_on_the_companys_list_that_a_later_poll_still_lacks(blocked_cfg, m
     assert sorted(json.loads(memdb.get("blocked:pending:joblist:dropbox"))) == ["9100001", "9100002"]
     problems = moves.check_confirm(day(cfg, memdb, http, 3, {"dropbox"}))
     assert [p["summary"] for p in problems] == [
-        "its job list lists 1 job(s) InternWatch has never seen: 'software engineer intern summer 2027' (9100001)"]
+        "1 job(s) on its job list that InternWatch has never seen: 'software engineer intern summer 2027' (9100001)"]
 
 
 def test_any_job_counts_on_a_list_without_titles(blocked_cfg, memdb):
@@ -634,7 +634,7 @@ def test_a_list_with_its_own_ids_is_matched_by_title(blocked_cfg, memdb):
     moves.check_job_lists(day(cfg, memdb, http, 2, {"paypal"}))
     problems = moves.check_confirm(day(cfg, memdb, http, 3, {"paypal"}))
     assert [p["summary"] for p in problems] == [
-        "its job list lists 1 job(s) InternWatch has never seen: 'data science intern new york'"]
+        "1 job(s) on its job list that InternWatch has never seen: 'data science intern new york'"]
 
 
 def test_job_lists_are_read_weekly_unless_set_daily(blocked_cfg, memdb):
@@ -898,3 +898,13 @@ def test_the_status_shows_each_check_and_recent_alerts(blocked_cfg, memdb):
     assert "watched by moves.py: 1" in out
     assert "P  careers and WordPress pages: 0 read, last never; 0/1 reads answered in 28 days; 1 to retry" in out
     assert "alerts in the last 28 days: 1: acme (page," in out
+
+
+
+def test_a_link_to_the_companys_own_domain_is_not_a_job_system():
+    c = company("liberty", checker="eightfold", settings={"host": "searchjobs.libertymutualgroup.com",
+                                                          "domain": "libertymutual.com", "api": "v2"})
+    assert moves.configured_hosts(c) == {"searchjobs.libertymutualgroup.com": "eightfold:domain=libertymutual.com"}
+    assert moves.systems_in('<a href="https://www.libertymutual.com/about">About</a>', "https://jobs.x.com/", c, {}) == set()
+    fid = company("fidelity", checker="workday", settings={"host": "wd1.myworkdaysite.com", "tenant": "fmr", "site": "x"})
+    assert moves.configured_hosts(fid) == {}  # shared by every tenant on it

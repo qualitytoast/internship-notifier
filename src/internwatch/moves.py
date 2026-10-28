@@ -197,8 +197,6 @@ def stored_titles(db: DB, company: str, days: int = 30) -> set[str]:
                                                  "OR removed_at >= ?)", company, since)}
 
 
-
-
 def note_unknown(db: DB, check: str, c: Company, found: dict[str, str], where: str, started: str) -> None:
     """Job ids seen on a source but not stored: kept until a later healthy poll confirms (confirm())."""
     if not found:
@@ -212,8 +210,8 @@ def note_unknown(db: DB, check: str, c: Company, found: dict[str, str], where: s
 
 def confirm(ctx: Ctx, check: str, label: str, any_job=False) -> list[dict]:
     """Every morning: a job id noted on an earlier run that the company's healthy poll today still doesn't have.
-    Student roles (by the filters' role rule) or unknown titles only, unless any_job (a bool, or a function of the company key: Uber's job
-    sitemap carries every posting, so any job missing there counts)."""
+    Student roles (by the filters' role rule) or unknown titles only, unless any_job (a bool, or a function of the
+    company key: Uber's job sitemap carries every posting, so any job missing there counts)."""
     problems = []
     for c in ctx.comps.values():
         k = f"blocked:pending:{check}:{c.key}"
@@ -244,7 +242,7 @@ def confirm(ctx: Ctx, check: str, label: str, any_job=False) -> list[dict]:
                               for ident, p in report[:6])
             where = report[0][1]["where"]
             problems.append(alert(ctx.db, c, check, "posting elsewhere?",
-                                  f"{label} lists {len(report)} job(s) InternWatch has never seen: {shown}",
+                                  f"{len(report)} job(s) on {label} that InternWatch has never seen: {shown}",
                                   f"Seen on {where} and still missing after today's healthy poll of {c.name}: the "
                                   "company may now post on a board InternWatch doesn't read. Open the link and "
                                   "check where the posting lives.", {k: raw}))
@@ -291,14 +289,20 @@ def config_keys_v2(c: Company) -> set[str]:
     return out
 
 
+HOST_SETTINGS = ("host", "portal", "list_url", "base_url")  # where a job system lives (not Eightfold's domain=)
+SHARED_HOSTS = re.compile(r"myworkdaysite\.com$|greenhouse\.io$|lever\.co$|ashbyhq\.com$|oraclecloud\.com$")
+
+
 def configured_hosts(c: Company) -> dict[str, str]:
-    """Hosts in the company's settings (a custom Eightfold domain, a Workday tenant…) → the system they belong to."""
+    """Hosts a company's own job systems live on (a custom Eightfold host, its Workday tenant…) → that system.
+    Hosts every company shares (wd1.myworkdaysite.com, boards.greenhouse.io…) are left to detect.PATTERNS."""
     out = {}
     for checker, s in _sources(c):
         first = {**s, "site": (s.get("sites") or [s.get("site")])[0], "board": (s.get("boards") or [s.get("board")])[0]}
         key = system_key_v2(checker, {k: v for k, v in first.items() if v})
-        for v in s.values():
-            if isinstance(v, str) and re.match(r"^(?:https?://)?[a-z0-9-]+(?:\.[a-z0-9-]+)+(?:[/?#]|$)", v, re.I):
+        for name in HOST_SETTINGS:
+            v = s.get(name)
+            if isinstance(v, str) and v and not SHARED_HOSTS.search(_host(v)):
                 out[_host(v)] = key
     return out
 
@@ -604,7 +608,7 @@ def check_archive(ctx: Ctx) -> list[dict]:
             state = json.loads(raw) if raw else {}
             first = not state
             since = state.get("since") or (ctx.now - timedelta(days=30)).strftime("%Y%m%d")
-            rows, failures = [], []
+            rows = []
             try:
                 for path in conf.get("list") or []:
                     r = http.get(CDX, params={"url": path, "fl": "original,timestamp", "filter": "statuscode:200",
