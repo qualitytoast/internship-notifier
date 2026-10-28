@@ -59,7 +59,8 @@ def settings(cfg: Config) -> dict:
             "stale_remind": timedelta(days=float(lv.get("stale_reminder_days", 14))),
             "unchecked_runs": int(lv.get("unchecked_runs", 2)),
             "scan_every": timedelta(days=float(lv.get("page_scan_days", 7))),
-            "scan_seconds": float(lv.get("page_scan_seconds", 180)), "enabled": lv.get("enabled", True)}
+            "scan_seconds": float(lv.get("page_scan_seconds", 180)), "enabled": lv.get("enabled", True),
+            "blocked_seconds": float(lv.get("blocked_scan_seconds", 150))}
 
 
 def ensure_schema(db: DB) -> None:

@@ -36,6 +36,13 @@ liveness:                        # boards that go dead, get abandoned or are rep
   unchecked_runs: 2              # a due company never processed in this many runs in a row is reported
   page_scan_days: 7              # careers pages and Workday sites are compared this often (daily runs only) …
   page_scan_seconds: 180         # … within this time budget per run
+  # Companies whose careers page answers scripts with a bot check, HTTP 400 or a robots.txt block:
+  # src/internwatch/moves.py watches where else they could start posting. Its checks read only these companies.
+  blocked: [akuna-capital, american-family, capstone, chicago-trading-company, citadel, citadel-securities, coinbase,
+            doordash, dropbox, epic-games, expedia, fidelity, general-motors, goldman-sachs, gts, hudson-river-trading,
+            liberty-mutual, meta, nutanix, openai, paypal, pinterest, pitchbook, schonfeld, seatgeek, servicenow,
+            tower-research, uber, ukg, veeva, whatnot]
+  blocked_scan_seconds: 150      # their checks' time budget in each daily run (before the emails)
 
 crosscheck:
   grace_minutes: 90              # wait this long (and for a fresh poll) before calling a Simplify role a miss

@@ -26,7 +26,7 @@ from zoneinfo import ZoneInfo
 
 import httpx
 
-from . import emails, liveness
+from . import emails, liveness, moves
 from .adapters import get_checker
 from .adapters.base import FetchContext, dedupe
 from .config import Company, Config
@@ -153,6 +153,7 @@ class RunSummary:
     retry: list[str] = field(default_factory=list)          # unhealthy without an alert yet (first strike)
     email_errors: list[str] = field(default_factory=list)   # configured, but sending failed
     processed: set = field(default_factory=set)             # companies whose poll was stored (liveness.unchecked)
+    healthy: set = field(default_factory=set)               # … and whose poll was ok, complete and full (moves.py)
     note: str = ""
 
     def line(self) -> str:
@@ -355,6 +356,8 @@ class Runner:
     def _liveness_observe(self, o: Outcome, verdict, known, s: RunSummary) -> None:
         """Boards of this company that emptied, fell or went stale (liveness.py). Never affects the poll itself."""
         s.processed.add(o.company.key)
+        if o.ok and not o.degraded and not o.partial and o.mode == "full":
+            s.healthy.add(o.company.key)
         if not liveness.settings(self.cfg)["enabled"]:
             return
         try:
@@ -364,6 +367,10 @@ class Runner:
             return
         s.problems += problems
         s.recovered += recovered
+        try:
+            s.problems += moves.observe(self.cfg, self.db, o)
+        except Exception:  # noqa: BLE001 — same: only logged
+            log.exception("moves: %s failed", o.company.key)
 
     def _liveness_finish(self, companies: list[Company], opts: RunOptions, s: RunSummary, run_deadline: float) -> None:
         """Run-level checks (liveness.py): companies never processed, new Workday sites, careers pages that moved."""
@@ -386,6 +393,21 @@ class Runner:
                     http.close()
         except Exception:  # noqa: BLE001 — never block the run's emails
             log.exception("liveness: run-level checks failed")
+        if not opts.daily:
+            return
+        # the companies whose careers page can't be read: where else they could start posting (moves.py)
+        budget_end = min(time.monotonic() + lv["blocked_seconds"], run_deadline - 300)
+        try:
+            s.problems += moves.run(self.cfg, self.db, self.gate, self._scan_http, budget_end, s.healthy)
+        except Exception:  # noqa: BLE001 — never block the run's emails
+            log.exception("moves: checks of the blocked companies failed")
+
+    def _scan_http(self, deadline: float, retries: int = 1, read_timeout: float | None = None) -> Http:
+        """The client of one moves.py check: its own time budget and fewer retries than a checker's."""
+        hs = dataclasses.replace(http_settings(self.cfg), retries=retries)
+        if read_timeout:
+            hs = dataclasses.replace(hs, read_timeout=read_timeout)
+        return Http(hs, gate=self.gate, deadline=deadline)
 
     def _guarded_check(self, c: Company, mode: str, known, state, detail_limit: int, run_deadline: float):
         if time.monotonic() > run_deadline - 30:
