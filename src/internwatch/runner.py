@@ -12,10 +12,12 @@ Order of a run
 """
 from __future__ import annotations
 
+import dataclasses
 import fcntl
 import json
 import logging
 import random
+import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, field
@@ -41,6 +43,10 @@ log = logging.getLogger(__name__)
 
 CROSSCHECK_KEY = "_simplify"   # company_state row used to track the cross-check's own health
 CONNECTIVITY_URLS = ("https://raw.githubusercontent.com/", "https://www.google.com/generate_204")
+# learn_ids: the posting id in a SimplifyJobs link, per checker that can read a posting by id (watch_ids)
+POSTING_ID_IN_URL = {"ashby": re.compile(r"([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})"),
+                     "oracle": re.compile(r"/job/(\d+)")}
+LEARNED_IDS_MAX = 60
 
 
 def http_settings(cfg: Config) -> HttpSettings:
@@ -205,6 +211,24 @@ class Runner:
             return "full"
         return "quick"
 
+    def _with_learned_ids(self, c: Company) -> Company:
+        """learn_ids: true (Ashby, Oracle): besides the configured watch_ids, read one by one the postings that the
+        last poll found open and those SimplifyJobs lists for the company in its latest download, so a posting left
+        out of the company's own list while it still takes applications is seen. Ids found closed are dropped."""
+        s = c.settings or {}
+        rx = POSTING_ID_IN_URL.get(c.checker)
+        if not s.get("learn_ids") or rx is None:
+            return c
+        state = self._checker_state(c.key)
+        closed = set(state.get("watch_closed") or [])
+        ids = list(dict.fromkeys(str(x) for x in s.get("watch_ids") or []))
+        ids += [x for x in state.get("watch_open") or [] if x not in ids]
+        rows = self.db.q("SELECT r.url FROM simplify_rows r JOIN kv k ON k.key = 'simplify_baselined:' || r.source "
+                         "WHERE r.tracked_company = ? AND r.last_seen = k.value ORDER BY r.first_seen DESC", c.key)
+        learned = [m.group(1) for r in rows if (m := rx.search(r["url"] or ""))]
+        ids += [x for x in dict.fromkeys(learned) if x not in closed and x not in ids][:LEARNED_IDS_MAX]
+        return dataclasses.replace(c, settings={**s, "watch_ids": ids})
+
     def _checker_state(self, key: str) -> dict:
         try:
             return json.loads(self.db.get(f"ckstate:{key}") or "{}")
@@ -299,6 +323,7 @@ class Runner:
         workers = opts.workers or self.workers
         jobs_plan = []
         for c in companies:
+            c = self._with_learned_ids(c)
             st = self.db.state(c.key)
             seeding = st["seeded_at"] is None
             jobs_plan.append((c, self.mode_for(c, opts), self.db.known_ids(c.key), self._checker_state(c.key),

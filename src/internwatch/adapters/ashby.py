@@ -3,17 +3,22 @@
 settings: board: <organization hosted jobs page name>   e.g. openai, mistral.ai, Talos-Trading
           (or boards: [Sierra, sierra-jp] for companies with several boards)
           mode: hosted   for orgs whose posting API answers 404 (e.g. whatnot): read the hosted page instead
+          watch_ids: [<posting id>, …]   unlisted postings to read one by one (the API and the hosted board leave
+                         them out, though they take applications: Aurora, Deepgram). The runner adds the ids of
+                         SimplifyJobs rows when learn_ids is true.
 GET https://api.ashbyhq.com/posting-api/job-board/<board>?includeCompensation=false → {"jobs": [...]}
 hosted: GET https://jobs.ashbyhq.com/<board> → window.__appData = {jobBoard: {jobPostings: [...], teams: [...]}}
-(jobs.ashbyhq.com/api/* is disallowed by robots.txt; the public API and the hosted page are allowed.)
+watched: GET https://jobs.ashbyhq.com/<board>/<id> → window.__appData.posting (404, or no posting, when closed)
+(jobs.ashbyhq.com/api/* is disallowed by robots.txt; the public API and the hosted pages are allowed.)
 With several boards, one that fails marks the poll degraded and the others are still read; all failing fails.
+A watched posting that can't be read marks the poll degraded; one that is closed is left out.
 """
 from __future__ import annotations
 
 import json
 
 from ..models import CheckerError, Job
-from .base import Checker, degrade, iso_date, join_locations, need, need_list, register
+from .base import Checker, degrade, html_text, iso_date, join_locations, need, need_list, register
 
 API = "https://api.ashbyhq.com/posting-api/job-board/{board}?includeCompensation=false"
 HOSTED = "https://jobs.ashbyhq.com/{board}"
@@ -57,17 +62,51 @@ class Ashby(Checker):
             raise errors[0]
         if errors:
             degrade(ctx, "; ".join(str(e) for e in errors))
+        if s.get("watch_ids"):
+            jobs += self._watched(http, s, ctx, boards[0], {j.id for j in jobs})
         return jobs
 
-    def _hosted(self, http, s):
-        html = http.get_text(HOSTED.format(board=s["board"]))
+    def _watched(self, http, s, ctx, board: str, listed: set[str]) -> list[Job]:
+        out, opened, closed = [], [], []
+        for wid in dict.fromkeys(str(x) for x in s["watch_ids"]):
+            if wid in listed:
+                continue
+            try:
+                resp = http.get(f"{HOSTED.format(board=board)}/{wid}", ok_statuses=(404,))
+                p = None if resp.status == 404 else self._app_data(resp.text, board).get("posting")
+            except CheckerError as e:
+                if ctx is None:
+                    raise
+                degrade(ctx, f"ashby:{board}: watched posting {wid}: {e}")
+                continue
+            if not (isinstance(p, dict) and p.get("title")):
+                closed.append(wid)
+                continue
+            opened.append(wid)
+            loc = join_locations([p.get("locationName")] + list(p.get("secondaryLocationNames") or []))
+            if p.get("workplaceType") == "Remote" and "remote" not in loc.lower():
+                loc = f"{loc}; Remote" if loc else "Remote"
+            out.append(Job(id=wid, title=p["title"], location=loc, url=f"https://jobs.ashbyhq.com/{board}/{wid}",
+                           posted=iso_date(p.get("publishedDate")), snippet=html_text(p.get("descriptionHtml")),
+                           department=p.get("departmentName") or "", employment_type=p.get("employmentType") or "",
+                           extra={"unlisted": True}))
+        if ctx is not None:
+            ctx.state["watch_open"] = opened
+            ctx.state["watch_closed"] = sorted(set(ctx.state.get("watch_closed") or []) | set(closed))[-300:]
+        return out
+
+    def _app_data(self, html: str, board: str) -> dict:
         i = html.find("window.__appData = ")
-        need(i >= 0, f"ashby:{s['board']}: hosted page has no window.__appData")
+        need(i >= 0, f"ashby:{board}: hosted page has no window.__appData")
         try:
             data, _ = json.JSONDecoder().raw_decode(html, i + len("window.__appData = "))
         except ValueError:
-            need(False, f"ashby:{s['board']}: window.__appData is not JSON")
-        board = (data or {}).get("jobBoard") or {}
+            need(False, f"ashby:{board}: window.__appData is not JSON")
+        return data or {}
+
+    def _hosted(self, http, s):
+        data = self._app_data(http.get_text(HOSTED.format(board=s["board"])), s["board"])
+        board = data.get("jobBoard") or {}
         posts = board.get("jobPostings")
         need(isinstance(posts, list), f"ashby:{s['board']}: jobBoard.jobPostings missing")
         teams = {t.get("id"): t.get("name", "") for t in board.get("teams") or []}
