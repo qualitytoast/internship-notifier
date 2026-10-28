@@ -319,6 +319,7 @@ companies:
     - checker: eightfold
       settings: {host: jobs.autodesk.com, domain: autodesk.com, api: pcsx, min_interval: 2.5, count_tolerance: 0.04}
   locations: [US, CA]
+  role_keywords: [phd researcher]
   verified: {page_total: 386, explained: 'union of both systems: Workday''s 347 postings plus the 88 requisitions only on Eightfold;
       the Eightfold careers page (jobs.autodesk.com) shows 386'}
 - key: toast
@@ -1158,6 +1159,7 @@ companies:
   careers_url: ['https://www.imc.com/eu/search-careers', 'https://www.imc.com/us/careers/jobs']
   checker: greenhouse
   settings: {board: imc}
+  role_keywords: [launchpad]
   verified: {page_total: 160, explained: 'Greenhouse is a superset of the site: 171 − 160 = 11 = 8 talent-community/event/interest-form
       postings without ''Worker Sub Type'' + 1 unlisted Sydney role (absent from the page payload) + 2 flagged ''Is Hidden Job?'' =
       true.'}
@@ -1265,6 +1267,7 @@ companies:
   careers_url: ['https://www.voloridge.com/join-our-team', 'https://www.voloridge.com/careers/']
   checker: greenhouse
   settings: {board: voloridgeinvestmentmanagement}
+  role_keywords: [ascend program]
   verified: {page_total: 11}
 - key: transmarket-group
   name: TransMarket Group
