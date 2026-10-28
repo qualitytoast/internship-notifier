@@ -31,7 +31,7 @@ import math
 import re
 import time
 from dataclasses import dataclass, field
-from datetime import timedelta
+from datetime import datetime, timedelta, timezone
 from urllib.parse import parse_qs, urlsplit
 
 from . import liveness
@@ -549,12 +549,142 @@ def check_confirm(ctx: Ctx) -> list[dict]:
             + confirm(ctx, "getro", "Getro's copy of its careers page"))
 
 
+# A: archive.org's copies ------------------------------------------------------------------------------------
+
+CDX = "https://web.archive.org/cdx/search/cdx"
+BOT_CHECK = re.compile(r"Just a moment|cf-chl|Checking your browser|Attention Required|px-captcha|captcha-delivery|"
+                       r"Pardon Our Interruption|HASHCASH", re.I)
+
+
+def norm_url(u: str) -> str:
+    p = urlsplit(u if "//" in u else "https://" + u)
+    host = p.netloc.lower().split(":")[0]
+    host = host[4:] if host.startswith("www.") else host
+    return host + (p.path.rstrip("/") or "/")
+
+
+def original_allowed(ctx: Ctx, http, url: str) -> bool:
+    """Read an archived copy only where the original site's robots.txt allows the page itself."""
+    if ctx.gate is None:
+        return True
+    p = urlsplit(url)
+    try:
+        rules = ctx.gate.robots(f"{p.scheme}://{p.netloc}", http._fetch_robots, 12.0)
+    except Exception:  # noqa: BLE001 — unreachable robots.txt: treated as "crawl nothing" (RFC 9309)
+        return False
+    return rules.allowed(url)
+
+
+def check_archive(ctx: Ctx) -> list[dict]:
+    """A. Weekly per company, spread over the week. One listing of the pages archive.org saved under each configured
+    path since the last look: a new student or program page, and (where `ids` is set) job ids InternWatch never
+    stored. Then the newest copy of each configured page, when it is at most `archive_max_days` old, isn't a bot
+    check and its own site's robots.txt allows the page: the job systems it names."""
+    paths = per_company(ctx.cfg, "archive_paths")
+    max_age = timedelta(days=float(opts(ctx.cfg).get("archive_max_days", 45)))
+    al = aliases(ctx.cfg)
+    problems: list[dict] = []
+    http = ctx.http(retries=0, read_timeout=45)  # archive.org can be slow or "temporarily offline": retry tomorrow
+    try:
+        for key in pick(ctx.db, "archive", sorted(paths), 7, ctx.now):
+            if ctx.out_of_time():
+                break
+            c, conf = ctx.comps[key], paths[key]
+            skey = f"blocked:archive:{key}"
+            raw = ctx.db.get(skey)
+            state = json.loads(raw) if raw else {}
+            first = not state
+            since = state.get("since") or (ctx.now - timedelta(days=30)).strftime("%Y%m%d")
+            rows, failures = [], []
+            try:
+                for path in conf.get("list") or []:
+                    r = http.get(CDX, params={"url": path, "fl": "original,timestamp", "filter": "statuscode:200",
+                                              "from": since, "limit": "3000"}, timeout=45)
+                    rows += [ln.split(" ") for ln in r.text.splitlines() if ln.count(" ") == 1]
+                copies = []
+                for page in conf.get("pages") or []:
+                    r = http.get(CDX, params={"url": page, "fl": "original,timestamp", "filter": "statuscode:200",
+                                              "limit": "-1"}, timeout=45)
+                    last = [ln.split(" ") for ln in r.text.splitlines() if ln.count(" ") == 1]
+                    if last:
+                        copies.append((page, last[-1][0], last[-1][1]))
+            except Exception as e:  # noqa: BLE001 — archive.org down or slow: tomorrow
+                if out_of_budget(e):
+                    break
+                done(ctx.db, "archive", key, outcome(e), ctx.now)
+                log.info("moves: archive.org listing for %s failed: %s", key, str(e)[:160])
+                continue
+            restore_kv = {skey: raw or "", **due_restore(ctx.db, "archive", key)}
+            seen_urls = set(state.get("urls") or [])
+            urls = {norm_url(u) for u, _ in rows}
+            new_pages = sorted(u for u in urls - seen_urls if STUDENT.search(u.split("/", 1)[-1]))
+            ids = {}
+            if conf.get("ids"):
+                rx = re.compile(conf["ids"])
+                for u, _ in rows:
+                    m = rx.search(u.split("?")[0])
+                    if m and m.group(1).isdigit():
+                        ids[m.group(1)] = ""
+            toks = stored_tokens(ctx.db, key)
+            stored_numbers = [int(t) for t in toks if t.isdigit() and len(t) >= 5]
+            floor = state.get("floor")
+            if floor is None:
+                floor = max(stored_numbers + [int(i) for i in ids] + [0])
+            unknown = {i: t for i, t in ids.items() if int(i) > floor and not is_stored(i, toks)}
+            systems = dict(state.get("systems") or {})
+            read_copies = dict(state.get("copies") or {})
+            new_sys: list[tuple[str, str, str]] = []
+            known = known_systems(ctx, c)
+            for page, original, ts in copies:
+                if ts <= read_copies.get(page, ""):
+                    continue  # no newer copy since the last look
+                age = ctx.now - datetime.strptime(ts[:14], "%Y%m%d%H%M%S").replace(tzinfo=timezone.utc)
+                if age > max_age or not original_allowed(ctx, http, original):
+                    continue
+                try:
+                    text = http.get_text(f"https://web.archive.org/web/{ts}id_/{original}")
+                except Exception as e:  # noqa: BLE001 — one unreadable copy: the next one comes
+                    log.info("moves: archived copy of %s not read: %s", page, str(e)[:160])
+                    continue
+                read_copies[page] = ts
+                if BOT_CHECK.search(text[:30000]):
+                    continue
+                now_sys = sorted(systems_in(text, original, c, al))
+                before = systems.get(page)
+                systems[page] = sorted(set(now_sys) | set(before or []))
+                if before is not None:
+                    new_sys += [(page, ts, x) for x in now_sys if x not in before and x not in known]
+            state.update(urls=sorted(seen_urls | urls), floor=max(floor, *(int(i) for i in ids)) if ids else floor,
+                         systems=systems, copies=read_copies, since=ctx.now.strftime("%Y%m%d"))
+            ctx.db.set(skey, json.dumps(state))
+            done(ctx.db, "archive", key, "ok", ctx.now)
+            if first:
+                continue  # first look: a silent baseline
+            note_unknown(ctx.db, "archive", c, unknown, "archived copies of its careers pages", ctx.started)
+            if new_pages:
+                problems.append(alert(ctx.db, c, "archive-pages", "new page",
+                                      f"archive.org saved new student or program pages: {', '.join(new_pages[:5])}",
+                                      "A new students, internships or program page is often the first sign of a new "
+                                      "program or job site. Open it and compare with the config.", restore_kv))
+            if new_sys:
+                shown = ", ".join(sorted({x for _, _, x in new_sys}))
+                page, ts, _ = new_sys[0]
+                problems.append(alert(ctx.db, c, "archive", "moved?",
+                                      f"an archived copy of {page} (saved {ts[:4]}-{ts[4:6]}-{ts[6:8]}) points at {shown}",
+                                      f"InternWatch reads {', '.join(sorted(known))}. The jobs may have moved to another "
+                                      f"job site: https://web.archive.org/web/{ts}/{page}", restore_kv))
+    finally:
+        http.close()
+    return problems
+
+
 # running them -----------------------------------------------------------------------------------------
 
 CHECKS: list[tuple[str, callable]] = [  # (name, fn(ctx) -> problems), cheapest first
     ("confirm", check_confirm),
     ("workday", check_workday),
     ("page", check_pages),
+    ("archive", check_archive),
 ]
 
 

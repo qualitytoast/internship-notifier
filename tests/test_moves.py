@@ -60,6 +60,9 @@ class FakeHttp:
     def close(self):
         pass
 
+    def _fetch_robots(self, url):
+        return 404, ""
+
 
 def ctx(cfg, db, http=None, healthy=(), gate=None):
     return moves.Ctx(cfg, db, gate, lambda deadline, **kw: http or FakeHttp({}), float("inf"), set(healthy))
@@ -454,3 +457,103 @@ def test_the_real_aliases_point_at_configured_systems():
     cfg = load()
     configured = set().union(*(moves.config_keys_v2(c) for c in cfg.companies if c.key in set(moves.blocked(cfg))))
     assert set(moves.aliases(cfg).values()) <= configured
+
+
+# A: archive.org's copies ----------------------------------------------------------------------------------------
+
+class FakeGate:
+    def __init__(self, robots: dict):
+        self.robots_txt = robots
+
+    def robots(self, origin, fetch, ttl):
+        from internwatch.robots import from_response
+        return from_response(200, self.robots_txt.get(origin, ""))
+
+    def _disk_get(self, origin):
+        return None
+
+
+CDX = "https://web.archive.org/cdx/search/cdx?url="
+
+
+def archive_setup(blocked_cfg, memdb, listing: str, copy_ts: str, copy: str):
+    c = company("coinbase", checker="greenhouse", settings={"board": "coinbase"})
+    cfg = blocked_cfg([c], archive_paths={"coinbase": {"list": ["coinbase.com/careers*"], "ids": r"/positions/(\d{6,})",
+                                                       "pages": ["https://www.coinbase.com/careers/positions"]}})
+    memdb.conn.execute("INSERT INTO jobs(company, job_id, title, url, first_seen, last_seen) VALUES "
+                       "('coinbase', '8175873', 'Software Engineer Intern', "
+                       "'https://www.coinbase.com/careers/positions/8175873?gh_jid=8175873', 't', 't')")
+    page = "https://www.coinbase.com/careers/positions"
+    http = FakeHttp({CDX + "coinbase.com/careers*": listing,
+                     CDX + page: f"{page} {copy_ts}\n",
+                     f"https://web.archive.org/web/{copy_ts}id_/{page}": copy})
+    return c, cfg, http
+
+
+def recent(days=1):
+    return (utcnow() - timedelta(days=days)).strftime("%Y%m%d%H%M%S")
+
+
+def test_archived_pages_new_student_pages_and_systems(blocked_cfg, memdb):
+    ts = recent()
+    listing = (f"https://www.coinbase.com/careers {ts}\nhttps://www.coinbase.com/careers/positions/8175873?gh_jid=8175873 {ts}\n")
+    gh = '<a href="https://boards.greenhouse.io/embed/job_app?for=coinbase&token=1">x</a>'
+    c, cfg, http = archive_setup(blocked_cfg, memdb, listing, ts, gh)
+    gate = FakeGate({})
+    assert moves.check_archive(ctx(cfg, memdb, http, gate=gate)) == []  # first look
+    memdb.set("blocked:at:archive:coinbase", "")
+    ts2 = recent(0)
+    http.pages[CDX + "coinbase.com/careers*"] = (listing + f"https://www.coinbase.com/careers/university {ts2}\n"
+                                                 f"https://www.coinbase.com/careers/about-us {ts2}\n")
+    http.pages[CDX + "https://www.coinbase.com/careers/positions"] = f"https://www.coinbase.com/careers/positions {ts2}\n"
+    http.pages[f"https://web.archive.org/web/{ts2}id_/https://www.coinbase.com/careers/positions"] = (
+        gh + '<a href="https://coinbase-students.icims.com/jobs">x</a>')
+    problems = moves.check_archive(ctx(cfg, memdb, http, gate=gate))
+    assert sorted((p["kind"], p["summary"].split(" (saved")[0]) for p in problems) == [
+        ("moved?", "an archived copy of https://www.coinbase.com/careers/positions"),
+        ("new page", "archive.org saved new student or program pages: coinbase.com/careers/university")]
+    assert "icims:portal=coinbase-students.icims.com" in [p for p in problems if p["kind"] == "moved?"][0]["summary"]
+
+
+def test_archived_job_ids_newer_than_the_first_look_and_unstored_wait_for_a_poll(blocked_cfg, memdb):
+    ts = recent()
+    listing = f"https://www.coinbase.com/careers/positions/8000001 {ts}\n"  # an old posting, closed long ago
+    c, cfg, http = archive_setup(blocked_cfg, memdb, listing, ts, "<html></html>")
+    moves.check_archive(ctx(cfg, memdb, http))
+    memdb.set("blocked:at:archive:coinbase", "")
+    http.pages[CDX + "coinbase.com/careers*"] = (f"https://www.coinbase.com/careers/positions/9000001 {ts}\n"
+                                                 f"https://www.coinbase.com/careers/positions/8000002 {ts}\n")
+    later = moves.Ctx(cfg, memdb, None, lambda d, **kw: http, float("inf"), {"coinbase"}, started="2026-10-29T09:00:00Z")
+    assert moves.check_archive(later) == []
+    assert list(json.loads(memdb.get("blocked:pending:archive:coinbase"))) == ["9000001"]  # 8000002 is below the floor
+    after = moves.Ctx(cfg, memdb, None, None, float("inf"), {"coinbase"}, started="2026-10-30T09:00:00Z")
+    assert "(9000001)" in moves.check_confirm(after)[0]["summary"]
+
+
+def test_a_copy_is_read_only_where_the_original_site_allows_it_and_only_when_recent(blocked_cfg, memdb):
+    ts = recent()
+    c, cfg, http = archive_setup(blocked_cfg, memdb, "", ts, "<html></html>")
+    blocked_gate = FakeGate({"https://www.coinbase.com": "User-agent: *\nDisallow: /careers/\n"})
+    moves.check_archive(ctx(cfg, memdb, http, gate=blocked_gate))
+    assert not any("/web/" in x for x in http.calls)  # robots.txt of coinbase.com disallows the page itself
+    memdb.set("blocked:at:archive:coinbase", "")
+    memdb.set("blocked:archive:coinbase", "")
+    old = recent(60)
+    http.pages[CDX + "https://www.coinbase.com/careers/positions"] = f"https://www.coinbase.com/careers/positions {old}\n"
+    http.calls.clear()
+    moves.check_archive(ctx(cfg, memdb, http, gate=FakeGate({})))
+    assert not any("/web/" in x for x in http.calls)  # 60 days old: says nothing about today
+
+
+def test_archive_org_down_is_retried_the_next_morning_without_an_alert(blocked_cfg, memdb):
+    c, cfg, http = archive_setup(blocked_cfg, memdb, "", recent(), "")
+    http.pages[CDX + "coinbase.com/careers*"] = FetchError("HTTP 503 for GET cdx (after 1 attempts)")
+    assert moves.check_archive(ctx(cfg, memdb, http)) == []
+    assert memdb.get("blocked:retry:archive:coinbase") == "1" and memdb.get("blocked:archive:coinbase") is None
+
+
+def test_a_bot_check_copy_is_skipped(blocked_cfg, memdb):
+    ts = recent()
+    c, cfg, http = archive_setup(blocked_cfg, memdb, "", ts, "<title>Just a moment...</title>")
+    moves.check_archive(ctx(cfg, memdb, http, gate=FakeGate({})))
+    assert json.loads(memdb.get("blocked:archive:coinbase"))["systems"] == {}

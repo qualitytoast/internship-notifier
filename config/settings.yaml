@@ -52,6 +52,25 @@ liveness:                        # boards that go dead, get abandoned or are rep
     liberty-mutual: https://jobs.libertymutualgroup.com
   id_pages:                      # pages that link postings by hand: their job ids are compared too (moves.py P)
     tower-research: [https://tower-research.com/internships/]
+  archive_paths:                 # archive.org (moves.py A): `list` paths whose newly saved pages are listed (with the
+    # job id in a page's URL, `ids`), and `pages` whose newest copy is read for the job systems it names
+    capstone: {pages: ["https://www.capstoneco.com/careers/"]}
+    coinbase: {list: ["coinbase.com/careers*"], ids: '/positions/(\d{6,})'}
+    doordash: {list: ["careersatdoordash.com/jobs/*", "careersatdoordash.com/university-careers*"],
+               ids: '/jobs/[\w-]+/(\d{6,})'}
+    expedia: {pages: ["https://careers.expediagroup.com/jobs/"]}
+    fidelity: {pages: ["https://jobs.fidelity.com/en/jobs/"]}
+    hudson-river-trading: {list: ["hudsonrivertrading.com/careers*", "hudsonrivertrading.com/student-opportunities*"],
+                           pages: ["https://www.hudsonrivertrading.com/careers/",
+                                   "https://www.hudsonrivertrading.com/student-opportunities/"]}
+    meta: {list: ["metacareers.com/careerprograms*"]}
+    openai: {pages: ["https://openai.com/careers/search/", "https://openai.com/careers/emerging-talent/"]}
+    pitchbook: {pages: ["https://pitchbook.com/careers"]}
+    uber: {pages: ["https://jobs.uber.com/en/jobs/"]}
+    ukg: {list: ["ukg.com/company/careers*"], pages: ["https://www.ukg.com/company/careers"]}
+    veeva: {pages: ["https://careers.veeva.com/job-search-results/"]}
+    whatnot: {list: ["whatnot.com/careers*"], pages: ["https://www.whatnot.com/careers"]}
+  archive_max_days: 45           # an older copy says nothing about where the company posts now
   aliases:                       # one job system under two names (moves.py): the left one counts as the right one
     eightfold:domain=libertymutual.eightfold.ai: eightfold:domain=libertymutual.com
     eightfold:domain=ukg.eightfold.ai: eightfold:domain=ukg.com
