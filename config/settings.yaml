@@ -64,8 +64,19 @@ liveness:                        # boards that go dead, get abandoned or are rep
     pinterest: {url: "https://www.pinterestcareers.com/sitemap.xml"}
     servicenow: {url: "https://careers.servicenow.com/sitemap.xml"}
     uber: {url: "https://jobs.uber.com/en/jobs/sitemap.xml", any_job: true}
-  archive_paths:                 # archive.org (moves.py A): `list` paths whose newly saved pages are listed (with the
-    # job id in a page's URL, `ids`), and `pages` whose newest copy is read for the job systems it names
+  program_pages:                 # new student and program pages (moves.py N): sitemaps, wp:<site> page lists, feeds
+    akuna-capital: ["https://akunacapital.com/page-sitemap.xml"]
+    capstone: ["wp:https://www.capstoneco.com"]
+    chicago-trading-company: ["https://www.chicagotrading.com/page-sitemap.xml"]
+    citadel: ["https://www.citadel.com/page-sitemap.xml"]
+    citadel-securities: ["https://www.citadelsecurities.com/page-sitemap.xml"]
+    goldman-sachs: ["https://www.goldmansachs.com/feeds/programs-and-internships.json"]
+    gts: ["https://gtsx.com/page-sitemap.xml"]
+    liberty-mutual: ["https://jobs.libertymutualgroup.com/page-sitemap.xml"]
+    openai: ["https://openai.com/sitemap.xml/page/"]
+    tower-research: ["https://tower-research.com/page-sitemap.xml"]
+  archive_paths:                 # archive.org (moves.py A): `list` paths whose newly saved student pages are listed
+    # (any_page: every new page; ids: the job id in a page's URL), `pages` whose newest copy is read for the systems
     capstone: {pages: ["https://www.capstoneco.com/careers/"]}
     coinbase: {list: ["coinbase.com/careers*"], ids: '/positions/(\d{6,})'}
     doordash: {list: ["careersatdoordash.com/jobs/*", "careersatdoordash.com/university-careers*"],
@@ -75,7 +86,7 @@ liveness:                        # boards that go dead, get abandoned or are rep
     hudson-river-trading: {list: ["hudsonrivertrading.com/careers*", "hudsonrivertrading.com/student-opportunities*"],
                            pages: ["https://www.hudsonrivertrading.com/careers/",
                                    "https://www.hudsonrivertrading.com/student-opportunities/"]}
-    meta: {list: ["metacareers.com/careerprograms*"]}
+    meta: {list: ["metacareers.com/careerprograms*"], any_page: true}   # every page there is a program page
     openai: {pages: ["https://openai.com/careers/search/", "https://openai.com/careers/emerging-talent/"]}
     pitchbook: {pages: ["https://pitchbook.com/careers"]}
     uber: {pages: ["https://jobs.uber.com/en/jobs/"]}

@@ -37,13 +37,16 @@ from urllib.parse import parse_qs, urlsplit
 from . import liveness
 from .config import Company, Config
 from .db import DB, iso, parse_iso, utcnow
-from .models import CheckTimeout, RobotsBlocked
+from .filters import is_student_role
+from .models import CheckTimeout, Job, RobotsBlocked
 
 log = logging.getLogger(__name__)
 
-STUDENT = re.compile(r"intern|co-?op|student|campus|early[-_ ]?(?:career|talent)|universit|graduate|program|fellow|"
-                     r"residen|emerging|apprentic|scholar|discover|insight|explore|sneak|academy|summit|datathon|"
-                     r"invitational|bootcamp|externship", re.I)
+# a page address or title that reads like a students, internships or program page (not "internaliser", "residents")
+STUDENT = re.compile(r"\bintern(?:s|ship|ships)?\b|\bco-?ops?\b|\bstudents?\b|\bcampus\b|early[-_ ]?(?:career|talent)|"
+                     r"universit|\bgraduates?\b|\bprograms?\b|\bfellow(?:s|ship|ships)?\b|\bresiden(?:cy|t)\b|"
+                     r"emerging[-_ ]talent|apprentic|\bscholar(?:s|ship|ships)?\b|sneak[-_ ]peek|\bacademy\b|"
+                     r"\bsummits?\b|datathon|invitational|bootcamp|externship|\bdiscover[-_ ]", re.I)
 
 
 # companies and settings ---------------------------------------------------------------------
@@ -194,8 +197,6 @@ def stored_titles(db: DB, company: str, days: int = 30) -> set[str]:
                                                  "OR removed_at >= ?)", company, since)}
 
 
-def student_like(title: str) -> bool:
-    return bool(STUDENT.search(title or ""))
 
 
 def note_unknown(db: DB, check: str, c: Company, found: dict[str, str], where: str, started: str) -> None:
@@ -211,7 +212,7 @@ def note_unknown(db: DB, check: str, c: Company, found: dict[str, str], where: s
 
 def confirm(ctx: Ctx, check: str, label: str, any_job=False) -> list[dict]:
     """Every morning: a job id noted on an earlier run that the company's healthy poll today still doesn't have.
-    Student-like or unknown titles only, unless any_job (a bool, or a function of the company key: Uber's job
+    Student roles (by the filters' role rule) or unknown titles only, unless any_job (a bool, or a function of the company key: Uber's job
     sitemap carries every posting, so any job missing there counts)."""
     problems = []
     for c in ctx.comps.values():
@@ -234,7 +235,8 @@ def confirm(ctx: Ctx, check: str, label: str, any_job=False) -> list[dict]:
             if p["found"] >= ctx.started or c.key not in ctx.healthy:
                 keep[ident] = p  # no healthy poll since it was seen: wait
                 continue
-            if (any_job(c.key) if callable(any_job) else any_job) or not p["title"] or student_like(p["title"]):
+            if (any_job(c.key) if callable(any_job) else any_job) or not p["title"] \
+                    or is_student_role(Job(id=ident, title=p["title"]), ctx.cfg.rules, c.extra_role_re):
                 report.append((ident, p))
         ctx.db.set(k, json.dumps(keep))
         if report:
@@ -624,7 +626,7 @@ def check_archive(ctx: Ctx) -> list[dict]:
             restore_kv = {skey: raw or "", **due_restore(ctx.db, "archive", key)}
             seen_urls = set(state.get("urls") or [])
             urls = {norm_url(u) for u, _ in rows}
-            new_pages = sorted(u for u in urls - seen_urls if STUDENT.search(u.split("/", 1)[-1]))
+            new_pages = sorted(u for u in urls - seen_urls if conf.get("any_page") or STUDENT.search(u.split("/", 1)[-1]))
             ids = {}
             if conf.get("ids"):
                 rx = re.compile(conf["ids"])
@@ -758,6 +760,136 @@ def check_job_lists(ctx: Ctx) -> list[dict]:
     return problems
 
 
+# N: new student and program pages --------------------------------------------------------------------------
+
+def page_list(http, source: str) -> dict[str, str]:
+    """{page: title} of a site: a sitemap, a WordPress page list ("wp:<site>") or a JSON feed of programs."""
+    if source.startswith("wp:"):
+        out, page, total = {}, 1, 1
+        while page <= min(total, 20):
+            r = http.get(f"{source[3:].rstrip('/')}/wp-json/wp/v2/pages", params={"per_page": 100, "page": page,
+                                                                                   "_fields": "link,title"})
+            for item in json.loads(r.text):
+                out[item.get("link") or ""] = htmllib.unescape(((item.get("title") or {}).get("rendered")) or "")
+            total = int(r.headers.get("x-wp-totalpages") or 1)
+            page += 1
+        return {k: v for k, v in out.items() if k}
+    text = http.get_text(source, headers={"Accept": "application/xml,application/json,*/*"})
+    t = text.lstrip()
+    if t.startswith(("[", "{")):
+        data = json.loads(t)
+        items = data if isinstance(data, list) else next((v for v in data.values() if isinstance(v, list)), [])
+        return {str(x.get("path") or x.get("url") or x.get("slug")): str(x.get("title") or "") for x in items
+                if isinstance(x, dict) and (x.get("path") or x.get("url") or x.get("slug"))}
+    return {htmllib.unescape(u): "" for u in re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", text)}
+
+
+def check_programs(ctx: Ctx) -> list[dict]:
+    """N. Weekly per company, spread over the week: a page on the company's site that wasn't there before and whose
+    address or title reads like a students, internships or program page. A source's first read is a silent
+    baseline."""
+    sources = per_company(ctx.cfg, "program_pages")
+    problems: list[dict] = []
+    http = ctx.http()
+    try:
+        for key in pick(ctx.db, "programs", sorted(sources), 7, ctx.now):
+            if ctx.out_of_time():
+                break
+            c = ctx.comps[key]
+            skey = f"blocked:programs:{key}"
+            raw = ctx.db.get(skey)
+            state = json.loads(raw) if raw else {}
+            new, errors = [], []
+            for source in sources[key]:
+                try:
+                    pages = page_list(http, source)
+                except Exception as e:  # noqa: BLE001 — refused: tomorrow
+                    if out_of_budget(e):
+                        return problems
+                    errors.append(outcome(e))
+                    log.info("moves: page list %s of %s not read: %s", source, key, str(e)[:160])
+                    continue
+                before = state.get(source)
+                state[source] = sorted(set(pages) | set(before or []))
+                if before is not None:
+                    new += [(u, t) for u, t in pages.items() if u not in before
+                            and STUDENT.search(f"{urlsplit(u).path} {t}")]
+            if errors and len(errors) == len(sources[key]):
+                done(ctx.db, "programs", key, "refused" if "refused" in errors else "failed", ctx.now)
+                continue
+            restore_kv = {skey: raw or "", **due_restore(ctx.db, "programs", key)}
+            ctx.db.set(skey, json.dumps(state))
+            done(ctx.db, "programs", key, "ok", ctx.now)
+            if new:
+                shown = ", ".join(f"{u}" + (f" ({t})" if t else "") for u, t in new[:5])
+                problems.append(alert(ctx.db, c, "programs", "new page", f"its site has new student or program pages: {shown}",
+                                      "A new students, internships or program page is often the first sign of a new "
+                                      "program or job site. Open it and compare with the config.", restore_kv))
+    finally:
+        http.close()
+    return problems
+
+
+# G: new labels ----------------------------------------------------------------------------------------------
+
+GOLDMAN_TYPES = ("RoleSearchExperience", "ExternalSourceType")
+LABEL = re.compile(r"intern|universit|student|graduate|new grad|phd|campus|early|co-?op|apprentic|rotation|fellow|"
+                   r"residen", re.I)
+
+
+def _new_labels(db: DB, c: Company, labels: set[str], what: str, detail: str) -> list[dict]:
+    key = f"blocked:labels:{c.key}"
+    raw = db.get(key)
+    known = set(json.loads(raw)) if raw else None
+    db.set(key, json.dumps(sorted(labels | (known or set()))))
+    new = sorted(labels - known) if known is not None else []  # first look: a silent baseline
+    if not new:
+        return []
+    return [alert(db, c, "labels", "new label", f"{what}: {', '.join(new)}", detail, {key: raw or ""})]
+
+
+def check_labels(ctx: Ctx) -> list[dict]:
+    """G. Weekly: the values Goldman's job API (the one InternWatch reads) accepts for experience and source types.
+    A new one (Goldman's schema already names an unused AVATURE source) can mean roles InternWatch doesn't ask for."""
+    c = ctx.comps.get("goldman-sachs")
+    if c is None or not pick(ctx.db, "labels", [c.key], 7, ctx.now):
+        return []
+    from .checkers.goldman import API
+    query = "{ " + " ".join(f'{t}: __type(name: "{t}") {{ enumValues {{ name }} }}' for t in GOLDMAN_TYPES) + " }"
+    http = ctx.http()
+    try:
+        data = http.post_json(API, json={"query": query}, headers={"Accept": "application/json"})
+    except Exception as e:  # noqa: BLE001 — refused: tomorrow
+        if not out_of_budget(e):
+            done(ctx.db, "labels", c.key, outcome(e), ctx.now)
+        return []
+    finally:
+        http.close()
+    labels = {f"{t}.{v['name']}" for t in GOLDMAN_TYPES for v in (((data.get("data") or {}).get(t) or {})
+                                                                   .get("enumValues") or [])}
+    if not labels:
+        done(ctx.db, "labels", c.key, "failed", ctx.now)
+        return []
+    done(ctx.db, "labels", c.key, "ok", ctx.now)
+    return _new_labels(ctx.db, c, labels, "Goldman's job API has new experience or source types",
+                       "InternWatch asks Higher for PROFESSIONAL, EARLY_CAREER and CAMPUS roles. A new type can hold "
+                       "roles it never asks for (the AVATURE source would be the Avature-only programs).")
+
+
+def observe(cfg: Config, db: DB, o) -> list[dict]:
+    """Per poll (runner._liveness_observe), no request: Meta's team labels in its healthy, complete poll. A new
+    student-like team ("Internship - …", "University Grad - …") can carry internships the Internship label misses."""
+    c = blocked(cfg).get(o.company.key)
+    if c is None or c.key != "meta":
+        return []
+    if not (o.ok and not o.degraded and not o.partial and not o.unchanged and o.mode == "full" and o.jobs):
+        return []
+    labels = {x.strip() for j in o.jobs for x in (j.department or "").split(" / ") if LABEL.search(x)}
+    return _new_labels(db, c, labels, "Meta labels jobs with new student teams",
+                       "InternWatch marks Meta's internships by its Internship label and their titles. A new student "
+                       "team can be a new program; check that its roles reach you.")
+
+
 # running them -----------------------------------------------------------------------------------------
 
 CHECKS: list[tuple[str, callable]] = [  # (name, fn(ctx) -> problems), cheapest first
@@ -765,6 +897,8 @@ CHECKS: list[tuple[str, callable]] = [  # (name, fn(ctx) -> problems), cheapest 
     ("workday", check_workday),
     ("page", check_pages),
     ("joblist", check_job_lists),
+    ("programs", check_programs),
+    ("labels", check_labels),
     ("archive", check_archive),
 ]
 
@@ -786,6 +920,3 @@ def run(cfg: Config, db: DB, gate, make_http, budget_end: float, healthy: set) -
     return problems
 
 
-def observe(cfg: Config, db: DB, o) -> list[dict]:
-    """Per-poll hook (runner._liveness_observe): checks that read nothing but the company's own poll."""
-    return []

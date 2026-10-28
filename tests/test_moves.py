@@ -644,3 +644,95 @@ def test_job_lists_are_read_weekly_unless_set_daily(blocked_cfg, memdb):
     http = FakeHttp({"https://akuna/jobs.json": "[]", **{f"https://co{i}/sitemap.xml": sitemap() for i in range(6)}})
     moves.check_job_lists(ctx(cfg, memdb, http))
     assert sorted(u.split("/")[2] for u in http.calls) == ["akuna", "co0"]  # Akuna daily; 6 weekly ones: 1 a day
+
+
+# N: new student and program pages ------------------------------------------------------------------------
+
+def test_a_new_student_page_in_a_sitemap(blocked_cfg, memdb):
+    c = company("citadel")
+    cfg = blocked_cfg([c], program_pages={"citadel": ["https://www.citadel.com/page-sitemap.xml"]})
+    base = ["https://www.citadel.com/careers/internships/", "https://www.citadel.com/notices/"]
+    http = FakeHttp({"https://www.citadel.com/page-sitemap.xml": sitemap(*base)})
+    assert moves.check_programs(ctx(cfg, memdb, http)) == []
+    memdb.set("blocked:at:programs:citadel", "")
+    http.pages["https://www.citadel.com/page-sitemap.xml"] = sitemap(
+        *base, "https://www.citadel.com/careers/programs-and-events/discover-citadel-2027/",
+        "https://www.citadel.com/what-we-do/commodities/")
+    problems = moves.check_programs(ctx(cfg, memdb, http))
+    assert [p["summary"] for p in problems] == [
+        "its site has new student or program pages: https://www.citadel.com/careers/programs-and-events/discover-citadel-2027/"]
+
+
+def test_a_new_program_in_a_feed_and_a_new_wordpress_page(blocked_cfg, memdb):
+    g, cap = company("goldman-sachs"), company("capstone")
+    feed = "https://www.goldmansachs.com/feeds/programs-and-internships.json"
+    wp = "https://www.capstoneco.com/wp-json/wp/v2/pages?per_page=100&page=1&_fields=link,title"
+    cfg = blocked_cfg([g, cap], program_pages={"goldman-sachs": [feed], "capstone": ["wp:https://www.capstoneco.com"]})
+    http = FakeHttp({feed: [{"path": "/careers/students/programs-and-internships/americas/possibilities-series",
+                             "title": "Possibilities Series"}],
+                     wp: Resp(200, "", {"x-wp-totalpages": "1"},
+                              json.dumps([{"link": "https://www.capstoneco.com/careers/", "title": {"rendered": "Careers"}}]).encode())})
+    for _ in range(2):
+        assert moves.check_programs(ctx(cfg, memdb, http)) == []  # first looks, one company a day
+    for k in ("goldman-sachs", "capstone"):
+        memdb.set(f"blocked:at:programs:{k}", "")
+    http.pages[feed] = http.pages[feed] + [{"path": "/careers/students/programs-and-internships/americas/new-analyst-week",
+                                            "title": "New Analyst Week"}]
+    http.pages[wp] = Resp(200, "", {"x-wp-totalpages": "1"}, json.dumps([
+        {"link": "https://www.capstoneco.com/careers/", "title": {"rendered": "Careers"}},
+        {"link": "https://www.capstoneco.com/careers/internship-program/", "title": {"rendered": "Internship Program"}}]).encode())
+    problems = moves.check_programs(ctx(cfg, memdb, http)) + moves.check_programs(ctx(cfg, memdb, http))
+    assert sorted(p["key"] for p in problems) == ["capstone", "goldman-sachs"]
+    assert "new-analyst-week (New Analyst Week)" in [p for p in problems if p["key"] == "goldman-sachs"][0]["summary"]
+
+
+# G: new labels ---------------------------------------------------------------------------------------------
+
+def test_new_goldman_experience_or_source_types(blocked_cfg, memdb):
+    from internwatch.checkers.goldman import API
+    g = company("goldman-sachs", checker="goldman")
+    cfg = blocked_cfg([g])
+    types = lambda *extra: {"data": {"RoleSearchExperience": {"enumValues": [{"name": n} for n in (
+        "PROFESSIONAL", "EARLY_CAREER", "CAMPUS", "INTERNAL_MOBILITY", *extra)]},
+        "ExternalSourceType": {"enumValues": [{"name": "AVATURE"}, {"name": "ORACLE"}]}}}
+    http = FakeHttp({API: types()})
+    assert moves.check_labels(ctx(cfg, memdb, http)) == []
+    memdb.set("blocked:at:labels:goldman-sachs", "")
+    http.pages[API] = types("SEASONAL")
+    problems = moves.check_labels(ctx(cfg, memdb, http))
+    assert [p["summary"] for p in problems] == [
+        "Goldman's job API has new experience or source types: RoleSearchExperience.SEASONAL"]
+    assert http.calls[-1].startswith("POST")
+
+
+def test_new_student_team_labels_at_meta_from_its_own_poll(blocked_cfg, memdb):
+    from internwatch.health import Outcome
+    meta = company("meta", checker="meta")
+    cfg = blocked_cfg([meta])
+    poll = lambda *deps: Outcome(company=meta, jobs=[job(str(i), "x", department=d) for i, d in enumerate(deps)])
+    assert moves.observe(cfg, memdb, poll("AI Research / Internship - PhD / Research", "Security / Program Management")) == []
+    assert json.loads(memdb.get("blocked:labels:meta")) == ["Internship - PhD"]  # Program Management isn't a student team
+    problems = moves.observe(cfg, memdb, poll("AI Research / Internship - PhD", "Infrastructure / Internship - Product"))
+    assert [p["summary"] for p in problems] == ["Meta labels jobs with new student teams: Internship - Product"]
+    assert moves.observe(cfg, memdb, poll("AI Research / Internship - PhD")) == []  # a label that leaves stays known
+    assert moves.observe(cfg, memdb, poll("X / Internship - Product")) == []
+    degraded = poll("X / University Grad - New")
+    degraded.degraded = "the Internship query failed"
+    assert moves.observe(cfg, memdb, degraded) == []  # an incomplete poll is never judged
+
+
+def test_no_other_company_poll_is_looked_at(blocked_cfg, memdb):
+    from internwatch.health import Outcome
+    other = company("other-meta", checker="meta")
+    cfg = blocked_cfg([company("acme"), other])
+    assert moves.observe(cfg, memdb, Outcome(company=other, jobs=[job("1", "x", department="Internship - Y")])) == []
+    assert memdb.get("blocked:labels:other-meta") is None
+
+
+def test_what_reads_like_a_student_or_program_page():
+    yes = ["/careers/internships/", "/careers/early-talent/", "/programs-and-events/discover-citadel/", "/residency/",
+           "/careers/students-and-early-career/", "/university-careers/", "/careers/emerging-talent/", "co-op"]
+    no = ["/news-insights/", "/tower-research-capital-systematic-internaliser/", "/disclosure-for-residents-of-japan/",
+          "/careers/international/", "/what-we-do/equities/"]
+    assert [u for u in yes if not moves.STUDENT.search(u)] == []
+    assert [u for u in no if moves.STUDENT.search(u)] == []
