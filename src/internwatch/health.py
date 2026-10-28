@@ -11,6 +11,10 @@ poll already retried every request with backoff), so a single blip never emails 
 
 While a problem stays open you get a reminder every `reminder_hours`; when it clears you get a
 "recovered" line in the next health email.
+
+A zero alert stays open until jobs come back (kv zero_open:<key>): 0 is accepted as the baseline after the alert,
+so the polls that still return 0 are healthy (closed jobs are marked removed), but they never count as "recovered";
+they remind you instead, and raise the alert again if the email about it could not be sent.
 """
 from __future__ import annotations
 
@@ -95,6 +99,11 @@ def assess(cfg: Config, db: DB, o: Outcome) -> Verdict:
             summary = f"job count fell {100 * (base - count) / base:.0f}% ({base} → {count})"
             detail = "More than the allowed drop since the last healthy check."
 
+    zero_since = db.get(f"zero_open:{c.key}")
+    if kind is None and zero_since:
+        if count == 0 or (count is None and st["last_count"] == 0):
+            return _still_zero(db, c, o, st, count, zero_since, remind, now)
+        db.set(f"zero_open:{c.key}", "")  # jobs are back: recovered below
     if kind is None:  # healthy
         verdict = Verdict(True)
         if st["alert_open"]:
@@ -130,5 +139,27 @@ def assess(cfg: Config, db: DB, o: Outcome) -> Verdict:
             fields.update(baseline_count=count, anomaly_streak=0, last_success=iso(now))
             if o.mode == "full":
                 fields["last_full"] = iso(now)
+            if kind == "zero":
+                db.set(f"zero_open:{c.key}", since)  # but 0 jobs never counts as recovered (_still_zero)
+    db.update_state(c.key, **fields)
+    return verdict
+
+
+def _still_zero(db: DB, c: Company, o: Outcome, st, count, since: str, remind: timedelta, now) -> Verdict:
+    """A healthy poll of a company whose zero alert is open and that still returns 0 jobs: no "recovered" line;
+    a reminder every `reminder_hours`, or at once if the alert's email did not go out (alert_open was reset)."""
+    verdict = Verdict(True)
+    fields = dict(consecutive_failures=0, anomaly_streak=0, last_success=iso(now))
+    last_alert = parse_iso(st["last_alert_at"])
+    if not st["alert_open"] or last_alert is None or now - last_alert >= remind:
+        verdict.problem = _problem(c, "zero", "still returns 0 jobs" + (" (reminder)" if st["alert_open"] else ""),
+                                   "The site may have changed how it loads jobs, or every posting was taken down.",
+                                   since)
+        fields.update(alert_open=1, last_alert_at=iso(now), last_error_kind="zero",
+                      last_error="returned 0 jobs: the site may have changed how it loads jobs")
+    if count is not None:
+        fields.update(baseline_count=count, last_count=count)
+    if o.mode == "full" and not o.unchanged:
+        fields["last_full"] = iso(now)
     db.update_state(c.key, **fields)
     return verdict

@@ -88,3 +88,39 @@ def test_degraded_fallback_alerts_but_keeps_jobs(make_cfg, memdb):
     for _ in range(2):
         v = assess(cfg, memdb, Outcome(company=c, jobs=jobs(5), degraded="doc_id rotated"))
     assert not v.healthy and v.problem["kind"] == "shape"
+
+
+def _zero_alerted(cfg, memdb, c):
+    assess(cfg, memdb, Outcome(company=c, jobs=jobs(12)))
+    assess(cfg, memdb, Outcome(company=c, jobs=[]))
+    v = assess(cfg, memdb, Outcome(company=c, jobs=[]))
+    assert v.problem["kind"] == "zero"
+
+
+def test_zero_alert_stays_open_until_jobs_come_back(make_cfg, memdb):
+    c = company("acme")
+    cfg = make_cfg([c])
+    _zero_alerted(cfg, memdb, c)
+    v = assess(cfg, memdb, Outcome(company=c, jobs=[]))  # still 0: never "working again (0 jobs)"
+    assert v.healthy and v.recovered is None and v.problem is None
+    memdb.update_state("acme", last_alert_at="2000-01-01T00:00:00Z")  # a day later: a reminder
+    v = assess(cfg, memdb, Outcome(company=c, jobs=[]))
+    assert v.problem["kind"] == "zero" and v.problem["summary"] == "still returns 0 jobs (reminder)"
+    v = assess(cfg, memdb, Outcome(company=c, jobs=jobs(3)))  # jobs are back
+    assert v.recovered and v.recovered["summary"] == "working again (3 jobs)"
+    assert assess(cfg, memdb, Outcome(company=c, jobs=jobs(3))).recovered is None
+
+
+def test_zero_alert_survives_an_error_and_an_unsent_email(make_cfg, memdb):
+    c = company("acme")
+    cfg = make_cfg([c])
+    _zero_alerted(cfg, memdb, c)
+    for _ in range(2):
+        assess(cfg, memdb, Outcome(company=c, error_kind="fetch", error="HTTP 503"))
+    v = assess(cfg, memdb, Outcome(company=c, jobs=[]))  # the error cleared, but the board is still empty
+    assert v.recovered is None
+    memdb.update_state("acme", alert_open=0, last_alert_at=None)  # what _reopen_alerts does after a failed email
+    v = assess(cfg, memdb, Outcome(company=c, jobs=[]))
+    assert v.problem and v.problem["summary"] == "still returns 0 jobs"
+    v = assess(cfg, memdb, Outcome(company=c, mode="quick", jobs=[], unchanged=True))  # 304: no count, still 0
+    assert v.recovered is None
