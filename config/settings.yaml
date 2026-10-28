@@ -36,8 +36,9 @@ liveness:                        # boards that go dead, get abandoned or are rep
   unchecked_runs: 2              # a due company never processed in this many runs in a row is reported
   page_scan_days: 7              # careers pages and Workday sites are compared this often (daily runs only) …
   page_scan_seconds: 180         # … within this time budget per run
-  # Companies whose careers page answers scripts with a bot check, HTTP 400 or a robots.txt block:
-  # src/internwatch/moves.py watches where else they could start posting. Its checks read only these companies.
+  # Companies whose careers page answers scripts with a bot check, HTTP 400 or a robots.txt block. The weekly page
+  # check leaves them out; src/internwatch/moves.py watches where else they could start posting instead, and its
+  # checks read only these companies.
   blocked: [akuna-capital, american-family, capstone, chicago-trading-company, citadel, citadel-securities, coinbase,
             doordash, dropbox, epic-games, expedia, fidelity, general-motors, goldman-sachs, gts, hudson-river-trading,
             liberty-mutual, meta, nutanix, openai, paypal, pinterest, pitchbook, schonfeld, seatgeek, servicenow,
@@ -45,6 +46,19 @@ liveness:                        # boards that go dead, get abandoned or are rep
   blocked_scan_seconds: 150      # their checks' time budget in each daily run (before the emails)
   extra_tenants:                 # Workday tenants of a parent company, where a new site would show (moves.py W)
     pitchbook: [morningstar.wd5.myworkdayjobs.com]
+  wp_pages:                      # WordPress sites whose /wp-json/wp/v2/pages answers: every page is read (moves.py P)
+    chicago-trading-company: https://www.chicagotrading.com
+    gts: https://gtsx.com
+    liberty-mutual: https://jobs.libertymutualgroup.com
+  id_pages:                      # pages that link postings by hand: their job ids are compared too (moves.py P)
+    tower-research: [https://tower-research.com/internships/]
+  aliases:                       # one job system under two names (moves.py): the left one counts as the right one
+    eightfold:domain=libertymutual.eightfold.ai: eightfold:domain=libertymutual.com
+    eightfold:domain=ukg.eightfold.ai: eightfold:domain=ukg.com
+    eightfold:domain=apply.ukg.com: eightfold:domain=ukg.com
+    eightfold:domain=paypal.eightfold.ai: workday:site=jobs,tenant=paypal   # PayPal's Eightfold site mirrors Workday
+    eightfold:domain=paypal.com: workday:site=jobs,tenant=paypal
+    oracle:host=iaziqy.fa.ocs.oraclecloud.com,site=cx_1: oracle:host=iaziqy.fa.ocs.oraclecloud.com,site=ubercareers
 
 crosscheck:
   grace_minutes: 90              # wait this long (and for a fresh poll) before calling a Simplify role a miss

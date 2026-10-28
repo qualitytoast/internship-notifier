@@ -383,8 +383,9 @@ def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
     now = utcnow()
     problems = []
     todo = []
+    blocked = set((cfg.settings.get("liveness", default={}) or {}).get("blocked") or [])
     for c in cfg.active:
-        if not c.careers_url:
+        if not c.careers_url or c.key in blocked:  # pages that refuse scripts: moves.py watches those companies
             continue
         last = parse_iso(db.get(f"page_scan_at:{c.key}") or None)
         if last is None or now - last >= p["scan_every"]:

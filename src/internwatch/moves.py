@@ -209,9 +209,10 @@ def note_unknown(db: DB, check: str, c: Company, found: dict[str, str], where: s
     db.set(k, json.dumps(pending))
 
 
-def confirm(ctx: Ctx, check: str, label: str, any_job: bool = False) -> list[dict]:
+def confirm(ctx: Ctx, check: str, label: str, any_job=False) -> list[dict]:
     """Every morning: a job id noted on an earlier run that the company's healthy poll today still doesn't have.
-    Student-like titles only, unless any_job (Uber's job sitemap carries no titles worth judging)."""
+    Student-like or unknown titles only, unless any_job (a bool, or a function of the company key: Uber's job
+    sitemap carries every posting, so any job missing there counts)."""
     problems = []
     for c in ctx.comps.values():
         k = f"blocked:pending:{check}:{c.key}"
@@ -227,7 +228,7 @@ def confirm(ctx: Ctx, check: str, label: str, any_job: bool = False) -> list[dic
             if p["found"] >= ctx.started or c.key not in ctx.healthy:
                 keep[ident] = p  # no healthy poll since it was seen: wait
                 continue
-            if any_job or student_like(p["title"]):
+            if (any_job(c.key) if callable(any_job) else any_job) or not p["title"] or student_like(p["title"]):
                 report.append((ident, p))
         ctx.db.set(k, json.dumps(keep))
         if report:
@@ -318,7 +319,10 @@ def systems_in(text: str, page_url: str, c: Company, aliases: dict) -> set[str]:
         h = h.lower()
         if h != own and h in hosts:
             seen.add(hosts[h])
-    return {aliases.get(k, k) for k in seen}
+    return {aliases.get(k, k) for k in seen if not NOT_A_SYSTEM.match(k)}
+
+
+NOT_A_SYSTEM = re.compile(r"^icims:portal=(?:cdn\d*|www|images?|static|assets?)\.icims\.com$")  # iCIMS's own hosts
 
 
 def aliases(cfg: Config) -> dict[str, str]:
@@ -423,10 +427,134 @@ def check_workday(ctx: Ctx) -> list[dict]:
     return problems
 
 
+# P: careers pages, WordPress pages, job ids on pages ---------------------------------------------------------
+
+JOB_ID_PATTERNS = [
+    re.compile(r"gh_jid=(\d{5,})"),
+    re.compile(r"greenhouse\.io/[\w-]+/jobs/(\d{5,})"),
+    re.compile(r"jobs\.(?:eu\.)?lever\.co/[\w.-]+/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})"),
+    re.compile(r"jobs\.ashbyhq\.com/[\w.%-]+/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})"),
+    re.compile(r"icims\.com/jobs/(\d{3,})"),
+    re.compile(r"myworkday(?:jobs|site)\.com/[^\"'\s<>]*?_((?:JR|R)-?\d{4,}(?:-\d+)?)"),
+]
+TAG = re.compile(r"<[^>]+>")
+
+
+def ids_with_titles(text: str) -> dict[str, str]:
+    """Job ids linked from a page, each with the link's title (data-title, else its text) when there is one."""
+    out: dict[str, str] = {}
+    for m in re.finditer(r"<a\b([^>]*)>(.*?)</a>", text, re.S | re.I):
+        attrs, inner = m.group(1), m.group(2)
+        href = re.search(r"href\s*=\s*[\"']([^\"']+)", attrs)
+        if not href:
+            continue
+        for rx in JOB_ID_PATTERNS:
+            for i in rx.findall(htmllib.unescape(href.group(1))):
+                t = re.search(r"data-title\s*=\s*[\"']([^\"']+)", attrs)
+                title = t.group(1) if t else " ".join(htmllib.unescape(TAG.sub(" ", inner)).split())
+                if not out.get(i):
+                    out[i] = title[:120]
+    for rx in JOB_ID_PATTERNS:  # ids outside links (JSON in the page)
+        for i in rx.findall(text):
+            out.setdefault(i, "")
+    return out
+
+
+def wp_pages(http, base: str) -> str:
+    """Every WordPress page's content, through the site's REST API (it answers where the HTML pages don't)."""
+    parts, page, total = [], 1, 1
+    while page <= min(total, 20):
+        r = http.get(f"{base.rstrip('/')}/wp-json/wp/v2/pages",
+                     params={"per_page": 100, "page": page, "_fields": "link,content"})
+        for item in json.loads(r.text):
+            rendered = htmllib.unescape(((item.get("content") or {}).get("rendered")) or "")
+            parts.append(f"<!-- {item.get('link', '')} -->\n{rendered}")
+        total = int(r.headers.get("x-wp-totalpages") or 1)
+        page += 1
+    return "\n".join(parts)
+
+
+def page_sources(ctx: Ctx, c: Company) -> list[tuple[str, str]]:
+    """(kind, url) of what P reads for a company: its careers page, its WordPress site, pages that list postings."""
+    out = [("page", c.careers_url[0])] if c.careers_url else []
+    wp = per_company(ctx.cfg, "wp_pages").get(c.key)
+    if wp:
+        out.append(("wp", wp))
+    out += [("ids", u) for u in per_company(ctx.cfg, "id_pages").get(c.key) or []]
+    return out
+
+
+def check_pages(ctx: Ctx) -> list[dict]:
+    """P. Weekly per company, spread over the week: the job systems each source names (an iCIMS portal, an Avature
+    site and an Eightfold domain each on their own; a link to a configured host counts as that system) and the job
+    ids it links. A source's first read is a silent baseline. New job ids wait for confirm()."""
+    problems: list[dict] = []
+    al = aliases(ctx.cfg)
+    http = ctx.http()
+    try:
+        for key in pick(ctx.db, "page", sorted(k for k, c in ctx.comps.items() if page_sources(ctx, c)), 7, ctx.now):
+            if ctx.out_of_time():
+                break
+            c = ctx.comps[key]
+            skey = f"blocked:page:{key}"
+            raw = ctx.db.get(skey)
+            state = json.loads(raw) if raw else {}
+            results, errors = {}, []
+            for kind, url in page_sources(ctx, c):
+                try:
+                    text = wp_pages(http, url) if kind == "wp" else http.get_text(
+                        url, headers={"Accept": "text/html,*/*;q=0.8"})  # */* too, as liveness.scan_pages
+                except Exception as e:  # noqa: BLE001 — a bot wall is only counted
+                    if out_of_budget(e):
+                        return problems
+                    errors.append(outcome(e))
+                    log.info("moves: %s of %s not read: %s", kind, key, str(e)[:160])
+                    continue
+                results[url] = (sorted(systems_in(text, "" if kind == "wp" else url, c, al)), ids_with_titles(text))
+            if not results:
+                done(ctx.db, "page", key, "refused" if "refused" in errors else "failed", ctx.now)
+                continue
+            restore_kv = {skey: raw or "", **due_restore(ctx.db, "page", key)}
+            known = known_systems(ctx, c)
+            toks = stored_tokens(ctx.db, key)
+            new_sys, gone, unknown = [], [], {}
+            for url, (systems, ids) in results.items():
+                before = state.get(url)
+                state[url] = {"systems": systems, "ids": sorted(set(ids) | set((before or {}).get("ids") or []))}
+                if before is None:
+                    continue  # this source's first read: a silent baseline
+                new_sys += [x for x in systems if x not in before["systems"] and x not in known]
+                gone += [x for x in before["systems"] if x in known and x not in systems]
+                unknown.update({i: t for i, t in ids.items() if i not in before["ids"] and not is_stored(i, toks)})
+            ctx.db.set(skey, json.dumps(state))
+            done(ctx.db, "page", key, "ok", ctx.now)
+            note_unknown(ctx.db, "page", c, unknown, "its careers pages", ctx.started)
+            if new_sys or gone:
+                parts = ([f"now point at {', '.join(sorted(set(new_sys)))}"] if new_sys else []) + \
+                        ([f"no longer mention {', '.join(sorted(set(gone)))}"] if gone else [])
+                problems.append(alert(ctx.db, c, "page", "moved?", f"its careers pages {' and '.join(parts)}",
+                                      f"InternWatch reads {', '.join(sorted(known))}. The jobs may have moved to "
+                                      f"another job site: compare {', '.join(results)} with the config.", restore_kv))
+    finally:
+        http.close()
+    return problems
+
+
+def check_confirm(ctx: Ctx) -> list[dict]:
+    """Every morning, no request: job ids noted by P, J, A or the Getro check that today's healthy poll still lacks."""
+    jl = per_company(ctx.cfg, "job_lists")
+    return (confirm(ctx, "page", "its careers pages")
+            + confirm(ctx, "joblist", "its job list", any_job=lambda k: (jl.get(k) or {}).get("any_job", False))
+            + confirm(ctx, "archive", "archived copies of its careers pages")
+            + confirm(ctx, "getro", "Getro's copy of its careers page"))
+
+
 # running them -----------------------------------------------------------------------------------------
 
 CHECKS: list[tuple[str, callable]] = [  # (name, fn(ctx) -> problems), cheapest first
+    ("confirm", check_confirm),
     ("workday", check_workday),
+    ("page", check_pages),
 ]
 
 

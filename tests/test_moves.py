@@ -68,8 +68,11 @@ def ctx(cfg, db, http=None, healthy=(), gate=None):
 @pytest.fixture
 def blocked_cfg(make_cfg):
     def _make(companies, **liveness_settings):
+        empty = {k: {} for k in ("extra_tenants", "wp_pages", "id_pages", "job_lists", "program_pages",
+                                  "archive_paths", "aliases")}
+        empty.update(parallel_sources=[], listings=[], getro=[])
         return make_cfg(companies, liveness={"blocked": [c.key for c in companies if not c.key.startswith("other")],
-                                             **liveness_settings})
+                                             **empty, **liveness_settings})
     return _make
 
 
@@ -320,3 +323,134 @@ def test_a_refused_robots_txt_is_read_again_the_next_morning(blocked_cfg, memdb)
     http.pages["https://amfam.wd1.myworkdayjobs.com/robots.txt"] = AMFAM_ROBOTS
     moves.check_workday(ctx(cfg, memdb, http))
     assert memdb.get("blocked:workday_hidden:amfam.wd1.myworkdayjobs.com")  # read on the retry
+
+
+# P: careers pages, WordPress pages, job ids on pages -------------------------------------------------------
+
+LM = {"host": "searchjobs.libertymutualgroup.com", "domain": "libertymutual.com", "api": "v2"}
+WP = "https://jobs.libertymutualgroup.com/wp-json/wp/v2/pages?per_page=100&page={}&_fields=link,content"
+
+
+def wp_answer(links: list[str], total_pages=1) -> Resp:
+    """A WordPress REST answer as the site sends it: JSON with escaped slashes."""
+    items = [{"link": "https://jobs.libertymutualgroup.com/x/", "content": {"rendered": f'<a href="{u}">Apply</a>'}}
+             for u in links]
+    body = json.dumps(items).replace("/", "\\/")
+    return Resp(200, "", {"content-type": "application/json", "x-wp-totalpages": str(total_pages)}, body.encode())
+
+
+def liberty(blocked_cfg):
+    c = company("liberty-mutual", checker="eightfold", settings=LM)
+    c.careers_url = ["https://jobs.libertymutualgroup.com/"]
+    return c, blocked_cfg([c], wp_pages={"liberty-mutual": "https://jobs.libertymutualgroup.com"})
+
+
+def test_wordpress_pages_that_start_linking_a_new_portal(blocked_cfg, memdb):
+    c, cfg = liberty(blocked_cfg)
+    campus = "https://campus-libertymutual.icims.com/jobs/intro"
+    http = FakeHttp({c.careers_url[0]: FetchError("HTTP 403 for GET page"),
+                     WP.format(1): wp_answer([campus, "https://libertymutual.eightfold.ai/careers?domain=libertymutual.com"], 2),
+                     WP.format(2): wp_answer(["https://searchjobs.libertymutualgroup.com/careers"])})
+    assert moves.check_pages(ctx(cfg, memdb, http)) == []  # first look; the refused page is skipped
+    state = json.loads(memdb.get("blocked:page:liberty-mutual"))
+    assert state["https://jobs.libertymutualgroup.com"]["systems"] == [
+        "eightfold:domain=libertymutual.com", "icims:portal=campus-libertymutual.icims.com"]
+    memdb.set("blocked:at:page:liberty-mutual", "")
+    assert moves.check_pages(ctx(cfg, memdb, http)) == []  # the same portals: nothing new
+    memdb.set("blocked:at:page:liberty-mutual", "")
+    http.pages[WP.format(2)] = wp_answer(["https://students-libertymutual.icims.com/jobs/1/intern/job"])
+    problems = moves.check_pages(ctx(cfg, memdb, http))
+    assert [(p["kind"], p["summary"]) for p in problems] == [
+        ("moved?", "its careers pages now point at icims:portal=students-libertymutual.icims.com")]
+
+
+def test_a_source_not_read_today_never_reports_its_systems_as_gone(blocked_cfg, memdb):
+    c, cfg = liberty(blocked_cfg)
+    http = FakeHttp({c.careers_url[0]: '<a href="https://searchjobs.libertymutualgroup.com/careers">jobs</a>'
+                                       '<a href="https://careers-libertymutual.icims.com/jobs">x</a>',
+                     WP.format(1): wp_answer([])})
+    moves.check_pages(ctx(cfg, memdb, http))
+    memdb.set("blocked:at:page:liberty-mutual", "")
+    http.pages[c.careers_url[0]] = FetchError("HTTP 403 for GET page")  # a bot check today
+    assert moves.check_pages(ctx(cfg, memdb, http)) == []
+    memdb.set("blocked:at:page:liberty-mutual", "")
+    http.pages[c.careers_url[0]] = '<a href="https://careers-libertymutual.icims.com/jobs">x</a>'
+    problems = moves.check_pages(ctx(cfg, memdb, http))  # read again, and the configured host is gone from it
+    assert [p["summary"] for p in problems] == ["its careers pages no longer mention eightfold:domain=libertymutual.com"]
+
+
+TOWER_PAGE = ('<a href="https://tower-research.com/open-positions/?gh_jid=8044334"><h3>Quantitative Developer Intern'
+              ' - Summer 2027</h3></a><a href="https://www.tower-research.com/open-positions/?gh_jid=8212158">'
+              '<h3>Software Engineer Intern (Summer 2027)</h3> New York</a>')
+
+
+def tower(blocked_cfg, memdb):
+    c = company("tower-research", checker="greenhouse", settings={"board": "towerresearchcapital"})
+    c.careers_url = ["https://tower-research.com/open-positions/"]
+    cfg = blocked_cfg([c], id_pages={"tower-research": ["https://tower-research.com/internships/"]})
+    memdb.conn.execute("INSERT INTO jobs(company, job_id, title, url, first_seen, last_seen) VALUES "
+                       "('tower-research', '8044334', 'Quantitative Developer Intern', '', 't', 't')")
+    return c, cfg
+
+
+def test_a_hand_made_link_to_a_closed_posting_stays_quiet(blocked_cfg, memdb):
+    c, cfg = tower(blocked_cfg, memdb)
+    http = FakeHttp({c.careers_url[0]: '<script src="https://boards.greenhouse.io/embed/job_board/js?for=towerresearchcapital"></script>',
+                     "https://tower-research.com/internships/": TOWER_PAGE})
+    first = moves.Ctx(cfg, memdb, None, lambda d, **kw: http, float("inf"), set(), started="2026-10-28T09:00:00Z")
+    assert moves.check_pages(first) == []  # 8212158 (closed, never stored) is part of the first look
+    later = moves.Ctx(cfg, memdb, None, lambda d, **kw: http, float("inf"), {"tower-research"},
+                      started="2026-10-29T09:00:00Z")
+    assert moves.check_confirm(later) == []
+    assert json.loads(memdb.get("blocked:page:tower-research"))["https://tower-research.com/internships/"]["ids"] == [
+        "8044334", "8212158"]
+
+
+def test_a_new_posting_linked_from_a_page_is_reported_after_a_healthy_poll_still_lacks_it(blocked_cfg, memdb):
+    c, cfg = tower(blocked_cfg, memdb)
+    http = FakeHttp({c.careers_url[0]: "<html></html>", "https://tower-research.com/internships/": TOWER_PAGE})
+    moves.check_pages(moves.Ctx(cfg, memdb, None, lambda d, **kw: http, float("inf"), set(), started="2026-10-28T09:00:00Z"))
+    memdb.set("blocked:at:page:tower-research", "")
+    http.pages["https://tower-research.com/internships/"] = TOWER_PAGE + (
+        '<a href="https://tower-research.com/open-positions/?gh_jid=9100001"><h3>Quantitative Trader Intern (Summer 2027)'
+        '</h3></a>')
+    day2 = moves.Ctx(cfg, memdb, None, lambda d, **kw: http, float("inf"), {"tower-research"}, started="2026-10-29T09:00:00Z")
+    assert moves.check_pages(day2) == [] and moves.check_confirm(day2) == []  # noted today: wait for tomorrow's poll
+    day3 = moves.Ctx(cfg, memdb, None, lambda d, **kw: http, float("inf"), {"tower-research"}, started="2026-10-30T09:00:00Z")
+    problems = moves.check_confirm(day3)
+    assert [p["kind"] for p in problems] == ["posting elsewhere?"]
+    assert "'Quantitative Trader Intern (Summer 2027)' (9100001)" in problems[0]["summary"]
+
+
+def test_a_refused_page_is_retried_the_next_morning_and_a_robots_block_is_not(blocked_cfg, memdb):
+    a, g = company("acme"), company("goldman")
+    cfg = blocked_cfg([a, g])
+    http = FakeHttp({a.careers_url[0]: FetchError("HTTP 403 for GET page"),
+                     g.careers_url[0]: RobotsBlocked("robots.txt disallows the page")})
+    moves.check_pages(ctx(cfg, memdb, http))  # one of the two a day: acme, refused
+    assert memdb.get("blocked:retry:page:acme") == "1" and not memdb.get("blocked:at:page:acme")
+    moves.check_pages(ctx(cfg, memdb, http))  # acme's retry (outside the quota) and goldman's turn
+    assert not memdb.get("blocked:retry:page:acme") and memdb.get("blocked:at:page:acme")  # refused twice: next week
+    assert not memdb.get("blocked:retry:page:goldman") and memdb.get("blocked:at:page:goldman")  # robots: never retried
+
+
+def test_the_weekly_page_check_leaves_the_31_out_and_reads_every_other_page_as_before(blocked_cfg, memdb):
+    from test_liveness import PageHttp
+    acme, other = company("acme", checker="greenhouse", settings={"board": "acme"}), company("other-co")
+    cfg = blocked_cfg([acme, other])
+    pages = PageHttp({other.careers_url[0]: '<a href="https://jobs.lever.co/other">x</a>'})
+    assert liveness.scan_pages(cfg, memdb, pages, float("inf")) == []
+    assert memdb.get("page_systems:other-co") == '["lever:site=other"]'
+    assert memdb.get("page_scan_at:acme") is None and memdb.get("page_systems:acme") is None
+
+
+def test_icims_own_hosts_are_not_portals():
+    text = '<img src="https://cdn07.icims.com/x.png"><a href="https://careers-gtsx.icims.com/jobs/search">jobs</a>'
+    assert moves.systems_in(text, "https://gtsx.com/careers/", company("gts"), {}) == {"icims:portal=careers-gtsx.icims.com"}
+
+
+def test_the_real_aliases_point_at_configured_systems():
+    from internwatch.config import load
+    cfg = load()
+    configured = set().union(*(moves.config_keys_v2(c) for c in cfg.companies if c.key in set(moves.blocked(cfg))))
+    assert set(moves.aliases(cfg).values()) <= configured
