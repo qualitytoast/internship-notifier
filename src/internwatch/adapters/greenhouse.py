@@ -5,6 +5,8 @@ settings: board: <token>            e.g. stripe  (or boards: [a, b] for companie
                                     the title and place match too ("Redwood City, CA" = "Redwood City, California,
                                     United States"); a twin with another title or place (a new term, a copy in
                                     Mexico) is kept
+          dedupe_requisitions: across_boards   the same, but only a twin of a posting on an earlier board is dropped;
+                                    every posting of the first board is kept as it was (Duolingo's university board)
           missing_ok: true          a board that answers 404 counts as empty (a company that switched its board
                                     off for now; the zero-jobs health check still flags a working board going to 0).
                                     A board that answered before and now answers 404 marks the poll degraded.
@@ -85,14 +87,17 @@ class Greenhouse(Checker):
                 continue
             read += 1
             answered.add(board)
+            across = s.get("dedupe_requisitions") == "across_boards"
+            this_board: set[tuple] = set()
             for j in got:
                 req = j.extra["alt_ids"][0] if j.extra["alt_ids"] else ""
                 if s.get("dedupe_requisitions") and req:
                     key = (req, _alnum(j.title), _place(j.location))
                     if key in reqs:
                         continue
-                    reqs.add(key)
+                    (this_board if across else reqs).add(key)
                 jobs.append(j)
+            reqs |= this_board
         if errors and not read:
             raise errors[0]
         if ctx is not None and s.get("missing_ok"):

@@ -213,7 +213,7 @@ companies:
   category: software
   careers_url: ['https://careers.duolingo.com/', 'https://careers.duolingo.com/?type=Thrive%20Program#careers', 'https://careers.duolingo.com/?type=Intern#careers']
   checker: greenhouse
-  settings: {board: duolingo}
+  settings: {boards: [duolingo, duolingounirecruitment], dedupe_requisitions: across_boards}
   role_keywords: [thrive]
   verified: {page_total: 63}
 - key: linkedin
@@ -402,12 +402,16 @@ companies:
   careers_url: ['https://jobs.paloaltonetworks.com/en/search-jobs', 'https://jobs.paloaltonetworks.com/en/search-jobs/intern/47263/1']
   checker: multi
   settings:
+    dedupe: true
     sources:
     - checker: workday
       settings: {host: paloaltonetworks.wd5.myworkdayjobs.com, tenant: paloaltonetworks, site: panwexternalcareers}
     - checker: ripplematch
       settings: {company_id: 676}
-  verified: {page_total: 1320, explained: 'Workday is complete: Radancy drops ~111 postings incl.'}
+    - checker: workday
+      settings: {host: paloaltonetworks.wd5.myworkdayjobs.com, tenant: paloaltonetworks, site: hidden-private-pawn-temp-gateway-147258369}
+  verified: {page_total: 1320, explained: 'Workday is complete: Radancy drops ~111 postings incl.; the unlinked hidden Workday site
+      is read too'}
 - key: applied-intuition
   name: Applied Intuition
   category: autonomy
@@ -964,9 +968,17 @@ companies:
   category: finance-insurance
   aliases: [Fidelity, Fidelity Investments]
   careers_url: ['https://jobs.fidelity.com/en/jobs/', 'https://jobs.fidelity.com/en/jobs/?search=intern&pagesize=20&origin=filtered#results']
-  checker: workday
-  settings: {host: wd1.myworkdaysite.com, tenant: fmr, site: FidelityCareers}
-  verified: {page_total: 755, explained: Only one external Workday site (FidelityCareers).}
+  checker: multi
+  settings:
+    dedupe: true
+    match_urls: [/recruiting/fmr/]
+    sources:
+    - checker: workday
+      settings: {host: wd1.myworkdaysite.com, tenant: fmr, site: FidelityCareers}
+    - checker: workday
+      settings: {host: wd1.myworkdaysite.com, tenant: fmr, site: targeted}
+  verified: {page_total: 755, explained: 'jobs.fidelity.com lists only the FidelityCareers site; the unlinked ''targeted''
+      site (most student postings) is read too'}
 - key: intel
   name: Intel
   category: semiconductors
@@ -1251,7 +1263,7 @@ companies:
   aliases: [Jump]
   careers_url: ['https://www.jumptrading.com/hr/students-new-grads', 'https://www.jumptrading.com/careers/']
   checker: greenhouse
-  settings: {board: jumptrading}
+  settings: {boards: [jumptrading, jumpcrypto]}
   verified: {page_total: 100}
 - key: seven-research
   name: Seven Research
@@ -1518,8 +1530,8 @@ companies:
   category: quant
   careers_url: ['https://www.optiver.com/join-us/jobs/']
   checker: greenhouse
-  settings: {board: optiverus}
-  verified: {page_total: 162}
+  settings: {boards: [optiverus, optiverprivate]}
+  verified: {page_total: 162, explained: optiver.com lists the optiverus board; the unadvertised optiverprivate board is read too}
 - key: akuna-capital
   name: Akuna Capital
   category: quant
@@ -1577,9 +1589,17 @@ companies:
   category: quant
   aliases: [Millennium]
   careers_url: ['https://career.mlp.com/careers']
-  checker: eightfold
-  settings: {host: career.mlp.com, domain: mlp.com, api: v2}
-  verified: {page_total: 221}
+  checker: multi
+  settings:
+    dedupe: true
+    match_urls: [career.mlp.com]
+    sources:
+    - checker: eightfold
+      settings: {host: career.mlp.com, domain: mlp.com, api: v2}
+    - checker: eightfold
+      settings: {host: career.mlp.com, domain: mlp.com, api: v2, params: {microsite: campus-site}}
+  verified: {page_total: 221, explained: 'the main search on career.mlp.com; the internships are only in the campus microsite
+      (microsite=campus-site), read as a second source'}
 - key: vatic-labs
   name: Vatic Labs
   category: quant
