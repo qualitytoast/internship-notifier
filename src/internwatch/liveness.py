@@ -13,19 +13,27 @@
 2. Companies not checked: due in `unchecked_runs` runs in a row but never processed (skipped at the run deadline, a
    crash while storing its jobs, a company added and never run).
 3. Weekly, in daily runs with time to spare: each company's careers page is read once and the hiring systems it
-   points at (detect.from_text) are compared with the last time; a new one that isn't configured, or a configured
-   one it no longer mentions, alerts ("moved"). Workday tenants' robots.txt, already cached by the checks (no request),
-   is compared with the configured sites: a new site alerts. The first look at a page or tenant is a silent baseline.
+   points at (detect.from_text, plus links to an Eightfold site) are compared with the last time, each iCIMS portal,
+   Avature portal and Eightfold domain on its own; a new one that isn't configured, or a configured one it no longer
+   mentions (for those three: no portal of it at all), alerts ("moved"). A portal the page linked on an earlier look,
+   or that a stored posting links, is not new. A read the site refused (bot check, 5xx, timeout) is retried once,
+   first the next morning; robots.txt blocks never are. Workday tenants' robots.txt, already cached by the checks (no
+   request), is compared with the configured sites: a new site alerts. The first look at a page or tenant is a
+   silent baseline.
 Every alert goes into the run's health email with reset_kv="live_alert:…", so an email that fails is sent again.
-State: table source_health, kv live_alert:*, unchecked_runs:*, page_systems:*, page_scan_at:*, workday_sites:*.
+State: table source_health, kv live_alert:*, unchecked_runs:*, page_systems:* (by system_key, as before),
+page_systems_v2:* (by page_key), page_scan_at:*, page_scan_retry:*, workday_sites:*.
 """
 from __future__ import annotations
 
+import html
 import json
 import logging
+import re
 import statistics
 import time
 from datetime import date, timedelta
+from urllib.parse import urlsplit
 
 from .adapters import get_checker
 from .config import Company, Config
@@ -309,8 +317,10 @@ def unchecked(cfg: Config, db: DB, due: list[Company], processed: set[str]) -> t
     return problems, recovered
 
 
-def config_keys(c: Company) -> set[str]:
-    """The hiring systems a company is configured to read, as detect.from_text would name them."""
+def config_keys(c: Company, key=None) -> set[str]:
+    """The hiring systems a company is configured to read, as detect.from_text would name them (system_key), or as
+    the weekly page check names them (key=page_key)."""
+    key = key or system_key
     out = set()
 
     def one(checker, s):
@@ -318,8 +328,7 @@ def config_keys(c: Company) -> set[str]:
         sites = list(s.get("sites") or []) or [s.get("site")]
         for b in boards:
             for site in sites:
-                d = {k: v for k, v in {**s, "board": b, "site": site}.items() if k in IDKEYS and v}
-                out.add(system_key(checker, d))
+                out.add(key(checker, {k: v for k, v in {**s, "board": b, "site": site}.items() if v}))
 
     s = c.settings or {}
     if c.checker == "multi":
@@ -332,6 +341,64 @@ def config_keys(c: Company) -> set[str]:
 
 def system_key(checker: str, s: dict) -> str:
     return checker + ":" + ",".join(f"{k}={str(s[k]).lower()}" for k in sorted(s) if k in IDKEYS and s[k])
+
+
+PORTALS = ("icims", "avature", "eightfold")  # each iCIMS portal, Avature portal and Eightfold domain is a system
+NOT_A_PORTAL = {"icims:portal=cookie-policy-scripts.icims.com"}  # iCIMS's cookie script on SIG's page
+AVATURE_LINK = re.compile(r"https?://[\w.-]+\.avature\.net/[\w%/.-]*")
+
+
+def page_key(checker: str, s: dict) -> str:
+    """system_key, but an iCIMS portal, an Avature portal and an Eightfold domain each count on their own, as
+    moves.system_key_v2 keys them for the 31 blocked companies (except Avature, which it keys by host)."""
+    from .moves import system_key_v2  # moves imports this module
+    if checker == "avature" and s.get("list_url"):
+        return avature_key(s["list_url"])
+    return system_key_v2(checker, s) if checker in PORTALS else system_key(checker, s)
+
+
+def avature_key(url: str) -> str:
+    """An Avature portal: its host and the first part of its path after a locale (bloomberg.avature.net/careers)."""
+    p = urlsplit(url)
+    path = [x for x in p.path.split("/") if x]
+    if path and re.fullmatch(r"[a-z]{2}_[a-z]{2}", path[0], re.I):
+        path = path[1:]
+    return f"avature:site={p.netloc.lower()}/{(path[0] if path else '').lower()}"
+
+
+def page_systems(text: str, found) -> set[str]:
+    """The job systems a careers page points at, keyed by page_key: what detect.from_text found in it (`found`), every
+    Avature link (also one without the "/" detect needs after the portal) and every link to an Eightfold site, read
+    with the HTML and JSON escaping around them undone. iCIMS's own hosts are not portals."""
+    from . import moves  # moves imports this module
+    seen = {page_key(x.checker, x.settings) for x in found if x.checker != "avature"}
+    if "avature.net" in text or "eightfold.ai" in text:
+        plain = html.unescape(html.unescape(text)).replace("\\u0026", "&").replace("\\/", "/")
+        seen.update(avature_key(m[0]) for m in AVATURE_LINK.finditer(plain))
+        for rx, build in moves.EXTRA_PATTERNS:  # the links moves.py knows besides detect's; only Eightfold's count
+            for m in re.finditer(rx, plain):
+                k = build(m)
+                if k.startswith("eightfold:domain="):
+                    domain = re.match(r"[\w.-]*", k.removeprefix("eightfold:domain="))[0]  # drops a JSON-escaped quote
+                    if domain:
+                        seen.add("eightfold:domain=" + domain)
+    return {k for k in seen if not moves.NOT_A_SYSTEM.match(k) and k not in NOT_A_PORTAL}
+
+
+def _portal(k: str) -> bool:
+    return k.split(":", 1)[0] in PORTALS
+
+
+def _system(k: str) -> str:
+    """What counts as still mentioned: any portal of the same system, any other system itself."""
+    return k.split(":", 1)[0] + ":" if _portal(k) else k
+
+
+def posting_portals(db: DB, company: str) -> set[str]:
+    """The portals the company's stored postings link (Atlassian's postings carry their iCIMS portal)."""
+    from .detect import from_text  # detect imports the runner
+    urls = "\n".join(r["url"] or "" for r in db.q("SELECT url FROM jobs WHERE company=?", company))
+    return {k for k in page_systems(urls, from_text(urls, "")) if _portal(k)}
 
 
 def workday_sites(text: str) -> set[str]:
@@ -377,8 +444,10 @@ def scan_workday_sites(cfg: Config, db: DB, gate) -> list[dict]:
 
 
 def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
-    """Read careers pages not looked at for `page_scan_days`, oldest first, until `budget_end` (time.monotonic())."""
+    """Read careers pages not looked at for `page_scan_days`, oldest first, until `budget_end` (time.monotonic()).
+    A page whose read the site refused goes first the next morning."""
     from .detect import from_text  # detect imports the runner
+    from .moves import outcome  # moves imports this module
     p = settings(cfg)
     now = utcnow()
     problems = []
@@ -388,30 +457,54 @@ def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
         if not c.careers_url or c.key in blocked:  # pages that refuse scripts: moves.py watches those companies
             continue
         last = parse_iso(db.get(f"page_scan_at:{c.key}") or None)
-        if last is None or now - last >= p["scan_every"]:
-            todo.append((last or now - timedelta(days=3650), c))
-    for _, c in sorted(todo, key=lambda x: x[0]):
+        retry = bool(db.get(f"page_scan_retry:{c.key}"))
+        if retry or last is None or now - last >= p["scan_every"]:
+            todo.append((not retry, last or now - timedelta(days=3650), c))
+    for *_, c in sorted(todo, key=lambda x: x[:2]):
         if time.monotonic() > budget_end:
             break
         url = c.careers_url[0]
         scanned = db.get(f"page_scan_at:{c.key}")
-        db.set(f"page_scan_at:{c.key}", iso(now))
+        rkey = f"page_scan_retry:{c.key}"
+        retried = db.get(rkey)
         try:
             # */* too: Wolfram's server types its page application/x-httpd-php and answers 406 to text/html alone
             text = http.get_text(url, headers={"Accept": "text/html,*/*;q=0.8"})
         except Exception as e:  # noqa: BLE001 — an unreadable page (bot wall, robots) is only logged
             log.info("liveness: careers page of %s not read: %s", c.key, str(e)[:160])
+            if outcome(e) == "refused" and not retried:
+                db.set(rkey, "1")  # a bot check, 5xx or timeout: read again first thing next morning
+            else:  # robots.txt, 404, or refused again: its next turn is next week
+                db.set(f"page_scan_at:{c.key}", iso(now))
+                if retried:
+                    db.set(rkey, "")
             continue
-        seen = {system_key(x.checker, x.settings) for x in from_text(text, url)}
-        key = f"page_systems:{c.key}"
-        raw = before = db.get(key)
-        db.set(key, json.dumps(sorted(seen)))
-        if before is None or before == "":
+        db.set(f"page_scan_at:{c.key}", iso(now))  # before the parsing: a page it chokes on must not stay due
+        if retried:
+            db.set(rkey, "")
+        found = from_text(text, url)
+        old_seen = {system_key(x.checker, x.settings) for x in found}
+        seen = page_systems(text, found)
+        key, key2 = f"page_systems:{c.key}", f"page_systems_v2:{c.key}"
+        raw, raw2 = db.get(key), db.get(key2)
+        prev = json.loads(raw2) if raw2 else None
+        db.set(key, json.dumps(sorted(old_seen)))  # as before portals counted on their own
+        db.set(key2, json.dumps({"systems": sorted(seen), "portals": sorted(  # every portal it ever linked
+            {k for k in seen if _portal(k)} | set(prev["portals"] if prev else []))}))
+        if prev is None and (raw is None or raw == ""):
             continue  # first look: a silent baseline
-        before = set(json.loads(before))
-        configured = config_keys(c)
-        new = sorted(seen - before - configured)
-        gone = sorted((before & configured) - seen)
+        if prev is None:  # the first look since portals count on their own: compared with the last look as before
+            before, configured = set(json.loads(raw)), config_keys(c)
+            new = sorted(old_seen - before - configured)
+            gone = sorted((before & configured) - old_seen)
+        else:
+            configured = config_keys(c, page_key)
+            new = seen - set(prev["systems"]) - set(prev["portals"]) - configured
+            if any(_portal(k) for k in new):
+                new -= posting_portals(db, c.key)  # InternWatch already reads postings there
+            new = sorted(new)
+            was, mentioned = {_system(k) for k in prev["systems"]}, {_system(k) for k in seen}
+            gone = sorted(k for k in configured if _system(k) in was and _system(k) not in mentioned)
         if new or gone:
             akey = f"live_alert:{c.key}:moved"
             parts = ([f"now points at {', '.join(new)}"] if new else []) + \
@@ -419,7 +512,8 @@ def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
             problems.append(_problem(c, "moved?", f"the careers page {' and '.join(parts)}",
                                      f"InternWatch reads {', '.join(sorted(configured))}. The jobs may have moved to "
                                      f"another job site: compare {url} with the config.", None, akey,
-                                     restore_kv={key: raw, f"page_scan_at:{c.key}": scanned or ""}))
+                                     restore_kv={key: raw or "", key2: raw2 or "",
+                                                 f"page_scan_at:{c.key}": scanned or ""}))
             db.set(akey, iso())
     return problems
 
@@ -437,10 +531,13 @@ def status(cfg: Config, db) -> str:
         lines.append(f"  {r['company']}: {r['label'] or r['source']}: "
                      + (f"empty since {r['empty_since']}" if r["empty_since"] else f"stale since {r['stale_since']}"))
     kv = {r["key"]: r["value"] for r in db.execute("SELECT key, value FROM kv WHERE key LIKE 'unchecked_runs:%' "
-                                                   "OR key LIKE 'page_scan_at:%' OR key LIKE 'workday_sites:%'")}
+                                                   "OR key LIKE 'page_scan_at:%' OR key LIKE 'page_scan_retry:%' "
+                                                   "OR key LIKE 'workday_sites:%'")}
     unchecked_ = {k.split(":", 1)[1]: v for k, v in kv.items() if k.startswith("unchecked_runs:") and v}
     lines.append(f"not processed in the last runs: {unchecked_ or 'none'}")
     scans = [v for k, v in kv.items() if k.startswith("page_scan_at:") and v]
-    lines.append(f"careers pages compared: {len(scans)} of {len(cfg.active)}" + (f", last {max(scans)}" if scans else ""))
+    retry = sum(1 for k, v in kv.items() if k.startswith("page_scan_retry:") and v)
+    lines.append(f"careers pages compared: {len(scans)} of {len(cfg.active)}" + (f", last {max(scans)}" if scans else "")
+                 + (f"; {retry} refused, read again tomorrow" if retry else ""))
     lines.append(f"Workday tenants compared: {sum(1 for k in kv if k.startswith('workday_sites:'))}")
     return "\n".join(lines)

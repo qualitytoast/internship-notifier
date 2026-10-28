@@ -65,10 +65,13 @@ Rules for changing things: CLAUDE.md.
   - `board stale`: a source listing at least 20 dated postings has had no new one for 45 days and for 3× its
     usual gap: it may have been abandoned while the company posts elsewhere.
   - `moved?`: weekly, in daily runs (3-minute budget), each careers page is read once and the job systems it points
-    at are compared with last week: a new one that isn't configured, or a configured one no longer mentioned. The
-    first look is a silent baseline. About 85 of 196 pages name a job system in their HTML; the rest are built in
-    the browser or block scripts, and are left to the other checks. The 31 companies whose page refuses scripts
-    (`liveness.blocked`) are left out: the checks below watch them instead.
+    at are compared with last week: a new one that isn't configured, or a configured one no longer mentioned. An
+    iCIMS portal, an Avature portal (bloomberg.avature.net/careers) and an Eightfold domain each count on their own,
+    and links to an Eightfold site count too. A portal the page linked on an earlier look, or that a stored posting
+    links, isn't new. A read the site refuses (bot check, 5xx, timeout) is retried first thing the next morning,
+    once; a robots.txt block never is. The first look is a silent baseline. About 85 of 196 pages name a job system
+    in their HTML; the rest are built in the browser or block scripts, and are left to the other checks. The 31
+    companies whose page refuses scripts (`liveness.blocked`) are left out: the checks below watch them instead.
   - `new site`: a Workday tenant's robots.txt (already cached by the checks, no request) lists a site that isn't
     configured. Sites on myworkdaysite.com can't be seen this way (its robots.txt answers 422).
   - `not checked`: a due company was never processed in two runs in a row (skipped at the run time limit, or

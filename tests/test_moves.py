@@ -171,8 +171,16 @@ def test_portals_sites_and_domains_are_keyed_separately():
     assert k("workday", {"host": "wd1.myworkdaysite.com", "tenant": "fmr", "site": "FidelityCareers"}) == \
         k("workday", {"host": "fmr.wd1.myworkdayjobs.com", "tenant": "fmr", "site": "fidelitycareers"})
     assert k("greenhouse", {"board": "acme"}) == liveness.system_key("greenhouse", {"board": "acme"})
-    # the weekly page check of every other company keeps today's keys
-    assert liveness.system_key("icims", {"portal": "https://campus-libertymutual.icims.com"}) == "icims:"
+    # the weekly page check of every other company keys portals the same way (Avature by portal, not host), and every
+    # other system as it always did; page_systems:* keeps one key per system
+    page = liveness.page_key
+    lm = {"portal": "https://campus-libertymutual.icims.com"}
+    assert page("icims", lm) == k("icims", lm) and liveness.system_key("icims", lm) == "icims:"
+    assert page("eightfold", {"host": "searchjobs.libertymutualgroup.com", "domain": "libertymutual.com"}) == \
+        "eightfold:domain=libertymutual.com"
+    assert page("avature", {"list_url": "https://a.avature.net/x/SearchJobs/"}) == "avature:site=a.avature.net/x"
+    fid = {"host": "wd1.myworkdaysite.com", "tenant": "fmr", "site": "FidelityCareers"}
+    assert page("workday", fid) == liveness.system_key("workday", fid) != k("workday", fid)
 
 
 def test_links_to_configured_hosts_count_as_that_system_except_the_page_itself():
@@ -445,7 +453,9 @@ def test_the_weekly_page_check_leaves_the_31_out_and_reads_every_other_page_as_b
     pages = PageHttp({other.careers_url[0]: '<a href="https://jobs.lever.co/other">x</a>'})
     assert liveness.scan_pages(cfg, memdb, pages, float("inf")) == []
     assert memdb.get("page_systems:other-co") == '["lever:site=other"]'
+    assert json.loads(memdb.get("page_systems_v2:other-co")) == {"systems": ["lever:site=other"], "portals": []}
     assert memdb.get("page_scan_at:acme") is None and memdb.get("page_systems:acme") is None
+    assert memdb.get("page_systems_v2:acme") is None and memdb.get("page_scan_retry:acme") is None
 
 
 def test_icims_own_hosts_are_not_portals():

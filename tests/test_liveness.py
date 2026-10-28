@@ -5,12 +5,16 @@ import copy
 import json
 from datetime import datetime, timedelta, timezone
 
+import pytest
+
 from internwatch import liveness
 from internwatch.adapters import get_checker
 from internwatch.adapters.base import FetchContext
-from internwatch.db import DB
+from internwatch.db import DB, iso, parse_iso, utcnow
+from internwatch.detect import from_text
 from internwatch.health import Outcome, Verdict
 from internwatch.http import Cassette, HostGate, Http, Resp
+from internwatch.models import CheckTimeout, FetchError, RobotsBlocked
 from internwatch.runner import RunOptions, Runner
 
 from conftest import REPO, FakeChecker, company, job
@@ -125,9 +129,11 @@ class PageHttp:
     def __init__(self, pages):
         self.pages = pages
         self.headers = None
+        self.calls = []
 
     def get_text(self, url, **kw):
         self.headers = kw.get("headers")
+        self.calls.append(url)
         page = self.pages[url]
         if isinstance(page, Exception):
             raise page
@@ -148,7 +154,10 @@ def test_a_careers_page_that_points_at_a_new_job_site(make_cfg, memdb):
                                       "greenhouse:board=acme")
     memdb.set("page_scan_at:acme", "")
     assert liveness.scan_pages(cfg, memdb, PageHttp({url: RuntimeError("bot wall")}), float("inf")) == []
-    assert liveness.scan_pages(cfg, memdb, PageHttp({url: moved}), float("inf")) == []  # scanned this week already
+    retry = PageHttp({url: moved})
+    assert liveness.scan_pages(cfg, memdb, retry, float("inf")) == [] and retry.calls == [url]  # the next morning
+    later = PageHttp({url: moved})
+    assert liveness.scan_pages(cfg, memdb, later, float("inf")) == [] and later.calls == []  # this week's look is done
 
 
 def test_careers_pages_accept_any_content_type(make_cfg, memdb):
@@ -157,6 +166,207 @@ def test_careers_pages_accept_any_content_type(make_cfg, memdb):
     http = PageHttp({c.careers_url[0]: "<html></html>"})
     liveness.scan_pages(make_cfg([c]), memdb, http, budget_end=float("inf"))
     assert http.headers["Accept"].startswith("text/html,") and "*/*" in http.headers["Accept"]
+
+
+# careers pages: each portal on its own ---------------------------------------------------------------------------
+
+def _look(cfg, db, c, page):
+    """One weekly look at c's careers page (made due, as a week after the last one)."""
+    db.set(f"page_scan_at:{c.key}", "")
+    return liveness.scan_pages(cfg, db, PageHttp({c.careers_url[0]: page}), float("inf"))
+
+
+def test_each_icims_portal_avature_portal_and_eightfold_domain_counts_on_its_own(make_cfg, memdb):
+    c = company("acme", checker="greenhouse", settings={"board": "acme"})
+    cfg = make_cfg([c])
+    page = ('<a href="https://careers-acme.icims.com/jobs/1/intern/job">Apply</a><img src="https://cdn07.icims.com/a.png">'
+            '<script src="https://cookie-policy-scripts.icims.com/acme/careers.acme.com/script.js"></script>'
+            '<a href="https://acme.avature.net/Careers/SearchJobs">Jobs</a>')
+    assert _look(cfg, memdb, c, page) == []  # first look
+    assert _look(cfg, memdb, c, page.replace("/Careers/", "/careers/")) == []  # the same portals
+    problems = _look(cfg, memdb, c, page + '<a href="https://campus-acme.icims.com/jobs">Campus</a>'
+                     '<a href="https://acme.avature.net/en_US/Internships">Interns</a>'
+                     '<a href="https://acme.eightfold.ai/careers?domain=acme.com">Join</a>')
+    assert [p["summary"] for p in problems] == [
+        "the careers page now points at avature:site=acme.avature.net/internships, eightfold:domain=acme.com, "
+        "icims:portal=campus-acme.icims.com"]
+    e = company("bolt", checker="eightfold", settings={"host": "jobs.bolt.com", "domain": "bolt.com", "api": "pcsx"})
+    cfg = make_cfg([e])
+    assert _look(cfg, memdb, e, "<html></html>") == []
+    assert _look(cfg, memdb, e, '<a href="https://app.eightfold.ai/careers?domain=bolt.com">Jobs</a>') == []  # its own
+
+
+def test_what_counts_as_a_portal_on_a_page():
+    def systems(page):
+        return liveness.page_systems(page, from_text(page, ""))
+    assert systems('<img src="https://cdn07.icims.com/a.png"><a href="https://www.icims.com/legal/">Privacy</a>'
+                   '<script src="https://cookie-policy-scripts.icims.com/sig/careers.sig.com/script.js"></script>'
+                   '<a href="https://careers-sig.icims.com/jobs/login">Log in</a>') == {"icims:portal=careers-sig.icims.com"}
+    assert systems('<a href="https://acme.avature.net/Careers/SearchJobs/">a</a><a href="https://acme.avature.net/careers">'
+                   'b</a><a href="https://acme.avature.net/en_US/careers/JobDetail/x/1">c</a>') == {
+        "avature:site=acme.avature.net/careers"}
+    for page in ('<a href="https://app.eightfold.ai/careers?domain=mlp.com">x</a>',  # Millennium's page writes all four
+                 '{"link": "https://app.eightfold.ai/careers?domain=mlp.com\\"}',
+                 '<a href="https://app.eightfold.ai/careers?pid=1&amp;amp;domain=mlp.com">x</a>',
+                 '{"u": "https:\\/\\/app.eightfold.ai\\/careers?pid=1\\u0026domain=mlp.com"}'):
+        assert systems(page) == {"eightfold:domain=mlp.com"}, page
+    assert systems('<a href="https://boards.greenhouse.io/acme">x</a>') == {"greenhouse:board=acme"}  # others unchanged
+
+
+def test_a_portal_that_drops_off_the_page_or_that_a_stored_posting_links_stays_quiet(make_cfg, memdb):
+    c = company("acme")
+    cfg = make_cfg([c])
+    a = '<a href="https://careers-acme.icims.com/jobs/1/x/job">x</a>'
+    b = '<a href="https://campus-acme.icims.com/jobs/2/y/job">y</a>'
+    assert _look(cfg, memdb, c, a + b) == []
+    assert _look(cfg, memdb, c, a) == []  # the campus portal's only posting closed …
+    assert _look(cfg, memdb, c, a + b) == []  # … and a new one opened: a portal the page linked before
+    memdb.conn.execute("INSERT INTO jobs(company, job_id, title, url, first_seen, last_seen) VALUES "
+                       "('acme', '3', 'Intern', 'https://globalmobility-acme.icims.com/jobs/3/intern/job', 't', 't')")
+    z = '<a href="https://globalmobility-acme.icims.com/jobs/3/intern/job">z</a>'
+    assert _look(cfg, memdb, c, a + b + z) == []  # InternWatch already reads postings there
+    assert [p["summary"] for p in _look(cfg, memdb, c, a + b + z + '<a href="https://new-acme.icims.com/">n</a>')] == [
+        "the careers page now points at icims:portal=new-acme.icims.com"]
+
+
+def test_a_configured_portal_is_gone_only_once_no_portal_of_its_system_is_left(make_cfg, memdb):
+    c = company("yelp", checker="multi", settings={"sources": [
+        {"checker": "icims", "settings": {"portal": "https://uscareers-yelp.icims.com"}},
+        {"checker": "phenom", "settings": {"base_url": "https://www.yelp.careers", "ref_num": "YELPUS"}}]})
+    cfg = make_cfg([c])
+    us = '<a href="https://uscareers-yelp.icims.com/jobs/1/x/job">x</a>'
+    ca = '<a href="https://cancareers-yelp.icims.com/jobs/2/y/job">y</a>'
+    assert _look(cfg, memdb, c, us + ca) == []
+    assert _look(cfg, memdb, c, ca) == []  # its first results are all Canadian this week: still on iCIMS
+    assert [p["summary"] for p in _look(cfg, memdb, c, "<html></html>")] == [
+        "the careers page no longer mentions icims:portal=uscareers-yelp.icims.com"]
+    assert _look(cfg, memdb, c, "<html></html>") == []  # said once
+    p = company("acme")
+    portal = '<a href="https://campus-acme.icims.com/jobs/1/x/job">x</a>'
+    assert _look(make_cfg([p]), memdb, p, portal) == [] and _look(make_cfg([p]), memdb, p, "<html></html>") == []
+    p = company("acme", checker="icims", settings={"portal": "https://campus-acme.icims.com"})  # configured later
+    assert _look(make_cfg([p]), memdb, p, "<html></html>") == []  # not linked last week: nothing gone
+
+
+def test_last_weeks_looks_carry_over_without_false_alerts_or_a_blank_week(make_cfg, memdb):
+    a = company("booking", checker="jibe", settings={"host": "jobs.booking.com"})
+    b = company("aqr", checker="greenhouse", settings={"board": "aqr"})
+    e = company("capone", checker="workday", settings={"host": "capitalone.wd12.myworkdayjobs.com", "tenant": "capitalone",
+                                                       "site": "Capital_One"})
+    cfg = make_cfg([a, b, e])
+    wd = "workday:host=capitalone.wd12.myworkdayjobs.com,site=capital_one,tenant=capitalone"
+    memdb.set("page_systems:booking", '["icims:"]')  # what last week's look stored: every portal as one
+    memdb.set("page_systems:aqr", "[]")
+    memdb.set("page_systems:capone", json.dumps([wd]))
+    pages = {a.careers_url[0]: '<a href="https://external-x.icims.com/jobs/login">a</a><a href="https://internal-x.icims.com/">b</a>',
+             b.careers_url[0]: '<a href="https://jobs.ashbyhq.com/aqr">Open roles</a>',
+             e.careers_url[0]: '<a href="https://capitalone.wd12.myworkdayjobs.com/Capital_One">Jobs</a>'
+                               '<a href="https://capitalone.eightfold.ai/careers/join?form=1">Join</a>'}
+    problems = liveness.scan_pages(cfg, memdb, PageHttp(pages), float("inf"))
+    # compared with last week's look as before: AQR's new Ashby board alerts; Booking's portals and Capital One's
+    # Eightfold link, which that look couldn't tell apart or see, are taken as they are now
+    assert [(p["key"], p["summary"]) for p in problems] == [("aqr", "the careers page now points at ashby:board=aqr")]
+    assert memdb.get("page_systems:booking") == '["icims:"]'
+    assert json.loads(memdb.get("page_systems_v2:booking")) == {
+        "systems": ["icims:portal=external-x.icims.com", "icims:portal=internal-x.icims.com"],
+        "portals": ["icims:portal=external-x.icims.com", "icims:portal=internal-x.icims.com"]}
+    for k in ("booking", "aqr", "capone"):
+        memdb.set(f"page_scan_at:{k}", "")
+    pages[a.careers_url[0]] += '<a href="https://campus-x.icims.com/">c</a>'
+    problems = liveness.scan_pages(cfg, memdb, PageHttp(pages), float("inf"))  # a week later: portal by portal
+    assert [(p["key"], p["summary"]) for p in problems] == [
+        ("booking", "the careers page now points at icims:portal=campus-x.icims.com")]
+
+
+def test_a_change_on_the_first_look_since_the_upgrade_comes_back_after_a_failed_email(make_cfg, memdb):
+    c = company("aqr", checker="greenhouse", settings={"board": "aqr"})
+    cfg = make_cfg([c])
+    memdb.set("page_systems:aqr", '["greenhouse:board=aqr"]')
+    memdb.set("page_scan_at:aqr", "2026-10-01T00:00:00Z")
+    moved = PageHttp({c.careers_url[0]: '<a href="https://jobs.ashbyhq.com/aqr">Open roles</a>'})
+    problems = liveness.scan_pages(cfg, memdb, moved, float("inf"))
+    assert [p["summary"] for p in problems] == [
+        "the careers page now points at ashby:board=aqr and no longer mentions greenhouse:board=aqr"]
+    _email_failed(memdb, problems)
+    assert memdb.get("page_systems_v2:aqr") == "" and memdb.get("page_systems:aqr") == '["greenhouse:board=aqr"]'
+    assert [p["summary"] for p in liveness.scan_pages(cfg, memdb, moved, float("inf"))] == [problems[0]["summary"]]
+
+
+def test_a_failed_email_puts_back_the_portals_known_before(make_cfg, memdb):
+    c = company("acme")
+    cfg = make_cfg([c])
+    a, b = '<a href="https://careers-acme.icims.com/">a</a>', '<a href="https://campus-acme.icims.com/">b</a>'
+    _look(cfg, memdb, c, a + b)
+    _look(cfg, memdb, c, a)
+    before = memdb.get("page_systems_v2:acme")
+    problems = _look(cfg, memdb, c, a + '<a href="https://new-acme.icims.com/">n</a>')
+    assert len(problems) == 1
+    _email_failed(memdb, problems)
+    assert memdb.get("page_systems_v2:acme") == before
+    assert [p["summary"] for p in _look(cfg, memdb, c, a + '<a href="https://new-acme.icims.com/">n</a>')] == [
+        problems[0]["summary"]]
+
+
+# careers pages: a refused read is retried the next morning -----------------------------------------------------
+
+def test_a_refused_page_is_read_again_first_the_next_morning_and_only_once(make_cfg, memdb):
+    a, b = company("acme"), company("beta")
+    cfg = make_cfg([a, b])
+    memdb.set("page_scan_at:acme", iso(utcnow() - timedelta(days=9)))
+    memdb.set("page_scan_at:beta", iso(utcnow() - timedelta(days=8)))
+    http = PageHttp({a.careers_url[0]: FetchError("HTTP 403 for GET x"), b.careers_url[0]: "<html></html>"})
+    liveness.scan_pages(cfg, memdb, http, float("inf"))
+    assert memdb.get("page_scan_retry:acme") == "1"
+    assert parse_iso(memdb.get("page_scan_at:acme")) < utcnow() - timedelta(days=8)  # still due
+    http.calls.clear()
+    liveness.scan_pages(cfg, memdb, http, float("inf"))  # the next morning: refused again …
+    assert http.calls == [a.careers_url[0]]
+    assert not memdb.get("page_scan_retry:acme") and memdb.get("page_scan_at:acme") >= iso(utcnow() - timedelta(minutes=1))
+    http.calls.clear()
+    liveness.scan_pages(cfg, memdb, http, float("inf"))
+    assert http.calls == []  # … so it waits for next week
+    memdb.set("page_scan_retry:acme", "1")
+    memdb.set("page_scan_at:beta", "")  # never read: due too, but the retry goes first
+    http.pages[a.careers_url[0]] = "<html></html>"
+    http.calls.clear()
+    liveness.scan_pages(cfg, memdb, http, float("inf"))
+    assert http.calls == [a.careers_url[0], b.careers_url[0]] and not memdb.get("page_scan_retry:acme")
+
+
+@pytest.mark.parametrize("error", [FetchError("HTTP 503 for GET x (after 4 attempts)"), RuntimeError("bot wall"),
+                                   CheckTimeout("timeout (ReadTimeout) for GET x (after 4 attempts)")])
+def test_a_5xx_a_timeout_or_a_bot_wall_is_read_again_the_next_morning(make_cfg, memdb, error):
+    c = company("acme")
+    liveness.scan_pages(make_cfg([c]), memdb, PageHttp({c.careers_url[0]: error}), float("inf"))
+    assert memdb.get("page_scan_retry:acme") == "1" and memdb.get("page_scan_at:acme") is None
+
+
+@pytest.mark.parametrize("error", [RobotsBlocked("robots.txt disallows x (Disallow: /)"), FetchError("HTTP 404 for GET x")])
+def test_a_robots_block_or_a_missing_page_waits_a_week(make_cfg, memdb, error):
+    c = company("acme")
+    cfg = make_cfg([c])
+    http = PageHttp({c.careers_url[0]: error})
+    liveness.scan_pages(cfg, memdb, http, float("inf"))
+    assert not memdb.get("page_scan_retry:acme") and memdb.get("page_scan_at:acme")
+    liveness.scan_pages(cfg, memdb, http, float("inf"))
+    assert http.calls == [c.careers_url[0]]
+
+
+def test_a_retry_is_never_read_for_a_company_blocked_since_or_after_the_budget(make_cfg, memdb):
+    c = company("acme")
+    memdb.set("page_scan_retry:acme", "1")
+    http = PageHttp({c.careers_url[0]: "<html></html>"})
+    liveness.scan_pages(make_cfg([c], liveness={"blocked": ["acme"]}), memdb, http, float("inf"))
+    liveness.scan_pages(make_cfg([c]), memdb, http, budget_end=0)  # the page check's time is already spent
+    assert http.calls == [] and memdb.get("page_scan_retry:acme") == "1" and memdb.get("page_scan_at:acme") is None
+
+
+def test_a_page_the_parsing_chokes_on_does_not_stay_first_in_line(make_cfg, memdb, monkeypatch):
+    c = company("acme")
+    monkeypatch.setattr(liveness, "page_systems", lambda text, found: 1 / 0)
+    with pytest.raises(ZeroDivisionError):
+        liveness.scan_pages(make_cfg([c]), memdb, PageHttp({c.careers_url[0]: "<html></html>"}), float("inf"))
+    assert memdb.get("page_scan_at:acme")  # read: the next run goes on to the other pages
 
 
 def test_an_emptied_campus_board_in_a_real_recording(make_cfg, memdb):
