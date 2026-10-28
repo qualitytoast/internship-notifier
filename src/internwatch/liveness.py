@@ -132,9 +132,28 @@ def _save(db: DB, company: str, source: str, label: str, **f) -> None:
                     (*f.values(), company, source))
 
 
-def _problem(c: Company, kind: str, summary: str, detail: str, since: str | None, alert_key: str) -> dict:
-    return {"key": c.key, "name": c.name, "checker": c.checker, "kind": kind, "summary": summary, "detail": detail,
-            "since": since or iso(), "careers_url": (c.careers_url or [""])[0], "reset_kv": alert_key}
+def _problem(c: Company, kind: str, summary: str, detail: str, since: str | None, alert_key: str,
+             restore_kv: dict | None = None, restore_row: dict | None = None) -> dict:
+    p = {"key": c.key, "name": c.name, "checker": c.checker, "kind": kind, "summary": summary, "detail": detail,
+         "since": since or iso(), "careers_url": (c.careers_url or [""])[0], "reset_kv": alert_key}
+    # what the check saved before raising the alert, put back if the health email fails (restore())
+    if restore_kv:
+        p["restore_kv"] = restore_kv
+    if restore_row:
+        p["restore_row"] = restore_row
+    return p
+
+
+def restore(db: DB, p: dict) -> None:
+    """The health email carrying `p` did not go out: put back the baseline its check had already moved on, so the
+    next run raises the same alert again (runner._reopen_alerts)."""
+    for k, v in (p.get("restore_kv") or {}).items():
+        db.set(k, v)
+    r = p.get("restore_row")
+    if r:
+        db.conn.execute("UPDATE source_health SET baseline=?, last_count=?, zero_streak=?, drop_streak=? "
+                        "WHERE company=? AND source=?", (r["baseline"], r["last_count"], r["zero_streak"],
+                                                         r["drop_streak"], r["company"], r["source"]))
 
 
 def _due(db: DB, alert_key: str, every: timedelta, now) -> bool:
@@ -190,8 +209,11 @@ def _count_rules(db, c, sid, what, n, p, now, problems, recovered) -> None:
         streak = (r["drop_streak"] or 0) + 1
         if streak >= p["after"]:
             dkey = f"live_alert:{c.key}:{sid}:drop"
+            before = {"company": c.key, "source": sid, "baseline": base, "last_count": r["last_count"],
+                      "zero_streak": r["zero_streak"], "drop_streak": r["drop_streak"]}
             problems.append(_problem(c, "board drop", f"{what} fell {100 * (base - n) / base:.0f}% ({base} → {n})",
-                                     "More than half of this board's jobs disappeared at once.", None, dkey))
+                                     "More than half of this board's jobs disappeared at once.", None, dkey,
+                                     restore_row=before))
             db.set(dkey, iso(now))
             _save(db, c.key, sid, what, baseline=n, drop_streak=0, zero_streak=0, last_count=n)
         else:
@@ -347,7 +369,7 @@ def scan_workday_sites(cfg: Config, db: DB, gate) -> list[dict]:
             problems.append(_problem(c, "new site", f"Workday tenant {host} lists new sites: {', '.join(new)}",
                                      "A new site can hold postings InternWatch doesn't read (Fidelity's 'targeted' "
                                      "held most of its internships). Add it to the config if it has student roles.",
-                                     None, akey))
+                                     None, akey, restore_kv={key: known}))
             db.set(akey, iso())
         db.set(key, json.dumps(sorted(sites | set(json.loads(known)))))
     return problems
@@ -370,6 +392,7 @@ def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
         if time.monotonic() > budget_end:
             break
         url = c.careers_url[0]
+        scanned = db.get(f"page_scan_at:{c.key}")
         db.set(f"page_scan_at:{c.key}", iso(now))
         try:
             # */* too: Wolfram's server types its page application/x-httpd-php and answers 406 to text/html alone
@@ -379,7 +402,7 @@ def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
             continue
         seen = {system_key(x.checker, x.settings) for x in from_text(text, url)}
         key = f"page_systems:{c.key}"
-        before = db.get(key)
+        raw = before = db.get(key)
         db.set(key, json.dumps(sorted(seen)))
         if before is None or before == "":
             continue  # first look: a silent baseline
@@ -393,7 +416,8 @@ def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
                     ([f"no longer mentions {', '.join(gone)}"] if gone else [])
             problems.append(_problem(c, "moved?", f"the careers page {' and '.join(parts)}",
                                      f"InternWatch reads {', '.join(sorted(configured))}. The jobs may have moved to "
-                                     f"another job site: compare {url} with the config.", None, akey))
+                                     f"another job site: compare {url} with the config.", None, akey,
+                                     restore_kv={key: raw, f"page_scan_at:{c.key}": scanned or ""}))
             db.set(akey, iso())
     return problems
 

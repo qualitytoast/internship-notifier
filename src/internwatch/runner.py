@@ -582,6 +582,7 @@ class Runner:
     def _reopen_alerts(self, s: RunSummary) -> None:
         """The health email did not go out: undo 'alerted' so the next run raises the same alerts again."""
         for p in s.problems:
+            liveness.restore(self.db, p)  # the baseline a liveness check had already moved past this alert
             if p.get("reset_kv"):
                 self.db.set(p["reset_kv"], "")
             elif p.get("key"):

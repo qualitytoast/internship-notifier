@@ -194,3 +194,102 @@ def test_a_bug_in_the_liveness_checks_never_costs_the_run(make_cfg, monkeypatch)
     s = r.run(RunOptions(crosscheck=False, send=False, scheduled_mail=False))
     assert s.seeded == ["acme"] and not s.failed
     assert [e["kind"] for e in db.q("SELECT kind FROM emails")] == ["seed"]
+
+
+# a health email that fails to send: every alert comes back on the next run ----------------------------------
+
+def _email_failed(db, problems):
+    """What runner._reopen_alerts does when the health email carrying `problems` did not go out."""
+    for p in problems:
+        liveness.restore(db, p)
+        db.set(p["reset_kv"], "")
+
+
+def test_a_failed_email_brings_back_a_careers_page_that_moved(make_cfg, memdb):
+    c = company("acme", checker="greenhouse", settings={"board": "acme"})
+    cfg = make_cfg([c])
+    url = c.careers_url[0]
+    gh = '<script src="https://boards.greenhouse.io/embed/job_board/js?for=acme"></script>'
+    moved = '<a href="https://jobs.ashbyhq.com/acme-inc">Open roles</a>'
+    liveness.scan_pages(cfg, memdb, PageHttp({url: gh}), float("inf"))
+    memdb.set("page_scan_at:acme", "2026-10-01T00:00:00Z")  # last week's look
+    problems = liveness.scan_pages(cfg, memdb, PageHttp({url: moved}), float("inf"))
+    assert [p["kind"] for p in problems] == ["moved?"]
+    _email_failed(memdb, problems)
+    assert memdb.get("page_scan_at:acme") == "2026-10-01T00:00:00Z"  # due again on the next run …
+    again = liveness.scan_pages(cfg, memdb, PageHttp({url: moved}), float("inf"))
+    assert [p["summary"] for p in again] == [p["summary"] for p in problems]  # … and raised again
+
+
+def test_a_failed_email_brings_back_a_new_workday_site(make_cfg, memdb, tmp_path):
+    c = company("acme", checker="workday", settings={"host": "acme.wd5.myworkdayjobs.com", "tenant": "acme",
+                                                     "site": "External"})
+    cfg = make_cfg([c])
+    gate = HostGate(tmp_path / "robots")
+    origin = "https://acme.wd5.myworkdayjobs.com"
+    gate._disk_put(origin, 200, "User-agent: *\nAllow: /External/\n")
+    liveness.scan_workday_sites(cfg, memdb, gate)
+    gate._disk_put(origin, 200, "User-agent: *\nAllow: /External/\nAllow: /Students/\n")
+    problems = liveness.scan_workday_sites(cfg, memdb, gate)
+    assert len(problems) == 1
+    _email_failed(memdb, problems)
+    assert [p["summary"] for p in liveness.scan_workday_sites(cfg, memdb, gate)] == [problems[0]["summary"]]
+
+
+def test_a_failed_email_brings_back_a_board_drop(make_cfg, memdb):
+    c = company("acme", checker="greenhouse", settings=GH2)
+    cfg = make_cfg([c])
+    _observe(cfg, memdb, c, _jobs(10, 12))
+    _observe(cfg, memdb, c, _jobs(10, 4))
+    problems, _ = _observe(cfg, memdb, c, _jobs(10, 4))
+    assert [p["kind"] for p in problems] == ["board drop"]
+    _email_failed(memdb, problems)
+    again, _ = _observe(cfg, memdb, c, _jobs(10, 4))
+    assert [p["summary"] for p in again] == [problems[0]["summary"]]  # "(12 → 4)" again, not lost
+    assert _observe(cfg, memdb, c, _jobs(10, 4))[0] == []  # delivered this time: accepted as before
+
+
+def test_alerts_without_a_saved_baseline_are_unchanged():
+    """Only the checks that move a baseline before alerting carry restore fields; every other alert is as before."""
+    p = liveness._problem(company("acme"), "board empty", "s", "d", None, "live_alert:acme:x")
+    assert set(p) == {"key", "name", "checker", "kind", "summary", "detail", "since", "careers_url", "reset_kv"}
+
+
+def test_the_runner_raises_a_board_drop_again_after_its_email_failed(make_cfg, monkeypatch):
+    from internwatch.config import Secrets
+    from internwatch.mailer import Mailer
+    monkeypatch.setattr(Runner, "online", lambda self: True)
+    monkeypatch.setattr("internwatch.mailer.time.sleep", lambda s: None)
+    c = company("acme", checker="greenhouse", settings=GH2)
+    cfg = make_cfg([c])
+    cfg.secrets = Secrets(smtp_user="me@example.com", smtp_password="app-password")
+    db = DB(cfg.settings.path("db"))
+    sent = []
+
+    def smtp(self, msg):
+        if fail_next:
+            raise OSError("535 bad credentials")
+        sent.append(msg["Subject"])
+    monkeypatch.setattr(Mailer, "_smtp_send", smtp)
+    r = Runner(cfg, db=db, checker_fn=FakeChecker({"acme": [_jobs(10, 12), _jobs(10, 4), _jobs(10, 4), _jobs(10, 4)]}))
+    opts = RunOptions(crosscheck=False, send=True, scheduled_mail=False, force=True)
+    fail_next = False
+    r.run(opts)
+    r.run(opts)
+    fail_next = True
+    s3 = r.run(opts)
+    assert [p["kind"] for p in s3.problems] == ["board drop"] and s3.email_errors
+    fail_next = False
+    s4 = r.run(opts)
+    assert [p["summary"] for p in s4.problems] == [s3.problems[0]["summary"]]
+    assert any("HEALTH" in x for x in sent)
+
+
+def test_the_health_email_never_shows_the_restore_fields(make_cfg):
+    from internwatch import emails
+    cfg = make_cfg([company("acme")])
+    plain = liveness._problem(company("acme"), "board drop", "campus fell 67% (12 → 4)", "d", "2026-10-28", "k")
+    with_restore = dict(plain, restore_kv={"page_systems:acme": "[]"},
+                        restore_row={"company": "acme", "source": "board:campus", "baseline": 12, "last_count": 4,
+                                     "zero_streak": 0, "drop_streak": 1})
+    assert emails.health(cfg, [with_restore], [], []) == emails.health(cfg, [plain], [], [])
