@@ -39,8 +39,10 @@ def decode_turbo_stream(flat: list):
                 out[name] = val(vi)
             return out
         if isinstance(v, list):
-            if v and isinstance(v[0], str) and len(v[0]) == 1 and v[0].isupper():
-                return v[1] if len(v) > 1 and v[0] == "D" else None  # typed values: dates kept, the rest unused
+            # A list of indices is a plain array; one that starts with a tag is a typed value: "D" (date) is kept,
+            # the rest ("P" promise, "SingleFetchClassInstance", …) are unused and stay opaque.
+            if v and isinstance(v[0], str):
+                return v[1] if len(v) > 1 and v[0] == "D" else None
             out_l: list = []
             memo[i] = out_l
             out_l.extend(val(x) for x in v)

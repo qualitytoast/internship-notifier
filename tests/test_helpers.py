@@ -25,6 +25,14 @@ def test_turbo_stream_decoding():
     assert decode_turbo_stream(flat) == {"loaderData": {"r": {"jobs": [{"title": "SWE Intern"}]}}}
 
 
+def test_turbo_stream_tags_longer_than_a_letter_stay_opaque():
+    # shopify.com/careers sometimes carries pricingSite = ["SingleFetchClassInstance", n]; read as a list of
+    # indices it crashed the whole poll (Wayback captures of Aug 6, Oct 12 and Oct 16 2026)
+    flat = [{"_1": 2, "_3": 4, "_5": 6}, "pricingSite", ["SingleFetchClassInstance", 0], "jobs", [7], "published",
+            ["D", "2026-08-06"], "SWE Intern"]
+    assert decode_turbo_stream(flat) == {"pricingSite": None, "jobs": ["SWE Intern"], "published": "2026-08-06"}
+
+
 def test_workday_partitions_pick_a_facet_below_the_cap():
     first = {"facets": [
         {"facetParameter": "locations", "values": [{"id": "a", "count": 2400}]},
