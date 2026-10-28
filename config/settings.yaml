@@ -43,6 +43,8 @@ liveness:                        # boards that go dead, get abandoned or are rep
             liberty-mutual, meta, nutanix, openai, paypal, pinterest, pitchbook, schonfeld, seatgeek, servicenow,
             tower-research, uber, ukg, veeva, whatnot]
   blocked_scan_seconds: 150      # their checks' time budget in each daily run (before the emails)
+  extra_tenants:                 # Workday tenants of a parent company, where a new site would show (moves.py W)
+    pitchbook: [morningstar.wd5.myworkdayjobs.com]
 
 crosscheck:
   grace_minutes: 90              # wait this long (and for a fresh poll) before calling a Simplify role a miss

@@ -254,3 +254,69 @@ def test_a_bug_in_these_checks_never_costs_the_run(blocked_cfg, monkeypatch, onl
     s = r.run(RunOptions(crosscheck=False, send=False, scheduled_mail=False, daily=True, retry_delay=0))
     assert s.seeded == ["acme"] and not s.failed
     assert [e["kind"] for e in db.q("SELECT kind FROM emails")] == ["seed"]
+
+
+# W: hidden Workday sites -------------------------------------------------------------------------------------
+
+AMFAM = {"host": "amfam.wd1.myworkdayjobs.com", "tenant": "amfam", "sites": ["AmFamGroupInternCareers", "Careers"]}
+AMFAM_ROBOTS = ("User-agent: *\nAllow: /Careers/\nAllow: /Agent-Staff/\nDisallow: /AmFamGroupInternCareers/\n"
+                "Disallow: /AmFam-Private/\nDisallow: /refreshFacet/\n")
+
+
+def test_a_new_hidden_workday_site(blocked_cfg, memdb, tmp_path):
+    from internwatch.http import HostGate
+    c = company("american-family", checker="workday", settings=AMFAM)
+    cfg = blocked_cfg([c])
+    gate = HostGate(tmp_path / "robots")
+    origin = "https://amfam.wd1.myworkdayjobs.com"
+    gate._disk_put(origin, 200, AMFAM_ROBOTS)
+    assert moves.check_workday(ctx(cfg, memdb, gate=gate)) == []  # first look: AmFam-Private is old news
+    assert json.loads(memdb.get("blocked:workday_hidden:amfam.wd1.myworkdayjobs.com")) == [
+        "AmFam-Private", "AmFamGroupInternCareers"]  # every hidden site; the configured one never alerts
+    memdb.set("blocked:at:workday:amfam.wd1.myworkdayjobs.com", "")  # due again
+    gate._disk_put(origin, 200, AMFAM_ROBOTS + "Disallow: /Agent-Staff-Private/\nAllow: /Students/\n")
+    problems = moves.check_workday(ctx(cfg, memdb, gate=gate))
+    # the hidden site alerts; a new Allow site is left to the weekly Workday check, which already reports it
+    assert [p["summary"] for p in problems] == [
+        "Workday tenant amfam.wd1.myworkdayjobs.com lists new hidden sites: Agent-Staff-Private"]
+    liveness.restore(memdb, problems[0])  # the health email failed: due and raised again next run
+    assert len(moves.check_workday(ctx(cfg, memdb, gate=gate))) == 1
+
+
+def test_a_myworkdaysite_config_is_read_on_its_tenant_host(blocked_cfg, memdb):
+    c = company("fidelity", checker="multi", settings={"sources": [
+        {"checker": "workday", "settings": {"host": "wd1.myworkdaysite.com", "tenant": "fmr", "site": "FidelityCareers"}},
+        {"checker": "workday", "settings": {"host": "wd1.myworkdaysite.com", "tenant": "fmr", "site": "targeted"}}]})
+    pb = company("pitchbook", checker="greenhouse", settings={"board": "pitchbookdata"})
+    cfg = blocked_cfg([c, pb], extra_tenants={"pitchbook": ["morningstar.wd5.myworkdayjobs.com"]})
+    http = FakeHttp({"https://fmr.wd1.myworkdayjobs.com/robots.txt": "Allow: /FidelityCareers/\nDisallow: /targeted/\n",
+                     "https://morningstar.wd5.myworkdayjobs.com/robots.txt": "Allow: /Americas/\nAllow: /EMEA/\n"})
+    for _ in range(2):  # weekly, spread: one of the two tenants a day
+        assert moves.check_workday(ctx(cfg, memdb, http)) == []  # first looks
+    for h in ("fmr.wd1.myworkdayjobs.com", "morningstar.wd5.myworkdayjobs.com"):
+        memdb.set(f"blocked:at:workday:{h}", "")
+    http.pages["https://fmr.wd1.myworkdayjobs.com/robots.txt"] += "Disallow: /targeted2/\n"
+    http.pages["https://morningstar.wd5.myworkdayjobs.com/robots.txt"] += "Allow: /PitchBook/\n"
+    problems = moves.check_workday(ctx(cfg, memdb, http)) + moves.check_workday(ctx(cfg, memdb, http))
+    assert sorted((p["key"], p["summary"]) for p in problems) == [
+        ("fidelity", "Workday tenant fmr.wd1.myworkdayjobs.com lists new sites: targeted2"),
+        ("pitchbook", "Workday tenant morningstar.wd5.myworkdayjobs.com lists new sites: PitchBook")]
+
+
+def test_workday_tenants_of_other_companies_are_never_read(blocked_cfg, memdb):
+    other = company("other-co", checker="workday", settings={"host": "other.wd5.myworkdayjobs.com", "tenant": "other",
+                                                          "site": "External"})
+    cfg = blocked_cfg([company("acme"), other])
+    http = FakeHttp({})
+    assert moves.check_workday(ctx(cfg, memdb, http)) == [] and http.calls == []
+
+
+def test_a_refused_robots_txt_is_read_again_the_next_morning(blocked_cfg, memdb):
+    c = company("american-family", checker="workday", settings=AMFAM)
+    cfg = blocked_cfg([c])
+    http = FakeHttp({"https://amfam.wd1.myworkdayjobs.com/robots.txt": FetchError("HTTP 503 for GET robots.txt")})
+    moves.check_workday(ctx(cfg, memdb, http))
+    assert memdb.get("blocked:retry:workday:amfam.wd1.myworkdayjobs.com") == "1"
+    http.pages["https://amfam.wd1.myworkdayjobs.com/robots.txt"] = AMFAM_ROBOTS
+    moves.check_workday(ctx(cfg, memdb, http))
+    assert memdb.get("blocked:workday_hidden:amfam.wd1.myworkdayjobs.com")  # read on the retry

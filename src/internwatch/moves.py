@@ -333,9 +333,101 @@ def known_systems(ctx: Ctx, c: Company) -> set[str]:
     return {al.get(k, k) for k in keys}
 
 
+# W: hidden Workday sites -------------------------------------------------------------------------------
+
+WORKDAY_PATHS = {"refreshfacet", "wday", "api", "cdn-cgi"}  # robots.txt paths that are Workday's own, not sites
+
+
+def workday_tenants(ctx: Ctx) -> dict[str, tuple[Company, set[str], bool]]:
+    """{host: (company, its configured sites, whether liveness.scan_workday_sites already compares the host's
+    Allow lines)}. A myworkdaysite.com config (Fidelity) is looked up on <tenant>.<wdN>.myworkdayjobs.com, whose
+    robots.txt names the hidden sites; extra_tenants adds a parent company's tenant (PitchBook's Morningstar)."""
+    out: dict[str, tuple[Company, set[str], bool]] = {}
+    for c in ctx.comps.values():
+        for checker, s in _sources(c):
+            host, tenant = s.get("host") or "", s.get("tenant")
+            if checker != "workday" or not tenant or not host:
+                continue
+            covered = "myworkdaysite" not in host
+            if not covered:
+                m = re.match(r"(wd\d+)\.myworkdaysite\.com", host)
+                if not m:
+                    continue
+                host = f"{tenant}.{m.group(1)}.myworkdayjobs.com"
+            sites = {str(x).lower() for x in (s.get("sites") or [s.get("site")]) if x}
+            prev = out.get(host)
+            out[host] = (c, (prev[1] if prev else set()) | sites, covered)
+    for key, hosts in per_company(ctx.cfg, "extra_tenants").items():
+        for h in hosts:
+            out.setdefault(h, (ctx.comps[key], set(), False))
+    return out
+
+
+def workday_robots_sites(text: str) -> tuple[set[str], set[str]]:
+    """(sites robots.txt allows, sites it hides with a Disallow line), Workday's own paths left out."""
+    allow = set(re.findall(r"(?im)^\s*allow:\s*/([\w-]+)/", text or ""))
+    hidden = set(re.findall(r"(?im)^\s*disallow:\s*/([\w-]+)/", text or ""))
+    return ({x for x in allow if x.lower() not in WORKDAY_PATHS}, {x for x in hidden if x.lower() not in WORKDAY_PATHS})
+
+
+def check_workday(ctx: Ctx) -> list[dict]:
+    """W. A new hidden site (Disallow line) on a tenant of the 31, or any new site on a tenant that the weekly
+    Workday check can't see (myworkdaysite.com hosts, parent companies). Weekly per tenant. robots.txt comes from
+    the checks' cache when it is fresh, else one plain GET that leaves the cache as it is."""
+    tenants = workday_tenants(ctx)
+    problems: list[dict] = []
+    http = None
+    try:
+        for host in pick(ctx.db, "workday", sorted(tenants), 7, ctx.now):
+            if ctx.out_of_time():
+                break
+            c, configured, covered = tenants[host]
+            origin = f"https://{host}"
+            disk = ctx.gate._disk_get(origin) if ctx.gate is not None else None
+            if disk and disk[0] == 200 and time.time() - disk[2] < 12 * 3600:
+                text = disk[1]
+            else:
+                http = http or ctx.http()
+                try:
+                    r = http.get(origin + "/robots.txt", check_robots=False, ok_statuses=(404,))
+                except Exception as e:  # noqa: BLE001 — a refused read is retried tomorrow
+                    if out_of_budget(e):
+                        break
+                    done(ctx.db, "workday", host, outcome(e), ctx.now)
+                    continue
+                if r.status != 200:
+                    done(ctx.db, "workday", host, "failed", ctx.now)
+                    continue
+                text = r.text
+            allow, hidden = workday_robots_sites(text)
+            sites = hidden if covered else allow | hidden
+            key = f"blocked:workday_hidden:{host}"
+            raw = ctx.db.get(key)
+            restore_kv = {key: raw or "", **due_restore(ctx.db, "workday", host)}
+            known = set(json.loads(raw)) if raw else None
+            ctx.db.set(key, json.dumps(sorted(sites | (known or set()))))
+            done(ctx.db, "workday", host, "ok", ctx.now)
+            if known is None:
+                continue  # first look: a silent baseline
+            new = sorted(x for x in sites - known if x.lower() not in configured)
+            if new:
+                which = "hidden " if covered else ""
+                problems.append(alert(
+                    ctx.db, c, "workday-hidden", "new site", f"Workday tenant {host} lists new {which}sites: {', '.join(new)}",
+                    "A hidden site (a Disallow line in robots.txt) can hold postings InternWatch doesn't read: American "
+                    "Family moved an intern posting to its hidden AmFam-Private site on Oct 24. Add it to the config "
+                    "if it has student roles.", restore_kv))
+    finally:
+        if http is not None:
+            http.close()
+    return problems
+
+
 # running them -----------------------------------------------------------------------------------------
 
-CHECKS: list[tuple[str, callable]] = []  # (name, fn(ctx) -> problems), cheapest first
+CHECKS: list[tuple[str, callable]] = [  # (name, fn(ctx) -> problems), cheapest first
+    ("workday", check_workday),
+]
 
 
 def run(cfg: Config, db: DB, gate, make_http, budget_end: float, healthy: set) -> list[dict]:
