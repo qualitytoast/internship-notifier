@@ -453,11 +453,12 @@ def test_icims_own_hosts_are_not_portals():
     assert moves.systems_in(text, "https://gtsx.com/careers/", company("gts"), {}) == {"icims:portal=careers-gtsx.icims.com"}
 
 
-def test_the_real_aliases_point_at_configured_systems():
+def test_the_real_aliases_point_at_configured_or_watched_systems():
     from internwatch.config import load
     cfg = load()
-    configured = set().union(*(moves.config_keys_v2(c) for c in cfg.companies if c.key in set(moves.blocked(cfg))))
-    assert set(moves.aliases(cfg).values()) <= configured
+    c = moves.Ctx(cfg, None, None, None, float("inf"), set())
+    known = set().union(*(moves.known_systems(c, x) for x in moves.blocked(cfg).values()))
+    assert set(moves.aliases(cfg).values()) <= known
 
 
 # A: archive.org's copies ----------------------------------------------------------------------------------------
@@ -796,3 +797,92 @@ def test_the_real_parallel_sources_name_adapters_that_exist():
     from internwatch.config import load
     for x in load().settings.get("liveness", "parallel_sources"):
         assert get_checker(x["checker"]) is not None
+
+
+# L: third-party lists, board registries, Getro boards -----------------------------------------------------------
+
+SPEEDY = """## US internships
+| Company | Position | Location | Posting | Age |
+|---|---|---|---|---|
+| <a href="https://x"><strong>Chicago Trading Company</strong></a> | Software Engineering Intern | Chicago | <a href="https://job-boards.greenhouse.io/ctccampusboard/jobs/1"><img src="https://img.shields.io/x"></a> | 2d |
+| ↳ | Quant Intern | Chicago | [Apply](https://job-boards.greenhouse.io/chicagotradingcampus/jobs/2) | 3d |
+"""
+
+
+def test_list_formats():
+    assert moves.list_rows("markdown", SPEEDY) == [
+        ("Chicago Trading Company", "Software Engineering Intern", "https://job-boards.greenhouse.io/ctccampusboard/jobs/1", None),
+        ("Chicago Trading Company", "Quant Intern", "https://job-boards.greenhouse.io/chicagotradingcampus/jobs/2", None)]
+    assert moves.list_rows("simplify", json.dumps([{"company_name": "Coinbase", "title": "SWE Intern", "url": "u"}])) == [
+        ("Coinbase", "SWE Intern", "u", None)]
+    assert moves.list_rows("trackr", json.dumps([{"companyId": "chicago-trading-company", "name": "Quant", "url": "u"}])) == [
+        ("chicago trading company", "Quant", "u", None)]
+    reg = moves.list_rows("registry", json.dumps([
+        {"name": "Fidelity Investments", "slug": "fmr", "ats": "workday", "wd": "wd1", "site": "targeted"},
+        {"name": "Chicago Trading Company", "slug": "ctccampusboard", "ats": "greenhouse"},
+        {"name": "Uber", "slug": "iaziqy.fa.ocs.oraclecloud.com", "ats": "oracle", "site": "CX_1"},
+        {"name": "X", "slug": "x", "ats": "unknownats"}]))
+    assert [r[3] for r in reg] == ["workday:site=targeted,tenant=fmr", "greenhouse:board=ctccampusboard",
+                                   "oracle:host=iaziqy.fa.ocs.oraclecloud.com,site=cx_1"]
+    assert reg[0][2] == "https://fmr.wd1.myworkdayjobs.com/targeted"
+    assert moves.ripplematch_rows(sitemap("https://app.ripplematch.com/company/ukg-ultimate-kronos-group",
+                                          "https://app.ripplematch.com/about")) == [
+        ("ukg ultimate kronos group", "", "https://app.ripplematch.com/company/ukg-ultimate-kronos-group",
+         "ripplematch:company=ukg-ultimate-kronos-group")]
+
+
+def test_a_list_links_a_new_board_for_one_of_the_31(blocked_cfg, memdb):
+    ctc = company("chicago-trading-company", name="Chicago Trading Company", checker="greenhouse",
+                  settings={"boards": ["chicagotrading", "chicagotradingcampus"]})
+    uber = company("uber", name="Uber", checker="oracle", settings={"host": "iaziqy.fa.ocs.oraclecloud.com", "site": "UberCareers"})
+    freight = company("other-uber-freight", name="Uber Freight", checker="greenhouse", settings={"board": "uberfreight"})
+    url = "https://lists.example/README.md"
+    cfg = blocked_cfg([ctc, uber, freight], listings=[{"name": "speedy", "format": "markdown", "url": url}],
+                      aliases={"oracle:host=iaziqy.fa.ocs.oraclecloud.com,site=cx_1":
+                               "oracle:host=iaziqy.fa.ocs.oraclecloud.com,site=ubercareers"},
+                      parallel_sources=[{"company": "chicago-trading-company", "checker": "greenhouse",
+                                         "settings": {"board": "ctccampusboard"}}])
+    row = "| {} | {} | x | [Apply]({}) | 1d |\n"
+    head = "| Company | Position | Location | Posting | Age |\n|---|---|---|---|---|\n"
+    http = FakeHttp({url: head + row.format("Chicago Trading Company", "Quant Intern",
+                                            "https://job-boards.greenhouse.io/chicagotradingcampus/jobs/2")})
+    assert moves.check_listings(ctx(cfg, memdb, http)) == []  # first download: a silent baseline
+    http.pages[url] += (row.format("Chicago Trading Company", "SWE Intern", "https://job-boards.greenhouse.io/ctcuniversity/jobs/9")
+                        + row.format("Chicago Trading Company", "Twin", "https://job-boards.greenhouse.io/ctccampusboard/jobs/3")
+                        + row.format("Uber", "Intern", "https://iaziqy.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/1")
+                        + row.format("Uber Freight", "Intern", "https://job-boards.greenhouse.io/uberfreight/jobs/4"))
+    problems = moves.check_listings(ctx(cfg, memdb, http, days=7))
+    assert [(p["key"], p["summary"].split(" (e.g.")[0]) for p in problems] == [
+        ("chicago-trading-company", "speedy links a job site InternWatch doesn't read: greenhouse:board=ctcuniversity")]
+    assert "'SWE Intern'" in problems[0]["summary"]
+
+
+def test_an_unchanged_list_is_not_parsed_again(blocked_cfg, memdb):
+    url = "https://lists.example/listings.json"
+    cfg = blocked_cfg([company("coinbase", name="Coinbase")], listings=[{"name": "s", "format": "simplify", "url": url}])
+    http = FakeHttp({url: Resp(200, url, {"etag": '"v1"'}, b"[]")})
+    moves.check_listings(ctx(cfg, memdb, http))
+    assert memdb.get("blocked:etag:s") == '"v1"'
+    http.pages[url] = Resp(304, url, {}, b"")
+    assert moves.check_listings(ctx(cfg, memdb, http, days=7)) == []
+
+
+def test_getros_copy_of_a_careers_page(blocked_cfg, memdb):
+    sg = company("seatgeek", name="SeatGeek", checker="greenhouse", settings={"board": "seatgeek"})
+    cfg = blocked_cfg([sg], getro=[{"company": "seatgeek", "board": "https://jobs.accel.com", "path": "/companies/seatgeek/"}])
+    job_url = "https://jobs.accel.com/companies/seatgeek/jobs/{}-{}"
+    http = FakeHttp({"https://jobs.accel.com/sitemap.xml": sitemap("https://jobs.accel.com/sitemap_jobs1.xml"),
+                     "https://jobs.accel.com/sitemap_jobs1.xml": sitemap(job_url.format(1, "ux-design-internship"))})
+    assert moves.check_getro(ctx(cfg, memdb, http)) == []  # first look
+    http.pages["https://jobs.accel.com/sitemap_jobs1.xml"] = sitemap(
+        job_url.format(1, "ux-design-internship"), job_url.format(2, "software-engineer-internship"),
+        job_url.format(3, "data-internship"))
+    http.pages[job_url.format(2, "software-engineer-internship")] = (
+        '{"source":"career_page","url":"https://seatgeek.com","x":{"url":"https://job-boards.greenhouse.io/sgcampus/jobs/7700001"}}')
+    http.pages[job_url.format(3, "data-internship")] = (
+        '{"source":"career_page","url":"https://boards.greenhouse.io/seatgeek/jobs/8888888"}')
+    problems = moves.check_getro(moves.Ctx(cfg, memdb, None, lambda d, **kw: http, float("inf"), set(),
+                                           now=utcnow() + timedelta(days=7), started="2026-11-04T09:00:00Z"))
+    assert [p["summary"].split(" (e.g.")[0] for p in problems] == [
+        "Getro's copy of its careers page links a job site InternWatch doesn't read: greenhouse:board=sgcampus"]
+    assert sorted(json.loads(memdb.get("blocked:pending:getro:seatgeek"))) == ["7700001", "8888888"]

@@ -955,6 +955,234 @@ def check_parallel(ctx: Ctx) -> list[dict]:
     return problems
 
 
+# L: third-party lists, board registries, Getro boards ---------------------------------------------------------
+
+REGISTRY_KEYS = {"greenhouse": "greenhouse:board={slug}", "lever": "lever:site={slug}", "ashby": "ashby:board={slug}",
+                 "workable": "workable:account={slug}", "smartrecruiters": "smartrecruiters:company={slug}",
+                 "workday": "workday:site={site},tenant={slug}", "oracle": "oracle:host={host},site={site}",
+                 "eightfold": "eightfold:domain={domain}"}
+REGISTRY_URLS = {"greenhouse": "https://job-boards.greenhouse.io/{slug}", "lever": "https://jobs.lever.co/{slug}",
+                 "ashby": "https://jobs.ashbyhq.com/{slug}", "workable": "https://apply.workable.com/{slug}",
+                 "smartrecruiters": "https://careers.smartrecruiters.com/{slug}",
+                 "workday": "https://{slug}.{wd}.myworkdayjobs.com/{site}"}
+
+
+def _md_cell(cell: str) -> str:
+    cell = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", TAG.sub(" ", cell))
+    return " ".join(htmllib.unescape(cell).replace("*", " ").split())
+
+
+def list_rows(fmt: str, text: str) -> list[tuple[str, str, str, str | None]]:
+    """(company, title, url, system key if the source names it outright) from one third-party list."""
+    if fmt == "markdown":  # pipe tables; "↳" repeats the company above
+        rows, header, company = [], None, ""
+        for line in text.splitlines():
+            if not line.startswith("|"):
+                header = None if not line.strip() or line.startswith("#") else header
+                continue
+            cells = [x.strip() for x in line.strip().strip("|").split("|")]
+            if cells and _md_cell(cells[0]).lower() == "company":
+                header = [_md_cell(x).lower() for x in cells]
+                continue
+            if header is None or set("".join(cells)) <= set("-: ") or len(cells) < len(header):
+                continue
+            col = dict(zip(header, cells))
+            name = _md_cell(col.get("company", ""))
+            company = company if name in ("", "↳") else name
+            def links(cell):
+                found = [a or b for a, b in re.findall(r'href="([^"]+)"|\]\((https?://[^)\s]+)\)', cell)]
+                return [u for u in found if "img.shields.io" not in u and "imgur.com" not in u]
+            apply = next((col[k] for k in ("posting", "apply", "application", "link") if col.get(k)), "")
+            urls = links(apply) or links(" ".join(v for k, v in col.items() if k != "company"))
+            title = _md_cell(col.get("position") or col.get("role") or col.get("title") or "")
+            if company and urls:
+                rows.append((company, title, htmllib.unescape(urls[0]), None))
+        return rows
+    data = json.loads(text)
+    items = data if isinstance(data, list) else next((v for v in data.values() if isinstance(v, list)), [])
+    if fmt == "simplify":
+        return [(x.get("company_name") or "", x.get("title") or "", x.get("url") or "", None) for x in items]
+    if fmt == "boardsweep":
+        return [(x.get("company") or "", x.get("title") or "", x.get("url") or "", None) for x in items]
+    if fmt == "trackr":
+        return [(str(x.get("companyId") or "").replace("-", " "), x.get("name") or "", x.get("url") or "", None)
+                for x in items]
+    if fmt == "registry":
+        out = []
+        for x in items:
+            ats, v = x.get("ats"), {k: str(x.get(k) or "").lower() for k in ("slug", "site", "host", "domain", "wd")}
+            if ats in REGISTRY_KEYS and v["slug"]:
+                v["host"] = v["host"] or v["slug"]
+                url = REGISTRY_URLS.get(ats, "").format(**{**v, "slug": x.get("slug"), "site": x.get("site") or ""})
+                out.append((x.get("name") or "", "", url, REGISTRY_KEYS[ats].format(**v)))
+        return out
+    raise ValueError(f"unknown list format {fmt}")
+
+
+def ripplematch_rows(text: str) -> list[tuple[str, str, str, str | None]]:
+    out = []
+    for slug in re.findall(r"<loc>\s*https://app\.ripplematch\.com/company/([\w-]+)/?\s*</loc>", text):
+        out.append((slug.replace("-", " "), "", f"https://app.ripplematch.com/company/{slug}",
+                    f"ripplematch:company={slug.lower()}"))
+    return out
+
+
+def company_of(index, comps: dict[str, Company], name: str, url: str, slug: bool = False) -> Company | None:
+    """The blocked company a list row belongs to: matched among every configured company first, so another
+    company's row is never taken for one of the 31. In a source that names companies by slug (RippleMatch, Trackr),
+    "ukg-ultimate-kronos-group" also matches the company whose name starts it."""
+    from .crosscheck import Row, norm_company
+    key = index.match(Row("", "", name, "", "", url, "", ""))
+    if key is None and slug:
+        n = norm_company(name)
+        for c in comps.values():
+            for alias in c.all_names:
+                a = norm_company(alias)
+                if a and n.startswith(a + " ") and len(a) >= 3:
+                    return c
+        return None
+    return comps.get(key)
+
+
+def check_listings(ctx: Ctx) -> list[dict]:
+    """L. Weekly per list, spread over the week: a job system a list links for one of the 31 that the config
+    doesn't name (aliases and the parallel boards count as named) and no list showed before. A list's first
+    download is a silent baseline; an unchanged list (ETag) costs one request."""
+    from .crosscheck import CompanyIndex
+    sources = {x["name"]: x for x in opts(ctx.cfg).get("listings") or []}
+    comps = ctx.comps
+    index = CompanyIndex(ctx.cfg.companies)
+    al = aliases(ctx.cfg)
+    problems: list[dict] = []
+    http = ctx.http(read_timeout=90)
+    try:
+        for name in pick(ctx.db, "listings", sorted(sources), 7, ctx.now):
+            if ctx.out_of_time():
+                break
+            src = sources[name]
+            etag_key, skey = f"blocked:etag:{name}", f"blocked:list:{name}"
+            raw = ctx.db.get(skey)
+            headers = {"If-None-Match": ctx.db.get(etag_key)} if raw and ctx.db.get(etag_key) else {}
+            try:
+                r = http.get(src["url"], headers=headers, ok_statuses=(304,), timeout=90)
+            except Exception as e:  # noqa: BLE001 — refused: tomorrow
+                if out_of_budget(e):
+                    break
+                done(ctx.db, "listings", name, outcome(e), ctx.now)
+                log.info("moves: list %s not read: %s", name, str(e)[:160])
+                continue
+            if r.status == 304:
+                done(ctx.db, "listings", name, "ok", ctx.now)
+                continue
+            try:
+                rows = ripplematch_rows(r.text) if src["format"] == "ripplematch" else list_rows(src["format"], r.text)
+            except (ValueError, KeyError, TypeError) as e:
+                done(ctx.db, "listings", name, "failed", ctx.now)
+                log.warning("moves: list %s could not be parsed: %s", name, e)
+                continue
+            found: dict[str, dict[str, tuple[str, str]]] = {}
+            for company, title, url, system in rows:
+                c = company_of(index, comps, company, url, slug=src["format"] in ("ripplematch", "trackr"))
+                if c is None:
+                    continue
+                for k in ([al.get(system, system)] if system else systems_in(url, "", c, al)):
+                    found.setdefault(c.key, {}).setdefault(k, (title, url))
+            before = json.loads(raw) if raw else None
+            everywhere: dict[str, set] = {}
+            for other in sources:
+                for k, systems in (json.loads(ctx.db.get(f"blocked:list:{other}") or "{}")).items():
+                    everywhere.setdefault(k, set()).update(systems)
+            state = {k: sorted(set(v) | set((before or {}).get(k) or [])) for k, v in found.items()}
+            for k, v in (before or {}).items():
+                state.setdefault(k, v)
+            ctx.db.set(skey, json.dumps(state))
+            if r.headers.get("etag"):
+                ctx.db.set(etag_key, r.headers["etag"])
+            done(ctx.db, "listings", name, "ok", ctx.now)
+            if before is None:
+                continue  # this list's first download: a silent baseline
+            for key, systems in sorted(found.items()):
+                c = comps[key]
+                known = known_systems(ctx, c) | everywhere.get(key, set())
+                new = {k: v for k, v in systems.items() if k not in known}
+                if new:
+                    shown = "; ".join(f"{k} (e.g. '{t or 'a posting'}' {u})" for k, (t, u) in list(new.items())[:3])
+                    problems.append(alert(ctx.db, c, f"list-{name}", "new job site?",
+                                          f"{src.get('label', name)} links a job site InternWatch doesn't read: {shown}",
+                                          "A list maintainer or contributor found a posting there. If it is the "
+                                          "company's and carries student roles, add it to the config.",
+                                          {skey: raw or "", **due_restore(ctx.db, "listings", name)}))
+    finally:
+        http.close()
+    return problems
+
+
+def check_getro(ctx: Ctx) -> list[dict]:
+    """L, Getro. Weekly per company: Getro-powered VC job boards (Accel, Thrive) copy some companies' jobs from their
+    careers page itself (source "career_page"), the page InternWatch can't read. A job new on Getro's copy that
+    links a job system InternWatch doesn't read alerts; one whose posting id InternWatch doesn't have waits for
+    confirm(). The first look is a silent baseline."""
+    entries_ = {x["company"]: x for x in entries(ctx.cfg, "getro")}
+    al = aliases(ctx.cfg)
+    problems: list[dict] = []
+    http = ctx.http(read_timeout=60)
+    try:
+        for key in pick(ctx.db, "getro", sorted(entries_), 7, ctx.now):
+            if ctx.out_of_time():
+                break
+            c, x = ctx.comps[key], entries_[key]
+            board = x["board"].rstrip("/")
+            try:
+                index = re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", http.get_text(board + "/sitemap.xml"))
+                jobs = {}
+                for sm in [u for u in index if "jobs" in u.rsplit("/", 1)[-1]]:
+                    for u in re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", http.get_text(sm)):
+                        m = re.search(re.escape(x["path"].rstrip("/")) + r"/jobs/(\d+)-?([\w%-]*)", u)
+                        if m:
+                            jobs[m.group(1)] = (u, m.group(2).replace("-", " "))
+            except Exception as e:  # noqa: BLE001 — refused: tomorrow
+                if out_of_budget(e):
+                    break
+                done(ctx.db, "getro", key, outcome(e), ctx.now)
+                log.info("moves: Getro board %s not read: %s", board, str(e)[:160])
+                continue
+            skey = f"blocked:getro:{key}"
+            raw = ctx.db.get(skey)
+            seen = set(json.loads(raw)) if raw else None
+            ctx.db.set(skey, json.dumps(sorted(set(jobs) | (seen or set()))))
+            done(ctx.db, "getro", key, "ok", ctx.now)
+            if seen is None or not jobs:
+                continue  # first look: a silent baseline
+            known = known_systems(ctx, c)
+            toks = stored_tokens(ctx.db, key)
+            elsewhere, unknown = {}, {}
+            for gid in sorted(set(jobs) - seen)[:20]:
+                url, title = jobs[gid]
+                try:
+                    page = http.get_text(url, headers={"Accept": "text/html"})
+                except Exception as e:  # noqa: BLE001 — that one job page: skipped
+                    if out_of_budget(e):
+                        break
+                    continue
+                links = [htmllib.unescape(u) for u in re.findall(r'"url":"(https?:[^"]+)"', page)]
+                for link in links:
+                    for k in systems_in(link, "", c, al) - known:
+                        elsewhere.setdefault(k, (title, link))
+                    ids = ids_with_titles(f'<a href="{link}">{title}</a>')
+                    unknown.update({i: title for i in ids if not is_stored(i, toks)})
+            note_unknown(ctx.db, "getro", c, unknown, f"Getro's copy ({board})", ctx.started)
+            if elsewhere:
+                shown = "; ".join(f"{k} (e.g. '{t}' {u})" for k, (t, u) in list(elsewhere.items())[:3])
+                problems.append(alert(ctx.db, c, "getro", "new job site?",
+                                      f"Getro's copy of its careers page links a job site InternWatch doesn't read: {shown}",
+                                      f"{board} copies {c.name}'s jobs from its careers page. The company may now post "
+                                      "there; if so and it carries student roles, add it to the config.",
+                                      {skey: raw, **due_restore(ctx.db, "getro", key)}))
+    finally:
+        http.close()
+    return problems
+
+
 # running them -----------------------------------------------------------------------------------------
 
 CHECKS: list[tuple[str, callable]] = [  # (name, fn(ctx) -> problems), cheapest first
@@ -966,6 +1194,8 @@ CHECKS: list[tuple[str, callable]] = [  # (name, fn(ctx) -> problems), cheapest 
     ("programs", check_programs),
     ("labels", check_labels),
     ("archive", check_archive),
+    ("listings", check_listings),
+    ("getro", check_getro),
 ]
 
 

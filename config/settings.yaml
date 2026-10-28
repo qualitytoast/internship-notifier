@@ -76,6 +76,32 @@ liveness:                        # boards that go dead, get abandoned or are rep
     - {company: liberty-mutual, checker: icims, settings: {portal: "https://campus-libertymutual.icims.com"}}
     - {company: seatgeek, checker: greenhouse, settings: {board: sgcampusrecruiting}}
     - {company: ukg, checker: ripplematch, settings: {company_id: 926}}
+  listings:                      # third-party lists and board registries, read weekly (moves.py L)
+    - {name: simplify, format: simplify, label: SimplifyJobs,
+       url: "https://raw.githubusercontent.com/SimplifyJobs/Summer2027-Internships/dev/.github/scripts/listings.json"}
+    - {name: vansh, format: simplify, label: "vanshb03's list",
+       url: "https://raw.githubusercontent.com/vanshb03/Summer2027-Internships/dev/.github/scripts/listings.json"}
+    - {name: speedyapply, format: markdown, label: speedyapply,
+       url: "https://raw.githubusercontent.com/speedyapply/2027-SWE-College-Jobs/main/README.md"}
+    - {name: sndsh, format: markdown, label: "sndsh404's list",
+       url: "https://raw.githubusercontent.com/sndsh404/summer-2027-internships/main/README.md"}
+    - {name: registry, format: registry, label: "zshah101's board registry",
+       url: "https://raw.githubusercontent.com/zshah101/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/main/data/companies.json"}
+    - {name: boardsweep, format: boardsweep, label: Boardsweep,
+       url: "https://raw.githubusercontent.com/Boardsweep/summer-2027-internships/main/listings.json"}
+    - {name: trackr-finance, format: trackr, label: Trackr,
+       url: "https://api.the-trackr.com/programmes?region=US&industry=Finance&season=2027&type=summer-internships"}
+    - {name: trackr-finance-insight, format: trackr, label: Trackr,
+       url: "https://api.the-trackr.com/programmes?region=US&industry=Finance&season=2027&type=insight-programs"}
+    - {name: trackr-tech, format: trackr, label: Trackr,
+       url: "https://api.the-trackr.com/programmes?region=US&industry=Tech&season=2027&type=summer-internships"}
+    - {name: trackr-tech-offcycle, format: trackr, label: Trackr,
+       url: "https://api.the-trackr.com/programmes?region=US&industry=Tech&season=2027&type=off-cycle-internships"}
+    - {name: ripplematch, format: ripplematch, label: "RippleMatch's company list",
+       url: "https://app.ripplematch.com/sitemap.xml"}
+  getro:                         # Getro boards that copy a company's jobs from its own careers page (moves.py L)
+    - {company: seatgeek, board: "https://jobs.accel.com", path: "/companies/seatgeek/"}
+    - {company: openai, board: "https://jobs.thrivecap.com", path: "/companies/openai-3-3b1ed8d5-5b3a-45b4-af49-e30a27910b3b/"}
   program_pages:                 # new student and program pages (moves.py N): sitemaps, wp:<site> page lists, feeds
     akuna-capital: ["https://akunacapital.com/page-sitemap.xml"]
     capstone: ["wp:https://www.capstoneco.com"]
@@ -113,6 +139,9 @@ liveness:                        # boards that go dead, get abandoned or are rep
     eightfold:domain=paypal.eightfold.ai: workday:site=jobs,tenant=paypal   # PayPal's Eightfold site mirrors Workday
     eightfold:domain=paypal.com: workday:site=jobs,tenant=paypal
     oracle:host=iaziqy.fa.ocs.oraclecloud.com,site=cx_1: oracle:host=iaziqy.fa.ocs.oraclecloud.com,site=ubercareers
+    ripplematch:company=akuna-capital: ripplematch:company_id=904                 # RippleMatch by name = by id
+    ripplematch:company=expedia-group: ripplematch:company_id=1153
+    ripplematch:company=ukg-ultimate-kronos-group: ripplematch:company_id=926
 
 crosscheck:
   grace_minutes: 90              # wait this long (and for a fresh poll) before calling a Simplify role a miss
