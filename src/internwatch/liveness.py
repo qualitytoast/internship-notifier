@@ -372,7 +372,8 @@ def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
         url = c.careers_url[0]
         db.set(f"page_scan_at:{c.key}", iso(now))
         try:
-            text = http.get_text(url, headers={"Accept": "text/html"})
+            # */* too: Wolfram's server types its page application/x-httpd-php and answers 406 to text/html alone
+            text = http.get_text(url, headers={"Accept": "text/html,*/*;q=0.8"})
         except Exception as e:  # noqa: BLE001 — an unreadable page (bot wall, robots) is only logged
             log.info("liveness: careers page of %s not read: %s", c.key, str(e)[:160])
             continue

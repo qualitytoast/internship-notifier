@@ -124,8 +124,10 @@ def test_a_new_workday_site_in_the_cached_robots_txt(make_cfg, memdb, tmp_path):
 class PageHttp:
     def __init__(self, pages):
         self.pages = pages
+        self.headers = None
 
     def get_text(self, url, **kw):
+        self.headers = kw.get("headers")
         page = self.pages[url]
         if isinstance(page, Exception):
             raise page
@@ -147,6 +149,14 @@ def test_a_careers_page_that_points_at_a_new_job_site(make_cfg, memdb):
     memdb.set("page_scan_at:acme", "")
     assert liveness.scan_pages(cfg, memdb, PageHttp({url: RuntimeError("bot wall")}), float("inf")) == []
     assert liveness.scan_pages(cfg, memdb, PageHttp({url: moved}), float("inf")) == []  # scanned this week already
+
+
+def test_careers_pages_accept_any_content_type(make_cfg, memdb):
+    """Wolfram's server answers 406 to Accept: text/html alone (its page is typed application/x-httpd-php)."""
+    c = company("acme", checker="greenhouse", settings={"board": "acme"})
+    http = PageHttp({c.careers_url[0]: "<html></html>"})
+    liveness.scan_pages(make_cfg([c]), memdb, http, budget_end=float("inf"))
+    assert http.headers["Accept"].startswith("text/html,") and "*/*" in http.headers["Accept"]
 
 
 def test_an_emptied_campus_board_in_a_real_recording(make_cfg, memdb):
