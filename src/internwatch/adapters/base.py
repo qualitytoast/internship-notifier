@@ -43,6 +43,7 @@ class FetchContext:
     partial:        set with `degraded` when the walk itself was cut short (out of time, short of the total): on a
                     company's first read, the runner then shows what later reads add as "already open", not new
     program_words:  the company's own program names (role_keywords), searched by checkers that read a student slice
+    source_counts:  jobs per sub-listing the returned jobs don't name (an Eightfold quick query), for liveness.py
     """
 
     mode: str = "full"
@@ -52,6 +53,7 @@ class FetchContext:
     degraded: str | None = None
     partial: bool = False
     program_words: tuple = ()
+    source_counts: dict = field(default_factory=dict)
     _old_streak: dict = field(default_factory=dict, repr=False)
 
     @property

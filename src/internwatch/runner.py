@@ -26,7 +26,7 @@ from zoneinfo import ZoneInfo
 
 import httpx
 
-from . import emails
+from . import emails, liveness
 from .adapters import get_checker
 from .adapters.base import FetchContext, dedupe
 from .config import Company, Config
@@ -107,6 +107,7 @@ def run_checker(cfg: Config, c: Company, *, mode: str = "full", known=(), state:
         out.state = ctx.state
         out.degraded = ctx.degraded
         out.partial = ctx.partial
+        out.source_counts = ctx.source_counts or None
     except NotModified:
         out.unchanged, out.state = True, ctx.state
     except CheckerError as e:
@@ -151,6 +152,7 @@ class RunSummary:
     skipped: list[str] = field(default_factory=list)
     retry: list[str] = field(default_factory=list)          # unhealthy without an alert yet (first strike)
     email_errors: list[str] = field(default_factory=list)   # configured, but sending failed
+    processed: set = field(default_factory=set)             # companies whose poll was stored (liveness.unchecked)
     note: str = ""
 
     def line(self) -> str:
@@ -308,6 +310,7 @@ class Runner:
 
         if opts.crosscheck:
             self._crosscheck(s)
+        self._liveness_finish(companies, opts, s, run_deadline)
         self._notify(s, first_run, opts)
         if opts.scheduled_mail and not first_run:
             self._scheduled_mail(opts, s)
@@ -331,10 +334,10 @@ class Runner:
         with ThreadPoolExecutor(max_workers=max(1, workers), thread_name_prefix="check") as pool:
             futures = {}
             for c, mode, known, state, dlimit in jobs_plan:
-                futures[pool.submit(self._guarded_check, c, mode, known, state, dlimit, run_deadline)] = c
+                futures[pool.submit(self._guarded_check, c, mode, known, state, dlimit, run_deadline)] = (c, known)
             phase = "re-checking" if s.checked else "checking"
             for done, fut in enumerate(as_completed(futures), 1):
-                c = futures[fut]
+                c, known = futures[fut]
                 o = fut.result()
                 if opts.progress:
                     opts.progress(done, len(futures), c.name, phase)
@@ -342,10 +345,47 @@ class Runner:
                     s.skipped.append(c.key)
                     continue
                 try:
-                    self._process(o, s, first_run)
+                    verdict = self._process(o, s, first_run)
                 except Exception:  # noqa: BLE001 — one company's bad data must not stop the run
                     log.exception("processing %s failed", c.key)
                     s.failed.append(c.key)
+                    continue
+                self._liveness_observe(o, verdict, known, s)
+
+    def _liveness_observe(self, o: Outcome, verdict, known, s: RunSummary) -> None:
+        """Boards of this company that emptied, fell or went stale (liveness.py). Never affects the poll itself."""
+        s.processed.add(o.company.key)
+        if not liveness.settings(self.cfg)["enabled"]:
+            return
+        try:
+            problems, recovered = liveness.observe(self.cfg, self.db, o.company, o, verdict, known)
+        except Exception:  # noqa: BLE001 — a bug here must never cost a company's poll or the run's emails
+            log.exception("liveness: %s failed", o.company.key)
+            return
+        s.problems += problems
+        s.recovered += recovered
+
+    def _liveness_finish(self, companies: list[Company], opts: RunOptions, s: RunSummary, run_deadline: float) -> None:
+        """Run-level checks (liveness.py): companies never processed, new Workday sites, careers pages that moved."""
+        lv = liveness.settings(self.cfg)
+        if not lv["enabled"]:
+            return
+        try:
+            problems, recovered = liveness.unchecked(self.cfg, self.db, companies, s.processed)
+            s.problems += problems
+            s.recovered += recovered
+            if not opts.daily:  # the weekly scans run once a morning, with time to spare
+                return
+            s.problems += liveness.scan_workday_sites(self.cfg, self.db, self.gate)
+            budget_end = min(time.monotonic() + lv["scan_seconds"], run_deadline - 300)
+            if time.monotonic() < budget_end:
+                http = Http(http_settings(self.cfg), gate=self.gate)
+                try:
+                    s.problems += liveness.scan_pages(self.cfg, self.db, http, budget_end)
+                finally:
+                    http.close()
+        except Exception:  # noqa: BLE001 — never block the run's emails
+            log.exception("liveness: run-level checks failed")
 
     def _guarded_check(self, c: Company, mode: str, known, state, detail_limit: int, run_deadline: float):
         if time.monotonic() > run_deadline - 30:

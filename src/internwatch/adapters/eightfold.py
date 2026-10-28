@@ -16,6 +16,8 @@ robots.txt on Eightfold hosts explicitly allows /api/pcsx and /api/apply.
 """
 from __future__ import annotations
 
+import json
+
 from ..models import CheckTimeout, Job
 from .base import (Checker, FetchContext, check_total_soft, dedupe, degrade, html_text, iso_date, join_locations, need,
                    need_list, register, report_skipped)
@@ -101,8 +103,12 @@ class Eightfold(Checker):
         quick = ctx is not None and ctx.quick and s.get("api") != "v2"
         self.malformed: set[str] = set()
         student: list[Job] = []
-        for q in s.get("quick_queries") or []:  # the site's own student filters, every poll, first: a long full walk
-            student += self._list(http, s, q, ctx, stop_early=False)[0]  # that runs out of time can't hide them
+        for i, q in enumerate(s.get("quick_queries") or []):  # the site's own student filters, every poll, first: a
+            got = self._list(http, s, q, ctx, stop_early=False)[0]  # long full walk that runs out of time can't hide them
+            student += got
+            if ctx is not None:  # a renamed filter value answers 0 jobs: liveness.py notices
+                ctx.source_counts[f"Eightfold quick query {i + 1} on {s['domain']} ({json.dumps(q, sort_keys=True)})"] = \
+                    len(dedupe(got))
         jobs: list[Job] = []
         try:
             total = self._list(http, s, {}, ctx, stop_early=quick, jobs=jobs)[1]

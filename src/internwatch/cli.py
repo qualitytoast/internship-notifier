@@ -8,6 +8,7 @@
   internwatch digest              send the daily digest now
   internwatch alert-test          trigger a real health alert end to end (proves alerts reach you)
   internwatch status              what the service has been doing
+  internwatch liveness            what the dead-board checks are tracking (read-only)
   internwatch test-filters "<title>" [--location …]   see how the filters decide a title
   internwatch record [company…]   record test fixtures (offline replays for pytest)
   internwatch coverage            regenerate COVERAGE.md
@@ -309,6 +310,23 @@ def cmd_alert_test(cfg: Config, a) -> int:
     return _send(cfg, "health", emails.health(cfg, [problem], [], [], test=True), a.no_send)
 
 
+def cmd_liveness(cfg: Config, a) -> int:
+    import sqlite3
+
+    from . import liveness
+    path = cfg.settings.path("db")
+    if not path.exists():
+        print("no database yet")
+        return 0
+    conn = sqlite3.connect(f"file:{path}?mode=ro", uri=True)  # read-only: nothing is created or changed
+    conn.row_factory = sqlite3.Row
+    try:
+        print(liveness.status(cfg, conn))
+    finally:
+        conn.close()
+    return 0
+
+
 def cmd_status(cfg: Config, a) -> int:
     db = DB(cfg.settings.path("db"))
     act = cfg.active
@@ -463,6 +481,7 @@ def build_parser() -> argparse.ArgumentParser:
         x.set_defaults(fn=fn)
 
     sub.add_parser("status", help="what the service has been doing").set_defaults(fn=cmd_status)
+    sub.add_parser("liveness", help="what the dead-board checks are tracking (read-only)").set_defaults(fn=cmd_liveness)
 
     t = sub.add_parser("test-filters", help="show how the filters decide a title")
     t.add_argument("title")

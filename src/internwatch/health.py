@@ -42,6 +42,7 @@ class Outcome:
     started_at: str = ""
     degraded: str | None = None        # jobs came from the checker's fallback source (see FetchContext)
     partial: bool = False              # the walk was cut short (see FetchContext)
+    source_counts: dict | None = None  # jobs per sub-listing the jobs don't name (see FetchContext, liveness.py)
 
     @property
     def ok(self) -> bool:
