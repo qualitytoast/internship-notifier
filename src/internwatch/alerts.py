@@ -15,6 +15,7 @@ several things (two new sites of a tenant) that clear one by one.
   source_empty  the board lists jobs again
   source_count  the board's count is back at `need` or more
   quiet         a new job id appears on the board
+  students      student roles are back at `need` or more
   system_new    the job system is added to the config, or the page stops naming it (seen())
   system_gone   the page names it again (back()), or it is removed from the config
   site          the Workday site is added to the config, or leaves robots.txt (seen())
@@ -201,6 +202,9 @@ def cleared(cfg: Config, db: DB, a) -> bool:
     if rule == "quiet":
         r = _source(db, a, d)
         return r is None or not r["stale_since"]
+    if rule == "students":
+        r = db.one("SELECT students FROM checks WHERE company=? ORDER BY id DESC LIMIT 1", c)
+        return r is not None and (r["students"] or 0) >= d["need"]
     if rule in ("system_new", "list_system"):
         return _cfg_system(cfg, a, d)
     if rule == "system_gone":

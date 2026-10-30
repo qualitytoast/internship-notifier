@@ -86,19 +86,17 @@ def test_nothing_is_judged_on_an_incomplete_poll_or_while_the_company_alert_is_o
     assert memdb.one("SELECT zero_streak FROM source_health WHERE source='board:campus'")["zero_streak"] == 0
 
 
-def test_a_big_board_without_new_postings_is_stale_until_one_appears(make_cfg, memdb):
+def test_a_board_without_new_postings_goes_quiet_until_one_appears(make_cfg, memdb):
     c = company("acme", checker="greenhouse", settings={"board": "acme"})
     cfg = make_cfg([c])
     today = datetime.now(timezone.utc).date()  # liveness judges dates in UTC
     old = [job(str(i), f"Engineer {i}", posted=(today - timedelta(days=70 + i)).isoformat()) for i in range(25)]
     problems, _ = _observe(cfg, memdb, c, old)
-    assert problems[0]["kind"] == "board stale" and "in 70 days" in problems[0]["summary"]
-    assert "every ~1 days" in problems[0]["summary"]
+    assert problems[0]["kind"] == "board quiet" and "in 70 days" in problems[0]["summary"]
+    assert _observe(cfg, memdb, c, old) == ([], [])  # the alert list repeats it
     fresh = old + [job("new", "Engineer", posted=today.isoformat())]
     problems, recovered = _observe(cfg, memdb, c, fresh)
-    assert problems == [] and recovered[0]["summary"] == "new postings on the job list again"
-    small = [job(str(i), "Quant", posted="2026-01-01") for i in range(8)]  # small boards post in bursts: not judged
-    assert _observe(cfg, memdb, company("tiny"), small) == ([], [])
+    assert problems == [] and recovered[0]["summary"] == "new jobs on the job list again"
 
 
 def test_a_company_never_processed_in_two_runs_is_reported(make_cfg, memdb):
@@ -503,3 +501,134 @@ def test_the_health_email_never_shows_the_restore_fields(make_cfg):
                         restore_row={"company": "acme", "source": "board:campus", "baseline": 12, "last_count": 4,
                                      "zero_streak": 0, "drop_streak": 1})
     assert emails.health(cfg, [with_restore], [], []) == emails.health(cfg, [plain], [], [])
+
+
+# ---------------------------------------------------------------------------------------------
+# quiet failures: what no single poll shows
+
+DAY = timedelta(days=1)
+
+
+def _poll(cfg, db, c, jobs, students=0):
+    """One healthy full poll: stored, recorded in checks, then judged, as the runner does it."""
+    now = iso()
+    db.upsert_jobs(c.key, jobs, now)
+    db.add_check(1, c.key, now, 0.1, "ok", None, None, len(jobs), students, 0, 0, 1)
+    return liveness.observe(cfg, db, c, Outcome(company=c, jobs=jobs), Verdict(True), set())[0]
+
+
+def _age_seen(db, c, days):
+    """Pretend the board was first read `days` ago."""
+    then = iso(utcnow() - days * DAY)
+    db.conn.execute("UPDATE jobs SET first_seen=?, baseline=1 WHERE company=?", (then, c.key))
+    db.conn.execute("DELETE FROM kv WHERE key LIKE 'board_new:%'")
+
+
+@pytest.mark.parametrize("size", [1, 5, 12, 300])
+def test_a_frozen_board_with_no_dates_goes_quiet_after_45_days_whatever_its_size(make_cfg, memdb, size):
+    c = company("acme", checker="ibm")
+    cfg = make_cfg([c])
+    jobs = [job(str(i), f"Engineer {i}") for i in range(size)]
+    memdb.upsert_jobs("acme", jobs, iso())
+    _age_seen(memdb, c, 45)
+    assert _observe(cfg, memdb, c, jobs) == ([], [])    # 45 days: not yet
+    _age_seen(memdb, c, 46)
+    problems, _ = _observe(cfg, memdb, c, jobs)
+    assert [(p["kind"], p["alert"]["rule"]) for p in problems] == [("board quiet", "quiet")]
+
+
+def test_a_frozen_workday_site_goes_quiet_although_its_dates_stop_at_30_days(make_cfg, memdb):
+    from internwatch.adapters.base import relative_posted
+    c = company("acme", checker="workday", settings={"host": "h", "tenant": "t", "site": "x"})
+    cfg = make_cfg([c])
+    jobs = [job(str(i), "Engineer", posted=relative_posted("Posted 30+ Days Ago")) for i in range(300)]
+    memdb.upsert_jobs("acme", jobs, iso())
+    _age_seen(memdb, c, 60)
+    assert [p["kind"] for p in _observe(cfg, memdb, c, jobs)[0]] == ["board quiet"]
+
+
+def test_a_new_job_on_any_board_resets_only_that_board(make_cfg, memdb):
+    c = company("acme", checker="greenhouse", settings=GH2)
+    cfg = make_cfg([c])
+    jobs = _jobs(4, 2)
+    memdb.upsert_jobs("acme", jobs, iso())
+    _age_seen(memdb, c, 60)
+    problems, _ = _observe(cfg, memdb, c, jobs)
+    assert sorted(p["summary"] for p in problems) == ["no new job on greenhouse board campus in 60 days",
+                                                      "no new job on greenhouse board main in 60 days"]
+    new = job("m-new", "Engineer", extra={"board": "main"})
+    memdb.upsert_jobs("acme", [new], iso())
+    problems, recovered = _observe(cfg, memdb, c, jobs + [new])
+    assert problems == [] and [r["summary"] for r in recovered] == ["new jobs on greenhouse board main again"]
+    assert memdb.one("SELECT stale_since FROM source_health WHERE source='stale board:campus'")["stale_since"]
+
+
+def test_an_empty_board_goes_quiet_from_the_day_it_was_first_read(make_cfg, memdb):
+    c = company("tgs", checker="lever", settings={"site": "tgsmc"})
+    cfg = make_cfg([c])
+    memdb.update_state("tgs", seeded_at=iso(utcnow() - 46 * DAY))
+    problems, _ = _observe(cfg, memdb, c, [])
+    assert [p["kind"] for p in problems] == ["board quiet"]
+
+
+def test_a_feed_answering_unchanged_for_ever_goes_quiet(make_cfg, memdb):
+    c = company("google", checker="google")
+    cfg = make_cfg([c])
+    jobs = [job(str(i), "Engineer") for i in range(30)]
+    memdb.upsert_jobs("google", jobs, iso())
+    _age_seen(memdb, c, 10)
+    assert _observe(cfg, memdb, c, jobs) == ([], [])
+    memdb.set("board_new:google:*", (utcnow() - 46 * DAY).date().isoformat())
+    o = Outcome(company=c, unchanged=True)
+    assert [p["kind"] for p in liveness.observe(cfg, memdb, c, o, Verdict(True), set())[0]] == ["board quiet"]
+
+
+def test_a_slow_bleed_alerts_once_and_a_sudden_drop_leaves_it_to_the_drop_alert(make_cfg, memdb):
+    c = company("acme", checker="greenhouse", settings={"board": "acme"})
+    cfg = make_cfg([c])
+    jobs = [job(str(i), f"Engineer {i}", posted=iso()) for i in range(30)]
+    seen = [[p["kind"] for p in _poll(cfg, memdb, c, jobs[:n])] for n in (30, 20, 14, 10, 7, 5, 4, 3)]
+    assert seen[:3] == [[], [], ["slow bleed"]] and not any(seen[3:])  # 14 is under half of 30
+    a = memdb.get("bleed_high:acme")
+    assert a == "30"
+    d = company("beta", checker="greenhouse", settings={"board": "beta"})
+    from internwatch import alerts
+    _poll(cfg, memdb, d, jobs)
+    alerts.record(memdb, [{"key": "beta", "name": "Beta", "kind": "drop", "summary": "x",
+                           "alert": {"id": "drop:beta", "rule": "count", "need": 15}}], [])
+    assert _poll(cfg, memdb, d, jobs[:9]) == []
+
+
+@pytest.mark.parametrize("checker", ["amazon", "apple", "janestreet_programs", "program_pages"])
+def test_lists_of_student_roles_are_left_out_of_the_slow_bleed(make_cfg, memdb, checker):
+    c = company("acme", checker=checker)
+    cfg = make_cfg([c])
+    jobs = [job(str(i), f"Software Engineer Intern {i}", posted=iso()) for i in range(30)]
+    assert not [p for n in (30, 3) for p in _poll(cfg, memdb, c, jobs[:n]) if p["kind"] == "slow bleed"]
+
+
+def test_internships_vanishing_at_once_alert_after_two_polls_and_each_company_on_its_own(make_cfg, memdb):
+    from internwatch import alerts
+    c = company("acme", checker="greenhouse", settings={"board": "acme"})
+    cfg = make_cfg([c])
+    staff = [job(f"s{i}", f"Senior Engineer {i}", posted=iso()) for i in range(40)]
+    interns = [job(f"i{i}", f"Software Engineer Intern {i}", posted=iso()) for i in range(10)]
+    seen = [[p["kind"] for p in _poll(cfg, memdb, c, staff + interns[:n], students=n)] for n in (10, 10, 0, 0)]
+    assert seen == [[], [], [], ["internships vanished"]]
+    p = _poll(cfg, memdb, c, staff, students=0)
+    alerts.record(memdb, [{"key": "acme", "name": "Acme", "kind": "internships vanished", "summary": "x",
+                           "alert": {"id": "live_alert:acme:students", "rule": "students", "need": 5}}], [])
+    alerts.sweep(cfg, memdb)
+    assert [a["kind"] for a in alerts.for_email(memdb)[0]] == ["internships vanished"]
+    _poll(cfg, memdb, c, staff + interns[:5], students=5)    # back at half
+    alerts.sweep(cfg, memdb)
+    assert alerts.for_email(memdb)[0] == []
+
+
+def test_internships_closing_one_by_one_do_not_alert():
+    assert liveness.vanished([1, 2, 3, 5]) is None
+    assert liveness.vanished([0, 1, 2, 3]) is None      # under 5 roles: nothing to judge
+    assert liveness.vanished([0, 2, 20, 20]) == 20
+    assert liveness.vanished([0, 3, 20, 20]) is None    # 85% gone: not "nearly all"
+    assert liveness.vanished([0, 0, 0, 20]) == 20
+    assert liveness.vanished([0, 0]) is None

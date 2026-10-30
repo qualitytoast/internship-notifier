@@ -5,9 +5,9 @@
    (FetchContext.source_counts), or a student slice of Apple, Meta or Amazon.
    emptied  a source that listed jobs lists none on two polls in a row: alert, kept open until it lists jobs again
    dropped  it lost more than half of at least 6 jobs on two polls in a row: alerted once, the new count accepted
-   stale    the newest posting of a source (or of a one-source company) is older than `stale_days` and than
-            `stale_gap_factor` × its usual gap between postings: alert, open until a newer posting appears. Only
-            sources listing at least `stale_min_dated` dated postings are judged: small boards post in bursts.
+   quiet    no new job id on a board for `quiet_days`, whatever its size: alert, open until a new one appears
+   Per company: slow bleed (under half its highest count of the last `bleed_days`) and internships vanished (nearly
+   all its student roles gone at once while its other jobs stay).
    Nothing is judged while the company itself is failing or its zero/drop alert is out (that alert already says it).
 2. Companies not checked: due in `unchecked_runs` runs in a row but never processed (skipped at the run deadline, a
    crash while storing its jobs, a company added and never run).
@@ -30,7 +30,6 @@ import html
 import json
 import logging
 import re
-import statistics
 import time
 from datetime import date, timedelta
 from urllib.parse import urlsplit
@@ -39,6 +38,7 @@ from . import alerts
 from .adapters import get_checker
 from .config import Company, Config
 from .db import DB, iso, parse_iso, utcnow
+from .filters import is_student_role
 from .health import Outcome
 
 log = logging.getLogger(__name__)
@@ -55,6 +55,8 @@ SLICES = {"apple": ("Apple's Internships team", lambda j: j.employment_type.star
           "meta": ("Meta's Internship label", lambda j: j.employment_type == "Internship"),
           "amazon": ("Amazon's intern postings", lambda j: j.employment_type == "Intern")}
 IDKEYS = ("board", "site", "host", "tenant", "account", "subdomain", "company_id")
+# lists that are mostly student roles: they fall at every season's end, so a fall says nothing about the board
+STUDENT_LISTS = ("amazon", "apple", "janestreet_programs", "program_pages")
 
 
 def settings(cfg: Config) -> dict:
@@ -62,8 +64,7 @@ def settings(cfg: Config) -> dict:
     lv = cfg.settings.get("liveness", default={}) or {}
     return {"after": int(h.get("alert_after_failures", 2)), "threshold": float(h.get("drop_threshold", 0.5)),
             "min_base": int(h.get("drop_min_baseline", 6)),
-            "stale_days": float(lv.get("stale_days", 45)), "gap_factor": float(lv.get("stale_gap_factor", 3)),
-            "stale_min_dated": int(lv.get("stale_min_dated", 20)),
+            "quiet_days": float(lv.get("quiet_days", 45)), "bleed_days": int(lv.get("bleed_days", 30)),
             "unchecked_runs": int(lv.get("unchecked_runs", 2)),
             "scan_every": timedelta(days=float(lv.get("page_scan_days", 7))),
             "scan_seconds": float(lv.get("page_scan_seconds", 180)), "enabled": lv.get("enabled", True),
@@ -177,7 +178,7 @@ def _due(db: DB, alert_key: str, every: timedelta, now) -> bool:
 
 def observe(cfg: Config, db: DB, c: Company, o: Outcome, verdict, known) -> tuple[list[dict], list[dict]]:
     """Judge one processed poll. Returns (problems, recovered) for the run's health email."""
-    if not (o.ok and not o.degraded and not o.partial and not o.unchanged and o.mode == "full" and o.jobs is not None):
+    if not (o.ok and not o.degraded and not o.partial and o.mode == "full"):
         return [], []
     if (verdict.problem and verdict.problem.get("kind") in ("zero", "drop")) or db.get(f"zero_open:{c.key}"):
         return [], []
@@ -185,9 +186,13 @@ def observe(cfg: Config, db: DB, c: Company, o: Outcome, verdict, known) -> tupl
     ensure_schema(db)
     now = utcnow()
     problems, recovered = [], []
-    for sid, (what, n) in source_counts(c, o).items():
-        _count_rules(db, c, sid, what, n, p, now, problems, recovered)
-    _stale_rule(db, c, o, known, p, now, problems, recovered)
+    if not o.unchanged and o.jobs is not None:
+        for sid, (what, n) in source_counts(c, o).items():
+            _count_rules(db, c, sid, what, n, p, now, problems, recovered)
+        if verdict.healthy:  # an unhealthy poll is a drop or a zero on its first strike: those rules decide
+            _bleed_rule(db, c, len(o.jobs), p, now, problems)
+            _vanished_rule(db, c, sum(1 for j in o.jobs if is_student_role(j, cfg.rules, c.extra_role_re)), p, now, problems)
+    _quiet_rule(db, c, o, known, p, now, problems, recovered)  # a feed that answers "unchanged" for ever goes quiet too
     return problems, recovered
 
 
@@ -238,15 +243,6 @@ def _count_rules(db, c, sid, what, n, p, now, problems, recovered) -> None:
     _save(db, c.key, sid, what, baseline=n, last_count=n, zero_streak=0, drop_streak=0)
 
 
-def newest_and_gap(posted: list[str]) -> tuple[date | None, float | None]:
-    """The newest posting date and the median gap in days between the distinct posting dates (newest 30)."""
-    days = sorted({d for d in (_date(x) for x in posted) if d}, reverse=True)[:30]
-    if not days:
-        return None, None
-    gaps = [(a - b).days for a, b in zip(days, days[1:])]
-    return days[0], (statistics.median(gaps) if gaps else None)
-
-
 def _date(x) -> date | None:
     try:
         return date.fromisoformat(str(x)[:10]) if x else None
@@ -254,48 +250,115 @@ def _date(x) -> date | None:
         return None
 
 
-def _stale_rule(db, c, o, known, p, now, problems, recovered) -> None:
-    """A source whose newest posting is too old for its usual pace (the whole company when it has one source)."""
-    groups: dict[str, tuple[str, list]] = {}
-    ids: list[str] = []
+def boards(c: Company, o: Outcome) -> dict[str, tuple[str, list]]:
+    """{board id: (what it is, its jobs in this poll)}: each board, site or source a company reads, even an empty one;
+    the company as one board when it reads just one."""
+    s = c.settings or {}
+    jobs = o.jobs or []
+    out: dict[str, tuple[str, list]] = {}
     if c.checker == "multi":
         from .checkers.multi import _source_ids
-        srcs = [(i, get_checker(x["checker"]), x.get("settings") or {})
-                for i, x in enumerate((c.settings or {}).get("sources") or [])]
+        srcs = [(i, get_checker(x["checker"]), x.get("settings") or {}) for i, x in enumerate(s.get("sources") or [])]
         ids = _source_ids(srcs)
-    for j in o.jobs or []:
-        i = int(j.extra.get("source", 0) or 0)
-        sid = ids[i] if i < len(ids) else WHOLE
-        what = f"{sid.split(':')[0]} source {i + 1}" if sid != WHOLE else "the job list"
-        groups.setdefault(sid, (what, []))[1].append(j)
+        for i, ck, st in srcs:
+            for k, v in _subs(ck.type, st) or [("", "")]:
+                out[f"{ids[i]} {k}:{v}" if k else ids[i]] = (f"{ck.type} source {i + 1}" + (f" ({k} {v})" if k else ""), [])
+        for j in jobs:
+            i = int(j.extra.get("source", 0) or 0)
+            if i < len(srcs):
+                subs = _subs(srcs[i][1].type, srcs[i][2])
+                k = subs[0][0] if subs else ""
+                sid = f"{ids[i]} {k}:{j.extra.get(k)}" if k else ids[i]
+                out.setdefault(sid, (sid, []))[1].append(j)
+        return out
+    subs = _subs(c.checker, s)
+    if not subs:
+        return {WHOLE: ("the job list", list(jobs))}
+    for k, v in subs:
+        out[f"{k}:{v}"] = (f"{c.checker} {k} {v}", [])
+    for j in jobs:
+        sid = f"{subs[0][0]}:{j.extra.get(subs[0][0])}"
+        out.setdefault(sid, (sid, []))[1].append(j)
+    return out
+
+
+def _quiet_rule(db, c, o, known, p, now, problems, recovered) -> None:
+    """No new job id on a board for `quiet_days`, whatever its size. A feed's own dates can't be relied on (Workday's
+    stop at "30+ days", many feeds have none), so the newest date is the latest of them and of the day InternWatch
+    first saw a job there. A board with neither is judged from the day it was first read."""
     today = now.date()
-    for sid, (what, jobs) in groups.items():
-        posted = [j.posted for j in jobs if j.posted]
-        if any(j.id not in known for j in jobs) and known:
-            posted.append(today.isoformat())  # a posting seen for the first time today counts as new
-        if len(posted) < p["stale_min_dated"]:
-            continue
-        newest, gap = newest_and_gap(posted)
+    stored = {r["job_id"]: r for r in db.q("SELECT job_id, first_seen, baseline FROM jobs WHERE company=?", c.key)}
+    for sid, (what, jobs) in boards(c, o).items():
+        kv = f"board_new:{c.key}:{sid}"
+        rows = [stored[j.id] for j in jobs if j.id in stored]
+        dates = [_date(db.get(kv)), *(_date(j.posted) for j in jobs),
+                 *(_date(r["first_seen"]) for r in rows if not r["baseline"])]
+        if known and any(j.id not in known for j in jobs):
+            dates.append(today)
+        newest = max((d for d in dates if d and d <= today), default=None)
         if newest is None:
-            continue
-        limit = max(p["stale_days"], p["gap_factor"] * (gap or 0))
+            first = [_date(r["first_seen"]) for r in rows]
+            seeded = _date(db.state(c.key)["seeded_at"]) if sid == WHOLE else None
+            newest = min([d for d in first if d] or [seeded or today])
+        db.set(kv, newest.isoformat())
         age = (today - newest).days
-        key = f"live_alert:{c.key}:{sid}:stale"
-        r = _row(db, c.key, f"stale {sid}")
-        if age > limit:
-            since = r["stale_since"] if r and r["stale_since"] else iso(now)
+        key, r = f"live_alert:{c.key}:{sid}:quiet", _row(db, c.key, f"stale {sid}")
+        if age > p["quiet_days"]:
             if not db.get(key):
-                usual = f"; it usually posts every ~{gap:.0f} days" if gap else ""
                 problems.append(_problem(
-                    c, "board stale", f"no new posting on {what} in {age} days{usual}",
+                    c, "board quiet", f"no new job on {what} in {age} days",
                     "The board may have been abandoned, or the company now posts somewhere else: check its careers page.",
-                    since, key, alert={"rule": "quiet", "source": f"stale {sid}"}))
+                    f"{newest.isoformat()}T00:00:00Z", key, alert={"rule": "quiet", "source": f"stale {sid}"}))
                 db.set(key, iso(now))
-            _save(db, c.key, f"stale {sid}", what, stale_since=since)
+            _save(db, c.key, f"stale {sid}", what, stale_since=r["stale_since"] if r and r["stale_since"] else iso(now))
         elif r and r["stale_since"]:
-            recovered.append({"key": c.key, "name": c.name, "summary": f"new postings on {what} again"})
+            recovered.append({"key": c.key, "name": c.name, "summary": f"new jobs on {what} again"})
             db.set(key, "")
             _save(db, c.key, f"stale {sid}", what, stale_since=None)
+
+
+def _bleed_rule(db, c, n: int, p, now, problems) -> None:
+    """A slow decline no single poll shows: under half the company's highest count of the last 30 days. Once per high."""
+    if c.checker in STUDENT_LISTS:
+        return
+    since = iso(now - timedelta(days=p["bleed_days"]))
+    high = max(n, db.one("SELECT MAX(jobs) m FROM checks WHERE company=? AND started_at>=?", c.key, since)["m"] or 0)
+    akey, hkey = f"live_alert:{c.key}:bleed", f"bleed_high:{c.key}"
+    if high < p["min_base"] or n >= high * (1 - p["threshold"]) or db.get(hkey) == str(high):
+        return
+    if alerts.live(db, c.key, "count"):  # its drop alert already says so
+        return
+    problems.append(_problem(c, "slow bleed", f"down to {n} jobs from {high} in the last {p['bleed_days']} days",
+                             "No single poll lost enough to alert. The board may be winding down, or jobs moved elsewhere.",
+                             None, akey, restore_kv={hkey: db.get(hkey) or ""},
+                             alert={"rule": "count", "need": high * (1 - p["threshold"])}))
+    db.set(hkey, str(high))
+    db.set(akey, iso(now))
+
+
+def vanished(history: list[int], minimum: int = 5, percent: int = 90) -> int | None:
+    """The count student roles fell from, if nearly all of them went at once: `history` is the newest polls first, one
+    a day. The last two polls must both show it (one could be a blip), against the two before. Internships closing
+    one by one at the end of a season never do; a company moving them to another board does."""
+    if len(history) < 3:
+        return None
+    high = max(history[2:4])
+    return high if high >= minimum and 100 * (high - max(history[:2])) >= percent * high else None
+
+
+def _vanished_rule(db, c, n: int, p, now, problems) -> None:
+    if c.checker in STUDENT_LISTS or c.checker in SLICES:  # all of them, or a slice with its own board rules
+        return
+    history = [n] + [r["students"] or 0 for r in db.q("SELECT students FROM checks WHERE company=? ORDER BY id DESC LIMIT 4",
+                                                      c.key)][1:]
+    high = vanished(history)
+    if high is None:
+        return
+    akey = f"live_alert:{c.key}:students"
+    problems.append(_problem(c, "internships vanished", f"student roles fell {100 * (high - n) // high}% ({high} → {n})",
+                             "Its other jobs are still listed. Hiring may have ended, or its internships moved to another "
+                             "board: check its careers page.", None, akey, alert={"rule": "students", "need": high / 2}))
+    db.set(akey, iso(now))
 
 
 # run-level rules -------------------------------------------------------------------------------
@@ -547,7 +610,7 @@ def status(cfg: Config, db) -> str:
     lines.append(f"{len(rows)} sources tracked, {len(open_)} with an open alert")
     for r in open_:
         lines.append(f"  {r['company']}: {r['label'] or r['source']}: "
-                     + (f"empty since {r['empty_since']}" if r["empty_since"] else f"stale since {r['stale_since']}"))
+                     + (f"empty since {r['empty_since']}" if r["empty_since"] else f"quiet since {r['stale_since']}"))
     kv = {r["key"]: r["value"] for r in db.execute("SELECT key, value FROM kv WHERE key LIKE 'unchecked_runs:%' "
                                                    "OR key LIKE 'page_scan_at:%' OR key LIKE 'page_scan_retry:%' "
                                                    "OR key LIKE 'workday_sites:%'")}
