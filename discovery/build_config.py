@@ -87,6 +87,8 @@ PROGRAM_KEYWORDS: dict[str, list[str]] = {
     "goldman-sachs-programs": ["possibilities", "emerging leaders"],
     # research internships titled without a student word ("PhD Researcher, AI Research")
     "autodesk": ["phd researcher"],
+    # Apex Fintech Solutions' interns, a PEAK6 company ("2026 AFS Technology Fintern - Software Engineering")
+    "peak6": ["fintern"],
 }
 
 # Hand-tuned settings on top of discovery (each comes from a discovery note).
@@ -232,6 +234,29 @@ OVERRIDES: dict[str, dict] = {
     "plaid": {"checker": "multi", "verified": {"explained":
         "Ashby board (no student roles) plus the student roles Plaid posts only on RippleMatch"}, "settings": {"sources": [
         {"checker": "ashby", "settings": {"board": "plaid"}}, {"checker": "ripplematch", "settings": {"company_id": 718}}]}},
+    # Boards the third-party lists link that the careers pages don't, found by the October 2026 board audit. Akuna's
+    # holds school-specific copies of its internships, Flow Traders' a Spring 2027 co-op, Visa's most of its interns
+    # abroad and its apprentices; Virtu's and Apex's (a PEAK6 company) have posted internships.
+    "flow-traders": {"settings": {"boards": ["flowtraders", "ftsp27co-ops"], "missing_ok": True}, "verified": {
+        "explained": "flowtraders.com lists the flowtraders board; the term board ftsp27co-ops is read too"}},
+    "akuna-capital": {"settings": {"boards": ["akunacapital", "akunacapitaloci"]}, "verified": {
+        "explained": "the careers page lists the akunacapital board; the on-campus board akunacapitaloci is read too"}},
+    "virtu": {"settings": {"boards": ["virtu", "virturecruitinghidden"]}, "verified": {
+        "explained": "the careers page lists the virtu board; the unadvertised virturecruitinghidden board is read too"}},
+    "visa": {"settings": {"host": "visa.wd5.myworkdayjobs.com", "tenant": "visa",
+                          "sites": ["Visa", "Visa_Early_Careers", "Visa_Talent_Portal"]}, "verified": {
+        "explained": "All 23 internships are on Visa_Early_Careers; the unlinked Visa_Talent_Portal site is read too"}},
+    "peak6": {"settings": {"host": "peak6group.wd1.myworkdayjobs.com", "tenant": "peak6group",
+                           "sites": ["PEAK6", "CapMan", "apexfintechsolutions"]}, "verified": {
+        "explained": "The checker reads 1 job more than careers.peak6.com lists under PEAK6 and PEAK6 Capital Management: "
+                     "a role of FOCUS (an insurance brand) posted on the PEAK6 site. The site of its company Apex Fintech "
+                     "Solutions is read too."}},
+    # RippleMatch lists only MongoDB's Learnathon events today; other companies post student-only roles there
+    "mongodb": {"checker": "multi", "verified": {"explained":
+        "the Greenhouse board plus MongoDB's RippleMatch page"}, "settings": {
+        "match_urls": ["greenhouse.io/mongodb/", "greenhouse.io/embed/job_app?for=mongodb"], "sources": [
+            {"checker": "greenhouse", "settings": {"board": "mongodb"}},
+            {"checker": "ripplematch", "settings": {"company_id": 825}}]}},
     "apple": {"checker": "apple", "settings": {}, "big": True, "verified": {"page_total": None, "explained":
         "reads the complete student slice (Students team + exact-word searches; 306 rows = 251 postings), grouped "
         "by posting; the whole site is ~6,100 posting x location rows and the page shows only '600+'"}},

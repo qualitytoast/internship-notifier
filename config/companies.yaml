@@ -575,8 +575,9 @@ companies:
   settings:
     host: visa.wd5.myworkdayjobs.com
     tenant: visa
-    sites: [Visa, Visa_Early_Careers]
-  verified: {page_total: 877, explained: All 23 internships are on Visa_Early_Careers;}
+    sites: [Visa, Visa_Early_Careers, Visa_Talent_Portal]
+  verified: {page_total: 877, explained: All 23 internships are on Visa_Early_Careers; the unlinked Visa_Talent_Portal site is read
+      too}
 - key: waymo
   name: Waymo
   category: autonomy
@@ -898,9 +899,15 @@ companies:
   name: MongoDB
   category: software
   careers_url: ['https://www.mongodb.com/company/careers/see-jobs']
-  checker: greenhouse
-  settings: {board: mongodb}
-  verified: {page_total: 396}
+  checker: multi
+  settings:
+    match_urls: [greenhouse.io/mongodb/, 'greenhouse.io/embed/job_app?for=mongodb']
+    sources:
+    - checker: greenhouse
+      settings: {board: mongodb}
+    - checker: ripplematch
+      settings: {company_id: 825}
+  verified: {page_total: 396, explained: the Greenhouse board plus MongoDB's RippleMatch page}
 - key: okta
   name: Okta
   category: security
@@ -1553,8 +1560,9 @@ companies:
   aliases: [Akuna]
   careers_url: ['https://akunacapital.com/careers']
   checker: greenhouse
-  settings: {board: akunacapital}
-  verified: {page_total: 37}
+  settings:
+    boards: [akunacapital, akunacapitaloci]
+  verified: {page_total: 37, explained: the careers page lists the akunacapital board; the on-campus board akunacapitaloci is read too}
 - key: chicago-trading-company
   name: Chicago Trading Company
   category: quant
@@ -1573,9 +1581,10 @@ companies:
   settings:
     host: peak6group.wd1.myworkdayjobs.com
     tenant: peak6group
-    sites: [PEAK6, CapMan]
+    sites: [PEAK6, CapMan, apexfintechsolutions]
+  role_keywords: [fintern]
   verified: {page_total: 19, explained: 'The checker reads 1 job more than careers.peak6.com lists under PEAK6 and PEAK6 Capital Management:
-      a role of FOCUS (an insurance brand) posted on the PEAK6 site.'}
+      a role of FOCUS (an insurance brand) posted on the PEAK6 site. The site of its company Apex Fintech Solutions is read too.'}
 - key: belvedere-trading
   name: Belvedere Trading
   category: quant
@@ -1662,15 +1671,19 @@ companies:
   aliases: [Virtu]
   careers_url: ['https://www.virtu.com/careers/']
   checker: greenhouse
-  settings: {board: virtu}
-  verified: {page_total: 46}
+  settings:
+    boards: [virtu, virturecruitinghidden]
+  verified: {page_total: 46, explained: the careers page lists the virtu board; the unadvertised virturecruitinghidden board is read
+      too}
 - key: flow-traders
   name: Flow Traders
   category: quant
   careers_url: ['https://www.flowtraders.com/careers']
   checker: greenhouse
-  settings: {board: flowtraders}
-  verified: {page_total: 47}
+  settings:
+    boards: [flowtraders, ftsp27co-ops]
+    missing_ok: true
+  verified: {page_total: 47, explained: flowtraders.com lists the flowtraders board; the term board ftsp27co-ops is read too}
 - key: valkyrie-trading
   name: Valkyrie Trading
   category: quant
