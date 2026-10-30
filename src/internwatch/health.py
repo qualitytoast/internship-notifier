@@ -9,20 +9,20 @@ poll already retried every request with backoff), so a single blip never emails 
   zero      0 jobs returned after previously returning some
   drop      job count fell by more than `drop_threshold` (e.g. 50 %)
 
-While a problem stays open you get a reminder every `reminder_hours`; when it clears you get a
-"recovered" line in the next health email.
+An alert goes on the list in alerts.py, which repeats it in every run's morning email until its problem clears: the
+problem says how in p["alert"].
 
 A zero alert stays open until jobs come back (kv zero_open:<key>): 0 is accepted as the baseline after the alert,
 so the polls that still return 0 are healthy (closed jobs are marked removed), but they never count as "recovered";
-they remind you instead, and raise the alert again if the email about it could not be sent.
+they raise the alert again if the email about it could not be sent. A drop works the same way: the lower count becomes
+the baseline, so closed jobs keep being recorded, while the alert remembers the count it needs to come back to.
 """
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from datetime import timedelta
 
 from .config import Company, Config
-from .db import DB, iso, parse_iso, utcnow
+from .db import DB, iso, utcnow
 
 
 @dataclass
@@ -67,9 +67,10 @@ class Verdict:
 
 
 def _problem(c: Company, kind: str, summary: str, detail: str, since: str | None,
-             restore_state: dict | None = None) -> dict:
+             restore_state: dict | None = None, alert: dict | None = None) -> dict:
     p = {"key": c.key, "name": c.name, "checker": c.checker, "kind": kind, "summary": summary,
-         "detail": detail, "since": since or iso(), "careers_url": (c.careers_url or [""])[0]}
+         "detail": detail, "since": since or iso(), "careers_url": (c.careers_url or [""])[0],
+         "alert": alert or {"id": f"health:{c.key}", "rule": "health"}}
     if restore_state:  # company_state put back if the health email fails (runner._reopen_alerts)
         p["restore_state"] = restore_state
     return p
@@ -81,7 +82,6 @@ def assess(cfg: Config, db: DB, o: Outcome) -> Verdict:
     now = utcnow()
     h = cfg.settings.get("health", default={}) or {}
     after = int(h.get("alert_after_failures", 2))
-    remind = timedelta(hours=float(h.get("reminder_hours", 24)))
     threshold = float(h.get("drop_threshold", 0.5))
     min_base = int(h.get("drop_min_baseline", 6))
 
@@ -107,11 +107,11 @@ def assess(cfg: Config, db: DB, o: Outcome) -> Verdict:
     zero_since = db.get(f"zero_open:{c.key}")
     if kind is None and zero_since:
         if count == 0 or (count is None and st["last_count"] == 0):
-            return _still_zero(db, c, o, st, count, zero_since, remind, now)
+            return _still_zero(db, c, o, st, count, zero_since, now)
         db.set(f"zero_open:{c.key}", "")  # jobs are back: recovered below
     if kind is None:  # healthy
         verdict = Verdict(True)
-        if st["alert_open"]:
+        if st["alert_open"] and st["last_error_kind"] != "drop":  # a steady lower count is not a recovery
             shown = f"{count} jobs" if count is not None else "feed unchanged"
             verdict.recovered = _problem(c, "recovered", f"working again ({shown})", "", st["failing_since"])
         fields = dict(consecutive_failures=0, anomaly_streak=0, failing_since=None, last_error=None,
@@ -132,15 +132,15 @@ def assess(cfg: Config, db: DB, o: Outcome) -> Verdict:
     if anomaly:
         fields["last_count"] = count
     verdict = Verdict(False, status="anomaly" if anomaly else ("blocked" if kind == "blocked" else "error"))
-    last_alert = parse_iso(st["last_alert_at"])
     if streak >= after:
-        if not st["alert_open"] or (last_alert and now - last_alert >= remind):
-            # a drop is accepted as the new baseline right below: if this alert's email fails, the next poll must
-            # still see the drop, so the alert carries the counts to put back
+        if not st["alert_open"]:
+            # a drop becomes the new baseline right below: if this alert's email fails, the next poll must still see
+            # the drop, so the alert carries the counts to put back
             restore = {"baseline_count": st["baseline_count"], "anomaly_streak": st["anomaly_streak"],
                        "last_count": st["last_count"]} if kind == "drop" else None
-            verdict.problem = _problem(c, kind, summary + (" (reminder: still failing)" if st["alert_open"] else ""),
-                                       detail, since, restore)
+            alert = {"drop": {"id": f"drop:{c.key}", "rule": "count", "need": (st["baseline_count"] or 0) * (1 - threshold)},
+                     "zero": {"id": f"zero:{c.key}", "rule": "zero"}}.get(kind)
+            verdict.problem = _problem(c, kind, summary, detail, since, restore, alert)
             fields.update(alert_open=1, last_alert_at=iso(now))
         if anomaly:
             # Alerted once; accept the new count as the baseline so a real shrink doesn't alert forever.
@@ -154,16 +154,15 @@ def assess(cfg: Config, db: DB, o: Outcome) -> Verdict:
     return verdict
 
 
-def _still_zero(db: DB, c: Company, o: Outcome, st, count, since: str, remind: timedelta, now) -> Verdict:
-    """A healthy poll of a company whose zero alert is open and that still returns 0 jobs: no "recovered" line;
-    a reminder every `reminder_hours`, or at once if the alert's email did not go out (alert_open was reset)."""
+def _still_zero(db: DB, c: Company, o: Outcome, st, count, since: str, now) -> Verdict:
+    """A healthy poll of a company whose zero alert is open and that still returns 0 jobs: no "recovered" line, and
+    the alert raised again if its email did not go out (alert_open was reset)."""
     verdict = Verdict(True)
     fields = dict(consecutive_failures=0, anomaly_streak=0, last_success=iso(now))
-    last_alert = parse_iso(st["last_alert_at"])
-    if not st["alert_open"] or last_alert is None or now - last_alert >= remind:
-        verdict.problem = _problem(c, "zero", "still returns 0 jobs" + (" (reminder)" if st["alert_open"] else ""),
+    if not st["alert_open"]:
+        verdict.problem = _problem(c, "zero", "still returns 0 jobs",
                                    "The site may have changed how it loads jobs, or every posting was taken down.",
-                                   since)
+                                   since, alert={"id": f"zero:{c.key}", "rule": "zero"})
         fields.update(alert_open=1, last_alert_at=iso(now), last_error_kind="zero",
                       last_error="returned 0 jobs: the site may have changed how it loads jobs")
     if count is not None:

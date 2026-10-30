@@ -55,10 +55,10 @@ def test_a_board_that_empties_alerts_on_the_second_poll_and_stays_open(make_cfg,
     problems, _ = _observe(cfg, memdb, c, _jobs(10, 0))
     assert [(p["kind"], p["summary"]) for p in problems] == [("board empty", "greenhouse board campus now lists 0 jobs (it listed 3)")]
     assert problems[0]["reset_kv"] == "live_alert:acme:board:campus:empty"
-    assert _observe(cfg, memdb, c, _jobs(10, 0)) == ([], [])  # still empty: reminded weekly, not every poll
+    assert _observe(cfg, memdb, c, _jobs(10, 0)) == ([], [])  # still empty: the alert list repeats it, not this
     memdb.set("live_alert:acme:board:campus:empty", "")  # the health email failed (_reopen_alerts) …
     problems, _ = _observe(cfg, memdb, c, _jobs(10, 0))
-    assert problems[0]["summary"].endswith("still lists 0 jobs (reminder)")  # … so it is raised again
+    assert problems[0]["summary"].endswith("still lists 0 jobs")  # … so it is raised again
     problems, recovered = _observe(cfg, memdb, c, _jobs(10, 2))
     assert problems == [] and recovered[0]["summary"] == "greenhouse board campus lists jobs again (2)"
 

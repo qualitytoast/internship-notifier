@@ -278,15 +278,46 @@ def watching_summary(cfg: Config, rows, keys: list[str]) -> tuple[str, str, str]
     return _with_files((subject, f"Now watching {who}. {n} matching roles open now.\n\n{body_text}", html), files)
 
 
-def digest(cfg: Config, new_rows, untracked: list[dict], misses: list[dict], open_problems: list[dict], *,
+def _alerts_section(cfg: Config, open_alerts, resolved) -> tuple[str, str]:
+    """Every open alert and what was resolved since the last email. Plain list items: a long list stays small, so the
+    email stays clear of Gmail's ~102 KB clipping. open_alerts=None: the list could not be read."""
+    if open_alerts is None:
+        note = "The list of open alerts could not be read in this run: see data/logs."
+        return f'<p style="{STYLE_P}"><b>{note}</b></p>', note
+    if not open_alerts and not resolved:
+        return "", ""
+    html, text = "", ""
+    if open_alerts:
+        def line(a):
+            new = "NEW " if a["health_at"] is None else ""
+            return f"#{a['id']} {new}{a['name']} [{a['kind']}]", f"{a['summary']} (since {_local(cfg, a['since'], '%b %d')})"
+
+        items = "".join(f'<li><b>{escape(line(a)[0])}</b> {escape(line(a)[1])}</li>' for a in open_alerts)
+        html = (f'<h3 style="{STYLE_H}">Open alerts ({len(open_alerts)})</h3><p style="{STYLE_P}">Each stays here until its '
+                f"problem clears. To stop one that won't: <code>internwatch dismiss &lt;number&gt;</code>, or "
+                f'<code>internwatch dismiss --kind "&lt;type&gt;"</code> for a whole type.</p><ul style="{STYLE_P}">{items}</ul>')
+        text = f"OPEN ALERTS ({len(open_alerts)}): dismiss with `internwatch dismiss <number>`\n" + "\n".join(
+            "  • " + " ".join(line(a)) for a in open_alerts)
+    if resolved:
+        shown = [f"{a['name']} [{a['kind']}]: {a['summary']}" for a in resolved]
+        html += (f'<h3 style="{STYLE_H}">Resolved since the last run ({len(resolved)})</h3><ul style="{STYLE_P}">'
+                 + "".join(f"<li>{escape(x)}</li>" for x in shown) + "</ul>")
+        text += ("\n\n" if text else "") + f"RESOLVED SINCE THE LAST RUN ({len(resolved)})\n" + "\n".join(f"  • {x}" for x in shown)
+    return html, text
+
+
+def digest(cfg: Config, new_rows, untracked: list[dict], open_alerts=(), resolved=(), *,
            morning: bool = False) -> tuple[str, str, str]:
     """The daily digest, or with morning=True the single email of `internwatch run --daily` (new since last run)."""
     new_rows, opened = _already_open(new_rows)
     n = len(new_rows)
     if morning:
+        new_alerts = sum(1 for a in open_alerts or () if a["health_at"] is None)
         subject = (f"{_prefix(cfg)} {_today(cfg)}: " + (f"{n} new: {_subject_companies(cfg, new_rows)}" if n else "no new roles")
                    + (f"; {len(opened)} already open" if opened else "")
-                   + (f"; {len(untracked)} at untracked companies" if untracked else ""))
+                   + (f"; {len(untracked)} at untracked companies" if untracked else "")
+                   + (f"; {len(open_alerts)} open alert{'s' if len(open_alerts) != 1 else ''}"
+                      + (f" ({new_alerts} new)" if new_alerts else "") if open_alerts else ""))
         window, title = "since the last check", f"Your morning check — {_today(cfg)}"
     else:
         subject = f"{_prefix(cfg, 'Digest')} {_today(cfg)}: {n} new role{'s' if n != 1 else ''}, {len(untracked)} from untracked companies"
@@ -319,12 +350,10 @@ def digest(cfg: Config, new_rows, untracked: list[dict], misses: list[dict], ope
                 ("untracked-roles.html", _wrap(f"All {len(untracked)} roles at untracked companies",
                                                _untracked_table(untracked)).encode(), "text/html"),
                 ("untracked-roles.csv", _untracked_csv(untracked).encode(), "text/csv")]
-    if misses or open_problems:
-        items = [f"{m['company']}: possible miss “{m['title']}”" for m in misses] + \
-                [f"{p['name']}: {p['summary']}" for p in open_problems]
-        parts_html.append(f'<h3 style="{STYLE_H}">Still-open health issues</h3><ul style="{STYLE_P}">'
-                          + "".join(f"<li>{escape(i)}</li>" for i in items) + "</ul>")
-        parts_text.append("STILL-OPEN HEALTH ISSUES\n" + "\n".join(f"  • {i}" for i in items))
+    h, t = _alerts_section(cfg, open_alerts, resolved)
+    if h:
+        parts_html.append(h)
+        parts_text.append(t)
     html = _wrap(title, "".join(parts_html))
     return _with_files((subject, "\n\n".join(parts_text), html), files)
 

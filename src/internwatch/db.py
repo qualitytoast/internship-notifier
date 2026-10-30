@@ -39,6 +39,20 @@ CREATE TABLE IF NOT EXISTS jobs (
 CREATE INDEX IF NOT EXISTS jobs_first_seen ON jobs(first_seen);
 CREATE INDEX IF NOT EXISTS jobs_title ON jobs(company, title);
 
+CREATE TABLE IF NOT EXISTS alerts (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  alert_key TEXT NOT NULL,            -- what is wrong: one open or dismissed row per key (see alerts.py)
+  company TEXT NOT NULL DEFAULT '', name TEXT NOT NULL DEFAULT '', kind TEXT NOT NULL,
+  summary TEXT NOT NULL, detail TEXT NOT NULL DEFAULT '', url TEXT NOT NULL DEFAULT '',
+  rule TEXT NOT NULL DEFAULT 'manual', data TEXT NOT NULL DEFAULT '{}',
+  since TEXT NOT NULL, raised_at TEXT NOT NULL,
+  state TEXT NOT NULL DEFAULT 'open', -- open | dismissed | resolved | cleared (dismissed, then its problem cleared)
+  closed_at TEXT, dismissed_at TEXT,
+  told_at TEXT,                       -- its "resolved" line went out
+  health_at TEXT                      -- a HEALTH email told about it
+);
+CREATE UNIQUE INDEX IF NOT EXISTS alerts_live ON alerts(alert_key) WHERE state IN ('open', 'dismissed');
+
 CREATE TABLE IF NOT EXISTS runs (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   started_at TEXT NOT NULL, finished_at TEXT, status TEXT,

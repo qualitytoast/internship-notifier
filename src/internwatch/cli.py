@@ -328,6 +328,30 @@ def cmd_liveness(cfg: Config, a) -> int:
     return 0
 
 
+def cmd_alerts(cfg: Config, a) -> int:
+    """Everything open, as the morning email lists it (read-only)."""
+    from . import alerts
+    rows = alerts.for_email(DB(cfg.settings.path("db")))[0]
+    for r in rows:
+        print(f"#{r['id']:<5} {r['name'][:26]:26} {r['kind']:20} {r['summary'][:110]} (since {r['since'][:10]})")
+    print(f"{len(rows)} open alert{'s' if len(rows) != 1 else ''}. Stop one with `internwatch dismiss <number>`.")
+    return 0
+
+
+def cmd_dismiss(cfg: Config, a) -> int:
+    """Stop repeating alerts that won't resolve on their own (a board that shrank for good, say)."""
+    from . import alerts
+    if not a.ids and not a.kind:
+        print("name the alerts: internwatch dismiss <number> …, or --kind \"<type>\"")
+        return 2
+    rows = alerts.dismiss(DB(cfg.settings.path("db")), ids=a.ids, kind=a.kind)
+    for r in rows:
+        print(f"dismissed #{r['id']} {r['name']} [{r['kind']}]: {r['summary'][:100]}")
+    if not rows:
+        print("no open alert matches: `internwatch alerts` lists them")
+    return 0 if rows else 1
+
+
 def cmd_status(cfg: Config, a) -> int:
     db = DB(cfg.settings.path("db"))
     act = cfg.active
@@ -483,6 +507,11 @@ def build_parser() -> argparse.ArgumentParser:
 
     sub.add_parser("status", help="what the service has been doing").set_defaults(fn=cmd_status)
     sub.add_parser("liveness", help="what the dead-board checks are tracking (read-only)").set_defaults(fn=cmd_liveness)
+    sub.add_parser("alerts", help="list the open alerts").set_defaults(fn=cmd_alerts)
+    di = sub.add_parser("dismiss", help="stop repeating alerts that won't resolve on their own")
+    di.add_argument("ids", nargs="*", type=int, help="the alerts' numbers, from the email or `internwatch alerts`")
+    di.add_argument("--kind", help='every open alert of this type, e.g. --kind "new job site?"')
+    di.set_defaults(fn=cmd_dismiss)
 
     t = sub.add_parser("test-filters", help="show how the filters decide a title")
     t.add_argument("title")

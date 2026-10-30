@@ -103,9 +103,8 @@ def test_zero_alert_stays_open_until_jobs_come_back(make_cfg, memdb):
     _zero_alerted(cfg, memdb, c)
     v = assess(cfg, memdb, Outcome(company=c, jobs=[]))  # still 0: never "working again (0 jobs)"
     assert v.healthy and v.recovered is None and v.problem is None
-    memdb.update_state("acme", last_alert_at="2000-01-01T00:00:00Z")  # a day later: a reminder
-    v = assess(cfg, memdb, Outcome(company=c, jobs=[]))
-    assert v.problem["kind"] == "zero" and v.problem["summary"] == "still returns 0 jobs (reminder)"
+    memdb.update_state("acme", last_alert_at="2000-01-01T00:00:00Z")  # days later: the alert list repeats it, not this
+    assert assess(cfg, memdb, Outcome(company=c, jobs=[])).problem is None
     v = assess(cfg, memdb, Outcome(company=c, jobs=jobs(3)))  # jobs are back
     assert v.recovered and v.recovered["summary"] == "working again (3 jobs)"
     assert assess(cfg, memdb, Outcome(company=c, jobs=jobs(3))).recovered is None

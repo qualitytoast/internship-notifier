@@ -3,8 +3,7 @@
 1. Per source, after each poll that read everything (not degraded, not cut short, not "unchanged"):
    source = a board or Workday site of a company that reads several, a multi source, an Eightfold quick query
    (FetchContext.source_counts), or a student slice of Apple, Meta or Amazon.
-   emptied  a source that listed jobs lists none on two polls in a row: alert, kept open (reminded weekly) until it
-            lists jobs again
+   emptied  a source that listed jobs lists none on two polls in a row: alert, kept open until it lists jobs again
    dropped  it lost more than half of at least 6 jobs on two polls in a row: alerted once, the new count accepted
    stale    the newest posting of a source (or of a one-source company) is older than `stale_days` and than
             `stale_gap_factor` × its usual gap between postings: alert, open until a newer posting appears. Only
@@ -20,7 +19,8 @@
    first the next morning; robots.txt blocks never are. Workday tenants' robots.txt, already cached by the checks (no
    request), is compared with the configured sites: a new site alerts. The first look at a page or tenant is a
    silent baseline.
-Every alert goes into the run's health email with reset_kv="live_alert:…", so an email that fails is sent again.
+Every alert goes into the run's health email with reset_kv="live_alert:…", so an email that fails is sent again, and
+onto the list in alerts.py, which repeats it each morning until it clears.
 State: table source_health, kv live_alert:*, unchecked_runs:*, page_systems:* (by system_key, as before),
 page_systems_v2:* (by page_key), page_scan_at:*, page_scan_retry:*, workday_sites:*.
 """
@@ -35,6 +35,7 @@ import time
 from datetime import date, timedelta
 from urllib.parse import urlsplit
 
+from . import alerts
 from .adapters import get_checker
 from .config import Company, Config
 from .db import DB, iso, parse_iso, utcnow
@@ -61,10 +62,8 @@ def settings(cfg: Config) -> dict:
     lv = cfg.settings.get("liveness", default={}) or {}
     return {"after": int(h.get("alert_after_failures", 2)), "threshold": float(h.get("drop_threshold", 0.5)),
             "min_base": int(h.get("drop_min_baseline", 6)),
-            "remind": timedelta(days=float(lv.get("source_reminder_days", 7))),
             "stale_days": float(lv.get("stale_days", 45)), "gap_factor": float(lv.get("stale_gap_factor", 3)),
             "stale_min_dated": int(lv.get("stale_min_dated", 20)),
-            "stale_remind": timedelta(days=float(lv.get("stale_reminder_days", 14))),
             "unchecked_runs": int(lv.get("unchecked_runs", 2)),
             "scan_every": timedelta(days=float(lv.get("page_scan_days", 7))),
             "scan_seconds": float(lv.get("page_scan_seconds", 180)), "enabled": lv.get("enabled", True),
@@ -142,9 +141,15 @@ def _save(db: DB, company: str, source: str, label: str, **f) -> None:
 
 
 def _problem(c: Company, kind: str, summary: str, detail: str, since: str | None, alert_key: str,
-             restore_kv: dict | None = None, restore_row: dict | None = None) -> dict:
+             restore_kv: dict | None = None, restore_row: dict | None = None, *, alert: dict | None = None,
+             items: list[dict] | None = None) -> dict:
+    """`alert`: how the alert clears (alerts.py); `items`: the same for each thing it covers, when several clear apart."""
     p = {"key": c.key, "name": c.name, "checker": c.checker, "kind": kind, "summary": summary, "detail": detail,
          "since": since or iso(), "careers_url": (c.careers_url or [""])[0], "reset_kv": alert_key}
+    if alert:
+        p["alert"] = {"id": alert_key, **alert}
+    if items:
+        p["alerts"] = items
     # what the check saved before raising the alert, put back if the health email fails (restore())
     if restore_kv:
         p["restore_kv"] = restore_kv
@@ -192,10 +197,10 @@ def _count_rules(db, c, sid, what, n, p, now, problems, recovered) -> None:
     key = f"live_alert:{c.key}:{sid}:empty"
     if r and r["empty_since"]:
         if n == 0:
-            if _due(db, key, p["remind"], now):
-                problems.append(_problem(c, "board empty", f"{what} still lists 0 jobs (reminder)",
+            if not db.get(key):  # the email about it failed: raised again
+                problems.append(_problem(c, "board empty", f"{what} still lists 0 jobs",
                                          "It used to list jobs. The board may be dead or replaced by another one.",
-                                         r["empty_since"], key))
+                                         r["empty_since"], key, alert={"rule": "source_empty", "source": sid}))
                 db.set(key, iso(now))
             _save(db, c.key, sid, what, last_count=0)
             return
@@ -208,7 +213,8 @@ def _count_rules(db, c, sid, what, n, p, now, problems, recovered) -> None:
         if streak >= p["after"]:
             problems.append(_problem(c, "board empty", f"{what} now lists 0 jobs (it listed {base})",
                                      "The board may be dead, replaced by another one, or between hiring seasons. "
-                                     "The rest of the company's jobs are still read.", None, key))
+                                     "The rest of the company's jobs are still read.", None, key,
+                                     alert={"rule": "source_empty", "source": sid}))
             db.set(key, iso(now))
             _save(db, c.key, sid, what, empty_since=iso(now), zero_streak=streak, last_count=0)
         else:
@@ -222,7 +228,8 @@ def _count_rules(db, c, sid, what, n, p, now, problems, recovered) -> None:
                       "zero_streak": r["zero_streak"], "drop_streak": r["drop_streak"]}
             problems.append(_problem(c, "board drop", f"{what} fell {100 * (base - n) / base:.0f}% ({base} → {n})",
                                      "More than half of this board's jobs disappeared at once.", None, dkey,
-                                     restore_row=before))
+                                     restore_row=before, alert={"rule": "source_count", "source": sid,
+                                                                "need": base * (1 - p["threshold"])}))
             db.set(dkey, iso(now))
             _save(db, c.key, sid, what, baseline=n, drop_streak=0, zero_streak=0, last_count=n)
         else:
@@ -277,12 +284,12 @@ def _stale_rule(db, c, o, known, p, now, problems, recovered) -> None:
         r = _row(db, c.key, f"stale {sid}")
         if age > limit:
             since = r["stale_since"] if r and r["stale_since"] else iso(now)
-            if _due(db, key, p["stale_remind"], now):
+            if not db.get(key):
                 usual = f"; it usually posts every ~{gap:.0f} days" if gap else ""
                 problems.append(_problem(
                     c, "board stale", f"no new posting on {what} in {age} days{usual}",
                     "The board may have been abandoned, or the company now posts somewhere else: check its careers page.",
-                    since, key))
+                    since, key, alert={"rule": "quiet", "source": f"stale {sid}"}))
                 db.set(key, iso(now))
             _save(db, c.key, f"stale {sid}", what, stale_since=since)
         elif r and r["stale_since"]:
@@ -312,7 +319,8 @@ def unchecked(cfg: Config, db: DB, due: list[Company], processed: set[str]) -> t
         if n >= p["unchecked_runs"] and not (st and st["alert_open"]) and _due(db, akey, timedelta(days=1), utcnow()):
             problems.append(_problem(c, "not checked", f"not checked in the last {n} runs",
                                      "It was due but never processed: skipped at the run time limit, or storing its "
-                                     "jobs failed (see data/logs). Its new postings are not being emailed.", None, akey))
+                                     "jobs failed (see data/logs). Its new postings are not being emailed.", None, akey,
+                                     alert={"rule": "unchecked"}))
             db.set(akey, iso())
     return problems, recovered
 
@@ -432,12 +440,15 @@ def scan_workday_sites(cfg: Config, db: DB, gate) -> list[dict]:
             db.set(key, json.dumps(sorted(sites)))  # first look: a silent baseline
             continue
         new = sorted(sites - set(json.loads(known)) - configured)
+        alerts.seen(db, c.key, "site", sites, scope=host)
         if new:
             akey = f"live_alert:{c.key}:workday-sites"
             problems.append(_problem(c, "new site", f"Workday tenant {host} lists new sites: {', '.join(new)}",
                                      "A new site can hold postings InternWatch doesn't read (Fidelity's 'targeted' "
                                      "held most of its internships). Add it to the config if it has student roles.",
-                                     None, akey, restore_kv={key: known}))
+                                     None, akey, restore_kv={key: known},
+                                     items=[{"id": f"{akey}:{x}", "rule": "site", "item": x, "scope": host,
+                                             "summary": f"Workday tenant {host} lists a new site: {x}"} for x in new]))
             db.set(akey, iso())
         db.set(key, json.dumps(sorted(sites | set(json.loads(known)))))
     return problems
@@ -505,6 +516,8 @@ def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
             new = sorted(new)
             was, mentioned = {_system(k) for k in prev["systems"]}, {_system(k) for k in seen}
             gone = sorted(k for k in configured if _system(k) in was and _system(k) not in mentioned)
+        alerts.seen(db, c.key, "system_new", seen | old_seen, scope="page", needed=2)
+        alerts.back(db, c.key, "system_gone", {_system(k) for k in seen | old_seen}, scope="page")
         if new or gone:
             akey = f"live_alert:{c.key}:moved"
             parts = ([f"now points at {', '.join(new)}"] if new else []) + \
@@ -513,7 +526,12 @@ def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
                                      f"InternWatch reads {', '.join(sorted(configured))}. The jobs may have moved to "
                                      f"another job site: compare {url} with the config.", None, akey,
                                      restore_kv={key: raw or "", key2: raw2 or "",
-                                                 f"page_scan_at:{c.key}": scanned or ""}))
+                                                 f"page_scan_at:{c.key}": scanned or ""},
+                                     items=[{"id": f"{akey}:new:{k}", "rule": "system_new", "item": k, "scope": "page",
+                                             "summary": f"the careers page now points at {k}"} for k in new]
+                                     + [{"id": f"{akey}:gone:{k}", "rule": "system_gone", "item": _system(k), "system": k,
+                                         "scope": "page", "summary": f"the careers page no longer mentions {k}"}
+                                        for k in gone]))
             db.set(akey, iso())
     return problems
 

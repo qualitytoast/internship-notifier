@@ -34,7 +34,7 @@ from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 from urllib.parse import parse_qs, urlsplit
 
-from . import liveness
+from . import alerts, liveness
 from .config import Company, Config
 from .db import DB, iso, parse_iso, utcnow
 from .filters import is_student_role
@@ -155,9 +155,12 @@ def due_restore(db: DB, check: str, key: str) -> dict:
     return {f"blocked:at:{check}:{key}": db.get(f"blocked:at:{check}:{key}") or ""}
 
 
-def alert(db: DB, c: Company, check: str, kind: str, summary: str, detail: str, restore_kv: dict) -> dict:
+def alert(db: DB, c: Company, check: str, kind: str, summary: str, detail: str, restore_kv: dict,
+          items: list[dict] | None = None) -> dict:
+    """`items`: how each thing this alert covers clears (alerts.py), {suffix, rule, summary, …}; suffix names the thing."""
     akey = f"live_alert:{c.key}:{check}"
-    p = liveness._problem(c, kind, summary, detail, None, akey, restore_kv=restore_kv)
+    full = [{"id": f"{akey}:{x['suffix']}", **{k: v for k, v in x.items() if k != "suffix"}} for x in items or []]
+    p = liveness._problem(c, kind, summary, detail, None, akey, restore_kv=restore_kv, items=full)
     db.set(akey, iso())
     return p
 
@@ -245,7 +248,10 @@ def confirm(ctx: Ctx, check: str, label: str, any_job=False) -> list[dict]:
                                   f"{len(report)} job(s) on {label} that InternWatch has never seen: {shown}",
                                   f"Seen on {where} and still missing after today's healthy poll of {c.name}: the "
                                   "company may now post on a board InternWatch doesn't read. Open the link and "
-                                  "check where the posting lives.", {k: raw}))
+                                  "check where the posting lives.", {k: raw},
+                                  [{"suffix": ident, "rule": "posting", "item": ident, "scope": check,
+                                    "summary": f"a job on {label} that InternWatch has never seen: "
+                                               f"'{p['title'] or ident}'"} for ident, p in report]))
     return problems
 
 
@@ -424,6 +430,7 @@ def check_workday(ctx: Ctx) -> list[dict]:
             known = set(json.loads(raw)) if raw else None
             ctx.db.set(key, json.dumps(sorted(sites | (known or set()))))
             done(ctx.db, "workday", host, "ok", ctx.now)
+            alerts.seen(ctx.db, c.key, "site", sites, scope=host)
             if known is None:
                 continue  # first look: a silent baseline
             new = sorted(x for x in sites - known if x.lower() not in configured)
@@ -433,7 +440,9 @@ def check_workday(ctx: Ctx) -> list[dict]:
                     ctx.db, c, "workday-hidden", "new site", f"Workday tenant {host} lists new {which}sites: {', '.join(new)}",
                     "A hidden site (a Disallow line in robots.txt) can hold postings InternWatch doesn't read: American "
                     "Family moved an intern posting to its hidden AmFam-Private site on Oct 24. Add it to the config "
-                    "if it has student roles.", restore_kv))
+                    "if it has student roles.", restore_kv,
+                    [{"suffix": x, "rule": "site", "item": x, "scope": host,
+                      "summary": f"Workday tenant {host} lists a new {which}site: {x}"} for x in new]))
     finally:
         if http is not None:
             http.close()
@@ -542,12 +551,21 @@ def check_pages(ctx: Ctx) -> list[dict]:
             ctx.db.set(skey, json.dumps(state))
             done(ctx.db, "page", key, "ok", ctx.now)
             note_unknown(ctx.db, "page", c, unknown, "its careers pages", ctx.started)
+            if not errors:  # every source was read: what none of them names is gone
+                named = {x for systems, _ in results.values() for x in systems}
+                alerts.seen(ctx.db, key, "system_new", named, scope="moves", needed=2)
+                alerts.back(ctx.db, key, "system_gone", named, scope="moves")
+                alerts.seen(ctx.db, key, "posting", {i for _, ids in results.values() for i in ids}, scope="page")
             if new_sys or gone:
                 parts = ([f"now point at {', '.join(sorted(set(new_sys)))}"] if new_sys else []) + \
                         ([f"no longer mention {', '.join(sorted(set(gone)))}"] if gone else [])
                 problems.append(alert(ctx.db, c, "page", "moved?", f"its careers pages {' and '.join(parts)}",
                                       f"InternWatch reads {', '.join(sorted(known))}. The jobs may have moved to "
-                                      f"another job site: compare {', '.join(results)} with the config.", restore_kv))
+                                      f"another job site: compare {', '.join(results)} with the config.", restore_kv,
+                                      [{"suffix": f"new:{x}", "rule": "system_new", "item": x, "scope": "moves",
+                                        "summary": f"its careers pages now point at {x}"} for x in sorted(set(new_sys))]
+                                      + [{"suffix": f"gone:{x}", "rule": "system_gone", "item": x, "scope": "moves",
+                                          "summary": f"its careers pages no longer mention {x}"} for x in sorted(set(gone))]))
     finally:
         http.close()
     return problems
@@ -647,6 +665,7 @@ def check_archive(ctx: Ctx) -> list[dict]:
             systems = dict(state.get("systems") or {})
             read_copies = dict(state.get("copies") or {})
             new_sys: list[tuple[str, str, str]] = []
+            newest: set[str] = set()
             known = known_systems(ctx, c)
             for page, original, ts in copies:
                 if ts <= read_copies.get(page, ""):
@@ -663,6 +682,7 @@ def check_archive(ctx: Ctx) -> list[dict]:
                 if BOT_CHECK.search(text[:30000]):
                     continue
                 now_sys = sorted(systems_in(text, original, c, al))
+                newest.update(now_sys)
                 before = systems.get(page)
                 systems[page] = sorted(set(now_sys) | set(before or []))
                 if before is not None:
@@ -671,6 +691,8 @@ def check_archive(ctx: Ctx) -> list[dict]:
                          systems=systems, copies=read_copies, since=ctx.now.strftime("%Y%m%d"))
             ctx.db.set(skey, json.dumps(state))
             done(ctx.db, "archive", key, "ok", ctx.now)
+            if newest:  # a newer copy was read: what none of them names is gone
+                alerts.seen(ctx.db, key, "system_new", newest, scope="archive", needed=2)
             if first:
                 continue  # first look: a silent baseline
             note_unknown(ctx.db, "archive", c, unknown, "archived copies of its careers pages", ctx.started)
@@ -678,14 +700,18 @@ def check_archive(ctx: Ctx) -> list[dict]:
                 problems.append(alert(ctx.db, c, "archive-pages", "new page",
                                       f"archive.org saved new student or program pages: {', '.join(new_pages[:5])}",
                                       "A new students, internships or program page is often the first sign of a new "
-                                      "program or job site. Open it and compare with the config.", restore_kv))
+                                      "program or job site. Open it and compare with the config.", restore_kv,
+                                      [{"suffix": u, "rule": "manual", "summary": f"archive.org saved a new page: {u}"}
+                                       for u in new_pages[:5]]))
             if new_sys:
                 shown = ", ".join(sorted({x for _, _, x in new_sys}))
                 page, ts, _ = new_sys[0]
                 problems.append(alert(ctx.db, c, "archive", "moved?",
                                       f"an archived copy of {page} (saved {ts[:4]}-{ts[4:6]}-{ts[6:8]}) points at {shown}",
                                       f"InternWatch reads {', '.join(sorted(known))}. The jobs may have moved to another "
-                                      f"job site: https://web.archive.org/web/{ts}/{page}", restore_kv))
+                                      f"job site: https://web.archive.org/web/{ts}/{page}", restore_kv,
+                                      [{"suffix": x, "rule": "system_new", "item": x, "scope": "archive",
+                                        "summary": f"an archived copy of {pg} points at {x}"} for pg, _, x in new_sys]))
     finally:
         http.close()
     return problems
@@ -749,6 +775,7 @@ def check_job_lists(ctx: Ctx) -> list[dict]:
                 seen = set(json.loads(raw)) if raw else None
                 ctx.db.set(skey, json.dumps(sorted(set(jobs) | (seen or set()))))
                 done(ctx.db, "joblist", key, "ok", ctx.now)
+                alerts.seen(ctx.db, key, "posting", set(jobs) | {f"title:{t}" for t in jobs.values()}, scope="joblist")
                 if seen is None or not jobs:
                     continue  # first read: a silent baseline
                 if conf.get("match") == "title":
@@ -828,7 +855,9 @@ def check_programs(ctx: Ctx) -> list[dict]:
                 shown = ", ".join(f"{u}" + (f" ({t})" if t else "") for u, t in new[:5])
                 problems.append(alert(ctx.db, c, "programs", "new page", f"its site has new student or program pages: {shown}",
                                       "A new students, internships or program page is often the first sign of a new "
-                                      "program or job site. Open it and compare with the config.", restore_kv))
+                                      "program or job site. Open it and compare with the config.", restore_kv,
+                                      [{"suffix": u, "rule": "manual", "summary": f"its site has a new page: {u}"
+                                        + (f" ({t})" if t else "")} for u, t in new[:5]]))
     finally:
         http.close()
     return problems
@@ -849,7 +878,8 @@ def _new_labels(db: DB, c: Company, labels: set[str], what: str, detail: str) ->
     new = sorted(labels - known) if known is not None else []  # first look: a silent baseline
     if not new:
         return []
-    return [alert(db, c, "labels", "new label", f"{what}: {', '.join(new)}", detail, {key: raw or ""})]
+    return [alert(db, c, "labels", "new label", f"{what}: {', '.join(new)}", detail, {key: raw or ""},
+                  [{"suffix": x, "rule": "manual", "summary": f"{what}: {x}"} for x in new])]
 
 
 def check_labels(ctx: Ctx) -> list[dict]:
@@ -929,6 +959,7 @@ def check_parallel(ctx: Ctx) -> list[dict]:
             raw = ctx.db.get(skey)
             state = json.loads(raw) if raw else None
             ids = {j.id for j in jobs}
+            alerts.seen(ctx.db, c.key, "posting", {f"title:{j.title}" for j in jobs}, scope=sid)
             new_state = {"ids": sorted(ids | set((state or {}).get("ids") or [])),
                          "alerted": (state or {}).get("alerted") or []}
             done(ctx.db, "parallel", sid, "ok", ctx.now)
@@ -953,7 +984,10 @@ def check_parallel(ctx: Ctx) -> list[dict]:
                 problems.append(alert(ctx.db, c, "parallel", "posting elsewhere?",
                                       f"{sid} lists {len(found)} matching role(s) InternWatch doesn't have: {shown}",
                                       "InternWatch only watches this board, it doesn't read it. If it keeps posting "
-                                      "roles you want, add it to the company's config.", {skey: raw}))
+                                      "roles you want, add it to the company's config.", {skey: raw},
+                                      [{"suffix": f"{sid}:{norm_title(j.title)}", "rule": "posting", "scope": sid,
+                                        "item": f"title:{j.title}", "summary": f"{sid} lists '{j.title}', a matching role "
+                                                                               "InternWatch doesn't have"} for j, _ in found]))
     finally:
         http.close()
     return problems
@@ -1115,7 +1149,10 @@ def check_listings(ctx: Ctx) -> list[dict]:
                                           f"{src.get('label', name)} links a job site InternWatch doesn't read: {shown}",
                                           "A list maintainer or contributor found a posting there. If it is the "
                                           "company's and carries student roles, add it to the config.",
-                                          {skey: raw or "", **due_restore(ctx.db, "listings", name)}))
+                                          {skey: raw or "", **due_restore(ctx.db, "listings", name)},
+                                          [{"suffix": k, "rule": "list_system", "item": k, "scope": "lists",
+                                            "summary": f"{src.get('label', name)} links a job site InternWatch doesn't "
+                                                       f"read: {k}"} for k in new]))
     finally:
         http.close()
     return problems
@@ -1181,7 +1218,10 @@ def check_getro(ctx: Ctx) -> list[dict]:
                                       f"Getro's copy of its careers page links a job site InternWatch doesn't read: {shown}",
                                       f"{board} copies {c.name}'s jobs from its careers page. The company may now post "
                                       "there; if so and it carries student roles, add it to the config.",
-                                      {skey: raw, **due_restore(ctx.db, "getro", key)}))
+                                      {skey: raw, **due_restore(ctx.db, "getro", key)},
+                                      [{"suffix": k, "rule": "list_system", "item": k, "scope": "getro",
+                                        "summary": f"Getro's copy of its careers page links a job site InternWatch "
+                                                   f"doesn't read: {k}"} for k in elsewhere]))
     finally:
         http.close()
     return problems

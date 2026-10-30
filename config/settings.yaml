@@ -24,15 +24,12 @@ health:
   alert_after_failures: 2        # consecutive failed polls before a health email (retries happen first)
   drop_threshold: 0.5            # alert if the job count falls by more than this fraction …
   drop_min_baseline: 6           # … from a baseline of at least this many jobs
-  reminder_hours: 24             # remind about a still-open problem this often
 
 liveness:                        # boards that go dead, get abandoned or are replaced (src/internwatch/liveness.py)
   enabled: true
-  source_reminder_days: 7        # remind about a board that stays empty this often
   stale_days: 45                 # a board with no new posting for this long …
   stale_gap_factor: 3            # … and for 3× its usual gap between postings is reported as stale
   stale_min_dated: 20            # (only boards listing at least this many dated postings: small boards post in bursts)
-  stale_reminder_days: 14
   unchecked_runs: 2              # a due company never processed in this many runs in a row is reported
   page_scan_days: 7              # careers pages and Workday sites are compared this often (daily runs only) …
   page_scan_seconds: 180         # … within this time budget per run

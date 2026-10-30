@@ -296,7 +296,8 @@ class CrossCheck:
                 in_fields = any(k in (r["category"] or "").lower() for k in YOUR_CATEGORIES)
                 if not hit["matched"] and in_fields and hit["removed_at"] is None:
                     reasons = json.loads(hit["reasons"] or "[]")
-                    res.misses.append({"company": comp.name, "title": r["title"], "url": hit["url"] or r["url"],
+                    res.misses.append({"company": comp.name, "key": comp.key, "how": "filtered", "title": r["title"],
+                                       "url": hit["url"] or r["url"],
                                        "reason": f"seen by the checker but rejected by your filters ({'; '.join(reasons) or 'no reason'})",
                                        "source": r["source"], "row_key": r["row_key"]})
                     self._set(r, "filtered", f"matched by {how}")
@@ -306,7 +307,7 @@ class CrossCheck:
             first_seen = parse_iso(r["first_seen"])
             last_ok = parse_iso(st["last_success"])
             if first_seen and now - first_seen >= self.grace and last_ok and last_ok >= first_seen + timedelta(minutes=30):
-                res.misses.append({"company": comp.name, "title": r["title"], "url": r["url"],
+                res.misses.append({"company": comp.name, "key": comp.key, "how": "never", "title": r["title"], "url": r["url"],
                                    "reason": f"listed on Simplify {r['first_seen']}; the checker polled since "
                                              f"({st['last_success']}) and never saw it", "source": r["source"],
                                    "row_key": r["row_key"]})

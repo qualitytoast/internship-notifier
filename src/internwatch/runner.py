@@ -26,7 +26,7 @@ from zoneinfo import ZoneInfo
 
 import httpx
 
-from . import emails, liveness, moves
+from . import alerts, emails, liveness, moves
 from .adapters import get_checker
 from .adapters.base import FetchContext, dedupe
 from .config import Company, Config
@@ -534,7 +534,8 @@ class Runner:
             s.problems.append({"key": c.key, "name": c.name, "checker": c.checker, "kind": o.error_kind or "shape",
                                "summary": f"the daily full scan failed {n} times in a row (quick scans still run)",
                                "detail": (o.error or o.degraded or "")[:400], "since": now,
-                               "careers_url": (c.careers_url or [""])[0], "reset_kv": f"full_alert:{c.key}"})
+                               "careers_url": (c.careers_url or [""])[0], "reset_kv": f"full_alert:{c.key}",
+                               "alert": {"id": f"full:{c.key}", "rule": "full"}})
             self.db.set(f"full_alert:{c.key}", now)
 
     # ------------------------------------------------------------------------------------------
@@ -572,8 +573,22 @@ class Runner:
             s.email_errors.append(f"{kind}: {error}")
         return sent or not ready or not opts.send
 
+    def _update_alerts(self, s: RunSummary) -> tuple[list[dict], list[dict]]:
+        """Bring the list of open alerts up to date. Returns the problems and misses a HEALTH email has yet to tell
+        about. A bug here must never cost the run's emails: the alerts of this run then wait for the next one."""
+        try:
+            with self.db.tx():
+                alerts.start(self.cfg, self.db)
+                fresh = alerts.record(self.db, s.problems, s.misses)
+                alerts.sweep(self.cfg, self.db)
+            return fresh
+        except Exception:  # noqa: BLE001 — see above
+            log.exception("alerts: the list could not be updated")
+            return s.problems, s.misses
+
     def _notify(self, s: RunSummary, first_run: bool, opts: RunOptions) -> None:
         db, now = self.db, iso()
+        fresh, new_misses = self._update_alerts(s)
         if first_run and s.seeded:
             rows = db.open_matches()
             failed = [self.cfg.company(k).name for k in s.failed if k in {c.key for c in self.cfg.companies}]
@@ -594,11 +609,14 @@ class Runner:
                 db.mark_notified(rows, now)
                 db.set("last_digest_at", now)
                 db.set("last_digest", datetime.now(self.tz).date().isoformat())
+                alerts.mark_told(db)
         elif rows:
             if self._deliver("new", emails.new_postings(self.cfg, rows), opts, s):
                 db.mark_notified(rows, now)
-        if s.problems or s.misses or (s.recovered and not first_run):
-            if not self._deliver("health", emails.health(self.cfg, s.problems, s.recovered, s.misses), opts, s):
+        if fresh or new_misses:  # the morning email repeats every open alert; this one tells about new ones, once
+            if self._deliver("health", emails.health(self.cfg, fresh, [], new_misses), opts, s):
+                alerts.mark_sent(db)
+            else:
                 self._reopen_alerts(s)
 
     def _reopen_alerts(self, s: RunSummary) -> None:
@@ -623,6 +641,7 @@ class Runner:
             if self._deliver("digest", build_digest(self.cfg, self.db), opts, s):
                 self.db.set("last_digest", today)
                 self.db.set("last_digest_at", built_at)  # untracked roles up to here have been reported
+                alerts.mark_told(self.db)
         rep_day = int(self.cfg.settings.get("email", "report_weekday", default=0))
         rep_hour = int(self.cfg.settings.get("email", "report_hour", default=8))
         last = self.db.get("last_report")
@@ -640,9 +659,9 @@ def build_digest(cfg: Config, db: DB, rows=None):
     new_rows = db.matches_first_seen_since(since) if rows is None else rows
     last = db.get("last_digest_at") or since
     untracked = CrossCheck(cfg, db).untracked_for_digest(min(last, since))
-    problems = []
-    names = {c.key: c.name for c in cfg.companies}
-    for r in db.q("SELECT * FROM company_state WHERE alert_open=1"):
-        problems.append({"name": names.get(r["company"], r["company"]), "summary": (r["last_error"] or "")[:160]})
-    misses = [dict(r) for r in db.q("SELECT company, title FROM simplify_rows WHERE status='missed' AND resolved_at>=?", since)]
-    return emails.digest(cfg, new_rows, untracked, misses, problems, morning=rows is not None)
+    try:
+        open_alerts, resolved = alerts.for_email(db)
+    except Exception:  # noqa: BLE001 — the roles still go out
+        log.exception("alerts: the list could not be read")
+        open_alerts, resolved = None, []
+    return emails.digest(cfg, new_rows, untracked, open_alerts, resolved, morning=rows is not None)

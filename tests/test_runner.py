@@ -77,7 +77,8 @@ def test_failures_alert_after_retry_then_recover(make_cfg):
     assert s.problems and s.problems[0]["kind"] == "error"
     assert "[InternWatch HEALTH]" in emails(db, "health")[-1]["subject"]
     s = r.run(force)
-    assert s.recovered and "recovered" in emails(db, "health")[-1]["subject"]
+    assert s.recovered and len(emails(db, "health")) == 1  # the morning email says so, not another HEALTH email
+    assert db.one("SELECT state FROM alerts WHERE company='acme'")["state"] == "resolved"
 
 
 def test_removed_jobs_and_reposts(make_cfg):
