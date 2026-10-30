@@ -191,3 +191,38 @@ def test_a_role_on_a_second_site_arrives_once_as_a_repost(make_cfg):
     assert s.new_matches == 2
     assert db.job("visa", twin.id)["repost_of"] == seen.id and db.job("visa", new.id)["repost_of"] is None
     assert r.run(opts).new_matches == 0
+
+
+# ---------------------------------------------------------------------------------------------
+# weekly checks moved to daily
+
+DAILY = RunOptions(daily=True, retry_delay=0, crosscheck=False, send=False, scheduled_mail=True)
+
+
+def test_the_morning_email_carries_coverage_and_no_coverage_email_goes_out(make_cfg, monkeypatch):
+    import email
+    from internwatch import liveness, moves
+    monkeypatch.setattr(liveness, "scan_pages", lambda *a, **kw: [])
+    monkeypatch.setattr(moves, "run", lambda *a, **kw: [])
+    cfg = make_cfg([company("acme", name="Acme"), company("beta", name="Beta")])
+    db = DB(cfg.settings.path("db"))
+    a = [job("1", "Engineer")]
+    r = Runner(cfg, db=db, checker_fn=FakeChecker({"acme": [a, a], "beta": [[job("2", "Engineer")], FetchError("HTTP 503"), FetchError("HTTP 503")]}))
+    r.run(DAILY)
+    r.run(DAILY)
+    assert not db.q("SELECT * FROM emails WHERE kind='coverage'")
+    row = db.q("SELECT * FROM emails WHERE kind='morning' ORDER BY id")[-1]
+    msg = email.message_from_bytes(open(row["path"], "rb").read())
+    names = [p.get_filename() for p in msg.walk() if p.get_filename()]
+    assert names == ["coverage.html"]
+    assert "1 of 2 checkers healthy; the full table is attached (coverage.html)." in open(row["path"].replace(".eml", ".html")).read()
+
+
+def test_only_archive_org_stays_weekly():
+    import inspect
+    from internwatch import moves
+    picks = {name: inspect.getsource(fn) for name, fn in moves.CHECKS}
+    assert 'pick(ctx.db, "archive", sorted(paths), 7, ctx.now)' in picks["archive"]
+    for name, every in (("workday", 1), ("page", 1), ("programs", 1), ("labels", 1), ("listings", 1), ("getro", 1), ("parallel", 1)):
+        assert f", {every}, ctx.now)" in picks[name], name
+    assert [n for n, _ in moves.CHECKS][-1] == "archive"  # the slowest read goes last

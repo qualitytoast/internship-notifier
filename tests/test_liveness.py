@@ -148,14 +148,16 @@ def test_a_careers_page_that_points_at_a_new_job_site(make_cfg, memdb):
     moved = '<a href="https://jobs.ashbyhq.com/acme-inc">Open roles</a>'
     problems = liveness.scan_pages(cfg, memdb, PageHttp({url: moved}), budget_end=float("inf"))
     assert problems[0]["kind"] == "moved?"
-    assert problems[0]["summary"] == ("the careers page now points at ashby:board=acme-inc and no longer mentions "
-                                      "greenhouse:board=acme")
+    assert problems[0]["summary"] == "the careers page now points at ashby:board=acme-inc"
+    memdb.set("page_scan_at:acme", "")
+    problems = liveness.scan_pages(cfg, memdb, PageHttp({url: moved}), budget_end=float("inf"))  # gone two reads in a row
+    assert [p["summary"] for p in problems] == ["the careers page no longer mentions greenhouse:board=acme"]
     memdb.set("page_scan_at:acme", "")
     assert liveness.scan_pages(cfg, memdb, PageHttp({url: RuntimeError("bot wall")}), float("inf")) == []
     retry = PageHttp({url: moved})
     assert liveness.scan_pages(cfg, memdb, retry, float("inf")) == [] and retry.calls == [url]  # the next morning
     later = PageHttp({url: moved})
-    assert liveness.scan_pages(cfg, memdb, later, float("inf")) == [] and later.calls == []  # this week's look is done
+    assert liveness.scan_pages(cfg, memdb, later, float("inf")) == [] and later.calls == []  # today's look is done
 
 
 def test_careers_pages_accept_any_content_type(make_cfg, memdb):
@@ -236,6 +238,7 @@ def test_a_configured_portal_is_gone_only_once_no_portal_of_its_system_is_left(m
     ca = '<a href="https://cancareers-yelp.icims.com/jobs/2/y/job">y</a>'
     assert _look(cfg, memdb, c, us + ca) == []
     assert _look(cfg, memdb, c, ca) == []  # its first results are all Canadian this week: still on iCIMS
+    assert _look(cfg, memdb, c, "<html></html>") == []  # gone once: it could flip back tomorrow
     assert [p["summary"] for p in _look(cfg, memdb, c, "<html></html>")] == [
         "the careers page no longer mentions icims:portal=uscareers-yelp.icims.com"]
     assert _look(cfg, memdb, c, "<html></html>") == []  # said once
@@ -265,9 +268,9 @@ def test_last_weeks_looks_carry_over_without_false_alerts_or_a_blank_week(make_c
     # Eightfold link, which that look couldn't tell apart or see, are taken as they are now
     assert [(p["key"], p["summary"]) for p in problems] == [("aqr", "the careers page now points at ashby:board=aqr")]
     assert memdb.get("page_systems:booking") == '["icims:"]'
-    assert json.loads(memdb.get("page_systems_v2:booking")) == {
-        "systems": ["icims:portal=external-x.icims.com", "icims:portal=internal-x.icims.com"],
-        "portals": ["icims:portal=external-x.icims.com", "icims:portal=internal-x.icims.com"]}
+    state = json.loads(memdb.get("page_systems_v2:booking"))
+    assert (state["systems"], state["portals"]) == (["icims:portal=external-x.icims.com", "icims:portal=internal-x.icims.com"],
+                                                    ["icims:portal=external-x.icims.com", "icims:portal=internal-x.icims.com"])
     for k in ("booking", "aqr", "capone"):
         memdb.set(f"page_scan_at:{k}", "")
     pages[a.careers_url[0]] += '<a href="https://campus-x.icims.com/">c</a>'
@@ -632,3 +635,48 @@ def test_internships_closing_one_by_one_do_not_alert():
     assert liveness.vanished([0, 3, 20, 20]) is None    # 85% gone: not "nearly all"
     assert liveness.vanished([0, 0, 0, 20]) == 20
     assert liveness.vanished([0, 0]) is None
+
+
+def test_a_page_that_flips_back_and_forth_alerts_once(make_cfg, memdb):
+    c = company("acme", checker="greenhouse", settings={"board": "acme"})
+    cfg = make_cfg([c])
+    both = '<a href="https://boards.greenhouse.io/acme">a</a><a href="https://jobs.ashbyhq.com/acme-inc">b</a>'
+    only = '<a href="https://boards.greenhouse.io/acme">a</a>'
+    none = "<html></html>"
+    assert _look(cfg, memdb, c, only) == []
+    assert [p["summary"] for p in _look(cfg, memdb, c, both)] == ["the careers page now points at ashby:board=acme-inc"]
+    assert _look(cfg, memdb, c, only) == []
+    assert _look(cfg, memdb, c, both) == []                       # the same link back: said once
+    assert [_look(cfg, memdb, c, none), _look(cfg, memdb, c, only), _look(cfg, memdb, c, none)] == [[], [], []]  # never twice in a row
+    assert len(_look(cfg, memdb, c, none)) == 1                   # twice in a row: said
+    assert [_look(cfg, memdb, c, only), _look(cfg, memdb, c, none), _look(cfg, memdb, c, none)] == [[], [], []]  # and said once
+
+
+def test_the_careers_pages_are_read_daily_and_one_that_refuses_waits_a_week(make_cfg, memdb):
+    from datetime import timedelta
+    c = company("acme", checker="greenhouse", settings={"board": "acme"})
+    cfg = make_cfg([c])
+    url = c.careers_url[0]
+    page = '<a href="https://boards.greenhouse.io/acme">a</a>'
+
+    def read(answer, days_ago=0):
+        http = PageHttp({url: answer})
+        liveness.scan_pages(cfg, memdb, http, float("inf"))
+        return http.calls == [url]
+
+    def age(days):
+        memdb.set("page_scan_at:acme", iso(utcnow() - timedelta(days=days, hours=2)))
+
+    assert read(page)
+    assert not read(page)              # the same morning: read already
+    age(1)
+    assert read(page)                  # the next morning, even a little earlier in the day
+    age(1)
+    assert read(FetchError("HTTP 403 for GET x"))
+    assert read(FetchError("HTTP 403 for GET x"))   # asked once more
+    age(3)
+    assert not read(page)              # refused twice: it waits
+    age(7)
+    assert read(page)                  # answers again …
+    age(1)
+    assert read(page)                  # … and is daily again

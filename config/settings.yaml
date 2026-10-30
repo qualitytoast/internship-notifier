@@ -2,11 +2,9 @@
 
 email:
   to: "nathan.m.hung@gmail.com"        # where every email goes
-  subject_prefix: InternWatch    # subjects: [InternWatch] new roles, [InternWatch Digest], [InternWatch HEALTH], [InternWatch COVERAGE]
+  subject_prefix: InternWatch    # subjects: [InternWatch] new roles, [InternWatch Digest], [InternWatch HEALTH]
   timezone: America/Chicago      # for the digest/report schedule and dates shown in emails
   digest_hour: 8                 # daily digest goes out with the first run at/after this local hour
-  report_weekday: 0              # weekly coverage report day (0 = Monday)
-  report_hour: 8
 
 schedule:
   # A run starts every 15 minutes (systemd timer). Each company is polled only when due; after
@@ -30,7 +28,7 @@ liveness:                        # boards that go dead, get abandoned or are rep
   quiet_days: 45                 # a board, of any size, with no new job id for this long is reported
   bleed_days: 30                 # a company under half its highest count of this many days is reported
   unchecked_runs: 2              # a due company never processed in this many runs in a row is reported
-  page_scan_days: 7              # careers pages and Workday sites are compared this often (daily runs only) …
+  page_scan_days: 1              # careers pages are compared this often, in daily runs (one that refuses: weekly) …
   page_scan_seconds: 180         # … within this time budget per run
   # Companies whose careers page answers scripts with a bot check, HTTP 400 or a robots.txt block. The weekly page
   # check leaves them out; src/internwatch/moves.py watches where else they could start posting instead, and its
@@ -39,7 +37,7 @@ liveness:                        # boards that go dead, get abandoned or are rep
             doordash, dropbox, epic-games, expedia, fidelity, general-motors, goldman-sachs, gts, hudson-river-trading,
             liberty-mutual, meta, nutanix, openai, paypal, pinterest, pitchbook, schonfeld, seatgeek, servicenow,
             tower-research, uber, ukg, veeva, whatnot]
-  blocked_scan_seconds: 150      # their checks' time budget in each daily run (before the emails)
+  blocked_scan_seconds: 300      # their checks' time budget in each daily run (before the emails)
   extra_tenants:                 # Workday tenants of a parent company, where a new site would show (moves.py W)
     pitchbook: [morningstar.wd5.myworkdayjobs.com]
   wp_pages:                      # WordPress sites whose /wp-json/wp/v2/pages answers: every page is read (moves.py P)
@@ -48,7 +46,7 @@ liveness:                        # boards that go dead, get abandoned or are rep
     liberty-mutual: https://jobs.libertymutualgroup.com
   id_pages:                      # pages that link postings by hand: their job ids are compared too (moves.py P)
     tower-research: [https://tower-research.com/internships/]
-  job_lists:                     # the job list a company publishes itself (moves.py J): weekly unless every_days says
+  job_lists:                     # the job list a company publishes itself (moves.py J): daily unless every_days says
     # otherwise; match: title where its ids aren't InternWatch's; any_job: report any posting, not only student ones
     akuna-capital: {url: "https://akunacapital.com/wp-content/uploads/akuna_jobs.json", every_days: 1}
     american-family: {url: "https://careers.amfam.com/sitemap.xml"}
@@ -72,7 +70,7 @@ liveness:                        # boards that go dead, get abandoned or are rep
     - {company: liberty-mutual, checker: icims, settings: {portal: "https://campus-libertymutual.icims.com"}}
     - {company: seatgeek, checker: greenhouse, settings: {board: sgcampusrecruiting}}
     - {company: ukg, checker: ripplematch, settings: {company_id: 926}}
-  listings:                      # third-party lists and board registries, read weekly (moves.py L)
+  listings:                      # third-party lists and board registries, read daily (moves.py L)
     - {name: simplify, format: simplify, label: SimplifyJobs,
        url: "https://raw.githubusercontent.com/SimplifyJobs/Summer2027-Internships/dev/.github/scripts/listings.json"}
     - {name: vansh, format: simplify, label: "vanshb03's list",

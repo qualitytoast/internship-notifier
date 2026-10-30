@@ -11,12 +11,13 @@
    Nothing is judged while the company itself is failing or its zero/drop alert is out (that alert already says it).
 2. Companies not checked: due in `unchecked_runs` runs in a row but never processed (skipped at the run deadline, a
    crash while storing its jobs, a company added and never run).
-3. Weekly, in daily runs with time to spare: each company's careers page is read once and the hiring systems it
+3. In daily runs, with time to spare: each company's careers page is read once and the hiring systems it
    points at (detect.from_text, plus links to an Eightfold site) are compared with the last time, each iCIMS portal,
    Avature portal and Eightfold domain on its own; a new one that isn't configured, or a configured one it no longer
-   mentions (for those three: no portal of it at all), alerts ("moved"). A portal the page linked on an earlier look,
+   mentions (for those three: no portal of it at all) on two reads in a row, alerts ("moved"). Every system a page ever
+   named is remembered, so a page that flips back and forth alerts once. A portal the page linked on an earlier look,
    or that a stored posting links, is not new. A read the site refused (bot check, 5xx, timeout) is retried once,
-   first the next morning; robots.txt blocks never are. Workday tenants' robots.txt, already cached by the checks (no
+   first the next morning, then waits REFUSED_DAYS; robots.txt blocks never are retried. Workday tenants' robots.txt, already cached by the checks (no
    request), is compared with the configured sites: a new site alerts. The first look at a page or tenant is a
    silent baseline.
 Every alert goes into the run's health email with reset_kv="live_alert:…", so an email that fails is sent again, and
@@ -57,6 +58,7 @@ SLICES = {"apple": ("Apple's Internships team", lambda j: j.employment_type.star
 IDKEYS = ("board", "site", "host", "tenant", "account", "subdomain", "company_id")
 # lists that are mostly student roles: they fall at every season's end, so a fall says nothing about the board
 STUDENT_LISTS = ("amazon", "apple", "janestreet_programs", "program_pages")
+REFUSED_DAYS = 7  # how long a careers page that refused waits (moves.REFUSED_DAYS for the checks there)
 
 
 def settings(cfg: Config) -> dict:
@@ -66,7 +68,7 @@ def settings(cfg: Config) -> dict:
             "min_base": int(h.get("drop_min_baseline", 6)),
             "quiet_days": float(lv.get("quiet_days", 45)), "bleed_days": int(lv.get("bleed_days", 30)),
             "unchecked_runs": int(lv.get("unchecked_runs", 2)),
-            "scan_every": timedelta(days=float(lv.get("page_scan_days", 7))),
+            "scan_every": timedelta(days=float(lv.get("page_scan_days", 1))),
             "scan_seconds": float(lv.get("page_scan_seconds", 180)), "enabled": lv.get("enabled", True),
             "blocked_seconds": float(lv.get("blocked_scan_seconds", 150))}
 
@@ -518,8 +520,8 @@ def scan_workday_sites(cfg: Config, db: DB, gate) -> list[dict]:
 
 
 def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
-    """Read careers pages not looked at for `page_scan_days`, oldest first, until `budget_end` (time.monotonic()).
-    A page whose read the site refused goes first the next morning."""
+    """Read careers pages not looked at today, oldest first, until `budget_end` (time.monotonic()). A page whose read
+    the site refused goes first the next morning, and if it refuses again waits REFUSED_DAYS."""
     from .detect import from_text  # detect imports the runner
     from .moves import outcome  # moves imports this module
     p = settings(cfg)
@@ -532,7 +534,8 @@ def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
             continue
         last = parse_iso(db.get(f"page_scan_at:{c.key}") or None)
         retry = bool(db.get(f"page_scan_retry:{c.key}"))
-        if retry or last is None or now - last >= p["scan_every"]:
+        every = timedelta(days=REFUSED_DAYS) if db.get(f"page_scan_refused:{c.key}") else p["scan_every"]
+        if retry or last is None or now - last >= every - timedelta(hours=12):  # by hand, runs drift by some hours
             todo.append((not retry, last or now - timedelta(days=3650), c))
     for *_, c in sorted(todo, key=lambda x: x[:2]):
         if time.monotonic() > budget_end:
@@ -546,16 +549,19 @@ def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
             text = http.get_text(url, headers={"Accept": "text/html,*/*;q=0.8"})
         except Exception as e:  # noqa: BLE001 — an unreadable page (bot wall, robots) is only logged
             log.info("liveness: careers page of %s not read: %s", c.key, str(e)[:160])
-            if outcome(e) == "refused" and not retried:
+            if outcome(e) == "refused" and not retried and not db.get(f"page_scan_refused:{c.key}"):
                 db.set(rkey, "1")  # a bot check, 5xx or timeout: read again first thing next morning
             else:  # robots.txt, 404, or refused again: its next turn is next week
                 db.set(f"page_scan_at:{c.key}", iso(now))
+                db.set(f"page_scan_refused:{c.key}", "1")
                 if retried:
                     db.set(rkey, "")
             continue
         db.set(f"page_scan_at:{c.key}", iso(now))  # before the parsing: a page it chokes on must not stay due
         if retried:
             db.set(rkey, "")
+        if db.get(f"page_scan_refused:{c.key}"):
+            db.set(f"page_scan_refused:{c.key}", "")
         found = from_text(text, url)
         old_seen = {system_key(x.checker, x.settings) for x in found}
         seen = page_systems(text, found)
@@ -563,8 +569,20 @@ def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
         raw, raw2 = db.get(key), db.get(key2)
         prev = json.loads(raw2) if raw2 else None
         db.set(key, json.dumps(sorted(old_seen)))  # as before portals counted on their own
-        db.set(key2, json.dumps({"systems": sorted(seen), "portals": sorted(  # every portal it ever linked
-            {k for k in seen if _portal(k)} | set(prev["portals"] if prev else []))}))
+        ever = set((prev or {}).get("ever") or (prev or {}).get("systems") or [])  # flipping pages alert once
+        told = set((prev or {}).get("told") or [])
+        absent: dict[str, int] = {}
+        gone_now: list[str] = []
+        if prev is not None:
+            configured = config_keys(c, page_key)
+            was, mentioned = {_system(k) for k in ever}, {_system(k) for k in seen}
+            absent = {k: (prev.get("absent") or {}).get(k, 0) + 1 for k in configured
+                      if _system(k) in was and _system(k) not in mentioned}
+            gone_now = sorted(k for k, n in absent.items() if n >= 2 and k not in told)
+        db.set(key2, json.dumps({"systems": sorted(seen), "ever": sorted(ever | seen), "absent": absent,
+                                 "told": sorted(told | set(gone_now)),
+                                 "portals": sorted(  # every portal it ever linked
+                                     {k for k in seen if _portal(k)} | set(prev["portals"] if prev else []))}))
         if prev is None and (raw is None or raw == ""):
             continue  # first look: a silent baseline
         if prev is None:  # the first look since portals count on their own: compared with the last look as before
@@ -572,13 +590,11 @@ def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
             new = sorted(old_seen - before - configured)
             gone = sorted((before & configured) - old_seen)
         else:
-            configured = config_keys(c, page_key)
-            new = seen - set(prev["systems"]) - set(prev["portals"]) - configured
+            new = seen - ever - set(prev["portals"]) - configured
             if any(_portal(k) for k in new):
                 new -= posting_portals(db, c.key)  # InternWatch already reads postings there
             new = sorted(new)
-            was, mentioned = {_system(k) for k in prev["systems"]}, {_system(k) for k in seen}
-            gone = sorted(k for k in configured if _system(k) in was and _system(k) not in mentioned)
+            gone = gone_now
         alerts.seen(db, c.key, "system_new", seen | old_seen, scope="page", needed=2)
         alerts.back(db, c.key, "system_gone", {_system(k) for k in seen | old_seen}, scope="page")
         if new or gone:

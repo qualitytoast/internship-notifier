@@ -4,7 +4,9 @@ The companies are named in settings `liveness.blocked`: the 31 whose careers pag
 an HTTP 400 or a robots.txt block, so the weekly page check (liveness.scan_pages) never sees where they point. Only
 those companies are read here. Nothing here stores a job or touches a poll: every check compares what it sees now
 with its own last look and raises a health alert for what is new. The first look of each check is a silent
-baseline. The checks run once a morning in daily runs, within `blocked_scan_seconds`, before the emails.
+baseline. The checks run once a morning in daily runs, within `blocked_scan_seconds`, before the emails: every one of
+them every morning except archive.org's (spread over the week: a copy only changes when someone saves one, and it
+throttles scripts), and a read a site refused waits a week.
 
   W  Workday tenants' robots.txt: hidden sites (Disallow lines), plus tenants of a parent company (extra_tenants)
   P  the careers page and any WordPress pages (/wp-json/wp/v2/pages): job systems they name, keyed per iCIMS
@@ -41,6 +43,8 @@ from .filters import is_student_role
 from .models import CheckTimeout, Job, RobotsBlocked
 
 log = logging.getLogger(__name__)
+
+REFUSED_DAYS = 7  # how long a read that a site refused waits, in a check that runs daily
 
 # a page address or title that reads like a students, internships or program page (not "internaliser", "residents")
 STUDENT = re.compile(r"\bintern(?:s|ship|ships)?\b|\bco-?ops?\b|\bstudents?\b|\bcampus\b|early[-_ ]?(?:career|talent)|"
@@ -109,16 +113,24 @@ class Ctx:
 
 # when each (check, company) is read ---------------------------------------------------------
 
+def refused_last(db: DB, check: str, key: str) -> bool:
+    history = load(db, f"blocked:rate:{check}:{key}", [])
+    return bool(history) and not history[-1][1]
+
+
 def pick(db: DB, check: str, keys: list[str], every_days: float, now) -> list[str]:
     """Due for `check` today: yesterday's refused reads (outside the quota), then the oldest due ones, at most a
-    1/every_days share of them a day so a weekly check spreads over the week (never-read ones first)."""
+    1/every_days share of them a day so a weekly check spreads over the week (never-read ones first). A read that was
+    refused waits REFUSED_DAYS, whatever the check's pace: asking a site that refuses every day teaches nothing and gives
+    it a reason to block the feed read from the same host. It goes back to the check's pace once it answers."""
     retry = [k for k in keys if db.get(f"blocked:retry:{check}:{k}")]
     due = []
     for k in keys:
         if k in retry:
             continue
         last = parse_iso(db.get(f"blocked:at:{check}:{k}") or None)
-        if last is None or now - last >= timedelta(days=every_days) - timedelta(hours=12):
+        days = max(every_days, REFUSED_DAYS) if refused_last(db, check, k) else every_days
+        if last is None or now - last >= timedelta(days=days) - timedelta(hours=12):
             due.append((last.isoformat() if last else "", k))
     quota = len(due) if every_days <= 1 else math.ceil(len(keys) / every_days)
     return retry + [k for _, k in sorted(due)[:quota]]
@@ -137,9 +149,10 @@ def out_of_budget(e: Exception) -> bool:
 
 
 def done(db: DB, check: str, key: str, result: str, now) -> None:
-    """Record a read: ok, failed, or refused (a first refusal is retried the next morning; a second one waits)."""
+    """Record a read: ok, failed, or refused (a first refusal is retried the next morning; a second one waits, and
+    one that is still refused after its wait waits again, with no retry)."""
     rkey = f"blocked:retry:{check}:{key}"
-    if result == "refused" and not db.get(rkey):
+    if result == "refused" and not db.get(rkey) and not refused_last(db, check, key):
         db.set(rkey, "1")
     else:
         db.set(rkey, "")
@@ -394,14 +407,14 @@ def workday_robots_sites(text: str) -> tuple[set[str], set[str]]:
 
 
 def check_workday(ctx: Ctx) -> list[dict]:
-    """W. A new hidden site (Disallow line) on a tenant of the 31, or any new site on a tenant that the weekly
-    Workday check can't see (myworkdaysite.com hosts, parent companies). Weekly per tenant. robots.txt comes from
+    """W. A new hidden site (Disallow line) on a tenant of the 31, or any new site on a tenant that the daily
+    Workday check can't see (myworkdaysite.com hosts, parent companies). robots.txt comes from
     the checks' cache when it is fresh, else one plain GET that leaves the cache as it is."""
     tenants = workday_tenants(ctx)
     problems: list[dict] = []
     http = None
     try:
-        for host in pick(ctx.db, "workday", sorted(tenants), 7, ctx.now):
+        for host in pick(ctx.db, "workday", sorted(tenants), 1, ctx.now):
             if ctx.out_of_time():
                 break
             c, configured, covered = tenants[host]
@@ -507,14 +520,15 @@ def page_sources(ctx: Ctx, c: Company) -> list[tuple[str, str]]:
 
 
 def check_pages(ctx: Ctx) -> list[dict]:
-    """P. Weekly per company, spread over the week: the job systems each source names (an iCIMS portal, an Avature
-    site and an Eightfold domain each on their own; a link to a configured host counts as that system) and the job
-    ids it links. A source's first read is a silent baseline. New job ids wait for confirm()."""
+    """P. Daily: the job systems each source names (an iCIMS portal, an Avature site and an Eightfold domain each on
+    their own; a link to a configured host counts as that system) and the job ids it links. A source's first read is
+    a silent baseline. New job ids wait for confirm(). Every system a source ever named is remembered, so a page that
+    flips back and forth alerts once, and one that stops naming a configured system alerts after two reads in a row."""
     problems: list[dict] = []
     al = aliases(ctx.cfg)
     http = ctx.http()
     try:
-        for key in pick(ctx.db, "page", sorted(k for k, c in ctx.comps.items() if page_sources(ctx, c)), 7, ctx.now):
+        for key in pick(ctx.db, "page", sorted(k for k, c in ctx.comps.items() if page_sources(ctx, c)), 1, ctx.now):
             if ctx.out_of_time():
                 break
             c = ctx.comps[key]
@@ -542,11 +556,17 @@ def check_pages(ctx: Ctx) -> list[dict]:
             new_sys, gone, unknown = [], [], {}
             for url, (systems, ids) in results.items():
                 before = state.get(url)
-                state[url] = {"systems": systems, "ids": sorted(set(ids) | set((before or {}).get("ids") or []))}
+                ever = set((before or {}).get("ever") or (before or {}).get("systems") or [])
+                absent = {x: ((before or {}).get("absent") or {}).get(x, 0) + 1 for x in ever
+                          if x in known and x not in systems}
+                told = set((before or {}).get("told") or [])
+                gone_now = [x for x, n in absent.items() if n >= 2 and x not in told]
+                state[url] = {"systems": systems, "ids": sorted(set(ids) | set((before or {}).get("ids") or [])),
+                              "ever": sorted(ever | set(systems)), "absent": absent, "told": sorted(told | set(gone_now))}
                 if before is None:
                     continue  # this source's first read: a silent baseline
-                new_sys += [x for x in systems if x not in before["systems"] and x not in known]
-                gone += [x for x in before["systems"] if x in known and x not in systems]
+                new_sys += [x for x in systems if x not in ever and x not in known]
+                gone += gone_now
                 unknown.update({i: t for i, t in ids.items() if i not in before["ids"] and not is_stored(i, toks)})
             ctx.db.set(skey, json.dumps(state))
             done(ctx.db, "page", key, "ok", ctx.now)
@@ -746,7 +766,7 @@ def title_stored(title: str, stored: set[str]) -> bool:
 
 
 def check_job_lists(ctx: Ctx) -> list[dict]:
-    """J. The job list a company publishes itself (a sitemap of job pages, Akuna's job file), compared with every
+    """J. Daily: the job list a company publishes itself (a sitemap of job pages, Akuna's job file), compared with every
     job InternWatch ever stored for it: by the id in the URL, or by title where the list uses its own ids
     (PayPal's Eightfold copy of Workday). The first read is a silent baseline; a job added since that InternWatch
     doesn't have is noted, and confirm() reports it if a healthy poll on a later run still lacks it."""
@@ -756,7 +776,7 @@ def check_job_lists(ctx: Ctx) -> list[dict]:
     try:
         groups: dict[float, list[str]] = {}
         for key, conf in lists.items():
-            groups.setdefault(float(conf.get("every_days", 7)), []).append(key)
+            groups.setdefault(float(conf.get("every_days", 1)), []).append(key)
         for every, keys in sorted(groups.items()):
             for key in pick(ctx.db, "joblist", sorted(keys), every, ctx.now):
                 if ctx.out_of_time():
@@ -816,14 +836,14 @@ def page_list(http, source: str) -> dict[str, str]:
 
 
 def check_programs(ctx: Ctx) -> list[dict]:
-    """N. Weekly per company, spread over the week: a page on the company's site that wasn't there before and whose
+    """N. Daily: a page on the company's site that wasn't there before and whose
     address or title reads like a students, internships or program page. A source's first read is a silent
     baseline."""
     sources = per_company(ctx.cfg, "program_pages")
     problems: list[dict] = []
     http = ctx.http()
     try:
-        for key in pick(ctx.db, "programs", sorted(sources), 7, ctx.now):
+        for key in pick(ctx.db, "programs", sorted(sources), 1, ctx.now):
             if ctx.out_of_time():
                 break
             c = ctx.comps[key]
@@ -883,10 +903,10 @@ def _new_labels(db: DB, c: Company, labels: set[str], what: str, detail: str) ->
 
 
 def check_labels(ctx: Ctx) -> list[dict]:
-    """G. Weekly: the values Goldman's job API (the one InternWatch reads) accepts for experience and source types.
+    """G. Daily: the values Goldman's job API (the one InternWatch reads) accepts for experience and source types.
     A new one (Goldman's schema already names an unused AVATURE source) can mean roles InternWatch doesn't ask for."""
     c = ctx.comps.get("goldman-sachs")
-    if c is None or not pick(ctx.db, "labels", [c.key], 7, ctx.now):
+    if c is None or not pick(ctx.db, "labels", [c.key], 1, ctx.now):
         return []
     from .checkers.goldman import API
     query = "{ " + " ".join(f'{t}: __type(name: "{t}") {{ enumValues {{ name }} }}' for t in GOLDMAN_TYPES) + " }"
@@ -1160,7 +1180,7 @@ def check_listings(ctx: Ctx) -> list[dict]:
 
 
 def check_getro(ctx: Ctx) -> list[dict]:
-    """L, Getro. Weekly per company: Getro-powered VC job boards (Accel, Thrive) copy some companies' jobs from their
+    """L, Getro. Daily: Getro-powered VC job boards (Accel, Thrive) copy some companies' jobs from their
     careers page itself (source "career_page"), the page InternWatch can't read. A job new on Getro's copy that
     links a job system InternWatch doesn't read alerts; one whose posting id InternWatch doesn't have waits for
     confirm(). The first look is a silent baseline."""
@@ -1169,7 +1189,7 @@ def check_getro(ctx: Ctx) -> list[dict]:
     problems: list[dict] = []
     http = ctx.http(read_timeout=60)
     try:
-        for key in pick(ctx.db, "getro", sorted(entries_), 7, ctx.now):
+        for key in pick(ctx.db, "getro", sorted(entries_), 1, ctx.now):
             if ctx.out_of_time():
                 break
             c, x = ctx.comps[key], entries_[key]
@@ -1230,17 +1250,17 @@ def check_getro(ctx: Ctx) -> list[dict]:
 
 # running them -----------------------------------------------------------------------------------------
 
-CHECKS: list[tuple[str, callable]] = [  # (name, fn(ctx) -> problems), cheapest first
+CHECKS: list[tuple[str, callable]] = [  # (name, fn(ctx) -> problems), cheapest first, so a slow site starves none of them
     ("confirm", check_confirm),
     ("workday", check_workday),
-    ("parallel", check_parallel),
-    ("page", check_pages),
     ("joblist", check_job_lists),
     ("programs", check_programs),
     ("labels", check_labels),
-    ("archive", check_archive),
+    ("parallel", check_parallel),
+    ("page", check_pages),
     ("listings", check_listings),
     ("getro", check_getro),
+    ("archive", check_archive),
 ]
 
 

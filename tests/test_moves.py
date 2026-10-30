@@ -387,7 +387,9 @@ def test_a_source_not_read_today_never_reports_its_systems_as_gone(blocked_cfg, 
     assert moves.check_pages(ctx(cfg, memdb, http)) == []
     memdb.set("blocked:at:page:liberty-mutual", "")
     http.pages[c.careers_url[0]] = '<a href="https://careers-libertymutual.icims.com/jobs">x</a>'
-    problems = moves.check_pages(ctx(cfg, memdb, http))  # read again, and the configured host is gone from it
+    assert moves.check_pages(ctx(cfg, memdb, http)) == []  # read again, and the configured host is gone: once
+    memdb.set("blocked:at:page:liberty-mutual", "")
+    problems = moves.check_pages(ctx(cfg, memdb, http))    # and a second read in a row
     assert [p["summary"] for p in problems] == ["its careers pages no longer mention eightfold:domain=libertymutual.com"]
 
 
@@ -446,14 +448,15 @@ def test_a_refused_page_is_retried_the_next_morning_and_a_robots_block_is_not(bl
     assert not memdb.get("blocked:retry:page:goldman") and memdb.get("blocked:at:page:goldman")  # robots: never retried
 
 
-def test_the_weekly_page_check_leaves_the_31_out_and_reads_every_other_page_as_before(blocked_cfg, memdb):
+def test_the_daily_page_check_leaves_the_31_out_and_reads_every_other_page(blocked_cfg, memdb):
     from test_liveness import PageHttp
     acme, other = company("acme", checker="greenhouse", settings={"board": "acme"}), company("other-co")
     cfg = blocked_cfg([acme, other])
     pages = PageHttp({other.careers_url[0]: '<a href="https://jobs.lever.co/other">x</a>'})
     assert liveness.scan_pages(cfg, memdb, pages, float("inf")) == []
     assert memdb.get("page_systems:other-co") == '["lever:site=other"]'
-    assert json.loads(memdb.get("page_systems_v2:other-co")) == {"systems": ["lever:site=other"], "portals": []}
+    state = json.loads(memdb.get("page_systems_v2:other-co"))
+    assert (state["systems"], state["portals"]) == (["lever:site=other"], [])
     assert memdb.get("page_scan_at:acme") is None and memdb.get("page_systems:acme") is None
     assert memdb.get("page_systems_v2:acme") is None and memdb.get("page_scan_retry:acme") is None
 
@@ -647,15 +650,26 @@ def test_a_list_with_its_own_ids_is_matched_by_title(blocked_cfg, memdb):
         "1 job(s) on its job list that InternWatch has never seen: 'data science intern new york'"]
 
 
-def test_job_lists_are_read_weekly_unless_set_daily(blocked_cfg, memdb):
-    a = company("akuna-capital")
-    keys = [a] + [company(f"co{i}") for i in range(6)]
-    lists = {"akuna-capital": {"url": "https://akuna/jobs.json", "every_days": 1},
-             **{f"co{i}": {"url": f"https://co{i}/sitemap.xml"} for i in range(6)}}
+def test_job_lists_are_read_daily_and_one_that_refuses_waits_a_week(blocked_cfg, memdb):
+    keys = [company("good"), company("shy")]
+    lists = {"good": {"url": "https://good/sitemap.xml"}, "shy": {"url": "https://shy/sitemap.xml"}}
     cfg = blocked_cfg(keys, job_lists=lists)
-    http = FakeHttp({"https://akuna/jobs.json": "[]", **{f"https://co{i}/sitemap.xml": sitemap() for i in range(6)}})
-    moves.check_job_lists(ctx(cfg, memdb, http))
-    assert sorted(u.split("/")[2] for u in http.calls) == ["akuna", "co0"]  # Akuna daily; 6 weekly ones: 1 a day
+    http = FakeHttp({"https://good/sitemap.xml": sitemap(), "https://shy/sitemap.xml": FetchError("HTTP 403 for GET x")})
+
+    def read(days):
+        http.calls.clear()
+        moves.check_job_lists(ctx(cfg, memdb, http, days=days))
+        return sorted(u.split("/")[2] for u in http.calls)
+
+    assert read(0) == ["good", "shy"]    # shy refuses …
+    assert read(1) == ["good", "shy"]    # … is asked once more the next morning, and refuses again
+    assert read(2) == ["good"]
+    assert read(7) == ["good"]           # a week after the second refusal is day 8
+    assert read(8) == ["good", "shy"]
+    http.pages["https://shy/sitemap.xml"] = sitemap()
+    assert read(9) == ["good"]           # that was its one retry, refused or not …
+    assert read(15) == ["good", "shy"]   # … then it answers …
+    assert read(16) == ["good", "shy"]   # … and goes back to daily
 
 
 # N: new student and program pages ------------------------------------------------------------------------

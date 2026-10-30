@@ -7,7 +7,7 @@ Order of a run
    every request retried with backoff); new student roles get their description fetched
 4. for each result, in this thread (SQLite has one writer): store jobs, filter new ones, health checks
 5. SimplifyJobs cross-check
-6. emails: new postings (one per run), health alert (one per run), daily digest, weekly report
+6. emails: new postings (one per run), health alert (one per run), daily digest
 7. ping the dead man's switch (success or /fail)
 """
 from __future__ import annotations
@@ -21,7 +21,7 @@ import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, field
-from datetime import date, datetime, timedelta
+from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 import httpx
@@ -645,15 +645,6 @@ class Runner:
                 self.db.set("last_digest", today)
                 self.db.set("last_digest_at", built_at)  # untracked roles up to here have been reported
                 alerts.mark_told(self.db)
-        rep_day = int(self.cfg.settings.get("email", "report_weekday", default=0))
-        rep_hour = int(self.cfg.settings.get("email", "report_hour", default=8))
-        last = self.db.get("last_report")
-        days = (local.date() - date.fromisoformat(last)).days if last else None
-        on_day = local.weekday() == rep_day and (opts.daily or local.hour >= rep_hour)
-        if last != today and (on_day or days is None or days >= 8):  # catch up if the report day was missed
-            from .report import coverage_rows
-            if self._deliver("coverage", emails.coverage(self.cfg, coverage_rows(self.cfg, self.db)), opts, s):
-                self.db.set("last_report", today)
 
 
 def build_digest(cfg: Config, db: DB, rows=None):
@@ -667,4 +658,8 @@ def build_digest(cfg: Config, db: DB, rows=None):
     except Exception:  # noqa: BLE001 — the roles still go out
         log.exception("alerts: the list could not be read")
         open_alerts, resolved = None, []
-    return emails.digest(cfg, new_rows, untracked, open_alerts, resolved, morning=rows is not None)
+    table = None
+    if rows is not None:  # the morning email carries one line and the whole table, so nothing else has to
+        from .report import coverage_rows
+        table = coverage_rows(cfg, db)
+    return emails.digest(cfg, new_rows, untracked, open_alerts, resolved, morning=rows is not None, table=table)

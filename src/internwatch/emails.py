@@ -4,7 +4,7 @@ Subject prefixes (filterable):
   [InternWatch]           new postings, first-run summary
   [InternWatch Digest]    daily digest
   [InternWatch HEALTH]    checker problems, possible misses, test alerts
-  [InternWatch COVERAGE]  weekly coverage report
+  [InternWatch COVERAGE]  coverage report, on request (`internwatch report`): every run's morning email attaches it
 """
 from __future__ import annotations
 
@@ -307,8 +307,9 @@ def _alerts_section(cfg: Config, open_alerts, resolved) -> tuple[str, str]:
 
 
 def digest(cfg: Config, new_rows, untracked: list[dict], open_alerts=(), resolved=(), *,
-           morning: bool = False) -> tuple[str, str, str]:
-    """The daily digest, or with morning=True the single email of `internwatch run --daily` (new since last run)."""
+           morning: bool = False, table: list[dict] | None = None) -> tuple[str, str, str]:
+    """The daily digest, or with morning=True the single email of `internwatch run --daily` (new since last run).
+    table: report.coverage_rows, shown as one line with the whole table attached."""
     new_rows, opened = _already_open(new_rows)
     n = len(new_rows)
     if morning:
@@ -354,6 +355,12 @@ def digest(cfg: Config, new_rows, untracked: list[dict], open_alerts=(), resolve
     if h:
         parts_html.append(h)
         parts_text.append(t)
+    if table is not None:
+        healthy = sum(1 for r in table if r["status"] == "ok")
+        line = f"{healthy} of {len(table)} checkers healthy; the full table is attached (coverage.html)."
+        parts_html.append(f'<p style="{STYLE_P}">{line}</p>')
+        parts_text.append(line)
+        files = (files or []) + [("coverage.html", coverage(cfg, table)[2].encode(), "text/html")]
     html = _wrap(title, "".join(parts_html))
     return _with_files((subject, "\n\n".join(parts_text), html), files)
 
@@ -409,7 +416,7 @@ def health(cfg: Config, problems: list[dict], recovered: list[dict], misses: lis
 def coverage(cfg: Config, rows: list[dict], window_days: int = 7) -> tuple[str, str, str]:
     """rows: [{name, checker, status, last_success, jobs, students, matched, errors, last_error}]"""
     healthy = sum(1 for r in rows if r["status"] == "ok")
-    subject = f"{_prefix(cfg, 'COVERAGE')} Weekly report {_today(cfg)}: {healthy}/{len(rows)} checkers healthy"
+    subject = f"{_prefix(cfg, 'COVERAGE')} Report {_today(cfg)}: {healthy}/{len(rows)} checkers healthy"
     def color(st):
         return {"ok": "#1a7f37", "blocked": "#57606a", "failing": "#cf222e", "never run": "#9a6700"}.get(st, "#9a6700")
     trs = "".join(
@@ -423,7 +430,7 @@ def coverage(cfg: Config, rows: list[dict], window_days: int = 7) -> tuple[str, 
         for r in rows)
     head = "".join(f'<th style="{STYLE_TH}">{h}</th>' for h in
                    ("Company", "Checker", "Status", "Last success", "Jobs", "Intern roles", "Matching", f"Errors ({window_days}d)", "Last error"))
-    html = _wrap(f"Weekly coverage report — {_today(cfg)}",
+    html = _wrap(f"Coverage report — {_today(cfg)}",
                  f'<p style="{STYLE_P}">{healthy} of {len(rows)} checkers healthy. "Jobs" and "Intern roles" are what each checker '
                  f"currently sees on the live site; blocked companies are covered by the SimplifyJobs cross-check.</p>"
                  f'<table style="{STYLE_TABLE}"><tr>{head}</tr>{trs}</table>')

@@ -4,7 +4,7 @@
   internwatch check <company>     run one checker and print what it finds
   internwatch verify [company…]   run every checker and print the coverage table
   internwatch add <name> <url>    detect the hiring system, test it live, add it to companies.yaml
-  internwatch report              send the weekly coverage report now
+  internwatch report              send the coverage report now
   internwatch digest              send the daily digest now
   internwatch alert-test          trigger a real health alert end to end (proves alerts reach you)
   internwatch status              what the service has been doing
@@ -498,7 +498,7 @@ def build_parser() -> argparse.ArgumentParser:
     ad.add_argument("--browser", action="store_true", help="also load the page in headless Chromium to detect")
     ad.set_defaults(fn=cmd_add)
 
-    for name, fn, h in (("report", cmd_report, "send the weekly coverage report now"),
+    for name, fn, h in (("report", cmd_report, "send the coverage report now"),
                         ("digest", cmd_digest, "send the daily digest now"),
                         ("alert-test", cmd_alert_test, "trigger a real health alert end to end")):
         x = sub.add_parser(name, help=h)
