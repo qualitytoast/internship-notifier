@@ -35,7 +35,7 @@ import logging
 import re
 
 from .config import Company, Config
-from .db import DB, iso
+from .db import DB, iso, utcnow
 
 log = logging.getLogger(__name__)
 
@@ -218,6 +218,9 @@ def cleared(cfg: Config, db: DB, a) -> bool:
         return _posting(cfg, db, a, d)
     if rule == "miss":
         return _miss_cleared(db, a, d)
+    if rule == "dark":
+        from . import moves  # moves imports this module
+        return moves.dark(db, d["check"], d["item"], utcnow()) is None
     return False
 
 

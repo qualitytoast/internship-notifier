@@ -1,7 +1,7 @@
 """Dead man's switch: ping healthchecks.io at the start and end of every run.
 
-If pings stop (machine down, timer broken, run hung), healthchecks.io emails you — even though
-this machine can't. Configure the check with period 15 min and grace 45 min (see README).
+If pings stop (no run that day, a run that hung or crashed), healthchecks.io emails you, even though
+this machine can't. Set up the check with Period 1 day and Grace 6 hours (see README).
 """
 from __future__ import annotations
 

@@ -1,14 +1,14 @@
 # InternWatch
 
-Watches 193 companies' careers sites (192 polled; Wayfair blocked: its site refuses automated clients) through their
+Watches 197 companies' careers sites (196 polled; Wayfair blocked: its site refuses automated clients) through their
 hiring systems' official feeds and emails new internships that pass `config/filters.yaml`. Python 3.12+,
 httpx, SQLite. Per-company checkers and evidence: COVERAGE.md. Freshman/sophomore programs: UNDERCLASSMEN.md.
 Rules for changing things: CLAUDE.md.
 
 ## Running it
-- **In use:** run `.venv/bin/internwatch run --daily` by hand each morning (15–25 min). Every company gets a full
+- **In use:** run `.venv/bin/internwatch run --daily` by hand each morning (about 20–25 min). Every company gets a full
   scan; failed ones are retried once later in the same run. Then ONE email goes out: `[InternWatch] <date>:
-  N new: Co (n)…` (or "no new roles"), plus untracked-company roles and open problems.
+  N new: Co (n)…` (or "no new roles"), plus untracked-company roles, every open alert and the coverage table.
   `run --daily --emails-only` sends whatever earlier runs couldn't send, without checking any site.
 - **Set up but not in use:**
   - `deploy/install_mac_daily.sh HH:MM`: launchd schedule for `run --daily`.
@@ -30,8 +30,8 @@ Rules for changing things: CLAUDE.md.
   - `[InternWatch]`: new roles and the morning email; also "Now watching …" for the first run and for a newly
     added company.
   - `[InternWatch Digest]`: daily at 8:00 America/Chicago, continuous mode only.
-  - `[InternWatch HEALTH]`: problems, recoveries, possible misses.
-  - `[InternWatch COVERAGE]`: weekly on Monday.
+  - `[InternWatch HEALTH]`: problems and possible misses, on the day they first appear.
+  - `[InternWatch COVERAGE]`: only on request (`internwatch report`).
 - **Each row:** company, title linked to the posting, location, term ("unspecified" if none), posted date,
   field tag, `unsure` tags with the reason, `freshman/sophomore`, "repost", "reopened", "new term", "via Simplify".
 - **Already open:** roles that were open before InternWatch could judge them but were never emailed (a
@@ -39,77 +39,106 @@ Rules for changing things: CLAUDE.md.
   in their own section after the new ones.
 - **More than 50 roles:** the 50 surest are in the body, and everything is attached as matching-roles.html and
   .csv.
+- **Open alerts:** every alert stays in every morning email until it is resolved or dismissed; see Health alerts.
+- **Coverage:** the morning email has one line ("195 of 196 checkers healthy") and attaches the whole table as
+  coverage.html.
 - **Delivery:** every email is also saved in `data/outbox/`. An email that fails to send is retried on the
   next run, and healthchecks.io is told the run failed.
 
 ## Health alerts
+- **The list of open alerts** (`src/internwatch/alerts.py`): every alert goes on one list in the database and is
+  repeated in every run's morning email, below the new roles, until it is resolved or dismissed. A missed day or a
+  failed email can't lose one. New ones are marked NEW and also get a `[InternWatch HEALTH]` email on their first day;
+  what was resolved since the last run is listed once.
+- **Dismissing:** for what won't resolve on its own (a board that shrank for good, a company that stopped hiring
+  interns), `internwatch alerts` lists what is open, `internwatch dismiss 17` stops one and
+  `internwatch dismiss --kind "new job site?"` stops a whole type. It stays off until its problem clears; if the
+  problem comes back later, that's a new alert. A dismissed `board drop` that falls on to 0 shows as `board empty`.
 - **When:** after 2 failed polls in a row; each request is already retried 3 times with 2/6/18 s backoff.
-  Reminders every 24 h, plus a "recovered" line when it clears.
-- **Kinds:**
-  - `error`, `timeout`
-  - `blocked`: robots.txt now disallows the feed; mark the company `status: blocked`.
-  - `shape`: unexpected response or incomplete pagination; the checker needs fixing.
-  - `zero`: 0 jobs after a nonzero count. It stays open, with daily reminders, until jobs come back: a company
-    stuck at 0 is never reported "recovered".
-  - `drop`: more than 50% fewer jobs, from a count of at least 6.
-  - `degraded`: one source of a multi-source company is failing.
-  - Also: a big site's daily full scan failing.
-  - `possible miss`: SimplifyJobs lists an in-field role at a tracked company that the checker never saw
-    although it polled afterwards (90 min grace), or saw but the filters rejected.
-- **Boards that go dead** (`src/internwatch/liveness.py`; `internwatch liveness` shows what it tracks):
-  - `board empty`: one board, Workday site, multi source, Eightfold quick query or student slice (Apple's
-    Internships team, Meta's Internship label, Amazon's interns) of a company that reads several lists 0 jobs on two
-    polls in a row after listing some, while the company total hardly moves. Open until it lists jobs again;
-    reminded weekly.
-  - `board drop`: such a source lost more than half of at least 6 jobs on two polls in a row (alerted once).
-  - `board stale`: a source listing at least 20 dated postings has had no new one for 45 days and for 3× its
-    usual gap: it may have been abandoned while the company posts elsewhere.
-  - `moved?`: weekly, in daily runs (3-minute budget), each careers page is read once and the job systems it points
-    at are compared with last week: a new one that isn't configured, or a configured one no longer mentioned. An
-    iCIMS portal, an Avature portal (bloomberg.avature.net/careers) and an Eightfold domain each count on their own,
-    and links to an Eightfold site count too. A portal the page linked on an earlier look, or that a stored posting
-    links, isn't new. A read the site refuses (bot check, 5xx, timeout) is retried first thing the next morning,
-    once; a robots.txt block never is. The first look is a silent baseline. About 85 of 196 pages name a job system
-    in their HTML; the rest are built in the browser or block scripts, and are left to the other checks. The 31
-    companies whose page refuses scripts (`liveness.blocked`) are left out: the checks below watch them instead.
+- **Kinds, and what resolves each** (every one can also be dismissed):
+  - `error`, `timeout`, `shape` (unexpected response or incomplete pagination; the checker needs fixing), `blocked`
+    (robots.txt now disallows the feed; mark the company `status: blocked`): the company's next fully healthy poll.
+    A `shape` alert also covers one failing source of a multi-source company.
+  - A big site's daily full scan failing: a full scan succeeds.
+  - `not checked`: a due company was never processed in two runs in a row (skipped at the run time limit, or storing
+    its jobs failed). Resolved when it is processed.
+  - `zero`: 0 jobs after a nonzero count. Resolved when jobs come back.
+  - `drop`: more than 50% fewer jobs at once, from a count of at least 6. Resolved when the count is back above half
+    of what it was. Until then InternWatch works from the lower count, so closed postings keep being recorded, and it
+    never says "working again".
+  - `slow bleed`: under half the company's highest count of the last 30 days, from at least 6 jobs, when no single poll
+    lost enough for `drop`. Once per high. Resolved when the count is back above half of it. Amazon, Apple and Jane
+    Street's programs are left out: their lists are mostly student roles and fall every season.
+  - `internships vanished`: a company with at least 5 student roles loses 90% of them within 3 polls, seen on two polls
+    in a row, while its other jobs stay. Every company gets its own alert. Resolved when student roles are back at half.
+    Roles closing one by one at a season's end rarely trip it (tests/test_season.py).
+  - `board empty`: one board, Workday site, multi source, Eightfold quick query or student slice (Apple's Internships
+    team, Meta's Internship label, Amazon's interns) of a company that reads several lists 0 jobs on two polls in a row
+    after listing some, while the company total hardly moves. Resolved when it lists jobs again.
+  - `board drop`: such a source lost more than half of at least 6 jobs on two polls in a row. Resolved when it is back
+    above half.
+  - `board quiet`: no new job id on a board for 45 days, whatever its size, even an empty one. The newest date is the
+    latest of the feed's own posting dates and the day InternWatch first saw a job there, because Workday's dates stop
+    at "30+ days" and many feeds have none. Resolved when a new job id appears.
+  - `moved?`: each careers page is read once a day (3-minute budget) and the job systems it points at are compared
+    with what it named before: a new one that isn't configured, or a configured one it stopped mentioning on two reads
+    in a row. An iCIMS portal, an Avature portal (bloomberg.avature.net/careers) and an Eightfold domain each count on
+    their own, and links to an Eightfold site count too. A portal the page linked on an earlier look, or that a stored
+    posting links, isn't new, and every system a page ever named is remembered, so a page that flips back and forth
+    alerts once. A read the site refuses (bot check, 5xx, timeout) is retried first thing the next morning, once, then
+    waits a week until it answers; a robots.txt block is never retried. The first look is a silent baseline. About 85
+    of 196 pages name a job system in their HTML; the rest are built in the browser or block scripts. The 31 companies
+    whose page refuses scripts (`liveness.blocked`) are left out: the checks below watch them instead. Resolved when
+    the system is added to the config or the page stops naming it (two reads in a row), or for a system it stopped
+    mentioning, when it names it again or it leaves the config.
   - `new site`: a Workday tenant's robots.txt (already cached by the checks, no request) lists a site that isn't
-    configured. Sites on myworkdaysite.com can't be seen this way (its robots.txt answers 422).
-  - `not checked`: a due company was never processed in two runs in a row (skipped at the run time limit, or
-    storing its jobs failed).
-  - A health email that fails to send is not lost: the next run raises the same alerts again, `drop`, `moved?`,
-    `new site` and `board drop` included (the counts or baselines they had already moved past are put back).
+    configured. Sites on myworkdaysite.com can't be seen this way (its robots.txt answers 422). Resolved when the site
+    is configured or leaves robots.txt.
+  - `new job site?`: a third-party list links a job system the config doesn't name, for any active company: SimplifyJobs'
+    full listings.json, speedyapply, sndsh404, zshah101's board registry, Boardsweep, Trackr or RippleMatch's company
+    list, read daily. A first look is never silent: Akuna's second board was missed that way. One alert per company and
+    job system, however many lists link it. Mirrors of what is read are named in `liveness.aliases`, and a portal a
+    stored posting links is known. Resolved when the system is configured or no list links it any more.
+    vanshb03's list can name a company but reveal no board: it links everything through go.vansh.nyc, whose robots.txt
+    disallows all readers, so those links are never followed.
+  - `possible miss`: SimplifyJobs lists an in-field role at a tracked company that the checker never saw although it
+    polled afterwards (90 min grace), or saw but the filters rejected. Not when Simplify's own location is outside the
+    company's locations too. Resolved when the checker stores it, it matches, or it closes.
+  - `check gone dark`: a list or check below that used to answer hasn't for 14 days. Resolved when it answers.
 - **Companies whose careers page can't be read** (`src/internwatch/moves.py`; the 31 in `liveness.blocked`, and
-  only those): where else they could start posting. Daily runs, before the emails, within 150 s. Every check's
-  first look is a silent baseline; a read the site refuses (bot check, 5xx) is retried the next morning;
-  `internwatch liveness` shows each check's reads, answer rate and recent alerts.
+  only those): where else they could start posting. Daily runs, before the emails, within 300 s. Every check runs every
+  morning except archive.org's, spread over the week, and a read a site refuses waits a week (asking a site that
+  refuses every day teaches nothing, and Citadel's refused page shares a host with its feed). Every check's first look
+  is a silent baseline; `internwatch liveness` shows each check's reads, answer rate and recent alerts.
   - W `new site`: a new hidden site (a Disallow line in robots.txt) on their Workday tenants, or any new site on
-    Fidelity's myworkdayjobs.com host and on PitchBook's parent Morningstar. Weekly.
+    Fidelity's myworkdayjobs.com host and on PitchBook's parent Morningstar.
   - P `moved?`: their careers page, and every WordPress page of CTC, GTS and Liberty Mutual (the page API answers
     where the pages don't), name a job system that isn't configured. An iCIMS portal, an Avature site and an
-    Eightfold domain each count on their own. Weekly, about 5 companies a day.
+    Eightfold domain each count on their own.
   - P/J/A/Getro `posting elsewhere?`: a job id on one of their pages (CTC's job lists, Tower's internships page), on
     their own job list (the sitemaps of Dropbox, Pinterest, Fidelity, GM, Nutanix, ServiceNow, Uber, American
-    Family and PayPal's Eightfold copy; Akuna's job file, daily), in archive.org's copies or in Getro's copy, that
-    InternWatch has never stored and that a healthy poll on a later run still doesn't have.
+    Family and PayPal's Eightfold copy; Akuna's job file), in archive.org's copies or in Getro's copy, that
+    InternWatch has never stored and that a healthy poll on a later run still doesn't have. Resolved when InternWatch
+    stores it or it leaves the place it was seen.
   - A: archive.org's copies of the pages of Coinbase, DoorDash, HRT, Meta, OpenAI, UKG, Whatnot and others (new
     student pages, systems named). Copies older than 45 days, bot-check copies and pages the original site's
     robots.txt disallows are skipped. Most companies' copies come in bursts, so this one is slow.
   - N `new page`: a new student or program page in their sitemaps or WordPress page lists, or a new program in
-    Goldman's programs feed.
+    Goldman's programs feed. Only dismissing ends it: nothing can tell when you have looked.
   - G `new label`: a new experience or source type in Goldman's job API; a new student team label in Meta's own
-    poll (no request).
+    poll (no request). Only dismissing ends it.
   - S `posting elsewhere?`: a role matching your filters on a board next to theirs (CTC's ctccampusboard, Liberty
     Mutual's campus iCIMS, American Family's hidden Workday sites, campus boards, RippleMatch for UKG, Expedia and
-    Akuna) that isn't a twin of one InternWatch has. These boards are watched, never stored. Daily.
-  - L `new job site?`: SimplifyJobs' full listings.json, vanshb03, speedyapply, sndsh404, zshah101's board
-    registry, Boardsweep, Trackr or RippleMatch's company list links one of them to a job system the config
-    doesn't name; or Getro's copy of SeatGeek's or OpenAI's careers page (Accel, Thrive) does. Weekly per list.
+    Akuna) that isn't a twin of one InternWatch has. These boards are watched, never stored.
+  - Getro `new job site?`: Getro's copy of SeatGeek's or OpenAI's careers page (Accel, Thrive) links a job system the
+    config doesn't name.
   - What none of this sees: a place no page, list or archive copy links (a board shared only with schools), and
     postings only on Handshake (it needs a login). Kadoa's quant list mirrors one feed per firm, so it can't reveal
-    a new place. SimplifyJobs' README (what the cross-check reads) leaves early-season roles out; its full
-    listings.json, read by L, has them.- **healthchecks.io:** pinged at the start and end of each run, so it alerts if no run happens or a run fails
-  (no internet, email failure). `internwatch alert-test` sends a real alert. Nothing above can alert when no run
-  happens, so set `HEALTHCHECKS_PING_URL` in `.env`.
+    a new place.
+- **healthchecks.io:** pinged at the start and end of each run, so it alerts if no run happens or a run fails
+  (no internet, email failure). Set up the check with Period 1 day and Grace 6 hours and put its URL in
+  `HEALTHCHECKS_PING_URL` in `.env`: any gap over 30 hours between finished runs alerts, and so does a run that starts
+  and never finishes. `internwatch alert-test` sends a real alert. Nothing above can alert when no run happens.
 - **Not seen by any of this:** postings that are open but listed nowhere InternWatch reads: unlisted Ashby
   postings with no known id (Whatnot shows 89 on whatnot.com, which is bot-protected and never polled), postings
   only on Handshake (Veeva's 2027 SWE intern) and program pages that aren't watched (Discover Citadel). For
@@ -189,6 +218,7 @@ Rules for changing things: CLAUDE.md.
   `--no-crosscheck`
 - `check <key>`: `--show matches|students|all`, `--details N`, `--record`, `--json`, `--force`
 - `verify [keys]`: `--write` (verify.json + COVERAGE.md), `--record`
+- `alerts` (what is open), `dismiss <numbers>` or `dismiss --kind "<type>"`
 - `add`, `record [keys]`, `coverage`, `refilter [--notify]`, `reseed <keys>`, `status`, `liveness`, `report`,
   `digest`, `alert-test`, `test-filters`, `daemon`
 - Tests (offline, from cassettes in tests/fixtures/cassettes): `.venv/bin/python -m pytest`
@@ -199,7 +229,7 @@ Rules for changing things: CLAUDE.md.
     check a time budget (8 min; the whole run 25 min).
   - Each company's results are saved in one DB transaction, so a Ctrl-C can't half-save them.
   - Also handles seeding, the cross-check, emails and the heartbeat.
-- **db.py:** SQLite (WAL) with tables jobs, company_state, checks, emails, runs, kv and simplify_rows. jobs
+- **db.py:** SQLite (WAL) with tables jobs, company_state, checks, emails, runs, kv, alerts and simplify_rows. jobs
   keeps every job ever seen: first/last seen, match decision, notified_at, baseline, removed_at, repost_of,
   alt_ids.
 - **http.py:**
@@ -208,11 +238,12 @@ Rules for changing things: CLAUDE.md.
   - At least 1 s between requests to a host (per-company min_interval), retries, 429 backoff, conditional GET.
   - `ssl_context()` = certifi plus the bundled intermediates in certs/.
 - **crosscheck.py:**
-  - Fetches the SimplifyJobs Summer2027 README and the Off-Season list (with ETag). New rows go
-    pending → found / filtered / missed.
+  - Fetches SimplifyJobs' Summer2027 listings.json (with ETag), which its READMEs are built from and which also has
+    the early-season roles they leave out. New rows go pending → found / filtered / missed / abroad, within 3 minutes;
+    a broken or hanging list raises an alert and costs no email.
   - For blocked or failing companies, the rows are stored as "via Simplify" jobs and emailed.
   - Matching uses job ids or requisition ids in the URL, then normalized titles of current postings (open, or
-    closed within 30 days; a different year never matches).
+    closed within 30 days; a different year never matches), preferring one in a compatible place.
 - **Removals and scans:** a removal is recorded only after a healthy full scan. Big sites' quick scans stop
   after two consecutive pages of known jobs.
 
@@ -223,7 +254,10 @@ Rules for changing things: CLAUDE.md.
 - **Second boards:** Klaviyo, Toast and Twilio have Greenhouse campus boards (klaviyocampus, toastcampus,
   twiliostudents). Expedia has a second Workday site, `private`, which robots.txt allows and SimplifyJobs
   links to. Plaid and Rockwell Automation post some student roles only on RippleMatch, which is read for them
-  (Rockwell's roles that are also on Workday under the same title are skipped).
+  (Rockwell's roles that are also on Workday under the same title are skipped). Found by the October 2026 board audit:
+  Flow Traders' term board ftsp27co-ops, Akuna's on-campus board akunacapitaloci, Virtu's virturecruitinghidden, Visa's
+  Visa_Talent_Portal, PEAK6's Apex Fintech Solutions site (its "Fintern" roles count through a PEAK6 role keyword) and
+  MongoDB's RippleMatch page.
 - **Not double-counted:** Epic Games' and Google's translated postings, and C3 AI's re-posted Ascend
   requisitions.
 - **Palo Alto Networks:** robots.txt disallows the HTML job pages but not the JSON API the checker uses, which
@@ -243,7 +277,7 @@ Rules for changing things: CLAUDE.md.
 
 ## Layout
 - `config/`: settings.yaml, companies.yaml, filters.yaml
-- `src/internwatch/`: cli, runner, filters, locations, health, liveness, moves, crosscheck, emails, mailer, db,
+- `src/internwatch/`: cli, runner, filters, locations, health, alerts, liveness, moves, crosscheck, emails, mailer, db,
   http, detect, report, plus `adapters/` and `checkers/`
 - `tests/`
 - `deploy/`

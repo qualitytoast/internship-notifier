@@ -441,3 +441,44 @@ def test_the_problems_open_before_the_list_existed_are_put_on_it(make_cfg, memdb
     assert [(a["name"], a["kind"], a["summary"]) for a in rows] == [("Acme", "shape", "unexpected data shape"),
                                                                      ("Beta", "zero", "returned 0 jobs")]
     assert all(a["health_at"] for a in rows)  # told about before: not new
+
+
+# ---------------------------------------------------------------------------------------------
+# a list or check that stops answering
+
+def history(db, check, key, *days_ago_ok):
+    from datetime import timedelta
+
+    from internwatch.db import utcnow
+    db.set(f"blocked:rate:{check}:{key}", json.dumps([[(utcnow() - timedelta(days=d)).date().isoformat(), ok]
+                                                      for d, ok in days_ago_ok]))
+
+
+def dark_ctx(cfg, db):
+    return moves.Ctx(cfg, db, None, None, float("inf"), set())
+
+
+def test_a_list_that_stops_answering_is_reported_once_and_clears(make_cfg, memdb):
+    cfg = make_cfg([company("acme", name="Acme")], liveness={"blocked": ["acme"], "listings": [
+        {"name": "speedy", "format": "markdown", "url": "https://x"}], "parallel_sources": []})
+    history(memdb, "listings", "speedy", (20, 1), (15, 1), (10, 0), (1, 0))
+    problems = moves.check_dark(dark_ctx(cfg, memdb))
+    assert [(p["kind"], p["name"]) for p in problems] == [("check gone dark", "speedy")]
+    assert "has not answered since" in problems[0]["summary"]
+    assert alerts.record(memdb, problems, [])[0] == problems
+    alerts.mark_sent(memdb)
+    alerts.sweep(cfg, memdb)
+    assert is_open(memdb) == ["dark:listings:speedy"]
+    assert alerts.record(memdb, moves.check_dark(dark_ctx(cfg, memdb)), [])[0] == []    # listed, not told about twice
+    history(memdb, "listings", "speedy", (1, 1))
+    alerts.sweep(cfg, memdb)
+    assert not is_open(memdb)
+
+
+def test_only_a_source_that_used_to_answer_and_is_still_configured_goes_dark(make_cfg, memdb):
+    cfg = make_cfg([company("acme", name="Acme")], liveness={"blocked": ["acme"], "listings": [], "parallel_sources": []})
+    history(memdb, "page", "acme", (20, 0), (10, 0), (3, 0))      # never answered: a page that refuses scripts
+    history(memdb, "joblist", "acme", (20, 1), (3, 1))            # answers
+    history(memdb, "listings", "removed", (20, 1), (15, 0))       # no longer in the config
+    history(memdb, "programs", "acme", (14, 1), (3, 0))           # 14 days: not yet
+    assert moves.check_dark(dark_ctx(cfg, memdb)) == []

@@ -45,6 +45,7 @@ from .models import CheckTimeout, Job, RobotsBlocked
 log = logging.getLogger(__name__)
 
 REFUSED_DAYS = 7  # how long a read that a site refused waits, in a check that runs daily
+DARK_DAYS = 14    # a list or check that answered before and hasn't for this long is reported
 
 # a page address or title that reads like a students, internships or program page (not "internaliser", "residents")
 STUDENT = re.compile(r"\bintern(?:s|ship|ships)?\b|\bco-?ops?\b|\bstudents?\b|\bcampus\b|early[-_ ]?(?:career|talent)|"
@@ -1248,10 +1249,49 @@ def check_getro(ctx: Ctx) -> list[dict]:
     return problems
 
 
+# watching the watchers ---------------------------------------------------------------------------------
+
+def dark(db: DB, check: str, key: str, now) -> str | None:
+    """The day a source that used to answer last did, if that is more than DARK_DAYS ago. None while it answers, and
+    for one that never has: a page that refuses scripts from the start is no news."""
+    days = [x[0] for x in load(db, f"blocked:rate:{check}:{key}", []) if x[1]]
+    last = max(days, default=None)
+    return last if last and (now.date() - datetime.fromisoformat(last).date()).days > DARK_DAYS else None
+
+
+def _watched(ctx: Ctx, check: str) -> set[str]:
+    """What `check` reads today, so a source taken out of the config is not reported as dark."""
+    if check == "listings":
+        return {x["name"] for x in opts(ctx.cfg).get("listings") or []}
+    if check == "parallel":
+        return {source_id(x) for x in entries(ctx.cfg, "parallel_sources")}
+    if check == "workday":
+        return set(workday_tenants(ctx))
+    return set(ctx.comps)
+
+
+def check_dark(ctx: Ctx) -> list[dict]:
+    """A list or check that stopped answering stops watching without a word: its reads are only logged. No request."""
+    problems: list[dict] = []
+    for r in ctx.db.q("SELECT key FROM kv WHERE key LIKE 'blocked:rate:%'"):
+        _, _, check, key = r["key"].split(":", 3)
+        last = dark(ctx.db, check, key, ctx.now)
+        if last is None or key not in _watched(ctx, check):
+            continue
+        c = ctx.comps.get(key)
+        problems.append({"key": c.key if c else "", "name": c.name if c else key, "checker": check, "kind": "check gone dark",
+                         "summary": f"{LABELS.get(check, check)} has not answered since {last}",
+                         "detail": "It is no longer watching anything: see `internwatch liveness` and data/logs.",
+                         "since": f"{last}T00:00:00Z", "careers_url": c.careers_url[0] if c and c.careers_url else "",
+                         "alert": {"id": f"dark:{check}:{key}", "rule": "dark", "check": check, "item": key}})
+    return problems
+
+
 # running them -----------------------------------------------------------------------------------------
 
 CHECKS: list[tuple[str, callable]] = [  # (name, fn(ctx) -> problems), cheapest first, so a slow site starves none of them
     ("confirm", check_confirm),
+    ("dark", check_dark),
     ("workday", check_workday),
     ("joblist", check_job_lists),
     ("programs", check_programs),
