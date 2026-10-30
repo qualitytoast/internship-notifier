@@ -30,7 +30,7 @@ from . import alerts, emails, liveness, moves
 from .adapters import get_checker
 from .adapters.base import FetchContext, dedupe
 from .config import Company, Config
-from .crosscheck import CrossCheck
+from .crosscheck import CrossCheck, Result
 from .db import DB, iso, parse_iso, reopened, utcnow
 from .filters import evaluate, is_student_role, vague_location
 from .health import Outcome, assess
@@ -42,6 +42,7 @@ from .models import CheckerError, Job, NotModified, ShapeError
 log = logging.getLogger(__name__)
 
 CROSSCHECK_KEY = "_simplify"   # company_state row used to track the cross-check's own health
+CROSSCHECK_SECONDS = 180       # a hanging list must not hold up the morning email
 CONNECTIVITY_URLS = ("https://raw.githubusercontent.com/", "https://www.google.com/generate_204")
 # learn_ids: the posting id in a SimplifyJobs link, per checker that can read a posting by id (watch_ids)
 POSTING_ID_IN_URL = {"ashby": re.compile(r"([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})"),
@@ -541,12 +542,14 @@ class Runner:
     # ------------------------------------------------------------------------------------------
     def _crosscheck(self, s: RunSummary) -> None:
         cc = CrossCheck(self.cfg, self.db)
-        http = Http(http_settings(self.cfg), gate=self.gate)
-        try:
-            res = cc.fetch_and_store(http)
+        http = Http(http_settings(self.cfg), gate=self.gate, deadline=time.monotonic() + CROSSCHECK_SECONDS)
+        try:  # whatever the list does, the run's emails still go out and the failure is named
+            res = cc.resolve(cc.fetch_and_store(http))
+        except Exception as e:  # noqa: BLE001
+            log.exception("cross-check failed")
+            res = Result(errors=[f"{type(e).__name__}: {e}"])
         finally:
             http.close()
-        res = cc.resolve(res)
         s.misses += res.misses
         # the cross-check's own health, so a broken README parser can't go unnoticed
         pseudo = Company(key=CROSSCHECK_KEY, name="SimplifyJobs cross-check", category="", checker="simplify",

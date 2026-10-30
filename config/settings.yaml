@@ -138,16 +138,39 @@ liveness:                        # boards that go dead, get abandoned or are rep
     ripplematch:company=akuna-capital: ripplematch:company_id=904                 # RippleMatch by name = by id
     ripplematch:company=expedia-group: ripplematch:company_id=1153
     ripplematch:company=ukg-ultimate-kronos-group: ripplematch:company_id=926
+    ripplematch:company=mongodb: ripplematch:company_id=825
+    # mirrors the October 2026 audit proved: nearly all their jobs are stored, or it is the same system by another name
+    workday:site=bh_externalcareers,tenant=brevanhoward: 'phenom:'   # brevan-howard
+    workday:site=apply,tenant=ebay: 'phenom:'   # ebay
+    ripplematch:company=ebay: 'ripplematch:company_id=865'   # ebay
+    ripplematch:company=epic: 'epic-careers:'   # epic-systems
+    workday:site=nvidiaexternalcareersite,tenant=nvidia: 'eightfold:domain=nvidia.com'   # nvidia
+    eightfold:domain=nvidia.eightfold.ai: 'eightfold:domain=nvidia.com'   # nvidia
+    ripplematch:company=palo-alto-networks: 'ripplematch:company_id=676'   # palo-alto-networks
+    ripplematch:company=plaid: 'ripplematch:company_id=718'   # plaid
+    ripplematch:company=rockwell-automation: 'ripplematch:company_id=671'   # rockwell-automation
+    ripplematch:company=hubspot: 'ripplematch:company_id=708'   # hubspot
+    ripplematch:company=peak6: 'workday:site=apexfintechsolutions,tenant=peak6group'   # peak6
+    workday:site=salesforce_research,tenant=salesforce: 'workday:site=external_career_site,tenant=salesforce'   # salesforce
+    workday:site=futureforce_newgradroles,tenant=salesforce: 'workday:site=external_career_site,tenant=salesforce'   # salesforce
+    workday:site=slack,tenant=salesforce: 'workday:site=external_career_site,tenant=salesforce'   # salesforce
+    ashby:board=snowflake: 'phenom:'   # snowflake
+    workday:site=ccicareers,tenant=osv-cci: 'workday:site=ccicareers,tenant=osv_cci'   # castleton-commodities
+    eightfold:domain=johndeere.eightfold.ai: 'eightfold:domain=johndeere.com'   # john-deere
+    icims:portal=hubcareers-docusign.icims.com: 'jibe:host=careers.docusign.com'   # docusign
+    icims:portal=uscareers-docusign.icims.com: 'jibe:host=careers.docusign.com'   # docusign
+    icims:portal=careers-sig.icims.com: 'jibe:host=careers.sig.com'   # sig
+    avature:site=twosigma.avature.net: 'avature:site=careers.twosigma.com'   # two-sigma
+    avature:site=ibmglobal.avature.net: 'ibm:'   # ibm
+    oracle:host=eeho.fa.us2.oraclecloud.com,site=cx_1: 'oracle:host=eeho.fa.us2.oraclecloud.com,site=cx_45001'   # oracle
+    greenhouse:board=instabase: 'instabase:board=instabase'   # instabase
 
 crosscheck:
   grace_minutes: 90              # wait this long (and for a fresh poll) before calling a Simplify role a miss
-  sources:
+  sources:                       # listings.json: what SimplifyJobs' README and Off-Season README are built from, and more
     - name: summer
-      url: https://raw.githubusercontent.com/SimplifyJobs/Summer2027-Internships/dev/README.md
+      url: https://raw.githubusercontent.com/SimplifyJobs/Summer2027-Internships/dev/.github/scripts/listings.json
       page: https://github.com/SimplifyJobs/Summer2027-Internships/blob/dev/README.md
-    - name: offseason
-      url: https://raw.githubusercontent.com/SimplifyJobs/Summer2027-Internships/dev/README-Off-Season.md
-      page: https://github.com/SimplifyJobs/Summer2027-Internships/blob/dev/README-Off-Season.md
 
 http:
   connect_timeout: 10

@@ -14,8 +14,8 @@ baseline. The checks run once a morning in daily runs, within `blocked_scan_seco
   N  new student and program pages in sitemaps, WordPress page lists and Goldman's programs feed
   G  new labels: Goldman's experience and source types, Meta's team labels (from its poll, no request)
   S  parallel boards read with the existing adapters: a matching role InternWatch doesn't have
-  L  third-party lists and board registries, and Getro boards that read the careers page: a job system for one of
-     these companies that the config doesn't name
+  L  third-party lists and board registries (for every active company, not just these), and Getro boards that read
+     the careers page: a job system the config doesn't name
 
 A job id seen where InternWatch has no such job is only reported once a healthy poll of the company on a later run
 still doesn't have it (a posting can simply be newer than this morning's poll).
@@ -1083,24 +1083,25 @@ def company_of(index, comps: dict[str, Company], name: str, url: str, slug: bool
 
 
 def check_listings(ctx: Ctx) -> list[dict]:
-    """L. Weekly per list, spread over the week: a job system a list links for one of the 31 that the config
-    doesn't name (aliases and the parallel boards count as named) and no list showed before. A list's first
-    download is a silent baseline; an unchanged list (ETag) costs one request."""
+    """L. Every active company, daily: a job system a list links that the config doesn't name (aliases and the parallel
+    boards count as named) or that no stored posting links. A first look is never silent: Akuna's second board was
+    missed for that reason, so a list's first download raises what it finds like any other. One alert per company and
+    job system, however many lists link it. An unchanged list (ETag) costs one request. vanshb03's list links everything
+    through go.vansh.nyc, whose robots.txt disallows all readers, so its links are never followed and reveal nothing."""
     from .crosscheck import CompanyIndex
     sources = {x["name"]: x for x in opts(ctx.cfg).get("listings") or []}
-    comps = ctx.comps
+    comps = {c.key: c for c in ctx.cfg.active}
     index = CompanyIndex(ctx.cfg.companies)
     al = aliases(ctx.cfg)
-    problems: list[dict] = []
+    found: dict[tuple[str, str], tuple[str, str, str]] = {}
     http = ctx.http(read_timeout=90)
     try:
-        for name in pick(ctx.db, "listings", sorted(sources), 7, ctx.now):
+        for name in pick(ctx.db, "listings", sorted(sources), 1, ctx.now):
             if ctx.out_of_time():
                 break
             src = sources[name]
-            etag_key, skey = f"blocked:etag:{name}", f"blocked:list:{name}"
-            raw = ctx.db.get(skey)
-            headers = {"If-None-Match": ctx.db.get(etag_key)} if raw and ctx.db.get(etag_key) else {}
+            etag_key, skey = f"lists:etag:{name}", f"lists:links:{name}"
+            headers = {"If-None-Match": ctx.db.get(etag_key)} if ctx.db.get(skey) and ctx.db.get(etag_key) else {}
             try:
                 r = http.get(src["url"], headers=headers, ok_statuses=(304,), timeout=90)
             except Exception as e:  # noqa: BLE001 — refused: tomorrow
@@ -1118,43 +1119,43 @@ def check_listings(ctx: Ctx) -> list[dict]:
                 done(ctx.db, "listings", name, "failed", ctx.now)
                 log.warning("moves: list %s could not be parsed: %s", name, e)
                 continue
-            found: dict[str, dict[str, tuple[str, str]]] = {}
+            linked: dict[str, set[str]] = {}
             for company, title, url, system in rows:
                 c = company_of(index, comps, company, url, slug=src["format"] in ("ripplematch", "trackr"))
                 if c is None:
                     continue
                 for k in ([al.get(system, system)] if system else systems_in(url, "", c, al)):
-                    found.setdefault(c.key, {}).setdefault(k, (title, url))
-            before = json.loads(raw) if raw else None
-            everywhere: dict[str, set] = {}
-            for other in sources:
-                for k, systems in (json.loads(ctx.db.get(f"blocked:list:{other}") or "{}")).items():
-                    everywhere.setdefault(k, set()).update(systems)
-            state = {k: sorted(set(v) | set((before or {}).get(k) or [])) for k, v in found.items()}
-            for k, v in (before or {}).items():
-                state.setdefault(k, v)
-            ctx.db.set(skey, json.dumps(state))
+                    linked.setdefault(c.key, set()).add(k)
+                    found.setdefault((c.key, k), (src.get("label", name), title, url))
+            ctx.db.set(skey, json.dumps({k: sorted(v) for k, v in linked.items()}))
             if r.headers.get("etag"):
                 ctx.db.set(etag_key, r.headers["etag"])
             done(ctx.db, "listings", name, "ok", ctx.now)
-            if before is None:
-                continue  # this list's first download: a silent baseline
-            for key, systems in sorted(found.items()):
-                c = comps[key]
-                known = known_systems(ctx, c) | everywhere.get(key, set())
-                new = {k: v for k, v in systems.items() if k not in known}
-                if new:
-                    shown = "; ".join(f"{k} (e.g. '{t or 'a posting'}' {u})" for k, (t, u) in list(new.items())[:3])
-                    problems.append(alert(ctx.db, c, f"list-{name}", "new job site?",
-                                          f"{src.get('label', name)} links a job site InternWatch doesn't read: {shown}",
-                                          "A list maintainer or contributor found a posting there. If it is the "
-                                          "company's and carries student roles, add it to the config.",
-                                          {skey: raw or "", **due_restore(ctx.db, "listings", name)},
-                                          [{"suffix": k, "rule": "list_system", "item": k, "scope": "lists",
-                                            "summary": f"{src.get('label', name)} links a job site InternWatch doesn't "
-                                                       f"read: {k}"} for k in new]))
     finally:
         http.close()
+    if all(ctx.db.get(f"lists:links:{n}") for n in sources):  # every list has been read: what none links has gone
+        everywhere: dict[str, set[str]] = {}
+        for n in sources:
+            for key, systems in load(ctx.db, f"lists:links:{n}", {}).items():
+                everywhere.setdefault(key, set()).update(systems)
+        for company in {a["company"] for a in alerts.live(ctx.db, rule="list_system")}:
+            alerts.seen(ctx.db, company, "list_system", everywhere.get(company, set()), scope="lists")
+    raw = ctx.db.get("lists:alerted")
+    told = set(json.loads(raw)) if raw else set()
+    problems: list[dict] = []
+    for (key, k), (label, title, url) in sorted(found.items()):
+        c = comps[key]
+        if f"{key}|{k}" in told or k in known_systems(ctx, c):
+            continue
+        told.add(f"{key}|{k}")
+        if liveness._portal(k) and k in liveness.posting_portals(ctx.db, key):
+            continue  # a stored posting links it: InternWatch reads what is posted there
+        summary = f"{label} links a job site InternWatch doesn't read: {k} (e.g. '{title or 'a posting'}' {url})"
+        problems.append(alert(ctx.db, c, f"list:{k}", "new job site?", summary,
+                              "A list maintainer or contributor found a posting there. If it is the company's and "
+                              "carries student roles, add it to the config.", {"lists:alerted": raw or ""},
+                              [{"suffix": "board", "rule": "list_system", "item": k, "scope": "lists", "summary": summary}]))
+    ctx.db.set("lists:alerted", json.dumps(sorted(told)))
     return problems
 
 
@@ -1272,7 +1273,7 @@ def status(cfg: Config, conn) -> str:
     for k, v in sorted(kv.items()):
         parts = k.split(":", 2)
         if parts[0] == "live_alert" and len(parts) == 3 and v and v[:10] >= since and parts[1] in comps \
-                and (parts[2] in mine or parts[2].startswith("list-")):
+                and (parts[2] in mine or parts[2].startswith("list:")):
             recent.append(f"{parts[1]} ({parts[2]}, {v[:10]})")
     lines.append(f"  alerts in the last 28 days: {len(recent)}" + (f": {', '.join(recent[:12])}" if recent else ""))
     return "\n".join(lines)

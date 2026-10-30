@@ -90,6 +90,7 @@ def _miss(m: dict) -> tuple[dict, dict]:
 
 
 def live(db: DB, company: str | None = None, rule: str | None = None):
+    """The rows holding their key, of one company and/or one rule."""
     where = ["state IN ('open', 'dismissed')"]
     args = []
     if company is not None:
@@ -145,8 +146,10 @@ def _configured(cfg: Config, c: Company) -> set[str]:
 
 
 def _cfg_system(cfg: Config, a, d: dict) -> bool:
+    from . import moves  # moves imports this module
     c = next((x for x in cfg.companies if x.key == a["company"]), None)
-    return c is None or d.get("system", d.get("item", "")).lower() in _configured(cfg, c)
+    system = d.get("system", d.get("item", "")).lower()
+    return c is None or system in _configured(cfg, c) or moves.aliases(cfg).get(system, system) in _configured(cfg, c)
 
 
 def _site(cfg: Config, a, d: dict) -> bool:
@@ -251,6 +254,15 @@ def start(cfg: Config, db: DB) -> None:
     for r in db.q("SELECT * FROM source_health WHERE empty_since IS NOT NULL"):
         add(r["company"], "board empty", f"{r['label'] or r['source']} lists 0 jobs", r["empty_since"],
             {"id": f"live_alert:{r['company']}:{r['source']}:empty", "rule": "source_empty", "source": r["source"]})
+    from .crosscheck import abroad  # crosscheck imports this module
+    for r in db.q("SELECT * FROM simplify_rows WHERE status IN ('filtered', 'missed')"):
+        c = names.get(r["tracked_company"])
+        if c is not None and not abroad(cfg, c, r["location"] or ""):
+            how = "filtered" if r["status"] == "filtered" else "never"
+            _upsert(db, *_miss({"company": c.name, "key": c.key, "how": how, "title": r["title"], "url": r["url"] or "",
+                                "source": r["source"], "row_key": r["row_key"],
+                                "reason": "rejected by your filters" if how == "filtered" else "the checker never saw it"}),
+                    now, told=now)
     db.set("alerts_started", now)
 
 

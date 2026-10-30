@@ -1,18 +1,18 @@
-"""Independent cross-check against the SimplifyJobs Summer 2027 lists (README.md + README-Off-Season.md).
+"""Independent cross-check against the SimplifyJobs Summer 2027 list (listings.json, what its READMEs are built from).
 
 Every run:
-1. download both READMEs (conditional GET with ETag) and parse every listing row
+1. download the list (conditional GET with ETag) and read every row
 2. rows never seen before are "new"; the very first download is only a baseline
 3. new row for a tracked company:
      - company blocked / checker currently failing → stored and emailed as a new posting "via Simplify"
      - otherwise wait until the checker has polled the company after the row appeared (plus a grace
        period); if the checker never saw the job → "possible miss" health alert (a bug to fix);
-       if it saw it but the filters rejected it (and it's one of your fields) → also reported
+       if it saw it but the filters rejected it (and it's one of your fields) → also reported;
+       neither when Simplify's own location is outside the company's locations too
 4. new row for an untracked company → listed in the daily digest
 """
 from __future__ import annotations
 
-import hashlib
 import json
 import logging
 import re
@@ -20,11 +20,11 @@ from dataclasses import dataclass, field
 from datetime import timedelta
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
-from bs4 import BeautifulSoup
-
+from . import alerts
 from .config import Company, Config
 from .db import DB, iso, parse_iso, utcnow
 from .filters import evaluate
+from .locations import location_decision
 from .models import Job
 
 log = logging.getLogger(__name__)
@@ -32,6 +32,9 @@ log = logging.getLogger(__name__)
 YOUR_CATEGORIES = ("software engineering", "data science", "quantitative")
 SUFFIXES = {"inc", "llc", "ltd", "corp", "corporation", "co", "company", "technologies", "technology", "group",
             "holdings", "lp", "llp", "plc", "the", "incorporated", "limited"}
+# listings.json's categories, as its READMEs head them
+CATEGORIES = {"software": "Software Engineering", "ai/ml/data": "Data Science, AI & Machine Learning",
+              "quant": "Quantitative Finance", "hardware": "Hardware Engineering", "product": "Product Management"}
 TRACKING_PARAMS = {"utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "ref", "source", "gh_src", "lever-source"}
 
 
@@ -79,48 +82,17 @@ def norm_company(name: str) -> str:
     return " ".join(words)
 
 
-def parse_readme(text: str, source: str) -> list[Row]:
+def parse_listings(text: str, source: str) -> list[Row]:
+    """Simplify's listings.json: the same rows as its READMEs and more (roles without a term, early-season roles)."""
     rows: list[Row] = []
-    sections = re.split(r"(?m)^## ", text)
-    for sec in sections[1:]:
-        heading = sec.split("\n", 1)[0]
-        category = re.sub(r"[^\w&,\s-]", "", heading).replace("Internship Roles", "").strip()
-        if "<table" not in sec:
+    for x in json.loads(text):
+        if not (isinstance(x, dict) and x.get("id")) or x.get("is_visible") is False:
             continue
-        soup = BeautifulSoup(sec, "html.parser")
-        for table in soup.find_all("table"):
-            headers = [th.get_text(strip=True).lower() for th in table.find_all("th")]
-            if "company" not in headers or "role" not in headers:
-                continue
-            col = {h: i for i, h in enumerate(headers)}
-            company = ""
-            for tr in table.find_all("tr"):
-                tds = tr.find_all("td")
-                if len(tds) < len(headers):
-                    continue
-                ctext = tds[col["company"]].get_text(" ", strip=True)
-                if ctext and ctext != "↳":
-                    company = ctext
-                title = tds[col["role"]].get_text(" ", strip=True)
-                loc_cell = tds[col["location"]] if "location" in col else None
-                if loc_cell is not None:
-                    det = loc_cell.find("details")
-                    if det and det.find("summary"):
-                        det.find("summary").decompose()
-                    location = "; ".join(x.strip() for x in loc_cell.get_text("\n").split("\n") if x.strip())
-                else:
-                    location = ""
-                app = tds[col["application"]] if "application" in col else tds[-2]
-                links = [a.get("href", "") for a in app.find_all("a")]
-                apply = next((u for u in links if "simplify.jobs" not in u), "")
-                simplify = next((u for u in links if "simplify.jobs/p/" in u), "")
-                closed = "🔒" in app.get_text() or not links
-                m = re.search(r"simplify\.jobs/p/([0-9a-f-]{36})", simplify)
-                key = m.group(1) if m else hashlib.sha1(f"{company}|{title}|{location}|{clean_url(apply)}".encode()).hexdigest()[:20]
-                rows.append(Row(source=source, key=key, company=company, title=title, location=location,
-                                url=clean_url(apply), simplify_url=simplify.split("?")[0], category=category,
-                                terms=tds[col["terms"]].get_text(" ", strip=True) if "terms" in col else "",
-                                age=tds[col["age"]].get_text(strip=True) if "age" in col else "", closed=closed))
+        category = x.get("category") or ""
+        rows.append(Row(source=source, key=str(x["id"]), company=x.get("company_name") or "", title=x.get("title") or "",
+                        location="; ".join(x.get("locations") or []), url=clean_url(x.get("url") or ""),
+                        simplify_url=f"https://simplify.jobs/p/{x['id']}", category=CATEGORIES.get(category.lower(), category),
+                        terms=" ".join(t for t in x.get("terms") or [] if t != "N/A"), closed=not x.get("active")))
     return rows
 
 
@@ -214,13 +186,27 @@ def find_in_db(db: DB, company: str, row: Row):
     t = title_key(row.title)
     years = set(_YEARS.findall(f"{row.title} {row.terms}"))
     closed_before = iso(utcnow() - timedelta(days=TITLE_MATCH_DAYS))
+    twins = []
     for j in candidates:
         if title_key(j["title"]) != t or (j["removed_at"] and j["removed_at"] < closed_before):
             continue
         if years and set(_YEARS.findall(j["title"])) and not years & set(_YEARS.findall(j["title"])):
             continue
-        return j, "title"
-    return None, ""
+        twins.append(j)
+    if not twins:
+        return None, ""
+    # the same title abroad must not stand in for this one: "Software Engineer Intern" in Paris for the one in Boston
+    in_us = location_decision(row.location, ["US"])[0]
+    return next((j for j in twins if not row.location or location_decision(j["location"], ["US"])[0] == in_us), twins[0]), "title"
+
+
+def abroad(cfg: Config, comp: Company, location: str) -> bool:
+    """Simplify's own location for a role is outside the company's locations: not a role you want, whatever happened."""
+    return bool(location) and not location_decision(location, comp.locations or cfg.rules.default_locations)[0]
+
+
+def _data(alert) -> dict:
+    return json.loads(alert["data"])
 
 
 class CrossCheck:
@@ -240,24 +226,25 @@ class CrossCheck:
                 headers["If-None-Match"] = self.db.get(etag_key)
             try:
                 resp = http.get(src["url"], headers=headers, ok_statuses=(304,), timeout=60)
+                if resp.status == 304:
+                    continue
+                rows = parse_listings(resp.text, name)
             except Exception as e:  # noqa: BLE001 — reported as a health problem by the caller
                 res.errors.append(f"{name}: {type(e).__name__}: {e}")
                 continue
-            if resp.status == 304:
-                continue
-            rows = parse_readme(resp.text, name)
             if len(rows) < 50:
-                res.errors.append(f"{name}: only {len(rows)} rows parsed — README format may have changed")
+                res.errors.append(f"{name}: only {len(rows)} rows parsed — the list's format may have changed")
                 continue
             if resp.headers.get("etag"):
                 self.db.set(etag_key, resp.headers["etag"])
-            baseline = not self.db.get(f"simplify_baselined:{name}")
+            # the first read of listings.json is a baseline too: it holds roles the READMEs left out, older than today
+            baseline = not self.db.get(f"simplify_baselined:{name}") or not self.db.get("simplify_listings_read")
             res.baseline = res.baseline or baseline
-            existing = {r["row_key"] for r in self.db.q("SELECT row_key FROM simplify_rows WHERE source=?", name)}
+            existing = {r["row_key"] for r in self.db.q("SELECT row_key FROM simplify_rows")}  # the READMEs' rows too
             with self.db.tx() as c:
                 for r in rows:
                     if r.key in existing:
-                        c.execute("UPDATE simplify_rows SET last_seen=? WHERE source=? AND row_key=?", (now, name, r.key))
+                        c.execute("UPDATE simplify_rows SET last_seen=? WHERE row_key=?", (now, r.key))
                         continue
                     if r.closed:
                         continue
@@ -271,6 +258,11 @@ class CrossCheck:
                     if not baseline:
                         res.new_rows += 1
             self.db.set(f"simplify_baselined:{name}", now)
+            self.db.conn.execute("UPDATE kv SET value=? WHERE key LIKE 'simplify_baselined:%'", (now,))  # the READMEs' rows
+            self.db.set("simplify_listings_read", now)
+            still_open = {r.key for r in rows if not r.closed}
+            for scope in {a["scope"] for a in map(_data, alerts.live(self.db, rule="miss"))}:
+                alerts.seen(self.db, None, "miss", still_open, scope=scope)  # a role that closed is no longer a miss
         return res
 
     def resolve(self, res: Result) -> Result:
@@ -292,6 +284,9 @@ class CrossCheck:
                 res.via_simplify += 1
                 continue
             hit, how = find_in_db(self.db, comp.key, row)
+            if abroad(self.cfg, comp, r["location"] or ""):
+                self._set(r, "abroad", f"matched by {how}" if hit is not None else "not seen")
+                continue
             if hit is not None:
                 in_fields = any(k in (r["category"] or "").lower() for k in YOUR_CATEGORIES)
                 if not hit["matched"] and in_fields and hit["removed_at"] is None:

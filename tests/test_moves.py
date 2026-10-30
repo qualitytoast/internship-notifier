@@ -5,10 +5,10 @@ from datetime import timedelta
 
 import pytest
 
-from internwatch import liveness, moves
+from internwatch import alerts, liveness, moves
 from internwatch.db import iso, utcnow
 from internwatch.http import Resp
-from internwatch.models import CheckTimeout, FetchError, RobotsBlocked
+from internwatch.models import CheckTimeout, FetchError, Job, RobotsBlocked
 from internwatch.runner import RunOptions, Runner
 
 from conftest import FakeChecker, company, job
@@ -467,7 +467,7 @@ def test_the_real_aliases_point_at_configured_or_watched_systems():
     from internwatch.config import load
     cfg = load()
     c = moves.Ctx(cfg, None, None, None, float("inf"), set())
-    known = set().union(*(moves.known_systems(c, x) for x in moves.blocked(cfg).values()))
+    known = set().union(*(moves.known_systems(c, x) for x in cfg.active))
     assert set(moves.aliases(cfg).values()) <= known
 
 
@@ -841,30 +841,107 @@ def test_list_formats():
          "ripplematch:company=ukg-ultimate-kronos-group")]
 
 
-def test_a_list_links_a_new_board_for_one_of_the_31(blocked_cfg, memdb):
+ROW = "| {} | {} | x | [Apply]({}) | 1d |\n"
+HEAD = "| Company | Position | Location | Posting | Age |\n|---|---|---|---|---|\n"
+GH = "https://job-boards.greenhouse.io/{}/jobs/{}"
+
+
+def _list_cfg(blocked_cfg, *companies, **kw):
+    url = "https://lists.example/README.md"
+    return blocked_cfg(list(companies), listings=[{"name": "speedy", "format": "markdown", "label": "speedy", "url": url}], **kw), url
+
+
+def akuna():
+    return company("akuna-capital", name="Akuna Capital", checker="greenhouse", settings={"board": "akunacapital"})
+
+
+def test_a_first_look_at_a_list_raises_a_board_nobody_named(blocked_cfg, memdb):
+    """Akuna's second board was missed because a list's first read was recorded silently."""
+    cfg, url = _list_cfg(blocked_cfg, akuna())
+    http = FakeHttp({url: HEAD + ROW.format("Akuna Capital", "Quant Intern", GH.format("akunacapitaloci", 2))})
+    problems = moves.check_listings(ctx(cfg, memdb, http))
+    assert [(p["key"], p["kind"]) for p in problems] == [("akuna-capital", "new job site?")]
+    assert "greenhouse:board=akunacapitaloci" in problems[0]["summary"] and "'Quant Intern'" in problems[0]["summary"]
+    assert moves.check_listings(ctx(cfg, memdb, http, days=1)) == []     # a second run raises nothing new …
+    alerts.record(memdb, problems, [])
+    assert [a["kind"] for a in alerts.for_email(memdb)[0]] == ["new job site?"]   # … and it stays listed
+
+
+def test_a_first_look_raises_for_every_company_not_just_the_31(blocked_cfg, memdb):
+    flow = company("other-flow-traders", name="Flow Traders", checker="greenhouse", settings={"board": "flowtraders"})
+    cfg, url = _list_cfg(blocked_cfg, flow)          # keys starting "other" are outside the blocked list
+    assert "other-flow-traders" not in moves.blocked(cfg)
+    http = FakeHttp({url: HEAD + ROW.format("Flow Traders", "Co-op", GH.format("ftsp27co-ops", 8176219))})
+    assert [p["key"] for p in moves.check_listings(ctx(cfg, memdb, http))] == ["other-flow-traders"]
+
+
+def test_what_is_read_mirrored_or_linked_by_a_posting_raises_nothing(blocked_cfg, memdb):
     ctc = company("chicago-trading-company", name="Chicago Trading Company", checker="greenhouse",
                   settings={"boards": ["chicagotrading", "chicagotradingcampus"]})
     uber = company("uber", name="Uber", checker="oracle", settings={"host": "iaziqy.fa.ocs.oraclecloud.com", "site": "UberCareers"})
+    atl = company("atlassian", name="Atlassian", checker="atlassian")
     freight = company("other-uber-freight", name="Uber Freight", checker="greenhouse", settings={"board": "uberfreight"})
-    url = "https://lists.example/README.md"
-    cfg = blocked_cfg([ctc, uber, freight], listings=[{"name": "speedy", "format": "markdown", "url": url}],
-                      aliases={"oracle:host=iaziqy.fa.ocs.oraclecloud.com,site=cx_1":
-                               "oracle:host=iaziqy.fa.ocs.oraclecloud.com,site=ubercareers"},
-                      parallel_sources=[{"company": "chicago-trading-company", "checker": "greenhouse",
-                                         "settings": {"board": "ctccampusboard"}}])
-    row = "| {} | {} | x | [Apply]({}) | 1d |\n"
-    head = "| Company | Position | Location | Posting | Age |\n|---|---|---|---|---|\n"
-    http = FakeHttp({url: head + row.format("Chicago Trading Company", "Quant Intern",
-                                            "https://job-boards.greenhouse.io/chicagotradingcampus/jobs/2")})
-    assert moves.check_listings(ctx(cfg, memdb, http)) == []  # first download: a silent baseline
-    http.pages[url] += (row.format("Chicago Trading Company", "SWE Intern", "https://job-boards.greenhouse.io/ctcuniversity/jobs/9")
-                        + row.format("Chicago Trading Company", "Twin", "https://job-boards.greenhouse.io/ctccampusboard/jobs/3")
-                        + row.format("Uber", "Intern", "https://iaziqy.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/1")
-                        + row.format("Uber Freight", "Intern", "https://job-boards.greenhouse.io/uberfreight/jobs/4"))
-    problems = moves.check_listings(ctx(cfg, memdb, http, days=7))
-    assert [(p["key"], p["summary"].split(" (e.g.")[0]) for p in problems] == [
-        ("chicago-trading-company", "speedy links a job site InternWatch doesn't read: greenhouse:board=ctcuniversity")]
-    assert "'SWE Intern'" in problems[0]["summary"]
+    cfg, url = _list_cfg(blocked_cfg, ctc, uber, atl, freight,
+                         aliases={"oracle:host=iaziqy.fa.ocs.oraclecloud.com,site=cx_1":
+                                  "oracle:host=iaziqy.fa.ocs.oraclecloud.com,site=ubercareers"},
+                         parallel_sources=[{"company": "chicago-trading-company", "checker": "greenhouse",
+                                            "settings": {"board": "ctccampusboard"}}])
+    memdb.upsert_jobs("atlassian", [Job(id="1", title="Intern", url="https://campus-americas.icims.com/jobs/1/intern/job")], iso())
+    text = HEAD + "".join(ROW.format(*r) for r in [
+        ("Chicago Trading Company", "Configured", GH.format("chicagotradingcampus", 2)),
+        ("Chicago Trading Company", "Watched", GH.format("ctccampusboard", 3)),
+        ("Uber", "Mirror", "https://iaziqy.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/1"),
+        ("Uber Freight", "Its own company", GH.format("uberfreight", 4)),
+        ("Atlassian", "Stored", "https://campus-americas.icims.com/jobs/1/intern/job")])
+    assert moves.check_listings(ctx(cfg, memdb, FakeHttp({url: text}))) == []
+
+
+def test_a_board_on_three_lists_is_one_alert(blocked_cfg, memdb):
+    urls = [f"https://lists.example/{i}.md" for i in range(3)]
+    cfg = blocked_cfg([akuna()], listings=[{"name": f"l{i}", "format": "markdown", "url": u} for i, u in enumerate(urls)])
+    text = HEAD + ROW.format("Akuna Capital", "Quant Intern", GH.format("akunacapitaloci", 2))
+    assert len(moves.check_listings(ctx(cfg, memdb, FakeHttp({u: text for u in urls})))) == 1
+
+
+def test_an_earlier_silent_baseline_does_not_suppress_the_alert(blocked_cfg, memdb):
+    cfg, url = _list_cfg(blocked_cfg, akuna())
+    memdb.set("blocked:list:speedy", json.dumps({"akuna-capital": ["greenhouse:board=akunacapitaloci"]}))
+    http = FakeHttp({url: HEAD + ROW.format("Akuna Capital", "Quant Intern", GH.format("akunacapitaloci", 2))})
+    assert len(moves.check_listings(ctx(cfg, memdb, http))) == 1
+
+
+def test_a_dismissed_board_is_not_raised_again(blocked_cfg, memdb):
+    cfg, url = _list_cfg(blocked_cfg, akuna())
+    http = FakeHttp({url: HEAD + ROW.format("Akuna Capital", "Quant Intern", GH.format("akunacapitaloci", 2))})
+    alerts.record(memdb, moves.check_listings(ctx(cfg, memdb, http)), [])
+    assert len(alerts.dismiss(memdb, kind="new job site?")) == 1
+    alerts.record(memdb, moves.check_listings(ctx(cfg, memdb, http, days=1)), [])
+    assert alerts.for_email(memdb)[0] == []
+
+
+def test_a_board_no_list_links_any_more_clears(blocked_cfg, memdb):
+    cfg, url = _list_cfg(blocked_cfg, akuna())
+    http = FakeHttp({url: HEAD + ROW.format("Akuna Capital", "Quant Intern", GH.format("akunacapitaloci", 2))})
+    alerts.record(memdb, moves.check_listings(ctx(cfg, memdb, http)), [])
+    http.pages[url] = HEAD + ROW.format("Akuna Capital", "Quant Intern", GH.format("akunacapital", 3))
+    assert moves.check_listings(ctx(cfg, memdb, http, days=1)) == []
+    assert alerts.for_email(memdb)[0] == []
+
+
+def test_a_board_failing_email_is_raised_again(blocked_cfg, memdb):
+    cfg, url = _list_cfg(blocked_cfg, akuna())
+    http = FakeHttp({url: HEAD + ROW.format("Akuna Capital", "Quant Intern", GH.format("akunacapitaloci", 2))})
+    p = moves.check_listings(ctx(cfg, memdb, http))[0]
+    liveness.restore(memdb, p)
+    assert len(moves.check_listings(ctx(cfg, memdb, http, days=1))) == 1
+
+
+def test_a_shortened_link_is_never_followed(blocked_cfg, memdb):
+    """go.vansh.nyc's robots.txt disallows every reader: its links name a company but reveal no job system."""
+    cfg, url = _list_cfg(blocked_cfg, akuna())
+    http = FakeHttp({url: HEAD + ROW.format("Akuna Capital", "Quant Intern", "https://go.vansh.nyc/10y")})
+    assert moves.check_listings(ctx(cfg, memdb, http)) == []
+    assert http.calls == [f"GET {url}"]
 
 
 def test_an_unchanged_list_is_not_parsed_again(blocked_cfg, memdb):
@@ -872,7 +949,7 @@ def test_an_unchanged_list_is_not_parsed_again(blocked_cfg, memdb):
     cfg = blocked_cfg([company("coinbase", name="Coinbase")], listings=[{"name": "s", "format": "simplify", "url": url}])
     http = FakeHttp({url: Resp(200, url, {"etag": '"v1"'}, b"[]")})
     moves.check_listings(ctx(cfg, memdb, http))
-    assert memdb.get("blocked:etag:s") == '"v1"'
+    assert memdb.get("lists:etag:s") == '"v1"'
     http.pages[url] = Resp(304, url, {}, b"")
     assert moves.check_listings(ctx(cfg, memdb, http, days=7)) == []
 
