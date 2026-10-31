@@ -393,6 +393,29 @@ def test_a_read_cut_short_by_time_stays_due(make_cfg, memdb):
     assert memdb.get("blocked:at:watch-full:nvidia/full") is None
 
 
+def test_a_read_an_adapter_cut_short_with_time_left_is_a_failed_read_not_an_empty_board(make_cfg, memdb):
+    *_, cfg = nvidia(make_cfg)
+    BOARDS["interns"] = [job("/job/a_JR5", "Software Engineer Intern"), "cut short"]  # Workday keeps what it read
+    assert read(cfg, memdb, ["nvidia"]) == []
+    assert json.loads(memdb.get("blocked:rate:watch:nvidia/interns"))[-1][1:] == [0, "failed"]
+    assert memdb.get("blocked:retry:watch:nvidia/interns") == "1" and memdb.get("blocked:at:watch:nvidia/interns") is None
+    assert memdb.get("blocked:pending:watch:nvidia/interns") is None   # and its jobs aren't judged
+
+
+def test_a_timeout_through_the_real_workday_adapter_counts_as_a_failed_read(make_cfg, memdb, monkeypatch):
+    from internwatch.adapters import get_checker
+    monkeypatch.setattr(watch, "get_checker", get_checker)
+    c = company("ebay")
+    cfg = cfg_of(make_cfg, [c], [{"company": "ebay", "name": "Workday", "checker": "workday", "settings": {
+        "host": "ebay.wd5.myworkdayjobs.com", "tenant": "ebay", "site": "apply"}}])
+
+    class Timeouts(Http):
+        def post_json(self, url, **kw):
+            raise CheckTimeout("timeout (ReadTimeout) for POST x (after 2 attempts)")
+    watch.run(cfg, memdb, None, lambda deadline, **kw: Timeouts(), float("inf"), {"ebay"})
+    assert json.loads(memdb.get("blocked:rate:watch:ebay/Workday"))[-1][1:] == [0, "failed"]
+
+
 def test_no_time_at_all_reads_nothing(make_cfg, memdb, monkeypatch):
     *_, cfg = nvidia(make_cfg)
     calls = spy(monkeypatch)

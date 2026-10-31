@@ -42,24 +42,26 @@ liveness:                        # boards that go dead, get abandoned or are rep
   watch_boards:                  # mirrors with a feed of their own: read every run, never stored. Boards whose
     # `new job site?` alert you dismissed are read the same way. A job that passes your filters and that InternWatch
     # doesn't have alerts. every_days: 7 is a weekly read; NVIDIA's full read needs 244 requests, its interns 10.
-    - {company: brevan-howard, checker: workday,
+    - {company: brevan-howard, name: Workday, checker: workday,
        settings: {host: wd3.myworkdaysite.com, tenant: brevanhoward, site: BH_ExternalCareers}}
-    - {company: ebay, checker: workday, settings: {host: ebay.wd5.myworkdayjobs.com, tenant: ebay, site: apply}}
-    - {company: epic-systems, checker: ripplematch, settings: {company_id: 631}}
+    - {company: ebay, name: Workday, checker: workday,
+       settings: {host: ebay.wd5.myworkdayjobs.com, tenant: ebay, site: apply}}
+    - {company: epic-systems, name: RippleMatch, checker: ripplematch, settings: {company_id: 631}}
     - {company: nvidia, name: Workday interns, checker: workday,
        settings: {host: nvidia.wd5.myworkdayjobs.com, tenant: nvidia, site: NVIDIAExternalCareerSite,
                   facets: {workerSubType: [0c40f6bd1d8f10adf6dae42e46d44a17]}}}
     - {company: nvidia, name: Workday full read, checker: workday, every_days: 7,
        settings: {host: nvidia.wd5.myworkdayjobs.com, tenant: nvidia, site: NVIDIAExternalCareerSite}}
-    - {company: peak6, checker: ripplematch, settings: {company_id: 149}}
-    - {company: salesforce, checker: workday,
+    - {company: peak6, name: RippleMatch, checker: ripplematch, settings: {company_id: 149}}
+    - {company: salesforce, name: Workday research site, checker: workday,
        settings: {host: salesforce.wd12.myworkdayjobs.com, tenant: salesforce, site: Salesforce_Research}}
-    - {company: salesforce, checker: workday,
+    - {company: salesforce, name: Workday new-grad site, checker: workday,
        settings: {host: salesforce.wd12.myworkdayjobs.com, tenant: salesforce, site: Futureforce_NewGradRoles}}
-    - {company: salesforce, checker: workday,
+    - {company: salesforce, name: Workday Slack site, checker: workday,
        settings: {host: salesforce.wd12.myworkdayjobs.com, tenant: salesforce, site: Slack}}
-    - {company: snowflake, checker: ashby, settings: {board: snowflake}}
-    - {company: docusign, checker: icims, settings: {portal: "https://hubcareers-docusign.icims.com"}}
+    - {company: snowflake, name: Ashby, checker: ashby, settings: {board: snowflake}}
+    - {company: docusign, name: iCIMS hubcareers, checker: icims,
+       settings: {portal: "https://hubcareers-docusign.icims.com"}}
   watch_every_days:              # dismissed boards too big to read every run (T-Mobile's has no intern worker type)
     "workday:site=alumni,tenant=tmobile": 7
   watch_unreadable:              # mirrors that can't be read. A role a list carries still raises a possible miss

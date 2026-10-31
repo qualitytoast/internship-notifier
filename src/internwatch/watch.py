@@ -187,8 +187,10 @@ def read(ctx: moves.Ctx, http, b: Board) -> list[Job] | None:
         moves.done(ctx.db, b.check, b.id, moves.outcome(e), ctx.now)
         log.info("watch: %s not read: %s", b.id, str(e)[:160])
         return None
-    if fc.partial and ctx.out_of_time():  # cut short: it stays due, and its jobs say nothing about what left the board
-        return None
+    if fc.partial:  # cut short (Workday keeps what it read through a timeout): its jobs say nothing about the rest
+        if not ctx.out_of_time():
+            moves.done(ctx.db, b.check, b.id, "failed", ctx.now)
+        return None  # out of time it just stays due
     moves.done(ctx.db, b.check, b.id, "ok", ctx.now)
     ctx.db.set(f"blocked:took:{b.id}", f"{time.monotonic() - started:.0f}")
     ctx.db.set(unreadable, "")
