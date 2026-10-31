@@ -1329,6 +1329,9 @@ def _watched(ctx: Ctx, check: str) -> set[str]:
         return set(workday_tenants(ctx))
     if check == "careers":
         return {c.key for c in ctx.cfg.active if c.careers_url and c.key not in ctx.comps}
+    if check in ("watch", "watch-full"):
+        from .watch import boards  # watch imports this module
+        return {b.id for b in boards(ctx.cfg, ctx.db) if b.check == check}
     return set(ctx.comps)
 
 
@@ -1344,9 +1347,11 @@ def check_dark(ctx: Ctx) -> list[dict]:
         last = dark(ctx.cfg, ctx.db, check, key, ctx.now)
         if last is None or key not in watched[check]:
             continue
-        c = companies.get(key)
+        company, _, board = key.partition("/")  # a watched board's key: company/board
+        c = companies.get(company)
+        label = f"{LABELS.get(check, check)} {board}" if c and board else LABELS.get(check, check)
         problems.append({"key": c.key if c else "", "name": c.name if c else key, "checker": check, "kind": "check gone dark",
-                         "summary": f"{LABELS.get(check, check)} has not answered since {last}",
+                         "summary": f"{label} has not answered since {last}",
                          "detail": "It is no longer watching anything: see `internwatch liveness` and data/logs.",
                          "since": f"{last}T00:00:00Z", "careers_url": c.careers_url[0] if c and c.careers_url else "",
                          "alert": {"id": f"dark:{check}:{key}", "rule": "dark", "check": check, "item": key}})
@@ -1372,7 +1377,8 @@ CHECKS: list[tuple[str, callable]] = [  # (name, fn(ctx) -> problems), cheapest 
 LABELS = {"confirm": "unknown job ids (confirmed next day)", "workday": "W  hidden Workday sites",
           "parallel": "S  parallel boards", "page": "P  careers and WordPress pages", "joblist": "J  own job lists",
           "programs": "N  new student/program pages", "labels": "G  Goldman API types", "archive": "A  archive.org copies",
-          "listings": "L  third-party lists", "getro": "L  Getro copies", "careers": "Careers page"}
+          "listings": "L  third-party lists", "getro": "L  Getro copies", "careers": "Careers page",
+          "watch": "Watched board", "watch-full": "Watched board, weekly read"}
 
 
 def status(cfg: Config, conn) -> str:

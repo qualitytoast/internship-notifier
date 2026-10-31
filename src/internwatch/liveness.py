@@ -70,7 +70,8 @@ def settings(cfg: Config) -> dict:
             "unchecked_runs": int(lv.get("unchecked_runs", 2)),
             "scan_every": timedelta(days=float(lv.get("page_scan_days", 1))),
             "scan_seconds": float(lv.get("page_scan_seconds", 180)), "enabled": lv.get("enabled", True),
-            "blocked_seconds": float(lv.get("blocked_scan_seconds", 150))}
+            "blocked_seconds": float(lv.get("blocked_scan_seconds", 150)),
+            "watch_seconds": float(lv.get("watch_seconds", 360))}
 
 
 def ensure_schema(db: DB) -> None:

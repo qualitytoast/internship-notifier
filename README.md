@@ -140,6 +140,17 @@ Rules for changing things: CLAUDE.md.
   - What none of this sees: a place no page, list or archive copy links (a board shared only with schools), and
     postings only on Handshake (it needs a login). Kadoa's quant list mirrors one feed per firm, so it can't reveal
     a new place.
+- **Boards read but not stored** (`src/internwatch/watch.py`): every board whose `new job site?` alert you dismissed, and
+  the mirrors in `liveness.watch_boards`, so a dead board that wakes up or a mirror with roles of its own can't go
+  unnoticed. Daily runs, after the checks above, within `watch_seconds`. `posting elsewhere?` alerts on a job only if it
+  passes your filters, isn't stored (by id or requisition id, or by title in a location that also passes your rule) and a
+  healthy poll on a later run still doesn't have it, because a mirror can simply post first. There is no baseline: the
+  other jobs on these boards fail those rules on every read. Each job alerts once; resolved when it's stored or leaves the
+  board. A dismissed board answering 404, 410, 422 or an empty page has nothing today and never goes dark. NVIDIA's Workday
+  is read every run for its interns (10 requests) and in full weekly (244); T-Mobile's `alumni` site weekly (87), since it
+  has no intern worker type. A weekly read starts only if the time left covers its last read. Mirrors that are the same
+  feed as a polled one need no read, and `internwatch liveness` lists each watched board and the ones that can't be read
+  (robots.txt, or no job list): for those, only a role a list carries can surface.
 - **healthchecks.io:** pinged at the start and end of each run, so it alerts if no run happens or a run fails
   (no internet, email failure). Set up the check with Period 1 day and Grace 6 hours and put its URL in
   `HEALTHCHECKS_PING_URL` in `.env`: any gap over 30 hours between finished runs alerts, and so does a run that starts
@@ -282,7 +293,7 @@ Rules for changing things: CLAUDE.md.
 
 ## Layout
 - `config/`: settings.yaml, companies.yaml, filters.yaml
-- `src/internwatch/`: cli, runner, filters, locations, health, alerts, liveness, moves, crosscheck, emails, mailer, db,
+- `src/internwatch/`: cli, runner, filters, locations, health, alerts, liveness, moves, watch, crosscheck, emails, mailer, db,
   http, detect, report, plus `adapters/` and `checkers/`
 - `tests/`
 - `deploy/`

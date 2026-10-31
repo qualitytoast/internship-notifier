@@ -26,7 +26,7 @@ from zoneinfo import ZoneInfo
 
 import httpx
 
-from . import alerts, emails, liveness, moves
+from . import alerts, emails, liveness, moves, watch
 from .adapters import get_checker
 from .adapters.base import FetchContext, dedupe
 from .config import Company, Config
@@ -402,6 +402,12 @@ class Runner:
             s.problems += moves.run(self.cfg, self.db, self.gate, self._scan_http, budget_end, s.healthy)
         except Exception:  # noqa: BLE001 — never block the run's emails
             log.exception("moves: checks of the blocked companies failed")
+        # boards read but not stored: dismissed ones and mirrors, for a role nothing else has (watch.py)
+        budget_end = min(time.monotonic() + lv["watch_seconds"], run_deadline - 300)
+        try:
+            s.problems += watch.run(self.cfg, self.db, self.gate, self._scan_http, budget_end, s.healthy)
+        except Exception:  # noqa: BLE001 — never block the run's emails
+            log.exception("watch: the watched boards failed")
         try:
             s.problems += moves.finish(self.cfg, self.db, self.gate, self._scan_http, s.healthy)
         except Exception:  # noqa: BLE001 — never block the run's emails

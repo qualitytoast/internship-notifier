@@ -313,7 +313,7 @@ def cmd_alert_test(cfg: Config, a) -> int:
 def cmd_liveness(cfg: Config, a) -> int:
     import sqlite3
 
-    from . import liveness, moves
+    from . import liveness, moves, watch
     path = cfg.settings.path("db")
     if not path.exists():
         print("no database yet")
@@ -323,6 +323,7 @@ def cmd_liveness(cfg: Config, a) -> int:
     try:
         print(liveness.status(cfg, conn))
         print(moves.status(cfg, conn))
+        print(watch.status(cfg, conn))
     finally:
         conn.close()
     return 0
