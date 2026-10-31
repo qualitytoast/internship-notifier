@@ -220,7 +220,7 @@ def cleared(cfg: Config, db: DB, a) -> bool:
         return _miss_cleared(db, a, d)
     if rule == "dark":
         from . import moves  # moves imports this module
-        return moves.dark(db, d["check"], d["item"], utcnow()) is None
+        return moves.dark(cfg, db, d["check"], d["item"], utcnow()) is None
     return False
 
 

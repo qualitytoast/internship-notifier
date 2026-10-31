@@ -142,12 +142,85 @@ def test_a_weekly_check_spreads_over_the_week_and_retries_a_refused_read_once(me
 
 
 def test_what_counts_as_refused():
-    assert moves.outcome(FetchError("HTTP 403 for GET x")) == "refused"   # a bot check: retried tomorrow
-    assert moves.outcome(FetchError("HTTP 503 for GET x (after 2 attempts)")) == "refused"
-    assert moves.outcome(CheckTimeout("timeout")) == "refused"
+    for status in (400, 401, 403, 406, 429):
+        assert moves.outcome(FetchError(f"HTTP {status} for GET x")) == "refused"   # the site says no
+    assert moves.outcome(FetchError("HTTP 503 for GET x (after 2 attempts)")) == "failed"
+    assert moves.outcome(CheckTimeout("timeout")) == "failed"
     assert moves.outcome(FetchError("HTTP 404 for GET x")) == "failed"
-    assert moves.outcome(RobotsBlocked("robots.txt disallows x")) == "failed"  # never retried
+    assert moves.outcome(RobotsBlocked("robots.txt disallows x")) == "robots"
     assert moves.out_of_budget(CheckTimeout("time budget exhausted before GET x (0 requests made)"))
+
+
+def test_a_page_whose_read_failed_is_read_again_every_morning_and_never_waits(memdb):
+    now = utcnow()
+    for day in range(5):
+        when = now + timedelta(days=day)
+        assert moves.pick(memdb, "page", ["acme"], 1, when) == ["acme"]
+        moves.done(memdb, "page", "acme", "failed", when)
+    assert not moves.refused_last(memdb, "page", "acme")
+    assert memdb.get("blocked:at:page:acme") is None
+
+
+def test_a_failed_read_goes_ahead_of_a_weekly_checks_quota(memdb):
+    now = utcnow()
+    keys = [f"c{i:02d}" for i in range(14)]
+    moves.done(memdb, "pages", "c07", "failed", now)
+    assert moves.pick(memdb, "pages", keys, 7, now + timedelta(days=1))[0] == "c07"
+
+
+def test_only_a_page_that_refuses_or_forbids_the_read_waits_a_week(memdb):
+    now = utcnow()
+    moves.done(memdb, "page", "shy", "refused", now)
+    moves.done(memdb, "page", "shy", "refused", now + timedelta(days=1))
+    moves.done(memdb, "page", "forbids", "robots", now)
+    later = now + timedelta(days=6)
+    assert moves.pick(memdb, "page", ["shy", "forbids"], 1, later) == []
+    later = now + timedelta(days=8)
+    assert moves.pick(memdb, "page", ["shy", "forbids"], 1, later) == ["forbids", "shy"]
+
+
+@pytest.mark.parametrize("check", ["listings", "getro", "parallel"])
+@pytest.mark.parametrize("result", ["failed", "refused", "robots"])
+def test_lists_getro_and_side_boards_are_read_every_morning_whatever_happened(memdb, check, result):
+    now = utcnow()
+    for day in range(6):
+        when = now + timedelta(days=day)
+        assert moves.pick(memdb, check, ["x"], 1, when) == ["x"]
+        moves.done(memdb, check, "x", result, when)
+
+
+def test_a_page_already_waiting_keeps_waiting_after_the_upgrade(memdb):
+    now = utcnow()
+    memdb.set("blocked:at:page:acme", iso(now - timedelta(days=1)))  # as revision 6 left it
+    memdb.set("blocked:rate:page:acme", json.dumps([[(now - timedelta(days=2)).date().isoformat(), 0],
+                                                    [(now - timedelta(days=1)).date().isoformat(), 0]]))
+    assert moves.refused_last(memdb, "page", "acme")
+    assert moves.pick(memdb, "page", ["acme"], 1, now) == []
+    assert moves.pick(memdb, "page", ["acme"], 1, now + timedelta(days=6)) == ["acme"]
+
+
+def test_a_read_that_fails_after_its_wait_goes_back_to_every_morning(memdb):
+    now = utcnow()
+    moves.done(memdb, "page", "acme", "robots", now)
+    later = now + timedelta(days=7)
+    moves.done(memdb, "page", "acme", "failed", later)
+    assert moves.pick(memdb, "page", ["acme"], 1, later + timedelta(days=1)) == ["acme"]
+
+
+def test_archive_org_keeps_its_own_pace():
+    assert moves.archive_outcome(FetchError("HTTP 503 for GET x")) == "refused"       # one retry
+    assert moves.archive_outcome(CheckTimeout("timeout")) == "refused"
+    assert moves.archive_outcome(FetchError("HTTP 403 for GET x")) == "refused"
+    assert moves.archive_outcome(FetchError("HTTP 404 for GET x")) == "robots"        # no retry
+    assert moves.archive_outcome(FetchError("HTTP 401 for GET x")) == "robots"
+    assert moves.archive_outcome(RobotsBlocked("robots.txt disallows x")) == "robots"
+
+
+def test_several_sources_that_all_failed_count_as_the_strictest():
+    assert moves.worst(["failed", "refused"]) == "refused"
+    assert moves.worst(["failed", "robots"]) == "robots"
+    assert moves.worst(["robots", "refused"]) == "refused"
+    assert moves.worst(["failed", "failed"]) == "failed"
 
 
 # stored jobs and job systems -------------------------------------------------------------------------------

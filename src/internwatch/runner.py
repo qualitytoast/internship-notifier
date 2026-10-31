@@ -402,6 +402,10 @@ class Runner:
             s.problems += moves.run(self.cfg, self.db, self.gate, self._scan_http, budget_end, s.healthy)
         except Exception:  # noqa: BLE001 — never block the run's emails
             log.exception("moves: checks of the blocked companies failed")
+        try:
+            s.problems += moves.finish(self.cfg, self.db, self.gate, self._scan_http, s.healthy)
+        except Exception:  # noqa: BLE001 — never block the run's emails
+            log.exception("moves: the gone-dark check failed")
 
     def _scan_http(self, deadline: float, retries: int = 1, read_timeout: float | None = None) -> Http:
         """The client of one moves.py check: its own time budget and fewer retries than a checker's."""

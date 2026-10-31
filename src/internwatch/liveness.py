@@ -521,9 +521,10 @@ def scan_workday_sites(cfg: Config, db: DB, gate) -> list[dict]:
 
 def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
     """Read careers pages not looked at today, oldest first, until `budget_end` (time.monotonic()). A page whose read
-    the site refused goes first the next morning, and if it refuses again waits REFUSED_DAYS."""
+    failed goes first the next morning, every morning. One the site refused goes first the next morning, and if it
+    refuses again waits REFUSED_DAYS."""
     from .detect import from_text  # detect imports the runner
-    from .moves import outcome  # moves imports this module
+    from .moves import outcome, record  # moves imports this module
     p = settings(cfg)
     now = utcnow()
     problems = []
@@ -549,15 +550,21 @@ def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
             text = http.get_text(url, headers={"Accept": "text/html,*/*;q=0.8"})
         except Exception as e:  # noqa: BLE001 — an unreadable page (bot wall, robots) is only logged
             log.info("liveness: careers page of %s not read: %s", c.key, str(e)[:160])
-            if outcome(e) == "refused" and not retried and not db.get(f"page_scan_refused:{c.key}"):
-                db.set(rkey, "1")  # a bot check, 5xx or timeout: read again first thing next morning
-            else:  # robots.txt, 404, or refused again: its next turn is next week
+            result = outcome(e)
+            record(db, "careers", c.key, result, now)
+            if result == "failed":  # 5xx, a timeout, a missing page: read again first thing next morning, every morning
+                db.set(rkey, "1")
+                db.set(f"page_scan_refused:{c.key}", "")
+            elif result == "refused" and not retried and not db.get(f"page_scan_refused:{c.key}"):
+                db.set(rkey, "1")  # a bot check: read again first thing next morning
+            else:  # robots.txt, or refused again: its next turn is next week
                 db.set(f"page_scan_at:{c.key}", iso(now))
                 db.set(f"page_scan_refused:{c.key}", "1")
                 if retried:
                     db.set(rkey, "")
             continue
         db.set(f"page_scan_at:{c.key}", iso(now))  # before the parsing: a page it chokes on must not stay due
+        record(db, "careers", c.key, "ok", now)
         if retried:
             db.set(rkey, "")
         if db.get(f"page_scan_refused:{c.key}"):

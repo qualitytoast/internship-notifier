@@ -6,7 +6,7 @@ those companies are read here. Nothing here stores a job or touches a poll: ever
 with its own last look and raises a health alert for what is new. The first look of each check is a silent
 baseline. The checks run once a morning in daily runs, within `blocked_scan_seconds`, before the emails: every one of
 them every morning except archive.org's (spread over the week: a copy only changes when someone saves one, and it
-throttles scripts), and a read a site refused waits a week.
+throttles scripts), and a page that refuses reads waits a week.
 
   W  Workday tenants' robots.txt: hidden sites (Disallow lines), plus tenants of a parent company (extra_tenants)
   P  the careers page and any WordPress pages (/wp-json/wp/v2/pages): job systems they name, keyed per iCIMS
@@ -21,7 +21,9 @@ throttles scripts), and a read a site refused waits a week.
 
 A job id seen where InternWatch has no such job is only reported once a healthy poll of the company on a later run
 still doesn't have it (a posting can simply be newer than this morning's poll).
-A read refused by the site (bot check, 5xx, timeout) is retried once the next morning; robots.txt blocks never are.
+A read that failed (5xx, timeout, a page that's gone) is read again the next morning, every morning. A page that refuses
+(a bot check, a block) gets one retry and then waits a week, and a robots.txt block just waits. Lists, Getro, parallel
+boards and watched boards never wait. A daily read missed three mornings in a row raises `check gone dark`.
 State: kv blocked:* (and live_alert:<key>:<check> for open alerts), each restored if the health email fails.
 """
 from __future__ import annotations
@@ -44,8 +46,12 @@ from .models import CheckTimeout, Job, RobotsBlocked
 
 log = logging.getLogger(__name__)
 
-REFUSED_DAYS = 7  # how long a read that a site refused waits, in a check that runs daily
-DARK_DAYS = 14    # a list or check that answered before and hasn't for this long is reported
+REFUSED_DAYS = 7   # how long a page that refuses reads waits, in a check that runs daily
+DARK_DAYS = 14     # a weekly read that answered before and hasn't for this long is reported
+DARK_MORNINGS = 3  # a daily read missed this many mornings in a row is reported
+REFUSED_STATUSES = ("400", "401", "403", "406", "429")  # the site says no; it isn't down
+NEVER_WAIT = ("listings", "getro", "parallel", "watch", "watch-full")  # read again the next morning, whatever happened
+WEEKLY = ("archive", "watch-full")
 
 # a page address or title that reads like a students, internships or program page (not "internaliser", "residents")
 STUDENT = re.compile(r"\bintern(?:s|ship|ships)?\b|\bco-?ops?\b|\bstudents?\b|\bcampus\b|early[-_ ]?(?:career|talent)|"
@@ -115,14 +121,18 @@ class Ctx:
 # when each (check, company) is read ---------------------------------------------------------
 
 def refused_last(db: DB, check: str, key: str) -> bool:
+    """The last read was refused or robots.txt forbade it (or older, when the kind wasn't kept), so a page waits. A read
+    that failed doesn't count: it stays due."""
+    if check in NEVER_WAIT:
+        return False
     history = load(db, f"blocked:rate:{check}:{key}", [])
-    return bool(history) and not history[-1][1]
+    return bool(history) and not history[-1][1] and history[-1][2:] != ["failed"]
 
 
 def pick(db: DB, check: str, keys: list[str], every_days: float, now) -> list[str]:
-    """Due for `check` today: yesterday's refused reads (outside the quota), then the oldest due ones, at most a
-    1/every_days share of them a day so a weekly check spreads over the week (never-read ones first). A read that was
-    refused waits REFUSED_DAYS, whatever the check's pace: asking a site that refuses every day teaches nothing and gives
+    """Due for `check` today: yesterday's failed and refused reads (outside the quota), then the oldest due ones, at most
+    a 1/every_days share of them a day so a weekly check spreads over the week (never-read ones first). A page that
+    refuses waits REFUSED_DAYS, whatever the check's pace: asking a site that refuses every day teaches nothing and gives
     it a reason to block the feed read from the same host. It goes back to the check's pace once it answers."""
     retry = [k for k in keys if db.get(f"blocked:retry:{check}:{k}")]
     due = []
@@ -138,11 +148,22 @@ def pick(db: DB, check: str, keys: list[str], every_days: float, now) -> list[st
 
 
 def outcome(e: Exception) -> str:
-    """refused: a bot check, 5xx, timeout (retried once the next morning); failed: robots.txt, 401/404/410."""
+    """robots: robots.txt forbids the read. refused: the site says no (a bot check, a block). failed: anything else
+    (5xx, a timeout, a page that's gone): nothing to learn from asking again tomorrow but a good answer."""
     if isinstance(e, RobotsBlocked):
-        return "failed"
+        return "robots"
     m = re.search(r"HTTP (\d{3})", str(e))
-    return "failed" if m and m.group(1) in ("401", "404", "410") else "refused"
+    return "refused" if m and m.group(1) in REFUSED_STATUSES else "failed"
+
+
+def worst(errors: list[str]) -> str:
+    """What a read of several sources that all failed counts as."""
+    return next((x for x in ("refused", "robots") if x in errors), "failed")
+
+
+def archive_outcome(e: Exception) -> str:
+    """archive.org throttles scripts, so it keeps its own pace: one retry, and none for a block or a missing copy."""
+    return "robots" if isinstance(e, RobotsBlocked) or re.search(r"HTTP (?:401|404|410)\b", str(e)) else "refused"
 
 
 def out_of_budget(e: Exception) -> bool:
@@ -150,18 +171,34 @@ def out_of_budget(e: Exception) -> bool:
 
 
 def done(db: DB, check: str, key: str, result: str, now) -> None:
-    """Record a read: ok, failed, or refused (a first refusal is retried the next morning; a second one waits, and
-    one that is still refused after its wait waits again, with no retry)."""
+    """Record a read: ok; failed (read again the next morning, every morning); refused (a first refusal is retried the
+    next morning, a second one waits, and one still refused after its wait waits again, with no retry); or robots
+    (it waits, with no retry)."""
+    if result != "ok" and check in NEVER_WAIT:
+        result = "failed"
     rkey = f"blocked:retry:{check}:{key}"
-    if result == "refused" and not db.get(rkey) and not refused_last(db, check, key):
+    if result == "failed" or (result == "refused" and not db.get(rkey) and not refused_last(db, check, key)):
         db.set(rkey, "1")
     else:
         db.set(rkey, "")
         db.set(f"blocked:at:{check}:{key}", iso(now))
+    record(db, check, key, result, now)
+
+
+def record(db: DB, check: str, key: str, result: str, now) -> None:
+    """One line of a source's history, and the last day it answered, which outlives the history's 28 days: a source
+    dark for longer must not pass for one that never answered."""
     k = f"blocked:rate:{check}:{key}"
+    hist = json.loads(db.get(k) or "[]")
+    today = now.date().isoformat()
+    answered = f"blocked:ok:{check}:{key}"
+    if result == "ok":
+        db.set(answered, today)
+    elif not db.get(answered) and any(x[1] for x in hist):
+        db.set(answered, max(x[0] for x in hist if x[1]))
     since = (now - timedelta(days=28)).date().isoformat()
-    hist = [x for x in json.loads(db.get(k) or "[]") if x[0] >= since]
-    db.set(k, json.dumps(hist + [[now.date().isoformat(), 1 if result == "ok" else 0]]))
+    line = [today, 1 if result == "ok" else 0] + (["failed"] if result == "failed" else [])
+    db.set(k, json.dumps([x for x in hist if x[0] >= since] + [line]))
 
 
 def due_restore(db: DB, check: str, key: str) -> dict:
@@ -549,7 +586,7 @@ def check_pages(ctx: Ctx) -> list[dict]:
                     continue
                 results[url] = (sorted(systems_in(text, "" if kind == "wp" else url, c, al)), ids_with_titles(text))
             if not results:
-                done(ctx.db, "page", key, "refused" if "refused" in errors else "failed", ctx.now)
+                done(ctx.db, "page", key, worst(errors), ctx.now)
                 continue
             restore_kv = {skey: raw or "", **due_restore(ctx.db, "page", key)}
             known = known_systems(ctx, c)
@@ -663,7 +700,7 @@ def check_archive(ctx: Ctx) -> list[dict]:
             except Exception as e:  # noqa: BLE001 — archive.org down or slow: tomorrow
                 if out_of_budget(e):
                     break
-                done(ctx.db, "archive", key, outcome(e), ctx.now)
+                done(ctx.db, "archive", key, archive_outcome(e), ctx.now)
                 log.info("moves: archive.org listing for %s failed: %s", key, str(e)[:160])
                 continue
             restore_kv = {skey: raw or "", **due_restore(ctx.db, "archive", key)}
@@ -867,7 +904,7 @@ def check_programs(ctx: Ctx) -> list[dict]:
                     new += [(u, t) for u, t in pages.items() if u not in before
                             and STUDENT.search(f"{urlsplit(u).path} {t}")]
             if errors and len(errors) == len(sources[key]):
-                done(ctx.db, "programs", key, "refused" if "refused" in errors else "failed", ctx.now)
+                done(ctx.db, "programs", key, worst(errors), ctx.now)
                 continue
             restore_kv = {skey: raw or "", **due_restore(ctx.db, "programs", key)}
             ctx.db.set(skey, json.dumps(state))
@@ -1175,7 +1212,8 @@ def check_listings(ctx: Ctx) -> list[dict]:
         problems.append(alert(ctx.db, c, f"list:{k}", "new job site?", summary,
                               "A list maintainer or contributor found a posting there. If it is the company's and "
                               "carries student roles, add it to the config.", {"lists:alerted": raw or ""},
-                              [{"suffix": "board", "rule": "list_system", "item": k, "scope": "lists", "summary": summary}]))
+                              [{"suffix": "board", "rule": "list_system", "item": k, "scope": "lists", "url": url,
+                                "summary": summary}]))
     ctx.db.set("lists:alerted", json.dumps(sorted(told)))
     return problems
 
@@ -1241,9 +1279,9 @@ def check_getro(ctx: Ctx) -> list[dict]:
                                       f"{board} copies {c.name}'s jobs from its careers page. The company may now post "
                                       "there; if so and it carries student roles, add it to the config.",
                                       {skey: raw, **due_restore(ctx.db, "getro", key)},
-                                      [{"suffix": k, "rule": "list_system", "item": k, "scope": "getro",
+                                      [{"suffix": k, "rule": "list_system", "item": k, "scope": "getro", "url": v[1],
                                         "summary": f"Getro's copy of its careers page links a job site InternWatch "
-                                                   f"doesn't read: {k}"} for k in elsewhere]))
+                                                   f"doesn't read: {k}"} for k, v in elsewhere.items()]))
     finally:
         http.close()
     return problems
@@ -1251,12 +1289,34 @@ def check_getro(ctx: Ctx) -> list[dict]:
 
 # watching the watchers ---------------------------------------------------------------------------------
 
-def dark(db: DB, check: str, key: str, now) -> str | None:
-    """The day a source that used to answer last did, if that is more than DARK_DAYS ago. None while it answers, and
-    for one that never has: a page that refuses scripts from the start is no news."""
-    days = [x[0] for x in load(db, f"blocked:rate:{check}:{key}", []) if x[1]]
-    last = max(days, default=None)
-    return last if last and (now.date() - datetime.fromisoformat(last).date()).days > DARK_DAYS else None
+def weekly(cfg: Config, check: str, key: str) -> bool:
+    """A read that comes round once a week, so three missed mornings would say nothing about it."""
+    if check == "joblist":
+        return float((opts(cfg).get("job_lists") or {}).get(key, {}).get("every_days", 1)) > 1
+    if check == "careers":
+        return liveness.settings(cfg)["scan_every"] > timedelta(days=1)
+    return check in WEEKLY
+
+
+def dark(cfg: Config, db: DB, check: str, key: str, now) -> str | None:
+    """The day a source last answered, if it has gone dark. A daily read has when it missed DARK_MORNINGS mornings in a
+    row: failed, or never reached because time ran out. A day with no run isn't a morning, and two runs in a day are one.
+    A weekly read, or a page waiting out a refusal, has when it hasn't answered for DARK_DAYS. None while it answers,
+    and for a page that never has: one that refuses scripts from the start is no news. The boards in NEVER_WAIT have no
+    such excuse, so one that never answered counts from its first read."""
+    history = load(db, f"blocked:rate:{check}:{key}", [])
+    days = [x[0] for x in history if x[1]]
+    last = max(days + [db.get(f"blocked:ok:{check}:{key}") or ""]) or None
+    if weekly(cfg, check, key) or refused_last(db, check, key):
+        return last if last and (now.date() - datetime.fromisoformat(last).date()).days > DARK_DAYS else None
+    if last:
+        missed = [d for d in load(db, "blocked:mornings", []) if d > last]
+    elif check in NEVER_WAIT and history:
+        last = history[0][0]
+        missed = [d for d in load(db, "blocked:mornings", []) if d >= last]
+    else:
+        return None
+    return last if len(missed) >= DARK_MORNINGS else None
 
 
 def _watched(ctx: Ctx, check: str) -> set[str]:
@@ -1267,18 +1327,24 @@ def _watched(ctx: Ctx, check: str) -> set[str]:
         return {source_id(x) for x in entries(ctx.cfg, "parallel_sources")}
     if check == "workday":
         return set(workday_tenants(ctx))
+    if check == "careers":
+        return {c.key for c in ctx.cfg.active if c.careers_url and c.key not in ctx.comps}
     return set(ctx.comps)
 
 
 def check_dark(ctx: Ctx) -> list[dict]:
     """A list or check that stopped answering stops watching without a word: its reads are only logged. No request."""
     problems: list[dict] = []
+    companies = {c.key: c for c in ctx.cfg.companies}
+    watched: dict[str, set[str]] = {}
     for r in ctx.db.q("SELECT key FROM kv WHERE key LIKE 'blocked:rate:%'"):
         _, _, check, key = r["key"].split(":", 3)
-        last = dark(ctx.db, check, key, ctx.now)
-        if last is None or key not in _watched(ctx, check):
+        if check not in watched:
+            watched[check] = _watched(ctx, check)
+        last = dark(ctx.cfg, ctx.db, check, key, ctx.now)
+        if last is None or key not in watched[check]:
             continue
-        c = ctx.comps.get(key)
+        c = companies.get(key)
         problems.append({"key": c.key if c else "", "name": c.name if c else key, "checker": check, "kind": "check gone dark",
                          "summary": f"{LABELS.get(check, check)} has not answered since {last}",
                          "detail": "It is no longer watching anything: see `internwatch liveness` and data/logs.",
@@ -1291,7 +1357,6 @@ def check_dark(ctx: Ctx) -> list[dict]:
 
 CHECKS: list[tuple[str, callable]] = [  # (name, fn(ctx) -> problems), cheapest first, so a slow site starves none of them
     ("confirm", check_confirm),
-    ("dark", check_dark),
     ("workday", check_workday),
     ("joblist", check_job_lists),
     ("programs", check_programs),
@@ -1307,7 +1372,7 @@ CHECKS: list[tuple[str, callable]] = [  # (name, fn(ctx) -> problems), cheapest 
 LABELS = {"confirm": "unknown job ids (confirmed next day)", "workday": "W  hidden Workday sites",
           "parallel": "S  parallel boards", "page": "P  careers and WordPress pages", "joblist": "J  own job lists",
           "programs": "N  new student/program pages", "labels": "G  Goldman API types", "archive": "A  archive.org copies",
-          "listings": "L  third-party lists", "getro": "L  Getro copies"}
+          "listings": "L  third-party lists", "getro": "L  Getro copies", "careers": "Careers page"}
 
 
 def status(cfg: Config, conn) -> str:
@@ -1318,6 +1383,8 @@ def status(cfg: Config, conn) -> str:
     since = (utcnow() - timedelta(days=28)).date().isoformat()
     lines = [f"companies whose careers page can't be read, watched by moves.py: {len(comps)}"]
     for check, label in LABELS.items():
+        if check == "careers":  # liveness.status reports these
+            continue
         if check == "confirm":
             pending = sum(len(json.loads(v or "{}")) for k, v in kv.items() if k.startswith("blocked:pending:"))
             lines.append(f"  {label}: {pending} waiting for a healthy poll")
@@ -1354,5 +1421,13 @@ def run(cfg: Config, db: DB, gate, make_http, budget_end: float, healthy: set) -
         except Exception:  # noqa: BLE001 — logged; never costs the run
             log.exception("moves: %s failed", name)
     return problems
+
+
+def finish(cfg: Config, db: DB, gate, make_http, healthy: set) -> list[dict]:
+    """Last in a daily run, and no request: this morning counts, whatever was read, so a third miss alerts the same
+    morning even if time ran out."""
+    today = utcnow().date().isoformat()
+    db.set("blocked:mornings", json.dumps(sorted({*load(db, "blocked:mornings", []), today})[-40:]))
+    return check_dark(Ctx(cfg, db, gate, make_http, float("inf"), set(healthy)))
 
 

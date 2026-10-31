@@ -342,15 +342,34 @@ def test_a_5xx_a_timeout_or_a_bot_wall_is_read_again_the_next_morning(make_cfg, 
     assert memdb.get("page_scan_retry:acme") == "1" and memdb.get("page_scan_at:acme") is None
 
 
-@pytest.mark.parametrize("error", [RobotsBlocked("robots.txt disallows x (Disallow: /)"), FetchError("HTTP 404 for GET x")])
-def test_a_robots_block_or_a_missing_page_waits_a_week(make_cfg, memdb, error):
+def test_a_robots_block_waits_a_week(make_cfg, memdb):
     c = company("acme")
     cfg = make_cfg([c])
-    http = PageHttp({c.careers_url[0]: error})
+    http = PageHttp({c.careers_url[0]: RobotsBlocked("robots.txt disallows x (Disallow: /)")})
     liveness.scan_pages(cfg, memdb, http, float("inf"))
     assert not memdb.get("page_scan_retry:acme") and memdb.get("page_scan_at:acme")
     liveness.scan_pages(cfg, memdb, http, float("inf"))
     assert http.calls == [c.careers_url[0]]
+
+
+@pytest.mark.parametrize("error", [FetchError("HTTP 404 for GET x"), FetchError("HTTP 503 for GET x"),
+                                   CheckTimeout("timeout (ReadTimeout) for GET x")])
+def test_a_page_that_is_gone_or_down_is_read_again_every_morning(make_cfg, memdb, error):
+    c = company("acme")
+    cfg = make_cfg([c])
+    http = PageHttp({c.careers_url[0]: error})
+    for _ in range(4):
+        liveness.scan_pages(cfg, memdb, http, float("inf"))
+    assert len(http.calls) == 4 and not memdb.get("page_scan_refused:acme") and memdb.get("page_scan_at:acme") is None
+    assert [x[2:] for x in json.loads(memdb.get("blocked:rate:careers:acme"))] == [["failed"]] * 4
+
+
+def test_every_careers_page_read_is_in_the_history_gone_dark_reads(make_cfg, memdb):
+    c = company("acme")
+    cfg = make_cfg([c])
+    liveness.scan_pages(cfg, memdb, PageHttp({c.careers_url[0]: "<html></html>"}), float("inf"))
+    assert [x[1] for x in json.loads(memdb.get("blocked:rate:careers:acme"))] == [1]
+    assert memdb.get("blocked:ok:careers:acme")
 
 
 def test_a_retry_is_never_read_for_a_company_blocked_since_or_after_the_budget(make_cfg, memdb):

@@ -458,10 +458,22 @@ def dark_ctx(cfg, db):
     return moves.Ctx(cfg, db, None, None, float("inf"), set())
 
 
-def test_a_list_that_stops_answering_is_reported_once_and_clears(make_cfg, memdb):
-    cfg = make_cfg([company("acme", name="Acme")], liveness={"blocked": ["acme"], "listings": [
+def mornings(db, *days_ago):
+    from datetime import timedelta
+
+    from internwatch.db import utcnow
+    db.set("blocked:mornings", json.dumps(sorted((utcnow() - timedelta(days=d)).date().isoformat() for d in days_ago)))
+
+
+def speedy_cfg(make_cfg):
+    return make_cfg([company("acme", name="Acme")], liveness={"blocked": ["acme"], "listings": [
         {"name": "speedy", "format": "markdown", "url": "https://x"}], "parallel_sources": []})
+
+
+def test_a_list_that_stops_answering_is_reported_once_and_clears(make_cfg, memdb):
+    cfg = speedy_cfg(make_cfg)
     history(memdb, "listings", "speedy", (20, 1), (15, 1), (10, 0), (1, 0))
+    mornings(memdb, 3, 2, 1)
     problems = moves.check_dark(dark_ctx(cfg, memdb))
     assert [(p["kind"], p["name"]) for p in problems] == [("check gone dark", "speedy")]
     assert "has not answered since" in problems[0]["summary"]
@@ -475,10 +487,132 @@ def test_a_list_that_stops_answering_is_reported_once_and_clears(make_cfg, memdb
     assert not is_open(memdb)
 
 
-def test_only_a_source_that_used_to_answer_and_is_still_configured_goes_dark(make_cfg, memdb):
+def test_a_page_that_never_answered_or_a_source_no_longer_read_is_not_dark(make_cfg, memdb):
     cfg = make_cfg([company("acme", name="Acme")], liveness={"blocked": ["acme"], "listings": [], "parallel_sources": []})
-    history(memdb, "page", "acme", (20, 0), (10, 0), (3, 0))      # never answered: a page that refuses scripts
-    history(memdb, "joblist", "acme", (20, 1), (3, 1))            # answers
+    history(memdb, "page", "acme", (5, 0), (4, 0), (3, 0))        # never answered: a page that refuses scripts
+    history(memdb, "joblist", "acme", (20, 1), (1, 1))            # answers
     history(memdb, "listings", "removed", (20, 1), (15, 0))       # no longer in the config
-    history(memdb, "programs", "acme", (14, 1), (3, 0))           # 14 days: not yet
+    mornings(memdb, 5, 4, 3, 2, 1)
     assert moves.check_dark(dark_ctx(cfg, memdb)) == []
+
+
+def dark_keys(cfg, db):
+    return [p["alert"]["id"] for p in moves.check_dark(dark_ctx(cfg, db))]
+
+
+def test_a_daily_read_goes_dark_on_the_third_missed_morning_not_the_second(make_cfg, memdb):
+    cfg = speedy_cfg(make_cfg)
+    history(memdb, "listings", "speedy", (3, 1), (2, 0), (1, 0))
+    mornings(memdb, 3, 2, 1)
+    assert dark_keys(cfg, memdb) == []                          # two missed
+    mornings(memdb, 3, 2, 1, 0)
+    assert dark_keys(cfg, memdb) == ["dark:listings:speedy"]    # three
+
+
+def test_a_day_with_no_run_is_not_a_missed_morning(make_cfg, memdb):
+    cfg = speedy_cfg(make_cfg)
+    history(memdb, "listings", "speedy", (9, 1), (8, 0), (1, 0))
+    mornings(memdb, 9, 8, 1)  # away for a week: two misses, not nine
+    assert dark_keys(cfg, memdb) == []
+
+
+def test_two_runs_in_a_day_are_one_morning(make_cfg, memdb, monkeypatch):
+    from datetime import datetime, timezone
+    cfg = speedy_cfg(make_cfg)
+    for hour in (14, 22):
+        monkeypatch.setattr(moves, "utcnow", lambda h=hour: datetime(2026, 11, 2, h, tzinfo=timezone.utc))
+        moves.finish(cfg, memdb, None, None, set())
+    assert json.loads(memdb.get("blocked:mornings")) == ["2026-11-02"]
+
+
+def missed_reads(db, check, key, *days_ago):
+    from datetime import timedelta
+
+    from internwatch.db import utcnow
+    for d in days_ago:
+        moves.record(db, check, key, "failed", utcnow() - timedelta(days=d))
+
+
+def test_a_daily_page_that_used_to_answer_goes_dark_on_the_third_miss(make_cfg, memdb):
+    from datetime import timedelta
+
+    from internwatch.db import utcnow
+    cfg = make_cfg([company("acme", name="Acme")], liveness={"blocked": ["acme"], "listings": [], "parallel_sources": []})
+    moves.record(memdb, "programs", "acme", "ok", utcnow() - timedelta(days=4))
+    missed_reads(memdb, "programs", "acme", 3, 2, 1)
+    mornings(memdb, 4, 3, 2)
+    assert dark_keys(cfg, memdb) == []
+    mornings(memdb, 4, 3, 2, 1)
+    assert dark_keys(cfg, memdb) == ["dark:programs:acme"]
+
+
+def test_a_read_the_run_never_reached_counts_as_missed(make_cfg, memdb):
+    cfg = speedy_cfg(make_cfg)
+    history(memdb, "listings", "speedy", (4, 1))  # nothing recorded since: time ran out three mornings in a row
+    mornings(memdb, 4, 3, 2, 1)
+    assert dark_keys(cfg, memdb) == ["dark:listings:speedy"]
+
+
+def test_a_list_that_never_answered_goes_dark_but_a_page_does_not(make_cfg, memdb):
+    cfg = speedy_cfg(make_cfg)
+    history(memdb, "listings", "speedy", (3, 0), (2, 0), (1, 0))
+    history(memdb, "programs", "acme", (3, 0), (2, 0), (1, 0))
+    mornings(memdb, 3, 2, 1)
+    assert dark_keys(cfg, memdb) == ["dark:listings:speedy"]
+
+
+def test_a_weekly_read_and_a_page_waiting_out_a_refusal_keep_14_days(make_cfg, memdb):
+    cfg = make_cfg([company("acme", name="Acme")], liveness={"blocked": ["acme"], "listings": [], "parallel_sources": []})
+    history(memdb, "archive", "acme", (10, 1), (3, 0))
+    history(memdb, "page", "acme", (10, 1), (4, 0), (3, 0))     # refused twice: it waits a week
+    mornings(memdb, 9, 8, 7, 6, 5, 4, 3, 2, 1)
+    assert dark_keys(cfg, memdb) == []
+    history(memdb, "archive", "acme", (16, 1), (3, 0))
+    history(memdb, "page", "acme", (16, 1), (4, 0), (3, 0))
+    assert sorted(dark_keys(cfg, memdb)) == ["dark:archive:acme", "dark:page:acme"]
+
+
+def test_a_job_list_on_a_weekly_pace_keeps_14_days(make_cfg, memdb):
+    cfg = make_cfg([company("acme", name="Acme")], liveness={
+        "blocked": ["acme"], "job_lists": {"acme": {"url": "https://x", "every_days": 7}}, "listings": [], "parallel_sources": []})
+    history(memdb, "joblist", "acme", (6, 1), (1, 0))
+    mornings(memdb, 5, 4, 3, 2, 1)
+    assert dark_keys(cfg, memdb) == []
+
+
+def test_an_alert_outlives_the_28_days_of_history(make_cfg, memdb):
+    from datetime import timedelta
+
+    from internwatch.db import utcnow
+    cfg = speedy_cfg(make_cfg)
+    now = utcnow()
+    moves.done(memdb, "listings", "speedy", "ok", now - timedelta(days=40))
+    for days in range(39, 0, -1):
+        moves.done(memdb, "listings", "speedy", "failed", now - timedelta(days=days))
+    assert not any(x[1] for x in json.loads(memdb.get("blocked:rate:listings:speedy")))   # the good read has aged out
+    mornings(memdb, 3, 2, 1)
+    assert moves.dark(cfg, memdb, "listings", "speedy", now) == (now - timedelta(days=40)).date().isoformat()
+
+
+def test_a_careers_page_goes_dark_and_names_its_company(make_cfg, memdb):
+    from datetime import timedelta
+
+    from internwatch.db import utcnow
+    cfg = make_cfg([company("acme", name="Acme")], liveness={"listings": [], "parallel_sources": []})
+    moves.record(memdb, "careers", "acme", "ok", utcnow() - timedelta(days=4))
+    missed_reads(memdb, "careers", "acme", 3, 2, 1)
+    mornings(memdb, 4, 3, 2, 1)
+    problems = moves.check_dark(dark_ctx(cfg, memdb))
+    assert [(p["name"], p["summary"].split(" has")[0]) for p in problems] == [("Acme", "Careers page")]
+
+
+def test_a_gone_dark_alert_clears_on_the_next_good_read(make_cfg, memdb):
+    from internwatch.db import utcnow
+    cfg = speedy_cfg(make_cfg)
+    history(memdb, "listings", "speedy", (4, 1), (3, 0), (2, 0), (1, 0))
+    mornings(memdb, 4, 3, 2, 1)
+    alerts.record(memdb, moves.check_dark(dark_ctx(cfg, memdb)), [])
+    assert is_open(memdb) == ["dark:listings:speedy"]
+    moves.done(memdb, "listings", "speedy", "ok", utcnow())
+    alerts.sweep(cfg, memdb)
+    assert not is_open(memdb)

@@ -85,8 +85,9 @@ Rules for changing things: CLAUDE.md.
     in a row. An iCIMS portal, an Avature portal (bloomberg.avature.net/careers) and an Eightfold domain each count on
     their own, and links to an Eightfold site count too. A portal the page linked on an earlier look, or that a stored
     posting links, isn't new, and every system a page ever named is remembered, so a page that flips back and forth
-    alerts once. A read the site refuses (bot check, 5xx, timeout) is retried first thing the next morning, once, then
-    waits a week until it answers; a robots.txt block is never retried. The first look is a silent baseline. About 85
+    alerts once. A read that fails (5xx, timeout, a missing page) is read again first thing the next morning, every
+    morning. A page the site refuses (a bot check, HTTP 400, 401, 403, 406 or 429) gets one retry, then waits a week
+    until it answers; a robots.txt block just waits. The first look is a silent baseline. About 85
     of 196 pages name a job system in their HTML; the rest are built in the browser or block scripts. The 31 companies
     whose page refuses scripts (`liveness.blocked`) are left out: the checks below watch them instead. Resolved when
     the system is added to the config or the page stops naming it (two reads in a row), or for a system it stopped
@@ -104,12 +105,16 @@ Rules for changing things: CLAUDE.md.
   - `possible miss`: SimplifyJobs lists an in-field role at a tracked company that the checker never saw although it
     polled afterwards (90 min grace), or saw but the filters rejected. Not when Simplify's own location is outside the
     company's locations too. Resolved when the checker stores it, it matches, or it closes.
-  - `check gone dark`: a list or check below that used to answer hasn't for 14 days. Resolved when it answers.
+  - `check gone dark`: a daily read, careers pages included, missed three mornings in a row: it failed, or time ran out
+    before the run reached it. A day with no run isn't a morning, and two runs in a day are one. A weekly read, or a page
+    waiting out a refusal, is reported after 14 days instead. A page that has never answered isn't news, but a list or
+    board is. Checked last in a run, so the third miss alerts the same morning. Resolved when it answers.
 - **Companies whose careers page can't be read** (`src/internwatch/moves.py`; the 31 in `liveness.blocked`, and
   only those): where else they could start posting. Daily runs, before the emails, within 300 s. Every check runs every
-  morning except archive.org's, spread over the week, and a read a site refuses waits a week (asking a site that
-  refuses every day teaches nothing, and Citadel's refused page shares a host with its feed). Every check's first look
-  is a silent baseline; `internwatch liveness` shows each check's reads, answer rate and recent alerts.
+  morning except archive.org's, spread over the week. A failed read comes back the next morning, every morning. Only a
+  page that refuses waits a week (asking a site that refuses every day teaches nothing, and Citadel's refused page
+  shares a host with its feed); third-party lists, Getro and side boards never wait. archive.org keeps one retry. Every
+  check's first look is a silent baseline; `internwatch liveness` shows each check's reads, answer rate and recent alerts.
   - W `new site`: a new hidden site (a Disallow line in robots.txt) on their Workday tenants, or any new site on
     Fidelity's myworkdayjobs.com host and on PitchBook's parent Morningstar.
   - P `moved?`: their careers page, and every WordPress page of CTC, GTS and Liberty Mutual (the page API answers
