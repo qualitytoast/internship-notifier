@@ -1,12 +1,15 @@
-"""Checkers added in October 2026, replayed from their recorded fixtures with edited responses: Instabase's
-careers-page watch, D. E. Shaw, IBM, ApplicantPro (Group One Trading)."""
+"""Checkers added in October and November 2026, replayed from their recorded fixtures with edited responses:
+Instabase's careers-page watch, D. E. Shaw, IBM, ApplicantPro (Group One Trading), Citadel Securities' programs."""
 import copy
 import json
+import re
 
 import pytest
 
+from internwatch import config as configmod
 from internwatch.adapters import get_checker
 from internwatch.adapters.base import FetchContext
+from internwatch.filters import evaluate
 from internwatch.health import assess
 from internwatch.checkers.ibm import COUNTRIES, place
 from internwatch.http import Cassette, Http
@@ -182,3 +185,62 @@ def test_applicantpro_short_list_or_error_fails_instead_of_reading_fewer_jobs(ch
         e["text"] = json.dumps(d)
     with pytest.raises(ShapeError):
         replay("group-one-trading", edit, ctx=FetchContext())
+
+
+# Citadel Securities programs (November 2026) ------------------------------------------------
+
+PROGRAMS = "https://www.citadelsecurities.com/careers/programs-and-events/"
+
+
+def without(*paths):
+    """An edit that drops the sitemap entries of these program pages."""
+    def edit(e):
+        for p in paths:
+            e["text"] = re.sub(rf"<url>(?:(?!</url>).)*?{re.escape(PROGRAMS + p)}(?:(?!</url>).)*?</url>", "", e["text"],
+                               flags=re.S)
+    return edit
+
+
+def test_citadel_programs_are_the_pages_below_each_program_page():
+    jobs = {j.id: j for j in replay("citadel-securities-programs")}
+    assert len(jobs) == 11
+    spark = jobs["citadel-securities-spark/apply"]
+    assert (spark.title, spark.location, spark.posted, spark.url) == (
+        "Citadel Securities Spark", "", "2026-11-06", PROGRAMS + "citadel-securities-spark/apply/")
+    assert [jobs[i].location for i in ("discover-citadel-securities/apply-india", "discover-citadel-securities/emea-apply",
+                                       "phd-summit/apply-phd-summit-us")] == ["India", "EMEA", "United States"]
+    # program pages themselves (Ignite since it closed on Oct 16, Terminal) and other career pages are no roles
+    assert all(i.count("/") == 1 for i in jobs) and not any(i.startswith(("ignite", "terminal")) for i in jobs)
+
+
+def test_citadel_program_whose_pages_below_are_gone_is_closed():
+    ids = {j.id for j in replay("citadel-securities-programs", without("citadel-securities-spark/apply/"))}
+    assert len(ids) == 10 and "citadel-securities-spark/apply" not in ids
+
+
+def test_no_open_citadel_program_is_a_valid_answer():
+    edit = without(*[j.id + "/" for j in replay("citadel-securities-programs")])
+    assert replay("citadel-securities-programs", edit, ctx=FetchContext()) == []
+
+
+@pytest.mark.parametrize("text", [
+    "<!DOCTYPE html><html><head><title>Just a moment...</title></head></html>",
+    '<?xml version="1.0"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+    "<url><loc>https://www.citadelsecurities.com/about/</loc></url></urlset>"])
+def test_citadel_programs_challenge_or_moved_pages_fail_instead_of_reading_none(text):
+    def edit(e):
+        e["text"] = text
+    with pytest.raises(ShapeError):
+        replay("citadel-securities-programs", edit, ctx=FetchContext())
+
+
+def test_spark_and_discover_match_only_through_the_programs_entry():
+    cfg = configmod.load(REPO)
+    progs, cs = (next(c for c in cfg.companies if c.key == k) for k in ("citadel-securities-programs", "citadel-securities"))
+    jobs = replay("citadel-securities-programs")
+    matched = sorted(j.id for j in jobs if evaluate(j, cfg.rules, category=progs.category, locations=progs.locations,
+                                                    extra_role_keywords=progs.extra_role_re).matched)
+    assert matched == ["citadel-securities-spark/apply", "discover-citadel-securities/apply"]
+    spark = next(j for j in jobs if j.id == "citadel-securities-spark/apply")
+    assert not evaluate(spark, cfg.rules, category=cs.category, locations=cs.locations,
+                        extra_role_keywords=cs.extra_role_re).matched  # "spark" is the programs entry's word only

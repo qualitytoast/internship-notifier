@@ -92,11 +92,11 @@ def test_only_the_named_companies_are_ever_read(blocked_cfg, caplog):
     assert "not in liveness.blocked" in caplog.text
 
 
-def test_the_real_settings_name_the_31_companies():
+def test_the_real_settings_name_the_32_companies():
     from internwatch.config import load
     cfg = load()
     keys = cfg.settings.get("liveness", "blocked")
-    assert len(keys) == len(set(keys)) == 31
+    assert len(keys) == len(set(keys)) == 32
     assert set(keys) <= {c.key for c in cfg.companies}
 
 
@@ -804,6 +804,46 @@ def test_new_goldman_experience_or_source_types(blocked_cfg, memdb):
     assert http.calls[-1].startswith("POST")
 
 
+class GoldmanApi(FakeHttp):
+    """Goldman's job API since Nov 2026: a query naming __type more than once is refused (HTTP 200 with an error)."""
+
+    def __init__(self, types: dict):
+        super().__init__({})
+        self.types = types
+
+    def post_json(self, url, **kw):
+        query = kw["json"]["query"]
+        self.calls.append(f"POST {url} {query}")
+        if query.count("__type") > 1:
+            return {"errors": [{"message": "This request is not asking for introspection in good faith - Query.__type "
+                                           "is present too often!", "extensions": {"classification": "BadFaithIntrospection"}}]}
+        t = query.split('__type(name: "')[1].split('"')[0]
+        return {"data": {t: {"enumValues": [{"name": n} for n in self.types[t]]} if t in self.types else None}}
+
+
+def test_goldman_types_are_asked_for_one_at_a_time_as_the_api_requires(blocked_cfg, memdb):
+    cfg = blocked_cfg([company("goldman-sachs", checker="goldman")])
+    api = GoldmanApi({"RoleSearchExperience": ["PROFESSIONAL", "EARLY_CAREER", "CAMPUS", "INTERNAL_MOBILITY"],
+                      "ExternalSourceType": ["AVATURE", "ORACLE"]})
+    assert moves.check_labels(ctx(cfg, memdb, api)) == []  # first look: a silent baseline
+    assert len(api.calls) == 2 and memdb.get("blocked:ok:labels:goldman-sachs")
+    assert json.loads(memdb.get("blocked:labels:goldman-sachs")) == [
+        "ExternalSourceType.AVATURE", "ExternalSourceType.ORACLE", "RoleSearchExperience.CAMPUS",
+        "RoleSearchExperience.EARLY_CAREER", "RoleSearchExperience.INTERNAL_MOBILITY", "RoleSearchExperience.PROFESSIONAL"]
+    memdb.set("blocked:at:labels:goldman-sachs", "")
+    api.types["ExternalSourceType"].append("WORKDAY")
+    assert [p["summary"] for p in moves.check_labels(ctx(cfg, memdb, api))] == [
+        "Goldman's job API has new experience or source types: ExternalSourceType.WORKDAY"]
+
+
+def test_goldman_type_the_api_stops_answering_is_a_failed_read(blocked_cfg, memdb):
+    cfg = blocked_cfg([company("goldman-sachs", checker="goldman")])
+    api = GoldmanApi({"RoleSearchExperience": ["CAMPUS"]})  # ExternalSourceType answers null
+    assert moves.check_labels(ctx(cfg, memdb, api)) == []
+    assert memdb.get("blocked:labels:goldman-sachs") is None  # not taken as a baseline
+    assert memdb.get("blocked:retry:labels:goldman-sachs") == "1" and not memdb.get("blocked:ok:labels:goldman-sachs")
+
+
 def test_new_student_team_labels_at_meta_from_its_own_poll(blocked_cfg, memdb):
     from internwatch.health import Outcome
     meta = company("meta", checker="meta")
@@ -886,7 +926,7 @@ def test_a_refused_parallel_board_and_boards_of_other_companies(blocked_cfg, mem
     fake_board["rm926"] = FetchError("HTTP 503 for GET x")
     assert moves.check_parallel(ctx(cfg, memdb)) == []
     assert memdb.get("blocked:retry:parallel:fake-board:board=rm926") == "1"
-    assert memdb.get("blocked:parallel:other-co:fake-board:board=never") is None  # never read: not one of the 31
+    assert memdb.get("blocked:parallel:other-co:fake-board:board=never") is None  # never read: not one of the 32
 
 
 def test_the_real_parallel_sources_name_adapters_that_exist():

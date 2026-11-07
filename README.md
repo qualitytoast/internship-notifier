@@ -1,6 +1,6 @@
 # InternWatch
 
-Watches 197 companies' careers sites (196 polled; Wayfair blocked: its site refuses automated clients) through their
+Watches 198 companies' careers sites (197 polled; Wayfair blocked: its site refuses automated clients) through their
 hiring systems' official feeds and emails new internships that pass `config/filters.yaml`. Python 3.12+,
 httpx, SQLite. Per-company checkers and evidence: COVERAGE.md. Freshman/sophomore programs: UNDERCLASSMEN.md.
 Rules for changing things: CLAUDE.md.
@@ -40,7 +40,7 @@ Rules for changing things: CLAUDE.md.
 - **More than 50 roles:** the 50 surest are in the body, and everything is attached as matching-roles.html and
   .csv.
 - **Open alerts:** every alert stays in every morning email until it is resolved or dismissed; see Health alerts.
-- **Coverage:** the morning email has one line ("195 of 196 checkers healthy") and attaches the whole table as
+- **Coverage:** the morning email has one line ("196 of 197 checkers healthy") and attaches the whole table as
   coverage.html.
 - **Delivery:** every email is also saved in `data/outbox/`. An email that fails to send is retried on the
   next run, and healthchecks.io is told the run failed.
@@ -88,7 +88,7 @@ Rules for changing things: CLAUDE.md.
     alerts once. A read that fails (5xx, timeout, a missing page) is read again first thing the next morning, every
     morning. A page the site refuses (a bot check, HTTP 400, 401, 403, 406 or 429) gets one retry, then waits a week
     until it answers; a robots.txt block just waits. The first look is a silent baseline. About 85
-    of 196 pages name a job system in their HTML; the rest are built in the browser or block scripts. The 31 companies
+    of 196 pages name a job system in their HTML; the rest are built in the browser or block scripts. The 32 companies
     whose page refuses scripts (`liveness.blocked`) are left out: the checks below watch them instead. Resolved when
     the system is added to the config or the page stops naming it (two reads in a row), or for a system it stopped
     mentioning, when it names it again or it leaves the config.
@@ -109,7 +109,7 @@ Rules for changing things: CLAUDE.md.
     before the run reached it. A day with no run isn't a morning, and two runs in a day are one. A weekly read, or a page
     waiting out a refusal, is reported after 14 days instead. A page that has never answered isn't news, but a list or
     board is. Checked last in a run, so the third miss alerts the same morning. Resolved when it answers.
-- **Companies whose careers page can't be read** (`src/internwatch/moves.py`; the 31 in `liveness.blocked`, and
+- **Companies whose careers page can't be read** (`src/internwatch/moves.py`; the 32 in `liveness.blocked`, and
   only those): where else they could start posting. Daily runs, before the emails, within 300 s. Every check runs every
   morning except archive.org's, spread over the week. A failed read comes back the next morning, every morning. Only a
   page that refuses waits a week (asking a site that refuses every day teaches nothing, and Citadel's refused page

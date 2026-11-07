@@ -287,6 +287,14 @@
   "duration": 0.3,
   "requests": 1
  },
+ "citadel-securities-programs": {
+  "jobs": 11,
+  "students": 6,
+  "matched": 2,
+  "at": "2026-11-07T17:47:42Z",
+  "duration": 0.2,
+  "requests": 1
+ },
  "cloudflare": {
   "jobs": 437,
   "students": 3,

@@ -11,6 +11,10 @@ settings:
   total_regex:        regex whose group 1 is the portal's total (e.g. 'aria-label="(\d+) results"'); a full scan
                       that collects fewer (or a page without the total) marks the poll degraded, keeping its jobs
   newest_first_query: query string that sorts newest first (used by quick scans of big portals)
+  second_order:       query string for another sort (Bloomberg: jobSort=schemaField_3_270_3&jobSortDirection=ASC,
+                      by title). A full scan that collects fewer than the total walks once more in this order and
+                      keeps what it adds: a newest-first order shuffles jobs posted together, so a few show on two
+                      pages and as many on none (Bloomberg, Nov 2026: 9 of 323 on every walk).
 List:   GET <list_url>?jobOffset=N → article.article--result cards linking to …/JobDetail/<slug>/<id>
 Detail: GET the job page → description, and City / State / Country fields when the card has no location
 See discovery/notes/two-sigma.md, bloomberg.md, synopsys.md.
@@ -104,8 +108,25 @@ class Avature(Checker):
         if ctx is not None and total is not None:
             ctx.reported_total = total
         if not quick and total is not None:
+            if s.get("second_order") and len(out) < total:
+                self._second_walk(http, url, size, fields, {**(s.get("params") or {}),
+                                                            **dict(parse_qsl(s["second_order"]))}, out, total)
             check_total_soft(len(out), total, f"avature:{url}", ctx)
         return list(out.values())
+
+    @staticmethod
+    def _second_walk(http, url, size, fields, params, out: dict, total: int) -> None:
+        """Walk the list in another order, adding the jobs the first walk missed. Most cards are already known, so
+        only a short page, the total reached or the page cap ends it."""
+        offset = 0
+        for _ in range(401):
+            jobs = parse_list(http.get_text(url, params={**params, **({"jobOffset": offset} if offset else {})}),
+                              url, fields)
+            for j in jobs:
+                out.setdefault(j.id, j)
+            offset += size
+            if len(jobs) < size or len(out) >= total:
+                break
 
     def detail(self, http, s, job):
         html = http.get_text(job.url)

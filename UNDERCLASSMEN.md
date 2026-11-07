@@ -31,7 +31,7 @@ rows are yours.
 | Jane Street | FTTP: First-Year Trading and Technology Program (NYC, London) | Fr | Jan 31, 2027 | emailed (Jane Street Programs) |
 | Two Sigma | First-Year Software Engineering Internship (NYC) | Fr | last round opened Jan 28; expect ~Jan 2027 | emailed |
 | Goldman Sachs | Possibilities Series | Fr | expected ~Feb 2027 | emailed when its page opens applications (Goldman Sachs Programs) |
-| Citadel / Citadel Securities | Discover Citadel: 2-day NYC program (quant research, SWE, trading) | Fr + So | US Mar 5, 2027 (EMEA Jan 29, Hong Kong Feb 14) | not watched (the program pages block automated access) |
+| Citadel / Citadel Securities | Discover Citadel: 2-day NYC program (quant research, SWE, trading) | Fr + So | US Mar 5, 2027 (EMEA Jan 29, Hong Kong Feb 14) | Citadel Securities: emailed while its US apply page is up (Citadel Securities Programs); Citadel: not watched (the program pages block automated access) |
 
 ## Every program, by company
 
@@ -43,8 +43,9 @@ rows are yours.
 | Capital One | Early Internship Program (10 weeks, McLean) and Analyst Early Internship (AEIP) | So | Capital One job site | emailed | AEIP closed; Early Internship not posted yet |
 | Capital One | First Gen Focus | Fr + So | capitalone.eightfold.ai events | not watched (events, not jobs) | — |
 | Citadel | Launch: 11-week engineering internship | So | Citadel job site | emailed if posted | not posted for 2027 |
-| Citadel / Citadel Securities | Discover Citadel | Fr + So | program pages | not watched | open (see above) |
-| Citadel Securities | Ignite Women's Trading Program (Winter 2027) | not stated | program page | not watched | closed Oct 16, 2026 |
+| Citadel / Citadel Securities | Discover Citadel | Fr + So | program pages | Citadel Securities: emailed while its US apply page is up (Citadel Securities Programs); Citadel: not watched | open (see above) |
+| Citadel Securities | Ignite Women's Trading Program (Winter 2027) | not stated | program page | emailed when its apply page is back (Citadel Securities Programs) | closed Oct 16, 2026 |
+| Citadel Securities | Spark (pages added Nov 6, 2026; the page blocks scripts, so its eligibility is unread) | not stated | program page | emailed while its apply page is up (Citadel Securities Programs) | open |
 | Duolingo | Thrive: 10-week internship, Pittsburgh (students underrepresented in tech) | So | Duolingo job site ("Software Engineer, Thrive Intern") | emailed | closed Sep 30, 2026; next round ~Sep 2027 |
 | Electronic Arts | Pathfinder | Fr + So | — | emailed if posted ("pathfinder") | page removed |
 | Expedia | Career Discovery Program (Software Development), Career Exploration Program | not stated | Expedia's second Workday site | emailed (2027 editions) | 2026 editions seen; 2027 not posted |

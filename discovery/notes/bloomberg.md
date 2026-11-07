@@ -22,6 +22,20 @@
 - **Sitemap** `GET /careers/sitemap.xml` (via `sitemap_index.xml`, 117 KB) lists **337 JobDetail URLs, each with a `<lastmod>`**. Today it differed from the list by one id: list-only 22246 "Content Research & Activation Analyst", sitemap-only 20317 (an accountant role). So it lags a little. It is useful as a cheap daily cross-check, but it is not the primary feed. It has no titles (only slugs) and no locations.
 - `api.altrulabs.com` (a widget) returned 404. The page also loads PerimeterX (`px-cloud.net` collector, `www.bloomberg.com/8FCGYgk4/init.js`), but the Avature HTML itself was served to plain httpx without any challenge.
 
+## Order shuffle (observed 2026-11-07, 13:23–17:45 UTC)
+- Two daily runs and one probe walk each read 27 full pages (323 cards) but only **314 unique ids**: 9 ids showed on
+  two neighboring pages (46002, 45936, 45935, 45860, 45701, 45270, 45192, 45098, 22309), and 9 others were on no page
+  (22303, 45113, 45183, 45291, 45691, 45869, 45918, 45934, 45987). All 9 were still open: the careers sitemap
+  (`/careers/sitemap.xml`, via `sitemap_index.xml`) listed exactly 323 ids, the 314 plus those 9. None was an internship.
+- The default newest-first order evidently ties jobs posted together and breaks the tie differently on each page.
+  The result is the same on every walk, so a walk never sees those 9. The 2026-10-20 recording had no repeats.
+- **Fix:** the Job Title sort works as a plain link: `?jobSort=schemaField_3_270_3&jobSortDirection=ASC&jobOffset=N`
+  (ids from the page's sort menu: City `schemaField_3_400_3`, State `…_399_3`, Country `…_398_3`, Job Title
+  `…_270_3`). Its own walk had 1 repeat (322 unique), and the two walks together gave exactly 323.
+  `second_order` makes the checker walk the title order whenever a full walk comes up short (54 requests that day,
+  27 otherwise). The second walk returns the same cards, so titles and locations match the first. A job page would
+  give only the city ("Singapore"), which would make stored jobs look edited.
+
 ## Field map (one card per job)
 Card selector: `article.article--result` (regex `<article class="article article--result"(.*?)</article>`).
 

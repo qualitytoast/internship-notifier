@@ -33,7 +33,8 @@ liveness:                        # boards that go dead, get abandoned or are rep
   # Companies whose careers page answers scripts with a bot check, HTTP 400 or a robots.txt block. The weekly page
   # check leaves them out; src/internwatch/moves.py watches where else they could start posting instead, and its
   # checks read only these companies.
-  blocked: [akuna-capital, american-family, capstone, chicago-trading-company, citadel, citadel-securities, coinbase,
+  blocked: [akuna-capital, american-family, capstone, chicago-trading-company, citadel, citadel-securities,
+            citadel-securities-programs, coinbase,
             doordash, dropbox, epic-games, expedia, fidelity, general-motors, goldman-sachs, gts, hudson-river-trading,
             liberty-mutual, meta, nutanix, openai, paypal, pinterest, pitchbook, schonfeld, seatgeek, servicenow,
             tower-research, uber, ukg, veeva, whatnot]

@@ -238,6 +238,7 @@ companies:
     page_size: 12
     fields: {location: .list-item-location}
     total_regex: list-controls__text__legend"\s+aria-label="(\d+) results"
+    second_order: jobSort=schemaField_3_270_3&jobSortDirection=ASC
   verified: {page_total: 337}
 - key: microsoft
   name: Microsoft
@@ -1169,6 +1170,16 @@ companies:
   settings: {base_url: 'https://www.citadelsecurities.com', min_interval: 10.0}
   role_keywords: [discover citadel, ignite]
   verified: {page_total: 79}
+- key: citadel-securities-programs
+  name: Citadel Securities Programs
+  category: quant
+  careers_url: ['https://www.citadelsecurities.com/careers/programs-and-events/']
+  checker: citadel_programs
+  settings: {base_url: 'https://www.citadelsecurities.com', min_interval: 10.0}
+  role_keywords: [discover citadel, ignite, spark]
+  verified: {page_total: 11, feed: 'GET https://www.citadelsecurities.com/page-sitemap.xml', explained: 'Each page below
+      a program page (an application or a region) is one role. The programs page blocks scripts, so it can''t be
+      counted; 11 = the page sitemap on 2026-11-07.'}
 - key: two-sigma
   name: Two Sigma
   category: quant

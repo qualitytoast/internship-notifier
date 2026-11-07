@@ -68,6 +68,21 @@ Plain HTTP gets a 403 challenge page instead of robots.txt. Under RFC 9309 a 4xx
   health: {expect: {status: 200, content_type: xml, root: urlset}, alert_on_challenge: true, min_jobs: 1, max_drop_ratio: 0.5}
 ```
 
+## Programs (`citadel-securities-programs`, added 2026-11-07)
+The student programs (Discover Citadel Securities, Ignite, and Spark, new on 2026-11-06) are never `career` posts.
+They live under `/careers/programs-and-events/<program>/`. The pages are challenged, but `/page-sitemap.xml` answers
+plain HTTP (200, the same as the career sitemap) and lists every page with a real per-page `<lastmod>`: on 2026-11-07
+the dates ran from 2025-04-10 to 2026-11-06. Unlike the career sitemap, these are not rewritten on every sync.
+- **Open = a page below the program page.** On 2026-11-07, Discover had `apply/` (US), `emea-apply/`, `apply-india/`,
+  `hong-kong/` and `singapore/`. PhD Summit, the Quant Invitational, Datathons and the Conference Travel Grant each
+  had an apply page, and Spark had `apply/`. Ignite, closed on Oct 16, had no page below it any more (lastmod Oct 16
+  20:50).
+- Checker `citadel_programs`: id `<program>/<page>`, title from the program slug, region from the page slug
+  (`apply-india` → India, `emea-apply` → EMEA), url = that page, posted = its lastmod. 11 roles that day.
+  `role_keywords: [discover citadel, ignite, spark]` on this entry only: Spark and Discover's US page match (tagged
+  freshman/sophomore, location?); the regional pages fail the location rule, and the events fail the role rule.
+- moves.py N still reports new program pages (`liveness.program_pages`), which is how Spark was found.
+
 ## Evidence
 - Sample: `discovery/samples/citadel-securities.json`. It has the raw sitemap (whole), the parsed rows, and page-1 cards compared with derived titles.
 - Capture: `discovery/captures/citadel-securities/` ("of 79").

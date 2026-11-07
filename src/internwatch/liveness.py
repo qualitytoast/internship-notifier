@@ -424,7 +424,7 @@ AVATURE_LINK = re.compile(r"https?://[\w.-]+\.avature\.net/[\w%/.-]*")
 
 def page_key(checker: str, s: dict) -> str:
     """system_key, but an iCIMS portal, an Avature portal and an Eightfold domain each count on their own, as
-    moves.system_key_v2 keys them for the 31 blocked companies (except Avature, which it keys by host)."""
+    moves.system_key_v2 keys them for the 32 blocked companies (except Avature, which it keys by host)."""
     from .moves import system_key_v2  # moves imports this module
     if checker == "avature" and s.get("list_url"):
         return avature_key(s["list_url"])

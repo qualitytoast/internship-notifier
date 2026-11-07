@@ -10,13 +10,20 @@ and one request per poll is enough.
 
 settings: base_url: https://www.citadel.com    (min_interval: 10)
 See discovery/notes/citadel.md.
+
+`citadel_programs`: the student programs, which are never job posts (Citadel Securities' Spark, Discover, Ignite).
+GET <base_url>/page-sitemap.xml → every page one level below a program page is returned as a job
+(…/programs-and-events/citadel-securities-spark/apply/ → id citadel-securities-spark/apply, title "Citadel
+Securities Spark"): a program takes applications through such a page and drops it when it closes (Ignite, Oct 2026).
+The page's lastmod is its posted date: on this sitemap it is real, not rewritten on every sync.
+See discovery/notes/citadel-securities.md.
 """
 from __future__ import annotations
 
 import re
 import xml.etree.ElementTree as ET
 
-from ..adapters.base import Checker, need, register
+from ..adapters.base import Checker, iso_date, need, register
 from ..models import Job
 
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
@@ -67,24 +74,55 @@ class CitadelSitemap(Checker):
         base = s["base_url"].rstrip("/")
         detail = re.compile(rf"^{re.escape(base)}/careers/details/([a-z0-9-]+)/?$")
         jobs: dict[str, Job] = {}
-        pages = [f"{base}/career-sitemap.xml"]
-        n = 0
-        while pages and n < 20:
-            body = http.get(pages.pop(0)).content
-            try:
-                root = ET.fromstring(body)
-            except ET.ParseError:
-                need(False, f"citadel:{base}: career sitemap is not XML (challenge page?) {body[:80]!r}")
-            need(root.tag.endswith("urlset"), f"citadel:{base}: unexpected sitemap root {root.tag}")
-            urls = root.findall("s:url", NS)
-            for u in urls:
-                loc = (u.findtext("s:loc", namespaces=NS) or "").strip()
-                m = detail.match(loc)
-                if m:
-                    slug = m.group(1)
-                    jobs.setdefault(slug, Job(id=slug, title=title_from_slug(slug), location=region_hint(slug), url=loc))
-            n += 1
-            if len(urls) >= 1000:  # Yoast splits at 1000 entries: career-sitemap2.xml, 3, …
-                pages.append(f"{base}/career-sitemap{n + 1}.xml")
+        for loc, _ in sitemap(http, base, "career"):
+            m = detail.match(loc)
+            if m:
+                slug = m.group(1)
+                jobs.setdefault(slug, Job(id=slug, title=title_from_slug(slug), location=region_hint(slug), url=loc))
         need(jobs, f"citadel:{base}: no job URLs in the career sitemap")
         return list(jobs.values())
+
+
+@register
+class CitadelPrograms(Checker):
+    type = "citadel_programs"
+
+    def describe(self, s):
+        return f"GET {s['base_url'].rstrip('/')}/page-sitemap.xml (program application pages)"
+
+    def fetch(self, http, s, ctx=None):
+        base = s["base_url"].rstrip("/")
+        root = f"{base}/careers/programs-and-events/"
+        child = re.compile(rf"^{re.escape(root)}([a-z0-9-]+)/([a-z0-9-]+)/?$")
+        pages = sitemap(http, base, "page")
+        need(any(loc.startswith(root) for loc, _ in pages), f"citadel:{base}: the page sitemap lists no program pages")
+        jobs: dict[str, Job] = {}
+        for loc, lastmod in pages:
+            m = child.match(loc)
+            if m:  # no open program at all is a valid answer
+                program, page = m.groups()
+                jobs.setdefault(f"{program}/{page}", Job(
+                    id=f"{program}/{page}", title=title_from_slug(program), url=loc, posted=iso_date(lastmod),
+                    location=region_hint(page) or region_hint(program)))
+        return list(jobs.values())
+
+
+def sitemap(http, base: str, name: str) -> list[tuple[str, str]]:
+    """(loc, lastmod) of every entry of the Yoast sitemap <base>/<name>-sitemap.xml and its split pages."""
+    out: list[tuple[str, str]] = []
+    pages = [f"{base}/{name}-sitemap.xml"]
+    n = 0
+    while pages and n < 20:
+        body = http.get(pages.pop(0)).content
+        try:
+            root = ET.fromstring(body)
+        except ET.ParseError:
+            need(False, f"citadel:{base}: {name} sitemap is not XML (challenge page?) {body[:80]!r}")
+        need(root.tag.endswith("urlset"), f"citadel:{base}: unexpected sitemap root {root.tag}")
+        urls = root.findall("s:url", NS)
+        out += [((u.findtext("s:loc", namespaces=NS) or "").strip(), (u.findtext("s:lastmod", namespaces=NS) or "").strip())
+                for u in urls]
+        n += 1
+        if len(urls) >= 1000:  # Yoast splits at 1000 entries: career-sitemap2.xml, 3, …
+            pages.append(f"{base}/{name}-sitemap{n + 1}.xml")
+    return out

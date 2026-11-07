@@ -1,6 +1,6 @@
 """Notice when a company whose careers page InternWatch can't read starts posting jobs somewhere new.
 
-The companies are named in settings `liveness.blocked`: the 31 whose careers page answers scripts with a bot check,
+The companies are named in settings `liveness.blocked`: the 32 whose careers page answers scripts with a bot check,
 an HTTP 400 or a robots.txt block, so the weekly page check (liveness.scan_pages) never sees where they point. Only
 those companies are read here. Nothing here stores a job or touches a poll: every check compares what it sees now
 with its own last look and raises a health alert for what is new. The first look of each check is a silent
@@ -445,7 +445,7 @@ def workday_robots_sites(text: str) -> tuple[set[str], set[str]]:
 
 
 def check_workday(ctx: Ctx) -> list[dict]:
-    """W. A new hidden site (Disallow line) on a tenant of the 31, or any new site on a tenant that the daily
+    """W. A new hidden site (Disallow line) on a tenant of the 32, or any new site on a tenant that the daily
     Workday check can't see (myworkdaysite.com hosts, parent companies). robots.txt comes from
     the checks' cache when it is fresh, else one plain GET that leaves the cache as it is."""
     tenants = workday_tenants(ctx)
@@ -947,21 +947,23 @@ def check_labels(ctx: Ctx) -> list[dict]:
     if c is None or not pick(ctx.db, "labels", [c.key], 1, ctx.now):
         return []
     from .checkers.goldman import API
-    query = "{ " + " ".join(f'{t}: __type(name: "{t}") {{ enumValues {{ name }} }}' for t in GOLDMAN_TYPES) + " }"
     http = ctx.http()
+    names: dict[str, set[str]] = {}
     try:
-        data = http.post_json(API, json={"query": query}, headers={"Accept": "application/json"})
+        for t in GOLDMAN_TYPES:  # one type a query: since Nov 2026 the API refuses __type twice ("BadFaithIntrospection")
+            data = http.post_json(API, json={"query": f'{{ {t}: __type(name: "{t}") {{ enumValues {{ name }} }} }}'},
+                                  headers={"Accept": "application/json"})
+            names[t] = {v["name"] for v in ((data.get("data") or {}).get(t) or {}).get("enumValues") or []}
     except Exception as e:  # noqa: BLE001 — refused: tomorrow
         if not out_of_budget(e):
             done(ctx.db, "labels", c.key, outcome(e), ctx.now)
         return []
     finally:
         http.close()
-    labels = {f"{t}.{v['name']}" for t in GOLDMAN_TYPES for v in (((data.get("data") or {}).get(t) or {})
-                                                                   .get("enumValues") or [])}
-    if not labels:
+    if not all(names.values()):  # a type the API no longer answers is a failed read, not "nothing new"
         done(ctx.db, "labels", c.key, "failed", ctx.now)
         return []
+    labels = {f"{t}.{n}" for t, ns in names.items() for n in ns}
     done(ctx.db, "labels", c.key, "ok", ctx.now)
     return _new_labels(ctx.db, c, labels, "Goldman's job API has new experience or source types",
                        "InternWatch asks Higher for PROFESSIONAL, EARLY_CAREER and CAMPUS roles. A new type can hold "
@@ -1125,7 +1127,7 @@ def ripplematch_rows(text: str) -> list[tuple[str, str, str, str | None]]:
 
 def company_of(index, comps: dict[str, Company], name: str, url: str, slug: bool = False) -> Company | None:
     """The blocked company a list row belongs to: matched among every configured company first, so another
-    company's row is never taken for one of the 31. In a source that names companies by slug (RippleMatch, Trackr),
+    company's row is never taken for one of the 32. In a source that names companies by slug (RippleMatch, Trackr),
     "ukg-ultimate-kronos-group" also matches the company whose name starts it."""
     from .crosscheck import Row, norm_company
     key = index.match(Row("", "", name, "", "", url, "", ""))
