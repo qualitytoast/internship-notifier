@@ -163,7 +163,7 @@ def settings_of(p: dict) -> tuple[str, dict]:
     from internwatch.crosscheck import url_markers
     marks = [m for ck, st in srcs for m in url_markers(Company(key="x", name="x", category="", careers_url=[],
                                                                checker=ck, settings=st))]
-    return "multi", {"dedupe": True, "dedupe_titles": True, "match_urls": marks,
+    return "multi", {"dedupe": True, "dedupe_titles": True, "twin_ids": True, "match_urls": marks,
                      "sources": [{"checker": ck, "settings": st} for ck, st in srcs]}
 
 
@@ -313,6 +313,10 @@ def add_settings(n: int, plan: dict) -> None:
                 st = reads[main["entry"]].get("settings") or {}
                 target = f"{main['checker']}:board={(st.get('board') or st.get('boards', [''])[0]).lower()}"
                 al.append(f"    ripplematch:company={rm[k]['slug']}: '{target}'   # {k}: its RippleMatch page, watched")
+    mirrors = yaml.safe_load((C / "mirrors.yaml").read_text())
+    for k in sorted(plan):
+        for m in mirrors.get(k) or []:
+            al.append(f"    {m['system']}: '{m['as']}'   # {k}: {m['why'].split(';')[0]}")
     append("watch_boards", watch)
     append("job_lists", jobs)
     append("wp_pages", wp)

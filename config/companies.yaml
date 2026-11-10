@@ -2021,6 +2021,7 @@ companies:
   settings:
     dedupe: true
     dedupe_titles: true
+    twin_ids: true
     match_urls: [greenhouse.io/drivewealth/, 'greenhouse.io/embed/job_app?for=drivewealth', ashbyhq.com/drivewealth/]
     sources:
     - checker: greenhouse

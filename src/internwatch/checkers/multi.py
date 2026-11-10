@@ -9,6 +9,9 @@ settings:
   dedupe_titles: true   ... or when its title matches an earlier source's job apart from case and punctuation;
                  text in brackets counts, since it can name another place or term (Rockwell: RippleMatch's
                  "Technical Sales Specialist" is the US role, not Workday's "Technical Sales Specialist (Canada)")
+  twin_ids: true   a dropped job's id and requisition ids are kept with the job that stays (its alt_ids), so a
+                 Simplify row or list that links the dropped copy still finds it (DriveWealth: the same internships
+                 on Greenhouse and on Ashby, where Simplify titles them differently)
 Ids from the first source are kept as they are; later sources' ids are prefixed with "<checker>:" so they can
 never collide. If one source fails, the others are still read and their new postings emailed, and the check
 is reported as degraded (a health alert after repeated failures); if every source fails, the check fails.
@@ -48,6 +51,15 @@ def _source_ids(sources) -> list[str]:
     return out
 
 
+def _twin(kept, dropped) -> None:
+    """twin_ids: the dropped copy's ids, kept with the job that stays (DB.upsert_jobs adds them to its alt_ids)."""
+    have = {kept.id, *map(str, kept.extra.get("alt_ids") or []), *kept.extra.get("twin_ids", [])}
+    for x in [dropped.id, *map(str, dropped.extra.get("alt_ids") or [])]:
+        if x not in have:
+            kept.extra.setdefault("twin_ids", []).append(x)
+            have.add(x)
+
+
 @contextmanager
 def _pacing(http, st: dict):
     """A source's own min_interval (Autodesk's Eightfold site asks for 2.5 s) while that source is read."""
@@ -75,6 +87,7 @@ class Multi(Checker):
 
     def fetch(self, http, s, ctx=None):
         jobs, total, seen, titles, errors = [], 0, set(), set(), []
+        by_key, by_title = {}, {}  # twin_ids: the kept job each id and title belongs to
         sources = self._sources(s)
         ids = _source_ids(sources)
         # sources that answered before; None on the company's very first check (everything is a baseline then)
@@ -118,12 +131,19 @@ class Multi(Checker):
             for j in got:
                 keys = {j.id, *map(str, j.extra.get("alt_ids") or [])}
                 if i and s.get("dedupe") and keys & seen:
+                    if s.get("twin_ids"):
+                        _twin(by_key[min(keys & seen)], j)
                     continue
                 bare = _bare_title(j.title)
                 if i and s.get("dedupe_titles") and bare in titles:
+                    if s.get("twin_ids"):
+                        _twin(by_title[bare], j)
                     continue
                 seen |= keys
                 titles.add(bare)
+                if s.get("twin_ids"):
+                    by_key.update(dict.fromkeys(keys, j))
+                    by_title.setdefault(bare, j)
                 if i:
                     j.id = f"{checker.type}:{j.id}"
                 j.extra["source"] = i

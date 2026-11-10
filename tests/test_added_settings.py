@@ -1,14 +1,22 @@
 """Settings only companies added in November 2026 use (each off unless a company sets it, so the others read exactly
-as before): Workday `pack` and `unlinked_ok`, `anchor_host` address markers, SmartRecruiters `ignore_search_total`."""
+as before): Workday `pack` and `unlinked_ok`, `anchor_host` address markers, SmartRecruiters `ignore_search_total`,
+multi `twin_ids`."""
 import json
 
 from internwatch.adapters import get_checker
 from internwatch.config import Company
-from internwatch.crosscheck import CompanyIndex, Row
+from internwatch.crosscheck import CompanyIndex, Row, find_in_db
 from internwatch.adapters.base import FetchContext
+from internwatch.db import iso
+from internwatch.models import Job
 
-from test_adapter_fixes import WD, WorkdaySite, replay, wd_jobs
+from test_adapter_fixes import WD, WorkdaySite, cassette, replay, wd_jobs
 from test_gap_fixes import _drop_links
+
+# Simplify's links to DriveWealth's Ashby copies of three internships it also posts on Greenhouse (titled differently)
+ASHBY = {"AI Consulting Associate Program – AI Engineer Intern": "a214dd6c-e3ac-481e-8308-bf74c2032b8a",
+         "AI Consulting Associate Program Product Owner Intern": "ec17ef99-dea9-4150-b935-5f74750d7b87",
+         "AI Consulting Associate Program Brokerage Intern": "b11409e6-a86d-4504-b4da-36636f888c16"}
 
 STORES = lambda i: f"store {i % 100}"  # noqa: E731 — 100 store locations, the only facet that splits the site
 
@@ -69,3 +77,34 @@ def test_smartrecruiters_ignore_search_total_keeps_the_pages_own_count_check():
     ctx = FetchContext()
     replay("servicenow", inflate, ctx=ctx)
     assert "the search reports 1000" in ctx.degraded            # as before
+
+
+def _simplify_finds(memdb, jobs) -> dict:
+    memdb.upsert_jobs("drivewealth", jobs, iso())
+    return {t: (find_in_db(memdb, "drivewealth", Row("s", "k", "DriveWealth", t, "Chicago, IL",
+                                                     f"https://jobs.ashbyhq.com/drivewealth/{u}?embed=true", "", ""))[1])
+            for t, u in ASHBY.items()}
+
+
+def test_multi_twin_ids_finds_simplify_rows_that_link_the_dropped_copy(memdb):
+    base = {k: v for k, v in cassette("drivewealth").meta["settings"].items() if k != "twin_ids"}
+    plain = replay("drivewealth", settings=base)
+    twins = replay("drivewealth", settings={**base, "twin_ids": True})
+    assert [j.id for j in twins] == [j.id for j in plain] and len(plain) == 27      # the same jobs are kept
+    assert not any("twin_ids" in j.extra for j in plain)                                # as before
+    assert sum(len(j.extra.get("twin_ids", [])) for j in twins) == 27                  # every Ashby copy, once
+    assert _simplify_finds(memdb, plain) == dict.fromkeys(ASHBY, "")                   # today: three misses
+    memdb.conn.execute("DELETE FROM jobs")
+    assert _simplify_finds(memdb, twins) == dict.fromkeys(ASHBY, "id")
+
+
+def test_multi_twin_ids_adds_a_copy_seen_later_to_the_stored_job(memdb):
+    first = Job(id="8039350003", title="AI CAP Engineering Intern", extra={"alt_ids": ["R1"]})
+    memdb.upsert_jobs("x", [first], iso())
+    again = Job(id="8039350003", title="AI CAP Engineering Intern", extra={"alt_ids": ["R1", "R2"]})
+    memdb.upsert_jobs("x", [again], iso())
+    assert json.loads(memdb.job("x", "8039350003")["alt_ids"]) == ["R1"]               # as before: kept from the insert
+    later = Job(id="8039350003", title="AI CAP Engineering Intern", extra={"alt_ids": ["R1"], "twin_ids": ["a214dd6c"]})
+    memdb.upsert_jobs("x", [later], iso())
+    memdb.upsert_jobs("x", [later], iso())
+    assert json.loads(memdb.job("x", "8039350003")["alt_ids"]) == ["R1", "a214dd6c"]

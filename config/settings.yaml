@@ -219,6 +219,8 @@ liveness:                        # boards that go dead, get abandoned or are rep
     greenhouse:board=instabase: 'instabase:board=instabase'   # instabase
     ripplematch:company=reddit: 'greenhouse:board=reddit'   # reddit: its RippleMatch page, watched
     ripplematch:company=roku: 'greenhouse:board=roku'   # roku: its RippleMatch page, watched
+    workday:site=ncinocareers,tenant=ncino: 'greenhouse:board=ncinoinc'   # ncino: its old Workday site, gone from the tenant's robots.txt (which lists only the empty nCinoAgency) and its feed answers 403
+    lever:site=symmetrysystems: 'greenhouse:board=zscaler'   # zscaler: Symmetry Systems' Lever board, 404 since Zscaler bought the company
 
 crosscheck:
   grace_minutes: 90              # wait this long (and for a fresh poll) before calling a Simplify role a miss

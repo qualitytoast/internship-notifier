@@ -125,6 +125,12 @@ def reopened(removed_at: str | None, now: str) -> bool:
     return bool(removed_at) and parse_iso(now) - parse_iso(removed_at) >= timedelta(days=REOPEN_DAYS)
 
 
+def _with_twins(alt_ids: list, j: Job) -> list:
+    """A job's alt_ids with the ids of its copies on the company's other boards (multi's twin_ids) added."""
+    twins = [t for t in j.extra.get("twin_ids") or [] if t not in alt_ids]
+    return [*alt_ids, *twins] if twins else alt_ids
+
+
 class DB:
     def __init__(self, path: Path | str):
         self.path = str(path)
@@ -198,9 +204,15 @@ class DB:
                         "INSERT INTO jobs(company, job_id, title, location, url, posted, department, employment_type,"
                         " snippet, first_seen, last_seen, alt_ids) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
                         (company, j.id, j.title, j.location, j.url, j.posted, j.department, j.employment_type,
-                         j.snippet, now, now, json.dumps(j.extra.get("alt_ids", []))))
+                         j.snippet, now, now, json.dumps(_with_twins(j.extra.get("alt_ids", []), j))))
                     new.append(j.id)
                 else:
+                    if j.extra.get("twin_ids"):  # multi's twin_ids: a copy on another board, seen later
+                        stored = json.loads(self.one("SELECT alt_ids FROM jobs WHERE company=? AND job_id=?",
+                                                     company, j.id)["alt_ids"] or "[]")
+                        if (ids := _with_twins(stored, j)) != stored:
+                            c.execute("UPDATE jobs SET alt_ids=? WHERE company=? AND job_id=?",
+                                      (json.dumps(ids), company, j.id))
                     edited = (j.title or "") != (row["title"] or "") or any(
                         new_v and new_v != (old_v or "") for new_v, old_v in
                         ((j.location, row["location"]), (j.employment_type, row["employment_type"])))

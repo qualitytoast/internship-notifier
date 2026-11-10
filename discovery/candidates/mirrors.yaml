@@ -1,0 +1,12 @@
+# Job sites the third-party lists link for an added company that its config doesn't read, because they are dead or
+# copies: each goes in settings.liveness.aliases (moves.py counts the left one as the right one), so it doesn't raise
+# `new job site?` on the company's first morning. stage2_batch.py apply writes the batch's entries.
+ncino:
+  - system: workday:site=ncinocareers,tenant=ncino
+    as: greenhouse:board=ncinoinc
+    why: its old Workday site, gone from the tenant's robots.txt (which lists only the empty nCinoAgency) and its feed
+      answers 403; the careers page links the Greenhouse boards that are read
+zscaler:
+  - system: lever:site=symmetrysystems
+    as: greenhouse:board=zscaler
+    why: Symmetry Systems' Lever board, 404 since Zscaler bought the company
