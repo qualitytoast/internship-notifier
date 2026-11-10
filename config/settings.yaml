@@ -17,6 +17,14 @@ schedule:
   run_timeout_minutes: 25        # hard stop for a whole run (long daily full scans of big sites fit inside)
   full_scan_hours: 24            # big sites (big: true) are read newest-first each poll, fully once a day
   detail_fetch_limit: 40         # max description fetches per company per run (new student roles only)
+  rounds:                        # companies with `round: added` (Nov 2026) run after the others' whole daily run, with
+    added:                       # these in place of the settings above and the liveness budgets; only emails wait
+      workers: 12
+      run_timeout_minutes: 35    # their own time limit, counted from the round's start
+      retry_delay: 90
+      page_scan_seconds: 240     # ~210 careers pages
+      blocked_scan_seconds: 150  # backup checks of the added companies whose careers page refuses scripts (~30 s)
+      watch_seconds: 1500        # their watched boards, incl. one giant store site's weekly full read (up to ~20 min)
 
 health:
   alert_after_failures: 2        # consecutive failed polls before a health email (retries happen first)
