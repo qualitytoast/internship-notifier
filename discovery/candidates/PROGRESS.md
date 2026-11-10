@@ -186,6 +186,8 @@ workers in the added round; build every new reader; add the subsidiaries (Tubi p
 site" setting; Progressive through RippleMatch. DraftKings, FOX, Match Group and PrizePicks were taken out of
 candidates.yaml and reads.yaml (their Stage 1 evidence stays in the result files): 236 companies.
 
-## Next: Stage 2, batch 0 (groundwork), on branch stage2-batch0 in a separate worktree
-The morning run is started by hand from this working tree, so src/ changes are built and proven in the worktree and
-merged into main only when batch 0 passes. See discovery/candidates/STAGE2_PROGRESS.md on that branch.
+## Next: Stage 2
+Batch 0 (groundwork, no companies) is merged into main (2026-11-09): rounds, the added round's cross-check and list
+check, "Now watching" rules, digest_at, the opt-in settings, tools/prove. Proven identical to the previous main by
+tools/prove/golden.py and three replayed mornings (discovery/candidates/STAGE2_PROGRESS.md). Batch 1 (Greenhouse) starts
+after a real morning run with batch 0 has worked.
