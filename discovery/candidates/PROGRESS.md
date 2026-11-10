@@ -68,6 +68,22 @@ nothing in config/ or src/ changes. Tools: `discovery/stage1.py` (pages, lists, 
 - RippleMatch: DraftKings 6, Mercor 4, Progressive 1, UnitedHealth 1, Reddit/Roku/Snap/Verizon 0.
 - Dead boards the lists still link: Ashby conductorone and superhuman (404) → aliases to the live boards.
 
+## Very large sites (workday_facets.json): full daily read against a student slice
+Workday costs ~1.0-1.5 s a request (20 jobs, unpartitioned); sites over the 2,000 cap are split and cost far more
+(CVS: 3.3 jobs a request). Full read vs slice (facet counts on 2026-11-09):
+| Company | Jobs | Full read | Student facet | Slice |
+|---|---|---|---|---|
+| CVS Health | 19,089 | >2 h (45 min read 8,410) | jobFamilyGroup "Internships and Devlpmt Pgms" 3,988 (mostly pharmacy) | ~200 req, ~4 min |
+| Lowe's | 13,007 | ~15 min+ (failed at 940 s, malformed) | none: keyword search | — |
+| Costco (Jibe) | ~18,000 | ~1 h+ (5,106 in 997 s) | category facet | — |
+| Citi | 4,885 | 14 min, 810 req | Intern (Paid) 16, Apprentice 114 | ~6 req |
+| GE Vernova | 2,177+ | 7.4 min | Co-op/Intern 179 | ~9 req |
+| Dick's | 3,648 | 5.7 min | Students and Recent Grads 5 | 1 req |
+| Micron | 2,882 | 5.2 min | Intern 141 | ~8 req |
+| Walmart, Target | capped (>2,000) | failed (malformed) | Intern 34 / Internships 108 | 2-6 req |
+Medium (full read is fine, ≤4 min): Applied Materials, HPE, BofA, HP, KLA, Morgan Stanley, Wells Fargo, Verizon,
+AT&T, Home Depot (932 on the main site), Nike; Oracle sites are cheap (JPMorgan 7,065 jobs in 36 requests).
+
 ## Next
 1. Read the special cases that existing adapters can read (Costco, UHG, Tyler, Precisely).
 2. Per company: Workday robots.txt sites (from the reads' cached robots.txt), lists check with candidate settings,

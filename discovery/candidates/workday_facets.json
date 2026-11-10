@@ -1,0 +1,617 @@
+{
+ "cvs-health": {
+  "total": 19089,
+  "student_facets": [
+   [
+    "workerSubType",
+    "Intern (Seasonal) (Trainee)",
+    56,
+    "183bb31d97231001005066125c530000"
+   ],
+   [
+    "workerSubType",
+    "Pharmacy Intern (Trainee)",
+    3928,
+    "183bb31d97231001005066125c530002"
+   ],
+   [
+    "jobFamilyGroup",
+    "Internships and Devlpmt Pgms",
+    3988,
+    "e65dbadf6a50100168ed81925eba0001"
+   ],
+   [
+    "locations",
+    "FL - Cooper City",
+    2,
+    "e75b3cfda6d41000ed9171e1df930000"
+   ],
+   [
+    "locations",
+    "NY - Cooperstown",
+    3,
+    "e75b3cfda6d41000edb1c702937e0000"
+   ],
+   [
+    "locations",
+    "OH - University Heights",
+    16,
+    "e75b3cfda6d41000edb4a79de2320000"
+   ],
+   [
+    "locations",
+    "PA - Coopersburg",
+    1,
+    "e75b3cfda6d41000edb8aa52b53a0000"
+   ]
+  ]
+ },
+ "walmart": {
+  "total": 2000,
+  "student_facets": [
+   [
+    "jobFamily",
+    "Intern",
+    34,
+    "e83ebdbd2a0a017e7530ee5947e9e0c3"
+   ],
+   [
+    "Job_Profiles",
+    "(USA) Pharmacy Pre-Grad Intern - WM",
+    444,
+    "855ef6dee3b4014faf247af62a3b15ec"
+   ],
+   [
+    "Job_Profiles",
+    "(USA) Pharmacy Grad Intern (Hrly)",
+    207,
+    "855ef6dee3b401e0bde015f32a3b8ad5"
+   ],
+   [
+    "company",
+    "(USA) Club 04991 Member JM (Zee Baber, Kelley Cooper, +2)",
+    6,
+    "67a4f5247677013ba83836b9b300e12b"
+   ],
+   [
+    "primaryLocation",
+    "(USA) AR ROGERS 05169 WM ON CAMPUS/RX FACILITIES",
+    3,
+    "855ef6dee3b401582f7f77ff1d3b495e"
+   ],
+   [
+    "primaryLocation",
+    "(USA) AZ LITCHFIELD PARK 02489 WM ON CAMPUS/RX FACILITIES",
+    17,
+    "938898d3c69b1004120fbe6a6db40000"
+   ],
+   [
+    "primaryLocation",
+    "(USA) FL ORLANDO 03971 WM ON CAMPUS/RX FACILITIES",
+    2,
+    "5330c970e308100c9bf2b0cf31210000"
+   ],
+   [
+    "primaryLocation",
+    "(USA) FL ORLANDO 05315 WM ON CAMPUS/RX FACILITIES",
+    8,
+    "855ef6dee3b401b8f558c1dc1d3b810b"
+   ],
+   [
+    "primaryLocation",
+    "(USA) FL ORLANDO 05997 WM ON CAMPUS/RX FACILITIES",
+    2,
+    "855ef6dee3b401d441a229e51d3ba922"
+   ],
+   [
+    "primaryLocation",
+    "(USA) IN PLAINFIELD 07611 WM ON CAMPUS/RX FACILITIES",
+    1,
+    "7b9ffba51f3a010c807a89fb265e0000"
+   ],
+   [
+    "primaryLocation",
+    "(USA) KY GEORGETOWN 07259 WM ON CAMPUS/RX FACILITIES",
+    1,
+    "855ef6dee3b40166a8815cca1d3b91cd"
+   ],
+   [
+    "primaryLocation",
+    "(USA) MD FREDERICK 07638 WM ON CAMPUS/RX FACILITIES",
+    8,
+    "9c90bc914ecc01c02ee2d0f4c808f82f"
+   ],
+   [
+    "primaryLocation",
+    "(USA) MO SPRINGFIELD 03704 WM ON CAMPUS/RX FACILITIES",
+    1,
+    "b55e8332e1751007ad8ce04dc5ae0000"
+   ],
+   [
+    "primaryLocation",
+    "(USA) TX SPRING 02670 WM ON CAMPUS/RX FACILITIES",
+    4,
+    "855ef6dee3b4014936a0fdd91d3b5103"
+   ]
+  ]
+ },
+ "target": {
+  "total": 2000,
+  "student_facets": [
+   [
+    "jobFamilyGroup",
+    "Internships",
+    108,
+    "daccab9f1d25019c1fe2b73634578e0d"
+   ],
+   [
+    "workerSubType",
+    "Intern",
+    108,
+    "daccab9f1d25019dc0cd608d3157bd05"
+   ],
+   [
+    "locations",
+    "1021 W University Ste B3, Georgetown,TX 78628-5339",
+    7,
+    "daccab9f1d2501ffb08acb3a3c578539"
+   ],
+   [
+    "locations",
+    "10500 Campus Way S, Upper Marlboro,MD 20774-1309",
+    8,
+    "daccab9f1d250115d033bffe3b57d42e"
+   ],
+   [
+    "locations",
+    "1300 University Ave W, Saint Paul,MN 55104-4103",
+    9,
+    "daccab9f1d2501c7d7785dcb3b578a19"
+   ],
+   [
+    "locations",
+    "13658 University Plaza St, Tampa,FL 33613-4649",
+    7,
+    "daccab9f1d2501f75f9fa8de3b579d24"
+   ],
+   [
+    "locations",
+    "14070 Cedar Rd, University Heights,OH 44118-3216",
+    8,
+    "daccab9f1d25018c5e344f423c57c53a"
+   ],
+   [
+    "locations",
+    "1414 University Ave, Berkeley,CA 94702-1548",
+    4,
+    "daccab9f1d25010a546c49e03b576525"
+   ],
+   [
+    "locations",
+    "1475 University Dr, Burlington,NC 27215-8768",
+    6,
+    "daccab9f1d2501634a9032463c576a3b"
+   ],
+   [
+    "locations",
+    "155 University Dr E, Granger,IN 46530-4474",
+    10,
+    "daccab9f1d2501b8858ee8db3b573023"
+   ],
+   [
+    "locations",
+    "1751 University Dr, Vista,CA 92083-7775",
+    8,
+    "daccab9f1d2501d774a4490f3c57df32"
+   ],
+   [
+    "locations",
+    "1931 Campus Ave, Upland,CA 91784-1667",
+    7,
+    "daccab9f1d25014a1860bc383c572b39"
+   ],
+   [
+    "locations",
+    "221 University Ave, Westwood,MA 02090-2333",
+    7,
+    "daccab9f1d2501c4c99e65e53b575427"
+   ],
+   [
+    "locations",
+    "2380 W International Speedway Blvd, Daytona Beach,FL 32114-1116",
+    6,
+    "daccab9f1d2501204350b5f93b57852d"
+   ],
+   [
+    "locations",
+    "26550 E University Dr, Aubrey,TX 76227",
+    6,
+    "d4eb94fa2122102393964a04e70a0000"
+   ],
+   [
+    "locations",
+    "2755 W University Dr. Ste 1101, Denton,TX 76201-1618",
+    7,
+    "9dbcd966e6c610481e01a1d78d510000"
+   ],
+   [
+    "locations",
+    "3029 University Ave, San Diego,CA 92104-3036",
+    4,
+    "daccab9f1d2501a96078f70d3c576232"
+   ],
+   [
+    "locations",
+    "420 S University Ave, Little Rock,AR 72205-5246",
+    9,
+    "daccab9f1d25018e9269b7e63b57ea27"
+   ],
+   [
+    "locations",
+    "4255 CAMPUS DR STE A150, Irvine,CA 92612-2668",
+    4,
+    "daccab9f1d25015c4b98f4d83b576e21"
+   ],
+   [
+    "locations",
+    "5001 University Towne Center Dr, Morgantown,WV 26501-2267",
+    9,
+    "daccab9f1d2501b2ab2e29543c57a43d"
+   ],
+   [
+    "locations",
+    "5420 University Pkwy, Winston Salem,NC 27105-1366",
+    7,
+    "daccab9f1d2501b3f77f09eb3b575729"
+   ],
+   [
+    "locations",
+    "5800 S University Dr, Davie,FL 33328-6102",
+    8,
+    "daccab9f1d2501ba148324743c575b42"
+   ],
+   [
+    "locations",
+    "6275 University Dr NW, Huntsville,AL 35806-1776",
+    8,
+    "daccab9f1d250140d92eb1743c576f42"
+   ],
+   [
+    "locations",
+    "7302 University Ave, Lubbock,TX 79423-1423",
+    6,
+    "daccab9f1d250184d21dabeb3b578929"
+   ],
+   [
+    "locations",
+    "8120 University City Blvd, Charlotte,NC 28213-8126",
+    7,
+    "daccab9f1d2501845c4349e23b572d26"
+   ]
+  ]
+ },
+ "lowes": {
+  "total": 13007,
+  "student_facets": [
+   [
+    "locations",
+    "Wilmington, NC (University Centre) 0445",
+    9,
+    "02b0c958653f010cf6eeab1b140696ab"
+   ]
+  ]
+ },
+ "home-depot": {
+  "total": 932,
+  "student_facets": []
+ },
+ "citi": {
+  "total": 2000,
+  "student_facets": [
+   [
+    "jobFamilyGroup",
+    "Internal Audit",
+    23,
+    "e32326e1708d019fa01aed0c1201d8c0"
+   ],
+   [
+    "workerSubType",
+    "Apprentice",
+    114,
+    "e32326e1708d0198ff5d26724901a2dd"
+   ],
+   [
+    "workerSubType",
+    "Intern (Paid)",
+    16,
+    "e32326e1708d01c9aa33257249019bdd"
+   ],
+   [
+    "locations",
+    "TX-SAN ANTONIO CAMPUS (BLDG 4)",
+    1,
+    "8a1ca13f3b46010c1a4464d5ad21813d"
+   ]
+  ]
+ },
+ "ge-vernova": {
+  "total": 2177,
+  "student_facets": [
+   [
+    "workerSubType",
+    "Apprentice (Fixed Term)",
+    25,
+    "0235f30695e810014f5b8f5b127d0000"
+   ],
+   [
+    "workerSubType",
+    "Co-op/Intern (Fixed Term)",
+    179,
+    "0235f30695e810014f5b8ff4a6f90000"
+   ]
+  ]
+ },
+ "dicks-sporting-goods": {
+  "total": 2000,
+  "student_facets": [
+   [
+    "CF_-_Job_Requisition_Job_Category__LRV__Extended",
+    "Students and Recent Grads",
+    5,
+    "451b0d7174c41003d1e5e478cb360000"
+   ],
+   [
+    "CF_-_Job_Requisition_Job_Category__LRV__Extended",
+    "Internal Audit",
+    3,
+    "451b0d7174c41003d1e5ee8621880000"
+   ]
+  ]
+ },
+ "micron": {
+  "total": 2882,
+  "student_facets": [
+   [
+    "workerSubType",
+    "Intern - Regular (Fixed Term)",
+    139,
+    "bff7a31dbdd3016722f3aeb41a01cf81"
+   ],
+   [
+    "workerSubType",
+    "Intern - Trainee (Fixed Term)",
+    2,
+    "bff7a31dbdd301cd53c8aeb41a01ce81"
+   ],
+   [
+    "jobFamilyGroup",
+    "Interns",
+    143,
+    "bff7a31dbdd3010ca04a790caa01fe61"
+   ]
+  ]
+ },
+ "hpe": {
+  "total": 1740,
+  "student_facets": [
+   [
+    "workerSubType",
+    "Temp Intern (Fixed Term)",
+    176,
+    "98cbd30d374e1033353f1fbd0c2452f5"
+   ],
+   [
+    "workerSubType",
+    "Reg Apprentice",
+    5,
+    "98cbd30d374e1033353f1715af5452f2"
+   ],
+   [
+    "workerSubType",
+    "Temp Apprentice (Fixed Term)",
+    1,
+    "98cbd30d374e1033353f27d3dd0c52f8"
+   ]
+  ]
+ },
+ "bank-of-america": {
+  "total": 3039,
+  "student_facets": [
+   [
+    "locations",
+    "University Place",
+    1,
+    "13a0897a1ccc10390be30b4090626806"
+   ]
+  ]
+ },
+ "applied-materials": {
+  "total": 2000,
+  "student_facets": [
+   [
+    "jobFamilyGroup",
+    "Interns",
+    84,
+    "12cd0bd5b8c8100a5ff4cfd6ca541ea6"
+   ],
+   [
+    "workerSubType",
+    "Intern / Student",
+    83,
+    "ba9df317f7ac456da2faff4fd6a521c8"
+   ]
+  ]
+ },
+ "hp": {
+  "total": 923,
+  "student_facets": [
+   [
+    "workerSubType",
+    "Temp Intern (Fixed Term)",
+    124,
+    "98cbd30d374e1033353f1fbd0c2452f5"
+   ]
+  ]
+ },
+ "nike": {
+  "total": 731,
+  "student_facets": [
+   [
+    "workerSubType",
+    "Intern (Fixed Term)",
+    16,
+    "cd128a2666561000ac472df272660000"
+   ]
+  ]
+ },
+ "kla": {
+  "total": 1154,
+  "student_facets": [
+   [
+    "jobFamilyGroup",
+    "Student",
+    2,
+    "bcb876733f86019037b304ff551bb91e"
+   ],
+   [
+    "workerSubType",
+    "Intern (Fixed Term)",
+    51,
+    "bcb876733f86017814949a52051b230c"
+   ]
+  ]
+ },
+ "morgan-stanley": {
+  "total": 1215,
+  "student_facets": [
+   [
+    "jobFamilyGroup",
+    "Internal Audit (JA)",
+    25,
+    "e490e8f3da91100b79cf79706ad60000"
+   ],
+   [
+    "jobFamilyGroup",
+    "Intern",
+    6,
+    "5a72a211d621102b112d341d111ddf94"
+   ],
+   [
+    "workerSubType",
+    "Intern",
+    6,
+    "5a72a211d621102a11412ae10c95037b"
+   ],
+   [
+    "locations",
+    "International Commerce Centre",
+    1,
+    "5a72a211d621102a18cadd3d926523c0"
+   ],
+   [
+    "locations",
+    "RMZ Ecoworld - Campus 6A",
+    6,
+    "e607bd2bb22e0113ccc49e12a2768b2d"
+   ]
+  ]
+ },
+ "wells-fargo": {
+  "total": 1605,
+  "student_facets": [
+   [
+    "jobFamily",
+    "Early Career Programs",
+    7,
+    "a474682131921001babf17eb9f800000"
+   ],
+   [
+    "workerSubType",
+    "Intern (Fixed Term) (Trainee)",
+    5,
+    "2d264dd4beb00100f05a7d60652a0000"
+   ],
+   [
+    "locations",
+    "UNIVERSITY PLACE, WA",
+    2,
+    "d3fe893e81ef01016aa618aafbf60000"
+   ]
+  ]
+ },
+ "verizon": {
+  "total": 1254,
+  "student_facets": [
+   [
+    "workerSubType",
+    "Intern (Fixed Term)",
+    1,
+    "1d175767e01d1000aed59084e5bd0000"
+   ],
+   [
+    "jobFamilyGroup",
+    "Campus & Apprenticeships",
+    1,
+    "4466d54cbeba1000ae7ce480184d0000"
+   ],
+   [
+    "locations",
+    "2818 W University Dr, Denton, Texas",
+    1,
+    "4466d54cbeba1000c04892dcf2ab0000"
+   ],
+   [
+    "locations",
+    "410 S University AVE, Little Rock, Arkansas",
+    1,
+    "4466d54cbeba1000c04c4dc21a710000"
+   ],
+   [
+    "locations",
+    "9901 University AVE, Clive, Iowa",
+    1,
+    "4466d54cbeba1000c0543636a6830000"
+   ]
+  ]
+ },
+ "att": {
+  "total": 1098,
+  "student_facets": [
+   [
+    "locations",
+    "USA:FL:Coral Springs:2204 University Dr:RET/RET",
+    1,
+    "11e7bed69e8b100154fc02c015790000"
+   ],
+   [
+    "locations",
+    "USA:FL:Daytona Beach:1804 W International Speedway Blvd:RET/RET",
+    1,
+    "11e7bed69e8b10015510fe87699d0000"
+   ],
+   [
+    "locations",
+    "USA:TX:Denton:2520 W University Dr (fka 2610 W University Dr):RET/RET",
+    1,
+    "4b2c807725691000fe1a03d6e5b10000"
+   ],
+   [
+    "locations",
+    "USA:UT:Orem:545 E University Pkwy:RET/RET",
+    1,
+    "11e7bed69e8b1001564fd7c648dd0000"
+   ]
+  ]
+ },
+ "disney": {
+  "total": 75,
+  "student_facets": [
+   [
+    "workerSubType",
+    "Student Program / Intern (Fixed Term)",
+    1,
+    "4f84d9e8a0970100aec0ae70150e0000"
+   ]
+  ]
+ }
+}
