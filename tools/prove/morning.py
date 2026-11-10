@@ -187,9 +187,24 @@ def replay(version: Path, rec: Path, out: Path, edits: str = "") -> None:
     (out / "requests.json").write_text(json.dumps({"asked": asked, "missing": missing}))
     mails = out / "emails"
     mails.mkdir(exist_ok=True)
-    for i, p in enumerate(sorted((h / "data" / "outbox").glob("*.html"))):
+    for i, p in enumerate(sorted((h / "data" / "outbox").glob("*.eml"))):
         shutil.copy(p, mails / f"{i:02d}-{p.name.split('-', 2)[-1]}")
+        shutil.copy(p.with_suffix(".html"), mails / f"{i:02d}-{p.with_suffix('.html').name.split('-', 2)[-1]}")
     print(f"replayed with {internwatch.__file__}: {s.line()}; {len(asked)} requests, {len(missing)} not recorded")
+
+
+def links(html_path: Path) -> set[str]:
+    """Every link in an email: its HTML body and its attachments (the .eml next to it)."""
+    import email
+    import html as htmllib
+    import re
+    eml = html_path.with_suffix(".eml")
+    texts = [html_path.read_text()]
+    if eml.exists():
+        for part in email.message_from_bytes(eml.read_bytes()).walk():
+            if part.get_content_type() in ("text/html", "text/csv"):
+                texts.append(part.get_payload(decode=True).decode("utf-8", "replace"))
+    return {htmllib.unescape(u) for t in texts for u in re.findall(r'(?:href="|,)(https?://[^"\s,]+)', t)}
 
 
 def compare(old_out: Path, new_out: Path, added: set[str]) -> int:
@@ -221,12 +236,23 @@ def compare(old_out: Path, new_out: Path, added: set[str]) -> int:
             problems.append(f"{table} {k}: {ra} -> {rb}")
     ea = sorted(p.name for p in (old_out / "emails").glob("*.html"))
     eb = sorted(p.name for p in (new_out / "emails").glob("*.html"))
-    if [n[3:] for n in ea] != [n[3:] for n in eb]:
-        problems.append(f"emails: {ea} -> {eb}")
-    else:
-        for x, y in zip(ea, eb):
-            if (old_out / "emails" / x).read_text() != (new_out / "emails" / y).read_text():
-                problems.append(f"emails: {x} differs")
+    if not added:  # nothing added: every email byte for byte
+        if [n[3:] for n in ea] != [n[3:] for n in eb]:
+            problems.append(f"emails: {ea} -> {eb}")
+        else:
+            for x, y in zip(ea, eb):
+                if (old_out / "emails" / x).read_text() != (new_out / "emails" / y).read_text():
+                    problems.append(f"emails: {x} differs")
+    else:  # the same emails apart from "Now watching", and every link of the old ones still there (but the rows
+        # that went to an added company); which jobs were emailed is in the jobs table, compared above
+        kinds = lambda names: [n[3:] for n in names if "watching" not in n]  # noqa: E731
+        if kinds(ea) != kinds(eb):
+            problems.append(f"emails: {ea} -> {eb}")
+        theirs = {r["url"] for r in new["simplify_rows"] if r.get("tracked_company") in added and r.get("url")}
+        for x, y in zip([n for n in ea if "watching" not in n], [n for n in eb if "watching" not in n]):
+            lost = links(old_out / "emails" / x) - links(new_out / "emails" / y) - theirs
+            if lost:
+                problems.append(f"emails: {x}: {len(lost)} links gone, e.g. {sorted(lost)[:3]}")
     ra = json.loads((old_out / "requests.json").read_text())
     rb = json.loads((new_out / "requests.json").read_text())
     if rb["asked"][:len(ra["asked"])] != ra["asked"]:
