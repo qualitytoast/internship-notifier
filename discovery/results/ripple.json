@@ -1,0 +1,23 @@
+{
+  "key": "ripple",
+  "name": "Ripple",
+  "careers_url": "https://ripple.com/careers/",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "ripple"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/ripple/jobs",
+  "feed_total": 117,
+  "page_total": 117,
+  "page_total_how": "headless render of https://ripple.com/careers/all-jobs/ (robots.txt checked for every request) shows 117 jobs; 117 read (2026-11-10)",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "boards-api.greenhouse.io/robots.txt checked before every request (discovery/robots/boards-api.greenhouse.io.txt)",
+  "notes": "",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added"
+}

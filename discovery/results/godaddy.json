@@ -1,0 +1,27 @@
+{
+  "key": "godaddy",
+  "name": "GoDaddy",
+  "careers_url": "https://careers.godaddy/",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "boards": [
+      "godaddy",
+      "eventsandinterns"
+    ],
+    "missing_ok": true
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/{godaddy,eventsandinterns}/jobs",
+  "feed_total": 30,
+  "page_total": 31,
+  "page_total_how": "headless render of https://careers.godaddy/jobs/search (robots.txt checked for every request) shows 31 jobs; 30 read (2026-11-10); the page links 31 jobs; its '244 results found' is the phone-number country picker",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "boards-api.greenhouse.io/robots.txt checked before every request (discovery/robots/boards-api.greenhouse.io.txt)",
+  "notes": "The page showed 31 jobs and the board 30 on 2026-11-09 (a posting or two opened or closed in between).",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added"
+}

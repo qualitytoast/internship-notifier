@@ -1,0 +1,23 @@
+{
+  "key": "bamboohr",
+  "name": "BambooHR",
+  "careers_url": "https://www.bamboohr.com/careers/",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "bamboohr17"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/bamboohr17/jobs",
+  "feed_total": 28,
+  "page_total": 28,
+  "page_total_how": "hosted Greenhouse board's stated count (2026-11-09)",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "boards-api.greenhouse.io/robots.txt checked before every request (discovery/robots/boards-api.greenhouse.io.txt)",
+  "notes": "",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added"
+}

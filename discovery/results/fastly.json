@@ -1,0 +1,23 @@
+{
+  "key": "fastly",
+  "name": "Fastly",
+  "careers_url": "https://www.fastly.com/about/careers",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "fastly"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/fastly/jobs",
+  "feed_total": 55,
+  "page_total": 54,
+  "page_total_how": "https://www.fastly.com/about/careers/current-openings links 54 of the 55 jobs read (2026-11-09)",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "boards-api.greenhouse.io/robots.txt checked before every request (discovery/robots/boards-api.greenhouse.io.txt)",
+  "notes": "The page showed 54 jobs and the board 55 on 2026-11-09 (a posting or two opened or closed in between).",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added"
+}

@@ -1812,3 +1812,633 @@ companies:
     - checker: workday
       settings: {host: priceline.wd1.myworkdayjobs.com, tenant: priceline, site: Priceline}
   verified: {page_total: 59}
+- key: udemy
+  name: Udemy
+  category: software
+  careers_url: ['https://about.udemy.com/careers/']
+  checker: greenhouse
+  settings:
+    boards: [udemy, udemybedi]
+    missing_ok: true
+  verified: {page_total: 1, explained: The page showed 1 jobs and the board 4 on 2026-11-09 (a posting or two opened or closed in between).}
+  round: added
+- key: ncino
+  name: nCino
+  category: fintech
+  careers_url: ['https://www.ncino.com/our-company/careers', 'https://www.ncino.com/company/careers']
+  checker: greenhouse
+  settings:
+    boards: [ncinoinc, ncinoearlytalent]
+    missing_ok: true
+  verified: {page_total: 30}
+  round: added
+- key: zoominfo
+  name: ZoomInfo
+  category: software
+  careers_url: ['https://www.zoominfo.com/careers', 'https://www.zoominfo.com/about/careers']
+  checker: greenhouse
+  settings: {board: zoominfo}
+  verified: {page_total: 91}
+  round: added
+- key: zscaler
+  name: Zscaler
+  category: security
+  aliases: [Symmetry Systems]
+  careers_url: ['https://www.zscaler.com/careers']
+  checker: greenhouse
+  settings: {board: zscaler}
+  verified: {page_total: 377, explained: The page showed 377 jobs and the board 378 on 2026-11-09 (a posting or two opened or closed
+      in between).}
+  round: added
+- key: yugabyte
+  name: YugabyteDB
+  category: software
+  careers_url: ['https://www.yugabyte.com/careers/']
+  checker: greenhouse
+  settings: {board: yugabyte}
+  verified: {page_total: 14}
+  round: added
+- key: viam
+  name: Viam
+  category: robotics
+  careers_url: ['https://www.viam.com/careers', 'https://www.viam.com/company/careers']
+  checker: greenhouse
+  settings: {board: viamrobotics}
+  verified: {page_total: 8}
+  round: added
+- key: you-com
+  name: You.com
+  category: ai
+  careers_url: ['https://you.com/careers']
+  checker: greenhouse
+  settings: {board: youcom}
+  verified: {page_total: 8}
+  round: added
+- key: zocdoc
+  name: Zocdoc
+  category: healthcare
+  careers_url: ['https://www.zocdoc.com/about/careers/']
+  checker: greenhouse
+  settings: {board: zocdoc}
+  verified: {page_total: 63}
+  round: added
+- key: redwood-materials
+  name: Redwood Materials
+  category: energy
+  careers_url: ['https://www.redwoodmaterials.com/join/', 'https://www.redwoodmaterials.com/careers']
+  checker: greenhouse
+  settings: {board: redwoodmaterials}
+  verified: {page_total: 131}
+  round: added
+- key: rubrik
+  name: Rubrik
+  category: security
+  careers_url: ['https://www.rubrik.com/company/careers']
+  checker: greenhouse
+  settings: {board: rubrik}
+  verified: {page_total: null}
+  round: added
+- key: snorkel-ai
+  name: Snorkel AI
+  category: ai
+  careers_url: ['https://snorkel.ai/join-us/', 'https://snorkel.ai/careers/']
+  checker: greenhouse
+  settings: {board: snorkelai}
+  verified: {page_total: 43}
+  round: added
+- key: starburst
+  name: Starburst
+  category: software
+  careers_url: ['https://www.starburst.io/careers/']
+  checker: greenhouse
+  settings: {board: starburst}
+  verified: {page_total: 38}
+  round: added
+- key: vercel
+  name: Vercel
+  category: software
+  careers_url: ['https://vercel.com/careers']
+  checker: greenhouse
+  settings: {board: vercel}
+  verified: {page_total: 87}
+  round: added
+- key: ziprecruiter
+  name: ZipRecruiter
+  category: software
+  careers_url: ['https://www.ziprecruiter.com/careers']
+  checker: greenhouse
+  settings: {board: ziprecruiter}
+  verified: {page_total: 68}
+  round: added
+- key: reddit
+  name: Reddit
+  category: software
+  careers_url: ['https://redditinc.com/careers', 'https://www.redditinc.com/careers']
+  checker: greenhouse
+  settings: {board: reddit}
+  verified: {page_total: 154}
+  round: added
+- key: sofi
+  name: SoFi
+  category: fintech
+  careers_url: ['https://www.sofi.com/careers/']
+  checker: greenhouse
+  settings: {board: sofi}
+  verified: {page_total: 48}
+  round: added
+- key: perpay
+  name: Perpay
+  category: fintech
+  careers_url: ['https://perpay.com/careers']
+  checker: greenhouse
+  settings: {board: perpay}
+  verified: {page_total: 17}
+  round: added
+- key: singlestore
+  name: SingleStore
+  category: software
+  careers_url: ['https://www.singlestore.com/careers/']
+  checker: greenhouse
+  settings: {board: singlestore}
+  verified: {page_total: 40}
+  round: added
+- key: typeface
+  name: Typeface
+  category: ai
+  careers_url: ['https://www.typeface.ai/careers']
+  checker: greenhouse
+  settings: {board: typeface}
+  verified: {page_total: 18}
+  round: added
+- key: godaddy
+  name: GoDaddy
+  category: software
+  careers_url: ['https://careers.godaddy/']
+  checker: greenhouse
+  settings:
+    boards: [godaddy, eventsandinterns]
+    missing_ok: true
+  verified: {page_total: 31, explained: The page showed 31 jobs and the board 30 on 2026-11-09 (a posting or two opened or closed in
+      between).}
+  round: added
+- key: pure-storage
+  name: Pure Storage
+  category: hardware
+  careers_url: ['https://www.everpuredata.com/company/careers.html', 'https://www.purestorage.com/company/careers.html']
+  checker: greenhouse
+  settings: {board: purestorage}
+  verified: {page_total: 369}
+  round: added
+- key: roku
+  name: Roku
+  category: media
+  careers_url: ['https://www.weareroku.com/']
+  checker: greenhouse
+  settings: {board: roku}
+  verified: {page_total: null}
+  round: added
+- key: veeam
+  name: Veeam Software
+  category: software
+  careers_url: ['https://careers.veeam.com/']
+  checker: greenhouse
+  settings: {board: veeamsoftware}
+  verified: {page_total: 198}
+  round: added
+- key: new-york-times
+  name: The New York Times
+  category: media
+  careers_url: ['https://www.nytco.com/careers/']
+  checker: greenhouse
+  settings: {board: thenewyorktimes}
+  verified: {page_total: 173}
+  round: added
+- key: drivewealth
+  name: DriveWealth
+  category: fintech
+  careers_url: ['https://www.drivewealth.com/company/careers/', 'https://www.drivewealth.com/careers/']
+  checker: multi
+  settings:
+    dedupe: true
+    dedupe_titles: true
+    match_urls: [greenhouse.io/drivewealth/, 'greenhouse.io/embed/job_app?for=drivewealth', ashbyhq.com/drivewealth/]
+    sources:
+    - checker: greenhouse
+      settings: {board: drivewealth}
+    - checker: ashby
+      settings: {board: drivewealth}
+  verified: {page_total: null}
+  round: added
+- key: garner-health
+  name: Garner Health
+  category: healthcare
+  careers_url: ['https://garnerhealth.com/careers', 'https://www.getgarner.com/careers']
+  checker: greenhouse
+  settings: {board: garnerhealth}
+  verified: {page_total: 62}
+  round: added
+- key: gemini
+  name: Gemini
+  category: fintech
+  careers_url: ['https://www.gemini.com/careers']
+  checker: greenhouse
+  settings: {board: gemini}
+  verified: {page_total: 27}
+  round: added
+- key: hyperproof
+  name: Hyperproof
+  category: security
+  careers_url: ['https://hyperproof.io/working-at-hyperproof/', 'https://hyperproof.io/careers/']
+  checker: greenhouse
+  settings: {board: hyperproof}
+  verified: {page_total: null}
+  round: added
+- key: khan-academy
+  name: Khan Academy
+  category: software
+  careers_url: ['https://www.khanacademy.org/careers']
+  checker: greenhouse
+  settings: {board: khanacademy}
+  verified: {page_total: 3}
+  round: added
+- key: knowbe4
+  name: KnowBe4
+  category: security
+  careers_url: ['https://www.knowbe4.com/careers']
+  checker: greenhouse
+  settings: {board: knowbe4}
+  verified: {page_total: 50}
+  round: added
+- key: lucid-motors
+  name: Lucid Motors
+  category: autonomy
+  careers_url: ['https://lucidmotors.com/careers']
+  checker: greenhouse
+  settings: {board: lucidmotors}
+  verified: {page_total: null}
+  round: added
+- key: lucid-software
+  name: Lucid Software
+  category: software
+  careers_url: ['https://lucid.co/careers']
+  checker: greenhouse
+  settings: {board: lucidsoftware}
+  verified: {page_total: 27}
+  round: added
+- key: nextdoor
+  name: Nextdoor
+  category: software
+  careers_url: ['https://about.nextdoor.com/careers/', 'https://about.nextdoor.com/careers']
+  checker: greenhouse
+  settings: {board: nextdoor}
+  verified: {page_total: null}
+  round: added
+- key: pacific-fusion
+  name: Pacific Fusion
+  category: energy
+  careers_url: ['https://www.pacificfusion.com/careers']
+  checker: greenhouse
+  settings: {board: pacificfusion}
+  verified: {page_total: 28}
+  round: added
+- key: pendo
+  name: Pendo
+  category: software
+  careers_url: ['https://www.pendo.io/careers/']
+  checker: greenhouse
+  settings: {board: pendo}
+  verified: {page_total: 22}
+  round: added
+- key: ridgeline
+  name: Ridgeline
+  category: fintech
+  careers_url: ['https://ridgeline.ai/company/careers', 'https://www.ridgelineapps.com/careers']
+  checker: greenhouse
+  settings: {board: ridgeline}
+  verified: {page_total: 29}
+  round: added
+- key: ripple
+  name: Ripple
+  category: fintech
+  careers_url: ['https://ripple.com/careers/']
+  checker: greenhouse
+  settings: {board: ripple}
+  verified: {page_total: 117}
+  round: added
+- key: truveta
+  name: Truveta
+  category: healthcare
+  careers_url: ['https://www.truveta.com/careers/']
+  checker: greenhouse
+  settings: {board: truveta}
+  verified: {page_total: 34}
+  round: added
+- key: ixl-learning
+  name: IXL Learning
+  category: software
+  careers_url: ['https://www.ixl.com/company/careers']
+  checker: greenhouse
+  settings: {board: ixllearning}
+  verified: {page_total: 115}
+  round: added
+- key: launchdarkly
+  name: LaunchDarkly
+  category: software
+  careers_url: ['https://launchdarkly.com/careers/']
+  checker: greenhouse
+  settings: {board: launchdarkly}
+  verified: {page_total: 43}
+  round: added
+- key: locus-robotics
+  name: Locus Robotics
+  category: robotics
+  careers_url: ['https://locusrobotics.com/company/careers/', 'https://locusrobotics.com/careers']
+  checker: greenhouse
+  settings: {board: locusrobotics}
+  verified: {page_total: 7}
+  round: added
+- key: neuralink
+  name: Neuralink
+  category: healthcare
+  careers_url: ['https://neuralink.com/careers/']
+  checker: greenhouse
+  settings: {board: neuralink}
+  verified: {page_total: 80}
+  round: added
+- key: obsidian-security
+  name: Obsidian Security
+  category: security
+  careers_url: ['https://www.obsidiansecurity.com/careers']
+  checker: greenhouse
+  settings: {board: obsidiansecurity}
+  verified: {page_total: 15}
+  round: added
+- key: haize-labs
+  name: Haize Labs
+  category: ai
+  careers_url: ['https://www.haizelabs.com/careers']
+  checker: greenhouse
+  settings: {board: haizelabs}
+  verified: {page_total: 6}
+  round: added
+- key: figure-ai
+  name: Figure AI
+  category: robotics
+  careers_url: ['https://www.figure.ai/careers']
+  checker: greenhouse
+  settings: {board: figureai}
+  verified: {page_total: 103, explained: The page showed 103 jobs and the board 102 on 2026-11-09 (a posting or two opened or closed
+      in between).}
+  round: added
+- key: braze
+  name: Braze
+  category: software
+  careers_url: ['https://www.braze.com/company/careers']
+  checker: greenhouse
+  settings: {board: braze}
+  verified: {page_total: 355}
+  round: added
+- key: bugcrowd
+  name: Bugcrowd
+  category: security
+  careers_url: ['https://www.bugcrowd.com/about/careers/']
+  checker: greenhouse
+  settings: {board: bugcrowd}
+  verified: {page_total: 13}
+  round: added
+- key: chime
+  name: Chime
+  category: fintech
+  careers_url: ['https://careers.chime.com/']
+  checker: greenhouse
+  settings: {board: chime}
+  verified: {page_total: null}
+  round: added
+- key: earnin
+  name: EarnIn
+  category: fintech
+  careers_url: ['https://www.earnin.com/careers']
+  checker: greenhouse
+  settings: {board: earnin}
+  verified: {page_total: 31}
+  round: added
+- key: enova
+  name: Enova
+  category: fintech
+  careers_url: ['https://www.enova.com/careers/']
+  checker: greenhouse
+  settings: {board: enova}
+  verified: {page_total: 39}
+  round: added
+- key: fervo-energy
+  name: Fervo Energy
+  category: energy
+  careers_url: ['https://fervoenergy.com/careers/']
+  checker: greenhouse
+  settings: {board: fervoenergy}
+  verified: {page_total: 67}
+  round: added
+- key: heygen
+  name: HeyGen
+  category: ai
+  careers_url: ['https://www.heygen.com/careers']
+  checker: greenhouse
+  settings: {board: heygen}
+  verified: {page_total: 19}
+  round: added
+- key: nasuni
+  name: Nasuni
+  category: software
+  careers_url: ['https://www.nasuni.com/about-us/careers/', 'https://www.nasuni.com/careers/']
+  checker: greenhouse
+  settings: {board: nasuni}
+  verified: {page_total: null}
+  round: added
+- key: censys
+  name: Censys
+  category: security
+  careers_url: ['https://censys.com/careers/']
+  checker: greenhouse
+  settings: {board: censys}
+  verified: {page_total: 28}
+  round: added
+- key: checkr
+  name: Checkr
+  category: software
+  careers_url: ['https://checkr.com/company/careers']
+  checker: greenhouse
+  settings: {board: checkr}
+  verified: {page_total: 38}
+  round: added
+- key: clockwork-systems
+  name: Clockwork Systems
+  category: software
+  careers_url: ['https://clockwork.io/careers/', 'https://www.clockwork.io/careers']
+  checker: greenhouse
+  settings: {board: clockworksystems}
+  verified: {page_total: 5}
+  round: added
+- key: gusto
+  name: Gusto
+  category: software
+  careers_url: ['https://gusto.com/about/careers']
+  checker: greenhouse
+  settings: {board: gusto}
+  verified: {page_total: 80}
+  round: added
+- key: betterment
+  name: Betterment
+  category: fintech
+  careers_url: ['https://www.betterment.com/careers']
+  checker: greenhouse
+  settings:
+    boards: [betterment, bettermentcampusrecruiting]
+    missing_ok: true
+  verified: {page_total: 25}
+  round: added
+- key: box
+  name: Box
+  category: software
+  careers_url: ['https://careers.box.com/']
+  checker: greenhouse
+  settings: {board: boxinc}
+  verified: {page_total: 142}
+  round: added
+- key: ai2
+  name: Allen Institute for AI (Ai2)
+  category: ai
+  careers_url: ['https://allenai.org/careers']
+  checker: greenhouse
+  settings: {board: thealleninstitute}
+  verified: {page_total: 17}
+  round: added
+- key: amperity
+  name: Amperity
+  category: software
+  careers_url: ['https://amperity.com/careers']
+  checker: greenhouse
+  settings: {board: amperity}
+  verified: {page_total: 15}
+  round: added
+- key: apptronik
+  name: Apptronik
+  category: robotics
+  careers_url: ['https://apptronik.com/careers/job-listings', 'https://apptronik.com/careers']
+  checker: greenhouse
+  settings: {board: apptronik}
+  verified: {page_total: null}
+  round: added
+- key: arcesium
+  name: Arcesium
+  category: fintech
+  careers_url: ['https://www.arcesium.com/careers']
+  checker: greenhouse
+  settings: {board: arcesiumllc}
+  verified: {page_total: 37}
+  round: added
+- key: asana
+  name: Asana
+  category: software
+  careers_url: ['https://asana.com/jobs']
+  checker: greenhouse
+  settings: {board: asana}
+  verified: {page_total: null}
+  round: added
+- key: bamboohr
+  name: BambooHR
+  category: software
+  careers_url: ['https://www.bamboohr.com/careers/']
+  checker: greenhouse
+  settings: {board: bamboohr17}
+  verified: {page_total: 28}
+  round: added
+- key: bandwidth
+  name: Bandwidth
+  category: software
+  careers_url: ['https://www.bandwidth.com/careers/']
+  checker: greenhouse
+  settings: {board: bandwidth}
+  verified: {page_total: 26}
+  round: added
+- key: bill
+  name: BILL
+  category: fintech
+  careers_url: ['https://www.bill.com/careers', 'https://www.bill.com/about-us/careers']
+  checker: greenhouse
+  settings: {board: billcom}
+  verified: {page_total: null}
+  round: added
+- key: bot-auto
+  name: Bot Auto
+  category: autonomy
+  careers_url: ['https://bot.auto/careers']
+  checker: greenhouse
+  settings: {board: botauto}
+  verified: {page_total: 26}
+  round: added
+- key: digitalocean
+  name: DigitalOcean
+  category: software
+  careers_url: ['https://www.digitalocean.com/careers']
+  checker: greenhouse
+  settings: {board: digitalocean98}
+  verified: {page_total: 152}
+  round: added
+- key: domino-data-lab
+  name: Domino Data Lab
+  category: ai
+  careers_url: ['https://domino.ai/careers']
+  checker: greenhouse
+  settings: {board: dominodatalab}
+  verified: {page_total: 18}
+  round: added
+- key: fastly
+  name: Fastly
+  category: software
+  careers_url: ['https://www.fastly.com/about/careers']
+  checker: greenhouse
+  settings: {board: fastly}
+  verified: {page_total: 54, explained: The page showed 54 jobs and the board 55 on 2026-11-09 (a posting or two opened or closed in
+      between).}
+  round: added
+- key: appian
+  name: Appian
+  category: software
+  careers_url: ['https://careers.appian.com', 'https://appian.com/careers']
+  checker: greenhouse
+  settings: {board: appian}
+  verified: {page_total: 158}
+  round: added
+- key: addepar
+  name: Addepar
+  category: fintech
+  careers_url: ['https://addepar.com/careers']
+  checker: greenhouse
+  settings: {board: addepar1}
+  verified: {page_total: 107}
+  round: added
+- key: altruist
+  name: Altruist
+  category: fintech
+  careers_url: ['https://altruist.com/careers/']
+  checker: greenhouse
+  settings: {board: altruist}
+  verified: {page_total: null}
+  round: added
+- key: descript
+  name: Descript
+  category: ai
+  careers_url: ['https://www.descript.com/careers']
+  checker: greenhouse
+  settings: {board: descript}
+  verified: {page_total: 10}
+  round: added
+- key: precisely
+  name: Precisely
+  category: software
+  careers_url: ['https://www.precisely.com/careers-and-culture/', 'https://www.precisely.com/careers']
+  checker: greenhouse
+  settings:
+    boards: [preciselyusjobs, preciselyinternationaljobs]
+  verified: {page_total: null}
+  round: added

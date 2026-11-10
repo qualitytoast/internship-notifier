@@ -569,9 +569,13 @@ def test_the_real_settings_name_active_companies_and_adapters_that_exist(monkeyp
     cfg = load()
     active = {c.key for c in cfg.active}
     boards = cfg.settings.get("liveness", "watch_boards")
-    assert len({watch.moves.source_id(x) for x in boards}) == len(boards) == 11  # the 10 mirrors, NVIDIA twice
+    assert len({watch.moves.source_id(x) for x in boards}) == len(boards)
+    first = cfg.scoped("").settings.get("liveness", "watch_boards")
+    assert len(first) == 11  # the original companies': the 10 mirrors, NVIDIA twice
+    added = {c.key for c in cfg.companies if c.round == "added"}
     for x in boards:
         assert x["company"] in active and get_checker(x["checker"])
+        assert x in first or x["company"] in added
     assert len(cfg.settings.get("liveness", "watch_unreadable")) == 6
 
 

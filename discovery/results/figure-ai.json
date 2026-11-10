@@ -1,0 +1,23 @@
+{
+  "key": "figure-ai",
+  "name": "Figure AI",
+  "careers_url": "https://www.figure.ai/careers",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "figureai"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/figureai/jobs",
+  "feed_total": 102,
+  "page_total": 103,
+  "page_total_how": "hosted Greenhouse board's stated count (2026-11-09)",
+  "intern_total": 12,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "boards-api.greenhouse.io/robots.txt checked before every request (discovery/robots/boards-api.greenhouse.io.txt)",
+  "notes": "The page showed 103 jobs and the board 102 on 2026-11-09 (a posting or two opened or closed in between).",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added"
+}

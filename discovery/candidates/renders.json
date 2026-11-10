@@ -1,0 +1,303 @@
+{
+ "altruist": {
+  "url": "https://altruist.com/careers/#open-roles",
+  "read": 74,
+  "shown": 0,
+  "titles_read": 50,
+  "titles_shown": 0,
+  "stated": [],
+  "job_link_hosts": [],
+  "requests_not_sent": 26,
+  "robots": "allowed",
+  "not_sent_sample": [
+   "https://boards.greenhouse.io/embed/job_board/js"
+  ],
+  "explained": "the page's list is Greenhouse's embedded board (boards.greenhouse.io/embed/job_board/js), which robots.txt disallows for scripts: the same board the API reads"
+ },
+ "apptronik": {
+  "url": "https://apptronik.com/careers/job-listings",
+  "read": 89,
+  "shown": 0,
+  "titles_read": 84,
+  "titles_shown": 0,
+  "stated": [],
+  "job_link_hosts": [],
+  "requests_not_sent": 3,
+  "robots": "allowed",
+  "not_sent_sample": [
+   "https://boards.greenhouse.io/embed/job_board/js",
+   "https://c.spl.greenhouse.io/com.snowplowanalytics.snowplow/tp2"
+  ],
+  "explained": "the page's list is Greenhouse's embedded board (boards.greenhouse.io/embed/job_board/js), which robots.txt disallows for scripts: the same board the API reads"
+ },
+ "asana": {
+  "url": "https://asana.com/jobs",
+  "read": 110,
+  "shown": 0,
+  "titles_read": 95,
+  "titles_shown": 0,
+  "stated": [],
+  "job_link_hosts": [],
+  "requests_not_sent": 31,
+  "robots": "allowed",
+  "not_sent_sample": [
+   "https://dx.mountain.com/spx",
+   "https://px.ads.linkedin.com/collect",
+   "https://t-antenna.asana.com/g/collect",
+   "https://www.googleadservices.com/ccm/conversion/11305044850/"
+  ],
+  "explained": "the page drew no job list for a script that keeps to robots.txt; the board's own API is the list"
+ },
+ "betterment": {
+  "url": "https://www.betterment.com/careers/current-openings",
+  "read": 25,
+  "shown": 25,
+  "titles_read": 25,
+  "titles_shown": 19,
+  "stated": [],
+  "job_link_hosts": [],
+  "requests_not_sent": 50,
+  "robots": "allowed"
+ },
+ "bill": {
+  "url": "https://www.bill.com/jobs",
+  "read": 40,
+  "shown": 0,
+  "titles_read": 40,
+  "titles_shown": 0,
+  "stated": [],
+  "job_link_hosts": [],
+  "requests_not_sent": 21,
+  "robots": "allowed",
+  "not_sent_sample": [
+   "https://c.spl.greenhouse.io/com.snowplowanalytics.snowplow/tp2",
+   "https://dev.visualwebsiteoptimizer.com/collect/s.gif",
+   "https://dev.visualwebsiteoptimizer.com/l.gif",
+   "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1066203264/"
+  ],
+  "explained": "the page drew no job list for a script that keeps to robots.txt; the board's own API is the list"
+ },
+ "bugcrowd": {
+  "url": "https://www.bugcrowd.com/about/careers/",
+  "read": 13,
+  "shown": 13,
+  "titles_read": 11,
+  "titles_shown": 11,
+  "stated": [],
+  "job_link_hosts": [
+   "boards.greenhouse.io"
+  ],
+  "requests_not_sent": 3,
+  "robots": "allowed"
+ },
+ "digitalocean": {
+  "url": "https://www.digitalocean.com/careers",
+  "read": 152,
+  "shown": 152,
+  "titles_read": 79,
+  "titles_shown": 72,
+  "stated": [
+   "81",
+   "30",
+   "16"
+  ],
+  "job_link_hosts": [],
+  "requests_not_sent": 10,
+  "robots": "allowed"
+ },
+ "domino-data-lab": {
+  "url": "https://domino.ai/careers#Open-Positions",
+  "read": 18,
+  "shown": 18,
+  "titles_read": 15,
+  "titles_shown": 13,
+  "stated": [],
+  "job_link_hosts": [
+   "app.careerpuck.com"
+  ],
+  "requests_not_sent": 4,
+  "robots": "allowed"
+ },
+ "godaddy": {
+  "url": "https://careers.godaddy/jobs/search",
+  "read": 30,
+  "shown": 0,
+  "titles_read": 29,
+  "titles_shown": 27,
+  "stated": [
+   "244"
+  ],
+  "job_link_hosts": [
+   "careers.godaddy"
+  ],
+  "requests_not_sent": 10,
+  "robots": "allowed",
+  "not_sent_sample": [
+   "https://px.ads.linkedin.com/collect",
+   "https://px.ads.linkedin.com/insight_tag_errors.gif",
+   "https://www.facebook.com/tr/"
+  ],
+  "page_links": 31,
+  "explained": "",
+  "note": "the page links 31 jobs; its '244 results found' is the phone-number country picker"
+ },
+ "hyperproof": {
+  "url": "https://hyperproof.io/working-at-hyperproof/#job-openings",
+  "read": 4,
+  "shown": 0,
+  "titles_read": 3,
+  "titles_shown": 0,
+  "stated": [],
+  "job_link_hosts": [],
+  "requests_not_sent": 19,
+  "robots": "allowed",
+  "not_sent_sample": [
+   "https://boards.greenhouse.io/embed/job_board/js",
+   "https://px.ads.linkedin.com/collect",
+   "https://px.ads.linkedin.com/insight_tag_errors.gif"
+  ],
+  "explained": "the page's list is Greenhouse's embedded board (boards.greenhouse.io/embed/job_board/js), which robots.txt disallows for scripts: the same board the API reads"
+ },
+ "ixl-learning": {
+  "url": "https://www.ixl.com/company/careers",
+  "read": 115,
+  "shown": 115,
+  "titles_read": 108,
+  "titles_shown": 107,
+  "stated": [
+   "115"
+  ],
+  "job_link_hosts": [],
+  "requests_not_sent": 5,
+  "robots": "allowed"
+ },
+ "lucid-motors": {
+  "url": "https://lucidmotors.com/careers/search",
+  "read": 454,
+  "shown": 0,
+  "titles_read": 398,
+  "titles_shown": 0,
+  "stated": [],
+  "job_link_hosts": [],
+  "requests_not_sent": 35,
+  "robots": "allowed",
+  "not_sent_sample": [],
+  "explained": "the page drew no job list for a script that keeps to robots.txt; the board's own API is the list"
+ },
+ "nasuni": {
+  "url": "https://www.nasuni.com/about-us/careers/open-positions/",
+  "read": 29,
+  "shown": 0,
+  "titles_read": 29,
+  "titles_shown": 0,
+  "stated": [],
+  "job_link_hosts": [],
+  "requests_not_sent": 21,
+  "robots": "allowed",
+  "not_sent_sample": [
+   "https://boards.greenhouse.io/embed/job_board/js"
+  ],
+  "explained": "the page's list is Greenhouse's embedded board (boards.greenhouse.io/embed/job_board/js), which robots.txt disallows for scripts: the same board the API reads"
+ },
+ "neuralink": {
+  "url": "https://neuralink.com/careers/",
+  "read": 80,
+  "shown": 80,
+  "titles_read": 80,
+  "titles_shown": 75,
+  "stated": [
+   "80",
+   "4",
+   "16"
+  ],
+  "job_link_hosts": [],
+  "requests_not_sent": 4,
+  "robots": "allowed"
+ },
+ "nextdoor": {
+  "url": "https://about.nextdoor.com/careers-list/",
+  "read": 20,
+  "shown": 0,
+  "titles_read": 16,
+  "titles_shown": 0,
+  "stated": [],
+  "job_link_hosts": [],
+  "requests_not_sent": 52,
+  "robots": "allowed",
+  "not_sent_sample": [
+   "https://boards.greenhouse.io/embed/job_board/js"
+  ],
+  "explained": "the page's list is Greenhouse's embedded board (boards.greenhouse.io/embed/job_board/js), which robots.txt disallows for scripts: the same board the API reads"
+ },
+ "precisely": {
+  "url": "https://www.precisely.com/careers-and-culture/us-jobs/",
+  "read": 55,
+  "shown": 0,
+  "titles_read": 45,
+  "titles_shown": 0,
+  "stated": [],
+  "job_link_hosts": [],
+  "requests_not_sent": 13,
+  "robots": "allowed",
+  "not_sent_sample": [
+   "https://10559256.fls.doubleclick.net/activityi;src=10559256;type=fulls0;cat=allwe0;rcb=5;o",
+   "https://ad.doubleclick.net/activity;src=10559256;type=fulls0;cat=allwe0;rcb=5;ord=70509223",
+   "https://boards.greenhouse.io/embed/job_board/js",
+   "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/17149678892/"
+  ],
+  "explained": "the page's list is Greenhouse's embedded board (boards.greenhouse.io/embed/job_board/js), which robots.txt disallows for scripts: the same board the API reads"
+ },
+ "redwood-materials": {
+  "url": "https://www.redwoodmaterials.com/join/",
+  "read": 131,
+  "shown": 131,
+  "titles_read": 116,
+  "titles_shown": 108,
+  "stated": [],
+  "job_link_hosts": [
+   "boards.greenhouse.io"
+  ],
+  "requests_not_sent": 0,
+  "robots": "allowed"
+ },
+ "ridgeline": {
+  "url": "https://ridgeline.ai/company/careers",
+  "read": 29,
+  "shown": 29,
+  "titles_read": 27,
+  "titles_shown": 25,
+  "stated": [],
+  "job_link_hosts": [
+   "boards.greenhouse.io"
+  ],
+  "requests_not_sent": 11,
+  "robots": "allowed"
+ },
+ "ripple": {
+  "url": "https://ripple.com/careers/all-jobs/",
+  "read": 117,
+  "shown": 117,
+  "titles_read": 76,
+  "titles_shown": 73,
+  "stated": [
+   "80"
+  ],
+  "job_link_hosts": [],
+  "requests_not_sent": 2,
+  "robots": "allowed"
+ },
+ "roku": {
+  "url": "https://www.weareroku.com/jobs/search/",
+  "read": 93,
+  "shown": 0,
+  "titles_read": 60,
+  "titles_shown": 22,
+  "stated": [],
+  "job_link_hosts": [
+   "www.weareroku.com"
+  ],
+  "requests_not_sent": 2,
+  "robots": "allowed",
+  "explained": "the page lists the board 25 at a time (4 pages); the first shows 22 of its 60 titles"
+ }
+}

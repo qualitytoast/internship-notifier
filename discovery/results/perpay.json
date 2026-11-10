@@ -1,0 +1,23 @@
+{
+  "key": "perpay",
+  "name": "Perpay",
+  "careers_url": "https://perpay.com/careers",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "perpay"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/perpay/jobs",
+  "feed_total": 17,
+  "page_total": 17,
+  "page_total_how": "hosted Greenhouse board's stated count (2026-11-09)",
+  "intern_total": 5,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "boards-api.greenhouse.io/robots.txt checked before every request (discovery/robots/boards-api.greenhouse.io.txt)",
+  "notes": "",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added"
+}

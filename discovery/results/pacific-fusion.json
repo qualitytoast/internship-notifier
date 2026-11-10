@@ -1,0 +1,23 @@
+{
+  "key": "pacific-fusion",
+  "name": "Pacific Fusion",
+  "careers_url": "https://www.pacificfusion.com/careers",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "pacificfusion"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/pacificfusion/jobs",
+  "feed_total": 28,
+  "page_total": 28,
+  "page_total_how": "hosted Greenhouse board's stated count (2026-11-09)",
+  "intern_total": 5,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "boards-api.greenhouse.io/robots.txt checked before every request (discovery/robots/boards-api.greenhouse.io.txt)",
+  "notes": "",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added"
+}

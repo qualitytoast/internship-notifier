@@ -96,8 +96,10 @@ def test_the_real_settings_name_the_32_companies():
     from internwatch.config import load
     cfg = load()
     keys = cfg.settings.get("liveness", "blocked")
-    assert len(keys) == len(set(keys)) == 32
-    assert set(keys) <= {c.key for c in cfg.companies}
+    assert len(keys) == len(set(keys)) and set(keys) <= {c.key for c in cfg.companies}
+    assert len(cfg.scoped("").settings.get("liveness", "blocked")) == 32   # the original companies' own
+    added = {c.key for c in cfg.companies if c.round == "added"}
+    assert set(keys) - set(cfg.scoped("").settings.get("liveness", "blocked")) <= added
 
 
 def test_nothing_runs_without_blocked_companies(make_cfg, memdb):

@@ -1,0 +1,23 @@
+{
+  "key": "zoominfo",
+  "name": "ZoomInfo",
+  "careers_url": "https://www.zoominfo.com/careers",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "zoominfo"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/zoominfo/jobs",
+  "feed_total": 91,
+  "page_total": 91,
+  "page_total_how": "https://www.zoominfo.com/careers links 91 of the 91 jobs read (2026-11-09)",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "boards-api.greenhouse.io/robots.txt checked before every request (discovery/robots/boards-api.greenhouse.io.txt)",
+  "notes": "",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added"
+}

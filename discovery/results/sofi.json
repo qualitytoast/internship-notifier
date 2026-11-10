@@ -1,0 +1,23 @@
+{
+  "key": "sofi",
+  "name": "SoFi",
+  "careers_url": "https://www.sofi.com/careers/",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "sofi"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/sofi/jobs",
+  "feed_total": 48,
+  "page_total": 48,
+  "page_total_how": "https://www.sofi.com/careers/ links 48 of the 48 jobs read (2026-11-09)",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "boards-api.greenhouse.io/robots.txt checked before every request (discovery/robots/boards-api.greenhouse.io.txt)",
+  "notes": "",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added"
+}

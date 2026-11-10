@@ -55,6 +55,8 @@ ALIASES = {
     "castleton-commodities": ["Castleton Commodities"],
     "de-shaw": ["DE Shaw", "D. E. Shaw & Co."],
     "ibm": ["International Business Machines"],
+    # added in November 2026 (round: added)
+    "zscaler": ["Symmetry Systems"],
 }
 
 # Freshman/sophomore program names that can appear in a posting title without a student word (UNDERCLASSMEN.md
@@ -329,6 +331,8 @@ def entry(seed: dict) -> dict | None:
         ver["explained"] = first_sentence(res.get("notes", ""))
     ver.update(ov.get("verified") or {})
     e["verified"] = ver
+    if seed.get("round"):  # a company added in November 2026: checked after the others (README, Internals)
+        e["round"] = seed["round"]
     return e
 
 

@@ -1,0 +1,23 @@
+{
+  "key": "ziprecruiter",
+  "name": "ZipRecruiter",
+  "careers_url": "https://www.ziprecruiter.com/careers",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "ziprecruiter"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/ziprecruiter/jobs",
+  "feed_total": 68,
+  "page_total": 68,
+  "page_total_how": "hosted Greenhouse board's stated count (2026-11-09)",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "boards-api.greenhouse.io/robots.txt checked before every request (discovery/robots/boards-api.greenhouse.io.txt)",
+  "notes": "The careers page is closed by robots.txt: the company is in liveness.blocked, with backup checks (backup_table.md).",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added"
+}

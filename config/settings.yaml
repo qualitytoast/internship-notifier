@@ -45,7 +45,8 @@ liveness:                        # boards that go dead, get abandoned or are rep
             citadel-securities-programs, coinbase,
             doordash, dropbox, epic-games, expedia, fidelity, general-motors, goldman-sachs, gts, hudson-river-trading,
             liberty-mutual, meta, nutanix, openai, paypal, pinterest, pitchbook, schonfeld, seatgeek, servicenow,
-            tower-research, uber, ukg, veeva, whatnot]
+            tower-research, uber, ukg, veeva, whatnot,
+            box, censys, chime, enova, gusto, haize-labs, lucid-software, rubrik, udemy, yugabyte, ziprecruiter, zocdoc]
   blocked_scan_seconds: 300      # their checks' time budget in each daily run (before the emails)
   watch_seconds: 360             # time budget of the watched boards (src/internwatch/watch.py), after the checks above
   watch_boards:                  # mirrors with a feed of their own: read every run, never stored. Boards whose
@@ -71,6 +72,8 @@ liveness:                        # boards that go dead, get abandoned or are rep
     - {company: snowflake, name: Ashby, checker: ashby, settings: {board: snowflake}}
     - {company: docusign, name: iCIMS hubcareers, checker: icims,
        settings: {portal: "https://hubcareers-docusign.icims.com"}}
+    - {company: reddit, name: RippleMatch, checker: ripplematch, settings: {company_id: 286}}
+    - {company: roku, name: RippleMatch, checker: ripplematch, settings: {company_id: 1129}}
   watch_every_days:              # dismissed boards too big to read every run (T-Mobile's has no intern worker type)
     "workday:site=alumni,tenant=tmobile": 7
   watch_unreadable:              # mirrors that can't be read. A role a list carries still raises a possible miss
@@ -86,6 +89,7 @@ liveness:                        # boards that go dead, get abandoned or are rep
     chicago-trading-company: https://www.chicagotrading.com
     gts: https://gtsx.com
     liberty-mutual: https://jobs.libertymutualgroup.com
+    yugabyte: https://www.yugabyte.com
   id_pages:                      # pages that link postings by hand: their job ids are compared too (moves.py P)
     tower-research: [https://tower-research.com/internships/]
   job_lists:                     # the job list a company publishes itself (moves.py J): daily unless every_days says
@@ -100,6 +104,7 @@ liveness:                        # boards that go dead, get abandoned or are rep
     pinterest: {url: "https://www.pinterestcareers.com/sitemap.xml"}
     servicenow: {url: "https://careers.servicenow.com/sitemap.xml"}
     uber: {url: "https://jobs.uber.com/en/jobs/sitemap.xml", any_job: true}
+    box: {url: "https://careers.box.com/sitemap.xml"}
   parallel_sources:              # boards next to the configured ones, read daily but never stored (moves.py S)
     - {company: akuna-capital, checker: greenhouse, settings: {board: mit}}
     - {company: akuna-capital, checker: greenhouse, settings: {board: optionstrading201course}}
@@ -149,6 +154,8 @@ liveness:                        # boards that go dead, get abandoned or are rep
     liberty-mutual: ["https://jobs.libertymutualgroup.com/page-sitemap.xml"]
     openai: ["https://openai.com/sitemap.xml/page/"]
     tower-research: ["https://tower-research.com/page-sitemap.xml"]
+    box: ["https://careers.box.com/sitemap.xml"]
+    yugabyte: ["wp:https://www.yugabyte.com"]
   archive_paths:                 # archive.org (moves.py A): `list` paths whose newly saved student pages are listed
     # (any_page: every new page; ids: the job id in a page's URL), `pages` whose newest copy is read for the systems
     capstone: {pages: ["https://www.capstoneco.com/careers/"]}
@@ -167,6 +174,12 @@ liveness:                        # boards that go dead, get abandoned or are rep
     ukg: {list: ["ukg.com/company/careers*"], pages: ["https://www.ukg.com/company/careers"]}
     veeva: {pages: ["https://careers.veeva.com/job-search-results/"]}
     whatnot: {list: ["whatnot.com/careers*"], pages: ["https://www.whatnot.com/careers"]}
+    box: {pages: ["https://careers.box.com/"]}
+    censys: {pages: ["https://censys.com/careers/"]}
+    enova: {pages: ["https://www.enova.com/careers/"]}
+    gusto: {pages: ["https://gusto.com/about/careers"]}
+    lucid-software: {pages: ["https://lucid.co/careers"]}
+    yugabyte: {pages: ["https://www.yugabyte.com/careers/"]}
   archive_max_days: 45           # an older copy says nothing about where the company posts now
   aliases:                       # one job system under two names (moves.py): the left one counts as the right one
     eightfold:domain=libertymutual.eightfold.ai: eightfold:domain=libertymutual.com
@@ -204,6 +217,8 @@ liveness:                        # boards that go dead, get abandoned or are rep
     avature:site=ibmglobal.avature.net: 'ibm:'   # ibm
     oracle:host=eeho.fa.us2.oraclecloud.com,site=cx_1: 'oracle:host=eeho.fa.us2.oraclecloud.com,site=cx_45001'   # oracle
     greenhouse:board=instabase: 'instabase:board=instabase'   # instabase
+    ripplematch:company=reddit: 'greenhouse:board=reddit'   # reddit: its RippleMatch page, watched
+    ripplematch:company=roku: 'greenhouse:board=roku'   # roku: its RippleMatch page, watched
 
 crosscheck:
   grace_minutes: 90              # wait this long (and for a fresh poll) before calling a Simplify role a miss

@@ -1,0 +1,23 @@
+{
+  "key": "heygen",
+  "name": "HeyGen",
+  "careers_url": "https://www.heygen.com/careers",
+  "hiring_system": "greenhouse",
+  "checker": "greenhouse",
+  "settings": {
+    "board": "heygen"
+  },
+  "feed": "GET https://boards-api.greenhouse.io/v1/boards/heygen/jobs",
+  "feed_total": 19,
+  "page_total": 19,
+  "page_total_how": "hosted Greenhouse board's stated count (2026-11-09)",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "boards-api.greenhouse.io/robots.txt checked before every request (discovery/robots/boards-api.greenhouse.io.txt)",
+  "notes": "",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added"
+}

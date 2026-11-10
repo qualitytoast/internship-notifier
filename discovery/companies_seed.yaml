@@ -199,3 +199,79 @@ companies:
   - {key: goldman-sachs-programs, name: Goldman Sachs Programs, category: finance-insurance, source: added, urls: ["https://www.goldmansachs.com/careers/students/programs-and-internships/americas/possibilities-series", "https://www.goldmansachs.com/careers/students/programs-and-internships/americas/emerging-leaders-series"]}
   - {key: gm-financial, name: GM Financial, category: finance-insurance, source: added, urls: ["https://fa-exvu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs"]}
   - {key: priceline, name: Priceline, category: software, source: added, urls: ["https://priceline.wd1.myworkdayjobs.com/Priceline-CollegeHiring"]}
+  - {key: udemy, name: "Udemy", category: software, source: added, round: added, urls: ["https://about.udemy.com/careers/"]}
+  - {key: ncino, name: "nCino", category: fintech, source: added, round: added, urls: ["https://www.ncino.com/company/careers"]}
+  - {key: zoominfo, name: "ZoomInfo", category: software, source: added, round: added, urls: ["https://www.zoominfo.com/about/careers"]}
+  - {key: zscaler, name: "Zscaler", category: security, source: added, round: added, urls: ["https://www.zscaler.com/careers"]}
+  - {key: yugabyte, name: "YugabyteDB", category: software, source: added, round: added, urls: ["https://www.yugabyte.com/careers/"]}
+  - {key: viam, name: "Viam", category: robotics, source: added, round: added, urls: ["https://www.viam.com/careers", "https://www.viam.com/company/careers"]}
+  - {key: you-com, name: "You.com", category: ai, source: added, round: added, urls: ["https://you.com/careers"]}
+  - {key: zocdoc, name: "Zocdoc", category: healthcare, source: added, round: added, urls: ["https://www.zocdoc.com/about/careers/"]}
+  - {key: redwood-materials, name: "Redwood Materials", category: energy, source: added, round: added, urls: ["https://www.redwoodmaterials.com/careers"]}
+  - {key: rubrik, name: "Rubrik", category: security, source: added, round: added, urls: ["https://www.rubrik.com/company/careers"]}
+  - {key: snorkel-ai, name: "Snorkel AI", category: ai, source: added, round: added, urls: ["https://snorkel.ai/careers/"]}
+  - {key: starburst, name: "Starburst", category: software, source: added, round: added, urls: ["https://www.starburst.io/careers/"]}
+  - {key: vercel, name: "Vercel", category: software, source: added, round: added, urls: ["https://vercel.com/careers"]}
+  - {key: ziprecruiter, name: "ZipRecruiter", category: software, source: added, round: added, urls: ["https://www.ziprecruiter.com/careers"]}
+  - {key: reddit, name: "Reddit", category: software, source: added, round: added, urls: ["https://www.redditinc.com/careers"]}
+  - {key: sofi, name: "SoFi", category: fintech, source: added, round: added, urls: ["https://www.sofi.com/careers/"]}
+  - {key: perpay, name: "Perpay", category: fintech, source: added, round: added, urls: ["https://perpay.com/careers"]}
+  - {key: singlestore, name: "SingleStore", category: software, source: added, round: added, urls: ["https://www.singlestore.com/careers/"]}
+  - {key: typeface, name: "Typeface", category: ai, source: added, round: added, urls: ["https://www.typeface.ai/careers"]}
+  - {key: godaddy, name: "GoDaddy", category: software, source: added, round: added, urls: ["https://careers.godaddy/"]}
+  - {key: pure-storage, name: "Pure Storage", category: hardware, source: added, round: added, urls: ["https://www.purestorage.com/company/careers.html"]}
+  - {key: roku, name: "Roku", category: media, source: added, round: added, urls: ["https://www.weareroku.com/"]}
+  - {key: veeam, name: "Veeam Software", category: software, source: added, round: added, urls: ["https://careers.veeam.com/"]}
+  - {key: new-york-times, name: "The New York Times", category: media, source: added, round: added, urls: ["https://www.nytco.com/careers/"]}
+  - {key: drivewealth, name: "DriveWealth", category: fintech, source: added, round: added, urls: ["https://www.drivewealth.com/careers/"]}
+  - {key: garner-health, name: "Garner Health", category: healthcare, source: added, round: added, urls: ["https://www.getgarner.com/careers"]}
+  - {key: gemini, name: "Gemini", category: fintech, source: added, round: added, urls: ["https://www.gemini.com/careers"]}
+  - {key: hyperproof, name: "Hyperproof", category: security, source: added, round: added, urls: ["https://hyperproof.io/careers/"]}
+  - {key: khan-academy, name: "Khan Academy", category: software, source: added, round: added, urls: ["https://www.khanacademy.org/careers"]}
+  - {key: knowbe4, name: "KnowBe4", category: security, source: added, round: added, urls: ["https://www.knowbe4.com/careers"]}
+  - {key: lucid-motors, name: "Lucid Motors", category: autonomy, source: added, round: added, urls: ["https://lucidmotors.com/careers"]}
+  - {key: lucid-software, name: "Lucid Software", category: software, source: added, round: added, urls: ["https://lucid.co/careers"]}
+  - {key: nextdoor, name: "Nextdoor", category: software, source: added, round: added, urls: ["https://about.nextdoor.com/careers"]}
+  - {key: pacific-fusion, name: "Pacific Fusion", category: energy, source: added, round: added, urls: ["https://www.pacificfusion.com/careers"]}
+  - {key: pendo, name: "Pendo", category: software, source: added, round: added, urls: ["https://www.pendo.io/careers/"]}
+  - {key: ridgeline, name: "Ridgeline", category: fintech, source: added, round: added, urls: ["https://www.ridgelineapps.com/careers"]}
+  - {key: ripple, name: "Ripple", category: fintech, source: added, round: added, urls: ["https://ripple.com/careers/"]}
+  - {key: truveta, name: "Truveta", category: healthcare, source: added, round: added, urls: ["https://www.truveta.com/careers/"]}
+  - {key: ixl-learning, name: "IXL Learning", category: software, source: added, round: added, urls: ["https://www.ixl.com/company/careers"]}
+  - {key: launchdarkly, name: "LaunchDarkly", category: software, source: added, round: added, urls: ["https://launchdarkly.com/careers/"]}
+  - {key: locus-robotics, name: "Locus Robotics", category: robotics, source: added, round: added, urls: ["https://locusrobotics.com/careers"]}
+  - {key: neuralink, name: "Neuralink", category: healthcare, source: added, round: added, urls: ["https://neuralink.com/careers/"]}
+  - {key: obsidian-security, name: "Obsidian Security", category: security, source: added, round: added, urls: ["https://www.obsidiansecurity.com/careers"]}
+  - {key: haize-labs, name: "Haize Labs", category: ai, source: added, round: added, urls: ["https://www.haizelabs.com/careers"]}
+  - {key: figure-ai, name: "Figure AI", category: robotics, source: added, round: added, urls: ["https://www.figure.ai/careers"]}
+  - {key: braze, name: "Braze", category: software, source: added, round: added, urls: ["https://www.braze.com/company/careers"]}
+  - {key: bugcrowd, name: "Bugcrowd", category: security, source: added, round: added, urls: ["https://www.bugcrowd.com/about/careers/"]}
+  - {key: chime, name: "Chime", category: fintech, source: added, round: added, urls: ["https://careers.chime.com/"]}
+  - {key: earnin, name: "EarnIn", category: fintech, source: added, round: added, urls: ["https://www.earnin.com/careers"]}
+  - {key: enova, name: "Enova", category: fintech, source: added, round: added, urls: ["https://www.enova.com/careers/"]}
+  - {key: fervo-energy, name: "Fervo Energy", category: energy, source: added, round: added, urls: ["https://fervoenergy.com/careers/"]}
+  - {key: heygen, name: "HeyGen", category: ai, source: added, round: added, urls: ["https://www.heygen.com/careers"]}
+  - {key: nasuni, name: "Nasuni", category: software, source: added, round: added, urls: ["https://www.nasuni.com/about-us/careers/", "https://www.nasuni.com/careers/"]}
+  - {key: censys, name: "Censys", category: security, source: added, round: added, urls: ["https://censys.com/careers/"]}
+  - {key: checkr, name: "Checkr", category: software, source: added, round: added, urls: ["https://checkr.com/company/careers"]}
+  - {key: clockwork-systems, name: "Clockwork Systems", category: software, source: added, round: added, urls: ["https://www.clockwork.io/careers"]}
+  - {key: gusto, name: "Gusto", category: software, source: added, round: added, urls: ["https://gusto.com/about/careers"]}
+  - {key: betterment, name: "Betterment", category: fintech, source: added, round: added, urls: ["https://www.betterment.com/careers"]}
+  - {key: box, name: "Box", category: software, source: added, round: added, urls: ["https://careers.box.com/"]}
+  - {key: ai2, name: "Allen Institute for AI (Ai2)", category: ai, source: added, round: added, urls: ["https://allenai.org/careers"]}
+  - {key: amperity, name: "Amperity", category: software, source: added, round: added, urls: ["https://amperity.com/careers"]}
+  - {key: apptronik, name: "Apptronik", category: robotics, source: added, round: added, urls: ["https://apptronik.com/careers/job-listings", "https://apptronik.com/careers"]}
+  - {key: arcesium, name: "Arcesium", category: fintech, source: added, round: added, urls: ["https://www.arcesium.com/careers"]}
+  - {key: asana, name: "Asana", category: software, source: added, round: added, urls: ["https://asana.com/jobs"]}
+  - {key: bamboohr, name: "BambooHR", category: software, source: added, round: added, urls: ["https://www.bamboohr.com/careers/"]}
+  - {key: bandwidth, name: "Bandwidth", category: software, source: added, round: added, urls: ["https://www.bandwidth.com/careers/"]}
+  - {key: bill, name: "BILL", category: fintech, source: added, round: added, urls: ["https://www.bill.com/careers", "https://www.bill.com/about-us/careers"]}
+  - {key: bot-auto, name: "Bot Auto", category: autonomy, source: added, round: added, urls: ["https://bot.auto/careers"]}
+  - {key: digitalocean, name: "DigitalOcean", category: software, source: added, round: added, urls: ["https://www.digitalocean.com/careers"]}
+  - {key: domino-data-lab, name: "Domino Data Lab", category: ai, source: added, round: added, urls: ["https://domino.ai/careers"]}
+  - {key: fastly, name: "Fastly", category: software, source: added, round: added, urls: ["https://www.fastly.com/about/careers"]}
+  - {key: appian, name: "Appian", category: software, source: added, round: added, urls: ["https://appian.com/careers"]}
+  - {key: addepar, name: "Addepar", category: fintech, source: added, round: added, urls: ["https://addepar.com/careers"]}
+  - {key: altruist, name: "Altruist", category: fintech, source: added, round: added, urls: ["https://altruist.com/careers/"]}
+  - {key: descript, name: "Descript", category: ai, source: added, round: added, urls: ["https://www.descript.com/careers"]}
+  - {key: precisely, name: "Precisely", category: software, source: added, round: added, urls: ["https://www.precisely.com/careers-and-culture/", "https://www.precisely.com/careers"]}
