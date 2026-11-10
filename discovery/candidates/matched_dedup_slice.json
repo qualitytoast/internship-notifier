@@ -407,12 +407,6 @@
   "matched": 2,
   "unsure": 0
  },
- "draftkings": {
-  "jobs": 96,
-  "students": 11,
-  "matched": 8,
-  "unsure": 4
- },
  "drivewealth": {
   "jobs": 37,
   "students": 5,
@@ -526,12 +520,6 @@
   "students": 9,
   "matched": 1,
   "unsure": 0
- },
- "fox": {
-  "jobs": 318,
-  "students": 62,
-  "matched": 50,
-  "unsure": 48
  },
  "freddie-mac": {
   "jobs": 66,
@@ -797,12 +785,6 @@
   "matched": 1,
   "unsure": 0
  },
- "match-group": {
-  "jobs": 71,
-  "students": 14,
-  "matched": 8,
-  "unsure": 2
- },
  "mckesson": {
   "jobs": 656,
   "students": 17,
@@ -994,12 +976,6 @@
   "students": 15,
   "matched": 2,
   "unsure": 1
- },
- "prizepicks": {
-  "jobs": 31,
-  "students": 4,
-  "matched": 3,
-  "unsure": 0
  },
  "progressive": {
   "jobs": 1,

@@ -342,11 +342,6 @@ companies:
   category: ai
   source: added
   urls: ['https://domino.ai/careers']
-- key: draftkings
-  name: DraftKings
-  category: software
-  source: added
-  urls: ['https://careers.draftkings.com/']
 - key: drivewealth
   name: DriveWealth
   category: fintech
@@ -442,11 +437,6 @@ companies:
   category: security
   source: added
   urls: ['https://www.fortinet.com/corporate/careers']
-- key: fox
-  name: FOX Corporation
-  category: media
-  source: added
-  urls: ['https://www.foxcareers.com/']
 - key: freddie-mac
   name: Freddie Mac
   category: finance-insurance
@@ -671,12 +661,6 @@ companies:
   category: fintech
   source: added
   urls: ['https://careers.mastercard.com/']
-- key: match-group
-  aliases: [Tinder, Hinge]
-  name: Match Group (Tinder, Hinge)
-  category: software
-  source: added
-  urls: ['https://mtch.com/careers/']
 - key: mckesson
   name: McKesson
   category: healthcare
@@ -840,11 +824,6 @@ companies:
   category: finance-insurance
   source: added
   urls: ['https://careers.principal.com/']
-- key: prizepicks
-  name: PrizePicks
-  category: software
-  source: added
-  urls: ['https://www.prizepicks.com/careers']
 - key: progressive
   name: Progressive
   category: finance-insurance

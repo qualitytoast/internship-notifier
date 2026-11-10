@@ -52,7 +52,6 @@
 | Pendo | 1 | Greenhouse pendo | answers | 22 | yes (22) | 0 | 0 | 3 s / 1 | 0 (0 open) | 0 |
 | Perpay | 1 | Greenhouse perpay | answers | 17 | yes (17) | 5 | 3 | 4 s / 1 | 4 (0 open) | 0 |
 | Precisely | 1 | Greenhouse preciselyusjobs,preciselyinternationaljobs | answers | 55 | render at batch time | 0 | 0 | 0 s / 1 | 0 (0 open) | 0 |
-| PrizePicks | 1 | Greenhouse prizepicks | answers | 31 | render at batch time | 4 | 3 | 3 s / 1 | 4 (2 open) | 0 |
 | Pure Storage | 1 | Greenhouse purestorage | answers | 352 | yes (369) | 1 | 1 | 4 s / 1 | 1 (0 open) | 0 |
 | Reddit | 1 | Greenhouse reddit | answers | 154 | yes (154) | 0 | 0 | 4 s / 1 | 0 (0 open) | 0 |
 | Redwood Materials | 1 | Greenhouse redwoodmaterials | answers | 126 | render at batch time | 0 | 0 | 4 s / 1 | 0 (0 open) | 0 |
@@ -110,7 +109,6 @@
 | Ironclad | 2 | Ashby ironcladhq | answers | 22 | yes (22) | 0 | 0 | 1 s / 1 | 0 (0 open) | 0 |
 | Lambda | 2 | Ashby lambda | answers | 97 | yes (97) | 1 | 0 | 0 s / 1 | 0 (0 open) | 0 |
 | Lightspark | 2 | Ashby lightspark | answers | 8 | yes (8) | 0 | 0 | 0 s / 1 | 0 (0 open) | 0 |
-| Match Group (Tinder, Hinge) | 2 | Lever /matchgroup | refuses scripts | 71 | yes (71) | 14 | 8 | 1 s / 1 | 5 (5 open) | 0 |
 | Mercor | 2 | Ashby mercor | answers | 86 | yes (86) | 5 | 5 | 0 s / 1 | 5 (0 open) | 0 |
 | Multiply Labs | 2 | Lever /multiplylabs | answers | 14 | yes (14) | 3 | 2 | 1 s / 1 | 2 (0 open) | 0 |
 | Netic | 2 | Ashby netic | answers | 36 | yes (36) | 3 | 3 | 0 s / 1 | 3 (0 open) | 0 |
@@ -152,14 +150,12 @@
 | Cox Enterprises | 3 | Workday cox/Cox_External_Career_Site_1 | refuses scripts | 725 | yes (789) | 16 | 16 | 42 s / 40 | 1 (0 open) | 0 |
 | DataRobot | 3 | Workday datarobot/DataRobot_External_Careers | refuses scripts | 13 | yes (13) | 3 | 3 | 1 s / 1 | 3 (1 open) | 0 |
 | Dexcom | 3 | Workday dexcom/Dexcom | answers | 281 | yes (294) | 2 | 1 | 15 s / 15 | 0 (0 open) | 0 |
-| DraftKings | 3 | Workday draftkings: draftkings, Campus_Career_Portal, Employee_Referral_Portal | refuses scripts | 96 | yes (175) | 11 | 8 | 10 s / 10 | 8 (0 open) | 0 |
 | Elevance Health | 3 | Workday elevancehealth: ANT, ELV-ET; Workday elevancehealth/carelonglobal_ph | answers | 289 | yes (282); yes (19) | 9 | 3 | 20 s / 17 | 4 (0 open) | 0 |
 | Equinix | 3 | Workday equinix/External | answers | 305 | yes (308) | 0 | 0 | 26 s / 16 | 0 (0 open) | 0 |
 | Etsy | 3 | Workday etsy/Etsy_Careers | answers | 68 | yes (68) | 0 | 0 | 4 s / 4 | 0 (0 open) | 0 |
 | F5 | 3 | Workday ffive/f5jobs | answers | 270 | yes (282) | 2 | 2 | 15 s / 15 | 2 (0 open) | 0 |
 | FIS | 3 | Workday fis/SearchJobs | answers | 463 | yes (507) | 1 | 1 | 27 s / 26 | 0 (0 open) | 0 |
 | Fiserv | 3 | Workday fiserv/EXT | answers | 370 | yes (386) | 3 | 0 | 20 s / 20 | 0 (0 open) | 0 |
-| FOX Corporation | 3 | Workday fox/Domestic; Workday fox/FOXTVST_EAST | answers | 318 | yes (325); yes (26) | 62 | 50 | 35 s / 19 | 1 (0 open) | 0 |
 | Freddie Mac | 3 | Workday freddiemac/External | answers | 66 | yes (71) | 2 | 2 | 4 s / 4 | 1 (0 open) | 0 |
 | GlobalFoundries | 3 | Workday globalfoundries/External | answers | 781 | yes (851) | 105 | 68 | 54 s / 43 | 24 (12 open) | 0 |
 | Guidewire | 3 | Workday guidewire/external | answers | 114 | yes (117) | 1 | 0 | 6 s / 6 | 0 (0 open) | 0 |

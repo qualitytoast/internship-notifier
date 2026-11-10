@@ -1,8 +1,8 @@
 {
  "1": {
-  "companies": 77,
-  "matching": 108,
-  "left_out": 17,
+  "companies": 76,
+  "matching": 105,
+  "left_out": 14,
   "roles": 91,
   "eml_kb": 172
  },
@@ -14,18 +14,18 @@
   "eml_kb": 55
  },
  "3": {
-  "companies": 60,
-  "matching": 530,
+  "companies": 58,
+  "matching": 472,
   "left_out": 43,
-  "roles": 487,
-  "eml_kb": 921
+  "roles": 429,
+  "eml_kb": 812
  },
  "2": {
-  "companies": 60,
-  "matching": 131,
-  "left_out": 12,
-  "roles": 119,
-  "eml_kb": 225
+  "companies": 59,
+  "matching": 123,
+  "left_out": 7,
+  "roles": 116,
+  "eml_kb": 219
  },
  "5": {
   "companies": 25,

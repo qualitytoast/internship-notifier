@@ -180,5 +180,12 @@ companies_table.md, matched_dedup*.json, now_watching.json, backup_table.md, new
 slice_compare.json are in data/stage1/scripts/ (build_plan.py, report_table.py, matched_dedup.py, now_watching.py,
 backup_table.py, new_systems_measure.py, slice_compare.py, rmk_read.py, fetch.py).
 
-## Next
-Stage 1 is complete. Waiting for your answers to the report's 6 decisions; then Stage 2, batch 0 (groundwork).
+## Decisions (2026-11-09) and scope
+Recorded at the top of STAGE1_REPORT.md: giant store sites read for student roles daily plus a weekly full read; 12
+workers in the added round; build every new reader; add the subsidiaries (Tubi pending: it came with FOX); no "known
+site" setting; Progressive through RippleMatch. DraftKings, FOX, Match Group and PrizePicks were taken out of
+candidates.yaml and reads.yaml (their Stage 1 evidence stays in the result files): 236 companies.
+
+## Next: Stage 2, batch 0 (groundwork), on branch stage2-batch0 in a separate worktree
+The morning run is started by hand from this working tree, so src/ changes are built and proven in the worktree and
+merged into main only when batch 0 passes. See discovery/candidates/STAGE2_PROGRESS.md on that branch.

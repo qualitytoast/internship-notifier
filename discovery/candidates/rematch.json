@@ -271,14 +271,6 @@
   "shown": 0,
   "day_one_misses": []
  },
- "draftkings": {
-  "rows": 8,
-  "untracked": 0,
-  "baseline": 8,
-  "open": 0,
-  "shown": 0,
-  "day_one_misses": []
- },
  "drivewealth": {
   "rows": 6,
   "untracked": 6,
@@ -344,14 +336,6 @@
   "day_one_misses": []
  },
  "fortinet": {
-  "rows": 1,
-  "untracked": 0,
-  "baseline": 1,
-  "open": 0,
-  "shown": 0,
-  "day_one_misses": []
- },
- "fox": {
   "rows": 1,
   "untracked": 0,
   "baseline": 1,
@@ -588,14 +572,6 @@
   "shown": 0,
   "day_one_misses": []
  },
- "match-group": {
-  "rows": 5,
-  "untracked": 5,
-  "baseline": 0,
-  "open": 5,
-  "shown": 5,
-  "day_one_misses": []
- },
  "mckesson": {
   "rows": 7,
   "untracked": 0,
@@ -754,14 +730,6 @@
   "baseline": 1,
   "open": 0,
   "shown": 0,
-  "day_one_misses": []
- },
- "prizepicks": {
-  "rows": 4,
-  "untracked": 3,
-  "baseline": 1,
-  "open": 2,
-  "shown": 3,
   "day_one_misses": []
  },
  "ptc": {

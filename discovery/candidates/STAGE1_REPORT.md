@@ -23,6 +23,23 @@ working files in `data/stage1/` (local only).
   email per batch with 30 to 490 roles.
 - **6 decisions for you**, each with my recommendation.
 
+## Your decisions (2026-11-09)
+
+1. Giant store sites: student roles every morning plus a full read once a week, each site on its own weekday.
+2. The added round checks 12 companies at once.
+3. Build all the new readers (Costco IT, Sandisk, SuccessFactors for NetApp/Paramount/Qorvo, Oleeo for the two campus
+   sites, ADP, Best Buy).
+4. Add all the subsidiaries listed (Tubi only if you want it as a company of its own, since FOX is out).
+5. No "known site" setting: the list rows that file another company's site under an added name raise their alert.
+6. Progressive is read through its RippleMatch page.
+
+Taken out (your coverage): DraftKings, FOX Corporation, Match Group, PrizePicks. That leaves 236 companies (237
+entries in candidates.yaml with Symmetry Systems, which folds into Zscaler). With these choices: about 88,800 jobs,
+3,360 student roles and 1,620 matching roles today; the morning email about 12.4 minutes later; 1,103 stored Simplify
+rows go to 130 companies at go-live, 218 of them still open; day-one alerts: 2 list rows (HP Inc.'s site filed as
+HPE, the Rivian-VW board filed as Rivian) and 3 possible misses. The tables below still include the four companies
+taken out; `companies_table.md` and `backup_table.md` are regenerated without them.
+
 ## Decisions for you
 
 ### 1. The five giant store, pharmacy and warehouse sites

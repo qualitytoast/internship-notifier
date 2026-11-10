@@ -2013,44 +2013,6 @@
   "shown": 0,
   "day_one_misses": 0
  },
- "draftkings": {
-  "name": "DraftKings",
-  "batch": 3,
-  "main_checker": "workday",
-  "sources": [
-   {
-    "entry": "draftkings",
-    "checker": "workday",
-    "jobs": 175,
-    "students": 14,
-    "matched": 10,
-    "seconds": 10.1,
-    "requests": 10,
-    "error": null
-   }
-  ],
-  "side": [
-   {
-    "entry": "draftkings~ripplematch",
-    "checker": "ripplematch",
-    "jobs": 6,
-    "students": 0,
-    "matched": 0,
-    "seconds": 0.4,
-    "requests": 1,
-    "error": null
-   }
-  ],
-  "dropped": [],
-  "page": "refused",
-  "blocked_page": true,
-  "very_large": false,
-  "slice": null,
-  "simplify_rows": 8,
-  "simplify_open": 0,
-  "shown": 0,
-  "day_one_misses": 0
- },
  "drivewealth": {
   "name": "DriveWealth",
   "batch": 1,
@@ -2808,64 +2770,6 @@
   ],
   "page": "robots",
   "blocked_page": true,
-  "very_large": false,
-  "slice": null,
-  "simplify_rows": 1,
-  "simplify_open": 0,
-  "shown": 0,
-  "day_one_misses": 0
- },
- "fox": {
-  "name": "FOX Corporation",
-  "batch": 3,
-  "main_checker": "workday",
-  "sources": [
-   {
-    "entry": "fox",
-    "checker": "workday",
-    "jobs": 325,
-    "students": 62,
-    "matched": 50,
-    "seconds": 31.2,
-    "requests": 17,
-    "error": null
-   },
-   {
-    "entry": "fox~site-FOXTVST_EAST",
-    "checker": "workday",
-    "jobs": 26,
-    "students": 1,
-    "matched": 1,
-    "seconds": 3.8,
-    "requests": 2,
-    "error": null
-   }
-  ],
-  "side": [
-   {
-    "entry": "fox~tubi",
-    "checker": "greenhouse",
-    "jobs": 24,
-    "students": 0,
-    "matched": 0,
-    "seconds": 1.1,
-    "requests": 2,
-    "error": null,
-    "subsidiary": "Tubi (Greenhouse tubitv)"
-   }
-  ],
-  "dropped": [
-   {
-    "entry": "fox~site-FOXTVST_Central",
-    "why": "public Workday site, 16 jobs, no student role: recorded as known"
-   },
-   {
-    "entry": "fox~site-FOXTVST_WEST",
-    "why": "public Workday site, 8 jobs, no student role: recorded as known"
-   }
-  ],
-  "page": "ok",
-  "blocked_page": false,
   "very_large": false,
   "slice": null,
   "simplify_rows": 1,
@@ -4155,33 +4059,6 @@
   "shown": 0,
   "day_one_misses": 0
  },
- "match-group": {
-  "name": "Match Group (Tinder, Hinge)",
-  "batch": 2,
-  "main_checker": "lever",
-  "sources": [
-   {
-    "entry": "match-group",
-    "checker": "lever",
-    "jobs": 71,
-    "students": 14,
-    "matched": 8,
-    "seconds": 0.8,
-    "requests": 1,
-    "error": null
-   }
-  ],
-  "side": [],
-  "dropped": [],
-  "page": "refused",
-  "blocked_page": true,
-  "very_large": false,
-  "slice": null,
-  "simplify_rows": 5,
-  "simplify_open": 5,
-  "shown": 5,
-  "day_one_misses": 0
- },
  "mckesson": {
   "name": "McKesson",
   "batch": 3,
@@ -5152,33 +5029,6 @@
   "simplify_rows": 1,
   "simplify_open": 0,
   "shown": 0,
-  "day_one_misses": 0
- },
- "prizepicks": {
-  "name": "PrizePicks",
-  "batch": 1,
-  "main_checker": "greenhouse",
-  "sources": [
-   {
-    "entry": "prizepicks",
-    "checker": "greenhouse",
-    "jobs": 31,
-    "students": 4,
-    "matched": 3,
-    "seconds": 3.0,
-    "requests": 1,
-    "error": null
-   }
-  ],
-  "side": [],
-  "dropped": [],
-  "page": "ok",
-  "blocked_page": false,
-  "very_large": false,
-  "slice": null,
-  "simplify_rows": 4,
-  "simplify_open": 2,
-  "shown": 3,
   "day_one_misses": 0
  },
  "progressive": {
