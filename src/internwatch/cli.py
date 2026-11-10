@@ -80,9 +80,9 @@ def cmd_run(cfg: Config, a) -> int:
     print(s.line() if opts.checks else f"sent what was pending ({len(s.emails)} email(s))")
     for e in s.emails:
         print("  email", e)
-    for p in s.problems:
+    for p in s.all_problems:
         print(f"  PROBLEM {p['name']}: {p['kind']} — {p['summary']}")
-    for m in s.misses:
+    for m in s.all_misses:
         print(f"  POSSIBLE MISS {m['company']}: {m['title']}")
     return 0 if not s.note.startswith("offline") else 1
 

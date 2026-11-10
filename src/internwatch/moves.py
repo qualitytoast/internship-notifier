@@ -34,6 +34,7 @@ import logging
 import math
 import re
 import time
+from pathlib import Path
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 from urllib.parse import parse_qs, urlsplit
@@ -1179,6 +1180,7 @@ def check_listings(ctx: Ctx) -> list[dict]:
                 done(ctx.db, "listings", name, "failed", ctx.now)
                 log.warning("moves: list %s could not be parsed: %s", name, e)
                 continue
+            keep_list(ctx.cfg, name, r.text)
             linked: dict[str, set[str]] = {}
             for company, title, url, system in rows:
                 c = company_of(index, comps, company, url, slug=src["format"] in ("ripplematch", "trackr"))
@@ -1217,6 +1219,78 @@ def check_listings(ctx: Ctx) -> list[dict]:
                               [{"suffix": "board", "rule": "list_system", "item": k, "scope": "lists", "url": url,
                                 "summary": summary}]))
     ctx.db.set("lists:alerted", json.dumps(sorted(told)))
+    return problems
+
+
+def kept_lists(cfg: Config) -> Path:
+    """Where the first round keeps the lists it downloaded, for the later rounds of the run (and of later runs,
+    while a list answers "unchanged")."""
+    return cfg.settings.path("db").parent / "lists"
+
+
+def keep_list(cfg: Config, name: str, text: str) -> None:
+    try:
+        kept_lists(cfg).mkdir(parents=True, exist_ok=True)
+        (kept_lists(cfg) / f"{name}.txt").write_text(text)
+    except OSError as e:  # the first round's own check never depends on it
+        log.warning("moves: list %s could not be kept for the later rounds: %s", name, e)
+
+
+def check_listings_later(ctx: Ctx, rnd: str, whole: Config) -> list[dict]:
+    """L in a later round (Config.scoped), with no request: the lists the first round downloaded, matched with every
+    company's names and links (the earlier rounds' first, so their rows stay theirs), for this round's companies.
+    Its state has keys of its own (lists:<round>:…), so neither round's alerts or their restores touch the other's."""
+    from .crosscheck import CompanyIndex
+    sources = {x["name"]: x for x in opts(ctx.cfg).get("listings") or []}
+    comps = {c.key: c for c in ctx.cfg.active}
+    index = CompanyIndex(whole.companies)
+    al = aliases(ctx.cfg)
+    found: dict[tuple[str, str], tuple[str, str, str]] = {}
+    read = 0
+    for name, src in sorted(sources.items()):
+        path = kept_lists(ctx.cfg) / f"{name}.txt"
+        if not path.exists():
+            continue
+        try:
+            text = path.read_text()
+            rows = ripplematch_rows(text) if src["format"] == "ripplematch" else list_rows(src["format"], text)
+        except (OSError, ValueError, KeyError, TypeError) as e:
+            log.warning("moves: kept list %s could not be read: %s", name, e)
+            continue
+        linked: dict[str, set[str]] = {}
+        for company, title, url, system in rows:
+            c = company_of(index, comps, company, url, slug=src["format"] in ("ripplematch", "trackr"))
+            if c is None:
+                continue
+            for k in ([al.get(system, system)] if system else systems_in(url, "", c, al)):
+                linked.setdefault(c.key, set()).add(k)
+                found.setdefault((c.key, k), (src.get("label", name), title, url))
+        ctx.db.set(f"lists:{rnd}:links:{name}", json.dumps({k: sorted(v) for k, v in linked.items()}))
+        read += 1
+    if read and all(ctx.db.get(f"lists:{rnd}:links:{n}") for n in sources):
+        everywhere: dict[str, set[str]] = {}
+        for n in sources:
+            for key, systems in load(ctx.db, f"lists:{rnd}:links:{n}", {}).items():
+                everywhere.setdefault(key, set()).update(systems)
+        for company in {a["company"] for a in alerts.live(ctx.db, rule="list_system")} & set(comps):
+            alerts.seen(ctx.db, company, "list_system", everywhere.get(company, set()), scope="lists")
+    raw = ctx.db.get(f"lists:{rnd}:alerted")
+    told = set(json.loads(raw)) if raw else set()
+    problems: list[dict] = []
+    for (key, k), (label, title, url) in sorted(found.items()):
+        c = comps[key]
+        if f"{key}|{k}" in told or k in known_systems(ctx, c):
+            continue
+        told.add(f"{key}|{k}")
+        if liveness._portal(k) and k in liveness.posting_portals(ctx.db, key):
+            continue
+        summary = f"{label} links a job site InternWatch doesn't read: {k} (e.g. '{title or 'a posting'}' {url})"
+        problems.append(alert(ctx.db, c, f"list:{k}", "new job site?", summary,
+                              "A list maintainer or contributor found a posting there. If it is the company's and "
+                              "carries student roles, add it to the config.", {f"lists:{rnd}:alerted": raw or ""},
+                              [{"suffix": "board", "rule": "list_system", "item": k, "scope": "lists", "url": url,
+                                "summary": summary}]))
+    ctx.db.set(f"lists:{rnd}:alerted", json.dumps(sorted(told)))
     return problems
 
 
@@ -1414,13 +1488,17 @@ def status(cfg: Config, conn) -> str:
     return "\n".join(lines)
 
 
-def run(cfg: Config, db: DB, gate, make_http, budget_end: float, healthy: set) -> list[dict]:
-    """Every check, each on its own: a bug or an outage in one never stops the others or the run's emails."""
+def run(cfg: Config, db: DB, gate, make_http, budget_end: float, healthy: set, rnd: str = "",
+        whole: Config | None = None) -> list[dict]:
+    """Every check, each on its own: a bug or an outage in one never stops the others or the run's emails. A later
+    round (rnd, with the whole config) reads the lists the first round downloaded instead of downloading them."""
     if not blocked(cfg):
         return []
     ctx = Ctx(cfg, db, gate, make_http, budget_end, set(healthy))
     problems: list[dict] = []
     for name, fn in CHECKS:
+        if rnd and name == "listings":
+            fn = lambda c: check_listings_later(c, rnd, whole or cfg)  # noqa: E731
         if ctx.out_of_time():
             log.info("moves: out of time before %s; it runs on a later morning", name)
             break

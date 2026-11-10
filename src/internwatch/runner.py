@@ -30,7 +30,7 @@ from . import alerts, emails, liveness, moves, watch
 from .adapters import get_checker
 from .adapters.base import FetchContext, dedupe
 from .config import Company, Config
-from .crosscheck import CrossCheck, Result
+from .crosscheck import CompanyIndex, CrossCheck, Result, Row, backfill_shown, find_in_db
 from .db import DB, iso, parse_iso, reopened, utcnow
 from .filters import evaluate, is_student_role, vague_location
 from .health import Outcome, assess
@@ -156,10 +156,32 @@ class RunSummary:
     processed: set = field(default_factory=set)             # companies whose poll was stored (liveness.unchecked)
     healthy: set = field(default_factory=set)               # … and whose poll was ok, complete and full (moves.py)
     note: str = ""
+    later: list = field(default_factory=list)               # (problems, misses) of each later round, in order
+
+    @property
+    def all_problems(self) -> list[dict]:
+        return self.problems + [p for problems, _ in self.later for p in problems]
+
+    @property
+    def all_misses(self) -> list[dict]:
+        return self.misses + [m for _, misses in self.later for m in misses]
+
+    def absorb(self, r: "RunSummary") -> None:
+        """A later round's results: counted with this run's, its alerts kept apart so they are recorded after these."""
+        self.checked += r.checked
+        self.failed += r.failed
+        self.new_jobs += r.new_jobs
+        self.new_matches += r.new_matches
+        self.seeded += r.seeded
+        self.recovered += r.recovered
+        self.skipped += r.skipped
+        self.processed |= r.processed
+        self.healthy |= r.healthy
+        self.later.append((r.problems, r.misses))
 
     def line(self) -> str:
         return (f"run {self.run_id}: checked {self.checked}, failed {len(self.failed)}, new jobs {self.new_jobs}, "
-                f"new matches {self.new_matches}, problems {len(self.problems)}, misses {len(self.misses)}"
+                f"new matches {self.new_matches}, problems {len(self.all_problems)}, misses {len(self.all_misses)}"
                 + (f", seeded {len(self.seeded)}" if self.seeded else "") + (f" — {self.note}" if self.note else ""))
 
 
@@ -177,6 +199,14 @@ class Runner:
         self.heartbeat = heartbeat or Heartbeat(cfg)
         self.checker_fn = checker_fn
         self.tz = ZoneInfo(cfg.settings.get("email", "timezone", default="America/Chicago"))
+        self.whole = cfg               # every company; self.cfg is the view of the round being run (Config.scoped)
+        self.rnd = ""                  # … and that round
+        self._simplify_open: dict = {}  # this run's SimplifyJobs download: source → keys of the rows it lists open
+        self._configure(cfg)
+
+    def _configure(self, cfg: Config) -> None:
+        """Check with this config (the whole one, or one round's view of it, Config.scoped) and its schedule."""
+        self.cfg = cfg
         sched = cfg.settings.get("schedule", default={}) or {}
         self.poll_minutes = sched.get("poll_minutes", [30, 45])
         self.retry_minutes = sched.get("retry_minutes", [30, 40])
@@ -297,22 +327,23 @@ class Runner:
             log.warning(s.note)
             return s
         start = time.monotonic()
-        run_deadline = start + self.run_timeout + (opts.retry_delay + 600 if opts.daily else 0)
         s.run_id = self.db.start_run(iso())
         first_run = self.db.get("first_run_done") is None
-        companies = self.due(opts)
-        log.info("run %d: %d companies due", s.run_id, len(companies))
-        self._check_all(companies, opts, s, first_run, run_deadline)
-        if opts.daily and s.retry and time.monotonic() < run_deadline - 300:
-            again = [c for c in companies if c.key in set(s.retry)]
-            log.info("checking %d unhealthy companies again before alerting", len(again))
-            s.retry, s.failed = [], [k for k in s.failed if k not in {c.key for c in again}]
-            time.sleep(opts.retry_delay)
-            self._check_all(again, opts, s, first_run, run_deadline)
-
-        if opts.crosscheck:
-            self._crosscheck(s)
-        self._liveness_finish(companies, opts, s, run_deadline)
+        whole = self.cfg
+        for c in whole.companies:  # a company of a later round goes live with the first run that has it
+            if c.round and not self.db.get(f"golive:{c.key}"):
+                self.db.set(f"golive:{c.key}", iso())
+        try:
+            for rnd in whole.rounds:
+                if rnd == "":  # the original companies, exactly as before rounds existed
+                    self._round(whole.scoped(rnd), rnd, opts, s, first_run, start)
+                    continue
+                r = RunSummary(run_id=s.run_id)
+                self._round(whole.scoped(rnd), rnd, opts, r, first_run, time.monotonic())
+                s.absorb(r)
+        finally:
+            self._configure(whole)
+            self.rnd = ""
         self._notify(s, first_run, opts)
         if opts.scheduled_mail and not first_run:
             self._scheduled_mail(opts, s)
@@ -322,6 +353,31 @@ class Runner:
         self.db.finish_run(s.run_id, iso(), status, s.checked, len(s.failed), s.new_matches, s.note)
         log.info(s.line())
         return s
+
+    def _round(self, cfg: Config, rnd: str, opts: RunOptions, s: RunSummary, first_run: bool, start: float) -> None:
+        """One round of a run: its companies' checks, a second look at the unhealthy ones (daily), the cross-check and
+        the run-level checks, within the round's own time limit. A later round reads only after the earlier ones."""
+        self._configure(cfg)
+        self.rnd = rnd
+        retry_delay = float(cfg.settings.get("schedule", "retry_delay", default=opts.retry_delay)) if rnd \
+            else opts.retry_delay
+        run_deadline = start + self.run_timeout + (retry_delay + 600 if opts.daily else 0)
+        companies = self.due(opts)
+        if rnd:
+            log.info("run %d, round %s: %d companies due", s.run_id, rnd, len(companies))
+        else:
+            log.info("run %d: %d companies due", s.run_id, len(companies))
+        self._check_all(companies, opts, s, first_run, run_deadline)
+        if opts.daily and s.retry and time.monotonic() < run_deadline - 300:
+            again = [c for c in companies if c.key in set(s.retry)]
+            log.info("checking %d unhealthy companies again before alerting", len(again))
+            s.retry, s.failed = [], [k for k in s.failed if k not in {c.key for c in again}]
+            time.sleep(retry_delay)
+            self._check_all(again, opts, s, first_run, run_deadline)
+
+        if opts.crosscheck:
+            self._crosscheck(s, rnd)
+        self._liveness_finish(companies, opts, s, run_deadline)
 
     def _check_all(self, companies: list[Company], opts: RunOptions, s: RunSummary, first_run: bool,
                    run_deadline: float) -> None:
@@ -399,7 +455,8 @@ class Runner:
         # the companies whose careers page can't be read: where else they could start posting (moves.py)
         budget_end = min(time.monotonic() + lv["blocked_seconds"], run_deadline - 300)
         try:
-            s.problems += moves.run(self.cfg, self.db, self.gate, self._scan_http, budget_end, s.healthy)
+            later = (self.rnd, self.whole) if self.rnd else ()  # the first round calls it exactly as before rounds
+            s.problems += moves.run(self.cfg, self.db, self.gate, self._scan_http, budget_end, s.healthy, *later)
         except Exception:  # noqa: BLE001 — never block the run's emails
             log.exception("moves: checks of the blocked companies failed")
         # boards read but not stored: dismissed ones and mirrors, for a role nothing else has (watch.py)
@@ -550,11 +607,16 @@ class Runner:
             self.db.set(f"full_alert:{c.key}", now)
 
     # ------------------------------------------------------------------------------------------
-    def _crosscheck(self, s: RunSummary) -> None:
-        cc = CrossCheck(self.cfg, self.db)
+    def _crosscheck(self, s: RunSummary, rnd: str = "") -> None:
+        others = {c.key for c in self.whole.companies if c.round != rnd}
+        if rnd:
+            self._crosscheck_round(s, rnd, others)
+            return
+        cc = CrossCheck(self.cfg, self.db, others=others)
         http = Http(http_settings(self.cfg), gate=self.gate, deadline=time.monotonic() + CROSSCHECK_SECONDS)
         try:  # whatever the list does, the run's emails still go out and the failure is named
             res = cc.resolve(cc.fetch_and_store(http))
+            self._simplify_open = res.open_keys
         except Exception as e:  # noqa: BLE001
             log.exception("cross-check failed")
             res = Result(errors=[f"{type(e).__name__}: {e}"])
@@ -575,6 +637,36 @@ class Runner:
         if res.via_simplify:
             log.info("cross-check: %d roles for blocked/failing companies stored via Simplify", res.via_simplify)
 
+    def _crosscheck_round(self, s: RunSummary, rnd: str, others: set[str]) -> None:
+        """A later round's part of the cross-check, with no download: the rows of its companies that have none yet
+        (all of them at a company's go-live) become theirs (CrossCheck.adopt), then they are resolved like any."""
+        try:
+            if not self.db.get("digest_backfilled"):  # the untracked rows earlier emails listed, once (CrossCheck.adopt)
+                with self.db.tx():
+                    n = backfill_shown(self.db, self.cfg.settings.path("outbox"))
+                    self.db.set("digest_backfilled", iso())
+                log.info("cross-check: %d untracked rows found in earlier emails", n)
+            for name, keys in self._simplify_open.items():  # kept for a morning whose download is unchanged (304)
+                self.db.set(f"simplify_open:{name}", json.dumps(sorted(keys)))
+            open_keys = {}
+            for src in self.cfg.settings.get("crosscheck", "sources", default=[]):
+                kept = self.db.get(f"simplify_open:{src['name']}")
+                if src["name"] in self._simplify_open:
+                    open_keys[src["name"]] = self._simplify_open[src["name"]]
+                elif kept:
+                    open_keys[src["name"]] = set(json.loads(kept))
+            golive = {c.key: self.db.get(f"golive:{c.key}") or "" for c in self.cfg.companies}
+            cc = CrossCheck(self.cfg, self.db, others=others)
+            with self.db.tx():
+                n = cc.adopt(CompanyIndex(self.whole.companies), open_keys, golive)
+            if n:
+                log.info("cross-check, round %s: %d SimplifyJobs rows given to their companies", rnd, n)
+            res = cc.resolve(Result())
+        except Exception:  # noqa: BLE001 — the run's emails still go out; the earlier round reports the list's health
+            log.exception("cross-check, round %s, failed", rnd)
+            return
+        s.misses += res.misses
+
     def _deliver(self, kind: str, built, opts: RunOptions, s: RunSummary) -> bool:
         subject, text, html = built[:3]
         self.mailer.dry_run = not opts.send
@@ -593,11 +685,14 @@ class Runner:
             with self.db.tx():
                 alerts.start(self.cfg, self.db)
                 fresh = alerts.record(self.db, s.problems, s.misses)
+                for problems, misses in s.later:  # each later round's after the earlier ones': their numbers are kept
+                    more = alerts.record(self.db, problems, misses)
+                    fresh = (fresh[0] + more[0], fresh[1] + more[1])
                 alerts.sweep(self.cfg, self.db)
             return fresh
         except Exception:  # noqa: BLE001 — see above
             log.exception("alerts: the list could not be updated")
-            return s.problems, s.misses
+            return s.all_problems, s.all_misses
 
     def _notify(self, s: RunSummary, first_run: bool, opts: RunOptions) -> None:
         db, now = self.db, iso()
@@ -612,13 +707,20 @@ class Runner:
             seeded = sum(1 for c in self.cfg.active if db.state(c.key)["seeded_at"])
             if self._deliver("seed", emails.seed_summary(self.cfg, db.open_matches(), seeded, []), opts, s):
                 db.set("seed_email_pending", "")
-        elif s.seeded:
-            rows = [r for k in s.seeded for r in db.open_matches(k)]
-            self._deliver("watching", emails.watching_summary(self.cfg, rows, s.seeded), opts, s)
+        elif s.seeded or db.get("watching_pending"):
+            # a "Now watching" email that didn't go out is sent again with the next run's (its roles were recorded)
+            keys = list(dict.fromkeys(json.loads(db.get("watching_pending") or "[]") + s.seeded))
+            rows, left_out = self._not_shown_before([r for k in keys for r in db.open_matches(k)])
+            if not self._deliver("watching", emails.watching_summary(self.cfg, rows, keys, left_out), opts, s):
+                db.set("watching_pending", json.dumps(keys))
+            elif db.get("watching_pending"):
+                db.set("watching_pending", "")
         rows = db.unnotified_matches()
         if opts.daily and not first_run:
             # one email every morning, even when nothing is new: silence would hide a broken setup
-            if self._deliver("morning", build_digest(self.cfg, db, rows=rows), opts, s):
+            shown: list[dict] = []
+            if self._deliver("morning", build_digest(self.cfg, db, rows=rows, shown=shown), opts, s):
+                self._mark_shown(shown, now)
                 db.mark_notified(rows, now)
                 db.set("last_digest_at", now)
                 db.set("last_digest", datetime.now(self.tz).date().isoformat())
@@ -632,15 +734,36 @@ class Runner:
             else:
                 self._reopen_alerts(s)
 
+    def _mark_shown(self, rows: list[dict], when: str) -> None:
+        """Untracked companies' Simplify rows an email listed: a company added later leaves their roles out of its
+        "Now watching" email, and never emails them again (CrossCheck.adopt)."""
+        for r in rows:
+            self.db.conn.execute("UPDATE simplify_rows SET digest_at=? WHERE source=? AND row_key=? AND digest_at IS NULL",
+                                 (when, r["source"], r["row_key"]))
+
+    def _not_shown_before(self, rows) -> tuple[list, int]:
+        """The open matching roles minus those tied (by the cross-check's own lookup) to a Simplify row that a morning
+        email already listed as an untracked company's role, and how many those were."""
+        shown_ids: set[tuple[str, str]] = set()
+        for k in {r["company"] for r in rows}:
+            for r in self.db.q("SELECT * FROM simplify_rows WHERE tracked_company=? AND digest_at IS NOT NULL", k):
+                hit, _ = find_in_db(self.db, k, Row(r["source"], r["row_key"], r["company"] or "", r["title"] or "",
+                                                    r["location"] or "", r["url"] or "", "", r["category"] or "",
+                                                    r["terms"] or ""))
+                if hit is not None:
+                    shown_ids.add((k, hit["job_id"]))
+        kept = [r for r in rows if (r["company"], r["job_id"]) not in shown_ids]
+        return kept, len(rows) - len(kept)
+
     def _reopen_alerts(self, s: RunSummary) -> None:
         """The health email did not go out: undo 'alerted' so the next run raises the same alerts again."""
-        for p in s.problems:
+        for p in s.all_problems:
             liveness.restore(self.db, p)  # the baseline a liveness check had already moved past this alert
             if p.get("reset_kv"):
                 self.db.set(p["reset_kv"], "")
             elif p.get("key"):
                 self.db.update_state(p["key"], alert_open=0, last_alert_at=None, **(p.get("restore_state") or {}))
-        for m in s.misses:
+        for m in s.all_misses:
             if m.get("row_key"):
                 self.db.conn.execute("UPDATE simplify_rows SET status='pending', resolved_at=NULL WHERE source=? AND row_key=?",
                                      (m["source"], m["row_key"]))
@@ -651,18 +774,23 @@ class Runner:
         digest_hour = int(self.cfg.settings.get("email", "digest_hour", default=8))
         if not opts.daily and local.hour >= digest_hour and self.db.get("last_digest") != today:
             built_at = iso()
-            if self._deliver("digest", build_digest(self.cfg, self.db), opts, s):
+            shown: list[dict] = []
+            if self._deliver("digest", build_digest(self.cfg, self.db, shown=shown), opts, s):
+                self._mark_shown(shown, built_at)
                 self.db.set("last_digest", today)
                 self.db.set("last_digest_at", built_at)  # untracked roles up to here have been reported
                 alerts.mark_told(self.db)
 
 
-def build_digest(cfg: Config, db: DB, rows=None):
-    """Daily digest; with rows= (daily mode) the morning email listing those new rows."""
+def build_digest(cfg: Config, db: DB, rows=None, shown: list | None = None):
+    """Daily digest; with rows= (daily mode) the morning email listing those new rows. shown: a list that gets the
+    untracked companies' rows the email lists."""
     since = iso(utcnow() - timedelta(hours=24))
     new_rows = db.matches_first_seen_since(since) if rows is None else rows
     last = db.get("last_digest_at") or since
     untracked = CrossCheck(cfg, db).untracked_for_digest(min(last, since))
+    if shown is not None:
+        shown.extend(untracked)
     try:
         open_alerts, resolved = alerts.for_email(db)
     except Exception:  # noqa: BLE001 — the roles still go out

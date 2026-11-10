@@ -389,9 +389,11 @@ def test_a_page_the_parsing_chokes_on_does_not_stay_first_in_line(make_cfg, memd
     assert memdb.get("page_scan_at:acme")  # read: the next run goes on to the other pages
 
 
-def test_an_emptied_campus_board_in_a_real_recording(make_cfg, memdb):
-    """Klaviyo's recorded fixture, with the campus board answering an empty list on two polls."""
+def test_an_emptied_campus_board_in_a_real_recording(make_cfg, memdb, monkeypatch):
+    """Klaviyo's recorded fixture, with the campus board answering an empty list on two polls (on the day it was
+    recorded: weeks later the quiet-board rule would rightly call the board quiet too)."""
     cas = Cassette.load(REPO / "tests" / "fixtures" / "cassettes" / "klaviyo.json.gz")
+    monkeypatch.setattr(liveness, "utcnow", lambda: parse_iso(cas.meta["recorded_at"]))
     c = company("klaviyo", checker="greenhouse", settings=cas.meta["settings"])
     cfg = make_cfg([c])
 

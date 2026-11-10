@@ -61,6 +61,7 @@ class Result:
     untracked: int = 0
     baseline: bool = False
     errors: list[str] = field(default_factory=list)
+    open_keys: dict = field(default_factory=dict)           # source → keys of the rows this download lists open
 
 
 def clean_url(url: str) -> str:
@@ -209,9 +210,15 @@ def _data(alert) -> dict:
     return json.loads(alert["data"])
 
 
+# the note of a row given to a company added later (round: added), at its go-live or once a morning email had listed
+# it as untracked: it is checked like any row from then on, but no path emails it again (never "via Simplify")
+ADOPTED = "adopted"
+
+
 class CrossCheck:
-    def __init__(self, cfg: Config, db: DB):
+    def __init__(self, cfg: Config, db: DB, others=()):
         self.cfg, self.db = cfg, db
+        self.others = set(others)  # companies of another round of the run (Config.scoped): their rows are left alone
         self.index = CompanyIndex(cfg.companies)
         self.grace = timedelta(minutes=int(cfg.settings.get("crosscheck", "grace_minutes", default=90)))
 
@@ -261,6 +268,7 @@ class CrossCheck:
             self.db.conn.execute("UPDATE kv SET value=? WHERE key LIKE 'simplify_baselined:%'", (now,))  # the READMEs' rows
             self.db.set("simplify_listings_read", now)
             still_open = {r.key for r in rows if not r.closed}
+            res.open_keys[name] = still_open
             for scope in {a["scope"] for a in map(_data, alerts.live(self.db, rule="miss"))}:
                 alerts.seen(self.db, None, "miss", still_open, scope=scope)  # a role that closed is no longer a miss
         return res
@@ -270,6 +278,8 @@ class CrossCheck:
         now = utcnow()
         companies = {c.key: c for c in self.cfg.companies}
         for r in self.db.q("SELECT * FROM simplify_rows WHERE status='pending'"):
+            if r["tracked_company"] in self.others:
+                continue
             comp = companies.get(r["tracked_company"])
             if comp is None:
                 self.db.conn.execute("UPDATE simplify_rows SET status='untracked' WHERE source=? AND row_key=?",
@@ -280,6 +290,10 @@ class CrossCheck:
             st = self.db.state(comp.key)
             failing = bool(st["alert_open"]) or (st["consecutive_failures"] or 0) > 0
             if comp.status != "active" or failing:
+                if r["note"] == ADOPTED:  # never emailed again: known for a company never checked, else judged later
+                    if comp.status != "active":
+                        self._set(r, "seen", "given to the company at its go-live; it is never checked")
+                    continue
                 self._store_via_simplify(comp, row, r, why="blocked" if comp.status != "active" else "checker failing")
                 res.via_simplify += 1
                 continue
@@ -309,6 +323,30 @@ class CrossCheck:
                 self._set(r, "missed", "")
         return res
 
+    def adopt(self, index: CompanyIndex, open_keys: dict, golive: dict) -> int:
+        """Rows with no company that belong to this round's companies, by the whole config's index (the earlier rounds'
+        companies first, so a row of theirs stays theirs), become theirs. One that Simplify lists open is checked from
+        now on (pending); if it was first seen before the company went live (golive: key → ISO time), or a morning
+        email already listed it as untracked, it is ADOPTED, so no path emails it again. One Simplify doesn't list open
+        (closed, or from Simplify's first download) is recorded as known (baseline). Rows of a source whose open
+        rows are unknown wait. Returns how many rows were given a company."""
+        mine = {c.key for c in self.cfg.companies}
+        n = 0
+        for r in self.db.q("SELECT * FROM simplify_rows WHERE tracked_company IS NULL"):
+            k = index.match(Row(r["source"], r["row_key"], r["company"] or "", r["title"] or "", r["location"] or "",
+                                r["url"] or "", "", r["category"] or "", r["terms"] or ""))
+            if k not in mine or (r["status"] == "untracked" and r["source"] not in open_keys):
+                continue
+            if r["status"] == "untracked" and r["row_key"] in open_keys[r["source"]]:
+                old = r["first_seen"] < golive.get(k, "") or r["digest_at"] is not None
+                status, note = "pending", ADOPTED if old else ""
+            else:
+                status, note = "baseline", r["note"]
+            self.db.conn.execute("UPDATE simplify_rows SET tracked_company=?, status=?, note=? WHERE source=? AND row_key=?",
+                                 (k, status, note, r["source"], r["row_key"]))
+            n += 1
+        return n
+
     def _set(self, r, status: str, note: str) -> None:
         self.db.conn.execute("UPDATE simplify_rows SET status=?, note=?, resolved_at=? WHERE source=? AND row_key=?",
                              (status, note, iso(), r["source"], r["row_key"]))
@@ -337,3 +375,41 @@ class CrossCheck:
             if m.matched:
                 out.append({**dict(r), "unsure": m.unsure})
         return out
+
+
+def backfill_shown(db: DB, outbox) -> int:
+    """Untracked companies' rows that morning emails and digests listed before digest_at was kept (Nov 2026), read
+    from their copies in the outbox: the untracked-roles.csv attachment, or the email's own table when it had none,
+    matched by link. Each gets the email's time as digest_at. Returns how many rows were marked."""
+    import csv
+    import email
+    import html as htmllib
+    from datetime import datetime, timezone
+    pending: dict[str, list] = {}
+    for r in db.q("SELECT source, row_key, url FROM simplify_rows WHERE tracked_company IS NULL AND digest_at IS NULL "
+                  "AND url IS NOT NULL"):
+        pending.setdefault(r["url"].strip(), []).append(r)
+    marked = 0
+    for path in sorted([*outbox.glob("*-morning*.eml"), *outbox.glob("*-digest*.eml")]):
+        try:
+            when = datetime.strptime(path.name[:15], "%Y%m%d-%H%M%S").astimezone(timezone.utc)
+        except ValueError:
+            continue
+        urls: set[str] = set()
+        msg = email.message_from_bytes(path.read_bytes())
+        for part in msg.walk():
+            if part.get_filename() == "untracked-roles.csv":
+                text = part.get_payload(decode=True).decode("utf-8", "replace")
+                urls |= {row.get("url", "").strip() for row in csv.DictReader(text.splitlines())}
+            elif part.get_content_type() == "text/html" and not part.get_filename():
+                page = part.get_payload(decode=True).decode("utf-8", "replace")
+                i = page.find("Untracked companies on the SimplifyJobs lists")
+                if i >= 0:
+                    table = page[i:page.find("</table>", i)]
+                    urls |= {htmllib.unescape(u).strip() for u in re.findall(r'<a href="([^"]+)"', table)}
+        for u in urls:
+            for r in pending.pop(u, []):
+                db.conn.execute("UPDATE simplify_rows SET digest_at=? WHERE source=? AND row_key=?",
+                                (when.strftime("%Y-%m-%dT%H:%M:%SZ"), r["source"], r["row_key"]))
+                marked += 1
+    return marked

@@ -1,9 +1,10 @@
 """Load settings.yaml, companies.yaml, filters.yaml and the .env secrets."""
 from __future__ import annotations
 
+import copy
 import os
 import re
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 
 import yaml
@@ -13,6 +14,16 @@ from .filters import Rules, kw_regex, load_rules
 
 ROOT = Path(os.environ.get("INTERNWATCH_HOME", Path(__file__).resolve().parents[2]))
 PLACEHOLDER_RE = re.compile(r"^<.*>$")
+# A daily run checks its companies in rounds: first those with no round (the original companies), exactly as before
+# rounds existed, then those with `round: added` (companies added in November 2026), with their own workers, time
+# limits and budgets (settings schedule.rounds.added). Only the emails wait for the last round.
+ROUNDS = ("", "added")
+# settings.liveness entries that belong to one company: {company: …} maps and [{company: …}] lists (Config.scoped)
+PER_COMPANY_MAPS = ("extra_tenants", "wp_pages", "id_pages", "job_lists", "program_pages", "archive_paths")
+PER_COMPANY_LISTS = ("watch_boards", "watch_unreadable", "parallel_sources", "getro")
+# schedule.rounds.<round> keys that replace schedule.<key>, and those that replace liveness.<key>
+ROUND_SCHEDULE_KEYS = ("workers", "run_timeout_minutes", "retry_delay")
+ROUND_LIVENESS_KEYS = ("page_scan_seconds", "blocked_scan_seconds", "watch_seconds")
 
 
 @dataclass
@@ -34,6 +45,7 @@ class Company:
     timeout_minutes: float | None = None   # time budget for one check (default: schedule.check_timeout_minutes)
     full_scan_hours: float | None = None   # big sites: hours between full scans (default: schedule.full_scan_hours)
     verified: dict = field(default_factory=dict)  # discovery evidence (informational)
+    round: str = ""                 # "" (checked first, as always) or "added" (checked after them; see ROUNDS)
 
     @property
     def extra_role_re(self):
@@ -106,10 +118,44 @@ class Config:
     def active(self) -> list[Company]:
         return [c for c in self.companies if c.status == "active"]
 
+    @property
+    def rounds(self) -> list[str]:
+        """The rounds a daily run has: "" always, then each other round that has a company."""
+        have = {c.round for c in self.companies}
+        return [r for r in ROUNDS if r == "" or r in have]
+
+    def scoped(self, rnd: str) -> "Config":
+        """This config as one round of a run sees it: only that round's companies, only their entries in the
+        per-company lists of settings.liveness, and for a later round its schedule.rounds.<round> settings.
+        The first round sees the config without the later rounds' companies: with none, this config itself."""
+        later = {c.key for c in self.companies if c.round != ""}
+        if rnd == "" and not later:
+            return self
+        mine = {c.key for c in self.companies if c.round == rnd}
+        keep = (lambda k: k not in later) if rnd == "" else (lambda k: k in mine)
+        raw = copy.deepcopy(self.settings.raw)
+        lv = raw.get("liveness") or {}
+        if isinstance(lv.get("blocked"), list):
+            lv["blocked"] = [k for k in lv["blocked"] if keep(k)]
+        for name in PER_COMPANY_MAPS:
+            if isinstance(lv.get(name), dict):
+                lv[name] = {k: v for k, v in lv[name].items() if keep(k)}
+        for name in PER_COMPANY_LISTS:
+            if isinstance(lv.get(name), list):
+                lv[name] = [x for x in lv[name] if not isinstance(x, dict) or keep(x.get("company"))]
+        if rnd:
+            sched = raw.setdefault("schedule", {})
+            own = (sched.get("rounds") or {}).get(rnd) or {}
+            sched.update({k: own[k] for k in ROUND_SCHEDULE_KEYS if k in own})
+            if lv or any(k in own for k in ROUND_LIVENESS_KEYS):
+                raw["liveness"] = {**lv, **{k: own[k] for k in ROUND_LIVENESS_KEYS if k in own}}
+        return replace(self, settings=Settings(raw, self.settings.root),
+                       companies=[c for c in self.companies if c.round == rnd])
+
 
 KNOWN_KEYS = {"key", "name", "category", "careers_url", "checker", "settings", "locations", "aliases", "status",
               "blocked_reason", "fallback", "role_keywords", "big", "notes", "timeout_minutes", "full_scan_hours",
-              "verified"}
+              "verified", "round"}
 
 
 def load_companies(path: Path) -> list[Company]:
@@ -134,9 +180,12 @@ def load_companies(path: Path) -> list[Company]:
             role_keywords=raw.get("role_keywords") or [], big=bool(raw.get("big", False)), notes=raw.get("notes", ""),
             timeout_minutes=raw.get("timeout_minutes"), full_scan_hours=raw.get("full_scan_hours"),
             verified=verified if isinstance(verified, dict) else {"note": str(verified)},
+            round=str(raw.get("round", "") or ""),
         )
         if c.status not in ("active", "blocked", "disabled"):
             raise ValueError(f"{where}: status must be active, blocked or disabled")
+        if c.round not in ROUNDS:
+            raise ValueError(f"{where}: round must be one of {', '.join(r for r in ROUNDS if r)} (or left out)")
         if c.key in seen:
             raise ValueError(f"duplicate company key {c.key} in {path}")
         seen.add(c.key)

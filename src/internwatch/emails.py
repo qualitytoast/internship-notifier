@@ -265,15 +265,18 @@ def seed_summary(cfg: Config, rows, checked: int, failed: list[str]) -> tuple[st
     return _with_files((subject, text, html), files)
 
 
-def watching_summary(cfg: Config, rows, keys: list[str]) -> tuple[str, str, str]:
-    """Sent when companies are seeded after the first run (newly added, or first readable now)."""
+def watching_summary(cfg: Config, rows, keys: list[str], left_out: int = 0) -> tuple[str, str, str]:
+    """Sent when companies are seeded after the first run (newly added, or first readable now). left_out: open roles
+    not listed because a morning email already showed them among the untracked companies' roles."""
     names = _names(cfg)
     who = ", ".join(names.get(k, k) for k in keys[:4]) + (f" +{len(keys) - 4} more" if len(keys) > 4 else "")
     n = len(rows)
     subject = f"{_prefix(cfg)} Now watching {who}: {n} matching role{'s' if n != 1 else ''} open"
     body_html, body_text, files = _sections_capped(cfg, rows)
+    seen = (f" {left_out} more you already saw in a morning email's list of untracked companies are left out."
+            if left_out else "")
     intro = (f'<p style="{STYLE_P}">These companies were read successfully for the first time. Their current postings '
-             f"were recorded, so only new ones will be emailed from now on. Matching roles open today:</p>")
+             f"were recorded, so only new ones will be emailed from now on. Matching roles open today:{seen}</p>")
     html = _wrap(f"Now watching {who}", intro + (body_html or f'<p style="{STYLE_P}">None right now.</p>'))
     return _with_files((subject, f"Now watching {who}. {n} matching roles open now.\n\n{body_text}", html), files)
 
