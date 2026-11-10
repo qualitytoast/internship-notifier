@@ -43,3 +43,18 @@ recorded round by round (198 problems, 198 misses, then the added round's), emai
   database copy, no email, no heartbeat), then replay it through `git archive main` (old) and this tree (new):
   morning 1 as recorded; morning 2 `after:<morning 1 out>,day:1,new:<keys>,fail:<key>`; morning 3
   `after:<morning 2 out>,day:2,mailfail`; then `morning.py compare <old out> <new out> <added keys>` for each.
+
+## Batch 1: the 76 Greenhouse companies (branch stage2-batch1)
+Batch 0's morning (2026-11-10, run 24): 28.7 min, 199 checks, 2,952 requests, morning email at 28.6 min; partial only
+because Capital One's Workday listed 4 postings without a link (the unchanged code path, as before batch 0) and
+CoreWeave's weights_and_biases Greenhouse board now answers 404. No added round (none yet); 104 untracked rows marked
+as shown; 6 of 11 lists kept.
+- [x] discovery/stage2_batch.py (render, apply): seed entries with round: added, results, aliases, settings
+- [x] page counts: hosted boards, company pages, headless renders with every request checked against robots.txt
+      (renders.json); six pages embed Greenhouse's board, which robots.txt disallows for scripts: explained
+- [x] 12 careers pages that refuse scripts join liveness.blocked (44 now) with their backup checks; Reddit's and Roku's
+      RippleMatch pages watched (aliases mark them as known)
+- [x] cassettes for all 76; verify --write (COVERAGE.md: none unverified); README, UNDERCLASSMEN.md
+- [x] golden.py against main: PASS, the 198 unchanged; 484 rows go from no company to an added one
+- [ ] a live go-live morning recorded (data/stage2/morning-2026-11-10-batch1) and the three mornings replayed
+- [ ] merge, push; the next real morning is batch 1's go-live
