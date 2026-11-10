@@ -330,6 +330,7 @@ class Runner:
         s.run_id = self.db.start_run(iso())
         first_run = self.db.get("first_run_done") is None
         whole = self.cfg
+        self._simplify_open = {}
         for c in whole.companies:  # a company of a later round goes live with the first run that has it
             if c.round and not self.db.get(f"golive:{c.key}"):
                 self.db.set(f"golive:{c.key}", iso())
