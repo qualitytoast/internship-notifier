@@ -1,0 +1,13 @@
+# status 200
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /portal-ai
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /portal-ai
+
+User-agent: *
+Disallow: /portal-ai
+
+Sitemap: https://ridgeline.ai/sitemap.xml

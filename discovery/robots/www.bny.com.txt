@@ -1,0 +1,59 @@
+# status 200
+# Updated: 2025-08-26
+
+User-Agent: *
+Disallow: /about-us/newsroom/
+Disallow: /about/news/
+Disallow: /disclaimers/
+Disallow: /disclosures/
+Disallow: /insights/
+Disallow: /legal-disclosure/
+Disallow: /bios/
+Disallow: /about-us/sustainability-report-strategy/
+Disallow: /careers/
+Disallow: /client-access/
+
+# Shared allow-list
+User-agent: Googlebot
+User-agent: AdsBot-Google
+User-agent: Googlebot-Image
+User-agent: Bingbot
+User-agent: Applebot
+User-agent: LinkedInbot
+User-agent: GPTBot
+User-agent: Slurp
+User-agent: YandexBot
+User-agent: Baiduspider
+User-agent: Exabot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+User-agent: Meta-ExternalAgent
+User-agent: facebookexternalhit
+User-agent: GoogleOther
+User-agent: PetalBot
+User-agent: Amazonbot
+User-agent: Claudebot
+User-agent: PerplexityBot
+
+# --- Shared disallows  ---
+Disallow: /isd-career-brochure-2024.pdf
+Disallow: /treasurers-as-technologists.pdf
+Disallow: /evolving-role-todays-corporate-treasurer.pdf
+Disallow: /disclaimers/client-notice.html
+Disallow: /documents/pdf/careers/additional-information.pdf
+Disallow: /2024-sustainability-report-tcfd-disclosure.pdf
+Disallow: /assets/wealth/pdf-library/rate-sheets
+Disallow: /bny-digital-revolution.pdf
+
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.bny.com/corporate/sitemap.xml
+Sitemap: https://www.bny.com/pershing/sitemap.xml
+Sitemap: https://www.bny.com/investments/us/sitemap.xml
+Sitemap: https://www.bny.com/investments/en/sitemap.xml
+Sitemap: https://www.bny.com/investments/es/sitemap.xml
+Sitemap: https://www.bny.com/investments/it/sitemap.xml
+Sitemap: https://www.bny.com/investments/fr/sitemap.xml
+Sitemap: https://www.bny.com/investments/de/sitemap.xml
+

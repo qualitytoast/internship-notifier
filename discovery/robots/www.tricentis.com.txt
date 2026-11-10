@@ -1,0 +1,23 @@
+# status 200
+User-agent: NAVER BOT
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: YisouSpider
+Disallow: /
+
+User-agent: *
+Allow: /
+Disallow: /*.pdf$
+Disallow: /search/
+Disallow: /search/fr/*
+Disallow: /search/de/*
+Disallow: /page/*
+Disallow: /de/page/*
+Disallow: /de/page/*
+Disallow: /fr/page/*
+Disallow: /lp/*
+
+Sitemap: https://www.tricentis.com/sitemap_index.xml

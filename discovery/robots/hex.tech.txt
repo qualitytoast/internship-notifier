@@ -1,0 +1,18 @@
+# status 200
+User-Agent: *
+User-Agent: ClaudeBot
+User-Agent: Claude-SearchBot
+User-Agent: Claude-User
+User-Agent: GPTBot
+User-Agent: OAI-SearchBot
+User-Agent: ChatGPT-User
+User-Agent: Googlebot
+User-Agent: Google-Extended
+User-Agent: Bingbot
+User-Agent: PerplexityBot
+User-Agent: Perplexity-User
+User-Agent: Applebot
+User-Agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://hex.tech/sitemap.xml

@@ -1,0 +1,1146 @@
+{
+ "ai2": {
+  "rows": 3,
+  "untracked": 1,
+  "baseline": 2,
+  "open": 1,
+  "shown": 1,
+  "day_one_misses": []
+ },
+ "allstate": {
+  "rows": 5,
+  "untracked": 5,
+  "baseline": 0,
+  "open": 4,
+  "shown": 3,
+  "day_one_misses": []
+ },
+ "american-express": {
+  "rows": 44,
+  "untracked": 5,
+  "baseline": 39,
+  "open": 2,
+  "shown": 3,
+  "day_one_misses": []
+ },
+ "analog-devices": {
+  "rows": 21,
+  "untracked": 1,
+  "baseline": 20,
+  "open": 1,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "appian": {
+  "rows": 2,
+  "untracked": 0,
+  "baseline": 2,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "applied-materials": {
+  "rows": 18,
+  "untracked": 11,
+  "baseline": 7,
+  "open": 9,
+  "shown": 7,
+  "day_one_misses": []
+ },
+ "arcesium": {
+  "rows": 2,
+  "untracked": 0,
+  "baseline": 2,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "arista-networks": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "base-power": {
+  "rows": 7,
+  "untracked": 0,
+  "baseline": 7,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "bedrock-robotics": {
+  "rows": 12,
+  "untracked": 0,
+  "baseline": 12,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "betterment": {
+  "rows": 1,
+  "untracked": 1,
+  "baseline": 0,
+  "open": 0,
+  "shown": 1,
+  "day_one_misses": []
+ },
+ "blackrock": {
+  "rows": 7,
+  "untracked": 0,
+  "baseline": 7,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "bny": {
+  "rows": 15,
+  "untracked": 0,
+  "baseline": 15,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "bot-auto": {
+  "rows": 2,
+  "untracked": 0,
+  "baseline": 2,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "braze": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "cadence": {
+  "rows": 12,
+  "untracked": 0,
+  "baseline": 12,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "charles-schwab": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "ciena": {
+  "rows": 20,
+  "untracked": 8,
+  "baseline": 12,
+  "open": 8,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "citi": {
+  "rows": 7,
+  "untracked": 7,
+  "baseline": 0,
+  "open": 7,
+  "shown": 5,
+  "day_one_misses": []
+ },
+ "clay": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "clockwork-systems": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "cohesity": {
+  "rows": 1,
+  "untracked": 1,
+  "baseline": 0,
+  "open": 1,
+  "shown": 1,
+  "day_one_misses": []
+ },
+ "commonwealth-fusion": {
+  "rows": 4,
+  "untracked": 3,
+  "baseline": 1,
+  "open": 1,
+  "shown": 3,
+  "day_one_misses": []
+ },
+ "copart": {
+  "rows": 10,
+  "untracked": 2,
+  "baseline": 8,
+  "open": 2,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "costar": {
+  "rows": 7,
+  "untracked": 1,
+  "baseline": 6,
+  "open": 0,
+  "shown": 1,
+  "day_one_misses": []
+ },
+ "costco": {
+  "rows": 8,
+  "untracked": 8,
+  "baseline": 0,
+  "open": 8,
+  "shown": 7,
+  "day_one_misses": [
+   [
+    "CDS Intern - Innovation",
+    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=10998"
+   ],
+   [
+    "CDS Intern - Powerapps Developer - ECM Digital Workflow",
+    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=11001"
+   ],
+   [
+    "CDS Intern - ECM Platform Management",
+    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=11010"
+   ],
+   [
+    "Costco Digital Services Intern - Infosec AI/ML",
+    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=10994"
+   ],
+   [
+    "Software Developer Intern - Software Engineer - Costco Travel",
+    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=11021"
+   ],
+   [
+    "Costco Data Systems Intern - IT Product Owner",
+    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=11024"
+   ],
+   [
+    "CDS Intern - Software Engineer - IT Retail Media",
+    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=11013"
+   ],
+   [
+    "Software Engineer Intern - International Depot",
+    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=10993"
+   ]
+  ]
+ },
+ "cox": {
+  "rows": 1,
+  "untracked": 1,
+  "baseline": 0,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "crusoe": {
+  "rows": 1,
+  "untracked": 1,
+  "baseline": 0,
+  "open": 0,
+  "shown": 1,
+  "day_one_misses": []
+ },
+ "cvs-health": {
+  "rows": 11,
+  "untracked": 11,
+  "baseline": 0,
+  "open": 8,
+  "shown": 10,
+  "day_one_misses": [
+   [
+    "Medicaid Data Analytics Intern",
+    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/CT---Hartford/Medicaid-Data-Analytics-Corporate-Internship---Summer-2027--Undergraduate-_R1052342"
+   ],
+   [
+    "Innovation & Technology Software Engineering: Platform & Applications Intern \ud83c\udf93",
+    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/AZ---Scottsdale/Innovation---Technology-Internship-Software-Engineering--Platform---Applications--Summer-2027-Grad_R1081216"
+   ],
+   [
+    "Innovation & Technology Software Engineering: Data & Intelligence Intern \ud83c\udf93",
+    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---New-York/Innovation---Technology-Internship--Software-Engineering--Data---Intelligence-Summer-2027-Graduate_R1081128"
+   ],
+   [
+    "Software Engineer Intern - Platform & Applications",
+    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/AZ---Scottsdale/Innovation-Technology-Internship-Software-Engineering--Platform---Applications-Summer-2027-Undergrad_R1081193"
+   ],
+   [
+    "Innovation & Technology Internship - Software Engineering: Data & Intelligence",
+    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---New-York/Innovation---Technology-Internship--Software-Engineering--Data---Intelligence-Summer-2027-Undergrad_R1081114"
+   ],
+   [
+    "Innovation & Technology Internship - Product & Agile Delivery",
+    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/Hartford-Farmington-Ave-Rogers/Innovation---Technology-Internship---Product---Agile-Delivery---Summer-2027--Undergraduate-_R1080767"
+   ],
+   [
+    "Innovation & Technology Internship - Data Science \ud83c\udf93",
+    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---New-York/Innovation---Technology-Internship---Data-Science---Summer-2027--Graduate-_R1081038"
+   ],
+   [
+    "Innovation & Technology Data Science Intern",
+    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---New-York/Innovation---Technology-Internship---Data-Science---Summer-2027--Undergraduate-_R1081067"
+   ]
+  ]
+ },
+ "datarobot": {
+  "rows": 3,
+  "untracked": 1,
+  "baseline": 2,
+  "open": 1,
+  "shown": 1,
+  "day_one_misses": []
+ },
+ "dicks-sporting-goods": {
+  "rows": 3,
+  "untracked": 0,
+  "baseline": 3,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "disney": {
+  "rows": 3,
+  "untracked": 2,
+  "baseline": 1,
+  "open": 0,
+  "shown": 2,
+  "day_one_misses": []
+ },
+ "domino-data-lab": {
+  "rows": 2,
+  "untracked": 0,
+  "baseline": 2,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "draftkings": {
+  "rows": 8,
+  "untracked": 0,
+  "baseline": 8,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "drivewealth": {
+  "rows": 6,
+  "untracked": 6,
+  "baseline": 0,
+  "open": 6,
+  "shown": 6,
+  "day_one_misses": []
+ },
+ "elevance-health": {
+  "rows": 4,
+  "untracked": 4,
+  "baseline": 0,
+  "open": 0,
+  "shown": 4,
+  "day_one_misses": []
+ },
+ "ellipsis-labs": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "enova": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "etched": {
+  "rows": 7,
+  "untracked": 1,
+  "baseline": 6,
+  "open": 1,
+  "shown": 1,
+  "day_one_misses": []
+ },
+ "exa": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "f5": {
+  "rows": 2,
+  "untracked": 0,
+  "baseline": 2,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "figure-ai": {
+  "rows": 7,
+  "untracked": 0,
+  "baseline": 7,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "fortinet": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "fox": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "freddie-mac": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "garner-health": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "ge-vernova": {
+  "rows": 26,
+  "untracked": 2,
+  "baseline": 24,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "gemini": {
+  "rows": 2,
+  "untracked": 1,
+  "baseline": 1,
+  "open": 1,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "genesis-molecular-ai": {
+  "rows": 1,
+  "untracked": 1,
+  "baseline": 0,
+  "open": 1,
+  "shown": 1,
+  "day_one_misses": []
+ },
+ "globalfoundries": {
+  "rows": 24,
+  "untracked": 16,
+  "baseline": 8,
+  "open": 12,
+  "shown": 3,
+  "day_one_misses": []
+ },
+ "grow-therapy": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "haize-labs": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "hartford": {
+  "rows": 3,
+  "untracked": 0,
+  "baseline": 3,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "hex": {
+  "rows": 2,
+  "untracked": 0,
+  "baseline": 2,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "heygen": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "home-depot": {
+  "rows": 4,
+  "untracked": 0,
+  "baseline": 4,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "hp": {
+  "rows": 15,
+  "untracked": 13,
+  "baseline": 2,
+  "open": 13,
+  "shown": 10,
+  "day_one_misses": []
+ },
+ "hpe": {
+  "rows": 46,
+  "untracked": 4,
+  "baseline": 42,
+  "open": 2,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "humana": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "ice": {
+  "rows": 33,
+  "untracked": 16,
+  "baseline": 17,
+  "open": 16,
+  "shown": 15,
+  "day_one_misses": []
+ },
+ "intuitive-surgical": {
+  "rows": 6,
+  "untracked": 2,
+  "baseline": 4,
+  "open": 2,
+  "shown": 2,
+  "day_one_misses": []
+ },
+ "ixl-learning": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "jpmorgan-chase": {
+  "rows": 22,
+  "untracked": 5,
+  "baseline": 17,
+  "open": 3,
+  "shown": 3,
+  "day_one_misses": []
+ },
+ "keysight": {
+  "rows": 56,
+  "untracked": 6,
+  "baseline": 50,
+  "open": 6,
+  "shown": 4,
+  "day_one_misses": []
+ },
+ "kla": {
+  "rows": 62,
+  "untracked": 16,
+  "baseline": 46,
+  "open": 16,
+  "shown": 12,
+  "day_one_misses": []
+ },
+ "knowbe4": {
+  "rows": 1,
+  "untracked": 1,
+  "baseline": 0,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "lowes": {
+  "rows": 6,
+  "untracked": 1,
+  "baseline": 5,
+  "open": 1,
+  "shown": 0,
+  "day_one_misses": [
+   [
+    "Store Operations Intern - Retail Facilities Support",
+    "https://lowes.wd5.myworkdayjobs.com/en-US/LWS_External_CS/job/Mooresville-NC-SSC-1999/Store-Operations-Real-Estate---Undergrad-Internship---Summer-2027_JR-02650537"
+   ]
+  ]
+ },
+ "macys": {
+  "rows": 4,
+  "untracked": 1,
+  "baseline": 3,
+  "open": 1,
+  "shown": 1,
+  "day_one_misses": []
+ },
+ "marvell": {
+  "rows": 71,
+  "untracked": 11,
+  "baseline": 60,
+  "open": 9,
+  "shown": 1,
+  "day_one_misses": [
+   [
+    "Data Science Intern",
+    "https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Boise-ID/Data-Science-Intern--BS---Summer-2027_2603782"
+   ]
+  ]
+ },
+ "mastercard": {
+  "rows": 2,
+  "untracked": 0,
+  "baseline": 2,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "match-group": {
+  "rows": 5,
+  "untracked": 5,
+  "baseline": 0,
+  "open": 5,
+  "shown": 5,
+  "day_one_misses": []
+ },
+ "mckesson": {
+  "rows": 7,
+  "untracked": 0,
+  "baseline": 7,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "mercor": {
+  "rows": 5,
+  "untracked": 0,
+  "baseline": 5,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "micron": {
+  "rows": 49,
+  "untracked": 3,
+  "baseline": 46,
+  "open": 2,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "multiply-labs": {
+  "rows": 2,
+  "untracked": 0,
+  "baseline": 2,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "nasdaq": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "nationwide": {
+  "rows": 3,
+  "untracked": 0,
+  "baseline": 3,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "navy-federal": {
+  "rows": 33,
+  "untracked": 2,
+  "baseline": 31,
+  "open": 2,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "ncino": {
+  "rows": 1,
+  "untracked": 1,
+  "baseline": 0,
+  "open": 0,
+  "shown": 1,
+  "day_one_misses": []
+ },
+ "netic": {
+  "rows": 3,
+  "untracked": 0,
+  "baseline": 3,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "neuralink": {
+  "rows": 4,
+  "untracked": 0,
+  "baseline": 4,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "new-york-times": {
+  "rows": 10,
+  "untracked": 7,
+  "baseline": 3,
+  "open": 7,
+  "shown": 7,
+  "day_one_misses": []
+ },
+ "niantic-spatial": {
+  "rows": 1,
+  "untracked": 1,
+  "baseline": 0,
+  "open": 0,
+  "shown": 1,
+  "day_one_misses": []
+ },
+ "nike": {
+  "rows": 3,
+  "untracked": 0,
+  "baseline": 3,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "northwestern-mutual": {
+  "rows": 2,
+  "untracked": 0,
+  "baseline": 2,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "one-finance": {
+  "rows": 2,
+  "untracked": 0,
+  "baseline": 2,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "pacific-fusion": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "patreon": {
+  "rows": 3,
+  "untracked": 1,
+  "baseline": 2,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "perpay": {
+  "rows": 4,
+  "untracked": 0,
+  "baseline": 4,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "persona-ai": {
+  "rows": 4,
+  "untracked": 0,
+  "baseline": 4,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "principal": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "prizepicks": {
+  "rows": 4,
+  "untracked": 3,
+  "baseline": 1,
+  "open": 2,
+  "shown": 3,
+  "day_one_misses": []
+ },
+ "ptc": {
+  "rows": 3,
+  "untracked": 3,
+  "baseline": 0,
+  "open": 2,
+  "shown": 2,
+  "day_one_misses": []
+ },
+ "pure-storage": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "q2": {
+  "rows": 7,
+  "untracked": 0,
+  "baseline": 7,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "qorvo": {
+  "rows": 50,
+  "untracked": 5,
+  "baseline": 45,
+  "open": 0,
+  "shown": 1,
+  "day_one_misses": []
+ },
+ "qualcomm": {
+  "rows": 43,
+  "untracked": 26,
+  "baseline": 17,
+  "open": 22,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "qumulo": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "replit": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "rhoda-ai": {
+  "rows": 3,
+  "untracked": 1,
+  "baseline": 2,
+  "open": 1,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "rilla": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "rivian": {
+  "rows": 20,
+  "untracked": 2,
+  "baseline": 18,
+  "open": 2,
+  "shown": 1,
+  "day_one_misses": []
+ },
+ "rivian-vw": {
+  "rows": 3,
+  "untracked": 1,
+  "baseline": 2,
+  "open": 1,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "roku": {
+  "rows": 5,
+  "untracked": 5,
+  "baseline": 0,
+  "open": 5,
+  "shown": 1,
+  "day_one_misses": []
+ },
+ "rubrik": {
+  "rows": 2,
+  "untracked": 2,
+  "baseline": 0,
+  "open": 2,
+  "shown": 1,
+  "day_one_misses": [
+   [
+    "Software Engineering Intern",
+    "https://www.rubrik.com/company/careers/departments/job.8171088?gh_jid=8171088"
+   ]
+  ]
+ },
+ "sailpoint": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "serval": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "singlestore": {
+  "rows": 4,
+  "untracked": 0,
+  "baseline": 4,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "snap": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "snorkel-ai": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "sonos": {
+  "rows": 8,
+  "untracked": 8,
+  "baseline": 0,
+  "open": 1,
+  "shown": 3,
+  "day_one_misses": []
+ },
+ "state-farm": {
+  "rows": 4,
+  "untracked": 3,
+  "baseline": 1,
+  "open": 0,
+  "shown": 3,
+  "day_one_misses": []
+ },
+ "synchrony": {
+  "rows": 2,
+  "untracked": 1,
+  "baseline": 1,
+  "open": 1,
+  "shown": 1,
+  "day_one_misses": []
+ },
+ "tensorwave": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "texas-instruments": {
+  "rows": 31,
+  "untracked": 6,
+  "baseline": 25,
+  "open": 6,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "travelers": {
+  "rows": 5,
+  "untracked": 0,
+  "baseline": 5,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "trimble": {
+  "rows": 10,
+  "untracked": 5,
+  "baseline": 5,
+  "open": 5,
+  "shown": 4,
+  "day_one_misses": []
+ },
+ "tyler-technologies": {
+  "rows": 7,
+  "untracked": 2,
+  "baseline": 5,
+  "open": 1,
+  "shown": 2,
+  "day_one_misses": [
+   [
+    "Software Development Intern",
+    "https://jobs.jobvite.com/tylertech/job/oQFRAfwG?nl=1&nl=1&fr=false"
+   ]
+  ]
+ },
+ "usaa": {
+  "rows": 1,
+  "untracked": 1,
+  "baseline": 0,
+  "open": 0,
+  "shown": 1,
+  "day_one_misses": []
+ },
+ "vanguard": {
+  "rows": 8,
+  "untracked": 0,
+  "baseline": 8,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "veeam": {
+  "rows": 8,
+  "untracked": 0,
+  "baseline": 8,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "vercel": {
+  "rows": 2,
+  "untracked": 0,
+  "baseline": 2,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "verizon": {
+  "rows": 4,
+  "untracked": 0,
+  "baseline": 4,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "viam": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "walmart": {
+  "rows": 6,
+  "untracked": 2,
+  "baseline": 4,
+  "open": 1,
+  "shown": 1,
+  "day_one_misses": [
+   [
+    "Corporate Intern: Data & Tech Transformation Intern",
+    "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-Always-AR-Bentonville-Home-Office/XMLNAME--USA--Summer-2027-Corporate-Intern---Data---Tech-Transformation-intern_R-2690457-1"
+   ]
+  ]
+ },
+ "wells-fargo": {
+  "rows": 2,
+  "untracked": 2,
+  "baseline": 0,
+  "open": 2,
+  "shown": 1,
+  "day_one_misses": []
+ },
+ "western-digital": {
+  "rows": 5,
+  "untracked": 2,
+  "baseline": 3,
+  "open": 2,
+  "shown": 0,
+  "day_one_misses": [
+   [
+    "Recording Electronics Data Analytics & Optimization Co-op",
+    "https://jobs.smartrecruiters.com/WesternDigital/744000155109379"
+   ]
+  ]
+ },
+ "xcimer": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
+ "zebra": {
+  "rows": 15,
+  "untracked": 14,
+  "baseline": 1,
+  "open": 1,
+  "shown": 9,
+  "day_one_misses": []
+ },
+ "zillow": {
+  "rows": 3,
+  "untracked": 3,
+  "baseline": 0,
+  "open": 3,
+  "shown": 3,
+  "day_one_misses": []
+ },
+ "ziprecruiter": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ }
+}

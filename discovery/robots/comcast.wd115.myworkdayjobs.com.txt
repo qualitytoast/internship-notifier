@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://comcast.wd115.myworkdayjobs.com/Comcast_Careers/siteMap.xml
+
+User-agent: *
+Allow: /Comcast_Careers/
+Disallow: /refreshFacet/

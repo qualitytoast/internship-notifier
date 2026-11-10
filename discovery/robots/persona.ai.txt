@@ -1,0 +1,6 @@
+# status 200
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://persona.ai/sitemap_index.xml

@@ -1,0 +1,116 @@
+# status 200
+# START YOAST BLOCK
+# ---------------------------
+
+User-agent: *
+Disallow:
+
+# Major Search Engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# AI & LLM Bots - OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# AI & LLM Bots - Anthropic/Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# AI & LLM Bots - Google
+User-agent: Google-Extended
+Allow: /
+
+# AI & LLM Bots - Other
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Common-Crawl
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: ai-crawler
+Allow: /
+
+# Social Media Bots
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# SEO Tool Crawlers
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+# Block specific unwanted bots
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: Omgili
+Disallow: /
+
+# Default rules for all other bots
+User-agent: *
+Disallow: /wp-admin
+Disallow: /wp-includes
+Disallow: /wp-login.php
+Disallow: /wp-content/plugins
+Disallow: /wp-content/cache
+Disallow: /wp-content/themes
+Disallow: /trackback
+Disallow: */trackback
+Disallow: */*/trackback
+Disallow: */*/feed/*/
+Disallow: */feed
+Disallow: /*?*
+Disallow: /cgi-bin
+Disallow: /*.php$
+Disallow: /*.inc$
+Disallow: /*.gz$
+Allow: */uploads
+Allow: /*.js
+Allow: /*.css
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+Allow: /*.pdf
+
+Sitemap: https://www.symmetry-systems.com/sitemap_index.xml
+# ---------------------------
+# END YOAST BLOCK

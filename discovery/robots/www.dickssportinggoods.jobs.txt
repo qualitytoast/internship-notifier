@@ -1,0 +1,14 @@
+# status 200
+User-agent: * 
+Crawl-delay: 10
+Allow: /
+Disallow: /calc-results/
+
+# Allow all bots to crawl the site, but ask them to wait 10 seconds between requests.
+# Well-behaved bots will honor this and reduce load on the server.
+
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://www.dickssportinggoods.jobs/sitemap_index.xml

@@ -1,0 +1,4 @@
+# status 200
+User-agent: *
+Disallow: 
+Sitemap: https://bestbuy.service-now.com/api/93622/seo/sitemap

@@ -1,0 +1,63 @@
+# status 200
+
+# Redirect Entries
+
+User-agent: *
+Disallow: /invite/
+Disallow: /i/
+
+# Pre-signup Flow Pages
+Disallow: /get-started/*
+
+# Thank You Pages
+## B4C
+Disallow: /thanks/crypto
+Disallow: /financial-experts/401k-advice-call/schedule
+Disallow: /communication-settings/
+Disallow: /concierge/thanks/*
+
+## B4B
+Disallow: /work/thanks/*
+
+## B4A
+Disallow: /advisors/thanks/*
+Disallow: /grow-your-ria
+Disallow: /advisors/q3-cash-offer
+Disallow: /advisors/onboarding-hub/*
+
+# Gated PDFs
+Disallow: /hubfs/PDFs/b4b/financial-wellness-guide.pdf
+Disallow: /hubfs/PDFs/b4b/reports/b4b-retirement-readiness-report-2023.pdf
+
+# Employer-Only Docs and Pages
+Disallow: /work/resources/401k-bulk-upload-tutorial
+Disallow: /work/resources/a-step-by-step-guide-to-401k-plan-compliance-testing
+Disallow: /work/resources/betterment-for-business-coronavirus-update
+
+# Other landing pages
+Disallow: /ira-and-401k-variant
+
+# Special Offer Pages
+Disallow: /work/sales-offer
+Disallow: /affiliate-partner-offer
+Disallow: /friend-referral-offer
+
+# Terms Page
+Disallow: /legal/offers/discretionary-cash-apy-boost-offer-2024
+Disallow: /legal/offers/new-user-cash-reserve-deposit-rate-boost-promotion
+Disallow: /pursuebetter/partners
+
+# Partnership Page 
+## B4B 
+Disallow: /work/accountingdepartment.com
+
+# B4B Flow Pages
+Disallow: /work/start/payment
+Disallow: /work/start/plan-build
+
+Sitemap: https://www.betterment.com/sitemap.xml
+Disallow: /_hcms/preview/
+Disallow: /hs/manage-preferences/
+Disallow: /hs/preferences-center/
+Disallow: /*?*hs_preview=*
+Disallow: /*?*hsCacheBuster=*

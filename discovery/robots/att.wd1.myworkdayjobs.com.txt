@@ -1,0 +1,13 @@
+# status 200
+Sitemap: https://att.wd1.myworkdayjobs.com/ATTCollege/siteMap.xml
+Sitemap: https://att.wd1.myworkdayjobs.com/ATTGeneral/siteMap.xml
+Sitemap: https://att.wd1.myworkdayjobs.com/Cricket/siteMap.xml
+
+User-agent: *
+Allow: /ATTCollege/
+Allow: /ATTGeneral/
+Allow: /Cricket/
+Disallow: /ATTCollegeSpecialInvite/
+Disallow: /ATTMilitaryFellowSpecialInvite/
+Disallow: /ATTSpecialInvite/
+Disallow: /refreshFacet/

@@ -1,0 +1,76 @@
+# status 200
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Disallow: /app/
+
+Sitemap: https://www.unifygtm.com/sitemap.xml
+
+# AI Crawlers - allowed on public marketing pages
+User-agent: GPTBot
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+Disallow: /app/
+
+User-agent: ClaudeBot
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+Disallow: /app/
+
+User-agent: CCBot
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+Disallow: /app/
+
+User-agent: PerplexityBot
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+Disallow: /app/
+
+User-agent: Google-Extended
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+Disallow: /app/
+
+User-agent: OAI-SearchBot
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+Disallow: /app/
+
+User-agent: Applebot-Extended
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+Disallow: /app/
+
+User-agent: Amazonbot
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+Disallow: /app/
+
+User-agent: ChatGPT-User
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+Disallow: /app/
+
+User-agent: anthropic-ai
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+Disallow: /app/
+
+User-agent: GoogleOther
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+Disallow: /app/
+
+User-agent: FacebookBot
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+Disallow: /app/
+
+User-agent: cohere-ai
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+Disallow: /app/
+
+# Bytespider (TikTok) - kept blocked
+User-agent: Bytespider
+Disallow: /

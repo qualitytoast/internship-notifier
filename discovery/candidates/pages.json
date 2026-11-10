@@ -1,0 +1,4401 @@
+{
+ "addepar": {
+  "url": "https://addepar.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://addepar.com/careers",
+  "bytes": 88895,
+  "seconds": 1.0,
+  "title": "Careers | Job Search | Addepar",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "adp": {
+  "url": "https://jobs.adp.com/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://jobs.adp.com/",
+  "seconds": 0.6
+ },
+ "ai2": {
+  "url": "https://allenai.org/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://allenai.org/careers",
+  "bytes": 1283878,
+  "seconds": 1.4,
+  "title": "Careers | Ai2",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=thealleninstitute"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "thealleninstitute"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "allstate": {
+  "url": "https://www.allstate.jobs/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.allstate.jobs/",
+  "bytes": 205787,
+  "seconds": 1.5,
+  "title": "Search for Allstate Jobs Near Me and Remote | Allstate Careers",
+  "challenge": false,
+  "systems": [
+   "workday:host=allstate.wd5.myworkdayjobs.com,site=allstate_careers,tenant=allstate"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "allstate.wd5.myworkdayjobs.com",
+     "tenant": "allstate",
+     "site": "allstate_careers"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "alltrails": {
+  "url": "https://www.alltrails.com/careers",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://www.alltrails.com/careers",
+  "seconds": 0.7
+ },
+ "altruist": {
+  "url": "https://altruist.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://altruist.com/careers/",
+  "bytes": 418600,
+  "seconds": 1.0,
+  "title": "Careers - Altruist",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=altruist"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "altruist"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "american-express": {
+  "url": "https://www.americanexpress.com/en-us/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.americanexpress.com/en-us/careers/",
+  "bytes": 575893,
+  "seconds": 0.9,
+  "title": "American Express Careers &amp; Job Openings | Amex Careers US",
+  "challenge": false,
+  "systems": [
+   "eightfold:domain=aexp.eightfold.ai"
+  ],
+  "candidates": [],
+  "eightfold": [
+   {
+    "host": "www.americanexpress.com",
+    "domain": "americanexpress.com",
+    "api": "pcsx"
+   }
+  ],
+  "phenom": []
+ },
+ "amperity": {
+  "url": "https://amperity.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://amperity.com/careers",
+  "bytes": 349093,
+  "seconds": 0.7,
+  "title": "Careers | Amperity",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "analog-devices": {
+  "url": "https://www.analog.com/en/about-adi/careers.html",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.analog.com/en/careers.html",
+  "bytes": 72031,
+  "seconds": 0.5,
+  "title": "Explore Careers | Analog Devices",
+  "challenge": false,
+  "systems": [
+   "workday:host=analogdevices.wd1.myworkdayjobs.com,site=external,tenant=analogdevices"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "analogdevices.wd1.myworkdayjobs.com",
+     "tenant": "analogdevices",
+     "site": "External"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "anchorage-digital": {
+  "url": "https://www.anchorage.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.anchorage.com/careers",
+  "bytes": 241493,
+  "seconds": 0.4,
+  "title": "Careers | Anchorage Digital",
+  "challenge": false,
+  "systems": [
+   "lever:site=anchorage"
+  ],
+  "candidates": [
+   {
+    "checker": "lever",
+    "settings": {
+     "site": "anchorage"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "appian": {
+  "url": "https://appian.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.appian.com",
+  "bytes": 93895,
+  "seconds": 1.2,
+  "title": "Appian Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "applied-materials": {
+  "url": "https://careers.appliedmaterials.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.appliedmaterials.com/careers",
+  "bytes": 203716,
+  "seconds": 0.8,
+  "title": "Careers at Applied Materials",
+  "challenge": false,
+  "systems": [
+   "eightfold:domain=appliedmaterials.com"
+  ],
+  "candidates": [],
+  "eightfold": [
+   {
+    "host": "careers.appliedmaterials.com",
+    "domain": "appliedmaterials.com",
+    "api": "pcsx"
+   }
+  ],
+  "phenom": []
+ },
+ "apptronik": {
+  "url": "https://apptronik.com/careers/job-listings",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://apptronik.com/careers/job-listings",
+  "bytes": 42224,
+  "seconds": 0.6,
+  "title": "Apptronik - Job Listings",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=apptronik"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "apptronik"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "arcesium": {
+  "url": "https://www.arcesium.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.arcesium.com/careers",
+  "bytes": 1103527,
+  "seconds": 1.2,
+  "title": "Careers | Arcesium",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=arcesiumllc"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "arcesiumllc"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "arista-networks": {
+  "url": "https://www.arista.com/en/careers",
+  "outcome": "refused",
+  "error": "HTTP 406 for GET https://www.arista.com/en/careers",
+  "seconds": 0.2
+ },
+ "asana": {
+  "url": "https://asana.com/jobs",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://asana.com/jobs",
+  "bytes": 880446,
+  "seconds": 1.2,
+  "title": "Apply for a career with Asana \u2022 Asana",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "athenahealth": {
+  "url": "https://www.athenahealth.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.athenahealth.com/us/en/",
+  "bytes": 196380,
+  "seconds": 223.4,
+  "title": "Get Started with Your Healthcare IT Career | athenahealth",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": [
+   {
+    "base_url": "https://careers.athenahealth.com",
+    "ref_num": "ATHAHHUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "att": {
+  "url": "https://www.att.jobs/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.att.jobs/",
+  "bytes": 65549,
+  "seconds": 0.3,
+  "title": "AT&amp;T Careers: Shape the future of connectivity",
+  "challenge": false,
+  "systems": [
+   "workday:host=att.wd1.myworkdayjobs.com,site=attcollege,tenant=att",
+   "workday:host=att.wd1.myworkdayjobs.com,site=attgeneral,tenant=att",
+   "workday:host=att.wd1.myworkdayjobs.com,site=cricket,tenant=att"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "att.wd1.myworkdayjobs.com",
+     "tenant": "att",
+     "site": "ATTGeneral"
+    }
+   },
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "att.wd1.myworkdayjobs.com",
+     "tenant": "att",
+     "site": "ATTcollege"
+    }
+   },
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "att.wd1.myworkdayjobs.com",
+     "tenant": "att",
+     "site": "Cricket"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "bamboohr": {
+  "url": "https://www.bamboohr.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.bamboohr.com/careers/",
+  "bytes": 31142,
+  "seconds": 0.2,
+  "title": "BambooHR Careers | Come grow with us",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "bandwidth": {
+  "url": "https://www.bandwidth.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.bandwidth.com/careers/",
+  "bytes": 160731,
+  "seconds": 0.4,
+  "title": "Careers at Bandwidth\u2013See Open Jobs and Apply Today",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=bandwidth"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "bandwidth"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "bank-of-america": {
+  "url": "https://careers.bankofamerica.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.bankofamerica.com/en-us",
+  "bytes": 118975,
+  "seconds": 1.3,
+  "title": "Bank of America Careers Site - Apply at Bank of America",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "base-power": {
+  "url": "https://www.basepowercompany.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.basepowercompany.com/careers",
+  "bytes": 169270,
+  "seconds": 0.4,
+  "title": "Build the future of American power | Base Power Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "baseten": {
+  "url": "https://www.baseten.co/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.baseten.co/resources/careers",
+  "bytes": 147363,
+  "seconds": 0.6,
+  "title": "Careers at Baseten",
+  "challenge": false,
+  "systems": [
+   "ashby:board=baseten"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "baseten"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "bedrock-robotics": {
+  "url": "https://bedrockrobotics.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://bedrockrobotics.com/careers",
+  "bytes": 272361,
+  "seconds": 0.6,
+  "title": "Careers at Bedrock Robotics | Robotics &amp; AI Jobs | Bedrock Robotics",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "best-buy": {
+  "url": "https://jobs.bestbuy.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://jobs.bestbuy.com/bby",
+  "bytes": 1091219,
+  "seconds": 222.6,
+  "title": "Best Buy Jobs - Best Buy Jobs",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "betterment": {
+  "url": "https://www.betterment.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.betterment.com/careers",
+  "bytes": 380624,
+  "seconds": 222.7,
+  "title": "Careers at Betterment | Help build a new way of investing.",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "bill": {
+  "url": "https://www.bill.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.bill.com/careers",
+  "bytes": 466910,
+  "seconds": 0.7,
+  "title": "Careers at BILL",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "blackrock": {
+  "url": "https://careers.blackrock.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.blackrock.com/",
+  "bytes": 181769,
+  "seconds": 0.2,
+  "title": "Working at BlackRock",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "bny": {
+  "url": "https://www.bny.com/corporate/global/en/careers.html",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.bny.com/corporate/global/en/about-us/careers/work-with-us.html",
+  "bytes": 268409,
+  "seconds": 222.3,
+  "title": "Work With Us | BNY",
+  "challenge": false,
+  "systems": [
+   "oracle:host=eofe.fa.us2.oraclecloud.com,site=bny-careers"
+  ],
+  "candidates": [
+   {
+    "checker": "oracle",
+    "settings": {
+     "host": "eofe.fa.us2.oraclecloud.com",
+     "site": "BNY-Careers"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "bot-auto": {
+  "url": "https://bot.auto/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://bot.auto/careers",
+  "bytes": 188548,
+  "seconds": 0.5,
+  "title": "Bot Auto",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=botauto"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "botauto"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "box": {
+  "url": "https://careers.box.com/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://careers.box.com/",
+  "seconds": 0.2
+ },
+ "braze": {
+  "url": "https://www.braze.com/company/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.braze.com/company/careers",
+  "bytes": 603881,
+  "seconds": 222.2,
+  "title": "Find your people. Make real impact.",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "bugcrowd": {
+  "url": "https://www.bugcrowd.com/about/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.bugcrowd.com/about/careers/",
+  "bytes": 316314,
+  "seconds": 222.2,
+  "title": "Careers | Bugcrowd",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=bugcrowd"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "bugcrowd"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "bumble": {
+  "url": "https://bumble.com/en/jobs",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://community.workday.com/maintenance-page?d=3&s=1&e=1&o=",
+  "bytes": 34790,
+  "seconds": 224.2,
+  "title": "Workday is currently unavailable.",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "cadence": {
+  "url": "https://www.cadence.com/en_US/home/company/careers.html",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://www.cadence.com/en_US/home/company/careers.html",
+  "seconds": 222.0
+ },
+ "carbon-robotics": {
+  "url": "https://carbonrobotics.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://carbonrobotics.com/careers",
+  "bytes": 238361,
+  "seconds": 0.5,
+  "title": "Careers &mdash; Carbon Robotics",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "cartesia": {
+  "url": "https://cartesia.ai/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.cartesia.ai/careers",
+  "bytes": 510629,
+  "seconds": 0.7,
+  "title": "Careers | Cartesia",
+  "challenge": false,
+  "systems": [
+   "ashby:board=cartesia"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "cartesia"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "censys": {
+  "url": "https://censys.com/careers/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://censys.com/careers/",
+  "seconds": 0.3
+ },
+ "cerebras": {
+  "url": "https://www.cerebras.ai/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.cerebras.ai/join-us",
+  "bytes": 260535,
+  "seconds": 0.7,
+  "title": "Careers at Cerebras | Build the Future of AI Compute",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "charles-schwab": {
+  "url": "https://www.schwabjobs.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.schwabjobs.com/",
+  "bytes": 339870,
+  "seconds": 0.3,
+  "title": "Careers in Finance, Technology, and Service | Schwab Jobs",
+  "challenge": false,
+  "systems": [
+   "icims:portal=career-schwab.icims.com"
+  ],
+  "candidates": [
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://career-schwab.icims.com"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "checkr": {
+  "url": "https://checkr.com/company/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://checkr.com/company/careers",
+  "bytes": 598001,
+  "seconds": 0.5,
+  "title": "Careers | Checkr",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "chewy": {
+  "url": "https://careers.chewy.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.chewy.com/us/en",
+  "bytes": 175589,
+  "seconds": 2.8,
+  "title": "Careers at Chewy | Chewy Inc. Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": [
+   {
+    "base_url": "https://careers.chewy.com",
+    "ref_num": "CHINUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "chime": {
+  "url": "https://careers.chime.com/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://careers.chime.com/",
+  "seconds": 0.5
+ },
+ "ciena": {
+  "url": "https://www.ciena.com/careers",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://www.ciena.com/careers",
+  "seconds": 0.3
+ },
+ "circle": {
+  "url": "https://www.circle.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.circle.com/us/en",
+  "bytes": 167371,
+  "seconds": 3.2,
+  "title": "Join Circle and Build the Financial Future",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": [
+   {
+    "base_url": "https://careers.circle.com",
+    "ref_num": "CIICIRUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "citi": {
+  "url": "https://jobs.citi.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://jobs.citi.com/",
+  "bytes": 39144,
+  "seconds": 0.2,
+  "title": "Citi Careers | Find Your Next Opportunity",
+  "challenge": false,
+  "systems": [
+   "eightfold:domain=citi.eightfold.ai",
+   "workday:host=citi.wd5.myworkdayjobs.com,site=2,tenant=citi"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "citi.wd5.myworkdayjobs.com",
+     "tenant": "citi",
+     "site": "2"
+    }
+   }
+  ],
+  "eightfold": [
+   {
+    "host": "jobs.citi.com",
+    "domain": "citi.com",
+    "api": "pcsx"
+   }
+  ],
+  "phenom": []
+ },
+ "clay": {
+  "url": "https://www.clay.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.clay.com/careers",
+  "bytes": 390767,
+  "seconds": 0.3,
+  "title": "Join the Clay crew | Clay.com",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "clockwork-systems": {
+  "url": "https://www.clockwork.io/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://clockwork.io/careers/",
+  "bytes": 49099,
+  "seconds": 2.8,
+  "title": "Careers - clockwork",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=clockworksystems"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "clockworksystems"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "cobot": {
+  "url": "https://www.co.bot/careers/",
+  "outcome": "failed",
+  "error": "HTTP 404 for GET https://www.co.bot/careers/",
+  "seconds": 0.7
+ },
+ "cohesity": {
+  "url": "https://www.cohesity.com/company/careers/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://www.cohesity.com/company/careers/",
+  "seconds": 0.1
+ },
+ "comcast": {
+  "url": "https://jobs.comcast.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://jobs.comcast.com/",
+  "bytes": 52219,
+  "seconds": 0.2,
+  "title": "Explore Comcast Global Media and Technology Jobs and Careers",
+  "challenge": false,
+  "systems": [
+   "workday:host=comcast.wd115.myworkdayjobs.com,site=comcast_careers,tenant=comcast"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "comcast.wd115.myworkdayjobs.com",
+     "tenant": "comcast",
+     "site": "Comcast_Careers"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "commonwealth-fusion": {
+  "url": "https://cfs.energy/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://cfs.energy/careers/",
+  "bytes": 79339,
+  "seconds": 0.5,
+  "title": "CFS Careers | Commonwealth Fusion Systems",
+  "challenge": false,
+  "systems": [
+   "lever:site=cfsenergy"
+  ],
+  "candidates": [
+   {
+    "checker": "lever",
+    "settings": {
+     "site": "cfsenergy"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "commure": {
+  "url": "https://www.commure.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.commure.com/careers",
+  "bytes": 302357,
+  "seconds": 0.2,
+  "title": "Careers | Commure - Command Your Tech, Empower Your People",
+  "challenge": false,
+  "systems": [
+   "ashby:board=commure",
+   "ashby:board=commure-athelas"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "Commure-Athelas"
+    }
+   },
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "Commure"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "conductorone": {
+  "url": "https://www.conductorone.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.c1.ai/careers",
+  "bytes": 148649,
+  "seconds": 0.5,
+  "title": "Careers - C1.ai",
+  "challenge": false,
+  "systems": [
+   "ashby:board=c1"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "C1"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "copart": {
+  "url": "https://copart.wd12.myworkdayjobs.com/copart",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://copart.wd12.myworkdayjobs.com/copart",
+  "bytes": 6470,
+  "seconds": 1.3,
+  "title": "",
+  "challenge": false,
+  "systems": [
+   "workday:host=copart.wd12.myworkdayjobs.com,site=copart,tenant=copart"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "copart.wd12.myworkdayjobs.com",
+     "tenant": "copart",
+     "site": "Copart"
+    }
+   },
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "copart.wd12.myworkdayjobs.com",
+     "tenant": "copart",
+     "site": "copart"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "costar": {
+  "url": "https://www.costargroup.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.costargroup.com/careers",
+  "bytes": 142946,
+  "seconds": 0.3,
+  "title": "Careers | CoStar Group",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "costco": {
+  "url": "https://www.costco.com/jobs.html",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.costco.com/f/-/careers",
+  "bytes": 2249547,
+  "seconds": 0.6,
+  "title": "Costco Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "cox": {
+  "url": "https://jobs.coxenterprises.com/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://jobs.coxenterprises.com/",
+  "seconds": 0.5
+ },
+ "crusoe": {
+  "url": "https://www.crusoe.ai/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.crusoe.ai/about/careers",
+  "bytes": 302283,
+  "seconds": 0.7,
+  "title": "Careers at Crusoe | Build the future of AI infrastructure",
+  "challenge": false,
+  "systems": [
+   "ashby:board=crusoe"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "Crusoe"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "cvs-health": {
+  "url": "https://jobs.cvshealth.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://jobs.cvshealth.com/us/en/home",
+  "bytes": 101909,
+  "seconds": 2.9,
+  "title": "CVS Health Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": [
+   {
+    "base_url": "https://jobs.cvshealth.com",
+    "ref_num": "CVSCHLUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "d-matrix": {
+  "url": "https://www.d-matrix.ai/careers/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://www.d-matrix.ai/careers/",
+  "seconds": 0.1
+ },
+ "datarobot": {
+  "url": "https://www.datarobot.com/careers/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://www.datarobot.com/careers/",
+  "seconds": 0.1
+ },
+ "delinea": {
+  "url": "https://delinea.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://delinea.com/careers",
+  "bytes": 170732,
+  "seconds": 1.0,
+  "title": "Work at Delinea | A Career in the Identity Security Space",
+  "challenge": false,
+  "systems": [
+   "ashby:board=delinea"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "delinea"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "descript": {
+  "url": "https://www.descript.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.descript.com/careers",
+  "bytes": 205636,
+  "seconds": 0.7,
+  "title": "Careers | Descript",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=descript"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "descript"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "dexcom": {
+  "url": "https://careers.dexcom.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.dexcom.com/careers",
+  "bytes": 182818,
+  "seconds": 0.6,
+  "title": "Careers at Dexcom",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [
+   {
+    "host": "careers.dexcom.com",
+    "domain": "dexcom.com",
+    "api": "pcsx"
+   }
+  ],
+  "phenom": []
+ },
+ "dicks-sporting-goods": {
+  "url": "https://www.dickssportinggoods.jobs/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.dickssportinggoods.jobs/",
+  "bytes": 83447,
+  "seconds": 0.4,
+  "title": "Dick&#039;s Sporting Goods | Home",
+  "challenge": false,
+  "systems": [
+   "workday:host=dickssportinggoods.wd1.myworkdayjobs.com,site=dsg,tenant=dickssportinggoods"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "dickssportinggoods.wd1.myworkdayjobs.com",
+     "tenant": "dickssportinggoods",
+     "site": "DSG"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "digitalocean": {
+  "url": "https://www.digitalocean.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.digitalocean.com/careers",
+  "bytes": 307559,
+  "seconds": 0.6,
+  "title": "Careers | DigitalOcean",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "disney": {
+  "url": "https://jobs.disneycareers.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://join.disneycareers.com/global/en",
+  "bytes": 205759,
+  "seconds": 3.6,
+  "title": "Careers at Disney | Disney Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": [
+   {
+    "base_url": "https://join.disneycareers.com",
+    "ref_num": "TWNTWDUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "domino-data-lab": {
+  "url": "https://domino.ai/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://domino.ai/careers",
+  "bytes": 883500,
+  "seconds": 0.6,
+  "title": "AI jobs | Solve the world\u2019s most important problems",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "draftkings": {
+  "url": "https://careers.draftkings.com/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://careers.draftkings.com/",
+  "seconds": 0.1
+ },
+ "drivewealth": {
+  "url": "https://www.drivewealth.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.drivewealth.com/company/careers/",
+  "bytes": 225651,
+  "seconds": 0.7,
+  "title": "Careers \u2013 DriveWealth",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=drivewealth"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "drivewealth"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "dusty-robotics": {
+  "url": "https://www.dustyrobotics.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.dustyrobotics.com/careers",
+  "bytes": 58108,
+  "seconds": 0.4,
+  "title": "Careers | Dusty Robotics",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=dustyrobotics"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "dustyrobotics"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "earnin": {
+  "url": "https://www.earnin.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.earnin.com/careers",
+  "bytes": 244062,
+  "seconds": 0.8,
+  "title": "Find Your Role At EarnIn | EarnIn Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "elevance-health": {
+  "url": "https://careers.elevancehealth.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.elevancehealth.com/",
+  "bytes": 246315,
+  "seconds": 1.2,
+  "title": "Join a Collaborative and Inclusive Workplace | Make an Impact and Grow with Us",
+  "challenge": false,
+  "systems": [
+   "workday:host=elevancehealth.wd1.myworkdayjobs.com,site=ant,tenant=elevancehealth"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "elevancehealth.wd1.myworkdayjobs.com",
+     "tenant": "elevancehealth",
+     "site": "ANT"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "ellipsis-labs": {
+  "url": "https://www.ellipsislabs.xyz/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.ellipsislabs.xyz/",
+  "bytes": 69297,
+  "seconds": 0.3,
+  "title": "Ellipsis Labs",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "enova": {
+  "url": "https://www.enova.com/careers/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://www.enova.com/careers/",
+  "seconds": 0.6
+ },
+ "equinix": {
+  "url": "https://careers.equinix.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.equinix.com/",
+  "bytes": 208755,
+  "seconds": 0.5,
+  "title": "Be at the Center of Everything | Equinix Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "etched": {
+  "url": "https://www.etched.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.etched.com/join",
+  "bytes": 204383,
+  "seconds": 0.4,
+  "title": "Join Us | Etched",
+  "challenge": false,
+  "systems": [
+   "ashby:board=etched"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "Etched"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "etsy": {
+  "url": "https://careers.etsy.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.etsy.com/",
+  "bytes": 130024,
+  "seconds": 0.4,
+  "title": "Home",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "eventual": {
+  "url": "https://www.eventual.ai/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.eventual.ai/careers",
+  "bytes": 74989,
+  "seconds": 0.5,
+  "title": "Careers | Eventual",
+  "challenge": false,
+  "systems": [
+   "ashby:board=eventualcomputing"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "eventualcomputing"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "exa": {
+  "url": "https://exa.ai/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://exa.ai/careers",
+  "bytes": 144045,
+  "seconds": 0.7,
+  "title": "Careers",
+  "challenge": false,
+  "systems": [
+   "ashby:board=exa"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "exa"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "f5": {
+  "url": "https://www.f5.com/company/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.f5.com/company/careers",
+  "bytes": 424797,
+  "seconds": 0.5,
+  "title": "Careers | F5",
+  "challenge": false,
+  "systems": [
+   "workday:host=ffive.wd5.myworkdayjobs.com,site=f5jobs,tenant=ffive"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "ffive.wd5.myworkdayjobs.com",
+     "tenant": "ffive",
+     "site": "f5jobs"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "fastly": {
+  "url": "https://www.fastly.com/about/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.fastly.com/about/careers",
+  "bytes": 180666,
+  "seconds": 0.2,
+  "title": "Jobs at Fastly | Fastly",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "fervo-energy": {
+  "url": "https://fervoenergy.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://fervoenergy.com/careers/",
+  "bytes": 872095,
+  "seconds": 1.8,
+  "title": "Careers - Fervo Energy",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=fervoenergy"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "fervoenergy"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "figure-ai": {
+  "url": "https://www.figure.ai/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.figure.ai/careers",
+  "bytes": 36445,
+  "seconds": 0.3,
+  "title": "Careers | Figure",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "fis": {
+  "url": "https://careers.fisglobal.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.fisglobal.com/us/en",
+  "bytes": 796720,
+  "seconds": 3.0,
+  "title": "Careers at FIS Global | FIS Global jobs",
+  "challenge": false,
+  "systems": [
+   "workday:host=fis.wd5.myworkdayjobs.com,site=searchjobs,tenant=fis"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "fis.wd5.myworkdayjobs.com",
+     "tenant": "fis",
+     "site": "SearchJobs"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": [
+   {
+    "base_url": "https://careers.fisglobal.com",
+    "ref_num": "FIGLUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "fiserv": {
+  "url": "https://careers.fiserv.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.fiserv.com/us/en",
+  "bytes": 80450,
+  "seconds": 1.0,
+  "title": "Careers at Fiserv",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": [
+   {
+    "base_url": "https://careers.fiserv.com",
+    "ref_num": "FFFYJUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "ford": {
+  "url": "https://corporate.ford.com/careers.html",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.careers.ford.com/en",
+  "bytes": 60348,
+  "seconds": 0.6,
+  "title": "Working at Ford Motor Company",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "fortinet": {
+  "url": "https://www.fortinet.com/corporate/careers",
+  "outcome": "robots",
+  "error": "robots.txt disallows https://www.fortinet.com/corporate/careers (Disallow: /)",
+  "seconds": 0.2
+ },
+ "fox": {
+  "url": "https://www.foxcareers.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.foxcareers.com/",
+  "bytes": 29104,
+  "seconds": 0.6,
+  "title": "FOX Careers \u2013 Jobs in Sports, News, Entertainment and More",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "freddie-mac": {
+  "url": "https://careers.freddiemac.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.freddiemac.com/us/en",
+  "bytes": 150449,
+  "seconds": 2.7,
+  "title": "Jobs at Freddie Mac | Freddie Mac Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": [
+   {
+    "base_url": "https://careers.freddiemac.com",
+    "ref_num": "FRMAUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "garner-health": {
+  "url": "https://www.getgarner.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://garnerhealth.com/careers",
+  "bytes": 103478,
+  "seconds": 0.4,
+  "title": "Careers at Garner | Apply Today",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=garnerhealth"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "garnerhealth"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "ge-vernova": {
+  "url": "https://careers.gevernova.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.gevernova.com/",
+  "bytes": 279392,
+  "seconds": 0.8,
+  "title": "Careers at GE Vernova | Join the Energy of Change",
+  "challenge": false,
+  "systems": [
+   "workday:host=gevernova.wd5.myworkdayjobs.com,site=vernova_externalsite,tenant=gevernova"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "gevernova.wd5.myworkdayjobs.com",
+     "tenant": "gevernova",
+     "site": "Vernova_ExternalSite"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "gemini": {
+  "url": "https://www.gemini.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.gemini.com/careers",
+  "bytes": 913910,
+  "seconds": 0.4,
+  "title": "Crypto Careers | Gemini",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "gen-digital": {
+  "url": "https://www.gendigital.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.gendigital.com/us/en/life-gen/",
+  "bytes": 179177,
+  "seconds": 1.4,
+  "title": "Careers at Gen&#x2122; | Empowering Digital Freedom | Gen&#x2122; | Gen&#x2122;",
+  "challenge": false,
+  "systems": [
+   "ashby:board=gen-digital"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "gen-digital"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "genesis-molecular-ai": {
+  "url": "https://www.genesis.ml/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.genesis.ml/careers",
+  "bytes": 95726,
+  "seconds": 0.8,
+  "title": "Careers at Genesis Molecular AI | Open Roles",
+  "challenge": false,
+  "systems": [
+   "ashby:board=genesis-molecular-ai"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "genesis-molecular-ai"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "gimlet-labs": {
+  "url": "https://gimletlabs.ai/join_us",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://gimletlabs.ai/join_us",
+  "bytes": 66253,
+  "seconds": 0.6,
+  "title": "Careers | Gimlet Labs",
+  "challenge": false,
+  "systems": [
+   "ashby:board=gimlet"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "gimlet"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "globalfoundries": {
+  "url": "https://gf.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://gf.com/careers/",
+  "bytes": 334286,
+  "seconds": 0.2,
+  "title": "Careers | GlobalFoundries",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "glossgenius": {
+  "url": "https://glossgenius.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://genius.ai/careers",
+  "bytes": 155120,
+  "seconds": 0.7,
+  "title": "Careers | Genius AI",
+  "challenge": false,
+  "systems": [
+   "ashby:board=geniusai",
+   "greenhouse:board=glossgenius"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "glossgenius"
+    }
+   },
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "geniusai"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "godaddy": {
+  "url": "https://careers.godaddy/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.godaddy/",
+  "bytes": 121295,
+  "seconds": 0.4,
+  "title": "Working at GoDaddy",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "grow-therapy": {
+  "url": "https://growtherapy.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://growtherapy.com/careers/",
+  "bytes": 677317,
+  "seconds": 0.7,
+  "title": "Grow Therapy Careers &amp; Culture - Explore Life at Grow",
+  "challenge": false,
+  "systems": [
+   "ashby:board=grow-therapy"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "grow-therapy"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "guidewire": {
+  "url": "https://www.guidewire.com/about/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.guidewire.com/about/careers",
+  "bytes": 150534,
+  "seconds": 0.4,
+  "title": "Careers | Guidewire",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "gusto": {
+  "url": "https://gusto.com/about/careers",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://gusto.com/about/careers",
+  "seconds": 0.2
+ },
+ "haize-labs": {
+  "url": "https://www.haizelabs.com/careers",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://www.haizelabs.com/careers",
+  "seconds": 0.2
+ },
+ "handshake": {
+  "url": "https://joinhandshake.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://joinhandshake.com/careers/",
+  "bytes": 1654221,
+  "seconds": 1.4,
+  "title": "Open roles at Handshake | Changing how new professionals build their career | Handshake",
+  "challenge": false,
+  "systems": [
+   "ashby:board=handshake"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "handshake"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "hartford": {
+  "url": "https://www.thehartford.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.thehartford.com/careers",
+  "bytes": 50055,
+  "seconds": 1.0,
+  "title": "Search Jobs | Careers | The Hartford",
+  "challenge": false,
+  "systems": [
+   "workday:host=thehartford.wd5.myworkdayjobs.com,site=careers_external,tenant=thehartford"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "thehartford.wd5.myworkdayjobs.com",
+     "tenant": "thehartford",
+     "site": "Careers_External"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "hex": {
+  "url": "https://hex.tech/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://hex.tech/careers/",
+  "bytes": 282703,
+  "seconds": 0.5,
+  "title": "Hex Careers - Join the Team | Hex",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "heygen": {
+  "url": "https://www.heygen.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.heygen.com/careers",
+  "bytes": 208658,
+  "seconds": 0.4,
+  "title": "Careers at HeyGen | Join Our Team",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "hilton": {
+  "url": "https://jobs.hilton.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://jobs.hilton.com/",
+  "bytes": 1394090,
+  "seconds": 3.7,
+  "title": "",
+  "challenge": false,
+  "systems": [
+   "oracle:host=efet.fa.us2.oraclecloud.com,site=cx_1"
+  ],
+  "candidates": [
+   {
+    "checker": "oracle",
+    "settings": {
+     "host": "efet.fa.us2.oraclecloud.com",
+     "site": "CX_1"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "home-depot": {
+  "url": "https://careers.homedepot.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.homedepot.com/",
+  "bytes": 1285138,
+  "seconds": 0.4,
+  "title": "The Home Depot Careers | Search for Jobs Near You",
+  "challenge": false,
+  "systems": [
+   "workday:host=homedepot.wd5.myworkdayjobs.com,site=careerdepot,tenant=homedepot"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "homedepot.wd5.myworkdayjobs.com",
+     "tenant": "homedepot",
+     "site": "CareerDepot"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "hp": {
+  "url": "https://jobs.hp.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://jobs.hp.com/",
+  "bytes": 240033,
+  "seconds": 0.8,
+  "title": "Find career opportunities at HP - HP Careers",
+  "challenge": false,
+  "systems": [
+   "eightfold:domain=hp-sandbox.com",
+   "eightfold:domain=hp-sandbox.eightfold.ai"
+  ],
+  "candidates": [],
+  "eightfold": [
+   {
+    "host": "jobs.hp.com",
+    "domain": "hp.com",
+    "api": "pcsx"
+   }
+  ],
+  "phenom": []
+ },
+ "hpe": {
+  "url": "https://careers.hpe.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.hpe.com/us/en",
+  "bytes": 112855,
+  "seconds": 1.3,
+  "title": "Redefine what\u2019s next for you | HPE Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": [
+   {
+    "base_url": "https://careers.hpe.com",
+    "ref_num": "HPE1US",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "humana": {
+  "url": "https://careers.humana.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.humana.com/us/en",
+  "bytes": 80036,
+  "seconds": 2.9,
+  "title": "Explore Careers at Humana",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": [
+   {
+    "base_url": "https://careers.humana.com",
+    "ref_num": "HUMHUMUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "hyperproof": {
+  "url": "https://hyperproof.io/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://hyperproof.io/working-at-hyperproof/",
+  "bytes": 934185,
+  "seconds": 0.9,
+  "title": "What Is It Like to Work at Hyperproof?",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=hyperproof"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "hyperproof"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "ice": {
+  "url": "https://www.ice.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.ice.com/careers",
+  "bytes": 113244,
+  "seconds": 0.4,
+  "title": "Careers at ICE",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "illumio": {
+  "url": "https://www.illumio.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.illumio.com/company/careers",
+  "bytes": 315865,
+  "seconds": 0.9,
+  "title": "Careers | Illumio",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "intuitive-surgical": {
+  "url": "https://careers.intuitive.com/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://careers.intuitive.com/",
+  "seconds": 0.2
+ },
+ "ironclad": {
+  "url": "https://ironcladapp.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://ironcladapp.com/careers",
+  "bytes": 393866,
+  "seconds": 0.6,
+  "title": "Careers at Ironclad",
+  "challenge": false,
+  "systems": [
+   "ashby:board=ironcladhq"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "ironcladhq"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "ixl-learning": {
+  "url": "https://www.ixl.com/company/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.ixl.com/company/careers",
+  "bytes": 44012,
+  "seconds": 0.4,
+  "title": "IXL Learning | Join our team",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "jpmorgan-chase": {
+  "url": "https://careers.jpmorgan.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.jpmorganchase.com/careers?redirect=careers_jpm",
+  "bytes": 174666,
+  "seconds": 0.7,
+  "title": "Careers | JPMorganChase",
+  "challenge": false,
+  "systems": [
+   "oracle:host=jpmc.fa.oraclecloud.com,site=cx_1001"
+  ],
+  "candidates": [
+   {
+    "checker": "oracle",
+    "settings": {
+     "host": "jpmc.fa.oraclecloud.com",
+     "site": "CX_1001"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "keysight": {
+  "url": "https://jobs.keysight.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://jobs.keysight.com/external",
+  "bytes": 547687,
+  "seconds": 1.4,
+  "title": "Keysight Careers",
+  "challenge": false,
+  "systems": [
+   "icims:portal=careers-keysight.icims.com",
+   "icims:portal=globalcareers-keysight.icims.com",
+   "icims:portal=keysight.icims.com"
+  ],
+  "candidates": [
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://www.icims.com"
+    }
+   },
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://keysight.icims.com"
+    }
+   },
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://careers-keysight.icims.com"
+    }
+   },
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://globalcareers-keysight.icims.com"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "khan-academy": {
+  "url": "https://www.khanacademy.org/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.khanacademy.org/careers",
+  "bytes": 3038,
+  "seconds": 0.1,
+  "title": "Client Challenge",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "kla": {
+  "url": "https://www.kla.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.kla.com/careers",
+  "bytes": 247647,
+  "seconds": 0.6,
+  "title": "",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "knowbe4": {
+  "url": "https://www.knowbe4.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.knowbe4.com/careers",
+  "bytes": 127975,
+  "seconds": 0.6,
+  "title": "Careers | KnowBe4",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=knowbe4"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "knowbe4"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "lambda": {
+  "url": "https://lambda.ai/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://lambda.com/careers",
+  "bytes": 91593,
+  "seconds": 0.6,
+  "title": "Careers at Lambda | Build the Future of AI Infrastructure",
+  "challenge": false,
+  "systems": [
+   "ashby:board=lambda"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "lambda"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "launchdarkly": {
+  "url": "https://launchdarkly.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://launchdarkly.com/careers/",
+  "bytes": 271118,
+  "seconds": 0.5,
+  "title": "Careers | LaunchDarkly",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=launchdarkly"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "launchdarkly"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "lightspark": {
+  "url": "https://www.lightspark.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.lightspark.com/careers",
+  "bytes": 50191,
+  "seconds": 0.5,
+  "title": "Careers at Lightspark | Help Build the Future of Payments",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "locus-robotics": {
+  "url": "https://locusrobotics.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://locusrobotics.com/company/careers/",
+  "bytes": 257391,
+  "seconds": 0.7,
+  "title": "Careers - Locus Robotics",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "lowes": {
+  "url": "https://talent.lowes.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://talent.lowes.com/us/en",
+  "bytes": 193872,
+  "seconds": 1.5,
+  "title": "Careers Home | Lowe's Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": [
+   {
+    "base_url": "https://talent.lowes.com",
+    "ref_num": "LOWEUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "lucid-motors": {
+  "url": "https://lucidmotors.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://lucidmotors.com/careers",
+  "bytes": 216286,
+  "seconds": 0.7,
+  "title": "Careers | Lucid Motors",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "lucid-software": {
+  "url": "https://lucid.co/careers",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://lucid.co/careers",
+  "seconds": 0.2
+ },
+ "macys": {
+  "url": "https://www.macysjobs.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://ebwh.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001",
+  "bytes": 26043,
+  "seconds": 1.3,
+  "title": "Macy\\'s",
+  "challenge": false,
+  "systems": [
+   "oracle:host=ebwh.fa.us2.oraclecloud.com,site=cx_1"
+  ],
+  "candidates": [
+   {
+    "checker": "oracle",
+    "settings": {
+     "host": "ebwh.fa.us2.oraclecloud.com",
+     "site": "CX_1"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "marvell": {
+  "url": "https://www.marvell.com/company/careers.html",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://www.marvell.com/company/careers.html",
+  "seconds": 0.5
+ },
+ "mastercard": {
+  "url": "https://careers.mastercard.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.mastercard.com/us/en/",
+  "bytes": 248045,
+  "seconds": 1.5,
+  "title": "Careers at Mastercard | Search Jobs and Opportunities",
+  "challenge": false,
+  "systems": [
+   "workday:host=mastercard.wd1.myworkdayjobs.com,site=corporatecareers,tenant=mastercard"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "mastercard.wd1.myworkdayjobs.com",
+     "tenant": "mastercard",
+     "site": "CorporateCareers"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": [
+   {
+    "base_url": "https://careers.mastercard.com",
+    "ref_num": "MASRUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "match-group": {
+  "url": "https://mtch.com/careers/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://mtch.com/careers/",
+  "seconds": 0.2
+ },
+ "mckesson": {
+  "url": "https://careers.mckesson.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.mckesson.com/en",
+  "bytes": 44585,
+  "seconds": 0.2,
+  "title": "McKesson Careers | The future of health starts with you.",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "mercor": {
+  "url": "https://mercor.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.mercor.com/careers/",
+  "bytes": 1363712,
+  "seconds": 0.9,
+  "title": "Careers at Mercor | Join our team",
+  "challenge": false,
+  "systems": [
+   "ashby:board=mercor"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "mercor"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "micron": {
+  "url": "https://www.micron.com/about/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.micron.com/about/careers",
+  "bytes": 309959,
+  "seconds": 0.2,
+  "title": "Careers | Micron Technology Inc.",
+  "challenge": false,
+  "systems": [
+   "eightfold:domain=micron.com"
+  ],
+  "candidates": [],
+  "eightfold": [
+   {
+    "host": "www.micron.com",
+    "domain": "micron.com",
+    "api": "pcsx"
+   }
+  ],
+  "phenom": []
+ },
+ "morgan-stanley": {
+  "url": "https://www.morganstanley.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.morganstanley.com/people",
+  "bytes": 775152,
+  "seconds": 0.4,
+  "title": "Careers in Finance and Investment Banking | Morgan Stanley",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "multiply-labs": {
+  "url": "https://www.multiplylabs.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.multiplylabs.com/careers",
+  "bytes": 16550,
+  "seconds": 0.3,
+  "title": "Careers | Multiply Labs",
+  "challenge": false,
+  "systems": [
+   "lever:site=multiplylabs"
+  ],
+  "candidates": [
+   {
+    "checker": "lever",
+    "settings": {
+     "site": "multiplylabs"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "nasdaq": {
+  "url": "https://www.nasdaq.com/about/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.nasdaq.com/about/careers",
+  "bytes": 195221,
+  "seconds": 0.4,
+  "title": "Careers | Nasdaq",
+  "challenge": false,
+  "systems": [
+   "workday:host=nasdaq.wd1.myworkdayjobs.com,site=global_external_site,tenant=nasdaq"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "nasdaq.wd1.myworkdayjobs.com",
+     "tenant": "nasdaq",
+     "site": "Global_External_Site"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "nasuni": {
+  "url": "https://www.nasuni.com/about-us/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.nasuni.com/about-us/careers/",
+  "bytes": 364680,
+  "seconds": 1.0,
+  "title": "Nasuni careers in technology | Nasuni",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "nationwide": {
+  "url": "https://www.nationwide.com/personal/about-us/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.nationwide.com/personal/about-us/careers/",
+  "bytes": 232899,
+  "seconds": 0.8,
+  "title": "Explore Insurance Careers \u2013 Nationwide",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "navy-federal": {
+  "url": "https://www.navyfederal.org/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://jobs.navyfederal.org/hcmUI/CandidateExperience/en/sites/nfcu",
+  "bytes": 170877,
+  "seconds": 2.4,
+  "title": "Navy Federal Credit Union",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "ncino": {
+  "url": "https://www.ncino.com/company/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.ncino.com/our-company/careers",
+  "bytes": 245334,
+  "seconds": 1.1,
+  "title": "Careers at nCino",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=ncinoinc"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "ncinoinc"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "netapp": {
+  "url": "https://www.netapp.com/company/careers/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://www.netapp.com/company/careers/",
+  "seconds": 0.3
+ },
+ "netic": {
+  "url": "https://www.netic.ai/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.netic.ai/company",
+  "bytes": 114572,
+  "seconds": 0.3,
+  "title": "Powering America\u2019s Essential Industries with AI | Netic",
+  "challenge": false,
+  "systems": [
+   "ashby:board=netic"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "netic"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "neuralink": {
+  "url": "https://neuralink.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://neuralink.com/careers/",
+  "bytes": 35822,
+  "seconds": 0.1,
+  "title": "Careers | Neuralink",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "new-york-times": {
+  "url": "https://www.nytco.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.nytco.com/careers/",
+  "bytes": 181277,
+  "seconds": 0.2,
+  "title": "Careers | The New York Times Company",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "nextdoor": {
+  "url": "https://about.nextdoor.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://about.nextdoor.com/careers/",
+  "bytes": 94578,
+  "seconds": 0.3,
+  "title": "Careers",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=nextdoor"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "nextdoor"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "niantic-spatial": {
+  "url": "https://www.nianticspatial.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.nianticspatial.com/careers",
+  "bytes": 61758,
+  "seconds": 0.7,
+  "title": "Careers | Life at Niantic Spatial | Niantic Spatial, Inc.",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "nike": {
+  "url": "https://careers.nike.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.nike.com/",
+  "bytes": 192997,
+  "seconds": 1.9,
+  "title": "Nike Careers",
+  "challenge": false,
+  "systems": [
+   "avature:site=nikeats.avature.net/niketalentcommunity",
+   "workday:host=nike.wd1.myworkdayjobs.com,site=nke,tenant=nike",
+   "workday:host=nike.wd1.myworkdayjobs.com,site=nke2,tenant=nike"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "nike.wd1.myworkdayjobs.com",
+     "tenant": "nike",
+     "site": "nke2"
+    }
+   },
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "nike.wd1.myworkdayjobs.com",
+     "tenant": "nike",
+     "site": "nke"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "nordstrom": {
+  "url": "https://careers.nordstrom.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.nordstrom.com/",
+  "bytes": 207743,
+  "seconds": 1.9,
+  "title": "Careers at Nordstrom",
+  "challenge": false,
+  "systems": [
+   "workday:host=nordstrom.wd501.myworkdayjobs.com,site=nordstrom_careers,tenant=nordstrom"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "nordstrom.wd501.myworkdayjobs.com",
+     "tenant": "nordstrom",
+     "site": "nordstrom_careers"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "northwestern-mutual": {
+  "url": "https://www.northwesternmutual.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.northwesternmutual.com/careers/",
+  "bytes": 175645,
+  "seconds": 0.6,
+  "title": "Financial Advisor &amp; Corporate Careers | Northwestern Mutual",
+  "challenge": false,
+  "systems": [
+   "icims:portal=opportunities-northwesternmutual.icims.com"
+  ],
+  "candidates": [
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://opportunities-northwesternmutual.icims.com"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "numeric": {
+  "url": "https://www.numeric.io/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.numeric.io/careers",
+  "bytes": 177057,
+  "seconds": 0.4,
+  "title": "Careers | Numeric",
+  "challenge": false,
+  "systems": [
+   "ashby:board=numeric"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "numeric"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "obsidian-security": {
+  "url": "https://www.obsidiansecurity.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.obsidiansecurity.com/careers",
+  "bytes": 202421,
+  "seconds": 0.3,
+  "title": "Join the Obsidian Security Team",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=obsidiansecurity"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "obsidiansecurity"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "one-finance": {
+  "url": "https://www.one.app/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.onepay.com/careers",
+  "bytes": 450507,
+  "seconds": 1.4,
+  "title": "OnePay | Careers",
+  "challenge": false,
+  "systems": [
+   "ashby:board=oneapp"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "oneapp"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "pacific-fusion": {
+  "url": "https://www.pacificfusion.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.pacificfusion.com/careers",
+  "bytes": 89063,
+  "seconds": 0.2,
+  "title": "Careers | Pacific Fusion",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=pacificfusion"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "pacificfusion"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "paramount": {
+  "url": "https://www.paramount.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.paramount.com/careers",
+  "bytes": 97510,
+  "seconds": 0.6,
+  "title": "Paramount | Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "patreon": {
+  "url": "https://www.patreon.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.patreon.com/careers",
+  "bytes": 592155,
+  "seconds": 1.4,
+  "title": "Creativity, powered by you \u2014 Patreon",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "pendo": {
+  "url": "https://www.pendo.io/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.pendo.io/careers/",
+  "bytes": 749551,
+  "seconds": 1.3,
+  "title": "Careers, culture, and open positions | Pendo.io",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=pendo"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "pendo"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "perpay": {
+  "url": "https://perpay.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://perpay.com/careers",
+  "bytes": 49599,
+  "seconds": 0.4,
+  "title": "Careers at Perpay",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=perpay"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "perpay"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "persona": {
+  "url": "https://withpersona.com/careers",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://withpersona.com/careers",
+  "seconds": 0.4
+ },
+ "persona-ai": {
+  "url": "https://persona.ai/careers",
+  "outcome": "failed",
+  "error": "HTTP 404 for GET https://persona.ai/careers",
+  "seconds": 0.9
+ },
+ "precisely": {
+  "url": "https://www.precisely.com/careers-and-culture/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.precisely.com/careers-and-culture/",
+  "bytes": 453932,
+  "seconds": 0.7,
+  "title": "Join Our Team: Careers &amp; Culture | Precisely",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "principal": {
+  "url": "https://careers.principal.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.principal.com/careers-home",
+  "bytes": 469258,
+  "seconds": 0.8,
+  "title": "Join our team | Careers at Principal",
+  "challenge": false,
+  "systems": [
+   "icims:portal=careers-principal.icims.com",
+   "icims:portal=careershk-principal.icims.com",
+   "icims:portal=careersindonesiapam-principal.icims.com",
+   "icims:portal=careersmalaysia-principal.icims.com",
+   "icims:portal=careerssingapore-principal.icims.com",
+   "icims:portal=careersthailandpam-principal.icims.com",
+   "icims:portal=internal-principal.icims.com",
+   "icims:portal=internalspanish-principal.icims.com"
+  ],
+  "candidates": [
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://internalspanish-principal.icims.com"
+    }
+   },
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://internal-principal.icims.com"
+    }
+   },
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://www.icims.com"
+    }
+   },
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://careerssingapore-principal.icims.com"
+    }
+   },
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://careers-principal.icims.com"
+    }
+   },
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://careershk-principal.icims.com"
+    }
+   },
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://careersmalaysia-principal.icims.com"
+    }
+   },
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://careersindonesiapam-principal.icims.com"
+    }
+   },
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://careersthailandpam-principal.icims.com"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "prizepicks": {
+  "url": "https://www.prizepicks.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.prizepicks.com/careers",
+  "bytes": 103929,
+  "seconds": 0.3,
+  "title": "Careers at PrizePicks | Join America&#x27;s #1 Picks App",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "progressive": {
+  "url": "https://careers.progressive.com/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://careers.progressive.com/",
+  "seconds": 0.2
+ },
+ "proofpoint": {
+  "url": "https://www.proofpoint.com/us/company/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.proofpoint.com/us/company/careers",
+  "bytes": 111985,
+  "seconds": 0.7,
+  "title": "Proofpoint Careers - Cybersecurity Jobs | Proofpoint US",
+  "challenge": false,
+  "systems": [
+   "workday:host=proofpoint.wd5.myworkdayjobs.com,site=proofpointcareers,tenant=proofpoint"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "proofpoint.wd5.myworkdayjobs.com",
+     "tenant": "proofpoint",
+     "site": "proofpointcareers"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "ptc": {
+  "url": "https://www.ptc.com/en/about/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.ptc.com/en/careers",
+  "bytes": 200693,
+  "seconds": 1.0,
+  "title": "PTC Careers | Join Our Global Team | PTC",
+  "challenge": false,
+  "systems": [
+   "workday:host=ptc.wd1.myworkdayjobs.com,site=ptc,tenant=ptc"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "ptc.wd1.myworkdayjobs.com",
+     "tenant": "ptc",
+     "site": "PTC"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "pure-storage": {
+  "url": "https://www.purestorage.com/company/careers.html",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.everpuredata.com/company/careers.html",
+  "bytes": 833678,
+  "seconds": 0.4,
+  "title": "Everpure Careers and Internships | Everpure | Everpure",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "q2": {
+  "url": "https://www.q2.com/company/why-work-at-q2",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.q2.com/company/why-work-at-q2",
+  "bytes": 258592,
+  "seconds": 0.6,
+  "title": "Why Work at Q2 | Q2",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "qorvo": {
+  "url": "https://careers.qorvo.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.qorvo.com/",
+  "bytes": 64661,
+  "seconds": 0.8,
+  "title": "Jobs",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "qualcomm": {
+  "url": "https://careers.qualcomm.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.qualcomm.com/careers",
+  "bytes": 300569,
+  "seconds": 1.0,
+  "title": "Qualcomm Careers | Engineering Jobs and More | Qualcomm",
+  "challenge": false,
+  "systems": [
+   "eightfold:domain=qualcomm.com"
+  ],
+  "candidates": [],
+  "eightfold": [
+   {
+    "host": "careers.qualcomm.com",
+    "domain": "qualcomm.com",
+    "api": "pcsx"
+   }
+  ],
+  "phenom": []
+ },
+ "qumulo": {
+  "url": "https://qumulo.com/company/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://qumulo.com/careers",
+  "bytes": 169614,
+  "seconds": 0.7,
+  "title": "Qumulo Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "reddit": {
+  "url": "https://www.redditinc.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://redditinc.com/careers",
+  "bytes": 619037,
+  "seconds": 0.7,
+  "title": "Careers - Reddit",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=reddit"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "reddit"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "redwood-materials": {
+  "url": "https://www.redwoodmaterials.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.redwoodmaterials.com/join/",
+  "bytes": 99894,
+  "seconds": 0.6,
+  "title": "Join Us | Redwood Materials",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "replit": {
+  "url": "https://replit.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://replit.com/careers",
+  "bytes": 215910,
+  "seconds": 0.7,
+  "title": "Careers | Replit",
+  "challenge": false,
+  "systems": [
+   "ashby:board=replit"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "replit"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "rhoda-ai": {
+  "url": "https://www.rhoda.ai/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.rhoda.ai/careers",
+  "bytes": 9801,
+  "seconds": 0.4,
+  "title": "Careers | Rhoda AI",
+  "challenge": false,
+  "systems": [
+   "ashby:board=rhoda-ai"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "rhoda-ai"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "ridgeline": {
+  "url": "https://www.ridgelineapps.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://ridgeline.ai/company/careers",
+  "bytes": 199638,
+  "seconds": 1.0,
+  "title": "Careers at Ridgeline",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=ridgeline"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "ridgeline"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "rilla": {
+  "url": "https://www.rilla.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.rilla.com/careers",
+  "bytes": 309269,
+  "seconds": 0.4,
+  "title": "Rilla | Careers",
+  "challenge": false,
+  "systems": [
+   "ashby:board=rilla"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "rilla"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "ripple": {
+  "url": "https://ripple.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://ripple.com/careers/",
+  "bytes": 184264,
+  "seconds": 0.4,
+  "title": "Crypto and Fintech Careers - Join Our Team | Ripple",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "rivian": {
+  "url": "https://careers.rivian.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.rivian.com/careers-home/",
+  "bytes": 413967,
+  "seconds": 0.6,
+  "title": "Rivian Automotive",
+  "challenge": false,
+  "systems": [
+   "icims:portal=internal-careers-rivian.icims.com",
+   "icims:portal=us-careers-rivian.icims.com"
+  ],
+  "candidates": [
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://us-careers-rivian.icims.com"
+    }
+   },
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://www.icims.com"
+    }
+   },
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://internal-careers-rivian.icims.com"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "rivian-vw": {
+  "url": "https://rivianvw.tech/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://jobs.ashbyhq.com/rivianvw.tech",
+  "bytes": 100281,
+  "seconds": 0.4,
+  "title": "Rivian and Volkswagen Group Technologies Jobs",
+  "challenge": false,
+  "systems": [
+   "ashby:board=rivianvw.tech"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "rivianvw.tech"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "roku": {
+  "url": "https://www.weareroku.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.weareroku.com/",
+  "bytes": 103189,
+  "seconds": 0.3,
+  "title": "Home | Roku Jobs",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "rubrik": {
+  "url": "https://www.rubrik.com/company/careers",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://www.rubrik.com/company/careers",
+  "seconds": 0.2
+ },
+ "sailpoint": {
+  "url": "https://www.sailpoint.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.sailpoint.com/company/careers",
+  "bytes": 535535,
+  "seconds": 0.5,
+  "title": "SailPoint careers | Identity security on-Site &amp; remote jobs | SailPoint",
+  "challenge": false,
+  "systems": [
+   "workday:host=sailpoint.wd1.myworkdayjobs.com,site=sailpoint,tenant=sailpoint"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "sailpoint.wd1.myworkdayjobs.com",
+     "tenant": "sailpoint",
+     "site": "SailPoint"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "sandisk": {
+  "url": "https://www.sandisk.com/careers/jobs-at-sandisk",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.sandisk.com/careers/jobs-at-sandisk",
+  "bytes": 1311038,
+  "seconds": 0.5,
+  "title": "Explore Open Positions | Sandisk",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "sas": {
+  "url": "https://www.sas.com/en_us/careers.html",
+  "outcome": "robots",
+  "error": "robots.txt disallows https://www.sas.com/en_us/careers.html (Disallow: /)",
+  "seconds": 0.2
+ },
+ "sentry": {
+  "url": "https://sentry.io/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://sentry.io/careers/",
+  "bytes": 659960,
+  "seconds": 0.7,
+  "title": "Careers | Sentry",
+  "challenge": false,
+  "systems": [
+   "ashby:board=sentry"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "sentry"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "serval": {
+  "url": "https://www.serval.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.serval.com/careers",
+  "bytes": 1175769,
+  "seconds": 0.6,
+  "title": "Careers at Serval",
+  "challenge": false,
+  "systems": [
+   "ashby:board=serval"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "Serval"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "singlestore": {
+  "url": "https://www.singlestore.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.singlestore.com/careers/",
+  "bytes": 1133794,
+  "seconds": 1.1,
+  "title": "SingleStore Careers - Join Us in Our Mission",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "snap": {
+  "url": "https://careers.snap.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.snap.com/",
+  "bytes": 149256,
+  "seconds": 0.3,
+  "title": "Snap Inc. Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "snorkel-ai": {
+  "url": "https://snorkel.ai/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://snorkel.ai/join-us/",
+  "bytes": 240331,
+  "seconds": 1.2,
+  "title": "Find careers in AI | Snorkel AI Careers",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=snorkelai"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "snorkelai"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "snyk": {
+  "url": "https://snyk.io/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://snyk.io/careers/",
+  "bytes": 258908,
+  "seconds": 1.2,
+  "title": "Careers | Snyk",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "socure": {
+  "url": "https://www.socure.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.socure.com/company/careers",
+  "bytes": 99758,
+  "seconds": 1.0,
+  "title": "",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "sofi": {
+  "url": "https://www.sofi.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.sofi.com/careers/",
+  "bytes": 227945,
+  "seconds": 1.0,
+  "title": "Looking for Fintech Jobs? | Work at SoFi",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "sonos": {
+  "url": "https://sonos.wd1.myworkdayjobs.com/Sonos",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://sonos.wd1.myworkdayjobs.com/Sonos",
+  "bytes": 6937,
+  "seconds": 1.3,
+  "title": "",
+  "challenge": false,
+  "systems": [
+   "workday:host=sonos.wd1.myworkdayjobs.com,site=sonos,tenant=sonos"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "sonos.wd1.myworkdayjobs.com",
+     "tenant": "sonos",
+     "site": "Sonos"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "southwest": {
+  "url": "https://careers.southwestair.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.southwestair.com/us/en/",
+  "bytes": 233917,
+  "seconds": 2.1,
+  "title": "Home | Southwest Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": [
+   {
+    "base_url": "https://careers.southwestair.com",
+    "ref_num": "SOUTUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "starburst": {
+  "url": "https://www.starburst.io/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.starburst.io/careers/",
+  "bytes": 126446,
+  "seconds": 0.4,
+  "title": "Careers | Starburst",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "state-farm": {
+  "url": "https://jobs.statefarm.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://jobs.statefarm.com/main/",
+  "bytes": 463392,
+  "seconds": 0.5,
+  "title": "State Farm Careers",
+  "challenge": false,
+  "systems": [
+   "icims:portal=careers-statefarm.icims.com",
+   "icims:portal=events-statefarm.icims.com",
+   "icims:portal=statefarm.icims.com"
+  ],
+  "candidates": [
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://events-statefarm.icims.com"
+    }
+   },
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://www.icims.com"
+    }
+   },
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://statefarm.icims.com"
+    }
+   },
+   {
+    "checker": "icims",
+    "settings": {
+     "portal": "https://careers-statefarm.icims.com"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "suno": {
+  "url": "https://suno.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://suno.com/careers",
+  "bytes": 350946,
+  "seconds": 0.3,
+  "title": "Careers | Suno",
+  "challenge": false,
+  "systems": [
+   "ashby:board=suno"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "suno"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "superhuman": {
+  "url": "https://superhuman.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://superhuman.com/company/careers",
+  "bytes": 921376,
+  "seconds": 0.6,
+  "title": "Explore career opportunities at Superhuman",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=grammarly"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "grammarly"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "symmetry-systems": {
+  "url": "https://www.symmetry-systems.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.zscaler.com/careers",
+  "bytes": 381876,
+  "seconds": 1.2,
+  "title": "Zscaler Jobs | Zscaler Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "synchrony": {
+  "url": "https://www.synchrony.com/careers",
+  "outcome": "failed",
+  "error": "network error (ConnectError: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1032)) for GET https://www.synchrony.com/careers (after 2 attempts)",
+  "seconds": 3.1
+ },
+ "tamr": {
+  "url": "https://www.tamr.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.tamr.com/careers",
+  "bytes": 190568,
+  "seconds": 0.4,
+  "title": "Careers | Tamr",
+  "challenge": false,
+  "systems": [
+   "ashby:board=tamr"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "tamr"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "target": {
+  "url": "https://corporate.target.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://corporate.target.com/careers",
+  "bytes": 115820,
+  "seconds": 0.1,
+  "title": "Jobs at Target",
+  "challenge": false,
+  "systems": [
+   "workday:host=target.wd5.myworkdayjobs.com,site=targetcareers,tenant=target"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "target.wd5.myworkdayjobs.com",
+     "tenant": "target",
+     "site": "targetcareers"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "tensorwave": {
+  "url": "https://tensorwave.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://tensorwave.com/careers",
+  "bytes": 70431,
+  "seconds": 1.0,
+  "title": "TensorWave",
+  "challenge": false,
+  "systems": [
+   "ashby:board=tensorwave"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "tensorwave"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "texas-instruments": {
+  "url": "https://careers.ti.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.ti.com/en/sites/CX",
+  "bytes": 101396,
+  "seconds": 2.0,
+  "title": "Texas Instruments",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "travelers": {
+  "url": "https://careers.travelers.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.travelers.com/",
+  "bytes": 1814582,
+  "seconds": 0.6,
+  "title": "Travelers Jobs |Travelers Careers | Jobs at Travelers | Apply Online for Careers with Insurance Leader Travelers",
+  "challenge": false,
+  "systems": [
+   "workday:host=travelers.wd5.myworkdayjobs.com,site=external,tenant=travelers"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "travelers.wd5.myworkdayjobs.com",
+     "tenant": "travelers",
+     "site": "External"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "tricentis": {
+  "url": "https://www.tricentis.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.tricentis.com/company/careers",
+  "bytes": 186570,
+  "seconds": 0.6,
+  "title": "Careers - Tricentis",
+  "challenge": false,
+  "systems": [
+   "workday:host=tricentis.wd1.myworkdayjobs.com,site=tricentis_careers,tenant=tricentis"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "tricentis.wd1.myworkdayjobs.com",
+     "tenant": "tricentis",
+     "site": "Tricentis_Careers"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "trimble": {
+  "url": "https://careers.trimble.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.trimble.com/en/careers",
+  "bytes": 1274968,
+  "seconds": 1.1,
+  "title": "Trimble Careers | Join the Future of Construction &amp; Geospatial Tech",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "truveta": {
+  "url": "https://www.truveta.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.truveta.com/careers/",
+  "bytes": 288459,
+  "seconds": 0.8,
+  "title": "Careers | Truveta",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=truveta"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "truveta"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "tyler-technologies": {
+  "url": "https://www.tylertech.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.tylertech.com/careers",
+  "bytes": 169978,
+  "seconds": 0.8,
+  "title": "Careers | Tyler Technologies",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "typeface": {
+  "url": "https://www.typeface.ai/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.typeface.ai/careers",
+  "bytes": 128119,
+  "seconds": 0.5,
+  "title": "Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "udemy": {
+  "url": "https://about.udemy.com/careers/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://about.udemy.com/careers/",
+  "seconds": 0.2
+ },
+ "uipath": {
+  "url": "https://www.uipath.com/company/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.uipath.com/careers",
+  "bytes": 449204,
+  "seconds": 1.0,
+  "title": "UiPath Careers - Shape the Future of Agentic Automation &amp; AI | UiPath",
+  "challenge": false,
+  "systems": [
+   "ashby:board=uipath"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "uipath"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "unify": {
+  "url": "https://www.unifygtm.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.unifygtm.com/careers",
+  "bytes": 196546,
+  "seconds": 0.2,
+  "title": "Unify Careers | Build The Future Of Growth",
+  "challenge": false,
+  "systems": [
+   "ashby:board=unify"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "unify"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "united-airlines": {
+  "url": "https://careers.united.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.united.com/us/en",
+  "bytes": 140879,
+  "seconds": 2.9,
+  "title": "Careers at United Airlines | United Airlines jobs",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": [
+   {
+    "base_url": "https://careers.united.com",
+    "ref_num": "UAIUADUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "unitedhealth-group": {
+  "url": "https://careers.unitedhealthgroup.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.unitedhealthgroup.com/search-jobs",
+  "bytes": 8674068,
+  "seconds": 1.2,
+  "title": "Search our Job Opportunities at UnitedHealth Group",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "usaa": {
+  "url": "https://www.usaajobs.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.usaajobs.com/",
+  "bytes": 49076,
+  "seconds": 0.3,
+  "title": "Working at USAA | Jobs and Careers at USAA",
+  "challenge": false,
+  "systems": [
+   "workday:host=usaa.wd1.myworkdayjobs.com,site=usaajobswd,tenant=usaa"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "usaa.wd1.myworkdayjobs.com",
+     "tenant": "usaa",
+     "site": "USAAJOBSWD"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "vanguard": {
+  "url": "https://www.vanguardjobs.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.vanguardjobs.com/",
+  "bytes": 1718269,
+  "seconds": 1.3,
+  "title": "Explore opportunities to join our mission | Vanguard careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "veeam": {
+  "url": "https://careers.veeam.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.veeam.com/",
+  "bytes": 272822,
+  "seconds": 0.7,
+  "title": "Working at Veeam",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "vercel": {
+  "url": "https://vercel.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://vercel.com/careers",
+  "bytes": 1357948,
+  "seconds": 1.2,
+  "title": "Careers",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=vercel"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "vercel"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "verizon": {
+  "url": "https://mycareer.verizon.com/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://mycareer.verizon.com/",
+  "seconds": 0.6
+ },
+ "viam": {
+  "url": "https://www.viam.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.viam.com/careers",
+  "bytes": 43350,
+  "seconds": 0.2,
+  "title": "Careers at Viam | Join the Team Making Robotics Programmable",
+  "challenge": true,
+  "systems": [
+   "greenhouse:board=viamrobotics"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "viamrobotics"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "walmart": {
+  "url": "https://careers.walmart.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.walmart.com/us/en/home",
+  "bytes": 178259,
+  "seconds": 0.8,
+  "title": "Walmart Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "warner-bros-discovery": {
+  "url": "https://careers.wbd.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://careers.wbd.com/global/en",
+  "bytes": 165979,
+  "seconds": 3.4,
+  "title": "Careers at Warner Bros. Discovery",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": [
+   {
+    "base_url": "https://careers.wbd.com",
+    "ref_num": "WAMEGLOBAL",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "washington-post": {
+  "url": "https://www.washingtonpost.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://corporate.washingtonpost.com/careers",
+  "bytes": 85565,
+  "seconds": 1.0,
+  "title": "Careers - The Washington Post",
+  "challenge": false,
+  "systems": [
+   "workday:host=washpost.wd5.myworkdayjobs.com,site=washingtonpostcareers,tenant=washpost"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "washpost.wd5.myworkdayjobs.com",
+     "tenant": "washpost",
+     "site": "washingtonpostcareers"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "wells-fargo": {
+  "url": "https://www.wellsfargojobs.com/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://www.wellsfargojobs.com/",
+  "seconds": 0.3
+ },
+ "western-digital": {
+  "url": "https://jobs.westerndigital.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.westerndigital.com/careers",
+  "bytes": 1023384,
+  "seconds": 0.8,
+  "title": "Explore Western Digital Career Opportunities | WD",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "xcimer": {
+  "url": "https://www.xcimer.com/careers",
+  "outcome": "failed",
+  "error": "robots.txt for https://www.xcimer.com unreachable (network error); will retry",
+  "seconds": 30.0
+ },
+ "you-com": {
+  "url": "https://you.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://you.com/careers",
+  "bytes": 200948,
+  "seconds": 0.4,
+  "title": "Careers | You.com",
+  "challenge": false,
+  "systems": [
+   "greenhouse:board=youcom"
+  ],
+  "candidates": [
+   {
+    "checker": "greenhouse",
+    "settings": {
+     "board": "youcom"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "yugabyte": {
+  "url": "https://www.yugabyte.com/careers/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://www.yugabyte.com/careers/",
+  "seconds": 0.1
+ },
+ "zebra": {
+  "url": "https://www.zebra.com/us/en/about-zebra/careers.html",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.zebra.com/us/en/about-zebra/careers.html",
+  "bytes": 452714,
+  "seconds": 0.3,
+  "title": "Careers | Zebra",
+  "challenge": false,
+  "systems": [
+   "workday:host=zebra.wd501.myworkdayjobs.com,site=zebra_careers,tenant=zebra"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "zebra.wd501.myworkdayjobs.com",
+     "tenant": "zebra",
+     "site": "Zebra_careers"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "zillow": {
+  "url": "https://www.zillow.com/careers/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.zillow.com/careers/",
+  "bytes": 599254,
+  "seconds": 0.4,
+  "title": "Home - Zillow Careers",
+  "challenge": false,
+  "systems": [
+   "workday:host=zillow.wd5.myworkdayjobs.com,site=zillow_group_external,tenant=zillow"
+  ],
+  "candidates": [
+   {
+    "checker": "workday",
+    "settings": {
+     "host": "zillow.wd5.myworkdayjobs.com",
+     "tenant": "zillow",
+     "site": "Zillow_Group_External"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "zip": {
+  "url": "https://ziphq.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://zip.com/careers",
+  "bytes": 138649,
+  "seconds": 0.6,
+  "title": "Careers at Zip | Building AI for Procurement",
+  "challenge": false,
+  "systems": [
+   "ashby:board=zip"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "zip"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
+ },
+ "ziprecruiter": {
+  "url": "https://www.ziprecruiter.com/careers",
+  "outcome": "robots",
+  "error": "robots.txt disallows https://www.ziprecruiter.com/careers (Disallow: /)",
+  "seconds": 0.3
+ },
+ "zocdoc": {
+  "url": "https://www.zocdoc.com/about/careers/",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://www.zocdoc.com/about/careers/",
+  "seconds": 0.2
+ },
+ "zoominfo": {
+  "url": "https://www.zoominfo.com/about/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.zoominfo.com/careers",
+  "bytes": 461562,
+  "seconds": 0.5,
+  "title": "Careers at ZoomInfo",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ },
+ "zscaler": {
+  "url": "https://www.zscaler.com/careers",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.zscaler.com/careers",
+  "bytes": 381876,
+  "seconds": 0.4,
+  "title": "Zscaler Jobs | Zscaler Careers",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
+ }
+}

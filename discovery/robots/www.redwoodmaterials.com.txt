@@ -1,0 +1,6 @@
+# status 200
+# START nuxt-robots (indexable)
+User-agent: *
+
+Sitemap: https://www.redwoodmaterials.com/sitemap.xml
+# END nuxt-robots

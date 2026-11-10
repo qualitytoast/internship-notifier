@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://dexcom.wd1.myworkdayjobs.com/Dexcom/siteMap.xml
+
+User-agent: *
+Allow: /Dexcom/
+Disallow: /refreshFacet/

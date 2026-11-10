@@ -1,0 +1,1415 @@
+{
+ "addepar": {
+  "greenhouse": [
+   "addepar1"
+  ]
+ },
+ "adp": {},
+ "ai2": {
+  "greenhouse": [
+   "thealleninstitute"
+  ]
+ },
+ "allstate": {
+  "workday:allstate.wd5.myworkdayjobs.com|allstate": [
+   "allstate_careers",
+   "sourcing_event"
+  ]
+ },
+ "alltrails": {
+  "lever": [
+   "alltrails"
+  ]
+ },
+ "altruist": {
+  "greenhouse": [
+   "altruist"
+  ]
+ },
+ "american-express": {
+  "oracle:egug.fa.us2.oraclecloud.com": [
+   "CX_1"
+  ],
+  "eightfold": [
+   {
+    "host": "www.americanexpress.com",
+    "domain": "americanexpress.com",
+    "api": "pcsx"
+   }
+  ]
+ },
+ "amperity": {},
+ "analog-devices": {
+  "workday:analogdevices.wd1.myworkdayjobs.com|analogdevices": [
+   "External"
+  ]
+ },
+ "anchorage-digital": {
+  "lever": [
+   "anchorage"
+  ]
+ },
+ "appian": {
+  "greenhouse": [
+   "appian"
+  ]
+ },
+ "applied-materials": {
+  "workday:amat.wd1.myworkdayjobs.com|amat": [
+   "External"
+  ],
+  "eightfold": [
+   {
+    "host": "careers.appliedmaterials.com",
+    "domain": "appliedmaterials.com",
+    "api": "pcsx"
+   }
+  ]
+ },
+ "apptronik": {
+  "greenhouse": [
+   "apptronik"
+  ]
+ },
+ "arcesium": {
+  "greenhouse": [
+   "arcesiumllc"
+  ]
+ },
+ "arista-networks": {
+  "smartrecruiters": [
+   "AristaNetworks"
+  ]
+ },
+ "asana": {
+  "greenhouse": [
+   "asana"
+  ]
+ },
+ "att": {
+  "workday:att.wd1.myworkdayjobs.com|att": [
+   "ATTGeneral",
+   "ATTcollege",
+   "Cricket",
+   "ATTCollegeSpecialInvite"
+  ]
+ },
+ "athenahealth": {
+  "phenom": [
+   {
+    "base_url": "https://careers.athenahealth.com",
+    "ref_num": "ATHAHHUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "bamboohr": {
+  "greenhouse": [
+   "bamboohr17"
+  ]
+ },
+ "bandwidth": {
+  "greenhouse": [
+   "bandwidth"
+  ]
+ },
+ "bank-of-america": {
+  "workday:ghr.wd1.myworkdayjobs.com|ghr": [
+   "us-emplsv",
+   "lateral-emea"
+  ]
+ },
+ "base-power": {
+  "ashby": [
+   "base-power"
+  ]
+ },
+ "baseten": {
+  "ashby": [
+   "baseten"
+  ]
+ },
+ "bedrock-robotics": {
+  "ashby": [
+   "bedrock-robotics"
+  ]
+ },
+ "best-buy": {
+  "workday:bestbuycanada.wd3.myworkdayjobs.com|bestbuycanada": [
+   "BestBuyCA_Career"
+  ]
+ },
+ "betterment": {
+  "greenhouse": [
+   "bettermentcampusrecruiting",
+   "betterment"
+  ]
+ },
+ "bill": {},
+ "blackrock": {
+  "workday:blackrock.wd1.myworkdayjobs.com|blackrock": [
+   "BlackRock_Professional",
+   "BlackRock_Early_Careers_Program"
+  ]
+ },
+ "bny": {
+  "oracle:eofe.fa.us2.oraclecloud.com": [
+   "BNY-Careers",
+   "CX_1001"
+  ]
+ },
+ "bot-auto": {
+  "greenhouse": [
+   "botauto"
+  ]
+ },
+ "box": {
+  "greenhouse": [
+   "boxinc"
+  ]
+ },
+ "braze": {
+  "greenhouse": [
+   "braze"
+  ]
+ },
+ "bugcrowd": {
+  "greenhouse": [
+   "bugcrowd"
+  ]
+ },
+ "bumble": {
+  "lever": [
+   "bumbleinc"
+  ]
+ },
+ "cadence": {
+  "workday:cadence.wd1.myworkdayjobs.com|cadence": [
+   "University_Talent",
+   "University_Talent_Intern",
+   "External_Careers",
+   "Univ_Careers",
+   "University_Talent_NCG",
+   "OpenEye_Careers",
+   "University_CST"
+  ]
+ },
+ "carbon-robotics": {},
+ "cartesia": {
+  "ashby": [
+   "cartesia"
+  ]
+ },
+ "censys": {
+  "greenhouse": [
+   "censys"
+  ]
+ },
+ "cerebras": {
+  "ashby": [
+   "cerebras"
+  ]
+ },
+ "charles-schwab": {
+  "icims": [
+   "https://career-schwab.icims.com"
+  ]
+ },
+ "checkr": {
+  "greenhouse": [
+   "checkr"
+  ]
+ },
+ "chewy": {
+  "workday:chewy.wd5.myworkdayjobs.com|chewy": [
+   "External"
+  ],
+  "phenom": [
+   {
+    "base_url": "https://careers.chewy.com",
+    "ref_num": "CHINUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "chime": {
+  "greenhouse": [
+   "chime"
+  ]
+ },
+ "ciena": {},
+ "circle": {
+  "workday:circle.wd1.myworkdayjobs.com|circle": [
+   "Circle"
+  ],
+  "ashby": [
+   "circle"
+  ],
+  "phenom": [
+   {
+    "base_url": "https://careers.circle.com",
+    "ref_num": "CIICIRUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "citi": {
+  "workday:citi.wd5.myworkdayjobs.com|citi": [
+   "2",
+   "Citi_Early_Careers_Events_Site"
+  ],
+  "eightfold": [
+   {
+    "host": "jobs.citi.com",
+    "domain": "citi.com",
+    "api": "pcsx"
+   }
+  ]
+ },
+ "clay": {
+  "ashby": [
+   "claylabs"
+  ]
+ },
+ "clockwork-systems": {
+  "greenhouse": [
+   "clockworksystems"
+  ]
+ },
+ "cohesity": {
+  "workday:cohesity.wd5.myworkdayjobs.com|cohesity": [
+   "Cohesity_Careers"
+  ]
+ },
+ "cobot": {
+  "ashby": [
+   "cobot"
+  ]
+ },
+ "comcast": {
+  "workday:comcast.wd115.myworkdayjobs.com|comcast": [
+   "Comcast_Careers"
+  ],
+  "workday:comcast.wd5.myworkdayjobs.com|comcast": [
+   "Comcast_Careers"
+  ]
+ },
+ "commonwealth-fusion": {
+  "lever": [
+   "cfsenergy"
+  ]
+ },
+ "commure": {
+  "ashby": [
+   "Commure-Athelas",
+   "Commure"
+  ]
+ },
+ "conductorone": {
+  "ashby": [
+   "C1",
+   "conductorone"
+  ]
+ },
+ "copart": {
+  "workday:copart.wd12.myworkdayjobs.com|copart": [
+   "Copart"
+  ]
+ },
+ "costar": {
+  "workday:costar.wd1.myworkdayjobs.com|costar": [
+   "Costar_Campus",
+   "CoStarCareers",
+   "confidential"
+  ]
+ },
+ "costco": {
+  "taleo": [
+   "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=10998"
+  ]
+ },
+ "cox": {
+  "workday:cox.wd1.myworkdayjobs.com|cox": [
+   "Cox_External_Career_Site_1"
+  ]
+ },
+ "crusoe": {
+  "ashby": [
+   "Crusoe"
+  ]
+ },
+ "cvs-health": {
+  "workday:cvshealth.wd1.myworkdayjobs.com|cvshealth": [
+   "CVS_Health_Careers",
+   "Private_Postings_Intern_Conversion_ONLY"
+  ],
+  "phenom": [
+   {
+    "base_url": "https://jobs.cvshealth.com",
+    "ref_num": "CVSCHLUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "d-matrix": {
+  "ashby": [
+   "d-Matrix"
+  ]
+ },
+ "datarobot": {
+  "workday:datarobot.wd1.myworkdayjobs.com|datarobot": [
+   "DataRobot_External_Careers"
+  ]
+ },
+ "delinea": {
+  "ashby": [
+   "delinea"
+  ]
+ },
+ "descript": {
+  "greenhouse": [
+   "descript"
+  ]
+ },
+ "dexcom": {
+  "workday:dexcom.wd1.myworkdayjobs.com|dexcom": [
+   "Dexcom"
+  ],
+  "eightfold": [
+   {
+    "host": "careers.dexcom.com",
+    "domain": "dexcom.com",
+    "api": "pcsx"
+   }
+  ]
+ },
+ "dicks-sporting-goods": {
+  "workday:dickssportinggoods.wd1.myworkdayjobs.com|dickssportinggoods": [
+   "DSG"
+  ]
+ },
+ "digitalocean": {},
+ "domino-data-lab": {},
+ "draftkings": {
+  "workday:draftkings.wd1.myworkdayjobs.com|draftkings": [
+   "Campus_Career_Portal",
+   "Employee_Referral_Portal",
+   "draftkings"
+  ],
+  "ripplematch": [
+   "https://app.ripplematch.com/company/draftkings"
+  ]
+ },
+ "drivewealth": {
+  "greenhouse": [
+   "drivewealth"
+  ],
+  "ashby": [
+   "drivewealth"
+  ]
+ },
+ "dusty-robotics": {
+  "greenhouse": [
+   "dustyrobotics"
+  ]
+ },
+ "earnin": {
+  "greenhouse": [
+   "earnin"
+  ]
+ },
+ "elevance-health": {
+  "workday:elevancehealth.wd1.myworkdayjobs.com|elevancehealth": [
+   "ANT",
+   "ELV-ET"
+  ]
+ },
+ "ellipsis-labs": {
+  "ashby": [
+   "ellipsislabs"
+  ]
+ },
+ "enova": {
+  "greenhouse": [
+   "enova"
+  ]
+ },
+ "equinix": {
+  "workday:equinix.wd1.myworkdayjobs.com|equinix": [
+   "External"
+  ]
+ },
+ "etched": {
+  "ashby": [
+   "Etched"
+  ]
+ },
+ "etsy": {
+  "workday:etsy.wd5.myworkdayjobs.com|etsy": [
+   "Etsy_Careers"
+  ]
+ },
+ "eventual": {
+  "ashby": [
+   "eventualcomputing"
+  ]
+ },
+ "exa": {
+  "ashby": [
+   "exa"
+  ]
+ },
+ "f5": {
+  "workday:ffive.wd5.myworkdayjobs.com|ffive": [
+   "f5jobs"
+  ]
+ },
+ "fastly": {
+  "greenhouse": [
+   "fastly"
+  ]
+ },
+ "fervo-energy": {
+  "greenhouse": [
+   "fervoenergy"
+  ]
+ },
+ "figure-ai": {
+  "greenhouse": [
+   "figureai"
+  ]
+ },
+ "fis": {
+  "workday:fis.wd5.myworkdayjobs.com|fis": [
+   "SearchJobs"
+  ],
+  "phenom": [
+   {
+    "base_url": "https://careers.fisglobal.com",
+    "ref_num": "FIGLUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "fiserv": {
+  "workday:fiserv.wd5.myworkdayjobs.com|fiserv": [
+   "ext"
+  ],
+  "phenom": [
+   {
+    "base_url": "https://careers.fiserv.com",
+    "ref_num": "FFFYJUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "ford": {
+  "oracle:efds.fa.em5.oraclecloud.com": [
+   "CX_1"
+  ]
+ },
+ "fortinet": {
+  "oracle:edel.fa.us2.oraclecloud.com": [
+   "CX_2001"
+  ]
+ },
+ "fox": {
+  "workday:fox.wd1.myworkdayjobs.com|fox": [
+   "Domestic"
+  ],
+  "workday:foxfactory.wd1.myworkdayjobs.com|foxfactory": [
+   "FOX"
+  ]
+ },
+ "freddie-mac": {
+  "workday:freddiemac.wd5.myworkdayjobs.com|freddiemac": [
+   "External"
+  ],
+  "phenom": [
+   {
+    "base_url": "https://careers.freddiemac.com",
+    "ref_num": "FRMAUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "garner-health": {
+  "greenhouse": [
+   "garnerhealth"
+  ]
+ },
+ "ge-vernova": {
+  "workday:gevernova.wd5.myworkdayjobs.com|gevernova": [
+   "Vernova_ExternalSite",
+   "only_confidential_executive_recruiting"
+  ]
+ },
+ "gemini": {
+  "greenhouse": [
+   "gemini"
+  ]
+ },
+ "gen-digital": {
+  "ashby": [
+   "gen-digital"
+  ]
+ },
+ "genesis-molecular-ai": {
+  "ashby": [
+   "genesis-molecular-ai"
+  ]
+ },
+ "gimlet-labs": {
+  "ashby": [
+   "gimlet"
+  ]
+ },
+ "globalfoundries": {
+  "workday:globalfoundries.wd1.myworkdayjobs.com|globalfoundries": [
+   "External"
+  ]
+ },
+ "glossgenius": {
+  "greenhouse": [
+   "glossgenius"
+  ],
+  "ashby": [
+   "geniusai"
+  ]
+ },
+ "godaddy": {
+  "greenhouse": [
+   "eventsandinterns"
+  ]
+ },
+ "grow-therapy": {
+  "ashby": [
+   "grow-therapy"
+  ]
+ },
+ "guidewire": {
+  "workday:wd5.myworkdaysite.com|guidewire": [
+   "external"
+  ]
+ },
+ "gusto": {
+  "greenhouse": [
+   "gusto"
+  ]
+ },
+ "haize-labs": {
+  "greenhouse": [
+   "haizelabs"
+  ]
+ },
+ "handshake": {
+  "ashby": [
+   "handshake"
+  ]
+ },
+ "hartford": {
+  "workday:thehartford.wd5.myworkdayjobs.com|thehartford": [
+   "Careers_External",
+   "careers_restricted"
+  ]
+ },
+ "hpe": {
+  "workday:hpe.wd5.myworkdayjobs.com|hpe": [
+   "jobsathpe",
+   "acjobsite"
+  ],
+  "workday:hp.wd5.myworkdayjobs.com|hp": [
+   "ExternalCareerSite",
+   "EXTEU-AC-CareerSite"
+  ],
+  "phenom": [
+   {
+    "base_url": "https://careers.hpe.com",
+    "ref_num": "HPE1US",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "hex": {
+  "ashby": [
+   "hex"
+  ]
+ },
+ "heygen": {
+  "greenhouse": [
+   "heygen"
+  ]
+ },
+ "hilton": {
+  "oracle:efet.fa.us2.oraclecloud.com": [
+   "CX_1",
+   "CX_1009"
+  ]
+ },
+ "home-depot": {
+  "workday:homedepot.wd5.myworkdayjobs.com|homedepot": [
+   "CareerDepot",
+   "CareerDepotCanada"
+  ]
+ },
+ "hp": {
+  "greenhouse": [
+   "hpiq",
+   "hp"
+  ],
+  "workday:hp.wd5.myworkdayjobs.com|hp": [
+   "EXTEU-AC-CareerSite",
+   "externalcareersite"
+  ],
+  "eightfold": [
+   {
+    "host": "jobs.hp.com",
+    "domain": "hp.com",
+    "api": "pcsx"
+   }
+  ]
+ },
+ "humana": {
+  "workday:humana.wd5.myworkdayjobs.com|humana": [
+   "humana_external_career_site"
+  ],
+  "phenom": [
+   {
+    "base_url": "https://careers.humana.com",
+    "ref_num": "HUMHUMUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "hyperproof": {
+  "greenhouse": [
+   "hyperproof"
+  ]
+ },
+ "illumio": {
+  "ashby": [
+   "illumio"
+  ]
+ },
+ "ice": {
+  "icims": [
+   "https://careers-ice.icims.com"
+  ],
+  "jibe": [
+   "ice.jibeapply.com"
+  ]
+ },
+ "intuitive-surgical": {
+  "smartrecruiters": [
+   "Intuitive"
+  ]
+ },
+ "ironclad": {
+  "ashby": [
+   "ironcladhq"
+  ]
+ },
+ "ixl-learning": {},
+ "jpmorgan-chase": {
+  "oracle:jpmc.fa.oraclecloud.com": [
+   "CX_1001"
+  ]
+ },
+ "keysight": {
+  "icims": [
+   "https://www.icims.com",
+   "https://keysight.icims.com",
+   "https://careers-keysight.icims.com",
+   "https://globalcareers-keysight.icims.com"
+  ]
+ },
+ "khan-academy": {
+  "greenhouse": [
+   "khanacademy"
+  ]
+ },
+ "kla": {
+  "workday:kla.wd1.myworkdayjobs.com|kla": [
+   "annarbor",
+   "UR",
+   "Search"
+  ]
+ },
+ "knowbe4": {
+  "greenhouse": [
+   "knowbe4"
+  ]
+ },
+ "lambda": {
+  "ashby": [
+   "lambda"
+  ]
+ },
+ "launchdarkly": {
+  "greenhouse": [
+   "launchdarkly"
+  ]
+ },
+ "lightspark": {
+  "ashby": [
+   "lightspark"
+  ]
+ },
+ "locus-robotics": {
+  "greenhouse": [
+   "locusrobotics"
+  ]
+ },
+ "lowes": {
+  "workday:lowes.wd5.myworkdayjobs.com|lowes": [
+   "LWS_External_CS"
+  ],
+  "phenom": [
+   {
+    "base_url": "https://talent.lowes.com",
+    "ref_num": "LOWEUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "lucid-motors": {
+  "greenhouse": [
+   "lucidmotors"
+  ]
+ },
+ "lucid-software": {},
+ "macys": {
+  "oracle:ebwh.fa.us2.oraclecloud.com": [
+   "CX_1",
+   "CX_1001"
+  ]
+ },
+ "marvell": {
+  "workday:marvell.wd1.myworkdayjobs.com|marvell": [
+   "MarvellCareers",
+   "MarvellCareers2"
+  ]
+ },
+ "mastercard": {
+  "workday:mastercard.wd1.myworkdayjobs.com|mastercard": [
+   "CorporateCareers",
+   "Campus",
+   "Public_Posting_Site"
+  ],
+  "phenom": [
+   {
+    "base_url": "https://careers.mastercard.com",
+    "ref_num": "MASRUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "match-group": {
+  "lever": [
+   "matchgroup"
+  ]
+ },
+ "mckesson": {
+  "workday:mckesson.wd3.myworkdayjobs.com|mckesson": [
+   "External_Careers",
+   "sourcer_on_req"
+  ]
+ },
+ "mercor": {
+  "ashby": [
+   "mercor"
+  ],
+  "ripplematch": [
+   "https://app.ripplematch.com/company/mercor"
+  ]
+ },
+ "micron": {
+  "workday:micron.wd1.myworkdayjobs.com|micron": [
+   "External"
+  ],
+  "eightfold": [
+   {
+    "host": "www.micron.com",
+    "domain": "micron.com",
+    "api": "pcsx"
+   }
+  ]
+ },
+ "morgan-stanley": {
+  "workday:ms.wd5.myworkdayjobs.com|ms": [
+   "External",
+   "private"
+  ]
+ },
+ "multiply-labs": {
+  "lever": [
+   "multiplylabs"
+  ]
+ },
+ "nasdaq": {
+  "workday:nasdaq.wd1.myworkdayjobs.com|nasdaq": [
+   "Global_External_Site"
+  ]
+ },
+ "nasuni": {},
+ "nationwide": {
+  "workday:nationwide.wd1.myworkdayjobs.com|nationwide": [
+   "Nationwide_Career"
+  ]
+ },
+ "navy-federal": {
+  "oracle:fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com": [
+   "nfcu"
+  ]
+ },
+ "ncino": {
+  "greenhouse": [
+   "ncinoinc",
+   "ncinoearlytalent"
+  ],
+  "workday:ncino.wd5.myworkdayjobs.com|ncino": [
+   "nCinoCareers"
+  ]
+ },
+ "netapp": {},
+ "netic": {
+  "ashby": [
+   "netic"
+  ]
+ },
+ "neuralink": {
+  "greenhouse": [
+   "neuralink"
+  ]
+ },
+ "new-york-times": {
+  "greenhouse": [
+   "thenewyorktimes"
+  ]
+ },
+ "nextdoor": {
+  "greenhouse": [
+   "nextdoor"
+  ]
+ },
+ "niantic-spatial": {
+  "ashby": [
+   "niantic-spatial"
+  ]
+ },
+ "nike": {
+  "workday:nike.wd1.myworkdayjobs.com|nike": [
+   "nke2",
+   "nke"
+  ]
+ },
+ "nordstrom": {
+  "workday:nordstrom.wd501.myworkdayjobs.com|nordstrom": [
+   "nordstrom_careers"
+  ]
+ },
+ "northwestern-mutual": {
+  "icims": [
+   "https://opportunities-northwesternmutual.icims.com"
+  ],
+  "workday:northwesternmutual.wd5.myworkdayjobs.com|northwesternmutual": [
+   "corporate-careers"
+  ],
+  "smartrecruiters": [
+   "NorthwesternMutual"
+  ]
+ },
+ "numeric": {
+  "ashby": [
+   "numeric"
+  ]
+ },
+ "obsidian-security": {
+  "greenhouse": [
+   "obsidiansecurity"
+  ]
+ },
+ "one-finance": {
+  "ashby": [
+   "oneapp"
+  ]
+ },
+ "unitedhealth-group": {
+  "ripplematch": [
+   "https://app.ripplematch.com/company/unitedhealth-group"
+  ]
+ },
+ "pacific-fusion": {
+  "greenhouse": [
+   "pacificfusion"
+  ]
+ },
+ "paramount": {},
+ "patreon": {
+  "ashby": [
+   "patreon"
+  ]
+ },
+ "pendo": {
+  "greenhouse": [
+   "pendo"
+  ]
+ },
+ "perpay": {
+  "greenhouse": [
+   "perpay"
+  ]
+ },
+ "persona": {
+  "ashby": [
+   "persona"
+  ]
+ },
+ "persona-ai": {
+  "ashby": [
+   "persona.ai"
+  ]
+ },
+ "precisely": {},
+ "principal": {
+  "icims": [
+   "https://internalspanish-principal.icims.com",
+   "https://internal-principal.icims.com",
+   "https://www.icims.com",
+   "https://careerssingapore-principal.icims.com",
+   "https://careers-principal.icims.com",
+   "https://careershk-principal.icims.com",
+   "https://careersmalaysia-principal.icims.com",
+   "https://careersindonesiapam-principal.icims.com",
+   "https://careersthailandpam-principal.icims.com"
+  ]
+ },
+ "prizepicks": {},
+ "progressive": {
+  "ripplematch": [
+   "https://app.ripplematch.com/company/progressive"
+  ]
+ },
+ "proofpoint": {
+  "workday:proofpoint.wd5.myworkdayjobs.com|proofpoint": [
+   "proofpointcareers"
+  ]
+ },
+ "ptc": {
+  "workday:ptc.wd1.myworkdayjobs.com|ptc": [
+   "PTC"
+  ]
+ },
+ "pure-storage": {
+  "greenhouse": [
+   "purestorage"
+  ]
+ },
+ "q2": {
+  "workday:q2ebanking.wd5.myworkdayjobs.com|q2ebanking": [
+   "Q2"
+  ]
+ },
+ "qorvo": {},
+ "qualcomm": {
+  "eightfold": [
+   {
+    "host": "careers.qualcomm.com",
+    "domain": "qualcomm.com",
+    "api": "pcsx"
+   }
+  ]
+ },
+ "qumulo": {
+  "ashby": [
+   "qumulo"
+  ]
+ },
+ "reddit": {
+  "greenhouse": [
+   "reddit"
+  ],
+  "ripplematch": [
+   "https://app.ripplematch.com/company/reddit"
+  ]
+ },
+ "redwood-materials": {
+  "greenhouse": [
+   "redwoodmaterials"
+  ]
+ },
+ "replit": {
+  "ashby": [
+   "replit"
+  ]
+ },
+ "rhoda-ai": {
+  "ashby": [
+   "rhoda-ai"
+  ]
+ },
+ "ridgeline": {
+  "greenhouse": [
+   "ridgeline"
+  ]
+ },
+ "rilla": {
+  "ashby": [
+   "rilla"
+  ]
+ },
+ "ripple": {},
+ "rivian": {
+  "icims": [
+   "https://us-careers-rivian.icims.com",
+   "https://www.icims.com",
+   "https://internal-careers-rivian.icims.com"
+  ],
+  "ashby": [
+   "rivianvw.tech"
+  ]
+ },
+ "rivian-vw": {
+  "ashby": [
+   "rivianvw.tech"
+  ]
+ },
+ "roku": {
+  "greenhouse": [
+   "roku"
+  ],
+  "ripplematch": [
+   "https://app.ripplematch.com/company/roku"
+  ]
+ },
+ "rubrik": {},
+ "sailpoint": {
+  "workday:sailpoint.wd1.myworkdayjobs.com|sailpoint": [
+   "SailPoint"
+  ]
+ },
+ "sandisk": {
+  "smartrecruiters": [
+   "Sandisk"
+  ]
+ },
+ "sas": {
+  "icims": [
+   "https://careers-sas.icims.com"
+  ]
+ },
+ "sentry": {
+  "ashby": [
+   "sentry"
+  ]
+ },
+ "serval": {
+  "ashby": [
+   "Serval"
+  ]
+ },
+ "singlestore": {
+  "greenhouse": [
+   "singlestore"
+  ]
+ },
+ "snap": {
+  "workday:wd1.myworkdaysite.com|snapchat": [
+   "snap"
+  ],
+  "ripplematch": [
+   "https://app.ripplematch.com/company/snap-inc"
+  ]
+ },
+ "snorkel-ai": {
+  "greenhouse": [
+   "snorkelai"
+  ]
+ },
+ "snyk": {
+  "workday:snyk.wd103.myworkdayjobs.com|snyk": [
+   "External"
+  ],
+  "ashby": [
+   "snyk"
+  ]
+ },
+ "socure": {
+  "ashby": [
+   "socure"
+  ]
+ },
+ "sofi": {
+  "greenhouse": [
+   "sofi"
+  ]
+ },
+ "sonos": {
+  "workday:sonos.wd1.myworkdayjobs.com|sonos": [
+   "Sonos"
+  ]
+ },
+ "southwest": {
+  "workday:swa.wd1.myworkdayjobs.com|swa": [
+   "external"
+  ],
+  "phenom": [
+   {
+    "base_url": "https://careers.southwestair.com",
+    "ref_num": "SOUTUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "starburst": {
+  "greenhouse": [
+   "starburst"
+  ]
+ },
+ "state-farm": {
+  "icims": [
+   "https://events-statefarm.icims.com",
+   "https://www.icims.com",
+   "https://statefarm.icims.com",
+   "https://careers-statefarm.icims.com"
+  ]
+ },
+ "suno": {
+  "ashby": [
+   "suno"
+  ]
+ },
+ "superhuman": {
+  "greenhouse": [
+   "grammarly"
+  ],
+  "ashby": [
+   "Superhuman Platform Inc",
+   "superhuman"
+  ]
+ },
+ "symmetry-systems": {
+  "lever": [
+   "symmetrysystems"
+  ]
+ },
+ "synchrony": {
+  "workday:synchronyfinancial.wd5.myworkdayjobs.com|synchronyfinancial": [
+   "University"
+  ]
+ },
+ "tamr": {
+  "ashby": [
+   "tamr"
+  ]
+ },
+ "target": {
+  "workday:target.wd5.myworkdayjobs.com|target": [
+   "targetcareers"
+  ]
+ },
+ "tensorwave": {
+  "ashby": [
+   "tensorwave"
+  ]
+ },
+ "texas-instruments": {
+  "oracle:edbz.fa.us2.oraclecloud.com": [
+   "CX"
+  ]
+ },
+ "travelers": {
+  "workday:travelers.wd5.myworkdayjobs.com|travelers": [
+   "External"
+  ]
+ },
+ "tricentis": {
+  "workday:tricentis.wd1.myworkdayjobs.com|tricentis": [
+   "Tricentis_Careers"
+  ]
+ },
+ "trimble": {
+  "workday:trimble.wd1.myworkdayjobs.com|trimble": [
+   "TrimbleCareers"
+  ]
+ },
+ "truveta": {
+  "greenhouse": [
+   "truveta"
+  ]
+ },
+ "tyler-technologies": {
+  "jobvite": [
+   "tylertech"
+  ]
+ },
+ "typeface": {
+  "greenhouse": [
+   "typeface"
+  ]
+ },
+ "udemy": {
+  "greenhouse": [
+   "udemybedi"
+  ]
+ },
+ "uipath": {
+  "ashby": [
+   "uipath"
+  ]
+ },
+ "unify": {
+  "ashby": [
+   "unify"
+  ]
+ },
+ "united-airlines": {
+  "phenom": [
+   {
+    "base_url": "https://careers.united.com",
+    "ref_num": "UAIUADUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "usaa": {
+  "workday:usaa.wd1.myworkdayjobs.com|usaa": [
+   "USAAJOBSWD"
+  ]
+ },
+ "vanguard": {
+  "workday:vanguard.wd5.myworkdayjobs.com|vanguard": [
+   "vanguard_external",
+   "contractors_restricted"
+  ]
+ },
+ "veeam": {
+  "greenhouse": [
+   "veeamsoftware"
+  ]
+ },
+ "vercel": {
+  "greenhouse": [
+   "vercel"
+  ]
+ },
+ "verizon": {
+  "workday:verizon.wd12.myworkdayjobs.com|verizon": [
+   "verizon-careers"
+  ],
+  "ripplematch": [
+   "https://app.ripplematch.com/company/verizon"
+  ]
+ },
+ "viam": {
+  "greenhouse": [
+   "viamrobotics"
+  ]
+ },
+ "walmart": {
+  "workday:walmart.wd504.myworkdayjobs.com|walmart": [
+   "WalmartExternal"
+  ],
+  "workday:walmart.wd5.myworkdayjobs.com|walmart": [
+   "Non-WorkdayInternal"
+  ]
+ },
+ "disney": {
+  "workday:disney.wd5.myworkdayjobs.com|disney": [
+   "disneycareerdc",
+   "disneycareer"
+  ],
+  "phenom": [
+   {
+    "base_url": "https://join.disneycareers.com",
+    "ref_num": "TWNTWDUS",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "warner-bros-discovery": {
+  "phenom": [
+   {
+    "base_url": "https://careers.wbd.com",
+    "ref_num": "WAMEGLOBAL",
+    "lang": "en_us",
+    "country": "us"
+   }
+  ]
+ },
+ "washington-post": {
+  "workday:washpost.wd5.myworkdayjobs.com|washpost": [
+   "washingtonpostcareers"
+  ]
+ },
+ "wells-fargo": {
+  "workday:wd1.myworkdaysite.com|wf": [
+   "WellsFargoJobs"
+  ]
+ },
+ "western-digital": {
+  "smartrecruiters": [
+   "WesternDigital"
+  ]
+ },
+ "xcimer": {
+  "lever": [
+   "xcimer"
+  ]
+ },
+ "you-com": {
+  "greenhouse": [
+   "youcom"
+  ]
+ },
+ "yugabyte": {},
+ "zebra": {
+  "workday:zebra.wd501.myworkdayjobs.com|zebra": [
+   "Zebra_careers"
+  ]
+ },
+ "zillow": {
+  "workday:zillow.wd5.myworkdayjobs.com|zillow": [
+   "Zillow_Group_External"
+  ]
+ },
+ "zip": {
+  "ashby": [
+   "zip"
+  ]
+ },
+ "ziprecruiter": {
+  "greenhouse": [
+   "ziprecruiter"
+  ]
+ },
+ "zocdoc": {
+  "greenhouse": [
+   "zocdoc"
+  ]
+ },
+ "zoominfo": {
+  "greenhouse": [
+   "zoominfo"
+  ]
+ },
+ "zscaler": {
+  "greenhouse": [
+   "zscaler"
+  ]
+ }
+}

@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://northwesternmutual.wd5.myworkdayjobs.com/CORPORATE-CAREERS/siteMap.xml
+Sitemap: https://northwesternmutual.wd5.myworkdayjobs.com/CORPORATE-CAREERS-PRIVATE/siteMap.xml
+
+User-agent: *
+Allow: /CORPORATE-CAREERS/
+Allow: /CORPORATE-CAREERS-PRIVATE/
+Disallow: /refreshFacet/

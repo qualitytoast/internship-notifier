@@ -1,0 +1,17 @@
+# status 200
+# Equinix Robots Txt
+
+User-agent: bedrockbot
+Disallow: /
+
+User-agent: *
+Disallow: /v1/candidate_details
+Disallow: /me/
+Disallow: /api/
+Disallow: /pages/*/blocks/
+Disallow: /jobs/search?query=
+Disallow: /jobs/search?*&query=
+
+Crawl-delay: 5
+
+Sitemap: https://careers.equinix.com/sitemap.xml

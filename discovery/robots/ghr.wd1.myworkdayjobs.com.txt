@@ -1,0 +1,21 @@
+# status 200
+Sitemap: https://ghr.wd1.myworkdayjobs.com/lateral-apac/siteMap.xml
+Sitemap: https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/siteMap.xml
+Sitemap: https://ghr.wd1.myworkdayjobs.com/lateral-canada/siteMap.xml
+Sitemap: https://ghr.wd1.myworkdayjobs.com/lateral-emea/siteMap.xml
+Sitemap: https://ghr.wd1.myworkdayjobs.com/lateral-latam/siteMap.xml
+Sitemap: https://ghr.wd1.myworkdayjobs.com/Lateral-US/siteMap.xml
+Sitemap: https://ghr.wd1.myworkdayjobs.com/Scoutt/siteMap.xml
+
+User-agent: *
+Allow: /lateral-apac/
+Allow: /lateral-ba_continuum/
+Allow: /lateral-canada/
+Allow: /lateral-emea/
+Allow: /lateral-latam/
+Allow: /Lateral-US/
+Allow: /Scoutt/
+Disallow: /US-EMPLSV/
+Disallow: /lateral-ous/
+Disallow: /Contractor-Conversion/
+Disallow: /refreshFacet/

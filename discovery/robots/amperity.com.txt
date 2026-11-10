@@ -1,0 +1,18 @@
+# status 200
+User-agent: *
+Allow: /*
+
+Disallow: /api/*
+
+# Internal region variants of the homepage that middleware rewrites "/" to —
+# duplicate content of "/", never linked; block so it isn't indexed separately.
+Disallow: /homepage/*
+
+# Filter/search parameter variants on listing pages are noindexed and canonicalize
+# back to the clean parent URL; block crawling outright to save crawl budget.
+Disallow: /resources?*
+Disallow: /integrations?*
+Disallow: /customers?*
+Disallow: /blog?*
+
+Sitemap: https://amperity.com/sitemap.xml

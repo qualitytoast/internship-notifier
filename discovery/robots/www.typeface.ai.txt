@@ -1,0 +1,7 @@
+# status 200
+User-Agent: *
+Allow: /
+Disallow: /resources/u/*
+
+Host: https://www.typeface.ai
+Sitemap: https://www.typeface.ai/sitemap.xml

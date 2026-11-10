@@ -1,0 +1,6 @@
+# status 200
+User-agent: *
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /insights?*_page=*
+
+Sitemap: https://www.anchorage.com/sitemap.xml

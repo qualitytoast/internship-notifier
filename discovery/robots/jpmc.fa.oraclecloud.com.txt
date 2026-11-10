@@ -1,0 +1,20 @@
+# status 403
+<html>
+
+  <body>
+
+    <h1 style="color:#CD5C5C; font-weight: normal;">
+
+      W4S-402: Blocked by WAF4SaaS
+
+    </h1>
+
+    <h3 style="color:#4682B4; font-weight: normal;">
+
+      RequestId:dd0e170fbacc38976ab3d4cf21c31736
+
+    </h3>
+
+  </body>
+
+</html>

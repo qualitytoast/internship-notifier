@@ -1,0 +1,4 @@
+# status 200
+Sitemap: https://www.genesis.ml/sitemap.xml
+
+Sitemap: https://www.genesis.ml/sitemap.xml

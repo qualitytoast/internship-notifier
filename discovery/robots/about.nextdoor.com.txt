@@ -1,0 +1,21 @@
+# status 200
+User-agent: *
+Disallow: /_hcms/
+Disallow: /hubfs/
+Disallow: /hs-assets/
+Disallow: /hs/manage-preferences/
+Disallow: /hs/email-preview/
+Disallow: /hs/preview/
+Disallow: /hs-sites/
+Disallow: /__hs_preview/
+Disallow: /__hs_static/
+Disallow: /_hcms/api/
+Disallow: /email/
+Disallow: /private/
+Allow: /
+
+Sitemap: https://about.nextdoor.com/sitemap.xml
+Disallow: /_hcms/preview/
+Disallow: /hs/preferences-center/
+Disallow: /*?*hs_preview=*
+Disallow: /*?*hsCacheBuster=*

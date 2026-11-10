@@ -1,0 +1,9 @@
+# status 200
+Sitemap: https://warnerbros.wd5.myworkdayjobs.com/global/siteMap.xml
+Sitemap: https://warnerbros.wd5.myworkdayjobs.com/francais/siteMap.xml
+
+User-agent: *
+Allow: /global/
+Allow: /francais/
+Disallow: /directshare/
+Disallow: /refreshFacet/

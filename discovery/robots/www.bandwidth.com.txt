@@ -1,0 +1,26 @@
+# status 200
+Sitemap: https://www.bandwidth.com/sitemap.xml
+
+# Disallow list
+User-agent: ByteSpider
+User-agent: TikTokSpider
+User-agent: Diffbot
+User-agent: Omgili
+User-agent: Webzio-Extended
+User-agent: ImagesiftBot
+User-agent: Timpibot
+User-agent: Meltwater
+User-agent: Awario
+User-agent: Brandwatch
+User-agent: Prowly
+User-agent: SemrushBot-BA
+User-agent: Dotbot
+Content-Signal: ai-train=no, search=no, ai-input=no
+Disallow: /
+
+# Default rule 
+User-agent: *
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /cdn-cgi/

@@ -1,0 +1,11 @@
+# status 200
+Sitemap: https://fiserv.wd5.myworkdayjobs.com/EXT/siteMap.xml
+Sitemap: https://fiserv.wd5.myworkdayjobs.com/NZ/siteMap.xml
+Sitemap: https://fiserv.wd5.myworkdayjobs.com/blconsultant/siteMap.xml
+
+User-agent: *
+Allow: /EXT/
+Allow: /NZ/
+Allow: /blconsultant/
+Disallow: /P3M/
+Disallow: /refreshFacet/

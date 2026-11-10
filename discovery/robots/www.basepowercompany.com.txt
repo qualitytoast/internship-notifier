@@ -1,0 +1,2 @@
+# status 200
+Sitemap: https://www.basepowercompany.com/sitemap.xml

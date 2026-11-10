@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://ptc.wd1.myworkdayjobs.com/PTC/siteMap.xml
+
+User-agent: *
+Allow: /PTC/
+Disallow: /refreshFacet/

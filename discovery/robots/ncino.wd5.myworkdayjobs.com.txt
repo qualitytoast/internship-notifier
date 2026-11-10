@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://ncino.wd5.myworkdayjobs.com/nCinoAgency/siteMap.xml
+
+User-agent: *
+Allow: /nCinoAgency/
+Disallow: /refreshFacet/

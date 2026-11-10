@@ -1,0 +1,12 @@
+# status 200
+Sitemap: https://etsy.wd5.myworkdayjobs.com/Depop_Careers/siteMap.xml
+Sitemap: https://etsy.wd5.myworkdayjobs.com/Etsy_Careers/siteMap.xml
+Sitemap: https://etsy.wd5.myworkdayjobs.com/Reverb_Careers/siteMap.xml
+
+User-agent: *
+Allow: /Depop_Careers/
+Allow: /Etsy_Careers/
+Allow: /Reverb_Careers/
+Disallow: /Private_Etsy_Careers/
+Disallow: /Private_Depop_Careers/
+Disallow: /refreshFacet/

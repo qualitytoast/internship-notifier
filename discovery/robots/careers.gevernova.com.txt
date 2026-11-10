@@ -1,0 +1,6 @@
+# status 200
+User-Agent: *
+
+Disallow:
+
+Sitemap: https://careers.gevernova.com/sitemap.xml

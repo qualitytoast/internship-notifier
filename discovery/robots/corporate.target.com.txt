@@ -1,0 +1,8 @@
+# status 200
+User-agent: *
+Disallow: /fragments/partials/
+Allow: /
+
+sitemap: https://corporate.target.com/sitemap.xml
+sitemap: https://corporate.target.com/sitemaparticle.xml
+sitemap: https://corporate.target.com/sitemapjob.xml

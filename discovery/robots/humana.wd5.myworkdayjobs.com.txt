@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://humana.wd5.myworkdayjobs.com/Humana_External_Career_Site/siteMap.xml
+Sitemap: https://humana.wd5.myworkdayjobs.com/CenterWell_External_Career_Site/siteMap.xml
+
+User-agent: *
+Allow: /Humana_External_Career_Site/
+Allow: /CenterWell_External_Career_Site/
+Disallow: /refreshFacet/

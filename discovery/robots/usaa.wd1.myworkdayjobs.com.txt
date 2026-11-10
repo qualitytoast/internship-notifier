@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://usaa.wd1.myworkdayjobs.com/USAAJOBSWD/siteMap.xml
+Sitemap: https://usaa.wd1.myworkdayjobs.com/CONFIDENTIAL/siteMap.xml
+
+User-agent: *
+Allow: /USAAJOBSWD/
+Allow: /CONFIDENTIAL/
+Disallow: /refreshFacet/

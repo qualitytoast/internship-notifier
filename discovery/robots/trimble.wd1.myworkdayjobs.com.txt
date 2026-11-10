@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://trimble.wd1.myworkdayjobs.com/TrimbleCareers/siteMap.xml
+
+User-agent: *
+Allow: /TrimbleCareers/
+Disallow: /refreshFacet/

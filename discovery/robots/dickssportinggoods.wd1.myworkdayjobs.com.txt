@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://dickssportinggoods.wd1.myworkdayjobs.com/DSG/siteMap.xml
+
+User-agent: *
+Allow: /DSG/
+Disallow: /DSG_DC_Referrals/
+Disallow: /C-DSG/
+Disallow: /refreshFacet/

@@ -1,0 +1,10 @@
+# status 200
+# START YOAST BLOCK
+# ---------------------------
+User-agent: *
+Disallow:
+
+Sitemap: https://www.coxenterprises.com/sitemap_index.xml
+Sitemap: https://www.coxenterprises.com/cox-relief/sitemap_index.xml
+# ---------------------------
+# END YOAST BLOCK

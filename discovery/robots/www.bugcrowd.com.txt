@@ -1,0 +1,8 @@
+# status 200
+User-agent: *
+Disallow: /*?preview
+Disallow: /confirmation/
+Disallow: /external_redirect
+
+Sitemap: https://www.bugcrowd.com/sitemap_index.xml
+Sitemap: https://bugcrowd.com/sitemap.xml

@@ -1,0 +1,31 @@
+# status 200
+
+Sitemap: https://delinea.com/sitemap.xml
+
+User-agent: *
+Disallow: /ty/*
+Disallow: /lp/*
+Disallow: /blog/author/*
+
+Disallow: /_hcms/preview/
+Disallow: /hs/manage-preferences/
+Disallow: /hs/preferences-center/
+Disallow: /*?*hs_preview=*
+Disallow: /*?*hsCacheBuster=*
+
+User-agent: SiteAuditBot
+Allow: /
+
+Disallow: /_hcms/preview/
+Disallow: /hs/manage-preferences/
+Disallow: /hs/preferences-center/
+Disallow: /*?*hs_preview=*
+Disallow: /*?*hsCacheBuster=*
+
+User-agent: OtterGPT
+Allow: /
+Disallow: /_hcms/preview/
+Disallow: /hs/manage-preferences/
+Disallow: /hs/preferences-center/
+Disallow: /*?*hs_preview=*
+Disallow: /*?*hsCacheBuster=*

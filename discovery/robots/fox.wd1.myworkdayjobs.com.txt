@@ -1,0 +1,12 @@
+# status 200
+Sitemap: https://fox.wd1.myworkdayjobs.com/Domestic/siteMap.xml
+Sitemap: https://fox.wd1.myworkdayjobs.com/FOXTVST_EAST/siteMap.xml
+Sitemap: https://fox.wd1.myworkdayjobs.com/FOXTVST_Central/siteMap.xml
+Sitemap: https://fox.wd1.myworkdayjobs.com/FOXTVST_WEST/siteMap.xml
+
+User-agent: *
+Allow: /Domestic/
+Allow: /FOXTVST_EAST/
+Allow: /FOXTVST_Central/
+Allow: /FOXTVST_WEST/
+Disallow: /refreshFacet/

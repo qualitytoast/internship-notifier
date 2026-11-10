@@ -1,0 +1,8 @@
+# status 200
+User-agent: *
+Allow: /
+Disallow: /search?*
+Disallow: /lp/
+Sitemap: https://www.obsidiansecurity.com/sitemap.xml
+
+Sitemap: https://www.obsidiansecurity.com/sitemap.xml

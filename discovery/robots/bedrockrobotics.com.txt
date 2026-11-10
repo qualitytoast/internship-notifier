@@ -1,0 +1,7 @@
+# status 200
+User-Agent: *
+Allow: /
+Disallow: /studio
+Disallow: /private
+
+Sitemap: https://bedrockrobotics.com/sitemap.xml

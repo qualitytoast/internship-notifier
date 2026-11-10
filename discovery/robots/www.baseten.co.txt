@@ -1,0 +1,7 @@
+# status 200
+User-Agent: *
+Allow: /
+Disallow: /dev/
+Disallow: /api/
+
+Sitemap: https://www.baseten.co/sitemap.xml

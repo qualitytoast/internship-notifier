@@ -1,0 +1,29 @@
+# status 200
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+# Allow all CXO pages
+Allow: /cxo/
+Allow: /customers/
+
+# Blocked files
+Disallow: /wp-content/uploads/2018/05/Data-Processing-Agreement-5.24.18.pdf
+Disallow: /content/dam/rubrik/en/resources/internal
+Disallow: /content/dam/rubrik/gated
+Disallow: /content/rubrik/language-masters
+Disallow: /_next/
+Disallow: /api/
+Disallow: /search-results?searchTerm=
+
+
+Sitemap: https://www.rubrik.com/sitemap.xml
+Sitemap: https://www.rubrik.com/de.sitemap.xml
+Sitemap: https://www.rubrik.com/fr.sitemap.xml
+Sitemap: https://www.rubrik.com/ja.sitemap.xml
+Sitemap: https://www.rubrik.com/tr_tr.sitemap.xml
+Sitemap: https://www.rubrik.com/id.sitemap.xml
+Sitemap: https://www.rubrik.com/it.sitemap.xml
+Sitemap: https://www.rubrik.com/nl.sitemap.xml
+Sitemap: https://training.rubrik.com/sitemap.xml
+Sitemap: https://rubrik.com/cxo/sitemap.xml
+Sitemap: https://www.rubrik.com/sitemap-eds.xml

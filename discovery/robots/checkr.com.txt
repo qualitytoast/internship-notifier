@@ -1,0 +1,6 @@
+# status 200
+User-Agent: *
+Allow: /
+Disallow: /screening-laws/
+
+Sitemap: https://checkr.com/sitemap_index.xml

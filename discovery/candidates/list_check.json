@@ -1,0 +1,211 @@
+{
+ "best-buy": {
+  "workday:site=bestbuyca_career,tenant=bestbuycanada": [
+   "zshah101's board registry",
+   "Best Buy",
+   "https://bestbuycanada.wd3.myworkdayjobs.com/BestBuyCA_Career"
+  ]
+ },
+ "bny": {
+  "oracle:host=eofe.fa.us2.oraclecloud.com,site=cx_1": [
+   "zshah101's board registry",
+   "BNY",
+   ""
+  ]
+ },
+ "conductorone": {
+  "ashby:board=conductorone": [
+   "zshah101's board registry",
+   "ConductorOne",
+   "https://jobs.ashbyhq.com/conductorone"
+  ]
+ },
+ "draftkings": {
+  "ripplematch:company=draftkings": [
+   "RippleMatch's company list",
+   "draftkings",
+   "https://app.ripplematch.com/company/draftkings"
+  ]
+ },
+ "etsy": {
+  "workday:site=depop_careers,tenant=etsy": [
+   "zshah101's board registry",
+   "Depop",
+   "https://etsy.wd5.myworkdayjobs.com/Depop_Careers"
+  ]
+ },
+ "fortinet": {
+  "oracle:host=edel.fa.us2.oraclecloud.com,site=cx_1": [
+   "zshah101's board registry",
+   "Fortinet",
+   ""
+  ]
+ },
+ "fox": {
+  "workday:site=fox,tenant=foxfactory": [
+   "zshah101's board registry",
+   "FOX",
+   "https://foxfactory.wd1.myworkdayjobs.com/FOX"
+  ]
+ },
+ "hpe": {
+  "workday:site=externalcareersite,tenant=hp": [
+   "Boardsweep",
+   "Hewlett Packard Enterprise",
+   "https://hp.wd5.myworkdayjobs.com/ExternalCareerSite/job/San-Francisco-California-United-States-of-America/Software-Quality-Assurance-Intern_UNI4803-1"
+  ],
+  "workday:site=exteu-ac-careersite,tenant=hp": [
+   "Boardsweep",
+   "Hewlett Packard Enterprise",
+   "https://hp.wd5.myworkdayjobs.com/EXTEU-AC-CareerSite/job/San-Francisco-California-United-States-of-America/Software-Engineering-Intern--AIML-Platform---HP-IQ_UNI4800"
+  ]
+ },
+ "humana": {
+  "workday:site=centerwell_external_career_site,tenant=humana": [
+   "zshah101's board registry",
+   "CenterWell",
+   "https://humana.wd5.myworkdayjobs.com/centerwell_external_career_site"
+  ]
+ },
+ "jpmorgan-chase": {
+  "oracle:host=jpmc.fa.oraclecloud.com,site=cx_2001": [
+   "sndsh404's list",
+   "JPMorganChase",
+   "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/job/210691905"
+  ]
+ },
+ "mckesson": {
+  "workday:site=covermymeds_external_careers,tenant=mckesson": [
+   "SimplifyJobs",
+   "CoverMyMeds",
+   "https://mckesson.wd3.myworkdayjobs.com/en-US/CoverMyMeds_External_Careers/job/USA-OH-Columbus/CMM-Technology-Intern---Summer-2027_JR0151979-2"
+  ],
+  "workday:site=scri_careers,tenant=mckesson": [
+   "zshah101's board registry",
+   "Sarah Cannon Research Institute (SCRI)",
+   "https://mckesson.wd3.myworkdayjobs.com/SCRI_Careers"
+  ]
+ },
+ "mercor": {
+  "ripplematch:company=mercor": [
+   "RippleMatch's company list",
+   "mercor",
+   "https://app.ripplematch.com/company/mercor"
+  ]
+ },
+ "morgan-stanley": {
+  "workday:site=external,tenant=williams": [
+   "SimplifyJobs",
+   "Williams",
+   "https://williams.wd5.myworkdayjobs.com/External/job/OK-Tulsa---Headquarters/Summer-2027-Return-Engineering-Intern_R112502"
+  ],
+  "workday:site=external,tenant=marshfieldclinichealthsystems": [
+   "zshah101's board registry",
+   "Marshfield Clinic Health System",
+   "https://marshfieldclinichealthsystems.wd5.myworkdayjobs.com/External"
+  ]
+ },
+ "northwestern-mutual": {
+  "smartrecruiters:company=northwesternmutual": [
+   "zshah101's board registry",
+   "Northwestern Mutual",
+   "https://careers.smartrecruiters.com/NorthwesternMutual"
+  ]
+ },
+ "unitedhealth-group": {
+  "ripplematch:company=unitedhealth-group": [
+   "RippleMatch's company list",
+   "unitedhealth group",
+   "https://app.ripplematch.com/company/unitedhealth-group"
+  ]
+ },
+ "progressive": {
+  "ripplematch:company=progressive": [
+   "RippleMatch's company list",
+   "progressive",
+   "https://app.ripplematch.com/company/progressive"
+  ]
+ },
+ "qualcomm": {
+  "eightfold:domain=qualcomm.eightfold.ai": [
+   "SimplifyJobs",
+   "Qualcomm",
+   "https://qualcomm.eightfold.ai/careers/job/446716226621"
+  ]
+ },
+ "reddit": {
+  "ripplematch:company=reddit": [
+   "RippleMatch's company list",
+   "reddit",
+   "https://app.ripplematch.com/company/reddit"
+  ]
+ },
+ "rivian": {
+  "ashby:board=rivianvw.tech": [
+   "Trackr",
+   "rivian",
+   "https://jobs.ashbyhq.com/rivianvw.tech?employmentType=Intern&utm_source=Trackr&utm_medium=tracker&utm_campaign=us_tech_2027"
+  ]
+ },
+ "roku": {
+  "ripplematch:company=roku": [
+   "RippleMatch's company list",
+   "roku",
+   "https://app.ripplematch.com/company/roku"
+  ]
+ },
+ "snap": {
+  "ripplematch:company=snap-inc": [
+   "RippleMatch's company list",
+   "snap inc",
+   "https://app.ripplematch.com/company/snap-inc"
+  ]
+ },
+ "superhuman": {
+  "ashby:board=superhuman": [
+   "zshah101's board registry",
+   "Superhuman",
+   "https://jobs.ashbyhq.com/superhuman"
+  ]
+ },
+ "synchrony": {
+  "workday:site=careers,tenant=synchronyfinancial": [
+   "zshah101's board registry",
+   "Synchrony Financial",
+   "https://synchronyfinancial.wd5.myworkdayjobs.com/careers"
+  ]
+ },
+ "texas-instruments": {
+  "oracle:host=ebgj.fa.us2.oraclecloud.com,site=cx_1": [
+   "zshah101's board registry",
+   "Texas Instruments",
+   ""
+  ],
+  "oracle:host=edbz.fa.us2.oraclecloud.com,site=cx_1": [
+   "zshah101's board registry",
+   "Texas Instruments",
+   ""
+  ]
+ },
+ "tyler-technologies": {
+  "jobvite:slug=tylertech": [
+   "SimplifyJobs",
+   "Tyler Technologies",
+   "https://jobs.jobvite.com/tylertech/job/oqQJAfwj?nl=1&nl=1&fr=false"
+  ]
+ },
+ "verizon": {
+  "ripplematch:company=verizon": [
+   "RippleMatch's company list",
+   "verizon",
+   "https://app.ripplematch.com/company/verizon"
+  ]
+ },
+ "walmart": {
+  "workday:site=non-workdayinternal,tenant=walmart": [
+   "zshah101's board registry",
+   "Walmart",
+   "https://walmart.wd5.myworkdayjobs.com/Non-WorkdayInternal"
+  ]
+ }
+}

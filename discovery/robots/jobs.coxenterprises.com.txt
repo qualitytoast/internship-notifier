@@ -1,0 +1,7 @@
+# status 200
+﻿# Production
+
+User-agent: *
+Allow: /
+
+Sitemap: https://jobs.coxenterprises.com/sitemap.xml

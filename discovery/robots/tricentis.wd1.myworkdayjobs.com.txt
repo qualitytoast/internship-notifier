@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://tricentis.wd1.myworkdayjobs.com/Tricentis_Careers/siteMap.xml
+
+User-agent: *
+Allow: /Tricentis_Careers/
+Disallow: /refreshFacet/

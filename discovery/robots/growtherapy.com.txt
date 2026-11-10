@@ -1,0 +1,27 @@
+# status 200
+User-agent: *
+Allow: /
+Disallow: /api/provider-search*
+Disallow: /graphql
+Disallow: /find/
+Disallow: /cms-preview/*
+Disallow: /_next/static/chunks/provider-card-book-session-button*.js
+Disallow: /_next/static/chunks/booking-preview-form-buttons*.js
+Disallow: /_next/static/chunks/provider-hero-book-session-button*.js
+Disallow: /_next/static/chunks/provider-grouping-heading-link-overlay*.js
+Disallow: /_next/static/chunks/grouping-item-wrapper*.js
+Disallow: /_next/static/chunks/provider-fit-check*.js
+Disallow: /_next/static/chunks/booking-module-buttons*.js
+Disallow: /_next/static/chunks/provider-profile-sticky-footer-schedule-link*.js
+Disallow: /_next/static/chunks/better-fit-see-more-providers-link*.js
+Disallow: /_next/static/chunks/booked-provider-view-similar-providers-link*.js
+Disallow: /_next/static/chunks/similar-providers-see-more-tile*.js
+Disallow: /_next/static/chunks/map-interactive*.js
+Sitemap: https://growtherapy.com/sitemaps/therapists-sitemap-index-v2.xml
+Sitemap: https://growtherapy.com/sitemaps/dynamic-provider-sitemap-match-1022.xml
+Sitemap: https://growtherapy.com/post-sitemap.xml
+Sitemap: https://growtherapy.com/guide-sitemap.xml
+Sitemap: https://growtherapy.com/page-sitemap.xml
+Sitemap: https://growtherapy.com/category-sitemap.xml
+Sitemap: https://growtherapy.com/screener-sitemap.xml
+Sitemap: https://growtherapy.com/guide-topic-sitemap.xml

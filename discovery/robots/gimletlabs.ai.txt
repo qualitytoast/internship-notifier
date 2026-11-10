@@ -1,0 +1,7 @@
+# status 200
+User-Agent: *
+Allow: /
+
+Host: https://gimletlabs.ai
+Sitemap: https://gimletlabs.ai/sitemap.xml
+Sitemap: https://gimletlabs.ai/blog/sitemap.xml

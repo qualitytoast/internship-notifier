@@ -1,0 +1,7 @@
+# status 200
+User-agent: *
+Allow: /
+Sitemap: https://www.lightspark.com/sitemap.xml
+Sitemap: https://www.lightspark.com/sitemap2.xml
+Disallow: /api/
+Disallow: /partner-summit-2025

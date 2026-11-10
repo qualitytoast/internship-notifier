@@ -1,0 +1,5 @@
+# status 200
+User-agent: *
+Disallow: /categories/
+
+Sitemap: https://www.tamr.com/sitemap.xml

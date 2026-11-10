@@ -1,0 +1,6 @@
+# status 200
+
+User-agent: *
+Disallow: /2/
+Disallow: /Citi_Early_Careers_Events_Site/
+Disallow: /refreshFacet/

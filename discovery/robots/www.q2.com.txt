@@ -1,0 +1,13 @@
+# status 200
+User-agent: *
+Sitemap: https://www.q2.com/sitemap.xml
+Disallow: *customer-stories-library-v2*
+Disallow: /pathfactory-testing
+Disallow: /homepage-personalization
+Disallow: /testing*
+
+Disallow: /_hcms/preview/
+Disallow: /hs/manage-preferences/
+Disallow: /hs/preferences-center/
+Disallow: /*?*hs_preview=*
+Disallow: /*?*hsCacheBuster=*

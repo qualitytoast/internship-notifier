@@ -1,0 +1,92 @@
+# status 200
+Sitemap: https://withpersona.com/sitemap-index.xml
+
+# AI search and citation bots
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /dashboard/
+Disallow: /inquiry/
+Disallow: /verify/
+Disallow: /404
+Disallow: /500
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /dashboard/
+Disallow: /inquiry/
+Disallow: /verify/
+Disallow: /404
+Disallow: /500
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /dashboard/
+Disallow: /inquiry/
+Disallow: /verify/
+Disallow: /404
+Disallow: /500
+
+User-agent: Claude-User
+Allow: /
+Disallow: /dashboard/
+Disallow: /inquiry/
+Disallow: /verify/
+Disallow: /404
+Disallow: /500
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /dashboard/
+Disallow: /inquiry/
+Disallow: /verify/
+Disallow: /404
+Disallow: /500
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /dashboard/
+Disallow: /inquiry/
+Disallow: /verify/
+Disallow: /404
+Disallow: /500
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /dashboard/
+Disallow: /inquiry/
+Disallow: /verify/
+Disallow: /404
+Disallow: /500
+
+User-agent: GoogleOther
+Allow: /
+Disallow: /dashboard/
+Disallow: /inquiry/
+Disallow: /verify/
+Disallow: /404
+Disallow: /500
+
+# AI training crawlers (see §5.2)
+User-agent: GPTBot
+Allow: /
+Disallow: /dashboard/
+Disallow: /inquiry/
+Disallow: /verify/
+Disallow: /404
+Disallow: /500
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /dashboard/
+Disallow: /inquiry/
+Disallow: /verify/
+Disallow: /404
+Disallow: /500
+
+# Default (existing, unchanged)
+User-agent: *
+Disallow: /dashboard/
+Disallow: /inquiry/
+Disallow: /verify/
+Disallow: /404
+Disallow: /500

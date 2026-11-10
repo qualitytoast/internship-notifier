@@ -1,0 +1,17 @@
+# status 200
+
+
+
+
+
+
+
+
+
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Crawl-delay: 10
+
+Sitemap: https://www.drivewealth.com/sitemap.xml
+Sitemap: https://www.drivewealth.com/sitemap.rss

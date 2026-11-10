@@ -1,0 +1,135 @@
+{
+ "american-express": {
+  "named": [
+   "eightfold:domain=aexp.eightfold.ai"
+  ],
+  "configured": [
+   "oracle:host=egug.fa.us2.oraclecloud.com,site=cx_1"
+  ],
+  "unconfigured": [
+   "eightfold:domain=aexp.eightfold.ai"
+  ]
+ },
+ "citi": {
+  "named": [
+   "eightfold:domain=citi.eightfold.ai",
+   "workday:host=citi.wd5.myworkdayjobs.com,site=2,tenant=citi"
+  ],
+  "configured": [
+   "workday:host=citi.wd5.myworkdayjobs.com,site=2,tenant=citi",
+   "workday:host=citi.wd5.myworkdayjobs.com,site=citi_early_careers_events_site,tenant=citi"
+  ],
+  "unconfigured": [
+   "eightfold:domain=citi.eightfold.ai"
+  ]
+ },
+ "hp": {
+  "named": [
+   "eightfold:domain=hp-sandbox.com",
+   "eightfold:domain=hp-sandbox.eightfold.ai"
+  ],
+  "configured": [
+   "greenhouse:board=hp",
+   "greenhouse:board=hpiq",
+   "workday:host=hp.wd5.myworkdayjobs.com,site=externalcareersite,tenant=hp",
+   "workday:host=hp.wd5.myworkdayjobs.com,site=exteu-ac-careersite,tenant=hp"
+  ],
+  "unconfigured": [
+   "eightfold:domain=hp-sandbox.com",
+   "eightfold:domain=hp-sandbox.eightfold.ai"
+  ]
+ },
+ "keysight": {
+  "named": [
+   "icims:portal=careers-keysight.icims.com",
+   "icims:portal=globalcareers-keysight.icims.com",
+   "icims:portal=keysight.icims.com"
+  ],
+  "configured": [
+   "jibe:host=jobs.keysight.com"
+  ],
+  "unconfigured": [
+   "icims:portal=careers-keysight.icims.com",
+   "icims:portal=globalcareers-keysight.icims.com",
+   "icims:portal=keysight.icims.com"
+  ]
+ },
+ "micron": {
+  "named": [
+   "eightfold:domain=micron.com"
+  ],
+  "configured": [
+   "workday:host=micron.wd1.myworkdayjobs.com,site=external,tenant=micron"
+  ],
+  "unconfigured": [
+   "eightfold:domain=micron.com"
+  ]
+ },
+ "nike": {
+  "named": [
+   "avature:site=nikeats.avature.net/niketalentcommunity",
+   "workday:host=nike.wd1.myworkdayjobs.com,site=nke,tenant=nike",
+   "workday:host=nike.wd1.myworkdayjobs.com,site=nke2,tenant=nike"
+  ],
+  "configured": [
+   "workday:host=nike.wd1.myworkdayjobs.com,site=nke,tenant=nike",
+   "workday:host=nike.wd1.myworkdayjobs.com,site=nke2,tenant=nike"
+  ],
+  "unconfigured": [
+   "avature:site=nikeats.avature.net/niketalentcommunity"
+  ]
+ },
+ "principal": {
+  "named": [
+   "icims:portal=careers-principal.icims.com",
+   "icims:portal=careershk-principal.icims.com",
+   "icims:portal=careersindonesiapam-principal.icims.com",
+   "icims:portal=careersmalaysia-principal.icims.com",
+   "icims:portal=careerssingapore-principal.icims.com",
+   "icims:portal=careersthailandpam-principal.icims.com",
+   "icims:portal=internal-principal.icims.com",
+   "icims:portal=internalspanish-principal.icims.com"
+  ],
+  "configured": [
+   "jibe:host=careers.principal.com"
+  ],
+  "unconfigured": [
+   "icims:portal=careers-principal.icims.com",
+   "icims:portal=careershk-principal.icims.com",
+   "icims:portal=careersindonesiapam-principal.icims.com",
+   "icims:portal=careersmalaysia-principal.icims.com",
+   "icims:portal=careerssingapore-principal.icims.com",
+   "icims:portal=careersthailandpam-principal.icims.com",
+   "icims:portal=internal-principal.icims.com",
+   "icims:portal=internalspanish-principal.icims.com"
+  ]
+ },
+ "rivian": {
+  "named": [
+   "icims:portal=internal-careers-rivian.icims.com",
+   "icims:portal=us-careers-rivian.icims.com"
+  ],
+  "configured": [
+   "jibe:host=careers.rivian.com"
+  ],
+  "unconfigured": [
+   "icims:portal=internal-careers-rivian.icims.com",
+   "icims:portal=us-careers-rivian.icims.com"
+  ]
+ },
+ "state-farm": {
+  "named": [
+   "icims:portal=careers-statefarm.icims.com",
+   "icims:portal=events-statefarm.icims.com",
+   "icims:portal=statefarm.icims.com"
+  ],
+  "configured": [
+   "jibe:host=jobs.statefarm.com"
+  ],
+  "unconfigured": [
+   "icims:portal=careers-statefarm.icims.com",
+   "icims:portal=events-statefarm.icims.com",
+   "icims:portal=statefarm.icims.com"
+  ]
+ }
+}

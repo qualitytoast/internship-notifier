@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://sonos.wd1.myworkdayjobs.com/Sonos/siteMap.xml
+Sitemap: https://sonos.wd1.myworkdayjobs.com/Student_Opportunities/siteMap.xml
+
+User-agent: *
+Allow: /Sonos/
+Allow: /Student_Opportunities/
+Disallow: /refreshFacet/

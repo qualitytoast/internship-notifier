@@ -1,0 +1,9 @@
+# status 200
+# robots.txt for https://www.crusoe.ai
+
+User-agent: *
+Allow: /
+Disallow: /in-progress/
+Disallow: /archive/
+
+Sitemap: https://www.crusoe.ai/sitemap.xml

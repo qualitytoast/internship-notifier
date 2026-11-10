@@ -1,0 +1,9 @@
+# status 200
+Sitemap: https://draftkings.wd1.myworkdayjobs.com/DraftKings/siteMap.xml
+
+User-agent: *
+Allow: /DraftKings/
+Disallow: /Campus_Career_Portal/
+Disallow: /DraftKings_Events_Portal/
+Disallow: /Employee_Referral_Portal/
+Disallow: /refreshFacet/

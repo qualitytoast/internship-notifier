@@ -1,0 +1,11 @@
+# status 200
+Sitemap: https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site/siteMap.xml
+Sitemap: https://nasdaq.wd1.myworkdayjobs.com/US_External_Career_Site/siteMap.xml
+Sitemap: https://nasdaq.wd1.myworkdayjobs.com/eVestment/siteMap.xml
+
+User-agent: *
+Allow: /Global_External_Site/
+Allow: /US_External_Career_Site/
+Allow: /eVestment/
+Disallow: /job_postings/
+Disallow: /refreshFacet/

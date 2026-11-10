@@ -1,0 +1,1352 @@
+{
+ "ai2": {
+  "names": {
+   "The Allen Institute for AI": 3
+  },
+  "rows": 3,
+  "open_now": 3,
+  "systems": {
+   "greenhouse:board=thealleninstitute": 3
+  }
+ },
+ "allstate": {
+  "names": {
+   "Allstate": 5
+  },
+  "rows": 5,
+  "open_now": 5,
+  "systems": {
+   "workday:host=allstate.wd5.myworkdayjobs.com,site=sourcing_event,tenant=allstate": 5
+  }
+ },
+ "american-express": {
+  "names": {
+   "American Express": 44
+  },
+  "rows": 44,
+  "open_now": 44,
+  "systems": {
+   "oracle:host=egug.fa.us2.oraclecloud.com,site=cx_1": 44
+  }
+ },
+ "analog-devices": {
+  "names": {
+   "Analog Devices": 21
+  },
+  "rows": 21,
+  "open_now": 21,
+  "systems": {
+   "workday:host=analogdevices.wd1.myworkdayjobs.com,site=external,tenant=analogdevices": 21
+  }
+ },
+ "appian": {
+  "names": {
+   "Appian": 2
+  },
+  "rows": 2,
+  "open_now": 2,
+  "systems": {
+   "greenhouse:board=appian": 2
+  }
+ },
+ "applied-materials": {
+  "names": {
+   "Applied Materials": 18
+  },
+  "rows": 18,
+  "open_now": 18,
+  "systems": {
+   "workday:host=amat.wd1.myworkdayjobs.com,site=external,tenant=amat": 18
+  }
+ },
+ "arcesium": {
+  "names": {
+   "Arcesium": 2
+  },
+  "rows": 2,
+  "open_now": 2,
+  "systems": {
+   "greenhouse:board=arcesiumllc": 2
+  }
+ },
+ "arista-networks": {
+  "names": {
+   "Arista Networks": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "other:jobs.smartrecruiters.com": 1
+  }
+ },
+ "base-power": {
+  "names": {
+   "Base Power": 7
+  },
+  "rows": 7,
+  "open_now": 7,
+  "systems": {
+   "ashby:board=base-power": 7
+  }
+ },
+ "bedrock-robotics": {
+  "names": {
+   "Bedrock Robotics": 12
+  },
+  "rows": 12,
+  "open_now": 12,
+  "systems": {
+   "ashby:board=bedrock-robotics": 12
+  }
+ },
+ "betterment": {
+  "names": {
+   "Betterment": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "greenhouse:board=bettermentcampusrecruiting": 1
+  }
+ },
+ "blackrock": {
+  "names": {
+   "BlackRock": 7
+  },
+  "rows": 7,
+  "open_now": 7,
+  "systems": {
+   "workday:host=blackrock.wd1.myworkdayjobs.com,site=blackrock_professional,tenant=blackrock": 7
+  }
+ },
+ "bny": {
+  "names": {
+   "BNY": 15
+  },
+  "rows": 15,
+  "open_now": 15,
+  "systems": {
+   "oracle:host=eofe.fa.us2.oraclecloud.com,site=cx_1001": 15
+  }
+ },
+ "bot-auto": {
+  "names": {
+   "Bot Auto": 2
+  },
+  "rows": 2,
+  "open_now": 2,
+  "systems": {
+   "greenhouse:board=botauto": 2
+  }
+ },
+ "braze": {
+  "names": {
+   "Braze": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "greenhouse:board=braze": 1
+  }
+ },
+ "cadence": {
+  "names": {
+   "Cadence Design Systems": 12
+  },
+  "rows": 12,
+  "open_now": 12,
+  "systems": {
+   "workday:host=cadence.wd1.myworkdayjobs.com,site=external_careers,tenant=cadence": 5,
+   "workday:host=cadence.wd1.myworkdayjobs.com,site=univ_careers,tenant=cadence": 4,
+   "workday:host=cadence.wd1.myworkdayjobs.com,site=university_talent_intern,tenant=cadence": 2,
+   "workday:host=cadence.wd1.myworkdayjobs.com,site=university_talent,tenant=cadence": 1
+  }
+ },
+ "charles-schwab": {
+  "names": {
+   "Charles Schwab": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "icims:portal=career-schwab.icims.com": 1
+  }
+ },
+ "ciena": {
+  "names": {
+   "Ciena": 20
+  },
+  "rows": 20,
+  "open_now": 20,
+  "systems": {
+   "other:ciena.wd5.myworkdayjobs.com": 20
+  }
+ },
+ "citi": {
+  "names": {
+   "Citi": 7
+  },
+  "rows": 7,
+  "open_now": 7,
+  "systems": {
+   "workday:host=citi.wd5.myworkdayjobs.com,site=2,tenant=citi": 7
+  }
+ },
+ "clay": {
+  "names": {
+   "Clay": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "ashby:board=claylabs": 1
+  }
+ },
+ "clockwork-systems": {
+  "names": {
+   "Clockwork Systems": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "greenhouse:board=clockworksystems": 1
+  }
+ },
+ "cohesity": {
+  "names": {
+   "Cohesity": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "workday:host=cohesity.wd5.myworkdayjobs.com,site=cohesity_careers,tenant=cohesity": 1
+  }
+ },
+ "commonwealth-fusion": {
+  "names": {
+   "Commonwealth Fusion Systems": 4
+  },
+  "rows": 4,
+  "open_now": 4,
+  "systems": {
+   "lever:site=cfsenergy": 4
+  }
+ },
+ "copart": {
+  "names": {
+   "Copart": 10
+  },
+  "rows": 10,
+  "open_now": 10,
+  "systems": {
+   "workday:host=copart.wd12.myworkdayjobs.com,site=copart,tenant=copart": 10
+  }
+ },
+ "costar": {
+  "names": {
+   "CoStar Group": 7
+  },
+  "rows": 7,
+  "open_now": 7,
+  "systems": {
+   "workday:host=costar.wd1.myworkdayjobs.com,site=costar_campus,tenant=costar": 7
+  }
+ },
+ "costco": {
+  "names": {
+   "Costco": 8
+  },
+  "rows": 8,
+  "open_now": 8,
+  "systems": {
+   "other:phf.tbe.taleo.net": 8
+  }
+ },
+ "cox": {
+  "names": {
+   "Cox": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "workday:host=cox.wd1.myworkdayjobs.com,site=cox_external_career_site_1,tenant=cox": 1
+  }
+ },
+ "crusoe": {
+  "names": {
+   "Crusoe": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "ashby:board=crusoe": 1
+  }
+ },
+ "cvs-health": {
+  "names": {
+   "CVS Health": 11
+  },
+  "rows": 11,
+  "open_now": 11,
+  "systems": {
+   "workday:host=cvshealth.wd1.myworkdayjobs.com,site=cvs_health_careers,tenant=cvshealth": 11
+  }
+ },
+ "datarobot": {
+  "names": {
+   "DataRobot": 3
+  },
+  "rows": 3,
+  "open_now": 3,
+  "systems": {
+   "workday:host=datarobot.wd1.myworkdayjobs.com,site=datarobot_external_careers,tenant=datarobot": 3
+  }
+ },
+ "dicks-sporting-goods": {
+  "names": {
+   "Dick's Sporting Goods": 3
+  },
+  "rows": 3,
+  "open_now": 3,
+  "systems": {
+   "workday:host=dickssportinggoods.wd1.myworkdayjobs.com,site=dsg,tenant=dickssportinggoods": 3
+  }
+ },
+ "disney": {
+  "names": {
+   "The Walt Disney Company": 3
+  },
+  "rows": 3,
+  "open_now": 3,
+  "systems": {
+   "workday:host=disney.wd5.myworkdayjobs.com,site=disneycareerdc,tenant=disney": 2,
+   "workday:host=disney.wd5.myworkdayjobs.com,site=disneycareer,tenant=disney": 1
+  }
+ },
+ "domino-data-lab": {
+  "names": {
+   "Domino Data Lab": 2
+  },
+  "rows": 2,
+  "open_now": 2,
+  "systems": {
+   "other:app.careerpuck.com": 2
+  }
+ },
+ "draftkings": {
+  "names": {
+   "DraftKings": 8
+  },
+  "rows": 8,
+  "open_now": 8,
+  "systems": {
+   "workday:host=draftkings.wd1.myworkdayjobs.com,site=campus_career_portal,tenant=draftkings": 6,
+   "workday:host=draftkings.wd1.myworkdayjobs.com,site=employee_referral_portal,tenant=draftkings": 2
+  }
+ },
+ "drivewealth": {
+  "names": {
+   "DriveWealth": 6
+  },
+  "rows": 6,
+  "open_now": 6,
+  "systems": {
+   "greenhouse:board=drivewealth": 3,
+   "ashby:board=drivewealth": 3
+  }
+ },
+ "elevance-health": {
+  "names": {
+   "Elevance Health": 4
+  },
+  "rows": 4,
+  "open_now": 4,
+  "systems": {
+   "workday:host=elevancehealth.wd1.myworkdayjobs.com,site=elv-et,tenant=elevancehealth": 4
+  }
+ },
+ "ellipsis-labs": {
+  "names": {
+   "Ellipsis Labs": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "ashby:board=ellipsislabs": 1
+  }
+ },
+ "enova": {
+  "names": {
+   "Enova": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "greenhouse:board=enova": 1
+  }
+ },
+ "etched": {
+  "names": {
+   "Etched": 7
+  },
+  "rows": 7,
+  "open_now": 7,
+  "systems": {
+   "ashby:board=etched": 7
+  }
+ },
+ "exa": {
+  "names": {
+   "Exa": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "ashby:board=exa": 1
+  }
+ },
+ "f5": {
+  "names": {
+   "F5": 2
+  },
+  "rows": 2,
+  "open_now": 2,
+  "systems": {
+   "workday:host=ffive.wd5.myworkdayjobs.com,site=f5jobs,tenant=ffive": 2
+  }
+ },
+ "figure-ai": {
+  "names": {
+   "Figure": 7
+  },
+  "rows": 7,
+  "open_now": 7,
+  "systems": {
+   "greenhouse:board=figureai": 7
+  }
+ },
+ "fortinet": {
+  "names": {
+   "Fortinet": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "oracle:host=edel.fa.us2.oraclecloud.com,site=cx_2001": 1
+  }
+ },
+ "fox": {
+  "names": {
+   "FOX": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "workday:host=fox.wd1.myworkdayjobs.com,site=domestic,tenant=fox": 1
+  }
+ },
+ "freddie-mac": {
+  "names": {
+   "Freddie Mac": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "workday:host=freddiemac.wd5.myworkdayjobs.com,site=external,tenant=freddiemac": 1
+  }
+ },
+ "garner-health": {
+  "names": {
+   "Garner Health": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "greenhouse:board=garnerhealth": 1
+  }
+ },
+ "ge-vernova": {
+  "names": {
+   "GE Vernova": 26
+  },
+  "rows": 26,
+  "open_now": 26,
+  "systems": {
+   "workday:host=gevernova.wd5.myworkdayjobs.com,site=vernova_externalsite,tenant=gevernova": 13,
+   "workday:host=gevernova.wd5.myworkdayjobs.com,site=only_confidential_executive_recruiting,tenant=gevernova": 13
+  }
+ },
+ "gemini": {
+  "names": {
+   "Gemini": 2
+  },
+  "rows": 2,
+  "open_now": 2,
+  "systems": {
+   "other:boards.greenhouse.io": 2
+  }
+ },
+ "genesis-molecular-ai": {
+  "names": {
+   "Genesis Molecular AI": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "ashby:board=genesis-molecular-ai": 1
+  }
+ },
+ "globalfoundries": {
+  "names": {
+   "GlobalFoundries": 24
+  },
+  "rows": 24,
+  "open_now": 24,
+  "systems": {
+   "workday:host=globalfoundries.wd1.myworkdayjobs.com,site=external,tenant=globalfoundries": 24
+  }
+ },
+ "grow-therapy": {
+  "names": {
+   "Grow Therapy": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "ashby:board=grow-therapy": 1
+  }
+ },
+ "haize-labs": {
+  "names": {
+   "Haize Labs": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "greenhouse:board=haizelabs": 1
+  }
+ },
+ "hartford": {
+  "names": {
+   "The Hartford": 3
+  },
+  "rows": 3,
+  "open_now": 3,
+  "systems": {
+   "workday:host=thehartford.wd5.myworkdayjobs.com,site=careers_external,tenant=thehartford": 3
+  }
+ },
+ "hex": {
+  "names": {
+   "Hex Technologies": 2
+  },
+  "rows": 2,
+  "open_now": 2,
+  "systems": {
+   "ashby:board=hex": 2
+  }
+ },
+ "heygen": {
+  "names": {
+   "HeyGen": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "greenhouse:board=heygen": 1
+  }
+ },
+ "hilton": {
+  "names": {
+   "Hilton Worldwide": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "oracle:host=efet.fa.us2.oraclecloud.com,site=cx_1009": 1
+  }
+ },
+ "home-depot": {
+  "names": {
+   "The Home Depot": 4
+  },
+  "rows": 4,
+  "open_now": 4,
+  "systems": {
+   "workday:host=homedepot.wd5.myworkdayjobs.com,site=careerdepot,tenant=homedepot": 4
+  }
+ },
+ "hp": {
+  "names": {
+   "HP IQ": 8,
+   "Hewlett Packard": 12,
+   "HP Inc.": 15,
+   "Hewlett Packard (HP)": 2
+  },
+  "rows": 37,
+  "open_now": 37,
+  "systems": {
+   "workday:host=hp.wd5.myworkdayjobs.com,site=externalcareersite,tenant=hp": 15,
+   "workday:host=hp.wd5.myworkdayjobs.com,site=exteu-ac-careersite,tenant=hp": 14,
+   "greenhouse:board=hpiq": 8
+  }
+ },
+ "hpe": {
+  "names": {
+   "Hewlett Packard Enterprise": 46
+  },
+  "rows": 46,
+  "open_now": 46,
+  "systems": {
+   "workday:host=hpe.wd5.myworkdayjobs.com,site=jobsathpe,tenant=hpe": 45,
+   "workday:host=hpe.wd5.myworkdayjobs.com,site=acjobsite,tenant=hpe": 1
+  }
+ },
+ "humana": {
+  "names": {
+   "Humana": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "workday:host=humana.wd5.myworkdayjobs.com,site=humana_external_career_site,tenant=humana": 1
+  }
+ },
+ "ice": {
+  "names": {
+   "Intercontinental Exchange": 33
+  },
+  "rows": 33,
+  "open_now": 33,
+  "systems": {
+   "other:ice.jibeapply.com": 17,
+   "icims:portal=careers-ice.icims.com": 16
+  }
+ },
+ "intuitive-surgical": {
+  "names": {
+   "Intuitive Surgical": 6
+  },
+  "rows": 6,
+  "open_now": 6,
+  "systems": {
+   "other:jobs.smartrecruiters.com": 6
+  }
+ },
+ "ixl-learning": {
+  "names": {
+   "IXL Learning": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "other:www.ixl.com": 1
+  }
+ },
+ "jpmorgan-chase": {
+  "names": {
+   "JP Morgan Chase": 22
+  },
+  "rows": 22,
+  "open_now": 22,
+  "systems": {
+   "oracle:host=jpmc.fa.oraclecloud.com,site=cx_1001": 22
+  }
+ },
+ "keysight": {
+  "names": {
+   "Keysight Technologies": 56
+  },
+  "rows": 56,
+  "open_now": 56,
+  "systems": {
+   "other:jobs.keysight.com": 56
+  }
+ },
+ "kla": {
+  "names": {
+   "KLA Corporation": 21,
+   "KLA": 41
+  },
+  "rows": 62,
+  "open_now": 62,
+  "systems": {
+   "workday:host=kla.wd1.myworkdayjobs.com,site=ur,tenant=kla": 31,
+   "workday:host=kla.wd1.myworkdayjobs.com,site=search,tenant=kla": 29,
+   "workday:host=kla.wd1.myworkdayjobs.com,site=annarbor,tenant=kla": 2
+  }
+ },
+ "knowbe4": {
+  "names": {
+   "KnowBe4": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "greenhouse:board=knowbe4": 1
+  }
+ },
+ "lowes": {
+  "names": {
+   "Lowe's": 6
+  },
+  "rows": 6,
+  "open_now": 6,
+  "systems": {
+   "workday:host=lowes.wd5.myworkdayjobs.com,site=lws_external_cs,tenant=lowes": 6
+  }
+ },
+ "macys": {
+  "names": {
+   "Macy's": 4
+  },
+  "rows": 4,
+  "open_now": 4,
+  "systems": {
+   "oracle:host=ebwh.fa.us2.oraclecloud.com,site=cx_1001": 4
+  }
+ },
+ "marvell": {
+  "names": {
+   "Marvell": 71
+  },
+  "rows": 71,
+  "open_now": 71,
+  "systems": {
+   "workday:host=marvell.wd1.myworkdayjobs.com,site=marvellcareers,tenant=marvell": 38,
+   "workday:host=marvell.wd1.myworkdayjobs.com,site=marvellcareers2,tenant=marvell": 33
+  }
+ },
+ "mastercard": {
+  "names": {
+   "Mastercard": 2
+  },
+  "rows": 2,
+  "open_now": 2,
+  "systems": {
+   "workday:host=mastercard.wd1.myworkdayjobs.com,site=campus,tenant=mastercard": 2
+  }
+ },
+ "match-group": {
+  "names": {
+   "Tinder": 5
+  },
+  "rows": 5,
+  "open_now": 5,
+  "systems": {
+   "lever:site=matchgroup": 5
+  }
+ },
+ "mckesson": {
+  "names": {
+   "McKesson": 6
+  },
+  "rows": 6,
+  "open_now": 6,
+  "systems": {
+   "workday:host=mckesson.wd3.myworkdayjobs.com,site=external_careers,tenant=mckesson": 5,
+   "workday:host=mckesson.wd3.myworkdayjobs.com,site=sourcer_on_req,tenant=mckesson": 1
+  }
+ },
+ "mercor": {
+  "names": {
+   "Mercor": 5
+  },
+  "rows": 5,
+  "open_now": 5,
+  "systems": {
+   "ashby:board=mercor": 5
+  }
+ },
+ "micron": {
+  "names": {
+   "Micron Technology": 49
+  },
+  "rows": 49,
+  "open_now": 49,
+  "systems": {
+   "workday:host=micron.wd1.myworkdayjobs.com,site=external,tenant=micron": 49
+  }
+ },
+ "multiply-labs": {
+  "names": {
+   "Multiply Labs": 2
+  },
+  "rows": 2,
+  "open_now": 2,
+  "systems": {
+   "lever:site=multiplylabs": 2
+  }
+ },
+ "nasdaq": {
+  "names": {
+   "Nasdaq": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "workday:host=nasdaq.wd1.myworkdayjobs.com,site=global_external_site,tenant=nasdaq": 1
+  }
+ },
+ "nationwide": {
+  "names": {
+   "Nationwide": 3
+  },
+  "rows": 3,
+  "open_now": 3,
+  "systems": {
+   "workday:host=nationwide.wd1.myworkdayjobs.com,site=nationwide_career,tenant=nationwide": 3
+  }
+ },
+ "navy-federal": {
+  "names": {
+   "Navy Federal": 33
+  },
+  "rows": 33,
+  "open_now": 33,
+  "systems": {
+   "oracle:host=fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com,site=nfcu": 33
+  }
+ },
+ "ncino": {
+  "names": {
+   "Ncino": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "greenhouse:board=ncinoearlytalent": 1
+  }
+ },
+ "netic": {
+  "names": {
+   "Cybernetic Labs": 3
+  },
+  "rows": 3,
+  "open_now": 3,
+  "systems": {
+   "ashby:board=netic": 3
+  }
+ },
+ "neuralink": {
+  "names": {
+   "Neuralink": 4
+  },
+  "rows": 4,
+  "open_now": 3,
+  "systems": {
+   "greenhouse:board=neuralink": 4
+  }
+ },
+ "new-york-times": {
+  "names": {
+   "The New York Times": 10
+  },
+  "rows": 10,
+  "open_now": 10,
+  "systems": {
+   "greenhouse:board=thenewyorktimes": 10
+  }
+ },
+ "niantic-spatial": {
+  "names": {
+   "Niantic Spatial": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "ashby:board=niantic-spatial": 1
+  }
+ },
+ "nike": {
+  "names": {
+   "Nike": 3
+  },
+  "rows": 3,
+  "open_now": 3,
+  "systems": {
+   "workday:host=nike.wd1.myworkdayjobs.com,site=nke,tenant=nike": 3
+  }
+ },
+ "northwestern-mutual": {
+  "names": {
+   "Northwestern Mutual": 2
+  },
+  "rows": 2,
+  "open_now": 2,
+  "systems": {
+   "workday:host=northwesternmutual.wd5.myworkdayjobs.com,site=corporate-careers,tenant=northwesternmutual": 2
+  }
+ },
+ "one-finance": {
+  "names": {
+   "ONE Finance": 2
+  },
+  "rows": 2,
+  "open_now": 2,
+  "systems": {
+   "ashby:board=oneapp": 2
+  }
+ },
+ "pacific-fusion": {
+  "names": {
+   "Pacific Fusion": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "greenhouse:board=pacificfusion": 1
+  }
+ },
+ "patreon": {
+  "names": {
+   "Patreon": 3
+  },
+  "rows": 3,
+  "open_now": 3,
+  "systems": {
+   "ashby:board=patreon": 3
+  }
+ },
+ "perpay": {
+  "names": {
+   "Perpay": 4
+  },
+  "rows": 4,
+  "open_now": 4,
+  "systems": {
+   "greenhouse:board=perpay": 4
+  }
+ },
+ "persona-ai": {
+  "names": {
+   "Persona AI": 4
+  },
+  "rows": 4,
+  "open_now": 4,
+  "systems": {
+   "ashby:board=persona.ai": 4
+  }
+ },
+ "principal": {
+  "names": {
+   "Principal Financial Group": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "other:careers.principal.com": 1
+  }
+ },
+ "prizepicks": {
+  "names": {
+   "PrizePicks": 4
+  },
+  "rows": 4,
+  "open_now": 4,
+  "systems": {
+   "other:prizepicks.com": 4
+  }
+ },
+ "ptc": {
+  "names": {
+   "PTC": 3
+  },
+  "rows": 3,
+  "open_now": 3,
+  "systems": {
+   "workday:host=ptc.wd1.myworkdayjobs.com,site=ptc,tenant=ptc": 3
+  }
+ },
+ "pure-storage": {
+  "names": {
+   "Pure Storage": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "greenhouse:board=purestorage": 1
+  }
+ },
+ "q2": {
+  "names": {
+   "Q2": 7
+  },
+  "rows": 7,
+  "open_now": 7,
+  "systems": {
+   "workday:host=q2ebanking.wd5.myworkdayjobs.com,site=q2,tenant=q2ebanking": 7
+  }
+ },
+ "qorvo": {
+  "names": {
+   "Qorvo": 50
+  },
+  "rows": 50,
+  "open_now": 50,
+  "systems": {
+   "other:careers.qorvo.com": 50
+  }
+ },
+ "qualcomm": {
+  "names": {
+   "Qualcomm": 43
+  },
+  "rows": 43,
+  "open_now": 43,
+  "systems": {
+   "eightfold:domain=qualcomm.eightfold.ai": 43
+  }
+ },
+ "qumulo": {
+  "names": {
+   "Qumulo": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "ashby:board=qumulo": 1
+  }
+ },
+ "replit": {
+  "names": {
+   "Replit": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "ashby:board=replit": 1
+  }
+ },
+ "rhoda-ai": {
+  "names": {
+   "Rhoda AI": 3
+  },
+  "rows": 3,
+  "open_now": 3,
+  "systems": {
+   "ashby:board=rhoda-ai": 3
+  }
+ },
+ "rilla": {
+  "names": {
+   "Rilla": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "ashby:board=rilla": 1
+  }
+ },
+ "rivian": {
+  "names": {
+   "Rivian": 20
+  },
+  "rows": 20,
+  "open_now": 20,
+  "systems": {
+   "other:careers.rivian.com": 20
+  }
+ },
+ "rivian-vw": {
+  "names": {
+   "Rivian and Volkswagen Group Technologies": 3
+  },
+  "rows": 3,
+  "open_now": 3,
+  "systems": {
+   "ashby:board=rivianvw.tech": 3
+  }
+ },
+ "roku": {
+  "names": {
+   "Roku": 5
+  },
+  "rows": 5,
+  "open_now": 5,
+  "systems": {
+   "other:www.weareroku.com": 5
+  }
+ },
+ "rubrik": {
+  "names": {
+   "Rubrik": 2
+  },
+  "rows": 2,
+  "open_now": 2,
+  "systems": {
+   "other:www.rubrik.com": 2
+  }
+ },
+ "sailpoint": {
+  "names": {
+   "SailPoint": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "workday:host=sailpoint.wd1.myworkdayjobs.com,site=sailpoint,tenant=sailpoint": 1
+  }
+ },
+ "sas": {
+  "names": {
+   "SAS": 2
+  },
+  "rows": 2,
+  "open_now": 2,
+  "systems": {
+   "icims:portal=careers-sas.icims.com": 2
+  }
+ },
+ "serval": {
+  "names": {
+   "Serval": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "ashby:board=serval": 1
+  }
+ },
+ "singlestore": {
+  "names": {
+   "SingleStore": 4
+  },
+  "rows": 4,
+  "open_now": 4,
+  "systems": {
+   "greenhouse:board=singlestore": 4
+  }
+ },
+ "snap": {
+  "names": {
+   "\ud83d\udd25 Snap": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "workday:host=wd1.myworkdaysite.com,site=snap,tenant=snapchat": 1
+  }
+ },
+ "snorkel-ai": {
+  "names": {
+   "Snorkel AI": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "greenhouse:board=snorkelai": 1
+  }
+ },
+ "sonos": {
+  "names": {
+   "Sonos": 8
+  },
+  "rows": 8,
+  "open_now": 8,
+  "systems": {
+   "workday:host=sonos.wd1.myworkdayjobs.com,site=sonos,tenant=sonos": 8
+  }
+ },
+ "state-farm": {
+  "names": {
+   "State Farm": 4
+  },
+  "rows": 4,
+  "open_now": 4,
+  "systems": {
+   "other:jobs.statefarm.com": 4
+  }
+ },
+ "synchrony": {
+  "names": {
+   "Synchrony Financial": 2
+  },
+  "rows": 2,
+  "open_now": 2,
+  "systems": {
+   "workday:host=synchronyfinancial.wd5.myworkdayjobs.com,site=university,tenant=synchronyfinancial": 2
+  }
+ },
+ "tensorwave": {
+  "names": {
+   "TensorWave": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "ashby:board=tensorwave": 1
+  }
+ },
+ "texas-instruments": {
+  "names": {
+   "Texas Instruments": 31
+  },
+  "rows": 31,
+  "open_now": 31,
+  "systems": {
+   "oracle:host=edbz.fa.us2.oraclecloud.com,site=cx": 31
+  }
+ },
+ "travelers": {
+  "names": {
+   "Travelers": 5
+  },
+  "rows": 5,
+  "open_now": 5,
+  "systems": {
+   "workday:host=travelers.wd5.myworkdayjobs.com,site=external,tenant=travelers": 5
+  }
+ },
+ "trimble": {
+  "names": {
+   "Trimble": 10
+  },
+  "rows": 10,
+  "open_now": 10,
+  "systems": {
+   "workday:host=trimble.wd1.myworkdayjobs.com,site=trimblecareers,tenant=trimble": 10
+  }
+ },
+ "tyler-technologies": {
+  "names": {
+   "Tyler Technologies": 7
+  },
+  "rows": 7,
+  "open_now": 7,
+  "systems": {
+   "other:jobs.jobvite.com": 7
+  }
+ },
+ "usaa": {
+  "names": {
+   "USAA": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "workday:host=usaa.wd1.myworkdayjobs.com,site=usaajobswd,tenant=usaa": 1
+  }
+ },
+ "vanguard": {
+  "names": {
+   "Vanguard": 8
+  },
+  "rows": 8,
+  "open_now": 8,
+  "systems": {
+   "workday:host=vanguard.wd5.myworkdayjobs.com,site=vanguard_external,tenant=vanguard": 7,
+   "workday:host=vanguard.wd5.myworkdayjobs.com,site=contractors_restricted,tenant=vanguard": 1
+  }
+ },
+ "veeam": {
+  "names": {
+   "Veeam Software": 8
+  },
+  "rows": 8,
+  "open_now": 8,
+  "systems": {
+   "greenhouse:board=veeamsoftware": 8
+  }
+ },
+ "vercel": {
+  "names": {
+   "Vercel": 2
+  },
+  "rows": 2,
+  "open_now": 2,
+  "systems": {
+   "greenhouse:board=vercel": 2
+  }
+ },
+ "verizon": {
+  "names": {
+   "Verizon Communications": 4
+  },
+  "rows": 4,
+  "open_now": 4,
+  "systems": {
+   "workday:host=verizon.wd12.myworkdayjobs.com,site=verizon-careers,tenant=verizon": 4
+  }
+ },
+ "viam": {
+  "names": {
+   "Viam": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "greenhouse:board=viamrobotics": 1
+  }
+ },
+ "walmart": {
+  "names": {
+   "Walmart": 6
+  },
+  "rows": 6,
+  "open_now": 6,
+  "systems": {
+   "workday:host=walmart.wd504.myworkdayjobs.com,site=walmartexternal,tenant=walmart": 6
+  }
+ },
+ "wells-fargo": {
+  "names": {
+   "Wells Fargo": 2
+  },
+  "rows": 2,
+  "open_now": 2,
+  "systems": {
+   "workday:host=wd1.myworkdaysite.com,site=wellsfargojobs,tenant=wf": 2
+  }
+ },
+ "western-digital": {
+  "names": {
+   "Western Digital": 5
+  },
+  "rows": 5,
+  "open_now": 5,
+  "systems": {
+   "other:jobs.smartrecruiters.com": 5
+  }
+ },
+ "xcimer": {
+  "names": {
+   "Xcimer Energy": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "lever:site=xcimer": 1
+  }
+ },
+ "zebra": {
+  "names": {
+   "Zebra Technologies": 15
+  },
+  "rows": 15,
+  "open_now": 15,
+  "systems": {
+   "workday:host=zebra.wd501.myworkdayjobs.com,site=zebra_careers,tenant=zebra": 15
+  }
+ },
+ "zillow": {
+  "names": {
+   "Zillow": 3
+  },
+  "rows": 3,
+  "open_now": 3,
+  "systems": {
+   "workday:host=zillow.wd5.myworkdayjobs.com,site=zillow_group_external,tenant=zillow": 3
+  }
+ },
+ "ziprecruiter": {
+  "names": {
+   "ZipRecruiter": 1
+  },
+  "rows": 1,
+  "open_now": 1,
+  "systems": {
+   "greenhouse:board=ziprecruiter": 1
+  }
+ }
+}

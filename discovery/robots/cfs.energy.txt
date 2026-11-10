@@ -1,0 +1,32 @@
+# status 200
+User-Agent: *
+Allow: /
+
+User-Agent: GPTBot
+Disallow: /
+
+User-Agent: OAI-SearchBot
+Allow: /
+
+User-Agent: ChatGPT-User
+Allow: /
+
+User-Agent: Claude-Web
+Disallow: /
+
+User-Agent: ClaudeBot
+Disallow: /
+
+User-Agent: anthropic-ai
+Disallow: /
+
+User-Agent: Google-Extended
+Disallow: /
+
+User-Agent: CCBot
+Disallow: /
+
+User-Agent: PerplexityBot
+Allow: /
+
+Sitemap: https://cfs.energy/sitemap.xml

@@ -1,0 +1,816 @@
+{
+ "allstate": {
+  "host": "allstate.wd5.myworkdayjobs.com",
+  "read": [
+   "allstate_careers",
+   "sourcing_event"
+  ],
+  "public_unread": [
+   "Agent"
+  ],
+  "hidden_unread": []
+ },
+ "analog-devices": {
+  "host": "analogdevices.wd1.myworkdayjobs.com",
+  "read": [
+   "external"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "applied-materials": {
+  "host": "amat.wd1.myworkdayjobs.com",
+  "read": [
+   "external"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "att": {
+  "host": "att.wd1.myworkdayjobs.com",
+  "read": [
+   "attcollege",
+   "attcollegespecialinvite",
+   "attgeneral",
+   "cricket"
+  ],
+  "public_unread": [],
+  "hidden_unread": [
+   "ATTMilitaryFellowSpecialInvite",
+   "ATTSpecialInvite"
+  ]
+ },
+ "bank-of-america": {
+  "host": "ghr.wd1.myworkdayjobs.com",
+  "read": [
+   "lateral-emea",
+   "us-emplsv"
+  ],
+  "public_unread": [
+   "Lateral-US",
+   "Scoutt",
+   "lateral-apac",
+   "lateral-ba_continuum",
+   "lateral-canada",
+   "lateral-latam"
+  ],
+  "hidden_unread": [
+   "Contractor-Conversion",
+   "lateral-ous"
+  ]
+ },
+ "blackrock": {
+  "host": "blackrock.wd1.myworkdayjobs.com",
+  "read": [
+   "blackrock_early_careers_program",
+   "blackrock_professional"
+  ],
+  "public_unread": [],
+  "hidden_unread": [
+   "BlackRock_AIG"
+  ]
+ },
+ "cadence": {
+  "host": "cadence.wd1.myworkdayjobs.com",
+  "read": [
+   "external_careers",
+   "openeye_careers",
+   "univ_careers",
+   "university_cst",
+   "university_talent",
+   "university_talent_intern",
+   "university_talent_ncg"
+  ],
+  "public_unread": [
+   "women-in-tech-scholarship"
+  ],
+  "hidden_unread": [
+   "addl_jobs"
+  ]
+ },
+ "chewy": {
+  "host": "chewy.wd5.myworkdayjobs.com",
+  "read": [
+   "external"
+  ],
+  "public_unread": [
+   "Relief-Veterinarian-Contractors",
+   "Student-Ambassador-Contractors"
+  ],
+  "hidden_unread": [
+   "VeterinaryCareers"
+  ]
+ },
+ "ciena": {
+  "host": "ciena.wd5.myworkdayjobs.com",
+  "read": [
+   "careers"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "circle": {
+  "host": "circle.wd1.myworkdayjobs.com",
+  "read": [
+   "circle"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "citi": {
+  "host": "citi.wd5.myworkdayjobs.com",
+  "read": [
+   "2",
+   "citi_early_careers_events_site"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "cohesity": {
+  "host": "cohesity.wd5.myworkdayjobs.com",
+  "read": [
+   "cohesity_careers"
+  ],
+  "public_unread": [],
+  "hidden_unread": [
+   "Private_Careers"
+  ]
+ },
+ "comcast": {
+  "host": "comcast.wd5.myworkdayjobs.com",
+  "read": [
+   "comcast_careers"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "comcast~wd115": {
+  "host": "comcast.wd115.myworkdayjobs.com",
+  "read": [
+   "comcast_careers"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "copart": {
+  "host": "copart.wd12.myworkdayjobs.com",
+  "read": [
+   "copart"
+  ],
+  "public_unread": [
+   "NPACareers"
+  ],
+  "hidden_unread": []
+ },
+ "costar": {
+  "host": "costar.wd1.myworkdayjobs.com",
+  "read": [
+   "confidential",
+   "costar_campus",
+   "costarcareers"
+  ],
+  "public_unread": [
+   "CoStarCanadaCareers",
+   "CoStarCareersEurope",
+   "CoStarCareersNiche",
+   "Richmond_Recruiting",
+   "SanDiego_Research",
+   "Washington_Research",
+   "broadbean_external"
+  ],
+  "hidden_unread": []
+ },
+ "cox": {
+  "host": "cox.wd1.myworkdayjobs.com",
+  "read": [
+   "cox_external_career_site_1"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "cvs-health": {
+  "host": "cvshealth.wd1.myworkdayjobs.com",
+  "read": [
+   "cvs_health_careers",
+   "private_postings_intern_conversion_only"
+  ],
+  "public_unread": [
+   "Private_Postings_Mergers_and_Acquisitions_ONLY"
+  ],
+  "hidden_unread": []
+ },
+ "datarobot": {
+  "host": "datarobot.wd1.myworkdayjobs.com",
+  "read": [
+   "datarobot_external_careers"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "dexcom": {
+  "host": "dexcom.wd1.myworkdayjobs.com",
+  "read": [
+   "dexcom"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "dicks-sporting-goods": {
+  "host": "dickssportinggoods.wd1.myworkdayjobs.com",
+  "read": [
+   "dsg"
+  ],
+  "public_unread": [],
+  "hidden_unread": [
+   "C-DSG",
+   "DSG_DC_Referrals"
+  ]
+ },
+ "disney": {
+  "host": "disney.wd5.myworkdayjobs.com",
+  "read": [
+   "disneycareer",
+   "disneycareerdc"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "draftkings": {
+  "host": "draftkings.wd1.myworkdayjobs.com",
+  "read": [
+   "campus_career_portal",
+   "draftkings",
+   "employee_referral_portal"
+  ],
+  "public_unread": [],
+  "hidden_unread": [
+   "DraftKings_Events_Portal"
+  ]
+ },
+ "elevance-health": {
+  "host": "elevancehealth.wd1.myworkdayjobs.com",
+  "read": [
+   "ant",
+   "elv-et"
+  ],
+  "public_unread": [
+   "IRL",
+   "Legato_Ireland",
+   "Legato_Israel",
+   "carelonglobal_in",
+   "carelonglobal_ph"
+  ],
+  "hidden_unread": []
+ },
+ "equinix": {
+  "host": "equinix.wd1.myworkdayjobs.com",
+  "read": [
+   "external"
+  ],
+  "public_unread": [
+   "Adecco",
+   "Adecco_Personaldienstleistungen_GmbH",
+   "Align_Technical_Resources",
+   "Annapurna_HR",
+   "BSI_People",
+   "Boyd_Moore_Executive_Search",
+   "Bradley-Morris_LLC_dba_Bradley-Morris_Inc",
+   "Brix_Projects",
+   "CDS_Recruitment",
+   "Career_Design_Center",
+   "Careertrotter",
+   "Clifford_Baines",
+   "DaijobGlobalRecruiting",
+   "Datacenterpeople_Ltd",
+   "Euro_London_Appointment",
+   "Execuforce",
+   "GDH_Consulting",
+   "Golden_Searches_Information_Consultant",
+   "HaysSpecialistRecruitmentJapan",
+   "Heidrick_Struggles",
+   "IQ_Telecom",
+   "Intelligence",
+   "JAC_Recruitment",
+   "Magellan_Professional_Solutions",
+   "ManpowerGroup",
+   "Michael_Page_International",
+   "Michael_Page_International_Japan_KK",
+   "MorganMcKinley",
+   "Mynavi_Corporation",
+   "PMA_Recruitment",
+   "PRECEPT",
+   "PRS_Recruitment_Services",
+   "Page_Personnel",
+   "Page_Personnel_Deutschland_GmbH",
+   "Pro-Unlimited",
+   "Recruit_Agent",
+   "Recruit_Career",
+   "Recruit_Plus",
+   "Robert_Half_International_Inc",
+   "Robert_Walters_Pty_Ltd",
+   "Skill_House",
+   "Skillhouse_Staffing_Solutions_KK",
+   "Soar_Consulting_Inc",
+   "en_japan_inc",
+   "enworld_Co_Ltd"
+  ],
+  "hidden_unread": [
+   "Applications_By_Invitations",
+   "Exclusive_Applications_by_Invite"
+  ]
+ },
+ "etsy": {
+  "host": "etsy.wd5.myworkdayjobs.com",
+  "read": [
+   "etsy_careers"
+  ],
+  "public_unread": [
+   "Depop_Careers",
+   "Reverb_Careers"
+  ],
+  "hidden_unread": [
+   "Private_Depop_Careers",
+   "Private_Etsy_Careers"
+  ]
+ },
+ "f5": {
+  "host": "ffive.wd5.myworkdayjobs.com",
+  "read": [
+   "f5jobs"
+  ],
+  "public_unread": [
+   "f5events"
+  ],
+  "hidden_unread": []
+ },
+ "fis": {
+  "host": "fis.wd5.myworkdayjobs.com",
+  "read": [
+   "searchjobs"
+  ],
+  "public_unread": [
+   "AgencyCareerSite"
+  ],
+  "hidden_unread": []
+ },
+ "fiserv": {
+  "host": "fiserv.wd5.myworkdayjobs.com",
+  "read": [
+   "ext"
+  ],
+  "public_unread": [
+   "NZ",
+   "blconsultant"
+  ],
+  "hidden_unread": [
+   "P3M"
+  ]
+ },
+ "fox": {
+  "host": "fox.wd1.myworkdayjobs.com",
+  "read": [
+   "domestic"
+  ],
+  "public_unread": [
+   "FOXTVST_Central",
+   "FOXTVST_EAST",
+   "FOXTVST_WEST"
+  ],
+  "hidden_unread": []
+ },
+ "freddie-mac": {
+  "host": "freddiemac.wd5.myworkdayjobs.com",
+  "read": [
+   "external"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "ge-vernova": {
+  "host": "gevernova.wd5.myworkdayjobs.com",
+  "read": [
+   "only_confidential_executive_recruiting",
+   "vernova_externalsite"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "globalfoundries": {
+  "host": "globalfoundries.wd1.myworkdayjobs.com",
+  "read": [
+   "external"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "guidewire": {
+  "host": "wd5.myworkdaysite.com",
+  "read": [
+   "external"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "hartford": {
+  "host": "thehartford.wd5.myworkdayjobs.com",
+  "read": [
+   "careers_external",
+   "careers_restricted"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "hpe": {
+  "host": "hpe.wd5.myworkdayjobs.com",
+  "read": [
+   "acjobsite",
+   "jobsathpe"
+  ],
+  "public_unread": [
+   "WFMathpe"
+  ],
+  "hidden_unread": []
+ },
+ "home-depot": {
+  "host": "homedepot.wd5.myworkdayjobs.com",
+  "read": [
+   "careerdepot",
+   "careerdepotcanada"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "hp": {
+  "host": "hp.wd5.myworkdayjobs.com",
+  "read": [
+   "externalcareersite",
+   "exteu-ac-careersite"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "humana": {
+  "host": "humana.wd5.myworkdayjobs.com",
+  "read": [
+   "humana_external_career_site"
+  ],
+  "public_unread": [
+   "CenterWell_External_Career_Site"
+  ],
+  "hidden_unread": []
+ },
+ "kla": {
+  "host": "kla.wd1.myworkdayjobs.com",
+  "read": [
+   "annarbor",
+   "search",
+   "ur"
+  ],
+  "public_unread": [
+   "Filmetrics",
+   "Israel",
+   "Penang_Semicon",
+   "Taiwan"
+  ],
+  "hidden_unread": []
+ },
+ "lowes": {
+  "host": "lowes.wd5.myworkdayjobs.com",
+  "read": [
+   "lws_external_cs"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "marvell": {
+  "host": "marvell.wd1.myworkdayjobs.com",
+  "read": [
+   "marvellcareers",
+   "marvellcareers2"
+  ],
+  "public_unread": [
+   "Scout"
+  ],
+  "hidden_unread": []
+ },
+ "mastercard": {
+  "host": "mastercard.wd1.myworkdayjobs.com",
+  "read": [
+   "campus",
+   "corporatecareers",
+   "public_posting_site"
+  ],
+  "public_unread": [
+   "ContractorConversion",
+   "RYC"
+  ],
+  "hidden_unread": [
+   "CUOReqSite",
+   "CampusApplyOnly"
+  ]
+ },
+ "mckesson": {
+  "host": "mckesson.wd3.myworkdayjobs.com",
+  "read": [
+   "external_careers",
+   "sourcer_on_req"
+  ],
+  "public_unread": [
+   "Acquisition_Campus",
+   "CoverMyMeds_External_Careers",
+   "Ontada_Careers",
+   "SCRI_Careers",
+   "rxsscareers"
+  ],
+  "hidden_unread": [
+   "Contractor_Conversions",
+   "Executive_Careers",
+   "Welcome_to_McKesson_Disability_IN",
+   "Welcome_to_McKesson_NBMBAA"
+  ]
+ },
+ "micron": {
+  "host": "micron.wd1.myworkdayjobs.com",
+  "read": [
+   "external"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "morgan-stanley": {
+  "host": "ms.wd5.myworkdayjobs.com",
+  "read": [
+   "external",
+   "private"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "nasdaq": {
+  "host": "nasdaq.wd1.myworkdayjobs.com",
+  "read": [
+   "global_external_site"
+  ],
+  "public_unread": [
+   "US_External_Career_Site",
+   "eVestment"
+  ],
+  "hidden_unread": [
+   "job_postings"
+  ]
+ },
+ "nationwide": {
+  "host": "nationwide.wd1.myworkdayjobs.com",
+  "read": [
+   "nationwide_career"
+  ],
+  "public_unread": [
+   "Nationwide_Career_India"
+  ],
+  "hidden_unread": []
+ },
+ "ncino~workday": {
+  "host": "ncino.wd5.myworkdayjobs.com",
+  "read": [
+   "ncinocareers"
+  ],
+  "public_unread": [
+   "nCinoAgency"
+  ],
+  "hidden_unread": []
+ },
+ "nike": {
+  "host": "nike.wd1.myworkdayjobs.com",
+  "read": [
+   "nke",
+   "nke2"
+  ],
+  "public_unread": [],
+  "hidden_unread": [
+   "nke4"
+  ]
+ },
+ "nordstrom": {
+  "host": "nordstrom.wd501.myworkdayjobs.com",
+  "read": [
+   "nordstrom_careers"
+  ],
+  "public_unread": [],
+  "hidden_unread": [
+   "nordstrom_internship"
+  ]
+ },
+ "northwestern-mutual": {
+  "host": "northwesternmutual.wd5.myworkdayjobs.com",
+  "read": [
+   "corporate-careers"
+  ],
+  "public_unread": [
+   "CORPORATE-CAREERS-PRIVATE"
+  ],
+  "hidden_unread": []
+ },
+ "proofpoint": {
+  "host": "proofpoint.wd5.myworkdayjobs.com",
+  "read": [
+   "proofpointcareers"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "ptc": {
+  "host": "ptc.wd1.myworkdayjobs.com",
+  "read": [
+   "ptc"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "q2": {
+  "host": "q2ebanking.wd5.myworkdayjobs.com",
+  "read": [
+   "q2"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "sailpoint": {
+  "host": "sailpoint.wd1.myworkdayjobs.com",
+  "read": [
+   "sailpoint"
+  ],
+  "public_unread": [],
+  "hidden_unread": [
+   "SailPointInternships",
+   "SailPointOps"
+  ]
+ },
+ "snap": {
+  "host": "wd1.myworkdaysite.com",
+  "read": [
+   "snap"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "snyk": {
+  "host": "snyk.wd103.myworkdayjobs.com",
+  "read": [
+   "external"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "sonos": {
+  "host": "sonos.wd1.myworkdayjobs.com",
+  "read": [
+   "sonos"
+  ],
+  "public_unread": [
+   "Student_Opportunities"
+  ],
+  "hidden_unread": []
+ },
+ "southwest": {
+  "host": "swa.wd1.myworkdayjobs.com",
+  "read": [
+   "external"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "synchrony": {
+  "host": "synchronyfinancial.wd5.myworkdayjobs.com",
+  "read": [
+   "university"
+  ],
+  "public_unread": [
+   "AgencyCareerSite"
+  ],
+  "hidden_unread": [
+   "careers"
+  ]
+ },
+ "target": {
+  "host": "target.wd5.myworkdayjobs.com",
+  "read": [
+   "targetcareers"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "travelers": {
+  "host": "travelers.wd5.myworkdayjobs.com",
+  "read": [
+   "external"
+  ],
+  "public_unread": [
+   "SimplyBusinesssExternal"
+  ],
+  "hidden_unread": []
+ },
+ "tricentis": {
+  "host": "tricentis.wd1.myworkdayjobs.com",
+  "read": [
+   "tricentis_careers"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "trimble": {
+  "host": "trimble.wd1.myworkdayjobs.com",
+  "read": [
+   "trimblecareers"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "usaa": {
+  "host": "usaa.wd1.myworkdayjobs.com",
+  "read": [
+   "usaajobswd"
+  ],
+  "public_unread": [
+   "CONFIDENTIAL"
+  ],
+  "hidden_unread": []
+ },
+ "vanguard": {
+  "host": "vanguard.wd5.myworkdayjobs.com",
+  "read": [
+   "contractors_restricted",
+   "vanguard_external"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "verizon": {
+  "host": "verizon.wd12.myworkdayjobs.com",
+  "read": [
+   "verizon-careers"
+  ],
+  "public_unread": [],
+  "hidden_unread": [
+   "contractor_external_careers",
+   "frontier_career_site"
+  ]
+ },
+ "walmart": {
+  "host": "walmart.wd504.myworkdayjobs.com",
+  "read": [
+   "walmartexternal"
+  ],
+  "public_unread": [
+   "Non-WorkdayInternal"
+  ],
+  "hidden_unread": []
+ },
+ "warner-bros-discovery": {
+  "host": "warnerbros.wd5.myworkdayjobs.com",
+  "read": [
+   "global"
+  ],
+  "public_unread": [
+   "francais"
+  ],
+  "hidden_unread": [
+   "directshare"
+  ]
+ },
+ "washington-post": {
+  "host": "washpost.wd5.myworkdayjobs.com",
+  "read": [
+   "washingtonpostcareers"
+  ],
+  "public_unread": [
+   "WashingtonPostCareersArc"
+  ],
+  "hidden_unread": []
+ },
+ "wells-fargo": {
+  "host": "wd1.myworkdaysite.com",
+  "read": [
+   "wellsfargojobs"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "zebra": {
+  "host": "zebra.wd501.myworkdayjobs.com",
+  "read": [
+   "zebra_careers"
+  ],
+  "public_unread": [],
+  "hidden_unread": []
+ },
+ "zillow": {
+  "host": "zillow.wd5.myworkdayjobs.com",
+  "read": [
+   "zillow_group_external"
+  ],
+  "public_unread": [],
+  "hidden_unread": [
+   "Referrals"
+  ]
+ }
+}

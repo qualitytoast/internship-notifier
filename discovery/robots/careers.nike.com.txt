@@ -1,0 +1,29 @@
+# status 200
+# careers.nike.com robots.txt -- just crawl it.
+
+# All robots allowed
+User-agent: *
+Disallow: 
+
+# Sitemap files
+Sitemap: https://careers.nike.com/sitemap.xml
+
+
+#                                                                                                    
+#                 ``                                                                        ```.`    
+#               `+/                                                                 ``.-/+o+:-.      
+#             `/mo                                                          ``.-:+syhdhs/-`          
+#            -hMd                                                    `..:+oyhmNNmds/-`               
+#          `oNMM/                                            ``.-/oyhdmMMMMNdy+:.                    
+#         .hMMMM-                                     `.-/+shdmNMMMMMMNdy+:.                         
+#        :mMMMMM+                             `.-:+sydmNMMMMMMMMMNmho:.`                             
+#       :NMMMMMMN:                    `.-:/oyhmmNMMMMMMMMMMMNmho:.`                                  
+#      .NMMMMMMMMNy:`          `.-/oshdmNMMMMMMMMMMMMMMMmhs/-`                                       
+#      hMMMMMMMMMMMMmhysooosyhdmNMMMMMMMMMMMMMMMMMMmds/-`                                            
+#     .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdy+-.`                                                
+#     -MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdy+-.`                                                     
+#     `NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmyo:.`                                                          
+#      /NMMMMMMMMMMMMMMMMMMMMMMMmho:.`                                                               
+#       .yNMMMMMMMMMMMMMMMMmhs/.`                                                                    
+#         ./shdmNNmmdhyo/-``                                                                         
+#              `````                 

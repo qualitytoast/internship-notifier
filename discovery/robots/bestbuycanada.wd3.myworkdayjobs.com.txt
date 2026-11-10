@@ -1,0 +1,7 @@
+# status 200
+Sitemap: https://bestbuycanada.wd3.myworkdayjobs.com/BestBuyCA_Career/siteMap.xml
+
+User-agent: *
+Allow: /BestBuyCA_Career/
+Disallow: /BestBuyCA_GenerateApplicationLink/
+Disallow: /refreshFacet/

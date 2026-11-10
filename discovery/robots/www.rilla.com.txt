@@ -1,0 +1,10 @@
+# status 200
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /slice-simulator
+Disallow: /preview
+Disallow: /exit-preview
+
+Sitemap: https://www.rilla.com/sitemap.xml

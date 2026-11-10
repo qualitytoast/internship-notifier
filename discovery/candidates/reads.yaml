@@ -1,0 +1,383 @@
+# Stage 1: what each candidate's first full read uses (checker + settings), from discovery/candidates/{pages,lists,
+# simplify_evidence,draft_systems}.json. Several systems for one company are read side by side (separate entries
+# "<key>~<label>") so their counts can be compared; the final config is decided after the reads.
+# timeout_minutes is generous on purpose: Stage 1 measures how long a complete read takes.
+reads:
+  addepar: {checker: greenhouse, settings: {board: addepar1}}
+  ai2: {checker: greenhouse, settings: {board: thealleninstitute}}
+  allstate: {checker: workday, settings: {host: allstate.wd5.myworkdayjobs.com, tenant: allstate, sites: [allstate_careers, sourcing_event]}}
+  alltrails: {checker: lever, settings: {site: alltrails}}
+  altruist: {checker: greenhouse, settings: {board: altruist}}
+  american-express: {checker: oracle, settings: {host: egug.fa.us2.oraclecloud.com, site: CX_1}}
+  amperity: {checker: greenhouse, settings: {board: amperity}}
+  analog-devices: {checker: workday, settings: {host: analogdevices.wd1.myworkdayjobs.com, tenant: analogdevices, site: External}}
+  anchorage-digital: {checker: lever, settings: {site: anchorage}}
+  appian: {checker: greenhouse, settings: {board: appian}}
+  applied-materials: {checker: workday, settings: {host: amat.wd1.myworkdayjobs.com, tenant: amat, site: External}}
+  applied-materials~eightfold: {checker: eightfold, settings: {host: careers.appliedmaterials.com, domain: appliedmaterials.com}}
+  apptronik: {checker: greenhouse, settings: {board: apptronik}}
+  arcesium: {checker: greenhouse, settings: {board: arcesiumllc}}
+  arista-networks: {checker: smartrecruiters, settings: {company: AristaNetworks}}
+  asana: {checker: greenhouse, settings: {board: asana}}
+  att: {checker: workday, settings: {host: att.wd1.myworkdayjobs.com, tenant: att, sites: [ATTGeneral, ATTcollege, Cricket, ATTCollegeSpecialInvite]}}
+  athenahealth: {checker: phenom, settings: {base_url: "https://www.athenahealth.com", ref_num: ATHAHHUS}}
+  bamboohr: {checker: greenhouse, settings: {board: bamboohr17}}
+  bandwidth: {checker: greenhouse, settings: {board: bandwidth}}
+  bank-of-america: {checker: workday, settings: {host: ghr.wd1.myworkdayjobs.com, tenant: ghr, sites: [us-emplsv, lateral-emea]}}
+  base-power: {checker: ashby, settings: {board: base-power}}
+  baseten: {checker: ashby, settings: {board: baseten}}
+  bedrock-robotics: {checker: ashby, settings: {board: bedrock-robotics}}
+  betterment: {checker: greenhouse, settings: {boards: [betterment, bettermentcampusrecruiting], missing_ok: true}}
+  bill: {checker: greenhouse, settings: {board: billcom}}
+  blackrock: {checker: workday, settings: {host: blackrock.wd1.myworkdayjobs.com, tenant: blackrock, sites: [BlackRock_Professional, BlackRock_Early_Careers_Program]}}
+  bny: {checker: oracle, settings: {host: eofe.fa.us2.oraclecloud.com, site: CX_1001}}
+  bny~bny-careers: {checker: oracle, settings: {host: eofe.fa.us2.oraclecloud.com, site: BNY-Careers}}
+  bot-auto: {checker: greenhouse, settings: {board: botauto}}
+  box: {checker: greenhouse, settings: {board: boxinc}}
+  braze: {checker: greenhouse, settings: {board: braze}}
+  bugcrowd: {checker: greenhouse, settings: {board: bugcrowd}}
+  bumble: {checker: lever, settings: {site: bumbleinc}}
+  cadence: {checker: workday, settings: {host: cadence.wd1.myworkdayjobs.com, tenant: cadence, sites: [External_Careers, Univ_Careers, University_Talent, University_Talent_Intern, University_Talent_NCG, University_CST, OpenEye_Careers]}}
+  carbon-robotics: {checker: ashby, settings: {board: carbon-robotics}}
+  cartesia: {checker: ashby, settings: {board: cartesia}}
+  censys: {checker: greenhouse, settings: {board: censys}}
+  cerebras: {checker: ashby, settings: {board: cerebras}}
+  charles-schwab: {checker: icims, settings: {portal: "https://career-schwab.icims.com"}}
+  checkr: {checker: greenhouse, settings: {board: checkr}}
+  chewy: {checker: workday, settings: {host: chewy.wd5.myworkdayjobs.com, tenant: chewy, site: External}}
+  chime: {checker: greenhouse, settings: {board: chime}}
+  ciena: {checker: workday, settings: {host: ciena.wd5.myworkdayjobs.com, tenant: ciena, site: Careers}}
+  circle: {checker: workday, settings: {host: circle.wd1.myworkdayjobs.com, tenant: circle, site: Circle}}
+  circle~ashby: {checker: ashby, settings: {board: circle}}
+  citi: {checker: workday, settings: {host: citi.wd5.myworkdayjobs.com, tenant: citi, sites: ["2", Citi_Early_Careers_Events_Site]}}
+  clay: {checker: ashby, settings: {board: claylabs}}
+  clockwork-systems: {checker: greenhouse, settings: {board: clockworksystems}}
+  cobot: {checker: ashby, settings: {board: cobot}}
+  cohesity: {checker: workday, settings: {host: cohesity.wd5.myworkdayjobs.com, tenant: cohesity, site: Cohesity_Careers}}
+  comcast: {checker: workday, settings: {host: comcast.wd5.myworkdayjobs.com, tenant: comcast, site: Comcast_Careers}}
+  comcast~wd115: {checker: workday, settings: {host: comcast.wd115.myworkdayjobs.com, tenant: comcast, site: Comcast_Careers}}
+  comcast~nbcuniversal: {checker: smartrecruiters, settings: {company: NBCUniversal3}}
+  commonwealth-fusion: {checker: lever, settings: {site: cfsenergy}}
+  commure: {checker: ashby, settings: {boards: [commure, commure-athelas]}}
+  conductorone: {checker: ashby, settings: {board: c1}}
+  copart: {checker: workday, settings: {host: copart.wd12.myworkdayjobs.com, tenant: copart, site: Copart}}
+  costar: {checker: workday, settings: {host: costar.wd1.myworkdayjobs.com, tenant: costar, sites: [CoStarCareers, Costar_Campus, confidential]}}
+  cox: {checker: workday, settings: {host: cox.wd1.myworkdayjobs.com, tenant: cox, site: Cox_External_Career_Site_1}}
+  crusoe: {checker: ashby, settings: {board: crusoe}}
+  cvs-health: {checker: workday, settings: {host: cvshealth.wd1.myworkdayjobs.com, tenant: cvshealth, sites: [CVS_Health_Careers, Private_Postings_Intern_Conversion_ONLY]}}
+  d-matrix: {checker: ashby, settings: {board: d-Matrix}}
+  datarobot: {checker: workday, settings: {host: datarobot.wd1.myworkdayjobs.com, tenant: datarobot, site: DataRobot_External_Careers}}
+  delinea: {checker: ashby, settings: {board: delinea}}
+  descript: {checker: greenhouse, settings: {board: descript}}
+  dexcom: {checker: workday, settings: {host: dexcom.wd1.myworkdayjobs.com, tenant: dexcom, site: Dexcom}}
+  dicks-sporting-goods: {checker: workday, settings: {host: dickssportinggoods.wd1.myworkdayjobs.com, tenant: dickssportinggoods, site: DSG}}
+  digitalocean: {checker: greenhouse, settings: {board: digitalocean98}}
+  disney: {checker: workday, settings: {host: disney.wd5.myworkdayjobs.com, tenant: disney, sites: [disneycareer, disneycareerdc]}}
+  domino-data-lab: {checker: greenhouse, settings: {board: dominodatalab}}
+  draftkings: {checker: workday, settings: {host: draftkings.wd1.myworkdayjobs.com, tenant: draftkings, sites: [draftkings, Campus_Career_Portal, Employee_Referral_Portal]}}
+  drivewealth: {checker: greenhouse, settings: {board: drivewealth}}
+  drivewealth~ashby: {checker: ashby, settings: {board: drivewealth}}
+  dusty-robotics: {checker: greenhouse, settings: {board: dustyrobotics}}
+  earnin: {checker: greenhouse, settings: {board: earnin}}
+  elevance-health: {checker: workday, settings: {host: elevancehealth.wd1.myworkdayjobs.com, tenant: elevancehealth, sites: [ANT, ELV-ET]}}
+  ellipsis-labs: {checker: ashby, settings: {board: ellipsislabs}}
+  enova: {checker: greenhouse, settings: {board: enova}}
+  equinix: {checker: workday, settings: {host: equinix.wd1.myworkdayjobs.com, tenant: equinix, site: External}}
+  etched: {checker: ashby, settings: {board: Etched}}
+  etsy: {checker: workday, settings: {host: etsy.wd5.myworkdayjobs.com, tenant: etsy, site: Etsy_Careers}}
+  eventual: {checker: ashby, settings: {board: eventualcomputing}}
+  exa: {checker: ashby, settings: {board: exa}}
+  f5: {checker: workday, settings: {host: ffive.wd5.myworkdayjobs.com, tenant: ffive, site: f5jobs}}
+  fastly: {checker: greenhouse, settings: {board: fastly}}
+  fervo-energy: {checker: greenhouse, settings: {board: fervoenergy}}
+  figure-ai: {checker: greenhouse, settings: {board: figureai}}
+  fis: {checker: workday, settings: {host: fis.wd5.myworkdayjobs.com, tenant: fis, site: SearchJobs}}
+  fiserv: {checker: workday, settings: {host: fiserv.wd5.myworkdayjobs.com, tenant: fiserv, site: EXT}}
+  ford: {checker: oracle, settings: {host: efds.fa.em5.oraclecloud.com, site: CX_1}}
+  fortinet: {checker: oracle, settings: {host: edel.fa.us2.oraclecloud.com, site: CX_2001}}
+  fox: {checker: workday, settings: {host: fox.wd1.myworkdayjobs.com, tenant: fox, site: Domestic}}
+  freddie-mac: {checker: workday, settings: {host: freddiemac.wd5.myworkdayjobs.com, tenant: freddiemac, site: External}}
+  garner-health: {checker: greenhouse, settings: {board: garnerhealth}}
+  ge-vernova: {checker: workday, settings: {host: gevernova.wd5.myworkdayjobs.com, tenant: gevernova, sites: [Vernova_ExternalSite, only_confidential_executive_recruiting]}}
+  gemini: {checker: greenhouse, settings: {board: gemini}}
+  gen-digital: {checker: ashby, settings: {board: gen-digital}}
+  genesis-molecular-ai: {checker: ashby, settings: {board: genesis-molecular-ai}}
+  gimlet-labs: {checker: ashby, settings: {board: gimlet}}
+  globalfoundries: {checker: workday, settings: {host: globalfoundries.wd1.myworkdayjobs.com, tenant: globalfoundries, site: External}}
+  glossgenius: {checker: greenhouse, settings: {board: glossgenius}}
+  glossgenius~ashby: {checker: ashby, settings: {board: geniusai}}
+  godaddy: {checker: greenhouse, settings: {boards: [godaddy, eventsandinterns], missing_ok: true}}
+  grow-therapy: {checker: ashby, settings: {board: grow-therapy}}
+  guidewire: {checker: workday, settings: {host: wd5.myworkdaysite.com, tenant: guidewire, site: external}}
+  gusto: {checker: greenhouse, settings: {board: gusto}}
+  haize-labs: {checker: greenhouse, settings: {board: haizelabs}}
+  handshake: {checker: ashby, settings: {board: handshake}}
+  hartford: {checker: workday, settings: {host: thehartford.wd5.myworkdayjobs.com, tenant: thehartford, sites: [Careers_External, careers_restricted]}}
+  hpe: {checker: workday, settings: {host: hpe.wd5.myworkdayjobs.com, tenant: hpe, sites: [jobsathpe, acjobsite]}}
+  hex: {checker: ashby, settings: {board: hex}}
+  heygen: {checker: greenhouse, settings: {board: heygen}}
+  hilton: {checker: oracle, settings: {host: efet.fa.us2.oraclecloud.com, site: CX_1}}
+  hilton~cx_1009: {checker: oracle, settings: {host: efet.fa.us2.oraclecloud.com, site: CX_1009}}
+  home-depot: {checker: workday, settings: {host: homedepot.wd5.myworkdayjobs.com, tenant: homedepot, sites: [CareerDepot, CareerDepotCanada]}}
+  hp: {checker: workday, settings: {host: hp.wd5.myworkdayjobs.com, tenant: hp, sites: [ExternalCareerSite, EXTEU-AC-CareerSite]}}
+  hp~greenhouse: {checker: greenhouse, settings: {boards: [hp, hpiq]}}
+  humana: {checker: workday, settings: {host: humana.wd5.myworkdayjobs.com, tenant: humana, site: Humana_External_Career_Site}}
+  hyperproof: {checker: greenhouse, settings: {board: hyperproof}}
+  ice: {checker: jibe, settings: {host: ice.jibeapply.com}}
+  ice~icims: {checker: icims, settings: {portal: "https://careers-ice.icims.com"}}
+  illumio: {checker: ashby, settings: {board: illumio}}
+  intuitive-surgical: {checker: smartrecruiters, settings: {company: Intuitive}}
+  ironclad: {checker: ashby, settings: {board: ironcladhq}}
+  ixl-learning: {checker: greenhouse, settings: {board: ixllearning}}
+  jpmorgan-chase: {checker: oracle, settings: {host: jpmc.fa.oraclecloud.com, site: CX_1001}}
+  keysight: {checker: jibe, settings: {host: jobs.keysight.com}}
+  khan-academy: {checker: greenhouse, settings: {board: khanacademy}}
+  kla: {checker: workday, settings: {host: kla.wd1.myworkdayjobs.com, tenant: kla, sites: [Search, UR, annarbor]}}
+  knowbe4: {checker: greenhouse, settings: {board: knowbe4}}
+  lambda: {checker: ashby, settings: {board: lambda}}
+  launchdarkly: {checker: greenhouse, settings: {board: launchdarkly}}
+  lightspark: {checker: ashby, settings: {board: lightspark}}
+  locus-robotics: {checker: greenhouse, settings: {board: locusrobotics}}
+  lowes: {checker: workday, settings: {host: lowes.wd5.myworkdayjobs.com, tenant: lowes, site: LWS_External_CS}}
+  lucid-motors: {checker: greenhouse, settings: {board: lucidmotors}}
+  lucid-software: {checker: greenhouse, settings: {board: lucidsoftware}}
+  macys: {checker: oracle, settings: {host: ebwh.fa.us2.oraclecloud.com, site: CX_1}}
+  macys~cx_1001: {checker: oracle, settings: {host: ebwh.fa.us2.oraclecloud.com, site: CX_1001}}
+  marvell: {checker: workday, settings: {host: marvell.wd1.myworkdayjobs.com, tenant: marvell, sites: [MarvellCareers, MarvellCareers2]}}
+  mastercard: {checker: workday, settings: {host: mastercard.wd1.myworkdayjobs.com, tenant: mastercard, sites: [CorporateCareers, Campus, Public_Posting_Site]}}
+  match-group: {checker: lever, settings: {site: matchgroup}}
+  mckesson: {checker: workday, settings: {host: mckesson.wd3.myworkdayjobs.com, tenant: mckesson, sites: [External_Careers, sourcer_on_req]}}
+  mercor: {checker: ashby, settings: {board: mercor}}
+  micron: {checker: workday, settings: {host: micron.wd1.myworkdayjobs.com, tenant: micron, site: External}}
+  morgan-stanley: {checker: workday, settings: {host: ms.wd5.myworkdayjobs.com, tenant: ms, sites: [External, private]}}
+  multiply-labs: {checker: lever, settings: {site: multiplylabs}}
+  nasdaq: {checker: workday, settings: {host: nasdaq.wd1.myworkdayjobs.com, tenant: nasdaq, site: Global_External_Site}}
+  nasuni: {checker: greenhouse, settings: {board: nasuni}}
+  nationwide: {checker: workday, settings: {host: nationwide.wd1.myworkdayjobs.com, tenant: nationwide, site: Nationwide_Career}}
+  navy-federal: {checker: oracle, settings: {host: fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com, site: nfcu}}
+  ncino: {checker: greenhouse, settings: {boards: [ncinoinc, ncinoearlytalent], missing_ok: true}}
+  ncino~workday: {checker: workday, settings: {host: ncino.wd5.myworkdayjobs.com, tenant: ncino, site: nCinoCareers}}
+  netic: {checker: ashby, settings: {board: netic}}
+  neuralink: {checker: greenhouse, settings: {board: neuralink}}
+  new-york-times: {checker: greenhouse, settings: {board: thenewyorktimes}}
+  nextdoor: {checker: greenhouse, settings: {board: nextdoor}}
+  niantic-spatial: {checker: ashby, settings: {board: niantic-spatial}}
+  nike: {checker: workday, settings: {host: nike.wd1.myworkdayjobs.com, tenant: nike, sites: [nke, nke2]}}
+  nordstrom: {checker: workday, settings: {host: nordstrom.wd501.myworkdayjobs.com, tenant: nordstrom, site: nordstrom_careers}}
+  northwestern-mutual: {checker: workday, settings: {host: northwesternmutual.wd5.myworkdayjobs.com, tenant: northwesternmutual, site: corporate-careers}}
+  northwestern-mutual~icims: {checker: icims, settings: {portal: "https://opportunities-northwesternmutual.icims.com"}}
+  numeric: {checker: ashby, settings: {board: numeric}}
+  obsidian-security: {checker: greenhouse, settings: {board: obsidiansecurity}}
+  one-finance: {checker: ashby, settings: {board: oneapp}}
+  pacific-fusion: {checker: greenhouse, settings: {board: pacificfusion}}
+  patreon: {checker: ashby, settings: {board: patreon}}
+  pendo: {checker: greenhouse, settings: {board: pendo}}
+  perpay: {checker: greenhouse, settings: {board: perpay}}
+  persona: {checker: ashby, settings: {board: persona}}
+  persona-ai: {checker: ashby, settings: {board: persona.ai}}
+  principal: {checker: jibe, settings: {host: careers.principal.com}}
+  prizepicks: {checker: greenhouse, settings: {board: prizepicks}}
+  proofpoint: {checker: workday, settings: {host: proofpoint.wd5.myworkdayjobs.com, tenant: proofpoint, site: ProofpointCareers}}
+  ptc: {checker: workday, settings: {host: ptc.wd1.myworkdayjobs.com, tenant: ptc, site: PTC}}
+  pure-storage: {checker: greenhouse, settings: {board: purestorage}}
+  q2: {checker: workday, settings: {host: q2ebanking.wd5.myworkdayjobs.com, tenant: q2ebanking, site: Q2}}
+  qualcomm: {checker: eightfold, settings: {host: careers.qualcomm.com, domain: qualcomm.com}}
+  qumulo: {checker: ashby, settings: {board: qumulo}}
+  reddit: {checker: greenhouse, settings: {board: reddit}}
+  redwood-materials: {checker: greenhouse, settings: {board: redwoodmaterials}}
+  replit: {checker: ashby, settings: {board: replit}}
+  rhoda-ai: {checker: ashby, settings: {board: rhoda-ai}}
+  ridgeline: {checker: greenhouse, settings: {board: ridgeline}}
+  rilla: {checker: ashby, settings: {board: rilla}}
+  ripple: {checker: greenhouse, settings: {board: ripple}}
+  rivian: {checker: jibe, settings: {host: careers.rivian.com}}
+  rivian-vw: {checker: ashby, settings: {board: rivianvw.tech}}
+  roku: {checker: greenhouse, settings: {board: roku}}
+  rubrik: {checker: greenhouse, settings: {board: rubrik}}
+  sailpoint: {checker: workday, settings: {host: sailpoint.wd1.myworkdayjobs.com, tenant: sailpoint, site: SailPoint}}
+  sandisk: {checker: smartrecruiters, settings: {company: Sandisk}}
+  sas: {checker: icims, settings: {portal: "https://careers-sas.icims.com"}}
+  sentry: {checker: ashby, settings: {board: sentry}}
+  serval: {checker: ashby, settings: {board: serval}}
+  singlestore: {checker: greenhouse, settings: {board: singlestore}}
+  snap: {checker: workday, settings: {host: wd1.myworkdaysite.com, tenant: snapchat, site: snap}}
+  snorkel-ai: {checker: greenhouse, settings: {board: snorkelai}}
+  snyk: {checker: workday, settings: {host: snyk.wd103.myworkdayjobs.com, tenant: snyk, site: External}}
+  snyk~ashby: {checker: ashby, settings: {board: snyk}}
+  socure: {checker: ashby, settings: {board: socure}}
+  sofi: {checker: greenhouse, settings: {board: sofi}}
+  sonos: {checker: workday, settings: {host: sonos.wd1.myworkdayjobs.com, tenant: sonos, site: Sonos}}
+  southwest: {checker: workday, settings: {host: swa.wd1.myworkdayjobs.com, tenant: swa, site: external}}
+  starburst: {checker: greenhouse, settings: {board: starburst}}
+  state-farm: {checker: jibe, settings: {host: jobs.statefarm.com}}
+  suno: {checker: ashby, settings: {board: suno}}
+  superhuman: {checker: ashby, settings: {board: "Superhuman Platform Inc"}}
+  superhuman~greenhouse: {checker: greenhouse, settings: {board: grammarly, missing_ok: true}}
+  symmetry-systems: {checker: lever, settings: {site: symmetrysystems}}
+  synchrony: {checker: workday, settings: {host: synchronyfinancial.wd5.myworkdayjobs.com, tenant: synchronyfinancial, site: University}}
+  tamr: {checker: ashby, settings: {board: tamr}}
+  target: {checker: workday, settings: {host: target.wd5.myworkdayjobs.com, tenant: target, site: targetcareers}}
+  tensorwave: {checker: ashby, settings: {board: tensorwave}}
+  texas-instruments: {checker: oracle, settings: {host: edbz.fa.us2.oraclecloud.com, site: CX}}
+  travelers: {checker: workday, settings: {host: travelers.wd5.myworkdayjobs.com, tenant: travelers, site: External}}
+  tricentis: {checker: workday, settings: {host: tricentis.wd1.myworkdayjobs.com, tenant: tricentis, site: Tricentis_Careers}}
+  trimble: {checker: workday, settings: {host: trimble.wd1.myworkdayjobs.com, tenant: trimble, site: TrimbleCareers}}
+  truveta: {checker: greenhouse, settings: {board: truveta}}
+  typeface: {checker: greenhouse, settings: {board: typeface}}
+  udemy: {checker: greenhouse, settings: {boards: [udemy, udemybedi], missing_ok: true}}
+  uipath: {checker: ashby, settings: {board: uipath}}
+  unify: {checker: ashby, settings: {board: unify}}
+  united-airlines: {checker: phenom, settings: {base_url: "https://careers.united.com", ref_num: UAIUADUS}}
+  usaa: {checker: workday, settings: {host: usaa.wd1.myworkdayjobs.com, tenant: usaa, site: USAAJOBSWD}}
+  vanguard: {checker: workday, settings: {host: vanguard.wd5.myworkdayjobs.com, tenant: vanguard, sites: [vanguard_external, contractors_restricted]}}
+  veeam: {checker: greenhouse, settings: {board: veeamsoftware}}
+  vercel: {checker: greenhouse, settings: {board: vercel}}
+  verizon: {checker: workday, settings: {host: verizon.wd12.myworkdayjobs.com, tenant: verizon, site: verizon-careers}}
+  viam: {checker: greenhouse, settings: {board: viamrobotics}}
+  walmart: {checker: workday, settings: {host: walmart.wd504.myworkdayjobs.com, tenant: walmart, site: WalmartExternal}}
+  disney: {checker: workday, settings: {host: disney.wd5.myworkdayjobs.com, tenant: disney, sites: [disneycareer, disneycareerdc]}}
+  warner-bros-discovery: {checker: workday, settings: {host: warnerbros.wd5.myworkdayjobs.com, tenant: warnerbros, site: global}}
+  washington-post: {checker: workday, settings: {host: washpost.wd5.myworkdayjobs.com, tenant: washpost, site: washingtonpostcareers}}
+  wells-fargo: {checker: workday, settings: {host: wd1.myworkdaysite.com, tenant: wf, site: WellsFargoJobs}}
+  western-digital: {checker: smartrecruiters, settings: {company: WesternDigital}}
+  xcimer: {checker: lever, settings: {site: xcimer}}
+  you-com: {checker: greenhouse, settings: {board: youcom}}
+  yugabyte: {checker: greenhouse, settings: {board: yugabyte}}
+  zebra: {checker: workday, settings: {host: zebra.wd501.myworkdayjobs.com, tenant: zebra, site: Zebra_careers}}
+  zillow: {checker: workday, settings: {host: zillow.wd5.myworkdayjobs.com, tenant: zillow, site: Zillow_Group_External}}
+  zip: {checker: ashby, settings: {board: zip}}
+  ziprecruiter: {checker: greenhouse, settings: {board: ziprecruiter}}
+  zocdoc: {checker: greenhouse, settings: {board: zocdoc}}
+  zoominfo: {checker: greenhouse, settings: {board: zoominfo}}
+  zscaler: {checker: greenhouse, settings: {board: zscaler}}
+  # added after the first reads: special cases, second sites, side boards, robots.txt sites
+  costco: {"checker": "jibe", "settings": {"host": "careers.costco.com"}}
+  unitedhealth-group: {"checker": "talentbrew", "settings": {"sitemap_url": "https://careers.unitedhealthgroup.com/sitemap.xml", "org_id": 34088, "detail_limit": 40}}
+  tyler-technologies: {"checker": "jobvite", "settings": {"company_id": "q6NaVfwI", "slug": "tylertech"}}
+  precisely: {"checker": "greenhouse", "settings": {"board": "preciselyusjobs"}}
+  jpmorgan-chase~cx_2001: {"checker": "oracle", "settings": {"host": "jpmc.fa.oraclecloud.com", "site": "CX_2001"}}
+  bny~cx_1: {"checker": "oracle", "settings": {"host": "eofe.fa.us2.oraclecloud.com", "site": "CX_1"}}
+  fortinet~cx_1: {"checker": "oracle", "settings": {"host": "edel.fa.us2.oraclecloud.com", "site": "CX_1"}}
+  texas-instruments~ebgj: {"checker": "oracle", "settings": {"host": "ebgj.fa.us2.oraclecloud.com", "site": "CX_1"}}
+  texas-instruments~edbz-cx_1: {"checker": "oracle", "settings": {"host": "edbz.fa.us2.oraclecloud.com", "site": "CX_1"}}
+  conductorone~conductorone: {"checker": "ashby", "settings": {"board": "conductorone"}}
+  superhuman~superhuman: {"checker": "ashby", "settings": {"board": "superhuman"}}
+  best-buy~canada: {"checker": "workday", "settings": {"host": "bestbuycanada.wd3.myworkdayjobs.com", "tenant": "bestbuycanada", "site": "BestBuyCA_Career"}}
+  draftkings~ripplematch: {"checker": "ripplematch", "settings": {"company_id": 841}}
+  mercor~ripplematch: {"checker": "ripplematch", "settings": {"company_id": 1158}}
+  unitedhealth-group~ripplematch: {"checker": "ripplematch", "settings": {"company_id": 831}}
+  progressive~ripplematch: {"checker": "ripplematch", "settings": {"company_id": 1132}}
+  reddit~ripplematch: {"checker": "ripplematch", "settings": {"company_id": 286}}
+  roku~ripplematch: {"checker": "ripplematch", "settings": {"company_id": 1129}}
+  snap~ripplematch: {"checker": "ripplematch", "settings": {"company_id": 1111}}
+  verizon~ripplematch: {"checker": "ripplematch", "settings": {"company_id": 627}}
+  allstate~site-Agent: {"checker": "workday", "settings": {"host": "allstate.wd5.myworkdayjobs.com", "tenant": "allstate", "site": "Agent"}}
+  bank-of-america~site-Lateral-US: {"checker": "workday", "settings": {"host": "ghr.wd1.myworkdayjobs.com", "tenant": "ghr", "site": "Lateral-US"}}
+  bank-of-america~site-Scoutt: {"checker": "workday", "settings": {"host": "ghr.wd1.myworkdayjobs.com", "tenant": "ghr", "site": "Scoutt"}}
+  bank-of-america~site-lateral-apac: {"checker": "workday", "settings": {"host": "ghr.wd1.myworkdayjobs.com", "tenant": "ghr", "site": "lateral-apac"}}
+  bank-of-america~site-lateral-ba_continuum: {"checker": "workday", "settings": {"host": "ghr.wd1.myworkdayjobs.com", "tenant": "ghr", "site": "lateral-ba_continuum"}}
+  bank-of-america~site-lateral-canada: {"checker": "workday", "settings": {"host": "ghr.wd1.myworkdayjobs.com", "tenant": "ghr", "site": "lateral-canada"}}
+  bank-of-america~site-lateral-latam: {"checker": "workday", "settings": {"host": "ghr.wd1.myworkdayjobs.com", "tenant": "ghr", "site": "lateral-latam"}}
+  cadence~site-women-in-tech-scholarship: {"checker": "workday", "settings": {"host": "cadence.wd1.myworkdayjobs.com", "tenant": "cadence", "site": "women-in-tech-scholarship"}}
+  chewy~site-Relief-Veterinarian-Contractors: {"checker": "workday", "settings": {"host": "chewy.wd5.myworkdayjobs.com", "tenant": "chewy", "site": "Relief-Veterinarian-Contractors"}}
+  chewy~site-Student-Ambassador-Contractors: {"checker": "workday", "settings": {"host": "chewy.wd5.myworkdayjobs.com", "tenant": "chewy", "site": "Student-Ambassador-Contractors"}}
+  copart~site-NPACareers: {"checker": "workday", "settings": {"host": "copart.wd12.myworkdayjobs.com", "tenant": "copart", "site": "NPACareers"}}
+  costar~site-CoStarCanadaCareers: {"checker": "workday", "settings": {"host": "costar.wd1.myworkdayjobs.com", "tenant": "costar", "site": "CoStarCanadaCareers"}}
+  costar~site-CoStarCareersEurope: {"checker": "workday", "settings": {"host": "costar.wd1.myworkdayjobs.com", "tenant": "costar", "site": "CoStarCareersEurope"}}
+  costar~site-CoStarCareersNiche: {"checker": "workday", "settings": {"host": "costar.wd1.myworkdayjobs.com", "tenant": "costar", "site": "CoStarCareersNiche"}}
+  costar~site-Richmond_Recruiting: {"checker": "workday", "settings": {"host": "costar.wd1.myworkdayjobs.com", "tenant": "costar", "site": "Richmond_Recruiting"}}
+  costar~site-SanDiego_Research: {"checker": "workday", "settings": {"host": "costar.wd1.myworkdayjobs.com", "tenant": "costar", "site": "SanDiego_Research"}}
+  costar~site-Washington_Research: {"checker": "workday", "settings": {"host": "costar.wd1.myworkdayjobs.com", "tenant": "costar", "site": "Washington_Research"}}
+  costar~site-broadbean_external: {"checker": "workday", "settings": {"host": "costar.wd1.myworkdayjobs.com", "tenant": "costar", "site": "broadbean_external"}}
+  cvs-health~site-Private_Postings_Mergers_and_Acquisitions_ONLY: {"checker": "workday", "settings": {"host": "cvshealth.wd1.myworkdayjobs.com", "tenant": "cvshealth", "site": "Private_Postings_Mergers_and_Acquisitions_ONLY"}}
+  elevance-health~site-IRL: {"checker": "workday", "settings": {"host": "elevancehealth.wd1.myworkdayjobs.com", "tenant": "elevancehealth", "site": "IRL"}}
+  elevance-health~site-Legato_Ireland: {"checker": "workday", "settings": {"host": "elevancehealth.wd1.myworkdayjobs.com", "tenant": "elevancehealth", "site": "Legato_Ireland"}}
+  elevance-health~site-Legato_Israel: {"checker": "workday", "settings": {"host": "elevancehealth.wd1.myworkdayjobs.com", "tenant": "elevancehealth", "site": "Legato_Israel"}}
+  elevance-health~site-carelonglobal_in: {"checker": "workday", "settings": {"host": "elevancehealth.wd1.myworkdayjobs.com", "tenant": "elevancehealth", "site": "carelonglobal_in"}}
+  elevance-health~site-carelonglobal_ph: {"checker": "workday", "settings": {"host": "elevancehealth.wd1.myworkdayjobs.com", "tenant": "elevancehealth", "site": "carelonglobal_ph"}}
+  equinix~site-Adecco: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Adecco"}}
+  equinix~site-Adecco_Personaldienstleistungen_GmbH: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Adecco_Personaldienstleistungen_GmbH"}}
+  equinix~site-Align_Technical_Resources: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Align_Technical_Resources"}}
+  equinix~site-Annapurna_HR: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Annapurna_HR"}}
+  equinix~site-BSI_People: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "BSI_People"}}
+  equinix~site-Boyd_Moore_Executive_Search: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Boyd_Moore_Executive_Search"}}
+  equinix~site-Bradley-Morris_LLC_dba_Bradley-Morris_Inc: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Bradley-Morris_LLC_dba_Bradley-Morris_Inc"}}
+  equinix~site-Brix_Projects: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Brix_Projects"}}
+  equinix~site-CDS_Recruitment: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "CDS_Recruitment"}}
+  equinix~site-Career_Design_Center: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Career_Design_Center"}}
+  equinix~site-Careertrotter: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Careertrotter"}}
+  equinix~site-Clifford_Baines: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Clifford_Baines"}}
+  equinix~site-DaijobGlobalRecruiting: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "DaijobGlobalRecruiting"}}
+  equinix~site-Datacenterpeople_Ltd: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Datacenterpeople_Ltd"}}
+  equinix~site-Euro_London_Appointment: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Euro_London_Appointment"}}
+  equinix~site-Execuforce: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Execuforce"}}
+  equinix~site-GDH_Consulting: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "GDH_Consulting"}}
+  equinix~site-Golden_Searches_Information_Consultant: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Golden_Searches_Information_Consultant"}}
+  equinix~site-HaysSpecialistRecruitmentJapan: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "HaysSpecialistRecruitmentJapan"}}
+  equinix~site-Heidrick_Struggles: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Heidrick_Struggles"}}
+  equinix~site-IQ_Telecom: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "IQ_Telecom"}}
+  equinix~site-Intelligence: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Intelligence"}}
+  equinix~site-JAC_Recruitment: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "JAC_Recruitment"}}
+  equinix~site-Magellan_Professional_Solutions: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Magellan_Professional_Solutions"}}
+  equinix~site-ManpowerGroup: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "ManpowerGroup"}}
+  equinix~site-Michael_Page_International: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Michael_Page_International"}}
+  equinix~site-Michael_Page_International_Japan_KK: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Michael_Page_International_Japan_KK"}}
+  equinix~site-MorganMcKinley: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "MorganMcKinley"}}
+  equinix~site-Mynavi_Corporation: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Mynavi_Corporation"}}
+  equinix~site-PMA_Recruitment: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "PMA_Recruitment"}}
+  equinix~site-PRECEPT: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "PRECEPT"}}
+  equinix~site-PRS_Recruitment_Services: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "PRS_Recruitment_Services"}}
+  equinix~site-Page_Personnel: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Page_Personnel"}}
+  equinix~site-Page_Personnel_Deutschland_GmbH: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Page_Personnel_Deutschland_GmbH"}}
+  equinix~site-Pro-Unlimited: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Pro-Unlimited"}}
+  equinix~site-Recruit_Agent: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Recruit_Agent"}}
+  equinix~site-Recruit_Career: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Recruit_Career"}}
+  equinix~site-Recruit_Plus: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Recruit_Plus"}}
+  equinix~site-Robert_Half_International_Inc: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Robert_Half_International_Inc"}}
+  equinix~site-Robert_Walters_Pty_Ltd: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Robert_Walters_Pty_Ltd"}}
+  equinix~site-Skill_House: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Skill_House"}}
+  equinix~site-Skillhouse_Staffing_Solutions_KK: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Skillhouse_Staffing_Solutions_KK"}}
+  equinix~site-Soar_Consulting_Inc: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Soar_Consulting_Inc"}}
+  equinix~site-en_japan_inc: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "en_japan_inc"}}
+  equinix~site-enworld_Co_Ltd: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "enworld_Co_Ltd"}}
+  etsy~site-Depop_Careers: {"checker": "workday", "settings": {"host": "etsy.wd5.myworkdayjobs.com", "tenant": "etsy", "site": "Depop_Careers"}}
+  etsy~site-Reverb_Careers: {"checker": "workday", "settings": {"host": "etsy.wd5.myworkdayjobs.com", "tenant": "etsy", "site": "Reverb_Careers"}}
+  f5~site-f5events: {"checker": "workday", "settings": {"host": "ffive.wd5.myworkdayjobs.com", "tenant": "ffive", "site": "f5events"}}
+  fis~site-AgencyCareerSite: {"checker": "workday", "settings": {"host": "fis.wd5.myworkdayjobs.com", "tenant": "fis", "site": "AgencyCareerSite"}}
+  fiserv~site-NZ: {"checker": "workday", "settings": {"host": "fiserv.wd5.myworkdayjobs.com", "tenant": "fiserv", "site": "NZ"}}
+  fiserv~site-blconsultant: {"checker": "workday", "settings": {"host": "fiserv.wd5.myworkdayjobs.com", "tenant": "fiserv", "site": "blconsultant"}}
+  fox~site-FOXTVST_Central: {"checker": "workday", "settings": {"host": "fox.wd1.myworkdayjobs.com", "tenant": "fox", "site": "FOXTVST_Central"}}
+  fox~site-FOXTVST_EAST: {"checker": "workday", "settings": {"host": "fox.wd1.myworkdayjobs.com", "tenant": "fox", "site": "FOXTVST_EAST"}}
+  fox~site-FOXTVST_WEST: {"checker": "workday", "settings": {"host": "fox.wd1.myworkdayjobs.com", "tenant": "fox", "site": "FOXTVST_WEST"}}
+  hpe~site-WFMathpe: {"checker": "workday", "settings": {"host": "hpe.wd5.myworkdayjobs.com", "tenant": "hpe", "site": "WFMathpe"}}
+  humana~site-CenterWell_External_Career_Site: {"checker": "workday", "settings": {"host": "humana.wd5.myworkdayjobs.com", "tenant": "humana", "site": "CenterWell_External_Career_Site"}}
+  kla~site-Filmetrics: {"checker": "workday", "settings": {"host": "kla.wd1.myworkdayjobs.com", "tenant": "kla", "site": "Filmetrics"}}
+  kla~site-Israel: {"checker": "workday", "settings": {"host": "kla.wd1.myworkdayjobs.com", "tenant": "kla", "site": "Israel"}}
+  kla~site-Penang_Semicon: {"checker": "workday", "settings": {"host": "kla.wd1.myworkdayjobs.com", "tenant": "kla", "site": "Penang_Semicon"}}
+  kla~site-Taiwan: {"checker": "workday", "settings": {"host": "kla.wd1.myworkdayjobs.com", "tenant": "kla", "site": "Taiwan"}}
+  marvell~site-Scout: {"checker": "workday", "settings": {"host": "marvell.wd1.myworkdayjobs.com", "tenant": "marvell", "site": "Scout"}}
+  mastercard~site-ContractorConversion: {"checker": "workday", "settings": {"host": "mastercard.wd1.myworkdayjobs.com", "tenant": "mastercard", "site": "ContractorConversion"}}
+  mastercard~site-RYC: {"checker": "workday", "settings": {"host": "mastercard.wd1.myworkdayjobs.com", "tenant": "mastercard", "site": "RYC"}}
+  mastercard~site-CampusApplyOnly: {"checker": "workday", "settings": {"host": "mastercard.wd1.myworkdayjobs.com", "tenant": "mastercard", "site": "CampusApplyOnly"}}
+  mckesson~site-Acquisition_Campus: {"checker": "workday", "settings": {"host": "mckesson.wd3.myworkdayjobs.com", "tenant": "mckesson", "site": "Acquisition_Campus"}}
+  mckesson~site-CoverMyMeds_External_Careers: {"checker": "workday", "settings": {"host": "mckesson.wd3.myworkdayjobs.com", "tenant": "mckesson", "site": "CoverMyMeds_External_Careers"}}
+  mckesson~site-Ontada_Careers: {"checker": "workday", "settings": {"host": "mckesson.wd3.myworkdayjobs.com", "tenant": "mckesson", "site": "Ontada_Careers"}}
+  mckesson~site-SCRI_Careers: {"checker": "workday", "settings": {"host": "mckesson.wd3.myworkdayjobs.com", "tenant": "mckesson", "site": "SCRI_Careers"}}
+  mckesson~site-rxsscareers: {"checker": "workday", "settings": {"host": "mckesson.wd3.myworkdayjobs.com", "tenant": "mckesson", "site": "rxsscareers"}}
+  nasdaq~site-US_External_Career_Site: {"checker": "workday", "settings": {"host": "nasdaq.wd1.myworkdayjobs.com", "tenant": "nasdaq", "site": "US_External_Career_Site"}}
+  nasdaq~site-eVestment: {"checker": "workday", "settings": {"host": "nasdaq.wd1.myworkdayjobs.com", "tenant": "nasdaq", "site": "eVestment"}}
+  nationwide~site-Nationwide_Career_India: {"checker": "workday", "settings": {"host": "nationwide.wd1.myworkdayjobs.com", "tenant": "nationwide", "site": "Nationwide_Career_India"}}
+  ncino~site-nCinoAgency: {"checker": "workday", "settings": {"host": "ncino.wd5.myworkdayjobs.com", "tenant": "ncino", "site": "nCinoAgency"}}
+  nordstrom~site-nordstrom_internship: {"checker": "workday", "settings": {"host": "nordstrom.wd501.myworkdayjobs.com", "tenant": "nordstrom", "site": "nordstrom_internship"}}
+  northwestern-mutual~site-CORPORATE-CAREERS-PRIVATE: {"checker": "workday", "settings": {"host": "northwesternmutual.wd5.myworkdayjobs.com", "tenant": "northwesternmutual", "site": "CORPORATE-CAREERS-PRIVATE"}}
+  sailpoint~site-SailPointInternships: {"checker": "workday", "settings": {"host": "sailpoint.wd1.myworkdayjobs.com", "tenant": "sailpoint", "site": "SailPointInternships"}}
+  sonos~site-Student_Opportunities: {"checker": "workday", "settings": {"host": "sonos.wd1.myworkdayjobs.com", "tenant": "sonos", "site": "Student_Opportunities"}}
+  synchrony~site-AgencyCareerSite: {"checker": "workday", "settings": {"host": "synchronyfinancial.wd5.myworkdayjobs.com", "tenant": "synchronyfinancial", "site": "AgencyCareerSite"}}
+  synchrony~site-careers: {"checker": "workday", "settings": {"host": "synchronyfinancial.wd5.myworkdayjobs.com", "tenant": "synchronyfinancial", "site": "careers"}}
+  travelers~site-SimplyBusinesssExternal: {"checker": "workday", "settings": {"host": "travelers.wd5.myworkdayjobs.com", "tenant": "travelers", "site": "SimplyBusinesssExternal"}}
+  usaa~site-CONFIDENTIAL: {"checker": "workday", "settings": {"host": "usaa.wd1.myworkdayjobs.com", "tenant": "usaa", "site": "CONFIDENTIAL"}}
+  walmart~site-Non-WorkdayInternal: {"checker": "workday", "settings": {"host": "walmart.wd504.myworkdayjobs.com", "tenant": "walmart", "site": "Non-WorkdayInternal"}}
+  warner-bros-discovery~site-francais: {"checker": "workday", "settings": {"host": "warnerbros.wd5.myworkdayjobs.com", "tenant": "warnerbros", "site": "francais"}}
+  washington-post~site-WashingtonPostCareersArc: {"checker": "workday", "settings": {"host": "washpost.wd5.myworkdayjobs.com", "tenant": "washpost", "site": "WashingtonPostCareersArc"}}
+  athenahealth~careers: {"checker": "phenom", "settings": {"base_url": "https://careers.athenahealth.com", "ref_num": "ATHAHHUS"}}
+  charles-schwab~talentbrew: {"checker": "talentbrew", "settings": {"sitemap_url": "https://www.schwabjobs.com/sitemap.xml", "org_id": 33727, "detail_limit": 40}}

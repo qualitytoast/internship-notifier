@@ -1,0 +1,7 @@
+# status 200
+Sitemap: https://nordstrom.wd501.myworkdayjobs.com/nordstrom_careers/siteMap.xml
+
+User-agent: *
+Allow: /nordstrom_careers/
+Disallow: /nordstrom_internship/
+Disallow: /refreshFacet/

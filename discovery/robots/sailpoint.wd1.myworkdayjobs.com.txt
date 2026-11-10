@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://sailpoint.wd1.myworkdayjobs.com/SailPoint/siteMap.xml
+
+User-agent: *
+Allow: /SailPoint/
+Disallow: /SailPointInternships/
+Disallow: /SailPointOps/
+Disallow: /refreshFacet/

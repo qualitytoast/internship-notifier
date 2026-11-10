@@ -1,0 +1,29 @@
+# status 200
+User-agent: *
+Disallow: /wp-login.php
+Disallow: /wp-admin/
+Disallow: /*6158141945001$
+Disallow: /*6158144712001$
+Disallow: /*6277746865001$
+Disallow: /*6158141945001$
+Disallow: /*6296949918001$
+Disallow: /*6239120440001$
+Disallow: /*6239121576001$
+Disallow: /resource-assets/reference-guide/dmaas-free-trial-deployment-guide-en.pdf
+Disallow: /resource-assets/ebook/esg-ransomware-preparedness-ebook-en.pdf
+Disallow: /resource-assets/legal/joining-cohesity-upholding-obligations-to-former-employers-en.pdf
+Disallow: /resource-assets/guides/ransomware-readiness-guide-cisco.pdf
+Disallow: /resource-assets/solution-brief/grow-your-revenue-with-microsoft-365-backup-powered-by-cohesity-solution-brief-en.pdf
+Disallow: /resource-assets/solution-brief/give-customers-peace-of-mind-offering-data-protection-microsoft-365-solution-brief-en.pdf
+Disallow: /resource-assets/guides/ransomware-readiness-guide-hpe.pdf
+
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://www.cohesity.com/sitemap.xml
+Sitemap: https://www.cohesity.com/sitemap.us.xml
+Sitemap: https://www.cohesity.com/sitemap.de.xml
+Sitemap: https://www.cohesity.com/sitemap.fr.xml
+Sitemap: https://www.cohesity.com/sitemap.jp.xml
+Sitemap: https://www.cohesity.com/sitemap.es.xml
+Sitemap: https://www.cohesity.com/sitemap.br.xml
+Sitemap: https://www.cohesity.com/sitemap.kr.xml

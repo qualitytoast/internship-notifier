@@ -1,0 +1,34 @@
+# status 200
+User-agent: *
+Allow: /
+Disallow: /p/*
+Disallow: /hp
+Disallow: /blog/gaining-confidence-as-salon-owner-make-what-youre-worth-fb
+Disallow: /blog/dare-to-dream-where-your-beauty-business-could-take-you-fb
+Disallow: /blog/beauty-quiz-is-it-time-to-raise-your-salon-prices-fb
+Disallow: /blog/6-ways-to-protect-your-time-and-money-fb
+Disallow: /the-best-software-for-your-team
+Disallow: /software-for-your-team
+Disallow: /blog/how-to-be-a-good-manager-and-salon-leader-fb
+Disallow: /your-dream-salon-software
+Disallow: /blog/beauty-pro-bill-of-rights-non-negotiables-to-help-you-thrive-fb
+Disallow: /blog/goodbye-loneliness-hello-happiness-going-solo-doesnt-mean-solitude-fb
+Disallow: /community
+Disallow: /go/
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://glossgenius.com/sitemap.xml

@@ -1,0 +1,9 @@
+# status 200
+Sitemap: https://allstate.wd5.myworkdayjobs.com/Agent/siteMap.xml
+Sitemap: https://allstate.wd5.myworkdayjobs.com/allstate_careers/siteMap.xml
+
+User-agent: *
+Allow: /Agent/
+Allow: /allstate_careers/
+Disallow: /sourcing_event/
+Disallow: /refreshFacet/

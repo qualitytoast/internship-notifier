@@ -1,0 +1,64 @@
+{
+ "draftkings": {
+  "slug": "draftkings",
+  "company_id": 841,
+  "roles": 6,
+  "sample": [
+   "Associate Quality Control Analyst",
+   "Data Coordinator Associate ",
+   "Operations Associate, Jackpocket ",
+   "Operations Associate, Jackpocket (PM Shift)"
+  ]
+ },
+ "mercor": {
+  "slug": "mercor",
+  "company_id": 1158,
+  "roles": 4,
+  "sample": [
+   "Machine Learning Engineer",
+   "Software & Data Science Expert",
+   "STEM PhD Expert",
+   "SWE (Cybersecurity)"
+  ]
+ },
+ "unitedhealth-group": {
+  "slug": "unitedhealth-group",
+  "company_id": 831,
+  "roles": 1,
+  "sample": [
+   "Sales Internship"
+  ]
+ },
+ "progressive": {
+  "slug": "progressive",
+  "company_id": 1132,
+  "roles": 1,
+  "sample": [
+   "Claims Adjuster Trainee, Idaho"
+  ]
+ },
+ "reddit": {
+  "slug": "reddit",
+  "company_id": 286,
+  "roles": 0,
+  "sample": []
+ },
+ "roku": {
+  "slug": "roku",
+  "company_id": 1129,
+  "roles": 0,
+  "sample": []
+ },
+ "snap": {
+  "slug": "snap-inc",
+  "company_id": 1111,
+  "roles": 0,
+  "sample": []
+ },
+ "verizon": {
+  "slug": "verizon",
+  "company_id": 627,
+  "roles": 0,
+  "sample": []
+ }
+}

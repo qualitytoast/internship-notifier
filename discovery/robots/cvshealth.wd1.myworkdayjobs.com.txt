@@ -1,0 +1,10 @@
+# status 200
+Sitemap: https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/siteMap.xml
+Sitemap: https://cvshealth.wd1.myworkdayjobs.com/Private_Postings_Intern_Conversion_ONLY/siteMap.xml
+Sitemap: https://cvshealth.wd1.myworkdayjobs.com/Private_Postings_Mergers_and_Acquisitions_ONLY/siteMap.xml
+
+User-agent: *
+Allow: /CVS_Health_Careers/
+Allow: /Private_Postings_Intern_Conversion_ONLY/
+Allow: /Private_Postings_Mergers_and_Acquisitions_ONLY/
+Disallow: /refreshFacet/

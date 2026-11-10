@@ -1,0 +1,41 @@
+# status 200
+# AI Bots
+User-agent: CCBot
+User-agent: FriendlyCrawler
+User-agent: iaskspider/2.0
+User-agent: ICC-Crawler
+User-agent: ImagesiftBot
+User-agent: img2dataset
+User-agent: ISSCyberRiskCrawler
+User-agent: Kangaroo Bot
+User-agent: omgili
+User-agent: omgilibot
+User-agent: PetalBot
+User-agent: Scrapy
+User-agent: Sidetrade indexer bot
+User-agent: Timpibot
+User-agent: VelenPublicWebCrawler
+User-agent: Webzio-Extended
+User-agent: YouBot
+Disallow: /
+
+# Block SEO
+User-agent: DataForSeoBot
+User-agent: EzoicBot
+User-agent: SeobilityBot
+User-agent: SEOkicks
+User-Agent: ZoomBot
+Disallow: /
+
+# Everyone else
+User-agent: *
+Disallow: 
+
+# Sitemaps
+Sitemap: https://appian.com/sitemap.xml
+Sitemap: https://appian.com/de.xml
+Sitemap: https://appian.com/es.xml
+Sitemap: https://appian.com/fr.xml
+Sitemap: https://appian.com/it.xml
+
+Crawl-delay: 10

@@ -1,0 +1,4 @@
+# status 200
+User-agent: *
+Disallow: /index-privacy-policy
+Disallow: /info

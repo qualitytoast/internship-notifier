@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://thehartford.wd5.myworkdayjobs.com/Careers_Restricted/siteMap.xml
+Sitemap: https://thehartford.wd5.myworkdayjobs.com/Careers_External/siteMap.xml
+
+User-agent: *
+Allow: /Careers_Restricted/
+Allow: /Careers_External/
+Disallow: /refreshFacet/

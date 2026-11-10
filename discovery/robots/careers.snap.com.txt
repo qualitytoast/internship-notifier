@@ -1,0 +1,4 @@
+# status 200
+# a file without rules allows all traffic
+
+Sitemap: https://careers.snap.com/sitemap.xml

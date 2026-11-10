@@ -1,0 +1,7 @@
+# status 200
+User-agent: *
+
+Allow: *
+Disallow: /api/*
+
+Sitemap: https://jobs.hilton.com/sitemap_index.xml

@@ -1,0 +1,7 @@
+# status 200
+Sitemap: https://gevernova.wd5.myworkdayjobs.com/Vernova_ExternalSite/siteMap.xml
+
+User-agent: *
+Allow: /Vernova_ExternalSite/
+Disallow: /Only_Confidential_Executive_Recruiting/
+Disallow: /refreshFacet/

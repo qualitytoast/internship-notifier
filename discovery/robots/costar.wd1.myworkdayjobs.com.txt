@@ -1,0 +1,24 @@
+# status 200
+Sitemap: https://costar.wd1.myworkdayjobs.com/CoStarCareers/siteMap.xml
+Sitemap: https://costar.wd1.myworkdayjobs.com/Costar_Campus/siteMap.xml
+Sitemap: https://costar.wd1.myworkdayjobs.com/CoStarCareersEurope/siteMap.xml
+Sitemap: https://costar.wd1.myworkdayjobs.com/Confidential/siteMap.xml
+Sitemap: https://costar.wd1.myworkdayjobs.com/Richmond_Recruiting/siteMap.xml
+Sitemap: https://costar.wd1.myworkdayjobs.com/SanDiego_Research/siteMap.xml
+Sitemap: https://costar.wd1.myworkdayjobs.com/Washington_Research/siteMap.xml
+Sitemap: https://costar.wd1.myworkdayjobs.com/CoStarCanadaCareers/siteMap.xml
+Sitemap: https://costar.wd1.myworkdayjobs.com/CoStarCareersNiche/siteMap.xml
+Sitemap: https://costar.wd1.myworkdayjobs.com/broadbean_external/siteMap.xml
+
+User-agent: *
+Allow: /CoStarCareers/
+Allow: /Costar_Campus/
+Allow: /CoStarCareersEurope/
+Allow: /Confidential/
+Allow: /Richmond_Recruiting/
+Allow: /SanDiego_Research/
+Allow: /Washington_Research/
+Allow: /CoStarCanadaCareers/
+Allow: /CoStarCareersNiche/
+Allow: /broadbean_external/
+Disallow: /refreshFacet/

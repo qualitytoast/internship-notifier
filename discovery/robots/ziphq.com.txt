@@ -1,0 +1,11 @@
+# status 200
+# Robots.txt file for https://zip.com/
+# 
+#
+
+User-agent: *
+Host: https://zip.com/
+
+Disallow: /resources/zip-community-founding-members-pilot
+
+Sitemap: https://zip.com/sitemap.xml

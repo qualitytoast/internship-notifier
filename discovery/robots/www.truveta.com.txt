@@ -1,0 +1,29 @@
+# status 200
+# ---------------------------
+# WordPress/Yoast-friendly robots.txt
+# ---------------------------
+ 
+# Global rules
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+ 
+# Block internal search pages (querystring and pretty URLs)
+Disallow: /search/
+Disallow: /*?s=
+Disallow: /*&s=
+Disallow: /*&_s=
+ 
+# Explicitly allow Google Ads crawlers
+User-agent: AdsBot-Google
+Allow: /
+User-agent: AdsBot-Google-Mobile
+Allow: /
+ 
+# Sitemaps
+Sitemap: https://www.truveta.com/sitemap_index.xml
+Sitemap: https://www.truveta.com/post-sitemap.xml
+Sitemap: https://www.truveta.com/page-sitemap.xml
+Sitemap: https://www.truveta.com/announcement-sitemap.xml
+Sitemap: https://www.truveta.com/resources-sitemap.xml
+# ---------------------------

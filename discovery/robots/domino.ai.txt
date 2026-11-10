@@ -1,0 +1,14 @@
+# status 200
+User-Agent: *
+Allow: /
+Allow: /pdfs/
+Allow: /legal/gxp-compliance
+Disallow: /thankyou
+Disallow: /manage/pages
+Disallow: /legal
+Disallow: /pdfs-gated/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/data/
+
+Sitemap: https://domino.ai/sitemap.xml

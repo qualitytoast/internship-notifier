@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://travelers.wd5.myworkdayjobs.com/External/siteMap.xml
+Sitemap: https://travelers.wd5.myworkdayjobs.com/SimplyBusinesssExternal/siteMap.xml
+
+User-agent: *
+Allow: /External/
+Allow: /SimplyBusinesssExternal/
+Disallow: /refreshFacet/

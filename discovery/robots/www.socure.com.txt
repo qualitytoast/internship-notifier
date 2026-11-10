@@ -1,0 +1,8 @@
+# status 200
+User-agent: *
+Disallow: /private/
+Allow: /
+Sitemap: https://www.socure.com/sitemap.xml
+
+User-agent: SiteAuditBot
+Allow: /

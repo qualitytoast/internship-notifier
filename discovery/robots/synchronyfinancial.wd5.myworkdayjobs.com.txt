@@ -1,0 +1,9 @@
+# status 200
+Sitemap: https://synchronyfinancial.wd5.myworkdayjobs.com/University/siteMap.xml
+Sitemap: https://synchronyfinancial.wd5.myworkdayjobs.com/AgencyCareerSite/siteMap.xml
+
+User-agent: *
+Allow: /University/
+Allow: /AgencyCareerSite/
+Disallow: /careers/
+Disallow: /refreshFacet/

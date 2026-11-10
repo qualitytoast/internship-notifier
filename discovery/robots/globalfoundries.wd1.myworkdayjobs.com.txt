@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://globalfoundries.wd1.myworkdayjobs.com/External/siteMap.xml
+
+User-agent: *
+Allow: /External/
+Disallow: /refreshFacet/

@@ -1,0 +1,25 @@
+# status 200
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: GoogleOther
+Allow: /
+User-agent: claudebot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: *
+Allow: /
+Sitemap: https://www.guidewire.com/sitemap.xml
+Sitemap: https://www.guidewire.com/de/sitemap.xml
+Sitemap: https://www.guidewire.com/fr/sitemap.xml
+Sitemap: https://www.guidewire.com/es/sitemap.xml
+Sitemap: https://www.guidewire.com/it/sitemap.xml
+Sitemap: https://www.guidewire.com/ja/sitemap.xml
+Sitemap: https://www.guidewire.com/pt/sitemap.xml
+Sitemap: https://www.guidewire.com/pl/sitemap.xml
+Sitemap: https://www.guidewire.com/hazardhub/sitemap.xml
+Host: https://www.guidewire.com

@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://zebra.wd501.myworkdayjobs.com/Zebra_careers/siteMap.xml
+
+User-agent: *
+Allow: /Zebra_careers/
+Disallow: /refreshFacet/

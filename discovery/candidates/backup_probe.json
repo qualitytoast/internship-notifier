@@ -1,0 +1,953 @@
+{
+ "adp": {
+  "careers_url": "https://jobs.adp.com/",
+  "sitemaps": {
+   "https://jobs.adp.com/sitemap.xml": {
+    "urls": 8459,
+    "jobs": 374,
+    "student_pages": [
+     "https://jobs.adp.com/cs/pracovni-mista/277949/director-program-management/",
+     "https://jobs.adp.com/cs/pracovni-mista/278254/internal-mobility-talent-marketplace-digital-talent-solutions-consultant/",
+     "https://jobs.adp.com/cs/pracovni-mista/278395/associate-client-support-consultant-spring-2026-graduates/",
+     "https://jobs.adp.com/cs/pracovni-mista/279581/oneadp-norfolk-spring-2027-intern-may-2027-grads/",
+     "https://jobs.adp.com/cs/pracovni-mista/279781/oneadp-augusta-spring-2027-intern-may-2027-grads/",
+     "https://jobs.adp.com/cs/pracovni-mista/279782/oneadp-alpharetta-spring-2027-intern-may-2027-grads/",
+     "https://jobs.adp.com/cs/pracovni-mista/280396/internal-wholesaler/",
+     "https://jobs.adp.com/cs/pracovni-mista/281240/internal-audit-manager-compliance/"
+    ],
+    "children": [
+     "https://jobs.adp.com/en/sitemap/",
+     "https://jobs.adp.com/es-es/sitemap/",
+     "https://jobs.adp.com/pt-br/sitemap/",
+     "https://jobs.adp.com/fr-ca/sitemap/",
+     "https://jobs.adp.com/cs/sitemap/",
+     "https://jobs.adp.com/fr/sitemap/",
+     "https://jobs.adp.com/de/sitemap/",
+     "https://jobs.adp.com/pl/sitemap/",
+     "https://jobs.adp.com/ro/sitemap/",
+     "https://jobs.adp.com/es-419/sitemap/",
+     "https://jobs.adp.com/en/sitemap/",
+     "https://jobs.adp.com/es-es/sitemap/"
+    ]
+   },
+   "https://www.adp.com/sitemap.xml": {
+    "urls": 4575,
+    "jobs": 0,
+    "student_pages": [
+     "https://www.adp.com/logins/revenue-share-incentive-program",
+     "https://www.adp.com/resources/articles-and-insights/articles/4/401k-student-loan-match",
+     "https://www.adp.com/resources/articles-and-insights/articles/b/build-a-better-employee-benefits-program",
+     "https://www.adp.com/resources/articles-and-insights/articles/c/connecticut-retirement-security-program",
+     "https://www.adp.com/resources/articles-and-insights/articles/e/employee-assistance-program",
+     "https://www.adp.com/resources/articles-and-insights/articles/e/employee-engagement-program",
+     "https://www.adp.com/resources/articles-and-insights/articles/e/employer-student-loan-repayment",
+     "https://www.adp.com/resources/articles-and-insights/articles/f/financial-wellness-programs-to-reduce-employee-stress"
+    ],
+    "children": []
+   },
+   "https://www.adp.ca/en/sitemap.xml": "refused",
+   "https://www.adp.ca/fr-ca/sitemap.xml": "refused",
+   "http://insurance.adp.com/sitemap.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 0
+ },
+ "alltrails": {
+  "careers_url": "https://www.alltrails.com/careers",
+  "sitemaps": {
+   "https://www.alltrails.com/sitemap/secure/rails/index.xml": {
+    "urls": 302,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.alltrails.com/sitemap/secure/rails/trails-updated1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/parks-updated1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/cities-updated1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/trail-features1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/nearby-features1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/www.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/html-sitemap.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/marketing-updates.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/blog.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/partner-collections.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/marketing-press.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/marketing-partner-list.xml"
+    ]
+   },
+   "https://www.alltrails.com/sitemap/secure/rails/en-gb/index.xml": {
+    "urls": 300,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.alltrails.com/sitemap/secure/rails/en-gb/trails-updated-en-gb-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/en-gb/parks-updated-en-gb-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/en-gb/cities-updated-en-gb-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/en-gb/trail-features-en-gb-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/en-gb/nearby-features-en-gb-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/en-gb/www-en-gb.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/en-gb/html-sitemap-en-gb.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/en-gb/marketing-updates-en-gb.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/en-gb/marketing-press-en-gb.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/en-gb/marketing-partner-list-en-gb.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/en-gb/atrails-en-gb-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/en-gb/atrails-en-gb-2.xml"
+    ]
+   },
+   "https://www.alltrails.com/sitemap/secure/rails/da-dk/index.xml": {
+    "urls": 300,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.alltrails.com/sitemap/secure/rails/da-dk/trails-updated-da-dk-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/da-dk/parks-updated-da-dk-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/da-dk/cities-updated-da-dk-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/da-dk/trail-features-da-dk-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/da-dk/nearby-features-da-dk-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/da-dk/www-da-dk.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/da-dk/html-sitemap-da-dk.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/da-dk/marketing-updates-da-dk.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/da-dk/marketing-press-da-dk.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/da-dk/marketing-partner-list-da-dk.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/da-dk/atrails-da-dk-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/da-dk/atrails-da-dk-2.xml"
+    ]
+   },
+   "https://www.alltrails.com/sitemap/secure/rails/de/index.xml": {
+    "urls": 300,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.alltrails.com/sitemap/secure/rails/de/trails-updated-de-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/de/parks-updated-de-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/de/cities-updated-de-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/de/trail-features-de-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/de/nearby-features-de-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/de/www-de.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/de/html-sitemap-de.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/de/marketing-updates-de.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/de/marketing-press-de.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/de/marketing-partner-list-de.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/de/atrails-de-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/de/atrails-de-2.xml"
+    ]
+   },
+   "https://www.alltrails.com/sitemap/secure/rails/es/index.xml": {
+    "urls": 300,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.alltrails.com/sitemap/secure/rails/es/trails-updated-es-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es/parks-updated-es-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es/cities-updated-es-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es/trail-features-es-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es/nearby-features-es-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es/www-es.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es/html-sitemap-es.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es/marketing-updates-es.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es/marketing-press-es.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es/marketing-partner-list-es.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es/atrails-es-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es/atrails-es-2.xml"
+    ]
+   },
+   "https://www.alltrails.com/sitemap/secure/rails/es-mx/index.xml": {
+    "urls": 300,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.alltrails.com/sitemap/secure/rails/es-mx/trails-updated-es-mx-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es-mx/parks-updated-es-mx-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es-mx/cities-updated-es-mx-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es-mx/trail-features-es-mx-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es-mx/nearby-features-es-mx-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es-mx/www-es-mx.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es-mx/html-sitemap-es-mx.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es-mx/marketing-updates-es-mx.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es-mx/marketing-press-es-mx.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es-mx/marketing-partner-list-es-mx.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es-mx/atrails-es-mx-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/es-mx/atrails-es-mx-2.xml"
+    ]
+   },
+   "https://www.alltrails.com/sitemap/secure/rails/fr/index.xml": {
+    "urls": 300,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.alltrails.com/sitemap/secure/rails/fr/trails-updated-fr-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/fr/parks-updated-fr-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/fr/cities-updated-fr-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/fr/trail-features-fr-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/fr/nearby-features-fr-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/fr/www-fr.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/fr/html-sitemap-fr.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/fr/marketing-updates-fr.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/fr/marketing-press-fr.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/fr/marketing-partner-list-fr.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/fr/atrails-fr-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/fr/atrails-fr-2.xml"
+    ]
+   },
+   "https://www.alltrails.com/sitemap/secure/rails/it-it/index.xml": {
+    "urls": 300,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.alltrails.com/sitemap/secure/rails/it-it/trails-updated-it-it-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/it-it/parks-updated-it-it-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/it-it/cities-updated-it-it-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/it-it/trail-features-it-it-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/it-it/nearby-features-it-it-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/it-it/www-it-it.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/it-it/html-sitemap-it-it.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/it-it/marketing-updates-it-it.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/it-it/marketing-press-it-it.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/it-it/marketing-partner-list-it-it.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/it-it/atrails-it-it-1.xml",
+     "https://www.alltrails.com/sitemap/secure/rails/it-it/atrails-it-it-2.xml"
+    ]
+   }
+  },
+  "wordpress": [],
+  "archive_copies": 0
+ },
+ "arista-networks": {
+  "careers_url": "https://www.arista.com/en/careers",
+  "sitemaps": {
+   "https://www.arista.com/sitemap.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 1
+ },
+ "box": {
+  "careers_url": "https://careers.box.com/",
+  "sitemaps": {
+   "https://careers.box.com/sitemap.xml": {
+    "urls": 299,
+    "jobs": 250,
+    "student_pages": [
+     "https://careers.box.com/en/early-careers/",
+     "https://careers.box.com/en/jobs/7545077/staff-technical-program-manager/",
+     "https://careers.box.com/ja/jobs/7545077/staff-technical-program-manager/"
+    ],
+    "children": [
+     "https://careers.box.com/en/sitemap/",
+     "https://careers.box.com/ja/sitemap/"
+    ]
+   },
+   "https://www.box.com/sitemap.xml": {
+    "urls": 13,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.box.com/en-nl/sitemap-en-nl.xml",
+     "https://www.box.com/fr-fr/sitemap-fr-fr.xml",
+     "https://www.box.com/ja-jp/sitemap-ja-jp.xml",
+     "https://www.box.com/en-gb/sitemap-en-gb.xml",
+     "https://www.box.com/en-se/sitemap-en-se.xml",
+     "https://www.box.com/en-au/sitemap-en-au.xml",
+     "https://www.box.com/en-in/sitemap-en-in.xml",
+     "https://www.box.com/en-us/sitemap-en.xml",
+     "https://www.box.com/es-419/sitemap-es-419.xml",
+     "https://www.box.com/it-it/sitemap-it-it.xml",
+     "https://www.box.com/de-de/sitemap-de-de.xml",
+     "https://www.box.com/en-ca/sitemap-en-ca.xml"
+    ]
+   }
+  },
+  "wordpress": [],
+  "archive_copies": 1
+ },
+ "cadence": {
+  "careers_url": "https://www.cadence.com/en_US/home/company/careers.html",
+  "sitemaps": {
+   "https://www.cadence.com/sitemap.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 2
+ },
+ "censys": {
+  "careers_url": "https://censys.com/careers/",
+  "sitemaps": {
+   "https://censys.com/sitemap_index.xml": {
+    "urls": 27,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://censys.com/post-sitemap.xml",
+     "https://censys.com/page-sitemap.xml",
+     "https://censys.com/case-study-sitemap.xml",
+     "https://censys.com/ebook-sitemap.xml",
+     "https://censys.com/event-sitemap.xml",
+     "https://censys.com/integration-sitemap.xml",
+     "https://censys.com/newsroom-sitemap.xml",
+     "https://censys.com/one-pager-sitemap.xml",
+     "https://censys.com/podcast-video-sitemap.xml",
+     "https://censys.com/report-sitemap.xml",
+     "https://censys.com/advisory-sitemap.xml",
+     "https://censys.com/tech-brief-sitemap.xml"
+    ]
+   },
+   "https://censys.com/sitemap.xml": {
+    "urls": 27,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://censys.com/post-sitemap.xml",
+     "https://censys.com/page-sitemap.xml",
+     "https://censys.com/case-study-sitemap.xml",
+     "https://censys.com/ebook-sitemap.xml",
+     "https://censys.com/event-sitemap.xml",
+     "https://censys.com/integration-sitemap.xml",
+     "https://censys.com/newsroom-sitemap.xml",
+     "https://censys.com/one-pager-sitemap.xml",
+     "https://censys.com/podcast-video-sitemap.xml",
+     "https://censys.com/report-sitemap.xml",
+     "https://censys.com/advisory-sitemap.xml",
+     "https://censys.com/tech-brief-sitemap.xml"
+    ]
+   },
+   "https://www.censys.com/sitemap.xml": "failed"
+  },
+  "wordpress": [],
+  "archive_copies": 6
+ },
+ "chime": {
+  "careers_url": "https://careers.chime.com/",
+  "sitemaps": {
+   "https://careers.chime.com/sitemap.xml": "refused",
+   "https://www.chime.com/sitemap.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 0
+ },
+ "ciena": {
+  "careers_url": "https://www.ciena.com/careers",
+  "sitemaps": {
+   "https://www.ciena.com/sitemap.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 7
+ },
+ "cohesity": {
+  "careers_url": "https://www.cohesity.com/company/careers/",
+  "sitemaps": {
+   "https://www.cohesity.com/sitemap.xml": "refused",
+   "https://www.cohesity.com/sitemap.us.xml": "refused",
+   "https://www.cohesity.com/sitemap.de.xml": "refused",
+   "https://www.cohesity.com/sitemap.fr.xml": "refused",
+   "https://www.cohesity.com/sitemap.jp.xml": "refused",
+   "https://www.cohesity.com/sitemap.es.xml": "refused",
+   "https://www.cohesity.com/sitemap.br.xml": "refused",
+   "https://www.cohesity.com/sitemap.kr.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 0
+ },
+ "cox": {
+  "careers_url": "https://jobs.coxenterprises.com/",
+  "sitemaps": {
+   "https://jobs.coxenterprises.com/sitemap.xml": {
+    "urls": 1207,
+    "jobs": 785,
+    "student_pages": [
+     "https://jobs.coxenterprises.com/en/blog/business-innovation/cox-gigs-program-honored-at-2024-learning-in-practice-awards/",
+     "https://jobs.coxenterprises.com/en/blog/business-innovation/cox-s-flying-doctors-inside-the-program-driving-electric-vehicles-forward/",
+     "https://jobs.coxenterprises.com/en/blog/career-advice/4-things-i-learned-during-my-internship-at-cox/",
+     "https://jobs.coxenterprises.com/en/blog/career-advice/early-career-advice-how-to-end-your-interview-on-a-high-note/",
+     "https://jobs.coxenterprises.com/en/blog/career-advice/how-to-answer-tell-me-about-yourself-for-an-internship/",
+     "https://jobs.coxenterprises.com/en/blog/career-advice/make-the-most-of-your-internship-at-cox/",
+     "https://jobs.coxenterprises.com/en/blog/career-advice/virtual-interview-tips-every-student-should-know/",
+     "https://jobs.coxenterprises.com/en/blog/career-advice/what-i-wish-i-had-known-in-my-early-career/"
+    ],
+    "children": [
+     "https://jobs.coxenterprises.com/en/sitemap/"
+    ]
+   },
+   "https://www.coxenterprises.com/sitemap_index.xml": {
+    "urls": 13,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.coxenterprises.com/post-sitemap.xml",
+     "https://www.coxenterprises.com/page-sitemap.xml",
+     "https://www.coxenterprises.com/press_releases-sitemap.xml",
+     "https://www.coxenterprises.com/people-sitemap.xml",
+     "https://www.coxenterprises.com/videos-sitemap.xml",
+     "https://www.coxenterprises.com/finalist_hero-sitemap.xml",
+     "https://www.coxenterprises.com/category-sitemap.xml",
+     "https://www.coxenterprises.com/role_level-sitemap.xml",
+     "https://www.coxenterprises.com/portfolio-sitemap.xml",
+     "https://www.coxenterprises.com/industry-sitemap.xml",
+     "https://www.coxenterprises.com/finalist_hero_category-sitemap.xml",
+     "https://www.coxenterprises.com/location_category-sitemap.xml"
+    ]
+   },
+   "https://www.coxenterprises.com/cox-relief/sitemap_index.xml": {
+    "urls": 1,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.coxenterprises.com/cox-relief/page-sitemap.xml"
+    ]
+   },
+   "https://www.coxenterprises.com/sitemap.xml": {
+    "urls": 13,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.coxenterprises.com/post-sitemap.xml",
+     "https://www.coxenterprises.com/page-sitemap.xml",
+     "https://www.coxenterprises.com/videos-sitemap.xml",
+     "https://www.coxenterprises.com/press_releases-sitemap.xml",
+     "https://www.coxenterprises.com/people-sitemap.xml",
+     "https://www.coxenterprises.com/finalist_hero-sitemap.xml",
+     "https://www.coxenterprises.com/category-sitemap.xml",
+     "https://www.coxenterprises.com/portfolio-sitemap.xml",
+     "https://www.coxenterprises.com/industry-sitemap.xml",
+     "https://www.coxenterprises.com/role_level-sitemap.xml",
+     "https://www.coxenterprises.com/finalist_hero_category-sitemap.xml",
+     "https://www.coxenterprises.com/location_category-sitemap.xml"
+    ]
+   }
+  },
+  "wordpress": [
+   {
+    "host": "www.coxenterprises.com",
+    "pages": 69
+   }
+  ],
+  "archive_copies": 24
+ },
+ "d-matrix": {
+  "careers_url": "https://www.d-matrix.ai/careers/",
+  "sitemaps": {
+   "https://www.d-matrix.ai/sitemap_index.xml": {
+    "urls": 7,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.d-matrix.ai/post-sitemap.xml",
+     "https://www.d-matrix.ai/page-sitemap.xml",
+     "https://www.d-matrix.ai/event-sitemap.xml",
+     "https://www.d-matrix.ai/newsletter-sitemap.xml",
+     "https://www.d-matrix.ai/announcement-sitemap.xml",
+     "https://www.d-matrix.ai/announcement_category-sitemap.xml",
+     "https://www.d-matrix.ai/gblocks_pattern_collections-sitemap.xml"
+    ]
+   },
+   "https://www.d-matrix.ai/sitemap.xml": {
+    "urls": 7,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.d-matrix.ai/post-sitemap.xml",
+     "https://www.d-matrix.ai/page-sitemap.xml",
+     "https://www.d-matrix.ai/event-sitemap.xml",
+     "https://www.d-matrix.ai/newsletter-sitemap.xml",
+     "https://www.d-matrix.ai/announcement-sitemap.xml",
+     "https://www.d-matrix.ai/announcement_category-sitemap.xml",
+     "https://www.d-matrix.ai/gblocks_pattern_collections-sitemap.xml"
+    ]
+   }
+  },
+  "wordpress": [],
+  "archive_copies": 1
+ },
+ "datarobot": {
+  "careers_url": "https://www.datarobot.com/careers/",
+  "sitemaps": {
+   "https://www.datarobot.com/sitemap.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 4
+ },
+ "draftkings": {
+  "careers_url": "https://careers.draftkings.com/",
+  "sitemaps": {
+   "https://careers.draftkings.com/sitemap.xml": {
+    "urls": 316,
+    "jobs": 76,
+    "student_pages": [
+     "https://careers.draftkings.com/early-careers/",
+     "https://careers.draftkings.com/early-careers/entry-level/",
+     "https://careers.draftkings.com/early-careers/internships-co-ops/",
+     "https://careers.draftkings.com/life-at-draftkings/early-careers/",
+     "https://careers.draftkings.com/life-at-draftkings/early-careers/how-intern-projects-shape-careers/",
+     "https://careers.draftkings.com/life-at-draftkings/early-careers/how-our-interns-gain-experience-building-products/",
+     "https://careers.draftkings.com/life-at-draftkings/early-careers/how-to-stand-out-during-your-interview/",
+     "https://careers.draftkings.com/life-at-draftkings/early-careers/inside-our-internship-program-in-sofia/"
+    ],
+    "children": [
+     "https://careers.draftkings.com/sitemap/"
+    ]
+   },
+   "https://www.draftkings.com/sitemap.xml": {
+    "urls": 2,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.draftkings.com/sitemaps/DFSCrawlerUriProvider_0.xml",
+     "https://www.draftkings.com/sitemaps/GatsbyDFSContentstackUriProvider_0.xml"
+    ]
+   }
+  },
+  "wordpress": [],
+  "archive_copies": 1
+ },
+ "enova": {
+  "careers_url": "https://www.enova.com/careers/",
+  "sitemaps": {
+   "https://www.enova.com/sitemap.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 1
+ },
+ "fortinet": {
+  "careers_url": "https://www.fortinet.com/corporate/careers",
+  "sitemaps": {
+   "https://www.fortinet.com/sitemap-index.xml": "robots",
+   "https://www.fortinet.com/sitemap.xml": "robots",
+   "https://www.fortinet.com/it/sitemap.xml": "robots",
+   "https://www.fortinet.com/de/sitemap.xml": "robots",
+   "https://www.fortinet.com/fr/sitemap.xml": "robots",
+   "https://www.fortinet.com/jp/sitemap.xml": "robots",
+   "https://www.fortinet.com/kr/sitemap.xml": "robots",
+   "https://www.fortinet.com/cn/sitemap.xml": "robots"
+  },
+  "wordpress": [],
+  "archive_copies": 3
+ },
+ "gusto": {
+  "careers_url": "https://gusto.com/about/careers",
+  "sitemaps": {
+   "https://gusto.com/sitemap.xml": "refused",
+   "https://www.gusto.com/sitemap.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 1
+ },
+ "haize-labs": {
+  "careers_url": "https://www.haizelabs.com/careers",
+  "sitemaps": {
+   "https://www.haizelabs.com/sitemap.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 0
+ },
+ "intuitive-surgical": {
+  "careers_url": "https://careers.intuitive.com/",
+  "sitemaps": {
+   "https://careers.intuitive.com/sitemap.xml": {
+    "urls": 5370,
+    "jobs": 3995,
+    "student_pages": [
+     "https://careers.intuitive.com/bg/career-opportunities/students-and-university/",
+     "https://careers.intuitive.com/bg/employee-stories/career-growth-advice/effective-strategies-for-finding-internship-opportunities/",
+     "https://careers.intuitive.com/bg/employee-stories/career-growth-advice/investing-in-the-future-one-intern-at-a-time/",
+     "https://careers.intuitive.com/bg/employee-stories/career-growth-advice/maximizing-learning-and-growth-during-internships/",
+     "https://careers.intuitive.com/bg/employee-stories/career-growth-advice/navigating-the-transition-from-internship-to-full-time-employment/",
+     "https://careers.intuitive.com/bg/employee-stories/career-growth-advice/the-future-of-engineering-careers-emerging-trends-and-opportunities/",
+     "https://careers.intuitive.com/bg/employee-stories/career-growth-advice/what-to-look-for-in-an-internship/",
+     "https://careers.intuitive.com/bg/employee-stories/get-to-know-us/interning-at-intuitive/"
+    ],
+    "children": [
+     "https://careers.intuitive.com/en/sitemap/",
+     "https://careers.intuitive.com/es/sitemap/",
+     "https://careers.intuitive.com/de/sitemap/",
+     "https://careers.intuitive.com/jp/sitemap/",
+     "https://careers.intuitive.com/bg/sitemap/"
+    ]
+   },
+   "https://www.intuitive.com/sitemapindex.xml": {
+    "urls": 11,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.intuitive.com/ja-jp/sitemap.xml",
+     "https://www.intuitive.com/en-gb/sitemap.xml",
+     "https://www.intuitive.com/fr-fr/sitemap.xml",
+     "https://www.intuitive.com/de-de/sitemap.xml",
+     "https://www.intuitive.com/ko-kr/sitemap.xml",
+     "https://www.intuitive.com/zh-tw/sitemap.xml",
+     "https://www.intuitive.com/en-in/sitemap.xml",
+     "https://www.intuitive.com/en-us/sitemap.xml",
+     "https://www.intufosun.hk/sitemap.xml",
+     "https://ventures.intuitive.com/sitemap.xml",
+     "https://www.intuitive.com/en-us/physician-locator/sitemap.xml"
+    ]
+   },
+   "https://www.intuitive.com/sitemap.xml": {
+    "urls": 11,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.intuitive.com/ja-jp/sitemap.xml",
+     "https://www.intuitive.com/en-gb/sitemap.xml",
+     "https://www.intuitive.com/fr-fr/sitemap.xml",
+     "https://www.intuitive.com/de-de/sitemap.xml",
+     "https://www.intuitive.com/ko-kr/sitemap.xml",
+     "https://www.intuitive.com/zh-tw/sitemap.xml",
+     "https://www.intuitive.com/en-in/sitemap.xml",
+     "https://www.intuitive.com/en-us/sitemap.xml",
+     "https://www.intufosun.hk/sitemap.xml",
+     "https://ventures.intuitive.com/sitemap.xml",
+     "https://www.intuitive.com/en-us/physician-locator/sitemap.xml"
+    ]
+   }
+  },
+  "wordpress": [],
+  "archive_copies": 1
+ },
+ "lucid-software": {
+  "careers_url": "https://lucid.co/careers",
+  "sitemaps": {
+   "https://lucid.co/sitemap.xml": "refused",
+   "https://www.lucid.co/sitemap.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 2
+ },
+ "marvell": {
+  "careers_url": "https://www.marvell.com/company/careers.html",
+  "sitemaps": {
+   "https://www.marvell.com/content/marvell-com/en/home.sitemap.xml": "refused",
+   "https://www.marvell.com/sitemap.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 5
+ },
+ "match-group": {
+  "careers_url": "https://mtch.com/careers/",
+  "sitemaps": {
+   "https://mtch.com/sitemap_index.xml": {
+    "urls": 10,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://mtch.com/post-sitemap1.xml",
+     "https://mtch.com/post-sitemap2.xml",
+     "https://mtch.com/post-sitemap3.xml",
+     "https://mtch.com/post-sitemap4.xml",
+     "https://mtch.com/post-sitemap5.xml",
+     "https://mtch.com/post-sitemap6.xml",
+     "https://mtch.com/page-sitemap.xml",
+     "https://mtch.com/love-story-sitemap.xml",
+     "https://mtch.com/leadership-sitemap.xml",
+     "https://mtch.com/category-sitemap.xml"
+    ]
+   },
+   "https://mtch.com/sitemap.xml": {
+    "urls": 10,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://mtch.com/post-sitemap1.xml",
+     "https://mtch.com/post-sitemap2.xml",
+     "https://mtch.com/post-sitemap3.xml",
+     "https://mtch.com/post-sitemap4.xml",
+     "https://mtch.com/post-sitemap5.xml",
+     "https://mtch.com/post-sitemap6.xml",
+     "https://mtch.com/page-sitemap.xml",
+     "https://mtch.com/love-story-sitemap.xml",
+     "https://mtch.com/leadership-sitemap.xml",
+     "https://mtch.com/category-sitemap.xml"
+    ]
+   },
+   "https://www.mtch.com/sitemap.xml": "failed"
+  },
+  "wordpress": [
+   {
+    "host": "mtch.com",
+    "pages": 25
+   },
+   {
+    "host": "www.mtch.com",
+    "pages": 25
+   }
+  ],
+  "archive_copies": 3
+ },
+ "netapp": {
+  "careers_url": "https://www.netapp.com/company/careers/",
+  "sitemaps": {
+   "https://www.netapp.com/sitemap.xml": "refused",
+   "https://www.netapp.com/de/sitemap.xml": "refused",
+   "https://www.netapp.com/es/sitemap.xml": "refused",
+   "https://www.netapp.com/fr/sitemap.xml": "refused",
+   "https://www.netapp.com/it/sitemap.xml": "refused",
+   "https://www.netapp.com/ja/sitemap.xml": "refused",
+   "https://www.netapp.com/ko/sitemap.xml": "refused",
+   "https://www.netapp.com/pt/sitemap.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 1
+ },
+ "persona": {
+  "careers_url": "https://withpersona.com/careers",
+  "sitemaps": {
+   "https://withpersona.com/sitemap-index.xml": "refused",
+   "https://withpersona.com/sitemap.xml": "failed",
+   "https://www.withpersona.com/sitemap.xml": "failed"
+  },
+  "wordpress": [],
+  "archive_copies": 0
+ },
+ "progressive": {
+  "careers_url": "https://careers.progressive.com/",
+  "sitemaps": {
+   "https://careers.progressive.com/sitemap.xml": "refused",
+   "https://www.progressive.com/sitemap.xml": {
+    "urls": 1494,
+    "jobs": 0,
+    "student_pages": [
+     "https://www.progressive.com/about/art/program-details/",
+     "https://www.progressive.com/answers/car-insurance-for-college-students/",
+     "https://www.progressive.com/answers/co-op-vs-condo-insurance/",
+     "https://www.progressive.com/answers/family-resources/teens-students/",
+     "https://www.progressive.com/answers/international-car-insurance/",
+     "https://www.progressive.com/answers/international-car-rental-insurance/",
+     "https://www.progressive.com/answers/international-drivers-license-car-insurance/",
+     "https://www.progressive.com/answers/motorcycle-rideshare-program/"
+    ],
+    "children": []
+   }
+  },
+  "wordpress": [],
+  "archive_copies": 0
+ },
+ "rubrik": {
+  "careers_url": "https://www.rubrik.com/company/careers",
+  "sitemaps": {
+   "https://www.rubrik.com/sitemap.xml": "refused",
+   "https://www.rubrik.com/de.sitemap.xml": "refused",
+   "https://www.rubrik.com/fr.sitemap.xml": "refused",
+   "https://www.rubrik.com/ja.sitemap.xml": "refused",
+   "https://www.rubrik.com/tr_tr.sitemap.xml": "refused",
+   "https://www.rubrik.com/id.sitemap.xml": "refused",
+   "https://www.rubrik.com/it.sitemap.xml": "refused",
+   "https://www.rubrik.com/nl.sitemap.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 0
+ },
+ "sas": {
+  "careers_url": "https://www.sas.com/en_us/careers.html",
+  "sitemaps": {
+   "https://www.hreflangxml.com/sas/sitemap-index.xml": "failed",
+   "https://www.hreflangxml.com/sas/hreflang-sitemap.xml": "failed",
+   "https://www.hreflangxml.com/sas/hreflang-primer-sitemap.xml": "failed",
+   "https://www.sas.com/sitemap.xml": "robots"
+  },
+  "wordpress": [],
+  "archive_copies": 2
+ },
+ "udemy": {
+  "careers_url": "https://about.udemy.com/careers/",
+  "sitemaps": {
+   "https://about.udemy.com/sitemap.xml": "refused",
+   "https://www.udemy.com/sitemap.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 0
+ },
+ "verizon": {
+  "careers_url": "https://mycareer.verizon.com/",
+  "sitemaps": {
+   "https://mycareer.verizon.com/sitemap.xml": {
+    "urls": 2,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://mycareer.verizon.com/en/sitemap.xml",
+     "https://mycareer.verizon.com/en/jobs/sitemap.xml"
+    ]
+   },
+   "https://sitemap.verizon.com/sitemap_index.xml": {
+    "urls": 2,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://sitemap.verizon.com/sitemap.0000.xml.gz",
+     "https://sitemap.verizon.com/sitemap.0001.xml.gz"
+    ]
+   },
+   "https://www.verizon.com/content/wcms.sitemap-index.xml": {
+    "urls": 19,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.verizon.com/content/wcms.sitemap.certified-pre-owned-sitemap.xml",
+     "https://www.verizon.com/content/wcms.sitemap.featured-sitemap.xml",
+     "https://www.verizon.com/content/wcms.sitemap.discounts-sitemap.xml",
+     "https://www.verizon.com/content/wcms.sitemap.financial-services-sitemap.xml",
+     "https://www.verizon.com/content/wcms.sitemap.category-pages-sitemap.xml",
+     "https://www.verizon.com/content/wcms.sitemap.articles-sitemap.xml",
+     "https://www.verizon.com/content/wcms.sitemap.entertainment-sitemap.xml",
+     "https://www.verizon.com/content/wcms.sitemap.5g-sitemap.xml",
+     "https://www.verizon.com/content/wcms.sitemap.switch-to-verizon-sitemap.xml",
+     "https://www.verizon.com/content/wcms.sitemap.prepaid-sitemap.xml",
+     "https://www.verizon.com/content/wcms.sitemap.deals-sitemap.xml",
+     "https://www.verizon.com/content/wcms.sitemap.wireless-devices-sitemap.xml"
+    ]
+   },
+   "https://www.verizon.com/content/support.sitemap-index.xml": {
+    "urls": 16,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.verizon.com/content/support.sitemap.faqs-sitemap.xml",
+     "https://www.verizon.com/content/support.sitemap.video-sitemap.xml",
+     "https://www.verizon.com/content/support.sitemap.devices-sitemap.xml",
+     "https://www.verizon.com/content/support.sitemap.transfer-service-sitemap.xml",
+     "https://www.verizon.com/content/support.sitemap.plan_and_account_support-sitemap.xml",
+     "https://www.verizon.com/content/support.sitemap.how_to_use-sitemap.xml",
+     "https://www.verizon.com/content/support.sitemap.OS-sitemap.xml",
+     "https://www.verizon.com/content/support.sitemap.knowledge_base-sitemap.xml",
+     "https://www.verizon.com/content/support.sitemap.glossary-sitemap.xml",
+     "https://www.verizon.com/content/support.sitemap.services-and-apps-sitemap.xml",
+     "https://www.verizon.com/content/support.sitemap.consolidation-sitemap.xml",
+     "https://www.verizon.com/content/support.sitemap.terms-sitemap.xml"
+    ]
+   },
+   "https://community.verizon.com/sitemap_threads.xml.gz": {
+    "urls": 0,
+    "jobs": 0,
+    "student_pages": [],
+    "children": []
+   },
+   "https://www.verizon.com/sitemap-index.xml": {
+    "urls": 20,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://sitemap.verizon.com/sitemap_index.xml",
+     "https://www.verizon.com/content/wcms.sitemap-index.xml",
+     "https://www.verizon.com/content/support.sitemap-index.xml",
+     "https://community.verizon.com/sitemap_threads.xml.gz",
+     "https://espanol.verizon.com/sitemap.xml",
+     "https://mycareer.verizon.com/sitemap.xml",
+     "https://www.verizon.com/business/learn-sitemap.xml",
+     "https://www.verizon.com/business/sitemap.xml",
+     "https://www.verizon.com/business/answers-sitemap.xml",
+     "https://www.verizon.com/business/locations/sitemap.xml",
+     "https://www.verizon.com/business/resources/sitemap.xml",
+     "https://www.verizon.com/business/shop/sitemap-prospect/smartphones.xml"
+    ]
+   },
+   "https://community.verizon.com/sitemap.xml": {
+    "urls": 0,
+    "jobs": 0,
+    "student_pages": [],
+    "children": []
+   },
+   "https://espanol.verizon.com/sitemap.xml": {
+    "urls": 12,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://espanol.verizon.com/sitemap-mobile.xml",
+     "https://espanol.verizon.com/sitemap-products.xml",
+     "https://espanol.verizon.com/sitemap-support-home.xml",
+     "https://espanol.verizon.com/sitemap-support-mobile.xml",
+     "https://espanol.verizon.com/sitemap-kb.xml",
+     "https://espanol.verizon.com/sitemap-kb2.xml",
+     "https://espanol.verizon.com/sitemap-kb3.xml",
+     "https://espanol.verizon.com/about/sitemap.xml",
+     "https://espanol.verizon.com/business/sitemap.xml",
+     "https://tv.verizon.com/watch/sitemap-network.xml",
+     "https://tv.verizon.com/watch/sitemap-movies.xml",
+     "https://tv.verizon.com/watch/sitemap-ppv.xml"
+    ]
+   }
+  },
+  "wordpress": [],
+  "archive_copies": 4
+ },
+ "wells-fargo": {
+  "careers_url": "https://www.wellsfargojobs.com/",
+  "sitemaps": {
+   "https://www.wellsfargojobs.com/sitemap.xml": {
+    "urls": 4904,
+    "jobs": 4785,
+    "student_pages": [
+     "https://www.wellsfargojobs.com/en/business-divisions/internal-audit/",
+     "https://www.wellsfargojobs.com/en/early-careers/",
+     "https://www.wellsfargojobs.com/en/early-careers/application-process/",
+     "https://www.wellsfargojobs.com/en/early-careers/events/",
+     "https://www.wellsfargojobs.com/en/early-careers/graduate-programs/",
+     "https://www.wellsfargojobs.com/en/early-careers/graduate-programs/corporate-investment-banking-mba-program/",
+     "https://www.wellsfargojobs.com/en/early-careers/graduate-programs/quantitative-analytics-program/",
+     "https://www.wellsfargojobs.com/en/early-careers/international-programs/"
+    ],
+    "children": []
+   }
+  },
+  "wordpress": [],
+  "archive_copies": 3
+ },
+ "yugabyte": {
+  "careers_url": "https://www.yugabyte.com/careers/",
+  "sitemaps": {
+   "https://www.yugabyte.com/sitemap_index.xml": {
+    "urls": 11,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.yugabyte.com/post-sitemap.xml",
+     "https://www.yugabyte.com/page-sitemap.xml",
+     "https://www.yugabyte.com/success-story-sitemap.xml",
+     "https://www.yugabyte.com/architecting-data-sitemap.xml",
+     "https://www.yugabyte.com/key-terms-sitemap.xml",
+     "https://www.yugabyte.com/advertising-sitemap.xml",
+     "https://www.yugabyte.com/category-sitemap.xml",
+     "https://www.yugabyte.com/post_tag-sitemap.xml",
+     "https://www.yugabyte.com/industries-sitemap.xml",
+     "https://www.yugabyte.com/features-sitemap.xml",
+     "https://www.yugabyte.com/author-sitemap.xml"
+    ]
+   },
+   "https://www.yugabyte.com/sitemap.xml": {
+    "urls": 11,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://www.yugabyte.com/post-sitemap.xml",
+     "https://www.yugabyte.com/page-sitemap.xml",
+     "https://www.yugabyte.com/success-story-sitemap.xml",
+     "https://www.yugabyte.com/architecting-data-sitemap.xml",
+     "https://www.yugabyte.com/key-terms-sitemap.xml",
+     "https://www.yugabyte.com/advertising-sitemap.xml",
+     "https://www.yugabyte.com/category-sitemap.xml",
+     "https://www.yugabyte.com/post_tag-sitemap.xml",
+     "https://www.yugabyte.com/industries-sitemap.xml",
+     "https://www.yugabyte.com/features-sitemap.xml",
+     "https://www.yugabyte.com/author-sitemap.xml"
+    ]
+   }
+  },
+  "wordpress": [
+   {
+    "host": "www.yugabyte.com",
+    "pages": 93
+   }
+  ],
+  "archive_copies": 2
+ },
+ "ziprecruiter": {
+  "careers_url": "https://www.ziprecruiter.com/careers",
+  "sitemaps": {
+   "https://www.ziprecruiter.com/sitemap.xml": "robots"
+  },
+  "wordpress": [],
+  "archive_copies": 0
+ },
+ "zocdoc": {
+  "careers_url": "https://www.zocdoc.com/about/careers/",
+  "sitemaps": {
+   "https://www.zocdoc.com/sitemap.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 0
+ }
+}

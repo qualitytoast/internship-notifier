@@ -1,0 +1,120 @@
+# status 200
+# =====================================================================
+# nianticspatial.com — robots.txt
+# Updated: June 2026
+# Purpose: Full AI crawler access for GEO / AI search visibility
+# =====================================================================
+
+# --- Standard search engines ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# --- OpenAI ---
+# GPTBot: training crawler (feeds model weights)
+User-agent: GPTBot
+Allow: /
+
+# OAI-SearchBot: powers ChatGPT Search index
+User-agent: OAI-SearchBot
+Allow: /
+
+# ChatGPT-User: live fetch during ChatGPT conversations
+User-agent: ChatGPT-User
+Allow: /
+
+# --- Anthropic ---
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# --- Perplexity ---
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# --- Google AI (Gemini training) ---
+User-agent: Google-Extended
+Allow: /
+
+# --- Apple Intelligence ---
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# --- Meta ---
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# --- Amazon (Alexa AI / Rufus) ---
+User-agent: Amazonbot
+Allow: /
+
+# --- xAI (Grok) ---
+User-agent: xAI-Bot
+Allow: /
+
+# --- Mistral (Le Chat) ---
+User-agent: MistralAI-User
+Allow: /
+
+# --- DeepSeek ---
+User-agent: DeepSeekBot
+Allow: /
+
+# --- DuckDuckGo AI ---
+User-agent: DuckAssistBot
+Allow: /
+
+# --- You.com AI search ---
+User-agent: YouBot
+Allow: /
+
+# --- Cohere (enterprise LLM training) ---
+User-agent: cohere-ai
+Allow: /
+
+# --- Diffbot (knowledge graph, feeds downstream LLMs) ---
+User-agent: Diffbot
+Allow: /
+
+# --- Allen Institute / OLMo (open-source model training) ---
+User-agent: AI2Bot
+Allow: /
+
+# --- Common Crawl (open dataset; trains GPT, Llama, Mistral, most major LLMs) ---
+User-agent: CCBot
+Allow: /
+
+# --- Block aggressive scrapers with no referral value ---
+User-agent: Bytespider
+Disallow: /
+
+# --- Global rules for all other crawlers ---
+User-agent: *
+Allow: /
+
+# --- Sitemaps & LLM Instructions ---
+Sitemap: https://www.nianticspatial.com/sitemap.xml
+# LLM instructions (not a robots.txt directive, kept as a comment for humans
+# and AI crawlers): https://www.nianticspatial.com/llms.txt

@@ -1,0 +1,107 @@
+# status 200
+User-Agent: *
+Content-Signal: search=yes, ai-input=yes
+Content-Signal: /docs search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /llms.txt search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /llms-full.txt search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /auth.md search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /index.md search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /100049 search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /100083 search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /about search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /ai-writing-assistant search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /alternatives search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /bing-api-alternative-exa search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /bing-api-deprecation search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /blog search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /brand search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /careers search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /claude search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /connect search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /contact search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /customers search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /demos search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /dpa search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /enterprise search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /evals search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /exa-for-sheets search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /integrations search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /mcp search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /msa search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /partners search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /pricing search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /privacy-policy search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /products search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /research search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /security search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /use-cases search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /versus search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /webinars search=yes, ai-input=yes, ai-train=yes
+Content-Signal: /why search=yes, ai-input=yes, ai-train=yes
+Allow: /library$
+Allow: /library/$
+Allow: /library?
+Allow: /library/person$
+Allow: /library/person/$
+Allow: /library/person?
+Allow: /library/organization$
+Allow: /library/organization/$
+Allow: /library/organization?
+Allow: /library/place$
+Allow: /library/place/$
+Allow: /library/place?
+Allow: /library/publication$
+Allow: /library/publication/$
+Allow: /library/publication?
+Allow: /library/legal/opinion$
+Allow: /library/legal/opinion/$
+Allow: /library/legal/opinion?
+Allow: /library/legal/patent$
+Allow: /library/legal/patent/$
+Allow: /library/legal/patent?
+Allow: /library/podcast$
+Allow: /library/podcast/$
+Allow: /library/podcast?
+Allow: /library/markets/stocks$
+Allow: /library/markets/stocks/$
+Allow: /library/markets/stocks?
+Allow: /library/markets$
+Allow: /library/markets/$
+Allow: /library/markets?
+Allow: /library/sports$
+Allow: /library/sports/$
+Allow: /library/sports?
+Allow: /library/weather$
+Allow: /library/weather/$
+Allow: /library/weather?
+Allow: /library/indicator$
+Allow: /library/indicator/$
+Allow: /library/indicator?
+Allow: /library/geoarea$
+Allow: /library/geoarea/$
+Allow: /library/geoarea?
+Allow: /library/earnings-call$
+Allow: /library/earnings-call/$
+Allow: /library/earnings-call?
+Allow: /library/job-posting$
+Allow: /library/job-posting/$
+Allow: /library/job-posting?
+Allow: /library/product$
+Allow: /library/product/$
+Allow: /library/product?
+Allow: /library/event$
+Allow: /library/event/$
+Allow: /library/event?
+Allow: /library/wikipedia-article$
+Allow: /library/wikipedia-article/$
+Allow: /library/wikipedia-article?
+Allow: /library/sec-filing$
+Allow: /library/sec-filing/$
+Allow: /library/sec-filing?
+Disallow: /search?*
+Disallow: /hackathon/
+Disallow: /library/*/
+Disallow: /library/places
+
+Sitemap: https://exa.ai/sitemap.xml
+Sitemap: https://exa.ai/docs/sitemap.xml

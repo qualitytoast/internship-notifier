@@ -1,0 +1,21 @@
+# status 200
+Sitemap: https://mckesson.wd3.myworkdayjobs.com/External_Careers/siteMap.xml
+Sitemap: https://mckesson.wd3.myworkdayjobs.com/Acquisition_Campus/siteMap.xml
+Sitemap: https://mckesson.wd3.myworkdayjobs.com/Ontada_Careers/siteMap.xml
+Sitemap: https://mckesson.wd3.myworkdayjobs.com/CoverMyMeds_External_Careers/siteMap.xml
+Sitemap: https://mckesson.wd3.myworkdayjobs.com/SCRI_Careers/siteMap.xml
+Sitemap: https://mckesson.wd3.myworkdayjobs.com/rxsscareers/siteMap.xml
+
+User-agent: *
+Allow: /External_Careers/
+Allow: /Acquisition_Campus/
+Allow: /Ontada_Careers/
+Allow: /CoverMyMeds_External_Careers/
+Allow: /SCRI_Careers/
+Allow: /rxsscareers/
+Disallow: /Contractor_Conversions/
+Disallow: /Executive_Careers/
+Disallow: /Welcome_to_McKesson_Disability_IN/
+Disallow: /Welcome_to_McKesson_NBMBAA/
+Disallow: /Sourcer_On_Req/
+Disallow: /refreshFacet/

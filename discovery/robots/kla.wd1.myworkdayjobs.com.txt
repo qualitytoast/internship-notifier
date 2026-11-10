@@ -1,0 +1,18 @@
+# status 200
+Sitemap: https://kla.wd1.myworkdayjobs.com/Search/siteMap.xml
+Sitemap: https://kla.wd1.myworkdayjobs.com/AnnArbor/siteMap.xml
+Sitemap: https://kla.wd1.myworkdayjobs.com/Israel/siteMap.xml
+Sitemap: https://kla.wd1.myworkdayjobs.com/Taiwan/siteMap.xml
+Sitemap: https://kla.wd1.myworkdayjobs.com/Filmetrics/siteMap.xml
+Sitemap: https://kla.wd1.myworkdayjobs.com/UR/siteMap.xml
+Sitemap: https://kla.wd1.myworkdayjobs.com/Penang_Semicon/siteMap.xml
+
+User-agent: *
+Allow: /Search/
+Allow: /AnnArbor/
+Allow: /Israel/
+Allow: /Taiwan/
+Allow: /Filmetrics/
+Allow: /UR/
+Allow: /Penang_Semicon/
+Disallow: /refreshFacet/

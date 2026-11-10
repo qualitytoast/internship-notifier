@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://fis.wd5.myworkdayjobs.com/SearchJobs/siteMap.xml
+Sitemap: https://fis.wd5.myworkdayjobs.com/AgencyCareerSite/siteMap.xml
+
+User-agent: *
+Allow: /SearchJobs/
+Allow: /AgencyCareerSite/
+Disallow: /refreshFacet/

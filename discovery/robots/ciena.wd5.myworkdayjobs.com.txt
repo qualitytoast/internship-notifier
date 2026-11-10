@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://ciena.wd5.myworkdayjobs.com/Careers/siteMap.xml
+
+User-agent: *
+Allow: /Careers/
+Disallow: /refreshFacet/

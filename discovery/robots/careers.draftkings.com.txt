@@ -1,0 +1,9 @@
+# status 200
+﻿# Production
+
+User-agent: *
+Allow: /
+
+Sitemap: https://careers.draftkings.com/sitemap.xml
+
+

@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://nationwide.wd1.myworkdayjobs.com/Nationwide_Career/siteMap.xml
+Sitemap: https://nationwide.wd1.myworkdayjobs.com/Nationwide_Career_India/siteMap.xml
+
+User-agent: *
+Allow: /Nationwide_Career/
+Allow: /Nationwide_Career_India/
+Disallow: /refreshFacet/

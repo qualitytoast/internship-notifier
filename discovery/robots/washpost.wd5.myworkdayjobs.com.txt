@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://washpost.wd5.myworkdayjobs.com/washingtonpostcareers/siteMap.xml
+Sitemap: https://washpost.wd5.myworkdayjobs.com/WashingtonPostCareersArc/siteMap.xml
+
+User-agent: *
+Allow: /washingtonpostcareers/
+Allow: /WashingtonPostCareersArc/
+Disallow: /refreshFacet/

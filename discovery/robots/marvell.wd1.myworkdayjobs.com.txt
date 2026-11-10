@@ -1,0 +1,9 @@
+# status 200
+Sitemap: https://marvell.wd1.myworkdayjobs.com/MarvellCareers/siteMap.xml
+Sitemap: https://marvell.wd1.myworkdayjobs.com/Scout/siteMap.xml
+
+User-agent: *
+Allow: /MarvellCareers/
+Allow: /Scout/
+Disallow: /MarvellCareers2/
+Disallow: /refreshFacet/

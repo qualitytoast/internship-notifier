@@ -1,0 +1,7 @@
+# status 200
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+Sitemap: https://qumulo.com/sitemap.xml

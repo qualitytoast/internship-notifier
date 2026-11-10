@@ -1,0 +1,857 @@
+{
+ "ai2": {
+  "open": 3,
+  "found": 3,
+  "missing": []
+ },
+ "allstate": {
+  "open": 4,
+  "found": 4,
+  "missing": []
+ },
+ "american-express": {
+  "open": 9,
+  "found": 2,
+  "missing": [
+   [
+    "Product Development Intern - US Consumer Services",
+    "NYC",
+    "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26012174"
+   ],
+   [
+    "Product Management Intern - Global Merchant & Network Services",
+    "NYC",
+    "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26012152"
+   ],
+   [
+    "AI Engineer Intern - Enterprise Technology Services",
+    "Sunrise, FL",
+    "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26011999"
+   ],
+   [
+    "AI Engineer Intern - Enterprise Technology Services",
+    "NYC",
+    "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26011991"
+   ],
+   [
+    "AI Engineer Intern - Enterprise Technology Services",
+    "Sunrise, FL",
+    "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26011745"
+   ],
+   [
+    "Data Analytics Intern - US Consumer Services",
+    "NYC",
+    "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26011607"
+   ],
+   [
+    "Product Development Intern - 2027 Product Development - US Consumer Services",
+    "NYC",
+    "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26011605"
+   ]
+  ]
+ },
+ "analog-devices": {
+  "open": 21,
+  "found": 21,
+  "missing": []
+ },
+ "appian": {
+  "open": 2,
+  "found": 2,
+  "missing": []
+ },
+ "applied-materials": {
+  "open": 14,
+  "found": 14,
+  "missing": []
+ },
+ "arcesium": {
+  "open": 2,
+  "found": 2,
+  "missing": []
+ },
+ "arista-networks": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "base-power": {
+  "open": 5,
+  "found": 5,
+  "missing": []
+ },
+ "bedrock-robotics": {
+  "open": 12,
+  "found": 12,
+  "missing": []
+ },
+ "blackrock": {
+  "open": 6,
+  "found": 6,
+  "missing": []
+ },
+ "bny": {
+  "open": 15,
+  "found": 14,
+  "missing": [
+   [
+    "Product Management Intern - Product Management",
+    "NYC",
+    "https://eofe.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/81345"
+   ]
+  ]
+ },
+ "bot-auto": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "braze": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "cadence": {
+  "open": 12,
+  "found": 12,
+  "missing": []
+ },
+ "ciena": {
+  "open": 14,
+  "found": 14,
+  "missing": []
+ },
+ "citi": {
+  "open": 9,
+  "found": 9,
+  "missing": []
+ },
+ "clay": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "clockwork-systems": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "cohesity": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "commonwealth-fusion": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "copart": {
+  "open": 10,
+  "found": 10,
+  "missing": []
+ },
+ "costar": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "costco": {
+  "open": 8,
+  "found": 0,
+  "missing": [
+   [
+    "CDS Intern - Innovation",
+    "Issaquah, WA",
+    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=10998"
+   ],
+   [
+    "CDS Intern - Powerapps Developer - ECM Digital Workflow",
+    "Issaquah, WA",
+    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=11001"
+   ],
+   [
+    "CDS Intern - ECM Platform Management",
+    "Issaquah, WA",
+    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=11010"
+   ],
+   [
+    "Costco Digital Services Intern - Infosec AI/ML",
+    "Issaquah, WA",
+    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=10994"
+   ],
+   [
+    "Software Developer Intern - Software Engineer - Costco Travel",
+    "Issaquah, WA",
+    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=11021"
+   ],
+   [
+    "Costco Data Systems Intern - IT Product Owner",
+    "Issaquah, WA",
+    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=11024"
+   ],
+   [
+    "CDS Intern - Software Engineer - IT Retail Media",
+    "Issaquah, WA",
+    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=11013"
+   ],
+   [
+    "Software Engineer Intern - International Depot",
+    "Issaquah, WA",
+    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=10993"
+   ]
+  ]
+ },
+ "cvs-health": {
+  "open": 8,
+  "found": 0,
+  "missing": [
+   [
+    "Innovation & Technology Software Engineering: Data & Intelligence Intern",
+    "NYC",
+    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---New-York/Innovation---Technology-Internship--Software-Engineering--Data---Intelligence-Summer-2027-Graduate_R1081128"
+   ],
+   [
+    "Medicaid Data Analytics Intern",
+    "Hartford, CT",
+    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/CT---Hartford/Medicaid-Data-Analytics-Corporate-Internship---Summer-2027--Undergraduate-_R1052342"
+   ],
+   [
+    "Innovation & Technology Internship - Data Science",
+    "NYC",
+    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---New-York/Innovation---Technology-Internship---Data-Science---Summer-2027--Graduate-_R1081038"
+   ],
+   [
+    "Innovation & Technology Internship - Product & Agile Delivery",
+    "Dallas, TX; Scottsdale, AZ; Hartford, CT; Woonsocket, RI",
+    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/Hartford-Farmington-Ave-Rogers/Innovation---Technology-Internship---Product---Agile-Delivery---Summer-2027--Undergraduate-_R1080767"
+   ],
+   [
+    "Software Engineer Intern - Platform & Applications",
+    "Dallas, TX; Scottsdale, AZ; Hartford, CT; Woonsocket, RI",
+    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/AZ---Scottsdale/Innovation-Technology-Internship-Software-Engineering--Platform---Applications-Summer-2027-Undergrad_R1081193"
+   ],
+   [
+    "Innovation & Technology Data Science Intern",
+    "NYC",
+    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---New-York/Innovation---Technology-Internship---Data-Science---Summer-2027--Undergraduate-_R1081067"
+   ],
+   [
+    "Innovation & Technology Software Engineering: Platform & Applications Intern",
+    "Dallas, TX; Scottsdale, AZ; Hartford, CT; Woonsocket, RI",
+    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/AZ---Scottsdale/Innovation---Technology-Internship-Software-Engineering--Platform---Applications--Summer-2027-Grad_R1081216"
+   ],
+   [
+    "Innovation & Technology Internship - Software Engineering: Data & Intelligence",
+    "NYC",
+    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---New-York/Innovation---Technology-Internship--Software-Engineering--Data---Intelligence-Summer-2027-Undergrad_R1081114"
+   ]
+  ]
+ },
+ "datarobot": {
+  "open": 3,
+  "found": 3,
+  "missing": []
+ },
+ "dicks-sporting-goods": {
+  "open": 2,
+  "found": 2,
+  "missing": []
+ },
+ "domino-data-lab": {
+  "open": 2,
+  "found": 2,
+  "missing": []
+ },
+ "draftkings": {
+  "open": 7,
+  "found": 7,
+  "missing": []
+ },
+ "drivewealth": {
+  "open": 6,
+  "found": 6,
+  "missing": []
+ },
+ "ellipsis-labs": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "enova": {
+  "open": 2,
+  "found": 2,
+  "missing": []
+ },
+ "etched": {
+  "open": 5,
+  "found": 5,
+  "missing": []
+ },
+ "exa": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "f5": {
+  "open": 2,
+  "found": 2,
+  "missing": []
+ },
+ "figure-ai": {
+  "open": 7,
+  "found": 7,
+  "missing": []
+ },
+ "fortinet": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "freddie-mac": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "garner-health": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "ge-vernova": {
+  "open": 18,
+  "found": 18,
+  "missing": []
+ },
+ "gemini": {
+  "open": 2,
+  "found": 2,
+  "missing": []
+ },
+ "genesis-molecular-ai": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "globalfoundries": {
+  "open": 19,
+  "found": 19,
+  "missing": []
+ },
+ "grow-therapy": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "haize-labs": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "hartford": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "hex": {
+  "open": 2,
+  "found": 2,
+  "missing": []
+ },
+ "heygen": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "hp": {
+  "open": 16,
+  "found": 16,
+  "missing": []
+ },
+ "hpe": {
+  "open": 40,
+  "found": 40,
+  "missing": []
+ },
+ "humana": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "ice": {
+  "open": 33,
+  "found": 33,
+  "missing": []
+ },
+ "intuitive-surgical": {
+  "open": 5,
+  "found": 5,
+  "missing": []
+ },
+ "ixl-learning": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "jpmorgan-chase": {
+  "open": 13,
+  "found": 9,
+  "missing": [
+   [
+    "Quantitative Research Intern - Multiple Teams",
+    "London, UK",
+    "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210776860"
+   ],
+   [
+    "Quantitative Research Intern - Risk and Treasury - Off-Cycle",
+    "London, UK",
+    "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210776873"
+   ],
+   [
+    "Quantitative Research Markets Analyst Intern - Quantitative Trading & Research Markets",
+    "London, UK",
+    "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210788659"
+   ],
+   [
+    "Quantitative Research Summer Analyst Internship - Asset Management",
+    "London, UK",
+    "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792010"
+   ]
+  ]
+ },
+ "keysight": {
+  "open": 50,
+  "found": 50,
+  "missing": []
+ },
+ "kla": {
+  "open": 51,
+  "found": 51,
+  "missing": []
+ },
+ "lowes": {
+  "open": 5,
+  "found": 0,
+  "missing": [
+   [
+    "Software Engineer Intern",
+    "Charlotte, NC",
+    "https://lowes.wd5.myworkdayjobs.com/en-US/LWS_External_CS/job/Lowes-Charlotte-Technology-Hub-3505/Software-Engineer---Undergrad-Internship---Summer-2027_JR-02623576"
+   ],
+   [
+    "Digital Product Management Intern",
+    "Charlotte, NC",
+    "https://lowes.wd5.myworkdayjobs.com/en-US/LWS_External_CS/job/Lowes-Charlotte-Technology-Hub-3505/Digital-Product-Management---Undergrad-Internship---Summer-2027_JR-02645845"
+   ],
+   [
+    "Exploratory Software Engineer Intern",
+    "Charlotte, NC",
+    "https://lowes.wd5.myworkdayjobs.com/en-US/LWS_External_CS/job/Lowes-Charlotte-Technology-Hub-3505/Exploratory-Software-Engineering---Undergrad-Internship---Summer-2027_JR-02623542"
+   ],
+   [
+    "PRO Services Reporting Intern",
+    "Mooresville, NC",
+    "https://lowes.wd5.myworkdayjobs.com/en-US/LWS_External_CS/job/Mooresville-NC-SSC-1999/PRO-Services-Reporting-Intern---Undergrad-Internship---Summer-2027-_JR-02672698"
+   ],
+   [
+    "Store Operations Intern - Retail Facilities Support",
+    "Mooresville, NC",
+    "https://lowes.wd5.myworkdayjobs.com/en-US/LWS_External_CS/job/Mooresville-NC-SSC-1999/Store-Operations-Real-Estate---Undergrad-Internship---Summer-2027_JR-02650537"
+   ]
+  ]
+ },
+ "macys": {
+  "open": 4,
+  "found": 4,
+  "missing": []
+ },
+ "marvell": {
+  "open": 60,
+  "found": 56,
+  "missing": [
+   [
+    "Data Center Silicon Hardware Engineering Intern - Winter 2027",
+    "Toronto, ON, Canada; Ottawa, ON, Canada",
+    "https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Ottawa-Canada/Data-Center-Silicon-Hardware-Engineering-Intern---Winter-2027_2604525"
+   ],
+   [
+    "Analog Layout Co-op Intern",
+    "Toronto, ON, Canada",
+    "https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Toronto-Canada/Analog-Layout-Intern---BS-MS---Summer-2027-Co-Op_2604789"
+   ],
+   [
+    "Data Center Silicon Hardware Engineering Intern Co-op - BS",
+    "Toronto, ON, Canada; Ottawa, ON, Canada",
+    "https://marvell.wd1.myworkdayjobs.com/MarvellCareers/job/Ottawa-Canada/Data-Center-Silicon-Hardware-Engineering-Intern---BS---2027-Co-Op_2604525"
+   ],
+   [
+    "Data Science Intern",
+    "Boise, ID",
+    "https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Boise-ID/Data-Science-Intern--BS---Summer-2027_2603782"
+   ]
+  ]
+ },
+ "match-group": {
+  "open": 5,
+  "found": 5,
+  "missing": []
+ },
+ "mckesson": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "mercor": {
+  "open": 5,
+  "found": 5,
+  "missing": []
+ },
+ "micron": {
+  "open": 40,
+  "found": 37,
+  "missing": [
+   [
+    "SSD Architecture Modeling Intern",
+    "Boise, ID",
+    "https://micron.wd1.myworkdayjobs.com/External/job/Boise-ID---Main-Site/Intern---SSD-Architecture-Modeling_JR113803"
+   ],
+   [
+    "Design Engineer Intern - High Bandwidth Memory",
+    "Richardson, TX",
+    "https://micron.wd1.myworkdayjobs.com/External/job/Richardson-TX/Intern---Design-Engineer--HBM_JR112552"
+   ],
+   [
+    "AI & Product Management Intern - Mobile Memory - Lpdram",
+    "San Jose, CA",
+    "https://micron.wd1.myworkdayjobs.com/External/job/San-Jose-CA/Intern---AI---Product-Management--Mobile-Memory--LPDRAM-_JR115839"
+   ]
+  ]
+ },
+ "multiply-labs": {
+  "open": 2,
+  "found": 2,
+  "missing": []
+ },
+ "nationwide": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "navy-federal": {
+  "open": 28,
+  "found": 28,
+  "missing": []
+ },
+ "netic": {
+  "open": 3,
+  "found": 3,
+  "missing": []
+ },
+ "neuralink": {
+  "open": 3,
+  "found": 3,
+  "missing": []
+ },
+ "new-york-times": {
+  "open": 9,
+  "found": 9,
+  "missing": []
+ },
+ "nike": {
+  "open": 3,
+  "found": 3,
+  "missing": []
+ },
+ "one-finance": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "pacific-fusion": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "patreon": {
+  "open": 2,
+  "found": 2,
+  "missing": []
+ },
+ "perpay": {
+  "open": 3,
+  "found": 3,
+  "missing": []
+ },
+ "prizepicks": {
+  "open": 3,
+  "found": 3,
+  "missing": []
+ },
+ "ptc": {
+  "open": 2,
+  "found": 2,
+  "missing": []
+ },
+ "pure-storage": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "q2": {
+  "open": 7,
+  "found": 7,
+  "missing": []
+ },
+ "qorvo": {
+  "open": 5,
+  "found": 0,
+  "missing": [
+   [
+    "Sales Data Analyst Intern",
+    "Hillsboro, OR",
+    "https://careers.qorvo.com/job/Hillsboro-Sales-Data-Analyst-Intern-OR-97124/1421951500/?ats=successfactors"
+   ],
+   [
+    "Software Engineer Intern",
+    "Richardson, TX",
+    "https://careers.qorvo.com/job/Richardson-Software-Engineer-Intern-TX-75080/1421457600/?ats=successfactors"
+   ],
+   [
+    "Product Engineering Intern",
+    "Hillsboro, OR",
+    "https://careers.qorvo.com/job/Hillsboro-Product-Engineering-Intern-OR-97124/1421976600/?ats=successfactors"
+   ],
+   [
+    "Test Engineer Intern",
+    "Hillsboro, OR",
+    "https://careers.qorvo.com/job/Hillsboro-Test-Engineering-Intern-OR-97124/1421978100/?ats=successfactors"
+   ],
+   [
+    "SOI Design Engineer Intern",
+    "Greensboro, NC",
+    "https://careers.qorvo.com/job/Greensboro-SOI-Design-Intern-NC-27409/1421670100/?ats=successfactors"
+   ]
+  ]
+ },
+ "qualcomm": {
+  "open": 35,
+  "found": 35,
+  "missing": []
+ },
+ "qumulo": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "rhoda-ai": {
+  "open": 3,
+  "found": 3,
+  "missing": []
+ },
+ "rilla": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "rivian": {
+  "open": 20,
+  "found": 20,
+  "missing": []
+ },
+ "rivian-vw": {
+  "open": 3,
+  "found": 2,
+  "missing": [
+   [
+    "Software Engineering Intern - Vehicle Controls",
+    "Irvine, CA; Palo Alto, CA",
+    "https://jobs.ashbyhq.com/rivianvw.tech/89feb2fe-c28c-4dad-846f-09594632ba55"
+   ]
+  ]
+ },
+ "roku": {
+  "open": 5,
+  "found": 5,
+  "missing": []
+ },
+ "rubrik": {
+  "open": 2,
+  "found": 1,
+  "missing": [
+   [
+    "Software Engineering Intern",
+    "Palo Alto, CA",
+    "https://www.rubrik.com/company/careers/departments/job.8171088?gh_jid=8171088"
+   ]
+  ]
+ },
+ "sailpoint": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "serval": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "singlestore": {
+  "open": 2,
+  "found": 2,
+  "missing": []
+ },
+ "snap": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "sonos": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "synchrony": {
+  "open": 2,
+  "found": 2,
+  "missing": []
+ },
+ "texas-instruments": {
+  "open": 27,
+  "found": 25,
+  "missing": [
+   [
+    "Validation/Characterization Engineer Intern",
+    "Santa Clara, CA",
+    "https://edbz.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/25013623"
+   ],
+   [
+    "Product/Test Engineering Intern",
+    "Santa Clara, CA",
+    "https://edbz.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/25016391"
+   ]
+  ]
+ },
+ "travelers": {
+  "open": 4,
+  "found": 4,
+  "missing": []
+ },
+ "trimble": {
+  "open": 9,
+  "found": 9,
+  "missing": []
+ },
+ "tyler-technologies": {
+  "open": 4,
+  "found": 0,
+  "missing": [
+   [
+    "Software Development Intern",
+    "Lawrenceville, GA",
+    "https://jobs.jobvite.com/tylertech/job/oAVOAfwD?nl=1&nl=1&fr=false"
+   ],
+   [
+    "Software Development Intern - Summer 2027",
+    "Plano, TX",
+    "https://jobs.jobvite.com/tylertech/job/oMAPAfwv?nl=1&nl=1&fr=false"
+   ],
+   [
+    "Software Developer Intern",
+    "Orono, ME",
+    "https://jobs.jobvite.com/tylertech/job/ouQXAfwB?nl=1&nl=1&fr=false"
+   ],
+   [
+    "Software Development Intern",
+    "Troy, MI; Overland Park, KS",
+    "https://jobs.jobvite.com/tylertech/job/oQFRAfwG?nl=1&nl=1&fr=false"
+   ]
+  ]
+ },
+ "vanguard": {
+  "open": 8,
+  "found": 8,
+  "missing": []
+ },
+ "veeam": {
+  "open": 7,
+  "found": 7,
+  "missing": []
+ },
+ "vercel": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "viam": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "walmart": {
+  "open": 5,
+  "found": 0,
+  "missing": [
+   [
+    "Data Science Intern 3",
+    "Bentonville, AR",
+    "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-ISD-Office---DGTC-AR-BENTONVILLE-Home-Office/Summer-2027-Intern---Data-Science-III_R-2630030"
+   ],
+   [
+    "Senior Data Scientist Intern",
+    "Bentonville, AR",
+    "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-ISD-Office---DGTC-AR-BENTONVILLE-Home-Office/Summer-2027-Intern--Intern--Sr-Data-Science_R-2630032"
+   ],
+   [
+    "Software Engineer 2 Intern",
+    "Bentonville, AR; Bellevue, WA; Sunnyvale, CA",
+    "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-ISD-Office---DGTC-AR-BENTONVILLE-Home-Office/Summer-2027-Intern---Software-Engineer-II_R-2630029-1"
+   ],
+   [
+    "Corporate Market Strategy Data Science Intern",
+    "Bentonville, AR",
+    "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-Always-AR-Bentonville-Home-Office/R-2690844--USA--Corporate-Intern---Market-Strategy-Data-Science-Intern_R-2690844"
+   ],
+   [
+    "Corporate Intern: Data & Tech Transformation Intern",
+    "Bentonville, AR",
+    "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-Always-AR-Bentonville-Home-Office/XMLNAME--USA--Summer-2027-Corporate-Intern---Data---Tech-Transformation-intern_R-2690457-1"
+   ]
+  ]
+ },
+ "wells-fargo": {
+  "open": 2,
+  "found": 2,
+  "missing": []
+ },
+ "western-digital": {
+  "open": 3,
+  "found": 2,
+  "missing": [
+   [
+    "Recording Electronics Data Analytics & Optimization Co-op",
+    "Rochester, MN",
+    "https://jobs.smartrecruiters.com/WesternDigital/744000155109379"
+   ]
+  ]
+ },
+ "xcimer": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "zebra": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ },
+ "zillow": {
+  "open": 3,
+  "found": 3,
+  "missing": []
+ },
+ "ziprecruiter": {
+  "open": 1,
+  "found": 1,
+  "missing": []
+ }
+}

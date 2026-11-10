@@ -1,0 +1,98 @@
+# status 200
+# ============================================
+# robots.txt - NetApp.com
+# Last Updated: June 2026
+# ============================================
+
+# ------------------------------------
+# General Crawlers
+# ------------------------------------
+User-agent: *
+Disallow: /api/
+Disallow: /secure_document_area/
+Disallow: /welcome/
+Disallow: /de/welcome/
+Disallow: /es/welcome/
+Disallow: /fr/welcome/
+Disallow: /it/welcome/
+Disallow: /ja/welcome/
+Disallow: /ko/welcome/
+Disallow: /nl/welcome/
+Disallow: /pt/welcome/
+Disallow: /ru/welcome/
+Disallow: /zh-hans/welcome/
+Disallow: /zh-hant/welcome/
+
+# ------------------------------------
+# AI / LLM Crawlers - Explicitly Allowed
+# ------------------------------------
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# ------------------------------------
+# Crawl Rate Management
+# ------------------------------------
+Crawl-delay: 2
+
+# ------------------------------------
+# Sitemaps
+# ------------------------------------
+
+# Primary Sitemaps
+Sitemap: https://www.netapp.com/sitemap.xml
+Sitemap: https://www.netapp.com/de/sitemap.xml
+Sitemap: https://www.netapp.com/es/sitemap.xml
+Sitemap: https://www.netapp.com/fr/sitemap.xml
+Sitemap: https://www.netapp.com/it/sitemap.xml
+Sitemap: https://www.netapp.com/ja/sitemap.xml
+Sitemap: https://www.netapp.com/ko/sitemap.xml
+Sitemap: https://www.netapp.com/pt/sitemap.xml
+Sitemap: https://www.netapp.com/zh-hans/sitemap.xml
+Sitemap: https://www.netapp.com/zh-hant/sitemap.xml
+
+# Video Sitemap (EN only)
+Sitemap: https://www.netapp.com/sitemap-video.xml
+
+# PDF Sitemaps
+Sitemap: https://www.netapp.com/pdfsitemap.xml
+Sitemap: https://www.netapp.com/de/pdfsitemap.xml
+Sitemap: https://www.netapp.com/es/pdfsitemap.xml
+Sitemap: https://www.netapp.com/fr/pdfsitemap.xml
+Sitemap: https://www.netapp.com/it/pdfsitemap.xml
+Sitemap: https://www.netapp.com/pt/pdfsitemap.xml
+Sitemap: https://www.netapp.com/ja/pdfsitemap.xml
+Sitemap: https://www.netapp.com/ko/pdfsitemap.xml
+Sitemap: https://www.netapp.com/zh-hans/pdfsitemap.xml
+Sitemap: https://www.netapp.com/zh-hant/pdfsitemap.xml
+
+# ------------------------------------
+# LLM Content Reference
+# ------------------------------------
+# For AI/LLM structured content, see: https://www.netapp.com/llms.txt

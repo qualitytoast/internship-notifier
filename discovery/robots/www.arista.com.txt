@@ -1,0 +1,53 @@
+# status 200
+User-agent: *
+Crawl-delay: 7
+
+User-agent: *
+Disallow: /administrator/
+Disallow: /bin/
+Disallow: /cache/
+Disallow: /cli/
+Disallow: /components/
+Disallow: /includes/
+Disallow: /installation/
+Disallow: /language/
+Disallow: /layouts/
+Disallow: /libraries/
+Disallow: /logs/
+Disallow: /modules/
+Disallow: /plugins/
+Disallow: /templates/arista/
+Disallow: /templates/protostar/
+Disallow: /templates/system/
+Disallow: /templates/arista_v2/html/
+Disallow: /tmp/ 
+
+Disallow: /Awstats/
+Disallow: /accesslogs/
+Disallow: /automatedssp/
+Disallow: /config/
+Disallow: /cron_scripts/
+Disallow: /custom_data/
+Disallow: /download/
+Disallow: /eos-stat/
+Disallow: /eosapi/
+Disallow: /loadbalance
+Disallow: /opensource/
+Disallow: /policyupload/
+Disallow: /setsfdcaccesscontrol/
+Disallow: /sfdc-dataloader/
+Disallow: /soapclient/
+Disallow: /stat/
+Disallow: /tcpdf/
+
+
+#Files
+Disallow: /configuration.php
+Disallow: /elb.html
+Disallow: /error.php
+Disallow: /assets/data/pdf/AristaBSMIRoHS.pdf
+Disallow: /templates/arista_v2/component.php
+Disallow: /templates/arista_v2/error.php
+Disallow: /templates/arista_v2/index.php
+Disallow: /templates/arista_v2/template_config.php
+Disallow: /templates/arista_v2/templateDetails.xml

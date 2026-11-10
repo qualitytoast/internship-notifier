@@ -1,0 +1,7 @@
+# status 200
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /staging/
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://hyperproof.io/sitemap_index.xml

@@ -1,0 +1,8 @@
+# status 200
+User-Agent: *
+Allow: /
+Disallow: /studio
+Disallow: /api/draft-mode/
+Disallow: /api/revalidate
+
+Sitemap: https://www.serval.com/sitemap.xml

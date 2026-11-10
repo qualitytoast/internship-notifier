@@ -1,0 +1,11 @@
+# status 200
+User-agent: *
+Allow: /
+Disallow: /v1/login
+Disallow: /auth-error
+Disallow: /community/login
+Disallow: /community/register
+
+Sitemap: https://www.digitalocean.com/sitemap.xml
+
+# LLM-readable index of this site: https://www.digitalocean.com/llms.txt

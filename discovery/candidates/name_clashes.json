@@ -1,0 +1,1731 @@
+{
+ "addepar": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "adp": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "ai2": {
+  "stored_own": 3,
+  "stored_other_link": 0,
+  "current_own": 3,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "allstate": {
+  "stored_own": 5,
+  "stored_other_link": 0,
+  "current_own": 4,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "alltrails": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "altruist": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "american-express": {
+  "stored_own": 44,
+  "stored_other_link": 0,
+  "current_own": 9,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "amperity": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "analog-devices": {
+  "stored_own": 21,
+  "stored_other_link": 0,
+  "current_own": 21,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "anchorage-digital": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "appian": {
+  "stored_own": 2,
+  "stored_other_link": 0,
+  "current_own": 2,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "applied-materials": {
+  "stored_own": 0,
+  "stored_other_link": 18,
+  "current_own": 0,
+  "current_other_link": 14,
+  "names_with_other_links": {
+   "Applied Materials": 32
+  }
+ },
+ "apptronik": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "arcesium": {
+  "stored_own": 2,
+  "stored_other_link": 0,
+  "current_own": 2,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "arista-networks": {
+  "stored_own": 0,
+  "stored_other_link": 1,
+  "current_own": 0,
+  "current_other_link": 1,
+  "names_with_other_links": {
+   "Arista Networks": 2
+  }
+ },
+ "asana": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "att": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "athenahealth": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "bamboohr": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "bandwidth": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "bank-of-america": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "base-power": {
+  "stored_own": 7,
+  "stored_other_link": 0,
+  "current_own": 5,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "baseten": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "bedrock-robotics": {
+  "stored_own": 12,
+  "stored_other_link": 0,
+  "current_own": 12,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "best-buy": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "betterment": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "bill": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "blackrock": {
+  "stored_own": 7,
+  "stored_other_link": 0,
+  "current_own": 6,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "bny": {
+  "stored_own": 0,
+  "stored_other_link": 15,
+  "current_own": 0,
+  "current_other_link": 15,
+  "names_with_other_links": {
+   "BNY": 30
+  }
+ },
+ "bot-auto": {
+  "stored_own": 2,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "box": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "braze": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "bugcrowd": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "bumble": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "cadence": {
+  "stored_own": 12,
+  "stored_other_link": 0,
+  "current_own": 12,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "carbon-robotics": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "cartesia": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "censys": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "cerebras": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "charles-schwab": {
+  "stored_own": 0,
+  "stored_other_link": 1,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {
+   "Charles Schwab": 1
+  }
+ },
+ "checkr": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "chewy": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "chime": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "ciena": {
+  "stored_own": 20,
+  "stored_other_link": 0,
+  "current_own": 14,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "circle": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "citi": {
+  "stored_own": 7,
+  "stored_other_link": 0,
+  "current_own": 9,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "clay": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "clockwork-systems": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "cohesity": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "cobot": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "comcast": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "commonwealth-fusion": {
+  "stored_own": 4,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "commure": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "conductorone": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "copart": {
+  "stored_own": 10,
+  "stored_other_link": 0,
+  "current_own": 10,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "costar": {
+  "stored_own": 7,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "costco": {
+  "stored_own": 0,
+  "stored_other_link": 8,
+  "current_own": 0,
+  "current_other_link": 8,
+  "names_with_other_links": {
+   "Costco": 16
+  }
+ },
+ "cox": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "crusoe": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "cvs-health": {
+  "stored_own": 11,
+  "stored_other_link": 0,
+  "current_own": 8,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "d-matrix": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "datarobot": {
+  "stored_own": 3,
+  "stored_other_link": 0,
+  "current_own": 3,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "delinea": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "descript": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "dexcom": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "dicks-sporting-goods": {
+  "stored_own": 3,
+  "stored_other_link": 0,
+  "current_own": 2,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "digitalocean": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "domino-data-lab": {
+  "stored_own": 0,
+  "stored_other_link": 2,
+  "current_own": 0,
+  "current_other_link": 2,
+  "names_with_other_links": {
+   "Domino Data Lab": 4
+  }
+ },
+ "draftkings": {
+  "stored_own": 8,
+  "stored_other_link": 0,
+  "current_own": 7,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "drivewealth": {
+  "stored_own": 0,
+  "stored_other_link": 6,
+  "current_own": 0,
+  "current_other_link": 6,
+  "names_with_other_links": {
+   "DriveWealth": 12
+  }
+ },
+ "dusty-robotics": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "earnin": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "elevance-health": {
+  "stored_own": 4,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "ellipsis-labs": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "enova": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 2,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "equinix": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "etched": {
+  "stored_own": 7,
+  "stored_other_link": 0,
+  "current_own": 5,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "etsy": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "eventual": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "exa": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "f5": {
+  "stored_own": 2,
+  "stored_other_link": 0,
+  "current_own": 2,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "fastly": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "fervo-energy": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "figure-ai": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "fis": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "fiserv": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "ford": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "fortinet": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "fox": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "freddie-mac": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "garner-health": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "ge-vernova": {
+  "stored_own": 26,
+  "stored_other_link": 0,
+  "current_own": 18,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "gemini": {
+  "stored_own": 2,
+  "stored_other_link": 0,
+  "current_own": 2,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "gen-digital": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "genesis-molecular-ai": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "gimlet-labs": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "globalfoundries": {
+  "stored_own": 24,
+  "stored_other_link": 0,
+  "current_own": 19,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "glossgenius": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "godaddy": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "grow-therapy": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "guidewire": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "gusto": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "haize-labs": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "handshake": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "hartford": {
+  "stored_own": 3,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "hpe": {
+  "stored_own": 46,
+  "stored_other_link": 0,
+  "current_own": 40,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "hex": {
+  "stored_own": 2,
+  "stored_other_link": 0,
+  "current_own": 2,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "heygen": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "hilton": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "home-depot": {
+  "stored_own": 4,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "hp": {
+  "stored_own": 0,
+  "stored_other_link": 15,
+  "current_own": 0,
+  "current_other_link": 16,
+  "names_with_other_links": {
+   "HP Inc.": 31
+  }
+ },
+ "humana": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "hyperproof": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "illumio": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "ice": {
+  "stored_own": 0,
+  "stored_other_link": 33,
+  "current_own": 0,
+  "current_other_link": 33,
+  "names_with_other_links": {
+   "Intercontinental Exchange": 66
+  }
+ },
+ "intuitive-surgical": {
+  "stored_own": 0,
+  "stored_other_link": 6,
+  "current_own": 0,
+  "current_other_link": 5,
+  "names_with_other_links": {
+   "Intuitive Surgical": 11
+  }
+ },
+ "ironclad": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "ixl-learning": {
+  "stored_own": 0,
+  "stored_other_link": 1,
+  "current_own": 0,
+  "current_other_link": 1,
+  "names_with_other_links": {
+   "IXL Learning": 2
+  }
+ },
+ "jpmorgan-chase": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "keysight": {
+  "stored_own": 56,
+  "stored_other_link": 0,
+  "current_own": 50,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "khan-academy": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "kla": {
+  "stored_own": 62,
+  "stored_other_link": 0,
+  "current_own": 51,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "knowbe4": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "lambda": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "launchdarkly": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "lightspark": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "locus-robotics": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "lowes": {
+  "stored_own": 6,
+  "stored_other_link": 0,
+  "current_own": 5,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "lucid-motors": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "lucid-software": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "macys": {
+  "stored_own": 0,
+  "stored_other_link": 4,
+  "current_own": 0,
+  "current_other_link": 4,
+  "names_with_other_links": {
+   "Macy's": 8
+  }
+ },
+ "marvell": {
+  "stored_own": 71,
+  "stored_other_link": 0,
+  "current_own": 60,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "mastercard": {
+  "stored_own": 2,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "match-group": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "mckesson": {
+  "stored_own": 6,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "mercor": {
+  "stored_own": 5,
+  "stored_other_link": 0,
+  "current_own": 5,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "micron": {
+  "stored_own": 49,
+  "stored_other_link": 0,
+  "current_own": 40,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "morgan-stanley": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "multiply-labs": {
+  "stored_own": 2,
+  "stored_other_link": 0,
+  "current_own": 2,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "nasdaq": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "nasuni": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "nationwide": {
+  "stored_own": 3,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "navy-federal": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "ncino": {
+  "stored_own": 0,
+  "stored_other_link": 1,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {
+   "Ncino": 1
+  }
+ },
+ "netapp": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "netic": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "neuralink": {
+  "stored_own": 4,
+  "stored_other_link": 0,
+  "current_own": 3,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "new-york-times": {
+  "stored_own": 10,
+  "stored_other_link": 0,
+  "current_own": 9,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "nextdoor": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "niantic-spatial": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "nike": {
+  "stored_own": 3,
+  "stored_other_link": 0,
+  "current_own": 3,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "nordstrom": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "northwestern-mutual": {
+  "stored_own": 0,
+  "stored_other_link": 2,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {
+   "Northwestern Mutual": 2
+  }
+ },
+ "numeric": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "obsidian-security": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "one-finance": {
+  "stored_own": 2,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "unitedhealth-group": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "pacific-fusion": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "paramount": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "patreon": {
+  "stored_own": 3,
+  "stored_other_link": 0,
+  "current_own": 2,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "pendo": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "perpay": {
+  "stored_own": 4,
+  "stored_other_link": 0,
+  "current_own": 3,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "persona": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "persona-ai": {
+  "stored_own": 4,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "precisely": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "principal": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "prizepicks": {
+  "stored_own": 0,
+  "stored_other_link": 4,
+  "current_own": 0,
+  "current_other_link": 3,
+  "names_with_other_links": {
+   "PrizePicks": 7
+  }
+ },
+ "progressive": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "proofpoint": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "ptc": {
+  "stored_own": 3,
+  "stored_other_link": 0,
+  "current_own": 2,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "pure-storage": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "q2": {
+  "stored_own": 7,
+  "stored_other_link": 0,
+  "current_own": 7,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "qorvo": {
+  "stored_own": 0,
+  "stored_other_link": 50,
+  "current_own": 0,
+  "current_other_link": 5,
+  "names_with_other_links": {
+   "Qorvo": 55
+  }
+ },
+ "qualcomm": {
+  "stored_own": 0,
+  "stored_other_link": 43,
+  "current_own": 0,
+  "current_other_link": 35,
+  "names_with_other_links": {
+   "Qualcomm": 78
+  }
+ },
+ "qumulo": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "reddit": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "redwood-materials": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "replit": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "rhoda-ai": {
+  "stored_own": 3,
+  "stored_other_link": 0,
+  "current_own": 3,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "ridgeline": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "rilla": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "ripple": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "rivian": {
+  "stored_own": 20,
+  "stored_other_link": 0,
+  "current_own": 20,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "rivian-vw": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "roku": {
+  "stored_own": 0,
+  "stored_other_link": 5,
+  "current_own": 0,
+  "current_other_link": 5,
+  "names_with_other_links": {
+   "Roku": 10
+  }
+ },
+ "rubrik": {
+  "stored_own": 0,
+  "stored_other_link": 2,
+  "current_own": 0,
+  "current_other_link": 2,
+  "names_with_other_links": {
+   "Rubrik": 4
+  }
+ },
+ "sailpoint": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "sandisk": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "sas": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "sentry": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "serval": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "singlestore": {
+  "stored_own": 4,
+  "stored_other_link": 0,
+  "current_own": 2,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "snap": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "snorkel-ai": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "snyk": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "socure": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "sofi": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "sonos": {
+  "stored_own": 8,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "southwest": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "starburst": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "state-farm": {
+  "stored_own": 4,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "suno": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "superhuman": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "symmetry-systems": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "synchrony": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "tamr": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "target": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "tensorwave": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "texas-instruments": {
+  "stored_own": 31,
+  "stored_other_link": 0,
+  "current_own": 27,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "travelers": {
+  "stored_own": 5,
+  "stored_other_link": 0,
+  "current_own": 4,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "tricentis": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "trimble": {
+  "stored_own": 10,
+  "stored_other_link": 0,
+  "current_own": 9,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "truveta": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "tyler-technologies": {
+  "stored_own": 0,
+  "stored_other_link": 7,
+  "current_own": 0,
+  "current_other_link": 4,
+  "names_with_other_links": {
+   "Tyler Technologies": 11
+  }
+ },
+ "typeface": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "udemy": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "uipath": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "unify": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "united-airlines": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "usaa": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "vanguard": {
+  "stored_own": 8,
+  "stored_other_link": 0,
+  "current_own": 8,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "veeam": {
+  "stored_own": 8,
+  "stored_other_link": 0,
+  "current_own": 7,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "vercel": {
+  "stored_own": 2,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "verizon": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "viam": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "walmart": {
+  "stored_own": 6,
+  "stored_other_link": 0,
+  "current_own": 5,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "disney": {
+  "stored_own": 3,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "warner-bros-discovery": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "washington-post": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "wells-fargo": {
+  "stored_own": 2,
+  "stored_other_link": 0,
+  "current_own": 2,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "western-digital": {
+  "stored_own": 0,
+  "stored_other_link": 5,
+  "current_own": 0,
+  "current_other_link": 3,
+  "names_with_other_links": {
+   "Western Digital": 8
+  }
+ },
+ "xcimer": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "you-com": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "yugabyte": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "zebra": {
+  "stored_own": 15,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "zillow": {
+  "stored_own": 3,
+  "stored_other_link": 0,
+  "current_own": 3,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "zip": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "ziprecruiter": {
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "zocdoc": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "zoominfo": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ },
+ "zscaler": {
+  "stored_own": 0,
+  "stored_other_link": 0,
+  "current_own": 0,
+  "current_other_link": 0,
+  "names_with_other_links": {}
+ }
+}

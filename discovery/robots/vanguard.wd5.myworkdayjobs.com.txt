@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://vanguard.wd5.myworkdayjobs.com/vanguard_external/siteMap.xml
+Sitemap: https://vanguard.wd5.myworkdayjobs.com/contractors_restricted/siteMap.xml
+
+User-agent: *
+Allow: /vanguard_external/
+Allow: /contractors_restricted/
+Disallow: /refreshFacet/

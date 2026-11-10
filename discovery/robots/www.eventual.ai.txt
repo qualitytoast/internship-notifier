@@ -1,0 +1,10 @@
+# status 200
+User-Agent: *
+Allow: /
+Disallow: /daft
+Disallow: /api/
+Disallow: /_next/
+Disallow: /payload/
+
+Sitemap: https://www.eventual.ai/sitemap.xml
+Sitemap: https://www.eventual.ai/blog/sitemap.xml

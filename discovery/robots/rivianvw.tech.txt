@@ -1,0 +1,5 @@
+# status 200
+User-agent: *
+Allow: /
+
+Sitemap: https://rivianvw.tech/sitemap.xml

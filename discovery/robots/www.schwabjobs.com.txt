@@ -1,0 +1,20 @@
+# status 200
+User-agent: *
+Disallow:/search-jobs/
+Disallow:/search_jobs/
+Disallow:/search_jobs
+Disallow:/search-jobs
+
+# XML Sitemaps
+# Master sitemap index
+Sitemap: https://www.schwabjobs.com/sitemap-index.xml
+
+# Child sitemaps
+Sitemap: https://www.schwabjobs.com/sitemap.xml
+Sitemap: https://www.schwabjobs.com/sitemap-jobs.xml
+Sitemap: https://www.schwabjobs.com/sitemap-locations.xml
+Sitemap: https://www.schwabjobs.com/sitemap-content.xml
+
+# HTML Sitemap
+Sitemap: https://www.schwabjobs.com/sitemap
+

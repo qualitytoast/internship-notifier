@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://copart.wd12.myworkdayjobs.com/Copart/siteMap.xml
+Sitemap: https://copart.wd12.myworkdayjobs.com/NPACareers/siteMap.xml
+
+User-agent: *
+Allow: /Copart/
+Allow: /NPACareers/
+Disallow: /refreshFacet/

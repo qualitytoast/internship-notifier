@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://ms.wd5.myworkdayjobs.com/External/siteMap.xml
+Sitemap: https://ms.wd5.myworkdayjobs.com/private/siteMap.xml
+
+User-agent: *
+Allow: /External/
+Allow: /private/
+Disallow: /refreshFacet/

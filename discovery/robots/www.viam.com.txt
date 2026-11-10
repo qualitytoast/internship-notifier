@@ -1,0 +1,6 @@
+# status 200
+User-agent: *
+
+Sitemap: https://www.viam.com/sitemap.xml 
+
+Sitemap: https://www.viam.com/sitemap.xml

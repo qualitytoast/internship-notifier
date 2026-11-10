@@ -1,0 +1,10 @@
+# status 200
+Sitemap: https://hpe.wd5.myworkdayjobs.com/Jobsathpe/siteMap.xml
+Sitemap: https://hpe.wd5.myworkdayjobs.com/WFMathpe/siteMap.xml
+Sitemap: https://hpe.wd5.myworkdayjobs.com/ACJobSite/siteMap.xml
+
+User-agent: *
+Allow: /Jobsathpe/
+Allow: /WFMathpe/
+Allow: /ACJobSite/
+Disallow: /refreshFacet/

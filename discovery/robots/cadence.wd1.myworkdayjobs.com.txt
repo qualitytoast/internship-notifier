@@ -1,0 +1,21 @@
+# status 200
+Sitemap: https://cadence.wd1.myworkdayjobs.com/External_Careers/siteMap.xml
+Sitemap: https://cadence.wd1.myworkdayjobs.com/Univ_Careers/siteMap.xml
+Sitemap: https://cadence.wd1.myworkdayjobs.com/women-in-tech-scholarship/siteMap.xml
+Sitemap: https://cadence.wd1.myworkdayjobs.com/OpenEye_Careers/siteMap.xml
+Sitemap: https://cadence.wd1.myworkdayjobs.com/University_Talent/siteMap.xml
+Sitemap: https://cadence.wd1.myworkdayjobs.com/University_Talent_NCG/siteMap.xml
+Sitemap: https://cadence.wd1.myworkdayjobs.com/University_Talent_Intern/siteMap.xml
+Sitemap: https://cadence.wd1.myworkdayjobs.com/University_CST/siteMap.xml
+
+User-agent: *
+Allow: /External_Careers/
+Allow: /Univ_Careers/
+Allow: /women-in-tech-scholarship/
+Allow: /OpenEye_Careers/
+Allow: /University_Talent/
+Allow: /University_Talent_NCG/
+Allow: /University_Talent_Intern/
+Allow: /University_CST/
+Disallow: /addl_jobs/
+Disallow: /refreshFacet/

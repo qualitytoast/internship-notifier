@@ -1,0 +1,7 @@
+# status 200
+User-agent: *
+Disallow: /tbench-viewer/
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://snorkel.ai/sitemap_index.xml

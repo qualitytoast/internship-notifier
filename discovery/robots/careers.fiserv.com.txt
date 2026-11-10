@@ -1,0 +1,87 @@
+# status 200
+User-agent: JobLeadsBot
+Disallow: /
+
+User-agent: JobcaseBot
+Disallow: /
+
+User-agent: LensaBot
+Disallow: /
+
+User-agent: iHireBot
+Disallow: /
+
+User-agent: TealBot
+Disallow: /
+
+User-agent: BebeeBot
+Disallow: /
+
+User-agent: TrabajoBot
+Disallow: /
+
+User-agent: EstateJobsBot
+Disallow: /
+
+User-agent: JobilizeBot
+Disallow: /
+
+User-agent: OrionTalentBot
+Disallow: /
+
+User-agent: BreakroomBot
+Disallow: /
+
+User-agent: BoomNationBot
+Disallow: /
+
+User-agent: VaiaTalentBot
+Disallow: /
+
+User-agent: LazyApply
+Disallow: /
+
+User-agent: PhantomBuster
+Disallow: /
+
+User-agent: Selenium
+Disallow: /
+
+User-agent: Puppeteer
+Disallow: /
+
+User-agent: HeadlessChrome
+Disallow: /
+
+User-agent: curl
+Disallow: /
+
+User-agent: python-requests
+Disallow: /
+
+User-agent: Scrapy
+Disallow: /
+
+User-agent: Wget
+Disallow: /
+
+User-agent: *
+Disallow: */phenomtrack.min.js
+Disallow: */socialAut
+Disallow: */iauth  
+Disallow: */chatbot
+Disallow: */jobcart
+Disallow: */apply
+Disallow: */applythankyou
+Disallow: */px-widgets
+Disallow: */lifeatphenom
+Disallow: */workingatphenom
+Disallow: */chatbot
+Disallow: */pxhomelead
+Disallow: */pxhomeapplicant
+Disallow: */pxhomequalifiedlead
+Disallow: */pxhomevisitor
+Disallow: */pxhomestranger
+Disallow: */glassdoor
+
+Sitemap: https://careers.fiserv.com/us/en/sitemap.xml

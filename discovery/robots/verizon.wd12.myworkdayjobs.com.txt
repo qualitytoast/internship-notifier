@@ -1,0 +1,7 @@
+# status 200
+
+User-agent: *
+Disallow: /verizon-careers/
+Disallow: /contractor_external_careers/
+Disallow: /frontier_career_site/
+Disallow: /refreshFacet/

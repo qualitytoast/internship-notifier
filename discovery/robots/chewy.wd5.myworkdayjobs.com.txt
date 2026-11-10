@@ -1,0 +1,10 @@
+# status 200
+Sitemap: https://wd5.myworkdaysite.com/recruiting/chewy/Student-Ambassador-Contractors/siteMap.xml
+Sitemap: https://wd5.myworkdaysite.com/recruiting/chewy/Relief-Veterinarian-Contractors/siteMap.xml
+
+User-agent: *
+Allow: /Student-Ambassador-Contractors/
+Allow: /Relief-Veterinarian-Contractors/
+Disallow: /External/
+Disallow: /VeterinaryCareers/
+Disallow: /refreshFacet/

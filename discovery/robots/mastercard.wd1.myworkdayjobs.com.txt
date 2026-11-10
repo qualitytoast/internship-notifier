@@ -1,0 +1,15 @@
+# status 200
+Sitemap: https://mastercard.wd1.myworkdayjobs.com/CorporateCareers/siteMap.xml
+Sitemap: https://mastercard.wd1.myworkdayjobs.com/Campus/siteMap.xml
+Sitemap: https://mastercard.wd1.myworkdayjobs.com/ContractorConversion/siteMap.xml
+Sitemap: https://mastercard.wd1.myworkdayjobs.com/RYC/siteMap.xml
+
+User-agent: *
+Allow: /CorporateCareers/
+Allow: /Campus/
+Allow: /ContractorConversion/
+Allow: /RYC/
+Disallow: /CUOReqSite/
+Disallow: /CampusApplyOnly/
+Disallow: /Public_Posting_Site/
+Disallow: /refreshFacet/

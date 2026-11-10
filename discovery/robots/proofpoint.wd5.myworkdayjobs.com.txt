@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://proofpoint.wd5.myworkdayjobs.com/ProofpointCareers/siteMap.xml
+
+User-agent: *
+Allow: /ProofpointCareers/
+Disallow: /refreshFacet/

@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://circle.wd1.myworkdayjobs.com/Circle/siteMap.xml
+
+User-agent: *
+Allow: /Circle/
+Disallow: /refreshFacet/

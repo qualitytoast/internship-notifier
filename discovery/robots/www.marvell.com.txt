@@ -1,0 +1,24 @@
+# status 200
+
+#Robot exclusion
+
+User-agent: *
+
+Disallow: /assets
+Disallow: /cn
+Disallow: /drivers
+Disallow: /error
+Disallow: /form
+Disallow: /go
+Disallow: /guide
+Disallow: /images
+Disallow: /includes
+Disallow: /inc
+Disallow: /survey
+Disallow: /w3c
+Disallow: /newsroom-archive/
+Disallow: /company/newsroom-archive/
+Disallow: /products/security-solutions/nitrox-hs-adapters/
+Disallow: /content/dam/marvell/en/company/assets/marvell-billing-guidelines.pdf
+Disallow: /content/dam/marvell/en/company/career/documents/marvell-talent-community-privacy-notice.pdf
+Sitemap: https://www.marvell.com/content/marvell-com/en/home.sitemap.xml

@@ -1,0 +1,27 @@
+# status 200
+User-Agent: *
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+User-Agent: *
+Disallow: /*.js$
+
+User-Agent: *
+Disallow: /advisor
+
+User-Agent: *
+Disallow: /*?topic=
+Disallow: /*&topic=
+
+Host: https://snyk.io
+Sitemap: https://snyk.io/sitemap-index.xml
+Sitemap: https://snyk.io/sitemaps/sitemap-pages.xml
+Sitemap: https://snyk.io/sitemaps/sitemap-articles.xml
+Sitemap: https://snyk.io/sitemaps/sitemap-blogs.xml
+Sitemap: https://snyk.io/sitemaps/sitemap-case-studies.xml
+Sitemap: https://snyk.io/sitemaps/sitemap-contributors.xml
+Sitemap: https://snyk.io/sitemaps/sitemap-events.xml
+Sitemap: https://snyk.io/sitemaps/sitemap-podcasts.xml
+Sitemap: https://snyk.io/sitemaps/sitemap-policies.xml
+Sitemap: https://snyk.io/sitemaps/sitemap-press-releases.xml
+Sitemap: https://snyk.io/sitemaps/sitemap-videos.xml

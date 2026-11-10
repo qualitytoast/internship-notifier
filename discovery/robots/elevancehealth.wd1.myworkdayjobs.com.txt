@@ -1,0 +1,17 @@
+# status 200
+Sitemap: https://elevancehealth.wd1.myworkdayjobs.com/Legato_Ireland/siteMap.xml
+Sitemap: https://elevancehealth.wd1.myworkdayjobs.com/ANT/siteMap.xml
+Sitemap: https://elevancehealth.wd1.myworkdayjobs.com/Legato_Israel/siteMap.xml
+Sitemap: https://elevancehealth.wd1.myworkdayjobs.com/carelonglobal_in/siteMap.xml
+Sitemap: https://elevancehealth.wd1.myworkdayjobs.com/carelonglobal_ph/siteMap.xml
+Sitemap: https://elevancehealth.wd1.myworkdayjobs.com/IRL/siteMap.xml
+
+User-agent: *
+Allow: /Legato_Ireland/
+Allow: /ANT/
+Allow: /Legato_Israel/
+Allow: /carelonglobal_in/
+Allow: /carelonglobal_ph/
+Allow: /IRL/
+Disallow: /ELV-ET/
+Disallow: /refreshFacet/

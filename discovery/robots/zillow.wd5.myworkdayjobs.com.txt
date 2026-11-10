@@ -1,0 +1,7 @@
+# status 200
+Sitemap: https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External/siteMap.xml
+
+User-agent: *
+Allow: /Zillow_Group_External/
+Disallow: /Referrals/
+Disallow: /refreshFacet/

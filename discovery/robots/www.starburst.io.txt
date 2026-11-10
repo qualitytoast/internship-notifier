@@ -1,0 +1,26 @@
+# status 200
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+Disallow: /thank-you/*
+Disallow: /contact/*-thank-you
+Disallow: /info/*-thank-you
+Disallow: /info/*thanks-
+Disallow: /vip-address-confirmation/
+Disallow: /trial-thank-you/
+Disallow: /*promo_code=*
+Disallow: /*post_type=*
+Disallow: /*page_id=*
+Disallow: /*_hstc=*
+Disallow: /*paged=*
+Disallow: /*.pdf$
+Disallow: /*?utm_*
+Disallow: /*?gclid=
+Disallow: /*?wsi=*
+Disallow: /*?wchannel*
+Disallow: /*?wmedia*
+Disallow: /*?hsa_*
+Disallow: /*?metadata_cid=*
+
+Sitemap: https://www.starburst.io/sitemap_index.xml

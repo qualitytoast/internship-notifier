@@ -1,0 +1,6 @@
+# status 200
+User-agent: *
+Allow: /
+Disallow: /sanity-studio
+
+Sitemap: https://www.co.bot/sitemap.xml

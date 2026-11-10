@@ -1,0 +1,8 @@
+# status 200
+Sitemap: https://blackrock.wd1.myworkdayjobs.com/BlackRock_Professional/siteMap.xml
+
+User-agent: *
+Allow: /BlackRock_Professional/
+Disallow: /BlackRock_AIG/
+Disallow: /BlackRock_Early_Careers_Program/
+Disallow: /refreshFacet/

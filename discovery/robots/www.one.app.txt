@@ -1,0 +1,27 @@
+# status 200
+User-Agent: *
+Allow: /
+Disallow: /joinone/*
+Disallow: /get-started/*
+Disallow: /joinoneapp/*
+Disallow: /join-one
+Disallow: /join
+Disallow: /joinapp
+Disallow: /join-app
+Disallow: /getone
+Disallow: /get-one
+Disallow: /tv
+Disallow: /join-one-app
+Disallow: /gettax
+Disallow: /get-credit-builder-easy
+Disallow: /get-one-credit-score
+Disallow: /get-credit-builder-no-fees
+Disallow: /join-get-10-walmart
+Disallow: /get-10-walmart
+Disallow: /getonetoone
+Disallow: /get-global-transfers
+Disallow: /streaming
+Disallow: /gas-cash-back
+Disallow: /get-direct-deposit
+Disallow: /rewards-offer-terms
+Disallow: /direct-deposit-offer-terms

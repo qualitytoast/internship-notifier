@@ -1,0 +1,7 @@
+# status 200
+Sitemap: https://hp.wd5.myworkdayjobs.com/ExternalCareerSite/siteMap.xml
+
+User-agent: *
+Allow: /ExternalCareerSite/
+Disallow: /EXTEU-AC-CareerSite/
+Disallow: /refreshFacet/

@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://q2ebanking.wd5.myworkdayjobs.com/Q2/siteMap.xml
+
+User-agent: *
+Allow: /Q2/
+Disallow: /refreshFacet/

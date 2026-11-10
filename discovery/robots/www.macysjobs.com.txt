@@ -1,0 +1,831 @@
+# status 200
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1"></meta>
+        
+                
+                        
+                   
+            <meta property="og:title" content="Macy's Careers"/>
+            <meta property="og:description" content=""/>
+                            <meta property="og:image" content="https://employeeconnection.net/CareerSiteMedia/Macy's_Logo_2025.JPG"/>
+                        
+            
+                        <meta property="og:type" content="website"/>
+                        
+            <meta property="og:site_name" content="Macy's"/>
+            <meta name="twitter:card" content="summary_large_image">
+            <title>Macy\'s</title>
+        
+	
+                              <base href="/hcmUI/CandidateExperience/en/sites/CX_1001"  data-apibaseurl="https://ebwh.fa.us2.oraclecloud.com:443" data-fahosturl="" data-vanitybaseurl="" data-sitenumber="CX_1001" data-shorturl='{"challengeFlag":null,"url":null}' data-customjs-src='/hcmUI/CandExpStatic/js/ce-custom.js?themeNumber=1009&themeVersion=7&brandVersion=76'/>
+                          
+        <link rel="icon" sizes="16x16" type="image/png" title="favicon" href="/hcmRestApi/CandidateExperience/siteFavicon/favicon-16x16.png?siteNumber=CX_1001&size=16x16"></link>
+        <link rel="icon" sizes="144x144" type="image/png" title="favicon" href="/hcmRestApi/CandidateExperience/siteFavicon/favicon-144x144.png?siteNumber=CX_1001&size=144x144"></link>
+        <link rel="icon" sizes="152x152" type="image/png" title="favicon" href="/hcmRestApi/CandidateExperience/siteFavicon/favicon-152x152.png?siteNumber=CX_1001&size=152x152"></link>
+
+        <link rel="apple-touch-icon" sizes="152x152" type="image/png" title="favicon" href="/hcmRestApi/CandidateExperience/siteFavicon/favicon-152x152.png?siteNumber=CX_1001&size=152x152"></link>
+
+        
+        <link rel="stylesheet" href="https://static.oracle.com/cdn/jet/19.0.0/default/css/redwood/oj-redwood-min.css">
+        <link rel="stylesheet" href="https://static.oracle.com/cdn/fa/oj-hcm-ce/2607.26.262300322/css/main-minimal.css">
+         
+        <link rel="stylesheet" title="cx-custom" data-custom-css href="/hcmUI/CandExpStatic/css/ce-custom.css?themeNumber=1009&lang=en&themeVersion=7&brandVersion=76&brandTlVersion=30&siteNumber=CX_1001"></link>
+
+        <script >
+                            const HASHBANG_REGEX = /\/?#\/(job|requisitions|jobs)\//;
+                if (window.location.href.match(HASHBANG_REGEX)) {	
+                        window.location.replace(window.location.href.replace(HASHBANG_REGEX, '/$1/'));
+                }
+                    </script>
+        <script src="https://static.oracle.com/cdn/fa/oj-hcm-ce/2607.26.262300322/js/main-minimal.js"  defer></script>
+            <script type="text/javascript" async src="//c.oracleinfinity.io/acs/account/fp3kyrmvtg/js/prod/odc.js" ></script>
+        	<script id="custom-js" src="/hcmUI/CandExpStatic/js/ce-custom.js?themeNumber=1009&themeVersion=7&brandVersion=76" defer data-custom-js></script>      
+                <style id="custom-css" >
+            /* Reset */
+*{margin:0;padding:0;}
+
+/* Slider */
+#slider{
+  width:100%;
+  position:relative;
+  overflow:hidden;
+      max-width: 2500px;
+  margin:0 auto;
+}
+#slider-responsive{
+  width:100%;
+  position:relative;
+  overflow:hidden;
+      max-width: 2500px;
+  margin:0 auto;
+}
+@keyframes load{
+  from{left:-100%;}
+  to{left:0;}
+}
+.slides{
+  width:500%;
+  height:100%;
+  position:relative;
+  -webkit-animation:slide 50s infinite;
+  -moz-animation:slide 50s infinite;
+  animation:slide 50s infinite;
+}
+.slider{
+  width:20%;
+  height:100%;
+  float:left;
+  position:relative;
+  z-index:1;
+  overflow:hidden;
+}
+
+.slide img{
+  width:100%;
+  height:100%;
+}
+#slider-responsive img{
+  width:100%;
+  height:auto;
+}
+.image{
+  width:100%;
+  height:100%;
+}
+#slider-responsive .image{
+  width:100%;
+  height:auto;
+}
+.images{
+   /* height: 430px; */
+}
+#slider-responsive .images{
+    height: auto;
+}
+.images img {
+    object-fit: cover;
+    width: 100%;
+    min-height: 430px;
+}
+#slider-responsive .images img {
+    object-fit: cover;
+    width: 100%;
+    min-height: auto;
+}
+/* Legend */
+.legend{
+
+    
+}
+
+/* Contents */
+.content{
+    position: absolute;
+    padding: 15px;
+    width: 100%;
+}
+#slider-responsive .content-txt{
+display:none;
+}
+.content-txt{
+  padding: 24px;
+    height: 300px;
+    width: 375px;
+    float: left;
+    position: relative;
+    top: 25px; 
+    background: #ffffffe0;
+    border-radius: 6px;
+  box-shadow: 0px 0px 16px -4px #a9a9a9;
+  left: 2%;
+}
+.content-txt h1{
+    font-size: 24px;
+    text-align: left;
+    margin-left: 30px;
+    padding-bottom: 0px !important;
+    font-family: "Open Sans", Arial, sans-serif;
+  color:#c00000;
+  font-weight:800;
+  padding-top: 0px !important;
+}
+.content-txt h2{
+   font-size: 15px;
+    text-align: left;
+    margin-left: 30px;
+    font-family: "Open Sans", Arial, sans-serif;
+    line-height: 18px;
+    font-weight: 600;
+    padding-bottom: 5px !important;
+  color:#c00000;
+}
+.content-txt p{
+    font-size: 13px;
+    text-align: left;
+    margin-left: 0px;
+    padding: 0 !important;
+    font-family: "Open Sans", Arial, sans-serif;
+    line-height: 18px;
+      margin-bottom: 15px;
+  color:#c00000;
+}
+
+.content-txt li{
+          list-style-type: square;
+    text-align: left;
+    /* color: #fff; */
+    padding: 5px 0px;
+}
+
+/* Switch */
+.switch{
+    width: 120px;
+    height: 10px;
+    position: absolute;
+    bottom: 65px;
+    z-index: 99;
+    left: 50px;
+}
+.switch > ul{
+  list-style:none;
+}
+.switch > ul > li{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#c00000;
+  float:left;
+  margin-right:5px;
+}
+
+.switch ul{
+  overflow:hidden;
+}
+.on{
+  width:80%;
+  height:80%;
+  border-radius:50%;
+  background:#fff;
+  position:relative;
+  -webkit-animation:on 50s infinite;
+  -moz-animation:on 50s infinite;
+  animation:on 50s infinite;
+  top:1px;
+  left:1px;
+}
+.button-white a{
+color:#fff;
+  border:2px solid #fff;
+}
+.home-slider .switch {
+    bottom: 20px;
+    left: 0px;
+}
+
+/* Animation */
+@-webkit-keyframes slide{
+  0%,100%{
+    margin-left:0%;
+  }
+  21%{
+    margin-left:0%;
+  }
+  25%{
+    margin-left:-100%;
+  }
+  46%{
+    margin-left:-100%;
+  }
+  50%{
+    margin-left:-200%;
+  }
+  71%{
+    margin-left:-200%;
+  }
+  75%{
+    margin-left:-300%;
+  }
+  96%{
+    margin-left:-300%;
+  }
+}
+@-moz-keyframes slide{
+  0%,100%{
+    margin-left:0%;
+  }
+  21%{
+    margin-left:0%;
+  }
+  25%{
+    margin-left:-100%;
+  }
+  46%{
+    margin-left:-100%;
+  }
+  50%{
+    margin-left:-200%;
+  }
+  71%{
+    margin-left:-200%;
+  }
+  75%{
+    margin-left:-300%;
+  }
+  96%{
+    margin-left:-300%;
+  }
+}
+@keyframes slide{
+  0%,100%{
+    margin-left:0%;
+  }
+  21%{
+    margin-left:0%;
+  }
+  25%{
+    margin-left:-100%;
+  }
+  46%{
+    margin-left:-100%;
+  }
+  50%{
+    margin-left:-200%;
+  }
+  71%{
+    margin-left:-200%;
+  }
+  75%{
+    margin-left:-300%;
+  }
+  96%{
+    margin-left:-300%;
+  }
+}
+
+@-webkit-keyframes content-s{
+  0%{left:-620px;}
+  10%{left:0px;}
+  30%{left:0px;}
+  40%{left:0px;}
+  50%{left:0px;}
+  60%{left:0px;}
+  70%{left:0;}
+  80%{left:-620px;}
+  90%{left:-620px;}
+  100%{left:-620px;}
+}
+@-moz-keyframes content-s{
+  0%{left:-620px;}
+  10%{left:0px;}
+  30%{left:0px;}
+  40%{left:0px;}
+  50%{left:0px;}
+  60%{left:0px;}
+  70%{left:0;}
+  80%{left:-620px;}
+  90%{left:-620px;}
+  100%{left:-620px;}
+}
+@keyframes content-s{
+  0%{left:-620px;}
+  10%{left:20px;}
+  15%{left:0px;}
+  30%{left:0px;}
+  40%{left:0px;}
+  50%{left:0px;}
+  60%{left:0px;}
+  70%{left:0;}
+  80%{left:-620px;}
+  90%{left:-620px;}
+  100%{left:-620px;}
+}
+
+@-webkit-keyframes on{
+  0%,100%{
+    margin-left:0%;
+  }
+  21%{
+    margin-left:0%;
+  }
+  25%{
+    margin-left:15px;
+  }
+  46%{
+    margin-left:15px;
+  }
+  50%{
+    margin-left:30px;
+  }
+  71%{
+    margin-left:30px;
+  }
+  75%{
+    margin-left:45px;
+  }
+  96%{
+    margin-left:45px;
+  }
+}
+
+@-moz-keyframes on{
+  0%,100%{
+    margin-left:0%;
+  }
+  21%{
+    margin-left:0%;
+  }
+  25%{
+    margin-left:15px;
+  }
+  46%{
+    margin-left:15px;
+  }
+  50%{
+    margin-left:30px;
+  }
+  71%{
+    margin-left:30px;
+  }
+  75%{
+    margin-left:45px;
+  }
+  96%{
+    margin-left:45px;
+  }
+}
+
+@keyframes on{
+  0%,100%{
+    margin-left:0%;
+  }
+  21%{
+    margin-left:0%;
+  }
+  25%{
+    margin-left:15px;
+  }
+  46%{
+    margin-left:15px;
+  }
+  50%{
+    margin-left:30px;
+  }
+  71%{
+    margin-left:30px;
+  }
+  75%{
+    margin-left:45px;
+  }
+  96%{
+    margin-left:45px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .content-txt {
+    width: 80%;
+}
+  .switch {
+    left: 35px;
+}
+}
+
+@media only screen and (max-width: 600px) {
+ .content-txt h1 {
+    font-size: 18px;
+}
+  .content-txt {
+    width: 235px;
+}
+  .switch {
+    left: 40px;
+}
+}
+
+
+/* Animation 5 slides*/
+
+.slides5{
+  width:500%;
+  height:100%;
+  position:relative;
+  -webkit-animation:slide5 50s infinite;
+  -moz-animation:slide5 50s infinite;
+  animation:slide5 50s infinite;
+}
+.slider5{
+  width:20%;
+  height:100%;
+  float:left;
+  position:relative;
+  z-index:1;
+  overflow:hidden;
+}
+@-webkit-keyframes slide5{
+  0%,100%{
+    margin-left:0%;
+  }
+  15%{
+    margin-left:0%;
+  }
+  20%{
+    margin-left:-100%;
+  }
+  35%{
+    margin-left:-100%;
+  }
+  40%{
+    margin-left:-200%;
+  }
+  55%{
+    margin-left:-200%;
+  }
+  60%{
+    margin-left:-300%;
+  }
+  75%{
+    margin-left:-300%;
+  }
+  80%{
+    margin-left:-300%;
+  }
+  85%{
+    margin-left:-400%;
+  }
+  96%{
+    margin-left:-400%;
+  }
+}
+@-moz-keyframes slide5{
+  0%,100%{
+    margin-left:0%;
+  }
+  15%{
+    margin-left:0%;
+  }
+  20%{
+    margin-left:-100%;
+  }
+  35%{
+    margin-left:-100%;
+  }
+  40%{
+    margin-left:-200%;
+  }
+  55%{
+    margin-left:-200%;
+  }
+  60%{
+    margin-left:-300%;
+  }
+  75%{
+    margin-left:-300%;
+  }
+  80%{
+    margin-left:-300%;
+  }
+  85%{
+    margin-left:-400%;
+  }
+  96%{
+    margin-left:-400%;
+  }
+}
+@keyframes slide5{
+ 0%,100%{
+    margin-left:0%;
+  }
+  15%{
+    margin-left:0%;
+  }
+  20%{
+    margin-left:-100%;
+  }
+  35%{
+    margin-left:-100%;
+  }
+  40%{
+    margin-left:-200%;
+  }
+  55%{
+    margin-left:-200%;
+  }
+  60%{
+    margin-left:-300%;
+  }
+  75%{
+    margin-left:-300%;
+  }
+  80%{
+    margin-left:-300%;
+  }
+  85%{
+    margin-left:-400%;
+  }
+  96%{
+    margin-left:-400%;
+  }
+}
+
+@keyframes on5{
+   0%,100%{
+    margin-left:0px;
+  }
+  15%{
+    margin-left:0px;
+  }
+  20%{
+    margin-left:15px;
+  }
+  35%{
+    margin-left:15px;
+  }
+  40%{
+    margin-left:30px;
+  }
+  55%{
+    margin-left:30px;
+  }
+  60%{
+    margin-left:45px;
+  }
+  75%{
+    margin-left:45px;
+  }
+  80%{
+    margin-left:45px;
+  }
+  85%{
+    margin-left:60px;
+  }
+  96%{
+    margin-left:60px;
+  }
+}
+
+@-webkit-keyframes on5{
+ 0%,100%{
+    margin-left:0px;
+  }
+  15%{
+    margin-left:0px;
+  }
+  20%{
+    margin-left:15px;
+  }
+  35%{
+    margin-left:15px;
+  }
+  40%{
+    margin-left:30px;
+  }
+  55%{
+    margin-left:30px;
+  }
+  60%{
+    margin-left:45px;
+  }
+  75%{
+    margin-left:45px;
+  }
+  80%{
+    margin-left:45px;
+  }
+  85%{
+    margin-left:60px;
+  }
+  96%{
+    margin-left:60px;
+  }
+}
+
+@-moz-keyframes on5{
+   0%,100%{
+    margin-left:0px;
+  }
+  15%{
+    margin-left:0px;
+  }
+  20%{
+    margin-left:15px;
+  }
+  35%{
+    margin-left:15px;
+  }
+  40%{
+    margin-left:30px;
+  }
+  55%{
+    margin-left:30px;
+  }
+  60%{
+    margin-left:45px;
+  }
+  75%{
+    margin-left:45px;
+  }
+  80%{
+    margin-left:45px;
+  }
+  85%{
+    margin-left:60px;
+  }
+  96%{
+    margin-left:60px;
+  }
+}
+
+.on5{
+  width:80%;
+  height:80%;
+  border-radius:50%;
+  background:#fff;
+  position:relative;
+  -webkit-animation:on5 50s infinite;
+  -moz-animation:on5 50s infinite;
+  animation:on5 50s infinite;
+  top:1px;
+  left:1px;
+}
+
+.home-page .search-box-compact {
+    margin-top: 8em !important;
+}
+.app__subpage .cc-back-to-homepage-wrapper {display:none !important}
+.back-wrapper a{cursor:pointer}
+
+.apply-flow-block--personal-information-address .apply-flow-block__form-list .address-form div:nth-child(8) {
+        display:none;
+}
+.show{display:block !important}
+.hide{display:none;}
+
+.buttoncolor{color: #FFFFFF !important; font-size: 20pt !important; font-style: bold !important;}
+
+/* Formatting of Provide Info link on Candidate Profile */ 
+.cs-application-actions__info {
+  font-size: 16px;
+  font-weight: bold;
+}
+.cs-button.cs-button--link.theme-color-1 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #cc0000 !important;
+}
+/* End custom Provide Info Link Formatting */
+        </style>
+        </head>
+    <body class="app-loading font-family-primary" data-bind="loadingIndicator, a11y.toggleFocusIndicator, bodyScrolledDown, currentRoute">
+        <div class="preload" aria-hidden="true">
+            <div class="preload__icons"></div>
+            <div class="preload__primary-font"></div>
+            <div class="preload__secondary-font"></div>
+        </div>
+        <div class="app-loading-spinner"></div>
+        <div class="app" data-bind="view: 'layout'"></div>
+                <script type="text/html" id="custom-footer" >
+            <div class="app-footer">
+
+    <div class="app-footer__links app-footer__links--mobile">
+        <ul class="footer-links">
+			<li class="footer-links__item">
+                <a class="footer-links__link" style="color:#FFFFFF !important;" href="https://www.macys.com/" target="_blank">Macys.com</a>
+            </li>
+			<li class="footer-links__item">
+                <a class="footer-links__link" style="color:#FFFFFF !important;" href="https://www.macysinc.com/" target="_blank">MacysInc.com</a>
+            </li>
+            
+            <li class="footer-links__item">
+                <a class="footer-links__link" style="color:#FFFFFF !important;" href="https://ebwh.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/pages/5" target="_blank">Our Culture</a>
+            </li>
+            
+            <li class="footer-links__item">
+                <a class="footer-links__link"  style="color:#FFFFFF !important;" href="https://ebwh.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/pages/2001" target="_blank">FAQ</a>
+            </li>
+            
+            <li class="footer-links__item">
+                <a class="footer-links__link"  style="color:#FFFFFF !important;" href="https://ebwh.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/pages/12005" target="_blank">Privacy Notice</a>
+            </li>
+            
+            <li class="footer-links__item">
+                <a class="footer-links__link" style="color:#FFFFFF !important;" href="https://ebwh.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/pages/2003" target="_blank">Legal Notice</a>
+            </li>
+            
+            <li class="footer-links__item">
+                <a class="footer-links__link" style="color:#FFFFFF !important;" href="https://employeeconnection.net/CareerSiteMedia/ucmfa45163882.pdf" target="_blank">FCRA</a>
+            </li>
+            
+            <li class="footer-links__item">
+                <a class="footer-links__link"  style="color:#FFFFFF !important;" href="https://ebwh.fa.us2.oraclecloud.com/fndSetup/faces/deeplink?objType=IRC_RECRUITING&action=ICE_JOB_SEARCH_RESP" target="_blank">Current Colleagues</a>
+            </li>
+<li class="footer-links__item">
+    <a class="footer-links__link truyoCookieSettingButton " style="color:#FFFFFF !important; cursor: pointer;">Cookie Preferences</a>
+</li>                        
+        </ul>
+        
+    </div>
+   
+    <div class="app-footer__links app-footer__links--desktop">
+        <ul class="footer-links">
+            <li class="footer-links__item">
+                <a class="footer-links__link"  style="color:#FFFFFF !important;" href="https://www.macys.com/" target="_blank">Macys.com</a>
+            </li>
+			<li class="footer-links__item">
+                <a class="footer-links__link" style="color:#FFFFFF !important;" href="https://www.macysinc.com/" target="_blank">MacysInc.com</a>
+            </li>
+            
+            <li class="footer-links__item">
+                <a class="footer-links__link" style="color:#FFFFFF !important;" href="https://ebwh.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/pages/5" target="_blank">Our Culture</a>
+            </li>
+            
+            <li class="footer-links__item">
+                <a class="footer-links__link" style="color:#FFFFFF !important;"  href="https://ebwh.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/pages/2001" target="_blank">FAQ</a>
+            </li>
+            
+            <li class="footer-links__item">
+                <a class="footer-links__link" style="color:#FFFFFF !important;"  href="https://ebwh.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/pages/12005" target="_blank">Privacy Notice</a>
+            </li>
+            
+            <li class="footer-links__item">
+                <a class="footer-links__link" style="color:#FFFFFF !important;" href="https://ebwh.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/pages/2003" target="_blank">Legal Notice</a>
+            </li>
+            
+            <li class="footer-links__item">
+                <a class="footer-links__link" style="color:#FFFFFF !important;" href="https://employeeconnection.net/CareerSiteMedia/ucmfa45163882.pdf" target="_blank">FCRA</a>
+            </li>
+            
+            <li class="footer-links__item">
+                <a class="footer-links__link" style="color:#FFFFFF !important;"  href="https://ebwh.fa.us2.oraclecloud.com/fndSetup/faces/deeplink?objType=IRC_RECRUITING&action=ICE_JOB_SEARCH_RESP" target="_blank">Current Colleagues</a>
+            </li>
+<li class="footer-links__item">
+    <a class="footer-links__link truyoCookieSettingButton " style="color:#FFFFFF !important; cursor: pointer;">Cookie Preferences</a>
+</li>            
+        </ul>
+    </div>
+
+</div>
+
+<div style="    background: #3c3c3c;
+    color: #fff;
+    font-size: 13px;
+    line-height: 18px;
+    padding: 5px 25px;">
+<p align ="center">Job descriptions are not all-inclusive and may not apply to colleagues covered by a collective bargaining agreement. Macy’s Inc. reserves the right to amend these job descriptions at any time. Macy’s Inc. is an Equal Opportunity Employer and is committed to an inclusive work environment.
+
+Candidates for positions in San Francisco ONLY can review their rights and the Company’s obligations under SFPC Art. 49 <u><a style="color:#FFFFFF !important;" href="https://employeeconnection.net/CareerSiteMedia/ucmfa46989141.pdf" target="_blank">here</a>.</u>
+
+Candidates for positions in Los Angeles ONLY can review their rights and the Company’s obligations under LA MC Ch. XVIII Art. 9 <u><a style="color:#FFFFFF !important;" href="https://employeeconnection.net/CareerSiteMedia/ucmfa46988945.pdf" target="_blank">here</u>.</a>
+
+Candidates for positions in Philadelphia ONLY can review their rights and the Company’s obligations under PC Ch. 9-3500 <u><a style="color:#FFFFFF !important;" href="https://employeeconnection.net/CareerSiteMedia/ucmfa46989064.pdf" target="_blank">here</u>.</a>
+
+<p>&nbsp</p>
+<p><br><div id="atftbx2" class="at-follow-tbx-element addthis-smartlayers addthis-animated at4-show"><p><span>Follow Us</span></p><div class="addthis_toolbox addthis_default_style"><a class="at300b at-follow-btn" data-svc="facebook" data-svc-id="MacysJobs" href="http://www.facebook.com/MacysJobs" target="_blank"><span class="at-icon-wrapper" style="background-color: rgb(59, 89, 152); line-height: 32px; height: 32px; width: 32px; border-radius: 50%;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-facebook-6" class="at-icon at-icon-facebook" style="fill: rgb(255, 255, 255); width: 32px; height: 32px;"><title id="at-svg-facebook-6">Facebook</title><g><path d="M22 5.16c-.406-.054-1.806-.16-3.43-.16-3.4 0-5.733 1.825-5.733 5.17v2.882H9v3.913h3.837V27h4.604V16.965h3.823l.587-3.913h-4.41v-2.5c0-1.123.347-1.903 2.198-1.903H22V5.16z" fill-rule="evenodd"></path></g></svg></span><span class="addthis_follow_label"><span class="at4-visually-hidden"></a><a class="at300b at-follow-btn" data-svc="instagram" data-svc-id="lifeatmacys/" title="Follow on Instagram" href="http://instagram.com/lifeatmacys/" target="_blank"><span class="at-icon-wrapper" style="background-color: rgb(224, 53, 102); line-height: 32px; height: 32px; width: 32px; border-radius: 50%;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-instagram-7" class="at-icon at-icon-instagram" style="fill: rgb(255, 255, 255); width: 32px; height: 32px;"><title id="at-svg-instagram-7">Instagram</title><g><path d="M16 5c-2.987 0-3.362.013-4.535.066-1.17.054-1.97.24-2.67.512a5.392 5.392 0 0 0-1.95 1.268 5.392 5.392 0 0 0-1.267 1.95c-.272.698-.458 1.498-.512 2.67C5.013 12.637 5 13.012 5 16s.013 3.362.066 4.535c.054 1.17.24 1.97.512 2.67.28.724.657 1.337 1.268 1.95a5.392 5.392 0 0 0 1.95 1.268c.698.27 1.498.457 2.67.51 1.172.054 1.547.067 4.534.067s3.362-.013 4.535-.066c1.17-.054 1.97-.24 2.67-.51a5.392 5.392 0 0 0 1.95-1.27 5.392 5.392 0 0 0 1.268-1.95c.27-.698.457-1.498.51-2.67.054-1.172.067-1.547.067-4.534s-.013-3.362-.066-4.535c-.054-1.17-.24-1.97-.51-2.67a5.392 5.392 0 0 0-1.27-1.95 5.392 5.392 0 0 0-1.95-1.267c-.698-.272-1.498-.458-2.67-.512C19.363 5.013 18.988 5 16 5zm0 1.982c2.937 0 3.285.01 4.445.064 1.072.05 1.655.228 2.042.38.514.198.88.437 1.265.822.385.385.624.75.823 1.265.15.387.33.97.38 2.042.052 1.16.063 1.508.063 4.445 0 2.937-.01 3.285-.064 4.445-.05 1.072-.228 1.655-.38 2.042-.198.514-.437.88-.822 1.265-.385.385-.75.624-1.265.823-.387.15-.97.33-2.042.38-1.16.052-1.508.063-4.445.063-2.937 0-3.285-.01-4.445-.064-1.072-.05-1.655-.228-2.042-.38-.514-.198-.88-.437-1.265-.822a3.408 3.408 0 0 1-.823-1.265c-.15-.387-.33-.97-.38-2.042-.052-1.16-.063-1.508-.063-4.445 0-2.937.01-3.285.064-4.445.05-1.072.228-1.655.38-2.042.198-.514.437-.88.822-1.265.385-.385.75-.624 1.265-.823.387-.15.97-.33 2.042-.38 1.16-.052 1.508-.063 4.445-.063zm0 12.685a3.667 3.667 0 1 1 0-7.334 3.667 3.667 0 0 1 0 7.334zm0-9.316a5.65 5.65 0 1 0 0 11.3 5.65 5.65 0 0 0 0-11.3zm7.192-.222a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0" fill-rule="evenodd"></path></g></svg></span><span class="addthis_follow_label"><span class="at4-visually-hidden"></a><a class="at300b at-follow-btn" data-svc="twitter" data-svc-id="macysJOBS" href="http://twitter.com/intent/follow?source=followbutton&amp;variant=1.0&amp;screen_name=macysJOBS" target="_blank"><span class="at-icon-wrapper" style="background-color: rgb(29, 161, 242); line-height: 32px; height: 32px; width: 32px; border-radius: 50%;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-twitter-8" class="at-icon at-icon-twitter" style="fill: rgb(255, 255, 255); width: 32px; height: 32px;"><title id="at-svg-twitter-8">Twitter</title><g><path d="M27.996 10.116c-.81.36-1.68.602-2.592.71a4.526 4.526 0 0 0 1.984-2.496 9.037 9.037 0 0 1-2.866 1.095 4.513 4.513 0 0 0-7.69 4.116 12.81 12.81 0 0 1-9.3-4.715 4.49 4.49 0 0 0-.612 2.27 4.51 4.51 0 0 0 2.008 3.755 4.495 4.495 0 0 1-2.044-.564v.057a4.515 4.515 0 0 0 3.62 4.425 4.52 4.52 0 0 1-2.04.077 4.517 4.517 0 0 0 4.217 3.134 9.055 9.055 0 0 1-5.604 1.93A9.18 9.18 0 0 1 6 23.85a12.773 12.773 0 0 0 6.918 2.027c8.3 0 12.84-6.876 12.84-12.84 0-.195-.005-.39-.014-.583a9.172 9.172 0 0 0 2.252-2.336" fill-rule="evenodd"></path></g></svg></span><span class="addthis_follow_label"><span class="at4-visually-hidden"></a><a class="at300b at-follow-btn" data-svc="linkedin" data-svc-id="macy/" href="http://www.linkedin.com/company/macy/" target="_blank"><span class="at-icon-wrapper" style="background-color: rgb(0, 119, 181); line-height: 32px; height: 32px; width: 32px; border-radius: 50%;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-linkedin-9" class="at-icon at-icon-linkedin" style="fill: rgb(255, 255, 255); width: 32px; height: 32px;"><title id="at-svg-linkedin-9">LinkedIn</title><g><path d="M26 25.963h-4.185v-6.55c0-1.56-.027-3.57-2.175-3.57-2.18 0-2.51 1.7-2.51 3.46v6.66h-4.182V12.495h4.012v1.84h.058c.558-1.058 1.924-2.174 3.96-2.174 4.24 0 5.022 2.79 5.022 6.417v7.386zM8.23 10.655a2.426 2.426 0 0 1 0-4.855 2.427 2.427 0 0 1 0 4.855zm-2.098 1.84h4.19v13.468h-4.19V12.495z" fill-rule="evenodd"></path></g></svg></span><span class="addthis_follow_label"><span class="at4-visually-hidden"></a><a class="at300b at-follow-btn" data-svc="youtube" data-svc-id="macysjobs" href="http://www.youtube.com/c/macysjobs?sub_confirmation=1" target="_blank"><span class="at-icon-wrapper" style="background-color: rgb(205, 32, 31); line-height: 32px; height: 32px; width: 32px; border-radius: 50%;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-youtube-10" class="at-icon at-icon-youtube" style="fill: rgb(255, 255, 255); width: 32px; height: 32px;"><title id="at-svg-youtube-10">YouTube</title><g><path d="M13.73 18.974V12.57l5.945 3.212-5.944 3.192zm12.18-9.778c-.837-.908-1.775-.912-2.205-.965C20.625 8 16.007 8 16.007 8c-.01 0-4.628 0-7.708.23-.43.054-1.368.058-2.205.966-.66.692-.875 2.263-.875 2.263S5 13.303 5 15.15v1.728c0 1.845.22 3.69.22 3.69s.215 1.57.875 2.262c.837.908 1.936.88 2.426.975 1.76.175 7.482.23 7.482.15 0 .08 4.624.072 7.703-.16.43-.052 1.368-.057 2.205-.965.66-.69.875-2.262.875-2.262s.22-1.845.22-3.69v-1.73c0-1.844-.22-3.69-.22-3.69s-.215-1.57-.875-2.262z" fill-rule="evenodd"></path></g></svg></span><span class="addthis_follow_label"><span class="at4-visually-hidden"></a><div class="atclear"></div></div></div></div></div>
+</p>
+</div>
+
+        </script>
+       
+    </body>
+</html>

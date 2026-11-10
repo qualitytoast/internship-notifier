@@ -1,0 +1,3 @@
+# status 200
+User-agent: *
+Sitemap: https://www.intuitive.com/sitemapindex.xml

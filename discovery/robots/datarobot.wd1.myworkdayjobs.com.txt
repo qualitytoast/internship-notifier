@@ -1,0 +1,6 @@
+# status 200
+Sitemap: https://datarobot.wd1.myworkdayjobs.com/DataRobot_External_Careers/siteMap.xml
+
+User-agent: *
+Allow: /DataRobot_External_Careers/
+Disallow: /refreshFacet/
