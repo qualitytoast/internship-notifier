@@ -92,6 +92,12 @@ def _subs(checker: str, s: dict) -> list[tuple[str, str]]:
     return []
 
 
+def _placed(j) -> list[tuple[int, dict]]:
+    """Each multi source a job is on, with its extra: its own, and those of the copies multi dropped (twin_ids), so a
+    board that only repeats another's postings counts them and isn't taken for an empty or quiet one."""
+    return [(int(j.extra.get("source", 0) or 0), j.extra), *((t["source"], t) for t in j.extra.get("twin_boards") or [])]
+
+
 def source_counts(c: Company, o: Outcome) -> dict[str, tuple[str, int]]:
     """{source id: (what it is, job count)} for a company that reads several sources; {} for one source."""
     s = c.settings or {}
@@ -110,12 +116,12 @@ def source_counts(c: Company, o: Outcome) -> dict[str, tuple[str, int]]:
             for k, v in subs or [("", "")]:
                 add(f"{ids[i]} {k}:{v}" if k else ids[i], f"{ck.type} source {i + 1}" + (f" ({k} {v})" if k else ""))
         for j in jobs:
-            i = int(j.extra.get("source", 0) or 0)
-            if i >= len(srcs):
-                continue
-            subs = _subs(srcs[i][1].type, srcs[i][2])
-            k = subs[0][0] if subs else ""
-            add(f"{ids[i]} {k}:{j.extra.get(k)}" if k else ids[i], "", 1)
+            for i, x in _placed(j):
+                if i >= len(srcs):
+                    continue
+                subs = _subs(srcs[i][1].type, srcs[i][2])
+                k = subs[0][0] if subs else ""
+                add(f"{ids[i]} {k}:{x.get(k)}" if k else ids[i], "", 1)
     else:
         subs = _subs(c.checker, s)
         for k, v in subs:
@@ -267,12 +273,12 @@ def boards(c: Company, o: Outcome) -> dict[str, tuple[str, list]]:
             for k, v in _subs(ck.type, st) or [("", "")]:
                 out[f"{ids[i]} {k}:{v}" if k else ids[i]] = (f"{ck.type} source {i + 1}" + (f" ({k} {v})" if k else ""), [])
         for j in jobs:
-            i = int(j.extra.get("source", 0) or 0)
-            if i < len(srcs):
-                subs = _subs(srcs[i][1].type, srcs[i][2])
-                k = subs[0][0] if subs else ""
-                sid = f"{ids[i]} {k}:{j.extra.get(k)}" if k else ids[i]
-                out.setdefault(sid, (sid, []))[1].append(j)
+            for i, x in _placed(j):
+                if i < len(srcs):
+                    subs = _subs(srcs[i][1].type, srcs[i][2])
+                    k = subs[0][0] if subs else ""
+                    sid = f"{ids[i]} {k}:{x.get(k)}" if k else ids[i]
+                    out.setdefault(sid, (sid, []))[1].append(j)
         return out
     subs = _subs(c.checker, s)
     if not subs:

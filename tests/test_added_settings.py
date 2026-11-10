@@ -108,3 +108,20 @@ def test_multi_twin_ids_adds_a_copy_seen_later_to_the_stored_job(memdb):
     memdb.upsert_jobs("x", [later], iso())
     memdb.upsert_jobs("x", [later], iso())
     assert json.loads(memdb.job("x", "8039350003")["alt_ids"]) == ["R1", "a214dd6c"]
+
+
+def test_multi_twin_ids_counts_a_board_that_only_repeats_another_as_its_own():
+    from internwatch import liveness
+    from internwatch.health import Outcome
+    base = {k: v for k, v in cassette("drivewealth").meta["settings"].items() if k != "twin_ids"}
+
+    def boards(settings):
+        c = Company(key="drivewealth", name="DriveWealth", category="", careers_url=[], checker="multi", settings=settings)
+        o = Outcome(company=c, jobs=replay("drivewealth", settings=settings))
+        return (sorted(liveness.source_counts(c, o).values()),
+                sorted((what, len(jobs)) for what, jobs in liveness.boards(c, o).values()))
+    # as before: every Ashby posting is a copy of a Greenhouse one, so the Ashby board looked empty (quiet in 45 days)
+    assert boards(base) == ([("ashby source 2", 0), ("greenhouse source 1", 27)],
+                            [("ashby source 2", 0), ("greenhouse source 1", 27)])
+    assert boards({**base, "twin_ids": True}) == ([("ashby source 2", 27), ("greenhouse source 1", 27)],
+                                                  [("ashby source 2", 27), ("greenhouse source 1", 27)])

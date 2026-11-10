@@ -11,7 +11,8 @@ settings:
                  "Technical Sales Specialist" is the US role, not Workday's "Technical Sales Specialist (Canada)")
   twin_ids: true   a dropped job's id and requisition ids are kept with the job that stays (its alt_ids), so a
                  Simplify row or list that links the dropped copy still finds it (DriveWealth: the same internships
-                 on Greenhouse and on Ashby, where Simplify titles them differently)
+                 on Greenhouse and on Ashby, where Simplify titles them differently); the liveness rules count the
+                 job on the dropped copy's board too, so a board that only repeats another's isn't empty or quiet
 Ids from the first source are kept as they are; later sources' ids are prefixed with "<checker>:" so they can
 never collide. If one source fails, the others are still read and their new postings emailed, and the check
 is reported as degraded (a health alert after repeated failures); if every source fails, the check fails.
@@ -51,13 +52,18 @@ def _source_ids(sources) -> list[str]:
     return out
 
 
-def _twin(kept, dropped) -> None:
-    """twin_ids: the dropped copy's ids, kept with the job that stays (DB.upsert_jobs adds them to its alt_ids)."""
+def _twin(kept, dropped, i: int) -> None:
+    """twin_ids: the dropped copy's ids, kept with the job that stays (DB.upsert_jobs adds them to its alt_ids), and
+    the board it was on (the liveness rules count the job there too)."""
     have = {kept.id, *map(str, kept.extra.get("alt_ids") or []), *kept.extra.get("twin_ids", [])}
     for x in [dropped.id, *map(str, dropped.extra.get("alt_ids") or [])]:
         if x not in have:
             kept.extra.setdefault("twin_ids", []).append(x)
             have.add(x)
+    where = {"source": i, **{k: dropped.extra[k] for k in ("board", "site", "list") if k in dropped.extra}}
+    own = {"source": kept.extra.get("source", 0), **{k: kept.extra[k] for k in ("board", "site", "list") if k in kept.extra}}
+    if where != own and where not in kept.extra.get("twin_boards", []):
+        kept.extra.setdefault("twin_boards", []).append(where)
 
 
 @contextmanager
@@ -132,12 +138,12 @@ class Multi(Checker):
                 keys = {j.id, *map(str, j.extra.get("alt_ids") or [])}
                 if i and s.get("dedupe") and keys & seen:
                     if s.get("twin_ids"):
-                        _twin(by_key[min(keys & seen)], j)
+                        _twin(by_key[min(keys & seen)], j, i)
                     continue
                 bare = _bare_title(j.title)
                 if i and s.get("dedupe_titles") and bare in titles:
                     if s.get("twin_ids"):
-                        _twin(by_title[bare], j)
+                        _twin(by_title[bare], j, i)
                     continue
                 seen |= keys
                 titles.add(bare)
