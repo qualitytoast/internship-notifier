@@ -1,6 +1,6 @@
 """Stage 1 discovery for the companies added in November 2026 (discovery/candidates/candidates.yaml).
 
-    INTERNWATCH_HOME=<scratch home> .venv/bin/python -I discovery/stage1.py pages [keys]
+    INTERNWATCH_HOME=data/stage1/home .venv/bin/python -I discovery/stage1.py pages [keys]
 
 Everything goes through the project's own HTTP client, so robots.txt is checked before every request and each host
 gets at least 1 s between requests. INTERNWATCH_HOME must point at a scratch copy of config/ and data/ (never the real

@@ -1,8 +1,26 @@
 # Stage 1 progress (companies added in November 2026)
 
 Plan: /Users/nathanhung/.claude/plans/pasted-content-id-2f7d-add-the-reactive-matsumoto.md. Stage 1 is discovery only:
-nothing in config/ or src/ changes. Tools: `discovery/stage1.py` (pages, lists, homes, hints, probe, read), run with
-`INTERNWATCH_HOME=<scratch home>` (a copy of config/ and data/; never the repo).
+nothing in config/ or src/ changes. Tools: `discovery/stage1.py` (pages, lists, homes, hints, probe, read, sites,
+coverage, clashes, rematch, backup, pagecount), run with `INTERNWATCH_HOME=data/stage1/home` (a copy of config/ and
+data/; never the repo).
+
+## Working files: data/stage1/ (gitignored, local only)
+Moved from the session's temporary folder on 2026-11-09 (a restart wipes /private/tmp); the copy was checked file by
+file with SHA-256 (1,141 files identical). Work from here:
+- `home/`: the scratch home the reads ran in (config copy, database copy, robots.txt cache, log).
+  `INTERNWATCH_HOME=data/stage1/home`; raw files then default to `data/stage1/raw/`.
+- `home_moves/`: the scratch home of the backup-check measurement (`scripts/measure_backup.py`).
+- `raw/jobs/<entry>.json.gz`: every job each Stage 1 read returned (374 reads): id, title, location, url, posted,
+  department, alt ids. These are the jobs, not HTTP recordings; cassettes are recorded in Stage 2 with each company's
+  final settings, as the plan requires.
+- `raw/lists/`: the 11 third-party lists and Simplify's listings, downloaded once on 2026-11-09.
+- `scripts/`: draft_settings.py, measure_backup.py. `base_list.tsv`, `draft.txt`, `facets.txt`, `*.log`: working notes
+  and the logs of the page and read runs. `underclassmen.md`: the freshman/sophomore research (also committed as
+  `underclassmen_research.md`). `notes/`: the Simplify name lists the candidate list was checked against.
+- `prior-golden-nov7/`: the Nov 7 old-vs-new scripts (golden_replay.py, golden_filters.py) and the old code they
+  compared against, which Batch 0 rebuilds into tools/prove/. Their 180 MB of outputs were left behind (regenerated
+  by the scripts).
 
 ## Done (2026-11-09)
 - `candidates.yaml`: 241 entries (Persona and Persona AI both), keys checked against the 198 (no clashes, no
@@ -12,7 +30,7 @@ nothing in config/ or src/ changes. Tools: `discovery/stage1.py` (pages, lists, 
 - `simplify_evidence.json`, `lists.json` (the 11 third-party lists, downloaded once), `systems.json`,
   `draft_systems.json`: every job system each company is linked to, by source.
 - `reads.yaml`: the checker + settings of each candidate's first full read (246 reads for 231 companies);
-  `read_results.json`: jobs, students, matches, seconds, requests per read (raw jobs in the scratch folder).
+  `read_results.json`: jobs, students, matches, seconds, requests per read (raw jobs in data/stage1/raw/jobs).
 
 ## Special cases found so far (no read yet)
 | Company | What it runs | Next |
@@ -44,7 +62,7 @@ nothing in config/ or src/ changes. Tools: `discovery/stage1.py` (pages, lists, 
   anchored `match_urls: ["//ms.wd5.myworkdayjobs.com/"]` instead.
 - `simplify_coverage.json`, `rematch.json`, `name_clashes.json`, `workday_sites.json`, `list_check.json`,
   `backup_probe.json`, `backup_measure.json` (32 refused pages: ~54 requests, ~30 s a morning), `ripplematch.json`.
-- Freshman/sophomore research: scratch underclassmen.md (18 companies; keywords for BofA, Hartford, Citi, JPMC).
+- Freshman/sophomore research: underclassmen_research.md (18 companies; keywords for BofA, Hartford, Citi, JPMC).
 
 ## Page counts (pagecounts.json, first pass)
 - Workday, Oracle, Eightfold, Jibe, Phenom, SmartRecruiters: the system's own reported total (what the site shows).
@@ -85,8 +103,17 @@ Medium (full read is fine, ≤4 min): Applied Materials, HPE, BofA, HP, KLA, Mor
 AT&T, Home Depot (932 on the main site), Nike; Oracle sites are cheap (JPMorgan 7,065 jobs in 36 requests).
 
 ## Next
-1. Read the special cases that existing adapters can read (Costco, UHG, Tyler, Precisely).
-2. Per company: Workday robots.txt sites (from the reads' cached robots.txt), lists check with candidate settings,
-   page systems against config, Simplify coverage against each read, re-match dry run, name-clash counts.
-3. Page counts with filters off, explained differences; backup checks for the refused careers pages.
-4. Freshman/sophomore programs; run-time model; the Stage 1 report.
+Done: the special cases existing adapters read (Costco partly, UHG, Tyler, Precisely); Workday robots.txt sites;
+lists check; page systems; Simplify coverage; re-match dry run; name clashes; backup checks measured once.
+1. Very large sites: re-read Walmart, Target, Lowe's and BofA with a scratch-only relaxed tolerance for postings
+   without a link; slices for CVS, Lowe's (keyword) and Costco (category); Disney's Phenom total.
+2. Page counts with filters off: Greenhouse boards that redirect to the company's own page; explain Citi, Micron,
+   Arista, HPE.
+3. Companies existing code can't read: what reading each would take and what it gives (NetApp, Paramount, Qorvo,
+   the Oleeo campus sites, Best Buy, ADP, Sandisk; Costco and Lowe's if still unread). Also Dusty Robotics, Precisely
+   international, Fortinet CX_1 against CX_2001, Persona.
+4. Per company decisions: Workday robots.txt sites, list-linked systems, mirrors, learn_ids, anchored match_urls,
+   RippleMatch, subsidiaries; backup checks per company with requests and seconds, and why any is skipped.
+5. Day-one alerts by kind; "Now watching" roles per batch; run-time model (8/12/16 workers, full read against
+   slice, overlap); database and cassette growth; freshman/sophomore keywords.
+6. The Stage 1 report (discovery/candidates/REPORT.md), commit and push, stop.
