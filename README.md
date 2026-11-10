@@ -193,23 +193,28 @@ Rules for changing things: CLAUDE.md.
 ## Companies (config/companies.yaml)
 - **Generated:** `discovery/build_config.py` builds it from `discovery/results/*.json` plus its ALIASES,
   OVERRIDES and PROGRAM_KEYWORDS. Change those and rerun it. A company added with `internwatch add` exists only
-  in companies.yaml, so a rerun drops it unless it is also given a result file.
+  in companies.yaml, so a rerun drops it unless it is also given a result file. A test requires a rerun to
+  reproduce companies.yaml byte for byte.
 - **Entry fields:** key, name, category (`quant` makes generic titles count as quant), careers_url, checker +
   settings, locations, aliases (for matching SimplifyJobs rows), status: blocked + blocked_reason + fallback,
   big (newest-first quick scans each poll, a full scan daily), timeout_minutes, role_keywords, verified
-  {page_total, explained, feed}.
+  {page_total, explained, feed}, round: added (see Internals).
 - **Verified:** the checker's count equals the live careers page with filters off (±3 jobs or 2%, or the
   difference is explained), and a test fixture is recorded.
 - **Adapters** (`src/internwatch/adapters/`):
   - greenhouse {board | boards, missing_ok, dedupe_requisitions: true | across_boards (only a later board's twins
     are skipped)}, lever {site}, ashby {board, mode: hosted, watch_ids, learn_ids}
-  - workday {host, tenant, site | sites (prefixes ids with the site), quick_queries}
+  - workday {host, tenant, site | sites (prefixes ids with the site), quick_queries, pack (a site that only store
+    locations split below the 2,000-job cap is read with many locations per search), unlinked_ok (postings listed
+    without a link that are skipped quietly)}
   - eightfold {host, domain, api: pcsx | v2, params, quick_queries, count_tolerance}, oracle {host, site, job_url,
     watch_ids, learn_ids}
   - watch_ids: postings read one by one because the company's own list leaves them out while they still take
     applications (Aurora's and Deepgram's unlisted Ashby postings, Dell's delisted Oracle requisitions); a closed
     one is dropped. learn_ids: also read the ids of the company's postings in the latest SimplifyJobs download.
-  - smartrecruiters {company}, workable {account}, icims {portal}, jibe {host}, phenom {base_url, ref_num},
+  - any adapter's settings: anchor_host (its host matches SimplifyJobs and list rows only at the start of a link:
+    Morgan Stanley's ms.wd5… is inside williams.wd5…)
+  - smartrecruiters {company, ignore_search_total}, workable {account}, icims {portal}, jibe {host}, phenom {base_url, ref_num},
     avature {list_url, page_size}, applicantpro {subdomain, domain_id}, gem, rippling, jobvite, pinpoint,
     recruiterbox, ripplematch
   - multi {sources, dedupe, dedupe_titles}: later sources' ids are prefixed with `<checker>:`; dedupe_titles skips
@@ -245,6 +250,12 @@ Rules for changing things: CLAUDE.md.
     check a time budget (8 min; the whole run 25 min).
   - Each company's results are saved in one DB transaction, so a Ctrl-C can't half-save them.
   - Also handles seeding, the cross-check, emails and the heartbeat.
+  - **Rounds:** companies with `round: added` (added in November 2026) are checked after the others' whole daily
+    run: checks, retry, cross-check, page scan, blocked checks and watched boards first run for the original
+    companies exactly as before (each round sees the config as `Config.scoped` gives it: its companies and their
+    entries in settings.liveness), then the same for the added ones with schedule.rounds.added (workers, time limit,
+    budgets). Only the emails wait for the last round. Alerts are recorded round by round, so an original company's
+    alert keeps the number it had before rounds existed.
 - **db.py:** SQLite (WAL) with tables jobs, company_state, checks, emails, runs, kv, alerts and simplify_rows. jobs
   keeps every job ever seen: first/last seen, match decision, notified_at, baseline, removed_at, repost_of,
   alt_ids.
@@ -258,6 +269,10 @@ Rules for changing things: CLAUDE.md.
     the early-season roles they leave out. New rows go pending → found / filtered / missed / abroad, within 3 minutes;
     a broken or hanging list raises an alert and costs no email.
   - For blocked or failing companies, the rows are stored as "via Simplify" jobs and emailed.
+  - An added company's round gives it the rows with no company that are its (`CrossCheck.adopt`): all its stored
+    rows at its go-live, its new ones each morning. A row first seen before its go-live, or already listed in an
+    email as an untracked company's role (digest_at, set when an email lists one), is never emailed again by any
+    path, and its role is left out of the company's "Now watching" email.
   - Matching uses job ids or requisition ids in the URL, then normalized titles of current postings (open, or
     closed within 30 days; a different year never matches), preferring one in a compatible place.
 - **Removals and scans:** a removal is recorded only after a healthy full scan. Big sites' quick scans stop
@@ -296,6 +311,8 @@ Rules for changing things: CLAUDE.md.
 - `src/internwatch/`: cli, runner, filters, locations, health, alerts, liveness, moves, watch, crosscheck, emails, mailer, db,
   http, detect, report, plus `adapters/` and `checkers/`
 - `tests/`
+- `tools/prove/`: golden.py (old against new: recorded fixtures, filter verdicts, SimplifyJobs and list matching)
+  and morning.py (a live daily run recorded once, replayed through both versions on database copies and compared)
 - `deploy/`
 - `discovery/`: notes, results, samples, build_config.py
 - `data/`: db, outbox, logs, robots cache (gitignored)
