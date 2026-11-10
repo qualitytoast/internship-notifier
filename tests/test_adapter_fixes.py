@@ -193,7 +193,7 @@ def ea(**extra) -> dict:
 def test_avature_ea_total_regex_reads_the_portal_total():
     ctx = FetchContext()
     jobs = replay("electronic-arts", settings=ea(total_regex=EA_TOTAL), ctx=ctx)
-    assert len(jobs) == cassette("electronic-arts").meta["count"] == ctx.reported_total == 364
+    assert len(jobs) == cassette("electronic-arts").meta["count"] == ctx.reported_total
     assert ctx.degraded is None
 
 
@@ -204,7 +204,8 @@ def test_avature_short_walk_is_reported_and_its_jobs_kept():
             e["text"] = e["text"][:i] + e["text"][e["text"].find('<article class="article article--result', i + 10):]
     ctx = FetchContext()
     jobs = replay("electronic-arts", short_page, settings=ea(total_regex=EA_TOTAL), ctx=ctx)
-    assert len(jobs) == 59 and "collected 59 jobs but the source reports 364" in ctx.degraded
+    total = cassette("electronic-arts").meta["count"]
+    assert len(jobs) == 59 and f"collected 59 jobs but the source reports {total}" in ctx.degraded
     with pytest.raises(CheckerError):  # no context: fails as before
         replay("electronic-arts", short_page, settings=ea(total_regex=EA_TOTAL))
 
@@ -212,83 +213,86 @@ def test_avature_short_walk_is_reported_and_its_jobs_kept():
 BLOOMBERG_LIST = "https://bloomberg.avature.net/careers/SearchJobs/"
 BY_TITLE = {"jobSort": "schemaField_3_270_3", "jobSortDirection": "ASC"}
 CARD = re.compile(r'<article class="article article--result".*?</article>', re.S)
+JOB_ID = re.compile(r"/JobDetail/[^/]+/(\d+)")
 
 
 def bloomberg(**extra) -> dict:
-    return {**cassette("bloomberg").meta["settings"], **extra}
+    return {k: v for k, v in {**cassette("bloomberg").meta["settings"], **extra}.items() if v is not None}
 
 
-def shuffled(hide: int):
-    """Bloomberg's newest-first order, Nov 2026: a card of one page shows again on the next page, and the card it
-    pushed out is on no page. Returns (edit, hidden ids)."""
-    pages = {e["url"]: e for e in cassette("bloomberg").exchanges if "SearchJobs" in e["url"]}
-    url = lambda o: canonical_url(BLOOMBERG_LIST, {"jobOffset": o} if o else None)
-    offsets = [12 * i for i in range(1, hide + 1)]
-    hidden = [re.search(r"/JobDetail/[^/]+/(\d+)", CARD.findall(pages[url(o)]["text"])[-1]).group(1) for o in offsets]
+def walks() -> tuple[list[dict], list[dict]]:
+    """The recorded read (Nov 9, 2026): Bloomberg's newest-first walk showed 330 cards but only 310 jobs (20 cards
+    showed twice and 20 jobs on no page), so the reader walked again by title (second_order) and found all 330.
+    Returns (the newest-first pages, the title-sorted pages)."""
+    ex = cassette("bloomberg").exchanges
+    return [e for e in ex if "jobSort" not in e["url"]], [e for e in ex if "jobSort" in e["url"]]
 
-    def edit(e):
-        for o in offsets:
-            if e["url"] == url(o):
-                repeat = CARD.findall(pages[url(o - 12)]["text"])[-2]  # still on the page before: never hidden
-                cards = CARD.findall(e["text"])
-                e["text"] = e["text"].replace(cards[-1], "").replace(cards[0], repeat + cards[0], 1)
-    return edit, hidden
+
+def ids(exchanges) -> set[str]:
+    return {JOB_ID.search(c).group(1) for e in exchanges for c in CARD.findall(e.get("text") or "")}
 
 
 def by_title(skip=()) -> list[dict]:
-    """The same jobs sorted by title, 12 a page, as the portal's Job Title sort serves them."""
-    cards = [c for e in cassette("bloomberg").exchanges if "SearchJobs" in e["url"] for c in CARD.findall(e["text"])
-             if re.search(r"/JobDetail/[^/]+/(\d+)", c).group(1) not in skip]
-    cards.sort(key=lambda c: re.search(r'<h3[^>]*>\s*<a[^>]*>(.*?)</a>', c, re.S).group(1).strip().lower())
+    """The title-sorted walk without the jobs in `skip`, 12 a page, as the portal's Job Title sort would serve it."""
+    cards = [c for e in walks()[1] for c in CARD.findall(e["text"]) if JOB_ID.search(c).group(1) not in skip]
     return [{"method": "GET", "url": canonical_url(BLOOMBERG_LIST, {**BY_TITLE, **({"jobOffset": i} if i else {})}),
              "body": "", "status": 200, "headers": {"content-type": "text/html;charset=UTF-8"},
              "text": "".join(cards[i:i + 12])} for i in range(0, len(cards) + 1, 12)]
 
 
-def bloomberg_replay(edit=None, extra=(), settings=None, ctx=None):
-    cas = cassette("bloomberg")
-    ex = copy.deepcopy(cas.exchanges)
-    for e in ex:
-        if edit:
-            edit(e)
-    return get_checker("avature").fetch(Http(replay=Cassette(exchanges=ex + list(extra))), settings, ctx)
+def bloomberg_replay(exchanges, settings, ctx=None):
+    return get_checker("avature").fetch(Http(replay=Cassette(exchanges=copy.deepcopy(exchanges))), settings, ctx)
 
 
 def test_avature_second_order_finds_the_jobs_a_shuffled_walk_hid():
-    edit, hidden = shuffled(9)
+    newest, titled = walks()
+    hidden, total = ids(titled) - ids(newest), cassette("bloomberg").meta["count"]
+    assert len(hidden) == 20 and len(ids(newest)) == total - 20
     ctx = FetchContext()
-    old = bloomberg_replay(edit, settings=bloomberg(), ctx=ctx)  # no second order: as before, 9 short and reported
-    assert len(old) == 328 and not set(hidden) & {j.id for j in old}
-    assert "collected 328 jobs but the source reports 337" in ctx.degraded
+    old = bloomberg_replay(newest, bloomberg(second_order=None), ctx)  # without the setting: short, and reported
+    assert len(old) == total - 20 and not hidden & {j.id for j in old}
+    assert f"collected {total - 20} jobs but the source reports {total}" in ctx.degraded
     ctx = FetchContext()
-    jobs = bloomberg_replay(edit, by_title(), bloomberg(second_order="jobSort=schemaField_3_270_3&jobSortDirection=ASC"), ctx)
-    assert len(jobs) == len({j.id for j in jobs}) == 337 and set(hidden) <= {j.id for j in jobs}
+    jobs = bloomberg_replay(newest + titled, bloomberg(), ctx)
+    assert len(jobs) == len({j.id for j in jobs}) == total and hidden <= {j.id for j in jobs}
     assert ctx.degraded is None and not ctx.partial
-    found = {j.id: j for j in jobs}
-    whole = {j.id: j for j in bloomberg_replay(settings=bloomberg())}
-    assert all((found[i].title, found[i].location, found[i].url) == (whole[i].title, whole[i].location, whole[i].url)
-               for i in whole)  # the same cards, so no stored job looks edited
+    first = {j.id: j for j in old}
+    assert all((j.title, j.location, j.url) == (first[j.id].title, first[j.id].location, first[j.id].url)
+               for j in jobs if j.id in first)  # the same cards, so no stored job looks edited
 
 
 def test_avature_complete_walk_never_takes_the_second_order():
-    # no title-sorted page is recorded: a second walk would fail on its first request
-    jobs = bloomberg_replay(settings=bloomberg(second_order="jobSort=schemaField_3_270_3&jobSortDirection=ASC"),
-                            ctx=FetchContext())
-    assert [j.id for j in jobs] == [j.id for j in bloomberg_replay(settings=bloomberg(), ctx=FetchContext())]
+    # every job once on the newest-first pages (the title-sorted cards in their place), and no title-sorted page
+    # recorded: a second walk would fail on its first request
+    newest, titled = walks()
+    cards = [c for e in titled for c in CARD.findall(e["text"])]
+    complete, n = [], 0
+    for e in newest:
+        page = CARD.findall(e.get("text") or "")
+        if not page:  # not a list page
+            complete.append(e)
+            continue
+        start, end = e["text"].find(page[0]), e["text"].rfind(page[-1]) + len(page[-1])
+        complete.append({**e, "text": e["text"][:start] + "".join(cards[n:n + len(page)]) + e["text"][end:]})
+        n += len(page)
+    ctx = FetchContext()
+    jobs = bloomberg_replay(complete, bloomberg(), ctx)
+    assert len(jobs) == cassette("bloomberg").meta["count"] and ctx.degraded is None
 
 
 def test_avature_still_short_after_both_orders_is_reported_and_jobs_kept():
-    edit, hidden = shuffled(9)
+    newest, titled = walks()
+    gone = sorted(ids(titled) - ids(newest))[:6]
     ctx = FetchContext()
-    jobs = bloomberg_replay(edit, by_title(skip=hidden[:6]),
-                            bloomberg(second_order="jobSort=schemaField_3_270_3&jobSortDirection=ASC"), ctx)
-    assert len(jobs) == 331 and "collected 331 jobs but the source reports 337" in ctx.degraded
+    jobs = bloomberg_replay(newest + by_title(skip=gone), bloomberg(), ctx)
+    total = cassette("bloomberg").meta["count"]
+    assert len(jobs) == total - 6 and f"collected {total - 6} jobs but the source reports {total}" in ctx.degraded
 
 
 def test_avature_total_missing_from_the_page_is_reported_and_jobs_kept():
     ctx = FetchContext()
     jobs = replay("electronic-arts", settings=ea(total_regex=r'data-total="(\d+)"'), ctx=ctx)
-    assert len(jobs) == 364 and "total not found on the page" in ctx.degraded
+    assert len(jobs) == cassette("electronic-arts").meta["count"] and "total not found on the page" in ctx.degraded
     with pytest.raises(CheckerError):
         replay("electronic-arts", settings=ea(total_regex=r'data-total="(\d+)"'))
 

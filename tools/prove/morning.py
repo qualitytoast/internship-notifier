@@ -109,11 +109,19 @@ def replay(version: Path, rec: Path, out: Path, edits: str = "") -> None:
     import importlib
     import pkgutil
     for m in pkgutil.walk_packages(internwatch.__path__, "internwatch."):  # modules imported later get the clock too
-        importlib.import_module(m.name)
+        if not m.name.endswith("__main__"):  # that one runs the command line
+            importlib.import_module(m.name)
     morning = json.load(gzip.open(rec / "morning.json.gz", "rt"))
     edit = dict(e.split(":", 1) if ":" in e else (e, "") for e in edits.split(",") if e)
     from datetime import timedelta
     frozen = parse_iso(morning["started"]) + timedelta(days=float(edit.get("day") or 0))
+    import internwatch.db as dbmod
+
+    class Frozen(dbmod.datetime):  # utcnow itself, wherever a reference to it was kept (moves.Ctx's default)
+        @classmethod
+        def now(cls, tz=None):
+            return frozen.astimezone(tz) if tz else frozen.replace(tzinfo=None)
+    dbmod.datetime = Frozen
     for mod in list(sys.modules.values()):  # the clock of every module that took utcnow from internwatch.db
         if getattr(mod, "__name__", "").startswith("internwatch") and hasattr(mod, "utcnow"):
             mod.utcnow = lambda: frozen

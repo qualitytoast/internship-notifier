@@ -51,3 +51,11 @@ def test_discovery_rebuilds_companies_yaml_exactly():
     text, missing = build_config.build()
     assert missing == []
     assert text == (REPO / "config" / "companies.yaml").read_text()
+
+
+@pytest.mark.parametrize("c", CFG.active, ids=[c.key for c in CFG.active])
+def test_fixture_was_recorded_with_the_current_settings(c):
+    """A fixture recorded with older settings replays them, so the tests would no longer read what a run reads."""
+    from internwatch.http import Cassette
+    meta = Cassette.load(fixture_path(CFG, c.key)).meta
+    assert (meta.get("checker"), meta.get("settings")) == (c.checker, c.settings), f"run `internwatch record {c.key}`"
