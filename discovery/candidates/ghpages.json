@@ -1,0 +1,396 @@
+{
+ "altruist": {
+  "read": 74,
+  "pages": [
+   {
+    "board": "altruist",
+    "status": 200,
+    "final_url": "https://altruist.com/careers/#open-roles",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "amperity": {
+  "read": 15,
+  "pages": [
+   {
+    "board": "amperity",
+    "status": 200,
+    "final_url": "https://amperity.com/careers#openpositions",
+    "shown": 15
+   }
+  ],
+  "shown": 15
+ },
+ "apptronik": {
+  "read": 89,
+  "pages": [
+   {
+    "board": "apptronik",
+    "status": 200,
+    "final_url": "https://apptronik.com/careers/job-listings",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "asana": {
+  "read": 110,
+  "pages": [
+   {
+    "board": "asana",
+    "status": 200,
+    "final_url": "https://asana.com/jobs",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "betterment": {
+  "read": 25,
+  "pages": [
+   {
+    "board": "betterment",
+    "status": 200,
+    "final_url": "https://www.betterment.com/careers/current-openings",
+    "shown": 0
+   },
+   {
+    "board": "bettermentcampusrecruiting",
+    "status": 200,
+    "final_url": "https://job-boards.greenhouse.io/bettermentcampusrecruiting",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "bill": {
+  "read": 40,
+  "pages": [
+   {
+    "board": "billcom",
+    "status": 200,
+    "final_url": "https://www.bill.com/jobs",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "bugcrowd": {
+  "read": 13,
+  "pages": [
+   {
+    "board": "bugcrowd",
+    "status": 200,
+    "final_url": "https://www.bugcrowd.com/about/careers/",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "chime": {
+  "read": 67,
+  "pages": [
+   {
+    "board": "chime",
+    "status": 403,
+    "final_url": "https://careers.chime.com/jobs/",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "descript": {
+  "read": 10,
+  "pages": [
+   {
+    "board": "descript",
+    "status": 200,
+    "final_url": "https://www.descript.com/careers#open-position",
+    "shown": 10
+   }
+  ],
+  "shown": 10
+ },
+ "digitalocean": {
+  "read": 152,
+  "pages": [
+   {
+    "board": "digitalocean98",
+    "status": 200,
+    "final_url": "https://www.digitalocean.com/careers",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "domino-data-lab": {
+  "read": 18,
+  "pages": [
+   {
+    "board": "dominodatalab",
+    "status": 200,
+    "final_url": "https://domino.ai/careers#Open-Positions",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "drivewealth": {
+  "read": 27,
+  "pages": [
+   {
+    "board": "drivewealth",
+    "error": "Exceeded maximum allowed redirects."
+   }
+  ],
+  "shown": 0
+ },
+ "fastly": {
+  "read": 55,
+  "pages": [
+   {
+    "board": "fastly",
+    "status": 200,
+    "final_url": "https://www.fastly.com/about/careers/current-openings",
+    "shown": 54
+   }
+  ],
+  "shown": 54
+ },
+ "gemini": {
+  "read": 27,
+  "pages": [
+   {
+    "board": "gemini",
+    "status": 200,
+    "final_url": "https://www.gemini.com/careers",
+    "shown": 27
+   }
+  ],
+  "shown": 27
+ },
+ "godaddy": {
+  "read": 30,
+  "pages": [
+   {
+    "board": "godaddy",
+    "status": 200,
+    "final_url": "https://careers.godaddy/jobs/search",
+    "shown": 0
+   },
+   {
+    "board": "eventsandinterns",
+    "status": 200,
+    "final_url": "https://job-boards.greenhouse.io/eventsandinterns",
+    "shown": 1
+   }
+  ],
+  "shown": 1
+ },
+ "hyperproof": {
+  "read": 4,
+  "pages": [
+   {
+    "board": "hyperproof",
+    "status": 200,
+    "final_url": "https://hyperproof.io/working-at-hyperproof/#job-openings",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "ixl-learning": {
+  "read": 115,
+  "pages": [
+   {
+    "board": "ixllearning",
+    "status": 200,
+    "final_url": "https://www.ixl.com/company/careers",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "lucid-motors": {
+  "read": 454,
+  "pages": [
+   {
+    "board": "lucidmotors",
+    "status": 200,
+    "final_url": "https://lucidmotors.com/careers/search",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "nasuni": {
+  "read": 29,
+  "pages": [
+   {
+    "board": "nasuni",
+    "status": 200,
+    "final_url": "https://www.nasuni.com/about-us/careers/open-positions/",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "neuralink": {
+  "read": 80,
+  "pages": [
+   {
+    "board": "neuralink",
+    "status": 200,
+    "final_url": "https://neuralink.com/careers/",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "nextdoor": {
+  "read": 20,
+  "pages": [
+   {
+    "board": "nextdoor",
+    "status": 200,
+    "final_url": "https://about.nextdoor.com/careers-list/",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "precisely": {
+  "read": 55,
+  "pages": [
+   {
+    "board": "preciselyusjobs",
+    "status": 200,
+    "final_url": "https://www.precisely.com/careers-and-culture/us-jobs/",
+    "shown": 0
+   },
+   {
+    "board": "preciselyinternationaljobs",
+    "status": 200,
+    "final_url": "https://www.precisely.com/careers-and-culture/international-jobs/",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "prizepicks": {
+  "read": 31,
+  "pages": [
+   {
+    "board": "prizepicks",
+    "status": 200,
+    "final_url": "https://www.prizepicks.com/jobs",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "redwood-materials": {
+  "read": 131,
+  "pages": [
+   {
+    "board": "redwoodmaterials",
+    "status": 200,
+    "final_url": "https://www.redwoodmaterials.com/join/",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "ridgeline": {
+  "read": 29,
+  "pages": [
+   {
+    "board": "ridgeline",
+    "status": 200,
+    "final_url": "https://ridgeline.ai/company/careers",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "ripple": {
+  "read": 117,
+  "pages": [
+   {
+    "board": "ripple",
+    "status": 200,
+    "final_url": "https://ripple.com/careers/all-jobs/",
+    "shown": 78
+   }
+  ],
+  "shown": 78
+ },
+ "roku": {
+  "read": 93,
+  "pages": [
+   {
+    "board": "roku",
+    "status": 200,
+    "final_url": "https://www.weareroku.com/jobs/search/",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "rubrik": {
+  "read": 151,
+  "pages": [
+   {
+    "board": "rubrik",
+    "status": 403,
+    "final_url": "https://www.rubrik.com/company/careers",
+    "shown": 0
+   }
+  ],
+  "shown": 0
+ },
+ "sofi": {
+  "read": 48,
+  "pages": [
+   {
+    "board": "sofi",
+    "status": 200,
+    "final_url": "https://www.sofi.com/careers/",
+    "shown": 48
+   }
+  ],
+  "shown": 48
+ },
+ "udemy": {
+  "read": 4,
+  "pages": [
+   {
+    "board": "udemy",
+    "status": 403,
+    "final_url": "https://about.udemy.com/careers/",
+    "shown": 0
+   },
+   {
+    "board": "udemybedi",
+    "status": 200,
+    "final_url": "https://job-boards.greenhouse.io/udemybedi",
+    "shown": 1
+   }
+  ],
+  "shown": 1
+ },
+ "zoominfo": {
+  "read": 91,
+  "pages": [
+   {
+    "board": "zoominfo",
+    "status": 200,
+    "final_url": "https://www.zoominfo.com/careers",
+    "shown": 91
+   }
+  ],
+  "shown": 91
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "fox~tubi": {
+  "checker": "greenhouse",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 24,
+  "students": 0,
+  "matched": 0,
+  "seconds": 1.1,
+  "requests": 2,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-10T01:42:10Z"
+ }
+}

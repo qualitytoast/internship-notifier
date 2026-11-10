@@ -126,6 +126,38 @@ extra on CX_1); read CX_2001 (Simplify links it), CX_1 becomes a mirror alias.
   locations whose counts add to 1,900 returned 1,399 jobs), so packing locations into searches of under 1,900 cuts
   CVS from about 5,300 requests to about 1,000-1,300. Measured in read_results_big.json (STAGE1_PACK=1, scratch only).
 
+## Copies, side sites and subsidiaries (measured by job overlap)
+- Copies to record as known, not read: Fortinet CX_1, BNY CX_1 and bny-careers, JPMorgan CX_2001, Hilton CX_1009,
+  Macy's CX_1001 (a subset), TI edbz CX_1, Applied Materials' Eightfold front, HPE WFMathpe (1,697 of 1,715
+  requisitions on the main site), Bank of America Lateral-US (1,985 of 1,987 on us-emplsv), GE Vernova's
+  only_confidential_executive_recruiting (248 jobs beyond the main site, none a student role).
+- Extra boards with their own jobs, to read: TI ebgj (127), HP Inc. Greenhouse (59), Snyk Ashby (37), Circle Ashby (6),
+  DriveWealth Ashby (28, 10 of them new), Best Buy Canada Workday (64; avoids a day-one list alert).
+- Workday public sites (104 unread): 9 with student roles (read 7; WFMathpe and Lateral-US are copies), 27 with jobs
+  but no student roles and 68 empty (recorded as known: the first look at a tenant is a silent baseline anyway).
+- Subsidiaries with boards of their own: NBCUniversal (Comcast; SmartRecruiters NBCUniversal3: 525 jobs, 138 student,
+  54 matching), Tubi (FOX; Greenhouse tubitv: 24, 0 student), FOX TV Stations (3 Workday sites, 50, 1), CoverMyMeds and
+  Sarah Cannon (McKesson sites, 20 and 19), CenterWell (Humana site, 1,833, 0), Depop (Etsy site, 23, 0), Simply
+  Business (Travelers site, 9, 0), NPA (Copart site, 20, 0), BA Continuum (BofA India site, 115, 0).
+
+## Page counts (ghpages.json, second pass)
+Oracle, Jibe, Workday and Eightfold reads are checked against the site's own total by the reader itself (a read
+outside 1.5% fails), so those are verified. Greenhouse boards that redirect to the company's own page: the company
+page links all of the read's jobs at Amperity, Descript, Fastly, Gemini, SoFi, ZoomInfo; Ripple's page is paged (78 of
+117 on page one); about 19 pages draw their list in the browser (a render at batch time); Chime and Rubrik refuse
+scripts.
+
+## Matching roles without repeats (matched_dedup.json)
+Multi-site reads list the same job twice (GE Vernova's two sites, HP's EU site): the jobs table treats a repeat with the
+same title and location as a repost. Counted without repeats: 88,890 distinct jobs, 3,209 student roles, 1,606
+matching (1,111 of them unsure), before the very large sites' full reads.
+
+## Backup checks per company (backup_table.md)
+32 companies: careers page (weekly while refused), WordPress pages (Cox, Match Group, YugabyteDB), job sitemaps (ADP,
+Box, Cox, DraftKings, Intuitive, Wells Fargo), program pages, archive.org (21 with copies, weekly), hidden Workday sites
+(cached robots.txt, no request), RippleMatch side boards (DraftKings, Progressive, Verizon). First morning: 54
+requests, 30 s.
+
 ## Next
 Done: the special cases existing adapters read (Costco partly, UHG, Tyler, Precisely); Workday robots.txt sites;
 lists check; page systems; Simplify coverage; re-match dry run; name clashes; backup checks measured once.
@@ -134,8 +166,7 @@ lists check; page systems; Simplify coverage; re-match dry run; name clashes; ba
 2. Page counts with filters off: Greenhouse boards that redirect to the company's own page; explain Citi, Micron,
    Arista, HPE.
 3. Done: companies existing code can't read (table above). Lowe's full read is in read_results_big.json.
-4. Per company decisions: Workday robots.txt sites, list-linked systems, mirrors, learn_ids, anchored match_urls,
-   RippleMatch, subsidiaries; backup checks per company with requests and seconds, and why any is skipped.
+4. Done: per company decisions (sections above); backup checks per company.
 5. Day-one alerts by kind; "Now watching" roles per batch; run-time model (8/12/16 workers, full read against
    slice, overlap); database and cassette growth; freshman/sophomore keywords.
 6. The Stage 1 report (discovery/candidates/REPORT.md), commit and push, stop.

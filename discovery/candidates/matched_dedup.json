@@ -1,0 +1,1448 @@
+{
+ "addepar": {
+  "jobs": 105,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "adp": {
+  "jobs": 421,
+  "students": 8,
+  "matched": 5,
+  "unsure": 5
+ },
+ "ai2": {
+  "jobs": 17,
+  "students": 3,
+  "matched": 3,
+  "unsure": 0
+ },
+ "allstate": {
+  "jobs": 413,
+  "students": 11,
+  "matched": 7,
+  "unsure": 4
+ },
+ "alltrails": {
+  "jobs": 1,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "altruist": {
+  "jobs": 74,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "american-express": {
+  "jobs": 299,
+  "students": 10,
+  "matched": 2,
+  "unsure": 0
+ },
+ "amperity": {
+  "jobs": 14,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "analog-devices": {
+  "jobs": 719,
+  "students": 67,
+  "matched": 25,
+  "unsure": 20
+ },
+ "anchorage-digital": {
+  "jobs": 23,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "appian": {
+  "jobs": 156,
+  "students": 5,
+  "matched": 3,
+  "unsure": 1
+ },
+ "applied-materials": {
+  "jobs": 1771,
+  "students": 77,
+  "matched": 36,
+  "unsure": 28
+ },
+ "apptronik": {
+  "jobs": 89,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "arcesium": {
+  "jobs": 37,
+  "students": 6,
+  "matched": 4,
+  "unsure": 2
+ },
+ "arista-networks": {
+  "jobs": 98,
+  "students": 4,
+  "matched": 3,
+  "unsure": 3
+ },
+ "asana": {
+  "jobs": 108,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "att": {
+  "jobs": 1008,
+  "students": 6,
+  "matched": 2,
+  "unsure": 2
+ },
+ "athenahealth": {
+  "jobs": 68,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "bamboohr": {
+  "jobs": 28,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "bandwidth": {
+  "jobs": 26,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "bank-of-america": {
+  "jobs": 2862,
+  "students": 17,
+  "matched": 7,
+  "unsure": 7
+ },
+ "base-power": {
+  "jobs": 196,
+  "students": 27,
+  "matched": 14,
+  "unsure": 1
+ },
+ "baseten": {
+  "jobs": 100,
+  "students": 1,
+  "matched": 1,
+  "unsure": 1
+ },
+ "bedrock-robotics": {
+  "jobs": 57,
+  "students": 13,
+  "matched": 13,
+  "unsure": 2
+ },
+ "best-buy": {
+  "jobs": 64,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "betterment": {
+  "jobs": 25,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "bill": {
+  "jobs": 40,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "blackrock": {
+  "jobs": 272,
+  "students": 14,
+  "matched": 11,
+  "unsure": 1
+ },
+ "bny": {
+  "jobs": 1007,
+  "students": 76,
+  "matched": 31,
+  "unsure": 23
+ },
+ "bot-auto": {
+  "jobs": 26,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "box": {
+  "jobs": 139,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "braze": {
+  "jobs": 343,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "bugcrowd": {
+  "jobs": 13,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "bumble": {
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "cadence": {
+  "jobs": 522,
+  "students": 27,
+  "matched": 13,
+  "unsure": 8
+ },
+ "carbon-robotics": {
+  "jobs": 4,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "cartesia": {
+  "jobs": 24,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "censys": {
+  "jobs": 27,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "cerebras": {
+  "jobs": 121,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "charles-schwab": {
+  "jobs": 278,
+  "students": 2,
+  "matched": 1,
+  "unsure": 1
+ },
+ "checkr": {
+  "jobs": 38,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "chewy": {
+  "jobs": 225,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "chime": {
+  "jobs": 67,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "ciena": {
+  "jobs": 161,
+  "students": 17,
+  "matched": 6,
+  "unsure": 4
+ },
+ "circle": {
+  "jobs": 67,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "citi": {
+  "jobs": 3841,
+  "students": 114,
+  "matched": 17,
+  "unsure": 14
+ },
+ "clay": {
+  "jobs": 62,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "clockwork-systems": {
+  "jobs": 5,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "cohesity": {
+  "jobs": 182,
+  "students": 6,
+  "matched": 3,
+  "unsure": 2
+ },
+ "cobot": {
+  "jobs": 14,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "comcast": {
+  "jobs": 654,
+  "students": 2,
+  "matched": 0,
+  "unsure": 0
+ },
+ "commonwealth-fusion": {
+  "jobs": 139,
+  "students": 18,
+  "matched": 18,
+  "unsure": 15
+ },
+ "commure": {
+  "jobs": 74,
+  "students": 4,
+  "matched": 0,
+  "unsure": 0
+ },
+ "conductorone": {
+  "jobs": 17,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "copart": {
+  "jobs": 368,
+  "students": 11,
+  "matched": 11,
+  "unsure": 5
+ },
+ "costar": {
+  "jobs": 352,
+  "students": 1,
+  "matched": 0,
+  "unsure": 0
+ },
+ "costco": {
+  "jobs": 40,
+  "students": 25,
+  "matched": 22,
+  "unsure": 14
+ },
+ "cox": {
+  "jobs": 725,
+  "students": 16,
+  "matched": 16,
+  "unsure": 16
+ },
+ "crusoe": {
+  "jobs": 322,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "cvs-health": {
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "d-matrix": {
+  "jobs": 36,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "datarobot": {
+  "jobs": 13,
+  "students": 3,
+  "matched": 3,
+  "unsure": 3
+ },
+ "delinea": {
+  "jobs": 64,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "descript": {
+  "jobs": 10,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "dexcom": {
+  "jobs": 281,
+  "students": 2,
+  "matched": 1,
+  "unsure": 1
+ },
+ "dicks-sporting-goods": {
+  "jobs": 3605,
+  "students": 5,
+  "matched": 5,
+  "unsure": 5
+ },
+ "digitalocean": {
+  "jobs": 151,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "domino-data-lab": {
+  "jobs": 18,
+  "students": 2,
+  "matched": 2,
+  "unsure": 0
+ },
+ "draftkings": {
+  "jobs": 96,
+  "students": 11,
+  "matched": 8,
+  "unsure": 4
+ },
+ "drivewealth": {
+  "jobs": 37,
+  "students": 5,
+  "matched": 5,
+  "unsure": 0
+ },
+ "dusty-robotics": {
+  "jobs": 2,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "earnin": {
+  "jobs": 29,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "elevance-health": {
+  "jobs": 289,
+  "students": 9,
+  "matched": 3,
+  "unsure": 3
+ },
+ "ellipsis-labs": {
+  "jobs": 14,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "enova": {
+  "jobs": 39,
+  "students": 4,
+  "matched": 2,
+  "unsure": 0
+ },
+ "equinix": {
+  "jobs": 305,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "etched": {
+  "jobs": 115,
+  "students": 13,
+  "matched": 12,
+  "unsure": 7
+ },
+ "etsy": {
+  "jobs": 68,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "eventual": {
+  "jobs": 5,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "exa": {
+  "jobs": 66,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "f5": {
+  "jobs": 270,
+  "students": 2,
+  "matched": 2,
+  "unsure": 0
+ },
+ "fastly": {
+  "jobs": 55,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "fervo-energy": {
+  "jobs": 67,
+  "students": 1,
+  "matched": 0,
+  "unsure": 0
+ },
+ "figure-ai": {
+  "jobs": 102,
+  "students": 12,
+  "matched": 10,
+  "unsure": 10
+ },
+ "fis": {
+  "jobs": 463,
+  "students": 1,
+  "matched": 1,
+  "unsure": 1
+ },
+ "fiserv": {
+  "jobs": 370,
+  "students": 3,
+  "matched": 0,
+  "unsure": 0
+ },
+ "ford": {
+  "jobs": 857,
+  "students": 3,
+  "matched": 0,
+  "unsure": 0
+ },
+ "fortinet": {
+  "jobs": 903,
+  "students": 9,
+  "matched": 1,
+  "unsure": 0
+ },
+ "fox": {
+  "jobs": 318,
+  "students": 62,
+  "matched": 50,
+  "unsure": 48
+ },
+ "freddie-mac": {
+  "jobs": 66,
+  "students": 2,
+  "matched": 2,
+  "unsure": 1
+ },
+ "garner-health": {
+  "jobs": 60,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "ge-vernova": {
+  "jobs": 2241,
+  "students": 83,
+  "matched": 62,
+  "unsure": 58
+ },
+ "gemini": {
+  "jobs": 27,
+  "students": 4,
+  "matched": 4,
+  "unsure": 4
+ },
+ "gen-digital": {
+  "jobs": 97,
+  "students": 4,
+  "matched": 0,
+  "unsure": 0
+ },
+ "genesis-molecular-ai": {
+  "jobs": 10,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "gimlet-labs": {
+  "jobs": 17,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "globalfoundries": {
+  "jobs": 781,
+  "students": 105,
+  "matched": 68,
+  "unsure": 60
+ },
+ "glossgenius": {
+  "jobs": 17,
+  "students": 2,
+  "matched": 2,
+  "unsure": 0
+ },
+ "godaddy": {
+  "jobs": 30,
+  "students": 1,
+  "matched": 1,
+  "unsure": 1
+ },
+ "grow-therapy": {
+  "jobs": 30,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "guidewire": {
+  "jobs": 114,
+  "students": 1,
+  "matched": 0,
+  "unsure": 0
+ },
+ "gusto": {
+  "jobs": 80,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "haize-labs": {
+  "jobs": 6,
+  "students": 2,
+  "matched": 2,
+  "unsure": 0
+ },
+ "handshake": {
+  "jobs": 76,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "hartford": {
+  "jobs": 215,
+  "students": 19,
+  "matched": 9,
+  "unsure": 9
+ },
+ "hpe": {
+  "jobs": 1743,
+  "students": 158,
+  "matched": 62,
+  "unsure": 47
+ },
+ "hex": {
+  "jobs": 37,
+  "students": 2,
+  "matched": 2,
+  "unsure": 0
+ },
+ "heygen": {
+  "jobs": 19,
+  "students": 1,
+  "matched": 1,
+  "unsure": 1
+ },
+ "hilton": {
+  "jobs": 4122,
+  "students": 33,
+  "matched": 2,
+  "unsure": 2
+ },
+ "home-depot": {
+  "jobs": 1324,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "hp": {
+  "jobs": 1193,
+  "students": 117,
+  "matched": 33,
+  "unsure": 14
+ },
+ "humana": {
+  "jobs": 304,
+  "students": 5,
+  "matched": 1,
+  "unsure": 1
+ },
+ "hyperproof": {
+  "jobs": 4,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "illumio": {
+  "jobs": 61,
+  "students": 3,
+  "matched": 3,
+  "unsure": 2
+ },
+ "ice": {
+  "jobs": 281,
+  "students": 44,
+  "matched": 38,
+  "unsure": 18
+ },
+ "intuitive-surgical": {
+  "jobs": 791,
+  "students": 13,
+  "matched": 8,
+  "unsure": 3
+ },
+ "ironclad": {
+  "jobs": 22,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "ixl-learning": {
+  "jobs": 115,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "jpmorgan-chase": {
+  "jobs": 6789,
+  "students": 68,
+  "matched": 22,
+  "unsure": 15
+ },
+ "keysight": {
+  "jobs": 682,
+  "students": 114,
+  "matched": 76,
+  "unsure": 33
+ },
+ "khan-academy": {
+  "jobs": 3,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "kla": {
+  "jobs": 974,
+  "students": 54,
+  "matched": 40,
+  "unsure": 26
+ },
+ "knowbe4": {
+  "jobs": 50,
+  "students": 11,
+  "matched": 4,
+  "unsure": 4
+ },
+ "lambda": {
+  "jobs": 97,
+  "students": 1,
+  "matched": 0,
+  "unsure": 0
+ },
+ "launchdarkly": {
+  "jobs": 43,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "lightspark": {
+  "jobs": 8,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "locus-robotics": {
+  "jobs": 7,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "lowes": {
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "lucid-motors": {
+  "jobs": 443,
+  "students": 1,
+  "matched": 0,
+  "unsure": 0
+ },
+ "lucid-software": {
+  "jobs": 27,
+  "students": 3,
+  "matched": 0,
+  "unsure": 0
+ },
+ "macys": {
+  "jobs": 6228,
+  "students": 103,
+  "matched": 13,
+  "unsure": 11
+ },
+ "marvell": {
+  "jobs": 349,
+  "students": 97,
+  "matched": 38,
+  "unsure": 36
+ },
+ "mastercard": {
+  "jobs": 814,
+  "students": 15,
+  "matched": 1,
+  "unsure": 0
+ },
+ "match-group": {
+  "jobs": 71,
+  "students": 14,
+  "matched": 8,
+  "unsure": 2
+ },
+ "mckesson": {
+  "jobs": 656,
+  "students": 17,
+  "matched": 2,
+  "unsure": 2
+ },
+ "mercor": {
+  "jobs": 86,
+  "students": 5,
+  "matched": 5,
+  "unsure": 0
+ },
+ "micron": {
+  "jobs": 2555,
+  "students": 143,
+  "matched": 89,
+  "unsure": 77
+ },
+ "morgan-stanley": {
+  "jobs": 1355,
+  "students": 78,
+  "matched": 36,
+  "unsure": 33
+ },
+ "multiply-labs": {
+  "jobs": 14,
+  "students": 3,
+  "matched": 2,
+  "unsure": 0
+ },
+ "nasdaq": {
+  "jobs": 150,
+  "students": 3,
+  "matched": 1,
+  "unsure": 0
+ },
+ "nasuni": {
+  "jobs": 29,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "nationwide": {
+  "jobs": 136,
+  "students": 5,
+  "matched": 4,
+  "unsure": 4
+ },
+ "navy-federal": {
+  "jobs": 148,
+  "students": 68,
+  "matched": 56,
+  "unsure": 39
+ },
+ "ncino": {
+  "jobs": 30,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "netapp": {
+  "jobs": 305,
+  "students": 13,
+  "matched": 5,
+  "unsure": 4
+ },
+ "netic": {
+  "jobs": 36,
+  "students": 3,
+  "matched": 3,
+  "unsure": 0
+ },
+ "neuralink": {
+  "jobs": 80,
+  "students": 19,
+  "matched": 18,
+  "unsure": 7
+ },
+ "new-york-times": {
+  "jobs": 172,
+  "students": 28,
+  "matched": 17,
+  "unsure": 9
+ },
+ "nextdoor": {
+  "jobs": 20,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "niantic-spatial": {
+  "jobs": 19,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "nike": {
+  "jobs": 1173,
+  "students": 18,
+  "matched": 11,
+  "unsure": 8
+ },
+ "nordstrom": {
+  "jobs": 1304,
+  "students": 15,
+  "matched": 3,
+  "unsure": 3
+ },
+ "northwestern-mutual": {
+  "jobs": 78,
+  "students": 2,
+  "matched": 1,
+  "unsure": 1
+ },
+ "numeric": {
+  "jobs": 24,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "obsidian-security": {
+  "jobs": 15,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "one-finance": {
+  "jobs": 38,
+  "students": 4,
+  "matched": 1,
+  "unsure": 0
+ },
+ "unitedhealth-group": {
+  "jobs": 5965,
+  "students": 106,
+  "matched": 83,
+  "unsure": 81
+ },
+ "pacific-fusion": {
+  "jobs": 26,
+  "students": 5,
+  "matched": 2,
+  "unsure": 1
+ },
+ "paramount": {
+  "jobs": 190,
+  "students": 2,
+  "matched": 0,
+  "unsure": 0
+ },
+ "patreon": {
+  "jobs": 21,
+  "students": 3,
+  "matched": 3,
+  "unsure": 0
+ },
+ "pendo": {
+  "jobs": 22,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "perpay": {
+  "jobs": 17,
+  "students": 5,
+  "matched": 3,
+  "unsure": 0
+ },
+ "persona": {
+  "jobs": 14,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "persona-ai": {
+  "jobs": 23,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "precisely": {
+  "jobs": 55,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "principal": {
+  "jobs": 142,
+  "students": 15,
+  "matched": 2,
+  "unsure": 1
+ },
+ "prizepicks": {
+  "jobs": 31,
+  "students": 4,
+  "matched": 3,
+  "unsure": 0
+ },
+ "progressive": {
+  "jobs": 1,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "proofpoint": {
+  "jobs": 115,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "ptc": {
+  "jobs": 162,
+  "students": 9,
+  "matched": 6,
+  "unsure": 5
+ },
+ "pure-storage": {
+  "jobs": 352,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "q2": {
+  "jobs": 61,
+  "students": 10,
+  "matched": 7,
+  "unsure": 1
+ },
+ "qorvo": {
+  "jobs": 8,
+  "students": 6,
+  "matched": 6,
+  "unsure": 1
+ },
+ "qualcomm": {
+  "jobs": 1898,
+  "students": 115,
+  "matched": 18,
+  "unsure": 4
+ },
+ "qumulo": {
+  "jobs": 25,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "reddit": {
+  "jobs": 154,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "redwood-materials": {
+  "jobs": 126,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "replit": {
+  "jobs": 29,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "rhoda-ai": {
+  "jobs": 45,
+  "students": 3,
+  "matched": 3,
+  "unsure": 0
+ },
+ "ridgeline": {
+  "jobs": 29,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "rilla": {
+  "jobs": 24,
+  "students": 3,
+  "matched": 3,
+  "unsure": 2
+ },
+ "ripple": {
+  "jobs": 116,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "rivian": {
+  "jobs": 948,
+  "students": 46,
+  "matched": 41,
+  "unsure": 19
+ },
+ "rivian-vw": {
+  "jobs": 174,
+  "students": 21,
+  "matched": 20,
+  "unsure": 7
+ },
+ "roku": {
+  "jobs": 88,
+  "students": 6,
+  "matched": 1,
+  "unsure": 0
+ },
+ "rubrik": {
+  "jobs": 145,
+  "students": 5,
+  "matched": 0,
+  "unsure": 0
+ },
+ "sailpoint": {
+  "jobs": 92,
+  "students": 1,
+  "matched": 0,
+  "unsure": 0
+ },
+ "sandisk": {
+  "jobs": 412,
+  "students": 17,
+  "matched": 14,
+  "unsure": 14
+ },
+ "sas": {
+  "jobs": 35,
+  "students": 3,
+  "matched": 3,
+  "unsure": 2
+ },
+ "sentry": {
+  "jobs": 39,
+  "students": 1,
+  "matched": 1,
+  "unsure": 1
+ },
+ "serval": {
+  "jobs": 67,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "singlestore": {
+  "jobs": 40,
+  "students": 2,
+  "matched": 2,
+  "unsure": 0
+ },
+ "snap": {
+  "jobs": 210,
+  "students": 4,
+  "matched": 1,
+  "unsure": 0
+ },
+ "snorkel-ai": {
+  "jobs": 43,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "snyk": {
+  "jobs": 45,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "socure": {
+  "jobs": 89,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "sofi": {
+  "jobs": 48,
+  "students": 1,
+  "matched": 0,
+  "unsure": 0
+ },
+ "sonos": {
+  "jobs": 52,
+  "students": 4,
+  "matched": 2,
+  "unsure": 1
+ },
+ "southwest": {
+  "jobs": 30,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "starburst": {
+  "jobs": 38,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "state-farm": {
+  "jobs": 222,
+  "students": 11,
+  "matched": 9,
+  "unsure": 9
+ },
+ "suno": {
+  "jobs": 68,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "superhuman": {
+  "jobs": 73,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "symmetry-systems": {
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "synchrony": {
+  "jobs": 46,
+  "students": 16,
+  "matched": 12,
+  "unsure": 9
+ },
+ "tamr": {
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "target": {
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "tensorwave": {
+  "jobs": 39,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "texas-instruments": {
+  "jobs": 958,
+  "students": 132,
+  "matched": 53,
+  "unsure": 37
+ },
+ "travelers": {
+  "jobs": 391,
+  "students": 65,
+  "matched": 46,
+  "unsure": 46
+ },
+ "tricentis": {
+  "jobs": 24,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "trimble": {
+  "jobs": 178,
+  "students": 19,
+  "matched": 16,
+  "unsure": 11
+ },
+ "truveta": {
+  "jobs": 34,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "tyler-technologies": {
+  "jobs": 136,
+  "students": 11,
+  "matched": 11,
+  "unsure": 0
+ },
+ "typeface": {
+  "jobs": 18,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "udemy": {
+  "jobs": 3,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "uipath": {
+  "jobs": 101,
+  "students": 2,
+  "matched": 2,
+  "unsure": 0
+ },
+ "unify": {
+  "jobs": 11,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "united-airlines": {
+  "jobs": 120,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "usaa": {
+  "jobs": 215,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "vanguard": {
+  "jobs": 327,
+  "students": 21,
+  "matched": 18,
+  "unsure": 13
+ },
+ "veeam": {
+  "jobs": 197,
+  "students": 17,
+  "matched": 12,
+  "unsure": 6
+ },
+ "vercel": {
+  "jobs": 87,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "verizon": {
+  "jobs": 983,
+  "students": 1,
+  "matched": 0,
+  "unsure": 0
+ },
+ "viam": {
+  "jobs": 8,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "walmart": {
+  "jobs": 2481,
+  "students": 135,
+  "matched": 4,
+  "unsure": 4
+ },
+ "disney": {
+  "jobs": 209,
+  "students": 44,
+  "matched": 13,
+  "unsure": 13
+ },
+ "warner-bros-discovery": {
+  "jobs": 201,
+  "students": 12,
+  "matched": 5,
+  "unsure": 5
+ },
+ "washington-post": {
+  "jobs": 52,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "wells-fargo": {
+  "jobs": 1549,
+  "students": 15,
+  "matched": 10,
+  "unsure": 10
+ },
+ "western-digital": {
+  "jobs": 263,
+  "students": 20,
+  "matched": 4,
+  "unsure": 3
+ },
+ "xcimer": {
+  "jobs": 63,
+  "students": 7,
+  "matched": 6,
+  "unsure": 4
+ },
+ "you-com": {
+  "jobs": 8,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "yugabyte": {
+  "jobs": 14,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "zebra": {
+  "jobs": 219,
+  "students": 22,
+  "matched": 4,
+  "unsure": 4
+ },
+ "zillow": {
+  "jobs": 198,
+  "students": 5,
+  "matched": 4,
+  "unsure": 1
+ },
+ "zip": {
+  "jobs": 96,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "ziprecruiter": {
+  "jobs": 68,
+  "students": 1,
+  "matched": 1,
+  "unsure": 0
+ },
+ "zocdoc": {
+  "jobs": 63,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "zoominfo": {
+  "jobs": 90,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ },
+ "zscaler": {
+  "jobs": 344,
+  "students": 0,
+  "matched": 0,
+  "unsure": 0
+ }
+}

@@ -23,7 +23,7 @@ import re
 import sys
 import threading
 import time
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -281,7 +281,8 @@ def read(keys: list[str]) -> None:
         return entry, res
 
     with ThreadPoolExecutor(max_workers=8) as pool:
-        for entry, res in pool.map(one, todo):
+        for fut in as_completed([pool.submit(one, kv) for kv in todo]):  # saved as each finishes
+            entry, res = fut.result()
             results[entry] = res
             path.write_text(json.dumps(dict(sorted(results.items())), indent=1) + "\n")
             print(f"{entry:28} {res['checker']:15} jobs {res['jobs']:6} students {res['students']:4} matched "
@@ -318,7 +319,7 @@ def pack_partitions(log: list[dict]) -> None:
     """Measurement only, in this process: when a capped Workday search would be split into more than 60 searches
     (one per store location at CVS, Target, Lowe's), pack that facet's values into searches of several values each.
     Workday matches any of the values in one search, so each packed search stays below the cap when its values'
-    counts add up to under 1,900 (at most 400 values each, to keep the request small)."""
+    counts add up to under 1,900 (at most 150 values each: Workday answers a search of 400 values with an error)."""
     from internwatch.adapters import workday as wd
     orig = wd.Workday._partitions
 
@@ -332,7 +333,7 @@ def pack_partitions(log: list[dict]) -> None:
         bins: list[list] = []  # [sum of counts, ids]: first fit, biggest values first
         for v in sorted(vals, key=lambda v: -v["count"]):
             for b in bins:
-                if b[0] + v["count"] <= 1900 and len(b[1]) < 400:
+                if b[0] + v["count"] <= 1900 and len(b[1]) < 150:  # 200 values work, 400 answer 500
                     b[0] += v["count"]
                     b[1].append(v["id"])
                     break
@@ -441,6 +442,13 @@ def _read_jobs(entry: str) -> list[dict]:
     return json.loads(gzip.open(p, "rt").read()) if p.exists() else []
 
 
+def company_jobs(key: str) -> list[dict]:
+    """Every job any Stage 1 read of a candidate returned: its reads.yaml entries, the very large sites' full reads and
+    slices, and the job lists saved from the probes of sites existing code can't read yet (<key>~<system>)."""
+    files = [raw_dir() / "jobs" / f"{key}.json.gz", *sorted((raw_dir() / "jobs").glob(f"{key}~*.json.gz"))]
+    return [j for f in files if f.exists() for j in _read_jobs(f.name[: -len(".json.gz")])]
+
+
 def _find(jobs: list[dict], url: str, title: str, terms: str, location: str):
     """crosscheck.find_in_db against a read's jobs instead of the database (open postings only)."""
     from internwatch.crosscheck import _YEARS, _id_in_url, clean_url, title_key
@@ -477,7 +485,7 @@ def coverage(keys: list[str]) -> None:
     cands, index = _index(cfg, rows)
     keyset = {c.key for c in cands}
     reads = yaml.safe_load((CANDIDATES / "reads.yaml").read_text())["reads"]
-    jobs = {k: [j for e in reads if e.split("~")[0] == k for j in _read_jobs(e)] for k in keyset}
+    jobs = {k: company_jobs(k) for k in keyset}
     listing = parse_listings((raw_dir() / "lists" / "simplify.txt").read_text(), "summer")
     out: dict[str, dict] = {}
     for r in listing:
@@ -573,7 +581,7 @@ def rematch(keys: list[str]) -> None:
         if is_open and r["status"] == "untracked":
             d["open"] += 1
             if k not in jobs_cache:
-                jobs_cache[k] = [j for e in reads if e.split("~")[0] == k for j in _read_jobs(e)]
+                jobs_cache[k] = company_jobs(k)
             hit, _ = _find(jobs_cache[k], r["url"] or "", r["title"] or "", r["terms"] or "", r["location"] or "")
             if hit is None:
                 d["day_one_misses"].append([r["title"], r["url"]])
@@ -721,6 +729,56 @@ def pagecount(keys: list[str]) -> None:
     save_robots(gate.cache_dir)
 
 
+def ghpages(keys: list[str]) -> None:
+    """Greenhouse reads whose hosted board states no count (it redirects to the company's own careers page): follow
+    the redirect, robots.txt first, and count the read's job ids that the company page links (gh_jid=, /jobs/<id>).
+    A page that links none draws its list in the browser and needs a render. Writes ghpages.json."""
+    cfg = home_config()
+    hs = http_settings(cfg)
+    hs.retries = 1
+    gate = make_gate(cfg)
+    reads = yaml.safe_load((CANDIDATES / "reads.yaml").read_text())["reads"]
+    pc = json.loads((CANDIDATES / "pagecounts.json").read_text())
+    results = json.loads((CANDIDATES / "read_results.json").read_text())
+    results.update(json.loads((CANDIDATES / "read_results_extra.json").read_text()))
+    todo = []
+    for e, spec in reads.items():
+        if spec["checker"] != "greenhouse" or e not in results or not results[e]["jobs"]:
+            continue
+        pt = (pc.get(e) or {}).get("page_total")
+        if keys and e.split("~")[0] not in keys:
+            continue
+        if not keys and isinstance(pt, int) and abs(results[e]["jobs"] - pt) <= max(3, 0.02 * pt):
+            continue
+        todo.append((e, spec["settings"]))
+
+    def one(item):
+        entry, s = item
+        ids = {str(j["id"]) for j in _read_jobs(entry)}
+        out = {"read": len(ids), "pages": []}
+        with Http(hs, gate=gate) as http:
+            for b in s.get("boards") or [s["board"]]:
+                try:
+                    r = http.get(f"https://job-boards.greenhouse.io/{b}", headers={"Accept": "text/html"},
+                                 ok_statuses=(403, 404))
+                    shown = set(re.findall(r"(?:gh_jid=|/jobs/|jobId=|job_id=)(\d{6,})", r.text)) & ids
+                    out["pages"].append({"board": b, "status": r.status, "final_url": r.url, "shown": len(shown)})
+                except Exception as e:  # noqa: BLE001
+                    out["pages"].append({"board": b, "error": str(e)[:160]})
+        out["shown"] = sum(p.get("shown", 0) for p in out["pages"])
+        return entry, out
+
+    out = {}
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        for entry, res in pool.map(one, todo):
+            out[entry] = res
+            print(f"{entry:24} read {res['read']:4} shown {res['shown']:4}  " +
+                  "; ".join(f"{p.get('status', 'ERR')} {(p.get('final_url') or p.get('error') or '')[:70]}"
+                            for p in res["pages"]), flush=True)
+    (CANDIDATES / "ghpages.json").write_text(json.dumps(dict(sorted(out.items())), indent=1) + "\n")
+    save_robots(gate.cache_dir)
+
+
 def candidate_companies(cfg, rows: list[dict], settings: dict | None = None) -> list:
     """The candidates as Company entries, after the 198 (settings: key -> (checker, settings) where known)."""
     from internwatch.config import Company
@@ -806,5 +864,7 @@ if __name__ == "__main__":
         pagecount(args)
     elif cmd == "facets":
         facets(args)
+    elif cmd == "ghpages":
+        ghpages(args)
     else:
         print(__doc__)

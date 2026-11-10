@@ -1,0 +1,3 @@
+# Stage 1 reads of subsidiaries with boards of their own (STAGE1_READS=reads_subs.yaml), for the subsidiary decision.
+reads:
+  fox~tubi: {checker: greenhouse, settings: {boards: [tubitv, tubi]}}
