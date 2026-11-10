@@ -123,6 +123,7 @@ companies:
   - {key: jane-street, name: Jane Street, category: quant, source: added, urls: ["https://www.janestreet.com/join-jane-street/open-roles/"]}
   - {key: citadel, name: Citadel, category: quant, source: added, urls: ["https://www.citadel.com/careers/open-opportunities/"]}
   - {key: citadel-securities, name: Citadel Securities, category: quant, source: added, urls: ["https://www.citadelsecurities.com/careers/open-opportunities/"]}
+  - {key: citadel-securities-programs, name: Citadel Securities Programs, category: quant, source: added, urls: ["https://www.citadelsecurities.com/careers/programs-and-events/"]}
   - {key: two-sigma, name: Two Sigma, category: quant, source: added, urls: ["https://careers.twosigma.com/careers/SearchJobs"]}
   - {key: imc, name: IMC Trading, category: quant, source: added, urls: ["https://www.imc.com/us/careers/jobs"]}
   - {key: hudson-river-trading, name: Hudson River Trading, category: quant, source: added, urls: ["https://www.hudsonrivertrading.com/careers/"]}

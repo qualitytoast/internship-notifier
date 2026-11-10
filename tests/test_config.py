@@ -39,3 +39,15 @@ def test_blocked_companies_explain_themselves():
     for c in CFG.companies:
         if c.status == "blocked":
             assert c.blocked_reason and c.fallback, f"{c.key}: blocked companies need blocked_reason and fallback"
+
+
+def test_discovery_rebuilds_companies_yaml_exactly():
+    """discovery/build_config.py regenerates config/companies.yaml byte for byte, so a rerun can never drop a company,
+    a setting or a note made since (Bloomberg's second_order and the Citadel Securities programs once were)."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("build_config", REPO / "discovery" / "build_config.py")
+    build_config = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(build_config)
+    text, missing = build_config.build()
+    assert missing == []
+    assert text == (REPO / "config" / "companies.yaml").read_text()

@@ -1177,9 +1177,9 @@ companies:
   checker: citadel_programs
   settings: {base_url: 'https://www.citadelsecurities.com', min_interval: 10.0}
   role_keywords: [discover citadel, ignite, spark]
-  verified: {page_total: 11, feed: 'GET https://www.citadelsecurities.com/page-sitemap.xml', explained: 'Each page below
-      a program page (an application or a region) is one role. The programs page blocks scripts, so it can''t be
-      counted; 11 = the page sitemap on 2026-11-07.'}
+  verified: {page_total: 11, feed: 'GET https://www.citadelsecurities.com/page-sitemap.xml', explained: 'Each page below a program page
+      (an application or a region) is one role. The programs page blocks scripts, so it can''t be counted; 11 = the page sitemap on
+      2026-11-07.'}
 - key: two-sigma
   name: Two Sigma
   category: quant

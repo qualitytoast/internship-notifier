@@ -74,6 +74,7 @@ PROGRAM_KEYWORDS: dict[str, list[str]] = {
     "goldman-sachs": ["possibilities", "emerging leaders"],
     "citadel": ["discover citadel", "launch"],
     "citadel-securities": ["discover citadel", "ignite"],
+    "citadel-securities-programs": ["discover citadel", "ignite", "spark"],
     "jane-street": ["fttp", "jsip", "insight", "focus", "bridge"],
     "two-sigma": ["mentor connect"],
     "hudson-river-trading": ["witti", "women in trading"],
@@ -106,7 +107,8 @@ OVERRIDES: dict[str, dict] = {
                                "fields": ["location", "department", "employment_type"]}},
     "bloomberg": {"settings": {"list_url": "https://bloomberg.avature.net/careers/SearchJobs/", "page_size": 12,
                                "fields": {"location": ".list-item-location"},
-                               "total_regex": r'list-controls__text__legend"\s+aria-label="(\d+) results"'}},
+                               "total_regex": r'list-controls__text__legend"\s+aria-label="(\d+) results"',
+                               "second_order": "jobSort=schemaField_3_270_3&jobSortDirection=ASC"}},
     "synopsys": {"big": True, "timeout_minutes": 10, "settings": {
         "list_url": "https://synopsys.avature.net/careers/SearchJobs/", "page_size": 6,
         "fields": {"employment_type": ".list-item-hireType", "posted": ".list-item-posted"},
@@ -263,6 +265,9 @@ OVERRIDES: dict[str, dict] = {
     "citadel": {"checker": "citadel", "settings": {"base_url": "https://www.citadel.com", "min_interval": 10.0}},
     "citadel-securities": {"checker": "citadel", "settings": {"base_url": "https://www.citadelsecurities.com",
                                                               "min_interval": 10.0}},
+    "citadel-securities-programs": {"verified": {"feed": "GET https://www.citadelsecurities.com/page-sitemap.xml",
+        "explained": "Each page below a program page (an application or a region) is one role. The programs page "
+                     "blocks scripts, so it can't be counted; 11 = the page sitemap on 2026-11-07."}},
     "wolverine": {"settings": {"subdomain": "wolve", "host": "careers.wolve.com"}},
     "amazon": {"settings": {}, "big": True, "verified": {"page_total": None, "explained":
         "reads the complete student slice (intern/apprentice flags + student business categories + keyword sweep, "
@@ -327,7 +332,8 @@ def entry(seed: dict) -> dict | None:
     return e
 
 
-def main() -> None:
+def build() -> tuple[str, list[str]]:
+    """config/companies.yaml's text as discovery would write it, and the seed keys with no discovery result yet."""
     out, missing = [], []
     for seed in SEED:
         e = entry(seed)
@@ -352,8 +358,13 @@ def main() -> None:
               "#   big: true                huge site: newest-first quick scans every poll, a full scan once a day\n"
               "#   verified                 discovery evidence: the careers page's own job count (and why it differs)\n")
     text = yaml.safe_dump({"companies": out}, sort_keys=False, allow_unicode=True, width=130, default_flow_style=None)
-    (ROOT / "config" / "companies.yaml").write_text(header + text)
-    print(f"wrote {len(out)} companies; no discovery result yet for {len(missing)}: {' '.join(missing)}")
+    return header + text, missing
+
+
+def main() -> None:
+    text, missing = build()
+    (ROOT / "config" / "companies.yaml").write_text(text)
+    print(f"wrote {text.count(chr(10) + '- key: ')} companies; no discovery result yet for {len(missing)}: {' '.join(missing)}")
 
 
 if __name__ == "__main__":
