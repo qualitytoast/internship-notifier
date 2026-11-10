@@ -27,8 +27,12 @@ recorded round by round (198 problems, 198 misses, then the added round's), emai
 - [x] 7. Opt-in settings (off for the 198): Workday skip postings without a link; Workday pack locations;
         anchored address markers for short tenants; SmartRecruiters search total; (Ashby learn_ids if needed)
 - [ ] 8. tools/prove: golden (cassettes, filters, matching, liveness functions) and replayed mornings
-        (golden.py: PASS against main on 2026-11-09; morning.py written, recording in data/stage2/)
-- [ ] 9. Test fixes: klaviyo's quiet-board test pinned to its recording date; the 8 drifted cassettes re-recorded
+        (golden.py: PASS against main on 2026-11-09, twice; a live morning recorded into
+        data/stage2/morning-2026-11-09 of the main tree; then runall.sh; plus a smoke replay of the added round on
+        real data: data/stage2/smoke/version is this branch with stripe, figma, klaviyo marked round: added)
+- [ ] 9. Test fixes: klaviyo's quiet-board test pinned to its recording date (done); the 8 drifted cassettes
+        (bloomberg, visa, mongodb, electronic-arts, akuna-capital, peak6, virtu, flow-traders) re-recorded after the
+        morning recording (never at the same time: same sites), with test_fixture_was_recorded_with_the_current_settings
 - [ ] 10. Docs; proofs PASS; merge into main; push; then a morning run before batch 1
 
 ## How to prove a batch
