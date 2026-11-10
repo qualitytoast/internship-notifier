@@ -7,7 +7,8 @@ at the main tree's src; PYTHONPATH puts this worktree's src first).
 
 Decisions (2026-11-09, STAGE1_REPORT.md): giant store sites read for student roles daily + a weekly full read; 12
 workers in the added round; every new reader built; the subsidiaries added (Tubi pending); no "known site" setting;
-Progressive through RippleMatch; DraftKings, FOX, Match Group, PrizePicks taken out (236 companies).
+Progressive through RippleMatch; DraftKings, FOX, Match Group, PrizePicks taken out (236 companies); Tubi
+(FOX's) stays out (2026-11-10).
 
 ## Batch 0: groundwork, no companies (proof: everything identical)
 Design: each round runs today's code over a view of the config that holds only its companies (and only their entries

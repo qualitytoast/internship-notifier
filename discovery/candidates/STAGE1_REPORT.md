@@ -29,7 +29,7 @@ working files in `data/stage1/` (local only).
 2. The added round checks 12 companies at once.
 3. Build all the new readers (Costco IT, Sandisk, SuccessFactors for NetApp/Paramount/Qorvo, Oleeo for the two campus
    sites, ADP, Best Buy).
-4. Add all the subsidiaries listed (Tubi only if you want it as a company of its own, since FOX is out).
+4. Add all the subsidiaries listed except Tubi, which went with FOX (confirmed 2026-11-10).
 5. No "known site" setting: the list rows that file another company's site under an added name raise their alert.
 6. Progressive is read through its RippleMatch page.
 
