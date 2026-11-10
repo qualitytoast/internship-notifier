@@ -13,7 +13,8 @@ copies of the same database, and compare everything they wrote, sent and asked f
                                                                      requests.json
     python -I tools/prove/morning.py compare <old out> <new out> [added keys…]
 
-edits (comma-separated, for the plan's morning 2 and 3): new:<company>[;<company>…] gives each a new matching
+edits (comma-separated, for the plan's morning 2 and 3): after:<out> starts from the database an earlier replay
+left; day:<n> sets the clock n days after the recording; new:<company>[;<company>…] gives each a new matching
 posting; fail:<company>[;…] makes each fail; mailfail makes every email fail to send (with sending on).
 A replay that needs a request the recording doesn't have gets an error for it, as an outage would, and the request
 is listed. Allowed differences in compare: the added companies' own rows and keys (round: added), rows that went
@@ -110,14 +111,15 @@ def replay(version: Path, rec: Path, out: Path, edits: str = "") -> None:
     for m in pkgutil.walk_packages(internwatch.__path__, "internwatch."):  # modules imported later get the clock too
         importlib.import_module(m.name)
     morning = json.load(gzip.open(rec / "morning.json.gz", "rt"))
-    frozen = parse_iso(morning["started"])
+    edit = dict(e.split(":", 1) if ":" in e else (e, "") for e in edits.split(",") if e)
+    from datetime import timedelta
+    frozen = parse_iso(morning["started"]) + timedelta(days=float(edit.get("day") or 0))
     for mod in list(sys.modules.values()):  # the clock of every module that took utcnow from internwatch.db
         if getattr(mod, "__name__", "").startswith("internwatch") and hasattr(mod, "utcnow"):
             mod.utcnow = lambda: frozen
     random.uniform = lambda lo, hi: (float(lo) + float(hi)) / 2
     heartbeat.Heartbeat._ping = lambda self, *a, **kw: None
     Runner.online = lambda self: True
-    edit = dict(e.split(":", 1) if ":" in e else (e, "") for e in edits.split(",") if e)
     queues: dict[tuple, list] = {}
     for e in morning["exchanges"]:
         queues.setdefault((e["method"], e["url"], e["body"]), []).append(e)
@@ -143,7 +145,8 @@ def replay(version: Path, rec: Path, out: Path, edits: str = "") -> None:
             raise models.FetchError(f"HTTP {resp.status} for {method} {url[:160]}")
         return resp
     httpmod.Http.request = served
-    h = home(out / "home", version, rec / "base.db")
+    h = home(out / "home", version, Path(edit["after"]) / "home" / "data" / "internwatch.db" if "after" in edit
+             else rec / "base.db")
     cfg = configmod.load(h)
     checker_fn = None
     if "new" in edit or "fail" in edit:
