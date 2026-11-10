@@ -1237,8 +1237,9 @@ def keep_list(cfg: Config, name: str, text: str) -> None:
 
 
 def check_listings_later(ctx: Ctx, rnd: str, whole: Config) -> list[dict]:
-    """L in a later round (Config.scoped), with no request: the lists the first round downloaded, matched with every
-    company's names and links (the earlier rounds' first, so their rows stay theirs), for this round's companies.
+    """L in a later round (Config.scoped): the lists the first round downloaded, matched with every company's names
+    and links (the earlier rounds' first, so their rows stay theirs), for this round's companies. A list the first
+    round hasn't downloaded since lists were kept (it answered "unchanged") is downloaded here, once.
     Its state has keys of its own (lists:<round>:…), so neither round's alerts or their restores touch the other's."""
     from .crosscheck import CompanyIndex
     sources = {x["name"]: x for x in opts(ctx.cfg).get("listings") or []}
@@ -1249,8 +1250,17 @@ def check_listings_later(ctx: Ctx, rnd: str, whole: Config) -> list[dict]:
     read = 0
     for name, src in sorted(sources.items()):
         path = kept_lists(ctx.cfg) / f"{name}.txt"
-        if not path.exists():
-            continue
+        if not path.exists():  # the first round hasn't downloaded it since lists were kept (it answered "unchanged")
+            if ctx.out_of_time():
+                break
+            http = ctx.http(read_timeout=90)
+            try:
+                keep_list(ctx.cfg, name, http.get(src["url"], timeout=90).text)
+            except Exception as e:  # noqa: BLE001 — tomorrow
+                log.info("moves: list %s not read for the round %s: %s", name, rnd, str(e)[:160])
+                continue
+            finally:
+                http.close()
         try:
             text = path.read_text()
             rows = ripplematch_rows(text) if src["format"] == "ripplematch" else list_rows(src["format"], text)

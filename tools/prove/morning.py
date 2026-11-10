@@ -153,6 +153,10 @@ def replay(version: Path, rec: Path, out: Path, edits: str = "") -> None:
             raise models.FetchError(f"HTTP {resp.status} for {method} {url[:160]}")
         return resp
     httpmod.Http.request = served
+    import logging
+    out.mkdir(parents=True, exist_ok=True)
+    logging.basicConfig(filename=out / "run.log", level=logging.INFO, force=True,
+                        format="%(asctime)s %(levelname)s %(name)s: %(message)s")
     h = home(out / "home", version, Path(edit["after"]) / "home" / "data" / "internwatch.db" if "after" in edit
              else rec / "base.db")
     cfg = configmod.load(h)

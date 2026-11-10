@@ -183,7 +183,8 @@ def test_a_later_rounds_list_check_reads_the_kept_lists_for_its_companies_only(m
                    liveness={"blocked": ["acme", "newco"]})
     rows = [{"company": "Newco", "title": "SWE Intern", "url": "https://jobs.ashbyhq.com/newco/1"},
             {"company": "Acme", "title": "SWE Intern", "url": "https://jobs.lever.co/acme/1"}]
-    moves.keep_list(cfg, "boardsweep", json.dumps(rows))
+    for src in cfg.settings["liveness"]["listings"]:  # every list kept by the first round; one with the rows
+        moves.keep_list(cfg, src["name"], json.dumps(rows) if src["name"] == "boardsweep" else "[]")
     ctx = moves.Ctx(cfg.scoped("added"), memdb, None, None, float("inf"), set())
     problems = moves.check_listings_later(ctx, "added", cfg)
     assert [p["key"] for p in problems] == ["newco"] and "ashby:board=newco" in problems[0]["summary"]
@@ -216,3 +217,25 @@ def test_earlier_emails_are_read_back_from_the_outbox(tmp_path, memdb):
     assert backfill_shown(memdb, tmp_path) == 2
     got = {r["row_key"]: r["digest_at"] for r in memdb.q("SELECT * FROM simplify_rows")}
     assert got["a"] and got["a"] == got["b"] and got["c"] is None
+
+
+def test_a_later_round_downloads_a_list_once_when_no_copy_is_kept(make_cfg, memdb):
+    cfg = make_cfg([company("acme"), company("newco", checker="greenhouse", settings={"board": "newco"}, round="added")],
+                   liveness={"blocked": ["acme", "newco"]})
+    rows = [{"company": "Newco", "title": "SWE Intern", "url": "https://jobs.ashbyhq.com/newco/1"}]
+    asked = []
+
+    class Http:
+        def get(self, url, **kw):
+            asked.append(url)
+            return type("R", (), {"text": json.dumps(rows) if "Boardsweep" in url else "[]"})()
+
+        def close(self):
+            pass
+    ctx = moves.Ctx(cfg.scoped("added"), memdb, None, lambda *a, **kw: Http(), float("inf"), set())
+    problems = moves.check_listings_later(ctx, "added", cfg)
+    assert [p["key"] for p in problems] == ["newco"]
+    assert len(asked) == len(cfg.settings["liveness"]["listings"])                   # each list once …
+    assert (moves.kept_lists(cfg) / "boardsweep.txt").exists()
+    moves.check_listings_later(ctx, "added", cfg)
+    assert len(asked) == len(cfg.settings["liveness"]["listings"])                   # … and then from the copy
