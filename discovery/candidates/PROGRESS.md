@@ -102,6 +102,30 @@ Workday costs ~1.0-1.5 s a request (20 jobs, unpartitioned); sites over the 2,00
 Medium (full read is fine, ≤4 min): Applied Materials, HPE, BofA, HP, KLA, Morgan Stanley, Wells Fargo, Verizon,
 AT&T, Home Depot (932 on the main site), Nike; Oracle sites are cheap (JPMorgan 7,065 jobs in 36 requests).
 
+## Companies existing code can't read yet (probed 2026-11-09; new_systems_measure.json)
+Each probe went through the project's client (robots.txt first). Jobs/students/matching from the site's own list.
+| Company | Where its jobs are | What reading it takes | Requests a day | Jobs / students / matching |
+|---|---|---|---|---|
+| Costco | IT jobs on Taleo Business Edition (phf.tbe.taleo.net, org COSTCO, site 41): one RSS feed with every job ("Costco IT Job Feed"). careers.costco.com (Jibe, 18,698 warehouse jobs, Crawl-delay 5) has none of them; all 8 stored Simplify rows link the Taleo site | small new reader for the Taleo feed (`taleo_tbe`) | 1 | 41 / 25 / 22 (Costco Digital Services interns) |
+| Sandisk | moved off SmartRecruiters (company empty; all 7 listed postings closed). Careers page links avature.sandisk.com/Careers; its list is drawn in the browser, its RSS feed shows the 20 newest only, its sitemap lists every job page (502) | new sitemap reader: titles from links, job page read for new student roles (location, date) | 1 + new student roles | 500 / 17 / 14 |
+| NetApp, Paramount, Qorvo | SAP SuccessFactors sites (jobs.netapp.com, careers.paramount.com, careers.qorvo.com): server-rendered search pages, 25 a page, with title, location, date. robots.txt disallows /services/ (RSS) only | new `successfactors` reader of the search pages | 13 / 9 / 1 | NetApp 320 / 13 / 5 (1 in the US); Paramount 223 / 2 / 0; Qorvo 8 / 6 / 6 |
+| Bank of America (campus) | Oleeo bankcampuscareers.tal.net: boards 1 (Global Programs, 20), 2 (Campus Events, 5), 5, 6 (Japan, 2+2), each with a complete Atom feed. Crawl-delay 10 | new `oleeo` reader (feeds) | 4 (40 s) | 29 / 16 / about 5 (US quant programs, Early Insights) |
+| Morgan Stanley (campus) | Oleeo morganstanley.tal.net board 1 (72 programs, 50 a page; feed switched off) and board 2. Crawl-delay 10 | same `oleeo` reader (pages) | 3 (30 s) | 72 programs; page 1: 50 / 45 / 3 US |
+| Best Buy | ServiceNow portal jobs.bestbuy.com: the list comes from a scripted service the page calls in the browser. Its sitemap (bestbuy.service-now.com) lists 2,252 job pages by requisition number; a job page carries its title but weighs 1.1 MB | custom checker: sitemap + one page per new requisition (about 130 a day; 2,252 on day one, 2.4 GB) | about 131 | 2,252 (mostly store roles) |
+| ADP | jobs.adp.com refuses scripts on every page; its sitemap answers: 690 jobs (8 languages each), titles in the links, no location | sitemap-only reader (titles, location unknown, so tagged unsure) | 1 | 690 / 8 / 5 |
+Read with existing code after all: Dusty Robotics (Rippling `dusty-robotics-inc`, 2 jobs; the Greenhouse board is gone),
+Precisely (Greenhouse preciselyusjobs + preciselyinternationaljobs, 55), athenahealth (Phenom careers.athenahealth.com,
+83), Charles Schwab (TalentBrew schwabjobs.com, 284). Fortinet: CX_1 and CX_2001 are mirrors (1,050 jobs in common, 1
+extra on CX_1); read CX_2001 (Simplify links it), CX_1 becomes a mirror alias.
+
+## Very large Workday sites: count gaps explained, and a cheaper full read (workday_partitions.json)
+- Citi 4,190 read vs 4,885 and Micron 2,881 vs 3,188: the larger number adds up each location's count, so a job in
+  several cities counts several times. The sites' own totals (time type and worker type counts) are 4,186 and 2,884.
+- CVS, Target, Lowe's and Bank of America's us-emplsv split below Workday's 2,000-job cap only by single locations
+  (4,991 / 2,117 / 1,873 / 2,763 searches). Workday matches any of several values in one search (tested: 19 CVS
+  locations whose counts add to 1,900 returned 1,399 jobs), so packing locations into searches of under 1,900 cuts
+  CVS from about 5,300 requests to about 1,000-1,300. Measured in read_results_big.json (STAGE1_PACK=1, scratch only).
+
 ## Next
 Done: the special cases existing adapters read (Costco partly, UHG, Tyler, Precisely); Workday robots.txt sites;
 lists check; page systems; Simplify coverage; re-match dry run; name clashes; backup checks measured once.
@@ -109,9 +133,7 @@ lists check; page systems; Simplify coverage; re-match dry run; name clashes; ba
    without a link; slices for CVS, Lowe's (keyword) and Costco (category); Disney's Phenom total.
 2. Page counts with filters off: Greenhouse boards that redirect to the company's own page; explain Citi, Micron,
    Arista, HPE.
-3. Companies existing code can't read: what reading each would take and what it gives (NetApp, Paramount, Qorvo,
-   the Oleeo campus sites, Best Buy, ADP, Sandisk; Costco and Lowe's if still unread). Also Dusty Robotics, Precisely
-   international, Fortinet CX_1 against CX_2001, Persona.
+3. Done: companies existing code can't read (table above). Lowe's full read is in read_results_big.json.
 4. Per company decisions: Workday robots.txt sites, list-linked systems, mirrors, learn_ids, anchored match_urls,
    RippleMatch, subsidiaries; backup checks per company with requests and seconds, and why any is skipped.
 5. Day-one alerts by kind; "Now watching" roles per batch; run-time model (8/12/16 workers, full read against

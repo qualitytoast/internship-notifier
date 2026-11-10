@@ -1,0 +1,13 @@
+# status 200
+User-agent: *
+Disallow: /*/agent/
+Disallow: /*/ats/
+Disallow: /*/channel/
+Crawl-delay: 10
+
+User-agent: Bytespider
+User-agent: ClaudeBot
+User-agent: GPTBot
+User-agent: ImageSiftBot
+User-agent: SemrushBot
+Disallow: /

@@ -1,0 +1,62 @@
+{
+ "key": "qorvo",
+ "host": "careers.qorvo.com",
+ "total": 8,
+ "jobs": 8,
+ "requests": 1,
+ "seconds": 0.4,
+ "students": 6,
+ "matched": 6,
+ "student_titles": [
+  [
+   "Customer Quality Engineering Intern",
+   "Richardson, TX, US, 75081"
+  ],
+  [
+   "Product Engineering Intern",
+   "Hillsboro, OR, US, 97124"
+  ],
+  [
+   "SOI Design Intern",
+   "Greensboro, NC, US, 27409"
+  ],
+  [
+   "Sales Data Analyst Intern",
+   "Hillsboro, OR, US, 97124"
+  ],
+  [
+   "Software Engineer Intern",
+   "Richardson, TX, US, 75080"
+  ],
+  [
+   "Test Engineering Intern",
+   "Hillsboro, OR, US, 97124"
+  ]
+ ],
+ "matched_titles": [
+  [
+   "Customer Quality Engineering Intern",
+   "Richardson, TX, US, 75081"
+  ],
+  [
+   "Product Engineering Intern",
+   "Hillsboro, OR, US, 97124"
+  ],
+  [
+   "SOI Design Intern",
+   "Greensboro, NC, US, 27409"
+  ],
+  [
+   "Sales Data Analyst Intern",
+   "Hillsboro, OR, US, 97124"
+  ],
+  [
+   "Software Engineer Intern",
+   "Richardson, TX, US, 75080"
+  ],
+  [
+   "Test Engineering Intern",
+   "Hillsboro, OR, US, 97124"
+  ]
+ ]
+}

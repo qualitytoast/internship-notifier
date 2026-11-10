@@ -1,0 +1,5791 @@
+{
+ "applied-materials": {
+  "site": "External",
+  "total": 2000,
+  "known": 2197,
+  "facets": [
+   {
+    "facet": "Country",
+    "values": 20,
+    "sum": 2246,
+    "largest": 1039,
+    "splits": true,
+    "requests": 124,
+    "auto": false,
+    "top": [
+     [
+      "United States of America",
+      1039
+     ],
+     [
+      "Singapore",
+      309
+     ],
+     [
+      "India",
+      165
+     ],
+     [
+      "China",
+      161
+     ],
+     [
+      "Taiwan",
+      142
+     ],
+     [
+      "Japan",
+      119
+     ],
+     [
+      "Korea, Republic of",
+      87
+     ],
+     [
+      "Israel",
+      75
+     ],
+     [
+      "Germany",
+      47
+     ],
+     [
+      "Italy",
+      28
+     ],
+     [
+      "France",
+      20
+     ],
+     [
+      "Malaysia",
+      17
+     ]
+    ]
+   },
+   {
+    "facet": "State_Region_Province",
+    "values": 55,
+    "sum": 2571,
+    "largest": 543,
+    "splits": true,
+    "requests": 161,
+    "auto": false,
+    "top": [
+     [
+      "California",
+      543
+     ],
+     [
+      "Texas",
+      317
+     ],
+     [
+      "South East",
+      309
+     ],
+     [
+      "Karn\u0101taka",
+      151
+     ],
+     [
+      "Massachusetts",
+      101
+     ],
+     [
+      "Tainan City",
+      88
+     ],
+     [
+      "Gyeonggi-do",
+      77
+     ],
+     [
+      "Arizona",
+      76
+     ],
+     [
+      "Shanghai",
+      75
+     ],
+     [
+      "Center District",
+      68
+     ],
+     [
+      "Hsinchu City",
+      65
+     ],
+     [
+      "Hiroshima",
+      45
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 24,
+    "sum": 2197,
+    "largest": 917,
+    "splits": true,
+    "requests": 124,
+    "auto": true,
+    "top": [
+     [
+      "Engineering",
+      917
+     ],
+     [
+      "Customer Service & Support",
+      388
+     ],
+     [
+      "Project/Program Management",
+      209
+     ],
+     [
+      "Manufacturing",
+      165
+     ],
+     [
+      "Materials",
+      88
+     ],
+     [
+      "Interns",
+      84
+     ],
+     [
+      "Marketing & Business Development",
+      50
+     ],
+     [
+      "Quality",
+      47
+     ],
+     [
+      "Finance",
+      35
+     ],
+     [
+      "Information Technology",
+      33
+     ],
+     [
+      "Business Operations",
+      28
+     ],
+     [
+      "Human Resources",
+      26
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 5,
+    "sum": 2197,
+    "largest": 1969,
+    "splits": true,
+    "requests": 113,
+    "auto": true,
+    "top": [
+     [
+      "Assignee / Regular",
+      1969
+     ],
+     [
+      "New College Grad",
+      132
+     ],
+     [
+      "Intern / Student",
+      83
+     ],
+     [
+      "Fixed Term (Fixed Term)",
+      11
+     ],
+     [
+      "Temporary Worker",
+      2
+     ]
+    ]
+   },
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 2197,
+    "largest": 2196,
+    "splits": false,
+    "requests": 111,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      2196
+     ],
+     [
+      "Part time",
+      1
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 161,
+    "sum": 2785,
+    "largest": 522,
+    "splits": true,
+    "requests": 261,
+    "auto": true,
+    "top": [
+     [
+      "Santa Clara,CA",
+      522
+     ],
+     [
+      "Singapore,SGP",
+      309
+     ],
+     [
+      "Austin,TX",
+      306
+     ],
+     [
+      "Bangalore,IND",
+      151
+     ],
+     [
+      "Tainan,TWN",
+      88
+     ],
+     [
+      "Shanghai,CHN",
+      75
+     ],
+     [
+      "Gloucester,MA",
+      73
+     ],
+     [
+      "Rehovot,ISR",
+      68
+     ],
+     [
+      "Hsinchu,TWN",
+      65
+     ],
+     [
+      "Hiroshima,JPN",
+      45
+     ],
+     [
+      "Yokkaichi,JPN",
+      40
+     ],
+     [
+      "Phoenix,AZ",
+      36
+     ]
+    ]
+   },
+   {
+    "facet": "distance",
+    "values": 5,
+    "sum": 5,
+    "largest": 1,
+    "splits": false,
+    "requests": 5,
+    "auto": false,
+    "top": [
+     [
+      "10 miles",
+      1
+     ],
+     [
+      "25 miles",
+      1
+     ],
+     [
+      "50 miles",
+      1
+     ],
+     [
+      "100 miles",
+      1
+     ],
+     [
+      "Any Distance",
+      1
+     ]
+    ]
+   }
+  ]
+ },
+ "bank-of-america": {
+  "site": "us-emplsv",
+  "total": 3037,
+  "known": 3037,
+  "facets": [
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 3037,
+    "largest": 3036,
+    "splits": false,
+    "requests": 153,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      3036
+     ],
+     [
+      "Part time",
+      1
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 2,
+    "sum": 3037,
+    "largest": 3036,
+    "splits": false,
+    "requests": 153,
+    "auto": true,
+    "top": [
+     [
+      "EE - Regular Employee",
+      3036
+     ],
+     [
+      "EE - Territorial",
+      1
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 11,
+    "sum": 20386,
+    "largest": 3037,
+    "splits": false,
+    "requests": 1021,
+    "auto": true,
+    "top": [
+     [
+      "Band (Management Level)",
+      3037
+     ],
+     [
+      "JA Job Family",
+      3037
+     ],
+     [
+      "JA Role",
+      3037
+     ],
+     [
+      "JA Sub Family",
+      3037
+     ],
+     [
+      "JA Sub Role",
+      3037
+     ],
+     [
+      "Reg ADV2B Jobs",
+      3037
+     ],
+     [
+      "Reg Dodd Frank Jobs",
+      1532
+     ],
+     [
+      "SAFELO/LO Job Group",
+      396
+     ],
+     [
+      "Job Family pre-JAT",
+      196
+     ],
+     [
+      "All Jobs (Inactive)",
+      20
+     ],
+     [
+      "All Jobs (Pre-Workday groupings) (Inactive)",
+      20
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 2763,
+    "sum": 7800,
+    "largest": 161,
+    "splits": true,
+    "requests": 2867,
+    "auto": true,
+    "top": [
+     [
+      "New York",
+      161
+     ],
+     [
+      "Charlotte",
+      155
+     ],
+     [
+      "Charlotte",
+      152
+     ],
+     [
+      "Charlotte",
+      118
+     ],
+     [
+      "Plano",
+      101
+     ],
+     [
+      "Chicago",
+      98
+     ],
+     [
+      "Jacksonville",
+      85
+     ],
+     [
+      "Charlotte",
+      82
+     ],
+     [
+      "Jersey City",
+      80
+     ],
+     [
+      "Boston",
+      78
+     ],
+     [
+      "Charlotte",
+      75
+     ],
+     [
+      "Addison",
+      64
+     ]
+    ]
+   }
+  ]
+ },
+ "bank-of-america~site-Lateral-US": {
+  "site": "Lateral-US",
+  "total": 1989,
+  "known": 1989,
+  "facets": [
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 1989,
+    "largest": 1988,
+    "splits": true,
+    "requests": 101,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      1988
+     ],
+     [
+      "Part time",
+      1
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 1,
+    "sum": 1989,
+    "largest": 1989,
+    "splits": true,
+    "requests": 100,
+    "auto": true,
+    "top": [
+     [
+      "EE - Regular Employee",
+      1989
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 11,
+    "sum": 13714,
+    "largest": 1989,
+    "splits": true,
+    "requests": 691,
+    "auto": true,
+    "top": [
+     [
+      "Band (Management Level)",
+      1989
+     ],
+     [
+      "JA Job Family",
+      1989
+     ],
+     [
+      "JA Role",
+      1989
+     ],
+     [
+      "JA Sub Family",
+      1989
+     ],
+     [
+      "JA Sub Role",
+      1989
+     ],
+     [
+      "Reg ADV2B Jobs",
+      1989
+     ],
+     [
+      "Reg Dodd Frank Jobs",
+      1210
+     ],
+     [
+      "SAFELO/LO Job Group",
+      349
+     ],
+     [
+      "Job Family pre-JAT",
+      191
+     ],
+     [
+      "All Jobs (Inactive)",
+      15
+     ],
+     [
+      "All Jobs (Pre-Workday groupings) (Inactive)",
+      15
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 2581,
+    "sum": 5424,
+    "largest": 102,
+    "splits": true,
+    "requests": 2610,
+    "auto": true,
+    "top": [
+     [
+      "New York",
+      102
+     ],
+     [
+      "Chicago",
+      71
+     ],
+     [
+      "Charlotte",
+      53
+     ],
+     [
+      "Plano",
+      50
+     ],
+     [
+      "Charlotte",
+      48
+     ],
+     [
+      "Charlotte",
+      41
+     ],
+     [
+      "Washington",
+      41
+     ],
+     [
+      "Chicago",
+      38
+     ],
+     [
+      "Boston",
+      37
+     ],
+     [
+      "Charlotte",
+      37
+     ],
+     [
+      "Jersey City",
+      36
+     ],
+     [
+      "Jersey City",
+      31
+     ]
+    ]
+   }
+  ]
+ },
+ "bank-of-america~site-Scoutt": {
+  "site": "Scoutt",
+  "total": 26,
+  "known": 26,
+  "facets": [
+   {
+    "facet": "timeType",
+    "values": 1,
+    "sum": 26,
+    "largest": 26,
+    "splits": true,
+    "requests": 2,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      26
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 1,
+    "sum": 26,
+    "largest": 26,
+    "splits": true,
+    "requests": 2,
+    "auto": true,
+    "top": [
+     [
+      "EE - Regular Employee",
+      26
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 6,
+    "sum": 156,
+    "largest": 26,
+    "splits": true,
+    "requests": 12,
+    "auto": true,
+    "top": [
+     [
+      "Band (Management Level)",
+      26
+     ],
+     [
+      "JA Job Family",
+      26
+     ],
+     [
+      "JA Role",
+      26
+     ],
+     [
+      "JA Sub Family",
+      26
+     ],
+     [
+      "JA Sub Role",
+      26
+     ],
+     [
+      "Reg ADV2B Jobs",
+      26
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 19,
+    "sum": 63,
+    "largest": 8,
+    "splits": true,
+    "requests": 19,
+    "auto": true,
+    "top": [
+     [
+      "Jersey City",
+      8
+     ],
+     [
+      "New York",
+      8
+     ],
+     [
+      "Jersey City",
+      7
+     ],
+     [
+      "Plano",
+      7
+     ],
+     [
+      "Charlotte",
+      6
+     ],
+     [
+      "Pennington",
+      5
+     ],
+     [
+      "Charlotte",
+      4
+     ],
+     [
+      "New York",
+      4
+     ],
+     [
+      "Chandler",
+      3
+     ],
+     [
+      "Chicago",
+      2
+     ],
+     [
+      "Addison",
+      1
+     ],
+     [
+      "Boston",
+      1
+     ]
+    ]
+   }
+  ]
+ },
+ "bank-of-america~site-lateral-apac": {
+  "site": "lateral-apac",
+  "total": 98,
+  "known": 98,
+  "facets": [
+   {
+    "facet": "timeType",
+    "values": 1,
+    "sum": 98,
+    "largest": 98,
+    "splits": true,
+    "requests": 5,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      98
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 2,
+    "sum": 98,
+    "largest": 97,
+    "splits": true,
+    "requests": 6,
+    "auto": true,
+    "top": [
+     [
+      "EE - Regular Employee",
+      97
+     ],
+     [
+      "EE - Fixed Term Contract (Fixed Term)",
+      1
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 8,
+    "sum": 590,
+    "largest": 98,
+    "splits": true,
+    "requests": 32,
+    "auto": true,
+    "top": [
+     [
+      "Band (Management Level)",
+      98
+     ],
+     [
+      "JA Job Family",
+      98
+     ],
+     [
+      "JA Role",
+      98
+     ],
+     [
+      "JA Sub Family",
+      98
+     ],
+     [
+      "JA Sub Role",
+      98
+     ],
+     [
+      "Reg ADV2B Jobs",
+      98
+     ],
+     [
+      "All Jobs (Inactive)",
+      1
+     ],
+     [
+      "All Jobs (Pre-Workday groupings) (Inactive)",
+      1
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 17,
+    "sum": 104,
+    "largest": 17,
+    "splits": true,
+    "requests": 17,
+    "auto": true,
+    "top": [
+     [
+      "Singapore",
+      17
+     ],
+     [
+      "Sydney",
+      16
+     ],
+     [
+      "Singapore",
+      14
+     ],
+     [
+      "Hong Kong",
+      12
+     ],
+     [
+      "Tokyo",
+      12
+     ],
+     [
+      "BANDRA (EAST)",
+      6
+     ],
+     [
+      "Seoul",
+      4
+     ],
+     [
+      "Taipei",
+      4
+     ],
+     [
+      "Chennai",
+      3
+     ],
+     [
+      "Hong Kong",
+      3
+     ],
+     [
+      "Jakarta",
+      3
+     ],
+     [
+      "Taguig",
+      3
+     ]
+    ]
+   }
+  ]
+ },
+ "bank-of-america~site-lateral-ba_continuum": {
+  "site": "lateral-ba_continuum",
+  "total": 115,
+  "known": 115,
+  "facets": [
+   {
+    "facet": "timeType",
+    "values": 1,
+    "sum": 115,
+    "largest": 115,
+    "splits": true,
+    "requests": 6,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      115
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 1,
+    "sum": 115,
+    "largest": 115,
+    "splits": true,
+    "requests": 6,
+    "auto": true,
+    "top": [
+     [
+      "EE - Regular Employee",
+      115
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 8,
+    "sum": 700,
+    "largest": 115,
+    "splits": true,
+    "requests": 38,
+    "auto": true,
+    "top": [
+     [
+      "Band (Management Level)",
+      115
+     ],
+     [
+      "JA Job Family",
+      115
+     ],
+     [
+      "JA Role",
+      115
+     ],
+     [
+      "JA Sub Family",
+      115
+     ],
+     [
+      "JA Sub Role",
+      115
+     ],
+     [
+      "Reg ADV2B Jobs",
+      115
+     ],
+     [
+      "All Jobs (Inactive)",
+      5
+     ],
+     [
+      "All Jobs (Pre-Workday groupings) (Inactive)",
+      5
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 12,
+    "sum": 182,
+    "largest": 49,
+    "splits": true,
+    "requests": 16,
+    "auto": true,
+    "top": [
+     [
+      "Mumbai",
+      49
+     ],
+     [
+      "GURUGRAM HARYANA",
+      36
+     ],
+     [
+      "Chennai Tamil Nadu",
+      25
+     ],
+     [
+      "Gandhinagar",
+      17
+     ],
+     [
+      "Mumbai",
+      16
+     ],
+     [
+      "Hyderabad",
+      15
+     ],
+     [
+      "Hyderabad Telangana",
+      14
+     ],
+     [
+      "Mumbai",
+      4
+     ],
+     [
+      "Hyderabad",
+      2
+     ],
+     [
+      "Hyderabad",
+      2
+     ],
+     [
+      "Hyderabad",
+      1
+     ],
+     [
+      "Mumbai",
+      1
+     ]
+    ]
+   }
+  ]
+ },
+ "bank-of-america~site-lateral-canada": {
+  "site": "lateral-canada",
+  "total": 5,
+  "known": 5,
+  "facets": [
+   {
+    "facet": "timeType",
+    "values": 1,
+    "sum": 5,
+    "largest": 5,
+    "splits": true,
+    "requests": 1,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      5
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 1,
+    "sum": 5,
+    "largest": 5,
+    "splits": true,
+    "requests": 1,
+    "auto": true,
+    "top": [
+     [
+      "EE - Regular Employee",
+      5
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 6,
+    "sum": 30,
+    "largest": 5,
+    "splits": true,
+    "requests": 6,
+    "auto": true,
+    "top": [
+     [
+      "Band (Management Level)",
+      5
+     ],
+     [
+      "JA Job Family",
+      5
+     ],
+     [
+      "JA Role",
+      5
+     ],
+     [
+      "JA Sub Family",
+      5
+     ],
+     [
+      "JA Sub Role",
+      5
+     ],
+     [
+      "Reg ADV2B Jobs",
+      5
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 2,
+    "sum": 6,
+    "largest": 5,
+    "splits": true,
+    "requests": 2,
+    "auto": true,
+    "top": [
+     [
+      "Toronto",
+      5
+     ],
+     [
+      "Calgary",
+      1
+     ]
+    ]
+   }
+  ]
+ },
+ "bank-of-america~site-lateral-latam": {
+  "site": "lateral-latam",
+  "total": 6,
+  "known": 6,
+  "facets": [
+   {
+    "facet": "timeType",
+    "values": 1,
+    "sum": 6,
+    "largest": 6,
+    "splits": true,
+    "requests": 1,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      6
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 1,
+    "sum": 6,
+    "largest": 6,
+    "splits": true,
+    "requests": 1,
+    "auto": true,
+    "top": [
+     [
+      "EE - Regular Employee",
+      6
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 6,
+    "sum": 36,
+    "largest": 6,
+    "splits": true,
+    "requests": 6,
+    "auto": true,
+    "top": [
+     [
+      "Band (Management Level)",
+      6
+     ],
+     [
+      "JA Job Family",
+      6
+     ],
+     [
+      "JA Role",
+      6
+     ],
+     [
+      "JA Sub Family",
+      6
+     ],
+     [
+      "JA Sub Role",
+      6
+     ],
+     [
+      "Reg ADV2B Jobs",
+      6
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 3,
+    "sum": 6,
+    "largest": 3,
+    "splits": true,
+    "requests": 3,
+    "auto": true,
+    "top": [
+     [
+      "Sao Paulo - SP",
+      3
+     ],
+     [
+      "Mexico City",
+      2
+     ],
+     [
+      "Mexico City",
+      1
+     ]
+    ]
+   }
+  ]
+ },
+ "citi": {
+  "site": "2",
+  "total": 2000,
+  "known": 4186,
+  "facets": [
+   {
+    "facet": "Country_and_Jurisdiction",
+    "values": 52,
+    "sum": 4196,
+    "largest": 1453,
+    "splits": true,
+    "requests": 244,
+    "auto": false,
+    "top": [
+     [
+      "United States of America",
+      1453
+     ],
+     [
+      "India",
+      922
+     ],
+     [
+      "Mexico",
+      280
+     ],
+     [
+      "Singapore",
+      259
+     ],
+     [
+      "Canada",
+      200
+     ],
+     [
+      "United Kingdom",
+      176
+     ],
+     [
+      "Philippines",
+      166
+     ],
+     [
+      "Hong Kong",
+      115
+     ],
+     [
+      "Malaysia",
+      111
+     ],
+     [
+      "Poland",
+      96
+     ],
+     [
+      "Taiwan",
+      57
+     ],
+     [
+      "China",
+      52
+     ]
+    ]
+   },
+   {
+    "facet": "State_or_Province",
+    "values": 55,
+    "sum": 3593,
+    "largest": 635,
+    "splits": false,
+    "requests": 208,
+    "auto": false,
+    "top": [
+     [
+      "Mah\u0101r\u0101shtra",
+      635
+     ],
+     [
+      "New York",
+      502
+     ],
+     [
+      "Florida",
+      336
+     ],
+     [
+      "Tamil N\u0101du",
+      289
+     ],
+     [
+      "California",
+      269
+     ],
+     [
+      "Texas",
+      242
+     ],
+     [
+      "Ontario",
+      198
+     ],
+     [
+      "New Jersey",
+      114
+     ],
+     [
+      "Selangor",
+      106
+     ],
+     [
+      "Distrito Federal",
+      85
+     ],
+     [
+      "Taipei City",
+      57
+     ],
+     [
+      "Hary\u0101na",
+      54
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 32,
+    "sum": 4166,
+    "largest": 1165,
+    "splits": false,
+    "requests": 223,
+    "auto": true,
+    "top": [
+     [
+      "Technology",
+      1165
+     ],
+     [
+      "Consumer Sales",
+      470
+     ],
+     [
+      "Operations - Transaction Services",
+      355
+     ],
+     [
+      "Customer Service",
+      238
+     ],
+     [
+      "Private Client Coverage",
+      236
+     ],
+     [
+      "Risk Management",
+      197
+     ],
+     [
+      "Operations - Services",
+      169
+     ],
+     [
+      "Management Development Programs",
+      162
+     ],
+     [
+      "Institutional Banking",
+      156
+     ],
+     [
+      "Finance",
+      154
+     ],
+     [
+      "Operations - Core",
+      147
+     ],
+     [
+      "Product Management and Development",
+      97
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 6,
+    "sum": 4186,
+    "largest": 4028,
+    "splits": false,
+    "requests": 213,
+    "auto": true,
+    "top": [
+     [
+      "Regular",
+      4028
+     ],
+     [
+      "Apprentice",
+      114
+     ],
+     [
+      "Fixed Term (Fixed Term)",
+      21
+     ],
+     [
+      "Intern (Paid)",
+      16
+     ],
+     [
+      "Payroll Only",
+      4
+     ],
+     [
+      "Temporary",
+      3
+     ]
+    ]
+   },
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 3901,
+    "largest": 3710,
+    "splits": false,
+    "requests": 196,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      3710
+     ],
+     [
+      "Part time",
+      191
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 547,
+    "sum": 4888,
+    "largest": 413,
+    "splits": true,
+    "requests": 708,
+    "auto": true,
+    "top": [
+     [
+      "Pune Maharashtra India",
+      413
+     ],
+     [
+      "New York New York United States",
+      333
+     ],
+     [
+      "Singapore  Singapore",
+      244
+     ],
+     [
+      "Mumbai Maharashtra India",
+      218
+     ],
+     [
+      "Irving Texas United States",
+      206
+     ],
+     [
+      "Tampa Florida United States",
+      201
+     ],
+     [
+      "Mississauga Ontario Canada",
+      179
+     ],
+     [
+      "Taguig  Philippines",
+      166
+     ],
+     [
+      "Chennai Tamil Nadu India",
+      109
+     ],
+     [
+      "Kuala Lumpur Selangor Malaysia",
+      106
+     ],
+     [
+      "London  United Kingdom",
+      104
+     ],
+     [
+      "1/124, SHIVAJI GARDENS, MOONLI",
+      95
+     ]
+    ]
+   }
+  ]
+ },
+ "comcast~wd115": {
+  "site": "Comcast_Careers",
+  "total": 698,
+  "known": 698,
+  "facets": [
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 698,
+    "largest": 682,
+    "splits": true,
+    "requests": 36,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      682
+     ],
+     [
+      "Part time",
+      16
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 3,
+    "sum": 698,
+    "largest": 695,
+    "splits": true,
+    "requests": 37,
+    "auto": true,
+    "top": [
+     [
+      "Regular",
+      695
+     ],
+     [
+      "Fixed Term Contract (Fixed Term)",
+      2
+     ],
+     [
+      "Intern (Trainee)",
+      1
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 17,
+    "sum": 698,
+    "largest": 469,
+    "splits": true,
+    "requests": 47,
+    "auto": true,
+    "top": [
+     [
+      "Sales",
+      469
+     ],
+     [
+      "Field Operations",
+      69
+     ],
+     [
+      "Engineering",
+      46
+     ],
+     [
+      "Finance & Accounting",
+      29
+     ],
+     [
+      "Human Resources",
+      24
+     ],
+     [
+      "Information Technology",
+      18
+     ],
+     [
+      "Strategic Planning & Development",
+      10
+     ],
+     [
+      "Enterprise Analytics & Data Intelligence",
+      6
+     ],
+     [
+      "Events",
+      6
+     ],
+     [
+      "Support",
+      6
+     ],
+     [
+      "Functional Operations",
+      4
+     ],
+     [
+      "Marketing",
+      3
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 435,
+    "sum": 803,
+    "largest": 37,
+    "splits": true,
+    "requests": 437,
+    "auto": true,
+    "top": [
+     [
+      "PA - Philadelphia, 1701 John F Kennedy Blvd",
+      37
+     ],
+     [
+      "India - Chennai, Comcast India Engineering Cent",
+      28
+     ],
+     [
+      "NY - New York, 1407 Broadway Floor 12",
+      20
+     ],
+     [
+      "IL - Chicago, 350 N. Orleans St 1300N",
+      18
+     ],
+     [
+      "VA - Reston, 11951 Freedom Dr Ste 900",
+      18
+     ],
+     [
+      "PA - Philadelphia, 1800 Arch St",
+      14
+     ],
+     [
+      "NY - New York, 55 W 46th St, FL 33 & 34",
+      12
+     ],
+     [
+      "CO - Englewood, 183 Inverness Dr West",
+      11
+     ],
+     [
+      "GA - Atlanta, 2605 Circle 75 Pkwy SE",
+      9
+     ],
+     [
+      "Great Britain - London, 1 St Giles High St",
+      9
+     ],
+     [
+      "PA - Philadelphia, 3601 S Broad St",
+      8
+     ],
+     [
+      "OR - Tigard, 11308 SW 68th Pkwy",
+      7
+     ]
+    ]
+   }
+  ]
+ },
+ "cvs-health": {
+  "site": "CVS_Health_Careers",
+  "total": 19111,
+  "known": 19111,
+  "facets": [
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 19108,
+    "largest": 10905,
+    "splits": false,
+    "requests": 957,
+    "auto": true,
+    "top": [
+     [
+      "Part time",
+      10905
+     ],
+     [
+      "Full time",
+      8203
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 8,
+    "sum": 19111,
+    "largest": 14804,
+    "splits": false,
+    "requests": 961,
+    "auto": true,
+    "top": [
+     [
+      "Regular",
+      14804
+     ],
+     [
+      "Pharmacy Intern (Trainee)",
+      3926
+     ],
+     [
+      "Per Diem",
+      210
+     ],
+     [
+      "Seasonal (Seasonal)",
+      110
+     ],
+     [
+      "Intern (Seasonal) (Trainee)",
+      56
+     ],
+     [
+      "Contingent Worker Program",
+      2
+     ],
+     [
+      "Extern",
+      2
+     ],
+     [
+      "Professional Services",
+      1
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 25,
+    "sum": 19111,
+    "largest": 12268,
+    "splits": false,
+    "requests": 971,
+    "auto": true,
+    "top": [
+     [
+      "Retail Store & Pharmacy",
+      12268
+     ],
+     [
+      "Internships and Devlpmt Pgms",
+      3986
+     ],
+     [
+      "Clinical Services",
+      1872
+     ],
+     [
+      "Transportation and Logistics",
+      228
+     ],
+     [
+      "Pharmacy Services",
+      161
+     ],
+     [
+      "Technology",
+      141
+     ],
+     [
+      "Business Administration",
+      62
+     ],
+     [
+      "Product, Marketing, and Advtsg",
+      54
+     ],
+     [
+      "Plan Operations",
+      53
+     ],
+     [
+      "Clinical Pharmacists",
+      46
+     ],
+     [
+      "Sales and Account Management",
+      45
+     ],
+     [
+      "Data and Analytics",
+      40
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 4991,
+    "sum": 24543,
+    "largest": 159,
+    "splits": true,
+    "requests": 5333,
+    "auto": true,
+    "top": [
+     [
+      "PA - Philadelphia",
+      159
+     ],
+     [
+      "NY - New York",
+      145
+     ],
+     [
+      "TX - Dallas",
+      139
+     ],
+     [
+      "IN - Indianapolis",
+      137
+     ],
+     [
+      "AZ - Phoenix",
+      110
+     ],
+     [
+      "TX - Houston",
+      110
+     ],
+     [
+      "IL - Chicago",
+      96
+     ],
+     [
+      "Work At Home-Texas",
+      95
+     ],
+     [
+      "Work At Home-Florida",
+      87
+     ],
+     [
+      "Work At Home-Illinois",
+      87
+     ],
+     [
+      "Work At Home-Connecticut",
+      86
+     ],
+     [
+      "Work At Home-Pennsylvania",
+      86
+     ]
+    ]
+   }
+  ]
+ },
+ "cvs-health~site-Private_Postings_Mergers_and_Acquisitions_ONLY": {
+  "site": "Private_Postings_Mergers_and_Acquisitions_ONLY",
+  "total": 1,
+  "known": 1,
+  "facets": [
+   {
+    "facet": "timeType",
+    "values": 1,
+    "sum": 1,
+    "largest": 1,
+    "splits": true,
+    "requests": 1,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      1
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 1,
+    "sum": 1,
+    "largest": 1,
+    "splits": true,
+    "requests": 1,
+    "auto": true,
+    "top": [
+     [
+      "Regular",
+      1
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 1,
+    "sum": 1,
+    "largest": 1,
+    "splits": true,
+    "requests": 1,
+    "auto": true,
+    "top": [
+     [
+      "Retail Store & Pharmacy",
+      1
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 1,
+    "sum": 1,
+    "largest": 1,
+    "splits": true,
+    "requests": 1,
+    "auto": true,
+    "top": [
+     [
+      "PA - Mechanicsburg",
+      1
+     ]
+    ]
+   }
+  ]
+ },
+ "dicks-sporting-goods": {
+  "site": "DSG",
+  "total": 2000,
+  "known": 3652,
+  "facets": [
+   {
+    "facet": "CF_-_Location_Type__EEB__Extended",
+    "values": 4,
+    "sum": 3651,
+    "largest": 3150,
+    "splits": false,
+    "requests": 184,
+    "auto": false,
+    "top": [
+     [
+      "DICK'S Sporting Goods",
+      3150
+     ],
+     [
+      "House of Sport",
+      309
+     ],
+     [
+      "Golf Galaxy",
+      178
+     ],
+     [
+      "Public Lands",
+      14
+     ]
+    ]
+   },
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 3636,
+    "largest": 2651,
+    "splits": false,
+    "requests": 183,
+    "auto": true,
+    "top": [
+     [
+      "Part time",
+      2651
+     ],
+     [
+      "Full time",
+      985
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 3,
+    "sum": 3652,
+    "largest": 2791,
+    "splits": false,
+    "requests": 184,
+    "auto": true,
+    "top": [
+     [
+      "Regular",
+      2791
+     ],
+     [
+      "Temporary",
+      859
+     ],
+     [
+      "Contractor",
+      2
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamily",
+    "values": 23,
+    "sum": 3652,
+    "largest": 2202,
+    "splits": false,
+    "requests": 198,
+    "auto": false,
+    "top": [
+     [
+      "Field - Teammate",
+      2202
+     ],
+     [
+      "Field - Specialist",
+      382
+     ],
+     [
+      "Field - Captain",
+      279
+     ],
+     [
+      "Field - Hourly (Front End/Ops)",
+      181
+     ],
+     [
+      "Field - Hourly (Sales)",
+      158
+     ],
+     [
+      "Field - Hourly (Tech/Services)",
+      128
+     ],
+     [
+      "Corporate - General",
+      68
+     ],
+     [
+      "Field - Lead",
+      58
+     ],
+     [
+      "Field - ASM",
+      52
+     ],
+     [
+      "Field - Lead (Key Carrier)",
+      30
+     ],
+     [
+      "Field - Golf Professional",
+      25
+     ],
+     [
+      "Distribution Center - Hourly",
+      24
+     ]
+    ]
+   },
+   {
+    "facet": "CF_-_Job_Requisition_Job_Category__LRV__Extended",
+    "values": 26,
+    "sum": 3651,
+    "largest": 3016,
+    "splits": false,
+    "requests": 201,
+    "auto": false,
+    "top": [
+     [
+      "Store Hourly",
+      3016
+     ],
+     [
+      "Sales Managers",
+      328
+     ],
+     [
+      "Store Hourly Golf",
+      124
+     ],
+     [
+      "Merchandising",
+      25
+     ],
+     [
+      "Golf Professional",
+      25
+     ],
+     [
+      "Store Management",
+      23
+     ],
+     [
+      "Distribution/Fulfillment",
+      18
+     ],
+     [
+      "Loss Prevention - Stores",
+      12
+     ],
+     [
+      "Loss Prevention",
+      12
+     ],
+     [
+      "Legal",
+      10
+     ],
+     [
+      "Technology",
+      7
+     ],
+     [
+      "Advertising/Marketing",
+      7
+     ]
+    ]
+   },
+   {
+    "facet": "CF_-_Job_Posting_Location_Type__LRV__Extended",
+    "values": 9,
+    "sum": 3652,
+    "largest": 2776,
+    "splits": false,
+    "requests": 187,
+    "auto": false,
+    "top": [
+     [
+      "DICK'S Sporting Goods",
+      2776
+     ],
+     [
+      "House of Sport",
+      309
+     ],
+     [
+      "Going Going Gone!",
+      202
+     ],
+     [
+      "Golf Galaxy",
+      178
+     ],
+     [
+      "CSC/Corporate",
+      73
+     ],
+     [
+      "DICK'S Sporting Goods (DSG + GG)",
+      65
+     ],
+     [
+      "Distribution Center",
+      34
+     ],
+     [
+      "Public Lands",
+      14
+     ],
+     [
+      "Virtual",
+      1
+     ]
+    ]
+   },
+   {
+    "facet": "locationRegionStateProvince",
+    "values": 48,
+    "sum": 3652,
+    "largest": 287,
+    "splits": true,
+    "requests": 208,
+    "auto": true,
+    "top": [
+     [
+      "Pennsylvania",
+      287
+     ],
+     [
+      "California",
+      282
+     ],
+     [
+      "Texas",
+      225
+     ],
+     [
+      "Ohio",
+      222
+     ],
+     [
+      "New York",
+      220
+     ],
+     [
+      "Florida",
+      211
+     ],
+     [
+      "Illinois",
+      156
+     ],
+     [
+      "North Carolina",
+      155
+     ],
+     [
+      "Michigan",
+      127
+     ],
+     [
+      "Virginia",
+      118
+     ],
+     [
+      "Indiana",
+      114
+     ],
+     [
+      "Georgia",
+      105
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 886,
+    "sum": 3657,
+    "largest": 57,
+    "splits": true,
+    "requests": 888,
+    "auto": true,
+    "top": [
+     [
+      "Customer Support Center",
+      57
+     ],
+     [
+      "Store1620 Tulsa OK",
+      20
+     ],
+     [
+      "Store1561 Salem NH",
+      15
+     ],
+     [
+      "Store0420 Rivertown MI",
+      11
+     ],
+     [
+      "Store1500 Victor NY",
+      11
+     ],
+     [
+      "Store1647 Mobile AL",
+      11
+     ],
+     [
+      "Store1661 Cedar Rapids IA",
+      11
+     ],
+     [
+      "Remote - US",
+      10
+     ],
+     [
+      "Store1548 Ross Park PA",
+      10
+     ],
+     [
+      "Store1565 Amherst NY",
+      10
+     ],
+     [
+      "Store1665 Charlottesville VA",
+      10
+     ],
+     [
+      "Store0090 Lansing MI",
+      9
+     ]
+    ]
+   }
+  ]
+ },
+ "ge-vernova": {
+  "site": "Vernova_ExternalSite",
+  "total": 2181,
+  "known": 2181,
+  "facets": [
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 2181,
+    "largest": 2159,
+    "splits": false,
+    "requests": 110,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      2159
+     ],
+     [
+      "Part time",
+      22
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 5,
+    "sum": 2181,
+    "largest": 1916,
+    "splits": true,
+    "requests": 111,
+    "auto": true,
+    "top": [
+     [
+      "Regular",
+      1916
+     ],
+     [
+      "Co-op/Intern (Fixed Term)",
+      179
+     ],
+     [
+      "Fixed Term Contract (Fixed Term)",
+      59
+     ],
+     [
+      "Apprentice (Fixed Term)",
+      25
+     ],
+     [
+      "Pensioner",
+      2
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 23,
+    "sum": 2181,
+    "largest": 843,
+    "splits": true,
+    "requests": 123,
+    "auto": true,
+    "top": [
+     [
+      "Engineering/Technology",
+      843
+     ],
+     [
+      "Manufacturing",
+      528
+     ],
+     [
+      "Services",
+      248
+     ],
+     [
+      "Project Management",
+      147
+     ],
+     [
+      "Digital Technology",
+      90
+     ],
+     [
+      "Sales",
+      75
+     ],
+     [
+      "Sourcing",
+      65
+     ],
+     [
+      "EHS",
+      34
+     ],
+     [
+      "Quality",
+      27
+     ],
+     [
+      "Finance",
+      25
+     ],
+     [
+      "Human Resources",
+      19
+     ],
+     [
+      "Product Management",
+      16
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 433,
+    "sum": 3032,
+    "largest": 162,
+    "splits": true,
+    "requests": 496,
+    "auto": true,
+    "top": [
+     [
+      "Greenville",
+      162
+     ],
+     [
+      "Schenectady",
+      136
+     ],
+     [
+      "Remote",
+      93
+     ],
+     [
+      "Bengaluru",
+      82
+     ],
+     [
+      "Chennai",
+      69
+     ],
+     [
+      "Stafford",
+      68
+     ],
+     [
+      "Villeurbanne",
+      55
+     ],
+     [
+      "Charleroi USA",
+      54
+     ],
+     [
+      "Noida",
+      52
+     ],
+     [
+      "Berlin",
+      51
+     ],
+     [
+      "Remote",
+      46
+     ],
+     [
+      "Niskayuna",
+      41
+     ]
+    ]
+   }
+  ]
+ },
+ "home-depot": {
+  "site": "CareerDepot",
+  "total": 933,
+  "known": 933,
+  "facets": [
+   {
+    "facet": "workerSubType",
+    "values": 1,
+    "sum": 933,
+    "largest": 933,
+    "splits": true,
+    "requests": 47,
+    "auto": true,
+    "top": [
+     [
+      "Regular Associate",
+      933
+     ]
+    ]
+   },
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 901,
+    "largest": 861,
+    "splits": false,
+    "requests": 46,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      861
+     ],
+     [
+      "Part time",
+      40
+     ]
+    ]
+   },
+   {
+    "facet": "remoteType",
+    "values": 4,
+    "sum": 931,
+    "largest": 611,
+    "splits": false,
+    "requests": 48,
+    "auto": false,
+    "top": [
+     [
+      "Onsite",
+      611
+     ],
+     [
+      "Multi-site",
+      225
+     ],
+     [
+      "Remote/Virtual",
+      79
+     ],
+     [
+      "Location Independent-Commutable",
+      16
+     ]
+    ]
+   },
+   {
+    "facet": "locationCountry",
+    "values": 1,
+    "sum": 924,
+    "largest": 924,
+    "splits": false,
+    "requests": 47,
+    "auto": true,
+    "top": [
+     [
+      "United States of America",
+      924
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 288,
+    "sum": 945,
+    "largest": 226,
+    "splits": true,
+    "requests": 307,
+    "auto": true,
+    "top": [
+     [
+      "STORE SUPPORT CENTER, ATLANTA - 9090",
+      226
+     ],
+     [
+      "GEORGIA - VIRTUAL - GA01",
+      96
+     ],
+     [
+      "PENNANT PARK, ATLANTA - 9141",
+      45
+     ],
+     [
+      "TEXAS - VIRTUAL - TX01",
+      28
+     ],
+     [
+      "FLORIDA - VIRTUAL - FL01",
+      22
+     ],
+     [
+      "CALIFORNIA - VIRTUAL - CA01",
+      17
+     ],
+     [
+      "MASSACHUSETTS - VIRTUAL - MA01",
+      13
+     ],
+     [
+      "NEW JERSEY - VIRTUAL - NJ01",
+      11
+     ],
+     [
+      "NEW YORK - VIRTUAL - NY01",
+      10
+     ],
+     [
+      "SMYRNA PACES SUMMIT - 9125",
+      9
+     ],
+     [
+      "IDAHO - VIRTUAL - ID01",
+      8
+     ],
+     [
+      "SACRAMENTO FDC/BDC - 5910",
+      8
+     ]
+    ]
+   }
+  ]
+ },
+ "hp": {
+  "site": "ExternalCareerSite",
+  "total": 923,
+  "known": 923,
+  "facets": [
+   {
+    "facet": "jobFamilyGroup",
+    "values": 20,
+    "sum": 923,
+    "largest": 175,
+    "splits": true,
+    "requests": 58,
+    "auto": true,
+    "top": [
+     [
+      "Sales",
+      175
+     ],
+     [
+      "Software",
+      134
+     ],
+     [
+      "Administration",
+      131
+     ],
+     [
+      "Engineering",
+      111
+     ],
+     [
+      "Supply Chain & Operations",
+      76
+     ],
+     [
+      "Services",
+      64
+     ],
+     [
+      "Marketing",
+      59
+     ],
+     [
+      "Finance",
+      41
+     ],
+     [
+      "Business Planning",
+      41
+     ],
+     [
+      "Data & Information Technology",
+      28
+     ],
+     [
+      "Human Resources",
+      14
+     ],
+     [
+      "Sales Operations",
+      13
+     ]
+    ]
+   },
+   {
+    "facet": "Location_Country",
+    "values": 39,
+    "sum": 996,
+    "largest": 380,
+    "splits": true,
+    "requests": 78,
+    "auto": false,
+    "top": [
+     [
+      "United States of America",
+      380
+     ],
+     [
+      "Spain",
+      104
+     ],
+     [
+      "India",
+      95
+     ],
+     [
+      "Mexico",
+      88
+     ],
+     [
+      "Singapore",
+      68
+     ],
+     [
+      "United Kingdom",
+      48
+     ],
+     [
+      "Malaysia",
+      39
+     ],
+     [
+      "Taiwan",
+      26
+     ],
+     [
+      "Canada",
+      21
+     ],
+     [
+      "China",
+      19
+     ],
+     [
+      "Israel",
+      16
+     ],
+     [
+      "Brazil",
+      13
+     ]
+    ]
+   },
+   {
+    "facet": "Location_Region_State_Province",
+    "values": 55,
+    "sum": 1153,
+    "largest": 192,
+    "splits": true,
+    "requests": 90,
+    "auto": false,
+    "top": [
+     [
+      "Texas",
+      192
+     ],
+     [
+      "Barcelona",
+      100
+     ],
+     [
+      "California",
+      90
+     ],
+     [
+      "Karn\u0101taka",
+      80
+     ],
+     [
+      "Jalisco",
+      77
+     ],
+     [
+      "Washington",
+      72
+     ],
+     [
+      "South West",
+      68
+     ],
+     [
+      "Pulau Pinang (Penang)",
+      30
+     ],
+     [
+      "Oregon",
+      30
+     ],
+     [
+      "New Mexico",
+      29
+     ],
+     [
+      "Berkshire",
+      27
+     ],
+     [
+      "Taipei City",
+      26
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 4,
+    "sum": 923,
+    "largest": 770,
+    "splits": true,
+    "requests": 49,
+    "auto": true,
+    "top": [
+     [
+      "Reg Employee",
+      770
+     ],
+     [
+      "Temp Intern (Fixed Term)",
+      124
+     ],
+     [
+      "Temporary Employee with Benefits (Fixed Term)",
+      26
+     ],
+     [
+      "Temporary Employee with No Benefits (Fixed Term)",
+      3
+     ]
+    ]
+   },
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 923,
+    "largest": 884,
+    "splits": true,
+    "requests": 47,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      884
+     ],
+     [
+      "Part time",
+      39
+     ]
+    ]
+   },
+   {
+    "facet": "primaryLocation",
+    "values": 106,
+    "sum": 923,
+    "largest": 129,
+    "splits": true,
+    "requests": 131,
+    "auto": false,
+    "top": [
+     [
+      "Spring, Texas, United States of America",
+      129
+     ],
+     [
+      "Sant Cugat del Valles, Barcelona, Spain",
+      93
+     ],
+     [
+      "Bengaluru, Karnataka, India",
+      69
+     ],
+     [
+      "Singapore, South West, Singapore",
+      65
+     ],
+     [
+      "Tlaquepaque, Jalisco, Mexico",
+      56
+     ],
+     [
+      "Vancouver, Washington, United States of America",
+      44
+     ],
+     [
+      "Palo Alto, California, United States of America",
+      31
+     ],
+     [
+      "Batu Kawan, Pulau Pinang (Penang), Malaysia",
+      28
+     ],
+     [
+      "Rio Rancho, New Mexico, United States of America",
+      26
+     ],
+     [
+      "Reading, Berkshire, United Kingdom",
+      23
+     ],
+     [
+      "Corvallis, Oregon, United States of America",
+      22
+     ],
+     [
+      "Taipei, Taipei City, Taiwan Region",
+      19
+     ]
+    ]
+   }
+  ]
+ },
+ "hpe": {
+  "site": "jobsathpe",
+  "total": 1738,
+  "known": 1738,
+  "facets": [
+   {
+    "facet": "jobFamilyGroup",
+    "values": 19,
+    "sum": 1738,
+    "largest": 675,
+    "splits": true,
+    "requests": 97,
+    "auto": true,
+    "top": [
+     [
+      "Engineering",
+      675
+     ],
+     [
+      "Sales",
+      453
+     ],
+     [
+      "Administration",
+      178
+     ],
+     [
+      "Services",
+      171
+     ],
+     [
+      "Supply Chain & Operations",
+      61
+     ],
+     [
+      "Information Technology",
+      37
+     ],
+     [
+      "Business Planning",
+      30
+     ],
+     [
+      "Sales Operations",
+      29
+     ],
+     [
+      "Finance",
+      27
+     ],
+     [
+      "Human Resources",
+      15
+     ],
+     [
+      "Learning & Development",
+      15
+     ],
+     [
+      "Marketing",
+      9
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 5,
+    "sum": 1738,
+    "largest": 1555,
+    "splits": true,
+    "requests": 90,
+    "auto": true,
+    "top": [
+     [
+      "Reg Employee",
+      1555
+     ],
+     [
+      "Temp Intern (Fixed Term)",
+      176
+     ],
+     [
+      "Reg Apprentice",
+      5
+     ],
+     [
+      "Temp Apprentice (Fixed Term)",
+      1
+     ],
+     [
+      "Temporary Employee with Benefits (Fixed Term)",
+      1
+     ]
+    ]
+   },
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 1738,
+    "largest": 1710,
+    "splits": true,
+    "requests": 88,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      1710
+     ],
+     [
+      "Part time",
+      28
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 459,
+    "sum": 2677,
+    "largest": 190,
+    "splits": true,
+    "requests": 506,
+    "auto": true,
+    "top": [
+     [
+      "Bengaluru, Karn\u0101taka, India",
+      190
+     ],
+     [
+      "Spring, Texas, United States of America",
+      111
+     ],
+     [
+      "Bengaluru, Karn\u0101taka, India",
+      72
+     ],
+     [
+      "Aguadilla, Puerto Rico, Puerto Rico",
+      62
+     ],
+     [
+      "San Juan, Puerto Rico, Puerto Rico",
+      60
+     ],
+     [
+      "Ft. Collins, Colorado, United States of America",
+      48
+     ],
+     [
+      "Spring, Texas, United States of America",
+      47
+     ],
+     [
+      "Sunnyvale, California, United States of America",
+      47
+     ],
+     [
+      "San Jose, California, United States of America",
+      45
+     ],
+     [
+      "Sunnyvale, California, United States of America",
+      45
+     ],
+     [
+      "Bloomington, Minnesota, United States of America",
+      38
+     ],
+     [
+      "Tokyo, Tokyo, Japan",
+      38
+     ]
+    ]
+   }
+  ]
+ },
+ "hpe~site-WFMathpe": {
+  "site": "WFMathpe",
+  "total": 1715,
+  "known": 1715,
+  "facets": [
+   {
+    "facet": "jobFamilyGroup",
+    "values": 19,
+    "sum": 1715,
+    "largest": 686,
+    "splits": true,
+    "requests": 98,
+    "auto": true,
+    "top": [
+     [
+      "Engineering",
+      686
+     ],
+     [
+      "Sales",
+      475
+     ],
+     [
+      "Services",
+      224
+     ],
+     [
+      "Supply Chain & Operations",
+      64
+     ],
+     [
+      "Finance",
+      46
+     ],
+     [
+      "Sales Operations",
+      45
+     ],
+     [
+      "Business Planning",
+      43
+     ],
+     [
+      "Information Technology",
+      37
+     ],
+     [
+      "Human Resources",
+      21
+     ],
+     [
+      "Learning & Development",
+      14
+     ],
+     [
+      "Marketing",
+      13
+     ],
+     [
+      "Technical",
+      8
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 3,
+    "sum": 1715,
+    "largest": 1705,
+    "splits": true,
+    "requests": 88,
+    "auto": true,
+    "top": [
+     [
+      "Reg Employee",
+      1705
+     ],
+     [
+      "Temp Intern (Fixed Term)",
+      5
+     ],
+     [
+      "Reg Apprentice",
+      5
+     ]
+    ]
+   },
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 1715,
+    "largest": 1713,
+    "splits": true,
+    "requests": 87,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      1713
+     ],
+     [
+      "Part time",
+      2
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 483,
+    "sum": 2700,
+    "largest": 195,
+    "splits": true,
+    "requests": 525,
+    "auto": true,
+    "top": [
+     [
+      "Bengaluru, Karn\u0101taka, India",
+      195
+     ],
+     [
+      "Spring, Texas, United States of America",
+      99
+     ],
+     [
+      "Bengaluru, Karn\u0101taka, India",
+      72
+     ],
+     [
+      "Aguadilla, Puerto Rico, Puerto Rico",
+      58
+     ],
+     [
+      "San Juan, Puerto Rico, Puerto Rico",
+      58
+     ],
+     [
+      "Ft. Collins, Colorado, United States of America",
+      50
+     ],
+     [
+      "Sunnyvale, California, United States of America",
+      45
+     ],
+     [
+      "Spring, Texas, United States of America",
+      43
+     ],
+     [
+      "San Jose, California, United States of America",
+      42
+     ],
+     [
+      "Tokyo, Tokyo, Japan",
+      38
+     ],
+     [
+      "Sunnyvale, California, United States of America",
+      37
+     ],
+     [
+      "Sofia, Sofia, Bulgaria",
+      36
+     ]
+    ]
+   }
+  ]
+ },
+ "humana~site-CenterWell_External_Career_Site": {
+  "site": "CenterWell_External_Career_Site",
+  "total": 1833,
+  "known": 1833,
+  "facets": [
+   {
+    "facet": "jobFamilyGroup",
+    "values": 26,
+    "sum": 1833,
+    "largest": 598,
+    "splits": true,
+    "requests": 109,
+    "auto": true,
+    "top": [
+     [
+      "Integrated Care & Care Operations - Therapy",
+      598
+     ],
+     [
+      "Integrated Care & Care Operations - Care Management",
+      596
+     ],
+     [
+      "Integrated Care & Care Operations - Clinical",
+      280
+     ],
+     [
+      "Integrated Care & Care Operations - Providers (Direct Patient Care)",
+      160
+     ],
+     [
+      "Integrated Care & Care Operations - Clinic/Center Administration",
+      52
+     ],
+     [
+      "Business Services - Administrative Services",
+      51
+     ],
+     [
+      "Sales - Sales",
+      32
+     ],
+     [
+      "Integrated Care & Care Operations - Pharmacy",
+      19
+     ],
+     [
+      "Member Quality & Financials - Medical Coding",
+      11
+     ],
+     [
+      "Sales - Account Management",
+      6
+     ],
+     [
+      "Consumer Service Operations - Consumer Contacts",
+      5
+     ],
+     [
+      "Integrated Care & Care Operations - Ancillary Health",
+      5
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 3,
+    "sum": 1833,
+    "largest": 1382,
+    "splits": true,
+    "requests": 94,
+    "auto": true,
+    "top": [
+     [
+      "Regular",
+      1382
+     ],
+     [
+      "Per Diem",
+      429
+     ],
+     [
+      "VSP",
+      22
+     ]
+    ]
+   },
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 1833,
+    "largest": 1361,
+    "splits": true,
+    "requests": 93,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      1361
+     ],
+     [
+      "Part time",
+      472
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 620,
+    "sum": 2293,
+    "largest": 45,
+    "splits": true,
+    "requests": 625,
+    "auto": true,
+    "top": [
+     [
+      "The Villages, FL",
+      45
+     ],
+     [
+      "Las Vegas, NV",
+      34
+     ],
+     [
+      "Orlando, FL",
+      27
+     ],
+     [
+      "Phoenix, AZ",
+      21
+     ],
+     [
+      "Jacksonville, FL",
+      20
+     ],
+     [
+      "Charlotte, NC",
+      18
+     ],
+     [
+      "Coeur d'Alene, ID",
+      18
+     ],
+     [
+      "Atlanta, GA",
+      17
+     ],
+     [
+      "Syracuse, NY",
+      17
+     ],
+     [
+      "Richmond, VA",
+      16
+     ],
+     [
+      "San Antonio, TX",
+      15
+     ],
+     [
+      "Denver, CO",
+      14
+     ]
+    ]
+   },
+   {
+    "facet": "locationRegionStateProvince",
+    "values": 39,
+    "sum": 1920,
+    "largest": 412,
+    "splits": true,
+    "requests": 115,
+    "auto": true,
+    "top": [
+     [
+      "Florida",
+      412
+     ],
+     [
+      "Texas",
+      169
+     ],
+     [
+      "North Carolina",
+      164
+     ],
+     [
+      "Georgia",
+      132
+     ],
+     [
+      "South Carolina",
+      102
+     ],
+     [
+      "Kentucky",
+      79
+     ],
+     [
+      "Virginia",
+      71
+     ],
+     [
+      "Arizona",
+      70
+     ],
+     [
+      "Tennessee",
+      55
+     ],
+     [
+      "Nevada",
+      49
+     ],
+     [
+      "Ohio",
+      48
+     ],
+     [
+      "Washington",
+      48
+     ]
+    ]
+   },
+   {
+    "facet": "locationHierarchy1",
+    "values": 2,
+    "sum": 1753,
+    "largest": 1722,
+    "splits": false,
+    "requests": 89,
+    "auto": false,
+    "top": [
+     [
+      "Office",
+      1722
+     ],
+     [
+      "Work at Home",
+      31
+     ]
+    ]
+   }
+  ]
+ },
+ "lowes": {
+  "site": "LWS_External_CS",
+  "total": 13005,
+  "known": 13005,
+  "facets": [
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 13005,
+    "largest": 9712,
+    "splits": false,
+    "requests": 651,
+    "auto": true,
+    "top": [
+     [
+      "Part time",
+      9712
+     ],
+     [
+      "Full time",
+      3293
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 3,
+    "sum": 13005,
+    "largest": 12916,
+    "splits": false,
+    "requests": 652,
+    "auto": true,
+    "top": [
+     [
+      "Regular",
+      12916
+     ],
+     [
+      "Probation",
+      45
+     ],
+     [
+      "Temporary",
+      44
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 24,
+    "sum": 13005,
+    "largest": 12513,
+    "splits": false,
+    "requests": 666,
+    "auto": true,
+    "top": [
+     [
+      "Store Operations",
+      12513
+     ],
+     [
+      "Supply Chain",
+      214
+     ],
+     [
+      "Corporate Administration",
+      49
+     ],
+     [
+      "Finance",
+      29
+     ],
+     [
+      "Sales",
+      28
+     ],
+     [
+      "Technology",
+      28
+     ],
+     [
+      "Security",
+      25
+     ],
+     [
+      "Merchandising",
+      23
+     ],
+     [
+      "Digital",
+      19
+     ],
+     [
+      "Marketing",
+      17
+     ],
+     [
+      "Human Resources",
+      13
+     ],
+     [
+      "IND-Finance",
+      9
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 1873,
+    "sum": 13072,
+    "largest": 167,
+    "splits": true,
+    "requests": 1889,
+    "auto": true,
+    "top": [
+     [
+      "Mooresville, NC (SSC) 1999",
+      167
+     ],
+     [
+      "Bengaluru",
+      41
+     ],
+     [
+      "Lowe's Groveport, OH BDC 3336",
+      41
+     ],
+     [
+      "Cranberry Township, PA 0653",
+      24
+     ],
+     [
+      "Kahului, HI 3279",
+      22
+     ],
+     [
+      "Lowe's Charlotte Technology Hub 3505",
+      21
+     ],
+     [
+      "Wooster, OH 1696",
+      21
+     ],
+     [
+      "Kailua Kona, HI (Kona) 1561",
+      19
+     ],
+     [
+      "Abilene, TX (N Abilene) 2719",
+      18
+     ],
+     [
+      "Bismarck, ND 2533",
+      18
+     ],
+     [
+      "Sikeston, MO 1209",
+      17
+     ],
+     [
+      "Washington, MO 1648",
+      17
+     ]
+    ]
+   }
+  ]
+ },
+ "micron": {
+  "site": "External",
+  "total": 2884,
+  "known": 2884,
+  "facets": [
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 2597,
+    "largest": 2589,
+    "splits": false,
+    "requests": 131,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      2589
+     ],
+     [
+      "Part time",
+      8
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 7,
+    "sum": 2884,
+    "largest": 2717,
+    "splits": false,
+    "requests": 148,
+    "auto": true,
+    "top": [
+     [
+      "Regular",
+      2717
+     ],
+     [
+      "Intern - Regular (Fixed Term)",
+      139
+     ],
+     [
+      "Fixed Term (Fixed Term)",
+      19
+     ],
+     [
+      "Fixed Term Benefits (Fixed Term)",
+      4
+     ],
+     [
+      "Contractor Type 1",
+      2
+     ],
+     [
+      "Intern - Trainee (Fixed Term)",
+      2
+     ],
+     [
+      "Contractor Type 2",
+      1
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 16,
+    "sum": 2883,
+    "largest": 1813,
+    "splits": false,
+    "requests": 152,
+    "auto": true,
+    "top": [
+     [
+      "Engineer-ProdRelated",
+      1813
+     ],
+     [
+      "Engineer-Facilities",
+      212
+     ],
+     [
+      "Information Systems",
+      176
+     ],
+     [
+      "Tech-ProdRelated",
+      167
+     ],
+     [
+      "Interns",
+      143
+     ],
+     [
+      "Material/Purchasing",
+      62
+     ],
+     [
+      "Clerical",
+      59
+     ],
+     [
+      "Production",
+      55
+     ],
+     [
+      "Sales, Mktg & Comm",
+      55
+     ],
+     [
+      "Sci/Tech-ProdRelated",
+      43
+     ],
+     [
+      "Human Resources",
+      35
+     ],
+     [
+      "Trades Groups",
+      32
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 64,
+    "sum": 3195,
+    "largest": 434,
+    "splits": true,
+    "requests": 202,
+    "auto": true,
+    "top": [
+     [
+      "Boise, ID - Main Site",
+      434
+     ],
+     [
+      "Fab 10N/X, Singapore",
+      358
+     ],
+     [
+      "Taichung - Fab 16, Taiwan",
+      297
+     ],
+     [
+      "Fab 10A, Singapore",
+      261
+     ],
+     [
+      "Hyderabad - Phoenix Aquila, India",
+      214
+     ],
+     [
+      "MSB, Singapore",
+      166
+     ],
+     [
+      "Boise, ID - ID1",
+      128
+     ],
+     [
+      "Taoyuan - Fab 11, Taiwan",
+      125
+     ],
+     [
+      "Taichung - MTB, Taiwan",
+      116
+     ],
+     [
+      "San Jose, CA",
+      112
+     ],
+     [
+      "Hiroshima - Fab 15, Japan",
+      111
+     ],
+     [
+      "Richardson, TX",
+      103
+     ]
+    ]
+   }
+  ]
+ },
+ "morgan-stanley": {
+  "site": "External",
+  "total": 1215,
+  "known": 1215,
+  "facets": [
+   {
+    "facet": "Location_Country",
+    "values": 19,
+    "sum": 1216,
+    "largest": 864,
+    "splits": true,
+    "requests": 73,
+    "auto": false,
+    "top": [
+     [
+      "United States of America",
+      864
+     ],
+     [
+      "India",
+      80
+     ],
+     [
+      "United Kingdom",
+      57
+     ],
+     [
+      "Hong Kong",
+      50
+     ],
+     [
+      "Hungary",
+      45
+     ],
+     [
+      "Japan",
+      37
+     ],
+     [
+      "Canada",
+      37
+     ],
+     [
+      "Singapore",
+      15
+     ],
+     [
+      "Korea, Republic of",
+      8
+     ],
+     [
+      "Germany",
+      4
+     ],
+     [
+      "Australia",
+      4
+     ],
+     [
+      "Taiwan",
+      3
+     ]
+    ]
+   },
+   {
+    "facet": "Location_Region_State_Province",
+    "values": 55,
+    "sum": 1140,
+    "largest": 344,
+    "splits": false,
+    "requests": 95,
+    "auto": false,
+    "top": [
+     [
+      "New York",
+      344
+     ],
+     [
+      "Texas",
+      86
+     ],
+     [
+      "California",
+      81
+     ],
+     [
+      "Georgia",
+      71
+     ],
+     [
+      "Mah\u0101r\u0101shtra",
+      60
+     ],
+     [
+      "Florida",
+      43
+     ],
+     [
+      "Maryland",
+      36
+     ],
+     [
+      "Massachusetts",
+      35
+     ],
+     [
+      "Utah",
+      33
+     ],
+     [
+      "Illinois",
+      26
+     ],
+     [
+      "Washington",
+      25
+     ],
+     [
+      "Quebec",
+      24
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 37,
+    "sum": 787,
+    "largest": 134,
+    "splits": false,
+    "requests": 64,
+    "auto": true,
+    "top": [
+     [
+      "Morgan Stanley Job Family Group",
+      134
+     ],
+     [
+      "Legal & Compliance (JA)",
+      73
+     ],
+     [
+      "Finance (JA)",
+      60
+     ],
+     [
+      "Software (JA)",
+      59
+     ],
+     [
+      "Investment Banking",
+      57
+     ],
+     [
+      "Operations (JA)",
+      51
+     ],
+     [
+      "Product (JA)",
+      37
+     ],
+     [
+      "Technology Management",
+      30
+     ],
+     [
+      "Business Management & Support- IM",
+      28
+     ],
+     [
+      "Products",
+      25
+     ],
+     [
+      "Internal Audit (JA)",
+      25
+     ],
+     [
+      "Infrastructure (JA)",
+      25
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 3,
+    "sum": 1215,
+    "largest": 1206,
+    "splits": true,
+    "requests": 63,
+    "auto": true,
+    "top": [
+     [
+      "Employee",
+      1206
+     ],
+     [
+      "Intern",
+      6
+     ],
+     [
+      "Fixed Term Direct (Fixed Term)",
+      3
+     ]
+    ]
+   },
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 1215,
+    "largest": 1203,
+    "splits": true,
+    "requests": 62,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      1203
+     ],
+     [
+      "Part time",
+      12
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 295,
+    "sum": 1421,
+    "largest": 246,
+    "splits": true,
+    "requests": 325,
+    "auto": true,
+    "top": [
+     [
+      "New York, New York, United States of America",
+      246
+     ],
+     [
+      "Purchase, New York, United States of America",
+      77
+     ],
+     [
+      "Mumbai, India",
+      54
+     ],
+     [
+      "Hong Kong, Hong Kong",
+      49
+     ],
+     [
+      "Budapest, Hungary",
+      44
+     ],
+     [
+      "Alpharetta, Georgia, United States of America",
+      43
+     ],
+     [
+      "Dallas, Texas, United States of America",
+      37
+     ],
+     [
+      "Tokyo, Japan",
+      35
+     ],
+     [
+      "London, United Kingdom",
+      31
+     ],
+     [
+      "Baltimore, Maryland, United States of America",
+      27
+     ],
+     [
+      "Glasgow, United Kingdom",
+      26
+     ],
+     [
+      "Montreal, Canada",
+      24
+     ]
+    ]
+   }
+  ]
+ },
+ "target": {
+  "site": "targetcareers",
+  "total": 2000,
+  "known": 14144,
+  "facets": [
+   {
+    "facet": "Location_Country",
+    "values": 2,
+    "sum": 14144,
+    "largest": 14075,
+    "splits": false,
+    "requests": 708,
+    "auto": false,
+    "top": [
+     [
+      "United States of America",
+      14075
+     ],
+     [
+      "India",
+      69
+     ]
+    ]
+   },
+   {
+    "facet": "Location_Region_State_Province",
+    "values": 52,
+    "sum": 14158,
+    "largest": 2124,
+    "splits": false,
+    "requests": 734,
+    "auto": false,
+    "top": [
+     [
+      "California",
+      2124
+     ],
+     [
+      "Texas",
+      1078
+     ],
+     [
+      "Florida",
+      970
+     ],
+     [
+      "New York",
+      778
+     ],
+     [
+      "Minnesota",
+      729
+     ],
+     [
+      "Illinois",
+      677
+     ],
+     [
+      "Pennsylvania",
+      554
+     ],
+     [
+      "Ohio",
+      449
+     ],
+     [
+      "Virginia",
+      425
+     ],
+     [
+      "New Jersey",
+      396
+     ],
+     [
+      "North Carolina",
+      386
+     ],
+     [
+      "Georgia",
+      347
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 18,
+    "sum": 14144,
+    "largest": 13661,
+    "splits": false,
+    "requests": 717,
+    "auto": true,
+    "top": [
+     [
+      "Stores",
+      13661
+     ],
+     [
+      "Technology",
+      111
+     ],
+     [
+      "Internships",
+      108
+     ],
+     [
+      "Supply Chain & Distribution Centers",
+      79
+     ],
+     [
+      "Risk & Compliance",
+      28
+     ],
+     [
+      "Merchandising",
+      24
+     ],
+     [
+      "Data & Analytics",
+      23
+     ],
+     [
+      "Business Operations & Project Management",
+      20
+     ],
+     [
+      "Real Estate, Design & Property Management",
+      19
+     ],
+     [
+      "Administrative Support",
+      19
+     ],
+     [
+      "Marketing, Communications & Public Relations",
+      17
+     ],
+     [
+      "Finance & Accounting",
+      16
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 3,
+    "sum": 14144,
+    "largest": 9951,
+    "splits": false,
+    "requests": 709,
+    "auto": true,
+    "top": [
+     [
+      "Regular",
+      9951
+     ],
+     [
+      "Seasonal (Seasonal)",
+      4085
+     ],
+     [
+      "Intern",
+      108
+     ]
+    ]
+   },
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 14144,
+    "largest": 13214,
+    "splits": false,
+    "requests": 708,
+    "auto": true,
+    "top": [
+     [
+      "Variable",
+      13214
+     ],
+     [
+      "Full time",
+      930
+     ]
+    ]
+   },
+   {
+    "facet": "remoteType",
+    "values": 1,
+    "sum": 22,
+    "largest": 22,
+    "splits": false,
+    "requests": 2,
+    "auto": false,
+    "top": [
+     [
+      "Remote or Hybrid",
+      22
+     ]
+    ]
+   },
+   {
+    "facet": "locationHierarchy1",
+    "values": 4,
+    "sum": 28288,
+    "largest": 14144,
+    "splits": false,
+    "requests": 1416,
+    "auto": false,
+    "top": [
+     [
+      "All Target Locations",
+      14144
+     ],
+     [
+      "Stores",
+      13736
+     ],
+     [
+      "Headquarters",
+      258
+     ],
+     [
+      "Distribution Centers",
+      150
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 2117,
+    "sum": 14835,
+    "largest": 90,
+    "splits": true,
+    "requests": 2127,
+    "auto": true,
+    "top": [
+     [
+      "1000 Nicollet Mall, Minneapolis,MN 55403-2542",
+      90
+     ],
+     [
+      "7000 Target Pkwy N,NCD-0375 Brooklyn Park,MN 55445",
+      84
+     ],
+     [
+      "Bangalore,India",
+      53
+     ],
+     [
+      "155 Dorset St, South Burlington,VT 05403-6346",
+      15
+     ],
+     [
+      "201 S Hills Vlg, Pittsburgh,PA 15241-1408",
+      14
+     ],
+     [
+      "1288 Camino Del Rio N, San Diego,CA 92108-1511",
+      13
+     ],
+     [
+      "3827 Marketplace Dr NW, Rochester,MN 55901-3192",
+      13
+     ],
+     [
+      "6231 PENN AVE, PITTSBURGH,PA 15206-3978",
+      13
+     ],
+     [
+      "7 Stony Hill Rd, Bethel,CT 06801-1030",
+      13
+     ],
+     [
+      "900 Nicollet Mall, Minneapolis,MN 55403-2530",
+      13
+     ],
+     [
+      "999 Corporate Dr, Westbury,NY 11590-6614",
+      13
+     ],
+     [
+      "10130 S State St, Sandy,UT 84070-4118",
+      12
+     ]
+    ]
+   },
+   {
+    "facet": "isRemote",
+    "values": 2,
+    "sum": 14144,
+    "largest": 14122,
+    "splits": false,
+    "requests": 709,
+    "auto": false,
+    "top": [
+     [
+      "False",
+      14122
+     ],
+     [
+      "True",
+      22
+     ]
+    ]
+   }
+  ]
+ },
+ "walmart": {
+  "site": "WalmartExternal",
+  "total": 2000,
+  "known": 19515,
+  "facets": [
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 19515,
+    "largest": 13225,
+    "splits": false,
+    "requests": 977,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      13225
+     ],
+     [
+      "Part time",
+      6290
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 24,
+    "sum": 20492,
+    "largest": 6913,
+    "splits": false,
+    "requests": 1034,
+    "auto": true,
+    "top": [
+     [
+      "Business Services",
+      6913
+     ],
+     [
+      "Business Operations",
+      6649
+     ],
+     [
+      "Healthcare",
+      3209
+     ],
+     [
+      "Maintenance",
+      1572
+     ],
+     [
+      "Technology",
+      777
+     ],
+     [
+      "Supply Chain",
+      314
+     ],
+     [
+      "Data Analytics and Management",
+      188
+     ],
+     [
+      "PMO",
+      174
+     ],
+     [
+      "Sales, Marketing and Business Development",
+      109
+     ],
+     [
+      "Transportation",
+      83
+     ],
+     [
+      "General and Retail Management",
+      82
+     ],
+     [
+      "Investigations and Security",
+      78
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamily",
+    "values": 55,
+    "sum": 20407,
+    "largest": 6901,
+    "splits": false,
+    "requests": 1045,
+    "auto": false,
+    "top": [
+     [
+      "Customer Service",
+      6901
+     ],
+     [
+      "Food Service",
+      3822
+     ],
+     [
+      "Operations Management",
+      2825
+     ],
+     [
+      "Pharmacy",
+      2033
+     ],
+     [
+      "Optical Care",
+      1159
+     ],
+     [
+      "Facilities Maintenance",
+      710
+     ],
+     [
+      "Software Engineering and Architecture",
+      563
+     ],
+     [
+      "Facility Maintenance Technical Specialty",
+      437
+     ],
+     [
+      "Facilities Maintenance General",
+      406
+     ],
+     [
+      "Warehouse Management",
+      201
+     ],
+     [
+      "Project Management",
+      160
+     ],
+     [
+      "Ground Transportation",
+      92
+     ]
+    ]
+   },
+   {
+    "facet": "Job_Profiles",
+    "values": 55,
+    "sum": 15800,
+    "largest": 826,
+    "splits": false,
+    "requests": 813,
+    "auto": false,
+    "top": [
+     [
+      "(USA) Member Specialist",
+      826
+     ],
+     [
+      "(USA) Personal Shopper - Sam's",
+      748
+     ],
+     [
+      "(USA) Staff Pharmacist",
+      667
+     ],
+     [
+      "(USA) Independent Optometrist",
+      628
+     ],
+     [
+      "(USA) Cafe Associate",
+      605
+     ],
+     [
+      "(USA) Merchandising",
+      604
+     ],
+     [
+      "(USA) Meat Cutter / Wrapper",
+      600
+     ],
+     [
+      "(USA) Freezer/Cooler/Deli",
+      600
+     ],
+     [
+      "(USA) Maintenance Sam's",
+      599
+     ],
+     [
+      "(USA) Home Meal Solutions",
+      599
+     ],
+     [
+      "(USA) Member Assist",
+      599
+     ],
+     [
+      "(USA) Produce I",
+      598
+     ]
+    ]
+   },
+   {
+    "facet": "company",
+    "values": 55,
+    "sum": 434,
+    "largest": 23,
+    "splits": false,
+    "requests": 56,
+    "auto": false,
+    "top": [
+     [
+      "(IND) Home Office Data Analytics and Management Data Engineering and Architecture PM (Jayavel Sengodan)",
+      23
+     ],
+     [
+      "(CAN) Store 03040 Overnight JM (Manish Patel)",
+      14
+     ],
+     [
+      "(CAN) Store 03093 Food JM (Mohammed Korayem, Amanda Murphy)",
+      13
+     ],
+     [
+      "(CAN) Store 01015 Food JM (Sonia Rani)",
+      12
+     ],
+     [
+      "(CAN) Home Office Maintenance Facilities Maintenance General PM (Brian Conover)",
+      11
+     ],
+     [
+      "(CAN) Store 03021 Food JM (Shivam Arora, Salman Ghanchi Vahora, +2)",
+      10
+     ],
+     [
+      "(CAN) Store 03167 Food JM (Celina Atkinson, Lynnette Rautiala)",
+      10
+     ],
+     [
+      "(USA) Home Office Maintenance Facility Maintenance Technical Specialty PM (Thomas Gobble)",
+      10
+     ],
+     [
+      "(CAN) Store 01003 Food JM (Ann Maloney, Adam Mccarthy, +2)",
+      9
+     ],
+     [
+      "(USA) Home Office Maintenance Facility Maintenance Technical Specialty PM (JEREMY MOORE)",
+      9
+     ],
+     [
+      "(USA) Home Office General and Retail Management Business Strategy and Planning PM (Cuy Yang)",
+      9
+     ],
+     [
+      "(USA) Home Office Maintenance Facility Maintenance Technical Specialty PM (Thomas Howard)",
+      9
+     ]
+    ]
+   },
+   {
+    "facet": "locationCountry",
+    "values": 3,
+    "sum": 20509,
+    "largest": 15711,
+    "splits": false,
+    "requests": 1027,
+    "auto": true,
+    "top": [
+     [
+      "United States of America",
+      15711
+     ],
+     [
+      "Canada",
+      4604
+     ],
+     [
+      "India",
+      194
+     ]
+    ]
+   },
+   {
+    "facet": "locationRegionStateProvince",
+    "values": 66,
+    "sum": 20836,
+    "largest": 1775,
+    "splits": true,
+    "requests": 1072,
+    "auto": true,
+    "top": [
+     [
+      "Texas",
+      1775
+     ],
+     [
+      "Ontario",
+      1601
+     ],
+     [
+      "California",
+      1169
+     ],
+     [
+      "Arkansas",
+      1005
+     ],
+     [
+      "Florida",
+      875
+     ],
+     [
+      "Quebec",
+      810
+     ],
+     [
+      "British Columbia",
+      670
+     ],
+     [
+      "Alberta",
+      665
+     ],
+     [
+      "Ohio",
+      627
+     ],
+     [
+      "Illinois",
+      567
+     ],
+     [
+      "North Carolina",
+      558
+     ],
+     [
+      "Georgia",
+      554
+     ]
+    ]
+   },
+   {
+    "facet": "primaryLocation",
+    "values": 4214,
+    "sum": 20509,
+    "largest": 196,
+    "splits": true,
+    "requests": 4380,
+    "auto": false,
+    "top": [
+     [
+      "Bentonville, AR",
+      196
+     ],
+     [
+      "Dallas, TX",
+      96
+     ],
+     [
+      "(USA) Upstream Building AR Bentonville Home Office",
+      92
+     ],
+     [
+      "Houston, TX",
+      74
+     ],
+     [
+      "(USA) Crossman Respect Building CA SUNNYVALE Home Office",
+      72
+     ],
+     [
+      "San Antonio, TX",
+      70
+     ],
+     [
+      "Sunnyvale, CA",
+      67
+     ],
+     [
+      "Mississauga, ON",
+      66
+     ],
+     [
+      "(USA) ISD Office - DGTC AR BENTONVILLE Home Office",
+      62
+     ],
+     [
+      "Oklahoma City, OK",
+      62
+     ],
+     [
+      "Columbia, SC",
+      59
+     ],
+     [
+      "(USA) Crossman Excellence Building CA SUNNYVALE Home Office",
+      58
+     ]
+    ]
+   },
+   {
+    "facet": "distance",
+    "values": 5,
+    "sum": 5,
+    "largest": 1,
+    "splits": false,
+    "requests": 5,
+    "auto": false,
+    "top": [
+     [
+      "10 miles",
+      1
+     ],
+     [
+      "25 miles",
+      1
+     ],
+     [
+      "50 miles",
+      1
+     ],
+     [
+      "100 miles",
+      1
+     ],
+     [
+      "Any Distance",
+      1
+     ]
+    ]
+   }
+  ]
+ },
+ "walmart~site-Non-WorkdayInternal": {
+  "site": "Non-WorkdayInternal",
+  "total": 2000,
+  "known": 2000,
+  "facets": [
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 1951,
+    "largest": 1751,
+    "splits": false,
+    "requests": 98,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      1751
+     ],
+     [
+      "Part time",
+      200
+     ]
+    ]
+   },
+   {
+    "facet": "Hiring_Manager",
+    "values": 55,
+    "sum": 199,
+    "largest": 8,
+    "splits": false,
+    "requests": 55,
+    "auto": false,
+    "top": [
+     [
+      "JEREMY MOORE",
+      8
+     ],
+     [
+      "Marcus Hinton",
+      6
+     ],
+     [
+      "Gregory Petersen",
+      6
+     ],
+     [
+      "Shawn Holm",
+      6
+     ],
+     [
+      "Holly Brown",
+      6
+     ],
+     [
+      "Jeremy De Graaf",
+      6
+     ],
+     [
+      "Michael Cerra",
+      6
+     ],
+     [
+      "Satwinder Murali",
+      5
+     ],
+     [
+      "Boniface Fogwe",
+      4
+     ],
+     [
+      "Rachel Daugherty",
+      4
+     ],
+     [
+      "Gregory Boom",
+      4
+     ],
+     [
+      "Melissa Haines",
+      4
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamilyGroup",
+    "values": 18,
+    "sum": 2697,
+    "largest": 1387,
+    "splits": true,
+    "requests": 145,
+    "auto": true,
+    "top": [
+     [
+      "Healthcare",
+      1387
+     ],
+     [
+      "Business Operations",
+      901
+     ],
+     [
+      "Technology",
+      154
+     ],
+     [
+      "Maintenance",
+      57
+     ],
+     [
+      "Business Services",
+      37
+     ],
+     [
+      "PMO",
+      29
+     ],
+     [
+      "Supply Chain",
+      29
+     ],
+     [
+      "Data Analytics and Management",
+      27
+     ],
+     [
+      "People",
+      16
+     ],
+     [
+      "Manufacturing and Printing",
+      16
+     ],
+     [
+      "Investigations and Security",
+      14
+     ],
+     [
+      "Support Services",
+      9
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamily",
+    "values": 42,
+    "sum": 2698,
+    "largest": 892,
+    "splits": true,
+    "requests": 163,
+    "auto": false,
+    "top": [
+     [
+      "Optical Care",
+      892
+     ],
+     [
+      "Operations Management",
+      846
+     ],
+     [
+      "Pharmacy",
+      482
+     ],
+     [
+      "Software Engineering and Architecture",
+      117
+     ],
+     [
+      "Food Service",
+      55
+     ],
+     [
+      "Customer Service",
+      36
+     ],
+     [
+      "Facility Maintenance Technical Specialty",
+      31
+     ],
+     [
+      "Project Management",
+      29
+     ],
+     [
+      "Product Management",
+      26
+     ],
+     [
+      "Facilities Maintenance",
+      19
+     ],
+     [
+      "Assembly and Production",
+      16
+     ],
+     [
+      "People Partner",
+      14
+     ]
+    ]
+   },
+   {
+    "facet": "Job_Profiles",
+    "values": 55,
+    "sum": 2455,
+    "largest": 644,
+    "splits": true,
+    "requests": 150,
+    "auto": false,
+    "top": [
+     [
+      "(USA) Independent Optometrist",
+      644
+     ],
+     [
+      "(USA) Staff Pharmacist",
+      210
+     ],
+     [
+      "(USA) Overnight Stocking Coach",
+      157
+     ],
+     [
+      "(USA) Pharmacy Pre-Grad Intern - WM",
+      122
+     ],
+     [
+      "(USA) Food & Consumables Coach",
+      111
+     ],
+     [
+      "(USA) Sam's Club Independent Optometrist",
+      86
+     ],
+     [
+      "(USA) Senior, Software Engineer",
+      57
+     ],
+     [
+      "(USA) Pharmacy Manager",
+      55
+     ],
+     [
+      "(USA) Associate Optometrist - Walmart",
+      55
+     ],
+     [
+      "(USA) Fashion Coach",
+      53
+     ],
+     [
+      "(USA) GM Coach",
+      52
+     ],
+     [
+      "(USA) Stocking 2 Coach",
+      49
+     ]
+    ]
+   },
+   {
+    "facet": "Management_Level",
+    "values": 17,
+    "sum": 2698,
+    "largest": 1087,
+    "splits": true,
+    "requests": 147,
+    "auto": false,
+    "top": [
+     [
+      "Manager",
+      1087
+     ],
+     [
+      "Senior Director",
+      809
+     ],
+     [
+      "Professional Individual Contributor",
+      217
+     ],
+     [
+      "Senior Manager",
+      135
+     ],
+     [
+      "H",
+      124
+     ],
+     [
+      "Individual Contributor",
+      121
+     ],
+     [
+      "Senior Individual Contributor",
+      65
+     ],
+     [
+      "G",
+      61
+     ],
+     [
+      "K",
+      32
+     ],
+     [
+      "I",
+      29
+     ],
+     [
+      "E",
+      6
+     ],
+     [
+      "F",
+      3
+     ]
+    ]
+   },
+   {
+    "facet": "company",
+    "values": 55,
+    "sum": 179,
+    "largest": 8,
+    "splits": false,
+    "requests": 55,
+    "auto": false,
+    "top": [
+     [
+      "(USA) Home Office Maintenance Facility Maintenance Technical Specialty PM (JEREMY MOORE)",
+      8
+     ],
+     [
+      "(USA) Home Office Maintenance Facility Maintenance Technical Specialty PM (Marcus Hinton)",
+      6
+     ],
+     [
+      "(USA) Home Office Healthcare Health and Wellness Operations PM (Shawn Holm)",
+      6
+     ],
+     [
+      "(USA) Home Office Healthcare Health and Wellness Operations PM (Holly Brown)",
+      6
+     ],
+     [
+      "(USA) Home Office Healthcare Health and Wellness Operations PM (Jeremy De Graaf)",
+      6
+     ],
+     [
+      "(USA) Home Office Healthcare Health and Wellness Operations PM (Satwinder Murali)",
+      5
+     ],
+     [
+      "(USA) Home Office Healthcare Health and Wellness Operations PM (David McClernon)",
+      4
+     ],
+     [
+      "(USA) Home Office Healthcare Health and Wellness Operations PM (Michael Cerra)",
+      4
+     ],
+     [
+      "(USA) Home Office Healthcare Health and Wellness Operations PM (Lindsay Brigham)",
+      4
+     ],
+     [
+      "(USA) Store 00589 MANAGEMENT PM (Alycia Logsdon)",
+      4
+     ],
+     [
+      "(USA) Store 02310 MANAGEMENT PM (Heather Byrd)",
+      4
+     ],
+     [
+      "(USA) Home Office Healthcare Health and Wellness Operations PM (Rachel Daugherty)",
+      4
+     ]
+    ]
+   },
+   {
+    "facet": "locationCountry",
+    "values": 1,
+    "sum": 2694,
+    "largest": 2694,
+    "splits": false,
+    "requests": 135,
+    "auto": true,
+    "top": [
+     [
+      "United States of America",
+      2694
+     ]
+    ]
+   },
+   {
+    "facet": "locationRegionStateProvince",
+    "values": 51,
+    "sum": 2710,
+    "largest": 238,
+    "splits": true,
+    "requests": 163,
+    "auto": true,
+    "top": [
+     [
+      "Texas",
+      238
+     ],
+     [
+      "California",
+      189
+     ],
+     [
+      "Arkansas",
+      146
+     ],
+     [
+      "Illinois",
+      142
+     ],
+     [
+      "Indiana",
+      122
+     ],
+     [
+      "Florida",
+      118
+     ],
+     [
+      "Georgia",
+      108
+     ],
+     [
+      "Michigan",
+      91
+     ],
+     [
+      "Ohio",
+      85
+     ],
+     [
+      "Pennsylvania",
+      82
+     ],
+     [
+      "New York",
+      79
+     ],
+     [
+      "Missouri",
+      70
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 1892,
+    "sum": 2777,
+    "largest": 92,
+    "splits": true,
+    "requests": 1898,
+    "auto": true,
+    "top": [
+     [
+      "Bentonville, AR",
+      92
+     ],
+     [
+      "Sunnyvale, CA",
+      47
+     ],
+     [
+      "Valdosta, GA",
+      16
+     ],
+     [
+      "Bellevue, WA",
+      13
+     ],
+     [
+      "(USA) TX LANCASTER 07382 ECOMM FULFILLMENT SERVICES",
+      9
+     ],
+     [
+      "Fishkill, NY",
+      9
+     ],
+     [
+      "Fort Wayne, IN",
+      9
+     ],
+     [
+      "Greenfield, IN",
+      9
+     ],
+     [
+      "Newington, CT",
+      8
+     ],
+     [
+      "Oklahoma City, OK",
+      8
+     ],
+     [
+      "Watertown, NY",
+      8
+     ],
+     [
+      "(USA) AZ LITCHFIELD PARK 03000 ECOMM FULFILLMENT SERVICES",
+      6
+     ]
+    ]
+   },
+   {
+    "facet": "distance",
+    "values": 5,
+    "sum": 5,
+    "largest": 1,
+    "splits": false,
+    "requests": 5,
+    "auto": false,
+    "top": [
+     [
+      "10 miles",
+      1
+     ],
+     [
+      "25 miles",
+      1
+     ],
+     [
+      "50 miles",
+      1
+     ],
+     [
+      "100 miles",
+      1
+     ],
+     [
+      "Any Distance",
+      1
+     ]
+    ]
+   }
+  ]
+ },
+ "wells-fargo": {
+  "site": "WellsFargoJobs",
+  "total": 1611,
+  "known": 1611,
+  "facets": [
+   {
+    "facet": "jobFamilyGroup",
+    "values": 14,
+    "sum": 1611,
+    "largest": 1316,
+    "splits": true,
+    "requests": 88,
+    "auto": true,
+    "top": [
+     [
+      "Client Management",
+      1316
+     ],
+     [
+      "Operations",
+      102
+     ],
+     [
+      "Technology",
+      77
+     ],
+     [
+      "Strategy & Execution",
+      25
+     ],
+     [
+      "Data & Analytics",
+      20
+     ],
+     [
+      "Administrative & Corporate Services",
+      19
+     ],
+     [
+      "Product Management",
+      16
+     ],
+     [
+      "Governance & Controls",
+      12
+     ],
+     [
+      "Finance & Accounting",
+      10
+     ],
+     [
+      "Human Resources",
+      5
+     ],
+     [
+      "Marketing & Communications & Public Affairs",
+      4
+     ],
+     [
+      "Legal & Investigations",
+      3
+     ]
+    ]
+   },
+   {
+    "facet": "jobFamily",
+    "values": 43,
+    "sum": 1611,
+    "largest": 1001,
+    "splits": true,
+    "requests": 110,
+    "auto": false,
+    "top": [
+     [
+      "Branch Banking",
+      1001
+     ],
+     [
+      "Home Mortgage",
+      145
+     ],
+     [
+      "Business Client Management",
+      118
+     ],
+     [
+      "Technology Engineering",
+      69
+     ],
+     [
+      "Contact Center",
+      36
+     ],
+     [
+      "Wealth Client Management",
+      25
+     ],
+     [
+      "Strategic Execution",
+      20
+     ],
+     [
+      "Commercial Lending Operations",
+      20
+     ],
+     [
+      "Investment Operations",
+      19
+     ],
+     [
+      "Business Operations",
+      14
+     ],
+     [
+      "Credit Portfolio Management",
+      13
+     ],
+     [
+      "Analytics",
+      12
+     ]
+    ]
+   },
+   {
+    "facet": "timeType",
+    "values": 2,
+    "sum": 1515,
+    "largest": 1339,
+    "splits": false,
+    "requests": 76,
+    "auto": true,
+    "top": [
+     [
+      "Full time",
+      1339
+     ],
+     [
+      "Part time",
+      176
+     ]
+    ]
+   },
+   {
+    "facet": "workerSubType",
+    "values": 3,
+    "sum": 1611,
+    "largest": 1599,
+    "splits": true,
+    "requests": 82,
+    "auto": true,
+    "top": [
+     [
+      "Regular",
+      1599
+     ],
+     [
+      "Fixed Term (Fixed Term)",
+      7
+     ],
+     [
+      "Intern (Fixed Term) (Trainee)",
+      5
+     ]
+    ]
+   },
+   {
+    "facet": "locationHierarchy1",
+    "values": 3,
+    "sum": 1605,
+    "largest": 1445,
+    "splits": false,
+    "requests": 82,
+    "auto": false,
+    "top": [
+     [
+      "Americas",
+      1445
+     ],
+     [
+      "APAC",
+      144
+     ],
+     [
+      "EMEA",
+      16
+     ]
+    ]
+   },
+   {
+    "facet": "locationCountry",
+    "values": 11,
+    "sum": 1605,
+    "largest": 1443,
+    "splits": false,
+    "requests": 88,
+    "auto": true,
+    "top": [
+     [
+      "United States of America",
+      1443
+     ],
+     [
+      "India",
+      78
+     ],
+     [
+      "Philippines",
+      59
+     ],
+     [
+      "United Kingdom",
+      14
+     ],
+     [
+      "Singapore",
+      4
+     ],
+     [
+      "Canada",
+      2
+     ],
+     [
+      "Hong Kong",
+      1
+     ],
+     [
+      "Ireland",
+      1
+     ],
+     [
+      "Japan",
+      1
+     ],
+     [
+      "Korea, Republic of",
+      1
+     ],
+     [
+      "United Arab Emirates",
+      1
+     ]
+    ]
+   },
+   {
+    "facet": "locationRegionStateProvince",
+    "values": 50,
+    "sum": 1787,
+    "largest": 243,
+    "splits": true,
+    "requests": 117,
+    "auto": true,
+    "top": [
+     [
+      "California",
+      243
+     ],
+     [
+      "Texas",
+      177
+     ],
+     [
+      "North Carolina",
+      157
+     ],
+     [
+      "Florida",
+      121
+     ],
+     [
+      "Arizona",
+      88
+     ],
+     [
+      "Minnesota",
+      76
+     ],
+     [
+      "Virginia",
+      75
+     ],
+     [
+      "New York",
+      64
+     ],
+     [
+      "National Capital Region",
+      59
+     ],
+     [
+      "Pennsylvania",
+      58
+     ],
+     [
+      "Colorado",
+      53
+     ],
+     [
+      "Karn\u0101taka",
+      48
+     ]
+    ]
+   },
+   {
+    "facet": "locations",
+    "values": 1187,
+    "sum": 2884,
+    "largest": 112,
+    "splits": true,
+    "requests": 1205,
+    "auto": true,
+    "top": [
+     [
+      "CHARLOTTE, NC",
+      112
+     ],
+     [
+      "IRVING, TX",
+      50
+     ],
+     [
+      "Bengaluru, India",
+      48
+     ],
+     [
+      "MINNEAPOLIS, MN",
+      45
+     ],
+     [
+      "Hyderabad, India",
+      36
+     ],
+     [
+      "CHANDLER, AZ",
+      34
+     ],
+     [
+      "SAN FRANCISCO, CA",
+      34
+     ],
+     [
+      "Taguig City, Philippines",
+      33
+     ],
+     [
+      "TAGUIG CITY, 00",
+      26
+     ],
+     [
+      "NEW YORK, NY",
+      22
+     ],
+     [
+      "PHOENIX, AZ",
+      22
+     ],
+     [
+      "LOS ANGELES, CA",
+      19
+     ]
+    ]
+   }
+  ]
+ }
+}

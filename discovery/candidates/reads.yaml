@@ -77,7 +77,7 @@ reads:
   draftkings: {checker: workday, settings: {host: draftkings.wd1.myworkdayjobs.com, tenant: draftkings, sites: [draftkings, Campus_Career_Portal, Employee_Referral_Portal]}}
   drivewealth: {checker: greenhouse, settings: {board: drivewealth}}
   drivewealth~ashby: {checker: ashby, settings: {board: drivewealth}}
-  dusty-robotics: {checker: greenhouse, settings: {board: dustyrobotics}}
+  dusty-robotics: {checker: rippling, settings: {board: dusty-robotics-inc}}  # Greenhouse board dustyrobotics is gone (404); the careers page reads Rippling
   earnin: {checker: greenhouse, settings: {board: earnin}}
   elevance-health: {checker: workday, settings: {host: elevancehealth.wd1.myworkdayjobs.com, tenant: elevancehealth, sites: [ANT, ELV-ET]}}
   ellipsis-labs: {checker: ashby, settings: {board: ellipsislabs}}
@@ -254,7 +254,7 @@ reads:
   costco: {"checker": "jibe", "settings": {"host": "careers.costco.com"}}
   unitedhealth-group: {"checker": "talentbrew", "settings": {"sitemap_url": "https://careers.unitedhealthgroup.com/sitemap.xml", "org_id": 34088, "detail_limit": 40}}
   tyler-technologies: {"checker": "jobvite", "settings": {"company_id": "q6NaVfwI", "slug": "tylertech"}}
-  precisely: {"checker": "greenhouse", "settings": {"board": "preciselyusjobs"}}
+  precisely: {"checker": "greenhouse", "settings": {"boards": ["preciselyusjobs", "preciselyinternationaljobs"]}}
   jpmorgan-chase~cx_2001: {"checker": "oracle", "settings": {"host": "jpmc.fa.oraclecloud.com", "site": "CX_2001"}}
   bny~cx_1: {"checker": "oracle", "settings": {"host": "eofe.fa.us2.oraclecloud.com", "site": "CX_1"}}
   fortinet~cx_1: {"checker": "oracle", "settings": {"host": "edel.fa.us2.oraclecloud.com", "site": "CX_1"}}

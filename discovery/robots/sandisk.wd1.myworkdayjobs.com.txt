@@ -1,0 +1,2 @@
+# status 422
+{"errorCode":"HTTP_422","errorCaseId":"823342MWA0762M","httpStatus":422,"locale":"en-US,en;q\u003d0.9","message":"","messageParams":{}}

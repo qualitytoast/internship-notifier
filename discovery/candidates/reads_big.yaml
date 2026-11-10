@@ -1,0 +1,39 @@
+# Stage 1 measurement reads of the very large sites (STAGE1_READS=reads_big.yaml): full reads with the link check
+# relaxed and store locations packed (STAGE1_RELAX_LINKS=1 STAGE1_PACK=1), and each site's student slice, to price
+# a full daily read against the slice and to see which matching roles the slice would miss.
+reads:
+  cvs-health:
+    checker: workday
+    timeout_minutes: 60
+    settings: {host: cvshealth.wd1.myworkdayjobs.com, tenant: cvshealth, sites: [CVS_Health_Careers, Private_Postings_Intern_Conversion_ONLY]}
+  walmart:
+    checker: workday
+    timeout_minutes: 60
+    settings: {host: walmart.wd504.myworkdayjobs.com, tenant: walmart, site: WalmartExternal}
+  target:
+    checker: workday
+    timeout_minutes: 60
+    settings: {host: target.wd5.myworkdayjobs.com, tenant: target, site: targetcareers}
+  lowes:
+    checker: workday
+    timeout_minutes: 60
+    settings: {host: lowes.wd5.myworkdayjobs.com, tenant: lowes, site: LWS_External_CS}
+  bank-of-america:
+    checker: workday
+    timeout_minutes: 60
+    settings: {host: ghr.wd1.myworkdayjobs.com, tenant: ghr, sites: [us-emplsv, lateral-emea]}
+  cvs-health~slice:
+    checker: workday
+    settings: {host: cvshealth.wd1.myworkdayjobs.com, tenant: cvshealth, site: CVS_Health_Careers,
+               facets: {workerSubType: [183bb31d97231001005066125c530000]}}
+  walmart~slice:
+    checker: workday
+    settings: {host: walmart.wd504.myworkdayjobs.com, tenant: walmart, site: WalmartExternal,
+               facets: {jobFamily: [e83ebdbd2a0a017e7530ee5947e9e0c3]}}
+  target~slice:
+    checker: workday
+    settings: {host: target.wd5.myworkdayjobs.com, tenant: target, site: targetcareers,
+               facets: {jobFamilyGroup: [daccab9f1d25019c1fe2b73634578e0d]}}
+  lowes~slice:
+    checker: workday
+    settings: {host: lowes.wd5.myworkdayjobs.com, tenant: lowes, site: LWS_External_CS, search: intern}

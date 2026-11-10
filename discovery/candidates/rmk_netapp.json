@@ -1,0 +1,86 @@
+{
+ "key": "netapp",
+ "host": "jobs.netapp.com",
+ "total": 320,
+ "jobs": 320,
+ "requests": 13,
+ "seconds": 14.9,
+ "students": 13,
+ "matched": 5,
+ "student_titles": [
+  [
+   "Azure GTM Sales Intern",
+   "Windsor, GB, SL4 1RS"
+  ],
+  [
+   "Intern",
+   "Dusseldorf, DE, 40472 +1 more\u2026"
+  ],
+  [
+   "Intern",
+   "Paris, FR"
+  ],
+  [
+   "Intern",
+   "Stockholm, Stockholm, SE, 11157"
+  ],
+  [
+   "Intern",
+   "Windsor, GB, SL4 1RS"
+  ],
+  [
+   "Intern - Distribution",
+   "Schiphol-Rijk, NL, 1118 BH"
+  ],
+  [
+   "Managed Services Intern",
+   "Windsor, GB, SL4 1RS"
+  ],
+  [
+   "Partner Sales Intern",
+   "Paris, FR +1 more\u2026"
+  ],
+  [
+   "Professional Services & End User Services Intern",
+   "Madrid, ES, 28046"
+  ],
+  [
+   "Professional Services Intern",
+   "Windsor, GB, SL4 1RS"
+  ],
+  [
+   "Software Engineer Intern",
+   "Wichita, KS, US, 67208"
+  ],
+  [
+   "Solutions Engineering Intern - Iberia",
+   "Madrid, ES, 28046"
+  ],
+  [
+   "Technical Sales Enablement Intern",
+   "Windsor, GB, SL4 1RS"
+  ]
+ ],
+ "matched_titles": [
+  [
+   "Intern",
+   "Dusseldorf, DE, 40472 +1 more\u2026"
+  ],
+  [
+   "Intern",
+   "Windsor, GB, SL4 1RS"
+  ],
+  [
+   "Managed Services Intern",
+   "Windsor, GB, SL4 1RS"
+  ],
+  [
+   "Professional Services Intern",
+   "Windsor, GB, SL4 1RS"
+  ],
+  [
+   "Software Engineer Intern",
+   "Wichita, KS, US, 67208"
+  ]
+ ]
+}

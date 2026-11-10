@@ -1,0 +1,117 @@
+{
+ "costco~taleo": {
+  "jobs": 41,
+  "students": 25,
+  "matched": 22,
+  "matched_titles": [
+   "CDS Intern - Central Engineering UX/UI Designer | Issaquah, WA (unsure)",
+   "CDS Intern - Client Hardware Administration | Issaquah, WA (unsure)",
+   "CDS Intern - Client Hardware Support | Issaquah, WA (unsure)",
+   "CDS Intern - ECM Platform Management | Issaquah, WA (unsure)",
+   "CDS Intern - Functional Analyst - WFM UKG | Issaquah, WA (unsure)",
+   "CDS Intern - Functional Analyst | Issaquah, WA (unsure)",
+   "CDS Intern - IT Product Owner - Costco Travel | Issaquah, WA (unsure)",
+   "CDS Intern - Identity Security | Issaquah, WA (unsure)",
+   "CDS Intern - Identity and Access Management | Issaquah, WA (unsure)",
+   "CDS Intern - InfoSec AI/ML | Issaquah, WA",
+   "CDS Intern - Innovation Analyst | Issaquah, WA (unsure)",
+   "CDS Intern - Innovation | Issaquah, WA (unsure)",
+   "CDS Intern - International Ecommerce Fulfillment | Issaquah, WA (unsure)",
+   "CDS Intern - LTL & Fulfillment Operations | Issaquah, WA (unsure)",
+   "CDS Intern - OT/IoT Security Engineering | Issaquah, WA",
+   "CDS Intern - PowerApps Developer - ECM Digital Workflow | Issaquah, WA",
+   "CDS Intern - Quality Engineer - Costco Travel | Issaquah, WA",
+   "CDS Intern - Quality Engineer Global People Systems-Enhancements & Optimization | Issaquah, WA",
+   "CDS Intern - Security Culture, Training, and Awareness | Issaquah, WA (unsure)",
+   "CDS Intern - Software Engineer - Costco Travel | Issaquah, WA",
+   "CDS Intern - Software Engineer - IT Retail Media | Issaquah, WA",
+   "CDS Intern - Software Engineer - International Depot | Issaquah, WA"
+  ]
+ },
+ "sandisk~avature": {
+  "jobs": 500,
+  "students": 17,
+  "matched": 14,
+  "matched_titles": [
+   "2027 Summer Intern VLSI CAD Design Automation Engineering | ? (unsure)",
+   "Circuit Design Engineer Intern | ? (unsure)",
+   "Failure Analysis Engineering Intern Memory Technology | ? (unsure)",
+   "GenAI AI ML Engineering Summer Intern | ? (unsure)",
+   "Intern VLSI Design Engineering | ? (unsure)",
+   "Internship Intake 2027 Product Development Engineering | ? (unsure)",
+   "Internship Intake 2027 Technology Development Engineering | ? (unsure)",
+   "Internship Intake 2027 Test Platform Development Engineering | ? (unsure)",
+   "Internship Intake 2027 Test Product Engineering | ? (unsure)",
+   "MS PhD Summer 2027 Intern VLSI Design Memory Technology | ? (unsure)",
+   "Summer 2027 Intern FPG T I US | ? (unsure)",
+   "Summer 2027 Intern Memory Technology | ? (unsure)",
+   "Summer 2027 Intern Process Technology Development ATG | ? (unsure)",
+   "Summer 2027 Intern System Design Verification | ? (unsure)"
+  ]
+ },
+ "adp~sitemap": {
+  "jobs": 690,
+  "students": 8,
+  "matched": 5,
+  "matched_titles": [
+   "oneadp alpharetta spring 2027 intern may 2027 grads | ? (unsure)",
+   "oneadp augusta spring 2027 intern may 2027 grads | ? (unsure)",
+   "oneadp norfolk spring 2027 intern may 2027 grads | ? (unsure)",
+   "spring intern may 27 grads | ? (unsure)",
+   "summer 2027 global security office gso internship | ? (unsure)"
+  ]
+ },
+ "bank-of-america~oleeo": {
+  "jobs": 29,
+  "students": 16,
+  "matched": 5,
+  "matched_titles": [
+   "2027 Brazil Fixed Income Sales & Trading Desk Internship Program | ? (unsure)",
+   "Bank of America | Early Insights Event | ? (unsure)",
+   "Global Markets Sales & Trading Summer Associate Program - 2027 | ? (unsure)",
+   "Global Quantitative Research Summer Associate Program - 2027 | ? (unsure)",
+   "Quantitative Strategies & Data Group Summer Associate Program - 2027 | ? (unsure)"
+  ]
+ },
+ "morgan-stanley~oleeo": {
+  "jobs": 50,
+  "students": 45,
+  "matched": 3,
+  "matched_titles": [
+   "2027 Institutional Equity Quantitative Finance Off-Cycle Internship - Derivatives (New York) | New York",
+   "2027 Quantitative Investment Strategies Summer Associate Program (New York) | New York",
+   "Parametric - 2027 Software Engineer Co-Op ( Alpharetta OR New York) | Alpharetta OR New York"
+  ]
+ },
+ "netapp~successfactors": {
+  "jobs": 320,
+  "students": 13,
+  "matched": 5,
+  "matched_titles": [
+   "Intern | Dusseldorf, DE, 40472 (unsure)",
+   "Intern | Windsor, GB, SL4 1RS (unsure)",
+   "Managed Services Intern | Windsor, GB, SL4 1RS (unsure)",
+   "Professional Services Intern | Windsor, GB, SL4 1RS (unsure)",
+   "Software Engineer Intern | Wichita, KS, US, 67208"
+  ]
+ },
+ "paramount~successfactors": {
+  "jobs": 223,
+  "students": 2,
+  "matched": 0,
+  "matched_titles": []
+ },
+ "qorvo~successfactors": {
+  "jobs": 8,
+  "students": 6,
+  "matched": 6,
+  "matched_titles": [
+   "Customer Quality Engineering Intern | Richardson, TX, US, 75081",
+   "Product Engineering Intern | Hillsboro, OR, US, 97124",
+   "SOI Design Intern | Greensboro, NC, US, 27409 (unsure)",
+   "Sales Data Analyst Intern | Hillsboro, OR, US, 97124",
+   "Software Engineer Intern | Richardson, TX, US, 75080",
+   "Test Engineering Intern | Hillsboro, OR, US, 97124"
+  ]
+ }
+}

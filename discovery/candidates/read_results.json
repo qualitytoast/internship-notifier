@@ -254,6 +254,21 @@
   "reported_total": null,
   "started": "2026-11-09T23:11:25Z"
  },
+ "athenahealth~careers": {
+  "checker": "phenom",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 83,
+  "students": 0,
+  "matched": 0,
+  "seconds": 0.5,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": 83,
+  "started": "2026-11-10T01:29:01Z"
+ },
  "att": {
   "checker": "workday",
   "ok": true,
@@ -598,6 +613,21 @@
   "degraded": null,
   "reported_total": null,
   "started": "2026-11-09T23:11:58Z"
+ },
+ "charles-schwab~talentbrew": {
+  "checker": "talentbrew",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 284,
+  "students": 2,
+  "matched": 1,
+  "seconds": 8.2,
+  "requests": 9,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-10T01:29:01Z"
  },
  "checkr": {
   "checker": "greenhouse",
@@ -1110,19 +1140,19 @@
   "started": "2026-11-09T23:14:13Z"
  },
  "dusty-robotics": {
-  "checker": "greenhouse",
-  "ok": false,
-  "error": "HTTP 404 for GET https://boards-api.greenhouse.io/v1/boards/dustyrobotics/jobs",
-  "error_kind": "fetch",
-  "jobs": 0,
+  "checker": "rippling",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 2,
   "students": 0,
   "matched": 0,
-  "seconds": 1.8,
+  "seconds": 0.5,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:14:14Z"
+  "started": "2026-11-10T01:29:01Z"
  },
  "earnin": {
   "checker": "greenhouse",
@@ -2578,6 +2608,21 @@
   "degraded": null,
   "reported_total": null,
   "started": "2026-11-09T23:14:46Z"
+ },
+ "precisely": {
+  "checker": "greenhouse",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 55,
+  "students": 0,
+  "matched": 0,
+  "seconds": 1.1,
+  "requests": 2,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-10T01:29:01Z"
  },
  "principal": {
   "checker": "jibe",

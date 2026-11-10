@@ -21,6 +21,7 @@ import json
 import os
 import re
 import sys
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -219,6 +220,7 @@ def probe(args: list[str]) -> None:
     save_robots(gate.cache_dir)
 
 
+CURRENT = threading.local()  # the read this worker thread is doing (for the measurement patches' logs)
 SLOW = {"workday", "oracle", "eightfold", "phenom", "jibe", "icims", "smartrecruiters", "avature", "talentbrew"}
 ORDER = ["workday", "oracle", "eightfold", "phenom", "jibe", "icims", "smartrecruiters"]  # longest reads start first
 
@@ -232,8 +234,14 @@ def read(keys: list[str]) -> None:
     from internwatch.filters import evaluate, is_student_role
     from internwatch.runner import run_checker
     cfg = home_config()
-    reads = yaml.safe_load((CANDIDATES / "reads.yaml").read_text())["reads"]
+    reads = yaml.safe_load((CANDIDATES / os.environ.get("STAGE1_READS", "reads.yaml")).read_text())["reads"]
     names = {r["key"]: r for r in load_candidates([])}
+    unlinked: list[dict] = []
+    if os.environ.get("STAGE1_RELAX_LINKS"):
+        relax_links(unlinked)
+    packed: list[dict] = []
+    if os.environ.get("STAGE1_PACK"):
+        pack_partitions(packed)
     done = set(json.loads((CANDIDATES / "read_results.json").read_text())) if "--new" in keys else set()
     keys = [k for k in keys if k != "--new"]
     todo = [(k, v) for k, v in reads.items() if k not in done and (not keys or k in keys or k.split("~")[0] in keys)]
@@ -251,6 +259,7 @@ def read(keys: list[str]) -> None:
                     checker=spec["checker"], settings=spec.get("settings") or {},
                     timeout_minutes=spec.get("timeout_minutes") or (45 if spec["checker"] in SLOW else 8))
         started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        CURRENT.entry = entry
         o = run_checker(cfg, c, gate=gate)
         jobs = o.jobs or []
         students = [j for j in jobs if is_student_role(j, cfg.rules)]
@@ -259,11 +268,17 @@ def read(keys: list[str]) -> None:
             json.dump([{"id": j.id, "title": j.title, "location": j.location, "url": j.url, "posted": j.posted,
                         "department": j.department, "employment_type": j.employment_type,
                         "alt_ids": (j.extra or {}).get("alt_ids") or []} for j in jobs], f)
-        return entry, {"checker": c.checker, "ok": o.ok if hasattr(o, "ok") else not o.error, "error": o.error,
-                       "error_kind": o.error_kind, "jobs": len(jobs), "students": len(students),
-                       "matched": len(matched), "seconds": round(o.duration, 1), "requests": o.requests,
-                       "partial": o.partial, "degraded": o.degraded, "reported_total": o.reported_total,
-                       "started": started}
+        res = {"checker": c.checker, "ok": o.ok if hasattr(o, "ok") else not o.error, "error": o.error,
+               "error_kind": o.error_kind, "jobs": len(jobs), "students": len(students),
+               "matched": len(matched), "seconds": round(o.duration, 1), "requests": o.requests,
+               "partial": o.partial, "degraded": o.degraded, "reported_total": o.reported_total,
+               "started": started}
+        tenant = (spec.get("settings") or {}).get("tenant")
+        if os.environ.get("STAGE1_RELAX_LINKS") and tenant:
+            res["unlinked"] = [u for u in unlinked if u["where"].startswith(f"workday:{tenant}/")]
+        if os.environ.get("STAGE1_PACK"):
+            res["packed"] = [x for x in packed if x["entry"] == entry]
+        return entry, res
 
     with ThreadPoolExecutor(max_workers=8) as pool:
         for entry, res in pool.map(one, todo):
@@ -273,6 +288,109 @@ def read(keys: list[str]) -> None:
                   f"{res['matched']:4} {res['seconds']:7}s {res['requests']:5} req "
                   f"{'PARTIAL ' if res['partial'] else ''}{'DEGRADED ' if res['degraded'] else ''}"
                   f"{(res['error'] or '')[:100]}", flush=True)
+    save_robots(gate.cache_dir)
+
+
+def relax_links(log: list[dict]) -> None:
+    """Measurement only, in this process: Workday reads that skip postings without a link instead of stopping (the
+    adapter stops once a partition has more than max(3, its total // 50) of them, counted over the whole site), as a
+    per-company tolerance would read them. Each such posting is logged with what Workday lists for it."""
+    from internwatch.adapters import workday as wd
+    need0, need_list0 = wd.need, wd.need_list
+
+    def need(cond, message):
+        if not cond and "postings without externalPath" in message:
+            return
+        need0(cond, message)
+
+    def need_list(obj, key, where):
+        items = need_list0(obj, key, where)
+        for p in items:
+            if isinstance(p, dict) and not (p.get("externalPath") and p.get("title")):
+                log.append({"where": where, **{k: p.get(k) for k in ("title", "externalPath", "locationsText",
+                                                                        "postedOn", "bulletFields")}})
+        return items
+
+    wd.need, wd.need_list = need, need_list
+
+
+def pack_partitions(log: list[dict]) -> None:
+    """Measurement only, in this process: when a capped Workday search would be split into more than 60 searches
+    (one per store location at CVS, Target, Lowe's), pack that facet's values into searches of several values each.
+    Workday matches any of the values in one search, so each packed search stays below the cap when its values'
+    counts add up to under 1,900 (at most 400 values each, to keep the request small)."""
+    from internwatch.adapters import workday as wd
+    orig = wd.Workday._partitions
+
+    def _partitions(self, s, first, total=0, skip=()):
+        parts = orig(self, s, first, total, skip)
+        if len(parts) <= 60 or s.get("partitions"):
+            return parts
+        name = next(iter(parts[0]))
+        vals = [v for f in wd._facets(first) if f.get("facetParameter") == name for v in f.get("values") or []
+                if v.get("id") and isinstance(v.get("count"), int)]
+        bins: list[list] = []  # [sum of counts, ids]: first fit, biggest values first
+        for v in sorted(vals, key=lambda v: -v["count"]):
+            for b in bins:
+                if b[0] + v["count"] <= 1900 and len(b[1]) < 400:
+                    b[0] += v["count"]
+                    b[1].append(v["id"])
+                    break
+            else:
+                bins.append([v["count"], [v["id"]]])
+        log.append({"entry": getattr(CURRENT, "entry", ""), "facet": name, "values": len(vals),
+                    "searches": len(bins), "instead_of": len(parts)})
+        return [{name: ids} for _, ids in bins]
+
+    wd.Workday._partitions = _partitions
+
+
+def facets(keys: list[str]) -> None:
+    """The first page of each Workday read in reads.yaml (one request each): every facet with its values' counts, and
+    the facets that could split a capped site into searches below the 2,000 cap (all values below it, counts adding
+    up to the total), with the requests a full read through each would take. Writes workday_partitions.json."""
+    import math
+    from internwatch.adapters.workday import AUTO_FACETS, CAP, HEADERS, PAGE, Workday, _facets
+    cfg = home_config()
+    hs = http_settings(cfg)
+    hs.retries = 1
+    gate = make_gate(cfg)
+    reads = yaml.safe_load((CANDIDATES / os.environ.get("STAGE1_READS", "reads.yaml")).read_text())["reads"]
+    todo = [(e, s["settings"]) for e, s in reads.items() if s["checker"] == "workday" and
+            (e in keys or e.split("~")[0] in keys)]
+    path = CANDIDATES / "workday_partitions.json"
+    out = json.loads(path.read_text()) if path.exists() else {}
+
+    def one(item):
+        entry, s = item
+        site = (s.get("sites") or [s.get("site")])[0]
+        with Http(hs, gate=gate) as http:
+            data = http.post_json(Workday().base(s, site) + "/jobs", json={"appliedFacets": s.get("facets", {}), "limit": PAGE,
+                                                        "offset": 0, "searchText": ""}, headers=HEADERS)
+        total = data.get("total")
+        known = max([total] + [sum(v.get("count") or 0 for v in f.get("values") or [] if isinstance(v, dict))
+                               for f in _facets(data) if f.get("facetParameter") in ("timeType", "workerSubType")])
+        fs = []
+        for f in _facets(data):
+            vals = [v for v in f.get("values") or [] if v.get("id") and isinstance(v.get("count"), int)]
+            if not vals:
+                continue
+            n, top = sum(v["count"] for v in vals), max(v["count"] for v in vals)
+            fs.append({"facet": f.get("facetParameter"), "values": len(vals), "sum": n, "largest": top,
+                       "splits": top < CAP and n >= known,
+                       "requests": sum(math.ceil(v["count"] / PAGE) or 1 for v in vals),
+                       "auto": f.get("facetParameter") in AUTO_FACETS,
+                       "top": sorted(([v.get("descriptor"), v["count"]] for v in vals), key=lambda x: -x[1])[:12]})
+        return entry, {"site": site, "total": total, "known": known, "facets": fs}
+
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        for entry, res in pool.map(one, todo):
+            out[entry] = res
+            best = sorted((f for f in res["facets"] if f["splits"]), key=lambda f: f["requests"])
+            print(f"{entry:28} total {res['total']:6} known {res['known']:6}  " +
+                  ("; ".join(f"{f['facet']}: {f['values']} values, {f['requests']} req" for f in best[:3])
+                   or "no facet splits it"), flush=True)
+    path.write_text(json.dumps(dict(sorted(out.items())), indent=1) + "\n")
     save_robots(gate.cache_dir)
 
 
@@ -686,5 +804,7 @@ if __name__ == "__main__":
         backup(args)
     elif cmd == "pagecount":
         pagecount(args)
+    elif cmd == "facets":
+        facets(args)
     else:
         print(__doc__)
