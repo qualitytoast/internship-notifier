@@ -6,6 +6,13 @@ settings:
   site:   uni                                   (or sites: [uni, Ext] to watch several career sites)
   partitions: [{timeType: [<id>]}, …]           optional; see the 2000-job cap below
   quick_queries: [{Job_Family_Group: [<id>]}]   optional; read fully on quick scans of big sites (e.g. intern facet)
+  pack: true          optional: when a capped site splits only by a facet with many values (one per store location
+                      at CVS, Target, Lowe's), several values go in one search (Workday returns jobs matching any):
+                      searches of at most PACK_VALUES values whose counts add up to under PACK_JOBS (CVS: 37 searches
+                      instead of 4,990)
+  unlinked_ok: 50     optional: up to this many postings listed without a link (no title, no link, no place: Walmart
+                      lists a few dozen) are skipped quietly; without it a handful stops the read, more than two
+                      mark it degraded
 List:   POST https://<host>/wday/cxs/<tenant>/<site>/jobs  {"appliedFacets":{}, "limit":20, "offset":N, "searchText":""}
         → {"total": N (first page only), "jobPostings": [{title, externalPath, locationsText, postedOn, bulletFields}],
            "facets": [{facetParameter, values: [{id, descriptor, count}]}]}
@@ -28,6 +35,9 @@ from .base import (Checker, check_total, degrade, html_text, iso_date, need, nee
 
 PAGE = 20     # Workday rejects larger pages
 CAP = 2000    # Workday's search result cap
+PACK_MIN = 60       # `pack`: a split into more searches than this is packed …
+PACK_VALUES = 150   # … into searches of at most this many values (Workday answers 400 values with an error, 200 work)
+PACK_JOBS = 1900    # … whose counts add up to at most this (a job listed under several values counts once each)
 HEADERS = {"Accept": "application/json", "Content-Type": "application/json"}
 REQ_ID = re.compile(r"^(?=[^ ]*\d{4})[A-Z0-9][A-Z0-9_-]{3,24}$")   # requisition-like bullet fields
 AUTO_FACETS = ("timeType", "workerSubType", "jobFamilyGroup", "locationCountry", "locationRegionStateProvince",
@@ -60,6 +70,23 @@ def _counted(page: dict, name: str) -> int:
     """How many jobs a facet's values count on this page (0 without that facet)."""
     return max((sum(v["count"] for v in f.get("values") or [] if isinstance(v.get("count"), int))
                 for f in _facets(page) if f.get("facetParameter") == name), default=0)
+
+
+def _pack(first: dict, parts: list[dict]) -> list[dict]:
+    """One-value searches of a single facet, packed into searches of several values (first fit, biggest first)."""
+    name = next(iter(parts[0]))
+    counts = {v["id"]: v["count"] for f in _facets(first) if f.get("facetParameter") == name for v in f.get("values") or []
+              if v.get("id") and isinstance(v.get("count"), int)}
+    bins: list[list] = []  # [jobs, ids]
+    for vid in sorted((i for p in parts for i in p[name]), key=lambda i: -counts.get(i, 0)):
+        n = counts.get(vid, 0)
+        b = next((b for b in bins if b[0] + n <= PACK_JOBS and len(b[1]) < PACK_VALUES), None)
+        if b is None:
+            bins.append([n, [vid]])
+        else:
+            b[0] += n
+            b[1].append(vid)
+    return [{name: ids} for _, ids in bins]
 
 
 @register
@@ -102,7 +129,8 @@ class Workday(Checker):
                 title = p.get("title") or (_title_from_path(path) if path else "")  # Intel lists one without a title
                 if not (path and title):
                     self.malformed += 1  # no link to read or open; too many of them means the format changed
-                    need(self.malformed <= max(3, total // 50), f"{where}: {self.malformed} postings without externalPath")
+                    need(self.malformed <= max(3, total // 50, s.get("unlinked_ok", 0)),
+                         f"{where}: {self.malformed} postings without externalPath")
                     continue
                 jid = f"{site}:{path}" if len(self.sites(s)) > 1 else path
                 page_ids.append(jid)
@@ -126,6 +154,11 @@ class Workday(Checker):
         return total, first, seen
 
     def _partitions(self, s, first: dict, total: int = 0, skip=()) -> list[dict]:
+        """_facet_parts, packed when the site asks for it (`pack`) and they are many."""
+        parts = self._facet_parts(s, first, total, skip)
+        return _pack(first, parts) if s.get("pack") and len(parts) > PACK_MIN else parts
+
+    def _facet_parts(self, s, first: dict, total: int = 0, skip=()) -> list[dict]:
         """The `partitions` setting, or facet values from a capped search's first page (one search each, all below the
         cap): the first facet in AUTO_FACETS order whose counts add up to `total`, so no job lacks a value for it;
         failing that, the one whose counts add up to the most. `skip`: facets the search already applies."""
@@ -152,7 +185,8 @@ class Workday(Checker):
         where = f"workday:{s['tenant']}/{site}" + (f" {facets}" if facets else "")
         # a capped total only says "2000 or more": the time type and worker type counts (one per job) say how many
         known = max([total] + [_counted(first, name) for name in ("timeType", "workerSubType") if name not in facets])
-        parts = self._partitions({}, first, known, skip=facets)  # never the configured partitions: they are split here
+        # never the configured partitions (they are what is split here); `pack` still applies
+        parts = self._partitions({"pack": True} if s.get("pack") else {}, first, known, skip=facets)
         if not need_soft(parts, f"{where}: {total}+ jobs hit Workday's {CAP} cap and no facet splits them; "
                                 f"set `partitions` in companies.yaml", ctx):
             _cut_short(ctx)
@@ -228,7 +262,8 @@ class Workday(Checker):
             degrade(ctx, f"workday:{s['tenant']}: ran out of time after {len(out)} jobs: {e}")
             _cut_short(ctx)
             reported = 0
-        if self.malformed > 2:  # one or two stray entries (GEICO lists one) are normal; more are worth a look
+        # one or two stray entries (GEICO lists one) are normal; more are worth a look, unless the site allows them
+        if self.malformed > max(2, s.get("unlinked_ok", 0)):
             degrade(ctx, f"workday:{s['tenant']}: skipped {self.malformed} postings without a link")
             _cut_short(ctx)
         if ctx is not None and reported:

@@ -2,6 +2,8 @@
 api.smartrecruiters.com, disallows all crawlers in robots.txt, so it is never used).
 
 settings: company: ServiceNow     (identifier in careers.smartrecruiters.com/<company>)
+          ignore_search_total: true   the search's totalFound isn't compared (Arista's says 147 and returns the
+                                      same 98 postings on every page); the page's own count still is
 1. GET https://careers.smartrecruiters.com/<company>  → first group page (HTML): section.js-group[data-qty] with up
    to 9 li.opening-job each, and div.js-openings-load[data-groups-pages][data-more]
 2. GET <data-more>?page=N for the other group pages (HTML fragments, 6 groups each)
@@ -99,7 +101,7 @@ class SmartRecruiters(Checker):
                 problems.append(f"group page {page} has no groups")
             groups, qty = groups + g, qty + q
         found = self._search(http, company, out)
-        if isinstance(found, int) and len(out) < found * 0.95:
+        if isinstance(found, int) and not s.get("ignore_search_total") and len(out) < found * 0.95:
             problems.append(f"collected {len(out)} postings but the search reports {found}")
         if ctx is not None:
             ctx.reported_total = qty or found

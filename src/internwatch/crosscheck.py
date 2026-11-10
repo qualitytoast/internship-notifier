@@ -116,7 +116,8 @@ def url_markers(c: Company) -> list[str]:
         marks.append(f"apply.workable.com/{s['account'].lower()}/")
     for k in ("host",):
         if s.get(k) and not str(s[k]).startswith(("wd1.myworkdaysite", "wd5.myworkdaysite")):
-            marks.append(str(s[k]).lower())
+            # anchor_host: the host only at the start of a link (ms.wd5… is inside williams.wd5…)
+            marks.append(f"//{str(s[k]).lower()}/" if s.get("anchor_host") else str(s[k]).lower())
     if c.checker == "workday" and "myworkdaysite.com" in str(s.get("host", "")):
         marks.append(f"/recruiting/{s.get('tenant', '').lower()}/")
     marks += [m.lower() for m in s.get("match_urls", [])]
