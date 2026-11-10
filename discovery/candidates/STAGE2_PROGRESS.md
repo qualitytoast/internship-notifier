@@ -82,7 +82,9 @@ as shown; 6 of 11 lists kept.
 - [x] re-match against the dry run: 81 rows (55 baseline, 26 untracked) against 80 (55, 25); NYT 12 (10), Enova 2 (1),
       Gemini 1 (2), Betterment 0 (1): rows Simplify added or dropped in between; no row of the 198 changed. The dry
       run's one miss (Rubrik "Software Engineering Intern") closed on Simplify before go-live
-- [ ] merge, push; the next real morning is batch 1's go-live
+- [x] merged into main (fast-forward) and pushed 2026-11-10; the next real morning is batch 1's go-live. Then check:
+      the run time, all 274 processed, the re-match, the 198 unchanged against the 5 mornings before, and the alerts
+      above (Rocket's board empty and the 6 `board quiet`)
 
 Corrections to STAGE1_REPORT.md's day-one alerts: `board quiet` needs no history, since the rule also reads a
 board's own posting dates (newest > 45 days old alerts on the first read). Measured from Stage 1's reads, this
