@@ -96,8 +96,15 @@ PROGRAM_KEYWORDS: dict[str, list[str]] = {
 
 # Hand-tuned settings on top of discovery (each comes from a discovery note).
 OVERRIDES: dict[str, dict] = {
-    # a capped Workday site split by location takes ~500 requests (Capital One passes 2,000 jobs soon)
-    "capital-one": {"timeout_minutes": 20},
+    # a capped Workday site split by location takes ~500 requests (Capital One passes 2,000 jobs soon); a posting
+    # without a link counts once against the whole site, not again in each location's search (10 Nov 2026)
+    "capital-one": {"timeout_minutes": 20, "settings": {"host": "capitalone.wd12.myworkdayjobs.com",
+                                                        "tenant": "capitalone", "site": "Capital_One",
+                                                        "unlinked_once": True}},
+    # CoreWeave folded its Weights & Biases board into the main one on 9 Nov 2026: the 7 postings moved there with
+    # their ids, and the board answers 404 (notes/coreweave.md)
+    "coreweave": {"settings": {"boards": ["coreweave", "coreweaveu", "coreweaveca", "coreweaveapac"]}, "verified": {
+        "feed": "GET https://boards-api.greenhouse.io/v1/boards/{coreweave,coreweaveu,coreweaveca,coreweaveapac}/jobs"}},
     "microsoft": {"big": True, "timeout_minutes": 30, "settings": {
         "host": "apply.careers.microsoft.com", "domain": "microsoft.com", "api": "pcsx", "min_interval": 3.0,
         "quick_queries": [{"filter_employment_type": "internship"}, {"filter_seniority": "Intern"}],
@@ -207,8 +214,17 @@ OVERRIDES: dict[str, dict] = {
                                               "min_interval": 2.5, "count_tolerance": 0.04}}]}},
     # Campus boards next to the main Greenhouse board (found by probing <board>campus, <board>students, …);
     # the careers pages list only the main board. Toast's and Twilio's are empty between seasons.
-    "klaviyo": {"settings": {"boards": ["klaviyo", "klaviyocampus"], "missing_ok": True}, "verified": {
-        "feed": "GET https://boards-api.greenhouse.io/v1/boards/{klaviyo,klaviyocampus}/jobs", "explained":
+    # Klaviyo also lists every posting on an Ashby board since November 2026 (151 of 151 on 10 Nov), a move
+    # under way: read second, its copies of Greenhouse postings dropped as twins, so a role posted only there is seen
+    "klaviyo": {"checker": "multi", "settings": {
+        "dedupe_titles": True, "twin_ids": True,
+        "match_urls": ["greenhouse.io/klaviyo/", "greenhouse.io/embed/job_app?for=klaviyo", "greenhouse.io/klaviyocampus/",
+                       "greenhouse.io/embed/job_app?for=klaviyocampus", "ashbyhq.com/f40d14d9-07f4-403d-802b-37453deccf0a/"],
+        "sources": [
+            {"checker": "greenhouse", "settings": {"boards": ["klaviyo", "klaviyocampus"], "missing_ok": True}},
+            {"checker": "ashby", "settings": {"board": "f40d14d9-07f4-403d-802b-37453deccf0a"}}]}, "verified": {
+        "feed": "GET https://boards-api.greenhouse.io/v1/boards/{klaviyo,klaviyocampus}/jobs + "
+                "GET https://api.ashbyhq.com/posting-api/job-board/f40d14d9-07f4-403d-802b-37453deccf0a", "explained":
         "the careers page lists the main board (159); internships and co-ops are on a second board, klaviyocampus"}},
     "toast": {"settings": {"boards": ["toast", "toastcampus"], "missing_ok": True},
               "verified": {"feed": "GET https://boards-api.greenhouse.io/v1/boards/{toast,toastcampus}/jobs"}},

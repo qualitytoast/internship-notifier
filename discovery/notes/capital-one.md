@@ -86,3 +86,11 @@
   - 7 Workday CXS calls: page 1, CA/UK filter, Toronto filter, intern facet, 2 searches, and 1 detail.
   - TalentBrew US `/search-jobs`, the jobs sitemap, the internship pages and one job page.
   - The UK and Canada home and `/search-jobs` pages.
+
+## Update 2026-11-10: postings without a link (`unlinked_once`)
+Both reads on the morning of 2026-11-10 stopped about 340 requests in with "4 postings without externalPath", and an
+hour later the site read cleanly (2,055 jobs, none without a link). The reader counted every listing of a link-less
+posting, and Capital One is read whole (capped at 2,000) and then once per location, a job under each of its places
+(5,011 listings for 2,055 jobs), while the limit came from the size of the search it was in: 3 in a small location's
+search. A posting or two listed for a moment without a link stopped the whole read. With `unlinked_once: true` each
+such posting counts once, against 2% of the whole site; more than two still mark the poll degraded and name them.

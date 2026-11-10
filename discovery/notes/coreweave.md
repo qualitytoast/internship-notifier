@@ -56,3 +56,11 @@ This is the standard Greenhouse job-board list (see notes/walleye.md). CoreWeave
 ## Evidence
 - Sample: `discovery/samples/coreweave.json` is the raw `coreweaveapac` list (23 jobs, 21 KB).
 - Capture: `discovery/captures/coreweave/` (W&B page). I made Playwright renders of all 5 careers pages and one GET per board.
+
+## Update 2026-11-10: the Weights & Biases board is gone
+The `weights_and_biases` board posted nothing new after 2026-08-11 (a `board quiet` alert on 2026-10-31), still listed
+7 postings on the morning of 2026-11-09 and answered 404 that evening. All 7 moved to the `coreweave` board with the
+same Greenhouse ids (e.g. 4696621006 "Senior Software Engineer, Weave - Weights & Biases"), so the morning of
+2026-11-10 still read every one. It never listed a student role, and no SimplifyJobs or list row links it. The board
+is no longer read: `boards: [coreweave, coreweaveu, coreweaveca, coreweaveapac]`. The aliases stay, so list rows
+naming Weights & Biases still go to CoreWeave.

@@ -102,7 +102,7 @@ companies:
   aliases: [Capital One]
   careers_url: ['https://www.capitalonecareers.com/search-jobs', 'https://www.capitalonecareers.com/search-jobs?acm=ALL&alrpm=ALL&ascf=[%7B%22key%22:%22custom_fields.Campus%22,%22value%22:%22Internships%22%7D]']
   checker: workday
-  settings: {host: capitalone.wd12.myworkdayjobs.com, tenant: capitalone, site: Capital_One}
+  settings: {host: capitalone.wd12.myworkdayjobs.com, tenant: capitalone, site: Capital_One, unlinked_once: true}
   role_keywords: [teip, first gen focus]
   timeout_minutes: 20
   verified: {page_total: 1841, explained: 'Workday Capital_One is the union of three Radancy TalentBrew country sites (US 1841, CA 52,
@@ -122,8 +122,8 @@ companies:
   careers_url: ['https://coreweave.com/careers', 'https://coreweave.com/careers/weights-biases']
   checker: greenhouse
   settings:
-    boards: [coreweave, coreweaveu, coreweaveca, coreweaveapac, weights_and_biases]
-  verified: {page_total: 428}
+    boards: [coreweave, coreweaveu, coreweaveca, coreweaveapac]
+  verified: {page_total: 428, feed: 'GET https://boards-api.greenhouse.io/v1/boards/{coreweave,coreweaveu,coreweaveca,coreweaveapac}/jobs'}
 - key: anyscale
   name: Anyscale
   category: ai
@@ -657,12 +657,21 @@ companies:
   name: Klaviyo
   category: software
   careers_url: ['https://www.klaviyo.com/careers/search-jobs', 'https://www.klaviyo.com/careers/search-jobs?team=Engineering&page=&keywords=intern']
-  checker: greenhouse
+  checker: multi
   settings:
-    boards: [klaviyo, klaviyocampus]
-    missing_ok: true
-  verified: {page_total: 159, feed: 'GET https://boards-api.greenhouse.io/v1/boards/{klaviyo,klaviyocampus}/jobs', explained: 'the careers
-      page lists the main board (159); internships and co-ops are on a second board, klaviyocampus'}
+    dedupe_titles: true
+    twin_ids: true
+    match_urls: [greenhouse.io/klaviyo/, 'greenhouse.io/embed/job_app?for=klaviyo', greenhouse.io/klaviyocampus/, 'greenhouse.io/embed/job_app?for=klaviyocampus',
+      ashbyhq.com/f40d14d9-07f4-403d-802b-37453deccf0a/]
+    sources:
+    - checker: greenhouse
+      settings:
+        boards: [klaviyo, klaviyocampus]
+        missing_ok: true
+    - checker: ashby
+      settings: {board: f40d14d9-07f4-403d-802b-37453deccf0a}
+  verified: {page_total: 159, feed: 'GET https://boards-api.greenhouse.io/v1/boards/{klaviyo,klaviyocampus}/jobs + GET https://api.ashbyhq.com/posting-api/job-board/f40d14d9-07f4-403d-802b-37453deccf0a',
+    explained: 'the careers page lists the main board (159); internships and co-ops are on a second board, klaviyocampus'}
 - key: rocket
   name: Rocket Companies
   category: fintech

@@ -13,7 +13,12 @@ settings:
   unlinked_ok: 50     optional: up to this many postings listed without a link (no title, no link, no place: Walmart
                       lists a few dozen) are skipped quietly; without it a handful stops the read, more than two
                       mark it degraded
-List:   POST https://<host>/wday/cxs/<tenant>/<site>/jobs  {"appliedFacets":{}, "limit":20, "offset":N, "searchText":""}
+  unlinked_once: true optional: a posting without a link counts once however many searches list it, and the read
+                      stops only when such postings pass 2% of the whole site, not of the search they are in; more
+                      than two still mark it degraded, naming them. Capital One is read whole and then again by
+                      location, a job under each of its places: on 10 Nov 2026 a few link-less postings, counted
+                      again in each small location's search, stopped its whole 2,055-job read at "4"
+List:  POST https://<host>/wday/cxs/<tenant>/<site>/jobs  {"appliedFacets":{}, "limit":20, "offset":N, "searchText":""}
         → {"total": N (first page only), "jobPostings": [{title, externalPath, locationsText, postedOn, bulletFields}],
            "facets": [{facetParameter, values: [{id, descriptor, count}]}]}
 Detail: GET  https://<host>/wday/cxs/<tenant>/<site><externalPath> → {"jobPostingInfo": {jobDescription, location, …}}
@@ -27,6 +32,7 @@ poll is marked degraded.
 """
 from __future__ import annotations
 
+import json
 import re
 
 from ..models import CheckTimeout, Job, ShapeError
@@ -123,10 +129,18 @@ class Workday(Checker):
             if total is None:
                 total, first = data.get("total"), data
                 need(isinstance(total, int), f"{where}: no total in first page")
+                self.biggest = max(self.biggest, total)
             page_ids = []
             for p in items:
                 path = p.get("externalPath")
                 title = p.get("title") or (_title_from_path(path) if path else "")  # Intel lists one without a title
+                if not (path and title) and s.get("unlinked_once"):
+                    key = json.dumps(p, sort_keys=True, default=str)
+                    self.unlinked.setdefault(key, p.get("title") or "")
+                    need(len(self.unlinked) <= max(3, self.biggest // 50, s.get("unlinked_ok", 0)),
+                         f"{where}: {len(self.unlinked)} postings without externalPath")
+                    page_ids.append(f"unlinked:{key}")  # listed, so it counts when the search's total is checked
+                    continue
                 if not (path and title):
                     self.malformed += 1  # no link to read or open; too many of them means the format changed
                     need(self.malformed <= max(3, total // 50, s.get("unlinked_ok", 0)),
@@ -253,6 +267,8 @@ class Workday(Checker):
     def fetch(self, http, s, ctx=None):
         out: dict[str, Job] = {}
         self.malformed = 0
+        self.unlinked: dict[str, str] = {}  # unlinked_once: each posting without a link (as listed) → its title
+        self.biggest = 0                    # unlinked_once: the largest total a search of this read reported
         try:
             reported = self._fetch_sites(http, s, ctx, out)
         except CheckTimeout as e:
@@ -265,6 +281,11 @@ class Workday(Checker):
         # one or two stray entries (GEICO lists one) are normal; more are worth a look, unless the site allows them
         if self.malformed > max(2, s.get("unlinked_ok", 0)):
             degrade(ctx, f"workday:{s['tenant']}: skipped {self.malformed} postings without a link")
+            _cut_short(ctx)
+        if len(self.unlinked) > max(2, s.get("unlinked_ok", 0)):
+            titles = [t for t in self.unlinked.values() if t]
+            degrade(ctx, f"workday:{s['tenant']}: skipped {len(self.unlinked)} postings without a link"
+                         + (": " + "; ".join(titles[:5]) if titles else ""))
             _cut_short(ctx)
         if ctx is not None and reported:
             ctx.reported_total = reported

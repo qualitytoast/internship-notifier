@@ -390,9 +390,9 @@ def test_a_page_the_parsing_chokes_on_does_not_stay_first_in_line(make_cfg, memd
 
 
 def test_an_emptied_campus_board_in_a_real_recording(make_cfg, memdb, monkeypatch):
-    """Klaviyo's recorded fixture, with the campus board answering an empty list on two polls (on the day it was
-    recorded: weeks later the quiet-board rule would rightly call the board quiet too)."""
-    cas = Cassette.load(REPO / "tests" / "fixtures" / "cassettes" / "klaviyo.json.gz")
+    """Klaviyo's Greenhouse boards as recorded on 20 Oct 2026, with the campus board answering an empty list on two
+    polls (on the day it was recorded: weeks later the quiet-board rule would rightly call the board quiet too)."""
+    cas = Cassette.load(REPO / "tests" / "fixtures" / "cassettes" / "klaviyo-greenhouse.json.gz")
     monkeypatch.setattr(liveness, "utcnow", lambda: parse_iso(cas.meta["recorded_at"]))
     c = company("klaviyo", checker="greenhouse", settings=cas.meta["settings"])
     cfg = make_cfg([c])

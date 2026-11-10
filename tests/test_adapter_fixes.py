@@ -40,14 +40,16 @@ def gone(*suffixes):
 
 
 # Greenhouse ---------------------------------------------------------------------------------
+# klaviyo-greenhouse: Klaviyo's two Greenhouse boards as recorded on 20 Oct 2026, 8 roles on the campus board (Klaviyo
+# itself is read with its Ashby board too since 10 Nov 2026, when its campus board was empty)
 
 def test_greenhouse_missing_ok_board_that_answered_before_and_vanishes_is_reported():
     ctx = FetchContext()
-    jobs = replay("klaviyo", ctx=ctx)
+    jobs = replay("klaviyo-greenhouse", ctx=ctx)
     assert ctx.state["boards_ok"] == ["klaviyo", "klaviyocampus"] and not ctx.degraded
     campus = sum(1 for j in jobs if j.extra["board"] == "klaviyocampus")
     ctx2 = FetchContext(state=ctx.state)
-    after = replay("klaviyo", gone("/boards/klaviyocampus/jobs"), ctx=ctx2)
+    after = replay("klaviyo-greenhouse", gone("/boards/klaviyocampus/jobs"), ctx=ctx2)
     assert len(after) == len(jobs) - campus > 0
     assert ctx2.degraded == "greenhouse:klaviyocampus answered 404 (it answered before)"
     assert ctx2.state["boards_ok"] == ["klaviyo", "klaviyocampus"]  # still expected back: reported every poll
@@ -57,9 +59,9 @@ def test_greenhouse_missing_ok_board_never_seen_stays_silent():
     ctx = FetchContext()
     assert replay("instabase", ctx=ctx) == [] and ctx.degraded is None
     ctx = FetchContext()
-    replay("klaviyo", gone("/boards/klaviyocampus/jobs"), ctx=ctx)
+    replay("klaviyo-greenhouse", gone("/boards/klaviyocampus/jobs"), ctx=ctx)
     assert ctx.degraded is None and ctx.state["boards_ok"] == ["klaviyo"]
-    assert replay("klaviyo", gone("/boards/klaviyocampus/jobs")) and replay("instabase") == []  # no context: as before
+    assert replay("klaviyo-greenhouse", gone("/boards/klaviyocampus/jobs")) and replay("instabase") == []  # no context: as before
 
 
 def test_greenhouse_one_failing_board_keeps_the_other_boards_jobs():
@@ -392,6 +394,56 @@ def test_workday_capped_site_that_no_facet_splits_keeps_what_was_read():
     assert "no facet splits them" in ctx.degraded
     with pytest.raises(CheckerError):
         get_checker("workday").fetch(site, WD)
+
+
+def linkless_site(n: int) -> WorkdaySite:
+    """Capital One's shape: a capped site split by location (100 jobs in "small"), `n` of small's jobs without a link,
+    so each is listed twice: in the capped search and in small's own search."""
+    jobs = wd_jobs(2100, locations=lambda i: "small" if i < 100 else f"city {i % 20}")
+    for j in jobs[5:5 + n]:
+        j["path"] = None
+    return WorkdaySite(jobs)
+
+
+def test_workday_unlinked_once_counts_a_posting_once_against_the_whole_site():
+    with pytest.raises(CheckerError, match="4 postings without externalPath"):  # as on 10 Nov 2026: 2 postings, read lost
+        get_checker("workday").fetch(linkless_site(2), WD, FetchContext())
+    ctx = FetchContext()
+    jobs = get_checker("workday").fetch(linkless_site(2), {**WD, "unlinked_once": True}, ctx)
+    assert len(jobs) == 2098 and not ctx.degraded and not ctx.partial
+
+
+def test_workday_unlinked_once_names_more_than_two_and_stops_past_two_percent():
+    ctx = FetchContext()
+    jobs = get_checker("workday").fetch(linkless_site(3), {**WD, "unlinked_once": True}, ctx)
+    assert len(jobs) == 2097 and ctx.partial
+    assert ctx.degraded == "workday:x: skipped 3 postings without a link: Job 5; Job 6; Job 7"
+    with pytest.raises(CheckerError, match="41 postings without externalPath"):  # 2% of 2000: the format changed
+        get_checker("workday").fetch(linkless_site(41), {**WD, "unlinked_once": True}, FetchContext())
+
+
+def test_workday_unlinked_once_on_capital_ones_recorded_read():
+    """Capital One's recorded read, whole and then by location, with two postings of a small location's search listed
+    without a link wherever they appear."""
+    cas = cassette("capital-one")
+    listed = collections.Counter(p["externalPath"] for e in cas.exchanges for p in json.loads(e["text"]).get("jobPostings") or [])
+    small = next(d for e in cas.exchanges if json.loads(e["body"] or "{}").get("appliedFacets")
+                 and json.loads(e["body"])["offset"] == 0 and (d := json.loads(e["text"]))["total"] < 150)
+    paths = [p["externalPath"] for p in small["jobPostings"] if listed[p["externalPath"]] > 1][:2]
+
+    def unlink(e):
+        d = json.loads(e["text"])
+        for p in d.get("jobPostings") or []:
+            if p.get("externalPath") in paths:
+                p.pop("externalPath")
+        e["text"] = json.dumps(d)
+    settings = cas.meta["settings"]
+    with pytest.raises(CheckerError, match="postings without externalPath"):  # as on 10 Nov 2026
+        replay("capital-one", unlink, settings={k: v for k, v in settings.items() if k != "unlinked_once"})
+    ctx = FetchContext()
+    jobs = replay("capital-one", unlink, ctx=ctx)
+    assert settings["unlinked_once"] and len(paths) == 2
+    assert len(jobs) == cas.meta["count"] - 2 and not ctx.degraded and not ctx.partial
 
 
 # Eightfold ----------------------------------------------------------------------------------

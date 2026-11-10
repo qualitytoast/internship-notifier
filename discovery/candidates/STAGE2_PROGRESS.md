@@ -85,6 +85,14 @@ as shown; 6 of 11 lists kept.
 - [x] merged into main (fast-forward) and pushed 2026-11-10; the next real morning is batch 1's go-live. Then check:
       the run time, all 274 processed, the re-match, the 198 unchanged against the 5 mornings before, and the alerts
       above (Rocket's board empty and the 6 `board quiet`)
+- Three of the 198 changed on main after the merge (2026-11-10, the morning's alerts), so the go-live comparison
+  expects them to differ: Capital One's Workday reader counts a link-less posting once (`unlinked_once`), CoreWeave no
+  longer reads its dead weights_and_biases board, Klaviyo reads its Ashby board after Greenhouse (multi, `twin_ids`).
+  Proof: golden.py against main differs only in coreweave's and klaviyo's cassette runs (filters, matching, Workday
+  files identical); three mornings replayed (data/stage2/morning-2026-11-10-fixes, batch 1's recording plus Klaviyo's
+  Ashby answer): the other 274's requests identical and in order, and the three differ only as intended. Capital One
+  is read once instead of twice (the recording lists one link-less posting, R1005268, 5 times: old "skipped 4",
+  degraded); CoreWeave reads clean and marks its 3 closed jobs; Klaviyo's jobs gain the Ashby twin ids, nothing else
 
 Corrections to STAGE1_REPORT.md's day-one alerts: `board quiet` needs no history, since the rule also reads a
 board's own posting dates (newest > 45 days old alerts on the first read). Measured from Stage 1's reads, this

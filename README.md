@@ -287,7 +287,8 @@ Rules for changing things: CLAUDE.md.
 - Product management and design are not excluded; they arrive as `field?`. Add `product manag*` to
   exclude.fields to drop them.
 - **Second boards:** Klaviyo, Toast and Twilio have Greenhouse campus boards (klaviyocampus, toastcampus,
-  twiliostudents). Expedia has a second Workday site, `private`, which robots.txt allows and SimplifyJobs
+  twiliostudents). Klaviyo also lists every posting on an Ashby board since November 2026, read after Greenhouse with
+  its copies dropped as twins, so a role posted only there is seen. Expedia has a second Workday site, `private`, which robots.txt allows and SimplifyJobs
   links to. Plaid and Rockwell Automation post some student roles only on RippleMatch, which is read for them
   (Rockwell's roles that are also on Workday under the same title are skipped). Found by the October 2026 board audit:
   Flow Traders' term board ftsp27co-ops, Akuna's on-campus board akunacapitaloci, Virtu's virturecruitinghidden, Visa's
