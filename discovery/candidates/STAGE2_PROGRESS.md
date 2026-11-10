@@ -26,14 +26,15 @@ recorded round by round (198 problems, 198 misses, then the added round's), emai
         downloads reused by the added round (no new requests)
 - [x] 7. Opt-in settings (off for the 198): Workday skip postings without a link; Workday pack locations;
         anchored address markers for short tenants; SmartRecruiters search total; (Ashby learn_ids if needed)
-- [ ] 8. tools/prove: golden (cassettes, filters, matching, liveness functions) and replayed mornings
-        (golden.py: PASS against main on 2026-11-09, twice; a live morning recorded into
-        data/stage2/morning-2026-11-09 of the main tree; then runall.sh; plus a smoke replay of the added round on
-        real data: data/stage2/smoke/version is this branch with stripe, figma, klaviyo marked round: added)
-- [ ] 9. Test fixes: klaviyo's quiet-board test pinned to its recording date (done); the 8 drifted cassettes
-        (bloomberg, visa, mongodb, electronic-arts, akuna-capital, peak6, virtu, flow-traders) re-recorded after the
-        morning recording (never at the same time: same sites), with test_fixture_was_recorded_with_the_current_settings
-- [ ] 10. Docs; proofs PASS; merge into main; push; then a morning run before batch 1
+- [x] 8. tools/prove: golden.py PASS against main (394 cassette runs, 85,183 filter verdicts, 39,614 matched rows,
+        36 Workday robots files identical); a live morning recorded (data/stage2/morning-2026-11-09: 3,067 exchanges,
+        198 checked, 0 failed) and runall.sh PASS for mornings 1, 2 (a day later: new roles at stripe, databricks,
+        openai; figma failing; every email failing) and 3 (after the failed emails); smoke replay with stripe, figma,
+        klaviyo as added: the added round ran last (its requests the last 4 of 2,779), no error
+- [x] 9. Test fixes: klaviyo's quiet-board test pinned to its recording date; the 8 drifted cassettes re-recorded
+        (test_fixture_was_recorded_with_the_current_settings); Bloomberg's tests now use the real shuffled walk the
+        new recording caught (310 of 330 jobs newest-first, all 330 by title)
+- [x] 10. Docs (README); proofs PASS; merged into main and pushed. Next: a real morning run before batch 1
 
 ## How to prove a batch
 - Static: `.venv/bin/python -I tools/prove/golden.py main` from the worktree (old = main, new = this tree): PASS
