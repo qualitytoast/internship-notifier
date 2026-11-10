@@ -3,8 +3,10 @@ copies of the same database, and compare everything they wrote, sent and asked f
 
     python -I tools/prove/morning.py record <dir>                    a live daily run (no email sent, no heartbeat) on
                                                                      a copy of data/: <dir>/base.db (the database
-                                                                     before it) and <dir>/morning.json.gz (every HTTP
-                                                                     exchange, errors and robots.txt refusals included)
+                                                                     before it), <dir>/lists and <dir>/outbox (the kept
+                                                                     lists and the emails it reads) and
+                                                                     <dir>/morning.json.gz (every HTTP exchange, errors
+                                                                     and robots.txt refusals included)
     python -I tools/prove/morning.py replay <version> <dir> <out> [edits]
                                                                      the recorded morning through <version> (a folder
                                                                      with src/ and config/) on a copy of base.db: one
@@ -44,6 +46,31 @@ TABLES = {  # table → (key columns, columns left out of the comparison)
     "runs": (("id",), ()),
     "emails": (("id",), ("path",)),
 }
+ADDED = {  # with added companies, rows that take a number (alerts, emails) are matched by what they are, and a run's
+    # totals count the added round too: those differences are printed for review, not counted
+    "alerts": (("alert_key", "raised_at"), ("id",)),
+    "emails": (("created_at", "kind"), ("id", "path", "subject")),
+    "runs": (("id",), ("checked", "failed", "new_matches")),
+}
+SNAPSHOTS = {"lists": ("*.txt",), "outbox": ("*-morning*.eml", "*-digest*.eml")}  # what a morning reads from data/
+# besides the database: the lists the first round kept, and the emails crosscheck.backfill_shown reads
+
+
+def snapshot(out: Path) -> None:
+    """The real data/ files a morning reads, as they were when it was recorded."""
+    for name, globs in SNAPSHOTS.items():
+        (out / name).mkdir(exist_ok=True)
+        for g in globs:
+            for p in (MAIN / "data" / name).glob(g):
+                shutil.copy2(p, out / name / p.name)
+
+
+def restore(src: Path, h: Path) -> set[str]:
+    """Copy a snapshot (or an earlier replay's data/) into a home. Returns the emails already in its outbox."""
+    for name in SNAPSHOTS:
+        if (src / name).exists():
+            shutil.copytree(src / name, h / "data" / name, dirs_exist_ok=True)
+    return {p.name for p in (h / "data" / "outbox").glob("*.eml")}
 
 
 def home(where: Path, version: Path, db: Path) -> Path:
@@ -67,8 +94,8 @@ def record(out: Path) -> None:
     shutil.copy(h / "data" / "internwatch.db", out / "base.db")
     if (MAIN / "data" / "robots").exists():
         shutil.copytree(MAIN / "data" / "robots", h / "data" / "robots")
-    if (MAIN / "data" / "lists").exists():
-        shutil.copytree(MAIN / "data" / "lists", h / "data" / "lists")
+    snapshot(out)
+    restore(out, h)
     from internwatch import config as configmod, heartbeat, http as httpmod
     from internwatch.db import iso
     from internwatch.runner import RunOptions, Runner
@@ -159,6 +186,7 @@ def replay(version: Path, rec: Path, out: Path, edits: str = "") -> None:
                         format="%(asctime)s %(levelname)s %(name)s: %(message)s")
     h = home(out / "home", version, Path(edit["after"]) / "home" / "data" / "internwatch.db" if "after" in edit
              else rec / "base.db")
+    already = restore(Path(edit["after"]) / "home" / "data" if "after" in edit else rec, h)
     cfg = configmod.load(h)
     checker_fn = None
     if "new" in edit or "fail" in edit:
@@ -187,7 +215,7 @@ def replay(version: Path, rec: Path, out: Path, edits: str = "") -> None:
     (out / "requests.json").write_text(json.dumps({"asked": asked, "missing": missing}))
     mails = out / "emails"
     mails.mkdir(exist_ok=True)
-    for i, p in enumerate(sorted((h / "data" / "outbox").glob("*.eml"))):
+    for i, p in enumerate(sorted(p for p in (h / "data" / "outbox").glob("*.eml") if p.name not in already)):
         shutil.copy(p, mails / f"{i:02d}-{p.name.split('-', 2)[-1]}")
         shutil.copy(p.with_suffix(".html"), mails / f"{i:02d}-{p.with_suffix('.html').name.split('-', 2)[-1]}")
     print(f"replayed with {internwatch.__file__}: {s.line()}; {len(asked)} requests, {len(missing)} not recorded")
@@ -209,8 +237,15 @@ def links(html_path: Path) -> set[str]:
 
 def compare(old_out: Path, new_out: Path, added: set[str]) -> int:
     old, new = json.loads((old_out / "db.json").read_text()), json.loads((new_out / "db.json").read_text())
-    problems = []
+    problems, review = [], []
     for table, (keys, skip) in TABLES.items():
+        if added and table in ADDED:
+            keys, skip = ADDED[table]
+            for x in sorted((r for r in new[table] if r.get("kind") != "watching" and r.get("company") not in added),
+                            key=lambda r: r["id"]):
+                y = next((r for r in old[table] if all(r[c] == x[c] for c in keys)), {})
+                review += [f"{table} {x['id']} {c}: {y.get(c)} -> {x[c]}" for c in skip if c != "id" and y.get(c) != x[c]]
+
         def keyed(rows):
             out = {}
             for r in rows:
@@ -230,6 +265,8 @@ def compare(old_out: Path, new_out: Path, added: set[str]) -> int:
             if isinstance(ours, dict) and (ours.get("company") in added or ours.get("tracked_company") in added):
                 if table != "simplify_rows" or (ra or {}).get("tracked_company") in (None, *added):
                     continue
+            if added and table == "emails" and ours.get("kind") == "watching":
+                continue
             if table == "simplify_rows" and ra and rb and {c for c in ra if ra[c] != rb[c]} == {"digest_at"} \
                     and ra["digest_at"] is None and ra["tracked_company"] is None:
                 continue
@@ -253,10 +290,18 @@ def compare(old_out: Path, new_out: Path, added: set[str]) -> int:
             lost = links(old_out / "emails" / x) - links(new_out / "emails" / y) - theirs
             if lost:
                 problems.append(f"emails: {x}: {len(lost)} links gone, e.g. {sorted(lost)[:3]}")
+    if added:  # a run records the 198's alerts first, so each keeps the number the old code gives it that morning
+        for t in sorted({a["raised_at"] for a in new["alerts"]}):
+            ours = [a["id"] for a in new["alerts"] if a["raised_at"] == t and a["company"] not in added]
+            theirs = [a["id"] for a in new["alerts"] if a["raised_at"] == t and a["company"] in added]
+            if ours and theirs and max(ours) > min(theirs):
+                problems.append(f"alerts raised {t}: an added company's alert is numbered before one of the 198's")
     ra = json.loads((old_out / "requests.json").read_text())
     rb = json.loads((new_out / "requests.json").read_text())
     if rb["asked"][:len(ra["asked"])] != ra["asked"]:
         problems.append("requests: the old version's requests are not the start of the new version's, in order")
+    for p in review:
+        print("   review:", p)
     for p in problems[:100]:
         print("  ", p)
     print("PASS" if not problems else f"FAIL ({len(problems)} differences)")
