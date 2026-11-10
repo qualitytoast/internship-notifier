@@ -1,7 +1,7 @@
 # Freshman & sophomore programs
 
-Every freshman/sophomore-friendly program found at the 168 companies InternWatch watches, compiled on
-2026-10-20 from the company career sites, the postings InternWatch has stored, and the lists under
+Every freshman/sophomore-friendly program found at the companies InternWatch watches, compiled on
+2026-10-20 (the companies added in November 2026: researched on 2026-11-09, discovery/candidates/underclassmen_research.md) from the company career sites, the postings InternWatch has stored, and the lists under
 [Sources](#sources). Dates are for the summer 2027 cycle as those sources reported them in October 2026;
 check the company's page before applying.
 
@@ -78,25 +78,33 @@ rows are yours.
 
 ## No dedicated program found
 
-These 141 companies have no freshman/sophomore program in any source above. Their regular internships still
+These 217 companies have no freshman/sophomore program in any source above. Their regular internships still
 come through, and any whose posting or description names freshmen or sophomores is tagged `freshman/sophomore`.
 
-1Password, Abridge, Adobe, Affirm, Airbnb, Akamai, AMD, American Family Insurance, Anyscale, Apple,
-Applied Intuition, AQR, Atlassian, Aurora Innovation, Autodesk, Benchling, Block, Booking.com, Brevan Howard,
-Brex, C3 AI, Capstone DC, Capstone Investment Advisors, CCC Intelligent Solutions, Chan Zuckerberg Initiative,
-Cisco, Cloudflare, Cockroach Labs, Cohere, Coinbase, CoreWeave (Weights & Biases), CrowdStrike, Databricks,
-Datadog, Decagon, Deepgram, Dell Technologies, DocuSign, DoorDash, Dropbox, DV Trading, eBay, Epic (Epic
-Systems), Epic Games, Fidelity Investments, Figma, GEICO, General Motors, Geneva Trading, Glean, Grafana Labs,
-Graviton Research Capital, Groq, Grubhub (Wonder), GTS, Harvey, HubSpot, Hugging Face, Immuta, Instabase,
-Intel, Intuit, John Deere, Jump Trading, Kirin, Klaviyo, Lyft, Mercury, Mistral AI, MongoDB, Netflix, Notion,
-Nuro, Nutanix, Okta, OpenAI, Oracle, Palo Alto Networks, Pinecone, Pinterest, PitchBook, Plaid, Postman,
-Procore, Qualtrics, Radix Trading, Red Hat, Remitly, Riot Games, Rippling, Robinhood, Roblox, Rocket Companies,
-Rockwell Automation, Samsara, Scale AI, SeatGeek, Semgrep, ServiceNow, Seven Research, Shopify, Sierra, Sigma
-Computing, Smartsheet, Snowflake, Spotify, Squarepoint Capital, Squarespace, Stripe, Synopsys, T-Mobile,
-Talos, Tanium, Temporal, The Trade Desk, The Voleon Group, Toast, Together AI, TransMarket Group, Twilio,
-Twitch, Uber Freight, UKG, Unity, Veeva Systems, Verkada, Voloridge Investment Management, Waabi, Walleye
-Capital, Wayfair, Waymo, Whatnot, Wolfram, Wolverine Trading, Workday, Workiva, XTX Markets, Yelp, Yext,
-Zendesk, Zoox
+1Password, Abridge, Addepar, Adobe, Affirm, Airbnb, Akamai, Allen Institute for AI (Ai2), Altruist, AMD,
+American Family Insurance, Amperity, Anyscale, Appian, Apple, Applied Intuition, Apptronik, AQR, Arcesium,
+Asana, Atlassian, Aurora Innovation, Autodesk, BambooHR, Bandwidth, Benchling, Betterment, BILL, Block,
+Booking.com, Bot Auto, Box, Braze, Brevan Howard, Brex, Bugcrowd, C3 AI, Capstone DC,
+Capstone Investment Advisors, CCC Intelligent Solutions, Censys, Chan Zuckerberg Initiative, Checkr, Chime,
+Cisco, Clockwork Systems, Cloudflare, Cockroach Labs, Cohere, Coinbase, CoreWeave (Weights & Biases),
+CrowdStrike, Databricks, Datadog, Decagon, Deepgram, Dell Technologies, Descript, DigitalOcean, DocuSign,
+Domino Data Lab, DoorDash, DriveWealth, Dropbox, DV Trading, EarnIn, eBay, Enova, Epic (Epic Systems),
+Epic Games, Fastly, Fervo Energy, Fidelity Investments, Figma, Figure AI, Garner Health, GEICO, Gemini,
+General Motors, Geneva Trading, Glean, GoDaddy, Grafana Labs, Graviton Research Capital, Groq, Grubhub (Wonder),
+GTS, Gusto, Haize Labs, Harvey, HeyGen, HubSpot, Hugging Face, Hyperproof, Immuta, Instabase, Intel, Intuit,
+IXL Learning, John Deere, Jump Trading, Khan Academy, Kirin, Klaviyo, KnowBe4, LaunchDarkly, Locus Robotics,
+Lucid Motors, Lucid Software, Lyft, Mercury, Mistral AI, MongoDB, Nasuni, nCino, Netflix, Neuralink, Nextdoor,
+Notion, Nuro, Nutanix, Obsidian Security, Okta, OpenAI, Oracle, Pacific Fusion, Palo Alto Networks, Pendo,
+Perpay, Pinecone, Pinterest, PitchBook, Plaid, Postman, Precisely, Procore, Pure Storage, Qualtrics,
+Radix Trading, Red Hat, Reddit, Redwood Materials, Remitly, Ridgeline, Riot Games, Ripple, Rippling, Robinhood,
+Roblox, Rocket Companies, Rockwell Automation, Roku, Rubrik, Samsara, Scale AI, SeatGeek, Semgrep, ServiceNow,
+Seven Research, Shopify, Sierra, Sigma Computing, SingleStore, Smartsheet, Snorkel AI, Snowflake, SoFi, Spotify,
+Squarepoint Capital, Squarespace, Starburst, Stripe, Synopsys, T-Mobile, Talos, Tanium, Temporal,
+The New York Times, The Trade Desk, The Voleon Group, Toast, Together AI, TransMarket Group, Truveta, Twilio,
+Twitch, Typeface, Uber Freight, Udemy, UKG, Unity, Veeam Software, Veeva Systems, Vercel, Verkada, Viam,
+Voloridge Investment Management, Waabi, Walleye Capital, Wayfair, Waymo, Whatnot, Wolfram, Wolverine Trading,
+Workday, Workiva, XTX Markets, Yelp, Yext, You.com, YugabyteDB, Zendesk, ZipRecruiter, Zocdoc, ZoomInfo, Zoox,
+Zscaler
 
 ## Sources
 

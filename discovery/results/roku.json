@@ -19,5 +19,6 @@
   "notes": "Watched, not stored: roku~ripplematch (0 jobs). Page count: the page lists the board 25 at a time (4 pages); the first shows 22 of its 60 titles.",
   "checked_at": "2026-11-09",
   "source": "added",
-  "round": "added"
+  "round": "added",
+  "explained": "The page lists the board 25 at a time (4 pages); the first shows 22 of its 60 titles (headless render of https://www.weareroku.com/jobs/search/ (2026-11-10))."
 }

@@ -19,5 +19,6 @@
   "notes": "Page count: the page's list is Greenhouse's embedded board (boards.greenhouse.io/embed/job_board/js), which robots.txt disallows for scripts: the same board the API reads.",
   "checked_at": "2026-11-09",
   "source": "added",
-  "round": "added"
+  "round": "added",
+  "explained": "The page's list is Greenhouse's embedded board (boards.greenhouse.io/embed/job_board/js), which robots.txt disallows for scripts: the same board the API reads (headless render of https://hyperproof.io/working-at-hyperproof/#job-openings (2026-11-10))."
 }

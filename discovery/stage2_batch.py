@@ -198,6 +198,9 @@ def page_count(k: str, p: dict, jobs: int) -> tuple[int | None, str, str]:
                   f"{r['read']} read (2026-11-10){'; ' + r['note'] if r.get('note') else ''}", ""
     if r and r.get("explained"):
         return None, f"headless render of {r['url']} (2026-11-10)", r["explained"]
+    if g and any("redirects" in (x.get("error") or "") for x in g["pages"]):
+        return None, "the hosted board and the careers page redirect in a loop for scripts", \
+            "the board's own API is the only list a script can read"
     if g and any(x.get("status") == 403 for x in g["pages"]):
         return None, "the careers page refuses scripts and the hosted board redirects to it", \
             "the board's own API is the only list a script can read"
@@ -234,7 +237,8 @@ def result(k: str, p: dict, cand: dict) -> dict:
             "settings": s, "feed": feed_of(checker, s), "feed_total": jobs, "page_total": pt, "page_total_how": how,
             "intern_total": students, "status": "verified", "blocked_reason": "", "fallback": "",
             "robots": f"{host}/robots.txt checked before every request (discovery/robots/{host}.txt)" if host else "",
-            "notes": " ".join(notes), "checked_at": "2026-11-09", "source": "added", "round": "added"}
+            "notes": " ".join(notes), "checked_at": "2026-11-09", "source": "added", "round": "added",
+            **({"explained": f"{why[0].upper()}{why[1:]} ({how})."} if pt is None and why else {})}
 
 
 def add_seed(entries: list[dict]) -> None:

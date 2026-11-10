@@ -19,5 +19,6 @@
   "notes": "The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md). Page count: the board's own API is the only list a script can read.",
   "checked_at": "2026-11-09",
   "source": "added",
-  "round": "added"
+  "round": "added",
+  "explained": "The board's own API is the only list a script can read (the careers page refuses scripts and the hosted board redirects to it)."
 }

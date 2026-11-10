@@ -19,5 +19,6 @@
   "notes": "Page count: the page drew no job list for a script that keeps to robots.txt; the board's own API is the list.",
   "checked_at": "2026-11-09",
   "source": "added",
-  "round": "added"
+  "round": "added",
+  "explained": "The page drew no job list for a script that keeps to robots.txt; the board's own API is the list (headless render of https://lucidmotors.com/careers/search (2026-11-10))."
 }
