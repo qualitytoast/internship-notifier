@@ -57,5 +57,40 @@ as shown; 6 of 11 lists kept.
       RippleMatch pages watched (aliases mark them as known)
 - [x] cassettes for all 76; verify --write (COVERAGE.md: none unverified); README, UNDERCLASSMEN.md
 - [x] golden.py against main: PASS, the 198 unchanged; 484 rows go from no company to an added one
-- [ ] a live go-live morning recorded (data/stage2/morning-2026-11-10-batch1) and the three mornings replayed
+- [x] a live go-live morning recorded (data/stage2/morning-2026-11-10-batch1: run 25, 278 checked, 0 failed, 76
+      seeded, 3,538 exchanges). Its alerts against the prediction found three gaps, fixed:
+      - DriveWealth: 3 possible misses. Its Ashby board now repeats all 27 Greenhouse postings, dedupe_titles kept the
+        Greenhouse copies, and Simplify links the Ashby ones (titled differently). New multi setting `twin_ids` (off
+        unless set; stage2_batch.py sets it for every added multi company): a dropped copy's ids join the kept job's
+        alt_ids, and the copy's board counts the job too (else that board looks empty and goes `board quiet` in 45
+        days)
+      - `new job site?` for nCino's old Workday site (gone from the tenant's robots.txt, feed 403) and Symmetry
+        Systems' Lever board (404): recorded as mirrors (candidates/mirrors.yaml → liveness.aliases). Stage 1's list
+        check had counted them as read because its candidate config still had them
+      - the recording's home had no outbox, so crosscheck.backfill_shown marked nothing (3 rows shown instead of 20);
+        morning.py now snapshots data/lists and the morning/digest emails at record time and replays from them
+- [x] golden.py: PASS (394 cassettes of the 198, 86,968 filter verdicts, 39,053 matches, 36 Workday files); 484 rows
+      go from no company to an added one
+- [x] three mornings replayed (proof-6c71a5b, M2_NEW stripe;databricks;openai;figure-ai;neuralink;veeam, M2_FAIL
+      figma;new-york-times): PASS. The 198's alerts, jobs, rows and requests identical; the old version's requests are
+      the start of the new one's; no link of the old emails lost. Morning 1 sends: "Now watching" 88 roles (15 left
+      out as already shown; 66 KB HTML, 252 KB .eml), the morning email 28 KB HTML with 110 untracked roles (113 with
+      the old code), HEALTH 7 problems: Rocket's board empty (the 198's own, raised by the old code too) and 6
+      `board quiet` (Viam, Udemy x2, Perpay, GoDaddy eventsandinterns, Haize Labs)
+- [x] go-live with New York Times failing (proof-6c71a5b/new-1-nytfail): its 9 open re-matched rows stay pending
+      (adopted), no simplify: job, seeded on its first good morning
+- [x] re-match against the dry run: 81 rows (55 baseline, 26 untracked) against 80 (55, 25); NYT 12 (10), Enova 2 (1),
+      Gemini 1 (2), Betterment 0 (1): rows Simplify added or dropped in between; no row of the 198 changed. The dry
+      run's one miss (Rubrik "Software Engineering Intern") closed on Simplify before go-live
 - [ ] merge, push; the next real morning is batch 1's go-live
+
+Corrections to STAGE1_REPORT.md's day-one alerts: `board quiet` needs no history, since the rule also reads a
+board's own posting dates (newest > 45 days old alerts on the first read). Measured from Stage 1's reads, this
+reproduces batch 1's 6 exactly; later batches: Eventual (Ashby, newest 47 days on Nov 10) and Northwestern Mutual's
+SmartRecruiters page (6 evergreen postings dated 2015, 63 undated: a misleading alert, decide in batch 3). Alert
+numbers: a run records the 198's alerts first, so on its own morning each gets the number the old code gives it; on
+later mornings the added companies' earlier alerts have taken numbers, so the 198's next ones are higher than the
+old code's (the replay compares alerts by key).
+
+Every batch from now on: compare the recorded go-live morning's alerts with the batch's predicted day-one alerts
+before replaying.

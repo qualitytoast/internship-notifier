@@ -244,7 +244,8 @@ def compare(old_out: Path, new_out: Path, added: set[str]) -> int:
             for x in sorted((r for r in new[table] if r.get("kind") != "watching" and r.get("company") not in added),
                             key=lambda r: r["id"]):
                 y = next((r for r in old[table] if all(r[c] == x[c] for c in keys)), {})
-                review += [f"{table} {x['id']} {c}: {y.get(c)} -> {x[c]}" for c in skip if c != "id" and y.get(c) != x[c]]
+                review += [f"{table} {x['id']} {c}: {y.get(c)} -> {x[c]}" for c in skip
+                           if c not in ("id", "path") and y.get(c) != x[c]]
 
         def keyed(rows):
             out = {}

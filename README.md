@@ -218,9 +218,12 @@ Rules for changing things: CLAUDE.md.
   - smartrecruiters {company, ignore_search_total}, workable {account}, icims {portal}, jibe {host}, phenom {base_url, ref_num},
     avature {list_url, page_size}, applicantpro {subdomain, domain_id}, gem, rippling, jobvite, pinpoint,
     recruiterbox, ripplematch
-  - multi {sources, dedupe, dedupe_titles}: later sources' ids are prefixed with `<checker>:`; dedupe_titles skips
-    a later source's role whose title matches an earlier one apart from case and punctuation. Sources are remembered
-    by checker and settings, and a source's first answer is its baseline, emailed once as "already open".
+  - multi {sources, dedupe, dedupe_titles, twin_ids}: later sources' ids are prefixed with `<checker>:`;
+    dedupe_titles skips a later source's role whose title matches an earlier one apart from case and punctuation;
+    twin_ids keeps a skipped copy's ids with the role that stays and counts it on the copy's board too, so a
+    SimplifyJobs row that links the copy is found and a board that only repeats another isn't taken as quiet (set
+    for the companies added in November 2026). Sources are remembered by checker and settings, and a source's first
+    answer is its baseline, emailed once as "already open".
 - **Custom checkers** (`src/internwatch/checkers/`): google, meta (GraphQL + sitemap fallback), amazon and
   apple (complete student slices), atlassian, goldman, citadel, shopify, epic_careers, talentbrew (Intuit),
   hubspot, instabase (its switched-off Greenhouse board plus a watch on the careers page for a move), deshaw (the
