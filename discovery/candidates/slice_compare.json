@@ -1,0 +1,85 @@
+{
+ "walmart": {
+  "full_jobs": 20474,
+  "full_students": 740,
+  "full_matching": 27,
+  "slice_jobs": 34,
+  "matching_outside_slice": [
+   [
+    "Pre Grad Intern - Sam's",
+    "Thornton, CO"
+   ],
+   [
+    "(USA) Pre Grad Intern - Sam's",
+    "Wichita, KS"
+   ],
+   [
+    "2026 Intern Conversion: 2027 Field Supply Chain - Process Engineer",
+    "(USA) Change Building AR Bentonville Home Office"
+   ],
+   [
+    "2026 Intern Conversion: 2027 Field Supply Chain - Quality Engineer",
+    "(USA) Change Building AR Bentonville Home Office"
+   ],
+   [
+    "Pre Grad Intern - Sam's",
+    "(USA) OK MOORE 06779 SAM'S CLUB"
+   ],
+   [
+    "Pre Grad Intern - Sam's",
+    "(USA) IN EVANSVILLE 08123 SAM'S CLUB"
+   ],
+   [
+    "(USA) Pre Grad Intern - Sam's",
+    "(USA) NY LATHAM 06440 SAM'S CLUB"
+   ],
+   [
+    "(USA) Pre Grad Intern - Sam's",
+    "Elmira, NY"
+   ],
+   [
+    "Pre Grad Intern - Sam's",
+    "(USA) MD LAUREL 06434 SAM'S CLUB"
+   ]
+  ]
+ },
+ "cvs-health": {
+  "full_jobs": 19078,
+  "full_students": 3944,
+  "full_matching": 17,
+  "slice_jobs": 56,
+  "matching_outside_slice": [
+   [
+    "RN-to-BSN Student Rotation - NATIONWIDE - Posted 07/31/26 (Evergreen)",
+    "49 Locations"
+   ],
+   [
+    "Physician Associate Student Rotation (Posted 7/23/26)",
+    "12 Locations"
+   ]
+  ]
+ },
+ "target": {
+  "full_jobs": 14142,
+  "full_students": 121,
+  "full_matching": 26,
+  "slice_jobs": 108,
+  "matching_outside_slice": [
+   [
+    "Technology Leadership Program - Hybrid (Starting August 2027)",
+    "7000 Target Pkwy N,NCD-0375 Brooklyn Park,MN 55445"
+   ],
+   [
+    "Inventory Analyst - Minneapolis, MN (Starting January 2027)",
+    "1000 Nicollet Mall, Minneapolis,MN 55403-2542"
+   ]
+  ]
+ },
+ "lowes": {
+  "full_jobs": 13001,
+  "full_students": 40,
+  "full_matching": 19,
+  "slice_jobs": 210,
+  "matching_outside_slice": []
+ }
+}

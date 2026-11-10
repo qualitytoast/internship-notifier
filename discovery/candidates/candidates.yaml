@@ -287,6 +287,7 @@ companies:
   source: added
   urls: ['https://www.costco.com/jobs.html']
 - key: cox
+  aliases: [Cox]
   name: Cox Enterprises
   category: telecom
   source: added
@@ -542,6 +543,7 @@ companies:
   source: added
   urls: ['https://www.heygen.com/careers']
 - key: hilton
+  aliases: [Hilton Worldwide]
   name: Hilton
   category: travel
   source: added
@@ -552,6 +554,7 @@ companies:
   source: added
   urls: ['https://careers.homedepot.com/']
 - key: hp
+  aliases: [Hewlett Packard, Hewlett Packard (HP), HP IQ]
   name: HP Inc.
   category: hardware
   source: added
@@ -572,6 +575,7 @@ companies:
   source: added
   urls: ['https://www.illumio.com/careers']
 - key: ice
+  aliases: [NYSE, ICE]
   name: Intercontinental Exchange (NYSE)
   category: fintech
   source: added
@@ -592,6 +596,7 @@ companies:
   source: added
   urls: ['https://www.ixl.com/company/careers']
 - key: jpmorgan-chase
+  aliases: [JP Morgan Chase]
   name: JPMorgan Chase
   category: finance-insurance
   source: added
@@ -667,6 +672,7 @@ companies:
   source: added
   urls: ['https://careers.mastercard.com/']
 - key: match-group
+  aliases: [Tinder, Hinge]
   name: Match Group (Tinder, Hinge)
   category: software
   source: added
@@ -712,6 +718,7 @@ companies:
   source: added
   urls: ['https://www.nationwide.com/personal/about-us/careers/']
 - key: navy-federal
+  aliases: [Navy Federal]
   name: Navy Federal Credit Union
   category: finance-insurance
   source: added
@@ -727,6 +734,7 @@ companies:
   source: added
   urls: ['https://www.netapp.com/company/careers/']
 - key: netic
+  aliases: [Cybernetic Labs]
   name: Netic
   category: ai
   source: added
@@ -782,6 +790,7 @@ companies:
   source: added
   urls: ['https://www.one.app/careers']
 - key: unitedhealth-group
+  aliases: [Optum, UnitedHealthcare]
   name: UnitedHealth Group (Optum)
   category: healthcare
   source: added
@@ -962,6 +971,7 @@ companies:
   source: added
   urls: ['https://www.singlestore.com/careers/']
 - key: snap
+  aliases: [Snapchat]
   name: Snap
   category: big-tech
   source: added
@@ -1012,6 +1022,7 @@ companies:
   source: added
   urls: ['https://suno.com/careers']
 - key: superhuman
+  aliases: [Grammarly]
   name: Superhuman (formerly Grammarly)
   category: ai
   source: added
@@ -1022,6 +1033,7 @@ companies:
   source: added
   urls: ['https://www.symmetry-systems.com/careers']
 - key: synchrony
+  aliases: [Synchrony Financial]
   name: Synchrony
   category: finance-insurance
   source: added
@@ -1117,6 +1129,7 @@ companies:
   source: added
   urls: ['https://vercel.com/careers']
 - key: verizon
+  aliases: [Verizon Communications]
   name: Verizon
   category: telecom
   source: added
@@ -1127,6 +1140,7 @@ companies:
   source: added
   urls: ['https://www.viam.com/careers', 'https://www.viam.com/company/careers']
 - key: walmart
+  aliases: [Walmart]
   name: Walmart (Walmart Global Tech)
   category: retail
   source: added
@@ -1202,6 +1216,7 @@ companies:
   source: added
   urls: ['https://www.zoominfo.com/about/careers']
 - key: zscaler
+  aliases: [Symmetry Systems]
   name: Zscaler
   category: security
   source: added

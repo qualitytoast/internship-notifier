@@ -1,0 +1,44 @@
+{
+ "1": {
+  "companies": 77,
+  "matching": 108,
+  "left_out": 17,
+  "roles": 91,
+  "eml_kb": 172
+ },
+ "6": {
+  "companies": 6,
+  "matching": 30,
+  "left_out": 1,
+  "roles": 29,
+  "eml_kb": 55
+ },
+ "3": {
+  "companies": 60,
+  "matching": 530,
+  "left_out": 43,
+  "roles": 487,
+  "eml_kb": 921
+ },
+ "2": {
+  "companies": 60,
+  "matching": 131,
+  "left_out": 12,
+  "roles": 119,
+  "eml_kb": 225
+ },
+ "5": {
+  "companies": 25,
+  "matching": 499,
+  "left_out": 40,
+  "roles": 459,
+  "eml_kb": 868
+ },
+ "4": {
+  "companies": 12,
+  "matching": 399,
+  "left_out": 33,
+  "roles": 366,
+  "eml_kb": 692
+ }
+}

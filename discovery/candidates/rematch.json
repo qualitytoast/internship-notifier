@@ -175,6 +175,14 @@
   "shown": 1,
   "day_one_misses": []
  },
+ "comcast": {
+  "rows": 4,
+  "untracked": 0,
+  "baseline": 4,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
  "commonwealth-fusion": {
   "rows": 4,
   "untracked": 3,
@@ -205,40 +213,7 @@
   "baseline": 0,
   "open": 8,
   "shown": 7,
-  "day_one_misses": [
-   [
-    "CDS Intern - Innovation",
-    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=10998"
-   ],
-   [
-    "CDS Intern - Powerapps Developer - ECM Digital Workflow",
-    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=11001"
-   ],
-   [
-    "CDS Intern - ECM Platform Management",
-    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=11010"
-   ],
-   [
-    "Costco Digital Services Intern - Infosec AI/ML",
-    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=10994"
-   ],
-   [
-    "Software Developer Intern - Software Engineer - Costco Travel",
-    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=11021"
-   ],
-   [
-    "Costco Data Systems Intern - IT Product Owner",
-    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=11024"
-   ],
-   [
-    "CDS Intern - Software Engineer - IT Retail Media",
-    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=11013"
-   ],
-   [
-    "Software Engineer Intern - International Depot",
-    "https://phf.tbe.taleo.net/phf02/ats/careers/v2/viewRequisition?org=COSTCO&cws=41&rid=10993"
-   ]
-  ]
+  "day_one_misses": []
  },
  "cox": {
   "rows": 1,
@@ -262,40 +237,7 @@
   "baseline": 0,
   "open": 8,
   "shown": 10,
-  "day_one_misses": [
-   [
-    "Medicaid Data Analytics Intern",
-    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/CT---Hartford/Medicaid-Data-Analytics-Corporate-Internship---Summer-2027--Undergraduate-_R1052342"
-   ],
-   [
-    "Innovation & Technology Software Engineering: Platform & Applications Intern \ud83c\udf93",
-    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/AZ---Scottsdale/Innovation---Technology-Internship-Software-Engineering--Platform---Applications--Summer-2027-Grad_R1081216"
-   ],
-   [
-    "Innovation & Technology Software Engineering: Data & Intelligence Intern \ud83c\udf93",
-    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---New-York/Innovation---Technology-Internship--Software-Engineering--Data---Intelligence-Summer-2027-Graduate_R1081128"
-   ],
-   [
-    "Software Engineer Intern - Platform & Applications",
-    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/AZ---Scottsdale/Innovation-Technology-Internship-Software-Engineering--Platform---Applications-Summer-2027-Undergrad_R1081193"
-   ],
-   [
-    "Innovation & Technology Internship - Software Engineering: Data & Intelligence",
-    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---New-York/Innovation---Technology-Internship--Software-Engineering--Data---Intelligence-Summer-2027-Undergrad_R1081114"
-   ],
-   [
-    "Innovation & Technology Internship - Product & Agile Delivery",
-    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/Hartford-Farmington-Ave-Rogers/Innovation---Technology-Internship---Product---Agile-Delivery---Summer-2027--Undergraduate-_R1080767"
-   ],
-   [
-    "Innovation & Technology Internship - Data Science \ud83c\udf93",
-    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---New-York/Innovation---Technology-Internship---Data-Science---Summer-2027--Graduate-_R1081038"
-   ],
-   [
-    "Innovation & Technology Data Science Intern",
-    "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---New-York/Innovation---Technology-Internship---Data-Science---Summer-2027--Undergraduate-_R1081067"
-   ]
-  ]
+  "day_one_misses": []
  },
  "datarobot": {
   "rows": 3,
@@ -465,6 +407,14 @@
   "shown": 3,
   "day_one_misses": []
  },
+ "glossgenius": {
+  "rows": 2,
+  "untracked": 2,
+  "baseline": 0,
+  "open": 2,
+  "shown": 2,
+  "day_one_misses": []
+ },
  "grow-therapy": {
   "rows": 1,
   "untracked": 0,
@@ -505,6 +455,14 @@
   "shown": 0,
   "day_one_misses": []
  },
+ "hilton": {
+  "rows": 1,
+  "untracked": 0,
+  "baseline": 1,
+  "open": 0,
+  "shown": 0,
+  "day_one_misses": []
+ },
  "home-depot": {
   "rows": 4,
   "untracked": 0,
@@ -514,10 +472,10 @@
   "day_one_misses": []
  },
  "hp": {
-  "rows": 15,
-  "untracked": 13,
-  "baseline": 2,
-  "open": 13,
+  "rows": 37,
+  "untracked": 18,
+  "baseline": 19,
+  "open": 17,
   "shown": 10,
   "day_one_misses": []
  },
@@ -599,12 +557,7 @@
   "baseline": 5,
   "open": 1,
   "shown": 0,
-  "day_one_misses": [
-   [
-    "Store Operations Intern - Retail Facilities Support",
-    "https://lowes.wd5.myworkdayjobs.com/en-US/LWS_External_CS/job/Mooresville-NC-SSC-1999/Store-Operations-Real-Estate---Undergrad-Internship---Summer-2027_JR-02650537"
-   ]
-  ]
+  "day_one_misses": []
  },
  "macys": {
   "rows": 4,
@@ -993,9 +946,9 @@
   "day_one_misses": []
  },
  "texas-instruments": {
-  "rows": 31,
+  "rows": 33,
   "untracked": 6,
-  "baseline": 25,
+  "baseline": 27,
   "open": 6,
   "shown": 0,
   "day_one_misses": []
@@ -1022,12 +975,7 @@
   "baseline": 5,
   "open": 1,
   "shown": 2,
-  "day_one_misses": [
-   [
-    "Software Development Intern",
-    "https://jobs.jobvite.com/tylertech/job/oQFRAfwG?nl=1&nl=1&fr=false"
-   ]
-  ]
+  "day_one_misses": []
  },
  "usaa": {
   "rows": 1,
@@ -1083,12 +1031,7 @@
   "baseline": 4,
   "open": 1,
   "shown": 1,
-  "day_one_misses": [
-   [
-    "Corporate Intern: Data & Tech Transformation Intern",
-    "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-Always-AR-Bentonville-Home-Office/XMLNAME--USA--Summer-2027-Corporate-Intern---Data---Tech-Transformation-intern_R-2690457-1"
-   ]
-  ]
+  "day_one_misses": []
  },
  "wells-fargo": {
   "rows": 2,

@@ -473,7 +473,11 @@ def _find(jobs: list[dict], url: str, title: str, terms: str, location: str):
 def _index(cfg, rows):
     from internwatch.crosscheck import CompanyIndex
     cands = candidate_companies(cfg, rows, read_settings())
-    return cands, CompanyIndex(cfg.companies + cands)
+    index = CompanyIndex(cfg.companies + cands)
+    mine = {c.key for c in cands}
+    index.markers = [(f"//{m}/" if k in mine and m in SHORT_HOSTS else m, k) for m, k in index.markers]
+    index.markers.sort(key=lambda x: -len(x[0]))
+    return cands, index
 
 
 def coverage(keys: list[str]) -> None:
@@ -779,12 +783,45 @@ def ghpages(keys: list[str]) -> None:
     save_robots(gate.cache_dir)
 
 
+# Workday tenants and hosts whose name is part of other companies' addresses (ms.wd5… is inside williams.wd5…): the
+# plan matches them from the start of the address (code change 3), and the dry runs do the same
+SHORT_HOSTS = ("ms.wd5.myworkdayjobs.com", "cox.wd1.myworkdayjobs.com", "fox.wd1.myworkdayjobs.com",
+               "hp.wd5.myworkdayjobs.com", "kla.wd1.myworkdayjobs.com", "ptc.wd1.myworkdayjobs.com",
+               "att.wd1.myworkdayjobs.com", "swa.wd1.myworkdayjobs.com", "fis.wd5.myworkdayjobs.com",
+               "ice.jibeapply.com")
+
+
+def planned_markers(checker: str, s: dict) -> list[str]:
+    """The `match_urls` the plan gives a source with no automatic address marker (and every source of a multi)."""
+    from urllib.parse import urlsplit
+    from internwatch.config import Company
+    from internwatch.crosscheck import url_markers
+    if checker == "multi":
+        return sorted({m for src in s.get("sources") or [] for m in planned_markers(src["checker"], src.get("settings") or {})})
+    marks = url_markers(Company(key="x", name="x", category="", careers_url=[], checker=checker, settings=s))
+    if checker == "smartrecruiters" and s.get("company"):
+        marks.append(f"smartrecruiters.com/{s['company'].lower()}/")
+    if checker == "jobvite" and s.get("slug"):
+        marks.append(f"jobs.jobvite.com/{s['slug'].lower()}/")
+    for k in ("sitemap_url", "base_url", "list_url"):
+        if s.get(k):
+            marks.append(urlsplit(s[k]).netloc.lower())
+    if checker == "eightfold" and s.get("domain"):
+        marks.append(f"{s['domain'].split('.')[0].lower()}.eightfold.ai")
+    return marks
+
+
 def candidate_companies(cfg, rows: list[dict], settings: dict | None = None) -> list:
-    """The candidates as Company entries, after the 198 (settings: key -> (checker, settings) where known)."""
+    """The candidates as Company entries, after the 198 (settings: key -> (checker, settings) where known), with the
+    plan's aliases (candidates.yaml) and `match_urls` (planned_markers)."""
     from internwatch.config import Company
     out = []
     for r in rows:
         checker, s = (settings or {}).get(r["key"], ("blocked", {}))
+        s = dict(s)
+        extra = [m for m in planned_markers(checker, s) if m not in (s.get("match_urls") or [])]
+        if extra and checker in ("multi", "smartrecruiters", "jobvite", "talentbrew", "phenom", "eightfold", "avature"):
+            s["match_urls"] = list(s.get("match_urls") or []) + extra
         out.append(Company(key=r["key"], name=r["name"], category=r.get("category", ""), careers_url=r["urls"],
                            checker=checker, settings=s, aliases=r.get("aliases") or []))
     return out

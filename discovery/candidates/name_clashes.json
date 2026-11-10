@@ -77,13 +77,11 @@
   "names_with_other_links": {}
  },
  "applied-materials": {
-  "stored_own": 0,
-  "stored_other_link": 18,
-  "current_own": 0,
-  "current_other_link": 14,
-  "names_with_other_links": {
-   "Applied Materials": 32
-  }
+  "stored_own": 18,
+  "stored_other_link": 0,
+  "current_own": 14,
+  "current_other_link": 0,
+  "names_with_other_links": {}
  },
  "apptronik": {
   "stored_own": 0,
@@ -100,13 +98,11 @@
   "names_with_other_links": {}
  },
  "arista-networks": {
-  "stored_own": 0,
-  "stored_other_link": 1,
-  "current_own": 0,
-  "current_other_link": 1,
-  "names_with_other_links": {
-   "Arista Networks": 2
-  }
+  "stored_own": 1,
+  "stored_other_link": 0,
+  "current_own": 1,
+  "current_other_link": 0,
+  "names_with_other_links": {}
  },
  "asana": {
   "stored_own": 0,
@@ -200,13 +196,11 @@
   "names_with_other_links": {}
  },
  "bny": {
-  "stored_own": 0,
-  "stored_other_link": 15,
-  "current_own": 0,
-  "current_other_link": 15,
-  "names_with_other_links": {
-   "BNY": 30
-  }
+  "stored_own": 15,
+  "stored_other_link": 0,
+  "current_own": 15,
+  "current_other_link": 0,
+  "names_with_other_links": {}
  },
  "bot-auto": {
   "stored_own": 2,
@@ -409,7 +403,7 @@
   }
  },
  "cox": {
-  "stored_own": 0,
+  "stored_own": 1,
   "stored_other_link": 0,
   "current_own": 0,
   "current_other_link": 0,
@@ -495,13 +489,11 @@
   "names_with_other_links": {}
  },
  "drivewealth": {
-  "stored_own": 0,
-  "stored_other_link": 6,
-  "current_own": 0,
-  "current_other_link": 6,
-  "names_with_other_links": {
-   "DriveWealth": 12
-  }
+  "stored_own": 6,
+  "stored_other_link": 0,
+  "current_own": 6,
+  "current_other_link": 0,
+  "names_with_other_links": {}
  },
  "dusty-robotics": {
   "stored_own": 0,
@@ -770,7 +762,7 @@
   "names_with_other_links": {}
  },
  "hilton": {
-  "stored_own": 0,
+  "stored_own": 1,
   "stored_other_link": 0,
   "current_own": 0,
   "current_other_link": 0,
@@ -784,13 +776,11 @@
   "names_with_other_links": {}
  },
  "hp": {
-  "stored_own": 0,
-  "stored_other_link": 15,
-  "current_own": 0,
-  "current_other_link": 16,
-  "names_with_other_links": {
-   "HP Inc.": 31
-  }
+  "stored_own": 37,
+  "stored_other_link": 0,
+  "current_own": 35,
+  "current_other_link": 0,
+  "names_with_other_links": {}
  },
  "humana": {
   "stored_own": 1,
@@ -814,22 +804,20 @@
   "names_with_other_links": {}
  },
  "ice": {
-  "stored_own": 0,
-  "stored_other_link": 33,
-  "current_own": 0,
-  "current_other_link": 33,
+  "stored_own": 17,
+  "stored_other_link": 16,
+  "current_own": 17,
+  "current_other_link": 16,
   "names_with_other_links": {
-   "Intercontinental Exchange": 66
+   "Intercontinental Exchange": 32
   }
  },
  "intuitive-surgical": {
-  "stored_own": 0,
-  "stored_other_link": 6,
-  "current_own": 0,
-  "current_other_link": 5,
-  "names_with_other_links": {
-   "Intuitive Surgical": 11
-  }
+  "stored_own": 6,
+  "stored_other_link": 0,
+  "current_own": 5,
+  "current_other_link": 0,
+  "names_with_other_links": {}
  },
  "ironclad": {
   "stored_own": 0,
@@ -848,9 +836,9 @@
   }
  },
  "jpmorgan-chase": {
-  "stored_own": 0,
+  "stored_own": 22,
   "stored_other_link": 0,
-  "current_own": 0,
+  "current_own": 13,
   "current_other_link": 0,
   "names_with_other_links": {}
  },
@@ -932,13 +920,11 @@
   "names_with_other_links": {}
  },
  "macys": {
-  "stored_own": 0,
-  "stored_other_link": 4,
-  "current_own": 0,
-  "current_other_link": 4,
-  "names_with_other_links": {
-   "Macy's": 8
-  }
+  "stored_own": 4,
+  "stored_other_link": 0,
+  "current_own": 4,
+  "current_other_link": 0,
+  "names_with_other_links": {}
  },
  "marvell": {
   "stored_own": 71,
@@ -955,9 +941,9 @@
   "names_with_other_links": {}
  },
  "match-group": {
-  "stored_own": 0,
+  "stored_own": 5,
   "stored_other_link": 0,
-  "current_own": 0,
+  "current_own": 5,
   "current_other_link": 0,
   "names_with_other_links": {}
  },
@@ -1018,20 +1004,18 @@
   "names_with_other_links": {}
  },
  "navy-federal": {
-  "stored_own": 0,
+  "stored_own": 33,
   "stored_other_link": 0,
-  "current_own": 0,
+  "current_own": 28,
   "current_other_link": 0,
   "names_with_other_links": {}
  },
  "ncino": {
-  "stored_own": 0,
-  "stored_other_link": 1,
+  "stored_own": 1,
+  "stored_other_link": 0,
   "current_own": 0,
   "current_other_link": 0,
-  "names_with_other_links": {
-   "Ncino": 1
-  }
+  "names_with_other_links": {}
  },
  "netapp": {
   "stored_own": 0,
@@ -1041,9 +1025,9 @@
   "names_with_other_links": {}
  },
  "netic": {
-  "stored_own": 0,
+  "stored_own": 3,
   "stored_other_link": 0,
-  "current_own": 0,
+  "current_own": 3,
   "current_other_link": 0,
   "names_with_other_links": {}
  },
@@ -1090,13 +1074,11 @@
   "names_with_other_links": {}
  },
  "northwestern-mutual": {
-  "stored_own": 0,
-  "stored_other_link": 2,
+  "stored_own": 2,
+  "stored_other_link": 0,
   "current_own": 0,
   "current_other_link": 0,
-  "names_with_other_links": {
-   "Northwestern Mutual": 2
-  }
+  "names_with_other_links": {}
  },
  "numeric": {
   "stored_own": 0,
@@ -1243,13 +1225,11 @@
   }
  },
  "qualcomm": {
-  "stored_own": 0,
-  "stored_other_link": 43,
-  "current_own": 0,
-  "current_other_link": 35,
-  "names_with_other_links": {
-   "Qualcomm": 78
-  }
+  "stored_own": 43,
+  "stored_other_link": 0,
+  "current_own": 35,
+  "current_other_link": 0,
+  "names_with_other_links": {}
  },
  "qumulo": {
   "stored_own": 1,
@@ -1466,9 +1446,9 @@
   "names_with_other_links": {}
  },
  "synchrony": {
-  "stored_own": 0,
+  "stored_own": 2,
   "stored_other_link": 0,
-  "current_own": 0,
+  "current_own": 2,
   "current_other_link": 0,
   "names_with_other_links": {}
  },
@@ -1529,13 +1509,11 @@
   "names_with_other_links": {}
  },
  "tyler-technologies": {
-  "stored_own": 0,
-  "stored_other_link": 7,
-  "current_own": 0,
-  "current_other_link": 4,
-  "names_with_other_links": {
-   "Tyler Technologies": 11
-  }
+  "stored_own": 7,
+  "stored_other_link": 0,
+  "current_own": 4,
+  "current_other_link": 0,
+  "names_with_other_links": {}
  },
  "typeface": {
   "stored_own": 0,
@@ -1601,7 +1579,7 @@
   "names_with_other_links": {}
  },
  "verizon": {
-  "stored_own": 0,
+  "stored_own": 4,
   "stored_other_link": 0,
   "current_own": 0,
   "current_other_link": 0,
@@ -1650,13 +1628,11 @@
   "names_with_other_links": {}
  },
  "western-digital": {
-  "stored_own": 0,
-  "stored_other_link": 5,
-  "current_own": 0,
-  "current_other_link": 3,
-  "names_with_other_links": {
-   "Western Digital": 8
-  }
+  "stored_own": 5,
+  "stored_other_link": 0,
+  "current_own": 3,
+  "current_other_link": 0,
+  "names_with_other_links": {}
  },
  "xcimer": {
   "stored_own": 1,

@@ -13,5 +13,20 @@
   "degraded": null,
   "reported_total": null,
   "started": "2026-11-10T01:42:10Z"
+ },
+ "northwestern-mutual~smartrecruiters": {
+  "checker": "smartrecruiters",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 69,
+  "students": 7,
+  "matched": 7,
+  "seconds": 6.9,
+  "requests": 8,
+  "partial": false,
+  "degraded": null,
+  "reported_total": 69,
+  "started": "2026-11-10T01:44:44Z"
  }
 }

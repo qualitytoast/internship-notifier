@@ -1,0 +1,7319 @@
+{
+ "addepar": {
+  "name": "Addepar",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "addepar",
+    "checker": "greenhouse",
+    "jobs": 107,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "adp": {
+  "name": "ADP",
+  "batch": 6,
+  "main_checker": "sitemap (titles only)",
+  "sources": [
+   {
+    "entry": "adp~sitemap",
+    "checker": "sitemap (titles only)",
+    "jobs": 690,
+    "students": 8,
+    "matched": 5,
+    "seconds": 1.5,
+    "requests": 1,
+    "new_reader": true
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "ai2": {
+  "name": "Allen Institute for AI (Ai2)",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "ai2",
+    "checker": "greenhouse",
+    "jobs": 17,
+    "students": 3,
+    "matched": 3,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 3,
+  "simplify_open": 1,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "allstate": {
+  "name": "Allstate",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "allstate",
+    "checker": "workday",
+    "jobs": 429,
+    "students": 11,
+    "matched": 7,
+    "seconds": 23.5,
+    "requests": 23,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "allstate~site-Agent",
+    "why": "public Workday site, 421 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 5,
+  "simplify_open": 4,
+  "shown": 3,
+  "day_one_misses": 0
+ },
+ "alltrails": {
+  "name": "AllTrails",
+  "batch": 2,
+  "main_checker": "lever",
+  "sources": [
+   {
+    "entry": "alltrails",
+    "checker": "lever",
+    "jobs": 1,
+    "students": 0,
+    "matched": 0,
+    "seconds": 11.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "altruist": {
+  "name": "Altruist",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "altruist",
+    "checker": "greenhouse",
+    "jobs": 74,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "american-express": {
+  "name": "American Express",
+  "batch": 5,
+  "main_checker": "oracle",
+  "sources": [
+   {
+    "entry": "american-express",
+    "checker": "oracle",
+    "jobs": 329,
+    "students": 14,
+    "matched": 2,
+    "seconds": 5.1,
+    "requests": 2,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 44,
+  "simplify_open": 2,
+  "shown": 3,
+  "day_one_misses": 0
+ },
+ "amperity": {
+  "name": "Amperity",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "amperity",
+    "checker": "greenhouse",
+    "jobs": 15,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "analog-devices": {
+  "name": "Analog Devices",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "analog-devices",
+    "checker": "workday",
+    "jobs": 800,
+    "students": 70,
+    "matched": 25,
+    "seconds": 40.6,
+    "requests": 40,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 21,
+  "simplify_open": 1,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "anchorage-digital": {
+  "name": "Anchorage Digital",
+  "batch": 2,
+  "main_checker": "lever",
+  "sources": [
+   {
+    "entry": "anchorage-digital",
+    "checker": "lever",
+    "jobs": 23,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "appian": {
+  "name": "Appian",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "appian",
+    "checker": "greenhouse",
+    "jobs": 158,
+    "students": 5,
+    "matched": 3,
+    "seconds": 0.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 2,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "applied-materials": {
+  "name": "Applied Materials",
+  "batch": 4,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "applied-materials",
+    "checker": "workday",
+    "jobs": 2193,
+    "students": 84,
+    "matched": 36,
+    "seconds": 225.2,
+    "requests": 213,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "applied-materials~eightfold",
+    "why": "Eightfold front over Workday"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 18,
+  "simplify_open": 9,
+  "shown": 7,
+  "day_one_misses": 0
+ },
+ "apptronik": {
+  "name": "Apptronik",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "apptronik",
+    "checker": "greenhouse",
+    "jobs": 89,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "arcesium": {
+  "name": "Arcesium",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "arcesium",
+    "checker": "greenhouse",
+    "jobs": 37,
+    "students": 6,
+    "matched": 4,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 2,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "arista-networks": {
+  "name": "Arista Networks",
+  "batch": 5,
+  "main_checker": "smartrecruiters",
+  "sources": [
+   {
+    "entry": "arista-networks",
+    "checker": "smartrecruiters",
+    "jobs": 98,
+    "students": 4,
+    "matched": 3,
+    "seconds": 1.4,
+    "requests": 2,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "asana": {
+  "name": "Asana",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "asana",
+    "checker": "greenhouse",
+    "jobs": 110,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "att": {
+  "name": "AT&T",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "att",
+    "checker": "workday",
+    "jobs": 1104,
+    "students": 6,
+    "matched": 2,
+    "seconds": 66.0,
+    "requests": 58,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "athenahealth": {
+  "name": "athenahealth",
+  "batch": 5,
+  "main_checker": "phenom",
+  "sources": [
+   {
+    "entry": "athenahealth~careers",
+    "checker": "phenom",
+    "jobs": 83,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.5,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "athenahealth",
+    "why": "www.athenahealth.com has no Phenom widgets; careers.athenahealth.com instead"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "bamboohr": {
+  "name": "BambooHR",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "bamboohr",
+    "checker": "greenhouse",
+    "jobs": 28,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "bandwidth": {
+  "name": "Bandwidth",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "bandwidth",
+    "checker": "greenhouse",
+    "jobs": 26,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "bank-of-america": {
+  "name": "Bank of America",
+  "batch": 4,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "bank-of-america",
+    "checker": "workday",
+    "jobs": 3107,
+    "students": 2,
+    "matched": 2,
+    "seconds": 368.6,
+    "requests": 366,
+    "error": null
+   },
+   {
+    "entry": "bank-of-america~oleeo",
+    "checker": "oleeo",
+    "jobs": 29,
+    "students": 16,
+    "matched": 5,
+    "seconds": 40.0,
+    "requests": 4,
+    "new_reader": true
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "bank-of-america~site-Lateral-US",
+    "why": "1,985 of its 1,987 jobs are on us-emplsv; the other 2 are not student roles"
+   },
+   {
+    "entry": "bank-of-america~site-Scoutt",
+    "why": "public Workday site, 26 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "bank-of-america~site-lateral-apac",
+    "why": "public Workday site, 98 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "bank-of-america~site-lateral-ba_continuum",
+    "why": "public Workday site, 115 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "bank-of-america~site-lateral-canada",
+    "why": "public Workday site, 5 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "bank-of-america~site-lateral-latam",
+    "why": "public Workday site, 6 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": true,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "base-power": {
+  "name": "Base Power",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "base-power",
+    "checker": "ashby",
+    "jobs": 197,
+    "students": 27,
+    "matched": 14,
+    "seconds": 0.4,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 7,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "baseten": {
+  "name": "Baseten",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "baseten",
+    "checker": "ashby",
+    "jobs": 101,
+    "students": 1,
+    "matched": 1,
+    "seconds": 0.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "bedrock-robotics": {
+  "name": "Bedrock Robotics",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "bedrock-robotics",
+    "checker": "ashby",
+    "jobs": 57,
+    "students": 13,
+    "matched": 13,
+    "seconds": 1.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 12,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "best-buy": {
+  "name": "Best Buy",
+  "batch": 6,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "best-buy~canada",
+    "checker": "workday",
+    "jobs": 64,
+    "students": 0,
+    "matched": 0,
+    "seconds": 4.3,
+    "requests": 4,
+    "error": null
+   },
+   {
+    "entry": "best-buy~servicenow",
+    "checker": "servicenow (sitemap + new job pages)",
+    "jobs": 2252,
+    "students": 0,
+    "matched": 0,
+    "seconds": 180.0,
+    "requests": 131,
+    "new_reader": true
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "betterment": {
+  "name": "Betterment",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "betterment",
+    "checker": "greenhouse",
+    "jobs": 25,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.1,
+    "requests": 2,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "bill": {
+  "name": "BILL",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "bill",
+    "checker": "greenhouse",
+    "jobs": 40,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "blackrock": {
+  "name": "BlackRock",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "blackrock",
+    "checker": "workday",
+    "jobs": 280,
+    "students": 14,
+    "matched": 11,
+    "seconds": 15.0,
+    "requests": 15,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 7,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "bny": {
+  "name": "BNY",
+  "batch": 5,
+  "main_checker": "oracle",
+  "sources": [
+   {
+    "entry": "bny",
+    "checker": "oracle",
+    "jobs": 1271,
+    "students": 76,
+    "matched": 31,
+    "seconds": 26.6,
+    "requests": 7,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "bny~bny-careers",
+    "why": "mirror"
+   },
+   {
+    "entry": "bny~cx_1",
+    "why": "mirror of CX_1001"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 15,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "bot-auto": {
+  "name": "Bot Auto",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "bot-auto",
+    "checker": "greenhouse",
+    "jobs": 26,
+    "students": 1,
+    "matched": 1,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 2,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "box": {
+  "name": "Box",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "box",
+    "checker": "greenhouse",
+    "jobs": 142,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "braze": {
+  "name": "Braze",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "braze",
+    "checker": "greenhouse",
+    "jobs": 355,
+    "students": 1,
+    "matched": 1,
+    "seconds": 2.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "bugcrowd": {
+  "name": "Bugcrowd",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "bugcrowd",
+    "checker": "greenhouse",
+    "jobs": 13,
+    "students": 0,
+    "matched": 0,
+    "seconds": 2.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "bumble": {
+  "name": "Bumble",
+  "batch": 2,
+  "main_checker": "lever",
+  "sources": [
+   {
+    "entry": "bumble",
+    "checker": "lever",
+    "jobs": 0,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "cadence": {
+  "name": "Cadence Design Systems",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "cadence",
+    "checker": "workday",
+    "jobs": 740,
+    "students": 53,
+    "matched": 28,
+    "seconds": 45.4,
+    "requests": 42,
+    "error": null
+   },
+   {
+    "entry": "cadence~site-women-in-tech-scholarship",
+    "checker": "workday",
+    "jobs": 1,
+    "students": 1,
+    "matched": 0,
+    "seconds": 0.4,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 12,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "carbon-robotics": {
+  "name": "Carbon Robotics",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "carbon-robotics",
+    "checker": "ashby",
+    "jobs": 4,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "cartesia": {
+  "name": "Cartesia",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "cartesia",
+    "checker": "ashby",
+    "jobs": 24,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "censys": {
+  "name": "Censys",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "censys",
+    "checker": "greenhouse",
+    "jobs": 28,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "cerebras": {
+  "name": "Cerebras",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "cerebras",
+    "checker": "ashby",
+    "jobs": 121,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.3,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "charles-schwab": {
+  "name": "Charles Schwab",
+  "batch": 5,
+  "main_checker": "talentbrew",
+  "sources": [
+   {
+    "entry": "charles-schwab~talentbrew",
+    "checker": "talentbrew",
+    "jobs": 284,
+    "students": 2,
+    "matched": 1,
+    "seconds": 8.2,
+    "requests": 9,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "charles-schwab",
+    "why": "robots.txt disallows the iCIMS portal: read through Radancy (schwabjobs.com)"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "checkr": {
+  "name": "Checkr",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "checkr",
+    "checker": "greenhouse",
+    "jobs": 38,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "chewy": {
+  "name": "Chewy",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "chewy",
+    "checker": "workday",
+    "jobs": 232,
+    "students": 0,
+    "matched": 0,
+    "seconds": 12.4,
+    "requests": 12,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "chewy~site-Relief-Veterinarian-Contractors",
+    "why": "public Workday site, 9 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "chewy~site-Student-Ambassador-Contractors",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "chime": {
+  "name": "Chime",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "chime",
+    "checker": "greenhouse",
+    "jobs": 67,
+    "students": 0,
+    "matched": 0,
+    "seconds": 2.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "ciena": {
+  "name": "Ciena",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "ciena",
+    "checker": "workday",
+    "jobs": 164,
+    "students": 17,
+    "matched": 6,
+    "seconds": 8.9,
+    "requests": 9,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 20,
+  "simplify_open": 8,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "circle": {
+  "name": "Circle",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "circle",
+    "checker": "workday",
+    "jobs": 61,
+    "students": 0,
+    "matched": 0,
+    "seconds": 4.0,
+    "requests": 4,
+    "error": null
+   },
+   {
+    "entry": "circle~ashby",
+    "checker": "ashby",
+    "jobs": 6,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.9,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "citi": {
+  "name": "Citi",
+  "batch": 4,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "citi",
+    "checker": "workday",
+    "jobs": 4190,
+    "students": 125,
+    "matched": 18,
+    "seconds": 842.0,
+    "requests": 810,
+    "error": null,
+    "requests_partitioned": 244,
+    "seconds_partitioned": 256.2
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 7,
+  "simplify_open": 7,
+  "shown": 5,
+  "day_one_misses": 0
+ },
+ "clay": {
+  "name": "Clay",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "clay",
+    "checker": "ashby",
+    "jobs": 62,
+    "students": 1,
+    "matched": 1,
+    "seconds": 1.3,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "clockwork-systems": {
+  "name": "Clockwork Systems",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "clockwork-systems",
+    "checker": "greenhouse",
+    "jobs": 5,
+    "students": 1,
+    "matched": 1,
+    "seconds": 1.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "cohesity": {
+  "name": "Cohesity",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "cohesity",
+    "checker": "workday",
+    "jobs": 185,
+    "students": 6,
+    "matched": 3,
+    "seconds": 9.9,
+    "requests": 10,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 1,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "cobot": {
+  "name": "Collaborative Robotics (Cobot)",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "cobot",
+    "checker": "ashby",
+    "jobs": 14,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "failed",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "comcast": {
+  "name": "Comcast",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "comcast~wd115",
+    "checker": "workday",
+    "jobs": 696,
+    "students": 2,
+    "matched": 0,
+    "seconds": 34.6,
+    "requests": 35,
+    "error": null
+   }
+  ],
+  "side": [
+   {
+    "entry": "comcast~nbcuniversal",
+    "checker": "smartrecruiters",
+    "jobs": 525,
+    "students": 138,
+    "matched": 54,
+    "seconds": 118.4,
+    "requests": 49,
+    "error": null,
+    "subsidiary": "NBCUniversal (SmartRecruiters NBCUniversal3)"
+   }
+  ],
+  "dropped": [
+   {
+    "entry": "comcast",
+    "why": "wd5 host answers 422; the live host is wd115 (comcast~wd115)"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 4,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "commonwealth-fusion": {
+  "name": "Commonwealth Fusion Systems",
+  "batch": 2,
+  "main_checker": "lever",
+  "sources": [
+   {
+    "entry": "commonwealth-fusion",
+    "checker": "lever",
+    "jobs": 140,
+    "students": 18,
+    "matched": 18,
+    "seconds": 1.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 4,
+  "simplify_open": 1,
+  "shown": 3,
+  "day_one_misses": 0
+ },
+ "commure": {
+  "name": "Commure",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "commure",
+    "checker": "ashby",
+    "jobs": 74,
+    "students": 4,
+    "matched": 0,
+    "seconds": 4.1,
+    "requests": 2,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "conductorone": {
+  "name": "ConductorOne",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "conductorone",
+    "checker": "ashby",
+    "jobs": 17,
+    "students": 0,
+    "matched": 0,
+    "seconds": 2.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "conductorone~conductorone",
+    "why": "dead Ashby board the registry still links: mirror alias to the live board c1"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "copart": {
+  "name": "Copart",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "copart",
+    "checker": "workday",
+    "jobs": 412,
+    "students": 19,
+    "matched": 19,
+    "seconds": 20.6,
+    "requests": 21,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "copart~site-NPACareers",
+    "why": "public Workday site, 20 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 10,
+  "simplify_open": 2,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "costar": {
+  "name": "CoStar Group",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "costar",
+    "checker": "workday",
+    "jobs": 367,
+    "students": 1,
+    "matched": 0,
+    "seconds": 23.2,
+    "requests": 21,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "costar~site-CoStarCanadaCareers",
+    "why": "public Workday site, 3 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "costar~site-CoStarCareersEurope",
+    "why": "public Workday site, 20 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "costar~site-CoStarCareersNiche",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "costar~site-Richmond_Recruiting",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "costar~site-SanDiego_Research",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "costar~site-Washington_Research",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "costar~site-broadbean_external",
+    "why": "public Workday site, 10 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 7,
+  "simplify_open": 0,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "costco": {
+  "name": "Costco",
+  "batch": 5,
+  "main_checker": "jibe",
+  "sources": [
+   {
+    "entry": "costco",
+    "checker": "jibe",
+    "jobs": 0,
+    "students": 0,
+    "matched": 0,
+    "seconds": 997.2,
+    "requests": 200,
+    "error": "jibe:careers.costco.com: collected 5106 jobs but the source reports 18692 (pagination incomplete)"
+   },
+   {
+    "entry": "costco~taleo",
+    "checker": "taleo_tbe",
+    "jobs": 41,
+    "students": 25,
+    "matched": 22,
+    "seconds": 1.0,
+    "requests": 1,
+    "new_reader": true
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": true,
+  "slice": null,
+  "simplify_rows": 8,
+  "simplify_open": 8,
+  "shown": 7,
+  "day_one_misses": 0
+ },
+ "cox": {
+  "name": "Cox Enterprises",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "cox",
+    "checker": "workday",
+    "jobs": 789,
+    "students": 19,
+    "matched": 19,
+    "seconds": 42.2,
+    "requests": 40,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "crusoe": {
+  "name": "Crusoe",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "crusoe",
+    "checker": "ashby",
+    "jobs": 324,
+    "students": 0,
+    "matched": 0,
+    "seconds": 3.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "cvs-health": {
+  "name": "CVS Health",
+  "batch": 4,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "cvs-health",
+    "checker": "workday",
+    "jobs": 19078,
+    "students": 3944,
+    "matched": 17,
+    "seconds": 1158.7,
+    "requests": 1134,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "cvs-health~site-Private_Postings_Mergers_and_Acquisitions_ONLY",
+    "why": "public Workday site, 1 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": true,
+  "slice": "cvs-health~slice",
+  "simplify_rows": 11,
+  "simplify_open": 8,
+  "shown": 10,
+  "day_one_misses": 0
+ },
+ "d-matrix": {
+  "name": "d-Matrix",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "d-matrix",
+    "checker": "ashby",
+    "jobs": 37,
+    "students": 0,
+    "matched": 0,
+    "seconds": 3.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "datarobot": {
+  "name": "DataRobot",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "datarobot",
+    "checker": "workday",
+    "jobs": 13,
+    "students": 3,
+    "matched": 3,
+    "seconds": 0.9,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 3,
+  "simplify_open": 1,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "delinea": {
+  "name": "Delinea",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "delinea",
+    "checker": "ashby",
+    "jobs": 67,
+    "students": 0,
+    "matched": 0,
+    "seconds": 2.9,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "descript": {
+  "name": "Descript",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "descript",
+    "checker": "greenhouse",
+    "jobs": 10,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "dexcom": {
+  "name": "Dexcom",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "dexcom",
+    "checker": "workday",
+    "jobs": 294,
+    "students": 2,
+    "matched": 1,
+    "seconds": 15.1,
+    "requests": 15,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "dicks-sporting-goods": {
+  "name": "Dick's Sporting Goods",
+  "batch": 4,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "dicks-sporting-goods",
+    "checker": "workday",
+    "jobs": 3648,
+    "students": 5,
+    "matched": 5,
+    "seconds": 343.7,
+    "requests": 308,
+    "error": null,
+    "requests_partitioned": 208,
+    "seconds_partitioned": 218.4
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 3,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "digitalocean": {
+  "name": "DigitalOcean",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "digitalocean",
+    "checker": "greenhouse",
+    "jobs": 152,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "domino-data-lab": {
+  "name": "Domino Data Lab",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "domino-data-lab",
+    "checker": "greenhouse",
+    "jobs": 18,
+    "students": 2,
+    "matched": 2,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 2,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "draftkings": {
+  "name": "DraftKings",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "draftkings",
+    "checker": "workday",
+    "jobs": 175,
+    "students": 14,
+    "matched": 10,
+    "seconds": 10.1,
+    "requests": 10,
+    "error": null
+   }
+  ],
+  "side": [
+   {
+    "entry": "draftkings~ripplematch",
+    "checker": "ripplematch",
+    "jobs": 6,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.4,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 8,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "drivewealth": {
+  "name": "DriveWealth",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "drivewealth",
+    "checker": "greenhouse",
+    "jobs": 27,
+    "students": 3,
+    "matched": 3,
+    "seconds": 2.0,
+    "requests": 1,
+    "error": null
+   },
+   {
+    "entry": "drivewealth~ashby",
+    "checker": "ashby",
+    "jobs": 28,
+    "students": 3,
+    "matched": 3,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 6,
+  "simplify_open": 6,
+  "shown": 6,
+  "day_one_misses": 0
+ },
+ "dusty-robotics": {
+  "name": "Dusty Robotics",
+  "batch": 2,
+  "main_checker": "rippling",
+  "sources": [
+   {
+    "entry": "dusty-robotics",
+    "checker": "rippling",
+    "jobs": 2,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.5,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "earnin": {
+  "name": "EarnIn",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "earnin",
+    "checker": "greenhouse",
+    "jobs": 31,
+    "students": 0,
+    "matched": 0,
+    "seconds": 2.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "elevance-health": {
+  "name": "Elevance Health",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "elevance-health",
+    "checker": "workday",
+    "jobs": 282,
+    "students": 8,
+    "matched": 3,
+    "seconds": 17.2,
+    "requests": 16,
+    "error": null
+   },
+   {
+    "entry": "elevance-health~site-carelonglobal_ph",
+    "checker": "workday",
+    "jobs": 19,
+    "students": 1,
+    "matched": 0,
+    "seconds": 3.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "elevance-health~site-IRL",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "elevance-health~site-Legato_Ireland",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "elevance-health~site-Legato_Israel",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "elevance-health~site-carelonglobal_in",
+    "why": "public Workday site, 7 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 4,
+  "simplify_open": 0,
+  "shown": 4,
+  "day_one_misses": 0
+ },
+ "ellipsis-labs": {
+  "name": "Ellipsis Labs",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "ellipsis-labs",
+    "checker": "ashby",
+    "jobs": 14,
+    "students": 1,
+    "matched": 1,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "enova": {
+  "name": "Enova",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "enova",
+    "checker": "greenhouse",
+    "jobs": 39,
+    "students": 4,
+    "matched": 2,
+    "seconds": 2.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "equinix": {
+  "name": "Equinix",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "equinix",
+    "checker": "workday",
+    "jobs": 308,
+    "students": 0,
+    "matched": 0,
+    "seconds": 26.0,
+    "requests": 16,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "equinix~site-Adecco",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Adecco_Personaldienstleistungen_GmbH",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Align_Technical_Resources",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Annapurna_HR",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-BSI_People",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Boyd_Moore_Executive_Search",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Bradley-Morris_LLC_dba_Bradley-Morris_Inc",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Brix_Projects",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-CDS_Recruitment",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Career_Design_Center",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Careertrotter",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Clifford_Baines",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-DaijobGlobalRecruiting",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Datacenterpeople_Ltd",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Euro_London_Appointment",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Execuforce",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-GDH_Consulting",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Golden_Searches_Information_Consultant",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-HaysSpecialistRecruitmentJapan",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Heidrick_Struggles",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-IQ_Telecom",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Intelligence",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-JAC_Recruitment",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Magellan_Professional_Solutions",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-ManpowerGroup",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Michael_Page_International",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Michael_Page_International_Japan_KK",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-MorganMcKinley",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Mynavi_Corporation",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-PMA_Recruitment",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-PRECEPT",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-PRS_Recruitment_Services",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Page_Personnel",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Page_Personnel_Deutschland_GmbH",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Pro-Unlimited",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Recruit_Agent",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Recruit_Career",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Recruit_Plus",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Robert_Half_International_Inc",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Robert_Walters_Pty_Ltd",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Skill_House",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Skillhouse_Staffing_Solutions_KK",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Soar_Consulting_Inc",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-en_japan_inc",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-enworld_Co_Ltd",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "etched": {
+  "name": "Etched",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "etched",
+    "checker": "ashby",
+    "jobs": 115,
+    "students": 13,
+    "matched": 12,
+    "seconds": 1.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 7,
+  "simplify_open": 1,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "etsy": {
+  "name": "Etsy",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "etsy",
+    "checker": "workday",
+    "jobs": 68,
+    "students": 0,
+    "matched": 0,
+    "seconds": 3.9,
+    "requests": 4,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "etsy~site-Depop_Careers",
+    "why": "public Workday site, 23 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "etsy~site-Reverb_Careers",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "eventual": {
+  "name": "Eventual (Daft)",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "eventual",
+    "checker": "ashby",
+    "jobs": 5,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "exa": {
+  "name": "Exa",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "exa",
+    "checker": "ashby",
+    "jobs": 66,
+    "students": 1,
+    "matched": 1,
+    "seconds": 2.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "f5": {
+  "name": "F5",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "f5",
+    "checker": "workday",
+    "jobs": 282,
+    "students": 2,
+    "matched": 2,
+    "seconds": 15.2,
+    "requests": 15,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "f5~site-f5events",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 2,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "fastly": {
+  "name": "Fastly",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "fastly",
+    "checker": "greenhouse",
+    "jobs": 55,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "fervo-energy": {
+  "name": "Fervo Energy",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "fervo-energy",
+    "checker": "greenhouse",
+    "jobs": 67,
+    "students": 1,
+    "matched": 0,
+    "seconds": 2.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "figure-ai": {
+  "name": "Figure AI",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "figure-ai",
+    "checker": "greenhouse",
+    "jobs": 102,
+    "students": 12,
+    "matched": 10,
+    "seconds": 2.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 7,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "fis": {
+  "name": "FIS",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "fis",
+    "checker": "workday",
+    "jobs": 507,
+    "students": 1,
+    "matched": 1,
+    "seconds": 27.0,
+    "requests": 26,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "fis~site-AgencyCareerSite",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "fiserv": {
+  "name": "Fiserv",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "fiserv",
+    "checker": "workday",
+    "jobs": 386,
+    "students": 3,
+    "matched": 0,
+    "seconds": 19.6,
+    "requests": 20,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "fiserv~site-NZ",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "fiserv~site-blconsultant",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "ford": {
+  "name": "Ford Motor Company",
+  "batch": 5,
+  "main_checker": "oracle",
+  "sources": [
+   {
+    "entry": "ford",
+    "checker": "oracle",
+    "jobs": 888,
+    "students": 3,
+    "matched": 0,
+    "seconds": 24.3,
+    "requests": 5,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "fortinet": {
+  "name": "Fortinet",
+  "batch": 5,
+  "main_checker": "oracle",
+  "sources": [
+   {
+    "entry": "fortinet",
+    "checker": "oracle",
+    "jobs": 1050,
+    "students": 9,
+    "matched": 1,
+    "seconds": 11.8,
+    "requests": 6,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "fortinet~cx_1",
+    "why": "mirror of CX_2001 (1,050 of 1,051 jobs)"
+   }
+  ],
+  "page": "robots",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "fox": {
+  "name": "FOX Corporation",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "fox",
+    "checker": "workday",
+    "jobs": 325,
+    "students": 62,
+    "matched": 50,
+    "seconds": 31.2,
+    "requests": 17,
+    "error": null
+   },
+   {
+    "entry": "fox~site-FOXTVST_EAST",
+    "checker": "workday",
+    "jobs": 26,
+    "students": 1,
+    "matched": 1,
+    "seconds": 3.8,
+    "requests": 2,
+    "error": null
+   }
+  ],
+  "side": [
+   {
+    "entry": "fox~tubi",
+    "checker": "greenhouse",
+    "jobs": 24,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.1,
+    "requests": 2,
+    "error": null,
+    "subsidiary": "Tubi (Greenhouse tubitv)"
+   }
+  ],
+  "dropped": [
+   {
+    "entry": "fox~site-FOXTVST_Central",
+    "why": "public Workday site, 16 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "fox~site-FOXTVST_WEST",
+    "why": "public Workday site, 8 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "freddie-mac": {
+  "name": "Freddie Mac",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "freddie-mac",
+    "checker": "workday",
+    "jobs": 71,
+    "students": 2,
+    "matched": 2,
+    "seconds": 3.7,
+    "requests": 4,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "garner-health": {
+  "name": "Garner Health",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "garner-health",
+    "checker": "greenhouse",
+    "jobs": 62,
+    "students": 1,
+    "matched": 1,
+    "seconds": 3.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "ge-vernova": {
+  "name": "GE Vernova",
+  "batch": 4,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "ge-vernova",
+    "checker": "workday",
+    "jobs": 4530,
+    "students": 169,
+    "matched": 128,
+    "seconds": 445.4,
+    "requests": 442,
+    "error": null,
+    "requests_partitioned": 111,
+    "seconds_partitioned": 116.6
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 26,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "gemini": {
+  "name": "Gemini",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "gemini",
+    "checker": "greenhouse",
+    "jobs": 27,
+    "students": 4,
+    "matched": 4,
+    "seconds": 3.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 2,
+  "simplify_open": 1,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "gen-digital": {
+  "name": "Gen Digital",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "gen-digital",
+    "checker": "ashby",
+    "jobs": 98,
+    "students": 4,
+    "matched": 0,
+    "seconds": 0.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "genesis-molecular-ai": {
+  "name": "Genesis Molecular AI",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "genesis-molecular-ai",
+    "checker": "ashby",
+    "jobs": 10,
+    "students": 1,
+    "matched": 1,
+    "seconds": 1.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 1,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "gimlet-labs": {
+  "name": "Gimlet Labs",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "gimlet-labs",
+    "checker": "ashby",
+    "jobs": 17,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.3,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "globalfoundries": {
+  "name": "GlobalFoundries",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "globalfoundries",
+    "checker": "workday",
+    "jobs": 851,
+    "students": 120,
+    "matched": 76,
+    "seconds": 53.7,
+    "requests": 43,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 24,
+  "simplify_open": 12,
+  "shown": 3,
+  "day_one_misses": 0
+ },
+ "glossgenius": {
+  "name": "GlossGenius",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "glossgenius~ashby",
+    "checker": "ashby",
+    "jobs": 17,
+    "students": 2,
+    "matched": 2,
+    "seconds": 1.3,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "glossgenius",
+    "why": "Greenhouse board gone; Ashby geniusai instead"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 2,
+  "simplify_open": 2,
+  "shown": 2,
+  "day_one_misses": 0
+ },
+ "godaddy": {
+  "name": "GoDaddy",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "godaddy",
+    "checker": "greenhouse",
+    "jobs": 30,
+    "students": 1,
+    "matched": 1,
+    "seconds": 3.7,
+    "requests": 2,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "grow-therapy": {
+  "name": "Grow Therapy",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "grow-therapy",
+    "checker": "ashby",
+    "jobs": 31,
+    "students": 1,
+    "matched": 1,
+    "seconds": 1.3,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "guidewire": {
+  "name": "Guidewire",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "guidewire",
+    "checker": "workday",
+    "jobs": 117,
+    "students": 1,
+    "matched": 0,
+    "seconds": 5.8,
+    "requests": 6,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "gusto": {
+  "name": "Gusto",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "gusto",
+    "checker": "greenhouse",
+    "jobs": 80,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.7,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "haize-labs": {
+  "name": "Haize Labs",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "haize-labs",
+    "checker": "greenhouse",
+    "jobs": 6,
+    "students": 2,
+    "matched": 2,
+    "seconds": 2.7,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "handshake": {
+  "name": "Handshake",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "handshake",
+    "checker": "ashby",
+    "jobs": 77,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.3,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "hartford": {
+  "name": "The Hartford",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "hartford",
+    "checker": "workday",
+    "jobs": 252,
+    "students": 24,
+    "matched": 12,
+    "seconds": 13.8,
+    "requests": 14,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 3,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "hpe": {
+  "name": "Hewlett Packard Enterprise",
+  "batch": 4,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "hpe",
+    "checker": "workday",
+    "jobs": 3463,
+    "students": 181,
+    "matched": 72,
+    "seconds": 189.8,
+    "requests": 175,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "hpe~site-WFMathpe",
+    "why": "1,697 of its 1,715 requisitions are on the main site; none of the other 18 is a student role"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 46,
+  "simplify_open": 2,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "hex": {
+  "name": "Hex Technologies",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "hex",
+    "checker": "ashby",
+    "jobs": 37,
+    "students": 2,
+    "matched": 2,
+    "seconds": 0.9,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 2,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "heygen": {
+  "name": "HeyGen",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "heygen",
+    "checker": "greenhouse",
+    "jobs": 19,
+    "students": 1,
+    "matched": 1,
+    "seconds": 2.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "hilton": {
+  "name": "Hilton",
+  "batch": 5,
+  "main_checker": "oracle",
+  "sources": [
+   {
+    "entry": "hilton",
+    "checker": "oracle",
+    "jobs": 4278,
+    "students": 33,
+    "matched": 2,
+    "seconds": 59.3,
+    "requests": 22,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "hilton~cx_1009",
+    "why": "mirror"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "home-depot": {
+  "name": "The Home Depot",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "home-depot",
+    "checker": "workday",
+    "jobs": 1402,
+    "students": 0,
+    "matched": 0,
+    "seconds": 74.1,
+    "requests": 71,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 4,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "hp": {
+  "name": "HP Inc.",
+  "batch": 4,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "hp",
+    "checker": "workday",
+    "jobs": 2130,
+    "students": 232,
+    "matched": 52,
+    "seconds": 113.7,
+    "requests": 108,
+    "error": null
+   },
+   {
+    "entry": "hp~greenhouse",
+    "checker": "greenhouse",
+    "jobs": 59,
+    "students": 8,
+    "matched": 8,
+    "seconds": 4.7,
+    "requests": 2,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 37,
+  "simplify_open": 17,
+  "shown": 10,
+  "day_one_misses": 0
+ },
+ "humana": {
+  "name": "Humana",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "humana",
+    "checker": "workday",
+    "jobs": 311,
+    "students": 5,
+    "matched": 1,
+    "seconds": 16.8,
+    "requests": 16,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "humana~site-CenterWell_External_Career_Site",
+    "why": "public Workday site, 1833 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "hyperproof": {
+  "name": "Hyperproof",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "hyperproof",
+    "checker": "greenhouse",
+    "jobs": 4,
+    "students": 0,
+    "matched": 0,
+    "seconds": 3.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "illumio": {
+  "name": "Illumio",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "illumio",
+    "checker": "ashby",
+    "jobs": 67,
+    "students": 3,
+    "matched": 3,
+    "seconds": 0.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "ice": {
+  "name": "Intercontinental Exchange (NYSE)",
+  "batch": 5,
+  "main_checker": "jibe",
+  "sources": [
+   {
+    "entry": "ice",
+    "checker": "jibe",
+    "jobs": 327,
+    "students": 52,
+    "matched": 44,
+    "seconds": 15.3,
+    "requests": 4,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "ice~icims",
+    "why": "robots.txt disallows the iCIMS portal: read through Jibe; recorded as unreadable mirror"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 33,
+  "simplify_open": 16,
+  "shown": 15,
+  "day_one_misses": 0
+ },
+ "intuitive-surgical": {
+  "name": "Intuitive Surgical",
+  "batch": 5,
+  "main_checker": "smartrecruiters",
+  "sources": [
+   {
+    "entry": "intuitive-surgical",
+    "checker": "smartrecruiters",
+    "jobs": 846,
+    "students": 13,
+    "matched": 8,
+    "seconds": 152.6,
+    "requests": 81,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 6,
+  "simplify_open": 2,
+  "shown": 2,
+  "day_one_misses": 0
+ },
+ "ironclad": {
+  "name": "Ironclad",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "ironclad",
+    "checker": "ashby",
+    "jobs": 22,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "ixl-learning": {
+  "name": "IXL Learning",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "ixl-learning",
+    "checker": "greenhouse",
+    "jobs": 115,
+    "students": 1,
+    "matched": 1,
+    "seconds": 2.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "jpmorgan-chase": {
+  "name": "JPMorgan Chase",
+  "batch": 5,
+  "main_checker": "oracle",
+  "sources": [
+   {
+    "entry": "jpmorgan-chase",
+    "checker": "oracle",
+    "jobs": 7065,
+    "students": 69,
+    "matched": 23,
+    "seconds": 88.8,
+    "requests": 36,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "jpmorgan-chase~cx_2001",
+    "why": "mirror of CX_1001"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 22,
+  "simplify_open": 3,
+  "shown": 3,
+  "day_one_misses": 0
+ },
+ "keysight": {
+  "name": "Keysight",
+  "batch": 5,
+  "main_checker": "jibe",
+  "sources": [
+   {
+    "entry": "keysight",
+    "checker": "jibe",
+    "jobs": 769,
+    "students": 122,
+    "matched": 83,
+    "seconds": 35.3,
+    "requests": 8,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 56,
+  "simplify_open": 6,
+  "shown": 4,
+  "day_one_misses": 0
+ },
+ "khan-academy": {
+  "name": "Khan Academy",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "khan-academy",
+    "checker": "greenhouse",
+    "jobs": 3,
+    "students": 0,
+    "matched": 0,
+    "seconds": 3.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "kla": {
+  "name": "KLA",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "kla",
+    "checker": "workday",
+    "jobs": 1383,
+    "students": 189,
+    "matched": 90,
+    "seconds": 74.3,
+    "requests": 71,
+    "error": null
+   },
+   {
+    "entry": "kla~site-Israel",
+    "checker": "workday",
+    "jobs": 83,
+    "students": 1,
+    "matched": 0,
+    "seconds": 6.9,
+    "requests": 5,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "kla~site-Filmetrics",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "kla~site-Penang_Semicon",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "kla~site-Taiwan",
+    "why": "public Workday site, 4 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 62,
+  "simplify_open": 16,
+  "shown": 12,
+  "day_one_misses": 0
+ },
+ "knowbe4": {
+  "name": "KnowBe4",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "knowbe4",
+    "checker": "greenhouse",
+    "jobs": 50,
+    "students": 11,
+    "matched": 4,
+    "seconds": 3.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "lambda": {
+  "name": "Lambda",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "lambda",
+    "checker": "ashby",
+    "jobs": 97,
+    "students": 1,
+    "matched": 0,
+    "seconds": 0.3,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "launchdarkly": {
+  "name": "LaunchDarkly",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "launchdarkly",
+    "checker": "greenhouse",
+    "jobs": 43,
+    "students": 0,
+    "matched": 0,
+    "seconds": 2.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "lightspark": {
+  "name": "Lightspark",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "lightspark",
+    "checker": "ashby",
+    "jobs": 8,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "locus-robotics": {
+  "name": "Locus Robotics",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "locus-robotics",
+    "checker": "greenhouse",
+    "jobs": 7,
+    "students": 0,
+    "matched": 0,
+    "seconds": 2.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "lowes": {
+  "name": "Lowe's",
+  "batch": 4,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "lowes",
+    "checker": "workday",
+    "jobs": 13001,
+    "students": 40,
+    "matched": 19,
+    "seconds": 774.8,
+    "requests": 757,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": true,
+  "slice": "lowes~slice",
+  "simplify_rows": 6,
+  "simplify_open": 1,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "lucid-motors": {
+  "name": "Lucid Motors",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "lucid-motors",
+    "checker": "greenhouse",
+    "jobs": 454,
+    "students": 1,
+    "matched": 0,
+    "seconds": 3.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "lucid-software": {
+  "name": "Lucid Software",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "lucid-software",
+    "checker": "greenhouse",
+    "jobs": 27,
+    "students": 3,
+    "matched": 0,
+    "seconds": 3.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "macys": {
+  "name": "Macy's",
+  "batch": 5,
+  "main_checker": "oracle",
+  "sources": [
+   {
+    "entry": "macys",
+    "checker": "oracle",
+    "jobs": 6867,
+    "students": 106,
+    "matched": 13,
+    "seconds": 74.6,
+    "requests": 35,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "macys~cx_1001",
+    "why": "subset of the main site"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 4,
+  "simplify_open": 1,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "marvell": {
+  "name": "Marvell",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "marvell",
+    "checker": "workday",
+    "jobs": 387,
+    "students": 128,
+    "matched": 62,
+    "seconds": 29.3,
+    "requests": 21,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "marvell~site-Scout",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 71,
+  "simplify_open": 9,
+  "shown": 1,
+  "day_one_misses": 1
+ },
+ "mastercard": {
+  "name": "Mastercard",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "mastercard",
+    "checker": "workday",
+    "jobs": 964,
+    "students": 27,
+    "matched": 1,
+    "seconds": 52.4,
+    "requests": 50,
+    "error": null
+   },
+   {
+    "entry": "mastercard~site-CampusApplyOnly",
+    "checker": "workday",
+    "jobs": 30,
+    "students": 10,
+    "matched": 0,
+    "seconds": 3.1,
+    "requests": 2,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "mastercard~site-ContractorConversion",
+    "why": "public Workday site, 1 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "mastercard~site-RYC",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 2,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "match-group": {
+  "name": "Match Group (Tinder, Hinge)",
+  "batch": 2,
+  "main_checker": "lever",
+  "sources": [
+   {
+    "entry": "match-group",
+    "checker": "lever",
+    "jobs": 71,
+    "students": 14,
+    "matched": 8,
+    "seconds": 0.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 5,
+  "simplify_open": 5,
+  "shown": 5,
+  "day_one_misses": 0
+ },
+ "mckesson": {
+  "name": "McKesson",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "mckesson",
+    "checker": "workday",
+    "jobs": 697,
+    "students": 17,
+    "matched": 2,
+    "seconds": 36.2,
+    "requests": 36,
+    "error": null
+   },
+   {
+    "entry": "mckesson~site-CoverMyMeds_External_Careers",
+    "checker": "workday",
+    "jobs": 20,
+    "students": 1,
+    "matched": 0,
+    "seconds": 1.4,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "mckesson~site-Acquisition_Campus",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "mckesson~site-Ontada_Careers",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "mckesson~site-SCRI_Careers",
+    "why": "public Workday site, 19 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "mckesson~site-rxsscareers",
+    "why": "public Workday site, 2 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 7,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "mercor": {
+  "name": "Mercor",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "mercor",
+    "checker": "ashby",
+    "jobs": 86,
+    "students": 5,
+    "matched": 5,
+    "seconds": 0.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [
+   {
+    "entry": "mercor~ripplematch",
+    "checker": "ripplematch",
+    "jobs": 4,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 5,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "micron": {
+  "name": "Micron Technology",
+  "batch": 4,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "micron",
+    "checker": "workday",
+    "jobs": 2881,
+    "students": 154,
+    "matched": 96,
+    "seconds": 313.4,
+    "requests": 301,
+    "error": null,
+    "requests_partitioned": 202,
+    "seconds_partitioned": 212.1
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 49,
+  "simplify_open": 2,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "morgan-stanley": {
+  "name": "Morgan Stanley",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "morgan-stanley",
+    "checker": "workday",
+    "jobs": 1598,
+    "students": 42,
+    "matched": 42,
+    "seconds": 86.1,
+    "requests": 81,
+    "error": null
+   },
+   {
+    "entry": "morgan-stanley~oleeo",
+    "checker": "oleeo",
+    "jobs": 50,
+    "students": 45,
+    "matched": 3,
+    "seconds": 30.0,
+    "requests": 3,
+    "new_reader": true
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "multiply-labs": {
+  "name": "Multiply Labs",
+  "batch": 2,
+  "main_checker": "lever",
+  "sources": [
+   {
+    "entry": "multiply-labs",
+    "checker": "lever",
+    "jobs": 14,
+    "students": 3,
+    "matched": 2,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 2,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "nasdaq": {
+  "name": "Nasdaq",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "nasdaq",
+    "checker": "workday",
+    "jobs": 153,
+    "students": 3,
+    "matched": 1,
+    "seconds": 8.3,
+    "requests": 8,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "nasdaq~site-US_External_Career_Site",
+    "why": "public Workday site, 3 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "nasdaq~site-eVestment",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "nasuni": {
+  "name": "Nasuni",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "nasuni",
+    "checker": "greenhouse",
+    "jobs": 29,
+    "students": 0,
+    "matched": 0,
+    "seconds": 2.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "nationwide": {
+  "name": "Nationwide",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "nationwide",
+    "checker": "workday",
+    "jobs": 151,
+    "students": 5,
+    "matched": 4,
+    "seconds": 8.0,
+    "requests": 8,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "nationwide~site-Nationwide_Career_India",
+    "why": "public Workday site, 31 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 3,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "navy-federal": {
+  "name": "Navy Federal Credit Union",
+  "batch": 5,
+  "main_checker": "oracle",
+  "sources": [
+   {
+    "entry": "navy-federal",
+    "checker": "oracle",
+    "jobs": 155,
+    "students": 75,
+    "matched": 63,
+    "seconds": 2.5,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 33,
+  "simplify_open": 2,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "ncino": {
+  "name": "nCino",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "ncino",
+    "checker": "greenhouse",
+    "jobs": 30,
+    "students": 0,
+    "matched": 0,
+    "seconds": 6.0,
+    "requests": 2,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "ncino~workday",
+    "why": "the Workday site answers 403; Greenhouse boards instead"
+   },
+   {
+    "entry": "ncino~site-nCinoAgency",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "netapp": {
+  "name": "NetApp",
+  "batch": 6,
+  "main_checker": "successfactors",
+  "sources": [
+   {
+    "entry": "netapp~successfactors",
+    "checker": "successfactors",
+    "jobs": 320,
+    "students": 13,
+    "matched": 5,
+    "seconds": 14.9,
+    "requests": 13,
+    "new_reader": true
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "netic": {
+  "name": "Netic",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "netic",
+    "checker": "ashby",
+    "jobs": 36,
+    "students": 3,
+    "matched": 3,
+    "seconds": 0.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 3,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "neuralink": {
+  "name": "Neuralink",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "neuralink",
+    "checker": "greenhouse",
+    "jobs": 80,
+    "students": 19,
+    "matched": 18,
+    "seconds": 2.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 4,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "new-york-times": {
+  "name": "The New York Times",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "new-york-times",
+    "checker": "greenhouse",
+    "jobs": 173,
+    "students": 28,
+    "matched": 17,
+    "seconds": 3.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 10,
+  "simplify_open": 7,
+  "shown": 7,
+  "day_one_misses": 0
+ },
+ "nextdoor": {
+  "name": "Nextdoor",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "nextdoor",
+    "checker": "greenhouse",
+    "jobs": 20,
+    "students": 0,
+    "matched": 0,
+    "seconds": 3.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "niantic-spatial": {
+  "name": "Niantic Spatial",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "niantic-spatial",
+    "checker": "ashby",
+    "jobs": 19,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "nike": {
+  "name": "Nike",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "nike",
+    "checker": "workday",
+    "jobs": 1222,
+    "students": 18,
+    "matched": 11,
+    "seconds": 61.8,
+    "requests": 62,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 3,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "nordstrom": {
+  "name": "Nordstrom",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "nordstrom",
+    "checker": "workday",
+    "jobs": 1311,
+    "students": 15,
+    "matched": 3,
+    "seconds": 66.1,
+    "requests": 66,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "nordstrom~site-nordstrom_internship",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "northwestern-mutual": {
+  "name": "Northwestern Mutual",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "northwestern-mutual",
+    "checker": "workday",
+    "jobs": 80,
+    "students": 2,
+    "matched": 1,
+    "seconds": 3.9,
+    "requests": 4,
+    "error": null
+   },
+   {
+    "entry": "northwestern-mutual~smartrecruiters",
+    "checker": "smartrecruiters",
+    "jobs": 69,
+    "students": 7,
+    "matched": 7,
+    "seconds": 6.9,
+    "requests": 8,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "northwestern-mutual~icims",
+    "why": "robots.txt disallows the iCIMS portal: read through Workday"
+   },
+   {
+    "entry": "northwestern-mutual~site-CORPORATE-CAREERS-PRIVATE",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 2,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "numeric": {
+  "name": "Numeric",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "numeric",
+    "checker": "ashby",
+    "jobs": 24,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "obsidian-security": {
+  "name": "Obsidian Security",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "obsidian-security",
+    "checker": "greenhouse",
+    "jobs": 15,
+    "students": 0,
+    "matched": 0,
+    "seconds": 2.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "one-finance": {
+  "name": "ONE Finance",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "one-finance",
+    "checker": "ashby",
+    "jobs": 38,
+    "students": 4,
+    "matched": 1,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 2,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "unitedhealth-group": {
+  "name": "UnitedHealth Group (Optum)",
+  "batch": 5,
+  "main_checker": "talentbrew",
+  "sources": [
+   {
+    "entry": "unitedhealth-group",
+    "checker": "talentbrew",
+    "jobs": 6339,
+    "students": 111,
+    "matched": 87,
+    "seconds": 40.5,
+    "requests": 41,
+    "error": null
+   }
+  ],
+  "side": [
+   {
+    "entry": "unitedhealth-group~ripplematch",
+    "checker": "ripplematch",
+    "jobs": 1,
+    "students": 1,
+    "matched": 0,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "pacific-fusion": {
+  "name": "Pacific Fusion",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "pacific-fusion",
+    "checker": "greenhouse",
+    "jobs": 28,
+    "students": 5,
+    "matched": 2,
+    "seconds": 3.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "paramount": {
+  "name": "Paramount",
+  "batch": 6,
+  "main_checker": "successfactors",
+  "sources": [
+   {
+    "entry": "paramount~successfactors",
+    "checker": "successfactors",
+    "jobs": 223,
+    "students": 2,
+    "matched": 0,
+    "seconds": 9.6,
+    "requests": 9,
+    "new_reader": true
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "patreon": {
+  "name": "Patreon",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "patreon",
+    "checker": "ashby",
+    "jobs": 21,
+    "students": 3,
+    "matched": 3,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 3,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "pendo": {
+  "name": "Pendo",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "pendo",
+    "checker": "greenhouse",
+    "jobs": 22,
+    "students": 0,
+    "matched": 0,
+    "seconds": 3.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "perpay": {
+  "name": "Perpay",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "perpay",
+    "checker": "greenhouse",
+    "jobs": 17,
+    "students": 5,
+    "matched": 3,
+    "seconds": 3.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 4,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "persona": {
+  "name": "Persona",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "persona",
+    "checker": "ashby",
+    "jobs": 14,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "persona-ai": {
+  "name": "Persona AI",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "persona-ai",
+    "checker": "ashby",
+    "jobs": 23,
+    "students": 1,
+    "matched": 1,
+    "seconds": 1.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "failed",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 4,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "precisely": {
+  "name": "Precisely",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "precisely",
+    "checker": "greenhouse",
+    "jobs": 29,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "principal": {
+  "name": "Principal Financial Group",
+  "batch": 5,
+  "main_checker": "jibe",
+  "sources": [
+   {
+    "entry": "principal",
+    "checker": "jibe",
+    "jobs": 151,
+    "students": 21,
+    "matched": 2,
+    "seconds": 5.2,
+    "requests": 2,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "prizepicks": {
+  "name": "PrizePicks",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "prizepicks",
+    "checker": "greenhouse",
+    "jobs": 31,
+    "students": 4,
+    "matched": 3,
+    "seconds": 3.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 4,
+  "simplify_open": 2,
+  "shown": 3,
+  "day_one_misses": 0
+ },
+ "progressive": {
+  "name": "Progressive",
+  "batch": 2,
+  "main_checker": "ripplematch",
+  "sources": [
+   {
+    "entry": "progressive~ripplematch",
+    "checker": "ripplematch",
+    "jobs": 1,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "proofpoint": {
+  "name": "Proofpoint",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "proofpoint",
+    "checker": "workday",
+    "jobs": 130,
+    "students": 0,
+    "matched": 0,
+    "seconds": 6.8,
+    "requests": 7,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "ptc": {
+  "name": "PTC",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "ptc",
+    "checker": "workday",
+    "jobs": 165,
+    "students": 9,
+    "matched": 6,
+    "seconds": 9.2,
+    "requests": 9,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 3,
+  "simplify_open": 2,
+  "shown": 2,
+  "day_one_misses": 0
+ },
+ "pure-storage": {
+  "name": "Pure Storage",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "pure-storage",
+    "checker": "greenhouse",
+    "jobs": 369,
+    "students": 1,
+    "matched": 1,
+    "seconds": 3.7,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "q2": {
+  "name": "Q2",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "q2",
+    "checker": "workday",
+    "jobs": 64,
+    "students": 10,
+    "matched": 7,
+    "seconds": 3.9,
+    "requests": 4,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 7,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "qorvo": {
+  "name": "Qorvo",
+  "batch": 6,
+  "main_checker": "successfactors",
+  "sources": [
+   {
+    "entry": "qorvo~successfactors",
+    "checker": "successfactors",
+    "jobs": 8,
+    "students": 6,
+    "matched": 6,
+    "seconds": 0.4,
+    "requests": 1,
+    "new_reader": true
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 50,
+  "simplify_open": 0,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "qualcomm": {
+  "name": "Qualcomm",
+  "batch": 5,
+  "main_checker": "eightfold",
+  "sources": [
+   {
+    "entry": "qualcomm",
+    "checker": "eightfold",
+    "jobs": 2017,
+    "students": 118,
+    "matched": 19,
+    "seconds": 234.8,
+    "requests": 203,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 43,
+  "simplify_open": 22,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "qumulo": {
+  "name": "Qumulo",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "qumulo",
+    "checker": "ashby",
+    "jobs": 25,
+    "students": 1,
+    "matched": 1,
+    "seconds": 0.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "reddit": {
+  "name": "Reddit",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "reddit",
+    "checker": "greenhouse",
+    "jobs": 154,
+    "students": 0,
+    "matched": 0,
+    "seconds": 3.9,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [
+   {
+    "entry": "reddit~ripplematch",
+    "checker": "ripplematch",
+    "jobs": 0,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "redwood-materials": {
+  "name": "Redwood Materials",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "redwood-materials",
+    "checker": "greenhouse",
+    "jobs": 131,
+    "students": 0,
+    "matched": 0,
+    "seconds": 4.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "replit": {
+  "name": "Replit",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "replit",
+    "checker": "ashby",
+    "jobs": 29,
+    "students": 1,
+    "matched": 1,
+    "seconds": 0.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "rhoda-ai": {
+  "name": "Rhoda AI",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "rhoda-ai",
+    "checker": "ashby",
+    "jobs": 45,
+    "students": 3,
+    "matched": 3,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 3,
+  "simplify_open": 1,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "ridgeline": {
+  "name": "Ridgeline",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "ridgeline",
+    "checker": "greenhouse",
+    "jobs": 29,
+    "students": 0,
+    "matched": 0,
+    "seconds": 3.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "rilla": {
+  "name": "Rilla",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "rilla",
+    "checker": "ashby",
+    "jobs": 24,
+    "students": 3,
+    "matched": 3,
+    "seconds": 1.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "ripple": {
+  "name": "Ripple",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "ripple",
+    "checker": "greenhouse",
+    "jobs": 117,
+    "students": 0,
+    "matched": 0,
+    "seconds": 3.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "rivian": {
+  "name": "Rivian",
+  "batch": 5,
+  "main_checker": "jibe",
+  "sources": [
+   {
+    "entry": "rivian",
+    "checker": "jibe",
+    "jobs": 964,
+    "students": 46,
+    "matched": 41,
+    "seconds": 45.3,
+    "requests": 10,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 20,
+  "simplify_open": 2,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "rivian-vw": {
+  "name": "Rivian and VW Group Technologies (JV)",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "rivian-vw",
+    "checker": "ashby",
+    "jobs": 176,
+    "students": 21,
+    "matched": 20,
+    "seconds": 1.3,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 3,
+  "simplify_open": 1,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "roku": {
+  "name": "Roku",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "roku",
+    "checker": "greenhouse",
+    "jobs": 93,
+    "students": 6,
+    "matched": 1,
+    "seconds": 3.7,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [
+   {
+    "entry": "roku~ripplematch",
+    "checker": "ripplematch",
+    "jobs": 0,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 5,
+  "simplify_open": 5,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "rubrik": {
+  "name": "Rubrik",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "rubrik",
+    "checker": "greenhouse",
+    "jobs": 151,
+    "students": 5,
+    "matched": 0,
+    "seconds": 4.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 2,
+  "simplify_open": 2,
+  "shown": 1,
+  "day_one_misses": 1
+ },
+ "sailpoint": {
+  "name": "SailPoint",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "sailpoint",
+    "checker": "workday",
+    "jobs": 94,
+    "students": 1,
+    "matched": 0,
+    "seconds": 5.0,
+    "requests": 5,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "sailpoint~site-SailPointInternships",
+    "why": "public Workday site, 2 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "sandisk": {
+  "name": "Sandisk",
+  "batch": 6,
+  "main_checker": "sitemap (Avature)",
+  "sources": [
+   {
+    "entry": "sandisk~avature",
+    "checker": "sitemap (Avature)",
+    "jobs": 500,
+    "students": 17,
+    "matched": 14,
+    "seconds": 4.0,
+    "requests": 3,
+    "new_reader": true
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "sandisk",
+    "why": "SmartRecruiters company emptied (moved to Avature)"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "sas": {
+  "name": "SAS Institute",
+  "batch": 5,
+  "main_checker": "icims",
+  "sources": [
+   {
+    "entry": "sas",
+    "checker": "icims",
+    "jobs": 35,
+    "students": 3,
+    "matched": 3,
+    "seconds": 1.4,
+    "requests": 2,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "robots",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "sentry": {
+  "name": "Sentry",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "sentry",
+    "checker": "ashby",
+    "jobs": 39,
+    "students": 1,
+    "matched": 1,
+    "seconds": 0.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "serval": {
+  "name": "Serval",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "serval",
+    "checker": "ashby",
+    "jobs": 67,
+    "students": 1,
+    "matched": 1,
+    "seconds": 1.3,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "singlestore": {
+  "name": "SingleStore",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "singlestore",
+    "checker": "greenhouse",
+    "jobs": 40,
+    "students": 2,
+    "matched": 2,
+    "seconds": 3.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 4,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "snap": {
+  "name": "Snap",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "snap",
+    "checker": "workday",
+    "jobs": 215,
+    "students": 4,
+    "matched": 1,
+    "seconds": 10.9,
+    "requests": 11,
+    "error": null
+   }
+  ],
+  "side": [
+   {
+    "entry": "snap~ripplematch",
+    "checker": "ripplematch",
+    "jobs": 0,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "snorkel-ai": {
+  "name": "Snorkel AI",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "snorkel-ai",
+    "checker": "greenhouse",
+    "jobs": 43,
+    "students": 0,
+    "matched": 0,
+    "seconds": 4.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "snyk": {
+  "name": "Snyk",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "snyk",
+    "checker": "workday",
+    "jobs": 11,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.7,
+    "requests": 1,
+    "error": null
+   },
+   {
+    "entry": "snyk~ashby",
+    "checker": "ashby",
+    "jobs": 37,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.9,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "socure": {
+  "name": "Socure",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "socure",
+    "checker": "ashby",
+    "jobs": 89,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "sofi": {
+  "name": "SoFi",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "sofi",
+    "checker": "greenhouse",
+    "jobs": 48,
+    "students": 1,
+    "matched": 0,
+    "seconds": 3.9,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "sonos": {
+  "name": "Sonos",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "sonos",
+    "checker": "workday",
+    "jobs": 54,
+    "students": 4,
+    "matched": 2,
+    "seconds": 2.4,
+    "requests": 3,
+    "error": null
+   },
+   {
+    "entry": "sonos~site-Student_Opportunities",
+    "checker": "workday",
+    "jobs": 4,
+    "students": 4,
+    "matched": 2,
+    "seconds": 0.4,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 8,
+  "simplify_open": 1,
+  "shown": 3,
+  "day_one_misses": 0
+ },
+ "southwest": {
+  "name": "Southwest Airlines",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "southwest",
+    "checker": "workday",
+    "jobs": 30,
+    "students": 0,
+    "matched": 0,
+    "seconds": 2.1,
+    "requests": 2,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "starburst": {
+  "name": "Starburst",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "starburst",
+    "checker": "greenhouse",
+    "jobs": 38,
+    "students": 0,
+    "matched": 0,
+    "seconds": 4.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "state-farm": {
+  "name": "State Farm",
+  "batch": 5,
+  "main_checker": "jibe",
+  "sources": [
+   {
+    "entry": "state-farm",
+    "checker": "jibe",
+    "jobs": 238,
+    "students": 11,
+    "matched": 9,
+    "seconds": 10.2,
+    "requests": 3,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 4,
+  "simplify_open": 0,
+  "shown": 3,
+  "day_one_misses": 0
+ },
+ "suno": {
+  "name": "Suno",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "suno",
+    "checker": "ashby",
+    "jobs": 68,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "superhuman": {
+  "name": "Superhuman (formerly Grammarly)",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "superhuman",
+    "checker": "ashby",
+    "jobs": 73,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.4,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "superhuman~greenhouse",
+    "why": "Grammarly's Greenhouse board, empty since the rename: recorded as known"
+   },
+   {
+    "entry": "superhuman~superhuman",
+    "why": "dead Ashby board the registry still links: mirror alias to the live board"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "symmetry-systems": {
+  "name": "Symmetry Systems",
+  "batch": 5,
+  "main_checker": "blocked",
+  "sources": [],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "symmetry-systems",
+    "why": "acquired by Zscaler (symmetry-systems.com redirects to zscaler.com): folded into Zscaler"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "synchrony": {
+  "name": "Synchrony",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "synchrony",
+    "checker": "workday",
+    "jobs": 22,
+    "students": 16,
+    "matched": 12,
+    "seconds": 1.9,
+    "requests": 2,
+    "error": null
+   },
+   {
+    "entry": "synchrony~site-careers",
+    "checker": "workday",
+    "jobs": 26,
+    "students": 1,
+    "matched": 1,
+    "seconds": 3.0,
+    "requests": 2,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "synchrony~site-AgencyCareerSite",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "failed",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 2,
+  "simplify_open": 1,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "tamr": {
+  "name": "Tamr",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "tamr",
+    "checker": "ashby",
+    "jobs": 0,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.9,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "target": {
+  "name": "Target",
+  "batch": 4,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "target",
+    "checker": "workday",
+    "jobs": 14142,
+    "students": 121,
+    "matched": 26,
+    "seconds": 1002.8,
+    "requests": 831,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": true,
+  "slice": "target~slice",
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "tensorwave": {
+  "name": "TensorWave",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "tensorwave",
+    "checker": "ashby",
+    "jobs": 39,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.7,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "texas-instruments": {
+  "name": "Texas Instruments",
+  "batch": 5,
+  "main_checker": "oracle",
+  "sources": [
+   {
+    "entry": "texas-instruments",
+    "checker": "oracle",
+    "jobs": 915,
+    "students": 126,
+    "matched": 46,
+    "seconds": 10.7,
+    "requests": 5,
+    "error": null
+   },
+   {
+    "entry": "texas-instruments~ebgj",
+    "checker": "oracle",
+    "jobs": 127,
+    "students": 13,
+    "matched": 8,
+    "seconds": 2.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "texas-instruments~edbz-cx_1",
+    "why": "mirror of the main site"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 33,
+  "simplify_open": 6,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "travelers": {
+  "name": "Travelers",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "travelers",
+    "checker": "workday",
+    "jobs": 409,
+    "students": 75,
+    "matched": 52,
+    "seconds": 20.9,
+    "requests": 21,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "travelers~site-SimplyBusinesssExternal",
+    "why": "public Workday site, 9 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 5,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "tricentis": {
+  "name": "Tricentis",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "tricentis",
+    "checker": "workday",
+    "jobs": 24,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.7,
+    "requests": 2,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "trimble": {
+  "name": "Trimble",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "trimble",
+    "checker": "workday",
+    "jobs": 184,
+    "students": 20,
+    "matched": 17,
+    "seconds": 9.9,
+    "requests": 10,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 10,
+  "simplify_open": 5,
+  "shown": 4,
+  "day_one_misses": 0
+ },
+ "truveta": {
+  "name": "Truveta",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "truveta",
+    "checker": "greenhouse",
+    "jobs": 34,
+    "students": 0,
+    "matched": 0,
+    "seconds": 3.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "tyler-technologies": {
+  "name": "Tyler Technologies",
+  "batch": 5,
+  "main_checker": "jobvite",
+  "sources": [
+   {
+    "entry": "tyler-technologies",
+    "checker": "jobvite",
+    "jobs": 145,
+    "students": 11,
+    "matched": 11,
+    "seconds": 16.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 7,
+  "simplify_open": 1,
+  "shown": 2,
+  "day_one_misses": 0
+ },
+ "typeface": {
+  "name": "Typeface",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "typeface",
+    "checker": "greenhouse",
+    "jobs": 18,
+    "students": 0,
+    "matched": 0,
+    "seconds": 3.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "udemy": {
+  "name": "Udemy",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "udemy",
+    "checker": "greenhouse",
+    "jobs": 4,
+    "students": 0,
+    "matched": 0,
+    "seconds": 8.0,
+    "requests": 2,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "uipath": {
+  "name": "UiPath",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "uipath",
+    "checker": "ashby",
+    "jobs": 102,
+    "students": 2,
+    "matched": 2,
+    "seconds": 1.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "unify": {
+  "name": "Unify",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "unify",
+    "checker": "ashby",
+    "jobs": 11,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "united-airlines": {
+  "name": "United Airlines",
+  "batch": 5,
+  "main_checker": "phenom",
+  "sources": [
+   {
+    "entry": "united-airlines",
+    "checker": "phenom",
+    "jobs": 124,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.4,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "usaa": {
+  "name": "USAA",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "usaa",
+    "checker": "workday",
+    "jobs": 215,
+    "students": 0,
+    "matched": 0,
+    "seconds": 10.8,
+    "requests": 11,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "usaa~site-CONFIDENTIAL",
+    "why": "public Workday site, 7 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "vanguard": {
+  "name": "Vanguard",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "vanguard",
+    "checker": "workday",
+    "jobs": 351,
+    "students": 21,
+    "matched": 18,
+    "seconds": 19.3,
+    "requests": 19,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 8,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "veeam": {
+  "name": "Veeam Software",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "veeam",
+    "checker": "greenhouse",
+    "jobs": 198,
+    "students": 17,
+    "matched": 12,
+    "seconds": 3.7,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 8,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "vercel": {
+  "name": "Vercel",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "vercel",
+    "checker": "greenhouse",
+    "jobs": 87,
+    "students": 1,
+    "matched": 1,
+    "seconds": 4.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 2,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "verizon": {
+  "name": "Verizon",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "verizon",
+    "checker": "workday",
+    "jobs": 1253,
+    "students": 1,
+    "matched": 0,
+    "seconds": 62.9,
+    "requests": 63,
+    "error": null
+   }
+  ],
+  "side": [
+   {
+    "entry": "verizon~ripplematch",
+    "checker": "ripplematch",
+    "jobs": 0,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 4,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "viam": {
+  "name": "Viam",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "viam",
+    "checker": "greenhouse",
+    "jobs": 8,
+    "students": 1,
+    "matched": 1,
+    "seconds": 4.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "walmart": {
+  "name": "Walmart (Walmart Global Tech)",
+  "batch": 4,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "walmart",
+    "checker": "workday",
+    "jobs": 20474,
+    "students": 740,
+    "matched": 27,
+    "seconds": 1199.8,
+    "requests": 1143,
+    "error": null
+   },
+   {
+    "entry": "walmart~site-Non-WorkdayInternal",
+    "checker": "workday",
+    "jobs": 2693,
+    "students": 137,
+    "matched": 5,
+    "seconds": 253.5,
+    "requests": 244,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": true,
+  "slice": "walmart~slice",
+  "simplify_rows": 6,
+  "simplify_open": 1,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "disney": {
+  "name": "The Walt Disney Company",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "disney",
+    "checker": "workday",
+    "jobs": 266,
+    "students": 54,
+    "matched": 14,
+    "seconds": 13.7,
+    "requests": 14,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 3,
+  "simplify_open": 0,
+  "shown": 2,
+  "day_one_misses": 0
+ },
+ "warner-bros-discovery": {
+  "name": "Warner Bros. Discovery",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "warner-bros-discovery",
+    "checker": "workday",
+    "jobs": 205,
+    "students": 12,
+    "matched": 5,
+    "seconds": 11.5,
+    "requests": 11,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "warner-bros-discovery~site-francais",
+    "why": "public Workday site, 4 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "washington-post": {
+  "name": "The Washington Post",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "washington-post",
+    "checker": "workday",
+    "jobs": 52,
+    "students": 0,
+    "matched": 0,
+    "seconds": 12.4,
+    "requests": 3,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [
+   {
+    "entry": "washington-post~site-WashingtonPostCareersArc",
+    "why": "public Workday site, 7 jobs, no student role: recorded as known"
+   }
+  ],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "wells-fargo": {
+  "name": "Wells Fargo",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "wells-fargo",
+    "checker": "workday",
+    "jobs": 1601,
+    "students": 15,
+    "matched": 10,
+    "seconds": 85.4,
+    "requests": 81,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 2,
+  "simplify_open": 2,
+  "shown": 1,
+  "day_one_misses": 0
+ },
+ "western-digital": {
+  "name": "Western Digital",
+  "batch": 5,
+  "main_checker": "smartrecruiters",
+  "sources": [
+   {
+    "entry": "western-digital",
+    "checker": "smartrecruiters",
+    "jobs": 336,
+    "students": 28,
+    "matched": 4,
+    "seconds": 87.4,
+    "requests": 30,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 5,
+  "simplify_open": 2,
+  "shown": 0,
+  "day_one_misses": 1
+ },
+ "xcimer": {
+  "name": "Xcimer Energy",
+  "batch": 2,
+  "main_checker": "lever",
+  "sources": [
+   {
+    "entry": "xcimer",
+    "checker": "lever",
+    "jobs": 63,
+    "students": 7,
+    "matched": 6,
+    "seconds": 1.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "failed",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "you-com": {
+  "name": "You.com",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "you-com",
+    "checker": "greenhouse",
+    "jobs": 8,
+    "students": 0,
+    "matched": 0,
+    "seconds": 4.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "yugabyte": {
+  "name": "YugabyteDB",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "yugabyte",
+    "checker": "greenhouse",
+    "jobs": 14,
+    "students": 0,
+    "matched": 0,
+    "seconds": 5.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "zebra": {
+  "name": "Zebra Technologies",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "zebra",
+    "checker": "workday",
+    "jobs": 230,
+    "students": 24,
+    "matched": 4,
+    "seconds": 11.8,
+    "requests": 12,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 15,
+  "simplify_open": 1,
+  "shown": 9,
+  "day_one_misses": 0
+ },
+ "zillow": {
+  "name": "Zillow",
+  "batch": 3,
+  "main_checker": "workday",
+  "sources": [
+   {
+    "entry": "zillow",
+    "checker": "workday",
+    "jobs": 206,
+    "students": 5,
+    "matched": 4,
+    "seconds": 11.3,
+    "requests": 11,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 3,
+  "simplify_open": 3,
+  "shown": 3,
+  "day_one_misses": 0
+ },
+ "zip": {
+  "name": "Zip",
+  "batch": 2,
+  "main_checker": "ashby",
+  "sources": [
+   {
+    "entry": "zip",
+    "checker": "ashby",
+    "jobs": 96,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.2,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "ziprecruiter": {
+  "name": "ZipRecruiter",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "ziprecruiter",
+    "checker": "greenhouse",
+    "jobs": 68,
+    "students": 1,
+    "matched": 1,
+    "seconds": 4.0,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "robots",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 1,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "zocdoc": {
+  "name": "Zocdoc",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "zocdoc",
+    "checker": "greenhouse",
+    "jobs": 63,
+    "students": 0,
+    "matched": 0,
+    "seconds": 4.8,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "refused",
+  "blocked_page": true,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "zoominfo": {
+  "name": "ZoomInfo",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "zoominfo",
+    "checker": "greenhouse",
+    "jobs": 91,
+    "students": 0,
+    "matched": 0,
+    "seconds": 5.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ },
+ "zscaler": {
+  "name": "Zscaler",
+  "batch": 1,
+  "main_checker": "greenhouse",
+  "sources": [
+   {
+    "entry": "zscaler",
+    "checker": "greenhouse",
+    "jobs": 378,
+    "students": 0,
+    "matched": 0,
+    "seconds": 5.1,
+    "requests": 1,
+    "error": null
+   }
+  ],
+  "side": [],
+  "dropped": [],
+  "page": "ok",
+  "blocked_page": false,
+  "very_large": false,
+  "slice": null,
+  "simplify_rows": 0,
+  "simplify_open": 0,
+  "shown": 0,
+  "day_one_misses": 0
+ }
+}

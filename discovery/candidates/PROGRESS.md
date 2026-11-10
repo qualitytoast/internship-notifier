@@ -158,15 +158,27 @@ Box, Cox, DraftKings, Intuitive, Wells Fargo), program pages, archive.org (21 wi
 (cached robots.txt, no request), RippleMatch side boards (DraftKings, Progressive, Verizon). First morning: 54
 requests, 30 s.
 
+## Very large sites, measured both ways (read_results_big.json, slice_compare.json)
+Full reads with locations packed (STAGE1_PACK, scratch only): CVS 19,078 jobs in 19.3 min (1,134 requests, 37
+searches instead of 4,990), Walmart 20,474 in 20 min (1,143), Target 14,142 in 16.7 min (831, 15 searches instead of
+2,117), Lowe's 13,001 in 12.9 min (757), Bank of America 3,107 in 6.1 min (366, 20 searches instead of 2,757).
+Workday answers a search of 400 location values with an error (200 work), so packed searches hold at most 150.
+Student reads: Walmart 2 requests, CVS 3, Target 6, Lowe's 11 (a search for "intern"). Matching roles the student
+reads miss: Walmart 9 of 27, CVS 2 of 17, Target 2 of 26, Lowe's 0 of 19; 12 of the 13 are tagged unsure.
+
+## Dry runs with the planned names and links
+candidates.yaml now carries the plan's aliases; the dry runs give multi companies `match_urls` from their boards and
+match the short Workday names (ms, hp, ...) from the start of the address, as the plan's config will. Coverage: 834
+open Simplify rows at 111 companies, 27 not found (16 open but unlisted: one-by-one lookup; 9 closed at the company;
+2 NBCUniversal). Re-match: 1,121 stored rows to 134 companies, 225 open get checks, 162 already shown, 3 day-one
+possible misses.
+
+## Stage 1 report
+`STAGE1_REPORT.md` (written 2026-11-09): TLDR, the 6 decisions with measured numbers, the code changes, the batches,
+the evidence and the table of every company (`companies_table.md`). The analysis scripts behind plan.json,
+companies_table.md, matched_dedup*.json, now_watching.json, backup_table.md, new_systems_measure.json and
+slice_compare.json are in data/stage1/scripts/ (build_plan.py, report_table.py, matched_dedup.py, now_watching.py,
+backup_table.py, new_systems_measure.py, slice_compare.py, rmk_read.py, fetch.py).
+
 ## Next
-Done: the special cases existing adapters read (Costco partly, UHG, Tyler, Precisely); Workday robots.txt sites;
-lists check; page systems; Simplify coverage; re-match dry run; name clashes; backup checks measured once.
-1. Very large sites: re-read Walmart, Target, Lowe's and BofA with a scratch-only relaxed tolerance for postings
-   without a link; slices for CVS, Lowe's (keyword) and Costco (category); Disney's Phenom total.
-2. Page counts with filters off: Greenhouse boards that redirect to the company's own page; explain Citi, Micron,
-   Arista, HPE.
-3. Done: companies existing code can't read (table above). Lowe's full read is in read_results_big.json.
-4. Done: per company decisions (sections above); backup checks per company.
-5. Day-one alerts by kind; "Now watching" roles per batch; run-time model (8/12/16 workers, full read against
-   slice, overlap); database and cassette growth; freshman/sophomore keywords.
-6. The Stage 1 report (discovery/candidates/REPORT.md), commit and push, stop.
+Stage 1 is complete. Waiting for your answers to the report's 6 decisions; then Stage 2, batch 0 (groundwork).

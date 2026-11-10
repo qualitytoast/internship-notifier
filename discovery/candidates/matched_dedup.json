@@ -120,7 +120,7 @@
   "unsure": 0
  },
  "bank-of-america": {
-  "jobs": 2862,
+  "jobs": 2858,
   "students": 17,
   "matched": 7,
   "unsure": 7
@@ -354,10 +354,10 @@
   "unsure": 0
  },
  "cvs-health": {
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "unsure": 0
+  "jobs": 13503,
+  "students": 2882,
+  "matched": 17,
+  "unsure": 11
  },
  "d-matrix": {
   "jobs": 36,
@@ -762,10 +762,10 @@
   "unsure": 0
  },
  "lowes": {
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "unsure": 0
+  "jobs": 12386,
+  "students": 38,
+  "matched": 18,
+  "unsure": 16
  },
  "lucid-motors": {
   "jobs": 443,
@@ -912,10 +912,10 @@
   "unsure": 3
  },
  "northwestern-mutual": {
-  "jobs": 78,
-  "students": 2,
-  "matched": 1,
-  "unsure": 1
+  "jobs": 136,
+  "students": 9,
+  "matched": 8,
+  "unsure": 6
  },
  "numeric": {
   "jobs": 24,
@@ -1236,10 +1236,10 @@
   "unsure": 0
  },
  "target": {
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "unsure": 0
+  "jobs": 14088,
+  "students": 121,
+  "matched": 26,
+  "unsure": 26
  },
  "tensorwave": {
   "jobs": 39,
@@ -1350,10 +1350,10 @@
   "unsure": 0
  },
  "walmart": {
-  "jobs": 2481,
-  "students": 135,
-  "matched": 4,
-  "unsure": 4
+  "jobs": 17883,
+  "students": 724,
+  "matched": 27,
+  "unsure": 19
  },
  "disney": {
   "jobs": 209,

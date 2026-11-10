@@ -24,6 +24,52 @@
    }
   ]
  },
+ "cvs-health": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 19078,
+  "students": 3944,
+  "matched": 17,
+  "seconds": 1158.7,
+  "requests": 1134,
+  "partial": false,
+  "degraded": null,
+  "reported_total": 20349,
+  "started": "2026-11-10T01:33:02Z",
+  "unlinked": [
+   {
+    "where": "workday:cvshealth/CVS_Health_Careers",
+    "title": null,
+    "externalPath": "/job/Pharmacy-Technician_R1085450",
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R1085450"
+    ]
+   },
+   {
+    "where": "workday:cvshealth/CVS_Health_Careers",
+    "title": null,
+    "externalPath": "/job/Pharmacy-Technician_R1069526-1",
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R1069526"
+    ]
+   }
+  ],
+  "packed": [
+   {
+    "entry": "cvs-health",
+    "facet": "locations",
+    "values": 4990,
+    "searches": 37,
+    "instead_of": 4990
+   }
+  ]
+ },
  "cvs-health~slice": {
   "checker": "workday",
   "ok": true,
@@ -40,6 +86,31 @@
   "started": "2026-11-10T01:33:02Z",
   "unlinked": [],
   "packed": []
+ },
+ "lowes": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 13001,
+  "students": 40,
+  "matched": 19,
+  "seconds": 774.8,
+  "requests": 757,
+  "partial": false,
+  "degraded": null,
+  "reported_total": 13033,
+  "started": "2026-11-10T01:33:02Z",
+  "unlinked": [],
+  "packed": [
+   {
+    "entry": "lowes",
+    "facet": "locations",
+    "values": 1873,
+    "searches": 13,
+    "instead_of": 1873
+   }
+  ]
  },
  "lowes~slice": {
   "checker": "workday",
@@ -58,6 +129,72 @@
   "unlinked": [],
   "packed": []
  },
+ "target": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 14142,
+  "students": 121,
+  "matched": 26,
+  "seconds": 1002.8,
+  "requests": 831,
+  "partial": true,
+  "degraded": "workday:target: skipped 4 postings without a link",
+  "reported_total": 14486,
+  "started": "2026-11-10T01:33:02Z",
+  "unlinked": [
+   {
+    "where": "workday:target/targetcareers",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R0000479456"
+    ]
+   },
+   {
+    "where": "workday:target/targetcareers",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R0000477494"
+    ]
+   },
+   {
+    "where": "workday:target/targetcareers",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R0000479456"
+    ]
+   },
+   {
+    "where": "workday:target/targetcareers",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R0000477494"
+    ]
+   }
+  ],
+  "packed": [
+   {
+    "entry": "target",
+    "facet": "locations",
+    "values": 2117,
+    "searches": 15,
+    "instead_of": 2117
+   }
+  ]
+ },
  "target~slice": {
   "checker": "workday",
   "ok": true,
@@ -74,6 +211,252 @@
   "started": "2026-11-10T01:33:02Z",
   "unlinked": [],
   "packed": []
+ },
+ "walmart": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 20474,
+  "students": 740,
+  "matched": 27,
+  "seconds": 1199.8,
+  "requests": 1143,
+  "partial": true,
+  "degraded": "workday:walmart: skipped 22 postings without a link",
+  "reported_total": 20803,
+  "started": "2026-11-10T01:33:02Z",
+  "unlinked": [
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2704184"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2704046"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2703537"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2703479"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2702081"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2701122"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2703479"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2704184"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2698638"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2691491"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2699073"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2677011"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2704046"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2703537"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2702081"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2701122"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2666516"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2666683"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2686189"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2616452"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2696083"
+    ]
+   },
+   {
+    "where": "workday:walmart/WalmartExternal",
+    "title": null,
+    "externalPath": null,
+    "locationsText": null,
+    "postedOn": null,
+    "bulletFields": [
+     "R-2525702"
+    ]
+   }
+  ],
+  "packed": [
+   {
+    "entry": "walmart",
+    "facet": "locationRegionStateProvince",
+    "values": 66,
+    "searches": 11,
+    "instead_of": 66
+   }
+  ]
  },
  "walmart~slice": {
   "checker": "workday",
