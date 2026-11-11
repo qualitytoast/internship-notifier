@@ -1,0 +1,23 @@
+{
+  "key": "dusty-robotics",
+  "name": "Dusty Robotics",
+  "careers_url": "https://www.dustyrobotics.com/careers",
+  "hiring_system": "rippling",
+  "checker": "rippling",
+  "settings": {
+    "board": "dusty-robotics-inc"
+  },
+  "feed": "GET https://ats.rippling.com/api/v2/board/dusty-robotics-inc/jobs",
+  "feed_total": 2,
+  "page_total": 2,
+  "page_total_how": "headless render of https://ats.rippling.com/dusty-robotics-inc/jobs (robots.txt checked for every request) shows 2 jobs; 2 read (2026-11-10)",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ats.rippling.com/robots.txt checked before every request (discovery/robots/ats.rippling.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-11",
+  "source": "added",
+  "round": "added"
+}

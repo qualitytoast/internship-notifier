@@ -961,22 +961,20 @@
  },
  "bumble": {
   "name": "Bumble",
-  "batch": 2,
-  "main_checker": "lever",
-  "sources": [
+  "batch": 3,
+  "main_checker": "blocked",
+  "sources": [],
+  "side": [],
+  "dropped": [
    {
     "entry": "bumble",
-    "checker": "lever",
-    "jobs": 0,
-    "students": 0,
-    "matched": 0,
-    "seconds": 0.2,
-    "requests": 1,
-    "error": null
+    "why": "HTTP 403 for POST https://bumble.wd3.myworkdayjobs.com/wday/cxs/bumble/Bumble_Careers/jobs"
+   },
+   {
+    "entry": "bumble~lever",
+    "why": "the registry's Lever board lists nothing and its hosted page is 404: mirror alias"
    }
   ],
-  "side": [],
-  "dropped": [],
   "page": "ok",
   "blocked_page": false,
   "very_large": false,
@@ -1445,7 +1443,7 @@
   ],
   "side": [],
   "dropped": [],
-  "page": "failed",
+  "page": "ok",
   "blocked_page": false,
   "very_large": false,
   "slice": null,
@@ -1533,11 +1531,11 @@
    {
     "entry": "commure",
     "checker": "ashby",
-    "jobs": 74,
+    "jobs": 72,
     "students": 4,
     "matched": 0,
-    "seconds": 4.1,
-    "requests": 2,
+    "seconds": 0.2,
+    "requests": 1,
     "error": null
    }
   ],
@@ -4968,7 +4966,7 @@
   ],
   "side": [],
   "dropped": [],
-  "page": "failed",
+  "page": "ok",
   "blocked_page": false,
   "very_large": false,
   "slice": null,
@@ -6053,14 +6051,20 @@
     "seconds": 1.4,
     "requests": 1,
     "error": null
+   },
+   {
+    "entry": "superhuman~greenhouse",
+    "checker": "greenhouse",
+    "jobs": 0,
+    "students": 0,
+    "matched": 0,
+    "seconds": 3.8,
+    "requests": 1,
+    "error": null
    }
   ],
   "side": [],
   "dropped": [
-   {
-    "entry": "superhuman~greenhouse",
-    "why": "Grammarly's Greenhouse board, empty since the rename: recorded as known"
-   },
    {
     "entry": "superhuman~superhuman",
     "why": "dead Ashby board the registry still links: mirror alias to the live board"
@@ -6914,8 +6918,8 @@
   ],
   "side": [],
   "dropped": [],
-  "page": "failed",
-  "blocked_page": false,
+  "page": "refused",
+  "blocked_page": true,
   "very_large": false,
   "slice": null,
   "simplify_rows": 1,

@@ -1,0 +1,23 @@
+{
+  "key": "delinea",
+  "name": "Delinea",
+  "careers_url": "https://delinea.com/careers",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "delinea"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/delinea",
+  "feed_total": 67,
+  "page_total": 68,
+  "page_total_how": "the hosted Ashby page's job list (2026-11-09)",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "api.ashbyhq.com/robots.txt checked before every request (discovery/robots/api.ashbyhq.com.txt)",
+  "notes": "The page showed 68 jobs and the board 67 on 2026-11-09 (a posting or two opened or closed in between).",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added"
+}

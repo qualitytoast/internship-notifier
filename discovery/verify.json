@@ -71,6 +71,14 @@
   "duration": 2.1,
   "requests": 1
  },
+ "alltrails": {
+  "jobs": 1,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 0.4,
+  "requests": 1
+ },
  "altruist": {
   "jobs": 74,
   "students": 0,
@@ -109,6 +117,14 @@
   "matched": 0,
   "at": "2026-11-10T15:33:14Z",
   "duration": 3.1,
+  "requests": 1
+ },
+ "anchorage-digital": {
+  "jobs": 23,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 16.4,
   "requests": 1
  },
  "ansatz-capital": {
@@ -221,6 +237,30 @@
   "matched": 0,
   "at": "2026-11-10T15:33:14Z",
   "duration": 6.0,
+  "requests": 1
+ },
+ "base-power": {
+  "jobs": 197,
+  "students": 27,
+  "matched": 14,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 0.3,
+  "requests": 1
+ },
+ "baseten": {
+  "jobs": 101,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 1.7,
+  "requests": 1
+ },
+ "bedrock-robotics": {
+  "jobs": 57,
+  "students": 13,
+  "matched": 13,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 7.2,
   "requests": 1
  },
  "belvedere-trading": {
@@ -359,6 +399,22 @@
   "duration": 0.5,
   "requests": 1
  },
+ "carbon-robotics": {
+  "jobs": 4,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 7.3,
+  "requests": 1
+ },
+ "cartesia": {
+  "jobs": 23,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 5.0,
+  "requests": 1
+ },
  "castleton-commodities": {
   "jobs": 11,
   "students": 4,
@@ -381,6 +437,14 @@
   "matched": 0,
   "at": "2026-11-10T15:33:14Z",
   "duration": 6.0,
+  "requests": 1
+ },
+ "cerebras": {
+  "jobs": 123,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 7.0,
   "requests": 1
  },
  "chan-zuckerberg": {
@@ -447,6 +511,14 @@
   "duration": 0.2,
   "requests": 1
  },
+ "clay": {
+  "jobs": 62,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 5.5,
+  "requests": 1
+ },
  "clockwork-systems": {
   "jobs": 5,
   "students": 1,
@@ -461,6 +533,14 @@
   "matched": 3,
   "at": "2026-10-20T15:09:46Z",
   "duration": 0.4,
+  "requests": 1
+ },
+ "cobot": {
+  "jobs": 14,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 1.9,
   "requests": 1
  },
  "cockroach-labs": {
@@ -487,6 +567,30 @@
   "duration": 1.1,
   "requests": 1
  },
+ "commonwealth-fusion": {
+  "jobs": 139,
+  "students": 18,
+  "matched": 18,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 2.1,
+  "requests": 1
+ },
+ "commure": {
+  "jobs": 72,
+  "students": 4,
+  "matched": 0,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 1.1,
+  "requests": 1
+ },
+ "conductorone": {
+  "jobs": 17,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 2.0,
+  "requests": 1
+ },
  "coreweave": {
   "jobs": 425,
   "students": 0,
@@ -502,6 +606,22 @@
   "at": "2026-10-20T15:09:46Z",
   "duration": 17.8,
   "requests": 18
+ },
+ "crusoe": {
+  "jobs": 325,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 3.2,
+  "requests": 1
+ },
+ "d-matrix": {
+  "jobs": 38,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 3.8,
+  "requests": 1
  },
  "databricks": {
   "jobs": 899,
@@ -541,6 +661,14 @@
   "matched": 0,
   "at": "2026-10-20T15:09:47Z",
   "duration": 1.4,
+  "requests": 1
+ },
+ "delinea": {
+  "jobs": 67,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 4.0,
   "requests": 1
  },
  "dell": {
@@ -623,6 +751,14 @@
   "duration": 2.3,
   "requests": 1
  },
+ "dusty-robotics": {
+  "jobs": 2,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 0.9,
+  "requests": 1
+ },
  "dv-trading": {
   "jobs": 74,
   "students": 20,
@@ -655,6 +791,14 @@
   "duration": 29.4,
   "requests": 19
  },
+ "ellipsis-labs": {
+  "jobs": 14,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 3.9,
+  "requests": 1
+ },
  "enova": {
   "jobs": 39,
   "students": 4,
@@ -677,6 +821,30 @@
   "matched": 2,
   "at": "2026-10-20T15:09:46Z",
   "duration": 0.2,
+  "requests": 1
+ },
+ "etched": {
+  "jobs": 116,
+  "students": 14,
+  "matched": 13,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 4.2,
+  "requests": 1
+ },
+ "eventual": {
+  "jobs": 5,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 4.8,
+  "requests": 1
+ },
+ "exa": {
+  "jobs": 66,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 5.1,
   "requests": 1
  },
  "expedia": {
@@ -775,6 +943,14 @@
   "duration": 6.0,
   "requests": 1
  },
+ "gen-digital": {
+  "jobs": 94,
+  "students": 3,
+  "matched": 0,
+  "at": "2026-11-11T16:08:56Z",
+  "duration": 0.2,
+  "requests": 1
+ },
  "general-motors": {
   "jobs": 815,
   "students": 69,
@@ -782,6 +958,14 @@
   "at": "2026-10-20T15:09:46Z",
   "duration": 44.1,
   "requests": 41
+ },
+ "genesis-molecular-ai": {
+  "jobs": 11,
+  "students": 2,
+  "matched": 2,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 5.0,
+  "requests": 1
  },
  "geneva-trading": {
   "jobs": 14,
@@ -791,12 +975,28 @@
   "duration": 1.9,
   "requests": 1
  },
+ "gimlet-labs": {
+  "jobs": 17,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 5.0,
+  "requests": 1
+ },
  "glean": {
   "jobs": 118,
   "students": 1,
   "matched": 1,
   "at": "2026-10-20T15:09:47Z",
   "duration": 1.0,
+  "requests": 1
+ },
+ "glossgenius": {
+  "jobs": 17,
+  "students": 2,
+  "matched": 2,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 5.0,
   "requests": 1
  },
  "gm-financial": {
@@ -871,6 +1071,14 @@
   "duration": 1.1,
   "requests": 1
  },
+ "grow-therapy": {
+  "jobs": 31,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 5.0,
+  "requests": 1
+ },
  "grubhub": {
   "jobs": 111,
   "students": 6,
@@ -903,6 +1111,14 @@
   "duration": 6.0,
   "requests": 1
  },
+ "handshake": {
+  "jobs": 77,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 6.0,
+  "requests": 1
+ },
  "harvey": {
   "jobs": 338,
   "students": 3,
@@ -917,6 +1133,14 @@
   "matched": 0,
   "at": "2026-10-27T03:04:10Z",
   "duration": 4.5,
+  "requests": 1
+ },
+ "hex": {
+  "jobs": 38,
+  "students": 2,
+  "matched": 2,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 6.0,
   "requests": 1
  },
  "heygen": {
@@ -967,6 +1191,14 @@
   "duration": 25.8,
   "requests": 23
  },
+ "illumio": {
+  "jobs": 67,
+  "students": 3,
+  "matched": 3,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 6.2,
+  "requests": 1
+ },
  "imc": {
   "jobs": 168,
   "students": 21,
@@ -1006,6 +1238,14 @@
   "at": "2026-10-20T15:09:46Z",
   "duration": 40.2,
   "requests": 41
+ },
+ "ironclad": {
+  "jobs": 23,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:54Z",
+  "duration": 6.1,
+  "requests": 1
  },
  "ixl-learning": {
   "jobs": 115,
@@ -1079,6 +1319,14 @@
   "duration": 6.0,
   "requests": 1
  },
+ "lambda": {
+  "jobs": 92,
+  "students": 1,
+  "matched": 0,
+  "at": "2026-11-11T16:08:56Z",
+  "duration": 3.3,
+  "requests": 1
+ },
  "launchdarkly": {
   "jobs": 43,
   "students": 0,
@@ -1094,6 +1342,14 @@
   "at": "2026-10-20T15:09:46Z",
   "duration": 48.1,
   "requests": 20
+ },
+ "lightspark": {
+  "jobs": 8,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 6.0,
+  "requests": 1
  },
  "linkedin": {
   "jobs": 231,
@@ -1141,6 +1397,14 @@
   "matched": 2,
   "at": "2026-10-27T03:04:10Z",
   "duration": 3.6,
+  "requests": 1
+ },
+ "mercor": {
+  "jobs": 90,
+  "students": 5,
+  "matched": 5,
+  "at": "2026-11-11T16:08:56Z",
+  "duration": 4.3,
   "requests": 1
  },
  "mercury": {
@@ -1191,6 +1455,14 @@
   "duration": 0.1,
   "requests": 1
  },
+ "multiply-labs": {
+  "jobs": 14,
+  "students": 3,
+  "matched": 2,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 0.7,
+  "requests": 1
+ },
  "nasuni": {
   "jobs": 29,
   "students": 0,
@@ -1214,6 +1486,14 @@
   "at": "2026-10-20T15:09:46Z",
   "duration": 130.1,
   "requests": 41
+ },
+ "netic": {
+  "jobs": 36,
+  "students": 3,
+  "matched": 3,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 8.1,
+  "requests": 1
  },
  "neuralink": {
   "jobs": 80,
@@ -1239,12 +1519,28 @@
   "duration": 6.0,
   "requests": 1
  },
+ "niantic-spatial": {
+  "jobs": 19,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 7.7,
+  "requests": 1
+ },
  "notion": {
   "jobs": 135,
   "students": 3,
   "matched": 3,
   "at": "2026-10-20T15:09:46Z",
   "duration": 0.2,
+  "requests": 1
+ },
+ "numeric": {
+  "jobs": 24,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 7.1,
   "requests": 1
  },
  "nuro": {
@@ -1295,6 +1591,14 @@
   "duration": 0.3,
   "requests": 1
  },
+ "one-finance": {
+  "jobs": 37,
+  "students": 4,
+  "matched": 1,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 5.8,
+  "requests": 1
+ },
  "openai": {
   "jobs": 807,
   "students": 1,
@@ -1335,6 +1639,14 @@
   "duration": 80.7,
   "requests": 82
  },
+ "patreon": {
+  "jobs": 21,
+  "students": 3,
+  "matched": 3,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 7.7,
+  "requests": 1
+ },
  "paypal": {
   "jobs": 337,
   "students": 0,
@@ -1373,6 +1685,22 @@
   "matched": 3,
   "at": "2026-11-10T15:33:14Z",
   "duration": 6.0,
+  "requests": 1
+ },
+ "persona": {
+  "jobs": 14,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 6.6,
+  "requests": 1
+ },
+ "persona-ai": {
+  "jobs": 22,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 3.5,
   "requests": 1
  },
  "pinecone": {
@@ -1447,6 +1775,14 @@
   "duration": 5.3,
   "requests": 6
  },
+ "progressive": {
+  "jobs": 1,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 0.7,
+  "requests": 1
+ },
  "pure-storage": {
   "jobs": 371,
   "students": 1,
@@ -1461,6 +1797,14 @@
   "matched": 0,
   "at": "2026-10-20T15:09:46Z",
   "duration": 0.1,
+  "requests": 1
+ },
+ "qumulo": {
+  "jobs": 25,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 4.1,
   "requests": 1
  },
  "radix": {
@@ -1511,12 +1855,36 @@
   "duration": 8.9,
   "requests": 9
  },
+ "replit": {
+  "jobs": 31,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 5.0,
+  "requests": 1
+ },
+ "rhoda-ai": {
+  "jobs": 44,
+  "students": 3,
+  "matched": 3,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 5.5,
+  "requests": 1
+ },
  "ridgeline": {
   "jobs": 30,
   "students": 0,
   "matched": 0,
   "at": "2026-11-10T15:33:14Z",
   "duration": 6.1,
+  "requests": 1
+ },
+ "rilla": {
+  "jobs": 25,
+  "students": 3,
+  "matched": 3,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 4.4,
   "requests": 1
  },
  "riot-games": {
@@ -1541,6 +1909,14 @@
   "matched": 5,
   "at": "2026-10-20T15:09:46Z",
   "duration": 1.1,
+  "requests": 1
+ },
+ "rivian-vw": {
+  "jobs": 181,
+  "students": 21,
+  "matched": 20,
+  "at": "2026-11-11T16:08:56Z",
+  "duration": 1.4,
   "requests": 1
  },
  "robinhood": {
@@ -1639,6 +2015,22 @@
   "duration": 1.8,
   "requests": 1
  },
+ "sentry": {
+  "jobs": 40,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 5.8,
+  "requests": 1
+ },
+ "serval": {
+  "jobs": 68,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 6.0,
+  "requests": 1
+ },
  "servicenow": {
   "jobs": 675,
   "students": 5,
@@ -1719,6 +2111,14 @@
   "duration": 0.5,
   "requests": 1
  },
+ "socure": {
+  "jobs": 90,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 6.1,
+  "requests": 1
+ },
  "sofi": {
   "jobs": 48,
   "students": 1,
@@ -1767,6 +2167,22 @@
   "duration": 1.1,
   "requests": 1
  },
+ "suno": {
+  "jobs": 66,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 6.1,
+  "requests": 1
+ },
+ "superhuman": {
+  "jobs": 73,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 6.2,
+  "requests": 2
+ },
  "synopsys": {
   "jobs": 636,
   "students": 4,
@@ -1791,6 +2207,14 @@
   "duration": 1.0,
   "requests": 1
  },
+ "tamr": {
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 5.8,
+  "requests": 1
+ },
  "tanium": {
   "jobs": 75,
   "students": 7,
@@ -1805,6 +2229,14 @@
   "matched": 0,
   "at": "2026-10-20T15:09:46Z",
   "duration": 3.0,
+  "requests": 1
+ },
+ "tensorwave": {
+  "jobs": 39,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 6.3,
   "requests": 1
  },
  "tgs": {
@@ -1927,6 +2359,14 @@
   "duration": 12.0,
   "requests": 2
  },
+ "uipath": {
+  "jobs": 98,
+  "students": 2,
+  "matched": 2,
+  "at": "2026-11-11T16:08:56Z",
+  "duration": 2.3,
+  "requests": 1
+ },
  "ukg": {
   "jobs": 246,
   "students": 1,
@@ -1934,6 +2374,14 @@
   "at": "2026-10-20T15:09:47Z",
   "duration": 60.5,
   "requests": 25
+ },
+ "unify": {
+  "jobs": 11,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 5.9,
+  "requests": 1
  },
  "unity": {
   "jobs": 131,
@@ -2103,6 +2551,14 @@
   "duration": 1.0,
   "requests": 1
  },
+ "xcimer": {
+  "jobs": 65,
+  "students": 7,
+  "matched": 6,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 0.9,
+  "requests": 1
+ },
  "xtx-markets": {
   "jobs": 7,
   "students": 0,
@@ -2150,6 +2606,14 @@
   "at": "2026-10-20T15:09:46Z",
   "duration": 6.6,
   "requests": 7
+ },
+ "zip": {
+  "jobs": 97,
+  "students": 0,
+  "matched": 0,
+  "at": "2026-11-11T16:07:55Z",
+  "duration": 5.3,
+  "requests": 1
  },
  "ziprecruiter": {
   "jobs": 68,

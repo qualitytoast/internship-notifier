@@ -36,7 +36,8 @@ reads:
   box: {checker: greenhouse, settings: {board: boxinc}}
   braze: {checker: greenhouse, settings: {board: braze}}
   bugcrowd: {checker: greenhouse, settings: {board: bugcrowd}}
-  bumble: {checker: lever, settings: {site: bumbleinc}}
+  bumble: {checker: workday, settings: {host: bumble.wd3.myworkdayjobs.com, tenant: bumble, site: Bumble_Careers}}  # where bumble.com/en/jobs redirects; "Workday is currently unavailable" (403) since 2026-11-09
+  bumble~lever: {checker: lever, settings: {site: bumbleinc}}  # the registry's link: lists nothing, its hosted page is 404
   cadence: {checker: workday, settings: {host: cadence.wd1.myworkdayjobs.com, tenant: cadence, sites: [External_Careers, Univ_Careers, University_Talent, University_Talent_Intern, University_Talent_NCG, University_CST, OpenEye_Careers]}}
   carbon-robotics: {checker: ashby, settings: {board: carbon-robotics}}
   cartesia: {checker: ashby, settings: {board: cartesia}}
@@ -58,7 +59,7 @@ reads:
   comcast~wd115: {checker: workday, settings: {host: comcast.wd115.myworkdayjobs.com, tenant: comcast, site: Comcast_Careers}}
   comcast~nbcuniversal: {checker: smartrecruiters, settings: {company: NBCUniversal3}}
   commonwealth-fusion: {checker: lever, settings: {site: cfsenergy}}
-  commure: {checker: ashby, settings: {boards: [commure, commure-athelas]}}
+  commure: {checker: ashby, settings: {board: commure}}  # the page also names commure-athelas, which answers 404 (2026-11-09 and 11-11): a mirror
   conductorone: {checker: ashby, settings: {board: c1}}
   copart: {checker: workday, settings: {host: copart.wd12.myworkdayjobs.com, tenant: copart, site: Copart}}
   costar: {checker: workday, settings: {host: costar.wd1.myworkdayjobs.com, tenant: costar, sites: [CoStarCareers, Costar_Campus, confidential]}}
@@ -187,7 +188,7 @@ reads:
   rilla: {checker: ashby, settings: {board: rilla}}
   ripple: {checker: greenhouse, settings: {board: ripple}}
   rivian: {checker: jibe, settings: {host: careers.rivian.com}}
-  rivian-vw: {checker: ashby, settings: {board: rivianvw.tech}}
+  rivian-vw: {checker: ashby, settings: {board: rivianvw.tech, learn_ids: true}}  # SimplifyJobs links a posting the board leaves out
   roku: {checker: greenhouse, settings: {board: roku}}
   rubrik: {checker: greenhouse, settings: {board: rubrik}}
   sailpoint: {checker: workday, settings: {host: sailpoint.wd1.myworkdayjobs.com, tenant: sailpoint, site: SailPoint}}

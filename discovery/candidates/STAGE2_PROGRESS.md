@@ -104,3 +104,47 @@ old code's (the replay compares alerts by key).
 
 Every batch from now on: compare the recorded go-live morning's alerts with the batch's predicted day-one alerts
 before replaying.
+
+## Batch 1's go-live morning (2026-11-11, run 25): as predicted, one gap fixed
+- 273 active companies checked (197 + 76), none failed, 23.9 min; the 198's part ended at 21.8 min, the added round
+  took 2.0 min (76 checks, 82 requests), emails at 23.8 min. All 76 seeded, 5,507 jobs stored, 107 matching.
+- The 198 against the five mornings before: every company's requests and time within its usual range, every start
+  within 17 s of its median; the page scan and backup checks started earlier than on any of them (no retry pass).
+- Alerts: Rocket's board empty and a Citadel Securities new page (the 198's own), then the 6 predicted `board quiet`
+  (#78-#83); no possible miss, no `new job site?`. The 198's two took the lower numbers.
+- Emails: "Now watching" 92 roles, 15 left out as already shown (65 KB HTML); the morning email 31 new roles, none
+  from an added company, 161 untracked rows, none of a watched company (64 KB HTML); HEALTH 8 problems.
+- Re-match: 88 rows given to batch 1's companies (58 known, 23 found, 7 abroad), none missed or sent via Simplify.
+- Gap: rows stored under the Off-Season README's source name (`offseason`, before listings.json held both lists) were
+  never re-matched while untracked, since their source is no longer downloaded: Gemini's "Product Management Intern"
+  and Betterment's "Software Engineer Intern" (the dry run counted both; my note above put the difference down to
+  Simplify's changes). Fixed in CrossCheck.adopt (such a row is open if today's list has its key), proven on
+  morning-2026-11-10-fixes (golden PASS, three mornings PASS: only those two rows differ), merged 2026-11-11 (ef79eaa).
+- Trackr's API has refused robots (Disallow: /) since 2026-11-09: its four lists raise `check gone dark` for the 198 on
+  the third missed morning (2026-11-12), as the old code would.
+
+## Batch 2: 58 Ashby, Lever, Rippling and RippleMatch companies (branch stage2-batch2)
+- Bumble moves to batch 3: bumble.com/en/jobs redirects to Workday (bumble.wd3 / Bumble_Careers), which has answered
+  "Workday is currently unavailable" (403, robots.txt too) since 2026-11-09; the registry's Lever board `bumbleinc`
+  lists nothing. Nothing of Bumble's can be read today: decided in batch 3.
+- Careers pages corrected: Cobot → co.bot/team, Persona AI → persona.ai (both link their Ashby board), Xcimer →
+  xcimer.energy/careers (refuses scripts: joins liveness.blocked with a WordPress page list and archive.org copies).
+- Commure reads its `commure` board only (`commure-athelas` answers 404; mirror). Superhuman reads its Ashby board and
+  Grammarly's Greenhouse board (lists nothing today; it would raise `board quiet` 45 days on if it stays empty).
+- Mirrors (candidates/mirrors.yaml): the dead boards lists or pages still link for ConductorOne, Superhuman,
+  GlossGenius, Dusty Robotics and Commure; Progressive's RippleMatch page by name. Mercor's RippleMatch page is watched.
+- Aliases: Netic "Cybernetic Labs", Superhuman "Grammarly", GlossGenius "Genius AI", Rivian-VW "Rivian and Volkswagen
+  Group Technologies" (SimplifyJobs' names; their rows link the companies' own boards). stage2_batch.py's alias writer
+  had silently skipped batch 2's (its insert point was batch 1's): fixed.
+- Rivian-VW has `learn_ids`. The added round now gives stored rows to their companies before its checks
+  (Runner._adopt_rows), so a posting the board leaves out is read on the first morning and seeded with the rest,
+  not emailed as new the morning after.
+- New: `stage2_batch.py listcheck <batch>` (linked job systems the final config doesn't know: 0 for batches 1 and 2);
+  page recounts are dated (five boards had moved by 4-5 postings since 2026-11-09 and were recounted).
+- [x] apply, build_config (332 companies), 58 cassettes, verify --write (COVERAGE.md: 331 verified, 1 blocked),
+      README (332 companies, 153 of 313 pages, 49 blocked), UNDERCLASSMEN.md (275 with no program)
+- Predicted for the go-live morning: `board quiet` for Eventual (newest posting 49 days old); no possible miss, no
+  `new job site?`; "Now watching" about 115-124 roles
+- [ ] golden.py against main
+- [ ] a live go-live morning recorded, its alerts compared with the prediction, three mornings replayed
+- [ ] merge, push; the next real morning is batch 2's go-live

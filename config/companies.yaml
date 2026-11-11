@@ -2452,3 +2452,483 @@ companies:
     boards: [preciselyusjobs, preciselyinternationaljobs]
   verified: {page_total: null}
   round: added
+- key: alltrails
+  name: AllTrails
+  category: software
+  careers_url: ['https://www.alltrails.com/careers']
+  checker: lever
+  settings: {site: alltrails}
+  verified: {page_total: 1}
+  round: added
+- key: superhuman
+  name: Superhuman (formerly Grammarly)
+  category: ai
+  aliases: [Grammarly]
+  careers_url: ['https://superhuman.com/company/careers', 'https://superhuman.com/careers']
+  checker: multi
+  settings:
+    dedupe: true
+    dedupe_titles: true
+    twin_ids: true
+    match_urls: [ashbyhq.com/superhuman platform inc/, greenhouse.io/grammarly/, 'greenhouse.io/embed/job_app?for=grammarly', ashbyhq.com/superhuman%20platform%20inc/]
+    sources:
+    - checker: ashby
+      settings: {board: Superhuman Platform Inc}
+    - checker: greenhouse
+      settings: {board: grammarly, missing_ok: true}
+  verified: {page_total: 73}
+  round: added
+- key: crusoe
+  name: Crusoe
+  category: ai
+  careers_url: ['https://www.crusoe.ai/about/careers', 'https://www.crusoe.ai/careers']
+  checker: ashby
+  settings: {board: crusoe}
+  verified: {page_total: 324}
+  round: added
+- key: d-matrix
+  name: d-Matrix
+  category: semiconductors
+  careers_url: ['https://www.d-matrix.ai/careers/']
+  checker: ashby
+  settings: {board: d-Matrix}
+  verified: {page_total: 37}
+  round: added
+- key: delinea
+  name: Delinea
+  category: security
+  careers_url: ['https://delinea.com/careers', 'https://delinea.com/company/careers']
+  checker: ashby
+  settings: {board: delinea}
+  verified: {page_total: 68, explained: The page showed 68 jobs and the board 67 on 2026-11-09 (a posting or two opened or closed in
+      between).}
+  round: added
+- key: conductorone
+  name: ConductorOne
+  category: security
+  careers_url: ['https://www.c1.ai/careers', 'https://www.conductorone.com/careers/']
+  checker: ashby
+  settings: {board: c1}
+  verified: {page_total: 17}
+  round: added
+- key: exa
+  name: Exa
+  category: ai
+  careers_url: ['https://exa.ai/careers']
+  checker: ashby
+  settings: {board: exa}
+  verified: {page_total: 66}
+  round: added
+- key: tensorwave
+  name: TensorWave
+  category: ai
+  careers_url: ['https://tensorwave.com/careers']
+  checker: ashby
+  settings: {board: tensorwave}
+  verified: {page_total: 39}
+  round: added
+- key: cerebras
+  name: Cerebras
+  category: ai
+  careers_url: ['https://www.cerebras.ai/join-us', 'https://www.cerebras.ai/careers']
+  checker: ashby
+  settings: {board: cerebras}
+  verified: {page_total: 121}
+  round: added
+- key: clay
+  name: Clay
+  category: software
+  careers_url: ['https://www.clay.com/careers']
+  checker: ashby
+  settings: {board: claylabs}
+  verified: {page_total: 62}
+  round: added
+- key: gimlet-labs
+  name: Gimlet Labs
+  category: ai
+  careers_url: ['https://gimletlabs.ai/join_us', 'https://gimletlabs.ai/careers']
+  checker: ashby
+  settings: {board: gimlet}
+  verified: {page_total: 17}
+  round: added
+- key: glossgenius
+  name: GlossGenius
+  category: software
+  aliases: [Genius AI]
+  careers_url: ['https://genius.ai/careers', 'https://glossgenius.com/careers']
+  checker: ashby
+  settings: {board: geniusai}
+  verified: {page_total: 17}
+  round: added
+- key: grow-therapy
+  name: Grow Therapy
+  category: healthcare
+  careers_url: ['https://growtherapy.com/careers/']
+  checker: ashby
+  settings: {board: grow-therapy}
+  verified: {page_total: 32, explained: The page showed 32 jobs and the board 31 on 2026-11-09 (a posting or two opened or closed in
+      between).}
+  round: added
+- key: rivian-vw
+  name: Rivian and VW Group Technologies (JV)
+  category: autonomy
+  aliases: [Rivian and Volkswagen Group Technologies]
+  careers_url: ['https://jobs.ashbyhq.com/rivianvw.tech', 'https://rivianvw.tech/careers']
+  checker: ashby
+  settings: {board: rivianvw.tech, learn_ids: true}
+  verified: {page_total: 181}
+  round: added
+- key: serval
+  name: Serval
+  category: ai
+  careers_url: ['https://www.serval.com/careers']
+  checker: ashby
+  settings: {board: serval}
+  verified: {page_total: 67}
+  round: added
+- key: cobot
+  name: Collaborative Robotics (Cobot)
+  category: robotics
+  careers_url: ['https://www.co.bot/team']
+  checker: ashby
+  settings: {board: cobot}
+  verified: {page_total: 14}
+  round: added
+- key: persona-ai
+  name: Persona AI
+  category: robotics
+  careers_url: ['https://persona.ai/']
+  checker: ashby
+  settings: {board: persona.ai}
+  verified: {page_total: 23}
+  round: added
+- key: socure
+  name: Socure
+  category: security
+  careers_url: ['https://www.socure.com/company/careers', 'https://www.socure.com/careers']
+  checker: ashby
+  settings: {board: socure}
+  verified: {page_total: 89}
+  round: added
+- key: unify
+  name: Unify
+  category: software
+  careers_url: ['https://www.unifygtm.com/careers']
+  checker: ashby
+  settings: {board: unify}
+  verified: {page_total: 11}
+  round: added
+- key: xcimer
+  name: Xcimer Energy
+  category: energy
+  careers_url: ['https://xcimer.energy/careers']
+  checker: lever
+  settings: {site: xcimer}
+  verified: {page_total: 63}
+  round: added
+- key: zip
+  name: Zip
+  category: software
+  careers_url: ['https://zip.com/careers', 'https://ziphq.com/careers']
+  checker: ashby
+  settings: {board: zip}
+  verified: {page_total: 96}
+  round: added
+- key: bedrock-robotics
+  name: Bedrock Robotics
+  category: robotics
+  careers_url: ['https://bedrockrobotics.com/careers']
+  checker: ashby
+  settings: {board: bedrock-robotics}
+  verified: {page_total: 57}
+  round: added
+- key: cartesia
+  name: Cartesia
+  category: ai
+  careers_url: ['https://www.cartesia.ai/careers', 'https://cartesia.ai/careers']
+  checker: ashby
+  settings: {board: cartesia}
+  verified: {page_total: 24}
+  round: added
+- key: commonwealth-fusion
+  name: Commonwealth Fusion Systems
+  category: energy
+  careers_url: ['https://cfs.energy/careers/', 'https://cfs.energy/careers']
+  checker: lever
+  settings: {site: cfsenergy}
+  verified: {page_total: 140}
+  round: added
+- key: etched
+  name: Etched
+  category: semiconductors
+  careers_url: ['https://www.etched.com/join', 'https://www.etched.com/careers']
+  checker: ashby
+  settings: {board: Etched}
+  verified: {page_total: 115}
+  round: added
+- key: eventual
+  name: Eventual (Daft)
+  category: ai
+  careers_url: ['https://www.eventual.ai/careers']
+  checker: ashby
+  settings: {board: eventualcomputing}
+  verified: {page_total: 5}
+  round: added
+- key: genesis-molecular-ai
+  name: Genesis Molecular AI
+  category: ai
+  careers_url: ['https://www.genesis.ml/careers']
+  checker: ashby
+  settings: {board: genesis-molecular-ai}
+  verified: {page_total: 10}
+  round: added
+- key: rilla
+  name: Rilla
+  category: ai
+  careers_url: ['https://www.rilla.com/careers']
+  checker: ashby
+  settings: {board: rilla}
+  verified: {page_total: 24}
+  round: added
+- key: uipath
+  name: UiPath
+  category: software
+  careers_url: ['https://www.uipath.com/careers', 'https://www.uipath.com/company/careers']
+  checker: ashby
+  settings: {board: uipath}
+  verified: {page_total: 98}
+  round: added
+- key: ellipsis-labs
+  name: Ellipsis Labs
+  category: fintech
+  careers_url: ['https://www.ellipsislabs.xyz/']
+  checker: ashby
+  settings: {board: ellipsislabs}
+  verified: {page_total: 14}
+  round: added
+- key: ironclad
+  name: Ironclad
+  category: software
+  careers_url: ['https://ironcladapp.com/careers']
+  checker: ashby
+  settings: {board: ironcladhq}
+  verified: {page_total: 22}
+  round: added
+- key: multiply-labs
+  name: Multiply Labs
+  category: robotics
+  careers_url: ['https://www.multiplylabs.com/careers']
+  checker: lever
+  settings: {site: multiplylabs}
+  verified: {page_total: 14}
+  round: added
+- key: numeric
+  name: Numeric
+  category: fintech
+  careers_url: ['https://www.numeric.io/careers']
+  checker: ashby
+  settings: {board: numeric}
+  verified: {page_total: 24}
+  round: added
+- key: one-finance
+  name: ONE Finance
+  category: fintech
+  careers_url: ['https://www.onepay.com/careers', 'https://www.one.app/careers']
+  checker: ashby
+  settings: {board: oneapp}
+  verified: {page_total: 38}
+  round: added
+- key: patreon
+  name: Patreon
+  category: software
+  careers_url: ['https://www.patreon.com/careers']
+  checker: ashby
+  settings: {board: patreon}
+  verified: {page_total: 21}
+  round: added
+- key: progressive
+  name: Progressive
+  category: finance-insurance
+  careers_url: ['https://careers.progressive.com/']
+  checker: ripplematch
+  settings: {company_id: 1132}
+  verified: {page_total: null}
+  round: added
+- key: rhoda-ai
+  name: Rhoda AI
+  category: robotics
+  careers_url: ['https://www.rhoda.ai/careers']
+  checker: ashby
+  settings: {board: rhoda-ai}
+  verified: {page_total: 45}
+  round: added
+- key: suno
+  name: Suno
+  category: ai
+  careers_url: ['https://suno.com/careers']
+  checker: ashby
+  settings: {board: suno}
+  verified: {page_total: 68}
+  round: added
+- key: hex
+  name: Hex Technologies
+  category: software
+  careers_url: ['https://hex.tech/careers/']
+  checker: ashby
+  settings: {board: hex}
+  verified: {page_total: 37}
+  round: added
+- key: tamr
+  name: Tamr
+  category: software
+  careers_url: ['https://www.tamr.com/careers']
+  checker: ashby
+  settings: {board: tamr}
+  verified: {page_total: 0}
+  round: added
+- key: anchorage-digital
+  name: Anchorage Digital
+  category: fintech
+  careers_url: ['https://www.anchorage.com/careers']
+  checker: lever
+  settings: {site: anchorage}
+  verified: {page_total: 23}
+  round: added
+- key: baseten
+  name: Baseten
+  category: ai
+  careers_url: ['https://www.baseten.co/resources/careers', 'https://www.baseten.co/careers/']
+  checker: ashby
+  settings: {board: baseten}
+  verified: {page_total: 101}
+  round: added
+- key: sentry
+  name: Sentry
+  category: software
+  careers_url: ['https://sentry.io/careers/']
+  checker: ashby
+  settings: {board: sentry}
+  verified: {page_total: 41, explained: The page showed 41 jobs and the board 39 on 2026-11-09 (a posting or two opened or closed in
+      between).}
+  round: added
+- key: dusty-robotics
+  name: Dusty Robotics
+  category: robotics
+  careers_url: ['https://www.dustyrobotics.com/careers']
+  checker: rippling
+  settings: {board: dusty-robotics-inc}
+  verified: {page_total: 2}
+  round: added
+- key: base-power
+  name: Base Power
+  category: energy
+  careers_url: ['https://www.basepowercompany.com/careers']
+  checker: ashby
+  settings: {board: base-power}
+  verified: {page_total: 197}
+  round: added
+- key: handshake
+  name: Handshake
+  category: software
+  careers_url: ['https://joinhandshake.com/careers/']
+  checker: ashby
+  settings: {board: handshake}
+  verified: {page_total: 77}
+  round: added
+- key: lambda
+  name: Lambda
+  category: ai
+  careers_url: ['https://lambda.com/careers', 'https://lambda.ai/careers']
+  checker: ashby
+  settings: {board: lambda}
+  verified: {page_total: 92}
+  round: added
+- key: carbon-robotics
+  name: Carbon Robotics
+  category: robotics
+  careers_url: ['https://carbonrobotics.com/careers']
+  checker: ashby
+  settings: {board: carbon-robotics}
+  verified: {page_total: 4}
+  round: added
+- key: commure
+  name: Commure
+  category: healthcare
+  careers_url: ['https://www.commure.com/careers']
+  checker: ashby
+  settings: {board: commure}
+  verified: {page_total: 72}
+  round: added
+- key: gen-digital
+  name: Gen Digital
+  category: security
+  careers_url: ['https://www.gendigital.com/us/en/life-gen/', 'https://www.gendigital.com/careers']
+  checker: ashby
+  settings: {board: gen-digital}
+  verified: {page_total: 94}
+  round: added
+- key: illumio
+  name: Illumio
+  category: security
+  careers_url: ['https://www.illumio.com/company/careers', 'https://www.illumio.com/careers']
+  checker: ashby
+  settings: {board: illumio}
+  verified: {page_total: 67}
+  round: added
+- key: lightspark
+  name: Lightspark
+  category: fintech
+  careers_url: ['https://www.lightspark.com/careers']
+  checker: ashby
+  settings: {board: lightspark}
+  verified: {page_total: 8}
+  round: added
+- key: mercor
+  name: Mercor
+  category: ai
+  careers_url: ['https://www.mercor.com/careers/', 'https://mercor.com/careers']
+  checker: ashby
+  settings: {board: mercor}
+  verified: {page_total: 90}
+  round: added
+- key: netic
+  name: Netic
+  category: ai
+  aliases: [Cybernetic Labs]
+  careers_url: ['https://www.netic.ai/company', 'https://www.netic.ai/careers']
+  checker: ashby
+  settings: {board: netic}
+  verified: {page_total: 36}
+  round: added
+- key: niantic-spatial
+  name: Niantic Spatial
+  category: ai
+  careers_url: ['https://www.nianticspatial.com/careers']
+  checker: ashby
+  settings: {board: niantic-spatial}
+  verified: {page_total: 19}
+  round: added
+- key: persona
+  name: Persona
+  category: security
+  careers_url: ['https://withpersona.com/careers']
+  checker: ashby
+  settings: {board: persona}
+  verified: {page_total: 14}
+  round: added
+- key: qumulo
+  name: Qumulo
+  category: software
+  careers_url: ['https://qumulo.com/careers', 'https://qumulo.com/company/careers/']
+  checker: ashby
+  settings: {board: qumulo}
+  verified: {page_total: 25}
+  round: added
+- key: replit
+  name: Replit
+  category: ai
+  careers_url: ['https://replit.com/careers']
+  checker: ashby
+  settings: {board: replit}
+  verified: {page_total: 29}
+  round: added

@@ -1,0 +1,23 @@
+{
+  "key": "lambda",
+  "name": "Lambda",
+  "careers_url": "https://lambda.com/careers",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "lambda"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/lambda",
+  "feed_total": 92,
+  "page_total": 92,
+  "page_total_how": "the hosted Ashby page's job list (2026-11-11)",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "api.ashbyhq.com/robots.txt checked before every request (discovery/robots/api.ashbyhq.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-11",
+  "source": "added",
+  "round": "added"
+}

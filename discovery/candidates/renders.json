@@ -118,6 +118,22 @@
   "requests_not_sent": 4,
   "robots": "allowed"
  },
+ "dusty-robotics": {
+  "url": "https://ats.rippling.com/dusty-robotics-inc/jobs",
+  "read": 2,
+  "shown": 2,
+  "titles_read": 2,
+  "titles_shown": 2,
+  "stated": [
+   "2"
+  ],
+  "job_link_hosts": [
+   "ats.us1.rippling.com"
+  ],
+  "requests_not_sent": 1,
+  "robots": "allowed",
+  "not_sent_sample": []
+ },
  "godaddy": {
   "url": "https://careers.godaddy/jobs/search",
   "read": 30,

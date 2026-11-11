@@ -250,7 +250,7 @@ companies:
   name: Collaborative Robotics (Cobot)
   category: robotics
   source: added
-  urls: ['https://www.co.bot/careers/', 'https://www.co.bot/careers']
+  urls: ['https://www.co.bot/team']
 - key: comcast
   name: Comcast
   category: telecom
@@ -479,6 +479,7 @@ companies:
   urls: ['https://gf.com/careers/']
 - key: glossgenius
   name: GlossGenius
+  aliases: ['Genius AI']
   category: software
   source: added
   urls: ['https://glossgenius.com/careers']
@@ -813,7 +814,7 @@ companies:
   name: Persona AI
   category: robotics
   source: added
-  urls: ['https://persona.ai/careers', 'https://personainc.ai/careers']
+  urls: ['https://persona.ai/']
 - key: precisely
   name: Precisely
   category: software
@@ -906,6 +907,7 @@ companies:
   urls: ['https://careers.rivian.com/']
 - key: rivian-vw
   name: Rivian and VW Group Technologies (JV)
+  aliases: ['Rivian and Volkswagen Group Technologies']
   category: autonomy
   source: added
   urls: ['https://rivianvw.tech/careers']
@@ -1153,7 +1155,7 @@ companies:
   name: Xcimer Energy
   category: energy
   source: added
-  urls: ['https://www.xcimer.com/careers']
+  urls: ['https://xcimer.energy/careers']
 - key: you-com
   name: You.com
   category: ai

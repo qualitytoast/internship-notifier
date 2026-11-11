@@ -57,6 +57,10 @@ ALIASES = {
     "ibm": ["International Business Machines"],
     # added in November 2026 (round: added)
     "zscaler": ["Symmetry Systems"],
+    "superhuman": ["Grammarly"],
+    "netic": ["Cybernetic Labs"],
+    "glossgenius": ["Genius AI"],
+    "rivian-vw": ["Rivian and Volkswagen Group Technologies"],
 }
 
 # Freshman/sophomore program names that can appear in a posting title without a student word (UNDERCLASSMEN.md

@@ -46,7 +46,8 @@ liveness:                        # boards that go dead, get abandoned or are rep
             doordash, dropbox, epic-games, expedia, fidelity, general-motors, goldman-sachs, gts, hudson-river-trading,
             liberty-mutual, meta, nutanix, openai, paypal, pinterest, pitchbook, schonfeld, seatgeek, servicenow,
             tower-research, uber, ukg, veeva, whatnot,
-            box, censys, chime, enova, gusto, haize-labs, lucid-software, rubrik, udemy, yugabyte, ziprecruiter, zocdoc]
+            box, censys, chime, enova, gusto, haize-labs, lucid-software, rubrik, udemy, yugabyte, ziprecruiter, zocdoc,
+            alltrails, d-matrix, persona, progressive, xcimer]
   blocked_scan_seconds: 300      # their checks' time budget in each daily run (before the emails)
   watch_seconds: 360             # time budget of the watched boards (src/internwatch/watch.py), after the checks above
   watch_boards:                  # mirrors with a feed of their own: read every run, never stored. Boards whose
@@ -74,6 +75,7 @@ liveness:                        # boards that go dead, get abandoned or are rep
        settings: {portal: "https://hubcareers-docusign.icims.com"}}
     - {company: reddit, name: RippleMatch, checker: ripplematch, settings: {company_id: 286}}
     - {company: roku, name: RippleMatch, checker: ripplematch, settings: {company_id: 1129}}
+    - {company: mercor, name: RippleMatch, checker: ripplematch, settings: {company_id: 1158}}
   watch_every_days:              # dismissed boards too big to read every run (T-Mobile's has no intern worker type)
     "workday:site=alumni,tenant=tmobile": 7
   watch_unreadable:              # mirrors that can't be read. A role a list carries still raises a possible miss
@@ -90,6 +92,7 @@ liveness:                        # boards that go dead, get abandoned or are rep
     gts: https://gtsx.com
     liberty-mutual: https://jobs.libertymutualgroup.com
     yugabyte: https://www.yugabyte.com
+    xcimer: https://xcimer.energy
   id_pages:                      # pages that link postings by hand: their job ids are compared too (moves.py P)
     tower-research: [https://tower-research.com/internships/]
   job_lists:                     # the job list a company publishes itself (moves.py J): daily unless every_days says
@@ -156,6 +159,8 @@ liveness:                        # boards that go dead, get abandoned or are rep
     tower-research: ["https://tower-research.com/page-sitemap.xml"]
     box: ["https://careers.box.com/sitemap.xml"]
     yugabyte: ["wp:https://www.yugabyte.com"]
+    progressive: ["https://www.progressive.com/sitemap.xml"]
+    xcimer: ["wp:https://xcimer.energy", "wp:https://www.xcimer.energy"]
   archive_paths:                 # archive.org (moves.py A): `list` paths whose newly saved student pages are listed
     # (any_page: every new page; ids: the job id in a page's URL), `pages` whose newest copy is read for the systems
     capstone: {pages: ["https://www.capstoneco.com/careers/"]}
@@ -180,6 +185,8 @@ liveness:                        # boards that go dead, get abandoned or are rep
     gusto: {pages: ["https://gusto.com/about/careers"]}
     lucid-software: {pages: ["https://lucid.co/careers"]}
     yugabyte: {pages: ["https://www.yugabyte.com/careers/"]}
+    d-matrix: {pages: ["https://www.d-matrix.ai/careers/"]}
+    xcimer: {pages: ["https://xcimer.energy/careers"]}
   archive_max_days: 45           # an older copy says nothing about where the company posts now
   aliases:                       # one job system under two names (moves.py): the left one counts as the right one
     eightfold:domain=libertymutual.eightfold.ai: eightfold:domain=libertymutual.com
@@ -221,6 +228,13 @@ liveness:                        # boards that go dead, get abandoned or are rep
     ripplematch:company=roku: 'greenhouse:board=roku'   # roku: its RippleMatch page, watched
     workday:site=ncinocareers,tenant=ncino: 'greenhouse:board=ncinoinc'   # ncino: its old Workday site, gone from the tenant's robots.txt (which lists only the empty nCinoAgency) and its feed answers 403
     lever:site=symmetrysystems: 'greenhouse:board=zscaler'   # zscaler: Symmetry Systems' Lever board, 404 since Zscaler bought the company
+    ripplematch:company=mercor: 'ashby:board=mercor'   # mercor: its RippleMatch page, watched
+    ashby:board=commure-athelas: 'ashby:board=commure'   # commure: a second Ashby board its careers page names, 404 on 2026-11-09 and 2026-11-11
+    ashby:board=conductorone: 'ashby:board=c1'   # conductorone: its old Ashby board, 404 since the company became C1
+    greenhouse:board=dustyrobotics: 'rippling:board=dusty-robotics-inc'   # dusty-robotics: its old Greenhouse board, 404 since it moved to Rippling
+    greenhouse:board=glossgenius: 'ashby:board=geniusai'   # glossgenius: its old Greenhouse board, 404 since it moved to Ashby
+    ripplematch:company=progressive: 'ripplematch:company_id=1132'   # progressive: RippleMatch by name = by id
+    ashby:board=superhuman: 'ashby:board=superhuman platform inc'   # superhuman: an Ashby board that answers 404
 
 crosscheck:
   grace_minutes: 90              # wait this long (and for a fresh poll) before calling a Simplify role a miss

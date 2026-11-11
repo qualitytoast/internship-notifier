@@ -886,6 +886,49 @@
   "wordpress": [],
   "archive_copies": 3
  },
+ "xcimer": {
+  "careers_url": "https://xcimer.energy/careers",
+  "sitemaps": {
+   "https://xcimer.energy/sitemap_index.xml": {
+    "urls": 6,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://xcimer.energy/page-sitemap.xml",
+     "https://xcimer.energy/news-sitemap.xml",
+     "https://xcimer.energy/faq-sitemap.xml",
+     "https://xcimer.energy/news_category-sitemap.xml",
+     "https://xcimer.energy/faq_tag-sitemap.xml",
+     "https://xcimer.energy/media_resource_category-sitemap.xml"
+    ]
+   },
+   "https://xcimer.energy/sitemap.xml": {
+    "urls": 6,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://xcimer.energy/page-sitemap.xml",
+     "https://xcimer.energy/news-sitemap.xml",
+     "https://xcimer.energy/faq-sitemap.xml",
+     "https://xcimer.energy/news_category-sitemap.xml",
+     "https://xcimer.energy/faq_tag-sitemap.xml",
+     "https://xcimer.energy/media_resource_category-sitemap.xml"
+    ]
+   },
+   "https://www.xcimer.energy/sitemap.xml": "failed"
+  },
+  "wordpress": [
+   {
+    "host": "xcimer.energy",
+    "pages": 15
+   },
+   {
+    "host": "www.xcimer.energy",
+    "pages": 15
+   }
+  ],
+  "archive_copies": 3
+ },
  "yugabyte": {
   "careers_url": "https://www.yugabyte.com/careers/",
   "sitemaps": {

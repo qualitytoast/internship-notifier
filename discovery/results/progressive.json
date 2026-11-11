@@ -1,0 +1,24 @@
+{
+  "key": "progressive",
+  "name": "Progressive",
+  "careers_url": "https://careers.progressive.com/",
+  "hiring_system": "ripplematch",
+  "checker": "ripplematch",
+  "settings": {
+    "company_id": 1132
+  },
+  "feed": "GET https://app.ripplematch.com/api/v2/public/roles/1132",
+  "feed_total": 1,
+  "page_total": null,
+  "page_total_how": "RippleMatch's page for the company draws its roles from the API that is read",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "app.ripplematch.com/robots.txt checked before every request (discovery/robots/app.ripplematch.com.txt)",
+  "notes": "The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md). Page count: the company's own careers site refuses scripts, so its RippleMatch page is what is read.",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added",
+  "explained": "The company's own careers site refuses scripts, so its RippleMatch page is what is read (RippleMatch's page for the company draws its roles from the API that is read)."
+}

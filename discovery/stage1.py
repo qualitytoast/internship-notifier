@@ -721,7 +721,7 @@ def pagecount(keys: list[str]) -> None:
 
     with ThreadPoolExecutor(max_workers=6) as pool:
         for entry, res in pool.map(one, todo):
-            out[entry] = res
+            out[entry] = {**res, "at": time.strftime("%Y-%m-%d", time.gmtime())}  # counts before 2026-11-10 carry none
     path.write_text(json.dumps(dict(sorted(out.items())), indent=1) + "\n")
     off = []
     for entry, res in sorted(out.items()):

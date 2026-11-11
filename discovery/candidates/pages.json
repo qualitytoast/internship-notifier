@@ -832,10 +832,27 @@
   "phenom": []
  },
  "cobot": {
-  "url": "https://www.co.bot/careers/",
-  "outcome": "failed",
-  "error": "HTTP 404 for GET https://www.co.bot/careers/",
-  "seconds": 0.7
+  "url": "https://www.co.bot/team",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.co.bot/team",
+  "bytes": 97524,
+  "seconds": 0.3,
+  "title": "Collaborative Robotics - Robots that react to you.",
+  "challenge": false,
+  "systems": [
+   "ashby:board=cobot"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "cobot"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
  },
  "cohesity": {
   "url": "https://www.cohesity.com/company/careers/",
@@ -2958,10 +2975,27 @@
   "seconds": 0.4
  },
  "persona-ai": {
-  "url": "https://persona.ai/careers",
-  "outcome": "failed",
-  "error": "HTTP 404 for GET https://persona.ai/careers",
-  "seconds": 0.9
+  "url": "https://persona.ai/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://persona.ai/",
+  "bytes": 255080,
+  "seconds": 0.3,
+  "title": "Industrial Humanoid Robots For Heavy Industry | Persona AI",
+  "challenge": false,
+  "systems": [
+   "ashby:board=persona.ai"
+  ],
+  "candidates": [
+   {
+    "checker": "ashby",
+    "settings": {
+     "board": "persona.ai"
+    }
+   }
+  ],
+  "eightfold": [],
+  "phenom": []
  },
  "precisely": {
   "url": "https://www.precisely.com/careers-and-culture/",
@@ -4251,10 +4285,10 @@
   "phenom": []
  },
  "xcimer": {
-  "url": "https://www.xcimer.com/careers",
-  "outcome": "failed",
-  "error": "robots.txt for https://www.xcimer.com unreachable (network error); will retry",
-  "seconds": 30.0
+  "url": "https://xcimer.energy/careers",
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://xcimer.energy/careers",
+  "seconds": 0.2
  },
  "you-com": {
   "url": "https://you.com/careers",

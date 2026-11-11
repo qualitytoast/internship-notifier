@@ -1,0 +1,23 @@
+{
+  "key": "commure",
+  "name": "Commure",
+  "careers_url": "https://www.commure.com/careers",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "commure"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/commure",
+  "feed_total": 72,
+  "page_total": 72,
+  "page_total_how": "the hosted Ashby page's job list (2026-11-11)",
+  "intern_total": 4,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "api.ashbyhq.com/robots.txt checked before every request (discovery/robots/api.ashbyhq.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-11",
+  "source": "added",
+  "round": "added"
+}

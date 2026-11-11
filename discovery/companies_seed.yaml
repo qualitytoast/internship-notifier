@@ -275,3 +275,61 @@ companies:
   - {key: altruist, name: "Altruist", category: fintech, source: added, round: added, urls: ["https://altruist.com/careers/"]}
   - {key: descript, name: "Descript", category: ai, source: added, round: added, urls: ["https://www.descript.com/careers"]}
   - {key: precisely, name: "Precisely", category: software, source: added, round: added, urls: ["https://www.precisely.com/careers-and-culture/", "https://www.precisely.com/careers"]}
+  - {key: alltrails, name: "AllTrails", category: software, source: added, round: added, urls: ["https://www.alltrails.com/careers"]}
+  - {key: superhuman, name: "Superhuman (formerly Grammarly)", category: ai, source: added, round: added, urls: ["https://superhuman.com/careers"]}
+  - {key: crusoe, name: "Crusoe", category: ai, source: added, round: added, urls: ["https://www.crusoe.ai/careers"]}
+  - {key: d-matrix, name: "d-Matrix", category: semiconductors, source: added, round: added, urls: ["https://www.d-matrix.ai/careers/"]}
+  - {key: delinea, name: "Delinea", category: security, source: added, round: added, urls: ["https://delinea.com/careers", "https://delinea.com/company/careers"]}
+  - {key: conductorone, name: "ConductorOne", category: security, source: added, round: added, urls: ["https://www.conductorone.com/careers/"]}
+  - {key: exa, name: "Exa", category: ai, source: added, round: added, urls: ["https://exa.ai/careers"]}
+  - {key: tensorwave, name: "TensorWave", category: ai, source: added, round: added, urls: ["https://tensorwave.com/careers"]}
+  - {key: cerebras, name: "Cerebras", category: ai, source: added, round: added, urls: ["https://www.cerebras.ai/careers"]}
+  - {key: clay, name: "Clay", category: software, source: added, round: added, urls: ["https://www.clay.com/careers"]}
+  - {key: gimlet-labs, name: "Gimlet Labs", category: ai, source: added, round: added, urls: ["https://gimletlabs.ai/join_us", "https://gimletlabs.ai/careers"]}
+  - {key: glossgenius, name: "GlossGenius", category: software, source: added, round: added, urls: ["https://glossgenius.com/careers"]}
+  - {key: grow-therapy, name: "Grow Therapy", category: healthcare, source: added, round: added, urls: ["https://growtherapy.com/careers/"]}
+  - {key: rivian-vw, name: "Rivian and VW Group Technologies (JV)", category: autonomy, source: added, round: added, urls: ["https://rivianvw.tech/careers"]}
+  - {key: serval, name: "Serval", category: ai, source: added, round: added, urls: ["https://www.serval.com/careers"]}
+  - {key: cobot, name: "Collaborative Robotics (Cobot)", category: robotics, source: added, round: added, urls: ["https://www.co.bot/team"]}
+  - {key: persona-ai, name: "Persona AI", category: robotics, source: added, round: added, urls: ["https://persona.ai/"]}
+  - {key: socure, name: "Socure", category: security, source: added, round: added, urls: ["https://www.socure.com/careers"]}
+  - {key: unify, name: "Unify", category: software, source: added, round: added, urls: ["https://www.unifygtm.com/careers"]}
+  - {key: xcimer, name: "Xcimer Energy", category: energy, source: added, round: added, urls: ["https://xcimer.energy/careers"]}
+  - {key: zip, name: "Zip", category: software, source: added, round: added, urls: ["https://ziphq.com/careers"]}
+  - {key: bedrock-robotics, name: "Bedrock Robotics", category: robotics, source: added, round: added, urls: ["https://bedrockrobotics.com/careers"]}
+  - {key: cartesia, name: "Cartesia", category: ai, source: added, round: added, urls: ["https://cartesia.ai/careers"]}
+  - {key: commonwealth-fusion, name: "Commonwealth Fusion Systems", category: energy, source: added, round: added, urls: ["https://cfs.energy/careers"]}
+  - {key: etched, name: "Etched", category: semiconductors, source: added, round: added, urls: ["https://www.etched.com/careers"]}
+  - {key: eventual, name: "Eventual (Daft)", category: ai, source: added, round: added, urls: ["https://www.eventual.ai/careers"]}
+  - {key: genesis-molecular-ai, name: "Genesis Molecular AI", category: ai, source: added, round: added, urls: ["https://www.genesis.ml/careers"]}
+  - {key: rilla, name: "Rilla", category: ai, source: added, round: added, urls: ["https://www.rilla.com/careers"]}
+  - {key: uipath, name: "UiPath", category: software, source: added, round: added, urls: ["https://www.uipath.com/company/careers"]}
+  - {key: ellipsis-labs, name: "Ellipsis Labs", category: fintech, source: added, round: added, urls: ["https://www.ellipsislabs.xyz/"]}
+  - {key: ironclad, name: "Ironclad", category: software, source: added, round: added, urls: ["https://ironcladapp.com/careers"]}
+  - {key: multiply-labs, name: "Multiply Labs", category: robotics, source: added, round: added, urls: ["https://www.multiplylabs.com/careers"]}
+  - {key: numeric, name: "Numeric", category: fintech, source: added, round: added, urls: ["https://www.numeric.io/careers"]}
+  - {key: one-finance, name: "ONE Finance", category: fintech, source: added, round: added, urls: ["https://www.one.app/careers"]}
+  - {key: patreon, name: "Patreon", category: software, source: added, round: added, urls: ["https://www.patreon.com/careers"]}
+  - {key: progressive, name: "Progressive", category: finance-insurance, source: added, round: added, urls: ["https://careers.progressive.com/"]}
+  - {key: rhoda-ai, name: "Rhoda AI", category: robotics, source: added, round: added, urls: ["https://www.rhoda.ai/careers"]}
+  - {key: suno, name: "Suno", category: ai, source: added, round: added, urls: ["https://suno.com/careers"]}
+  - {key: hex, name: "Hex Technologies", category: software, source: added, round: added, urls: ["https://hex.tech/careers/"]}
+  - {key: tamr, name: "Tamr", category: software, source: added, round: added, urls: ["https://www.tamr.com/careers"]}
+  - {key: anchorage-digital, name: "Anchorage Digital", category: fintech, source: added, round: added, urls: ["https://www.anchorage.com/careers"]}
+  - {key: baseten, name: "Baseten", category: ai, source: added, round: added, urls: ["https://www.baseten.co/careers/"]}
+  - {key: sentry, name: "Sentry", category: software, source: added, round: added, urls: ["https://sentry.io/careers/"]}
+  - {key: dusty-robotics, name: "Dusty Robotics", category: robotics, source: added, round: added, urls: ["https://www.dustyrobotics.com/careers"]}
+  - {key: base-power, name: "Base Power", category: energy, source: added, round: added, urls: ["https://www.basepowercompany.com/careers"]}
+  - {key: handshake, name: "Handshake", category: software, source: added, round: added, urls: ["https://joinhandshake.com/careers/"]}
+  - {key: lambda, name: "Lambda", category: ai, source: added, round: added, urls: ["https://lambda.ai/careers"]}
+  - {key: carbon-robotics, name: "Carbon Robotics", category: robotics, source: added, round: added, urls: ["https://carbonrobotics.com/careers"]}
+  - {key: commure, name: "Commure", category: healthcare, source: added, round: added, urls: ["https://www.commure.com/careers"]}
+  - {key: gen-digital, name: "Gen Digital", category: security, source: added, round: added, urls: ["https://www.gendigital.com/careers"]}
+  - {key: illumio, name: "Illumio", category: security, source: added, round: added, urls: ["https://www.illumio.com/careers"]}
+  - {key: lightspark, name: "Lightspark", category: fintech, source: added, round: added, urls: ["https://www.lightspark.com/careers"]}
+  - {key: mercor, name: "Mercor", category: ai, source: added, round: added, urls: ["https://mercor.com/careers"]}
+  - {key: netic, name: "Netic", category: ai, source: added, round: added, urls: ["https://www.netic.ai/careers"]}
+  - {key: niantic-spatial, name: "Niantic Spatial", category: ai, source: added, round: added, urls: ["https://www.nianticspatial.com/careers"]}
+  - {key: persona, name: "Persona", category: security, source: added, round: added, urls: ["https://withpersona.com/careers"]}
+  - {key: qumulo, name: "Qumulo", category: software, source: added, round: added, urls: ["https://qumulo.com/company/careers/"]}
+  - {key: replit, name: "Replit", category: ai, source: added, round: added, urls: ["https://replit.com/careers"]}

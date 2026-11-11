@@ -1,0 +1,23 @@
+{
+  "key": "genesis-molecular-ai",
+  "name": "Genesis Molecular AI",
+  "careers_url": "https://www.genesis.ml/careers",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "genesis-molecular-ai"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/genesis-molecular-ai",
+  "feed_total": 10,
+  "page_total": 10,
+  "page_total_how": "the hosted Ashby page's job list (2026-11-09)",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "api.ashbyhq.com/robots.txt checked before every request (discovery/robots/api.ashbyhq.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added"
+}

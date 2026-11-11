@@ -7,6 +7,8 @@
     .venv/bin/python discovery/stage2_batch.py apply <batch>    seed entries (round: added), discovery/results/<key>.json,
                                                                 aliases in build_config.py, settings.liveness entries
                                                                 (backup checks, side pages); then run build_config.py
+    .venv/bin/python discovery/stage2_batch.py listcheck <batch>   after build_config.py: job systems the lists and
+                                                                careers pages link that the config doesn't know
 
 Batches follow the plan: 1 Greenhouse, 2 Ashby/Lever/Rippling/RippleMatch, 3 Workday ≤ 2,000 jobs, 4 Workday > 2,000,
 5 Oracle/Eightfold/SmartRecruiters/Jibe/Phenom/Radancy/Jobvite/iCIMS, 6 new readers (discovery/candidates/plan.json).
@@ -58,6 +60,10 @@ def norm(text: str) -> str:
 def needs_render(k: str, p: dict) -> str | None:
     """The company page to count, when nothing else counted it (the hosted board redirects to a page that draws its
     list in the browser)."""
+    main = p["sources"][0]
+    if main["checker"] == "rippling":  # its API states no total: the hosted board is the page
+        reads = yaml.safe_load((C / "reads.yaml").read_text())["reads"]
+        return f"https://ats.rippling.com/{reads[main['entry']]['settings']['board']}/jobs"
     gh = load("ghpages.json").get(k)
     if not gh or gh["shown"] >= gh["read"] - max(3, 0.02 * gh["read"]):
         return None
@@ -163,6 +169,7 @@ def settings_of(p: dict) -> tuple[str, dict]:
     from internwatch.crosscheck import url_markers
     marks = [m for ck, st in srcs for m in url_markers(Company(key="x", name="x", category="", careers_url=[],
                                                                checker=ck, settings=st))]
+    marks += [m.replace(" ", "%20") for m in marks if " " in m]  # a board name with spaces, as links spell it
     return "multi", {"dedupe": True, "dedupe_titles": True, "twin_ids": True, "match_urls": marks,
                      "sources": [{"checker": ck, "settings": st} for ck, st in srcs]}
 
@@ -177,7 +184,16 @@ def feed_of(checker: str, s: dict) -> str:
         return f"GET https://api.ashbyhq.com/posting-api/job-board/{s.get('board')}"
     if checker == "lever":
         return f"GET https://api.lever.co/v0/postings/{s.get('site')}?mode=json"
+    if checker == "rippling":
+        return f"GET https://ats.rippling.com/api/v2/board/{s.get('board')}/jobs"
+    if checker == "ripplematch":
+        return f"GET https://app.ripplematch.com/api/v2/public/roles/{s.get('company_id')}"
     return checker
+
+
+def counted(v: dict) -> str:
+    """The day a page count was taken (Stage 1's, before recounts were dated, were all taken on 2026-11-09)."""
+    return v.get("at", "2026-11-09")
 
 
 def page_count(k: str, p: dict, jobs: int) -> tuple[int | None, str, str]:
@@ -185,8 +201,13 @@ def page_count(k: str, p: dict, jobs: int) -> tuple[int | None, str, str]:
     pc, gh, rd = load("pagecounts.json"), load("ghpages.json"), load("renders.json") if (C / "renders.json").exists() else {}
     main = p["sources"][0]["entry"]
     v = pc.get(main) or {}
-    if isinstance(v.get("page_total"), int) and v["page_total"] and abs(v["page_total"] - jobs) <= max(3, 0.02 * jobs):
-        return v["page_total"], v["how"] + " (2026-11-09)", ""
+    others = [(pc.get(s["entry"]) or {}).get("page_total") for s in p["sources"][1:]]
+    if others and all(x == 0 for x in others) and isinstance(v.get("page_total"), int) \
+            and abs(v["page_total"] - jobs) <= max(3, 0.02 * jobs):  # a second board that lists nothing
+        return v["page_total"], v["how"] + "; " + ", ".join(s["entry"].split("~")[-1] + " lists none"
+                                                            for s in p["sources"][1:]) + f" ({counted(v)})", ""
+    if isinstance(v.get("page_total"), int) and (v["page_total"] or not jobs) and abs(v["page_total"] - jobs) <= max(3, 0.02 * jobs):
+        return v["page_total"], v["how"] + f" ({counted(v)})", ""
     g = gh.get(main)
     if g and g["shown"] >= g["read"] - max(3, 0.02 * g["read"]):
         url = next((x.get("final_url") for x in g["pages"] if x.get("status") == 200), "")
@@ -207,6 +228,9 @@ def page_count(k: str, p: dict, jobs: int) -> tuple[int | None, str, str]:
     if r and r.get("shown") is not None:
         return r["shown"], f"headless render of {r['url']} shows {r['shown']} of the {r['read']} jobs read (2026-11-10)", \
             "the page lists part of the board at a time (pages or a 'more' button)"
+    if p["sources"][0]["checker"] == "ripplematch":
+        return None, "RippleMatch's page for the company draws its roles from the API that is read", \
+            "the company's own careers site refuses scripts, so its RippleMatch page is what is read"
     return None, "not counted on the company page", "the board's own API is the list"
 
 
@@ -220,7 +244,8 @@ def result(k: str, p: dict, cand: dict) -> dict:
     pt, how, why = page_count(k, p, jobs)
     notes = []
     if isinstance(pt, int) and pt != jobs:  # build_config.py explains a difference with the notes' first sentence
-        notes.append(f"The page showed {pt} jobs and the board {jobs} on 2026-11-09 (a posting or two opened or "
+        day = counted(load("pagecounts.json").get(p["sources"][0]["entry"]) or {})
+        notes.append(f"The page showed {pt} jobs and the board {jobs} on {day} (a posting or two opened or "
                      f"closed in between).")
     if p["blocked_page"]:
         notes.append(f"The careers page {('is closed by robots.txt' if p['page'] == 'robots' else 'refuses scripts')}: "
@@ -237,7 +262,9 @@ def result(k: str, p: dict, cand: dict) -> dict:
             "settings": s, "feed": feed_of(checker, s), "feed_total": jobs, "page_total": pt, "page_total_how": how,
             "intern_total": students, "status": "verified", "blocked_reason": "", "fallback": "",
             "robots": f"{host}/robots.txt checked before every request (discovery/robots/{host}.txt)" if host else "",
-            "notes": " ".join(notes), "checked_at": "2026-11-09", "source": "added", "round": "added",
+            "notes": " ".join(notes),
+            "checked_at": max(res.get(x["entry"], {}).get("started", "2026-11-09")[:10] for x in p["sources"]),
+            "source": "added", "round": "added",
             **({"explained": f"{why[0].upper()}{why[1:]} ({how})."} if pt is None and why else {})}
 
 
@@ -254,13 +281,14 @@ def add_seed(entries: list[dict]) -> None:
 def add_aliases(entries: list[dict]) -> None:
     path = REPO / "discovery" / "build_config.py"
     text = path.read_text()
-    adds = [e for e in entries if e.get("aliases") and f'"{e["key"]}": ' not in text.split("ALIASES = {", 1)[1].split("\n}", 1)[0]]
+    head, rest = text.split("ALIASES = {", 1)
+    body, tail = rest.split("\n}", 1)  # the dict's own closing brace
+    adds = [e for e in entries if e.get("aliases") and f'"{e["key"]}": ' not in body]
     if adds:
-        block = "".join(f'    "{e["key"]}": {json.dumps(e["aliases"])},\n' for e in adds)
-        text = text.replace('    "ibm": ["International Business Machines"],\n}',
-                            '    "ibm": ["International Business Machines"],\n    # added in November 2026 (round: added)\n'
-                            + block + "}", 1)
-        path.write_text(text)
+        marker = "    # added in November 2026 (round: added)"
+        body += ("" if marker in body else "\n" + marker) + "".join(
+            f'\n    "{e["key"]}": {json.dumps(e["aliases"])},' for e in adds)
+        path.write_text(head + "ALIASES = {" + body + "\n}" + tail)
 
 
 def add_settings(n: int, plan: dict) -> None:
@@ -338,6 +366,29 @@ def apply(n: int) -> None:
     print(f"batch {n}: {len(plan)} companies; now run discovery/build_config.py")
 
 
+def listcheck(n: int) -> None:
+    """Before a batch's go-live morning is recorded: the job systems Stage 1 saw linked for its companies, by the
+    lists (lists.json) and by their careers pages (systems.json), that the final config doesn't count as known (its
+    own boards, parallel boards, liveness.aliases). A list's would raise `new job site?` on the first morning and a
+    page's would sit in the page check's silent first look: read it, record it in mirrors.yaml, or expect the alert."""
+    from types import SimpleNamespace
+    from internwatch import config, moves
+    cfg = config.load(REPO)
+    ctx = SimpleNamespace(cfg=cfg.scoped("added"))
+    al = moves.aliases(ctx.cfg)
+    lists, systems = load("lists.json"), load("systems.json")
+    found = 0
+    for k in sorted(batch(n)):
+        known = moves.known_systems(ctx, cfg.company(k))
+        seen = {s: f"list: {v[0]}" for s, v in (lists.get(k) or {}).items()}
+        seen.update({s: "its careers page" for s, tags in (systems.get(k) or {}).items() if "page" in tags and s not in seen})
+        for system, where in sorted(seen.items()):
+            if al.get(system, system) not in known and not system.startswith("other:"):
+                found += 1
+                print(f"{k:22} {system:60} {where}")
+    print(f"batch {n}: {found} linked job systems the config doesn't know")
+
+
 if __name__ == "__main__":
     cmd, n = sys.argv[1], int(sys.argv[2])
-    {"render": render, "apply": apply}[cmd](n)
+    {"render": render, "apply": apply, "listcheck": listcheck}[cmd](n)

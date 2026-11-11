@@ -510,6 +510,21 @@
   "started": "2026-11-09T23:14:01Z"
  },
  "bumble": {
+  "checker": "workday",
+  "ok": false,
+  "error": "HTTP 403 for POST https://bumble.wd3.myworkdayjobs.com/wday/cxs/bumble/Bumble_Careers/jobs",
+  "error_kind": "fetch",
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 1.2,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-11T16:00:23Z"
+ },
+ "bumble~lever": {
   "checker": "lever",
   "ok": true,
   "error": null,
@@ -517,12 +532,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 0.2,
+  "seconds": 18.2,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:14:02Z"
+  "started": "2026-11-11T16:00:23Z"
  },
  "cadence": {
   "checker": "workday",
@@ -859,15 +874,15 @@
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 74,
+  "jobs": 72,
   "students": 4,
   "matched": 0,
-  "seconds": 4.1,
-  "requests": 2,
+  "seconds": 0.2,
+  "requests": 1,
   "partial": false,
-  "degraded": "HTTP 404 for GET https://api.ashbyhq.com/posting-api/job-board/commure-athelas?includeCompensation=false",
+  "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:14:07Z"
+  "started": "2026-11-11T16:01:00Z"
  },
  "conductorone": {
   "checker": "ashby",
@@ -1152,7 +1167,7 @@
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-10T01:29:01Z"
+  "started": "2026-11-11T16:08:21Z"
  },
  "earnin": {
   "checker": "greenhouse",
@@ -1489,15 +1504,15 @@
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 98,
-  "students": 4,
+  "jobs": 94,
+  "students": 3,
   "matched": 0,
-  "seconds": 0.2,
+  "seconds": 0.3,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:14:21Z"
+  "started": "2026-11-11T16:08:21Z"
  },
  "genesis-molecular-ai": {
   "checker": "ashby",
@@ -1999,15 +2014,15 @@
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 97,
+  "jobs": 92,
   "students": 1,
   "matched": 0,
-  "seconds": 0.3,
+  "seconds": 2.2,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:14:33Z"
+  "started": "2026-11-11T16:08:21Z"
  },
  "launchdarkly": {
   "checker": "greenhouse",
@@ -2194,15 +2209,30 @@
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 86,
+  "jobs": 90,
   "students": 5,
   "matched": 5,
-  "seconds": 0.2,
+  "seconds": 3.3,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:14:37Z"
+  "started": "2026-11-11T16:08:21Z"
+ },
+ "mercor~ripplematch": {
+  "checker": "ripplematch",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 4,
+  "students": 0,
+  "matched": 0,
+  "seconds": 0.3,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-11T16:08:22Z"
  },
  "micron": {
   "checker": "workday",
@@ -2654,6 +2684,21 @@
   "reported_total": null,
   "started": "2026-11-09T23:14:47Z"
  },
+ "progressive~ripplematch": {
+  "checker": "ripplematch",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 1,
+  "students": 0,
+  "matched": 0,
+  "seconds": 1.3,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-11T16:08:22Z"
+ },
  "proofpoint": {
   "checker": "workday",
   "ok": true,
@@ -2869,15 +2914,15 @@
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 176,
+  "jobs": 181,
   "students": 21,
   "matched": 20,
-  "seconds": 1.3,
+  "seconds": 4.4,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:14:52Z"
+  "started": "2026-11-11T16:08:21Z"
  },
  "roku": {
   "checker": "greenhouse",
@@ -3172,12 +3217,12 @@
   "jobs": 73,
   "students": 0,
   "matched": 0,
-  "seconds": 1.4,
+  "seconds": 5.3,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:14:58Z"
+  "started": "2026-11-11T16:08:21Z"
  },
  "superhuman~greenhouse": {
   "checker": "greenhouse",
@@ -3187,12 +3232,27 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 3.8,
+  "seconds": 0.2,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:14:58Z"
+  "started": "2026-11-11T16:08:21Z"
+ },
+ "superhuman~superhuman": {
+  "checker": "ashby",
+  "ok": false,
+  "error": "HTTP 404 for GET https://api.ashbyhq.com/posting-api/job-board/superhuman?includeCompensation=false",
+  "error_kind": "fetch",
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 6.0,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-11T16:08:21Z"
  },
  "symmetry-systems": {
   "checker": "lever",
@@ -3379,15 +3439,15 @@
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 102,
+  "jobs": 98,
   "students": 2,
   "matched": 2,
-  "seconds": 1.1,
+  "seconds": 1.2,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:15:01Z"
+  "started": "2026-11-11T16:08:21Z"
  },
  "unify": {
   "checker": "ashby",

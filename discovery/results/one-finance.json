@@ -1,0 +1,23 @@
+{
+  "key": "one-finance",
+  "name": "ONE Finance",
+  "careers_url": "https://www.onepay.com/careers",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "oneapp"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/oneapp",
+  "feed_total": 38,
+  "page_total": 38,
+  "page_total_how": "the hosted Ashby page's job list (2026-11-09)",
+  "intern_total": 4,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "api.ashbyhq.com/robots.txt checked before every request (discovery/robots/api.ashbyhq.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added"
+}

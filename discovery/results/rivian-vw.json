@@ -1,0 +1,24 @@
+{
+  "key": "rivian-vw",
+  "name": "Rivian and VW Group Technologies (JV)",
+  "careers_url": "https://jobs.ashbyhq.com/rivianvw.tech",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "rivianvw.tech",
+    "learn_ids": true
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/rivianvw.tech",
+  "feed_total": 181,
+  "page_total": 181,
+  "page_total_how": "the hosted Ashby page's job list (2026-11-11)",
+  "intern_total": 21,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "api.ashbyhq.com/robots.txt checked before every request (discovery/robots/api.ashbyhq.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-11",
+  "source": "added",
+  "round": "added"
+}

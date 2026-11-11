@@ -1,0 +1,23 @@
+{
+  "key": "etched",
+  "name": "Etched",
+  "careers_url": "https://www.etched.com/join",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "Etched"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/Etched",
+  "feed_total": 115,
+  "page_total": 115,
+  "page_total_how": "the hosted Ashby page's job list (2026-11-09)",
+  "intern_total": 13,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "api.ashbyhq.com/robots.txt checked before every request (discovery/robots/api.ashbyhq.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added"
+}

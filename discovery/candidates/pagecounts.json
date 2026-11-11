@@ -165,7 +165,13 @@
  },
  "bumble": {
   "page_total": null,
-  "how": "not read: HTTP 404 for GET https://jobs.lever.co/bumbleinc"
+  "how": "workday: no total reported; the read's count stands",
+  "at": "2026-11-11"
+ },
+ "bumble~lever": {
+  "page_total": null,
+  "how": "not read: HTTP 404 for GET https://jobs.lever.co/bumbleinc",
+  "at": "2026-11-11"
  },
  "cadence": {
   "page_total": 740,
@@ -264,8 +270,9 @@
   "how": "postings on the hosted Lever page"
  },
  "commure": {
-  "page_total": null,
-  "how": "not read: HTTP 404 for GET https://jobs.ashbyhq.com/commure-athelas"
+  "page_total": 72,
+  "how": "the hosted Ashby page's job list",
+  "at": "2026-11-11"
  },
  "conductorone": {
   "page_total": 17,
@@ -376,8 +383,9 @@
   "how": "the hosted Ashby page's job list"
  },
  "dusty-robotics": {
-  "page_total": 0,
-  "how": "hosted Greenhouse board's stated count"
+  "page_total": null,
+  "how": "rippling: no total reported; the read's count stands",
+  "at": "2026-11-11"
  },
  "earnin": {
   "page_total": 31,
@@ -704,8 +712,9 @@
   "how": "hosted Greenhouse board's stated count"
  },
  "gen-digital": {
-  "page_total": 98,
-  "how": "the hosted Ashby page's job list"
+  "page_total": 94,
+  "how": "the hosted Ashby page's job list",
+  "at": "2026-11-11"
  },
  "genesis-molecular-ai": {
   "page_total": 10,
@@ -840,8 +849,9 @@
   "how": "hosted Greenhouse board's stated count"
  },
  "lambda": {
-  "page_total": 97,
-  "how": "the hosted Ashby page's job list"
+  "page_total": 92,
+  "how": "the hosted Ashby page's job list",
+  "at": "2026-11-11"
  },
  "launchdarkly": {
   "page_total": 43,
@@ -892,8 +902,14 @@
   "how": "workday's own reported total (the careers page shows it)"
  },
  "mercor": {
-  "page_total": 86,
-  "how": "the hosted Ashby page's job list"
+  "page_total": 90,
+  "how": "the hosted Ashby page's job list",
+  "at": "2026-11-11"
+ },
+ "mercor~ripplematch": {
+  "page_total": null,
+  "how": "ripplematch: no total reported; the read's count stands",
+  "at": "2026-11-11"
  },
  "micron": {
   "page_total": 3188,
@@ -1011,6 +1027,11 @@
   "page_total": 0,
   "how": "hosted Greenhouse board's stated count"
  },
+ "progressive~ripplematch": {
+  "page_total": null,
+  "how": "ripplematch: no total reported; the read's count stands",
+  "at": "2026-11-11"
+ },
  "proofpoint": {
   "page_total": 131,
   "how": "workday's own reported total (the careers page shows it)"
@@ -1068,8 +1089,9 @@
   "how": "jibe's own reported total (the careers page shows it)"
  },
  "rivian-vw": {
-  "page_total": 176,
-  "how": "the hosted Ashby page's job list"
+  "page_total": 181,
+  "how": "the hosted Ashby page's job list",
+  "at": "2026-11-11"
  },
  "roku": {
   "page_total": 9,
@@ -1149,11 +1171,18 @@
  },
  "superhuman": {
   "page_total": 73,
-  "how": "the hosted Ashby page's job list"
+  "how": "the hosted Ashby page's job list",
+  "at": "2026-11-11"
  },
  "superhuman~greenhouse": {
   "page_total": 0,
-  "how": "hosted Greenhouse board's stated count"
+  "how": "hosted Greenhouse board's stated count",
+  "at": "2026-11-11"
+ },
+ "superhuman~superhuman": {
+  "page_total": null,
+  "how": "not read: HTTP 404 for GET https://jobs.ashbyhq.com/superhuman",
+  "at": "2026-11-11"
  },
  "symmetry-systems": {
   "page_total": null,
@@ -1204,8 +1233,9 @@
   "how": "not read: HTTP 403 for GET https://job-boards.greenhouse.io/udemy"
  },
  "uipath": {
-  "page_total": 102,
-  "how": "the hosted Ashby page's job list"
+  "page_total": 98,
+  "how": "the hosted Ashby page's job list",
+  "at": "2026-11-11"
  },
  "unify": {
   "page_total": 11,

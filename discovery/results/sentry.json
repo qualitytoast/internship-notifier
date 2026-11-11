@@ -1,0 +1,23 @@
+{
+  "key": "sentry",
+  "name": "Sentry",
+  "careers_url": "https://sentry.io/careers/",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "sentry"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/sentry",
+  "feed_total": 39,
+  "page_total": 41,
+  "page_total_how": "the hosted Ashby page's job list (2026-11-09)",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "api.ashbyhq.com/robots.txt checked before every request (discovery/robots/api.ashbyhq.com.txt)",
+  "notes": "The page showed 41 jobs and the board 39 on 2026-11-09 (a posting or two opened or closed in between).",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added"
+}

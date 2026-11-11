@@ -1,0 +1,23 @@
+{
+  "key": "rhoda-ai",
+  "name": "Rhoda AI",
+  "careers_url": "https://www.rhoda.ai/careers",
+  "hiring_system": "ashby",
+  "checker": "ashby",
+  "settings": {
+    "board": "rhoda-ai"
+  },
+  "feed": "GET https://api.ashbyhq.com/posting-api/job-board/rhoda-ai",
+  "feed_total": 45,
+  "page_total": 45,
+  "page_total_how": "the hosted Ashby page's job list (2026-11-09)",
+  "intern_total": 3,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "api.ashbyhq.com/robots.txt checked before every request (discovery/robots/api.ashbyhq.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-09",
+  "source": "added",
+  "round": "added"
+}

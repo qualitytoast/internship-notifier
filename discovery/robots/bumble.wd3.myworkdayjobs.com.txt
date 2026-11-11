@@ -1,0 +1,2 @@
+# status 403
+{"errorCode":"S22","errorCaseId":"0BFBA1MWCB2CDL","httpStatus":403,"locale":"en-US,en;q\u003d0.9","message":"permission denied","messageParams":{}}

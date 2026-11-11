@@ -10,3 +10,27 @@ zscaler:
   - system: lever:site=symmetrysystems
     as: greenhouse:board=zscaler
     why: Symmetry Systems' Lever board, 404 since Zscaler bought the company
+conductorone:
+  - system: ashby:board=conductorone
+    as: ashby:board=c1
+    why: its old Ashby board, 404 since the company became C1; the registry still links it
+superhuman:
+  - system: ashby:board=superhuman
+    as: ashby:board=superhuman platform inc
+    why: an Ashby board that answers 404; the registry links it, the live board is "Superhuman Platform Inc"
+glossgenius:
+  - system: greenhouse:board=glossgenius
+    as: ashby:board=geniusai
+    why: its old Greenhouse board, 404 since it moved to Ashby; SimplifyJobs and its own page still link it
+dusty-robotics:
+  - system: greenhouse:board=dustyrobotics
+    as: rippling:board=dusty-robotics-inc
+    why: its old Greenhouse board, 404 since it moved to Rippling; SimplifyJobs and its own page still link it
+commure:
+  - system: ashby:board=commure-athelas
+    as: ashby:board=commure
+    why: a second Ashby board its careers page names, 404 on 2026-11-09 and 2026-11-11
+progressive:
+  - system: ripplematch:company=progressive
+    as: ripplematch:company_id=1132
+    why: RippleMatch by name = by id
