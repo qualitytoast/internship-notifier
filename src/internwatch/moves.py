@@ -1258,6 +1258,10 @@ def check_listings_later(ctx: Ctx, rnd: str, whole: Config) -> list[dict]:
                 keep_list(ctx.cfg, name, http.get(src["url"], timeout=90).text)
             except Exception as e:  # noqa: BLE001 — tomorrow
                 log.info("moves: list %s not read for the round %s: %s", name, rnd, str(e)[:160])
+                if isinstance(e, RobotsBlocked) and not ctx.db.get(f"lists:{rnd}:links:{name}"):
+                    # closed by robots.txt before this round ever read it: it links nothing the round knows of, and
+                    # must not keep the round from closing its alerts for boards the other lists stopped linking
+                    ctx.db.set(f"lists:{rnd}:links:{name}", "{}")
                 continue
             finally:
                 http.close()

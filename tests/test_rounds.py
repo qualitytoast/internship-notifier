@@ -271,3 +271,28 @@ def test_a_later_round_downloads_a_list_once_when_no_copy_is_kept(make_cfg, memd
     assert (moves.kept_lists(cfg) / "boardsweep.txt").exists()
     moves.check_listings_later(ctx, "added", cfg)
     assert len(asked) == len(cfg.settings["liveness"]["listings"])                   # … and then from the copy
+
+
+def test_a_list_robots_txt_closed_before_a_later_round_read_it_doesnt_keep_its_alerts_open(make_cfg, memdb):
+    from internwatch.models import RobotsBlocked
+    cfg = make_cfg([company("acme"), company("newco", checker="greenhouse", settings={"board": "newco"}, round="added")],
+                   liveness={"blocked": ["acme", "newco"]})
+    names = [src["name"] for src in cfg.settings["liveness"]["listings"]]
+    rows = [{"company": "Newco", "title": "SWE Intern", "url": "https://jobs.ashbyhq.com/newco/1"}]
+    for name in names[1:]:  # the first list was never kept: robots.txt closes it (Trackr's API, November 2026)
+        moves.keep_list(cfg, name, json.dumps(rows) if name == "boardsweep" else "[]")
+
+    class Http:
+        def get(self, url, **kw):
+            raise RobotsBlocked(f"robots.txt disallows {url}")
+
+        def close(self):
+            pass
+    ctx = moves.Ctx(cfg.scoped("added"), memdb, None, lambda *a, **kw: Http(), float("inf"), set())
+    problems = moves.check_listings_later(ctx, "added", cfg)
+    alerts.record(memdb, problems, [])
+    assert [a["company"] for a in alerts.live(memdb, rule="list_system")] == ["newco"]
+    moves.keep_list(cfg, "boardsweep", "[]")  # the list stops linking the board
+    assert moves.check_listings_later(ctx, "added", cfg) == []
+    assert alerts.live(memdb, rule="list_system") == []
+
