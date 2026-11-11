@@ -21,6 +21,8 @@ posting; fail:<company>[;…] makes each fail; mailfail makes every email fail t
 A replay that needs a request the recording doesn't have gets an error for it, as an outage would, and the request
 is listed. Allowed differences in compare: the added companies' own rows and keys (round: added), rows that went
 from no company to one of them, and digest_at on untracked rows (set by the new code when an email lists them).
+Requests: the first round's must be the same in the same order, a later round must not ask before the first has
+finished, and the old version's later-round requests must all be in the new version's, in their order.
 """
 from __future__ import annotations
 
@@ -158,12 +160,12 @@ def replay(version: Path, rec: Path, out: Path, edits: str = "") -> None:
     queues: dict[tuple, list] = {}
     for e in morning["exchanges"]:
         queues.setdefault((e["method"], e["url"], e["body"]), []).append(e)
-    asked, missing = [], []
+    asked, missing, running = [], [], []
 
     def served(self, method, url, *, params=None, json=None, data=None, headers=None, timeout=None, ok_statuses=(),
                check_robots=True):
         full, body = httpmod.canonical_url(url, params), httpmod.body_key(json, data)
-        asked.append([method, full, body])
+        asked.append([method, full, body, getattr(running[0], "rnd", "") if running else ""])  # with its round
         q = queues.get((method, full, body)) or []
         if not q:
             missing.append([method, full, body])
@@ -207,6 +209,7 @@ def replay(version: Path, rec: Path, out: Path, edits: str = "") -> None:
         mailer.Mailer.ready = lambda self: (True, "")
         mailer.Mailer.send = lambda self, kind, subject, text, html, attachments=None: (False, "SMTP down (injected)", None)
     r = Runner(cfg, checker_fn=checker_fn) if checker_fn else Runner(cfg)
+    running.append(r)
     s = r.run(RunOptions(daily=True, send=send, workers=1, retry_delay=0))
     db = sqlite3.connect(h / "data" / "internwatch.db")
     db.row_factory = sqlite3.Row
@@ -297,9 +300,20 @@ def compare(old_out: Path, new_out: Path, added: set[str]) -> int:
             theirs = [a["id"] for a in new["alerts"] if a["raised_at"] == t and a["company"] in added]
             if ours and theirs and max(ours) > min(theirs):
                 problems.append(f"alerts raised {t}: an added company's alert is numbered before one of the 198's")
-    ra = json.loads((old_out / "requests.json").read_text())
-    rb = json.loads((new_out / "requests.json").read_text())
-    if rb["asked"][:len(ra["asked"])] != ra["asked"]:
+    ra = json.loads((old_out / "requests.json").read_text())["asked"]
+    rb = json.loads((new_out / "requests.json").read_text())["asked"]
+    if all(len(x) > 3 for x in ra + rb):  # replays that noted each request's round
+        first = lambda asked: [x[:3] for x in asked if not x[3]]  # noqa: E731
+        later = lambda asked: [x[:3] for x in asked if x[3]]  # noqa: E731
+        if first(ra) != first(rb):
+            problems.append("requests: the first round's requests differ, or are in another order")
+        if any(not x[3] for x in rb[next((i for i, x in enumerate(rb) if x[3]), len(rb)):]):
+            problems.append("requests: a later round asked before the first round had finished")
+        rest = iter(later(rb))  # companies added to a round are read between the old ones, which keep their order
+        if not all(any(x == y for y in rest) for x in later(ra)):
+            problems.append("requests: a later round's request of the old version is missing from the new version's, "
+                            "or out of order")
+    elif [x[:3] for x in rb[:len(ra)]] != [x[:3] for x in ra]:
         problems.append("requests: the old version's requests are not the start of the new version's, in order")
     for p in review:
         print("   review:", p)
