@@ -235,6 +235,7 @@ liveness:                        # boards that go dead, get abandoned or are rep
     greenhouse:board=glossgenius: 'ashby:board=geniusai'   # glossgenius: its old Greenhouse board, 404 since it moved to Ashby
     ripplematch:company=progressive: 'ripplematch:company_id=1132'   # progressive: RippleMatch by name = by id
     ashby:board=superhuman: 'ashby:board=superhuman platform inc'   # superhuman: an Ashby board that answers 404
+    ashby:board=rivianvw: 'ashby:board=rivianvw.tech'   # rivian-vw: the registry's name for the board, which answers 404
 
 crosscheck:
   grace_minutes: 90              # wait this long (and for a fresh poll) before calling a Simplify role a miss

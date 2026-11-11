@@ -367,25 +367,42 @@ def apply(n: int) -> None:
 
 
 def listcheck(n: int) -> None:
-    """Before a batch's go-live morning is recorded: the job systems Stage 1 saw linked for its companies, by the
-    lists (lists.json) and by their careers pages (systems.json), that the final config doesn't count as known (its
-    own boards, parallel boards, liveness.aliases). A list's would raise `new job site?` on the first morning and a
-    page's would sit in the page check's silent first look: read it, record it in mirrors.yaml, or expect the alert."""
+    """Before a batch's go-live morning is recorded: the job systems linked for its companies that the final config
+    doesn't count as known (its own boards, parallel boards, liveness.aliases). The lists the last morning kept
+    (data/lists) are matched with the final config, as the round's list check will match them (names and aliases
+    included), and each company's careers page is taken from Stage 1 (systems.json). A list's link would raise
+    `new job site?` on the first morning and a page's would sit in the page check's silent first look: read it,
+    record it in mirrors.yaml, or expect the alert."""
     from types import SimpleNamespace
     from internwatch import config, moves
+    from internwatch.crosscheck import CompanyIndex
     cfg = config.load(REPO)
     ctx = SimpleNamespace(cfg=cfg.scoped("added"))
-    al = moves.aliases(ctx.cfg)
-    lists, systems = load("lists.json"), load("systems.json")
+    al, keys = moves.aliases(ctx.cfg), set(batch(n))
+    comps = {c.key: c for c in ctx.cfg.active}
+    index = CompanyIndex(cfg.companies)
+    seen: dict[tuple[str, str], str] = {}
+    for src in moves.opts(cfg).get("listings") or []:
+        path = MAIN_DATA / "lists" / f"{src['name']}.txt"
+        if not path.exists():
+            print(f"(no kept copy of the list {src['name']}: not checked)")
+            continue
+        text = path.read_text()
+        rows = moves.ripplematch_rows(text) if src["format"] == "ripplematch" else moves.list_rows(src["format"], text)
+        for company, title, url, system in rows:
+            c = moves.company_of(index, comps, company, url, slug=src["format"] in ("ripplematch", "trackr"))
+            if c is not None and c.key in keys:
+                for k in ([al.get(system, system)] if system else moves.systems_in(url, "", c, al)):
+                    seen.setdefault((c.key, k), f"list: {src.get('label', src['name'])} ({company!r} {url})")
+    for k in sorted(keys):
+        for system, tags in (load("systems.json").get(k) or {}).items():
+            if "page" in tags:
+                seen.setdefault((k, al.get(system, system)), "its careers page (Stage 1)")
     found = 0
-    for k in sorted(batch(n)):
-        known = moves.known_systems(ctx, cfg.company(k))
-        seen = {s: f"list: {v[0]}" for s, v in (lists.get(k) or {}).items()}
-        seen.update({s: "its careers page" for s, tags in (systems.get(k) or {}).items() if "page" in tags and s not in seen})
-        for system, where in sorted(seen.items()):
-            if al.get(system, system) not in known and not system.startswith("other:"):
-                found += 1
-                print(f"{k:22} {system:60} {where}")
+    for (k, system), where in sorted(seen.items()):
+        if system not in moves.known_systems(ctx, cfg.company(k)) and not system.startswith("other:"):
+            found += 1
+            print(f"{k:22} {system:50} {where[:150]}")
     print(f"batch {n}: {found} linked job systems the config doesn't know")
 
 

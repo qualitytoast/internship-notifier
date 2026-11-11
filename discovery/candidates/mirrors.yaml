@@ -34,3 +34,7 @@ progressive:
   - system: ripplematch:company=progressive
     as: ripplematch:company_id=1132
     why: RippleMatch by name = by id
+rivian-vw:
+  - system: ashby:board=rivianvw
+    as: ashby:board=rivianvw.tech
+    why: the registry's name for the board, which answers 404; the live board is rivianvw.tech
