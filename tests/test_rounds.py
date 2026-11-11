@@ -31,8 +31,9 @@ def two_rounds(make_cfg, **kw):
 def row(db, key, company_name, url, status="untracked", first_seen="2026-11-01T00:00:00Z", tracked=None, **kw):
     db.conn.execute("INSERT INTO simplify_rows(source, row_key, company, title, location, url, category, first_seen,"
                     " last_seen, tracked_company, status, digest_at) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
-                    ("summer", key, company_name, kw.get("title", "Software Engineer Intern"), "New York, NY", url,
-                     "Software Engineering", first_seen, first_seen, tracked, status, kw.get("digest_at")))
+                    (kw.get("source", "summer"), key, company_name, kw.get("title", "Software Engineer Intern"),
+                     "New York, NY", url, "Software Engineering", first_seen, first_seen, tracked, status,
+                     kw.get("digest_at")))
 
 
 def test_with_no_added_company_the_first_round_is_the_config_itself(make_cfg):
@@ -149,6 +150,17 @@ def test_rows_of_a_source_with_unknown_open_rows_wait(make_cfg, memdb):
     cfg = two_rounds(make_cfg)
     row(memdb, "r", "Newco", "https://newco.example.com/jobs/1")
     assert CrossCheck(cfg.scoped("added"), memdb).adopt(CompanyIndex(cfg.companies), {}, {}) == 0
+
+
+def test_a_row_of_a_source_no_longer_read_is_adopted_by_its_key_in_todays_lists(make_cfg, memdb):
+    cfg = two_rounds(make_cfg)  # the Off-Season README's rows, stored before listings.json held both lists
+    row(memdb, "open", "Newco", "https://newco.example.com/jobs/1", source="offseason")
+    row(memdb, "closed", "Newco", "https://newco.example.com/jobs/2", source="offseason")
+    cc, golive = CrossCheck(cfg.scoped("added"), memdb), {"newco": "2026-11-10T00:00:00Z"}
+    assert cc.adopt(CompanyIndex(cfg.companies), {}, golive) == 0  # today's open rows unknown: they wait
+    assert cc.adopt(CompanyIndex(cfg.companies), {"summer": {"open"}}, golive) == 2
+    assert {r["row_key"]: (r["status"], r["note"]) for r in memdb.q("SELECT * FROM simplify_rows")} == {
+        "open": ("pending", ADOPTED), "closed": ("baseline", None)}
 
 
 def test_now_watching_leaves_out_roles_already_shown_and_is_sent_again(make_cfg, monkeypatch, online):

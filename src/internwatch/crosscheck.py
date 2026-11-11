@@ -330,15 +330,20 @@ class CrossCheck:
         now on (pending); if it was first seen before the company went live (golive: key → ISO time), or a morning
         email already listed it as untracked, it is ADOPTED, so no path emails it again. One Simplify doesn't list open
         (closed, or from Simplify's first download) is recorded as known (baseline). Rows of a source whose open
-        rows are unknown wait. Returns how many rows were given a company."""
+        rows are unknown wait. A row of a source that is no longer read (the Off-Season README, before listings.json
+        held both) is in today's lists under the same key, so it is open if any of them lists it, once the open
+        rows of all are known. Returns how many rows were given a company."""
         mine = {c.key for c in self.cfg.companies}
+        names = [s["name"] for s in self.cfg.settings.get("crosscheck", "sources", default=[])]
+        everywhere = set().union(*(open_keys[x] for x in names)) if names and all(x in open_keys for x in names) else None
         n = 0
         for r in self.db.q("SELECT * FROM simplify_rows WHERE tracked_company IS NULL"):
             k = index.match(Row(r["source"], r["row_key"], r["company"] or "", r["title"] or "", r["location"] or "",
                                 r["url"] or "", "", r["category"] or "", r["terms"] or ""))
-            if k not in mine or (r["status"] == "untracked" and r["source"] not in open_keys):
+            listed = open_keys[r["source"]] if r["source"] in open_keys else None if r["source"] in names else everywhere
+            if k not in mine or (r["status"] == "untracked" and listed is None):
                 continue
-            if r["status"] == "untracked" and r["row_key"] in open_keys[r["source"]]:
+            if r["status"] == "untracked" and r["row_key"] in listed:
                 old = r["first_seen"] < golive.get(k, "") or r["digest_at"] is not None
                 status, note = "pending", ADOPTED if old else ""
             else:
