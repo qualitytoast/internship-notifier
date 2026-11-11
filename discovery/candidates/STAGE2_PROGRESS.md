@@ -145,6 +145,28 @@ before replaying.
       README (332 companies, 153 of 313 pages, 49 blocked), UNDERCLASSMEN.md (275 with no program)
 - Predicted for the go-live morning: `board quiet` for Eventual (newest posting 49 days old); no possible miss, no
   `new job site?`; "Now watching" about 115-124 roles
-- [ ] golden.py against main
-- [ ] a live go-live morning recorded, its alerts compared with the prediction, three mornings replayed
-- [ ] merge, push; the next real morning is batch 2's go-live
+- [x] golden.py against main: PASS (546 cassette runs of the 198 and batch 1, 94,412 filter verdicts, 39,715 matches,
+      36 Workday files); 462 rows go from no company to a batch 2 company
+- [x] a live go-live morning recorded (data/stage2/morning-2026-11-11-batch2: run 26, 331 checked, 0 failed, 58
+      seeded, 2,992 exchanges, 20.8 min; the added round's 134 companies from 18.0 min, 142 requests). Its alerts
+      against the prediction: Eventual's `board quiet` as predicted; AMD `internships vanished` (the 198's own: its
+      student roles fell from 96 to 10 in the morning's real run; the old code raises it too); and one gap, fixed:
+      - `new job site?` for Rivian-VW: the registry links `ashby:board=rivianvw` (404; the board is rivianvw.tech)
+        under "Rivian and Volkswagen Group Technologies", which the new alias matched. Recorded as a mirror.
+        listcheck had used Stage 1's matches (lists.json, made with the old names): it now matches the lists the last
+        morning kept with the final config, and shows this link without the mirror
+      Also fixed: a list robots.txt closed before the added round ever read it (Trackr's four) no longer keeps the
+      round from closing its `new job site?` alerts when the other lists stop linking a board
+- [x] re-match: 75 rows given to batch 2's companies (65 known, 9 found, 1 abroad; the dry run had 72), 11 of them
+      from the old off-season source, none missed; "Now watching" 116 roles, 8 left out as already shown (59 KB
+      HTML); the morning email 30 KB HTML; Rivian-VW read the posting its Simplify row links (closed) on day one
+- [x] three mornings replayed (proof-9a7cc2f, old = main with batch 1; M2_NEW stripe;databricks;openai;rivian-vw;
+      cerebras;replit;neuralink, M2_FAIL figma;crusoe;new-york-times): PASS. The 198's tables identical; the first
+      round's requests identical and in order (2,769 / 3,007 / 3,006), the added round asks only after it, and
+      batch 1's requests are all there in their order. Batch 1's 76 companies compared on their own: jobs, state,
+      rows, alerts and checks identical in all three mornings
+- [x] go-live with Crusoe and Rivian-VW failing (proof-867d750/new-1-fail): their re-matched open row stays pending
+      (adopted), no simplify: job, both seeded on their first good morning
+- [ ] merge, push; the next real morning is batch 2's go-live. Expected then: Eventual `board quiet`; from the 198's
+      own side AMD `internships vanished` (if its student roles stay near 10) and Trackr's four lists and Akuna's
+      three checks `check gone dark`
