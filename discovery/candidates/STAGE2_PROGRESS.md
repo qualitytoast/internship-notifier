@@ -167,6 +167,6 @@ before replaying.
       rows, alerts and checks identical in all three mornings
 - [x] go-live with Crusoe and Rivian-VW failing (proof-867d750/new-1-fail): their re-matched open row stays pending
       (adopted), no simplify: job, both seeded on their first good morning
-- [ ] merge, push; the next real morning is batch 2's go-live. Expected then: Eventual `board quiet`; from the 198's
+- [x] merged into main (fast-forward) and pushed 2026-11-11; the next real morning is batch 2's go-live. Expected then: Eventual `board quiet`; from the 198's
       own side AMD `internships vanished` (if its student roles stay near 10) and Trackr's four lists and Akuna's
       three checks `check gone dark`
