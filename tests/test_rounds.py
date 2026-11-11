@@ -163,6 +163,26 @@ def test_a_row_of_a_source_no_longer_read_is_adopted_by_its_key_in_todays_lists(
         "open": ("pending", ADOPTED), "closed": ("baseline", None)}
 
 
+def test_a_later_round_reads_the_postings_its_rows_link_on_the_first_morning(make_cfg, monkeypatch, online):
+    newco = company("newco", checker="ashby", round="added", settings={"board": "newco", "learn_ids": True})
+    cfg = make_cfg([company("acme"), newco], **LATER)
+    for mod in (moves, watch):
+        monkeypatch.setattr(mod, "run", lambda *a, **kw: [])
+    monkeypatch.setattr(liveness, "scan_pages", lambda *a, **kw: [])
+    monkeypatch.setattr(CrossCheck, "fetch_and_store", lambda self, http: Result(open_keys={"summer": {"u"}}))
+    db = DB(cfg.settings.path("db"))
+    db.set("simplify_baselined:summer", "2026-11-01T00:00:00Z")  # the row below is in the latest download
+    row(db, "u", "Newco", "https://jobs.ashbyhq.com/newco/0a1b2c3d-1111-2222-3333-444455556666")
+    fake, asked = FakeChecker({"acme": [[]], "newco": [[]]}), {}
+
+    def checker(cfg_, c, **kw):
+        asked[c.key] = (c.settings or {}).get("watch_ids")
+        return fake(cfg_, c, **kw)
+    Runner(cfg, db=db, checker_fn=checker).run(RunOptions(daily=True, retry_delay=0, send=False, scheduled_mail=False))
+    assert asked == {"acme": None, "newco": ["0a1b2c3d-1111-2222-3333-444455556666"]}  # a posting the board may leave out
+    assert db.one("SELECT tracked_company, note FROM simplify_rows")["tracked_company"] == "newco"
+
+
 def test_now_watching_leaves_out_roles_already_shown_and_is_sent_again(make_cfg, monkeypatch, online):
     cfg = two_rounds(make_cfg)
     monkeypatch.setattr(liveness, "scan_pages", lambda *a, **kw: [])

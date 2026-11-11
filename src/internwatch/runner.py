@@ -368,6 +368,8 @@ class Runner:
             log.info("run %d, round %s: %d companies due", s.run_id, rnd, len(companies))
         else:
             log.info("run %d: %d companies due", s.run_id, len(companies))
+        if rnd and opts.crosscheck:
+            self._adopt_rows(rnd)
         self._check_all(companies, opts, s, first_run, run_deadline)
         if opts.daily and s.retry and time.monotonic() < run_deadline - 300:
             again = [c for c in companies if c.key in set(s.retry)]
@@ -638,9 +640,11 @@ class Runner:
         if res.via_simplify:
             log.info("cross-check: %d roles for blocked/failing companies stored via Simplify", res.via_simplify)
 
-    def _crosscheck_round(self, s: RunSummary, rnd: str, others: set[str]) -> None:
-        """A later round's part of the cross-check, with no download: the rows of its companies that have none yet
-        (all of them at a company's go-live) become theirs (CrossCheck.adopt), then they are resolved like any."""
+    def _adopt_rows(self, rnd: str) -> None:
+        """Before a later round's checks: the stored SimplifyJobs rows of its companies that have no company yet (all
+        of them at a company's go-live) become theirs (CrossCheck.adopt). The round's cross-check then resolves them
+        like any, and a learn_ids company reads the postings they link on its first morning too, so one its board
+        leaves out is recorded with the rest and not emailed as new the morning after."""
         try:
             if not self.db.get("digest_backfilled"):  # the untracked rows earlier emails listed, once (CrossCheck.adopt)
                 with self.db.tx():
@@ -657,12 +661,18 @@ class Runner:
                 elif kept:
                     open_keys[src["name"]] = set(json.loads(kept))
             golive = {c.key: self.db.get(f"golive:{c.key}") or "" for c in self.cfg.companies}
-            cc = CrossCheck(self.cfg, self.db, others=others)
             with self.db.tx():
-                n = cc.adopt(CompanyIndex(self.whole.companies), open_keys, golive)
+                n = CrossCheck(self.cfg, self.db).adopt(CompanyIndex(self.whole.companies), open_keys, golive)
             if n:
                 log.info("cross-check, round %s: %d SimplifyJobs rows given to their companies", rnd, n)
-            res = cc.resolve(Result())
+        except Exception:  # noqa: BLE001 — the round's checks still run; the rows wait for the next morning
+            log.exception("cross-check, round %s: rows not given to their companies", rnd)
+
+    def _crosscheck_round(self, s: RunSummary, rnd: str, others: set[str]) -> None:
+        """A later round's part of the cross-check, with no download: its companies' rows (_adopt_rows gave them the
+        ones stored before they went live) are resolved like any."""
+        try:
+            res = CrossCheck(self.cfg, self.db, others=others).resolve(Result())
         except Exception:  # noqa: BLE001 — the run's emails still go out; the earlier round reports the list's health
             log.exception("cross-check, round %s, failed", rnd)
             return
