@@ -1,0 +1,44 @@
+{
+  "key": "comcast",
+  "name": "Comcast",
+  "careers_url": "https://jobs.comcast.com/",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "comcast.wd115.myworkdayjobs.com",
+      "smartrecruiters.com/nbcuniversal3/"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "comcast.wd115.myworkdayjobs.com",
+          "tenant": "comcast",
+          "site": "Comcast_Careers"
+        }
+      },
+      {
+        "checker": "smartrecruiters",
+        "settings": {
+          "company": "NBCUniversal3"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://comcast.wd115.myworkdayjobs.com/wday/cxs/comcast/Comcast_Careers/jobs + GET https://careers.smartrecruiters.com/NBCUniversal3",
+  "feed_total": 1228,
+  "page_total": 1228,
+  "page_total_how": "each read's own count, added up: 708 (wd115: workday's own reported total (the careers page shows it)) + 520 (nbcuniversal: smartrecruiters's own reported total (the careers page shows it)) (2026-11-12)",
+  "intern_total": 144,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "comcast.wd115.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/comcast.wd115.myworkdayjobs.com.txt)",
+  "notes": "Read with it, as part of the company: NBCUniversal (SmartRecruiters NBCUniversal3). Two boards: POST https://comcast.wd115.myworkdayjobs.com/wday/cxs/comcast/Comcast_Careers/jobs + GET https://careers.smartrecruiters.com/NBCUniversal3; a later board's posting with an earlier one's id or requisition is skipped. Not read: comcast: wd5 host answers 422; the live host is wd115 (comcast~wd115).",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

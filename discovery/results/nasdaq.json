@@ -1,0 +1,45 @@
+{
+  "key": "nasdaq",
+  "name": "Nasdaq",
+  "careers_url": "https://www.nasdaq.com/about/careers",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "nasdaq.wd1.myworkdayjobs.com",
+      "greenhouse.io/nasdaq/",
+      "greenhouse.io/embed/job_app?for=nasdaq"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "nasdaq.wd1.myworkdayjobs.com",
+          "tenant": "nasdaq",
+          "site": "Global_External_Site"
+        }
+      },
+      {
+        "checker": "greenhouse",
+        "settings": {
+          "board": "nasdaq"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://nasdaq.wd1.myworkdayjobs.com/wday/cxs/nasdaq/Global_External_Site/jobs + GET https://boards-api.greenhouse.io/v1/boards/nasdaq/jobs",
+  "feed_total": 189,
+  "page_total": 189,
+  "page_total_how": "each read's own count, added up: 168 (nasdaq: workday's own reported total (the careers page shows it)) + 21 (greenhouse: job links on the hosted Greenhouse board (it states no count)) (2026-11-12)",
+  "intern_total": 4,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "nasdaq.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/nasdaq.wd1.myworkdayjobs.com.txt)",
+  "notes": "The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md). Two boards: POST https://nasdaq.wd1.myworkdayjobs.com/wday/cxs/nasdaq/Global_External_Site/jobs + GET https://boards-api.greenhouse.io/v1/boards/nasdaq/jobs; a later board's posting with an earlier one's id or requisition is skipped. Not read: nasdaq~site-US_External_Career_Site: public Workday site, 3 jobs, no student role: recorded as known. Not read: nasdaq~site-eVestment: public Workday site, 0 jobs, no student role: recorded as known.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

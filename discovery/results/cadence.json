@@ -1,0 +1,93 @@
+{
+  "key": "cadence",
+  "name": "Cadence Design Systems",
+  "careers_url": "https://www.cadence.com/en_US/home/company/careers.html",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "cadence.wd1.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "cadence.wd1.myworkdayjobs.com",
+          "tenant": "cadence",
+          "site": "External_Careers"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "cadence.wd1.myworkdayjobs.com",
+          "tenant": "cadence",
+          "site": "Univ_Careers"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "cadence.wd1.myworkdayjobs.com",
+          "tenant": "cadence",
+          "site": "University_Talent"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "cadence.wd1.myworkdayjobs.com",
+          "tenant": "cadence",
+          "site": "University_Talent_Intern"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "cadence.wd1.myworkdayjobs.com",
+          "tenant": "cadence",
+          "site": "University_Talent_NCG"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "cadence.wd1.myworkdayjobs.com",
+          "tenant": "cadence",
+          "site": "University_CST"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "cadence.wd1.myworkdayjobs.com",
+          "tenant": "cadence",
+          "site": "OpenEye_Careers"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "cadence.wd1.myworkdayjobs.com",
+          "tenant": "cadence",
+          "site": "women-in-tech-scholarship"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/External_Careers/jobs + POST https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/Univ_Careers/jobs + POST https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/University_Talent/jobs + POST https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/University_Talent_Intern/jobs + POST https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/University_Talent_NCG/jobs + POST https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/University_CST/jobs + POST https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/OpenEye_Careers/jobs + POST https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/women-in-tech-scholarship/jobs",
+  "feed_total": 688,
+  "page_total": 729,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 54,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "cadence.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/cadence.wd1.myworkdayjobs.com.txt)",
+  "notes": "Its 8 Workday sites listed 730 postings on 2026-11-12, 42 of them a requisition an earlier site already lists, which is read once. The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md). 8 boards: POST https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/External_Careers/jobs + POST https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/Univ_Careers/jobs + POST https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/University_Talent/jobs + POST https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/University_Talent_Intern/jobs + POST https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/University_Talent_NCG/jobs + POST https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/University_CST/jobs + POST https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/OpenEye_Careers/jobs + POST https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/women-in-tech-scholarship/jobs; a later board's posting with an earlier one's id or requisition is skipped.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

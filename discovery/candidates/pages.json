@@ -46,10 +46,10 @@
   "url": "https://www.allstate.jobs/",
   "outcome": "ok",
   "status": 200,
-  "final_url": "https://www.allstate.jobs/",
-  "bytes": 205787,
-  "seconds": 1.5,
-  "title": "Search for Allstate Jobs Near Me and Remote | Allstate Careers",
+  "final_url": "https://www.allstatecorporation.com/careers.aspx",
+  "bytes": 48927,
+  "seconds": 1.6,
+  "title": "Careers at Allstate | Allstate Corporation",
   "challenge": false,
   "systems": [
    "workday:host=allstate.wd5.myworkdayjobs.com,site=allstate_careers,tenant=allstate"
@@ -134,28 +134,9 @@
  },
  "analog-devices": {
   "url": "https://www.analog.com/en/about-adi/careers.html",
-  "outcome": "ok",
-  "status": 200,
-  "final_url": "https://www.analog.com/en/careers.html",
-  "bytes": 72031,
-  "seconds": 0.5,
-  "title": "Explore Careers | Analog Devices",
-  "challenge": false,
-  "systems": [
-   "workday:host=analogdevices.wd1.myworkdayjobs.com,site=external,tenant=analogdevices"
-  ],
-  "candidates": [
-   {
-    "checker": "workday",
-    "settings": {
-     "host": "analogdevices.wd1.myworkdayjobs.com",
-     "tenant": "analogdevices",
-     "site": "External"
-    }
-   }
-  ],
-  "eightfold": [],
-  "phenom": []
+  "outcome": "failed",
+  "error": "timeout (ReadTimeout) for GET https://www.analog.com/en/about-adi/careers.html (after 2 attempts)",
+  "seconds": 78.1
  },
  "anchorage-digital": {
   "url": "https://www.anchorage.com/careers",
@@ -308,8 +289,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.att.jobs/",
-  "bytes": 65549,
-  "seconds": 0.3,
+  "bytes": 65593,
+  "seconds": 0.8,
   "title": "AT&amp;T Careers: Shape the future of connectivity",
   "challenge": false,
   "systems": [
@@ -495,8 +476,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.blackrock.com/",
-  "bytes": 181769,
-  "seconds": 0.2,
+  "bytes": 181770,
+  "seconds": 0.7,
   "title": "Working at BlackRock",
   "challenge": false,
   "systems": [],
@@ -612,7 +593,7 @@
   "url": "https://www.cadence.com/en_US/home/company/careers.html",
   "outcome": "refused",
   "error": "HTTP 403 for GET https://www.cadence.com/en_US/home/company/careers.html",
-  "seconds": 222.0
+  "seconds": 0.6
  },
  "carbon-robotics": {
   "url": "https://carbonrobotics.com/careers",
@@ -714,7 +695,7 @@
   "status": 200,
   "final_url": "https://careers.chewy.com/us/en",
   "bytes": 175589,
-  "seconds": 2.8,
+  "seconds": 3.1,
   "title": "Careers at Chewy | Chewy Inc. Careers",
   "challenge": false,
   "systems": [],
@@ -739,7 +720,7 @@
   "url": "https://www.ciena.com/careers",
   "outcome": "refused",
   "error": "HTTP 403 for GET https://www.ciena.com/careers",
-  "seconds": 0.3
+  "seconds": 1.1
  },
  "circle": {
   "url": "https://www.circle.com/careers",
@@ -747,7 +728,7 @@
   "status": 200,
   "final_url": "https://careers.circle.com/us/en",
   "bytes": 167371,
-  "seconds": 3.2,
+  "seconds": 3.5,
   "title": "Join Circle and Build the Financial Future",
   "challenge": false,
   "systems": [],
@@ -858,14 +839,14 @@
   "url": "https://www.cohesity.com/company/careers/",
   "outcome": "refused",
   "error": "HTTP 403 for GET https://www.cohesity.com/company/careers/",
-  "seconds": 0.1
+  "seconds": 0.2
  },
  "comcast": {
   "url": "https://jobs.comcast.com/",
   "outcome": "ok",
   "status": 200,
   "final_url": "https://jobs.comcast.com/",
-  "bytes": 52219,
+  "bytes": 52559,
   "seconds": 0.2,
   "title": "Explore Comcast Global Media and Technology Jobs and Careers",
   "challenge": false,
@@ -966,8 +947,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://copart.wd12.myworkdayjobs.com/copart",
-  "bytes": 6470,
-  "seconds": 1.3,
+  "bytes": 6870,
+  "seconds": 0.4,
   "title": "",
   "challenge": false,
   "systems": [
@@ -996,17 +977,9 @@
  },
  "costar": {
   "url": "https://www.costargroup.com/careers",
-  "outcome": "ok",
-  "status": 200,
-  "final_url": "https://www.costargroup.com/careers",
-  "bytes": 142946,
-  "seconds": 0.3,
-  "title": "Careers | CoStar Group",
-  "challenge": false,
-  "systems": [],
-  "candidates": [],
-  "eightfold": [],
-  "phenom": []
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://www.costargroup.com/careers",
+  "seconds": 0.2
  },
  "costco": {
   "url": "https://www.costco.com/jobs.html",
@@ -1026,7 +999,7 @@
   "url": "https://jobs.coxenterprises.com/",
   "outcome": "refused",
   "error": "HTTP 403 for GET https://jobs.coxenterprises.com/",
-  "seconds": 0.5
+  "seconds": 0.2
  },
  "crusoe": {
   "url": "https://www.crusoe.ai/careers",
@@ -1135,7 +1108,7 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.dexcom.com/careers",
-  "bytes": 182818,
+  "bytes": 182884,
   "seconds": 0.6,
   "title": "Careers at Dexcom",
   "challenge": false,
@@ -1194,8 +1167,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://join.disneycareers.com/global/en",
-  "bytes": 205759,
-  "seconds": 3.6,
+  "bytes": 205765,
+  "seconds": 3.1,
   "title": "Careers at Disney | Disney Careers",
   "challenge": false,
   "systems": [],
@@ -1295,8 +1268,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.elevancehealth.com/",
-  "bytes": 246315,
-  "seconds": 1.2,
+  "bytes": 226168,
+  "seconds": 0.8,
   "title": "Join a Collaborative and Inclusive Workplace | Make an Impact and Grow with Us",
   "challenge": false,
   "systems": [
@@ -1340,8 +1313,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.equinix.com/",
-  "bytes": 208755,
-  "seconds": 0.5,
+  "bytes": 208772,
+  "seconds": 0.7,
   "title": "Be at the Center of Everything | Equinix Careers",
   "challenge": false,
   "systems": [],
@@ -1377,8 +1350,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.etsy.com/",
-  "bytes": 130024,
-  "seconds": 0.4,
+  "bytes": 130076,
+  "seconds": 0.3,
   "title": "Home",
   "challenge": false,
   "systems": [],
@@ -1437,8 +1410,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.f5.com/company/careers",
-  "bytes": 424797,
-  "seconds": 0.5,
+  "bytes": 426395,
+  "seconds": 1.0,
   "title": "Careers | F5",
   "challenge": false,
   "systems": [
@@ -1513,8 +1486,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.fisglobal.com/us/en",
-  "bytes": 796720,
-  "seconds": 3.0,
+  "bytes": 796838,
+  "seconds": 1.9,
   "title": "Careers at FIS Global | FIS Global jobs",
   "challenge": false,
   "systems": [
@@ -1546,7 +1519,7 @@
   "status": 200,
   "final_url": "https://careers.fiserv.com/us/en",
   "bytes": 80450,
-  "seconds": 1.0,
+  "seconds": 1.3,
   "title": "Careers at Fiserv",
   "challenge": false,
   "systems": [],
@@ -1600,8 +1573,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.freddiemac.com/us/en",
-  "bytes": 150449,
-  "seconds": 2.7,
+  "bytes": 150567,
+  "seconds": 0.7,
   "title": "Jobs at Freddie Mac | Freddie Mac Careers",
   "challenge": false,
   "systems": [],
@@ -1749,17 +1722,9 @@
  },
  "globalfoundries": {
   "url": "https://gf.com/careers/",
-  "outcome": "ok",
-  "status": 200,
-  "final_url": "https://gf.com/careers/",
-  "bytes": 334286,
-  "seconds": 0.2,
-  "title": "Careers | GlobalFoundries",
-  "challenge": false,
-  "systems": [],
-  "candidates": [],
-  "eightfold": [],
-  "phenom": []
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://gf.com/careers/",
+  "seconds": 0.3
  },
  "glossgenius": {
   "url": "https://glossgenius.com/careers",
@@ -1833,8 +1798,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.guidewire.com/about/careers",
-  "bytes": 150534,
-  "seconds": 0.4,
+  "bytes": 150646,
+  "seconds": 0.2,
   "title": "Careers | Guidewire",
   "challenge": false,
   "systems": [],
@@ -1882,8 +1847,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.thehartford.com/careers",
-  "bytes": 50055,
-  "seconds": 1.0,
+  "bytes": 50053,
+  "seconds": 0.8,
   "title": "Search Jobs | Careers | The Hartford",
   "challenge": false,
   "systems": [
@@ -1959,8 +1924,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.homedepot.com/",
-  "bytes": 1285138,
-  "seconds": 0.4,
+  "bytes": 1285006,
+  "seconds": 0.5,
   "title": "The Home Depot Careers | Search for Jobs Near You",
   "challenge": false,
   "systems": [
@@ -2029,7 +1994,7 @@
   "status": 200,
   "final_url": "https://careers.humana.com/us/en",
   "bytes": 80036,
-  "seconds": 2.9,
+  "seconds": 3.2,
   "title": "Explore Careers at Humana",
   "challenge": false,
   "systems": [],
@@ -2224,8 +2189,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.kla.com/careers",
-  "bytes": 247647,
-  "seconds": 0.6,
+  "bytes": 242827,
+  "seconds": 0.8,
   "title": "",
   "challenge": false,
   "systems": [],
@@ -2399,7 +2364,7 @@
   "url": "https://www.marvell.com/company/careers.html",
   "outcome": "refused",
   "error": "HTTP 403 for GET https://www.marvell.com/company/careers.html",
-  "seconds": 0.5
+  "seconds": 0.3
  },
  "mastercard": {
   "url": "https://careers.mastercard.com/",
@@ -2407,7 +2372,7 @@
   "status": 200,
   "final_url": "https://careers.mastercard.com/us/en/",
   "bytes": 248045,
-  "seconds": 1.5,
+  "seconds": 1.8,
   "title": "Careers at Mastercard | Search Jobs and Opportunities",
   "challenge": false,
   "systems": [
@@ -2444,8 +2409,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.mckesson.com/en",
-  "bytes": 44585,
-  "seconds": 0.2,
+  "bytes": 44670,
+  "seconds": 0.6,
   "title": "McKesson Careers | The future of health starts with you.",
   "challenge": false,
   "systems": [],
@@ -2503,8 +2468,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.morganstanley.com/people",
-  "bytes": 775152,
-  "seconds": 0.4,
+  "bytes": 774768,
+  "seconds": 0.7,
   "title": "Careers in Finance and Investment Banking | Morgan Stanley",
   "challenge": false,
   "systems": [],
@@ -2537,28 +2502,9 @@
  },
  "nasdaq": {
   "url": "https://www.nasdaq.com/about/careers",
-  "outcome": "ok",
-  "status": 200,
-  "final_url": "https://www.nasdaq.com/about/careers",
-  "bytes": 195221,
-  "seconds": 0.4,
-  "title": "Careers | Nasdaq",
-  "challenge": false,
-  "systems": [
-   "workday:host=nasdaq.wd1.myworkdayjobs.com,site=global_external_site,tenant=nasdaq"
-  ],
-  "candidates": [
-   {
-    "checker": "workday",
-    "settings": {
-     "host": "nasdaq.wd1.myworkdayjobs.com",
-     "tenant": "nasdaq",
-     "site": "Global_External_Site"
-    }
-   }
-  ],
-  "eightfold": [],
-  "phenom": []
+  "outcome": "refused",
+  "error": "HTTP 403 for GET https://www.nasdaq.com/about/careers",
+  "seconds": 0.5
  },
  "nasuni": {
   "url": "https://www.nasuni.com/about-us/careers/",
@@ -2579,8 +2525,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.nationwide.com/personal/about-us/careers/",
-  "bytes": 232899,
-  "seconds": 0.8,
+  "bytes": 232891,
+  "seconds": 1.6,
   "title": "Explore Insurance Careers \u2013 Nationwide",
   "challenge": false,
   "systems": [],
@@ -2724,8 +2670,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.nike.com/",
-  "bytes": 192997,
-  "seconds": 1.9,
+  "bytes": 188075,
+  "seconds": 0.9,
   "title": "Nike Careers",
   "challenge": false,
   "systems": [
@@ -2759,8 +2705,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.nordstrom.com/",
-  "bytes": 207743,
-  "seconds": 1.9,
+  "bytes": 201078,
+  "seconds": 1.1,
   "title": "Careers at Nordstrom",
   "challenge": false,
   "systems": [
@@ -2784,8 +2730,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.northwesternmutual.com/careers/",
-  "bytes": 175645,
-  "seconds": 0.6,
+  "bytes": 175619,
+  "seconds": 0.4,
   "title": "Financial Advisor &amp; Corporate Careers | Northwestern Mutual",
   "challenge": false,
   "systems": [
@@ -3115,7 +3061,7 @@
   "status": 200,
   "final_url": "https://www.proofpoint.com/us/company/careers",
   "bytes": 111985,
-  "seconds": 0.7,
+  "seconds": 0.5,
   "title": "Proofpoint Careers - Cybersecurity Jobs | Proofpoint US",
   "challenge": false,
   "systems": [
@@ -3139,8 +3085,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.ptc.com/en/careers",
-  "bytes": 200693,
-  "seconds": 1.0,
+  "bytes": 200780,
+  "seconds": 1.9,
   "title": "PTC Careers | Join Our Global Team | PTC",
   "challenge": false,
   "systems": [
@@ -3179,7 +3125,7 @@
   "status": 200,
   "final_url": "https://www.q2.com/company/why-work-at-q2",
   "bytes": 258592,
-  "seconds": 0.6,
+  "seconds": 0.2,
   "title": "Why Work at Q2 | Q2",
   "challenge": false,
   "systems": [],
@@ -3464,7 +3410,7 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.sailpoint.com/company/careers",
-  "bytes": 535535,
+  "bytes": 536117,
   "seconds": 0.5,
   "title": "SailPoint careers | Identity security on-Site &amp; remote jobs | SailPoint",
   "challenge": false,
@@ -3569,8 +3515,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.snap.com/",
-  "bytes": 149256,
-  "seconds": 0.3,
+  "bytes": 145950,
+  "seconds": 0.5,
   "title": "Snap Inc. Careers",
   "challenge": false,
   "systems": [],
@@ -3606,8 +3552,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://snyk.io/careers/",
-  "bytes": 258908,
-  "seconds": 1.2,
+  "bytes": 261705,
+  "seconds": 0.9,
   "title": "Careers | Snyk",
   "challenge": false,
   "systems": [],
@@ -3648,8 +3594,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://sonos.wd1.myworkdayjobs.com/Sonos",
-  "bytes": 6937,
-  "seconds": 1.3,
+  "bytes": 7337,
+  "seconds": 0.8,
   "title": "",
   "challenge": false,
   "systems": [
@@ -3673,8 +3619,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.southwestair.com/us/en/",
-  "bytes": 233917,
-  "seconds": 2.1,
+  "bytes": 234035,
+  "seconds": 1.2,
   "title": "Home | Southwest Careers",
   "challenge": false,
   "systems": [],
@@ -3807,10 +3753,18 @@
   "phenom": []
  },
  "synchrony": {
-  "url": "https://www.synchrony.com/careers",
-  "outcome": "failed",
-  "error": "network error (ConnectError: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1032)) for GET https://www.synchrony.com/careers (after 2 attempts)",
-  "seconds": 3.1
+  "url": "https://www.synchronycareers.com/",
+  "outcome": "ok",
+  "status": 200,
+  "final_url": "https://www.synchronycareers.com/",
+  "bytes": 25455,
+  "seconds": 0.2,
+  "title": "Working at Synchrony Financial",
+  "challenge": false,
+  "systems": [],
+  "candidates": [],
+  "eightfold": [],
+  "phenom": []
  },
  "tamr": {
   "url": "https://www.tamr.com/careers",
@@ -3902,7 +3856,7 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.travelers.com/",
-  "bytes": 1814582,
+  "bytes": 1814583,
   "seconds": 0.6,
   "title": "Travelers Jobs |Travelers Careers | Jobs at Travelers | Apply Online for Careers with Insurance Leader Travelers",
   "challenge": false,
@@ -3927,8 +3881,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.tricentis.com/company/careers",
-  "bytes": 186570,
-  "seconds": 0.6,
+  "bytes": 188693,
+  "seconds": 1.0,
   "title": "Careers - Tricentis",
   "challenge": false,
   "systems": [
@@ -3952,7 +3906,7 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.trimble.com/en/careers",
-  "bytes": 1274968,
+  "bytes": 1273816,
   "seconds": 1.1,
   "title": "Trimble Careers | Join the Future of Construction &amp; Geospatial Tech",
   "challenge": false,
@@ -4104,8 +4058,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.usaajobs.com/",
-  "bytes": 49076,
-  "seconds": 0.3,
+  "bytes": 49139,
+  "seconds": 0.6,
   "title": "Working at USAA | Jobs and Careers at USAA",
   "challenge": false,
   "systems": [
@@ -4129,8 +4083,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.vanguardjobs.com/",
-  "bytes": 1718269,
-  "seconds": 1.3,
+  "bytes": 1719015,
+  "seconds": 0.5,
   "title": "Explore opportunities to join our mission | Vanguard careers",
   "challenge": false,
   "systems": [],
@@ -4179,7 +4133,7 @@
   "url": "https://mycareer.verizon.com/",
   "outcome": "refused",
   "error": "HTTP 403 for GET https://mycareer.verizon.com/",
-  "seconds": 0.6
+  "seconds": 0.5
  },
  "viam": {
   "url": "https://www.viam.com/careers",
@@ -4224,7 +4178,7 @@
   "status": 200,
   "final_url": "https://careers.wbd.com/global/en",
   "bytes": 165979,
-  "seconds": 3.4,
+  "seconds": 3.0,
   "title": "Careers at Warner Bros. Discovery",
   "challenge": false,
   "systems": [],
@@ -4241,34 +4195,15 @@
  },
  "washington-post": {
   "url": "https://www.washingtonpost.com/careers/",
-  "outcome": "ok",
-  "status": 200,
-  "final_url": "https://corporate.washingtonpost.com/careers",
-  "bytes": 85565,
-  "seconds": 1.0,
-  "title": "Careers - The Washington Post",
-  "challenge": false,
-  "systems": [
-   "workday:host=washpost.wd5.myworkdayjobs.com,site=washingtonpostcareers,tenant=washpost"
-  ],
-  "candidates": [
-   {
-    "checker": "workday",
-    "settings": {
-     "host": "washpost.wd5.myworkdayjobs.com",
-     "tenant": "washpost",
-     "site": "washingtonpostcareers"
-    }
-   }
-  ],
-  "eightfold": [],
-  "phenom": []
+  "outcome": "failed",
+  "error": "timeout (ReadTimeout) for GET https://www.washingtonpost.com/careers/ (after 2 attempts)",
+  "seconds": 62.5
  },
  "wells-fargo": {
   "url": "https://www.wellsfargojobs.com/",
   "outcome": "refused",
   "error": "HTTP 403 for GET https://www.wellsfargojobs.com/",
-  "seconds": 0.3
+  "seconds": 0.2
  },
  "western-digital": {
   "url": "https://jobs.westerndigital.com/",
@@ -4324,8 +4259,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.zebra.com/us/en/about-zebra/careers.html",
-  "bytes": 452714,
-  "seconds": 0.3,
+  "bytes": 452721,
+  "seconds": 0.9,
   "title": "Careers | Zebra",
   "challenge": false,
   "systems": [
@@ -4349,8 +4284,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.zillow.com/careers/",
-  "bytes": 599254,
-  "seconds": 0.4,
+  "bytes": 599494,
+  "seconds": 0.6,
   "title": "Home - Zillow Careers",
   "challenge": false,
   "systems": [

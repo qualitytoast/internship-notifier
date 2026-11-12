@@ -1,0 +1,44 @@
+{
+  "key": "snyk",
+  "name": "Snyk",
+  "careers_url": "https://snyk.io/careers/",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "snyk.wd103.myworkdayjobs.com",
+      "ashbyhq.com/snyk/"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "snyk.wd103.myworkdayjobs.com",
+          "tenant": "snyk",
+          "site": "External"
+        }
+      },
+      {
+        "checker": "ashby",
+        "settings": {
+          "board": "snyk"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://snyk.wd103.myworkdayjobs.com/wday/cxs/snyk/External/jobs + GET https://api.ashbyhq.com/posting-api/job-board/snyk",
+  "feed_total": 49,
+  "page_total": 49,
+  "page_total_how": "each read's own count, added up: 11 (snyk: workday's own reported total (the careers page shows it)) + 38 (ashby: the hosted Ashby page's job list) (2026-11-12)",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "snyk.wd103.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/snyk.wd103.myworkdayjobs.com.txt)",
+  "notes": "Two boards: POST https://snyk.wd103.myworkdayjobs.com/wday/cxs/snyk/External/jobs + GET https://api.ashbyhq.com/posting-api/job-board/snyk; a later board's posting with an earlier one's id or requisition is skipped.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

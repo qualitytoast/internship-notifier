@@ -1,0 +1,25 @@
+{
+  "key": "chewy",
+  "name": "Chewy",
+  "careers_url": "https://careers.chewy.com/us/en",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "chewy.wd5.myworkdayjobs.com",
+    "tenant": "chewy",
+    "site": "External"
+  },
+  "feed": "POST https://chewy.wd5.myworkdayjobs.com/wday/cxs/chewy/External/jobs",
+  "feed_total": 237,
+  "page_total": 237,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "chewy.wd5.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/chewy.wd5.myworkdayjobs.com.txt)",
+  "notes": "Not read: chewy~site-Relief-Veterinarian-Contractors: public Workday site, 9 jobs, no student role: recorded as known. Not read: chewy~site-Student-Ambassador-Contractors: public Workday site, 0 jobs, no student role: recorded as known.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

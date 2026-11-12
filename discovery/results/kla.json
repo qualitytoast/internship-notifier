@@ -1,0 +1,65 @@
+{
+  "key": "kla",
+  "name": "KLA",
+  "careers_url": "https://www.kla.com/careers",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "//kla.wd1.myworkdayjobs.com/"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "kla.wd1.myworkdayjobs.com",
+          "anchor_host": true,
+          "tenant": "kla",
+          "site": "Search"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "kla.wd1.myworkdayjobs.com",
+          "anchor_host": true,
+          "tenant": "kla",
+          "site": "UR"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "kla.wd1.myworkdayjobs.com",
+          "anchor_host": true,
+          "tenant": "kla",
+          "site": "annarbor"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "kla.wd1.myworkdayjobs.com",
+          "anchor_host": true,
+          "tenant": "kla",
+          "site": "Israel"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://kla.wd1.myworkdayjobs.com/wday/cxs/kla/Search/jobs + POST https://kla.wd1.myworkdayjobs.com/wday/cxs/kla/UR/jobs + POST https://kla.wd1.myworkdayjobs.com/wday/cxs/kla/annarbor/jobs + POST https://kla.wd1.myworkdayjobs.com/wday/cxs/kla/Israel/jobs",
+  "feed_total": 1230,
+  "page_total": 1463,
+  "page_total_how": "each read's own count, added up: 1382 (kla: workday's own reported total (the careers page shows it)) + 81 (Israel: workday's own reported total (the careers page shows it)) (2026-11-12)",
+  "intern_total": 190,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "kla.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/kla.wd1.myworkdayjobs.com.txt)",
+  "notes": "Its 4 Workday sites listed 1463 postings on 2026-11-12, 233 of them a requisition an earlier site already lists, which is read once. 4 boards: POST https://kla.wd1.myworkdayjobs.com/wday/cxs/kla/Search/jobs + POST https://kla.wd1.myworkdayjobs.com/wday/cxs/kla/UR/jobs + POST https://kla.wd1.myworkdayjobs.com/wday/cxs/kla/annarbor/jobs + POST https://kla.wd1.myworkdayjobs.com/wday/cxs/kla/Israel/jobs; a later board's posting with an earlier one's id or requisition is skipped. Not read: kla~site-Filmetrics: public Workday site, 0 jobs, no student role: recorded as known. Not read: kla~site-Penang_Semicon: public Workday site, 0 jobs, no student role: recorded as known. Not read: kla~site-Taiwan: public Workday site, 4 jobs, no student role: recorded as known.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

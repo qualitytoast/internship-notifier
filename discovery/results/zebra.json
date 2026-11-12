@@ -1,0 +1,25 @@
+{
+  "key": "zebra",
+  "name": "Zebra Technologies",
+  "careers_url": "https://www.zebra.com/us/en/about-zebra/careers.html",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "zebra.wd501.myworkdayjobs.com",
+    "tenant": "zebra",
+    "site": "Zebra_careers"
+  },
+  "feed": "POST https://zebra.wd501.myworkdayjobs.com/wday/cxs/zebra/Zebra_careers/jobs",
+  "feed_total": 239,
+  "page_total": 239,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 18,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "zebra.wd501.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/zebra.wd501.myworkdayjobs.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

@@ -1,0 +1,44 @@
+{
+  "key": "northwestern-mutual",
+  "name": "Northwestern Mutual",
+  "careers_url": "https://www.northwesternmutual.com/careers/",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "northwesternmutual.wd5.myworkdayjobs.com",
+      "smartrecruiters.com/northwesternmutual/"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "northwesternmutual.wd5.myworkdayjobs.com",
+          "tenant": "northwesternmutual",
+          "site": "corporate-careers"
+        }
+      },
+      {
+        "checker": "smartrecruiters",
+        "settings": {
+          "company": "NorthwesternMutual"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://northwesternmutual.wd5.myworkdayjobs.com/wday/cxs/northwesternmutual/corporate-careers/jobs + GET https://careers.smartrecruiters.com/NorthwesternMutual",
+  "feed_total": 155,
+  "page_total": 155,
+  "page_total_how": "each read's own count, added up: 86 (northwestern-mutual: workday's own reported total (the careers page shows it)) + 69 (smartrecruiters: smartrecruiters's own reported total (the careers page shows it)) (2026-11-12)",
+  "intern_total": 9,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "northwesternmutual.wd5.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/northwesternmutual.wd5.myworkdayjobs.com.txt)",
+  "notes": "Two boards: POST https://northwesternmutual.wd5.myworkdayjobs.com/wday/cxs/northwesternmutual/corporate-careers/jobs + GET https://careers.smartrecruiters.com/NorthwesternMutual; a later board's posting with an earlier one's id or requisition is skipped. Not read: northwestern-mutual~icims: robots.txt disallows the iCIMS portal: read through Workday. Not read: northwestern-mutual~site-CORPORATE-CAREERS-PRIVATE: public Workday site, 0 jobs, no student role: recorded as known.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

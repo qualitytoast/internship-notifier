@@ -1,6 +1,6 @@
 # InternWatch
 
-Watches 332 companies' careers sites (331 polled; Wayfair blocked: its site refuses automated clients; 134 of them
+Watches 390 companies' careers sites (389 polled; Wayfair blocked: its site refuses automated clients; 192 of them
 added in November 2026 and checked in the added round, see Internals) through their
 hiring systems' official feeds and emails new internships that pass `config/filters.yaml`. Python 3.12+,
 httpx, SQLite. Per-company checkers and evidence: COVERAGE.md. Freshman/sophomore programs: UNDERCLASSMEN.md.
@@ -88,8 +88,8 @@ Rules for changing things: CLAUDE.md.
     posting links, isn't new, and every system a page ever named is remembered, so a page that flips back and forth
     alerts once. A read that fails (5xx, timeout, a missing page) is read again first thing the next morning, every
     morning. A page the site refuses (a bot check, HTTP 400, 401, 403, 406 or 429) gets one retry, then waits a week
-    until it answers; a robots.txt block just waits. The first look is a silent baseline. About 153
-    of 313 pages name a job system in their HTML; the rest are built in the browser or block scripts. The 49 companies
+    until it answers; a robots.txt block just waits. The first look is a silent baseline. About 175
+    of 360 pages name a job system in their HTML; the rest are built in the browser or block scripts. The 60 companies
     whose page refuses scripts (`liveness.blocked`) are left out: the checks below watch them instead. Resolved when
     the system is added to the config or the page stops naming it (two reads in a row), or for a system it stopped
     mentioning, when it names it again or it leaves the config.
@@ -110,7 +110,7 @@ Rules for changing things: CLAUDE.md.
     before the run reached it. A day with no run isn't a morning, and two runs in a day are one. A weekly read, or a page
     waiting out a refusal, is reported after 14 days instead. A page that has never answered isn't news, but a list or
     board is. Checked last in a run, so the third miss alerts the same morning. Resolved when it answers.
-- **Companies whose careers page can't be read** (`src/internwatch/moves.py`; the 49 in `liveness.blocked`, and
+- **Companies whose careers page can't be read** (`src/internwatch/moves.py`; the 60 in `liveness.blocked`, and
   only those): where else they could start posting. Daily runs, before the emails, within 300 s. Every check runs every
   morning except archive.org's, spread over the week. A failed read comes back the next morning, every morning. Only a
   page that refuses waits a week (asking a site that refuses every day teaches nothing, and Citadel's refused page
@@ -222,8 +222,10 @@ Rules for changing things: CLAUDE.md.
     dedupe_titles skips a later source's role whose title matches an earlier one apart from case and punctuation;
     twin_ids keeps a skipped copy's ids with the role that stays and counts it on the copy's board too, so a
     SimplifyJobs row that links the copy is found and a board that only repeats another isn't taken as quiet (set
-    for the companies added in November 2026). Sources are remembered by checker and settings, and a source's first
-    answer is its baseline, emailed once as "already open".
+    for the companies added in November 2026). Each Workday site of an added company is a source of its own with
+    dedupe, so a requisition two of its sites list is stored once; from the third batch on dedupe_titles is left
+    out, since it also drops a board's own openings that share a title. Sources are remembered by checker and
+    settings, and a source's first answer is its baseline, emailed once as "already open".
 - **Custom checkers** (`src/internwatch/checkers/`): google, meta (GraphQL + sitemap fallback), amazon and
   apple (complete student slices), atlassian, goldman, citadel, shopify, epic_careers, talentbrew (Intuit),
   hubspot, instabase (its switched-off Greenhouse board plus a watch on the careers page for a move), deshaw (the

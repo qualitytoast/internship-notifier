@@ -1,0 +1,86 @@
+# status 200
+# robots.txt for gf.com
+# Last updated: June 2026
+# Sitemap: https://gf.com/sitemap_index.xml
+
+# -------------------------------------------------------
+# All crawlers (default rules)
+# -------------------------------------------------------
+User-agent: *
+
+# WordPress admin & authentication
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /wp-register.php
+Disallow: /xmlrpc.php
+Disallow: /wp-comments-post.php
+
+# Allow the admin-ajax endpoint (used by front-end functionality Googlebot may need)
+Allow: /wp-admin/admin-ajax.php
+
+# WordPress REST API (exposes internal data)
+Disallow: /wp-json/
+
+# WordPress form uploads (no indexable content)
+Disallow: /wp-content/uploads/wpforms/
+
+# NOTE: /wp-content/plugins/ and /wp-content/themes/ are intentionally NOT
+# blocked. Googlebot needs the CSS/JS in these folders to render pages
+# correctly. Directory browsing should be disabled at the server level,
+# not via robots.txt.
+
+# WordPress utility feeds
+Disallow: /feed/
+Disallow: /comments/feed/
+Disallow: /*/feed/
+Disallow: /*/trackback/
+
+# Search results pages (duplicate content)
+Disallow: /?s=
+Disallow: /search/
+
+# URL parameter-based pages (duplicate content)
+Disallow: /?p=
+Disallow: /?page_id=
+Disallow: /?cat=
+Disallow: /?tag=
+Disallow: /?attachment_id=
+Disallow: /?replytocom=
+
+# Embed pages
+Disallow: /embed/
+
+# Calendar export (iCal)
+Disallow: /news-and-events/events/?ical=
+
+# WP Engine internal sign-on plugin
+Disallow: /wpe_sign_on_plugin/
+
+# -------------------------------------------------------
+# AI crawlers — full access for GEO visibility, but still
+# block the same admin/internal paths.
+# (A crawler matching a specific user-agent group ignores
+# the "*" group entirely, so the disallows are repeated here.)
+# -------------------------------------------------------
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+User-agent: PerplexityBot
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: Claude-Web
+User-agent: Google-Extended
+User-agent: cohere-ai
+Allow: /
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
+Disallow: /wp-json/
+Disallow: /wp-content/uploads/wpforms/
+Disallow: /?s=
+Disallow: /wpe_sign_on_plugin/
+
+# -------------------------------------------------------
+# Sitemap
+# -------------------------------------------------------
+Sitemap: https://gf.com/sitemap_index.xml

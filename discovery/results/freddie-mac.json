@@ -1,0 +1,25 @@
+{
+  "key": "freddie-mac",
+  "name": "Freddie Mac",
+  "careers_url": "https://careers.freddiemac.com/us/en",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "freddiemac.wd5.myworkdayjobs.com",
+    "tenant": "freddiemac",
+    "site": "External"
+  },
+  "feed": "POST https://freddiemac.wd5.myworkdayjobs.com/wday/cxs/freddiemac/External/jobs",
+  "feed_total": 71,
+  "page_total": 71,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 2,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "freddiemac.wd5.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/freddiemac.wd5.myworkdayjobs.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

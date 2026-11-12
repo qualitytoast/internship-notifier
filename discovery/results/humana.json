@@ -1,0 +1,47 @@
+{
+  "key": "humana",
+  "name": "Humana",
+  "careers_url": "https://careers.humana.com/us/en",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "humana.wd5.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "humana.wd5.myworkdayjobs.com",
+          "tenant": "humana",
+          "unlinked_ok": 50,
+          "site": "Humana_External_Career_Site"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "humana.wd5.myworkdayjobs.com",
+          "tenant": "humana",
+          "unlinked_ok": 50,
+          "site": "CenterWell_External_Career_Site"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://humana.wd5.myworkdayjobs.com/wday/cxs/humana/Humana_External_Career_Site/jobs + POST https://humana.wd5.myworkdayjobs.com/wday/cxs/humana/CenterWell_External_Career_Site/jobs",
+  "feed_total": 2136,
+  "page_total": 2142,
+  "page_total_how": "each read's own count, added up: 319 (humana: workday's own reported total (the careers page shows it)) + 1823 (CenterWell_External_Career_Site: workday's own reported total (the careers page shows it)) (2026-11-12)",
+  "intern_total": 5,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "humana.wd5.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/humana.wd5.myworkdayjobs.com.txt)",
+  "notes": "The page showed 2142 jobs and the board 2136 on 2026-11-12 (a posting or two opened or closed in between). Read with it, as part of the company: CenterWell (Humana's Workday site CenterWell_External_Career_Site). Two boards: POST https://humana.wd5.myworkdayjobs.com/wday/cxs/humana/Humana_External_Career_Site/jobs + POST https://humana.wd5.myworkdayjobs.com/wday/cxs/humana/CenterWell_External_Career_Site/jobs; a later board's posting with an earlier one's id or requisition is skipped.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

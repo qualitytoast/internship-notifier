@@ -1,0 +1,45 @@
+{
+  "key": "blackrock",
+  "name": "BlackRock",
+  "careers_url": "https://careers.blackrock.com/",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "blackrock.wd1.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "blackrock.wd1.myworkdayjobs.com",
+          "tenant": "blackrock",
+          "site": "BlackRock_Professional"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "blackrock.wd1.myworkdayjobs.com",
+          "tenant": "blackrock",
+          "site": "BlackRock_Early_Careers_Program"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://blackrock.wd1.myworkdayjobs.com/wday/cxs/blackrock/BlackRock_Professional/jobs + POST https://blackrock.wd1.myworkdayjobs.com/wday/cxs/blackrock/BlackRock_Early_Careers_Program/jobs",
+  "feed_total": 298,
+  "page_total": 298,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 14,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "blackrock.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/blackrock.wd1.myworkdayjobs.com.txt)",
+  "notes": "Two boards: POST https://blackrock.wd1.myworkdayjobs.com/wday/cxs/blackrock/BlackRock_Professional/jobs + POST https://blackrock.wd1.myworkdayjobs.com/wday/cxs/blackrock/BlackRock_Early_Careers_Program/jobs; a later board's posting with an earlier one's id or requisition is skipped.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

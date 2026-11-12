@@ -1,0 +1,25 @@
+{
+  "key": "tricentis",
+  "name": "Tricentis",
+  "careers_url": "https://www.tricentis.com/company/careers",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "tricentis.wd1.myworkdayjobs.com",
+    "tenant": "tricentis",
+    "site": "Tricentis_Careers"
+  },
+  "feed": "POST https://tricentis.wd1.myworkdayjobs.com/wday/cxs/tricentis/Tricentis_Careers/jobs",
+  "feed_total": 32,
+  "page_total": 32,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "tricentis.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/tricentis.wd1.myworkdayjobs.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

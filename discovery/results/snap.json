@@ -1,0 +1,25 @@
+{
+  "key": "snap",
+  "name": "Snap",
+  "careers_url": "https://careers.snap.com/",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "wd1.myworkdaysite.com",
+    "tenant": "snapchat",
+    "site": "snap"
+  },
+  "feed": "POST https://wd1.myworkdaysite.com/wday/cxs/snapchat/snap/jobs",
+  "feed_total": 215,
+  "page_total": 215,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 3,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "wd1.myworkdaysite.com/robots.txt checked before every request (discovery/robots/wd1.myworkdaysite.com.txt)",
+  "notes": "Watched, not stored: snap~ripplematch (0 jobs).",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

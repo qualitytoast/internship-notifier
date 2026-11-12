@@ -1,0 +1,53 @@
+{
+  "key": "elevance-health",
+  "name": "Elevance Health",
+  "careers_url": "https://careers.elevancehealth.com/",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "elevancehealth.wd1.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "elevancehealth.wd1.myworkdayjobs.com",
+          "tenant": "elevancehealth",
+          "site": "ANT"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "elevancehealth.wd1.myworkdayjobs.com",
+          "tenant": "elevancehealth",
+          "site": "ELV-ET"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "elevancehealth.wd1.myworkdayjobs.com",
+          "tenant": "elevancehealth",
+          "site": "carelonglobal_ph"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://elevancehealth.wd1.myworkdayjobs.com/wday/cxs/elevancehealth/ANT/jobs + POST https://elevancehealth.wd1.myworkdayjobs.com/wday/cxs/elevancehealth/ELV-ET/jobs + POST https://elevancehealth.wd1.myworkdayjobs.com/wday/cxs/elevancehealth/carelonglobal_ph/jobs",
+  "feed_total": 290,
+  "page_total": 290,
+  "page_total_how": "each read's own count, added up: 272 (elevance-health: workday's own reported total (the careers page shows it)) + 18 (carelonglobal_ph: workday's own reported total (the careers page shows it)) (2026-11-12)",
+  "intern_total": 9,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "elevancehealth.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/elevancehealth.wd1.myworkdayjobs.com.txt)",
+  "notes": "3 boards: POST https://elevancehealth.wd1.myworkdayjobs.com/wday/cxs/elevancehealth/ANT/jobs + POST https://elevancehealth.wd1.myworkdayjobs.com/wday/cxs/elevancehealth/ELV-ET/jobs + POST https://elevancehealth.wd1.myworkdayjobs.com/wday/cxs/elevancehealth/carelonglobal_ph/jobs; a later board's posting with an earlier one's id or requisition is skipped. Not read: elevance-health~site-IRL: public Workday site, 0 jobs, no student role: recorded as known. Not read: elevance-health~site-Legato_Ireland: public Workday site, 0 jobs, no student role: recorded as known. Not read: elevance-health~site-Legato_Israel: public Workday site, 0 jobs, no student role: recorded as known. Not read: elevance-health~site-carelonglobal_in: public Workday site, 18 jobs, no student role: recorded as known.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

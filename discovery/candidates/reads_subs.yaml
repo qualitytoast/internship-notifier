@@ -2,3 +2,4 @@
 reads:
   fox~tubi: {checker: greenhouse, settings: {boards: [tubitv, tubi]}}
   northwestern-mutual~smartrecruiters: {checker: smartrecruiters, settings: {company: NorthwesternMutual}}
+  nasdaq~greenhouse: {checker: greenhouse, settings: {board: nasdaq}}  # a board opened 2026-10-27 (21 jobs, a co-op in Toronto); SimplifyJobs links it since 2026-11-12

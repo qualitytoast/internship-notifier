@@ -1,0 +1,45 @@
+{
+  "key": "marvell",
+  "name": "Marvell",
+  "careers_url": "https://www.marvell.com/company/careers.html",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "marvell.wd1.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "marvell.wd1.myworkdayjobs.com",
+          "tenant": "marvell",
+          "site": "MarvellCareers"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "marvell.wd1.myworkdayjobs.com",
+          "tenant": "marvell",
+          "site": "MarvellCareers2"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://marvell.wd1.myworkdayjobs.com/wday/cxs/marvell/MarvellCareers/jobs + POST https://marvell.wd1.myworkdayjobs.com/wday/cxs/marvell/MarvellCareers2/jobs",
+  "feed_total": 357,
+  "page_total": 381,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 117,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "marvell.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/marvell.wd1.myworkdayjobs.com.txt)",
+  "notes": "Its 2 Workday sites listed 381 postings on 2026-11-12, 24 of them a requisition an earlier site already lists, which is read once. The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md). Two boards: POST https://marvell.wd1.myworkdayjobs.com/wday/cxs/marvell/MarvellCareers/jobs + POST https://marvell.wd1.myworkdayjobs.com/wday/cxs/marvell/MarvellCareers2/jobs; a later board's posting with an earlier one's id or requisition is skipped. Not read: marvell~site-Scout: public Workday site, 0 jobs, no student role: recorded as known.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

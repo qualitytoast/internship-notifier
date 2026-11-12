@@ -252,6 +252,7 @@ companies:
   source: added
   urls: ['https://www.co.bot/team']
 - key: comcast
+  aliases: [NBCUniversal]
   name: Comcast
   category: telecom
   source: added
@@ -1018,7 +1019,7 @@ companies:
   name: Synchrony
   category: finance-insurance
   source: added
-  urls: ['https://www.synchrony.com/careers', 'https://www.synchronyfinancial.com/careers.html']
+  urls: ['https://www.synchronycareers.com/']  # www.synchrony.com/careers fails at the TLS handshake for scripts
 - key: tamr
   name: Tamr
   category: software

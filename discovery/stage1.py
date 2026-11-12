@@ -686,9 +686,11 @@ def pagecount(keys: list[str]) -> None:
     gate = make_gate(cfg)
     reads = yaml.safe_load((CANDIDATES / "reads.yaml").read_text())["reads"]
     results = json.loads((CANDIDATES / "read_results.json").read_text())
-    extra = CANDIDATES / "read_results_extra.json"
-    if extra.exists():
-        results.update(json.loads(extra.read_text()))
+    for name in ("read_results_extra.json", "read_results_subs.json"):  # extra sites, and second boards found later
+        if (CANDIDATES / name).exists():
+            results.update(json.loads((CANDIDATES / name).read_text()))
+    if (CANDIDATES / "reads_subs.yaml").exists():
+        reads.update(yaml.safe_load((CANDIDATES / "reads_subs.yaml").read_text())["reads"])
     path = CANDIDATES / "pagecounts.json"
     out = json.loads(path.read_text()) if path.exists() else {}
     todo = [(e, s) for e, s in reads.items() if (not keys or e.split("~")[0] in keys) and e in results]

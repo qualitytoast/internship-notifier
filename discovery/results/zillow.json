@@ -1,0 +1,25 @@
+{
+  "key": "zillow",
+  "name": "Zillow",
+  "careers_url": "https://www.zillow.com/careers/",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "zillow.wd5.myworkdayjobs.com",
+    "tenant": "zillow",
+    "site": "Zillow_Group_External"
+  },
+  "feed": "POST https://zillow.wd5.myworkdayjobs.com/wday/cxs/zillow/Zillow_Group_External/jobs",
+  "feed_total": 201,
+  "page_total": 201,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 5,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "zillow.wd5.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/zillow.wd5.myworkdayjobs.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

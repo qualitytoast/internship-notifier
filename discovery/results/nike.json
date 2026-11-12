@@ -1,0 +1,45 @@
+{
+  "key": "nike",
+  "name": "Nike",
+  "careers_url": "https://careers.nike.com/",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "nike.wd1.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "nike.wd1.myworkdayjobs.com",
+          "tenant": "nike",
+          "site": "nke"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "nike.wd1.myworkdayjobs.com",
+          "tenant": "nike",
+          "site": "nke2"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://nike.wd1.myworkdayjobs.com/wday/cxs/nike/nke/jobs + POST https://nike.wd1.myworkdayjobs.com/wday/cxs/nike/nke2/jobs",
+  "feed_total": 1208,
+  "page_total": 1209,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 18,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "nike.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/nike.wd1.myworkdayjobs.com.txt)",
+  "notes": "The page showed 1209 jobs and the board 1208 on 2026-11-12 (a posting or two opened or closed in between). Two boards: POST https://nike.wd1.myworkdayjobs.com/wday/cxs/nike/nke/jobs + POST https://nike.wd1.myworkdayjobs.com/wday/cxs/nike/nke2/jobs; a later board's posting with an earlier one's id or requisition is skipped.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

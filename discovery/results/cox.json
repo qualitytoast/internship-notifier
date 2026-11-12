@@ -1,0 +1,26 @@
+{
+  "key": "cox",
+  "name": "Cox Enterprises",
+  "careers_url": "https://jobs.coxenterprises.com/",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "cox.wd1.myworkdayjobs.com",
+    "anchor_host": true,
+    "tenant": "cox",
+    "site": "Cox_External_Career_Site_1"
+  },
+  "feed": "POST https://cox.wd1.myworkdayjobs.com/wday/cxs/cox/Cox_External_Career_Site_1/jobs",
+  "feed_total": 802,
+  "page_total": 802,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 20,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "cox.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/cox.wd1.myworkdayjobs.com.txt)",
+  "notes": "The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md).",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

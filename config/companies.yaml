@@ -2932,3 +2932,744 @@ companies:
   settings: {board: replit}
   verified: {page_total: 29}
   round: added
+- key: humana
+  name: Humana
+  category: healthcare
+  careers_url: ['https://careers.humana.com/us/en', 'https://careers.humana.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [humana.wd5.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: humana.wd5.myworkdayjobs.com, tenant: humana, unlinked_ok: 50, site: Humana_External_Career_Site}
+    - checker: workday
+      settings: {host: humana.wd5.myworkdayjobs.com, tenant: humana, unlinked_ok: 50, site: CenterWell_External_Career_Site}
+  verified: {page_total: 2142, explained: The page showed 2142 jobs and the board 2136 on 2026-11-12 (a posting or two opened or closed
+      in between).}
+  round: added
+- key: morgan-stanley
+  name: Morgan Stanley
+  category: finance-insurance
+  careers_url: ['https://www.morganstanley.com/people', 'https://www.morganstanley.com/careers']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [//ms.wd5.myworkdayjobs.com/]
+    sources:
+    - checker: workday
+      settings: {host: ms.wd5.myworkdayjobs.com, anchor_host: true, tenant: ms, site: External}
+    - checker: workday
+      settings: {host: ms.wd5.myworkdayjobs.com, anchor_host: true, tenant: ms, site: private}
+  verified: {page_total: 1573, explained: 'Its 2 Workday sites listed 1573 postings on 2026-11-12, 204 of them a requisition an earlier
+      site already lists, which is read once.'}
+  round: added
+- key: wells-fargo
+  name: Wells Fargo
+  category: finance-insurance
+  careers_url: ['https://www.wellsfargojobs.com/']
+  checker: workday
+  settings: {host: wd1.myworkdaysite.com, tenant: wf, unlinked_ok: 50, site: WellsFargoJobs}
+  verified: {page_total: 1545, explained: The page showed 1545 jobs and the board 1541 on 2026-11-12 (a posting or two opened or closed
+      in between).}
+  round: added
+- key: comcast
+  name: Comcast
+  category: telecom
+  aliases: [NBCUniversal]
+  careers_url: ['https://jobs.comcast.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [comcast.wd115.myworkdayjobs.com, smartrecruiters.com/nbcuniversal3/]
+    sources:
+    - checker: workday
+      settings: {host: comcast.wd115.myworkdayjobs.com, tenant: comcast, site: Comcast_Careers}
+    - checker: smartrecruiters
+      settings: {company: NBCUniversal3}
+  verified: {page_total: 1228}
+  round: added
+- key: kla
+  name: KLA
+  category: semiconductors
+  careers_url: ['https://www.kla.com/careers']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [//kla.wd1.myworkdayjobs.com/]
+    sources:
+    - checker: workday
+      settings: {host: kla.wd1.myworkdayjobs.com, anchor_host: true, tenant: kla, site: Search}
+    - checker: workday
+      settings: {host: kla.wd1.myworkdayjobs.com, anchor_host: true, tenant: kla, site: UR}
+    - checker: workday
+      settings: {host: kla.wd1.myworkdayjobs.com, anchor_host: true, tenant: kla, site: annarbor}
+    - checker: workday
+      settings: {host: kla.wd1.myworkdayjobs.com, anchor_host: true, tenant: kla, site: Israel}
+  verified: {page_total: 1463, explained: 'Its 4 Workday sites listed 1463 postings on 2026-11-12, 233 of them a requisition an earlier
+      site already lists, which is read once.'}
+  round: added
+- key: home-depot
+  name: The Home Depot
+  category: retail
+  careers_url: ['https://careers.homedepot.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [homedepot.wd5.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: homedepot.wd5.myworkdayjobs.com, tenant: homedepot, site: CareerDepot}
+    - checker: workday
+      settings: {host: homedepot.wd5.myworkdayjobs.com, tenant: homedepot, site: CareerDepotCanada}
+  verified: {page_total: 1361, explained: The page showed 1361 jobs and the board 1360 on 2026-11-12 (a posting or two opened or closed
+      in between).}
+  round: added
+- key: verizon
+  name: Verizon
+  category: telecom
+  aliases: [Verizon Communications]
+  careers_url: ['https://mycareer.verizon.com/']
+  checker: workday
+  settings: {host: verizon.wd12.myworkdayjobs.com, tenant: verizon, site: verizon-careers}
+  role_keywords: [sprinternship]
+  verified: {page_total: 1280}
+  round: added
+- key: nordstrom
+  name: Nordstrom
+  category: retail
+  careers_url: ['https://careers.nordstrom.com/']
+  checker: workday
+  settings: {host: nordstrom.wd501.myworkdayjobs.com, tenant: nordstrom, unlinked_ok: 50, site: nordstrom_careers}
+  verified: {page_total: 1253, explained: The page showed 1253 jobs and the board 1248 on 2026-11-12 (a posting or two opened or closed
+      in between).}
+  round: added
+- key: att
+  name: AT&T
+  category: telecom
+  careers_url: ['https://www.att.jobs/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [//att.wd1.myworkdayjobs.com/]
+    sources:
+    - checker: workday
+      settings: {host: att.wd1.myworkdayjobs.com, anchor_host: true, tenant: att, site: ATTGeneral}
+    - checker: workday
+      settings: {host: att.wd1.myworkdayjobs.com, anchor_host: true, tenant: att, site: ATTcollege}
+    - checker: workday
+      settings: {host: att.wd1.myworkdayjobs.com, anchor_host: true, tenant: att, site: Cricket}
+    - checker: workday
+      settings: {host: att.wd1.myworkdayjobs.com, anchor_host: true, tenant: att, site: ATTCollegeSpecialInvite}
+  verified: {page_total: 1125}
+  round: added
+- key: nike
+  name: Nike
+  category: retail
+  careers_url: ['https://careers.nike.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [nike.wd1.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: nike.wd1.myworkdayjobs.com, tenant: nike, site: nke}
+    - checker: workday
+      settings: {host: nike.wd1.myworkdayjobs.com, tenant: nike, site: nke2}
+  verified: {page_total: 1209, explained: The page showed 1209 jobs and the board 1208 on 2026-11-12 (a posting or two opened or closed
+      in between).}
+  round: added
+- key: mastercard
+  name: Mastercard
+  category: fintech
+  careers_url: ['https://careers.mastercard.com/us/en/', 'https://careers.mastercard.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [mastercard.wd1.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: mastercard.wd1.myworkdayjobs.com, tenant: mastercard, site: CorporateCareers}
+    - checker: workday
+      settings: {host: mastercard.wd1.myworkdayjobs.com, tenant: mastercard, site: Campus}
+    - checker: workday
+      settings: {host: mastercard.wd1.myworkdayjobs.com, tenant: mastercard, site: Public_Posting_Site}
+    - checker: workday
+      settings: {host: mastercard.wd1.myworkdayjobs.com, tenant: mastercard, site: CampusApplyOnly}
+  verified: {page_total: 974, explained: 'Its 4 Workday sites listed 974 postings on 2026-11-12, 43 of them a requisition an earlier
+      site already lists, which is read once.'}
+  round: added
+- key: globalfoundries
+  name: GlobalFoundries
+  category: semiconductors
+  careers_url: ['https://gf.com/careers/']
+  checker: workday
+  settings: {host: globalfoundries.wd1.myworkdayjobs.com, tenant: globalfoundries, site: External}
+  verified: {page_total: 855, explained: The page showed 855 jobs and the board 852 on 2026-11-12 (a posting or two opened or closed
+      in between).}
+  round: added
+- key: mckesson
+  name: McKesson
+  category: healthcare
+  careers_url: ['https://careers.mckesson.com/en', 'https://careers.mckesson.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [mckesson.wd3.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: mckesson.wd3.myworkdayjobs.com, tenant: mckesson, site: External_Careers}
+    - checker: workday
+      settings: {host: mckesson.wd3.myworkdayjobs.com, tenant: mckesson, site: sourcer_on_req}
+    - checker: workday
+      settings: {host: mckesson.wd3.myworkdayjobs.com, tenant: mckesson, site: Acquisition_Campus}
+    - checker: workday
+      settings: {host: mckesson.wd3.myworkdayjobs.com, tenant: mckesson, site: CoverMyMeds_External_Careers}
+    - checker: workday
+      settings: {host: mckesson.wd3.myworkdayjobs.com, tenant: mckesson, site: SCRI_Careers}
+  verified: {page_total: 743, explained: 'Its 5 Workday sites listed 743 postings on 2026-11-12, 59 of them a requisition an earlier
+      site already lists, which is read once.'}
+  round: added
+- key: cadence
+  name: Cadence Design Systems
+  category: semiconductors
+  careers_url: ['https://www.cadence.com/en_US/home/company/careers.html']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [cadence.wd1.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: cadence.wd1.myworkdayjobs.com, tenant: cadence, site: External_Careers}
+    - checker: workday
+      settings: {host: cadence.wd1.myworkdayjobs.com, tenant: cadence, site: Univ_Careers}
+    - checker: workday
+      settings: {host: cadence.wd1.myworkdayjobs.com, tenant: cadence, site: University_Talent}
+    - checker: workday
+      settings: {host: cadence.wd1.myworkdayjobs.com, tenant: cadence, site: University_Talent_Intern}
+    - checker: workday
+      settings: {host: cadence.wd1.myworkdayjobs.com, tenant: cadence, site: University_Talent_NCG}
+    - checker: workday
+      settings: {host: cadence.wd1.myworkdayjobs.com, tenant: cadence, site: University_CST}
+    - checker: workday
+      settings: {host: cadence.wd1.myworkdayjobs.com, tenant: cadence, site: OpenEye_Careers}
+    - checker: workday
+      settings: {host: cadence.wd1.myworkdayjobs.com, tenant: cadence, site: women-in-tech-scholarship}
+  verified: {page_total: 729, explained: 'Its 8 Workday sites listed 730 postings on 2026-11-12, 42 of them a requisition an earlier
+      site already lists, which is read once.'}
+  round: added
+- key: cox
+  name: Cox Enterprises
+  category: telecom
+  aliases: [Cox]
+  careers_url: ['https://jobs.coxenterprises.com/']
+  checker: workday
+  settings: {host: cox.wd1.myworkdayjobs.com, anchor_host: true, tenant: cox, site: Cox_External_Career_Site_1}
+  verified: {page_total: 802}
+  round: added
+- key: analog-devices
+  name: Analog Devices
+  category: semiconductors
+  careers_url: ['https://www.analog.com/en/about-adi/careers.html']
+  checker: workday
+  settings: {host: analogdevices.wd1.myworkdayjobs.com, tenant: analogdevices, site: External}
+  verified: {page_total: 783}
+  round: added
+- key: proofpoint
+  name: Proofpoint
+  category: security
+  careers_url: ['https://www.proofpoint.com/us/company/careers']
+  checker: workday
+  settings: {host: proofpoint.wd5.myworkdayjobs.com, tenant: proofpoint, site: ProofpointCareers}
+  verified: {page_total: 135}
+  round: added
+- key: fis
+  name: FIS
+  category: fintech
+  careers_url: ['https://careers.fisglobal.com/us/en', 'https://careers.fisglobal.com/']
+  checker: workday
+  settings: {host: fis.wd5.myworkdayjobs.com, anchor_host: true, tenant: fis, site: SearchJobs}
+  verified: {page_total: 499}
+  round: added
+- key: allstate
+  name: Allstate
+  category: finance-insurance
+  careers_url: ['https://www.allstatecorporation.com/careers.aspx', 'https://www.allstate.jobs/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [allstate.wd5.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: allstate.wd5.myworkdayjobs.com, tenant: allstate, site: allstate_careers}
+    - checker: workday
+      settings: {host: allstate.wd5.myworkdayjobs.com, tenant: allstate, site: sourcing_event}
+  verified: {page_total: 427}
+  round: added
+- key: fiserv
+  name: Fiserv
+  category: fintech
+  careers_url: ['https://careers.fiserv.com/us/en', 'https://careers.fiserv.com/']
+  checker: workday
+  settings: {host: fiserv.wd5.myworkdayjobs.com, tenant: fiserv, site: EXT}
+  verified: {page_total: 394}
+  round: added
+- key: copart
+  name: Copart
+  category: other
+  careers_url: ['https://copart.wd12.myworkdayjobs.com/copart', 'https://www.copart.com/careers/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [copart.wd12.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: copart.wd12.myworkdayjobs.com, tenant: copart, site: Copart}
+    - checker: workday
+      settings: {host: copart.wd12.myworkdayjobs.com, tenant: copart, site: NPACareers}
+  verified: {page_total: 440, explained: 'Its 2 Workday sites listed 438 postings on 2026-11-12, 1 of them a requisition an earlier
+      site already lists, which is read once.'}
+  round: added
+- key: travelers
+  name: Travelers
+  category: finance-insurance
+  careers_url: ['https://careers.travelers.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [travelers.wd5.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: travelers.wd5.myworkdayjobs.com, tenant: travelers, site: External}
+    - checker: workday
+      settings: {host: travelers.wd5.myworkdayjobs.com, tenant: travelers, site: SimplyBusinesssExternal}
+  verified: {page_total: 418, explained: The page showed 418 jobs and the board 426 on 2026-11-12 (a posting or two opened or closed
+      in between).}
+  round: added
+- key: costar
+  name: CoStar Group
+  category: software
+  careers_url: ['https://www.costargroup.com/careers']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [costar.wd1.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: costar.wd1.myworkdayjobs.com, tenant: costar, site: CoStarCareers}
+    - checker: workday
+      settings: {host: costar.wd1.myworkdayjobs.com, tenant: costar, site: Costar_Campus}
+    - checker: workday
+      settings: {host: costar.wd1.myworkdayjobs.com, tenant: costar, site: confidential}
+  verified: {page_total: 371}
+  round: added
+- key: marvell
+  name: Marvell
+  category: semiconductors
+  careers_url: ['https://www.marvell.com/company/careers.html']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [marvell.wd1.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: marvell.wd1.myworkdayjobs.com, tenant: marvell, site: MarvellCareers}
+    - checker: workday
+      settings: {host: marvell.wd1.myworkdayjobs.com, tenant: marvell, site: MarvellCareers2}
+  verified: {page_total: 381, explained: 'Its 2 Workday sites listed 381 postings on 2026-11-12, 24 of them a requisition an earlier
+      site already lists, which is read once.'}
+  round: added
+- key: vanguard
+  name: Vanguard
+  category: finance-insurance
+  careers_url: ['https://www.vanguardjobs.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [vanguard.wd5.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: vanguard.wd5.myworkdayjobs.com, tenant: vanguard, site: vanguard_external}
+    - checker: workday
+      settings: {host: vanguard.wd5.myworkdayjobs.com, tenant: vanguard, site: contractors_restricted}
+  verified: {page_total: 363, explained: 'Its 2 Workday sites listed 362 postings on 2026-11-12, 1 of them a requisition an earlier
+      site already lists, which is read once.'}
+  round: added
+- key: f5
+  name: F5
+  category: security
+  careers_url: ['https://www.f5.com/company/careers']
+  checker: workday
+  settings: {host: ffive.wd5.myworkdayjobs.com, tenant: ffive, site: f5jobs}
+  verified: {page_total: 292}
+  round: added
+- key: elevance-health
+  name: Elevance Health
+  category: healthcare
+  careers_url: ['https://careers.elevancehealth.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [elevancehealth.wd1.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: elevancehealth.wd1.myworkdayjobs.com, tenant: elevancehealth, site: ANT}
+    - checker: workday
+      settings: {host: elevancehealth.wd1.myworkdayjobs.com, tenant: elevancehealth, site: ELV-ET}
+    - checker: workday
+      settings: {host: elevancehealth.wd1.myworkdayjobs.com, tenant: elevancehealth, site: carelonglobal_ph}
+  verified: {page_total: 290}
+  round: added
+- key: equinix
+  name: Equinix
+  category: software
+  careers_url: ['https://careers.equinix.com/']
+  checker: workday
+  settings: {host: equinix.wd1.myworkdayjobs.com, tenant: equinix, site: External}
+  verified: {page_total: 314}
+  round: added
+- key: blackrock
+  name: BlackRock
+  category: finance-insurance
+  careers_url: ['https://careers.blackrock.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [blackrock.wd1.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: blackrock.wd1.myworkdayjobs.com, tenant: blackrock, site: BlackRock_Professional}
+    - checker: workday
+      settings: {host: blackrock.wd1.myworkdayjobs.com, tenant: blackrock, site: BlackRock_Early_Careers_Program}
+  verified: {page_total: 298}
+  round: added
+- key: dexcom
+  name: Dexcom
+  category: healthcare
+  careers_url: ['https://careers.dexcom.com/careers', 'https://careers.dexcom.com/']
+  checker: workday
+  settings: {host: dexcom.wd1.myworkdayjobs.com, tenant: dexcom, site: Dexcom}
+  verified: {page_total: 295}
+  round: added
+- key: hartford
+  name: The Hartford
+  category: finance-insurance
+  careers_url: ['https://www.thehartford.com/careers']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [thehartford.wd5.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: thehartford.wd5.myworkdayjobs.com, tenant: thehartford, site: Careers_External}
+    - checker: workday
+      settings: {host: thehartford.wd5.myworkdayjobs.com, tenant: thehartford, site: careers_restricted}
+  role_keywords: [early immersion program]
+  verified: {page_total: 248, explained: 'Its 2 Workday sites listed 248 postings on 2026-11-12, 9 of them a requisition an earlier
+      site already lists, which is read once.'}
+  round: added
+- key: chewy
+  name: Chewy
+  category: retail
+  careers_url: ['https://careers.chewy.com/us/en', 'https://careers.chewy.com/']
+  checker: workday
+  settings: {host: chewy.wd5.myworkdayjobs.com, tenant: chewy, site: External}
+  verified: {page_total: 237}
+  round: added
+- key: northwestern-mutual
+  name: Northwestern Mutual
+  category: finance-insurance
+  careers_url: ['https://www.northwesternmutual.com/careers/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [northwesternmutual.wd5.myworkdayjobs.com, smartrecruiters.com/northwesternmutual/]
+    sources:
+    - checker: workday
+      settings: {host: northwesternmutual.wd5.myworkdayjobs.com, tenant: northwesternmutual, site: corporate-careers}
+    - checker: smartrecruiters
+      settings: {company: NorthwesternMutual}
+  verified: {page_total: 155}
+  round: added
+- key: zebra
+  name: Zebra Technologies
+  category: hardware
+  careers_url: ['https://www.zebra.com/us/en/about-zebra/careers.html']
+  checker: workday
+  settings: {host: zebra.wd501.myworkdayjobs.com, tenant: zebra, site: Zebra_careers}
+  verified: {page_total: 239}
+  round: added
+- key: nasdaq
+  name: Nasdaq
+  category: fintech
+  careers_url: ['https://www.nasdaq.com/about/careers']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [nasdaq.wd1.myworkdayjobs.com, greenhouse.io/nasdaq/, 'greenhouse.io/embed/job_app?for=nasdaq']
+    sources:
+    - checker: workday
+      settings: {host: nasdaq.wd1.myworkdayjobs.com, tenant: nasdaq, site: Global_External_Site}
+    - checker: greenhouse
+      settings: {board: nasdaq}
+  verified: {page_total: 189}
+  round: added
+- key: snap
+  name: Snap
+  category: big-tech
+  aliases: [Snapchat]
+  careers_url: ['https://careers.snap.com/']
+  checker: workday
+  settings: {host: wd1.myworkdaysite.com, tenant: snapchat, site: snap}
+  verified: {page_total: 215}
+  round: added
+- key: zillow
+  name: Zillow
+  category: software
+  careers_url: ['https://www.zillow.com/careers/']
+  checker: workday
+  settings: {host: zillow.wd5.myworkdayjobs.com, tenant: zillow, site: Zillow_Group_External}
+  verified: {page_total: 201}
+  round: added
+- key: ciena
+  name: Ciena
+  category: hardware
+  careers_url: ['https://www.ciena.com/careers']
+  checker: workday
+  settings: {host: ciena.wd5.myworkdayjobs.com, tenant: ciena, site: Careers}
+  verified: {page_total: 173}
+  round: added
+- key: disney
+  name: The Walt Disney Company
+  category: media
+  careers_url: ['https://join.disneycareers.com/global/en', 'https://jobs.disneycareers.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [disney.wd5.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: disney.wd5.myworkdayjobs.com, tenant: disney, site: disneycareer}
+    - checker: workday
+      settings: {host: disney.wd5.myworkdayjobs.com, tenant: disney, site: disneycareerdc}
+  verified: {page_total: 191, explained: 'Its 2 Workday sites listed 191 postings on 2026-11-12, 19 of them a requisition an earlier
+      site already lists, which is read once.'}
+  round: added
+- key: usaa
+  name: USAA
+  category: finance-insurance
+  careers_url: ['https://www.usaajobs.com/']
+  checker: workday
+  settings: {host: usaa.wd1.myworkdayjobs.com, tenant: usaa, site: USAAJOBSWD}
+  role_keywords: [accelerate program]
+  verified: {page_total: 207}
+  round: added
+- key: warner-bros-discovery
+  name: Warner Bros. Discovery
+  category: media
+  careers_url: ['https://careers.wbd.com/global/en', 'https://careers.wbd.com/']
+  checker: workday
+  settings: {host: warnerbros.wd5.myworkdayjobs.com, tenant: warnerbros, site: global}
+  verified: {page_total: 193, explained: The page showed 193 jobs and the board 191 on 2026-11-12 (a posting or two opened or closed
+      in between).}
+  round: added
+- key: cohesity
+  name: Cohesity
+  category: software
+  careers_url: ['https://www.cohesity.com/company/careers/']
+  checker: workday
+  settings: {host: cohesity.wd5.myworkdayjobs.com, tenant: cohesity, site: Cohesity_Careers}
+  verified: {page_total: 194}
+  round: added
+- key: trimble
+  name: Trimble
+  category: software
+  careers_url: ['https://www.trimble.com/en/careers', 'https://careers.trimble.com/', 'https://www.trimble.com/en/our-commitment/careers']
+  checker: workday
+  settings: {host: trimble.wd1.myworkdayjobs.com, tenant: trimble, site: TrimbleCareers}
+  verified: {page_total: 200}
+  round: added
+- key: ptc
+  name: PTC
+  category: software
+  careers_url: ['https://www.ptc.com/en/careers', 'https://www.ptc.com/en/about/careers']
+  checker: workday
+  settings: {host: ptc.wd1.myworkdayjobs.com, anchor_host: true, tenant: ptc, site: PTC}
+  verified: {page_total: 166}
+  round: added
+- key: nationwide
+  name: Nationwide
+  category: finance-insurance
+  careers_url: ['https://www.nationwide.com/personal/about-us/careers/']
+  checker: workday
+  settings: {host: nationwide.wd1.myworkdayjobs.com, tenant: nationwide, site: Nationwide_Career}
+  verified: {page_total: 160}
+  round: added
+- key: guidewire
+  name: Guidewire
+  category: software
+  careers_url: ['https://www.guidewire.com/about/careers']
+  checker: workday
+  settings: {host: wd5.myworkdaysite.com, tenant: guidewire, site: external}
+  verified: {page_total: 116}
+  round: added
+- key: etsy
+  name: Etsy
+  category: software
+  careers_url: ['https://careers.etsy.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [etsy.wd5.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: etsy.wd5.myworkdayjobs.com, tenant: etsy, site: Etsy_Careers}
+    - checker: workday
+      settings: {host: etsy.wd5.myworkdayjobs.com, tenant: etsy, site: Depop_Careers}
+  verified: {page_total: 89}
+  round: added
+- key: circle
+  name: Circle
+  category: fintech
+  careers_url: ['https://careers.circle.com/us/en', 'https://www.circle.com/careers']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [circle.wd1.myworkdayjobs.com, ashbyhq.com/circle/]
+    sources:
+    - checker: workday
+      settings: {host: circle.wd1.myworkdayjobs.com, tenant: circle, site: Circle}
+    - checker: ashby
+      settings: {board: circle}
+  verified: {page_total: 66}
+  round: added
+- key: q2
+  name: Q2
+  category: fintech
+  careers_url: ['https://www.q2.com/company/why-work-at-q2', 'https://www.q2.com/company/careers']
+  checker: workday
+  settings: {host: q2ebanking.wd5.myworkdayjobs.com, tenant: q2ebanking, site: Q2}
+  verified: {page_total: 62}
+  round: added
+- key: sailpoint
+  name: SailPoint
+  category: security
+  careers_url: ['https://www.sailpoint.com/company/careers', 'https://www.sailpoint.com/careers']
+  checker: workday
+  settings: {host: sailpoint.wd1.myworkdayjobs.com, tenant: sailpoint, site: SailPoint}
+  verified: {page_total: 99}
+  round: added
+- key: freddie-mac
+  name: Freddie Mac
+  category: finance-insurance
+  careers_url: ['https://careers.freddiemac.com/us/en', 'https://careers.freddiemac.com/']
+  checker: workday
+  settings: {host: freddiemac.wd5.myworkdayjobs.com, tenant: freddiemac, site: External}
+  verified: {page_total: 71}
+  round: added
+- key: synchrony
+  name: Synchrony
+  category: finance-insurance
+  aliases: [Synchrony Financial]
+  careers_url: ['https://www.synchronycareers.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [synchronyfinancial.wd5.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: synchronyfinancial.wd5.myworkdayjobs.com, tenant: synchronyfinancial, site: University}
+    - checker: workday
+      settings: {host: synchronyfinancial.wd5.myworkdayjobs.com, tenant: synchronyfinancial, site: careers}
+  verified: {page_total: 43, explained: 'Its 2 Workday sites listed 43 postings on 2026-11-12, 3 of them a requisition an earlier site
+      already lists, which is read once.'}
+  round: added
+- key: washington-post
+  name: The Washington Post
+  category: media
+  careers_url: ['https://www.washingtonpost.com/careers/']
+  checker: workday
+  settings: {host: washpost.wd5.myworkdayjobs.com, tenant: washpost, site: washingtonpostcareers}
+  verified: {page_total: 51}
+  round: added
+- key: sonos
+  name: Sonos
+  category: hardware
+  careers_url: ['https://sonos.wd1.myworkdayjobs.com/Sonos', 'https://www.sonos.com/en-us/careers']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [sonos.wd1.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: sonos.wd1.myworkdayjobs.com, tenant: sonos, site: Sonos}
+    - checker: workday
+      settings: {host: sonos.wd1.myworkdayjobs.com, tenant: sonos, site: Student_Opportunities}
+  verified: {page_total: 54}
+  round: added
+- key: snyk
+  name: Snyk
+  category: security
+  careers_url: ['https://snyk.io/careers/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [snyk.wd103.myworkdayjobs.com, ashbyhq.com/snyk/]
+    sources:
+    - checker: workday
+      settings: {host: snyk.wd103.myworkdayjobs.com, tenant: snyk, site: External}
+    - checker: ashby
+      settings: {board: snyk}
+  verified: {page_total: 49}
+  round: added
+- key: southwest
+  name: Southwest Airlines
+  category: travel
+  careers_url: ['https://careers.southwestair.com/us/en/', 'https://careers.southwestair.com/']
+  checker: workday
+  settings: {host: swa.wd1.myworkdayjobs.com, anchor_host: true, tenant: swa, site: external}
+  verified: {page_total: 36}
+  round: added
+- key: tricentis
+  name: Tricentis
+  category: software
+  careers_url: ['https://www.tricentis.com/company/careers', 'https://www.tricentis.com/careers']
+  checker: workday
+  settings: {host: tricentis.wd1.myworkdayjobs.com, tenant: tricentis, site: Tricentis_Careers}
+  verified: {page_total: 32}
+  round: added
+- key: datarobot
+  name: DataRobot
+  category: ai
+  careers_url: ['https://www.datarobot.com/careers/']
+  checker: workday
+  settings: {host: datarobot.wd1.myworkdayjobs.com, tenant: datarobot, site: DataRobot_External_Careers}
+  verified: {page_total: 13}
+  round: added

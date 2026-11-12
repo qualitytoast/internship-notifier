@@ -4,6 +4,8 @@
                                                                 the browser: headless Chromium, every request it
                                                                 makes checked against its site's robots.txt first
                                                                 (a disallowed one is never sent). → renders.json
+    .venv/bin/python discovery/stage2_batch.py sitecopies <batch>   Workday companies whose sites list one requisition
+                                                                more than once, from the last reads → site_copies.yaml
     .venv/bin/python discovery/stage2_batch.py apply <batch>    seed entries (round: added), discovery/results/<key>.json,
                                                                 aliases in build_config.py, settings.liveness entries
                                                                 (backup checks, side pages); then run build_config.py
@@ -42,6 +44,16 @@ def batch(n: int) -> dict:
     return {k: v for k, v in load("plan.json").items() if v["batch"] == n and v["sources"]}
 
 
+def all_reads() -> dict:
+    """The planned reads: reads.yaml, and the second boards found later (reads_subs.yaml)."""
+    return {**yaml.safe_load((C / "reads.yaml").read_text())["reads"],
+            **yaml.safe_load((C / "reads_subs.yaml").read_text())["reads"]}
+
+
+def all_results() -> dict:
+    return {**load("read_results.json"), **load("read_results_extra.json"), **load("read_results_subs.json")}
+
+
 def read_jobs(entry: str) -> list[dict]:
     p = MAIN_DATA / "stage1" / "raw" / "jobs" / f"{entry}.json.gz"
     return json.load(gzip.open(p, "rt")) if p.exists() else []
@@ -62,7 +74,7 @@ def needs_render(k: str, p: dict) -> str | None:
     list in the browser)."""
     main = p["sources"][0]
     if main["checker"] == "rippling":  # its API states no total: the hosted board is the page
-        reads = yaml.safe_load((C / "reads.yaml").read_text())["reads"]
+        reads = all_reads()
         return f"https://ats.rippling.com/{reads[main['entry']]['settings']['board']}/jobs"
     gh = load("ghpages.json").get(k)
     if not gh or gh["shown"] >= gh["read"] - max(3, 0.02 * gh["read"]):
@@ -160,9 +172,70 @@ def render(n: int) -> None:
 
 # apply --------------------------------------------------------------------------------------------------------------
 
+def site_copies() -> dict:
+    """Companies whose Workday sites list one requisition more than once (written by `sitecopies`)."""
+    path = C / "site_copies.yaml"
+    return (yaml.safe_load(path.read_text()) or {}) if path.exists() else {}
+
+
+def sites_read(p: dict) -> dict[str, list[dict]]:
+    """The jobs of the last read of each Workday site of a company, in the order its sources name them."""
+    reads, out = all_reads(), {}
+    for x in p["sources"]:
+        if x["checker"] != "workday":
+            continue
+        st = reads[x["entry"]].get("settings") or {}
+        names = st.get("sites") or [st["site"]]
+        for site in names:
+            out.setdefault(site, [])
+        for j in read_jobs(x["entry"]):
+            out[str(j["id"]).split(":", 1)[0] if len(names) > 1 else names[0]].append(j)
+    return out
+
+
+def sitecopies(n: int) -> None:
+    """Which companies of the batch list a requisition on more than one of their Workday sites, counted in the last
+    read of each site (data/stage1/raw/jobs). → site_copies.yaml: such a company is read one site per source with
+    `dedupe`, so the copy on a later site is dropped instead of being stored and emailed as a second job."""
+    found = {k: v for k, v in site_copies().items() if k not in batch(n)}
+    res = all_results()
+    for k, p in sorted(batch(n).items()):
+        seen: set[str] = set()
+        rows = {}
+        for site, jobs in sites_read(p).items():
+            reqs = [set(map(str, j.get("alt_ids") or [])) for j in jobs]
+            rows[site] = {"postings": len(jobs), "copies": sum(1 for r in reqs if r & seen)}
+            seen |= set().union(*reqs) if reqs else set()
+        if sum(x["copies"] for x in rows.values()):
+            at = max(res.get(x["entry"], {}).get("started", "")[:10] for x in p["sources"] if x["checker"] == "workday")
+            found[k] = {"at": at, "copies": sum(x["copies"] for x in rows.values()), "sites": rows}
+            print(f"{k:22} " + ", ".join(f"{s} {x['copies']}/{x['postings']}" for s, x in rows.items()))
+    (C / "site_copies.yaml").write_text(
+        "# Companies whose Workday sites list one requisition on more than one site, from the last read of each site\n"
+        "# (stage2_batch.py sitecopies): postings on each site, and how many repeat a requisition of an earlier site.\n"
+        "# Each is configured one site per source (multi, dedupe), so a copy is not stored as a second job.\n"
+        + yaml.safe_dump(found, sort_keys=True, width=120))
+    print(f"batch {n}: {sum(1 for k in found if k in batch(n))} companies whose Workday sites repeat each other")
+
+
 def settings_of(p: dict) -> tuple[str, dict]:
-    reads = yaml.safe_load((C / "reads.yaml").read_text())["reads"]
-    srcs = [(s["checker"], reads[s["entry"]].get("settings") or {}) for s in p["sources"] if not s.get("new_reader")]
+    """The company's checker and settings. Each Workday site is a source of its own: the sites of one tenant repeat
+    each other's requisitions on and off (Copart's NPA site and Vanguard's contractor site listed none of the main
+    site's on 2026-11-09 and one each on 11-12; KLA's Israel site lists only copies), and `dedupe` drops a later
+    site's copy instead of storing it as a second job."""
+    reads = all_reads()
+    srcs: list[tuple[str, dict]] = []
+    for x in p["sources"]:
+        if x.get("new_reader"):
+            continue
+        ck, st = x["checker"], dict(reads[x["entry"]].get("settings") or {})
+        if ck != "workday":
+            srcs.append((ck, st))
+            continue
+        base = {k: v for k, v in st.items() if k not in ("site", "sites")}
+        for site in st.get("sites") or [st["site"]]:
+            if ("workday", {**base, "site": site}) not in srcs:
+                srcs.append(("workday", {**base, "site": site}))
     if len(srcs) == 1:
         return srcs[0]
     from internwatch.config import Company
@@ -170,7 +243,16 @@ def settings_of(p: dict) -> tuple[str, dict]:
     marks = [m for ck, st in srcs for m in url_markers(Company(key="x", name="x", category="", careers_url=[],
                                                                checker=ck, settings=st))]
     marks += [m.replace(" ", "%20") for m in marks if " " in m]  # a board name with spaces, as links spell it
-    return "multi", {"dedupe": True, "dedupe_titles": True, "twin_ids": True, "match_urls": marks,
+    # SmartRecruiters links carry the company's name on a shared host: careers. and jobs.smartrecruiters.com/<name>/
+    marks += [f"smartrecruiters.com/{st['company'].lower()}/" for ck, st in srcs if ck == "smartrecruiters"]
+    marks = list(dict.fromkeys(marks))
+    # dedupe_titles (a later board's job with a title already read is a copy) fitted the first two batches' second
+    # boards, which only repeat the first. From batch 3 on it is left out: the rule also drops a board's own openings
+    # that share a title (Northwestern Mutual's SmartRecruiters page lists "Sr Software Engineer" three times: 11 jobs
+    # lost on 2026-11-12, 2 at Snyk), a subsidiary's (NBCUniversal has 14 titles Comcast also uses, each a different
+    # job) and another site's of the same Workday tenant. There only an id or requisition both list is a copy.
+    titles = {"dedupe_titles": True} if p["batch"] < 3 else {}
+    return "multi", {"dedupe": True, **titles, "twin_ids": True, "match_urls": marks,
                      "sources": [{"checker": ck, "settings": st} for ck, st in srcs]}
 
 
@@ -188,6 +270,11 @@ def feed_of(checker: str, s: dict) -> str:
         return f"GET https://ats.rippling.com/api/v2/board/{s.get('board')}/jobs"
     if checker == "ripplematch":
         return f"GET https://app.ripplematch.com/api/v2/public/roles/{s.get('company_id')}"
+    if checker == "workday":
+        sites = s.get("sites") or [s["site"]]
+        return f"POST https://{s['host']}/wday/cxs/{s['tenant']}/{sites[0] if len(sites) == 1 else '{' + ','.join(sites) + '}'}/jobs"
+    if checker == "smartrecruiters":
+        return f"GET https://careers.smartrecruiters.com/{s.get('company')}"
     return checker
 
 
@@ -208,6 +295,11 @@ def page_count(k: str, p: dict, jobs: int) -> tuple[int | None, str, str]:
                                                             for s in p["sources"][1:]) + f" ({counted(v)})", ""
     if isinstance(v.get("page_total"), int) and (v["page_total"] or not jobs) and abs(v["page_total"] - jobs) <= max(3, 0.02 * jobs):
         return v["page_total"], v["how"] + f" ({counted(v)})", ""
+    each = [(s["entry"], pc.get(s["entry"]) or {}) for s in p["sources"] if not s.get("new_reader")]
+    if len(each) > 1 and all(isinstance(x.get("page_total"), int) for _, x in each) \
+            and abs(sum(x["page_total"] for _, x in each) - jobs) <= max(3, 0.02 * jobs):  # several sites or boards
+        return sum(x["page_total"] for _, x in each), "each read's own count, added up: " + " + ".join(
+            f"{x['page_total']} ({e.split('~site-')[-1].split('~')[-1]}: {x['how']})" for e, x in each) + f" ({counted(v)})", ""
     g = gh.get(main)
     if g and g["shown"] >= g["read"] - max(3, 0.02 * g["read"]):
         url = next((x.get("final_url") for x in g["pages"] if x.get("status") == 200), "")
@@ -235,7 +327,7 @@ def page_count(k: str, p: dict, jobs: int) -> tuple[int | None, str, str]:
 
 
 def result(k: str, p: dict, cand: dict) -> dict:
-    res = {**load("read_results.json"), **load("read_results_extra.json")}
+    res = all_results()
     checker, s = settings_of(p)
     jobs = sum(res.get(x["entry"], {}).get("jobs", 0) for x in p["sources"])
     students = sum(res.get(x["entry"], {}).get("students", 0) for x in p["sources"])
@@ -243,16 +335,26 @@ def result(k: str, p: dict, cand: dict) -> dict:
     careers = pages.get("final_url") if pages.get("outcome") == "ok" else cand["urls"][0]
     pt, how, why = page_count(k, p, jobs)
     notes = []
-    if isinstance(pt, int) and pt != jobs:  # build_config.py explains a difference with the notes' first sentence
+    copies = site_copies().get(k)
+    if copies:  # read one site per source: a requisition an earlier site lists is dropped
+        jobs -= copies["copies"]
+        notes.append(f"Its {len(copies['sites'])} Workday sites listed {jobs + copies['copies']} postings on {copies['at']}, "
+                     f"{copies['copies']} of them a requisition an earlier site already lists, which is read once.")
+    elif isinstance(pt, int) and pt != jobs:  # build_config.py explains a difference with the notes' first sentence
         day = counted(load("pagecounts.json").get(p["sources"][0]["entry"]) or {})
         notes.append(f"The page showed {pt} jobs and the board {jobs} on {day} (a posting or two opened or "
                      f"closed in between).")
     if p["blocked_page"]:
         notes.append(f"The careers page {('is closed by robots.txt' if p['page'] == 'robots' else 'refuses scripts')}: "
                      f"the company is in liveness.blocked, with backup checks (backup_table.md).")
+    subs = [x["subsidiary"] for x in p["sources"] if x.get("subsidiary")]
+    if subs:
+        notes.append("Read with it, as part of the company: " + "; ".join(subs) + ".")
     if checker == "multi":
-        notes.append("Two boards: " + " + ".join(feed_of(x["checker"], x["settings"]) for x in s["sources"]) +
-                     "; a later board's posting with an earlier one's id or title is skipped.")
+        notes.append(("Two boards: " if len(s["sources"]) == 2 else f"{len(s['sources'])} boards: ")
+                     + " + ".join(feed_of(x["checker"], x["settings"]) for x in s["sources"]) +
+                     ("; a later board's posting with an earlier one's id or title is skipped." if s.get("dedupe_titles")
+                      else "; a later board's posting with an earlier one's id or requisition is skipped."))
     notes += [f"Not read: {d['entry']}: {d['why']}." for d in p["dropped"]]
     notes += [f"Watched, not stored: {x['entry']} ({x.get('jobs', 0)} jobs)." for x in p["side"]]
     if why:
@@ -331,7 +433,7 @@ def add_settings(n: int, plan: dict) -> None:
         if isinstance(v.get("archive_copies"), int) and v["archive_copies"] > 0:
             arch.append(f'    {k}: {{pages: ["{v["careers_url"]}"]}}')
     rm = load("ripplematch.json")
-    reads = yaml.safe_load((C / "reads.yaml").read_text())["reads"]
+    reads = all_reads()
     for k, p in plan.items():
         for s in p["side"]:
             if s["checker"] == "ripplematch" and k in rm:
@@ -339,12 +441,20 @@ def add_settings(n: int, plan: dict) -> None:
                 watch.append(f"    - {{company: {k}, name: RippleMatch, checker: ripplematch, settings: {{company_id: {cid}}}}}")
                 main = p["sources"][0]
                 st = reads[main["entry"]].get("settings") or {}
-                target = f"{main['checker']}:board={(st.get('board') or st.get('boards', [''])[0]).lower()}"
+                if main["checker"] == "workday":
+                    from internwatch.moves import system_key_v2
+                    target = system_key_v2("workday", {**st, "site": (st.get("sites") or [st.get("site")])[0]})
+                else:
+                    target = f"{main['checker']}:board={(st.get('board') or st.get('boards', [''])[0]).lower()}"
                 al.append(f"    ripplematch:company={rm[k]['slug']}: '{target}'   # {k}: its RippleMatch page, watched")
-    mirrors = yaml.safe_load((C / "mirrors.yaml").read_text())
+    mirrors, cant = yaml.safe_load((C / "mirrors.yaml").read_text()), []
     for k in sorted(plan):
         for m in mirrors.get(k) or []:
-            al.append(f"    {m['system']}: '{m['as']}'   # {k}: {m['why'].split(';')[0]}")
+            if m.get("unreadable"):  # a site its careers page names that no script may read: listed, never read
+                cant.append(f'    - {{company: {k}, board: "{m["system"]}", why: {m["unreadable"]}}}')
+            else:
+                al.append(f"    {m['system']}: '{m['as']}'   # {k}: {m['why'].split(';')[0]}")
+    append("watch_unreadable", cant)
     append("watch_boards", watch)
     append("job_lists", jobs)
     append("wp_pages", wp)
@@ -370,11 +480,11 @@ def listcheck(n: int) -> None:
     """Before a batch's go-live morning is recorded: the job systems linked for its companies that the final config
     doesn't count as known (its own boards, parallel boards, liveness.aliases). The lists the last morning kept
     (data/lists) are matched with the final config, as the round's list check will match them (names and aliases
-    included), and each company's careers page is taken from Stage 1 (systems.json). A list's link would raise
-    `new job site?` on the first morning and a page's would sit in the page check's silent first look: read it,
-    record it in mirrors.yaml, or expect the alert."""
+    included): such a link would raise `new job site?` on the first morning, so read it, record it in mirrors.yaml,
+    or expect the alert. Then the systems each careers page named when it was last read (pages.json), as the page
+    check names them: one that isn't configured sits in that check's silent first look for good, so explain it."""
     from types import SimpleNamespace
-    from internwatch import config, moves
+    from internwatch import config, liveness, moves
     from internwatch.crosscheck import CompanyIndex
     cfg = config.load(REPO)
     ctx = SimpleNamespace(cfg=cfg.scoped("added"))
@@ -394,18 +504,23 @@ def listcheck(n: int) -> None:
             if c is not None and c.key in keys:
                 for k in ([al.get(system, system)] if system else moves.systems_in(url, "", c, al)):
                     seen.setdefault((c.key, k), f"list: {src.get('label', src['name'])} ({company!r} {url})")
-    for k in sorted(keys):
-        for system, tags in (load("systems.json").get(k) or {}).items():
-            if "page" in tags:
-                seen.setdefault((k, al.get(system, system)), "its careers page (Stage 1)")
     found = 0
     for (k, system), where in sorted(seen.items()):
         if system not in moves.known_systems(ctx, cfg.company(k)) and not system.startswith("other:"):
             found += 1
             print(f"{k:22} {system:50} {where[:150]}")
-    print(f"batch {n}: {found} linked job systems the config doesn't know")
+    print(f"batch {n}: {found} job systems the lists link that the config doesn't know")
+    pages, named = load("pages.json"), 0
+    for k in sorted(keys):
+        c = cfg.company(k)
+        mine = liveness.config_keys(c) | liveness.config_keys(c, liveness.page_key)
+        for system in sorted((pages.get(k) or {}).get("systems") or []):
+            if system not in mine and al.get(system, system) not in moves.known_systems(ctx, c):
+                named += 1
+                print(f"{k:22} {system:50} its careers page names it (silent first look)")
+    print(f"batch {n}: {named} job systems the careers pages name that the config doesn't read")
 
 
 if __name__ == "__main__":
     cmd, n = sys.argv[1], int(sys.argv[2])
-    {"render": render, "apply": apply, "listcheck": listcheck}[cmd](n)
+    {"render": render, "apply": apply, "listcheck": listcheck, "sitecopies": sitecopies}[cmd](n)

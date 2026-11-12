@@ -7,12 +7,12 @@
   "jobs": 421,
   "students": 0,
   "matched": 0,
-  "seconds": 21.4,
+  "seconds": 21.5,
   "requests": 22,
   "partial": false,
   "degraded": null,
   "reported_total": 421,
-  "started": "2026-11-09T23:45:51Z"
+  "started": "2026-11-12T14:38:47Z"
  },
  "bank-of-america~site-Lateral-US": {
   "checker": "workday",
@@ -142,12 +142,12 @@
   "jobs": 1,
   "students": 1,
   "matched": 0,
-  "seconds": 0.4,
+  "seconds": 0.3,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": 1,
-  "started": "2026-11-09T23:45:53Z"
+  "started": "2026-11-12T14:38:48Z"
  },
  "chewy~site-Relief-Veterinarian-Contractors": {
   "checker": "workday",
@@ -162,7 +162,7 @@
   "partial": false,
   "degraded": null,
   "reported_total": 9,
-  "started": "2026-11-09T23:45:53Z"
+  "started": "2026-11-12T14:38:48Z"
  },
  "chewy~site-Student-Ambassador-Contractors": {
   "checker": "workday",
@@ -172,12 +172,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 0.8,
+  "seconds": 1.3,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:45:54Z"
+  "started": "2026-11-12T14:38:48Z"
  },
  "conductorone~conductorone": {
   "checker": "ashby",
@@ -199,15 +199,15 @@
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 20,
+  "jobs": 23,
   "students": 0,
   "matched": 0,
-  "seconds": 0.6,
-  "requests": 1,
+  "seconds": 1.5,
+  "requests": 2,
   "partial": false,
   "degraded": null,
-  "reported_total": 20,
-  "started": "2026-11-09T23:45:55Z"
+  "reported_total": 23,
+  "started": "2026-11-12T14:38:49Z"
  },
  "costar~site-CoStarCanadaCareers": {
   "checker": "workday",
@@ -217,27 +217,27 @@
   "jobs": 3,
   "students": 0,
   "matched": 0,
-  "seconds": 0.8,
+  "seconds": 0.7,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": 3,
-  "started": "2026-11-09T23:45:55Z"
+  "started": "2026-11-12T14:38:49Z"
  },
  "costar~site-CoStarCareersEurope": {
   "checker": "workday",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 20,
+  "jobs": 18,
   "students": 0,
   "matched": 0,
-  "seconds": 1.3,
+  "seconds": 1.4,
   "requests": 1,
   "partial": false,
   "degraded": null,
-  "reported_total": 20,
-  "started": "2026-11-09T23:45:55Z"
+  "reported_total": 18,
+  "started": "2026-11-12T14:38:50Z"
  },
  "costar~site-CoStarCareersNiche": {
   "checker": "workday",
@@ -252,7 +252,7 @@
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:45:56Z"
+  "started": "2026-11-12T14:38:50Z"
  },
  "costar~site-Richmond_Recruiting": {
   "checker": "workday",
@@ -262,12 +262,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 2.8,
+  "seconds": 1.8,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:45:56Z"
+  "started": "2026-11-12T14:38:51Z"
  },
  "costar~site-SanDiego_Research": {
   "checker": "workday",
@@ -277,12 +277,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 3.0,
+  "seconds": 2.1,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:45:57Z"
+  "started": "2026-11-12T14:38:52Z"
  },
  "costar~site-Washington_Research": {
   "checker": "workday",
@@ -292,27 +292,27 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 3.0,
+  "seconds": 2.6,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:45:58Z"
+  "started": "2026-11-12T14:38:53Z"
  },
  "costar~site-broadbean_external": {
   "checker": "workday",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 10,
+  "jobs": 11,
   "students": 0,
   "matched": 0,
   "seconds": 2.6,
   "requests": 1,
   "partial": false,
   "degraded": null,
-  "reported_total": 10,
-  "started": "2026-11-09T23:45:59Z"
+  "reported_total": 11,
+  "started": "2026-11-12T14:38:53Z"
  },
  "costco": {
   "checker": "jibe",
@@ -372,9 +372,24 @@
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:00Z"
+  "started": "2026-11-12T14:38:54Z"
  },
  "elevance-health~site-Legato_Ireland": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 1.0,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:38:55Z"
+ },
+ "elevance-health~site-Legato_Israel": {
   "checker": "workday",
   "ok": true,
   "error": null,
@@ -387,69 +402,39 @@
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:00Z"
- },
- "elevance-health~site-Legato_Israel": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 2.0,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:00Z"
+  "started": "2026-11-12T14:38:55Z"
  },
  "elevance-health~site-carelonglobal_in": {
   "checker": "workday",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 7,
+  "jobs": 18,
   "students": 0,
   "matched": 0,
-  "seconds": 2.7,
+  "seconds": 2.2,
   "requests": 1,
   "partial": false,
   "degraded": null,
-  "reported_total": 7,
-  "started": "2026-11-09T23:46:01Z"
+  "reported_total": 18,
+  "started": "2026-11-12T14:38:55Z"
  },
  "elevance-health~site-carelonglobal_ph": {
   "checker": "workday",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 19,
+  "jobs": 18,
   "students": 1,
   "matched": 0,
-  "seconds": 3.2,
+  "seconds": 2.8,
   "requests": 1,
   "partial": false,
   "degraded": null,
-  "reported_total": 19,
-  "started": "2026-11-09T23:46:01Z"
+  "reported_total": 18,
+  "started": "2026-11-12T14:38:56Z"
  },
  "equinix~site-Adecco": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 0.8,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:01Z"
- },
- "equinix~site-Adecco_Personaldienstleistungen_GmbH": {
   "checker": "workday",
   "ok": true,
   "error": null,
@@ -462,7 +447,22 @@
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:02Z"
+  "started": "2026-11-12T14:38:56Z"
+ },
+ "equinix~site-Adecco_Personaldienstleistungen_GmbH": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 1.1,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:38:56Z"
  },
  "equinix~site-Align_Technical_Resources": {
   "checker": "workday",
@@ -472,12 +472,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 1.4,
+  "seconds": 1.7,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:02Z"
+  "started": "2026-11-12T14:38:57Z"
  },
  "equinix~site-Annapurna_HR": {
   "checker": "workday",
@@ -492,7 +492,7 @@
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:03Z"
+  "started": "2026-11-12T14:38:58Z"
  },
  "equinix~site-BSI_People": {
   "checker": "workday",
@@ -502,119 +502,14 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 2.3,
+  "seconds": 3.0,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:03Z"
+  "started": "2026-11-12T14:38:58Z"
  },
  "equinix~site-Boyd_Moore_Executive_Search": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 3.4,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:04Z"
- },
- "equinix~site-Bradley-Morris_LLC_dba_Bradley-Morris_Inc": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 3.2,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:04Z"
- },
- "equinix~site-Brix_Projects": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 4.0,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:05Z"
- },
- "equinix~site-CDS_Recruitment": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 4.1,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:06Z"
- },
- "equinix~site-Career_Design_Center": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 4.0,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:07Z"
- },
- "equinix~site-Careertrotter": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 4.0,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:08Z"
- },
- "equinix~site-Clifford_Baines": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 4.0,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:09Z"
- },
- "equinix~site-DaijobGlobalRecruiting": {
   "checker": "workday",
   "ok": true,
   "error": null,
@@ -627,9 +522,9 @@
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:10Z"
+  "started": "2026-11-12T14:38:58Z"
  },
- "equinix~site-Datacenterpeople_Ltd": {
+ "equinix~site-Bradley-Morris_LLC_dba_Bradley-Morris_Inc": {
   "checker": "workday",
   "ok": true,
   "error": null,
@@ -637,14 +532,14 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 4.7,
+  "seconds": 4.0,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:10Z"
+  "started": "2026-11-12T14:38:59Z"
  },
- "equinix~site-Euro_London_Appointment": {
+ "equinix~site-Brix_Projects": {
   "checker": "workday",
   "ok": true,
   "error": null,
@@ -652,14 +547,14 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 5.6,
+  "seconds": 5.3,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:11Z"
+  "started": "2026-11-12T14:38:59Z"
  },
- "equinix~site-Execuforce": {
+ "equinix~site-CDS_Recruitment": {
   "checker": "workday",
   "ok": true,
   "error": null,
@@ -672,7 +567,112 @@
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:12Z"
+  "started": "2026-11-12T14:39:00Z"
+ },
+ "equinix~site-Career_Design_Center": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 5.3,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:01Z"
+ },
+ "equinix~site-Careertrotter": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 7.7,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:02Z"
+ },
+ "equinix~site-Clifford_Baines": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 5.0,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:03Z"
+ },
+ "equinix~site-DaijobGlobalRecruiting": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 5.1,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:04Z"
+ },
+ "equinix~site-Datacenterpeople_Ltd": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 5.1,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:05Z"
+ },
+ "equinix~site-Euro_London_Appointment": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 4.7,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:06Z"
+ },
+ "equinix~site-Execuforce": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 4.0,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:08Z"
  },
  "equinix~site-GDH_Consulting": {
   "checker": "workday",
@@ -682,12 +682,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 5.7,
+  "seconds": 3.8,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:12Z"
+  "started": "2026-11-12T14:39:09Z"
  },
  "equinix~site-Golden_Searches_Information_Consultant": {
   "checker": "workday",
@@ -697,12 +697,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 6.4,
+  "seconds": 4.7,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:13Z"
+  "started": "2026-11-12T14:39:09Z"
  },
  "equinix~site-HaysSpecialistRecruitmentJapan": {
   "checker": "workday",
@@ -712,12 +712,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 7.0,
+  "seconds": 5.6,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:13Z"
+  "started": "2026-11-12T14:39:10Z"
  },
  "equinix~site-Heidrick_Struggles": {
   "checker": "workday",
@@ -727,12 +727,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 12.1,
+  "seconds": 6.2,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:14Z"
+  "started": "2026-11-12T14:39:10Z"
  },
  "equinix~site-IQ_Telecom": {
   "checker": "workday",
@@ -742,14 +742,29 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 7.2,
+  "seconds": 6.0,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:15Z"
+  "started": "2026-11-12T14:39:11Z"
  },
  "equinix~site-Intelligence": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 6.0,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:12Z"
+ },
+ "equinix~site-JAC_Recruitment": {
   "checker": "workday",
   "ok": true,
   "error": null,
@@ -762,22 +777,7 @@
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:17Z"
- },
- "equinix~site-JAC_Recruitment": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 7.1,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:17Z"
+  "started": "2026-11-12T14:39:13Z"
  },
  "equinix~site-Magellan_Professional_Solutions": {
   "checker": "workday",
@@ -787,12 +787,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 7.0,
+  "seconds": 6.0,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:18Z"
+  "started": "2026-11-12T14:39:14Z"
  },
  "equinix~site-ManpowerGroup": {
   "checker": "workday",
@@ -802,12 +802,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 7.0,
+  "seconds": 5.9,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:19Z"
+  "started": "2026-11-12T14:39:15Z"
  },
  "equinix~site-Michael_Page_International": {
   "checker": "workday",
@@ -817,12 +817,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 6.8,
+  "seconds": 5.8,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:20Z"
+  "started": "2026-11-12T14:39:16Z"
  },
  "equinix~site-Michael_Page_International_Japan_KK": {
   "checker": "workday",
@@ -832,12 +832,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 6.4,
+  "seconds": 6.3,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:22Z"
+  "started": "2026-11-12T14:39:17Z"
  },
  "equinix~site-MorganMcKinley": {
   "checker": "workday",
@@ -852,7 +852,7 @@
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:23Z"
+  "started": "2026-11-12T14:39:18Z"
  },
  "equinix~site-Mynavi_Corporation": {
   "checker": "workday",
@@ -862,29 +862,14 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 6.3,
+  "seconds": 6.2,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:24Z"
+  "started": "2026-11-12T14:39:19Z"
  },
  "equinix~site-PMA_Recruitment": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 6.1,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:25Z"
- },
- "equinix~site-PRECEPT": {
   "checker": "workday",
   "ok": true,
   "error": null,
@@ -897,7 +882,22 @@
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:26Z"
+  "started": "2026-11-12T14:39:20Z"
+ },
+ "equinix~site-PRECEPT": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 5.8,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:21Z"
  },
  "equinix~site-PRS_Recruitment_Services": {
   "checker": "workday",
@@ -907,12 +907,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 6.8,
+  "seconds": 6.0,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:26Z"
+  "started": "2026-11-12T14:39:22Z"
  },
  "equinix~site-Page_Personnel": {
   "checker": "workday",
@@ -922,14 +922,164 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 7.1,
+  "seconds": 5.8,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:27Z"
+  "started": "2026-11-12T14:39:23Z"
  },
  "equinix~site-Page_Personnel_Deutschland_GmbH": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 5.8,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:24Z"
+ },
+ "equinix~site-Pro-Unlimited": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 5.8,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:25Z"
+ },
+ "equinix~site-Recruit_Agent": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 6.2,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:26Z"
+ },
+ "equinix~site-Recruit_Career": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 6.2,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:27Z"
+ },
+ "equinix~site-Recruit_Plus": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 6.0,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:28Z"
+ },
+ "equinix~site-Robert_Half_International_Inc": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 6.0,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:29Z"
+ },
+ "equinix~site-Robert_Walters_Pty_Ltd": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 6.0,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:30Z"
+ },
+ "equinix~site-Skill_House": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 7.9,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:31Z"
+ },
+ "equinix~site-Skillhouse_Staffing_Solutions_KK": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 6.1,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:32Z"
+ },
+ "equinix~site-Soar_Consulting_Inc": {
+  "checker": "workday",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 0,
+  "students": 0,
+  "matched": 0,
+  "seconds": 5.6,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:39:33Z"
+ },
+ "equinix~site-en_japan_inc": {
   "checker": "workday",
   "ok": true,
   "error": null,
@@ -942,157 +1092,7 @@
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:28Z"
- },
- "equinix~site-Pro-Unlimited": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 6.9,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:29Z"
- },
- "equinix~site-Recruit_Agent": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 6.8,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:30Z"
- },
- "equinix~site-Recruit_Career": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 7.3,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:31Z"
- },
- "equinix~site-Recruit_Plus": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 6.7,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:32Z"
- },
- "equinix~site-Robert_Half_International_Inc": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 7.2,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:33Z"
- },
- "equinix~site-Robert_Walters_Pty_Ltd": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 7.0,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:34Z"
- },
- "equinix~site-Skill_House": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 7.1,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:35Z"
- },
- "equinix~site-Skillhouse_Staffing_Solutions_KK": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 7.2,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:36Z"
- },
- "equinix~site-Soar_Consulting_Inc": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 7.0,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:37Z"
- },
- "equinix~site-en_japan_inc": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 7.0,
-  "requests": 1,
-  "partial": false,
-  "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:38Z"
+  "started": "2026-11-12T14:39:34Z"
  },
  "equinix~site-enworld_Co_Ltd": {
   "checker": "workday",
@@ -1102,27 +1102,27 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 7.4,
+  "seconds": 6.3,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:39Z"
+  "started": "2026-11-12T14:39:35Z"
  },
  "etsy~site-Depop_Careers": {
   "checker": "workday",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 23,
+  "jobs": 21,
   "students": 0,
   "matched": 0,
-  "seconds": 2.5,
+  "seconds": 1.5,
   "requests": 2,
   "partial": false,
   "degraded": null,
-  "reported_total": 23,
-  "started": "2026-11-09T23:46:40Z"
+  "reported_total": 21,
+  "started": "2026-11-12T14:39:36Z"
  },
  "etsy~site-Reverb_Careers": {
   "checker": "workday",
@@ -1132,12 +1132,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 0.7,
+  "seconds": 2.0,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:41Z"
+  "started": "2026-11-12T14:39:36Z"
  },
  "f5~site-f5events": {
   "checker": "workday",
@@ -1147,12 +1147,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 0.8,
+  "seconds": 0.5,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:42Z"
+  "started": "2026-11-12T14:39:37Z"
  },
  "fiserv~site-NZ": {
   "checker": "workday",
@@ -1167,7 +1167,7 @@
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:42Z"
+  "started": "2026-11-12T14:39:38Z"
  },
  "fiserv~site-blconsultant": {
   "checker": "workday",
@@ -1177,12 +1177,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 1.1,
+  "seconds": 1.3,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:42Z"
+  "started": "2026-11-12T14:39:38Z"
  },
  "fis~site-AgencyCareerSite": {
   "checker": "workday",
@@ -1192,12 +1192,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 0.4,
+  "seconds": 0.3,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:42Z"
+  "started": "2026-11-12T14:39:38Z"
  },
  "fortinet~cx_1": {
   "checker": "oracle",
@@ -1279,15 +1279,15 @@
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 1833,
+  "jobs": 1819,
   "students": 0,
   "matched": 0,
-  "seconds": 95.5,
+  "seconds": 96.7,
   "requests": 92,
-  "partial": false,
-  "degraded": null,
-  "reported_total": 1833,
-  "started": "2026-11-09T23:46:43Z"
+  "partial": true,
+  "degraded": "workday:humana: skipped 4 postings without a link",
+  "reported_total": 1823,
+  "started": "2026-11-12T14:39:38Z"
  },
  "jpmorgan-chase~cx_2001": {
   "checker": "oracle",
@@ -1312,27 +1312,27 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 0.7,
+  "seconds": 0.9,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:44Z"
+  "started": "2026-11-12T14:39:38Z"
  },
  "kla~site-Israel": {
   "checker": "workday",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 83,
+  "jobs": 81,
   "students": 1,
   "matched": 0,
-  "seconds": 6.9,
+  "seconds": 7.4,
   "requests": 5,
   "partial": false,
   "degraded": null,
-  "reported_total": 83,
-  "started": "2026-11-09T23:46:45Z"
+  "reported_total": 81,
+  "started": "2026-11-12T14:39:39Z"
  },
  "kla~site-Penang_Semicon": {
   "checker": "workday",
@@ -1342,12 +1342,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 1.3,
+  "seconds": 2.4,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:45Z"
+  "started": "2026-11-12T14:39:39Z"
  },
  "kla~site-Taiwan": {
   "checker": "workday",
@@ -1357,12 +1357,12 @@
   "jobs": 4,
   "students": 0,
   "matched": 0,
-  "seconds": 2.2,
+  "seconds": 3.0,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": 4,
-  "started": "2026-11-09T23:46:45Z"
+  "started": "2026-11-12T14:39:39Z"
  },
  "marvell~site-Scout": {
   "checker": "workday",
@@ -1377,37 +1377,37 @@
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:46Z"
+  "started": "2026-11-12T14:39:39Z"
  },
  "mastercard~site-CampusApplyOnly": {
   "checker": "workday",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 30,
-  "students": 10,
+  "jobs": 35,
+  "students": 12,
   "matched": 0,
-  "seconds": 3.1,
+  "seconds": 2.8,
   "requests": 2,
   "partial": false,
   "degraded": null,
-  "reported_total": 30,
-  "started": "2026-11-09T23:46:47Z"
+  "reported_total": 35,
+  "started": "2026-11-12T14:39:40Z"
  },
  "mastercard~site-ContractorConversion": {
   "checker": "workday",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 1,
+  "jobs": 3,
   "students": 0,
   "matched": 0,
-  "seconds": 0.6,
+  "seconds": 0.3,
   "requests": 1,
   "partial": false,
   "degraded": null,
-  "reported_total": 1,
-  "started": "2026-11-09T23:46:46Z"
+  "reported_total": 3,
+  "started": "2026-11-12T14:39:40Z"
  },
  "mastercard~site-RYC": {
   "checker": "workday",
@@ -1417,27 +1417,27 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 1.8,
+  "seconds": 1.6,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:46Z"
+  "started": "2026-11-12T14:39:40Z"
  },
  "mckesson~site-Acquisition_Campus": {
   "checker": "workday",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 0,
-  "students": 0,
-  "matched": 0,
-  "seconds": 0.9,
+  "jobs": 2,
+  "students": 2,
+  "matched": 2,
+  "seconds": 1.2,
   "requests": 1,
   "partial": false,
   "degraded": null,
-  "reported_total": null,
-  "started": "2026-11-09T23:46:47Z"
+  "reported_total": 2,
+  "started": "2026-11-12T14:39:41Z"
  },
  "mckesson~site-CoverMyMeds_External_Careers": {
   "checker": "workday",
@@ -1447,12 +1447,12 @@
   "jobs": 20,
   "students": 1,
   "matched": 0,
-  "seconds": 1.4,
+  "seconds": 2.1,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": 20,
-  "started": "2026-11-09T23:46:47Z"
+  "started": "2026-11-12T14:39:41Z"
  },
  "mckesson~site-Ontada_Careers": {
   "checker": "workday",
@@ -1462,27 +1462,27 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 2.0,
+  "seconds": 2.3,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:48Z"
+  "started": "2026-11-12T14:39:42Z"
  },
  "mckesson~site-SCRI_Careers": {
   "checker": "workday",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 19,
+  "jobs": 20,
   "students": 0,
   "matched": 0,
-  "seconds": 2.7,
+  "seconds": 2.9,
   "requests": 1,
   "partial": false,
   "degraded": null,
-  "reported_total": 19,
-  "started": "2026-11-09T23:46:48Z"
+  "reported_total": 20,
+  "started": "2026-11-12T14:39:42Z"
  },
  "mckesson~site-rxsscareers": {
   "checker": "workday",
@@ -1492,12 +1492,12 @@
   "jobs": 2,
   "students": 0,
   "matched": 0,
-  "seconds": 2.9,
+  "seconds": 3.7,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": 2,
-  "started": "2026-11-09T23:46:49Z"
+  "started": "2026-11-12T14:39:42Z"
  },
  "mercor~ripplematch": {
   "checker": "ripplematch",
@@ -1522,12 +1522,12 @@
   "jobs": 3,
   "students": 0,
   "matched": 0,
-  "seconds": 0.7,
+  "seconds": 0.8,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": 3,
-  "started": "2026-11-09T23:46:50Z"
+  "started": "2026-11-12T14:39:43Z"
  },
  "nasdaq~site-eVestment": {
   "checker": "workday",
@@ -1537,27 +1537,27 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 1.5,
+  "seconds": 1.6,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:50Z"
+  "started": "2026-11-12T14:39:43Z"
  },
  "nationwide~site-Nationwide_Career_India": {
   "checker": "workday",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 31,
+  "jobs": 33,
   "students": 0,
   "matched": 0,
   "seconds": 1.7,
   "requests": 2,
   "partial": false,
   "degraded": null,
-  "reported_total": 31,
-  "started": "2026-11-09T23:46:50Z"
+  "reported_total": 33,
+  "started": "2026-11-12T14:39:44Z"
  },
  "ncino~site-nCinoAgency": {
   "checker": "workday",
@@ -1587,7 +1587,7 @@
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:51Z"
+  "started": "2026-11-12T14:39:44Z"
  },
  "northwestern-mutual~site-CORPORATE-CAREERS-PRIVATE": {
   "checker": "workday",
@@ -1597,12 +1597,12 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 1.1,
+  "seconds": 0.8,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:51Z"
+  "started": "2026-11-12T14:39:45Z"
  },
  "precisely": {
   "checker": "greenhouse",
@@ -1672,12 +1672,12 @@
   "jobs": 2,
   "students": 0,
   "matched": 0,
-  "seconds": 0.9,
+  "seconds": 0.5,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": 2,
-  "started": "2026-11-09T23:46:51Z"
+  "started": "2026-11-12T14:39:45Z"
  },
  "snap~ripplematch": {
   "checker": "ripplematch",
@@ -1687,27 +1687,27 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 1.0,
+  "seconds": 0.5,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:47:39Z"
+  "started": "2026-11-12T14:39:46Z"
  },
  "sonos~site-Student_Opportunities": {
   "checker": "workday",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 4,
-  "students": 4,
+  "jobs": 2,
+  "students": 2,
   "matched": 2,
-  "seconds": 0.4,
+  "seconds": 0.3,
   "requests": 1,
   "partial": false,
   "degraded": null,
-  "reported_total": 4,
-  "started": "2026-11-09T23:46:52Z"
+  "reported_total": 2,
+  "started": "2026-11-12T14:39:45Z"
  },
  "superhuman~superhuman": {
   "checker": "ashby",
@@ -1732,27 +1732,27 @@
   "jobs": 0,
   "students": 0,
   "matched": 0,
-  "seconds": 0.3,
+  "seconds": 0.4,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:52Z"
+  "started": "2026-11-12T14:39:45Z"
  },
  "synchrony~site-careers": {
   "checker": "workday",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 26,
+  "jobs": 29,
   "students": 1,
   "matched": 1,
-  "seconds": 3.0,
+  "seconds": 3.1,
   "requests": 2,
   "partial": false,
   "degraded": null,
-  "reported_total": 26,
-  "started": "2026-11-09T23:46:52Z"
+  "reported_total": 29,
+  "started": "2026-11-12T14:39:45Z"
  },
  "texas-instruments~ebgj": {
   "checker": "oracle",
@@ -1789,15 +1789,15 @@
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 9,
+  "jobs": 8,
   "students": 0,
   "matched": 0,
   "seconds": 0.6,
   "requests": 1,
   "partial": false,
   "degraded": null,
-  "reported_total": 9,
-  "started": "2026-11-09T23:46:52Z"
+  "reported_total": 8,
+  "started": "2026-11-12T14:39:45Z"
  },
  "tyler-technologies": {
   "checker": "jobvite",
@@ -1857,22 +1857,22 @@
   "partial": false,
   "degraded": null,
   "reported_total": 7,
-  "started": "2026-11-09T23:46:52Z"
+  "started": "2026-11-12T14:39:46Z"
  },
  "verizon~ripplematch": {
   "checker": "ripplematch",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 0,
-  "students": 0,
+  "jobs": 1,
+  "students": 1,
   "matched": 0,
-  "seconds": 1.0,
+  "seconds": 1.3,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:47:40Z"
+  "started": "2026-11-12T14:39:47Z"
  },
  "walmart~site-Non-WorkdayInternal": {
   "checker": "workday",
@@ -1902,7 +1902,7 @@
   "partial": false,
   "degraded": null,
   "reported_total": 4,
-  "started": "2026-11-09T23:46:53Z"
+  "started": "2026-11-12T14:39:46Z"
  },
  "washington-post~site-WashingtonPostCareersArc": {
   "checker": "workday",
@@ -1912,11 +1912,11 @@
   "jobs": 7,
   "students": 0,
   "matched": 0,
-  "seconds": 0.9,
+  "seconds": 0.6,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": 7,
-  "started": "2026-11-09T23:46:53Z"
+  "started": "2026-11-12T14:39:46Z"
  }
 }

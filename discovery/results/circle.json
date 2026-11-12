@@ -1,0 +1,44 @@
+{
+  "key": "circle",
+  "name": "Circle",
+  "careers_url": "https://careers.circle.com/us/en",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "circle.wd1.myworkdayjobs.com",
+      "ashbyhq.com/circle/"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "circle.wd1.myworkdayjobs.com",
+          "tenant": "circle",
+          "site": "Circle"
+        }
+      },
+      {
+        "checker": "ashby",
+        "settings": {
+          "board": "circle"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://circle.wd1.myworkdayjobs.com/wday/cxs/circle/Circle/jobs + GET https://api.ashbyhq.com/posting-api/job-board/circle",
+  "feed_total": 66,
+  "page_total": 66,
+  "page_total_how": "each read's own count, added up: 61 (circle: workday's own reported total (the careers page shows it)) + 5 (ashby: the hosted Ashby page's job list) (2026-11-12)",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "circle.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/circle.wd1.myworkdayjobs.com.txt)",
+  "notes": "Two boards: POST https://circle.wd1.myworkdayjobs.com/wday/cxs/circle/Circle/jobs + GET https://api.ashbyhq.com/posting-api/job-board/circle; a later board's posting with an earlier one's id or requisition is skipped.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

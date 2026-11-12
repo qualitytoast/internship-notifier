@@ -61,6 +61,11 @@ ALIASES = {
     "netic": ["Cybernetic Labs"],
     "glossgenius": ["Genius AI"],
     "rivian-vw": ["Rivian and Volkswagen Group Technologies"],
+    "comcast": ["NBCUniversal"],
+    "verizon": ["Verizon Communications"],
+    "cox": ["Cox"],
+    "snap": ["Snapchat"],
+    "synchrony": ["Synchrony Financial"],
 }
 
 # Freshman/sophomore program names that can appear in a posting title without a student word (UNDERCLASSMEN.md
@@ -96,6 +101,10 @@ PROGRAM_KEYWORDS: dict[str, list[str]] = {
     "autodesk": ["phd researcher"],
     # Apex Fintech Solutions' interns, a PEAK6 company ("2026 AFS Technology Fintern - Software Engineering")
     "peak6": ["fintern"],
+    # added in November 2026: program titles with no student word (candidates/underclassmen_research.md)
+    "hartford": ["early immersion program"],
+    "usaa": ["accelerate program"],
+    "verizon": ["sprinternship"],
 }
 
 # Hand-tuned settings on top of discovery (each comes from a discovery note).

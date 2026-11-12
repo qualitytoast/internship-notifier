@@ -1,0 +1,65 @@
+{
+  "key": "att",
+  "name": "AT&T",
+  "careers_url": "https://www.att.jobs/",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "//att.wd1.myworkdayjobs.com/"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "att.wd1.myworkdayjobs.com",
+          "anchor_host": true,
+          "tenant": "att",
+          "site": "ATTGeneral"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "att.wd1.myworkdayjobs.com",
+          "anchor_host": true,
+          "tenant": "att",
+          "site": "ATTcollege"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "att.wd1.myworkdayjobs.com",
+          "anchor_host": true,
+          "tenant": "att",
+          "site": "Cricket"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "att.wd1.myworkdayjobs.com",
+          "anchor_host": true,
+          "tenant": "att",
+          "site": "ATTCollegeSpecialInvite"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://att.wd1.myworkdayjobs.com/wday/cxs/att/ATTGeneral/jobs + POST https://att.wd1.myworkdayjobs.com/wday/cxs/att/ATTcollege/jobs + POST https://att.wd1.myworkdayjobs.com/wday/cxs/att/Cricket/jobs + POST https://att.wd1.myworkdayjobs.com/wday/cxs/att/ATTCollegeSpecialInvite/jobs",
+  "feed_total": 1125,
+  "page_total": 1125,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 5,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "att.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/att.wd1.myworkdayjobs.com.txt)",
+  "notes": "4 boards: POST https://att.wd1.myworkdayjobs.com/wday/cxs/att/ATTGeneral/jobs + POST https://att.wd1.myworkdayjobs.com/wday/cxs/att/ATTcollege/jobs + POST https://att.wd1.myworkdayjobs.com/wday/cxs/att/Cricket/jobs + POST https://att.wd1.myworkdayjobs.com/wday/cxs/att/ATTCollegeSpecialInvite/jobs; a later board's posting with an earlier one's id or requisition is skipped.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

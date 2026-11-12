@@ -1,0 +1,25 @@
+{
+  "key": "nationwide",
+  "name": "Nationwide",
+  "careers_url": "https://www.nationwide.com/personal/about-us/careers/",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "nationwide.wd1.myworkdayjobs.com",
+    "tenant": "nationwide",
+    "site": "Nationwide_Career"
+  },
+  "feed": "POST https://nationwide.wd1.myworkdayjobs.com/wday/cxs/nationwide/Nationwide_Career/jobs",
+  "feed_total": 160,
+  "page_total": 160,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 6,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "nationwide.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/nationwide.wd1.myworkdayjobs.com.txt)",
+  "notes": "Not read: nationwide~site-Nationwide_Career_India: public Workday site, 33 jobs, no student role: recorded as known.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

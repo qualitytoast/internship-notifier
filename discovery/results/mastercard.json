@@ -1,0 +1,61 @@
+{
+  "key": "mastercard",
+  "name": "Mastercard",
+  "careers_url": "https://careers.mastercard.com/us/en/",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "mastercard.wd1.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "mastercard.wd1.myworkdayjobs.com",
+          "tenant": "mastercard",
+          "site": "CorporateCareers"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "mastercard.wd1.myworkdayjobs.com",
+          "tenant": "mastercard",
+          "site": "Campus"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "mastercard.wd1.myworkdayjobs.com",
+          "tenant": "mastercard",
+          "site": "Public_Posting_Site"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "mastercard.wd1.myworkdayjobs.com",
+          "tenant": "mastercard",
+          "site": "CampusApplyOnly"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs + POST https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/Campus/jobs + POST https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/Public_Posting_Site/jobs + POST https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CampusApplyOnly/jobs",
+  "feed_total": 931,
+  "page_total": 974,
+  "page_total_how": "each read's own count, added up: 939 (mastercard: workday's own reported total (the careers page shows it)) + 35 (CampusApplyOnly: workday's own reported total (the careers page shows it)) (2026-11-12)",
+  "intern_total": 41,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "mastercard.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/mastercard.wd1.myworkdayjobs.com.txt)",
+  "notes": "Its 4 Workday sites listed 974 postings on 2026-11-12, 43 of them a requisition an earlier site already lists, which is read once. 4 boards: POST https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs + POST https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/Campus/jobs + POST https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/Public_Posting_Site/jobs + POST https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CampusApplyOnly/jobs; a later board's posting with an earlier one's id or requisition is skipped. Not read: mastercard~site-ContractorConversion: public Workday site, 3 jobs, no student role: recorded as known. Not read: mastercard~site-RYC: public Workday site, 0 jobs, no student role: recorded as known.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

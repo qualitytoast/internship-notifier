@@ -14,6 +14,21 @@
   "reported_total": null,
   "started": "2026-11-10T01:42:10Z"
  },
+ "nasdaq~greenhouse": {
+  "checker": "greenhouse",
+  "ok": true,
+  "error": null,
+  "error_kind": null,
+  "jobs": 21,
+  "students": 1,
+  "matched": 0,
+  "seconds": 0.2,
+  "requests": 1,
+  "partial": false,
+  "degraded": null,
+  "reported_total": null,
+  "started": "2026-11-12T14:49:27Z"
+ },
  "northwestern-mutual~smartrecruiters": {
   "checker": "smartrecruiters",
   "ok": true,
@@ -22,11 +37,11 @@
   "jobs": 69,
   "students": 7,
   "matched": 7,
-  "seconds": 6.9,
+  "seconds": 7.0,
   "requests": 8,
   "partial": false,
   "degraded": null,
   "reported_total": 69,
-  "started": "2026-11-10T01:44:44Z"
+  "started": "2026-11-12T14:41:15Z"
  }
 }

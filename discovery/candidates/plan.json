@@ -88,9 +88,9 @@
    {
     "entry": "allstate",
     "checker": "workday",
-    "jobs": 429,
-    "students": 11,
-    "matched": 7,
+    "jobs": 427,
+    "students": 9,
+    "matched": 6,
     "seconds": 23.5,
     "requests": 23,
     "error": null
@@ -228,17 +228,17 @@
    {
     "entry": "analog-devices",
     "checker": "workday",
-    "jobs": 800,
-    "students": 70,
-    "matched": 25,
-    "seconds": 40.6,
+    "jobs": 783,
+    "students": 71,
+    "matched": 27,
+    "seconds": 40.4,
     "requests": 40,
     "error": null
    }
   ],
   "side": [],
   "dropped": [],
-  "page": "ok",
+  "page": "failed",
   "blocked_page": false,
   "very_large": false,
   "slice": null,
@@ -449,11 +449,11 @@
    {
     "entry": "att",
     "checker": "workday",
-    "jobs": 1104,
-    "students": 6,
+    "jobs": 1125,
+    "students": 5,
     "matched": 2,
-    "seconds": 66.0,
-    "requests": 58,
+    "seconds": 62.6,
+    "requests": 59,
     "error": null
    }
   ],
@@ -570,6 +570,17 @@
     "error": null
    },
    {
+    "entry": "bank-of-america~site-lateral-ba_continuum",
+    "checker": "workday",
+    "jobs": 115,
+    "students": 0,
+    "matched": 0,
+    "seconds": 20.5,
+    "requests": 6,
+    "error": null,
+    "subsidiary": "BA Continuum, India (Bank of America's Workday site lateral-ba_continuum)"
+   },
+   {
     "entry": "bank-of-america~oleeo",
     "checker": "oleeo",
     "jobs": 29,
@@ -593,10 +604,6 @@
    {
     "entry": "bank-of-america~site-lateral-apac",
     "why": "public Workday site, 98 jobs, no student role: recorded as known"
-   },
-   {
-    "entry": "bank-of-america~site-lateral-ba_continuum",
-    "why": "public Workday site, 115 jobs, no student role: recorded as known"
    },
    {
     "entry": "bank-of-america~site-lateral-canada",
@@ -796,11 +803,11 @@
    {
     "entry": "blackrock",
     "checker": "workday",
-    "jobs": 280,
+    "jobs": 298,
     "students": 14,
     "matched": 11,
-    "seconds": 15.0,
-    "requests": 15,
+    "seconds": 16.1,
+    "requests": 16,
     "error": null
    }
   ],
@@ -992,10 +999,10 @@
    {
     "entry": "cadence",
     "checker": "workday",
-    "jobs": 740,
+    "jobs": 729,
     "students": 53,
-    "matched": 28,
-    "seconds": 45.4,
+    "matched": 26,
+    "seconds": 42.6,
     "requests": 42,
     "error": null
    },
@@ -1005,7 +1012,7 @@
     "jobs": 1,
     "students": 1,
     "matched": 0,
-    "seconds": 0.4,
+    "seconds": 0.3,
     "requests": 1,
     "error": null
    }
@@ -1196,10 +1203,10 @@
    {
     "entry": "chewy",
     "checker": "workday",
-    "jobs": 232,
+    "jobs": 237,
     "students": 0,
     "matched": 0,
-    "seconds": 12.4,
+    "seconds": 12.5,
     "requests": 12,
     "error": null
    }
@@ -1259,10 +1266,10 @@
    {
     "entry": "ciena",
     "checker": "workday",
-    "jobs": 164,
-    "students": 17,
-    "matched": 6,
-    "seconds": 8.9,
+    "jobs": 173,
+    "students": 19,
+    "matched": 5,
+    "seconds": 10.7,
     "requests": 9,
     "error": null
    }
@@ -1289,17 +1296,17 @@
     "jobs": 61,
     "students": 0,
     "matched": 0,
-    "seconds": 4.0,
+    "seconds": 4.6,
     "requests": 4,
     "error": null
    },
    {
     "entry": "circle~ashby",
     "checker": "ashby",
-    "jobs": 6,
+    "jobs": 5,
     "students": 0,
     "matched": 0,
-    "seconds": 0.9,
+    "seconds": 0.3,
     "requests": 1,
     "error": null
    }
@@ -1406,10 +1413,10 @@
    {
     "entry": "cohesity",
     "checker": "workday",
-    "jobs": 185,
+    "jobs": 194,
     "students": 6,
     "matched": 3,
-    "seconds": 9.9,
+    "seconds": 10.1,
     "requests": 10,
     "error": null
    }
@@ -1460,27 +1467,26 @@
    {
     "entry": "comcast~wd115",
     "checker": "workday",
-    "jobs": 696,
+    "jobs": 708,
     "students": 2,
     "matched": 0,
-    "seconds": 34.6,
-    "requests": 35,
+    "seconds": 35.6,
+    "requests": 36,
     "error": null
-   }
-  ],
-  "side": [
+   },
    {
     "entry": "comcast~nbcuniversal",
     "checker": "smartrecruiters",
-    "jobs": 525,
-    "students": 138,
-    "matched": 54,
-    "seconds": 118.4,
-    "requests": 49,
+    "jobs": 520,
+    "students": 142,
+    "matched": 56,
+    "seconds": 47.3,
+    "requests": 47,
     "error": null,
     "subsidiary": "NBCUniversal (SmartRecruiters NBCUniversal3)"
    }
   ],
+  "side": [],
   "dropped": [
    {
     "entry": "comcast",
@@ -1590,21 +1596,27 @@
    {
     "entry": "copart",
     "checker": "workday",
-    "jobs": 412,
+    "jobs": 415,
     "students": 19,
     "matched": 19,
-    "seconds": 20.6,
+    "seconds": 20.8,
     "requests": 21,
     "error": null
+   },
+   {
+    "entry": "copart~site-NPACareers",
+    "checker": "workday",
+    "jobs": 23,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.5,
+    "requests": 2,
+    "error": null,
+    "subsidiary": "NPA (Copart's Workday site NPACareers)"
    }
   ],
   "side": [],
-  "dropped": [
-   {
-    "entry": "copart~site-NPACareers",
-    "why": "public Workday site, 20 jobs, no student role: recorded as known"
-   }
-  ],
+  "dropped": [],
   "page": "ok",
   "blocked_page": false,
   "very_large": false,
@@ -1622,10 +1634,10 @@
    {
     "entry": "costar",
     "checker": "workday",
-    "jobs": 367,
+    "jobs": 371,
     "students": 1,
     "matched": 0,
-    "seconds": 23.2,
+    "seconds": 21.3,
     "requests": 21,
     "error": null
    }
@@ -1638,7 +1650,7 @@
    },
    {
     "entry": "costar~site-CoStarCareersEurope",
-    "why": "public Workday site, 20 jobs, no student role: recorded as known"
+    "why": "public Workday site, 18 jobs, no student role: recorded as known"
    },
    {
     "entry": "costar~site-CoStarCareersNiche",
@@ -1658,11 +1670,11 @@
    },
    {
     "entry": "costar~site-broadbean_external",
-    "why": "public Workday site, 10 jobs, no student role: recorded as known"
+    "why": "public Workday site, 11 jobs, no student role: recorded as known"
    }
   ],
-  "page": "ok",
-  "blocked_page": false,
+  "page": "refused",
+  "blocked_page": true,
   "very_large": false,
   "slice": null,
   "simplify_rows": 7,
@@ -1715,11 +1727,11 @@
    {
     "entry": "cox",
     "checker": "workday",
-    "jobs": 789,
-    "students": 19,
-    "matched": 19,
-    "seconds": 42.2,
-    "requests": 40,
+    "jobs": 802,
+    "students": 20,
+    "matched": 20,
+    "seconds": 40.8,
+    "requests": 41,
     "error": null
    }
   ],
@@ -1831,7 +1843,7 @@
     "jobs": 13,
     "students": 3,
     "matched": 3,
-    "seconds": 0.9,
+    "seconds": 1.0,
     "requests": 1,
     "error": null
    }
@@ -1909,10 +1921,10 @@
    {
     "entry": "dexcom",
     "checker": "workday",
-    "jobs": 294,
+    "jobs": 295,
     "students": 2,
     "matched": 1,
-    "seconds": 15.1,
+    "seconds": 14.8,
     "requests": 15,
     "error": null
    }
@@ -2110,20 +2122,20 @@
    {
     "entry": "elevance-health",
     "checker": "workday",
-    "jobs": 282,
+    "jobs": 272,
     "students": 8,
-    "matched": 3,
-    "seconds": 17.2,
-    "requests": 16,
+    "matched": 2,
+    "seconds": 14.9,
+    "requests": 15,
     "error": null
    },
    {
     "entry": "elevance-health~site-carelonglobal_ph",
     "checker": "workday",
-    "jobs": 19,
+    "jobs": 18,
     "students": 1,
     "matched": 0,
-    "seconds": 3.2,
+    "seconds": 2.8,
     "requests": 1,
     "error": null
    }
@@ -2144,7 +2156,7 @@
    },
    {
     "entry": "elevance-health~site-carelonglobal_in",
-    "why": "public Workday site, 7 jobs, no student role: recorded as known"
+    "why": "public Workday site, 18 jobs, no student role: recorded as known"
    }
   ],
   "page": "ok",
@@ -2218,10 +2230,10 @@
    {
     "entry": "equinix",
     "checker": "workday",
-    "jobs": 308,
+    "jobs": 314,
     "students": 0,
     "matched": 0,
-    "seconds": 26.0,
+    "seconds": 16.5,
     "requests": 16,
     "error": null
    }
@@ -2456,17 +2468,24 @@
     "jobs": 68,
     "students": 0,
     "matched": 0,
-    "seconds": 3.9,
+    "seconds": 3.8,
     "requests": 4,
     "error": null
+   },
+   {
+    "entry": "etsy~site-Depop_Careers",
+    "checker": "workday",
+    "jobs": 21,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.5,
+    "requests": 2,
+    "error": null,
+    "subsidiary": "Depop (Etsy's Workday site Depop_Careers)"
    }
   ],
   "side": [],
   "dropped": [
-   {
-    "entry": "etsy~site-Depop_Careers",
-    "why": "public Workday site, 23 jobs, no student role: recorded as known"
-   },
    {
     "entry": "etsy~site-Reverb_Careers",
     "why": "public Workday site, 0 jobs, no student role: recorded as known"
@@ -2543,10 +2562,10 @@
    {
     "entry": "f5",
     "checker": "workday",
-    "jobs": 282,
+    "jobs": 292,
     "students": 2,
     "matched": 2,
-    "seconds": 15.2,
+    "seconds": 18.4,
     "requests": 15,
     "error": null
    }
@@ -2656,11 +2675,11 @@
    {
     "entry": "fis",
     "checker": "workday",
-    "jobs": 507,
+    "jobs": 499,
     "students": 1,
     "matched": 1,
-    "seconds": 27.0,
-    "requests": 26,
+    "seconds": 24.6,
+    "requests": 25,
     "error": null
    }
   ],
@@ -2688,10 +2707,10 @@
    {
     "entry": "fiserv",
     "checker": "workday",
-    "jobs": 386,
+    "jobs": 394,
     "students": 3,
     "matched": 0,
-    "seconds": 19.6,
+    "seconds": 22.5,
     "requests": 20,
     "error": null
    }
@@ -2786,7 +2805,7 @@
     "jobs": 71,
     "students": 2,
     "matched": 2,
-    "seconds": 3.7,
+    "seconds": 4.2,
     "requests": 4,
     "error": null
    }
@@ -2893,10 +2912,10 @@
    {
     "entry": "gen-digital",
     "checker": "ashby",
-    "jobs": 98,
-    "students": 4,
+    "jobs": 94,
+    "students": 3,
     "matched": 0,
-    "seconds": 0.2,
+    "seconds": 0.3,
     "requests": 1,
     "error": null
    }
@@ -2974,18 +2993,18 @@
    {
     "entry": "globalfoundries",
     "checker": "workday",
-    "jobs": 851,
-    "students": 120,
-    "matched": 76,
-    "seconds": 53.7,
+    "jobs": 852,
+    "students": 117,
+    "matched": 70,
+    "seconds": 43.1,
     "requests": 43,
     "error": null
    }
   ],
   "side": [],
   "dropped": [],
-  "page": "ok",
-  "blocked_page": false,
+  "page": "refused",
+  "blocked_page": true,
   "very_large": false,
   "slice": null,
   "simplify_rows": 24,
@@ -3087,10 +3106,10 @@
    {
     "entry": "guidewire",
     "checker": "workday",
-    "jobs": 117,
+    "jobs": 116,
     "students": 1,
     "matched": 0,
-    "seconds": 5.8,
+    "seconds": 5.9,
     "requests": 6,
     "error": null
    }
@@ -3195,11 +3214,11 @@
    {
     "entry": "hartford",
     "checker": "workday",
-    "jobs": 252,
+    "jobs": 248,
     "students": 24,
     "matched": 12,
-    "seconds": 13.8,
-    "requests": 14,
+    "seconds": 13.2,
+    "requests": 13,
     "error": null
    }
   ],
@@ -3340,11 +3359,11 @@
    {
     "entry": "home-depot",
     "checker": "workday",
-    "jobs": 1402,
+    "jobs": 1360,
     "students": 0,
     "matched": 0,
-    "seconds": 74.1,
-    "requests": 71,
+    "seconds": 71.1,
+    "requests": 69,
     "error": null
    }
   ],
@@ -3404,21 +3423,27 @@
    {
     "entry": "humana",
     "checker": "workday",
-    "jobs": 311,
+    "jobs": 317,
     "students": 5,
-    "matched": 1,
-    "seconds": 16.8,
+    "matched": 0,
+    "seconds": 16.4,
     "requests": 16,
     "error": null
+   },
+   {
+    "entry": "humana~site-CenterWell_External_Career_Site",
+    "checker": "workday",
+    "jobs": 1819,
+    "students": 0,
+    "matched": 0,
+    "seconds": 96.7,
+    "requests": 92,
+    "error": null,
+    "subsidiary": "CenterWell (Humana's Workday site CenterWell_External_Career_Site)"
    }
   ],
   "side": [],
-  "dropped": [
-   {
-    "entry": "humana~site-CenterWell_External_Career_Site",
-    "why": "public Workday site, 1833 jobs, no student role: recorded as known"
-   }
-  ],
+  "dropped": [],
   "page": "ok",
   "blocked_page": false,
   "very_large": false,
@@ -3689,20 +3714,20 @@
    {
     "entry": "kla",
     "checker": "workday",
-    "jobs": 1383,
+    "jobs": 1382,
     "students": 189,
-    "matched": 90,
-    "seconds": 74.3,
+    "matched": 92,
+    "seconds": 73.1,
     "requests": 71,
     "error": null
    },
    {
     "entry": "kla~site-Israel",
     "checker": "workday",
-    "jobs": 83,
+    "jobs": 81,
     "students": 1,
     "matched": 0,
-    "seconds": 6.9,
+    "seconds": 7.4,
     "requests": 5,
     "error": null
    }
@@ -3766,10 +3791,10 @@
    {
     "entry": "lambda",
     "checker": "ashby",
-    "jobs": 97,
+    "jobs": 92,
     "students": 1,
     "matched": 0,
-    "seconds": 0.3,
+    "seconds": 2.2,
     "requests": 1,
     "error": null
    }
@@ -3987,11 +4012,11 @@
    {
     "entry": "marvell",
     "checker": "workday",
-    "jobs": 387,
-    "students": 128,
-    "matched": 62,
-    "seconds": 29.3,
-    "requests": 21,
+    "jobs": 381,
+    "students": 117,
+    "matched": 50,
+    "seconds": 19.9,
+    "requests": 20,
     "error": null
    }
   ],
@@ -4019,20 +4044,20 @@
    {
     "entry": "mastercard",
     "checker": "workday",
-    "jobs": 964,
-    "students": 27,
+    "jobs": 939,
+    "students": 29,
     "matched": 1,
-    "seconds": 52.4,
-    "requests": 50,
+    "seconds": 50.1,
+    "requests": 48,
     "error": null
    },
    {
     "entry": "mastercard~site-CampusApplyOnly",
     "checker": "workday",
-    "jobs": 30,
-    "students": 10,
+    "jobs": 35,
+    "students": 12,
     "matched": 0,
-    "seconds": 3.1,
+    "seconds": 2.8,
     "requests": 2,
     "error": null
    }
@@ -4041,7 +4066,7 @@
   "dropped": [
    {
     "entry": "mastercard~site-ContractorConversion",
-    "why": "public Workday site, 1 jobs, no student role: recorded as known"
+    "why": "public Workday site, 3 jobs, no student role: recorded as known"
    },
    {
     "entry": "mastercard~site-RYC",
@@ -4065,11 +4090,21 @@
    {
     "entry": "mckesson",
     "checker": "workday",
-    "jobs": 697,
-    "students": 17,
-    "matched": 2,
-    "seconds": 36.2,
+    "jobs": 701,
+    "students": 14,
+    "matched": 3,
+    "seconds": 36.7,
     "requests": 36,
+    "error": null
+   },
+   {
+    "entry": "mckesson~site-Acquisition_Campus",
+    "checker": "workday",
+    "jobs": 2,
+    "students": 2,
+    "matched": 2,
+    "seconds": 1.2,
+    "requests": 1,
     "error": null
    },
    {
@@ -4078,24 +4113,27 @@
     "jobs": 20,
     "students": 1,
     "matched": 0,
-    "seconds": 1.4,
+    "seconds": 2.1,
     "requests": 1,
     "error": null
+   },
+   {
+    "entry": "mckesson~site-SCRI_Careers",
+    "checker": "workday",
+    "jobs": 20,
+    "students": 0,
+    "matched": 0,
+    "seconds": 2.9,
+    "requests": 1,
+    "error": null,
+    "subsidiary": "Sarah Cannon Research Institute (McKesson's Workday site SCRI_Careers)"
    }
   ],
   "side": [],
   "dropped": [
    {
-    "entry": "mckesson~site-Acquisition_Campus",
-    "why": "public Workday site, 0 jobs, no student role: recorded as known"
-   },
-   {
     "entry": "mckesson~site-Ontada_Careers",
     "why": "public Workday site, 0 jobs, no student role: recorded as known"
-   },
-   {
-    "entry": "mckesson~site-SCRI_Careers",
-    "why": "public Workday site, 19 jobs, no student role: recorded as known"
    },
    {
     "entry": "mckesson~site-rxsscareers",
@@ -4119,10 +4157,10 @@
    {
     "entry": "mercor",
     "checker": "ashby",
-    "jobs": 86,
+    "jobs": 90,
     "students": 5,
     "matched": 5,
-    "seconds": 0.2,
+    "seconds": 3.3,
     "requests": 1,
     "error": null
    }
@@ -4186,11 +4224,11 @@
    {
     "entry": "morgan-stanley",
     "checker": "workday",
-    "jobs": 1598,
-    "students": 42,
-    "matched": 42,
-    "seconds": 86.1,
-    "requests": 81,
+    "jobs": 1573,
+    "students": 40,
+    "matched": 40,
+    "seconds": 79.8,
+    "requests": 79,
     "error": null
    },
    {
@@ -4250,11 +4288,21 @@
    {
     "entry": "nasdaq",
     "checker": "workday",
-    "jobs": 153,
+    "jobs": 168,
     "students": 3,
     "matched": 1,
-    "seconds": 8.3,
-    "requests": 8,
+    "seconds": 10.9,
+    "requests": 9,
+    "error": null
+   },
+   {
+    "entry": "nasdaq~greenhouse",
+    "checker": "greenhouse",
+    "jobs": 21,
+    "students": 1,
+    "matched": 0,
+    "seconds": 0.2,
+    "requests": 1,
     "error": null
    }
   ],
@@ -4269,8 +4317,8 @@
     "why": "public Workday site, 0 jobs, no student role: recorded as known"
    }
   ],
-  "page": "ok",
-  "blocked_page": false,
+  "page": "refused",
+  "blocked_page": true,
   "very_large": false,
   "slice": null,
   "simplify_rows": 1,
@@ -4313,10 +4361,10 @@
    {
     "entry": "nationwide",
     "checker": "workday",
-    "jobs": 151,
-    "students": 5,
-    "matched": 4,
-    "seconds": 8.0,
+    "jobs": 160,
+    "students": 6,
+    "matched": 5,
+    "seconds": 8.4,
     "requests": 8,
     "error": null
    }
@@ -4325,7 +4373,7 @@
   "dropped": [
    {
     "entry": "nationwide~site-Nationwide_Career_India",
-    "why": "public Workday site, 31 jobs, no student role: recorded as known"
+    "why": "public Workday site, 33 jobs, no student role: recorded as known"
    }
   ],
   "page": "ok",
@@ -4570,7 +4618,7 @@
    {
     "entry": "nike",
     "checker": "workday",
-    "jobs": 1222,
+    "jobs": 1208,
     "students": 18,
     "matched": 11,
     "seconds": 61.8,
@@ -4597,11 +4645,11 @@
    {
     "entry": "nordstrom",
     "checker": "workday",
-    "jobs": 1311,
-    "students": 15,
+    "jobs": 1248,
+    "students": 16,
     "matched": 3,
-    "seconds": 66.1,
-    "requests": 66,
+    "seconds": 63.0,
+    "requests": 63,
     "error": null
    }
   ],
@@ -4629,11 +4677,11 @@
    {
     "entry": "northwestern-mutual",
     "checker": "workday",
-    "jobs": 80,
+    "jobs": 86,
     "students": 2,
-    "matched": 1,
-    "seconds": 3.9,
-    "requests": 4,
+    "matched": 2,
+    "seconds": 5.0,
+    "requests": 5,
     "error": null
    },
    {
@@ -4642,7 +4690,7 @@
     "jobs": 69,
     "students": 7,
     "matched": 7,
-    "seconds": 6.9,
+    "seconds": 7.0,
     "requests": 8,
     "error": null
    }
@@ -5064,10 +5112,10 @@
    {
     "entry": "proofpoint",
     "checker": "workday",
-    "jobs": 130,
+    "jobs": 135,
     "students": 0,
     "matched": 0,
-    "seconds": 6.8,
+    "seconds": 28.5,
     "requests": 7,
     "error": null
    }
@@ -5091,10 +5139,10 @@
    {
     "entry": "ptc",
     "checker": "workday",
-    "jobs": 165,
-    "students": 9,
-    "matched": 6,
-    "seconds": 9.2,
+    "jobs": 166,
+    "students": 12,
+    "matched": 9,
+    "seconds": 8.7,
     "requests": 9,
     "error": null
    }
@@ -5145,10 +5193,10 @@
    {
     "entry": "q2",
     "checker": "workday",
-    "jobs": 64,
+    "jobs": 62,
     "students": 10,
     "matched": 7,
-    "seconds": 3.9,
+    "seconds": 4.8,
     "requests": 4,
     "error": null
    }
@@ -5480,10 +5528,10 @@
    {
     "entry": "rivian-vw",
     "checker": "ashby",
-    "jobs": 176,
+    "jobs": 181,
     "students": 21,
     "matched": 20,
-    "seconds": 1.3,
+    "seconds": 4.4,
     "requests": 1,
     "error": null
    }
@@ -5572,10 +5620,10 @@
    {
     "entry": "sailpoint",
     "checker": "workday",
-    "jobs": 94,
+    "jobs": 99,
     "students": 1,
     "matched": 0,
-    "seconds": 5.0,
+    "seconds": 4.8,
     "requests": 5,
     "error": null
    }
@@ -5745,7 +5793,7 @@
     "entry": "snap",
     "checker": "workday",
     "jobs": 215,
-    "students": 4,
+    "students": 3,
     "matched": 1,
     "seconds": 10.9,
     "requests": 11,
@@ -5759,7 +5807,7 @@
     "jobs": 0,
     "students": 0,
     "matched": 0,
-    "seconds": 1.0,
+    "seconds": 0.5,
     "requests": 1,
     "error": null
    }
@@ -5812,17 +5860,17 @@
     "jobs": 11,
     "students": 0,
     "matched": 0,
-    "seconds": 0.7,
+    "seconds": 0.8,
     "requests": 1,
     "error": null
    },
    {
     "entry": "snyk~ashby",
     "checker": "ashby",
-    "jobs": 37,
+    "jobs": 38,
     "students": 0,
     "matched": 0,
-    "seconds": 0.9,
+    "seconds": 1.3,
     "requests": 1,
     "error": null
    }
@@ -5901,19 +5949,19 @@
     "entry": "sonos",
     "checker": "workday",
     "jobs": 54,
-    "students": 4,
+    "students": 2,
     "matched": 2,
-    "seconds": 2.4,
+    "seconds": 2.6,
     "requests": 3,
     "error": null
    },
    {
     "entry": "sonos~site-Student_Opportunities",
     "checker": "workday",
-    "jobs": 4,
-    "students": 4,
+    "jobs": 2,
+    "students": 2,
     "matched": 2,
-    "seconds": 0.4,
+    "seconds": 0.3,
     "requests": 1,
     "error": null
    }
@@ -5937,10 +5985,10 @@
    {
     "entry": "southwest",
     "checker": "workday",
-    "jobs": 30,
+    "jobs": 36,
     "students": 0,
     "matched": 0,
-    "seconds": 2.1,
+    "seconds": 2.0,
     "requests": 2,
     "error": null
    }
@@ -6048,7 +6096,7 @@
     "jobs": 73,
     "students": 0,
     "matched": 0,
-    "seconds": 1.4,
+    "seconds": 5.3,
     "requests": 1,
     "error": null
    },
@@ -6058,7 +6106,7 @@
     "jobs": 0,
     "students": 0,
     "matched": 0,
-    "seconds": 3.8,
+    "seconds": 0.2,
     "requests": 1,
     "error": null
    }
@@ -6108,20 +6156,20 @@
    {
     "entry": "synchrony",
     "checker": "workday",
-    "jobs": 22,
-    "students": 16,
-    "matched": 12,
-    "seconds": 1.9,
-    "requests": 2,
+    "jobs": 14,
+    "students": 8,
+    "matched": 8,
+    "seconds": 1.1,
+    "requests": 1,
     "error": null
    },
    {
     "entry": "synchrony~site-careers",
     "checker": "workday",
-    "jobs": 26,
+    "jobs": 29,
     "students": 1,
     "matched": 1,
-    "seconds": 3.0,
+    "seconds": 3.1,
     "requests": 2,
     "error": null
    }
@@ -6133,7 +6181,7 @@
     "why": "public Workday site, 0 jobs, no student role: recorded as known"
    }
   ],
-  "page": "failed",
+  "page": "ok",
   "blocked_page": false,
   "very_large": false,
   "slice": null,
@@ -6273,21 +6321,27 @@
    {
     "entry": "travelers",
     "checker": "workday",
-    "jobs": 409,
-    "students": 75,
-    "matched": 52,
-    "seconds": 20.9,
+    "jobs": 418,
+    "students": 76,
+    "matched": 53,
+    "seconds": 21.7,
     "requests": 21,
     "error": null
+   },
+   {
+    "entry": "travelers~site-SimplyBusinesssExternal",
+    "checker": "workday",
+    "jobs": 8,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.6,
+    "requests": 1,
+    "error": null,
+    "subsidiary": "Simply Business (Travelers' Workday site SimplyBusinesssExternal)"
    }
   ],
   "side": [],
-  "dropped": [
-   {
-    "entry": "travelers~site-SimplyBusinesssExternal",
-    "why": "public Workday site, 9 jobs, no student role: recorded as known"
-   }
-  ],
+  "dropped": [],
   "page": "ok",
   "blocked_page": false,
   "very_large": false,
@@ -6305,10 +6359,10 @@
    {
     "entry": "tricentis",
     "checker": "workday",
-    "jobs": 24,
+    "jobs": 32,
     "students": 0,
     "matched": 0,
-    "seconds": 1.7,
+    "seconds": 1.6,
     "requests": 2,
     "error": null
    }
@@ -6332,9 +6386,9 @@
    {
     "entry": "trimble",
     "checker": "workday",
-    "jobs": 184,
-    "students": 20,
-    "matched": 17,
+    "jobs": 200,
+    "students": 25,
+    "matched": 19,
     "seconds": 9.9,
     "requests": 10,
     "error": null
@@ -6467,10 +6521,10 @@
    {
     "entry": "uipath",
     "checker": "ashby",
-    "jobs": 102,
+    "jobs": 98,
     "students": 2,
     "matched": 2,
-    "seconds": 1.1,
+    "seconds": 1.2,
     "requests": 1,
     "error": null
    }
@@ -6548,10 +6602,10 @@
    {
     "entry": "usaa",
     "checker": "workday",
-    "jobs": 215,
+    "jobs": 207,
     "students": 0,
     "matched": 0,
-    "seconds": 10.8,
+    "seconds": 10.5,
     "requests": 11,
     "error": null
    }
@@ -6580,10 +6634,10 @@
    {
     "entry": "vanguard",
     "checker": "workday",
-    "jobs": 351,
-    "students": 21,
-    "matched": 18,
-    "seconds": 19.3,
+    "jobs": 362,
+    "students": 20,
+    "matched": 17,
+    "seconds": 19.9,
     "requests": 19,
     "error": null
    }
@@ -6661,11 +6715,11 @@
    {
     "entry": "verizon",
     "checker": "workday",
-    "jobs": 1253,
+    "jobs": 1280,
     "students": 1,
     "matched": 0,
-    "seconds": 62.9,
-    "requests": 63,
+    "seconds": 63.8,
+    "requests": 64,
     "error": null
    }
   ],
@@ -6673,10 +6727,10 @@
    {
     "entry": "verizon~ripplematch",
     "checker": "ripplematch",
-    "jobs": 0,
-    "students": 0,
+    "jobs": 1,
+    "students": 1,
     "matched": 0,
-    "seconds": 1.0,
+    "seconds": 1.3,
     "requests": 1,
     "error": null
    }
@@ -6763,11 +6817,11 @@
    {
     "entry": "disney",
     "checker": "workday",
-    "jobs": 266,
-    "students": 54,
-    "matched": 14,
-    "seconds": 13.7,
-    "requests": 14,
+    "jobs": 191,
+    "students": 48,
+    "matched": 13,
+    "seconds": 10.6,
+    "requests": 11,
     "error": null
    }
   ],
@@ -6790,11 +6844,11 @@
    {
     "entry": "warner-bros-discovery",
     "checker": "workday",
-    "jobs": 205,
+    "jobs": 191,
     "students": 12,
     "matched": 5,
-    "seconds": 11.5,
-    "requests": 11,
+    "seconds": 10.4,
+    "requests": 10,
     "error": null
    }
   ],
@@ -6822,10 +6876,10 @@
    {
     "entry": "washington-post",
     "checker": "workday",
-    "jobs": 52,
+    "jobs": 51,
     "students": 0,
     "matched": 0,
-    "seconds": 12.4,
+    "seconds": 3.1,
     "requests": 3,
     "error": null
    }
@@ -6837,7 +6891,7 @@
     "why": "public Workday site, 7 jobs, no student role: recorded as known"
    }
   ],
-  "page": "ok",
+  "page": "failed",
   "blocked_page": false,
   "very_large": false,
   "slice": null,
@@ -6854,11 +6908,11 @@
    {
     "entry": "wells-fargo",
     "checker": "workday",
-    "jobs": 1601,
-    "students": 15,
-    "matched": 10,
-    "seconds": 85.4,
-    "requests": 81,
+    "jobs": 1541,
+    "students": 11,
+    "matched": 7,
+    "seconds": 95.7,
+    "requests": 78,
     "error": null
    }
   ],
@@ -6989,9 +7043,9 @@
    {
     "entry": "zebra",
     "checker": "workday",
-    "jobs": 230,
-    "students": 24,
-    "matched": 4,
+    "jobs": 239,
+    "students": 18,
+    "matched": 3,
     "seconds": 11.8,
     "requests": 12,
     "error": null
@@ -7016,10 +7070,10 @@
    {
     "entry": "zillow",
     "checker": "workday",
-    "jobs": 206,
+    "jobs": 201,
     "students": 5,
     "matched": 4,
-    "seconds": 11.3,
+    "seconds": 10.9,
     "requests": 11,
     "error": null
    }

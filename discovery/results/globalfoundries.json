@@ -1,0 +1,25 @@
+{
+  "key": "globalfoundries",
+  "name": "GlobalFoundries",
+  "careers_url": "https://gf.com/careers/",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "globalfoundries.wd1.myworkdayjobs.com",
+    "tenant": "globalfoundries",
+    "site": "External"
+  },
+  "feed": "POST https://globalfoundries.wd1.myworkdayjobs.com/wday/cxs/globalfoundries/External/jobs",
+  "feed_total": 852,
+  "page_total": 855,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 117,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "globalfoundries.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/globalfoundries.wd1.myworkdayjobs.com.txt)",
+  "notes": "The page showed 855 jobs and the board 852 on 2026-11-12 (a posting or two opened or closed in between). The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md).",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

@@ -1,0 +1,26 @@
+{
+  "key": "nordstrom",
+  "name": "Nordstrom",
+  "careers_url": "https://careers.nordstrom.com/",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "nordstrom.wd501.myworkdayjobs.com",
+    "tenant": "nordstrom",
+    "unlinked_ok": 50,
+    "site": "nordstrom_careers"
+  },
+  "feed": "POST https://nordstrom.wd501.myworkdayjobs.com/wday/cxs/nordstrom/nordstrom_careers/jobs",
+  "feed_total": 1248,
+  "page_total": 1253,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 16,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "nordstrom.wd501.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/nordstrom.wd501.myworkdayjobs.com.txt)",
+  "notes": "The page showed 1253 jobs and the board 1248 on 2026-11-12 (a posting or two opened or closed in between). Not read: nordstrom~site-nordstrom_internship: public Workday site, 0 jobs, no student role: recorded as known.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

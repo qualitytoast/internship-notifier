@@ -1,0 +1,26 @@
+{
+  "key": "fis",
+  "name": "FIS",
+  "careers_url": "https://careers.fisglobal.com/us/en",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "fis.wd5.myworkdayjobs.com",
+    "anchor_host": true,
+    "tenant": "fis",
+    "site": "SearchJobs"
+  },
+  "feed": "POST https://fis.wd5.myworkdayjobs.com/wday/cxs/fis/SearchJobs/jobs",
+  "feed_total": 499,
+  "page_total": 499,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "fis.wd5.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/fis.wd5.myworkdayjobs.com.txt)",
+  "notes": "Not read: fis~site-AgencyCareerSite: public Workday site, 0 jobs, no student role: recorded as known.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

@@ -1,0 +1,162 @@
+# Companies whose Workday sites list one requisition on more than one site, from the last read of each site
+# (stage2_batch.py sitecopies): postings on each site, and how many repeat a requisition of an earlier site.
+# Each is configured one site per source (multi, dedupe), so a copy is not stored as a second job.
+cadence:
+  at: '2026-11-12'
+  copies: 42
+  sites:
+    External_Careers:
+      copies: 0
+      postings: 687
+    OpenEye_Careers:
+      copies: 2
+      postings: 2
+    Univ_Careers:
+      copies: 20
+      postings: 21
+    University_CST:
+      copies: 9
+      postings: 9
+    University_Talent:
+      copies: 4
+      postings: 4
+    University_Talent_Intern:
+      copies: 3
+      postings: 3
+    University_Talent_NCG:
+      copies: 3
+      postings: 3
+    women-in-tech-scholarship:
+      copies: 1
+      postings: 1
+copart:
+  at: '2026-11-12'
+  copies: 1
+  sites:
+    Copart:
+      copies: 0
+      postings: 415
+    NPACareers:
+      copies: 1
+      postings: 23
+disney:
+  at: '2026-11-12'
+  copies: 19
+  sites:
+    disneycareer:
+      copies: 0
+      postings: 27
+    disneycareerdc:
+      copies: 19
+      postings: 164
+hartford:
+  at: '2026-11-12'
+  copies: 9
+  sites:
+    Careers_External:
+      copies: 0
+      postings: 216
+    careers_restricted:
+      copies: 9
+      postings: 32
+kla:
+  at: '2026-11-12'
+  copies: 233
+  sites:
+    Israel:
+      copies: 81
+      postings: 81
+    Search:
+      copies: 0
+      postings: 1151
+    UR:
+      copies: 105
+      postings: 182
+    annarbor:
+      copies: 47
+      postings: 49
+marvell:
+  at: '2026-11-12'
+  copies: 24
+  sites:
+    MarvellCareers:
+      copies: 0
+      postings: 344
+    MarvellCareers2:
+      copies: 24
+      postings: 37
+mastercard:
+  at: '2026-11-12'
+  copies: 43
+  sites:
+    Campus:
+      copies: 23
+      postings: 32
+    CampusApplyOnly:
+      copies: 20
+      postings: 35
+    CorporateCareers:
+      copies: 0
+      postings: 898
+    Public_Posting_Site:
+      copies: 0
+      postings: 9
+mckesson:
+  at: '2026-11-12'
+  copies: 59
+  sites:
+    Acquisition_Campus:
+      copies: 2
+      postings: 2
+    CoverMyMeds_External_Careers:
+      copies: 20
+      postings: 20
+    External_Careers:
+      copies: 0
+      postings: 671
+    SCRI_Careers:
+      copies: 9
+      postings: 20
+    sourcer_on_req:
+      copies: 28
+      postings: 30
+morgan-stanley:
+  at: '2026-11-12'
+  copies: 204
+  sites:
+    External:
+      copies: 0
+      postings: 1195
+    private:
+      copies: 204
+      postings: 378
+sonos:
+  at: '2026-11-12'
+  copies: 2
+  sites:
+    Sonos:
+      copies: 0
+      postings: 54
+    Student_Opportunities:
+      copies: 2
+      postings: 2
+synchrony:
+  at: '2026-11-12'
+  copies: 3
+  sites:
+    University:
+      copies: 0
+      postings: 14
+    careers:
+      copies: 3
+      postings: 29
+vanguard:
+  at: '2026-11-12'
+  copies: 1
+  sites:
+    contractors_restricted:
+      copies: 1
+      postings: 27
+    vanguard_external:
+      copies: 0
+      postings: 335

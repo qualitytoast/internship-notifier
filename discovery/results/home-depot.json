@@ -1,0 +1,45 @@
+{
+  "key": "home-depot",
+  "name": "The Home Depot",
+  "careers_url": "https://careers.homedepot.com/",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "homedepot.wd5.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "homedepot.wd5.myworkdayjobs.com",
+          "tenant": "homedepot",
+          "site": "CareerDepot"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "homedepot.wd5.myworkdayjobs.com",
+          "tenant": "homedepot",
+          "site": "CareerDepotCanada"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://homedepot.wd5.myworkdayjobs.com/wday/cxs/homedepot/CareerDepot/jobs + POST https://homedepot.wd5.myworkdayjobs.com/wday/cxs/homedepot/CareerDepotCanada/jobs",
+  "feed_total": 1360,
+  "page_total": 1361,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "homedepot.wd5.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/homedepot.wd5.myworkdayjobs.com.txt)",
+  "notes": "The page showed 1361 jobs and the board 1360 on 2026-11-12 (a posting or two opened or closed in between). Two boards: POST https://homedepot.wd5.myworkdayjobs.com/wday/cxs/homedepot/CareerDepot/jobs + POST https://homedepot.wd5.myworkdayjobs.com/wday/cxs/homedepot/CareerDepotCanada/jobs; a later board's posting with an earlier one's id or requisition is skipped.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

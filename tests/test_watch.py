@@ -576,7 +576,9 @@ def test_the_real_settings_name_active_companies_and_adapters_that_exist(monkeyp
     for x in boards:
         assert x["company"] in active and get_checker(x["checker"])
         assert x in first or x["company"] in added
-    assert len(cfg.settings.get("liveness", "watch_unreadable")) == 6
+    assert len(cfg.scoped("").settings.get("liveness", "watch_unreadable")) == 6  # the original companies'
+    for x in cfg.settings.get("liveness", "watch_unreadable")[6:]:  # sites an added company's careers page names
+        assert x["company"] in added and x["company"] in active
 
 
 def test_a_list_keeps_the_link_a_watched_board_needs(make_cfg, memdb):

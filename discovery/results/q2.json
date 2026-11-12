@@ -1,0 +1,25 @@
+{
+  "key": "q2",
+  "name": "Q2",
+  "careers_url": "https://www.q2.com/company/why-work-at-q2",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "q2ebanking.wd5.myworkdayjobs.com",
+    "tenant": "q2ebanking",
+    "site": "Q2"
+  },
+  "feed": "POST https://q2ebanking.wd5.myworkdayjobs.com/wday/cxs/q2ebanking/Q2/jobs",
+  "feed_total": 62,
+  "page_total": 62,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 10,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "q2ebanking.wd5.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/q2ebanking.wd5.myworkdayjobs.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

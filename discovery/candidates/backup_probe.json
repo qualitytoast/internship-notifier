@@ -344,6 +344,14 @@
   "wordpress": [],
   "archive_copies": 0
  },
+ "costar": {
+  "careers_url": "https://www.costargroup.com/careers",
+  "sitemaps": {
+   "https://www.costargroup.com/sitemap.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 2
+ },
  "cox": {
   "careers_url": "https://jobs.coxenterprises.com/",
   "sitemaps": {
@@ -518,6 +526,70 @@
   "wordpress": [],
   "archive_copies": 3
  },
+ "globalfoundries": {
+  "careers_url": "https://gf.com/careers/",
+  "sitemaps": {
+   "https://gf.com/sitemap_index.xml": {
+    "urls": 18,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://gf.com/post-sitemap.xml",
+     "https://gf.com/page-sitemap.xml",
+     "https://gf.com/event-sitemap.xml",
+     "https://gf.com/leadership-sitemap.xml",
+     "https://gf.com/press-release-sitemap.xml",
+     "https://gf.com/third-party-press-re-sitemap.xml",
+     "https://gf.com/zh/post-sitemap.xml",
+     "https://gf.com/de/post-sitemap.xml",
+     "https://gf.com/zh/page-sitemap.xml",
+     "https://gf.com/de/page-sitemap.xml",
+     "https://gf.com/zh/event-sitemap.xml",
+     "https://gf.com/de/event-sitemap.xml"
+    ]
+   },
+   "https://gf.com/sitemap.xml": {
+    "urls": 18,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://gf.com/post-sitemap.xml",
+     "https://gf.com/page-sitemap.xml",
+     "https://gf.com/event-sitemap.xml",
+     "https://gf.com/leadership-sitemap.xml",
+     "https://gf.com/press-release-sitemap.xml",
+     "https://gf.com/third-party-press-re-sitemap.xml",
+     "https://gf.com/zh/post-sitemap.xml",
+     "https://gf.com/de/post-sitemap.xml",
+     "https://gf.com/zh/page-sitemap.xml",
+     "https://gf.com/de/page-sitemap.xml",
+     "https://gf.com/zh/event-sitemap.xml",
+     "https://gf.com/de/event-sitemap.xml"
+    ]
+   },
+   "https://www.gf.com/sitemap.xml": {
+    "urls": 18,
+    "jobs": 0,
+    "student_pages": [],
+    "children": [
+     "https://gf.com/post-sitemap.xml",
+     "https://gf.com/page-sitemap.xml",
+     "https://gf.com/event-sitemap.xml",
+     "https://gf.com/leadership-sitemap.xml",
+     "https://gf.com/press-release-sitemap.xml",
+     "https://gf.com/third-party-press-re-sitemap.xml",
+     "https://gf.com/zh/post-sitemap.xml",
+     "https://gf.com/de/post-sitemap.xml",
+     "https://gf.com/zh/page-sitemap.xml",
+     "https://gf.com/de/page-sitemap.xml",
+     "https://gf.com/zh/event-sitemap.xml",
+     "https://gf.com/de/event-sitemap.xml"
+    ]
+   }
+  },
+  "wordpress": [],
+  "archive_copies": 3
+ },
  "gusto": {
   "careers_url": "https://gusto.com/about/careers",
   "sitemaps": {
@@ -667,6 +739,14 @@
    }
   ],
   "archive_copies": 3
+ },
+ "nasdaq": {
+  "careers_url": "https://www.nasdaq.com/about/careers",
+  "sitemaps": {
+   "https://www.nasdaq.com/sitemap.xml": "refused"
+  },
+  "wordpress": [],
+  "archive_copies": 1
  },
  "netapp": {
   "careers_url": "https://www.netapp.com/company/careers/",
@@ -859,6 +939,22 @@
      "https://tv.verizon.com/watch/sitemap-movies.xml",
      "https://tv.verizon.com/watch/sitemap-ppv.xml"
     ]
+   },
+   "https://mycareer.verizon.com/en/jobs/sitemap.xml": {
+    "urls": 1273,
+    "jobs": 1273,
+    "student_pages": [],
+    "children": []
+   },
+   "https://mycareer.verizon.com/en/sitemap.xml": {
+    "urls": 171,
+    "jobs": 0,
+    "student_pages": [
+     "https://mycareer.verizon.com/life-at-verizon/students-internships/",
+     "https://mycareer.verizon.com/blog/verizon-voices/my-first-30-as-a-verizon-intern/",
+     "https://mycareer.verizon.com/blog/verizon-voices/my-verizon-internship-experience/"
+    ],
+    "children": []
    }
   },
   "wordpress": [],

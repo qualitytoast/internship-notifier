@@ -1,0 +1,26 @@
+{
+  "key": "wells-fargo",
+  "name": "Wells Fargo",
+  "careers_url": "https://www.wellsfargojobs.com/",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "wd1.myworkdaysite.com",
+    "tenant": "wf",
+    "unlinked_ok": 50,
+    "site": "WellsFargoJobs"
+  },
+  "feed": "POST https://wd1.myworkdaysite.com/wday/cxs/wf/WellsFargoJobs/jobs",
+  "feed_total": 1541,
+  "page_total": 1545,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 11,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "wd1.myworkdaysite.com/robots.txt checked before every request (discovery/robots/wd1.myworkdaysite.com.txt)",
+  "notes": "The page showed 1545 jobs and the board 1541 on 2026-11-12 (a posting or two opened or closed in between). The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md).",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

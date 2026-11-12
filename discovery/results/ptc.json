@@ -1,0 +1,26 @@
+{
+  "key": "ptc",
+  "name": "PTC",
+  "careers_url": "https://www.ptc.com/en/careers",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "ptc.wd1.myworkdayjobs.com",
+    "anchor_host": true,
+    "tenant": "ptc",
+    "site": "PTC"
+  },
+  "feed": "POST https://ptc.wd1.myworkdayjobs.com/wday/cxs/ptc/PTC/jobs",
+  "feed_total": 166,
+  "page_total": 166,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 12,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ptc.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/ptc.wd1.myworkdayjobs.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

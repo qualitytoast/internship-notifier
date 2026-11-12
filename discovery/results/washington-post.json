@@ -1,0 +1,25 @@
+{
+  "key": "washington-post",
+  "name": "The Washington Post",
+  "careers_url": "https://www.washingtonpost.com/careers/",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "washpost.wd5.myworkdayjobs.com",
+    "tenant": "washpost",
+    "site": "washingtonpostcareers"
+  },
+  "feed": "POST https://washpost.wd5.myworkdayjobs.com/wday/cxs/washpost/washingtonpostcareers/jobs",
+  "feed_total": 51,
+  "page_total": 51,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "washpost.wd5.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/washpost.wd5.myworkdayjobs.com.txt)",
+  "notes": "Not read: washington-post~site-WashingtonPostCareersArc: public Workday site, 7 jobs, no student role: recorded as known.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

@@ -1,0 +1,25 @@
+{
+  "key": "dexcom",
+  "name": "Dexcom",
+  "careers_url": "https://careers.dexcom.com/careers",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "dexcom.wd1.myworkdayjobs.com",
+    "tenant": "dexcom",
+    "site": "Dexcom"
+  },
+  "feed": "POST https://dexcom.wd1.myworkdayjobs.com/wday/cxs/dexcom/Dexcom/jobs",
+  "feed_total": 295,
+  "page_total": 295,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 2,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "dexcom.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/dexcom.wd1.myworkdayjobs.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

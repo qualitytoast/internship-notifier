@@ -1,6 +1,8 @@
 # Job sites the third-party lists link for an added company that its config doesn't read, because they are dead or
 # copies: each goes in settings.liveness.aliases (moves.py counts the left one as the right one), so it doesn't raise
 # `new job site?` on the company's first morning. stage2_batch.py apply writes the batch's entries.
+# An entry with `unreadable` is a site the company's careers page names that no script may read: it goes in
+# settings.liveness.watch_unreadable (listed by `internwatch liveness`, never read).
 ncino:
   - system: workday:site=ncinocareers,tenant=ncino
     as: greenhouse:board=ncinoinc
@@ -38,3 +40,12 @@ rivian-vw:
   - system: ashby:board=rivianvw
     as: ashby:board=rivianvw.tech
     why: the registry's name for the board, which answers 404; the live board is rivianvw.tech
+nike:
+  - system: avature:site=nikeats.avature.net/niketalentcommunity
+    unreadable: robots.txt blocks it
+    why: Nike's talent community on Avature, which its careers page links; its robots.txt disallows every page
+northwestern-mutual:
+  - system: icims:portal=opportunities-northwesternmutual.icims.com
+    unreadable: robots.txt blocks it
+    why: the iCIMS portal its careers page links; its robots.txt disallows the job search (Workday and
+      SmartRecruiters are read)

@@ -333,3 +333,61 @@ companies:
   - {key: persona, name: "Persona", category: security, source: added, round: added, urls: ["https://withpersona.com/careers"]}
   - {key: qumulo, name: "Qumulo", category: software, source: added, round: added, urls: ["https://qumulo.com/company/careers/"]}
   - {key: replit, name: "Replit", category: ai, source: added, round: added, urls: ["https://replit.com/careers"]}
+  - {key: humana, name: "Humana", category: healthcare, source: added, round: added, urls: ["https://careers.humana.com/"]}
+  - {key: morgan-stanley, name: "Morgan Stanley", category: finance-insurance, source: added, round: added, urls: ["https://www.morganstanley.com/careers"]}
+  - {key: wells-fargo, name: "Wells Fargo", category: finance-insurance, source: added, round: added, urls: ["https://www.wellsfargojobs.com/"]}
+  - {key: comcast, name: "Comcast", category: telecom, source: added, round: added, urls: ["https://jobs.comcast.com/"]}
+  - {key: kla, name: "KLA", category: semiconductors, source: added, round: added, urls: ["https://www.kla.com/careers"]}
+  - {key: home-depot, name: "The Home Depot", category: retail, source: added, round: added, urls: ["https://careers.homedepot.com/"]}
+  - {key: verizon, name: "Verizon", category: telecom, source: added, round: added, urls: ["https://mycareer.verizon.com/"]}
+  - {key: nordstrom, name: "Nordstrom", category: retail, source: added, round: added, urls: ["https://careers.nordstrom.com/"]}
+  - {key: att, name: "AT&T", category: telecom, source: added, round: added, urls: ["https://www.att.jobs/"]}
+  - {key: nike, name: "Nike", category: retail, source: added, round: added, urls: ["https://careers.nike.com/"]}
+  - {key: mastercard, name: "Mastercard", category: fintech, source: added, round: added, urls: ["https://careers.mastercard.com/"]}
+  - {key: globalfoundries, name: "GlobalFoundries", category: semiconductors, source: added, round: added, urls: ["https://gf.com/careers/"]}
+  - {key: mckesson, name: "McKesson", category: healthcare, source: added, round: added, urls: ["https://careers.mckesson.com/"]}
+  - {key: cadence, name: "Cadence Design Systems", category: semiconductors, source: added, round: added, urls: ["https://www.cadence.com/en_US/home/company/careers.html"]}
+  - {key: cox, name: "Cox Enterprises", category: telecom, source: added, round: added, urls: ["https://jobs.coxenterprises.com/"]}
+  - {key: analog-devices, name: "Analog Devices", category: semiconductors, source: added, round: added, urls: ["https://www.analog.com/en/about-adi/careers.html"]}
+  - {key: proofpoint, name: "Proofpoint", category: security, source: added, round: added, urls: ["https://www.proofpoint.com/us/company/careers"]}
+  - {key: fis, name: "FIS", category: fintech, source: added, round: added, urls: ["https://careers.fisglobal.com/"]}
+  - {key: allstate, name: "Allstate", category: finance-insurance, source: added, round: added, urls: ["https://www.allstate.jobs/"]}
+  - {key: fiserv, name: "Fiserv", category: fintech, source: added, round: added, urls: ["https://careers.fiserv.com/"]}
+  - {key: copart, name: "Copart", category: other, source: added, round: added, urls: ["https://copart.wd12.myworkdayjobs.com/copart", "https://www.copart.com/careers/"]}
+  - {key: travelers, name: "Travelers", category: finance-insurance, source: added, round: added, urls: ["https://careers.travelers.com/"]}
+  - {key: costar, name: "CoStar Group", category: software, source: added, round: added, urls: ["https://www.costargroup.com/careers"]}
+  - {key: marvell, name: "Marvell", category: semiconductors, source: added, round: added, urls: ["https://www.marvell.com/company/careers.html"]}
+  - {key: vanguard, name: "Vanguard", category: finance-insurance, source: added, round: added, urls: ["https://www.vanguardjobs.com/"]}
+  - {key: f5, name: "F5", category: security, source: added, round: added, urls: ["https://www.f5.com/company/careers"]}
+  - {key: elevance-health, name: "Elevance Health", category: healthcare, source: added, round: added, urls: ["https://careers.elevancehealth.com/"]}
+  - {key: equinix, name: "Equinix", category: software, source: added, round: added, urls: ["https://careers.equinix.com/"]}
+  - {key: blackrock, name: "BlackRock", category: finance-insurance, source: added, round: added, urls: ["https://careers.blackrock.com/"]}
+  - {key: dexcom, name: "Dexcom", category: healthcare, source: added, round: added, urls: ["https://careers.dexcom.com/"]}
+  - {key: hartford, name: "The Hartford", category: finance-insurance, source: added, round: added, urls: ["https://www.thehartford.com/careers"]}
+  - {key: chewy, name: "Chewy", category: retail, source: added, round: added, urls: ["https://careers.chewy.com/"]}
+  - {key: northwestern-mutual, name: "Northwestern Mutual", category: finance-insurance, source: added, round: added, urls: ["https://www.northwesternmutual.com/careers/"]}
+  - {key: zebra, name: "Zebra Technologies", category: hardware, source: added, round: added, urls: ["https://www.zebra.com/us/en/about-zebra/careers.html"]}
+  - {key: nasdaq, name: "Nasdaq", category: fintech, source: added, round: added, urls: ["https://www.nasdaq.com/about/careers"]}
+  - {key: snap, name: "Snap", category: big-tech, source: added, round: added, urls: ["https://careers.snap.com/"]}
+  - {key: zillow, name: "Zillow", category: software, source: added, round: added, urls: ["https://www.zillow.com/careers/"]}
+  - {key: ciena, name: "Ciena", category: hardware, source: added, round: added, urls: ["https://www.ciena.com/careers"]}
+  - {key: disney, name: "The Walt Disney Company", category: media, source: added, round: added, urls: ["https://jobs.disneycareers.com/"]}
+  - {key: usaa, name: "USAA", category: finance-insurance, source: added, round: added, urls: ["https://www.usaajobs.com/"]}
+  - {key: warner-bros-discovery, name: "Warner Bros. Discovery", category: media, source: added, round: added, urls: ["https://careers.wbd.com/"]}
+  - {key: cohesity, name: "Cohesity", category: software, source: added, round: added, urls: ["https://www.cohesity.com/company/careers/"]}
+  - {key: trimble, name: "Trimble", category: software, source: added, round: added, urls: ["https://careers.trimble.com/", "https://www.trimble.com/en/our-commitment/careers"]}
+  - {key: ptc, name: "PTC", category: software, source: added, round: added, urls: ["https://www.ptc.com/en/about/careers"]}
+  - {key: nationwide, name: "Nationwide", category: finance-insurance, source: added, round: added, urls: ["https://www.nationwide.com/personal/about-us/careers/"]}
+  - {key: guidewire, name: "Guidewire", category: software, source: added, round: added, urls: ["https://www.guidewire.com/about/careers"]}
+  - {key: etsy, name: "Etsy", category: software, source: added, round: added, urls: ["https://careers.etsy.com/"]}
+  - {key: circle, name: "Circle", category: fintech, source: added, round: added, urls: ["https://www.circle.com/careers"]}
+  - {key: q2, name: "Q2", category: fintech, source: added, round: added, urls: ["https://www.q2.com/company/why-work-at-q2", "https://www.q2.com/company/careers"]}
+  - {key: sailpoint, name: "SailPoint", category: security, source: added, round: added, urls: ["https://www.sailpoint.com/careers"]}
+  - {key: freddie-mac, name: "Freddie Mac", category: finance-insurance, source: added, round: added, urls: ["https://careers.freddiemac.com/"]}
+  - {key: synchrony, name: "Synchrony", category: finance-insurance, source: added, round: added, urls: ["https://www.synchronycareers.com/"]}
+  - {key: washington-post, name: "The Washington Post", category: media, source: added, round: added, urls: ["https://www.washingtonpost.com/careers/"]}
+  - {key: sonos, name: "Sonos", category: hardware, source: added, round: added, urls: ["https://sonos.wd1.myworkdayjobs.com/Sonos", "https://www.sonos.com/en-us/careers"]}
+  - {key: snyk, name: "Snyk", category: security, source: added, round: added, urls: ["https://snyk.io/careers/"]}
+  - {key: southwest, name: "Southwest Airlines", category: travel, source: added, round: added, urls: ["https://careers.southwestair.com/"]}
+  - {key: tricentis, name: "Tricentis", category: software, source: added, round: added, urls: ["https://www.tricentis.com/careers"]}
+  - {key: datarobot, name: "DataRobot", category: ai, source: added, round: added, urls: ["https://www.datarobot.com/careers/"]}

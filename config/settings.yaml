@@ -47,7 +47,8 @@ liveness:                        # boards that go dead, get abandoned or are rep
             liberty-mutual, meta, nutanix, openai, paypal, pinterest, pitchbook, schonfeld, seatgeek, servicenow,
             tower-research, uber, ukg, veeva, whatnot,
             box, censys, chime, enova, gusto, haize-labs, lucid-software, rubrik, udemy, yugabyte, ziprecruiter, zocdoc,
-            alltrails, d-matrix, persona, progressive, xcimer]
+            alltrails, d-matrix, persona, progressive, xcimer,
+            cadence, ciena, cohesity, costar, cox, datarobot, globalfoundries, marvell, nasdaq, verizon, wells-fargo]
   blocked_scan_seconds: 300      # their checks' time budget in each daily run (before the emails)
   watch_seconds: 360             # time budget of the watched boards (src/internwatch/watch.py), after the checks above
   watch_boards:                  # mirrors with a feed of their own: read every run, never stored. Boards whose
@@ -76,6 +77,8 @@ liveness:                        # boards that go dead, get abandoned or are rep
     - {company: reddit, name: RippleMatch, checker: ripplematch, settings: {company_id: 286}}
     - {company: roku, name: RippleMatch, checker: ripplematch, settings: {company_id: 1129}}
     - {company: mercor, name: RippleMatch, checker: ripplematch, settings: {company_id: 1158}}
+    - {company: snap, name: RippleMatch, checker: ripplematch, settings: {company_id: 1111}}
+    - {company: verizon, name: RippleMatch, checker: ripplematch, settings: {company_id: 627}}
   watch_every_days:              # dismissed boards too big to read every run (T-Mobile's has no intern worker type)
     "workday:site=alumni,tenant=tmobile": 7
   watch_unreadable:              # mirrors that can't be read. A role a list carries still raises a possible miss
@@ -85,6 +88,8 @@ liveness:                        # boards that go dead, get abandoned or are rep
     - {company: atlassian, board: "icims:portal=campus-americas.icims.com", why: it has no job list}
     - {company: atlassian, board: "icims:portal=globalcareers-atlassian.icims.com", why: it has no job list}
     - {company: atlassian, board: "icims:portal=campus-globalcareers-atlassian.icims.com", why: it has no job list}
+    - {company: nike, board: "avature:site=nikeats.avature.net/niketalentcommunity", why: robots.txt blocks it}
+    - {company: northwestern-mutual, board: "icims:portal=opportunities-northwesternmutual.icims.com", why: robots.txt blocks it}
   extra_tenants:                 # Workday tenants of a parent company, where a new site would show (moves.py W)
     pitchbook: [morningstar.wd5.myworkdayjobs.com]
   wp_pages:                      # WordPress sites whose /wp-json/wp/v2/pages answers: every page is read (moves.py P)
@@ -93,6 +98,7 @@ liveness:                        # boards that go dead, get abandoned or are rep
     liberty-mutual: https://jobs.libertymutualgroup.com
     yugabyte: https://www.yugabyte.com
     xcimer: https://xcimer.energy
+    cox: https://www.coxenterprises.com
   id_pages:                      # pages that link postings by hand: their job ids are compared too (moves.py P)
     tower-research: [https://tower-research.com/internships/]
   job_lists:                     # the job list a company publishes itself (moves.py J): daily unless every_days says
@@ -108,6 +114,9 @@ liveness:                        # boards that go dead, get abandoned or are rep
     servicenow: {url: "https://careers.servicenow.com/sitemap.xml"}
     uber: {url: "https://jobs.uber.com/en/jobs/sitemap.xml", any_job: true}
     box: {url: "https://careers.box.com/sitemap.xml"}
+    cox: {url: "https://jobs.coxenterprises.com/sitemap.xml"}
+    wells-fargo: {url: "https://www.wellsfargojobs.com/sitemap.xml"}
+    verizon: {url: "https://mycareer.verizon.com/en/jobs/sitemap.xml"}
   parallel_sources:              # boards next to the configured ones, read daily but never stored (moves.py S)
     - {company: akuna-capital, checker: greenhouse, settings: {board: mit}}
     - {company: akuna-capital, checker: greenhouse, settings: {board: optionstrading201course}}
@@ -161,6 +170,9 @@ liveness:                        # boards that go dead, get abandoned or are rep
     yugabyte: ["wp:https://www.yugabyte.com"]
     progressive: ["https://www.progressive.com/sitemap.xml"]
     xcimer: ["wp:https://xcimer.energy", "wp:https://www.xcimer.energy"]
+    cox: ["https://jobs.coxenterprises.com/sitemap.xml", "wp:https://www.coxenterprises.com"]
+    wells-fargo: ["https://www.wellsfargojobs.com/sitemap.xml"]
+    verizon: ["https://mycareer.verizon.com/en/sitemap.xml"]
   archive_paths:                 # archive.org (moves.py A): `list` paths whose newly saved student pages are listed
     # (any_page: every new page; ids: the job id in a page's URL), `pages` whose newest copy is read for the systems
     capstone: {pages: ["https://www.capstoneco.com/careers/"]}
@@ -187,6 +199,16 @@ liveness:                        # boards that go dead, get abandoned or are rep
     yugabyte: {pages: ["https://www.yugabyte.com/careers/"]}
     d-matrix: {pages: ["https://www.d-matrix.ai/careers/"]}
     xcimer: {pages: ["https://xcimer.energy/careers"]}
+    cadence: {pages: ["https://www.cadence.com/en_US/home/company/careers.html"]}
+    ciena: {pages: ["https://www.ciena.com/careers"]}
+    costar: {pages: ["https://www.costargroup.com/careers"]}
+    cox: {pages: ["https://jobs.coxenterprises.com/"]}
+    datarobot: {pages: ["https://www.datarobot.com/careers/"]}
+    globalfoundries: {pages: ["https://gf.com/careers/"]}
+    marvell: {pages: ["https://www.marvell.com/company/careers.html"]}
+    nasdaq: {pages: ["https://www.nasdaq.com/about/careers"]}
+    verizon: {pages: ["https://mycareer.verizon.com/"]}
+    wells-fargo: {pages: ["https://www.wellsfargojobs.com/"]}
   archive_max_days: 45           # an older copy says nothing about where the company posts now
   aliases:                       # one job system under two names (moves.py): the left one counts as the right one
     eightfold:domain=libertymutual.eightfold.ai: eightfold:domain=libertymutual.com
@@ -236,6 +258,8 @@ liveness:                        # boards that go dead, get abandoned or are rep
     ripplematch:company=progressive: 'ripplematch:company_id=1132'   # progressive: RippleMatch by name = by id
     ashby:board=superhuman: 'ashby:board=superhuman platform inc'   # superhuman: an Ashby board that answers 404
     ashby:board=rivianvw: 'ashby:board=rivianvw.tech'   # rivian-vw: the registry's name for the board, which answers 404
+    ripplematch:company=snap-inc: 'workday:site=snap,tenant=snapchat'   # snap: its RippleMatch page, watched
+    ripplematch:company=verizon: 'workday:site=verizon-careers,tenant=verizon'   # verizon: its RippleMatch page, watched
 
 crosscheck:
   grace_minutes: 90              # wait this long (and for a fresh poll) before calling a Simplify role a miss

@@ -1,0 +1,25 @@
+{
+  "key": "f5",
+  "name": "F5",
+  "careers_url": "https://www.f5.com/company/careers",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "ffive.wd5.myworkdayjobs.com",
+    "tenant": "ffive",
+    "site": "f5jobs"
+  },
+  "feed": "POST https://ffive.wd5.myworkdayjobs.com/wday/cxs/ffive/f5jobs/jobs",
+  "feed_total": 292,
+  "page_total": 292,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 2,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ffive.wd5.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/ffive.wd5.myworkdayjobs.com.txt)",
+  "notes": "Not read: f5~site-f5events: public Workday site, 0 jobs, no student role: recorded as known.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

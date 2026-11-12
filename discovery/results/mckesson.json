@@ -1,0 +1,69 @@
+{
+  "key": "mckesson",
+  "name": "McKesson",
+  "careers_url": "https://careers.mckesson.com/en",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "mckesson.wd3.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "mckesson.wd3.myworkdayjobs.com",
+          "tenant": "mckesson",
+          "site": "External_Careers"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "mckesson.wd3.myworkdayjobs.com",
+          "tenant": "mckesson",
+          "site": "sourcer_on_req"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "mckesson.wd3.myworkdayjobs.com",
+          "tenant": "mckesson",
+          "site": "Acquisition_Campus"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "mckesson.wd3.myworkdayjobs.com",
+          "tenant": "mckesson",
+          "site": "CoverMyMeds_External_Careers"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "mckesson.wd3.myworkdayjobs.com",
+          "tenant": "mckesson",
+          "site": "SCRI_Careers"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://mckesson.wd3.myworkdayjobs.com/wday/cxs/mckesson/External_Careers/jobs + POST https://mckesson.wd3.myworkdayjobs.com/wday/cxs/mckesson/sourcer_on_req/jobs + POST https://mckesson.wd3.myworkdayjobs.com/wday/cxs/mckesson/Acquisition_Campus/jobs + POST https://mckesson.wd3.myworkdayjobs.com/wday/cxs/mckesson/CoverMyMeds_External_Careers/jobs + POST https://mckesson.wd3.myworkdayjobs.com/wday/cxs/mckesson/SCRI_Careers/jobs",
+  "feed_total": 684,
+  "page_total": 743,
+  "page_total_how": "each read's own count, added up: 701 (mckesson: workday's own reported total (the careers page shows it)) + 2 (Acquisition_Campus: workday's own reported total (the careers page shows it)) + 20 (CoverMyMeds_External_Careers: workday's own reported total (the careers page shows it)) + 20 (SCRI_Careers: workday's own reported total (the careers page shows it)) (2026-11-12)",
+  "intern_total": 17,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "mckesson.wd3.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/mckesson.wd3.myworkdayjobs.com.txt)",
+  "notes": "Its 5 Workday sites listed 743 postings on 2026-11-12, 59 of them a requisition an earlier site already lists, which is read once. Read with it, as part of the company: Sarah Cannon Research Institute (McKesson's Workday site SCRI_Careers). 5 boards: POST https://mckesson.wd3.myworkdayjobs.com/wday/cxs/mckesson/External_Careers/jobs + POST https://mckesson.wd3.myworkdayjobs.com/wday/cxs/mckesson/sourcer_on_req/jobs + POST https://mckesson.wd3.myworkdayjobs.com/wday/cxs/mckesson/Acquisition_Campus/jobs + POST https://mckesson.wd3.myworkdayjobs.com/wday/cxs/mckesson/CoverMyMeds_External_Careers/jobs + POST https://mckesson.wd3.myworkdayjobs.com/wday/cxs/mckesson/SCRI_Careers/jobs; a later board's posting with an earlier one's id or requisition is skipped. Not read: mckesson~site-Ontada_Careers: public Workday site, 0 jobs, no student role: recorded as known. Not read: mckesson~site-rxsscareers: public Workday site, 2 jobs, no student role: recorded as known.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

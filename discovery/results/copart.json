@@ -1,0 +1,45 @@
+{
+  "key": "copart",
+  "name": "Copart",
+  "careers_url": "https://copart.wd12.myworkdayjobs.com/copart",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "copart.wd12.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "copart.wd12.myworkdayjobs.com",
+          "tenant": "copart",
+          "site": "Copart"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "copart.wd12.myworkdayjobs.com",
+          "tenant": "copart",
+          "site": "NPACareers"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://copart.wd12.myworkdayjobs.com/wday/cxs/copart/Copart/jobs + POST https://copart.wd12.myworkdayjobs.com/wday/cxs/copart/NPACareers/jobs",
+  "feed_total": 437,
+  "page_total": 440,
+  "page_total_how": "each read's own count, added up: 417 (copart: workday's own reported total (the careers page shows it)) + 23 (NPACareers: workday's own reported total (the careers page shows it)) (2026-11-12)",
+  "intern_total": 19,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "copart.wd12.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/copart.wd12.myworkdayjobs.com.txt)",
+  "notes": "Its 2 Workday sites listed 438 postings on 2026-11-12, 1 of them a requisition an earlier site already lists, which is read once. Read with it, as part of the company: NPA (Copart's Workday site NPACareers). Two boards: POST https://copart.wd12.myworkdayjobs.com/wday/cxs/copart/Copart/jobs + POST https://copart.wd12.myworkdayjobs.com/wday/cxs/copart/NPACareers/jobs; a later board's posting with an earlier one's id or requisition is skipped.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}

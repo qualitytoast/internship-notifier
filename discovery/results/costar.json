@@ -1,0 +1,53 @@
+{
+  "key": "costar",
+  "name": "CoStar Group",
+  "careers_url": "https://www.costargroup.com/careers",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "costar.wd1.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "costar.wd1.myworkdayjobs.com",
+          "tenant": "costar",
+          "site": "CoStarCareers"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "costar.wd1.myworkdayjobs.com",
+          "tenant": "costar",
+          "site": "Costar_Campus"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "costar.wd1.myworkdayjobs.com",
+          "tenant": "costar",
+          "site": "confidential"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://costar.wd1.myworkdayjobs.com/wday/cxs/costar/CoStarCareers/jobs + POST https://costar.wd1.myworkdayjobs.com/wday/cxs/costar/Costar_Campus/jobs + POST https://costar.wd1.myworkdayjobs.com/wday/cxs/costar/confidential/jobs",
+  "feed_total": 371,
+  "page_total": 371,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "costar.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/costar.wd1.myworkdayjobs.com.txt)",
+  "notes": "The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md). 3 boards: POST https://costar.wd1.myworkdayjobs.com/wday/cxs/costar/CoStarCareers/jobs + POST https://costar.wd1.myworkdayjobs.com/wday/cxs/costar/Costar_Campus/jobs + POST https://costar.wd1.myworkdayjobs.com/wday/cxs/costar/confidential/jobs; a later board's posting with an earlier one's id or requisition is skipped. Not read: costar~site-CoStarCanadaCareers: public Workday site, 3 jobs, no student role: recorded as known. Not read: costar~site-CoStarCareersEurope: public Workday site, 18 jobs, no student role: recorded as known. Not read: costar~site-CoStarCareersNiche: public Workday site, 0 jobs, no student role: recorded as known. Not read: costar~site-Richmond_Recruiting: public Workday site, 0 jobs, no student role: recorded as known. Not read: costar~site-SanDiego_Research: public Workday site, 0 jobs, no student role: recorded as known. Not read: costar~site-Washington_Research: public Workday site, 0 jobs, no student role: recorded as known. Not read: costar~site-broadbean_external: public Workday site, 11 jobs, no student role: recorded as known.",
+  "checked_at": "2026-11-12",
+  "source": "added",
+  "round": "added"
+}
