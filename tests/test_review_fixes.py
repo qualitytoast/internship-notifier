@@ -135,6 +135,21 @@ def test_multi_source_skips_a_later_sources_title_duplicate(monkeypatch):
     assert [j.id for j in jobs] == ["w1", "w2", "w3", "w4", "fake:r2", "fake:r3", "fake:r4", "fake:r5"]
 
 
+def test_multi_source_keeps_the_openings_one_source_lists_under_the_same_title(monkeypatch):
+    srcs = [_Src([job("a1", "Software Engineer Intern"), job("a2", "Software Engineer Intern")]),
+            _Src([job("b1", "Financial Representative Intern"), job("b2", "Financial Representative Intern"),
+                  job("b3", "SOFTWARE ENGINEER, INTERN"),             # the first source's: a copy
+                  job("b4", "Data Analyst Intern")]),
+            _Src([job("c1", "Financial Representative Intern"),       # the second source's: a copy
+                  job("c2", "Data Analyst Intern"),
+                  job("c3", "Actuarial Intern"), job("c4", "Actuarial Intern")])]
+    monkeypatch.setattr(Multi, "_sources", lambda self, s: [(i, x, {}) for i, x in enumerate(srcs)])
+    jobs = Multi().fetch(None, {"dedupe_titles": True, "twin_ids": True}, FetchContext())
+    assert [j.id for j in jobs] == ["a1", "a2", "fake:b1", "fake:b2", "fake:b4", "fake:c3", "fake:c4"]
+    twins = {j.id: j.extra.get("twin_ids") for j in jobs if j.extra.get("twin_ids")}
+    assert twins == {"a1": ["b3"], "fake:b1": ["c1"], "fake:b4": ["c2"]}  # a copy goes to the first job of its title
+
+
 def test_long_lists_are_attached_not_clipped(make_cfg):
     cfg = make_cfg([company("acme", name="Acme")])
     rows = [{"company": "acme", "job_id": str(i), "title": f"SWE Intern {i}", "location": "NY", "url": f"https://x/{i}",

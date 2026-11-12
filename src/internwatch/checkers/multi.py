@@ -8,7 +8,8 @@ settings:
                  (Autodesk: the same requisitions on Eightfold and Workday)
   dedupe_titles: true   ... or when its title matches an earlier source's job apart from case and punctuation;
                  text in brackets counts, since it can name another place or term (Rockwell: RippleMatch's
-                 "Technical Sales Specialist" is the US role, not Workday's "Technical Sales Specialist (Canada)")
+                 "Technical Sales Specialist" is the US role, not Workday's "Technical Sales Specialist (Canada)").
+                 Only an earlier source's: two openings one source lists under the same title are both kept
   twin_ids: true   a dropped job's id and requisition ids are kept with the job that stays (its alt_ids), so a
                  Simplify row or list that links the dropped copy still finds it (DriveWealth: the same internships
                  on Greenhouse and on Ashby, where Simplify titles them differently); the liveness rules count the
@@ -134,6 +135,7 @@ class Multi(Checker):
             if ctx is not None and ctx.reported_total is not None:
                 total += ctx.reported_total
                 ctx.reported_total = None
+            own = set()  # this source's titles: the next sources' copies of them are dropped, not its own openings
             for j in got:
                 keys = {j.id, *map(str, j.extra.get("alt_ids") or [])}
                 if i and s.get("dedupe") and keys & seen:
@@ -146,7 +148,7 @@ class Multi(Checker):
                         _twin(by_title[bare], j, i)
                     continue
                 seen |= keys
-                titles.add(bare)
+                own.add(bare)
                 if s.get("twin_ids"):
                     by_key.update(dict.fromkeys(keys, j))
                     by_title.setdefault(bare, j)
@@ -154,6 +156,7 @@ class Multi(Checker):
                     j.id = f"{checker.type}:{j.id}"
                 j.extra["source"] = i
                 jobs.append(j)
+            titles |= own
         if ctx is not None:
             ctx.state.pop("ok_sources", None)
             ctx.state["ok_source_ids"] = sorted((prev or set()) | ok_now)

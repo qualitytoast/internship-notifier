@@ -317,3 +317,15 @@ before replaying.
       then: about 29 to 32 minutes; "Now watching" with about 516 roles at 58 companies; Northwestern Mutual `board
       quiet`; a `shape` alert at any Workday company whose site lists three or more postings without a link, or
       shows Workday's maintenance page, that morning (Workday did both on Nov 12)
+
+## After batch 3: the user's answers (2026-11-12)
+
+- Frontier (Verizon's hidden site) stays read.
+- Bumble stays held and is read again at each batch; it is not added as `status: blocked`.
+- Workday postings listed without a link: `unlinked_ok` stays with the four companies it was seen at (Nordstrom,
+  Wells Fargo, Humana, McKesson). Each new case alerts once (`shape`) and is given the setting after that.
+- The title rule (`dedupe_titles`) compares a later board's job only with earlier boards' jobs: two openings one
+  board lists under the same title are both kept (multi.py). It can only keep more jobs. Klaviyo and Rockwell
+  Automation of the 198 and DriveWealth and Superhuman of the added round use it; none of the 53 multi recordings
+  has such a pair today, so nothing changes on the day. Batch 3's companies stay without the rule (a subsidiary
+  or another site of the tenant uses the same titles for different jobs).

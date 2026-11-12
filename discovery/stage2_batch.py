@@ -246,11 +246,12 @@ def settings_of(p: dict) -> tuple[str, dict]:
     # SmartRecruiters links carry the company's name on a shared host: careers. and jobs.smartrecruiters.com/<name>/
     marks += [f"smartrecruiters.com/{st['company'].lower()}/" for ck, st in srcs if ck == "smartrecruiters"]
     marks = list(dict.fromkeys(marks))
-    # dedupe_titles (a later board's job with a title already read is a copy) fitted the first two batches' second
-    # boards, which only repeat the first. From batch 3 on it is left out: the rule also drops a board's own openings
-    # that share a title (Northwestern Mutual's SmartRecruiters page lists "Sr Software Engineer" three times: 11 jobs
-    # lost on 2026-11-12, 2 at Snyk), a subsidiary's (NBCUniversal has 14 titles Comcast also uses, each a different
-    # job) and another site's of the same Workday tenant. There only an id or requisition both list is a copy.
+    # dedupe_titles (a later board's job with a title an earlier board lists is a copy) fitted the first two batches'
+    # second boards, which only repeat the first. From batch 3 on it is left out: a subsidiary's board lists different
+    # jobs under titles its parent also uses (NBCUniversal has 14 titles Comcast also uses), and so does another site
+    # of the same Workday tenant. There only an id or requisition both list is a copy. (Until 2026-11-12 the rule
+    # also dropped a board's own openings that shared a title: 11 on Northwestern Mutual's SmartRecruiters page that
+    # day, 2 at Snyk.)
     titles = {"dedupe_titles": True} if p["batch"] < 3 else {}
     return "multi", {"dedupe": True, **titles, "twin_ids": True, "match_urls": marks,
                      "sources": [{"checker": ck, "settings": st} for ck, st in srcs]}

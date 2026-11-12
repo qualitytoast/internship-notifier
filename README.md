@@ -219,12 +219,14 @@ Rules for changing things: CLAUDE.md.
     avature {list_url, page_size}, applicantpro {subdomain, domain_id}, gem, rippling, jobvite, pinpoint,
     recruiterbox, ripplematch
   - multi {sources, dedupe, dedupe_titles, twin_ids}: later sources' ids are prefixed with `<checker>:`;
-    dedupe_titles skips a later source's role whose title matches an earlier one apart from case and punctuation;
+    dedupe_titles skips a later source's role whose title matches an earlier source's apart from case and
+    punctuation (two roles one source lists under the same title are both kept);
     twin_ids keeps a skipped copy's ids with the role that stays and counts it on the copy's board too, so a
     SimplifyJobs row that links the copy is found and a board that only repeats another isn't taken as quiet (set
     for the companies added in November 2026). Each Workday site of an added company is a source of its own with
     dedupe, so a requisition two of its sites list is stored once; from the third batch on dedupe_titles is left
-    out, since it also drops a board's own openings that share a title. Sources are remembered by checker and
+    out, since a subsidiary's board or another site of the same Workday tenant lists different jobs under titles
+    the first also uses. Sources are remembered by checker and
     settings, and a source's first answer is its baseline, emailed once as "already open".
 - **Custom checkers** (`src/internwatch/checkers/`): google, meta (GraphQL + sitemap fallback), amazon and
   apple (complete student slices), atlassian, goldman, citadel, shopify, epic_careers, talentbrew (Intuit),
