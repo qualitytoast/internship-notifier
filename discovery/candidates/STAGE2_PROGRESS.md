@@ -329,3 +329,7 @@ before replaying.
   Automation of the 198 and DriveWealth and Superhuman of the added round use it; none of the 53 multi recordings
   has such a pair today, so nothing changes on the day. Batch 3's companies stay without the rule (a subsidiary
   or another site of the tenant uses the same titles for different jobs).
+  Proof (430a7b0, old = main): golden.py PASS (778 cassette runs, 99,103 filter verdicts, 40,124 matches, 36 Workday
+  files identical); three replayed mornings of the Nov 12 recording (morning-2026-11-12-batch3b/proof-430a7b0;
+  M2_NEW stripe;klaviyo;rockwell-automation;drivewealth;superhuman;kla;comcast, M2_FAIL figma;morgan-stanley) PASS
+  with no company excepted: every table, email and request identical. The new test fails on the old code.
