@@ -170,3 +170,27 @@ before replaying.
 - [x] merged into main (fast-forward) and pushed 2026-11-11; the next real morning is batch 2's go-live. Expected then: Eventual `board quiet`; from the 198's
       own side AMD `internships vanished` (if its student roles stay near 10) and Trackr's four lists and Akuna's
       three checks `check gone dark`
+
+## Batch 2's go-live morning (2026-11-12, run 26): as predicted, one gap fixed
+- 331 active companies checked (197 + 134), none failed, 26.5 min; the 198's checks ended at 17.2 min (as on Nov 11),
+  their page scan, backup checks and watched boards ran to 23.0 min, the added round's checks took 2.0 min (134 checks,
+  143 requests), emails at 26.4 min. All 58 seeded, 3,159 jobs stored, 125 matching.
+- The 198 against the five mornings before: every company's requests within its usual range. Palo Alto Networks' read
+  took 391 s (78-83 s before, the same 78 requests), so the companies queued behind it started up to 73 s later than
+  their median.
+- Alerts #84-#92: the 7 predicted `check gone dark` (Trackr's four lists, Akuna's three checks), a possible miss at
+  Microsoft (the 198's own: "Data Scientist Intern - CoreAI", rejected by the filters as not a student role), and
+  Eventual's `board quiet`. No `new job site?`. AMD's `internships vanished` did not come: it lists 11 student roles
+  (10 the day before, 96 and 101 before that), an 89% fall, and the rule needs 90%. AMD took down 86 student roles on
+  Nov 11 (53 matching, every US one); SimplifyJobs shows them closed too.
+- Emails: "Now watching" 117 roles, 8 left out as already shown (57 KB HTML); the morning email 26 new roles (24 at the
+  198, Rubrik's and Arcesium's from batch 1), 125 untracked rows (56 KB HTML); HEALTH "13 problems".
+- Re-match: the 75 stored rows given to batch 2's companies as in the recording (65 known, 9 found, 1 abroad), none
+  missed, no "via Simplify" job; Gemini's old off-season row went to it as fixed on Nov 11.
+- Gap: HEALTH listed Trackr's four `check gone dark` twice (9 alerts, 13 lines). Each round's gone-dark check
+  (moves.finish) reports the reads the rounds share, here the third-party lists the first round downloads; the alert
+  list had them once. Fixed in RunSummary.absorb: a later round's copy of an alert an earlier round raised in the same
+  run is dropped (61baa70). Proof on morning-2026-11-11-batch2 against main: golden PASS (662 cassette runs, 99,103
+  filter verdicts, 40,124 matches, 36 Workday files identical); mornings 1 and 2 identical; morning 3 differs only in
+  the HEALTH email, which loses the four repeated entries ("11 problems" → "7 problems").
+- Bumble's Workday site still answers "Workday is currently unavailable" (403), four days on: held out of batch 3.
