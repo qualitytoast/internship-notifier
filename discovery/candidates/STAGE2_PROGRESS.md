@@ -194,3 +194,75 @@ before replaying.
   filter verdicts, 40,124 matches, 36 Workday files identical); mornings 1 and 2 identical; morning 3 differs only in
   the HEALTH email, which loses the four repeated entries ("11 problems" → "7 problems").
 - Bumble's Workday site still answers "Workday is currently unavailable" (403), four days on: held out of batch 3.
+
+## Batch 3: 58 Workday companies (branch stage2-batch3)
+- Bumble stays out: bumble.com/en/jobs still ends on Workday's maintenance page and its Workday feed answers 403
+  (2026-11-09 to 11-12). For the user: wait, or add it as `status: blocked` until the site returns.
+- Every site re-read on 2026-11-12 (160 reads, 1,452 requests; read_results*.json, pagecounts.json and pages.json
+  dated): 27,625 jobs, 1,234 student roles and 627 matching at the 58 companies (27,785 / 1,263 / 647 on Nov 9).
+- The subsidiaries the user approved are read with their parents from the first morning: NBCUniversal (Comcast, its
+  SmartRecruiters page NBCUniversal3: 520 jobs, 56 matching), CenterWell (Humana), Depop (Etsy), Sarah Cannon
+  (McKesson's SCRI_Careers), Simply Business (Travelers), NPA (Copart). build_plan.py had still listed the five
+  Workday ones as "known, not read". Comcast gets the alias NBCUniversal (SimplifyJobs' name; its 4 rows link
+  NBCUniversal3).
+- Each Workday site is a source of its own (`multi`, `dedupe`, `twin_ids`; 22 companies), so a requisition two sites
+  of a tenant list is stored once. Measured in the Nov 12 reads (site_copies.yaml): 12 companies repeat 640 postings
+  (KLA 233 of 1,463, Morgan Stanley 204 of 1,573, McKesson 59, Mastercard 43, Cadence 42, Marvell 24, Disney 19,
+  Hartford 9, Synchrony 3, Sonos 2, Copart 1, Vanguard 1); each copy has the kept job's requisition, 635 its title too
+  (5 are reworded). Copart's and Vanguard's second sites repeated nothing on Nov 9: which sites repeat changes, so
+  the rule is the same for all, not only for those that repeat today.
+- `dedupe_titles` is left out from this batch on. It drops a later board's job whose title was already read, and that
+  includes the board's own earlier jobs: Northwestern Mutual's SmartRecruiters page lists "Sr Software Engineer"
+  three times (11 distinct openings dropped on Nov 12), Snyk's Ashby board 2; NBCUniversal has 14 titles Comcast also
+  uses, each another job. Without it Snyk's 3 real copies (Ashby repeats Workday) are stored twice. In the
+  recordings of the 42 multi companies no live company loses a job this way today (Klaviyo, Rockwell, DriveWealth,
+  Superhuman: 0); the rule itself (multi.py compares with every earlier job, its docstring says "an earlier
+  source's") is the user's to change, since the 198 use it.
+- Found by re-reading the sites the plan had dropped and by the list pre-check:
+  - McKesson's Acquisition_Campus site lists 2 Summer 2027 operations internships since Nov 10 (it was empty on
+    Nov 9): read as a fifth source.
+  - Nasdaq opened a Greenhouse board on Oct 27 (21 jobs, a co-op in Toronto) and SimplifyJobs links it since Nov 12:
+    read as a second source (it would have raised `new job site?` on the first morning).
+  - Three Workday sites list postings without a link today (none on Nov 9): Nordstrom 5, Wells Fargo 4, CenterWell 4.
+    More than two mark a read degraded, so the three get `unlinked_ok: 50` (the setting the report planned for
+    Walmart, Target, Lowe's and Bank of America): such a posting has no title, link or place to read.
+- Careers pages: Synchrony's is www.synchronycareers.com (www.synchrony.com/careers fails at the TLS handshake).
+  11 refuse scripts and join liveness.blocked (60 now) with their backup checks: Cadence, Ciena, Cohesity, Cox,
+  DataRobot, Marvell, Verizon, Wells Fargo, and CoStar, GlobalFoundries and Nasdaq, which answered on Nov 9 and
+  refuse on Nov 12. Own job lists that match the Workday reads by id: Cox (802 of 802), Wells Fargo (1,538 of 1,542),
+  Verizon's /en/jobs/sitemap.xml (1,273 of 1,273; the probe had not followed the sitemap index). Program pages:
+  Cox, Wells Fargo, Verizon (/en/sitemap.xml). GlobalFoundries' page sitemap answers 403: nothing to read there.
+- Two sites careers pages name that no script may read (robots.txt) are listed in watch_unreadable: Nike's Avature
+  talent community and Northwestern Mutual's iCIMS portal. The Phenom and Eightfold fronts Stage 1 noted (Chewy,
+  Circle, Dexcom, Disney, FIS, Fiserv, Freddie Mac, Humana, Mastercard, Southwest, Warner Bros. Discovery) are not
+  systems the page check names: nothing to record.
+- Snap's and Verizon's RippleMatch pages are watched; short Workday tenants match a link only at its start
+  (`anchor_host`: Morgan Stanley ms, Cox, KLA, PTC, AT&T att, Southwest swa, FIS); program keywords: The Hartford
+  "early immersion program", USAA "accelerate program", Verizon "sprinternship".
+- stage2_batch.py: `sitecopies`; Workday and SmartRecruiters feeds; page counts added up over a company's reads;
+  the list pre-check names page systems as the page check does (batches 1 and 2 still 0 and 0).
+- [x] apply, build_config (390 companies, 192 added), 58 cassettes, verify --write (COVERAGE.md: 389 verified,
+      1 blocked; every count within 3 jobs or 2% of its page, or explained by the copies between sites), README
+      (390 companies, 175 of 360 pages, 60 blocked), UNDERCLASSMEN.md (8 companies' programs, 325 with none)
+- Predicted for the go-live morning: `board quiet` for Northwestern Mutual's SmartRecruiters page (its 6 dated
+  postings are from 2015, 63 carry no date); a possible miss at Marvell if SimplifyJobs still lists "Data Science
+  Intern" (closed at Marvell); no `new job site?`; "Now watching" about 490 to 550 roles
+- [x] golden.py against main: PASS (662 cassette runs of the 198 and batches 1-2, 99,103 filter verdicts, 40,124
+      matches, 36 Workday files identical); 1,914 stored and list rows go from no company to a batch 3 company
+- [x] a live go-live morning recorded (data/stage2/morning-2026-11-12-batch3: run 27, 389 companies, 0 failed, 58
+      seeded, 4,673 exchanges, 31.6 min; the 198's last check ended at 21.1 min, the added round's 190 companies
+      from 21.6 to 27.9 min with 1,641 requests, its page scan, backup checks and watched boards to 31.5 min). Its
+      alerts against the prediction: Northwestern Mutual's `board quiet` as predicted ("no new job on smartrecruiters
+      source 2 in 4056 days"); no possible miss (SimplifyJobs closed Marvell's row), no `new job site?`; Palo Alto
+      Networks `board empty` (the 198's own: its RippleMatch page went from 8 roles to none); and one gap, fixed:
+      - McKesson `shape`: "skipped 4 postings without a link", on the first read and on the second look 3 minutes
+        later. It had none in the morning's reads: a fourth Workday site with them today, and T-Mobile and Autodesk
+        (the 198's) read degraded on their first try and clean on the second. McKesson gets `unlinked_ok: 50` too.
+        Any other Workday company can raise this alert on a morning its site lists three or more such postings.
+      First looks reached on that morning: 47 careers pages (Analog Devices' and The Washington Post's timed out and
+      are read again the next morning), the 11 blocked companies' pages (Cox's answered), 16 Workday tenants' hidden
+      sites, the 3 job lists, 3 program-page lists, 3 of the archive.org copies (the rest later in the week), both
+      RippleMatch pages
+- [x] re-match: 391 stored rows given to batch 3's companies (292 known, 85 found, 14 abroad; 62 from the old
+      off-season source), none missed, no "via Simplify" job; "Now watching" 508 roles of 550 matching (42 left out
+      as already shown)

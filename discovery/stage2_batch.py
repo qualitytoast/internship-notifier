@@ -340,6 +340,10 @@ def result(k: str, p: dict, cand: dict) -> dict:
         jobs -= copies["copies"]
         notes.append(f"Its {len(copies['sites'])} Workday sites listed {jobs + copies['copies']} postings on {copies['at']}, "
                      f"{copies['copies']} of them a requisition an earlier site already lists, which is read once.")
+    elif isinstance(pt, int) and pt != jobs and any("without a link" in (res.get(x["entry"], {}).get("degraded") or "")
+                                                    for x in p["sources"]):
+        notes.append(f"The site reported {pt} postings on {counted(load('pagecounts.json').get(p['sources'][0]['entry']) or {})}"
+                     f" and {jobs} were read: the others were listed without a link, title or place (unlinked_ok skips them).")
     elif isinstance(pt, int) and pt != jobs:  # build_config.py explains a difference with the notes' first sentence
         day = counted(load("pagecounts.json").get(p["sources"][0]["entry"]) or {})
         notes.append(f"The page showed {pt} jobs and the board {jobs} on {day} (a posting or two opened or "

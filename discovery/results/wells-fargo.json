@@ -19,7 +19,7 @@
   "blocked_reason": "",
   "fallback": "",
   "robots": "wd1.myworkdaysite.com/robots.txt checked before every request (discovery/robots/wd1.myworkdaysite.com.txt)",
-  "notes": "The page showed 1545 jobs and the board 1541 on 2026-11-12 (a posting or two opened or closed in between). The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md).",
+  "notes": "The site reported 1545 postings on 2026-11-12 and 1541 were read: the others were listed without a link, title or place (unlinked_ok skips them). The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md).",
   "checked_at": "2026-11-12",
   "source": "added",
   "round": "added"

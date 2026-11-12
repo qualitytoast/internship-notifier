@@ -144,7 +144,7 @@ reads:
   macys~cx_1001: {checker: oracle, settings: {host: ebwh.fa.us2.oraclecloud.com, site: CX_1001}}
   marvell: {checker: workday, settings: {host: marvell.wd1.myworkdayjobs.com, tenant: marvell, sites: [MarvellCareers, MarvellCareers2]}}
   mastercard: {checker: workday, settings: {host: mastercard.wd1.myworkdayjobs.com, tenant: mastercard, sites: [CorporateCareers, Campus, Public_Posting_Site]}}
-  mckesson: {checker: workday, settings: {host: mckesson.wd3.myworkdayjobs.com, tenant: mckesson, sites: [External_Careers, sourcer_on_req]}}
+  mckesson: {checker: workday, settings: {host: mckesson.wd3.myworkdayjobs.com, tenant: mckesson, sites: [External_Careers, sourcer_on_req], unlinked_ok: 50}}  # 4 postings without a link in the go-live recording (2026-11-12, none in the morning's reads): skipped, not a degraded read
   mercor: {checker: ashby, settings: {board: mercor}}
   micron: {checker: workday, settings: {host: micron.wd1.myworkdayjobs.com, tenant: micron, site: External}}
   morgan-stanley: {checker: workday, settings: {host: ms.wd5.myworkdayjobs.com, anchor_host: true, tenant: ms, sites: [External, private]}}
@@ -352,10 +352,10 @@ reads:
   mastercard~site-ContractorConversion: {"checker": "workday", "settings": {"host": "mastercard.wd1.myworkdayjobs.com", "tenant": "mastercard", "site": "ContractorConversion"}}
   mastercard~site-RYC: {"checker": "workday", "settings": {"host": "mastercard.wd1.myworkdayjobs.com", "tenant": "mastercard", "site": "RYC"}}
   mastercard~site-CampusApplyOnly: {"checker": "workday", "settings": {"host": "mastercard.wd1.myworkdayjobs.com", "tenant": "mastercard", "site": "CampusApplyOnly"}}
-  mckesson~site-Acquisition_Campus: {"checker": "workday", "settings": {"host": "mckesson.wd3.myworkdayjobs.com", "tenant": "mckesson", "site": "Acquisition_Campus"}}
-  mckesson~site-CoverMyMeds_External_Careers: {"checker": "workday", "settings": {"host": "mckesson.wd3.myworkdayjobs.com", "tenant": "mckesson", "site": "CoverMyMeds_External_Careers"}}
+  mckesson~site-Acquisition_Campus: {"checker": "workday", "settings": {"host": "mckesson.wd3.myworkdayjobs.com", "tenant": "mckesson", "site": "Acquisition_Campus", "unlinked_ok": 50}}
+  mckesson~site-CoverMyMeds_External_Careers: {"checker": "workday", "settings": {"host": "mckesson.wd3.myworkdayjobs.com", "tenant": "mckesson", "site": "CoverMyMeds_External_Careers", "unlinked_ok": 50}}
   mckesson~site-Ontada_Careers: {"checker": "workday", "settings": {"host": "mckesson.wd3.myworkdayjobs.com", "tenant": "mckesson", "site": "Ontada_Careers"}}
-  mckesson~site-SCRI_Careers: {"checker": "workday", "settings": {"host": "mckesson.wd3.myworkdayjobs.com", "tenant": "mckesson", "site": "SCRI_Careers"}}
+  mckesson~site-SCRI_Careers: {"checker": "workday", "settings": {"host": "mckesson.wd3.myworkdayjobs.com", "tenant": "mckesson", "site": "SCRI_Careers", "unlinked_ok": 50}}
   mckesson~site-rxsscareers: {"checker": "workday", "settings": {"host": "mckesson.wd3.myworkdayjobs.com", "tenant": "mckesson", "site": "rxsscareers"}}
   nasdaq~site-US_External_Career_Site: {"checker": "workday", "settings": {"host": "nasdaq.wd1.myworkdayjobs.com", "tenant": "nasdaq", "site": "US_External_Career_Site"}}
   nasdaq~site-eVestment: {"checker": "workday", "settings": {"host": "nasdaq.wd1.myworkdayjobs.com", "tenant": "nasdaq", "site": "eVestment"}}

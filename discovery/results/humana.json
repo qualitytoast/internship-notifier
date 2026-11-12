@@ -40,7 +40,7 @@
   "blocked_reason": "",
   "fallback": "",
   "robots": "humana.wd5.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/humana.wd5.myworkdayjobs.com.txt)",
-  "notes": "The page showed 2142 jobs and the board 2136 on 2026-11-12 (a posting or two opened or closed in between). Read with it, as part of the company: CenterWell (Humana's Workday site CenterWell_External_Career_Site). Two boards: POST https://humana.wd5.myworkdayjobs.com/wday/cxs/humana/Humana_External_Career_Site/jobs + POST https://humana.wd5.myworkdayjobs.com/wday/cxs/humana/CenterWell_External_Career_Site/jobs; a later board's posting with an earlier one's id or requisition is skipped.",
+  "notes": "The site reported 2142 postings on 2026-11-12 and 2136 were read: the others were listed without a link, title or place (unlinked_ok skips them). Read with it, as part of the company: CenterWell (Humana's Workday site CenterWell_External_Career_Site). Two boards: POST https://humana.wd5.myworkdayjobs.com/wday/cxs/humana/Humana_External_Career_Site/jobs + POST https://humana.wd5.myworkdayjobs.com/wday/cxs/humana/CenterWell_External_Career_Site/jobs; a later board's posting with an earlier one's id or requisition is skipped.",
   "checked_at": "2026-11-12",
   "source": "added",
   "round": "added"

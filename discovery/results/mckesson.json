@@ -16,6 +16,7 @@
         "settings": {
           "host": "mckesson.wd3.myworkdayjobs.com",
           "tenant": "mckesson",
+          "unlinked_ok": 50,
           "site": "External_Careers"
         }
       },
@@ -24,6 +25,7 @@
         "settings": {
           "host": "mckesson.wd3.myworkdayjobs.com",
           "tenant": "mckesson",
+          "unlinked_ok": 50,
           "site": "sourcer_on_req"
         }
       },
@@ -32,6 +34,7 @@
         "settings": {
           "host": "mckesson.wd3.myworkdayjobs.com",
           "tenant": "mckesson",
+          "unlinked_ok": 50,
           "site": "Acquisition_Campus"
         }
       },
@@ -40,6 +43,7 @@
         "settings": {
           "host": "mckesson.wd3.myworkdayjobs.com",
           "tenant": "mckesson",
+          "unlinked_ok": 50,
           "site": "CoverMyMeds_External_Careers"
         }
       },
@@ -48,6 +52,7 @@
         "settings": {
           "host": "mckesson.wd3.myworkdayjobs.com",
           "tenant": "mckesson",
+          "unlinked_ok": 50,
           "site": "SCRI_Careers"
         }
       }

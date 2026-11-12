@@ -19,7 +19,7 @@
   "blocked_reason": "",
   "fallback": "",
   "robots": "nordstrom.wd501.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/nordstrom.wd501.myworkdayjobs.com.txt)",
-  "notes": "The page showed 1253 jobs and the board 1248 on 2026-11-12 (a posting or two opened or closed in between). Not read: nordstrom~site-nordstrom_internship: public Workday site, 0 jobs, no student role: recorded as known.",
+  "notes": "The site reported 1253 postings on 2026-11-12 and 1248 were read: the others were listed without a link, title or place (unlinked_ok skips them). Not read: nordstrom~site-nordstrom_internship: public Workday site, 0 jobs, no student role: recorded as known.",
   "checked_at": "2026-11-12",
   "source": "added",
   "round": "added"
