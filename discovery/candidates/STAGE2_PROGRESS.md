@@ -295,3 +295,25 @@ before replaying.
 - After the hidden sites: 37 of the 58 companies are `multi` (116 sources); verify: 27,249 jobs, 1,136 student roles,
   553 matching, 1,519 requests; 21 companies' sites repeat each other (site_copies.yaml); no job in any of the 53
   multi companies' recordings is dropped for a repeat inside its own source.
+- [x] golden.py against main with the final config (84791cc): PASS (662 cassette runs, 99,103 filter verdicts, 40,124
+      matches, 36 Workday files identical; 1,914 rows go to batch 3 companies)
+- [x] a second live go-live morning recorded with the final config (data/stage2/morning-2026-11-12-batch3b: run 27,
+      389 companies, 58 seeded, 4,636 exchanges, 29.2 min; the 198's last check ended at 20.5 min, the added round's
+      192 companies from 21.1 to 25.4 min with 1,661 requests, 1,520 of them batch 3's). Alerts: Northwestern
+      Mutual's `board quiet` (predicted); Palo Alto Networks `board empty` and T-Mobile `shape` (the 198's own:
+      T-Mobile's Workday site answered with Workday's maintenance page on both tries; the old code raises both). No
+      possible miss, no `new job site?`, no degraded read among the added companies
+- [x] re-match: 392 stored rows given to batch 3's companies (293 known, 84 found, 15 abroad), none missed, no "via
+      Simplify" job; "Now watching" 516 roles of 558 matching (42 left out as already shown; 58 KB HTML, 1.06 MB
+      with its attachments), Nike's 14 and Nasdaq's 3 matching internships among them; the morning email 21 KB HTML
+- [x] three mornings replayed (proof-84791cc, old = main; M2_NEW stripe;databricks;openai;kla;comcast;cerebras;
+      neuralink, M2_FAIL figma;morgan-stanley;new-york-times): PASS. The 198's and batches 1-2's tables identical;
+      the first round's requests identical and in order (3,044 less the added round's in the old run / 4,646 in the
+      new one on morning 1); the added round asks only after it; for review: 2-3 archive.org requests a morning
+      and 4-13 keys of the weekly archive.org check fall on other days for earlier added companies
+- [x] go-live with KLA, Comcast and Marvell failing (proof-84791cc/new-1-fail): their 41 re-matched open rows stay
+      pending (adopted), no "via Simplify" job, no possible miss; the three are seeded on their first good morning
+- [x] merged into main (fast-forward) and pushed 2026-11-12; the next real morning is batch 3's go-live. Expected
+      then: about 29 to 32 minutes; "Now watching" with about 516 roles at 58 companies; Northwestern Mutual `board
+      quiet`; a `shape` alert at any Workday company whose site lists three or more postings without a link, or
+      shows Workday's maintenance page, that morning (Workday did both on Nov 12)
