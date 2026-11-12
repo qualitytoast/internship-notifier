@@ -167,7 +167,10 @@ class RunSummary:
         return self.misses + [m for _, misses in self.later for m in misses]
 
     def absorb(self, r: "RunSummary") -> None:
-        """A later round's results: counted with this run's, its alerts kept apart so they are recorded after these."""
+        """A later round's results: counted with this run's, its alerts kept apart so they are recorded after these.
+        A read the rounds share (a third-party list, a Workday tenant) goes dark for each of them: the alert is the
+        earlier round's, so the HEALTH email tells about it once."""
+        told = {k for p in self.all_problems for k in alerts.keys(p)}
         self.checked += r.checked
         self.failed += r.failed
         self.new_jobs += r.new_jobs
@@ -177,7 +180,7 @@ class RunSummary:
         self.skipped += r.skipped
         self.processed |= r.processed
         self.healthy |= r.healthy
-        self.later.append((r.problems, r.misses))
+        self.later.append(([p for p in r.problems if not alerts.keys(p) <= told], r.misses))
 
     def line(self) -> str:
         return (f"run {self.run_id}: checked {self.checked}, failed {len(self.failed)}, new jobs {self.new_jobs}, "

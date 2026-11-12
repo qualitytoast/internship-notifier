@@ -50,6 +50,11 @@ def _items(p: dict) -> list[dict]:
     return p.get("alerts") or [p.get("alert") or {}]
 
 
+def keys(p: dict) -> set[str]:
+    """The alerts a problem stands for."""
+    return {alert_key(p, i) for i in _items(p)}
+
+
 def _row(db: DB, key: str):
     return db.one("SELECT * FROM alerts WHERE alert_key=? AND state IN ('open', 'dismissed')", key)
 

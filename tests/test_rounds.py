@@ -296,3 +296,32 @@ def test_a_list_robots_txt_closed_before_a_later_round_read_it_doesnt_keep_its_a
     assert moves.check_listings_later(ctx, "added", cfg) == []
     assert alerts.live(memdb, rule="list_system") == []
 
+
+
+def test_a_read_the_rounds_share_that_went_dark_is_told_about_once(make_cfg, monkeypatch, online):
+    from datetime import timedelta
+
+    from internwatch.db import utcnow
+    cfg = two_rounds(make_cfg)
+    db = DB(cfg.settings.path("db"))
+    for mod, fn in ((liveness, "scan_pages"), (moves, "run"), (watch, "run")):
+        monkeypatch.setattr(mod, fn, lambda *a, **kw: [])
+    name = cfg.settings["liveness"]["listings"][0]["name"]  # the first round downloads it: both rounds find it dark
+    days = [(utcnow() - timedelta(days=n)).date().isoformat() for n in (3, 2, 1)]
+    db.set(f"blocked:rate:listings:{name}", json.dumps([[days[0], 1], [days[1], 0, "failed"], [days[2], 0, "failed"]]))
+    db.set("blocked:mornings", json.dumps(days))
+    checker = FakeChecker({"acme": [[job("1", "Software Engineer Intern (Summer 2027)")]],
+                           "newco": [[job("2", "Software Engineer Intern (Summer 2027)")]]})
+    s = Runner(cfg, db=db, checker_fn=checker).run(DAILY)
+    assert [p["alert"]["id"] for p in s.all_problems] == [f"dark:listings:{name}"] and s.later == [([], [])]
+    assert [a["alert_key"] for a in alerts.live(db)] == [f"dark:listings:{name}"]
+    assert [e for e in s.emails if e.startswith("health")][0].startswith("health: [InternWatch HEALTH] 1 problem:")
+
+
+def test_a_later_round_keeps_the_alerts_that_are_its_own():
+    def problem(key, alert=None):
+        return {"key": key, "name": key, "kind": "check gone dark", "summary": "s", **({"alert": alert} if alert else {})}
+    shared, own = {"id": "dark:workday:t.wd1.myworkdayjobs.com", "rule": "dark"}, {"id": "dark:careers:newco", "rule": "dark"}
+    s = RunSummary(problems=[problem("acme", shared), problem("acme")])
+    s.absorb(RunSummary(problems=[problem("newco", shared), problem("newco", own), problem("newco")]))
+    assert s.later == [([problem("newco", own), problem("newco")], [])]
