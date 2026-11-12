@@ -701,12 +701,17 @@ def pagecount(keys: list[str]) -> None:
         with Http(hs, gate=gate) as http:
             try:
                 if checker == "greenhouse":
-                    n = 0
+                    n, linked = 0, set()
                     for b in s.get("boards") or [s["board"]]:
                         r = http.get(f"https://job-boards.greenhouse.io/{b}", headers={"Accept": "text/html"},
                                      ok_statuses=(404,))
                         m = re.search(r"(\d[\d,]*)\s+jobs?\b", r.text) if r.status == 200 else None
                         n += int(m.group(1).replace(",", "")) if m else 0
+                        if r.status == 200 and not m:  # a board that states no count: the jobs its page links
+                            linked |= set(re.findall(rf"/{re.escape(b)}/jobs/(\d+)", r.text))
+                    if linked and not n:
+                        return entry, {"page_total": len(linked),
+                                       "how": "job links on the hosted Greenhouse board (it states no count)"}
                     return entry, {"page_total": n, "how": "hosted Greenhouse board's stated count"}
                 if checker == "lever":
                     r = http.get(f"https://jobs.lever.co/{s['site']}", headers={"Accept": "text/html"})

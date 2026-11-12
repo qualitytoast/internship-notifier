@@ -293,13 +293,13 @@ def page_count(k: str, p: dict, jobs: int) -> tuple[int | None, str, str]:
             and abs(v["page_total"] - jobs) <= max(3, 0.02 * jobs):  # a second board that lists nothing
         return v["page_total"], v["how"] + "; " + ", ".join(s["entry"].split("~")[-1] + " lists none"
                                                             for s in p["sources"][1:]) + f" ({counted(v)})", ""
-    if isinstance(v.get("page_total"), int) and (v["page_total"] or not jobs) and abs(v["page_total"] - jobs) <= max(3, 0.02 * jobs):
-        return v["page_total"], v["how"] + f" ({counted(v)})", ""
     each = [(s["entry"], pc.get(s["entry"]) or {}) for s in p["sources"] if not s.get("new_reader")]
     if len(each) > 1 and all(isinstance(x.get("page_total"), int) for _, x in each) \
             and abs(sum(x["page_total"] for _, x in each) - jobs) <= max(3, 0.02 * jobs):  # several sites or boards
         return sum(x["page_total"] for _, x in each), "each read's own count, added up: " + " + ".join(
             f"{x['page_total']} ({e.split('~site-')[-1].split('~')[-1]}: {x['how']})" for e, x in each) + f" ({counted(v)})", ""
+    if isinstance(v.get("page_total"), int) and (v["page_total"] or not jobs) and abs(v["page_total"] - jobs) <= max(3, 0.02 * jobs):
+        return v["page_total"], v["how"] + f" ({counted(v)})", ""
     g = gh.get(main)
     if g and g["shown"] >= g["read"] - max(3, 0.02 * g["read"]):
         url = next((x.get("final_url") for x in g["pages"] if x.get("status") == 200), "")

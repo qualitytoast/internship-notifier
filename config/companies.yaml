@@ -2970,10 +2970,18 @@ companies:
   name: Wells Fargo
   category: finance-insurance
   careers_url: ['https://www.wellsfargojobs.com/']
-  checker: workday
-  settings: {host: wd1.myworkdaysite.com, tenant: wf, unlinked_ok: 50, site: WellsFargoJobs}
-  verified: {page_total: 1545, explained: 'The site reported 1545 postings on 2026-11-12 and 1541 were read: the others were listed
-      without a link, title or place (unlinked_ok skips them).'}
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [/recruiting/wf/]
+    sources:
+    - checker: workday
+      settings: {host: wd1.myworkdaysite.com, tenant: wf, unlinked_ok: 50, site: WellsFargoJobs}
+    - checker: workday
+      settings: {host: wd1.myworkdaysite.com, tenant: wf, unlinked_ok: 50, site: WellsFargoJobsTargeted}
+  verified: {page_total: 1570, explained: 'Its 2 Workday sites listed 1566 postings on 2026-11-12, 6 of them a requisition an earlier
+      site already lists, which is read once.'}
   round: added
 - key: comcast
   name: Comcast
@@ -3035,17 +3043,34 @@ companies:
   category: telecom
   aliases: [Verizon Communications]
   careers_url: ['https://mycareer.verizon.com/']
-  checker: workday
-  settings: {host: verizon.wd12.myworkdayjobs.com, tenant: verizon, site: verizon-careers}
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [verizon.wd12.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: verizon.wd12.myworkdayjobs.com, tenant: verizon, site: verizon-careers}
+    - checker: workday
+      settings: {host: verizon.wd12.myworkdayjobs.com, tenant: verizon, site: frontier_career_site}
   role_keywords: [sprinternship]
-  verified: {page_total: 1280}
+  verified: {page_total: 1664, explained: 'Its 2 Workday sites listed 1664 postings on 2026-11-12, 356 of them a requisition an earlier
+      site already lists, which is read once.'}
   round: added
 - key: nordstrom
   name: Nordstrom
   category: retail
   careers_url: ['https://careers.nordstrom.com/']
-  checker: workday
-  settings: {host: nordstrom.wd501.myworkdayjobs.com, tenant: nordstrom, unlinked_ok: 50, site: nordstrom_careers}
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [nordstrom.wd501.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: nordstrom.wd501.myworkdayjobs.com, tenant: nordstrom, unlinked_ok: 50, site: nordstrom_careers}
+    - checker: workday
+      settings: {host: nordstrom.wd501.myworkdayjobs.com, tenant: nordstrom, site: nordstrom_internship}
   verified: {page_total: 1253, explained: 'The site reported 1253 postings on 2026-11-12 and 1248 were read: the others were listed
       without a link, title or place (unlinked_ok skips them).'}
   round: added
@@ -3083,7 +3108,9 @@ companies:
       settings: {host: nike.wd1.myworkdayjobs.com, tenant: nike, site: nke}
     - checker: workday
       settings: {host: nike.wd1.myworkdayjobs.com, tenant: nike, site: nke2}
-  verified: {page_total: 1209, explained: The page showed 1209 jobs and the board 1208 on 2026-11-12 (a posting or two opened or closed
+    - checker: workday
+      settings: {host: nike.wd1.myworkdayjobs.com, tenant: nike, site: nke4}
+  verified: {page_total: 1225, explained: The page showed 1225 jobs and the board 1224 on 2026-11-12 (a posting or two opened or closed
       in between).}
   round: added
 - key: mastercard
@@ -3165,7 +3192,7 @@ companies:
       settings: {host: cadence.wd1.myworkdayjobs.com, tenant: cadence, site: OpenEye_Careers}
     - checker: workday
       settings: {host: cadence.wd1.myworkdayjobs.com, tenant: cadence, site: women-in-tech-scholarship}
-  verified: {page_total: 729, explained: 'Its 8 Workday sites listed 730 postings on 2026-11-12, 42 of them a requisition an earlier
+  verified: {page_total: 730, explained: 'Its 8 Workday sites listed 730 postings on 2026-11-12, 42 of them a requisition an earlier
       site already lists, which is read once.'}
   round: added
 - key: cox
@@ -3221,9 +3248,17 @@ companies:
   name: Fiserv
   category: fintech
   careers_url: ['https://careers.fiserv.com/us/en', 'https://careers.fiserv.com/']
-  checker: workday
-  settings: {host: fiserv.wd5.myworkdayjobs.com, tenant: fiserv, site: EXT}
-  verified: {page_total: 394}
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [fiserv.wd5.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: fiserv.wd5.myworkdayjobs.com, tenant: fiserv, site: EXT}
+    - checker: workday
+      settings: {host: fiserv.wd5.myworkdayjobs.com, tenant: fiserv, site: P3M}
+  verified: {page_total: 404}
   round: added
 - key: copart
   name: Copart
@@ -3256,8 +3291,7 @@ companies:
       settings: {host: travelers.wd5.myworkdayjobs.com, tenant: travelers, site: External}
     - checker: workday
       settings: {host: travelers.wd5.myworkdayjobs.com, tenant: travelers, site: SimplyBusinesssExternal}
-  verified: {page_total: 418, explained: The page showed 418 jobs and the board 426 on 2026-11-12 (a posting or two opened or closed
-      in between).}
+  verified: {page_total: 426}
   round: added
 - key: costar
   name: CoStar Group
@@ -3341,9 +3375,18 @@ companies:
   name: Equinix
   category: software
   careers_url: ['https://careers.equinix.com/']
-  checker: workday
-  settings: {host: equinix.wd1.myworkdayjobs.com, tenant: equinix, site: External}
-  verified: {page_total: 314}
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [equinix.wd1.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: equinix.wd1.myworkdayjobs.com, tenant: equinix, site: External}
+    - checker: workday
+      settings: {host: equinix.wd1.myworkdayjobs.com, tenant: equinix, site: Applications_By_Invitations}
+  verified: {page_total: 321, explained: 'Its 2 Workday sites listed 321 postings on 2026-11-12, 1 of them a requisition an earlier
+      site already lists, which is read once.'}
   round: added
 - key: blackrock
   name: BlackRock
@@ -3391,8 +3434,16 @@ companies:
   name: Chewy
   category: retail
   careers_url: ['https://careers.chewy.com/us/en', 'https://careers.chewy.com/']
-  checker: workday
-  settings: {host: chewy.wd5.myworkdayjobs.com, tenant: chewy, site: External}
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [chewy.wd5.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: chewy.wd5.myworkdayjobs.com, tenant: chewy, site: External}
+    - checker: workday
+      settings: {host: chewy.wd5.myworkdayjobs.com, tenant: chewy, site: Student-Ambassador-Contractors}
   verified: {page_total: 237}
   round: added
 - key: northwestern-mutual
@@ -3431,26 +3482,49 @@ companies:
     sources:
     - checker: workday
       settings: {host: nasdaq.wd1.myworkdayjobs.com, tenant: nasdaq, site: Global_External_Site}
+    - checker: workday
+      settings: {host: nasdaq.wd1.myworkdayjobs.com, tenant: nasdaq, site: job_postings}
     - checker: greenhouse
       settings: {board: nasdaq}
-  verified: {page_total: 189}
+  verified: {page_total: 197, explained: 'Its 2 Workday sites listed 197 postings on 2026-11-12, 1 of them a requisition an earlier
+      site already lists, which is read once.'}
   round: added
 - key: snap
   name: Snap
   category: big-tech
   aliases: [Snapchat]
   careers_url: ['https://careers.snap.com/']
-  checker: workday
-  settings: {host: wd1.myworkdaysite.com, tenant: snapchat, site: snap}
-  verified: {page_total: 215}
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [/recruiting/snapchat/]
+    sources:
+    - checker: workday
+      settings: {host: wd1.myworkdaysite.com, tenant: snapchat, site: snap}
+    - checker: workday
+      settings: {host: wd1.myworkdaysite.com, tenant: snapchat, site: sourced}
+    - checker: workday
+      settings: {host: wd1.myworkdaysite.com, tenant: snapchat, site: referral19}
+  verified: {page_total: 429, explained: 'Its 3 Workday sites listed 429 postings on 2026-11-12, 169 of them a requisition an earlier
+      site already lists, which is read once.'}
   round: added
 - key: zillow
   name: Zillow
   category: software
   careers_url: ['https://www.zillow.com/careers/']
-  checker: workday
-  settings: {host: zillow.wd5.myworkdayjobs.com, tenant: zillow, site: Zillow_Group_External}
-  verified: {page_total: 201}
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [zillow.wd5.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: zillow.wd5.myworkdayjobs.com, tenant: zillow, site: Zillow_Group_External}
+    - checker: workday
+      settings: {host: zillow.wd5.myworkdayjobs.com, tenant: zillow, site: Referrals}
+  verified: {page_total: 400, explained: 'Its 2 Workday sites listed 400 postings on 2026-11-12, 188 of them a requisition an earlier
+      site already lists, which is read once.'}
   round: added
 - key: ciena
   name: Ciena
@@ -3490,10 +3564,18 @@ companies:
   name: Warner Bros. Discovery
   category: media
   careers_url: ['https://careers.wbd.com/global/en', 'https://careers.wbd.com/']
-  checker: workday
-  settings: {host: warnerbros.wd5.myworkdayjobs.com, tenant: warnerbros, site: global}
-  verified: {page_total: 193, explained: The page showed 193 jobs and the board 191 on 2026-11-12 (a posting or two opened or closed
-      in between).}
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [warnerbros.wd5.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: warnerbros.wd5.myworkdayjobs.com, tenant: warnerbros, site: global}
+    - checker: workday
+      settings: {host: warnerbros.wd5.myworkdayjobs.com, tenant: warnerbros, site: directshare}
+  verified: {page_total: 212, explained: 'Its 2 Workday sites listed 210 postings on 2026-11-12, 1 of them a requisition an earlier
+      site already lists, which is read once.'}
   round: added
 - key: cohesity
   name: Cohesity
@@ -3549,7 +3631,10 @@ companies:
       settings: {host: etsy.wd5.myworkdayjobs.com, tenant: etsy, site: Etsy_Careers}
     - checker: workday
       settings: {host: etsy.wd5.myworkdayjobs.com, tenant: etsy, site: Depop_Careers}
-  verified: {page_total: 89}
+    - checker: workday
+      settings: {host: etsy.wd5.myworkdayjobs.com, tenant: etsy, site: Private_Etsy_Careers}
+  verified: {page_total: 164, explained: 'Its 3 Workday sites listed 164 postings on 2026-11-12, 67 of them a requisition an earlier
+      site already lists, which is read once.'}
   round: added
 - key: circle
   name: Circle
@@ -3579,9 +3664,18 @@ companies:
   name: SailPoint
   category: security
   careers_url: ['https://www.sailpoint.com/company/careers', 'https://www.sailpoint.com/careers']
-  checker: workday
-  settings: {host: sailpoint.wd1.myworkdayjobs.com, tenant: sailpoint, site: SailPoint}
-  verified: {page_total: 99}
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [sailpoint.wd1.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: sailpoint.wd1.myworkdayjobs.com, tenant: sailpoint, site: SailPoint}
+    - checker: workday
+      settings: {host: sailpoint.wd1.myworkdayjobs.com, tenant: sailpoint, site: SailPointInternships}
+  verified: {page_total: 101, explained: 'Its 2 Workday sites listed 101 postings on 2026-11-12, 2 of them a requisition an earlier
+      site already lists, which is read once.'}
   round: added
 - key: freddie-mac
   name: Freddie Mac
@@ -3631,7 +3725,8 @@ companies:
       settings: {host: sonos.wd1.myworkdayjobs.com, tenant: sonos, site: Sonos}
     - checker: workday
       settings: {host: sonos.wd1.myworkdayjobs.com, tenant: sonos, site: Student_Opportunities}
-  verified: {page_total: 54}
+  verified: {page_total: 56, explained: 'Its 2 Workday sites listed 56 postings on 2026-11-12, 2 of them a requisition an earlier site
+      already lists, which is read once.'}
   round: added
 - key: snyk
   name: Snyk

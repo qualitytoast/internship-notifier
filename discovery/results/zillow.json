@@ -2,23 +2,43 @@
   "key": "zillow",
   "name": "Zillow",
   "careers_url": "https://www.zillow.com/careers/",
-  "hiring_system": "workday",
-  "checker": "workday",
+  "hiring_system": "multi",
+  "checker": "multi",
   "settings": {
-    "host": "zillow.wd5.myworkdayjobs.com",
-    "tenant": "zillow",
-    "site": "Zillow_Group_External"
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "zillow.wd5.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "zillow.wd5.myworkdayjobs.com",
+          "tenant": "zillow",
+          "site": "Zillow_Group_External"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "zillow.wd5.myworkdayjobs.com",
+          "tenant": "zillow",
+          "site": "Referrals"
+        }
+      }
+    ]
   },
-  "feed": "POST https://zillow.wd5.myworkdayjobs.com/wday/cxs/zillow/Zillow_Group_External/jobs",
-  "feed_total": 201,
-  "page_total": 201,
-  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
-  "intern_total": 5,
+  "feed": "POST https://zillow.wd5.myworkdayjobs.com/wday/cxs/zillow/Zillow_Group_External/jobs + POST https://zillow.wd5.myworkdayjobs.com/wday/cxs/zillow/Referrals/jobs",
+  "feed_total": 212,
+  "page_total": 400,
+  "page_total_how": "each read's own count, added up: 201 (zillow: workday's own reported total (the careers page shows it)) + 199 (Referrals: workday's own reported total (the careers page shows it)) (2026-11-12)",
+  "intern_total": 10,
   "status": "verified",
   "blocked_reason": "",
   "fallback": "",
   "robots": "zillow.wd5.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/zillow.wd5.myworkdayjobs.com.txt)",
-  "notes": "",
+  "notes": "Its 2 Workday sites listed 400 postings on 2026-11-12, 188 of them a requisition an earlier site already lists, which is read once. Two boards: POST https://zillow.wd5.myworkdayjobs.com/wday/cxs/zillow/Zillow_Group_External/jobs + POST https://zillow.wd5.myworkdayjobs.com/wday/cxs/zillow/Referrals/jobs; a later board's posting with an earlier one's id or requisition is skipped.",
   "checked_at": "2026-11-12",
   "source": "added",
   "round": "added"

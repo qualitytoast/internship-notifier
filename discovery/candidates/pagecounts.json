@@ -227,6 +227,11 @@
   "how": "workday: no total reported; the read's count stands",
   "at": "2026-11-12"
  },
+ "chewy~site-VeterinaryCareers": {
+  "page_total": 16,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-12"
+ },
  "chime": {
   "page_total": null,
   "how": "not read: HTTP 403 for GET https://job-boards.greenhouse.io/chime"
@@ -485,6 +490,11 @@
   "how": "workday: no total reported; the read's count stands",
   "at": "2026-11-12"
  },
+ "equinix~site-Applications_By_Invitations": {
+  "page_total": 7,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-12"
+ },
  "equinix~site-BSI_People": {
   "page_total": null,
   "how": "workday: no total reported; the read's count stands",
@@ -538,6 +548,11 @@
  "equinix~site-Euro_London_Appointment": {
   "page_total": null,
   "how": "workday: no total reported; the read's count stands",
+  "at": "2026-11-12"
+ },
+ "equinix~site-Exclusive_Applications_by_Invite": {
+  "page_total": 9,
+  "how": "workday's own reported total (the careers page shows it)",
   "at": "2026-11-12"
  },
  "equinix~site-Execuforce": {
@@ -704,6 +719,16 @@
   "how": "workday's own reported total (the careers page shows it)",
   "at": "2026-11-12"
  },
+ "etsy~site-Private_Depop_Careers": {
+  "page_total": null,
+  "how": "workday: no total reported; the read's count stands",
+  "at": "2026-11-12"
+ },
+ "etsy~site-Private_Etsy_Careers": {
+  "page_total": 75,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-12"
+ },
  "etsy~site-Reverb_Careers": {
   "page_total": null,
   "how": "workday: no total reported; the read's count stands",
@@ -752,6 +777,11 @@
  "fiserv~site-NZ": {
   "page_total": null,
   "how": "workday: no total reported; the read's count stands",
+  "at": "2026-11-12"
+ },
+ "fiserv~site-P3M": {
+  "page_total": 10,
+  "how": "workday's own reported total (the careers page shows it)",
   "at": "2026-11-12"
  },
  "fiserv~site-blconsultant": {
@@ -1117,6 +1147,11 @@
   "how": "workday: no total reported; the read's count stands",
   "at": "2026-11-12"
  },
+ "nasdaq~site-job_postings": {
+  "page_total": 8,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-12"
+ },
  "nasuni": {
   "page_total": 0,
   "how": "hosted Greenhouse board's stated count"
@@ -1165,6 +1200,11 @@
  },
  "nike": {
   "page_total": 1209,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-12"
+ },
+ "nike~site-nke4": {
+  "page_total": 16,
   "how": "workday's own reported total (the careers page shows it)",
   "at": "2026-11-12"
  },
@@ -1329,6 +1369,11 @@
   "how": "workday's own reported total (the careers page shows it)",
   "at": "2026-11-12"
  },
+ "sailpoint~site-SailPointOps": {
+  "page_total": null,
+  "how": "workday: no total reported; the read's count stands",
+  "at": "2026-11-12"
+ },
  "sandisk": {
   "page_total": null,
   "how": "smartrecruiters: no total reported; the read's count stands"
@@ -1357,6 +1402,26 @@
  "snap~ripplematch": {
   "page_total": null,
   "how": "ripplematch: no total reported; the read's count stands",
+  "at": "2026-11-12"
+ },
+ "snap~site-immigration": {
+  "page_total": 5,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-12"
+ },
+ "snap~site-referral19": {
+  "page_total": 25,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-12"
+ },
+ "snap~site-sourced": {
+  "page_total": 189,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-12"
+ },
+ "snap~site-zenly": {
+  "page_total": null,
+  "how": "workday: no total reported; the read's count stands",
   "at": "2026-11-12"
  },
  "snorkel-ai": {
@@ -1536,6 +1601,16 @@
   "how": "ripplematch: no total reported; the read's count stands",
   "at": "2026-11-12"
  },
+ "verizon~site-contractor_external_careers": {
+  "page_total": 4,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-12"
+ },
+ "verizon~site-frontier_career_site": {
+  "page_total": 384,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-12"
+ },
  "viam": {
   "page_total": 8,
   "how": "hosted Greenhouse board's stated count"
@@ -1546,6 +1621,11 @@
  },
  "warner-bros-discovery": {
   "page_total": 193,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-12"
+ },
+ "warner-bros-discovery~site-directshare": {
+  "page_total": 19,
   "how": "workday's own reported total (the careers page shows it)",
   "at": "2026-11-12"
  },
@@ -1566,6 +1646,11 @@
  },
  "wells-fargo": {
   "page_total": 1545,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-12"
+ },
+ "wells-fargo~site-WellsFargoJobsTargeted": {
+  "page_total": 25,
   "how": "workday's own reported total (the careers page shows it)",
   "at": "2026-11-12"
  },
@@ -1592,6 +1677,11 @@
  },
  "zillow": {
   "page_total": 201,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-12"
+ },
+ "zillow~site-Referrals": {
+  "page_total": 199,
   "how": "workday's own reported total (the careers page shows it)",
   "at": "2026-11-12"
  },

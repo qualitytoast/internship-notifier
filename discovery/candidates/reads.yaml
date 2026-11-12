@@ -374,3 +374,33 @@ reads:
   washington-post~site-WashingtonPostCareersArc: {"checker": "workday", "settings": {"host": "washpost.wd5.myworkdayjobs.com", "tenant": "washpost", "site": "WashingtonPostCareersArc"}}
   athenahealth~careers: {"checker": "phenom", "settings": {"base_url": "https://careers.athenahealth.com", "ref_num": "ATHAHHUS"}}
   charles-schwab~talentbrew: {"checker": "talentbrew", "settings": {"sitemap_url": "https://www.schwabjobs.com/sitemap.xml", "org_id": 33727, "detail_limit": 40}}
+  # sites a tenant's robots.txt hides (Disallow) that Stage 1's survey listed but never read, and the sites of the
+  # three tenants on myworkdaysite.com, whose robots.txt is on <tenant>.<wdN>.myworkdayjobs.com (read 2026-11-12)
+  att~site-ATTMilitaryFellowSpecialInvite: {"checker": "workday", "settings": {"host": "att.wd1.myworkdayjobs.com", "anchor_host": true, "tenant": "att", "site": "ATTMilitaryFellowSpecialInvite"}}
+  att~site-ATTSpecialInvite: {"checker": "workday", "settings": {"host": "att.wd1.myworkdayjobs.com", "anchor_host": true, "tenant": "att", "site": "ATTSpecialInvite"}}
+  blackrock~site-BlackRock_AIG: {"checker": "workday", "settings": {"host": "blackrock.wd1.myworkdayjobs.com", "tenant": "blackrock", "site": "BlackRock_AIG"}}
+  cadence~site-addl_jobs: {"checker": "workday", "settings": {"host": "cadence.wd1.myworkdayjobs.com", "tenant": "cadence", "site": "addl_jobs"}}
+  chewy~site-VeterinaryCareers: {"checker": "workday", "settings": {"host": "chewy.wd5.myworkdayjobs.com", "tenant": "chewy", "site": "VeterinaryCareers"}}
+  cohesity~site-Private_Careers: {"checker": "workday", "settings": {"host": "cohesity.wd5.myworkdayjobs.com", "tenant": "cohesity", "site": "Private_Careers"}}
+  equinix~site-Applications_By_Invitations: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Applications_By_Invitations"}}
+  equinix~site-Exclusive_Applications_by_Invite: {"checker": "workday", "settings": {"host": "equinix.wd1.myworkdayjobs.com", "tenant": "equinix", "site": "Exclusive_Applications_by_Invite"}}
+  etsy~site-Private_Depop_Careers: {"checker": "workday", "settings": {"host": "etsy.wd5.myworkdayjobs.com", "tenant": "etsy", "site": "Private_Depop_Careers"}}
+  etsy~site-Private_Etsy_Careers: {"checker": "workday", "settings": {"host": "etsy.wd5.myworkdayjobs.com", "tenant": "etsy", "site": "Private_Etsy_Careers"}}
+  fiserv~site-P3M: {"checker": "workday", "settings": {"host": "fiserv.wd5.myworkdayjobs.com", "tenant": "fiserv", "site": "P3M"}}
+  mastercard~site-CUOReqSite: {"checker": "workday", "settings": {"host": "mastercard.wd1.myworkdayjobs.com", "tenant": "mastercard", "site": "CUOReqSite"}}
+  mckesson~site-Contractor_Conversions: {"checker": "workday", "settings": {"host": "mckesson.wd3.myworkdayjobs.com", "tenant": "mckesson", "site": "Contractor_Conversions", "unlinked_ok": 50}}
+  mckesson~site-Executive_Careers: {"checker": "workday", "settings": {"host": "mckesson.wd3.myworkdayjobs.com", "tenant": "mckesson", "site": "Executive_Careers", "unlinked_ok": 50}}
+  mckesson~site-Welcome_to_McKesson_Disability_IN: {"checker": "workday", "settings": {"host": "mckesson.wd3.myworkdayjobs.com", "tenant": "mckesson", "site": "Welcome_to_McKesson_Disability_IN", "unlinked_ok": 50}}
+  mckesson~site-Welcome_to_McKesson_NBMBAA: {"checker": "workday", "settings": {"host": "mckesson.wd3.myworkdayjobs.com", "tenant": "mckesson", "site": "Welcome_to_McKesson_NBMBAA", "unlinked_ok": 50}}
+  nasdaq~site-job_postings: {"checker": "workday", "settings": {"host": "nasdaq.wd1.myworkdayjobs.com", "tenant": "nasdaq", "site": "job_postings"}}
+  nike~site-nke4: {"checker": "workday", "settings": {"host": "nike.wd1.myworkdayjobs.com", "tenant": "nike", "site": "nke4"}}
+  sailpoint~site-SailPointOps: {"checker": "workday", "settings": {"host": "sailpoint.wd1.myworkdayjobs.com", "tenant": "sailpoint", "site": "SailPointOps"}}
+  verizon~site-contractor_external_careers: {"checker": "workday", "settings": {"host": "verizon.wd12.myworkdayjobs.com", "tenant": "verizon", "site": "contractor_external_careers"}}
+  verizon~site-frontier_career_site: {"checker": "workday", "settings": {"host": "verizon.wd12.myworkdayjobs.com", "tenant": "verizon", "site": "frontier_career_site"}}
+  warner-bros-discovery~site-directshare: {"checker": "workday", "settings": {"host": "warnerbros.wd5.myworkdayjobs.com", "tenant": "warnerbros", "site": "directshare"}}
+  zillow~site-Referrals: {"checker": "workday", "settings": {"host": "zillow.wd5.myworkdayjobs.com", "tenant": "zillow", "site": "Referrals"}}
+  wells-fargo~site-WellsFargoJobsTargeted: {"checker": "workday", "settings": {"host": "wd1.myworkdaysite.com", "tenant": "wf", "site": "WellsFargoJobsTargeted", "unlinked_ok": 50}}
+  snap~site-sourced: {"checker": "workday", "settings": {"host": "wd1.myworkdaysite.com", "tenant": "snapchat", "site": "sourced"}}
+  snap~site-referral19: {"checker": "workday", "settings": {"host": "wd1.myworkdaysite.com", "tenant": "snapchat", "site": "referral19"}}
+  snap~site-immigration: {"checker": "workday", "settings": {"host": "wd1.myworkdaysite.com", "tenant": "snapchat", "site": "immigration"}}
+  snap~site-zenly: {"checker": "workday", "settings": {"host": "wd1.myworkdaysite.com", "tenant": "snapchat", "site": "zenly"}}

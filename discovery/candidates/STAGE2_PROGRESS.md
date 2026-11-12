@@ -266,3 +266,32 @@ before replaying.
 - [x] re-match: 391 stored rows given to batch 3's companies (292 known, 85 found, 14 abroad; 62 from the old
       off-season source), none missed, no "via Simplify" job; "Now watching" 508 roles of 550 matching (42 left out
       as already shown)
+- The first three-morning run (proof-f0da7be) showed two kinds of difference, both explained, and one of them led to
+  sites the plan had missed:
+  - Wells Fargo's tenant state (`blocked:…:workday:wf.wd1.myworkdayjobs.com`): the backup check's first look found a
+    site robots.txt hides, WellsFargoJobsTargeted. Stage 1's survey (workday_sites.json) had listed 23 hidden sites
+    at batch 3's tenants as unread and never read them, and could not survey the three tenants on myworkdaysite.com
+    (Wells Fargo, Snap, Guidewire: their robots.txt is on <tenant>.<wdN>.myworkdayjobs.com). All read on Nov 12:
+    - with student roles, now read: Nasdaq job_postings (8 jobs: "Business Development Intern - 2027 Summer
+      Internship", "MIT Internship", "Nasdaq Campus Program - 2027"), Nike nke4 (16 jobs, 15 student roles, none on
+      Nike's two public sites), Warner Bros. Discovery directshare (19, 2 matching), Equinix
+      Applications_By_Invitations (7, an intern in Sydney), Zillow Referrals (199, 188 copies), Snap sourced (189,
+      157 copies);
+    - student sites that are empty or without a student role today, now read: Nordstrom nordstrom_internship (0),
+      Chewy Student-Ambassador-Contractors (0), SailPoint SailPointInternships (2);
+    - private, targeted or referral sites with jobs of their own, now read: Wells Fargo WellsFargoJobsTargeted (25,
+      19 not on the public site), Etsy Private_Etsy_Careers (75, 8), Snap referral19 (25, 13), Fiserv P3M (10, 10);
+    - Verizon frontier_career_site (384 jobs, 356 of them also on Verizon's site, no student role): Frontier, which
+      Verizon bought. Read like the subsidiaries the user approved; it was not on the list they saw;
+    - not read (another audience, or empty): Chewy VeterinaryCareers, Equinix Exclusive_Applications_by_Invite and
+      Mastercard CUOReqSite (executives), McKesson Contractor_Conversions, Verizon contractor_external_careers, Snap
+      immigration, and the 10 empty ones.
+    Later batches: read every hidden site, and survey myworkdaysite.com tenants on their own host, before applying.
+  - The weekly archive.org check reads a seventh of a round's companies a day, never-read ones first, so batch 3's
+    ten take the first days and five earlier added companies' copies (Enova, Gusto, Lucid Software, Xcimer,
+    YugabyteDB) are read some days later; nothing of the 198's moves. morning.py compare lists these for review
+    (kv keys and 2-3 archive.org requests a morning) instead of failing, and counts a Workday tenant's host keys as
+    its company's. With that, proof-f0da7be passes all three mornings, and batch 2's proof-9a7cc2f still passes.
+- After the hidden sites: 37 of the 58 companies are `multi` (116 sources); verify: 27,249 jobs, 1,136 student roles,
+  553 matching, 1,519 requests; 21 companies' sites repeat each other (site_copies.yaml); no job in any of the 53
+  multi companies' recordings is dropped for a repeat inside its own source.

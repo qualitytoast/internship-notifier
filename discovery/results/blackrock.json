@@ -38,7 +38,7 @@
   "blocked_reason": "",
   "fallback": "",
   "robots": "blackrock.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/blackrock.wd1.myworkdayjobs.com.txt)",
-  "notes": "Two boards: POST https://blackrock.wd1.myworkdayjobs.com/wday/cxs/blackrock/BlackRock_Professional/jobs + POST https://blackrock.wd1.myworkdayjobs.com/wday/cxs/blackrock/BlackRock_Early_Careers_Program/jobs; a later board's posting with an earlier one's id or requisition is skipped.",
+  "notes": "Two boards: POST https://blackrock.wd1.myworkdayjobs.com/wday/cxs/blackrock/BlackRock_Professional/jobs + POST https://blackrock.wd1.myworkdayjobs.com/wday/cxs/blackrock/BlackRock_Early_Careers_Program/jobs; a later board's posting with an earlier one's id or requisition is skipped. Not read: blackrock~site-BlackRock_AIG: public Workday site, 0 jobs, no student role: recorded as known.",
   "checked_at": "2026-11-12",
   "source": "added",
   "round": "added"

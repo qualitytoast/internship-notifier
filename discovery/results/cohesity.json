@@ -18,7 +18,7 @@
   "blocked_reason": "",
   "fallback": "",
   "robots": "cohesity.wd5.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/cohesity.wd5.myworkdayjobs.com.txt)",
-  "notes": "The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md).",
+  "notes": "The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md). Not read: cohesity~site-Private_Careers: public Workday site, 0 jobs, no student role: recorded as known.",
   "checked_at": "2026-11-12",
   "source": "added",
   "round": "added"

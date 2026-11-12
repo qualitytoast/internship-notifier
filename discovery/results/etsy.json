@@ -26,19 +26,27 @@
           "tenant": "etsy",
           "site": "Depop_Careers"
         }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "etsy.wd5.myworkdayjobs.com",
+          "tenant": "etsy",
+          "site": "Private_Etsy_Careers"
+        }
       }
     ]
   },
-  "feed": "POST https://etsy.wd5.myworkdayjobs.com/wday/cxs/etsy/Etsy_Careers/jobs + POST https://etsy.wd5.myworkdayjobs.com/wday/cxs/etsy/Depop_Careers/jobs",
-  "feed_total": 89,
-  "page_total": 89,
-  "page_total_how": "each read's own count, added up: 68 (etsy: workday's own reported total (the careers page shows it)) + 21 (Depop_Careers: workday's own reported total (the careers page shows it)) (2026-11-12)",
+  "feed": "POST https://etsy.wd5.myworkdayjobs.com/wday/cxs/etsy/Etsy_Careers/jobs + POST https://etsy.wd5.myworkdayjobs.com/wday/cxs/etsy/Depop_Careers/jobs + POST https://etsy.wd5.myworkdayjobs.com/wday/cxs/etsy/Private_Etsy_Careers/jobs",
+  "feed_total": 97,
+  "page_total": 164,
+  "page_total_how": "each read's own count, added up: 68 (etsy: workday's own reported total (the careers page shows it)) + 21 (Depop_Careers: workday's own reported total (the careers page shows it)) + 75 (Private_Etsy_Careers: workday's own reported total (the careers page shows it)) (2026-11-12)",
   "intern_total": 0,
   "status": "verified",
   "blocked_reason": "",
   "fallback": "",
   "robots": "etsy.wd5.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/etsy.wd5.myworkdayjobs.com.txt)",
-  "notes": "Read with it, as part of the company: Depop (Etsy's Workday site Depop_Careers). Two boards: POST https://etsy.wd5.myworkdayjobs.com/wday/cxs/etsy/Etsy_Careers/jobs + POST https://etsy.wd5.myworkdayjobs.com/wday/cxs/etsy/Depop_Careers/jobs; a later board's posting with an earlier one's id or requisition is skipped. Not read: etsy~site-Reverb_Careers: public Workday site, 0 jobs, no student role: recorded as known.",
+  "notes": "Its 3 Workday sites listed 164 postings on 2026-11-12, 67 of them a requisition an earlier site already lists, which is read once. Read with it, as part of the company: Depop (Etsy's Workday site Depop_Careers). 3 boards: POST https://etsy.wd5.myworkdayjobs.com/wday/cxs/etsy/Etsy_Careers/jobs + POST https://etsy.wd5.myworkdayjobs.com/wday/cxs/etsy/Depop_Careers/jobs + POST https://etsy.wd5.myworkdayjobs.com/wday/cxs/etsy/Private_Etsy_Careers/jobs; a later board's posting with an earlier one's id or requisition is skipped. Not read: etsy~site-Reverb_Careers: public Workday site, 0 jobs, no student role: recorded as known. Not read: etsy~site-Private_Depop_Careers: public Workday site, 0 jobs, no student role: recorded as known.",
   "checked_at": "2026-11-12",
   "source": "added",
   "round": "added"

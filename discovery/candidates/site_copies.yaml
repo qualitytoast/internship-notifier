@@ -49,6 +49,29 @@ disney:
     disneycareerdc:
       copies: 19
       postings: 164
+equinix:
+  at: '2026-11-12'
+  copies: 1
+  sites:
+    Applications_By_Invitations:
+      copies: 1
+      postings: 7
+    External:
+      copies: 0
+      postings: 314
+etsy:
+  at: '2026-11-12'
+  copies: 67
+  sites:
+    Depop_Careers:
+      copies: 0
+      postings: 21
+    Etsy_Careers:
+      copies: 0
+      postings: 68
+    Private_Etsy_Careers:
+      copies: 67
+      postings: 75
 hartford:
   at: '2026-11-12'
   copies: 9
@@ -130,6 +153,39 @@ morgan-stanley:
     private:
       copies: 204
       postings: 378
+nasdaq:
+  at: '2026-11-12'
+  copies: 1
+  sites:
+    Global_External_Site:
+      copies: 0
+      postings: 168
+    job_postings:
+      copies: 1
+      postings: 8
+sailpoint:
+  at: '2026-11-12'
+  copies: 2
+  sites:
+    SailPoint:
+      copies: 0
+      postings: 99
+    SailPointInternships:
+      copies: 2
+      postings: 2
+snap:
+  at: '2026-11-12'
+  copies: 169
+  sites:
+    referral19:
+      copies: 12
+      postings: 25
+    snap:
+      copies: 0
+      postings: 215
+    sourced:
+      copies: 157
+      postings: 189
 sonos:
   at: '2026-11-12'
   copies: 2
@@ -160,3 +216,43 @@ vanguard:
     vanguard_external:
       copies: 0
       postings: 335
+verizon:
+  at: '2026-11-12'
+  copies: 356
+  sites:
+    frontier_career_site:
+      copies: 356
+      postings: 384
+    verizon-careers:
+      copies: 0
+      postings: 1280
+warner-bros-discovery:
+  at: '2026-11-12'
+  copies: 1
+  sites:
+    directshare:
+      copies: 1
+      postings: 19
+    global:
+      copies: 0
+      postings: 191
+wells-fargo:
+  at: '2026-11-12'
+  copies: 6
+  sites:
+    WellsFargoJobs:
+      copies: 0
+      postings: 1541
+    WellsFargoJobsTargeted:
+      copies: 6
+      postings: 25
+zillow:
+  at: '2026-11-12'
+  copies: 188
+  sites:
+    Referrals:
+      copies: 188
+      postings: 199
+    Zillow_Group_External:
+      copies: 0
+      postings: 201

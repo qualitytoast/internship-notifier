@@ -58,7 +58,7 @@
   "blocked_reason": "",
   "fallback": "",
   "robots": "att.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/att.wd1.myworkdayjobs.com.txt)",
-  "notes": "4 boards: POST https://att.wd1.myworkdayjobs.com/wday/cxs/att/ATTGeneral/jobs + POST https://att.wd1.myworkdayjobs.com/wday/cxs/att/ATTcollege/jobs + POST https://att.wd1.myworkdayjobs.com/wday/cxs/att/Cricket/jobs + POST https://att.wd1.myworkdayjobs.com/wday/cxs/att/ATTCollegeSpecialInvite/jobs; a later board's posting with an earlier one's id or requisition is skipped.",
+  "notes": "4 boards: POST https://att.wd1.myworkdayjobs.com/wday/cxs/att/ATTGeneral/jobs + POST https://att.wd1.myworkdayjobs.com/wday/cxs/att/ATTcollege/jobs + POST https://att.wd1.myworkdayjobs.com/wday/cxs/att/Cricket/jobs + POST https://att.wd1.myworkdayjobs.com/wday/cxs/att/ATTCollegeSpecialInvite/jobs; a later board's posting with an earlier one's id or requisition is skipped. Not read: att~site-ATTMilitaryFellowSpecialInvite: public Workday site, 0 jobs, no student role: recorded as known. Not read: att~site-ATTSpecialInvite: public Workday site, 0 jobs, no student role: recorded as known.",
   "checked_at": "2026-11-12",
   "source": "added",
   "round": "added"

@@ -504,12 +504,12 @@
   "requests": 1
  },
  "chewy": {
-  "jobs": 237,
+  "jobs": 238,
   "students": 0,
   "matched": 0,
-  "at": "2026-11-12T14:51:30Z",
-  "duration": 13.0,
-  "requests": 12
+  "at": "2026-11-12T15:49:48Z",
+  "duration": 19.1,
+  "requests": 13
  },
  "chicago-trading-company": {
   "jobs": 31,
@@ -960,12 +960,12 @@
   "requests": 1
  },
  "equinix": {
-  "jobs": 314,
-  "students": 0,
+  "jobs": 320,
+  "students": 1,
   "matched": 0,
-  "at": "2026-11-12T14:51:30Z",
-  "duration": 17.1,
-  "requests": 16
+  "at": "2026-11-12T15:49:48Z",
+  "duration": 20.9,
+  "requests": 17
  },
  "etched": {
   "jobs": 116,
@@ -976,12 +976,12 @@
   "requests": 1
  },
  "etsy": {
-  "jobs": 89,
+  "jobs": 97,
   "students": 0,
   "matched": 0,
-  "at": "2026-11-12T14:51:30Z",
-  "duration": 5.6,
-  "requests": 6
+  "at": "2026-11-12T15:49:48Z",
+  "duration": 9.5,
+  "requests": 10
  },
  "eventual": {
   "jobs": 5,
@@ -1064,12 +1064,12 @@
   "requests": 25
  },
  "fiserv": {
-  "jobs": 395,
+  "jobs": 407,
   "students": 3,
   "matched": 0,
-  "at": "2026-11-12T14:51:30Z",
-  "duration": 19.6,
-  "requests": 20
+  "at": "2026-11-12T15:49:48Z",
+  "duration": 20.5,
+  "requests": 21
  },
  "five-rings": {
   "jobs": 17,
@@ -1728,12 +1728,12 @@
   "requests": 1
  },
  "nasdaq": {
-  "jobs": 188,
-  "students": 4,
-  "matched": 1,
-  "at": "2026-11-12T14:54:53Z",
-  "duration": 10.4,
-  "requests": 10
+  "jobs": 198,
+  "students": 10,
+  "matched": 3,
+  "at": "2026-11-12T15:49:48Z",
+  "duration": 10.7,
+  "requests": 11
  },
  "nasuni": {
   "jobs": 29,
@@ -1808,20 +1808,20 @@
   "requests": 1
  },
  "nike": {
-  "jobs": 1208,
-  "students": 18,
-  "matched": 11,
-  "at": "2026-11-12T14:51:30Z",
-  "duration": 72.0,
-  "requests": 63
+  "jobs": 1221,
+  "students": 33,
+  "matched": 14,
+  "at": "2026-11-12T15:49:48Z",
+  "duration": 61.8,
+  "requests": 62
  },
  "nordstrom": {
-  "jobs": 1245,
+  "jobs": 1247,
   "students": 16,
   "matched": 3,
-  "at": "2026-11-12T14:51:30Z",
-  "duration": 63.9,
-  "requests": 63
+  "at": "2026-11-12T15:49:48Z",
+  "duration": 64.3,
+  "requests": 64
  },
  "northwestern-mutual": {
   "jobs": 155,
@@ -2299,9 +2299,9 @@
   "jobs": 99,
   "students": 1,
   "matched": 0,
-  "at": "2026-11-12T14:51:30Z",
-  "duration": 4.8,
-  "requests": 5
+  "at": "2026-11-12T15:49:48Z",
+  "duration": 5.6,
+  "requests": 6
  },
  "salesforce": {
   "jobs": 1583,
@@ -2432,12 +2432,12 @@
   "requests": 1
  },
  "snap": {
-  "jobs": 215,
-  "students": 3,
+  "jobs": 260,
+  "students": 4,
   "matched": 1,
-  "at": "2026-11-12T14:51:30Z",
-  "duration": 10.9,
-  "requests": 11
+  "at": "2026-11-12T15:49:48Z",
+  "duration": 33.2,
+  "requests": 23
  },
  "snorkel-ai": {
   "jobs": 43,
@@ -2848,12 +2848,12 @@
   "requests": 1
  },
  "verizon": {
-  "jobs": 1279,
+  "jobs": 1306,
   "students": 1,
   "matched": 0,
-  "at": "2026-11-12T14:51:30Z",
-  "duration": 63.8,
-  "requests": 64
+  "at": "2026-11-12T15:49:48Z",
+  "duration": 83.9,
+  "requests": 84
  },
  "verkada": {
   "jobs": 319,
@@ -2920,12 +2920,12 @@
   "requests": 2
  },
  "warner-bros-discovery": {
-  "jobs": 191,
-  "students": 12,
-  "matched": 5,
-  "at": "2026-11-12T14:51:30Z",
-  "duration": 10.8,
-  "requests": 10
+  "jobs": 208,
+  "students": 14,
+  "matched": 7,
+  "at": "2026-11-12T15:49:48Z",
+  "duration": 11.6,
+  "requests": 11
  },
  "washington-post": {
   "jobs": 51,
@@ -2944,12 +2944,12 @@
   "requests": 1
  },
  "wells-fargo": {
-  "jobs": 1544,
+  "jobs": 1565,
   "students": 11,
   "matched": 7,
-  "at": "2026-11-12T14:51:30Z",
-  "duration": 84.7,
-  "requests": 78
+  "at": "2026-11-12T15:49:48Z",
+  "duration": 101.1,
+  "requests": 80
  },
  "whatnot": {
   "jobs": 149,
@@ -3064,12 +3064,12 @@
   "requests": 7
  },
  "zillow": {
-  "jobs": 201,
+  "jobs": 212,
   "students": 5,
   "matched": 4,
-  "at": "2026-11-12T14:51:30Z",
-  "duration": 10.9,
-  "requests": 11
+  "at": "2026-11-12T15:49:48Z",
+  "duration": 22.1,
+  "requests": 21
  },
  "zip": {
   "jobs": 97,

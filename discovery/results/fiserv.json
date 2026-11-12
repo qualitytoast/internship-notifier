@@ -2,23 +2,43 @@
   "key": "fiserv",
   "name": "Fiserv",
   "careers_url": "https://careers.fiserv.com/us/en",
-  "hiring_system": "workday",
-  "checker": "workday",
+  "hiring_system": "multi",
+  "checker": "multi",
   "settings": {
-    "host": "fiserv.wd5.myworkdayjobs.com",
-    "tenant": "fiserv",
-    "site": "EXT"
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "fiserv.wd5.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "fiserv.wd5.myworkdayjobs.com",
+          "tenant": "fiserv",
+          "site": "EXT"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "fiserv.wd5.myworkdayjobs.com",
+          "tenant": "fiserv",
+          "site": "P3M"
+        }
+      }
+    ]
   },
-  "feed": "POST https://fiserv.wd5.myworkdayjobs.com/wday/cxs/fiserv/EXT/jobs",
-  "feed_total": 394,
-  "page_total": 394,
-  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "feed": "POST https://fiserv.wd5.myworkdayjobs.com/wday/cxs/fiserv/EXT/jobs + POST https://fiserv.wd5.myworkdayjobs.com/wday/cxs/fiserv/P3M/jobs",
+  "feed_total": 404,
+  "page_total": 404,
+  "page_total_how": "each read's own count, added up: 394 (fiserv: workday's own reported total (the careers page shows it)) + 10 (P3M: workday's own reported total (the careers page shows it)) (2026-11-12)",
   "intern_total": 3,
   "status": "verified",
   "blocked_reason": "",
   "fallback": "",
   "robots": "fiserv.wd5.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/fiserv.wd5.myworkdayjobs.com.txt)",
-  "notes": "Not read: fiserv~site-NZ: public Workday site, 0 jobs, no student role: recorded as known. Not read: fiserv~site-blconsultant: public Workday site, 0 jobs, no student role: recorded as known.",
+  "notes": "Two boards: POST https://fiserv.wd5.myworkdayjobs.com/wday/cxs/fiserv/EXT/jobs + POST https://fiserv.wd5.myworkdayjobs.com/wday/cxs/fiserv/P3M/jobs; a later board's posting with an earlier one's id or requisition is skipped. Not read: fiserv~site-NZ: public Workday site, 0 jobs, no student role: recorded as known. Not read: fiserv~site-blconsultant: public Workday site, 0 jobs, no student role: recorded as known.",
   "checked_at": "2026-11-12",
   "source": "added",
   "round": "added"

@@ -19,8 +19,10 @@ edits (comma-separated, for the plan's morning 2 and 3): after:<out> starts from
 left; day:<n> sets the clock n days after the recording; new:<company>[;<company>…] gives each a new matching
 posting; fail:<company>[;…] makes each fail; mailfail makes every email fail to send (with sending on).
 A replay that needs a request the recording doesn't have gets an error for it, as an outage would, and the request
-is listed. Allowed differences in compare: the added companies' own rows and keys (round: added), rows that went
-from no company to one of them, and digest_at on untracked rows (set by the new code when an email lists them).
+is listed. Allowed differences in compare: the added companies' own rows and keys (round: added; a Workday tenant's
+state is keyed by its host), rows that went from no company to one of them, digest_at on untracked rows (set by
+the new code when an email lists them), and the day the weekly archive.org check reads a later round's earlier
+companies (listed for review: the check reads a seventh of the round a day, so more companies move the days).
 Requests: the first round's must be the same in the same order, a later round must not ask before the first has
 finished, and the old version's later-round requests must all be in the new version's, in their order.
 """
@@ -238,9 +240,30 @@ def links(html_path: Path) -> set[str]:
     return {htmllib.unescape(u) for t in texts for u in re.findall(r'(?:href="|,)(https?://[^"\s,]+)', t)}
 
 
+def later_rounds(home: Path, added: set[str]) -> tuple[set[str], set[str]]:
+    """From a version's config: the Workday tenant hosts only `added` companies read (moves.py keys a tenant's state
+    by its host, wf.wd1.myworkdayjobs.com for Wells Fargo), and the companies of later rounds that are not `added`."""
+    import re
+    import yaml
+    hosts: dict[str, set[str]] = {}
+    earlier = set()
+    for c in yaml.safe_load((home / "config" / "companies.yaml").read_text())["companies"]:
+        if c.get("round") and c["key"] not in added:
+            earlier.add(c["key"])
+        st = c.get("settings") or {}
+        for x in st.get("sources") or [{"checker": c["checker"], "settings": st}]:
+            s = x.get("settings") or {}
+            if x.get("checker") == "workday" and s.get("host") and s.get("tenant"):
+                m = re.match(r"(wd\d+)\.myworkdaysite\.com", s["host"])
+                hosts.setdefault(f"{s['tenant']}.{m.group(1)}.myworkdayjobs.com" if m else s["host"], set()).add(c["key"])
+    return {h for h, keys in hosts.items() if keys <= added}, earlier
+
+
 def compare(old_out: Path, new_out: Path, added: set[str]) -> int:
     old, new = json.loads((old_out / "db.json").read_text()), json.loads((new_out / "db.json").read_text())
     problems, review = [], []
+    hosts, earlier = later_rounds(new_out / "home", added) if added else (set(), set())
+    moved = 0  # reads of the weekly archive.org check that fall on another day for a later round's earlier companies
     for table, (keys, skip) in TABLES.items():
         if added and table in ADDED:
             keys, skip = ADDED[table]
@@ -263,8 +286,14 @@ def compare(old_out: Path, new_out: Path, added: set[str]) -> int:
             if ra == rb:
                 continue
             ours = rb or ra
-            if table == "kv" and any(x in k[0] for x in [*(f":{c}" for c in added), "lists:added:", "golive:",
-                                                           "simplify_open:", "digest_backfilled"]):
+            if table == "kv" and any(x in k[0] for x in [*(f":{c}" for c in added), *(f":{h}" for h in hosts),
+                                                           "lists:added:", "golive:", "simplify_open:",
+                                                           "digest_backfilled"]):
+                continue
+            if table == "kv" and ":archive:" in k[0] and k[0].rsplit(":", 1)[-1] in earlier:
+                # the archive.org check reads a seventh of a round's companies a day, never-read ones first: companies
+                # added to the round take the first days, and an earlier company's copy is read some days later
+                moved += 1
                 continue
             if isinstance(ours, dict) and (ours.get("company") in added or ours.get("tracked_company") in added):
                 if table != "simplify_rows" or (ra or {}).get("tracked_company") in (None, *added):
@@ -310,11 +339,18 @@ def compare(old_out: Path, new_out: Path, added: set[str]) -> int:
         if any(not x[3] for x in rb[next((i for i, x in enumerate(rb) if x[3]), len(rb)):]):
             problems.append("requests: a later round asked before the first round had finished")
         rest = iter(later(rb))  # companies added to a round are read between the old ones, which keep their order
-        if not all(any(x == y for y in rest) for x in later(ra)):
+        weekly = [x for x in later(ra) if "//web.archive.org/" in x[1] and x not in later(rb)] if moved else []
+        if weekly:
+            review.append(f"requests: {len(weekly)} archive.org requests of the old version's later round fall on "
+                          f"another day in the new version")
+        if not all(any(x == y for y in rest) for x in later(ra) if x not in weekly):
             problems.append("requests: a later round's request of the old version is missing from the new version's, "
                             "or out of order")
     elif [x[:3] for x in rb[:len(ra)]] != [x[:3] for x in ra]:
         problems.append("requests: the old version's requests are not the start of the new version's, in order")
+    if moved:
+        review.append(f"kv: {moved} keys of the weekly archive.org check differ for earlier companies of a later round "
+                      f"(the round has more companies: their copies are read on other days)")
     for p in review:
         print("   review:", p)
     for p in problems[:100]:

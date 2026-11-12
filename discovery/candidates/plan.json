@@ -458,7 +458,16 @@
    }
   ],
   "side": [],
-  "dropped": [],
+  "dropped": [
+   {
+    "entry": "att~site-ATTMilitaryFellowSpecialInvite",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "att~site-ATTSpecialInvite",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
   "page": "ok",
   "blocked_page": false,
   "very_large": false,
@@ -812,7 +821,12 @@
    }
   ],
   "side": [],
-  "dropped": [],
+  "dropped": [
+   {
+    "entry": "blackrock~site-BlackRock_AIG",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
   "page": "ok",
   "blocked_page": false,
   "very_large": false,
@@ -1018,7 +1032,12 @@
    }
   ],
   "side": [],
-  "dropped": [],
+  "dropped": [
+   {
+    "entry": "cadence~site-addl_jobs",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
   "page": "refused",
   "blocked_page": true,
   "very_large": false,
@@ -1209,6 +1228,17 @@
     "seconds": 12.5,
     "requests": 12,
     "error": null
+   },
+   {
+    "entry": "chewy~site-Student-Ambassador-Contractors",
+    "checker": "workday",
+    "jobs": 0,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.3,
+    "requests": 1,
+    "error": null,
+    "why": "Chewy's student ambassador site, empty in November"
    }
   ],
   "side": [],
@@ -1218,8 +1248,8 @@
     "why": "public Workday site, 9 jobs, no student role: recorded as known"
    },
    {
-    "entry": "chewy~site-Student-Ambassador-Contractors",
-    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+    "entry": "chewy~site-VeterinaryCareers",
+    "why": "public Workday site, 16 jobs, no student role: recorded as known"
    }
   ],
   "page": "ok",
@@ -1422,7 +1452,12 @@
    }
   ],
   "side": [],
-  "dropped": [],
+  "dropped": [
+   {
+    "entry": "cohesity~site-Private_Careers",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
   "page": "refused",
   "blocked_page": true,
   "very_large": false,
@@ -2236,6 +2271,16 @@
     "seconds": 16.5,
     "requests": 16,
     "error": null
+   },
+   {
+    "entry": "equinix~site-Applications_By_Invitations",
+    "checker": "workday",
+    "jobs": 7,
+    "students": 1,
+    "matched": 0,
+    "seconds": 1.9,
+    "requests": 1,
+    "error": null
    }
   ],
   "side": [],
@@ -2419,6 +2464,10 @@
    {
     "entry": "equinix~site-enworld_Co_Ltd",
     "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "equinix~site-Exclusive_Applications_by_Invite",
+    "why": "public Workday site, 9 jobs, no student role: recorded as known"
    }
   ],
   "page": "ok",
@@ -2482,12 +2531,27 @@
     "requests": 2,
     "error": null,
     "subsidiary": "Depop (Etsy's Workday site Depop_Careers)"
+   },
+   {
+    "entry": "etsy~site-Private_Etsy_Careers",
+    "checker": "workday",
+    "jobs": 75,
+    "students": 0,
+    "matched": 0,
+    "seconds": 4.3,
+    "requests": 4,
+    "error": null,
+    "why": "a private site robots.txt hides: 8 of its 75 jobs are not on the public site"
    }
   ],
   "side": [],
   "dropped": [
    {
     "entry": "etsy~site-Reverb_Careers",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "etsy~site-Private_Depop_Careers",
     "why": "public Workday site, 0 jobs, no student role: recorded as known"
    }
   ],
@@ -2713,6 +2777,17 @@
     "seconds": 22.5,
     "requests": 20,
     "error": null
+   },
+   {
+    "entry": "fiserv~site-P3M",
+    "checker": "workday",
+    "jobs": 10,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.4,
+    "requests": 1,
+    "error": null,
+    "why": "a site robots.txt hides: its 10 jobs are not on the public site"
    }
   ],
   "side": [],
@@ -4071,6 +4146,10 @@
    {
     "entry": "mastercard~site-RYC",
     "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "mastercard~site-CUOReqSite",
+    "why": "public Workday site, 15 jobs, no student role: recorded as known"
    }
   ],
   "page": "ok",
@@ -4138,6 +4217,22 @@
    {
     "entry": "mckesson~site-rxsscareers",
     "why": "public Workday site, 2 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "mckesson~site-Contractor_Conversions",
+    "why": "public Workday site, 5 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "mckesson~site-Executive_Careers",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "mckesson~site-Welcome_to_McKesson_Disability_IN",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "mckesson~site-Welcome_to_McKesson_NBMBAA",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
    }
   ],
   "page": "ok",
@@ -4293,6 +4388,16 @@
     "matched": 1,
     "seconds": 10.9,
     "requests": 9,
+    "error": null
+   },
+   {
+    "entry": "nasdaq~site-job_postings",
+    "checker": "workday",
+    "jobs": 8,
+    "students": 4,
+    "matched": 1,
+    "seconds": 0.9,
+    "requests": 1,
     "error": null
    },
    {
@@ -4624,6 +4729,16 @@
     "seconds": 61.8,
     "requests": 62,
     "error": null
+   },
+   {
+    "entry": "nike~site-nke4",
+    "checker": "workday",
+    "jobs": 16,
+    "students": 15,
+    "matched": 3,
+    "seconds": 0.5,
+    "requests": 1,
+    "error": null
    }
   ],
   "side": [],
@@ -4651,15 +4766,21 @@
     "seconds": 63.0,
     "requests": 63,
     "error": null
+   },
+   {
+    "entry": "nordstrom~site-nordstrom_internship",
+    "checker": "workday",
+    "jobs": 0,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.7,
+    "requests": 1,
+    "error": null,
+    "why": "Nordstrom's internship site, empty in November"
    }
   ],
   "side": [],
-  "dropped": [
-   {
-    "entry": "nordstrom~site-nordstrom_internship",
-    "why": "public Workday site, 0 jobs, no student role: recorded as known"
-   }
-  ],
+  "dropped": [],
   "page": "ok",
   "blocked_page": false,
   "very_large": false,
@@ -5626,13 +5747,24 @@
     "seconds": 4.8,
     "requests": 5,
     "error": null
+   },
+   {
+    "entry": "sailpoint~site-SailPointInternships",
+    "checker": "workday",
+    "jobs": 2,
+    "students": 0,
+    "matched": 0,
+    "seconds": 0.5,
+    "requests": 1,
+    "error": null,
+    "why": "SailPoint's internship site"
    }
   ],
   "side": [],
   "dropped": [
    {
-    "entry": "sailpoint~site-SailPointInternships",
-    "why": "public Workday site, 2 jobs, no student role: recorded as known"
+    "entry": "sailpoint~site-SailPointOps",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
    }
   ],
   "page": "ok",
@@ -5798,6 +5930,27 @@
     "seconds": 10.9,
     "requests": 11,
     "error": null
+   },
+   {
+    "entry": "snap~site-sourced",
+    "checker": "workday",
+    "jobs": 189,
+    "students": 1,
+    "matched": 0,
+    "seconds": 15.3,
+    "requests": 10,
+    "error": null
+   },
+   {
+    "entry": "snap~site-referral19",
+    "checker": "workday",
+    "jobs": 25,
+    "students": 0,
+    "matched": 0,
+    "seconds": 6.5,
+    "requests": 2,
+    "error": null,
+    "why": "a referral site: 13 of its 25 requisitions are not on the public site"
    }
   ],
   "side": [
@@ -5812,7 +5965,16 @@
     "error": null
    }
   ],
-  "dropped": [],
+  "dropped": [
+   {
+    "entry": "snap~site-immigration",
+    "why": "public Workday site, 5 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "snap~site-zenly",
+    "why": "public Workday site, 0 jobs, no student role: recorded as known"
+   }
+  ],
   "page": "ok",
   "blocked_page": false,
   "very_large": false,
@@ -6721,6 +6883,17 @@
     "seconds": 63.8,
     "requests": 64,
     "error": null
+   },
+   {
+    "entry": "verizon~site-frontier_career_site",
+    "checker": "workday",
+    "jobs": 384,
+    "students": 0,
+    "matched": 0,
+    "seconds": 20.4,
+    "requests": 20,
+    "error": null,
+    "subsidiary": "Frontier (Verizon's Workday site frontier_career_site)"
    }
   ],
   "side": [
@@ -6735,7 +6908,12 @@
     "error": null
    }
   ],
-  "dropped": [],
+  "dropped": [
+   {
+    "entry": "verizon~site-contractor_external_careers",
+    "why": "public Workday site, 4 jobs, no student role: recorded as known"
+   }
+  ],
   "page": "refused",
   "blocked_page": true,
   "very_large": false,
@@ -6850,6 +7028,16 @@
     "seconds": 10.4,
     "requests": 10,
     "error": null
+   },
+   {
+    "entry": "warner-bros-discovery~site-directshare",
+    "checker": "workday",
+    "jobs": 19,
+    "students": 2,
+    "matched": 2,
+    "seconds": 1.4,
+    "requests": 1,
+    "error": null
    }
   ],
   "side": [],
@@ -6914,6 +7102,17 @@
     "seconds": 95.7,
     "requests": 78,
     "error": null
+   },
+   {
+    "entry": "wells-fargo~site-WellsFargoJobsTargeted",
+    "checker": "workday",
+    "jobs": 25,
+    "students": 0,
+    "matched": 0,
+    "seconds": 2.8,
+    "requests": 2,
+    "error": null,
+    "why": "a targeted site robots.txt hides: 19 of its 25 jobs are not on the public site"
    }
   ],
   "side": [],
@@ -7075,6 +7274,16 @@
     "matched": 4,
     "seconds": 10.9,
     "requests": 11,
+    "error": null
+   },
+   {
+    "entry": "zillow~site-Referrals",
+    "checker": "workday",
+    "jobs": 199,
+    "students": 5,
+    "matched": 4,
+    "seconds": 10.0,
+    "requests": 10,
     "error": null
    }
   ],

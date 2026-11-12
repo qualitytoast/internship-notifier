@@ -2,23 +2,43 @@
   "key": "verizon",
   "name": "Verizon",
   "careers_url": "https://mycareer.verizon.com/",
-  "hiring_system": "workday",
-  "checker": "workday",
+  "hiring_system": "multi",
+  "checker": "multi",
   "settings": {
-    "host": "verizon.wd12.myworkdayjobs.com",
-    "tenant": "verizon",
-    "site": "verizon-careers"
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "verizon.wd12.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "verizon.wd12.myworkdayjobs.com",
+          "tenant": "verizon",
+          "site": "verizon-careers"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "verizon.wd12.myworkdayjobs.com",
+          "tenant": "verizon",
+          "site": "frontier_career_site"
+        }
+      }
+    ]
   },
-  "feed": "POST https://verizon.wd12.myworkdayjobs.com/wday/cxs/verizon/verizon-careers/jobs",
-  "feed_total": 1280,
-  "page_total": 1280,
-  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
+  "feed": "POST https://verizon.wd12.myworkdayjobs.com/wday/cxs/verizon/verizon-careers/jobs + POST https://verizon.wd12.myworkdayjobs.com/wday/cxs/verizon/frontier_career_site/jobs",
+  "feed_total": 1308,
+  "page_total": 1664,
+  "page_total_how": "each read's own count, added up: 1280 (verizon: workday's own reported total (the careers page shows it)) + 384 (frontier_career_site: workday's own reported total (the careers page shows it)) (2026-11-12)",
   "intern_total": 1,
   "status": "verified",
   "blocked_reason": "",
   "fallback": "",
   "robots": "verizon.wd12.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/verizon.wd12.myworkdayjobs.com.txt)",
-  "notes": "The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md). Watched, not stored: verizon~ripplematch (1 jobs).",
+  "notes": "Its 2 Workday sites listed 1664 postings on 2026-11-12, 356 of them a requisition an earlier site already lists, which is read once. The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md). Read with it, as part of the company: Frontier (Verizon's Workday site frontier_career_site). Two boards: POST https://verizon.wd12.myworkdayjobs.com/wday/cxs/verizon/verizon-careers/jobs + POST https://verizon.wd12.myworkdayjobs.com/wday/cxs/verizon/frontier_career_site/jobs; a later board's posting with an earlier one's id or requisition is skipped. Not read: verizon~site-contractor_external_careers: public Workday site, 4 jobs, no student role: recorded as known. Watched, not stored: verizon~ripplematch (1 jobs).",
   "checked_at": "2026-11-12",
   "source": "added",
   "round": "added"
