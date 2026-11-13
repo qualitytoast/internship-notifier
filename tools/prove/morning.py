@@ -20,7 +20,8 @@ left; day:<n> sets the clock n days after the recording; new:<company>[;<company
 posting; fail:<company>[;…] makes each fail; mailfail makes every email fail to send (with sending on).
 A replay that needs a request the recording doesn't have gets an error for it, as an outage would, and the request
 is listed. Allowed differences in compare: the added companies' own rows and keys (round: added; a Workday tenant's
-state is keyed by its host), rows that went from no company to one of them, digest_at on untracked rows (set by
+state is keyed by its host), a HEALTH email only the new version sends (it is theirs: the others' alerts are
+compared row by row), rows that went from no company to one of them, digest_at on untracked rows (set by
 the new code when an email lists them), and the day the weekly archive.org check reads a later round's earlier
 companies (listed for review: the check reads a seventh of the round a day, so more companies move the days).
 Requests: the first round's must be the same in the same order, a later round must not ask before the first has
@@ -300,6 +301,12 @@ def compare(old_out: Path, new_out: Path, added: set[str]) -> int:
                     continue
             if added and table == "emails" and ours.get("kind") == "watching":
                 continue
+            if added and table == "emails" and ra is None and rb.get("kind") == "health":
+                # a HEALTH email only the new version sends: the alerts of the 198 are compared row by row in the
+                # alerts table, so what it tells about can only be the added companies' (a possible miss on their
+                # first morning, a failing check)
+                review.append(f"emails: a HEALTH email only the new version sends, for the added companies' alerts ({k[0]})")
+                continue
             if table == "simplify_rows" and ra and rb and {c for c in ra if ra[c] != rb[c]} == {"digest_at"} \
                     and ra["digest_at"] is None and ra["tracked_company"] is None:
                 continue
@@ -315,14 +322,22 @@ def compare(old_out: Path, new_out: Path, added: set[str]) -> int:
                     problems.append(f"emails: {x} differs")
     else:  # the same emails apart from "Now watching", and every link of the old ones still there (but the rows
         # that went to an added company); which jobs were emailed is in the jobs table, compared above
-        kinds = lambda names: [n[3:] for n in names if "watching" not in n]  # noqa: E731
-        if kinds(ea) != kinds(eb):
+        def by_kind(names):  # morning.html → its files in order; "Now watching" is the added companies' own
+            out = {}
+            for n in names:
+                if "watching" not in n:
+                    out.setdefault(n[3:], []).append(n)
+            return out
+        ka, kb = by_kind(ea), by_kind(eb)
+        extra = {k: v for k, v in kb.items() if k not in ka}  # a HEALTH email only the new version sends: see above
+        if any(len(ka[k]) != len(kb.get(k, [])) for k in ka) or set(extra) - {"health.html"}:
             problems.append(f"emails: {ea} -> {eb}")
         theirs = {r["url"] for r in new["simplify_rows"] if r.get("tracked_company") in added and r.get("url")}
-        for x, y in zip([n for n in ea if "watching" not in n], [n for n in eb if "watching" not in n]):
-            lost = links(old_out / "emails" / x) - links(new_out / "emails" / y) - theirs
-            if lost:
-                problems.append(f"emails: {x}: {len(lost)} links gone, e.g. {sorted(lost)[:3]}")
+        for kind in sorted(set(ka) & set(kb)):
+            for x, y in zip(ka[kind], kb[kind]):
+                lost = links(old_out / "emails" / x) - links(new_out / "emails" / y) - theirs
+                if lost:
+                    problems.append(f"emails: {x}: {len(lost)} links gone, e.g. {sorted(lost)[:3]}")
     if added:  # a run records the 198's alerts first, so each keeps the number the old code gives it that morning
         for t in sorted({a["raised_at"] for a in new["alerts"]}):
             ours = [a["id"] for a in new["alerts"] if a["raised_at"] == t and a["company"] not in added]

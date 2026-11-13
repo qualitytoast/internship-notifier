@@ -7,7 +7,8 @@ httpx, SQLite. Per-company checkers and evidence: COVERAGE.md. Freshman/sophomor
 Rules for changing things: CLAUDE.md.
 
 ## Running it
-- **In use:** run `.venv/bin/internwatch run --daily` by hand each morning (about 20–25 min). Every company gets a full
+- **In use:** run `.venv/bin/internwatch run --daily` by hand each morning (about 35 min; 11 to 21 min more on the four
+  mornings a week when one giant store site gets its weekly full read). Every company gets a full
   scan; failed ones are retried once later in the same run. Then ONE email goes out: `[InternWatch] <date>:
   N new: Co (n)…` (or "no new roles"), plus untracked-company roles, every open alert and the coverage table.
   `run --daily --emails-only` sends whatever earlier runs couldn't send, without checking any site.

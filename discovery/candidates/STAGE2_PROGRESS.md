@@ -415,3 +415,35 @@ HP Inc., Lowe's, Micron Technology, Target, Walmart (Walmart Global Tech).
 - Stage 1 tooling: reads_big.yaml now holds only the four daily student reads; the giants' entries in reads.yaml are
   their weekly full reads. Today's results of extra sites go in read_results_extra.json (it overrides
   read_results.json, so a fresh result left only there was ignored).
+- main moved during the batch: 1bb8da7 (the user's change for Citadel's rebuilt sites, 2026-11-13 10:35). The branch
+  was rebased on it (COVERAGE.md and UNDERCLASSMEN.md merged by hand, COVERAGE.md and companies.yaml regenerated)
+  and every proof below was run after the rebase, against that main.
+- [x] tests pass; golden.py against main (9fd9414): PASS (the 778 cassette runs of the companies already live
+      identical, 128,194 filter verdicts, 40,424 matches, 91 Workday files; 937 rows go to batch 4's companies)
+- [x] two live go-live mornings recorded on a copy of the database. The first (morning-2026-11-13-batch4) found
+      Walmart's failed read (`past_total`, above). The second, with the final code and config
+      (morning-2026-11-13-batch4b: run 28, 404 checks, 12 seeded, 7,219 exchanges): the 198's checks ended at 18.9
+      min; the added round's 204 companies ran from 19.4 to 28.6 min with 3,357 requests (1,700 batch 4's; Bank of
+      America the longest at 306 s); CVS's weekly read took 1,081 s. All 12 read on the first pass. The clock says
+      113.8 min because the laptop lid was closed for 65 of them (pmset log: Clamshell Sleep 12:53 to 13:58); the
+      run itself is about 49 min with a weekly read, about 35 without (a recording made the same day skips most
+      careers pages, which take about 4 more minutes on a real morning)
+- [x] alerts in the recording, the predicted day-one alerts: three possible misses, each a SimplifyJobs row the
+      checker has and the filters reject (Lowe's "Store Operations Intern - Retail Facilities Support": excluded
+      field 'Store'; Applied Materials "Industrial Engineering Intern": excluded field 'Industrial Engineering';
+      Micron "Data Scientist New Grad - AI for Business Functions": new grad). No `new job site?`, no `moved?`, no
+      degraded read. The 198's own: Citadel's three checks fail in the recording (it was made with the branch's
+      code from before the rebase)
+- [x] re-match: 222 stored rows given to batch 4's companies (163 known, 51 found, 5 abroad, 3 filtered), none
+      missed, no "via Simplify" job; "Now watching" 361 roles of 388 matching (27 left out as already shown; 58 KB
+      HTML, 786 KB with its attachments); the morning email 72 KB HTML
+- [x] three mornings replayed (proof-9fd9414, old = main 1bb8da7; M2_NEW stripe;databricks;openai;walmart;citi;
+      micron;cvs-health;kla;cerebras, M2_FAIL figma;bank-of-america;target;new-york-times): PASS. The tables of the
+      198 and of batches 1 to 3 identical, the first round's requests identical and in order. For review: the run
+      totals, the email subjects, and a HEALTH email only the new version sends on morning 1 (the three possible
+      misses). The compare step took that email as a difference; it now lists it for review, since the alerts of the
+      198 are compared row by row (runall-batch4-9fd9414-compare.log is the comparison with that change)
+- [x] the morning after CVS's weekly read (morning 2 of the replay): two `posting elsewhere?` alerts, for the two
+      clinical student rotations outside its Intern worker type, as predicted
+- [x] go-live with Walmart, HPE and Micron failing (proof-9fd9414/new-1-fail): not seeded, their 11 open rows stay
+      pending, no "via Simplify" job, three `error` alerts
