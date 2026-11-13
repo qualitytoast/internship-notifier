@@ -8,7 +8,7 @@
     "base_url": "https://www.citadelsecurities.com",
     "min_interval": 10.0
   },
-  "feed": "GET https://www.citadelsecurities.com/page-sitemap.xml",
+  "feed": "GET https://www.citadelsecurities.com/sitemap/page.xml",
   "page_total": 11,
   "status": "verified",
   "notes": "Watched since commit ce289e4 (Nov 2026): each page below a program page is one role; the programs page itself blocks scripts. Recorded here so build_config.py reproduces config/companies.yaml."

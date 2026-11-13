@@ -213,6 +213,46 @@ def test_citadel_programs_are_the_pages_below_each_program_page():
     assert all(i.count("/") == 1 for i in jobs) and not any(i.startswith(("ignite", "terminal")) for i in jobs)
 
 
+def rebuilt(base: str, name: str, *entries) -> Http:
+    """A sitemap as the sites rebuilt on 2026-11-13 write it (seen in a browser: scripts are refused): another address,
+    an xhtml namespace, lastmod with milliseconds."""
+    body = ('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+            'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+            + "".join(f"<url>\n<loc>{base}{path}</loc>\n<lastmod>{mod}</lastmod>\n</url>\n" for path, mod in entries)
+            + "</urlset>")
+    return Http(replay=Cassette(exchanges=[{"method": "GET", "url": f"{base}/sitemap/{name}.xml", "body": "", "status": 200,
+                                            "headers": {"content-type": "application/xml"}, "text": body}]))
+
+
+def test_citadel_reads_the_rebuilt_sites_sitemaps_and_every_id_stays():
+    site = "https://www.citadel.com"
+    jobs = get_checker("citadel").fetch(rebuilt(
+        site, "career",
+        ("/careers/details/software-engineer-intern-us/", "2026-09-21T08:22:44.000Z"),
+        ("/careers/details/equities-citadel-associate-program-summer-internship-2028/", "2026-11-13T15:00:34.000Z"),
+        ("/careers/details/us-physical-gas-specialist/", "2026-11-12T21:00:34.000Z")), {"base_url": site})
+    assert [(j.id, j.title, j.location, j.posted) for j in jobs] == [
+        ("software-engineer-intern-us", "Software Engineer Intern US", "United States", None),
+        ("equities-citadel-associate-program-summer-internship-2028",
+         "Equities Citadel Associate Program Summer Internship 2028", "", None),
+        ("us-physical-gas-specialist", "US Physical Gas Specialist", "United States", None)]
+    assert jobs[0].url == site + "/careers/details/software-engineer-intern-us/"
+    assert {j.id for j in jobs} <= {j.id for j in replay("citadel")}  # the ids the old site's sitemap gave in October
+
+    pages = get_checker("citadel_programs").fetch(rebuilt(
+        "https://www.citadelsecurities.com", "page",
+        ("/careers/programs-and-events/", "2026-11-13T15:42:18.000Z"),
+        ("/careers/programs-and-events/citadel-securities-spark/", "2026-11-13T01:38:33.000Z"),
+        ("/careers/programs-and-events/citadel-securities-spark/apply/", "2026-11-13T02:30:34.000Z"),
+        ("/careers/programs-and-events/discover-citadel-securities/apply-india/", "2026-11-06T06:27:06.000Z"),
+        ("/who-we-are/office-locations/london/", "2026-11-05T21:14:48.000Z")),
+        {"base_url": "https://www.citadelsecurities.com"})
+    assert [(j.id, j.title, j.location, j.posted) for j in pages] == [
+        ("citadel-securities-spark/apply", "Citadel Securities Spark", "", "2026-11-13"),
+        ("discover-citadel-securities/apply-india", "Discover Citadel Securities", "India", "2026-11-06")]
+    assert {j.id for j in pages} <= {j.id for j in replay("citadel-securities-programs")}
+
+
 def test_citadel_program_whose_pages_below_are_gone_is_closed():
     ids = {j.id for j in replay("citadel-securities-programs", without("citadel-securities-spark/apply/"))}
     assert len(ids) == 10 and "citadel-securities-spark/apply" not in ids

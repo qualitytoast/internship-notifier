@@ -86,3 +86,24 @@ the dates ran from 2025-04-10 to 2026-11-06. Unlike the career sitemap, these ar
 ## Evidence
 - Sample: `discovery/samples/citadel-securities.json`. It has the raw sitemap (whole), the parsed rows, and page-1 cards compared with derived titles.
 - Capture: `discovery/captures/citadel-securities/` ("of 79").
+
+## 2026-11-13: the site was rebuilt, and its new sitemaps refuse scripts
+- Between the reads of Nov 12 13:46 UTC and Nov 13 14:19 UTC both sites went from WordPress to Next.js (content from
+  Sanity). `/career-sitemap.xml`, `/page-sitemap.xml`, `/sitemap_index.xml` and `/wp-sitemap.xml` answer **404** (the
+  site's own not-found page, not challenged).
+- citadel.com's robots.txt (200, the same rules) now names `Sitemap: https://www.citadel.com/sitemap.xml` and
+  `https://www.citadelsecurities.com/sitemap.xml`. `/sitemap.xml` answers plain HTTP (**200**, a `sitemapindex` of
+  `/sitemap/page.xml`, `post.xml`, `career.xml`, `leadership.xml`, `category.xml`, `series.xml` and
+  `career-perspectives.xml`, with no lastmod).
+- `/sitemap/career.xml` and `/sitemap/page.xml` answer plain HTTP with **403** `cf-mitigated: challenge` on both
+  sites (all 11 tries across the four addresses, 16:08 to 16:33 UTC, 10 s apart), as `/careers/open-opportunities/`
+  does (2 of 2 on each site).
+  `/sitemap.xml` answered 200 before and after, so the challenge goes by address, not by who asks.
+- Seen in a browser that day, the new sitemaps have the old format: the same `urlset` (plus an `xmlns:xhtml`
+  attribute), `<loc>` and `<lastmod>` (now with milliseconds), and every job and page kept its address.
+- citadelsecurities.com `/sitemap/page.xml`: 13 pages below a program page, the 13 stored for
+  `citadel-securities-programs`. Its `/sitemap/career.xml` was not looked at; citadel.com's had 66 entries,
+  all `/careers/details/<slug>/`, each a job already stored under that id.
+- The checkers ask the new addresses since then (one request each a run) and fail with HTTP 403 until Citadel lets
+  scripts read them. The challenge is not worked around. While a checker fails, SimplifyJobs' rows for the company
+  are emailed "via Simplify"; nothing stands in for the program pages.

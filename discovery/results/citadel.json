@@ -13,7 +13,7 @@
     "location_from": "slug_region_hint",
     "posted_from": "first_seen"
   },
-  "feed": "GET https://www.citadel.com/career-sitemap.xml",
+  "feed": "GET https://www.citadel.com/sitemap/career.xml",
   "feed_total": 63,
   "page_total": 63,
   "page_total_how": "Playwright render of https://www.citadel.com/careers/open-opportunities/ on 2026-10-20 showed 'Viewing 10 of 63' (the 2026-10-19 capture also showed 'of 63'); all cards seen are in the sitemap",

@@ -552,28 +552,16 @@
   "requests": 72
  },
  "citadel": {
-  "jobs": 63,
-  "students": 28,
-  "matched": 11,
-  "at": "2026-10-20T15:09:47Z",
-  "duration": 0.3,
-  "requests": 1
+  "error": "fetch: HTTP 403 for GET https://www.citadel.com/sitemap/career.xml",
+  "at": "2026-11-13T16:32:55Z"
  },
  "citadel-securities": {
-  "jobs": 79,
-  "students": 23,
-  "matched": 9,
-  "at": "2026-10-20T15:09:47Z",
-  "duration": 0.3,
-  "requests": 1
+  "error": "fetch: HTTP 403 for GET https://www.citadelsecurities.com/sitemap/career.xml",
+  "at": "2026-11-13T16:32:55Z"
  },
  "citadel-securities-programs": {
-  "jobs": 11,
-  "students": 6,
-  "matched": 2,
-  "at": "2026-11-07T17:47:42Z",
-  "duration": 0.2,
-  "requests": 1
+  "error": "fetch: HTTP 403 for GET https://www.citadelsecurities.com/sitemap/page.xml",
+  "at": "2026-11-13T16:32:55Z"
  },
  "clay": {
   "jobs": 62,

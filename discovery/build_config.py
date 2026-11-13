@@ -296,7 +296,7 @@ OVERRIDES: dict[str, dict] = {
     "citadel": {"checker": "citadel", "settings": {"base_url": "https://www.citadel.com", "min_interval": 10.0}},
     "citadel-securities": {"checker": "citadel", "settings": {"base_url": "https://www.citadelsecurities.com",
                                                               "min_interval": 10.0}},
-    "citadel-securities-programs": {"verified": {"feed": "GET https://www.citadelsecurities.com/page-sitemap.xml",
+    "citadel-securities-programs": {"verified": {"feed": "GET https://www.citadelsecurities.com/sitemap/page.xml",
         "explained": "Each page below a program page (an application or a region) is one role. The programs page "
                      "blocks scripts, so it can't be counted; 11 = the page sitemap on 2026-11-07."}},
     "wolverine": {"settings": {"subdomain": "wolve", "host": "careers.wolve.com"}},

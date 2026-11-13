@@ -1,18 +1,24 @@
-"""Citadel and Citadel Securities: the career sitemap of each WordPress site.
+"""Citadel and Citadel Securities: the career sitemap of each site.
 
-GET <base_url>/career-sitemap.xml   (Yoast sitemap of the "career" post type, advertised in robots.txt)
+GET <base_url>/sitemap/career.xml   (the sitemap of the "career" pages, listed in /sitemap.xml, which robots.txt
+advertises)
 → <urlset><url><loc>https://www.citadel.com/careers/details/<slug>/</loc>…
 The listing and detail pages answer automated clients with an interactive challenge, so they are never
 fetched (the links go in emails and open normally in your browser). Titles and a region hint come from the
 slug; the slug words carry the job type ("intern", "phd-intern", "university-graduate"). There is no posting
-date (lastmod is rewritten on every sync): first-seen is used. robots.txt asks for 10 s between requests,
+date (lastmod is a sync or import time): first-seen is used. robots.txt asks for 10 s between requests,
 and one request per poll is enough.
+
+Both sites were rebuilt on 2026-11-13 (WordPress to Next.js). The sitemaps kept their format and every job and
+page kept its address, but they moved from /career-sitemap.xml and /page-sitemap.xml to /sitemap/career.xml and
+/sitemap/page.xml, and the new addresses answer scripts with the same challenge (HTTP 403). The check then fails
+and alerts; the challenge is never worked around. See the notes for what was seen that day.
 
 settings: base_url: https://www.citadel.com    (min_interval: 10)
 See discovery/notes/citadel.md.
 
 `citadel_programs`: the student programs, which are never job posts (Citadel Securities' Spark, Discover, Ignite).
-GET <base_url>/page-sitemap.xml → every page one level below a program page is returned as a job
+GET <base_url>/sitemap/page.xml → every page one level below a program page is returned as a job
 (…/programs-and-events/citadel-securities-spark/apply/ → id citadel-securities-spark/apply, title "Citadel
 Securities Spark"): a program takes applications through such a page and drops it when it closes (Ignite, Oct 2026).
 The page's lastmod is its posted date: on this sitemap it is real, not rewritten on every sync.
@@ -68,7 +74,7 @@ class CitadelSitemap(Checker):
     type = "citadel"
 
     def describe(self, s):
-        return f"GET {s['base_url'].rstrip('/')}/career-sitemap.xml (job slugs)"
+        return f"GET {s['base_url'].rstrip('/')}/sitemap/career.xml (job slugs)"
 
     def fetch(self, http, s, ctx=None):
         base = s["base_url"].rstrip("/")
@@ -88,7 +94,7 @@ class CitadelPrograms(Checker):
     type = "citadel_programs"
 
     def describe(self, s):
-        return f"GET {s['base_url'].rstrip('/')}/page-sitemap.xml (program application pages)"
+        return f"GET {s['base_url'].rstrip('/')}/sitemap/page.xml (program application pages)"
 
     def fetch(self, http, s, ctx=None):
         base = s["base_url"].rstrip("/")
@@ -108,21 +114,12 @@ class CitadelPrograms(Checker):
 
 
 def sitemap(http, base: str, name: str) -> list[tuple[str, str]]:
-    """(loc, lastmod) of every entry of the Yoast sitemap <base>/<name>-sitemap.xml and its split pages."""
-    out: list[tuple[str, str]] = []
-    pages = [f"{base}/{name}-sitemap.xml"]
-    n = 0
-    while pages and n < 20:
-        body = http.get(pages.pop(0)).content
-        try:
-            root = ET.fromstring(body)
-        except ET.ParseError:
-            need(False, f"citadel:{base}: {name} sitemap is not XML (challenge page?) {body[:80]!r}")
-        need(root.tag.endswith("urlset"), f"citadel:{base}: unexpected sitemap root {root.tag}")
-        urls = root.findall("s:url", NS)
-        out += [((u.findtext("s:loc", namespaces=NS) or "").strip(), (u.findtext("s:lastmod", namespaces=NS) or "").strip())
-                for u in urls]
-        n += 1
-        if len(urls) >= 1000:  # Yoast splits at 1000 entries: career-sitemap2.xml, 3, …
-            pages.append(f"{base}/{name}-sitemap{n + 1}.xml")
-    return out
+    """(loc, lastmod) of every entry of the site's sitemap of one kind of page, <base>/sitemap/<name>.xml."""
+    body = http.get(f"{base}/sitemap/{name}.xml").content
+    try:
+        root = ET.fromstring(body)
+    except ET.ParseError:
+        need(False, f"citadel:{base}: {name} sitemap is not XML (challenge page?) {body[:80]!r}")
+    need(root.tag.endswith("urlset"), f"citadel:{base}: unexpected sitemap root {root.tag}")
+    return [((u.findtext("s:loc", namespaces=NS) or "").strip(), (u.findtext("s:lastmod", namespaces=NS) or "").strip())
+            for u in root.findall("s:url", NS)]

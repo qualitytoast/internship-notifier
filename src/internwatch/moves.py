@@ -877,7 +877,9 @@ def page_list(http, source: str) -> dict[str, str]:
 def check_programs(ctx: Ctx) -> list[dict]:
     """N. Daily: a page on the company's site that wasn't there before and whose
     address or title reads like a students, internships or program page. A source's first read is a silent
-    baseline."""
+    baseline, unless the list moved there from an address the config no longer names (Citadel's sitemaps, November
+    2026): the pages known from the old address are then the ones it is compared with, so a page added around the
+    move still alerts."""
     sources = per_company(ctx.cfg, "program_pages")
     problems: list[dict] = []
     http = ctx.http()
@@ -889,6 +891,7 @@ def check_programs(ctx: Ctx) -> list[dict]:
             skey = f"blocked:programs:{key}"
             raw = ctx.db.get(skey)
             state = json.loads(raw) if raw else {}
+            moved = [s for s in state if s not in sources[key]]  # addresses the list was read from before
             new, errors = [], []
             for source in sources[key]:
                 try:
@@ -900,6 +903,8 @@ def check_programs(ctx: Ctx) -> list[dict]:
                     log.info("moves: page list %s of %s not read: %s", source, key, str(e)[:160])
                     continue
                 before = state.get(source)
+                if before is None and moved:
+                    before = [u for s in moved for u in state[s]]
                 state[source] = sorted(set(pages) | set(before or []))
                 if before is not None:
                     new += [(u, t) for u, t in pages.items() if u not in before
@@ -907,6 +912,9 @@ def check_programs(ctx: Ctx) -> list[dict]:
             if errors and len(errors) == len(sources[key]):
                 done(ctx.db, "programs", key, worst(errors), ctx.now)
                 continue
+            if all(s in state for s in sources[key]):  # every list now holds the old addresses' pages
+                for s in moved:
+                    del state[s]
             restore_kv = {skey: raw or "", **due_restore(ctx.db, "programs", key)}
             ctx.db.set(skey, json.dumps(state))
             done(ctx.db, "programs", key, "ok", ctx.now)

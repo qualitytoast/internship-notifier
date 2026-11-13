@@ -764,6 +764,29 @@ def test_a_new_student_page_in_a_sitemap(blocked_cfg, memdb):
         "its site has new student or program pages: https://www.citadel.com/careers/programs-and-events/discover-citadel-2027/"]
 
 
+def test_a_page_list_that_moved_is_compared_with_the_pages_its_old_address_had(blocked_cfg, memdb):
+    """Citadel's rebuilt site (November 2026) lists its pages at another address: its first read is no silent baseline."""
+    c = company("citadel")
+    old, moved = "https://www.citadel.com/page-sitemap.xml", "https://www.citadel.com/sitemap/page.xml"
+    base = ["https://www.citadel.com/careers/internships/", "https://www.citadel.com/notices/"]
+    http = FakeHttp({old: sitemap(*base)})
+    assert moves.check_programs(ctx(blocked_cfg([c], program_pages={"citadel": [old]}), memdb, http)) == []
+    cfg = blocked_cfg([c], program_pages={"citadel": [moved]})
+    http.pages = {moved: FetchError("HTTP 403")}  # refused: the old address's pages stay known
+    memdb.set("blocked:at:programs:citadel", "")
+    assert moves.check_programs(ctx(cfg, memdb, http)) == []
+    assert list(json.loads(memdb.get("blocked:programs:citadel"))) == [old]
+    http.pages = {moved: sitemap(*base, "https://www.citadel.com/careers/programs-and-events/discover-citadel-2027/")}
+    memdb.set("blocked:at:programs:citadel", "")
+    problems = moves.check_programs(ctx(cfg, memdb, http))
+    assert [p["summary"] for p in problems] == [
+        "its site has new student or program pages: https://www.citadel.com/careers/programs-and-events/discover-citadel-2027/"]
+    state = json.loads(memdb.get("blocked:programs:citadel"))
+    assert list(state) == [moved] and len(state[moved]) == 3
+    memdb.set("blocked:at:programs:citadel", "")
+    assert moves.check_programs(ctx(cfg, memdb, http)) == []  # told once
+
+
 def test_a_new_program_in_a_feed_and_a_new_wordpress_page(blocked_cfg, memdb):
     g, cap = company("goldman-sachs"), company("capstone")
     feed = "https://www.goldmansachs.com/feeds/programs-and-internships.json"
