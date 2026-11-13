@@ -66,6 +66,8 @@ ALIASES = {
     "cox": ["Cox"],
     "snap": ["Snapchat"],
     "synchrony": ["Synchrony Financial"],
+    "walmart": ["Walmart"],
+    "hp": ["Hewlett Packard", "Hewlett Packard (HP)", "HP IQ"],
 }
 
 # Freshman/sophomore program names that can appear in a posting title without a student word (UNDERCLASSMEN.md
@@ -105,6 +107,7 @@ PROGRAM_KEYWORDS: dict[str, list[str]] = {
     "hartford": ["early immersion program"],
     "usaa": ["accelerate program"],
     "verizon": ["sprinternship"],
+    "citi": ["d1 athlete development program"],
 }
 
 # Hand-tuned settings on top of discovery (each comes from a discovery note).
@@ -203,6 +206,8 @@ OVERRIDES: dict[str, dict] = {
                                                     "sites": ["External_Career_Site", "Futureforce_Internships"],
                                                     "min_interval": 5.0}, "timeout_minutes": 15},
     "t-mobile": {"big": True, "timeout_minutes": 15},
+    # added in November 2026: its three Workday sites take 6 minutes (352 s on 2026-11-13), close to the 8 allowed
+    "bank-of-america": {"timeout_minutes": 10},
     # linkedin.com disallows all crawlers, but LinkedIn's hiring account on SmartRecruiters has a public career page
     # whose robots.txt allows reading (found in an open list of employer job boards). linkedin.com is never fetched.
     "linkedin": {"checker": "smartrecruiters", "status": "active", "settings": {"company": "LinkedIn3"},

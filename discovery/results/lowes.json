@@ -1,0 +1,28 @@
+{
+  "key": "lowes",
+  "name": "Lowe's",
+  "careers_url": "https://talent.lowes.com/us/en",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "lowes.wd5.myworkdayjobs.com",
+    "tenant": "lowes",
+    "search": "intern",
+    "past_total": true,
+    "unlinked_ok": 50,
+    "site": "LWS_External_CS"
+  },
+  "feed": "POST https://lowes.wd5.myworkdayjobs.com/wday/cxs/lowes/LWS_External_CS/jobs",
+  "feed_total": 210,
+  "page_total": 210,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-13)",
+  "intern_total": 40,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "lowes.wd5.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/lowes.wd5.myworkdayjobs.com.txt)",
+  "notes": "A giant store site (12994 jobs on 2026-11-13, almost all store roles the filters reject): every morning the read is a search for \"intern\" on LWS_External_CS (210 postings); the whole site is read once a week as a watched board (liveness.watch_boards, every_days: 7), which alerts for a matching role that isn't stored.",
+  "checked_at": "2026-11-13",
+  "source": "added",
+  "round": "added"
+}

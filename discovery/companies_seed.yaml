@@ -391,3 +391,15 @@ companies:
   - {key: southwest, name: "Southwest Airlines", category: travel, source: added, round: added, urls: ["https://careers.southwestair.com/"]}
   - {key: tricentis, name: "Tricentis", category: software, source: added, round: added, urls: ["https://www.tricentis.com/careers"]}
   - {key: datarobot, name: "DataRobot", category: ai, source: added, round: added, urls: ["https://www.datarobot.com/careers/"]}
+  - {key: bank-of-america, name: "Bank of America", category: finance-insurance, source: added, round: added, urls: ["https://careers.bankofamerica.com/"]}
+  - {key: walmart, name: "Walmart (Walmart Global Tech)", category: retail, source: added, round: added, urls: ["https://careers.walmart.com/"]}
+  - {key: ge-vernova, name: "GE Vernova", category: energy, source: added, round: added, urls: ["https://careers.gevernova.com/"]}
+  - {key: citi, name: "Citi", category: finance-insurance, source: added, round: added, urls: ["https://jobs.citi.com/"]}
+  - {key: dicks-sporting-goods, name: "Dick's Sporting Goods", category: retail, source: added, round: added, urls: ["https://www.dickssportinggoods.jobs/"]}
+  - {key: hpe, name: "Hewlett Packard Enterprise", category: hardware, source: added, round: added, urls: ["https://careers.hpe.com/"]}
+  - {key: micron, name: "Micron Technology", category: semiconductors, source: added, round: added, urls: ["https://www.micron.com/about/careers"]}
+  - {key: applied-materials, name: "Applied Materials", category: semiconductors, source: added, round: added, urls: ["https://careers.appliedmaterials.com/"]}
+  - {key: hp, name: "HP Inc.", category: hardware, source: added, round: added, urls: ["https://jobs.hp.com/"]}
+  - {key: lowes, name: "Lowe's", category: retail, source: added, round: added, urls: ["https://talent.lowes.com/"]}
+  - {key: target, name: "Target", category: retail, source: added, round: added, urls: ["https://corporate.target.com/careers"]}
+  - {key: cvs-health, name: "CVS Health", category: healthcare, source: added, round: added, urls: ["https://jobs.cvshealth.com/"]}

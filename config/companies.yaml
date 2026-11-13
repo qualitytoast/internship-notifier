@@ -3768,3 +3768,196 @@ companies:
   settings: {host: datarobot.wd1.myworkdayjobs.com, tenant: datarobot, site: DataRobot_External_Careers}
   verified: {page_total: 13}
   round: added
+- key: bank-of-america
+  name: Bank of America
+  category: finance-insurance
+  careers_url: ['https://careers.bankofamerica.com/en-us', 'https://careers.bankofamerica.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [ghr.wd1.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: ghr.wd1.myworkdayjobs.com, tenant: ghr, pack: true, split_first: true, past_total: true, unlinked_ok: 50, site: us-emplsv}
+    - checker: workday
+      settings: {host: ghr.wd1.myworkdayjobs.com, tenant: ghr, pack: true, split_first: true, past_total: true, unlinked_ok: 50, site: lateral-emea}
+    - checker: workday
+      settings: {host: ghr.wd1.myworkdayjobs.com, tenant: ghr, pack: true, split_first: true, past_total: true, unlinked_ok: 50, site: lateral-ba_continuum}
+  timeout_minutes: 10
+  verified: {page_total: 3238, explained: The page showed 3238 jobs and the board 3236 on 2026-11-13 (a posting or two opened or closed
+      in between).}
+  round: added
+- key: walmart
+  name: Walmart (Walmart Global Tech)
+  category: retail
+  aliases: [Walmart]
+  careers_url: ['https://careers.walmart.com/us/en/home', 'https://careers.walmart.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [walmart.wd504.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings:
+        host: walmart.wd504.myworkdayjobs.com
+        tenant: walmart
+        facets:
+          jobFamily: [e83ebdbd2a0a017e7530ee5947e9e0c3]
+        past_total: true
+        unlinked_ok: 50
+        site: WalmartExternal
+    - checker: workday
+      settings: {host: walmart.wd504.myworkdayjobs.com, tenant: walmart, pack: true, split_first: true, past_total: true, unlinked_ok: 50,
+        site: Non-WorkdayInternal}
+  verified: {page_total: 2529, explained: 'Its 2 Workday sites listed 2527 postings on 2026-11-13, 2 of them a requisition an earlier
+      site already lists, which is read once.'}
+  round: added
+- key: ge-vernova
+  name: GE Vernova
+  category: energy
+  careers_url: ['https://careers.gevernova.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [gevernova.wd5.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: gevernova.wd5.myworkdayjobs.com, tenant: gevernova, pack: true, split_first: true, past_total: true, site: Vernova_ExternalSite}
+    - checker: workday
+      settings: {host: gevernova.wd5.myworkdayjobs.com, tenant: gevernova, pack: true, split_first: true, past_total: true, site: only_confidential_executive_recruiting}
+  verified: {page_total: 4608, explained: 'Its 2 Workday sites listed 4608 postings on 2026-11-13, 2119 of them a requisition an earlier
+      site already lists, which is read once.'}
+  round: added
+- key: citi
+  name: Citi
+  category: finance-insurance
+  careers_url: ['https://jobs.citi.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [citi.wd5.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: citi.wd5.myworkdayjobs.com, tenant: citi, pack: true, split_first: true, past_total: true, unlinked_ok: 50, site: '2'}
+    - checker: workday
+      settings: {host: citi.wd5.myworkdayjobs.com, tenant: citi, pack: true, split_first: true, past_total: true, unlinked_ok: 50, site: Citi_Early_Careers_Events_Site}
+  role_keywords: [d1 athlete development program]
+  verified: {page_total: 4233, explained: 'Its 2 Workday sites listed 4230 postings on 2026-11-13, 4 of them a requisition an earlier
+      site already lists, which is read once.'}
+  round: added
+- key: dicks-sporting-goods
+  name: Dick's Sporting Goods
+  category: retail
+  careers_url: ['https://www.dickssportinggoods.jobs/']
+  checker: workday
+  settings: {host: dickssportinggoods.wd1.myworkdayjobs.com, tenant: dickssportinggoods, pack: true, split_first: true, past_total: true,
+    site: DSG}
+  verified: {page_total: 3607, explained: The page showed 3607 jobs and the board 3606 on 2026-11-13 (a posting or two opened or closed
+      in between).}
+  round: added
+- key: hpe
+  name: Hewlett Packard Enterprise
+  category: hardware
+  careers_url: ['https://careers.hpe.com/us/en', 'https://careers.hpe.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [hpe.wd5.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings: {host: hpe.wd5.myworkdayjobs.com, tenant: hpe, pack: true, split_first: true, past_total: true, site: jobsathpe}
+    - checker: workday
+      settings: {host: hpe.wd5.myworkdayjobs.com, tenant: hpe, pack: true, split_first: true, past_total: true, site: acjobsite}
+  verified: {page_total: 3546, explained: 'Its 2 Workday sites listed 3546 postings on 2026-11-13, 1562 of them a requisition an earlier
+      site already lists, which is read once.'}
+  round: added
+- key: micron
+  name: Micron Technology
+  category: semiconductors
+  careers_url: ['https://www.micron.com/about/careers']
+  checker: workday
+  settings: {host: micron.wd1.myworkdayjobs.com, tenant: micron, pack: true, split_first: true, past_total: true, site: External}
+  verified: {page_total: 2900, explained: The page showed 2900 jobs and the board 2895 on 2026-11-13 (a posting or two opened or closed
+      in between).}
+  round: added
+- key: applied-materials
+  name: Applied Materials
+  category: semiconductors
+  careers_url: ['https://careers.appliedmaterials.com/careers', 'https://careers.appliedmaterials.com/']
+  checker: workday
+  settings: {host: amat.wd1.myworkdayjobs.com, tenant: amat, pack: true, split_first: true, past_total: true, site: External}
+  verified: {page_total: 2283}
+  round: added
+- key: hp
+  name: HP Inc.
+  category: hardware
+  aliases: [Hewlett Packard, Hewlett Packard (HP), HP IQ]
+  careers_url: ['https://jobs.hp.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [//hp.wd5.myworkdayjobs.com/, greenhouse.io/hp/, 'greenhouse.io/embed/job_app?for=hp', greenhouse.io/hpiq/, 'greenhouse.io/embed/job_app?for=hpiq']
+    sources:
+    - checker: workday
+      settings: {host: hp.wd5.myworkdayjobs.com, anchor_host: true, tenant: hp, pack: true, split_first: true, past_total: true, site: ExternalCareerSite}
+    - checker: workday
+      settings: {host: hp.wd5.myworkdayjobs.com, anchor_host: true, tenant: hp, pack: true, split_first: true, past_total: true, site: EXTEU-AC-CareerSite}
+    - checker: greenhouse
+      settings:
+        boards: [hp, hpiq]
+  verified: {page_total: 2203, explained: 'Its 2 Workday sites listed 2203 postings on 2026-11-13, 912 of them a requisition an earlier
+      site already lists, which is read once.'}
+  round: added
+- key: lowes
+  name: Lowe's
+  category: retail
+  careers_url: ['https://talent.lowes.com/us/en', 'https://talent.lowes.com/']
+  checker: workday
+  settings: {host: lowes.wd5.myworkdayjobs.com, tenant: lowes, search: intern, past_total: true, unlinked_ok: 50, site: LWS_External_CS}
+  verified: {page_total: 210}
+  round: added
+- key: target
+  name: Target
+  category: retail
+  careers_url: ['https://corporate.target.com/careers']
+  checker: workday
+  settings:
+    host: target.wd5.myworkdayjobs.com
+    tenant: target
+    facets:
+      jobFamilyGroup: [daccab9f1d25019c1fe2b73634578e0d]
+    past_total: true
+    unlinked_ok: 50
+    site: targetcareers
+  verified: {page_total: 92, explained: The page showed 92 jobs and the board 91 on 2026-11-13 (a posting or two opened or closed in
+      between).}
+  round: added
+- key: cvs-health
+  name: CVS Health
+  category: healthcare
+  careers_url: ['https://jobs.cvshealth.com/us/en/home', 'https://jobs.cvshealth.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [cvshealth.wd1.myworkdayjobs.com]
+    sources:
+    - checker: workday
+      settings:
+        host: cvshealth.wd1.myworkdayjobs.com
+        tenant: cvshealth
+        facets:
+          workerSubType: [183bb31d97231001005066125c530000]
+        past_total: true
+        unlinked_ok: 50
+        site: CVS_Health_Careers
+    - checker: workday
+      settings: {host: cvshealth.wd1.myworkdayjobs.com, tenant: cvshealth, past_total: true, unlinked_ok: 50, site: Private_Postings_Intern_Conversion_ONLY}
+  verified: {page_total: 64}
+  round: added

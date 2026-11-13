@@ -1,6 +1,6 @@
 # InternWatch
 
-Watches 390 companies' careers sites (389 polled; Wayfair blocked: its site refuses automated clients; 192 of them
+Watches 402 companies' careers sites (401 polled; Wayfair blocked: its site refuses automated clients; 204 of them
 added in November 2026 and checked in the added round, see Internals) through their
 hiring systems' official feeds and emails new internships that pass `config/filters.yaml`. Python 3.12+,
 httpx, SQLite. Per-company checkers and evidence: COVERAGE.md. Freshman/sophomore programs: UNDERCLASSMEN.md.
@@ -88,8 +88,8 @@ Rules for changing things: CLAUDE.md.
     posting links, isn't new, and every system a page ever named is remembered, so a page that flips back and forth
     alerts once. A read that fails (5xx, timeout, a missing page) is read again first thing the next morning, every
     morning. A page the site refuses (a bot check, HTTP 400, 401, 403, 406 or 429) gets one retry, then waits a week
-    until it answers; a robots.txt block just waits. The first look is a silent baseline. About 175
-    of 360 pages name a job system in their HTML; the rest are built in the browser or block scripts. The 60 companies
+    until it answers; a robots.txt block just waits. The first look is a silent baseline. About 182
+    of 372 pages name a job system in their HTML; the rest are built in the browser or block scripts. The 60 companies
     whose page refuses scripts (`liveness.blocked`) are left out: the checks below watch them instead. Resolved when
     the system is added to the config or the page stops naming it (two reads in a row), or for a system it stopped
     mentioning, when it names it again or it leaves the config.
@@ -149,7 +149,12 @@ Rules for changing things: CLAUDE.md.
   other jobs on these boards fail those rules on every read. Each job alerts once; resolved when it's stored or leaves the
   board. A dismissed board answering 404, 410, 422 or an empty page has nothing today and never goes dark. NVIDIA's Workday
   is read every run for its interns (10 requests) and in full weekly (244); T-Mobile's `alumni` site weekly (87), since it
-  has no intern worker type. A weekly read starts only if the time left covers its last read. Mirrors that are the same
+  has no intern worker type. The four giant store sites of the added round (Walmart, CVS Health, Target, Lowe's: 13,000
+  to 20,000 jobs each, nearly all store roles) are read the same way: every morning their student roles as the company's
+  own check (an intern job family or worker type, or a search for "intern": 2 to 11 requests), and the whole site once
+  a week as a watched board, one site a morning (660 to 1,030 requests, 11 to 21 minutes). A matching role outside the
+  student label reaches you as a `posting elsewhere?` alert within a week. A weekly read starts only if the time left
+  covers its last read. Mirrors that are the same
   feed as a polled one need no read, and `internwatch liveness` lists each watched board and the ones that can't be read
   (robots.txt, or no job list): for those, only a role a list carries can surface.
 - **healthchecks.io:** pinged at the start and end of each run, so it alerts if no run happens or a run fails
@@ -206,8 +211,11 @@ Rules for changing things: CLAUDE.md.
   - greenhouse {board | boards, missing_ok, dedupe_requisitions: true | across_boards (only a later board's twins
     are skipped)}, lever {site}, ashby {board, mode: hosted, watch_ids, learn_ids}
   - workday {host, tenant, site | sites (prefixes ids with the site), quick_queries, pack (a site that only store
-    locations split below the 2,000-job cap is read with many locations per search), unlinked_ok (postings listed
-    without a link that are skipped quietly)}
+    locations split below the 2,000-job cap is read with many locations per search), split_first (a site at the cap
+    is split from its first page, without first reading the capped search's 2,000 jobs, which the split reads again),
+    past_total (a search is read on past the total its first page reported while full pages bring new postings:
+    jobs posted during the read push the oldest ones there), unlinked_ok (postings listed without a link that are
+    skipped quietly)}
   - eightfold {host, domain, api: pcsx | v2, params, quick_queries, count_tolerance}, oracle {host, site, job_url,
     watch_ids, learn_ids}
   - watch_ids: postings read one by one because the company's own list leaves them out while they still take

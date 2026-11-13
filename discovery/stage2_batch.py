@@ -41,17 +41,41 @@ def load(name):
 
 
 def batch(n: int) -> dict:
-    return {k: v for k, v in load("plan.json").items() if v["batch"] == n and v["sources"]}
+    return {k: as_read(v) for k, v in load("plan.json").items() if v["batch"] == n and v["sources"]}
+
+
+def as_read(p: dict) -> dict:
+    """The company as it is read every morning. A giant store site (the plan's `slice`: Walmart, CVS, Target, Lowe's)
+    is read for its student roles, so that read stands in for the site's entry; the whole site is `full`, read once
+    a week as a watched board (add_settings), which alerts for a matching role that isn't stored."""
+    if not p.get("slice"):
+        return p
+    main, r = p["slice"].split("~")[0], all_results().get(p["slice"], {})
+    daily = {"entry": p["slice"], "checker": "workday", "error": r.get("error"),
+             **{f: r.get(f, 0) for f in ("jobs", "students", "matched", "seconds", "requests")}}
+    return {**p, "sources": [daily if x["entry"] == main else x for x in p["sources"]],
+            "full": next(x for x in p["sources"] if x["entry"] == main)}
 
 
 def all_reads() -> dict:
-    """The planned reads: reads.yaml, and the second boards found later (reads_subs.yaml)."""
+    """The planned reads: reads.yaml, the second boards found later (reads_subs.yaml) and the giant sites' daily
+    student reads (reads_big.yaml)."""
     return {**yaml.safe_load((C / "reads.yaml").read_text())["reads"],
-            **yaml.safe_load((C / "reads_subs.yaml").read_text())["reads"]}
+            **yaml.safe_load((C / "reads_subs.yaml").read_text())["reads"],
+            **yaml.safe_load((C / "reads_big.yaml").read_text())["reads"]}
 
 
 def all_results() -> dict:
-    return {**load("read_results.json"), **load("read_results_extra.json"), **load("read_results_subs.json")}
+    return {**load("read_results.json"), **load("read_results_extra.json"), **load("read_results_subs.json"),
+            **load("read_results_big.json")}
+
+
+def slice_of(st: dict) -> str:
+    """What a giant site's daily read asks for, in words."""
+    if st.get("search"):
+        return f'a search for "{st["search"]}"'
+    name = {"workerSubType": "worker type", "jobFamily": "job family", "jobFamilyGroup": "job family group"}
+    return " and ".join(f"its student {name.get(f, f)}" for f in st.get("facets") or {})
 
 
 def read_jobs(entry: str) -> list[dict]:
@@ -298,7 +322,8 @@ def page_count(k: str, p: dict, jobs: int) -> tuple[int | None, str, str]:
     if len(each) > 1 and all(isinstance(x.get("page_total"), int) for _, x in each) \
             and abs(sum(x["page_total"] for _, x in each) - jobs) <= max(3, 0.02 * jobs):  # several sites or boards
         return sum(x["page_total"] for _, x in each), "each read's own count, added up: " + " + ".join(
-            f"{x['page_total']} ({e.split('~site-')[-1].split('~')[-1]}: {x['how']})" for e, x in each) + f" ({counted(v)})", ""
+            f"{x['page_total']} ({'the daily student read' if e.endswith('~slice') else e.split('~site-')[-1].split('~')[-1]}: "
+            f"{x['how']})" for e, x in each) + f" ({counted(v)})", ""
     if isinstance(v.get("page_total"), int) and (v["page_total"] or not jobs) and abs(v["page_total"] - jobs) <= max(3, 0.02 * jobs):
         return v["page_total"], v["how"] + f" ({counted(v)})", ""
     g = gh.get(main)
@@ -355,6 +380,13 @@ def result(k: str, p: dict, cand: dict) -> dict:
     subs = [x["subsidiary"] for x in p["sources"] if x.get("subsidiary")]
     if subs:
         notes.append("Read with it, as part of the company: " + "; ".join(subs) + ".")
+    if p.get("full"):
+        full, st = p["full"], all_reads()[p["slice"]]["settings"]
+        day = res.get(full["entry"], {}).get("started", "")[:10]
+        notes.append(f"A giant store site ({full['jobs']} jobs on {day}, almost all store roles the filters reject): every "
+                     f"morning the read is {slice_of(st)} on {st['site']} ({p['sources'][0]['jobs']} postings); the whole site "
+                     f"is read once a week as a watched board (liveness.watch_boards, every_days: 7), which alerts for a "
+                     f"matching role that isn't stored.")
     if checker == "multi":
         notes.append(("Two boards: " if len(s["sources"]) == 2 else f"{len(s['sources'])} boards: ")
                      + " + ".join(feed_of(x["checker"], x["settings"]) for x in s["sources"]) +
@@ -452,6 +484,11 @@ def add_settings(n: int, plan: dict) -> None:
                 else:
                     target = f"{main['checker']}:board={(st.get('board') or st.get('boards', [''])[0]).lower()}"
                 al.append(f"    ripplematch:company={rm[k]['slug']}: '{target}'   # {k}: its RippleMatch page, watched")
+    for k, p in plan.items():
+        if p.get("full"):  # a giant site: its student roles are the daily read, the whole site a weekly watched board
+            st = reads[p["full"]["entry"]]["settings"]
+            watch.append(f"    - {{company: {k}, name: Workday full read, checker: workday, every_days: 7,\n"
+                         f"       settings: {json.dumps(st).replace(chr(34), '')}}}")
     mirrors, cant = yaml.safe_load((C / "mirrors.yaml").read_text()), []
     for k in sorted(plan):
         for m in mirrors.get(k) or []:

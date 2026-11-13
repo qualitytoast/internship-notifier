@@ -47,12 +47,14 @@
   "how": "hosted Greenhouse board's stated count"
  },
  "applied-materials": {
-  "page_total": 2193,
-  "how": "workday's own reported total (the careers page shows it)"
+  "page_total": 2283,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "applied-materials~eightfold": {
-  "page_total": 2135,
-  "how": "eightfold's own reported total (the careers page shows it)"
+  "page_total": 2223,
+  "how": "eightfold's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "apptronik": {
   "page_total": 0,
@@ -88,32 +90,49 @@
   "how": "hosted Greenhouse board's stated count"
  },
  "bank-of-america": {
-  "page_total": null,
-  "how": "workday: no total reported; the read's count stands"
+  "page_total": 3120,
+  "how": "the site's own count on its first page (its jobs per time type or worker type: a search never reports more than 2,000)",
+  "at": "2026-11-13"
+ },
+ "bank-of-america~site-Contractor-Conversion": {
+  "page_total": 20,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "bank-of-america~site-Lateral-US": {
-  "page_total": 1987,
-  "how": "workday's own reported total (the careers page shows it)"
+  "page_total": 1986,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "bank-of-america~site-Scoutt": {
-  "page_total": 26,
-  "how": "workday's own reported total (the careers page shows it)"
+  "page_total": 22,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "bank-of-america~site-lateral-apac": {
-  "page_total": 98,
-  "how": "workday's own reported total (the careers page shows it)"
+  "page_total": 101,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "bank-of-america~site-lateral-ba_continuum": {
-  "page_total": 115,
-  "how": "workday's own reported total (the careers page shows it)"
+  "page_total": 118,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "bank-of-america~site-lateral-canada": {
-  "page_total": 5,
-  "how": "workday's own reported total (the careers page shows it)"
+  "page_total": 4,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "bank-of-america~site-lateral-latam": {
   "page_total": 6,
-  "how": "workday's own reported total (the careers page shows it)"
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
+ },
+ "bank-of-america~site-lateral-ous": {
+  "page_total": 10,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "base-power": {
   "page_total": 197,
@@ -252,8 +271,9 @@
   "at": "2026-11-12"
  },
  "citi": {
-  "page_total": 4885,
-  "how": "workday's own reported total (the careers page shows it)"
+  "page_total": 4233,
+  "how": "the site's own count on its first page (its jobs per time type or worker type: a search never reports more than 2,000)",
+  "at": "2026-11-13"
  },
  "clay": {
   "page_total": 62,
@@ -360,12 +380,24 @@
   "how": "the hosted Ashby page's job list"
  },
  "cvs-health": {
-  "page_total": null,
-  "how": "workday: no total reported; the read's count stands"
+  "page_total": 18515,
+  "how": "the site's own count on its first page (its jobs per time type or worker type: a search never reports more than 2,000)",
+  "at": "2026-11-13"
+ },
+ "cvs-health~site-Private_Postings_Intern_Conversion_ONLY": {
+  "page_total": 10,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "cvs-health~site-Private_Postings_Mergers_and_Acquisitions_ONLY": {
   "page_total": 1,
-  "how": "workday's own reported total (the careers page shows it)"
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
+ },
+ "cvs-health~slice": {
+  "page_total": 54,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "d-matrix": {
   "page_total": 37,
@@ -390,8 +422,9 @@
   "at": "2026-11-12"
  },
  "dicks-sporting-goods": {
-  "page_total": 3648,
-  "how": "workday's own reported total (the careers page shows it)"
+  "page_total": 3607,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "digitalocean": {
   "page_total": 3,
@@ -828,8 +861,9 @@
   "how": "hosted Greenhouse board's stated count"
  },
  "ge-vernova": {
-  "page_total": 4530,
-  "how": "workday's own reported total (the careers page shows it)"
+  "page_total": 4608,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "gemini": {
   "page_total": 0,
@@ -913,16 +947,24 @@
   "at": "2026-11-12"
  },
  "hp": {
-  "page_total": 2130,
-  "how": "workday's own reported total (the careers page shows it)"
+  "page_total": 2146,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "hpe": {
-  "page_total": 3467,
-  "how": "workday's own reported total (the careers page shows it)"
+  "page_total": 3546,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
+ },
+ "hpe~site-WFMathpe": {
+  "page_total": 1754,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "hp~greenhouse": {
-  "page_total": 59,
-  "how": "hosted Greenhouse board's stated count"
+  "page_total": 57,
+  "how": "hosted Greenhouse board's stated count",
+  "at": "2026-11-13"
  },
  "humana": {
   "page_total": 319,
@@ -1021,8 +1063,14 @@
   "how": "hosted Greenhouse board's stated count"
  },
  "lowes": {
-  "page_total": null,
-  "how": "workday: no total reported; the read's count stands"
+  "page_total": 13032,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
+ },
+ "lowes~slice": {
+  "page_total": 210,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "lucid-motors": {
   "page_total": 0,
@@ -1115,8 +1163,9 @@
   "at": "2026-11-11"
  },
  "micron": {
-  "page_total": 3188,
-  "how": "workday's own reported total (the careers page shows it)"
+  "page_total": 2900,
+  "how": "the site's own count on its first page (its jobs per time type or worker type: a search never reports more than 2,000)",
+  "at": "2026-11-13"
  },
  "morgan-stanley": {
   "page_total": 1573,
@@ -1512,8 +1561,14 @@
   "how": "the hosted Ashby page's job list"
  },
  "target": {
-  "page_total": null,
-  "how": "workday: no total reported; the read's count stands"
+  "page_total": 14130,
+  "how": "the site's own count on its first page (its jobs per time type or worker type: a search never reports more than 2,000)",
+  "at": "2026-11-13"
+ },
+ "target~slice": {
+  "page_total": 92,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "tensorwave": {
   "page_total": 39,
@@ -1616,8 +1671,19 @@
   "how": "hosted Greenhouse board's stated count"
  },
  "walmart": {
-  "page_total": null,
-  "how": "workday: no total reported; the read's count stands"
+  "page_total": 20500,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
+ },
+ "walmart~site-Non-WorkdayInternal": {
+  "page_total": 2491,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
+ },
+ "walmart~slice": {
+  "page_total": 38,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-13"
  },
  "warner-bros-discovery": {
   "page_total": 193,

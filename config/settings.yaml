@@ -24,7 +24,8 @@ schedule:
       retry_delay: 90
       page_scan_seconds: 240     # ~210 careers pages
       blocked_scan_seconds: 150  # backup checks of the added companies whose careers page refuses scripts (~30 s)
-      watch_seconds: 1500        # their watched boards, incl. one giant store site's weekly full read (up to ~20 min)
+      watch_seconds: 1800        # their watched boards, incl. one giant store site's weekly full read (Walmart's took
+                                 # 20.5 min on 2026-11-13; a weekly read starts only with 1.15 times that left)
 
 health:
   alert_after_failures: 2        # consecutive failed polls before a health email (retries happen first)
@@ -79,6 +80,14 @@ liveness:                        # boards that go dead, get abandoned or are rep
     - {company: mercor, name: RippleMatch, checker: ripplematch, settings: {company_id: 1158}}
     - {company: snap, name: RippleMatch, checker: ripplematch, settings: {company_id: 1111}}
     - {company: verizon, name: RippleMatch, checker: ripplematch, settings: {company_id: 627}}
+    - {company: cvs-health, name: Workday full read, checker: workday, every_days: 7,
+       settings: {host: cvshealth.wd1.myworkdayjobs.com, tenant: cvshealth, site: CVS_Health_Careers, pack: true, split_first: true, past_total: true, unlinked_ok: 50}}
+    - {company: lowes, name: Workday full read, checker: workday, every_days: 7,
+       settings: {host: lowes.wd5.myworkdayjobs.com, tenant: lowes, site: LWS_External_CS, pack: true, split_first: true, past_total: true, unlinked_ok: 50}}
+    - {company: target, name: Workday full read, checker: workday, every_days: 7,
+       settings: {host: target.wd5.myworkdayjobs.com, tenant: target, site: targetcareers, pack: true, split_first: true, past_total: true, unlinked_ok: 50}}
+    - {company: walmart, name: Workday full read, checker: workday, every_days: 7,
+       settings: {host: walmart.wd504.myworkdayjobs.com, tenant: walmart, site: WalmartExternal, pack: true, split_first: true, past_total: true, unlinked_ok: 50}}
   watch_every_days:              # dismissed boards too big to read every run (T-Mobile's has no intern worker type)
     "workday:site=alumni,tenant=tmobile": 7
   watch_unreadable:              # mirrors that can't be read. A role a list carries still raises a possible miss
@@ -260,6 +269,11 @@ liveness:                        # boards that go dead, get abandoned or are rep
     ashby:board=rivianvw: 'ashby:board=rivianvw.tech'   # rivian-vw: the registry's name for the board, which answers 404
     ripplematch:company=snap-inc: 'workday:site=snap,tenant=snapchat'   # snap: its RippleMatch page, watched
     ripplematch:company=verizon: 'workday:site=verizon-careers,tenant=verizon'   # verizon: its RippleMatch page, watched
+    eightfold:domain=appliedmaterials.com: 'workday:site=external,tenant=amat'   # applied-materials: careers.appliedmaterials.com, an Eightfold front over the Workday site that is read (2,222 of its 2,223 jobs were on it on 2026-11-13
+    eightfold:domain=citi.eightfold.ai: 'workday:site=2,tenant=citi'   # citi: Citi's Eightfold site for events and pre-internship programs, a front over the Workday sites that are read (Stage 1, 2026-11-09)
+    eightfold:domain=hp-sandbox.com: 'workday:site=externalcareersite,tenant=hp'   # hp: jobs.hp.com, an Eightfold front over HP's Workday site (Stage 1, 2026-11-09)
+    eightfold:domain=hp-sandbox.eightfold.ai: 'workday:site=externalcareersite,tenant=hp'   # hp: jobs.hp.com, an Eightfold front over HP's Workday site (Stage 1, 2026-11-09)
+    eightfold:domain=micron.com: 'workday:site=external,tenant=micron'   # micron: careers.micron.com, an Eightfold front over Micron's Workday site (Stage 1, 2026-11-09)
 
 crosscheck:
   grace_minutes: 90              # wait this long (and for a fresh poll) before calling a Simplify role a miss

@@ -29,6 +29,16 @@ cadence:
     women-in-tech-scholarship:
       copies: 1
       postings: 1
+citi:
+  at: '2026-11-13'
+  copies: 4
+  sites:
+    '2':
+      copies: 0
+      postings: 4222
+    Citi_Early_Careers_Events_Site:
+      copies: 4
+      postings: 8
 copart:
   at: '2026-11-12'
   copies: 1
@@ -72,6 +82,16 @@ etsy:
     Private_Etsy_Careers:
       copies: 67
       postings: 75
+ge-vernova:
+  at: '2026-11-13'
+  copies: 2119
+  sites:
+    Vernova_ExternalSite:
+      copies: 0
+      postings: 2188
+    only_confidential_executive_recruiting:
+      copies: 2119
+      postings: 2420
 hartford:
   at: '2026-11-12'
   copies: 9
@@ -82,6 +102,26 @@ hartford:
     careers_restricted:
       copies: 9
       postings: 32
+hp:
+  at: '2026-11-13'
+  copies: 912
+  sites:
+    EXTEU-AC-CareerSite:
+      copies: 912
+      postings: 1218
+    ExternalCareerSite:
+      copies: 0
+      postings: 928
+hpe:
+  at: '2026-11-13'
+  copies: 1562
+  sites:
+    acjobsite:
+      copies: 1562
+      postings: 1761
+    jobsathpe:
+      copies: 0
+      postings: 1785
 kla:
   at: '2026-11-12'
   copies: 233
@@ -226,6 +266,16 @@ verizon:
     verizon-careers:
       copies: 0
       postings: 1280
+walmart:
+  at: '2026-11-13'
+  copies: 2
+  sites:
+    Non-WorkdayInternal:
+      copies: 2
+      postings: 2489
+    WalmartExternal:
+      copies: 0
+      postings: 38
 warner-bros-discovery:
   at: '2026-11-12'
   copies: 1

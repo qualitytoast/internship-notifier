@@ -13,7 +13,7 @@ reads:
   analog-devices: {checker: workday, settings: {host: analogdevices.wd1.myworkdayjobs.com, tenant: analogdevices, site: External}}
   anchorage-digital: {checker: lever, settings: {site: anchorage}}
   appian: {checker: greenhouse, settings: {board: appian}}
-  applied-materials: {checker: workday, settings: {host: amat.wd1.myworkdayjobs.com, tenant: amat, site: External}}
+  applied-materials: {checker: workday, settings: {host: amat.wd1.myworkdayjobs.com, tenant: amat, site: External, pack: true, split_first: true, past_total: true}}
   applied-materials~eightfold: {checker: eightfold, settings: {host: careers.appliedmaterials.com, domain: appliedmaterials.com}}
   apptronik: {checker: greenhouse, settings: {board: apptronik}}
   arcesium: {checker: greenhouse, settings: {board: arcesiumllc}}
@@ -23,7 +23,7 @@ reads:
   athenahealth: {checker: phenom, settings: {base_url: "https://www.athenahealth.com", ref_num: ATHAHHUS}}
   bamboohr: {checker: greenhouse, settings: {board: bamboohr17}}
   bandwidth: {checker: greenhouse, settings: {board: bandwidth}}
-  bank-of-america: {checker: workday, settings: {host: ghr.wd1.myworkdayjobs.com, tenant: ghr, sites: [us-emplsv, lateral-emea]}}
+  bank-of-america: {checker: workday, timeout_minutes: 60, settings: {host: ghr.wd1.myworkdayjobs.com, tenant: ghr, sites: [us-emplsv, lateral-emea], pack: true, split_first: true, past_total: true, unlinked_ok: 50}}  # 4 postings without a link on 2026-11-09
   base-power: {checker: ashby, settings: {board: base-power}}
   baseten: {checker: ashby, settings: {board: baseten}}
   bedrock-robotics: {checker: ashby, settings: {board: bedrock-robotics}}
@@ -50,7 +50,7 @@ reads:
   ciena: {checker: workday, settings: {host: ciena.wd5.myworkdayjobs.com, tenant: ciena, site: Careers}}
   circle: {checker: workday, settings: {host: circle.wd1.myworkdayjobs.com, tenant: circle, site: Circle}}
   circle~ashby: {checker: ashby, settings: {board: circle}}
-  citi: {checker: workday, settings: {host: citi.wd5.myworkdayjobs.com, tenant: citi, sites: ["2", Citi_Early_Careers_Events_Site]}}
+  citi: {checker: workday, settings: {host: citi.wd5.myworkdayjobs.com, tenant: citi, sites: ["2", Citi_Early_Careers_Events_Site], pack: true, split_first: true, past_total: true, unlinked_ok: 50}}  # 4 postings without a link on 2026-11-13 stopped the read
   clay: {checker: ashby, settings: {board: claylabs}}
   clockwork-systems: {checker: greenhouse, settings: {board: clockworksystems}}
   cobot: {checker: ashby, settings: {board: cobot}}
@@ -65,13 +65,13 @@ reads:
   costar: {checker: workday, settings: {host: costar.wd1.myworkdayjobs.com, tenant: costar, sites: [CoStarCareers, Costar_Campus, confidential]}}
   cox: {checker: workday, settings: {host: cox.wd1.myworkdayjobs.com, anchor_host: true, tenant: cox, site: Cox_External_Career_Site_1}}
   crusoe: {checker: ashby, settings: {board: crusoe}}
-  cvs-health: {checker: workday, settings: {host: cvshealth.wd1.myworkdayjobs.com, tenant: cvshealth, sites: [CVS_Health_Careers, Private_Postings_Intern_Conversion_ONLY]}}
+  cvs-health: {checker: workday, timeout_minutes: 60, settings: {host: cvshealth.wd1.myworkdayjobs.com, tenant: cvshealth, site: CVS_Health_Careers, pack: true, split_first: true, past_total: true, unlinked_ok: 50}}  # the weekly full read (its interns daily: reads_big.yaml cvs-health~slice); 2 postings without a link on 2026-11-09
   d-matrix: {checker: ashby, settings: {board: d-Matrix}}
   datarobot: {checker: workday, settings: {host: datarobot.wd1.myworkdayjobs.com, tenant: datarobot, site: DataRobot_External_Careers}}
   delinea: {checker: ashby, settings: {board: delinea}}
   descript: {checker: greenhouse, settings: {board: descript}}
   dexcom: {checker: workday, settings: {host: dexcom.wd1.myworkdayjobs.com, tenant: dexcom, site: Dexcom}}
-  dicks-sporting-goods: {checker: workday, settings: {host: dickssportinggoods.wd1.myworkdayjobs.com, tenant: dickssportinggoods, site: DSG}}
+  dicks-sporting-goods: {checker: workday, settings: {host: dickssportinggoods.wd1.myworkdayjobs.com, tenant: dickssportinggoods, site: DSG, pack: true, split_first: true, past_total: true}}
   digitalocean: {checker: greenhouse, settings: {board: digitalocean98}}
   disney: {checker: workday, settings: {host: disney.wd5.myworkdayjobs.com, tenant: disney, sites: [disneycareer, disneycareerdc]}}
   domino-data-lab: {checker: greenhouse, settings: {board: dominodatalab}}
@@ -97,7 +97,7 @@ reads:
   fortinet: {checker: oracle, settings: {host: edel.fa.us2.oraclecloud.com, site: CX_2001}}
   freddie-mac: {checker: workday, settings: {host: freddiemac.wd5.myworkdayjobs.com, tenant: freddiemac, site: External}}
   garner-health: {checker: greenhouse, settings: {board: garnerhealth}}
-  ge-vernova: {checker: workday, settings: {host: gevernova.wd5.myworkdayjobs.com, tenant: gevernova, sites: [Vernova_ExternalSite, only_confidential_executive_recruiting]}}
+  ge-vernova: {checker: workday, settings: {host: gevernova.wd5.myworkdayjobs.com, tenant: gevernova, sites: [Vernova_ExternalSite, only_confidential_executive_recruiting], pack: true, split_first: true, past_total: true}}
   gemini: {checker: greenhouse, settings: {board: gemini}}
   gen-digital: {checker: ashby, settings: {board: gen-digital}}
   genesis-molecular-ai: {checker: ashby, settings: {board: genesis-molecular-ai}}
@@ -112,13 +112,13 @@ reads:
   haize-labs: {checker: greenhouse, settings: {board: haizelabs}}
   handshake: {checker: ashby, settings: {board: handshake}}
   hartford: {checker: workday, settings: {host: thehartford.wd5.myworkdayjobs.com, tenant: thehartford, sites: [Careers_External, careers_restricted]}}
-  hpe: {checker: workday, settings: {host: hpe.wd5.myworkdayjobs.com, tenant: hpe, sites: [jobsathpe, acjobsite]}}
+  hpe: {checker: workday, settings: {host: hpe.wd5.myworkdayjobs.com, tenant: hpe, sites: [jobsathpe, acjobsite], pack: true, split_first: true, past_total: true}}
   hex: {checker: ashby, settings: {board: hex}}
   heygen: {checker: greenhouse, settings: {board: heygen}}
   hilton: {checker: oracle, settings: {host: efet.fa.us2.oraclecloud.com, site: CX_1}}
   hilton~cx_1009: {checker: oracle, settings: {host: efet.fa.us2.oraclecloud.com, site: CX_1009}}
   home-depot: {checker: workday, settings: {host: homedepot.wd5.myworkdayjobs.com, tenant: homedepot, sites: [CareerDepot, CareerDepotCanada]}}
-  hp: {checker: workday, settings: {host: hp.wd5.myworkdayjobs.com, tenant: hp, sites: [ExternalCareerSite, EXTEU-AC-CareerSite]}}
+  hp: {checker: workday, settings: {host: hp.wd5.myworkdayjobs.com, anchor_host: true, tenant: hp, sites: [ExternalCareerSite, EXTEU-AC-CareerSite], pack: true, split_first: true, past_total: true}}
   hp~greenhouse: {checker: greenhouse, settings: {boards: [hp, hpiq]}}
   humana: {checker: workday, settings: {host: humana.wd5.myworkdayjobs.com, tenant: humana, site: Humana_External_Career_Site, unlinked_ok: 50}}  # CenterWell's site: 4 postings without a link on 2026-11-12 (none on 11-09): skipped, not a degraded read
   hyperproof: {checker: greenhouse, settings: {board: hyperproof}}
@@ -137,7 +137,7 @@ reads:
   launchdarkly: {checker: greenhouse, settings: {board: launchdarkly}}
   lightspark: {checker: ashby, settings: {board: lightspark}}
   locus-robotics: {checker: greenhouse, settings: {board: locusrobotics}}
-  lowes: {checker: workday, settings: {host: lowes.wd5.myworkdayjobs.com, tenant: lowes, site: LWS_External_CS}}
+  lowes: {checker: workday, timeout_minutes: 60, settings: {host: lowes.wd5.myworkdayjobs.com, tenant: lowes, site: LWS_External_CS, pack: true, split_first: true, past_total: true, unlinked_ok: 50}}  # the weekly full read (a search for "intern" daily: reads_big.yaml lowes~slice)
   lucid-motors: {checker: greenhouse, settings: {board: lucidmotors}}
   lucid-software: {checker: greenhouse, settings: {board: lucidsoftware}}
   macys: {checker: oracle, settings: {host: ebwh.fa.us2.oraclecloud.com, site: CX_1}}
@@ -146,7 +146,7 @@ reads:
   mastercard: {checker: workday, settings: {host: mastercard.wd1.myworkdayjobs.com, tenant: mastercard, sites: [CorporateCareers, Campus, Public_Posting_Site]}}
   mckesson: {checker: workday, settings: {host: mckesson.wd3.myworkdayjobs.com, tenant: mckesson, sites: [External_Careers, sourcer_on_req], unlinked_ok: 50}}  # 4 postings without a link in the go-live recording (2026-11-12, none in the morning's reads): skipped, not a degraded read
   mercor: {checker: ashby, settings: {board: mercor}}
-  micron: {checker: workday, settings: {host: micron.wd1.myworkdayjobs.com, tenant: micron, site: External}}
+  micron: {checker: workday, settings: {host: micron.wd1.myworkdayjobs.com, tenant: micron, site: External, pack: true, split_first: true, past_total: true}}
   morgan-stanley: {checker: workday, settings: {host: ms.wd5.myworkdayjobs.com, anchor_host: true, tenant: ms, sites: [External, private]}}
   multiply-labs: {checker: lever, settings: {site: multiplylabs}}
   nasdaq: {checker: workday, settings: {host: nasdaq.wd1.myworkdayjobs.com, tenant: nasdaq, site: Global_External_Site}}
@@ -213,7 +213,7 @@ reads:
   symmetry-systems: {checker: lever, settings: {site: symmetrysystems}}
   synchrony: {checker: workday, settings: {host: synchronyfinancial.wd5.myworkdayjobs.com, tenant: synchronyfinancial, site: University}}
   tamr: {checker: ashby, settings: {board: tamr}}
-  target: {checker: workday, settings: {host: target.wd5.myworkdayjobs.com, tenant: target, site: targetcareers}}
+  target: {checker: workday, timeout_minutes: 60, settings: {host: target.wd5.myworkdayjobs.com, tenant: target, site: targetcareers, pack: true, split_first: true, past_total: true, unlinked_ok: 50}}  # the weekly full read (its internships daily: reads_big.yaml target~slice); 4 postings without a link on 2026-11-09
   tensorwave: {checker: ashby, settings: {board: tensorwave}}
   texas-instruments: {checker: oracle, settings: {host: edbz.fa.us2.oraclecloud.com, site: CX}}
   travelers: {checker: workday, settings: {host: travelers.wd5.myworkdayjobs.com, tenant: travelers, site: External}}
@@ -231,7 +231,7 @@ reads:
   vercel: {checker: greenhouse, settings: {board: vercel}}
   verizon: {checker: workday, settings: {host: verizon.wd12.myworkdayjobs.com, tenant: verizon, site: verizon-careers}}
   viam: {checker: greenhouse, settings: {board: viamrobotics}}
-  walmart: {checker: workday, settings: {host: walmart.wd504.myworkdayjobs.com, tenant: walmart, site: WalmartExternal}}
+  walmart: {checker: workday, timeout_minutes: 60, settings: {host: walmart.wd504.myworkdayjobs.com, tenant: walmart, site: WalmartExternal, pack: true, split_first: true, past_total: true, unlinked_ok: 50}}  # the weekly full read (its interns daily: reads_big.yaml walmart~slice); 22 postings without a link on 2026-11-09
   disney: {checker: workday, settings: {host: disney.wd5.myworkdayjobs.com, tenant: disney, sites: [disneycareer, disneycareerdc]}}
   warner-bros-discovery: {checker: workday, settings: {host: warnerbros.wd5.myworkdayjobs.com, tenant: warnerbros, site: global}}
   washington-post: {checker: workday, settings: {host: washpost.wd5.myworkdayjobs.com, tenant: washpost, site: washingtonpostcareers}}
@@ -268,10 +268,12 @@ reads:
   snap~ripplematch: {"checker": "ripplematch", "settings": {"company_id": 1111}}
   verizon~ripplematch: {"checker": "ripplematch", "settings": {"company_id": 627}}
   allstate~site-Agent: {"checker": "workday", "settings": {"host": "allstate.wd5.myworkdayjobs.com", "tenant": "allstate", "site": "Agent"}}
-  bank-of-america~site-Lateral-US: {"checker": "workday", "settings": {"host": "ghr.wd1.myworkdayjobs.com", "tenant": "ghr", "site": "Lateral-US"}}
+  bank-of-america~site-Lateral-US: {"checker": "workday", "settings": {"host": "ghr.wd1.myworkdayjobs.com", "tenant": "ghr", "site": "Lateral-US", "pack": true, "split_first": true, "unlinked_ok": 50}}
   bank-of-america~site-Scoutt: {"checker": "workday", "settings": {"host": "ghr.wd1.myworkdayjobs.com", "tenant": "ghr", "site": "Scoutt"}}
   bank-of-america~site-lateral-apac: {"checker": "workday", "settings": {"host": "ghr.wd1.myworkdayjobs.com", "tenant": "ghr", "site": "lateral-apac"}}
-  bank-of-america~site-lateral-ba_continuum: {"checker": "workday", "settings": {"host": "ghr.wd1.myworkdayjobs.com", "tenant": "ghr", "site": "lateral-ba_continuum"}}
+  bank-of-america~site-lateral-ba_continuum: {"checker": "workday", "settings": {"host": "ghr.wd1.myworkdayjobs.com", "tenant": "ghr", "site": "lateral-ba_continuum", "pack": true, "split_first": true, "past_total": true, "unlinked_ok": 50}}
+  bank-of-america~site-Contractor-Conversion: {"checker": "workday", "settings": {"host": "ghr.wd1.myworkdayjobs.com", "tenant": "ghr", "site": "Contractor-Conversion"}}
+  bank-of-america~site-lateral-ous: {"checker": "workday", "settings": {"host": "ghr.wd1.myworkdayjobs.com", "tenant": "ghr", "site": "lateral-ous"}}
   bank-of-america~site-lateral-canada: {"checker": "workday", "settings": {"host": "ghr.wd1.myworkdayjobs.com", "tenant": "ghr", "site": "lateral-canada"}}
   bank-of-america~site-lateral-latam: {"checker": "workday", "settings": {"host": "ghr.wd1.myworkdayjobs.com", "tenant": "ghr", "site": "lateral-latam"}}
   cadence~site-women-in-tech-scholarship: {"checker": "workday", "settings": {"host": "cadence.wd1.myworkdayjobs.com", "tenant": "cadence", "site": "women-in-tech-scholarship"}}
@@ -285,6 +287,7 @@ reads:
   costar~site-SanDiego_Research: {"checker": "workday", "settings": {"host": "costar.wd1.myworkdayjobs.com", "tenant": "costar", "site": "SanDiego_Research"}}
   costar~site-Washington_Research: {"checker": "workday", "settings": {"host": "costar.wd1.myworkdayjobs.com", "tenant": "costar", "site": "Washington_Research"}}
   costar~site-broadbean_external: {"checker": "workday", "settings": {"host": "costar.wd1.myworkdayjobs.com", "tenant": "costar", "site": "broadbean_external"}}
+  cvs-health~site-Private_Postings_Intern_Conversion_ONLY: {"checker": "workday", "settings": {"host": "cvshealth.wd1.myworkdayjobs.com", "tenant": "cvshealth", "site": "Private_Postings_Intern_Conversion_ONLY", "past_total": true, "unlinked_ok": 50}}
   cvs-health~site-Private_Postings_Mergers_and_Acquisitions_ONLY: {"checker": "workday", "settings": {"host": "cvshealth.wd1.myworkdayjobs.com", "tenant": "cvshealth", "site": "Private_Postings_Mergers_and_Acquisitions_ONLY"}}
   elevance-health~site-IRL: {"checker": "workday", "settings": {"host": "elevancehealth.wd1.myworkdayjobs.com", "tenant": "elevancehealth", "site": "IRL"}}
   elevance-health~site-Legato_Ireland: {"checker": "workday", "settings": {"host": "elevancehealth.wd1.myworkdayjobs.com", "tenant": "elevancehealth", "site": "Legato_Ireland"}}
@@ -342,7 +345,7 @@ reads:
   fis~site-AgencyCareerSite: {"checker": "workday", "settings": {"host": "fis.wd5.myworkdayjobs.com", "tenant": "fis", "site": "AgencyCareerSite"}}
   fiserv~site-NZ: {"checker": "workday", "settings": {"host": "fiserv.wd5.myworkdayjobs.com", "tenant": "fiserv", "site": "NZ"}}
   fiserv~site-blconsultant: {"checker": "workday", "settings": {"host": "fiserv.wd5.myworkdayjobs.com", "tenant": "fiserv", "site": "blconsultant"}}
-  hpe~site-WFMathpe: {"checker": "workday", "settings": {"host": "hpe.wd5.myworkdayjobs.com", "tenant": "hpe", "site": "WFMathpe"}}
+  hpe~site-WFMathpe: {"checker": "workday", "settings": {"host": "hpe.wd5.myworkdayjobs.com", "tenant": "hpe", "site": "WFMathpe", "pack": true, "split_first": true}}
   humana~site-CenterWell_External_Career_Site: {"checker": "workday", "settings": {"host": "humana.wd5.myworkdayjobs.com", "tenant": "humana", "site": "CenterWell_External_Career_Site", "unlinked_ok": 50}}
   kla~site-Filmetrics: {"checker": "workday", "settings": {"host": "kla.wd1.myworkdayjobs.com", "tenant": "kla", "site": "Filmetrics"}}
   kla~site-Israel: {"checker": "workday", "settings": {"host": "kla.wd1.myworkdayjobs.com", "anchor_host": true, "tenant": "kla", "site": "Israel"}}
@@ -369,7 +372,7 @@ reads:
   synchrony~site-careers: {"checker": "workday", "settings": {"host": "synchronyfinancial.wd5.myworkdayjobs.com", "tenant": "synchronyfinancial", "site": "careers"}}
   travelers~site-SimplyBusinesssExternal: {"checker": "workday", "settings": {"host": "travelers.wd5.myworkdayjobs.com", "tenant": "travelers", "site": "SimplyBusinesssExternal"}}
   usaa~site-CONFIDENTIAL: {"checker": "workday", "settings": {"host": "usaa.wd1.myworkdayjobs.com", "tenant": "usaa", "site": "CONFIDENTIAL"}}
-  walmart~site-Non-WorkdayInternal: {"checker": "workday", "settings": {"host": "walmart.wd504.myworkdayjobs.com", "tenant": "walmart", "site": "Non-WorkdayInternal"}}
+  walmart~site-Non-WorkdayInternal: {"checker": "workday", "settings": {"host": "walmart.wd504.myworkdayjobs.com", "tenant": "walmart", "site": "Non-WorkdayInternal", "pack": true, "split_first": true, "past_total": true, "unlinked_ok": 50}}
   warner-bros-discovery~site-francais: {"checker": "workday", "settings": {"host": "warnerbros.wd5.myworkdayjobs.com", "tenant": "warnerbros", "site": "francais"}}
   washington-post~site-WashingtonPostCareersArc: {"checker": "workday", "settings": {"host": "washpost.wd5.myworkdayjobs.com", "tenant": "washpost", "site": "WashingtonPostCareersArc"}}
   athenahealth~careers: {"checker": "phenom", "settings": {"base_url": "https://careers.athenahealth.com", "ref_num": "ATHAHHUS"}}

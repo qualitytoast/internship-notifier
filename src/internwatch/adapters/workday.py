@@ -10,6 +10,11 @@ settings:
                       at CVS, Target, Lowe's), several values go in one search (Workday returns jobs matching any):
                       searches of at most PACK_VALUES values whose counts add up to under PACK_JOBS (CVS: 37 searches
                       instead of 4,990)
+  split_first: true   optional: a search at the 2000-job cap is split from its first page; without it the capped
+                      search is read to its end first (100 requests for 2,000 jobs the split then reads again)
+  past_total: true    optional: a search is read on past the total its first page reported, while its pages are full
+                      and bring postings not seen before. Postings added during a read push the oldest ones there
+                      (Walmart added 18 in 75 seconds on 2026-11-13: the read stopped at the first total, 23 short)
   unlinked_ok: 50     optional: up to this many postings listed without a link (no title, no link, no place: Walmart
                       lists a few dozen) are skipped quietly; without it a handful stops the read, more than two
                       mark it degraded
@@ -116,8 +121,10 @@ class Workday(Checker):
         return ", ".join(self.base(s, site) + "/jobs" for site in self.sites(s))
 
     # one search (all pages) ------------------------------------------------------------------
-    def _search(self, http, s, site, facets: dict, out: dict, ctx=None, stop_early=False) -> tuple[int, dict, set]:
-        """Read one search to its end. Returns (reported total, first page, ids this search returned)."""
+    def _search(self, http, s, site, facets: dict, out: dict, ctx=None, stop_early=False,
+                capped_stop=False) -> tuple[int, dict, set]:
+        """Read one search to its end, or only its first page when it is at the cap and `capped_stop` is set (the
+        caller splits it). Returns (reported total, first page, ids this search returned)."""
         url = self.base(s, site) + "/jobs"
         where = f"workday:{s['tenant']}/{site}"
         offset, total, first = 0, None, {}
@@ -159,7 +166,10 @@ class Workday(Checker):
             fresh = [j for j in page_ids if j not in seen]
             seen.update(page_ids)
             offset += PAGE
-            if not items or offset >= min(total, CAP):
+            more = offset < min(total, CAP)
+            if not more and s.get("past_total") and len(items) == PAGE and fresh and offset < CAP:
+                more = True  # a full last page of new postings: the search may have grown, its oldest are on the next
+            if not items or not more or (capped_stop and total >= CAP):
                 break
             if not fresh:
                 break  # the page repeated earlier results (Workday wraps around); counts are checked by the caller
@@ -201,6 +211,8 @@ class Workday(Checker):
         known = max([total] + [_counted(first, name) for name in ("timeType", "workerSubType") if name not in facets])
         # never the configured partitions (they are what is split here); `pack` still applies
         parts = self._partitions({"pack": True} if s.get("pack") else {}, first, known, skip=facets)
+        if not parts and s.get("split_first"):  # nothing splits it: the capped search's own jobs are what there is
+            self._search(http, s, site, facets, out, ctx)
         if not need_soft(parts, f"{where}: {total}+ jobs hit Workday's {CAP} cap and no facet splits them; "
                                 f"set `partitions` in companies.yaml", ctx):
             _cut_short(ctx)
@@ -224,7 +236,8 @@ class Workday(Checker):
         reported, got, firsts = 0, set(), []
         for part in parts:
             sub = {**facets, **part}
-            total, first, seen = self._search(http, s, site, sub, out, ctx, stop_early=quick)
+            total, first, seen = self._search(http, s, site, sub, out, ctx, stop_early=quick,
+                                              capped_stop=depth == 0 and bool(s.get("split_first")))
             got |= seen
             firsts.append(first)
             if total < CAP:
@@ -304,7 +317,8 @@ class Workday(Checker):
                 if not quick:
                     self._check_partitions(s, site, parts, firsts, got, ctx)
             else:
-                total, first, seen = self._search(http, s, site, s.get("facets", {}), out, ctx, stop_early=quick)
+                total, first, seen = self._search(http, s, site, s.get("facets", {}), out, ctx, stop_early=quick,
+                                                  capped_stop=bool(s.get("split_first")))
                 if total >= CAP:  # capped: read it again one facet value at a time
                     reported += self._split(http, s, site, s.get("facets", {}), total, first, out, ctx, depth=0)[0]
                 else:

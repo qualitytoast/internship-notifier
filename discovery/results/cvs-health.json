@@ -1,0 +1,54 @@
+{
+  "key": "cvs-health",
+  "name": "CVS Health",
+  "careers_url": "https://jobs.cvshealth.com/us/en/home",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "cvshealth.wd1.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "cvshealth.wd1.myworkdayjobs.com",
+          "tenant": "cvshealth",
+          "facets": {
+            "workerSubType": [
+              "183bb31d97231001005066125c530000"
+            ]
+          },
+          "past_total": true,
+          "unlinked_ok": 50,
+          "site": "CVS_Health_Careers"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "cvshealth.wd1.myworkdayjobs.com",
+          "tenant": "cvshealth",
+          "past_total": true,
+          "unlinked_ok": 50,
+          "site": "Private_Postings_Intern_Conversion_ONLY"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://cvshealth.wd1.myworkdayjobs.com/wday/cxs/cvshealth/CVS_Health_Careers/jobs + POST https://cvshealth.wd1.myworkdayjobs.com/wday/cxs/cvshealth/Private_Postings_Intern_Conversion_ONLY/jobs",
+  "feed_total": 64,
+  "page_total": 64,
+  "page_total_how": "each read's own count, added up: 54 (the daily student read: workday's own reported total (the careers page shows it)) + 10 (Private_Postings_Intern_Conversion_ONLY: workday's own reported total (the careers page shows it)) (2026-11-13)",
+  "intern_total": 54,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "cvshealth.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/cvshealth.wd1.myworkdayjobs.com.txt)",
+  "notes": "A giant store site (18452 jobs on 2026-11-13, almost all store roles the filters reject): every morning the read is its student worker type on CVS_Health_Careers (54 postings); the whole site is read once a week as a watched board (liveness.watch_boards, every_days: 7), which alerts for a matching role that isn't stored. Two boards: POST https://cvshealth.wd1.myworkdayjobs.com/wday/cxs/cvshealth/CVS_Health_Careers/jobs + POST https://cvshealth.wd1.myworkdayjobs.com/wday/cxs/cvshealth/Private_Postings_Intern_Conversion_ONLY/jobs; a later board's posting with an earlier one's id or requisition is skipped. Not read: cvs-health~site-Private_Postings_Mergers_and_Acquisitions_ONLY: public Workday site, 1 jobs, no student role: recorded as known.",
+  "checked_at": "2026-11-13",
+  "source": "added",
+  "round": "added"
+}

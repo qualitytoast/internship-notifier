@@ -183,6 +183,14 @@
   "duration": 0.4,
   "requests": 1
  },
+ "applied-materials": {
+  "jobs": 2285,
+  "students": 84,
+  "matched": 38,
+  "at": "2026-11-13T18:23:24Z",
+  "duration": 151.5,
+  "requests": 130
+ },
  "apptronik": {
   "jobs": 89,
   "students": 0,
@@ -262,6 +270,14 @@
   "at": "2026-11-10T15:33:14Z",
   "duration": 6.0,
   "requests": 1
+ },
+ "bank-of-america": {
+  "jobs": 3234,
+  "students": 1,
+  "matched": 1,
+  "at": "2026-11-13T18:23:24Z",
+  "duration": 282.5,
+  "requests": 279
  },
  "base-power": {
   "jobs": 197,
@@ -563,6 +579,14 @@
   "error": "fetch: HTTP 403 for GET https://www.citadelsecurities.com/sitemap/page.xml",
   "at": "2026-11-13T16:32:55Z"
  },
+ "citi": {
+  "jobs": 4229,
+  "students": 121,
+  "matched": 18,
+  "at": "2026-11-13T18:23:24Z",
+  "duration": 249.9,
+  "requests": 232
+ },
  "clay": {
   "jobs": 62,
   "students": 1,
@@ -707,6 +731,14 @@
   "duration": 3.2,
   "requests": 1
  },
+ "cvs-health": {
+  "jobs": 64,
+  "students": 54,
+  "matched": 15,
+  "at": "2026-11-13T18:23:24Z",
+  "duration": 3.3,
+  "requests": 4
+ },
  "d-matrix": {
   "jobs": 38,
   "students": 0,
@@ -794,6 +826,14 @@
   "at": "2026-11-12T14:51:30Z",
   "duration": 15.1,
   "requests": 15
+ },
+ "dicks-sporting-goods": {
+  "jobs": 3599,
+  "students": 6,
+  "matched": 5,
+  "at": "2026-11-13T18:23:24Z",
+  "duration": 213.4,
+  "requests": 207
  },
  "digitalocean": {
   "jobs": 152,
@@ -1099,6 +1139,14 @@
   "duration": 5.8,
   "requests": 1
  },
+ "ge-vernova": {
+  "jobs": 2505,
+  "students": 65,
+  "matched": 49,
+  "at": "2026-11-13T18:23:24Z",
+  "duration": 256.9,
+  "requests": 252
+ },
  "geico": {
   "jobs": 292,
   "students": 8,
@@ -1355,6 +1403,22 @@
   "duration": 76.9,
   "requests": 70
  },
+ "hp": {
+  "jobs": 1287,
+  "students": 124,
+  "matched": 35,
+  "at": "2026-11-13T18:23:25Z",
+  "duration": 114.1,
+  "requests": 110
+ },
+ "hpe": {
+  "jobs": 1978,
+  "students": 187,
+  "matched": 71,
+  "at": "2026-11-13T18:23:24Z",
+  "duration": 201.5,
+  "requests": 178
+ },
  "hubspot": {
   "jobs": 2,
   "students": 0,
@@ -1587,6 +1651,14 @@
   "duration": 6.0,
   "requests": 1
  },
+ "lowes": {
+  "jobs": 207,
+  "students": 40,
+  "matched": 18,
+  "at": "2026-11-13T18:23:25Z",
+  "duration": 10.4,
+  "requests": 11
+ },
  "lucid-motors": {
   "jobs": 460,
   "students": 1,
@@ -1666,6 +1738,14 @@
   "at": "2026-10-20T15:09:46Z",
   "duration": 2.8,
   "requests": 3
+ },
+ "micron": {
+  "jobs": 2897,
+  "students": 148,
+  "matched": 90,
+  "at": "2026-11-13T18:23:25Z",
+  "duration": 158.0,
+  "requests": 156
  },
  "microsoft": {
   "jobs": 2369,
@@ -2587,6 +2667,14 @@
   "duration": 0.1,
   "requests": 1
  },
+ "target": {
+  "jobs": 90,
+  "students": 90,
+  "matched": 22,
+  "at": "2026-11-13T18:23:25Z",
+  "duration": 6.5,
+  "requests": 5
+ },
  "temporal": {
   "jobs": 70,
   "students": 0,
@@ -2906,6 +2994,14 @@
   "at": "2026-10-20T15:09:47Z",
   "duration": 1.2,
   "requests": 2
+ },
+ "walmart": {
+  "jobs": 2513,
+  "students": 166,
+  "matched": 25,
+  "at": "2026-11-13T18:23:25Z",
+  "duration": 144.5,
+  "requests": 137
  },
  "warner-bros-discovery": {
   "jobs": 208,

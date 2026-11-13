@@ -1,0 +1,28 @@
+{
+  "key": "dicks-sporting-goods",
+  "name": "Dick's Sporting Goods",
+  "careers_url": "https://www.dickssportinggoods.jobs/",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "dickssportinggoods.wd1.myworkdayjobs.com",
+    "tenant": "dickssportinggoods",
+    "pack": true,
+    "split_first": true,
+    "past_total": true,
+    "site": "DSG"
+  },
+  "feed": "POST https://dickssportinggoods.wd1.myworkdayjobs.com/wday/cxs/dickssportinggoods/DSG/jobs",
+  "feed_total": 3606,
+  "page_total": 3607,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-13)",
+  "intern_total": 6,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "dickssportinggoods.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/dickssportinggoods.wd1.myworkdayjobs.com.txt)",
+  "notes": "The page showed 3607 jobs and the board 3606 on 2026-11-13 (a posting or two opened or closed in between).",
+  "checked_at": "2026-11-13",
+  "source": "added",
+  "round": "added"
+}

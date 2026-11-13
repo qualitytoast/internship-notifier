@@ -686,11 +686,13 @@ def pagecount(keys: list[str]) -> None:
     gate = make_gate(cfg)
     reads = yaml.safe_load((CANDIDATES / "reads.yaml").read_text())["reads"]
     results = json.loads((CANDIDATES / "read_results.json").read_text())
-    for name in ("read_results_extra.json", "read_results_subs.json"):  # extra sites, and second boards found later
+    # extra sites, second boards found later, and the giant sites' daily student reads
+    for name in ("read_results_extra.json", "read_results_subs.json", "read_results_big.json"):
         if (CANDIDATES / name).exists():
             results.update(json.loads((CANDIDATES / name).read_text()))
-    if (CANDIDATES / "reads_subs.yaml").exists():
-        reads.update(yaml.safe_load((CANDIDATES / "reads_subs.yaml").read_text())["reads"])
+    for name in ("reads_subs.yaml", "reads_big.yaml"):
+        if (CANDIDATES / name).exists():
+            reads.update(yaml.safe_load((CANDIDATES / name).read_text())["reads"])
     path = CANDIDATES / "pagecounts.json"
     out = json.loads(path.read_text()) if path.exists() else {}
     todo = [(e, s) for e, s in reads.items() if (not keys or e.split("~")[0] in keys) and e in results]
@@ -720,6 +722,18 @@ def pagecount(keys: list[str]) -> None:
                 if checker == "ashby":
                     n = sum(len(Ashby()._hosted(http, {"board": b})) for b in s.get("boards") or [s["board"]])
                     return entry, {"page_total": n, "how": "the hosted Ashby page's job list"}
+                rt, jobs = results[entry].get("reported_total"), results[entry].get("jobs", 0)
+                if checker == "workday" and rt and abs(rt - jobs) > max(3, 0.02 * jobs):
+                    # a site over Workday's 2,000 cap read one location at a time: a job under several locations is in
+                    # several searches, so their totals add up to too many. Each site's first page counts its jobs once
+                    from internwatch.adapters.workday import HEADERS, PAGE, Workday, _counted
+                    n = 0
+                    for site in s.get("sites") or [s["site"]]:
+                        d = http.post_json(Workday().base(s, site) + "/jobs", headers=HEADERS, json={
+                            "appliedFacets": s.get("facets", {}), "limit": PAGE, "offset": 0, "searchText": s.get("search", "")})
+                        n += max(d.get("total") or 0, _counted(d, "timeType"), _counted(d, "workerSubType"))
+                    return entry, {"page_total": n, "how": "the site's own count on its first page (its jobs per time type "
+                                                           "or worker type: a search never reports more than 2,000)"}
             except Exception as e:  # noqa: BLE001
                 return entry, {"page_total": None, "how": f"not read: {str(e)[:120]}"}
         rt = results[entry].get("reported_total")

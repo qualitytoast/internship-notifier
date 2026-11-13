@@ -309,11 +309,11 @@
    {
     "entry": "applied-materials",
     "checker": "workday",
-    "jobs": 2193,
-    "students": 84,
-    "matched": 36,
-    "seconds": 225.2,
-    "requests": 213,
+    "jobs": 2283,
+    "students": 83,
+    "matched": 37,
+    "seconds": 140.4,
+    "requests": 129,
     "error": null
    }
   ],
@@ -571,20 +571,20 @@
    {
     "entry": "bank-of-america",
     "checker": "workday",
-    "jobs": 3107,
-    "students": 2,
-    "matched": 2,
-    "seconds": 368.6,
-    "requests": 366,
+    "jobs": 3118,
+    "students": 1,
+    "matched": 1,
+    "seconds": 334.4,
+    "requests": 272,
     "error": null
    },
    {
     "entry": "bank-of-america~site-lateral-ba_continuum",
     "checker": "workday",
-    "jobs": 115,
+    "jobs": 118,
     "students": 0,
     "matched": 0,
-    "seconds": 20.5,
+    "seconds": 18.1,
     "requests": 6,
     "error": null,
     "subsidiary": "BA Continuum, India (Bank of America's Workday site lateral-ba_continuum)"
@@ -604,19 +604,27 @@
   "dropped": [
    {
     "entry": "bank-of-america~site-Lateral-US",
-    "why": "1,985 of its 1,987 jobs are on us-emplsv; the other 2 are not student roles"
+    "why": "1,982 of its 1,984 jobs are on us-emplsv (2026-11-13); the other 2 are not student roles"
    },
    {
     "entry": "bank-of-america~site-Scoutt",
-    "why": "public Workday site, 26 jobs, no student role: recorded as known"
+    "why": "public Workday site, 22 jobs, no student role: recorded as known"
    },
    {
     "entry": "bank-of-america~site-lateral-apac",
-    "why": "public Workday site, 98 jobs, no student role: recorded as known"
+    "why": "public Workday site, 101 jobs, no student role: recorded as known"
+   },
+   {
+    "entry": "bank-of-america~site-Contractor-Conversion",
+    "why": "a contractor site robots.txt hides (20 jobs, no student role)"
+   },
+   {
+    "entry": "bank-of-america~site-lateral-ous",
+    "why": "a site robots.txt hides, for roles outside the US (10 jobs, no student role)"
    },
    {
     "entry": "bank-of-america~site-lateral-canada",
-    "why": "public Workday site, 5 jobs, no student role: recorded as known"
+    "why": "public Workday site, 4 jobs, no student role: recorded as known"
    },
    {
     "entry": "bank-of-america~site-lateral-latam",
@@ -1360,14 +1368,12 @@
    {
     "entry": "citi",
     "checker": "workday",
-    "jobs": 4190,
-    "students": 125,
+    "jobs": 4230,
+    "students": 122,
     "matched": 18,
-    "seconds": 842.0,
-    "requests": 810,
-    "error": null,
-    "requests_partitioned": 244,
-    "seconds_partitioned": 256.2
+    "seconds": 239.1,
+    "requests": 232,
+    "error": null
    }
   ],
   "side": [],
@@ -1816,12 +1822,23 @@
    {
     "entry": "cvs-health",
     "checker": "workday",
-    "jobs": 19078,
-    "students": 3944,
-    "matched": 17,
-    "seconds": 1158.7,
-    "requests": 1134,
+    "jobs": 18452,
+    "students": 3405,
+    "matched": 16,
+    "seconds": 1081.6,
+    "requests": 1006,
     "error": null
+   },
+   {
+    "entry": "cvs-health~site-Private_Postings_Intern_Conversion_ONLY",
+    "checker": "workday",
+    "jobs": 10,
+    "students": 0,
+    "matched": 0,
+    "seconds": 1.3,
+    "requests": 1,
+    "error": null,
+    "why": "CVS's site for intern conversions"
    }
   ],
   "side": [],
@@ -1983,14 +2000,12 @@
    {
     "entry": "dicks-sporting-goods",
     "checker": "workday",
-    "jobs": 3648,
-    "students": 5,
+    "jobs": 3606,
+    "students": 6,
     "matched": 5,
-    "seconds": 343.7,
-    "requests": 308,
-    "error": null,
-    "requests_partitioned": 208,
-    "seconds_partitioned": 218.4
+    "seconds": 216.4,
+    "requests": 204,
+    "error": null
    }
   ],
   "side": [],
@@ -2931,14 +2946,12 @@
    {
     "entry": "ge-vernova",
     "checker": "workday",
-    "jobs": 4530,
-    "students": 169,
-    "matched": 128,
-    "seconds": 445.4,
-    "requests": 442,
-    "error": null,
-    "requests_partitioned": 111,
-    "seconds_partitioned": 116.6
+    "jobs": 4608,
+    "students": 129,
+    "matched": 96,
+    "seconds": 249.9,
+    "requests": 249,
+    "error": null
    }
   ],
   "side": [],
@@ -3316,11 +3329,11 @@
    {
     "entry": "hpe",
     "checker": "workday",
-    "jobs": 3463,
-    "students": 181,
-    "matched": 72,
-    "seconds": 189.8,
-    "requests": 175,
+    "jobs": 3546,
+    "students": 200,
+    "matched": 74,
+    "seconds": 199.2,
+    "requests": 179,
     "error": null
    }
   ],
@@ -3328,7 +3341,7 @@
   "dropped": [
    {
     "entry": "hpe~site-WFMathpe",
-    "why": "1,697 of its 1,715 requisitions are on the main site; none of the other 18 is a student role"
+    "why": "1,729 of its 1,753 jobs are on the two sites read (2026-11-13); none of the other 24 is a student role"
    }
   ],
   "page": "ok",
@@ -3461,20 +3474,20 @@
    {
     "entry": "hp",
     "checker": "workday",
-    "jobs": 2130,
+    "jobs": 2146,
     "students": 232,
-    "matched": 52,
-    "seconds": 113.7,
+    "matched": 56,
+    "seconds": 117.5,
     "requests": 108,
     "error": null
    },
    {
     "entry": "hp~greenhouse",
     "checker": "greenhouse",
-    "jobs": 59,
-    "students": 8,
-    "matched": 8,
-    "seconds": 4.7,
+    "jobs": 57,
+    "students": 7,
+    "matched": 7,
+    "seconds": 1.2,
     "requests": 2,
     "error": null
    }
@@ -3974,11 +3987,11 @@
    {
     "entry": "lowes",
     "checker": "workday",
-    "jobs": 13001,
+    "jobs": 12994,
     "students": 40,
-    "matched": 19,
-    "seconds": 774.8,
-    "requests": 757,
+    "matched": 18,
+    "seconds": 661.8,
+    "requests": 658,
     "error": null
    }
   ],
@@ -4290,14 +4303,12 @@
    {
     "entry": "micron",
     "checker": "workday",
-    "jobs": 2881,
-    "students": 154,
-    "matched": 96,
-    "seconds": 313.4,
-    "requests": 301,
-    "error": null,
-    "requests_partitioned": 202,
-    "seconds_partitioned": 212.1
+    "jobs": 2895,
+    "students": 147,
+    "matched": 89,
+    "seconds": 156.4,
+    "requests": 155,
+    "error": null
    }
   ],
   "side": [],
@@ -6387,11 +6398,11 @@
    {
     "entry": "target",
     "checker": "workday",
-    "jobs": 14142,
-    "students": 121,
-    "matched": 26,
-    "seconds": 1002.8,
-    "requests": 831,
+    "jobs": 14120,
+    "students": 105,
+    "matched": 24,
+    "seconds": 927.3,
+    "requests": 729,
     "error": null
    }
   ],
@@ -6958,21 +6969,21 @@
    {
     "entry": "walmart",
     "checker": "workday",
-    "jobs": 20474,
-    "students": 740,
-    "matched": 27,
-    "seconds": 1199.8,
-    "requests": 1143,
+    "jobs": 20190,
+    "students": 769,
+    "matched": 32,
+    "seconds": 1227.5,
+    "requests": 1029,
     "error": null
    },
    {
     "entry": "walmart~site-Non-WorkdayInternal",
     "checker": "workday",
-    "jobs": 2693,
-    "students": 137,
+    "jobs": 2489,
+    "students": 131,
     "matched": 5,
-    "seconds": 253.5,
-    "requests": 244,
+    "seconds": 270.9,
+    "requests": 135,
     "error": null
    }
   ],

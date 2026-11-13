@@ -1,0 +1,56 @@
+{
+  "key": "walmart",
+  "name": "Walmart (Walmart Global Tech)",
+  "careers_url": "https://careers.walmart.com/us/en/home",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "walmart.wd504.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "walmart.wd504.myworkdayjobs.com",
+          "tenant": "walmart",
+          "facets": {
+            "jobFamily": [
+              "e83ebdbd2a0a017e7530ee5947e9e0c3"
+            ]
+          },
+          "past_total": true,
+          "unlinked_ok": 50,
+          "site": "WalmartExternal"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "walmart.wd504.myworkdayjobs.com",
+          "tenant": "walmart",
+          "pack": true,
+          "split_first": true,
+          "past_total": true,
+          "unlinked_ok": 50,
+          "site": "Non-WorkdayInternal"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://walmart.wd504.myworkdayjobs.com/wday/cxs/walmart/WalmartExternal/jobs + POST https://walmart.wd504.myworkdayjobs.com/wday/cxs/walmart/Non-WorkdayInternal/jobs",
+  "feed_total": 2525,
+  "page_total": 2529,
+  "page_total_how": "each read's own count, added up: 38 (the daily student read: workday's own reported total (the careers page shows it)) + 2491 (Non-WorkdayInternal: workday's own reported total (the careers page shows it)) (2026-11-13)",
+  "intern_total": 169,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "walmart.wd504.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/walmart.wd504.myworkdayjobs.com.txt)",
+  "notes": "Its 2 Workday sites listed 2527 postings on 2026-11-13, 2 of them a requisition an earlier site already lists, which is read once. A giant store site (20190 jobs on 2026-11-13, almost all store roles the filters reject): every morning the read is its student job family on WalmartExternal (38 postings); the whole site is read once a week as a watched board (liveness.watch_boards, every_days: 7), which alerts for a matching role that isn't stored. Two boards: POST https://walmart.wd504.myworkdayjobs.com/wday/cxs/walmart/WalmartExternal/jobs + POST https://walmart.wd504.myworkdayjobs.com/wday/cxs/walmart/Non-WorkdayInternal/jobs; a later board's posting with an earlier one's id or requisition is skipped.",
+  "checked_at": "2026-11-13",
+  "source": "added",
+  "round": "added"
+}

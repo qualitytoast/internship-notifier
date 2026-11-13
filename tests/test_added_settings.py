@@ -1,16 +1,18 @@
 """Settings only companies added in November 2026 use (each off unless a company sets it, so the others read exactly
-as before): Workday `pack` and `unlinked_ok`, `anchor_host` address markers, SmartRecruiters `ignore_search_total`,
+as before): Workday `pack`, `split_first`, `past_total` and `unlinked_ok`, `anchor_host` address markers, SmartRecruiters `ignore_search_total`,
 multi `twin_ids`."""
 import json
+
+import pytest
 
 from internwatch.adapters import get_checker
 from internwatch.config import Company
 from internwatch.crosscheck import CompanyIndex, Row, find_in_db
 from internwatch.adapters.base import FetchContext
 from internwatch.db import iso
-from internwatch.models import Job
+from internwatch.models import Job, ShapeError
 
-from test_adapter_fixes import WD, WorkdaySite, cassette, replay, wd_jobs
+from test_adapter_fixes import STATES, TMO, WD, WorkdaySite, cassette, replay, wd_jobs
 from test_gap_fixes import _drop_links
 
 # Simplify's links to DriveWealth's Ashby copies of three internships it also posts on Greenhouse (titled differently)
@@ -38,6 +40,101 @@ def test_workday_pack_leaves_a_split_into_a_few_searches_alone():
     get_checker("workday").fetch(plain, WD, FetchContext())
     get_checker("workday").fetch(packed, {**WD, "pack": True}, FetchContext())
     assert packed.searches == plain.searches == [{}, {"timeType": ["FT"]}, {"timeType": ["PT"]}]
+
+
+class Counted(WorkdaySite):
+    """A WorkdaySite that counts every request, not only each search's first."""
+
+    def __init__(self, jobs):
+        super().__init__(jobs)
+        self.requests = 0
+
+    def post_json(self, url, json=None, headers=None):
+        self.requests += 1
+        return super().post_json(url, json=json, headers=headers)
+
+
+def test_workday_split_first_splits_a_capped_site_from_its_first_page():
+    jobs = wd_jobs(2100, timeType=lambda i: "FT" if i < 1500 else "PT")
+    plain, split = Counted(jobs), Counted(jobs)
+    ctx1, ctx2 = FetchContext(), FetchContext()
+    a = get_checker("workday").fetch(plain, WD, ctx1)
+    b = get_checker("workday").fetch(split, {**WD, "split_first": True}, ctx2)
+    assert sorted(j.id for j in a) == sorted(j.id for j in b) and len(b) == 2100
+    assert ctx1.degraded is ctx2.degraded is None and ctx1.reported_total == ctx2.reported_total == 2100
+    assert split.searches == plain.searches == [{}, {"timeType": ["FT"]}, {"timeType": ["PT"]}]
+    assert plain.requests == 100 + 75 + 30    # the capped search to its end, then each time type
+    assert split.requests == 1 + 75 + 30      # only its first page
+
+
+def test_workday_split_first_splits_a_capped_part_from_its_first_page_too():
+    jobs = (wd_jobs(641, timeType=lambda i: "FT", locationRegionStateProvince=STATES)
+            + wd_jobs(2100, start=641, timeType=lambda i: "PT", locationRegionStateProvince=STATES))
+    plain, split = Counted(jobs), Counted(jobs)
+    ctx = FetchContext()
+    a = get_checker("workday").fetch(plain, TMO, FetchContext())
+    b = get_checker("workday").fetch(split, {**TMO, "split_first": True}, ctx)
+    assert sorted(j.id for j in a) == sorted(j.id for j in b) and len(b) == 2741
+    assert ctx.degraded is None and ctx.reported_total == 2741 and split.searches == plain.searches
+    assert plain.requests - split.requests == 99   # Part time's capped search: 100 pages, or the first
+
+
+def test_workday_split_first_reads_a_capped_site_that_no_facet_splits_to_its_end():
+    site = Counted(wd_jobs(2100))
+    ctx = FetchContext()
+    assert len(get_checker("workday").fetch(site, {**WD, "split_first": True}, ctx)) == 2000   # as without it
+    assert "no facet splits them" in ctx.degraded and site.requests == 1 + 100
+
+
+def test_workday_split_first_leaves_a_site_below_the_cap_alone():
+    jobs = wd_jobs(150, timeType=lambda i: "FT")
+    plain, split = Counted(jobs), Counted(jobs)
+    a = get_checker("workday").fetch(plain, WD, FetchContext())
+    b = get_checker("workday").fetch(split, {**WD, "split_first": True}, FetchContext())
+    assert [j.id for j in a] == [j.id for j in b] and plain.requests == split.requests == 8
+
+
+class Growing(Counted):
+    """A site that gains `new` postings at the top of its list (newest first) after its `at`-th request."""
+
+    def __init__(self, jobs, new: int, at: int):
+        super().__init__(jobs)
+        self.new, self.at = new, at
+
+    def post_json(self, url, json=None, headers=None):
+        if self.requests == self.at:
+            self.jobs = wd_jobs(self.new, start=10_000, timeType=lambda i: "FT") + self.jobs
+        return super().post_json(url, json=json, headers=headers)
+
+
+def test_workday_past_total_reads_the_postings_a_growing_search_pushes_past_its_first_total():
+    jobs = wd_jobs(400, timeType=lambda i: "FT")
+    plain, ctx = Growing(jobs, new=18, at=5), FetchContext()
+    with pytest.raises(ShapeError, match="collected 382 jobs but the source reports 400"):  # Walmart, 2026-11-13
+        get_checker("workday").fetch(plain, WD, ctx)
+    site, ctx = Growing(jobs, new=18, at=5), FetchContext()
+    got = get_checker("workday").fetch(site, {**WD, "past_total": True}, ctx)
+    assert {j.id for j in got} >= {f"/job/Job-{i}" for i in range(400)} and ctx.degraded is None   # none of the 400 lost
+    assert site.requests == 20 + 1    # the 20 pages of the first total, then the page the oldest were pushed to
+
+
+def test_workday_past_total_asks_once_more_only_after_a_full_last_page():
+    for n, extra in ((150, 0), (160, 1)):   # 160 ends on a full page: one more request, which brings nothing
+        plain, site = Counted(wd_jobs(n, timeType=lambda i: "FT")), Counted(wd_jobs(n, timeType=lambda i: "FT"))
+        a = get_checker("workday").fetch(plain, WD, FetchContext())
+        b = get_checker("workday").fetch(site, {**WD, "past_total": True}, FetchContext())
+        assert [j.id for j in a] == [j.id for j in b] and site.requests == plain.requests + extra == 8 + extra
+
+
+def test_workday_past_total_stops_when_the_page_past_the_end_repeats_the_first(monkeypatch):
+    class Wraps(Counted):   # Target's tenant answers a page past the end with postings it already listed
+        def post_json(self, url, json=None, headers=None):
+            if json["offset"] >= len(self.jobs):
+                json = {**json, "offset": 0}
+            return super().post_json(url, json=json, headers=headers)
+    site, ctx = Wraps(wd_jobs(160, timeType=lambda i: "FT")), FetchContext()
+    assert len(get_checker("workday").fetch(site, {**WD, "past_total": True}, ctx)) == 160 and ctx.degraded is None
+    assert site.requests == 9
 
 
 def test_workday_unlinked_ok_skips_postings_without_a_link_quietly():

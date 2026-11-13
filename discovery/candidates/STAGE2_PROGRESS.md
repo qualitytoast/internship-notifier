@@ -350,3 +350,68 @@ before replaying.
   Securities Programs. Citadel rebuilt both sites that morning: robots.txt now names /sitemap.xml, the old
   /career-sitemap.xml and /page-sitemap.xml answer 404, and the new /sitemap/career.xml answered a bot check (403)
   on the one try made. Nothing to do with the added round; for the user. No `shape` alert at any Workday company.
+
+## Batch 4: 12 Workday companies over 2,000 jobs (branch stage2-batch4)
+
+Applied Materials, Bank of America, Citi, CVS Health, Dick's Sporting Goods, GE Vernova, Hewlett Packard Enterprise,
+HP Inc., Lowe's, Micron Technology, Target, Walmart (Walmart Global Tech).
+
+- Every site of the 12 tenants read on 2026-11-13, the hidden ones included (robots.txt of each tenant, then the
+  first page of every site it names): no site with a student role of its own that the plan didn't already read.
+  Read: Bank of America us-emplsv (robots.txt hides it), lateral-emea and lateral-ba_continuum (BA Continuum, the
+  approved subsidiary); Citi 2 and Citi_Early_Careers_Events_Site (both hidden); CVS's CVS_Health_Careers and
+  Private_Postings_Intern_Conversion_ONLY (a student-named site, 10 jobs); GE Vernova's public site and its hidden
+  "executive" site, which lists 2,420 jobs, 301 of them only there; HP's public site and EXTEU-AC-CareerSite; HPE
+  jobsathpe and acjobsite; Walmart's WalmartExternal and Non-WorkdayInternal (2,489 jobs, 293 only there).
+  Not read: Bank of America Lateral-US (1,982 of 1,984 are on us-emplsv), Scoutt, lateral-apac, lateral-canada,
+  lateral-latam, lateral-ous (hidden, outside the US) and Contractor-Conversion (hidden, contractors); HPE WFMathpe
+  (1,729 of 1,753 on the sites read; none of the other 24 a student role); CVS's mergers site (1 job); Dick's two
+  hidden sites (empty). None has a student role of its own today.
+- The four giant store sites (your decision 1): the company's own check reads their student roles every morning,
+  and the whole site is a watched board read once a week (liveness.watch_boards, every_days: 7; moves.pick reads a
+  seventh of a round's weekly boards a day, so each of the four gets its own morning, CVS first).
+  | Site | Daily read | Jobs / matching | Whole site on 2026-11-13 | Matching roles outside the daily read |
+  |---|---|---|---|---|
+  | Walmart | job family "Intern" (2 requests) + all of Non-WorkdayInternal (135) | 2,523 / 25 | 20,190 jobs, 1,029 requests, 20.5 min | 8: 5 "Pre Grad Intern - Sam's" (pharmacy), 2 "Intern Conversion" full-time offers, 1 Canadian "Optician, Student" |
+  | CVS Health | worker type "Intern" (3) + the intern-conversion site (1) | 64 / 15 | 18,452 jobs, 1,006 requests, 18 min | 2 clinical student rotations |
+  | Target | job family group "Internships" (5) | 90 / 22 | 14,120 jobs, 729 requests, 15.5 min | 2 full-time programs starting in 2027 |
+  | Lowe's | a search for "intern" (11) | 210 / 18 | 12,994 jobs, 658 requests, 11 min | none |
+  Eleven of the 12 outside roles are tagged unsure. Each raises one `posting elsewhere?` alert the morning after its
+  site's first weekly read (the board's read, then a healthy poll that still lacks it). CVS's virtual underwriting
+  externship is under its Intern worker type, so it is in the daily read.
+- New Workday setting `split_first` (off unless set; tests in test_added_settings.py): a search at the 2,000-job cap
+  is split from its first page. Without it the capped search is read to its end first: 100 requests for 2,000 jobs
+  the split reads again. It replaces the plan's configured partitions, whose lists of facet ids would go stale with
+  every new country or location. With `pack` it brought Citi from 810 requests to 232, Applied Materials from 213 to
+  129, Micron from 301 to 155, Dick's from 308 to 204. Every batch 4 Workday source has both except the giants'
+  daily reads, which are far below the cap.
+- New Workday setting `past_total` (off unless set; tests in test_added_settings.py), found by the first go-live
+  recording: Walmart's Non-WorkdayInternal read failed on its first try ("collected 1364 jobs but the source reports
+  1387"). Walmart had published 18 postings during the 75-second read of that job family: each pushed the list down
+  by one, so 18 postings came twice and the 18 oldest fell past the offset where the reader stops (the first page's
+  total). With the setting a search is read on while its last page is full and brings postings not seen before (one
+  more request when a total is a multiple of 20; a page past the end is empty, or at Target's tenant repeats earlier
+  postings, which ends it). Every batch 4 Workday source and the four weekly reads have it: one failed partition
+  fails a whole 20-minute weekly read. The 198 don't (their requests would change): for the user.
+- Postings without a link: Citi listed 4 on 2026-11-13 and the read stopped (the limit follows the search being
+  read); it has `unlinked_ok: 50` now, as have the companies Stage 1 saw them at (Bank of America, CVS, Lowe's,
+  Target, Walmart). The other six have none: a new case alerts once.
+- Each Workday site is a source of its own with `dedupe`, as in batch 3: GE Vernova's executive site repeats 2,119
+  of the public site's requisitions, HPE's acjobsite 1,562, HP's EU site 912, Citi's events site 4, Walmart's
+  second site 2 of the 38 interns.
+- Counted against the sites (verify, 2026-11-13): all 12 match. 24,895 jobs, 1,086 student roles, 384 matching.
+  A site read one location at a time lists a job under each of its locations, so the searches' totals add up to too
+  many (Bank of America 5,215 for 3,118 jobs): pagecount now counts such a site from its first page (its jobs per
+  time type or worker type).
+- Careers pages: all 12 answer; none joins liveness.blocked. Five Eightfold fronts their pages name are recorded as
+  mirrors (Applied Materials: 2,222 of its 2,223 jobs are on the Workday site; Citi's events site, HP and Micron
+  from Stage 1). listcheck: 0 and 0.
+- Bank of America has `timeout_minutes: 10` (its three sites took 352 s; 8 minutes is the default). The added round's
+  `watch_seconds` went from 1500 to 1800: Walmart's weekly read took 1,228 s and a weekly read starts only with 1.15
+  times its last time left.
+- Citi's program "D1 Athlete Development Program" is a company keyword. UNDERCLASSMEN.md: 9 rows for Bank of
+  America (3, on its campus site, read from batch 6), Citi (3), CVS, Lowe's and Walmart; two more "open now" rows
+  (Lowe's Exploratory Software Engineering internship, CVS's underwriting externship); 332 with no program.
+- Stage 1 tooling: reads_big.yaml now holds only the four daily student reads; the giants' entries in reads.yaml are
+  their weekly full reads. Today's results of extra sites go in read_results_extra.json (it overrides
+  read_results.json, so a fresh result left only there was ignored).

@@ -1,116 +1,18 @@
 {
- "bank-of-america": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 3107,
-  "students": 2,
-  "matched": 2,
-  "seconds": 368.6,
-  "requests": 366,
-  "partial": false,
-  "degraded": null,
-  "reported_total": 5154,
-  "started": "2026-11-10T01:33:02Z",
-  "unlinked": [],
-  "packed": [
-   {
-    "entry": "bank-of-america",
-    "facet": "locations",
-    "values": 2757,
-    "searches": 20,
-    "instead_of": 2757
-   }
-  ]
- },
- "cvs-health": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 19078,
-  "students": 3944,
-  "matched": 17,
-  "seconds": 1158.7,
-  "requests": 1134,
-  "partial": false,
-  "degraded": null,
-  "reported_total": 20349,
-  "started": "2026-11-10T01:33:02Z",
-  "unlinked": [
-   {
-    "where": "workday:cvshealth/CVS_Health_Careers",
-    "title": null,
-    "externalPath": "/job/Pharmacy-Technician_R1085450",
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R1085450"
-    ]
-   },
-   {
-    "where": "workday:cvshealth/CVS_Health_Careers",
-    "title": null,
-    "externalPath": "/job/Pharmacy-Technician_R1069526-1",
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R1069526"
-    ]
-   }
-  ],
-  "packed": [
-   {
-    "entry": "cvs-health",
-    "facet": "locations",
-    "values": 4990,
-    "searches": 37,
-    "instead_of": 4990
-   }
-  ]
- },
  "cvs-health~slice": {
   "checker": "workday",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 56,
-  "students": 56,
-  "matched": 16,
-  "seconds": 5.3,
+  "jobs": 54,
+  "students": 54,
+  "matched": 15,
+  "seconds": 3.7,
   "requests": 3,
   "partial": false,
   "degraded": null,
-  "reported_total": 56,
-  "started": "2026-11-10T01:33:02Z",
-  "unlinked": [],
-  "packed": []
- },
- "lowes": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 13001,
-  "students": 40,
-  "matched": 19,
-  "seconds": 774.8,
-  "requests": 757,
-  "partial": false,
-  "degraded": null,
-  "reported_total": 13033,
-  "started": "2026-11-10T01:33:02Z",
-  "unlinked": [],
-  "packed": [
-   {
-    "entry": "lowes",
-    "facet": "locations",
-    "values": 1873,
-    "searches": 13,
-    "instead_of": 1873
-   }
-  ]
+  "reported_total": 54,
+  "started": "2026-11-13T16:38:29Z"
  },
  "lowes~slice": {
   "checker": "workday",
@@ -119,360 +21,42 @@
   "error_kind": null,
   "jobs": 210,
   "students": 40,
-  "matched": 19,
-  "seconds": 21.8,
+  "matched": 18,
+  "seconds": 10.3,
   "requests": 11,
   "partial": false,
   "degraded": null,
   "reported_total": 210,
-  "started": "2026-11-10T01:33:05Z",
-  "unlinked": [],
-  "packed": []
- },
- "target": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 14142,
-  "students": 121,
-  "matched": 26,
-  "seconds": 1002.8,
-  "requests": 831,
-  "partial": true,
-  "degraded": "workday:target: skipped 4 postings without a link",
-  "reported_total": 14486,
-  "started": "2026-11-10T01:33:02Z",
-  "unlinked": [
-   {
-    "where": "workday:target/targetcareers",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R0000479456"
-    ]
-   },
-   {
-    "where": "workday:target/targetcareers",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R0000477494"
-    ]
-   },
-   {
-    "where": "workday:target/targetcareers",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R0000479456"
-    ]
-   },
-   {
-    "where": "workday:target/targetcareers",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R0000477494"
-    ]
-   }
-  ],
-  "packed": [
-   {
-    "entry": "target",
-    "facet": "locations",
-    "values": 2117,
-    "searches": 15,
-    "instead_of": 2117
-   }
-  ]
+  "started": "2026-11-13T16:38:29Z"
  },
  "target~slice": {
   "checker": "workday",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 108,
-  "students": 108,
-  "matched": 24,
-  "seconds": 11.1,
-  "requests": 6,
+  "jobs": 91,
+  "students": 91,
+  "matched": 22,
+  "seconds": 6.7,
+  "requests": 5,
   "partial": false,
   "degraded": null,
-  "reported_total": 108,
-  "started": "2026-11-10T01:33:02Z",
-  "unlinked": [],
-  "packed": []
- },
- "walmart": {
-  "checker": "workday",
-  "ok": true,
-  "error": null,
-  "error_kind": null,
-  "jobs": 20474,
-  "students": 740,
-  "matched": 27,
-  "seconds": 1199.8,
-  "requests": 1143,
-  "partial": true,
-  "degraded": "workday:walmart: skipped 22 postings without a link",
-  "reported_total": 20803,
-  "started": "2026-11-10T01:33:02Z",
-  "unlinked": [
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2704184"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2704046"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2703537"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2703479"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2702081"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2701122"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2703479"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2704184"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2698638"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2691491"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2699073"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2677011"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2704046"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2703537"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2702081"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2701122"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2666516"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2666683"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2686189"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2616452"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2696083"
-    ]
-   },
-   {
-    "where": "workday:walmart/WalmartExternal",
-    "title": null,
-    "externalPath": null,
-    "locationsText": null,
-    "postedOn": null,
-    "bulletFields": [
-     "R-2525702"
-    ]
-   }
-  ],
-  "packed": [
-   {
-    "entry": "walmart",
-    "facet": "locationRegionStateProvince",
-    "values": 66,
-    "searches": 11,
-    "instead_of": 66
-   }
-  ]
+  "reported_total": 92,
+  "started": "2026-11-13T16:38:29Z"
  },
  "walmart~slice": {
   "checker": "workday",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 34,
-  "students": 34,
-  "matched": 18,
-  "seconds": 3.0,
+  "jobs": 38,
+  "students": 38,
+  "matched": 22,
+  "seconds": 2.3,
   "requests": 2,
   "partial": false,
   "degraded": null,
-  "reported_total": 34,
-  "started": "2026-11-10T01:33:02Z",
-  "unlinked": [],
-  "packed": []
+  "reported_total": 38,
+  "started": "2026-11-13T16:38:29Z"
  }
 }

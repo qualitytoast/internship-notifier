@@ -49,3 +49,24 @@ northwestern-mutual:
     unreadable: robots.txt blocks it
     why: the iCIMS portal its careers page links; its robots.txt disallows the job search (Workday and
       SmartRecruiters are read)
+applied-materials:
+  - system: eightfold:domain=appliedmaterials.com
+    as: workday:site=external,tenant=amat
+    why: careers.appliedmaterials.com, an Eightfold front over the Workday site that is read (2,222 of its 2,223 jobs were
+      on it on 2026-11-13; the other is not a student role)
+citi:
+  - system: eightfold:domain=citi.eightfold.ai
+    as: workday:site=2,tenant=citi
+    why: Citi's Eightfold site for events and pre-internship programs, a front over the Workday sites that are read
+      (Stage 1, 2026-11-09)
+hp:
+  - system: eightfold:domain=hp-sandbox.com
+    as: workday:site=externalcareersite,tenant=hp
+    why: jobs.hp.com, an Eightfold front over HP's Workday site (Stage 1, 2026-11-09)
+  - system: eightfold:domain=hp-sandbox.eightfold.ai
+    as: workday:site=externalcareersite,tenant=hp
+    why: jobs.hp.com, an Eightfold front over HP's Workday site (Stage 1, 2026-11-09)
+micron:
+  - system: eightfold:domain=micron.com
+    as: workday:site=external,tenant=micron
+    why: careers.micron.com, an Eightfold front over Micron's Workday site (Stage 1, 2026-11-09)

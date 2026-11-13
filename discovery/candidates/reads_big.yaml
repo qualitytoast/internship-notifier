@@ -1,39 +1,18 @@
-# Stage 1 measurement reads of the very large sites (STAGE1_READS=reads_big.yaml): full reads with the link check
-# relaxed and store locations packed (STAGE1_RELAX_LINKS=1 STAGE1_PACK=1), and each site's student slice, to price
-# a full daily read against the slice and to see which matching roles the slice would miss.
+# The daily student reads of the four giant sites (STAGE1_READS=reads_big.yaml STAGE1_RESULTS=read_results_big.json).
+# Their whole sites are read once a week: the main entries in reads.yaml, with the settings of that weekly read.
 reads:
-  cvs-health:
-    checker: workday
-    timeout_minutes: 60
-    settings: {host: cvshealth.wd1.myworkdayjobs.com, tenant: cvshealth, sites: [CVS_Health_Careers, Private_Postings_Intern_Conversion_ONLY]}
-  walmart:
-    checker: workday
-    timeout_minutes: 60
-    settings: {host: walmart.wd504.myworkdayjobs.com, tenant: walmart, site: WalmartExternal}
-  target:
-    checker: workday
-    timeout_minutes: 60
-    settings: {host: target.wd5.myworkdayjobs.com, tenant: target, site: targetcareers}
-  lowes:
-    checker: workday
-    timeout_minutes: 60
-    settings: {host: lowes.wd5.myworkdayjobs.com, tenant: lowes, site: LWS_External_CS}
-  bank-of-america:
-    checker: workday
-    timeout_minutes: 60
-    settings: {host: ghr.wd1.myworkdayjobs.com, tenant: ghr, sites: [us-emplsv, lateral-emea]}
   cvs-health~slice:
     checker: workday
     settings: {host: cvshealth.wd1.myworkdayjobs.com, tenant: cvshealth, site: CVS_Health_Careers,
-               facets: {workerSubType: [183bb31d97231001005066125c530000]}}
+               facets: {workerSubType: [183bb31d97231001005066125c530000]}, past_total: true, unlinked_ok: 50}
   walmart~slice:
     checker: workday
     settings: {host: walmart.wd504.myworkdayjobs.com, tenant: walmart, site: WalmartExternal,
-               facets: {jobFamily: [e83ebdbd2a0a017e7530ee5947e9e0c3]}}
+               facets: {jobFamily: [e83ebdbd2a0a017e7530ee5947e9e0c3]}, past_total: true, unlinked_ok: 50}
   target~slice:
     checker: workday
     settings: {host: target.wd5.myworkdayjobs.com, tenant: target, site: targetcareers,
-               facets: {jobFamilyGroup: [daccab9f1d25019c1fe2b73634578e0d]}}
+               facets: {jobFamilyGroup: [daccab9f1d25019c1fe2b73634578e0d]}, past_total: true, unlinked_ok: 50}
   lowes~slice:
     checker: workday
-    settings: {host: lowes.wd5.myworkdayjobs.com, tenant: lowes, site: LWS_External_CS, search: intern}
+    settings: {host: lowes.wd5.myworkdayjobs.com, tenant: lowes, site: LWS_External_CS, search: intern, past_total: true, unlinked_ok: 50}

@@ -1,0 +1,65 @@
+{
+  "key": "bank-of-america",
+  "name": "Bank of America",
+  "careers_url": "https://careers.bankofamerica.com/en-us",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "ghr.wd1.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "ghr.wd1.myworkdayjobs.com",
+          "tenant": "ghr",
+          "pack": true,
+          "split_first": true,
+          "past_total": true,
+          "unlinked_ok": 50,
+          "site": "us-emplsv"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "ghr.wd1.myworkdayjobs.com",
+          "tenant": "ghr",
+          "pack": true,
+          "split_first": true,
+          "past_total": true,
+          "unlinked_ok": 50,
+          "site": "lateral-emea"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "ghr.wd1.myworkdayjobs.com",
+          "tenant": "ghr",
+          "pack": true,
+          "split_first": true,
+          "past_total": true,
+          "unlinked_ok": 50,
+          "site": "lateral-ba_continuum"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://ghr.wd1.myworkdayjobs.com/wday/cxs/ghr/us-emplsv/jobs + POST https://ghr.wd1.myworkdayjobs.com/wday/cxs/ghr/lateral-emea/jobs + POST https://ghr.wd1.myworkdayjobs.com/wday/cxs/ghr/lateral-ba_continuum/jobs",
+  "feed_total": 3236,
+  "page_total": 3238,
+  "page_total_how": "each read's own count, added up: 3120 (bank-of-america: the site's own count on its first page (its jobs per time type or worker type: a search never reports more than 2,000)) + 118 (lateral-ba_continuum: workday's own reported total (the careers page shows it)) (2026-11-13)",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ghr.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/ghr.wd1.myworkdayjobs.com.txt)",
+  "notes": "The page showed 3238 jobs and the board 3236 on 2026-11-13 (a posting or two opened or closed in between). Read with it, as part of the company: BA Continuum, India (Bank of America's Workday site lateral-ba_continuum). 3 boards: POST https://ghr.wd1.myworkdayjobs.com/wday/cxs/ghr/us-emplsv/jobs + POST https://ghr.wd1.myworkdayjobs.com/wday/cxs/ghr/lateral-emea/jobs + POST https://ghr.wd1.myworkdayjobs.com/wday/cxs/ghr/lateral-ba_continuum/jobs; a later board's posting with an earlier one's id or requisition is skipped. Not read: bank-of-america~site-Lateral-US: 1,982 of its 1,984 jobs are on us-emplsv (2026-11-13); the other 2 are not student roles. Not read: bank-of-america~site-Scoutt: public Workday site, 22 jobs, no student role: recorded as known. Not read: bank-of-america~site-lateral-apac: public Workday site, 101 jobs, no student role: recorded as known. Not read: bank-of-america~site-Contractor-Conversion: a contractor site robots.txt hides (20 jobs, no student role). Not read: bank-of-america~site-lateral-ous: a site robots.txt hides, for roles outside the US (10 jobs, no student role). Not read: bank-of-america~site-lateral-canada: public Workday site, 4 jobs, no student role: recorded as known. Not read: bank-of-america~site-lateral-latam: public Workday site, 6 jobs, no student role: recorded as known.",
+  "checked_at": "2026-11-13",
+  "source": "added",
+  "round": "added"
+}

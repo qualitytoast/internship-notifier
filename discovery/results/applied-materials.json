@@ -1,0 +1,28 @@
+{
+  "key": "applied-materials",
+  "name": "Applied Materials",
+  "careers_url": "https://careers.appliedmaterials.com/careers",
+  "hiring_system": "workday",
+  "checker": "workday",
+  "settings": {
+    "host": "amat.wd1.myworkdayjobs.com",
+    "tenant": "amat",
+    "pack": true,
+    "split_first": true,
+    "past_total": true,
+    "site": "External"
+  },
+  "feed": "POST https://amat.wd1.myworkdayjobs.com/wday/cxs/amat/External/jobs",
+  "feed_total": 2283,
+  "page_total": 2283,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-13)",
+  "intern_total": 83,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "amat.wd1.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/amat.wd1.myworkdayjobs.com.txt)",
+  "notes": "Not read: applied-materials~eightfold: Eightfold front over Workday.",
+  "checked_at": "2026-11-13",
+  "source": "added",
+  "round": "added"
+}
