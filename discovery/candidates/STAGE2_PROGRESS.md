@@ -333,3 +333,20 @@ before replaying.
   files identical); three replayed mornings of the Nov 12 recording (morning-2026-11-12-batch3b/proof-430a7b0;
   M2_NEW stripe;klaviyo;rockwell-automation;drivewealth;superhuman;kla;comcast, M2_FAIL figma;morgan-stanley) PASS
   with no company excepted: every table, email and request identical. The new test fails on the old code.
+
+## Batch 3's go-live morning (2026-11-13, run 27): as predicted
+
+- 389 active companies checked in 32.6 minutes (predicted 29 to 32). The 198's checks ended at 18.8 min; the added
+  round's 192 checks ran from 23.6 to 27.8 min with 1,643 requests; the emails went out at 32.5 min.
+- All 58 seeded: 26,910 jobs, 547 matching. "Now watching": 507 roles, 40 left out as already shown (58 KB HTML,
+  1.07 MB with its attachments). No batch 3 role in the morning email (28 new: 25 at the 198, Xcimer 2, Crusoe 1;
+  66 KB HTML).
+- Re-match: 395 stored rows given to batch 3's companies (296 known, 84 found, 15 abroad), none missed, no "via
+  Simplify" job.
+- The 198 against the five mornings before: the same 197 companies, every start within 10 s of its median, every
+  request count inside its earlier range, none slower.
+- Alerts #93 to #97: Northwestern Mutual `board quiet` (predicted); the 198's own Palo Alto Networks `board empty`
+  (its RippleMatch page, seen in the recording) and three `error` alerts for Citadel, Citadel Securities and Citadel
+  Securities Programs. Citadel rebuilt both sites that morning: robots.txt now names /sitemap.xml, the old
+  /career-sitemap.xml and /page-sitemap.xml answer 404, and the new /sitemap/career.xml answered a bot check (403)
+  on the one try made. Nothing to do with the added round; for the user. No `shape` alert at any Workday company.
