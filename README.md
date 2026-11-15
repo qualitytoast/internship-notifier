@@ -39,8 +39,9 @@ Rules for changing things: CLAUDE.md.
 - **Already open:** roles that were open before InternWatch could judge them but were never emailed (a
   multi-source company's source read for the first time, or a role matching after `refilter --notify`) come once,
   in their own section after the new ones.
-- **More than 50 roles:** the 50 surest are in the body, and everything is attached as matching-roles.html and
-  .csv.
+- **More than 50 roles:** the body lists 50 roles at most, new and already-open ones together (the new ones first,
+  surest first), so Gmail doesn't clip the email at ~102 KB; every list that doesn't fit is attached whole as
+  matching-roles.html and .csv (already-open-roles.html and .csv for the already-open ones).
 - **Open alerts:** every alert stays in every morning email until it is resolved or dismissed; see Health alerts.
 - **Coverage:** the morning email has one line ("196 of 197 checkers healthy") and attaches the whole table as
   coverage.html.
