@@ -161,6 +161,39 @@ def test_long_lists_are_attached_not_clipped(make_cfg):
     assert len(emails.new_postings(cfg, rows[:3])) == 3
 
 
+def _role_rows(n, start=0, baseline=0, company="acme"):
+    return [{"company": company, "job_id": str(i), "title": f"Software Engineer Intern {i}", "location": "New York, NY",
+             "url": f"https://jobs.example.com/{company}/{i}", "term": "Summer 2027", "posted": None, "tags": '["SWE"]',
+             "reasons": "[]", "unsure": 0, "repost_of": None, "source": "checker", "first_seen": iso(),
+             "baseline": baseline} for i in range(start, start + n)]
+
+
+def _body_roles(html: str) -> int:
+    return html.count('href="https://jobs.example.com/')
+
+
+def test_new_and_already_open_roles_share_one_body_cap(make_cfg):
+    # 2026-11-15: 44 new roles and 26 already open (HP's Workday site read for the first time), each list capped at 50
+    # on its own, made a 103 KB morning email, which Gmail clips
+    cfg = make_cfg([company("acme", name="Acme"), company("hp", name="HP Inc.")])
+    rows = _role_rows(44) + _role_rows(26, start=100, baseline=1, company="hp")
+    for build in (lambda: emails.digest(cfg, rows, [], morning=True), lambda: emails.new_postings(cfg, rows)):
+        subject, text, html, files = build()
+        assert _body_roles(html) == 50 and "the 6 surest are below" in html
+        assert {n for n, _, _ in files} == {"already-open-roles.html", "already-open-roles.csv"}
+        assert "Software Engineer Intern 125" in dict((n, b) for n, b, _ in files)["already-open-roles.csv"].decode()
+        assert "Already open (26)" in html and "HP Inc. (26)" in html
+    # more than 50 new roles: the already-open ones are all in the attachment, the body says so
+    subject, text, html, files = emails.digest(cfg, _role_rows(60) + _role_rows(5, start=100, baseline=1, company="hp"),
+                                               [], morning=True)
+    assert _body_roles(html) == 50 and "The 0 surest" not in html and "already-open-roles.html" in html
+    assert {n for n, _, _ in files} == {"matching-roles.html", "matching-roles.csv", "already-open-roles.html",
+                                        "already-open-roles.csv"}
+    # together under 50: as before, everything in the body and nothing attached
+    built = emails.digest(cfg, _role_rows(10) + _role_rows(5, start=100, baseline=1, company="hp"), [], morning=True)
+    assert len(built) == 3 and _body_roles(built[2]) == 15
+
+
 def test_interrupted_processing_leaves_nothing_half_saved(make_cfg, monkeypatch):
     import internwatch.runner as runner_mod
     cfg = make_cfg([company("acme", name="Acme")])

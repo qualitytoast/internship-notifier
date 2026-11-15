@@ -145,7 +145,9 @@ def _subject_companies(cfg: Config, rows, limit: int = 4) -> str:
     return ", ".join(parts)
 
 
-MAX_BODY_ROWS = 50  # Gmail clips messages over ~100 KB of HTML, so longer lists travel as attachments
+MAX_BODY_ROWS = 50  # Gmail clips messages over ~100 KB of HTML, so longer lists travel as attachments. One cap for
+# the new and the already-open roles together: each list capped on its own, 44 new and 26 already-open roles made a
+# 103 KB morning email on 2026-11-15
 
 
 def _cell(v) -> str:
@@ -180,26 +182,43 @@ ALREADY_OPEN_NOTE = ("Open before InternWatch could judge them (a source read fo
                      "changed), so not new, but never emailed before.")
 
 
-def _sections_capped(cfg: Config, rows, what: str = "matching roles", stem: str = "matching-roles"):
-    """Company sections for the email body (at most MAX_BODY_ROWS, surest first) + attachments with everything."""
-    if len(rows) <= MAX_BODY_ROWS:
+def _sections_capped(cfg: Config, rows, what: str = "matching roles", stem: str = "matching-roles",
+                     limit: int = MAX_BODY_ROWS):
+    """Company sections for the email body (at most `limit`, surest first) + attachments with everything. A limit
+    below MAX_BODY_ROWS is what an earlier list of the same email left of it (the new roles come first)."""
+    if len(rows) <= limit:
         h, t = _company_sections(cfg, rows)
         return h, t, None
     names = _names(cfg)
-    shown = sorted(rows, key=lambda r: (bool(r["unsure"]), r["company"], r["title"]))[:MAX_BODY_ROWS]
+    shown = sorted(rows, key=lambda r: (bool(r["unsure"]), r["company"], r["title"]))[:limit]
     h, t = _company_sections(cfg, shown)
     groups = sorted(_group(rows).items(), key=lambda kv: names.get(kv[0], kv[0]).lower())
     counts = ", ".join(f"{escape(names.get(k, k))} ({len(v)})" for k, v in groups)
-    note = (f'<p style="{STYLE_P}"><b>{len(rows)} {what}</b> is too many for one email: the {MAX_BODY_ROWS} surest are below, '
-            f"and the complete list is attached (<b>{stem}.html</b> opens in a browser, <b>{stem}.csv</b> "
-            f"in a spreadsheet).</p><p style=\"{STYLE_P}\"><b>By company:</b> {counts}</p>"
-            f'<h3 style="{STYLE_H}">The {MAX_BODY_ROWS} surest</h3>')
+    files_html = (f"the complete list is attached (<b>{stem}.html</b> opens in a browser, <b>{stem}.csv</b> "
+                  f"in a spreadsheet)")
+    if limit == MAX_BODY_ROWS:
+        note = (f'<p style="{STYLE_P}"><b>{len(rows)} {what}</b> is too many for one email: the {limit} surest are below, '
+                f"and {files_html}.</p><p style=\"{STYLE_P}\"><b>By company:</b> {counts}</p>"
+                f'<h3 style="{STYLE_H}">The {limit} surest</h3>')
+        text_note = (f"{len(rows)} {what}: the {limit} surest are listed below; the complete list is attached "
+                     f"({stem}.html / {stem}.csv).\n\n")
+    else:  # one email lists MAX_BODY_ROWS roles at most, so Gmail doesn't clip it: the new roles above took the rest
+        shown_note = f"the {limit} surest are below, and " if limit else ""
+        note = (f'<p style="{STYLE_P}">One email lists {MAX_BODY_ROWS} roles at most and the new roles above come first: '
+                f"of these <b>{len(rows)} {what}</b>, {shown_note}{files_html}.</p>"
+                f'<p style="{STYLE_P}"><b>By company:</b> {counts}</p>'
+                + (f'<h3 style="{STYLE_H}">The {limit} surest</h3>' if limit else ""))
+        text_note = (f"{len(rows)} {what}: " + (f"the {limit} surest are listed below; " if limit else "")
+                     + f"the complete list is attached ({stem}.html / {stem}.csv).\n\n")
     full_html, _ = _company_sections(cfg, rows)
     files = [(f"{stem}.html", _wrap(f"All {len(rows)} {what}", full_html).encode(), "text/html"),
              (f"{stem}.csv", _csv(cfg, rows).encode(), "text/csv")]
-    text_note = (f"{len(rows)} {what}: the {MAX_BODY_ROWS} surest are listed below; the complete list is attached "
-                 f"({stem}.html / {stem}.csv).\n\n")
-    return note + h, text_note + t, files
+    return note + (h if limit else ""), text_note + (t if limit else ""), files
+
+
+def _left_after(rows) -> int:
+    """What MAX_BODY_ROWS leaves for the already-open roles once the new ones are in the body."""
+    return max(0, MAX_BODY_ROWS - min(len(rows), MAX_BODY_ROWS))
 
 
 UNTRACKED_BODY_ROWS = 25  # the morning email lists this many roles at untracked companies; the rest are attached
@@ -240,7 +259,7 @@ def new_postings(cfg: Config, rows) -> tuple[str, str, str]:
             + (f", {unsure} tagged <b>unsure</b> (included because a rule could not decide)" if unsure else "") + ".</p>")
     text = f"{n} new matching role(s).\n\n{body_text}"
     if opened:
-        h, t, more = _sections_capped(cfg, opened, "already-open roles", "already-open-roles")
+        h, t, more = _sections_capped(cfg, opened, "already-open roles", "already-open-roles", _left_after(rows))
         body_html += (f'<h3 style="{STYLE_H}">Already open ({len(opened)})</h3><p style="{STYLE_P}">{ALREADY_OPEN_NOTE}</p>' + h)
         text += f"\n\nALREADY OPEN ({len(opened)}): {ALREADY_OPEN_NOTE}\n{t}"
         files = (files or []) + (more or [])
@@ -336,7 +355,7 @@ def digest(cfg: Config, new_rows, untracked: list[dict], open_alerts=(), resolve
         parts_html.append(f'<p style="{STYLE_P}">No new matching roles {window}.</p>')
         parts_text.append(f"No new matching roles {window}.")
     if opened:
-        h, t, more = _sections_capped(cfg, opened, "already-open roles", "already-open-roles")
+        h, t, more = _sections_capped(cfg, opened, "already-open roles", "already-open-roles", _left_after(new_rows))
         parts_html.append(f'<h3 style="{STYLE_H}">Already open ({len(opened)})</h3><p style="{STYLE_P}">{ALREADY_OPEN_NOTE}</p>' + h)
         parts_text.append(f"ALREADY OPEN ({len(opened)}): {ALREADY_OPEN_NOTE}\n{t}")
         files = (files or []) + (more or [])
