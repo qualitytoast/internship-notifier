@@ -236,7 +236,7 @@ reads:
   warner-bros-discovery: {checker: workday, settings: {host: warnerbros.wd5.myworkdayjobs.com, tenant: warnerbros, site: global}}
   washington-post: {checker: workday, settings: {host: washpost.wd5.myworkdayjobs.com, tenant: washpost, site: washingtonpostcareers}}
   wells-fargo: {checker: workday, settings: {host: wd1.myworkdaysite.com, tenant: wf, site: WellsFargoJobs, unlinked_ok: 50}}  # 4 postings without a link on 2026-11-12 (none on 11-09): skipped, not a degraded read
-  western-digital: {checker: smartrecruiters, settings: {company: WesternDigital, ignore_search_total: true}}  # its search counts 325 and lists only the newest 100; its page lists 162 (2026-11-15)
+  western-digital: {checker: smartrecruiters, settings: {company: WesternDigital, ignore_search_total: true, learn_ids: true}}  # its search counts 325 and lists only the newest 100; its page lists 162 (2026-11-15); learn_ids: Simplify's rows read one by one (a Winter 2027 co-op was in neither)
   xcimer: {checker: lever, settings: {site: xcimer}}
   you-com: {checker: greenhouse, settings: {board: youcom}}
   yugabyte: {checker: greenhouse, settings: {board: yugabyte}}

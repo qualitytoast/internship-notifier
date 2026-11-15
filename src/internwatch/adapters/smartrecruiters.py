@@ -4,6 +4,11 @@ api.smartrecruiters.com, disallows all crawlers in robots.txt, so it is never us
 settings: company: ServiceNow     (identifier in careers.smartrecruiters.com/<company>)
           ignore_search_total: true   the search's totalFound isn't compared (Arista's says 147 and returns the
                                       same 98 postings on every page); the page's own count still is
+          watch_ids: [744000152261929, …]   postings read one by one, from their own page: Western Digital's page
+                                      leaves out older postings and its search lists only the newest 100 (a Winter
+                                      2027 co-op posted in September was in neither on 2026-11-15). The runner adds
+                                      the ids of SimplifyJobs rows when learn_ids is true. One whose page says it has
+                                      expired is closed
 1. GET https://careers.smartrecruiters.com/<company>  → first group page (HTML): section.js-group[data-qty] with up
    to 9 li.opening-job each, and div.js-openings-load[data-groups-pages][data-more]
 2. GET <data-more>?page=N for the other group pages (HTML fragments, 6 groups each)
@@ -21,12 +26,13 @@ import re
 
 from bs4 import BeautifulSoup
 
-from ..models import Job
+from ..models import CheckerError, Job
 from .base import Checker, degrade, html_text, iso_date, join_locations, need, need_soft, register
 
 HOSTED = "https://careers.smartrecruiters.com"
 SEARCH = "https://jobs.smartrecruiters.com/sr-jobs/search"
 ID_RE = re.compile(r"/(\d{6,})-")
+EXPIRED = re.compile(r"this job has expired|no longer (?:available|accepting)", re.I)
 
 
 def _jobs_in(node, group: str, out: dict) -> int:
@@ -101,6 +107,7 @@ class SmartRecruiters(Checker):
                 problems.append(f"group page {page} has no groups")
             groups, qty = groups + g, qty + q
         found = self._search(http, company, out)
+        listed = set(out)
         if isinstance(found, int) and not s.get("ignore_search_total") and len(out) < found * 0.95:
             problems.append(f"collected {len(out)} postings but the search reports {found}")
         if ctx is not None:
@@ -110,7 +117,38 @@ class SmartRecruiters(Checker):
                       ctx)
         if problems:
             degrade(ctx, f"{where}: " + "; ".join(problems))
+        if s.get("watch_ids"):
+            out.update((j.id, j) for j in self._watched(http, s, ctx, listed))
         return list(out.values())
+
+    def _watched(self, http, s, ctx, listed: set[str]) -> list[Job]:
+        """watch_ids: each posting the page and search left out, read from its own page. Open: it has a title and no
+        "this job has expired" notice; gone (404, 410) or expired: closed, and not read again (watch_closed)."""
+        company = s["company"]
+        out, opened, closed = [], [], []
+        for wid in dict.fromkeys(str(x) for x in s["watch_ids"]):
+            if wid in listed:
+                continue
+            url = f"https://jobs.smartrecruiters.com/{company}/{wid}"
+            try:
+                r = http.get(url, headers={"Accept": "text/html"}, ok_statuses=(404, 410))
+            except CheckerError as e:
+                if ctx is None:
+                    raise
+                degrade(ctx, f"smartrecruiters:{company}: watched posting {wid}: {e}")
+                continue
+            soup = BeautifulSoup(r.text, "lxml") if r.status == 200 else None
+            title = soup.select_one("[itemprop=title]") if soup is not None else None
+            if title is None or EXPIRED.search(soup.get_text(" ", strip=True)):
+                closed.append(wid)
+                continue
+            opened.append(wid)
+            out.append(self._from_page(soup, Job(id=wid, title=" ".join(title.get_text(" ", strip=True).split()),
+                                                 location="", url=url, extra={"unlisted": True})))
+        if ctx is not None:
+            ctx.state["watch_open"] = opened
+            ctx.state["watch_closed"] = sorted(set(ctx.state.get("watch_closed") or []) | set(closed))[-300:]
+        return out
 
     def _search(self, http, company: str, out: dict) -> int | None:
         d = http.get_json(SEARCH, params={"limit": 100, "company": company})
@@ -132,7 +170,11 @@ class SmartRecruiters(Checker):
         return d.get("totalFound")
 
     def detail(self, http, s, job):
-        soup = BeautifulSoup(http.get_text(job.url), "lxml")
+        return self._from_page(BeautifulSoup(http.get_text(job.url), "lxml"), job)
+
+    @staticmethod
+    def _from_page(soup, job):
+        """A posting page's schema.org microdata: employment type, posted date, description, location."""
         et = soup.select_one("[itemprop=employmentType]")
         if et:
             job.employment_type = et.get_text(" ", strip=True)

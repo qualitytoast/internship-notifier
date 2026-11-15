@@ -253,8 +253,8 @@ EXPLAINED = {
                        "(2026-11-15, and 147 for 98 on 11-09): the read has all 98, and the search's count isn't "
                        "compared (ignore_search_total).",
     "western-digital": "Its SmartRecruiters page lists 162 postings (all 336 on 11-09) and its search counts 325 but "
-                       "lists only the newest 100: the read is both (210), so each new posting is read on its first "
-                       "morning, and older ones off the page can't be.",
+                       "lists only the newest 100: the read is both (210) and the postings Simplify links, each read "
+                       "from its own page (learn_ids), so an older posting off the page is read when Simplify lists it.",
     "tyler-technologies": "Its hosted Jobvite page shows the first 125 jobs in alphabetical order and cuts off the other "
                           "19 (2026-11-15): the Jobvite feed that is read lists all 144.",
 }

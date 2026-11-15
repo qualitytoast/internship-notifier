@@ -7,6 +7,7 @@
   "settings": {
     "company": "WesternDigital",
     "ignore_search_total": true,
+    "learn_ids": true,
     "match_urls": [
       "smartrecruiters.com/westerndigital/"
     ]
@@ -20,7 +21,7 @@
   "blocked_reason": "",
   "fallback": "",
   "robots": "careers.smartrecruiters.com/robots.txt checked before every request (discovery/robots/careers.smartrecruiters.com.txt)",
-  "notes": "Its SmartRecruiters page lists 162 postings (all 336 on 11-09) and its search counts 325 but lists only the newest 100: the read is both (210), so each new posting is read on its first morning, and older ones off the page can't be.",
+  "notes": "Its SmartRecruiters page lists 162 postings (all 336 on 11-09) and its search counts 325 but lists only the newest 100: the read is both (210) and the postings Simplify links, each read from its own page (learn_ids), so an older posting off the page is read when Simplify lists it.",
   "checked_at": "2026-11-15",
   "source": "added",
   "round": "added"

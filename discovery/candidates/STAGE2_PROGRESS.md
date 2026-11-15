@@ -501,7 +501,11 @@ Instruments, Tyler Technologies, United Airlines, UnitedHealth Group (Optum), We
   - Western Digital's SmartRecruiters page now lists 162 postings (all 336 on Nov 9); its search counts 325 and lists
     only its newest 100, half of them not on the page (two US Summer 2027 internships among them); neither the
     page's own keyword search nor any search parameter reaches the rest. The read is the page plus the newest 100
-    (210): every new posting is read on its first morning; older ones off the page can't be read.
+    (210): every new posting is read on its first morning. The first go-live recording found the gap: a Simplify row,
+    "Winter 2027 Intern/Co-op Development Engineer" (posted Sep 28, open, its page has the apply button), was in
+    neither, and became a day-one possible miss. New SmartRecruiters setting `watch_ids`/`learn_ids` (off unless set,
+    as for Oracle and Ashby; tests in test_added_settings.py): the postings Simplify links are read from their own
+    page; one whose page says it has expired is closed. Western Digital has it: 211 jobs live, the co-op among them.
 - Settings from Stage 1's plan: `learn_ids` (Simplify rows of open but unlisted requisitions read one by one) for
   American Express, JPMorgan Chase, BNY and Texas Instruments; `ignore_search_total` for Arista (its search counts
   132 and lists the same 98 on every page) and Western Digital. TI reads two Oracle sites, and learn_ids worked only

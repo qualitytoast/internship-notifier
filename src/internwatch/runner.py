@@ -46,7 +46,8 @@ CROSSCHECK_SECONDS = 180       # a hanging list must not hold up the morning ema
 CONNECTIVITY_URLS = ("https://raw.githubusercontent.com/", "https://www.google.com/generate_204")
 # learn_ids: the posting id in a SimplifyJobs link, per checker that can read a posting by id (watch_ids)
 POSTING_ID_IN_URL = {"ashby": re.compile(r"([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})"),
-                     "oracle": re.compile(r"/job/(\d+)")}
+                     "oracle": re.compile(r"/job/(\d+)"),
+                     "smartrecruiters": re.compile(r"smartrecruiters\.com/[^/?#]+/(\d{6,})")}
 LEARNED_IDS_MAX = 60
 
 
@@ -249,7 +250,7 @@ class Runner:
         return "quick"
 
     def _with_learned_ids(self, c: Company) -> Company:
-        """learn_ids: true (Ashby, Oracle): besides the configured watch_ids, read one by one the postings that the
+        """learn_ids: true (Ashby, Oracle, SmartRecruiters): besides the configured watch_ids, read one by one the postings that the
         last poll found open and those SimplifyJobs lists for the company in its latest download, so a posting left
         out of the company's own list while it still takes applications is seen. Ids found closed are dropped.
         In a multi-source company one source may set it (the open and closed ids are kept in the company's checker

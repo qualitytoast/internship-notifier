@@ -137,6 +137,40 @@ def test_workday_past_total_stops_when_the_page_past_the_end_repeats_the_first(m
     assert site.requests == 9
 
 
+def _sr_page(title, expired=False):
+    button = ('<button id="st-apply" class="button">Sorry, this job has expired</button>' if expired
+              else '<a class="apply-with-smartr-button">I&#39;m interested</a>')
+    return (f'<html><h1 itemprop="title">{title}</h1><meta itemprop="datePosted" content="2026-09-28T19:47:06.751Z">'
+            '<meta itemprop="addressLocality" content="Rochester"><meta itemprop="addressRegion" content="Minnesota">'
+            f'<meta itemprop="addressCountry" content="United States"><div itemprop="description">Co-op</div>{button}</html>')
+
+
+def test_smartrecruiters_watch_ids_read_postings_the_page_and_search_leave_out():
+    # Western Digital, 2026-11-15: its page lists 162 postings, its search the newest 100 of 325; a Winter 2027 co-op
+    # posted in September was in neither, and Simplify linked it
+    from test_board_fixes import FakeHttp
+    from internwatch.http import Resp
+    wd = "https://jobs.smartrecruiters.com/WesternDigital/"
+    http = FakeHttp({wd + "1": _sr_page("Winter 2027 Intern/Co-op Development Engineer"),
+                     wd + "2": _sr_page("Spring 2027 Co-Op - AI Systems Strategy", expired=True),
+                     wd + "3": Resp(404, wd + "3", {}, b"")})
+    ctx = FetchContext()
+    ctx.state = {"watch_closed": ["9"]}
+    got = get_checker("smartrecruiters")._watched(http, {"company": "WesternDigital", "watch_ids": ["1", "2", "3", "4"]},
+                                                 ctx, listed={"4"})
+    assert [(j.id, j.title, j.location, j.posted, j.extra) for j in got] == [
+        ("1", "Winter 2027 Intern/Co-op Development Engineer", "Rochester, Minnesota, United States", "2026-09-28",
+         {"unlisted": True})]
+    assert ctx.state == {"watch_open": ["1"], "watch_closed": ["2", "3", "9"]} and http.asked == [wd + "1", wd + "2", wd + "3"]
+
+
+def test_smartrecruiters_learns_ids_from_simplify_links():
+    from internwatch.runner import POSTING_ID_IN_URL
+    rx = POSTING_ID_IN_URL["smartrecruiters"]
+    assert rx.search("https://jobs.smartrecruiters.com/WesternDigital/744000152261929").group(1) == "744000152261929"
+    assert rx.search("https://jobs.smartrecruiters.com/Intuitive/744000150000000-co-op-intern?trid=x").group(1) == "744000150000000"
+
+
 def test_workday_unlinked_ok_skips_postings_without_a_link_quietly():
     from test_adapter_fixes import cassette
     base = cassette("crowdstrike").meta["settings"]
