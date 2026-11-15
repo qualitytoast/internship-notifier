@@ -476,3 +476,8 @@ HP Inc., Lowe's, Micron Technology, Target, Walmart (Walmart Global Tech).
   via Simplify (when that copy passed the filters) and the copy itself, as it does for rows shown in an untracked list.
 - The Nov 15 morning email had 103 KB of HTML, past Gmail's ~102 KB clipping: 44 new roles and 26 "already open",
   each list capped at 50 rows on its own. For the user (it is the 198's email too).
+- [x] both fixes tested (each new test fails on the old code: "Now watching" listed 4 roles instead of 2; the outage
+      page was taken for the first look); golden.py against main (a611189): PASS (802 cassette runs, 155,604 filter
+      verdicts, 40,454 matches, 103 Workday files identical); three replayed mornings of the Nov 13 recording
+      (proof-a611189): PASS, with nothing even for review (no outage page and no row sent via Simplify in it)
+- For the user to dismiss: #179 and #182 (sites batch 4 chose not to read), #186 (a closed posting)
