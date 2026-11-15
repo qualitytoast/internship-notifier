@@ -1,0 +1,27 @@
+{
+  "key": "tyler-technologies",
+  "name": "Tyler Technologies",
+  "careers_url": "https://www.tylertech.com/careers",
+  "hiring_system": "jobvite",
+  "checker": "jobvite",
+  "settings": {
+    "company_id": "q6NaVfwI",
+    "slug": "tylertech",
+    "match_urls": [
+      "jobs.jobvite.com/tylertech/"
+    ]
+  },
+  "feed": "GET https://app.jobvite.com/CompanyJobs/Xml.aspx?c=q6NaVfwI",
+  "feed_total": 144,
+  "page_total": 125,
+  "page_total_how": "jobs on its hosted page jobs.jobvite.com/tylertech/jobs (2026-11-15)",
+  "intern_total": 11,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "app.jobvite.com/robots.txt checked before every request (discovery/robots/app.jobvite.com.txt)",
+  "notes": "Its hosted Jobvite page shows the first 125 jobs in alphabetical order and cuts off the other 19 (2026-11-15): the Jobvite feed that is read lists all 144.",
+  "checked_at": "2026-11-15",
+  "source": "added",
+  "round": "added"
+}

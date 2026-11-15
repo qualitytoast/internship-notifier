@@ -8,7 +8,7 @@ reads:
   allstate: {checker: workday, settings: {host: allstate.wd5.myworkdayjobs.com, tenant: allstate, sites: [allstate_careers, sourcing_event]}}
   alltrails: {checker: lever, settings: {site: alltrails}}
   altruist: {checker: greenhouse, settings: {board: altruist}}
-  american-express: {checker: oracle, settings: {host: egug.fa.us2.oraclecloud.com, site: CX_1}}
+  american-express: {checker: oracle, settings: {host: egug.fa.us2.oraclecloud.com, site: CX_1, learn_ids: true}}  # Simplify rows of open but unlisted requisitions are read one by one (Stage 1: 7)
   amperity: {checker: greenhouse, settings: {board: amperity}}
   analog-devices: {checker: workday, settings: {host: analogdevices.wd1.myworkdayjobs.com, tenant: analogdevices, site: External}}
   anchorage-digital: {checker: lever, settings: {site: anchorage}}
@@ -17,7 +17,7 @@ reads:
   applied-materials~eightfold: {checker: eightfold, settings: {host: careers.appliedmaterials.com, domain: appliedmaterials.com}}
   apptronik: {checker: greenhouse, settings: {board: apptronik}}
   arcesium: {checker: greenhouse, settings: {board: arcesiumllc}}
-  arista-networks: {checker: smartrecruiters, settings: {company: AristaNetworks}}
+  arista-networks: {checker: smartrecruiters, settings: {company: AristaNetworks, ignore_search_total: true}}  # its search says 132 and returns the same 98 postings on every page
   asana: {checker: greenhouse, settings: {board: asana}}
   att: {checker: workday, settings: {host: att.wd1.myworkdayjobs.com, anchor_host: true, tenant: att, sites: [ATTGeneral, ATTcollege, Cricket, ATTCollegeSpecialInvite]}}
   athenahealth: {checker: phenom, settings: {base_url: "https://www.athenahealth.com", ref_num: ATHAHHUS}}
@@ -30,7 +30,7 @@ reads:
   betterment: {checker: greenhouse, settings: {boards: [betterment, bettermentcampusrecruiting], missing_ok: true}}
   bill: {checker: greenhouse, settings: {board: billcom}}
   blackrock: {checker: workday, settings: {host: blackrock.wd1.myworkdayjobs.com, tenant: blackrock, sites: [BlackRock_Professional, BlackRock_Early_Careers_Program]}}
-  bny: {checker: oracle, settings: {host: eofe.fa.us2.oraclecloud.com, site: CX_1001}}
+  bny: {checker: oracle, settings: {host: eofe.fa.us2.oraclecloud.com, site: CX_1001, learn_ids: true}}  # Simplify rows of open but unlisted requisitions are read one by one (Stage 1: 1)
   bny~bny-careers: {checker: oracle, settings: {host: eofe.fa.us2.oraclecloud.com, site: BNY-Careers}}
   bot-auto: {checker: greenhouse, settings: {board: botauto}}
   box: {checker: greenhouse, settings: {board: boxinc}}
@@ -128,7 +128,7 @@ reads:
   intuitive-surgical: {checker: smartrecruiters, settings: {company: Intuitive}}
   ironclad: {checker: ashby, settings: {board: ironcladhq}}
   ixl-learning: {checker: greenhouse, settings: {board: ixllearning}}
-  jpmorgan-chase: {checker: oracle, settings: {host: jpmc.fa.oraclecloud.com, site: CX_1001}}
+  jpmorgan-chase: {checker: oracle, settings: {host: jpmc.fa.oraclecloud.com, site: CX_1001, learn_ids: true}}  # Simplify rows of open but unlisted requisitions are read one by one (Stage 1: 4)
   keysight: {checker: jibe, settings: {host: jobs.keysight.com}}
   khan-academy: {checker: greenhouse, settings: {board: khanacademy}}
   kla: {checker: workday, settings: {host: kla.wd1.myworkdayjobs.com, anchor_host: true, tenant: kla, sites: [Search, UR, annarbor]}}
@@ -215,7 +215,7 @@ reads:
   tamr: {checker: ashby, settings: {board: tamr}}
   target: {checker: workday, timeout_minutes: 60, settings: {host: target.wd5.myworkdayjobs.com, tenant: target, site: targetcareers, pack: true, split_first: true, past_total: true, unlinked_ok: 50}}  # the weekly full read (its internships daily: reads_big.yaml target~slice); 4 postings without a link on 2026-11-09
   tensorwave: {checker: ashby, settings: {board: tensorwave}}
-  texas-instruments: {checker: oracle, settings: {host: edbz.fa.us2.oraclecloud.com, site: CX}}
+  texas-instruments: {checker: oracle, settings: {host: edbz.fa.us2.oraclecloud.com, site: CX, learn_ids: true}}  # Simplify rows of open but unlisted requisitions are read one by one (Stage 1: 3)
   travelers: {checker: workday, settings: {host: travelers.wd5.myworkdayjobs.com, tenant: travelers, site: External}}
   tricentis: {checker: workday, settings: {host: tricentis.wd1.myworkdayjobs.com, tenant: tricentis, site: Tricentis_Careers}}
   trimble: {checker: workday, settings: {host: trimble.wd1.myworkdayjobs.com, tenant: trimble, site: TrimbleCareers}}
@@ -236,7 +236,7 @@ reads:
   warner-bros-discovery: {checker: workday, settings: {host: warnerbros.wd5.myworkdayjobs.com, tenant: warnerbros, site: global}}
   washington-post: {checker: workday, settings: {host: washpost.wd5.myworkdayjobs.com, tenant: washpost, site: washingtonpostcareers}}
   wells-fargo: {checker: workday, settings: {host: wd1.myworkdaysite.com, tenant: wf, site: WellsFargoJobs, unlinked_ok: 50}}  # 4 postings without a link on 2026-11-12 (none on 11-09): skipped, not a degraded read
-  western-digital: {checker: smartrecruiters, settings: {company: WesternDigital}}
+  western-digital: {checker: smartrecruiters, settings: {company: WesternDigital, ignore_search_total: true}}  # its search counts 325 and lists only the newest 100; its page lists 162 (2026-11-15)
   xcimer: {checker: lever, settings: {site: xcimer}}
   you-com: {checker: greenhouse, settings: {board: youcom}}
   yugabyte: {checker: greenhouse, settings: {board: yugabyte}}

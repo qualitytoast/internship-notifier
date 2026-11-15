@@ -41,7 +41,7 @@ def load(name):
 
 
 def batch(n: int) -> dict:
-    return {k: as_read(v) for k, v in load("plan.json").items() if v["batch"] == n and v["sources"]}
+    return {k: {**as_read(v), "key": k} for k, v in load("plan.json").items() if v["batch"] == n and v["sources"]}
 
 
 def as_read(p: dict) -> dict:
@@ -242,6 +242,48 @@ def sitecopies(n: int) -> None:
     print(f"batch {n}: {sum(1 for k in found if k in batch(n))} companies whose Workday sites repeat each other")
 
 
+# Hosts SimplifyJobs links for a company that its config doesn't read (robots.txt closes them): rows that link them
+# are the company's (ICE's iCIMS portal behind its Jibe site, Charles Schwab's behind its Radancy site)
+MIRROR_MARKS = {"ice": ["careers-ice.icims.com"], "charles-schwab": ["career-schwab.icims.com"]}
+
+
+# Counts the site gives that its own list doesn't reach, measured on the day of the batch
+EXPLAINED = {
+    "arista-networks": "Its SmartRecruiters page and search count 132 postings but list the same 98 on every page "
+                       "(2026-11-15, and 147 for 98 on 11-09): the read has all 98, and the search's count isn't "
+                       "compared (ignore_search_total).",
+    "western-digital": "Its SmartRecruiters page lists 162 postings (all 336 on 11-09) and its search counts 325 but "
+                       "lists only the newest 100: the read is both (210), so each new posting is read on its first "
+                       "morning, and older ones off the page can't be.",
+    "tyler-technologies": "Its hosted Jobvite page shows the first 125 jobs in alphabetical order and cuts off the other "
+                          "19 (2026-11-15): the Jobvite feed that is read lists all 144.",
+}
+# Sites that state no count a script may read: why the read is the list
+NOT_COUNTED = {
+    "charles-schwab": ("schwabjobs.com's search page, which states the count, is closed to scripts by robots.txt "
+                       "(2026-11-15)", "the sitemap the site publishes for crawlers is the list"),
+    "sas": ("its iCIMS portal's search pages state no total (2026-11-15)",
+            "the read walks the search pages to the last one"),
+}
+
+
+def own_marks(ck: str, st: dict) -> list[str]:
+    """URL markers for a system the cross-check can't tell from a link by itself (crosscheck.url_markers knows hosts
+    and Greenhouse, Ashby, Lever, Gem and Workable boards): SmartRecruiters and Jobvite name the company in the path of
+    a shared host; Phenom, Radancy and iCIMS sites are the company's own hosts."""
+    if ck == "smartrecruiters":
+        return [f"smartrecruiters.com/{st['company'].lower()}/"]
+    if ck == "jobvite":
+        return [f"jobs.jobvite.com/{st['slug'].lower()}/"]
+    if ck == "phenom":
+        return [urlsplit(st["base_url"]).netloc.lower()]
+    if ck == "talentbrew":
+        return [urlsplit(st["sitemap_url"]).netloc.lower()]
+    if ck == "icims":
+        return [urlsplit(st["portal"]).netloc.lower()]
+    return []
+
+
 def settings_of(p: dict) -> tuple[str, dict]:
     """The company's checker and settings. Each Workday site is a source of its own: the sites of one tenant repeat
     each other's requisitions on and off (Copart's NPA site and Vanguard's contractor site listed none of the main
@@ -261,7 +303,9 @@ def settings_of(p: dict) -> tuple[str, dict]:
             if ("workday", {**base, "site": site}) not in srcs:
                 srcs.append(("workday", {**base, "site": site}))
     if len(srcs) == 1:
-        return srcs[0]
+        ck, st = srcs[0]
+        marks = own_marks(ck, st) + MIRROR_MARKS.get(p["key"], []) if p["batch"] >= 5 else []
+        return (ck, {**st, "match_urls": marks}) if marks else srcs[0]
     from internwatch.config import Company
     from internwatch.crosscheck import url_markers
     marks = [m for ck, st in srcs for m in url_markers(Company(key="x", name="x", category="", careers_url=[],
@@ -269,6 +313,8 @@ def settings_of(p: dict) -> tuple[str, dict]:
     marks += [m.replace(" ", "%20") for m in marks if " " in m]  # a board name with spaces, as links spell it
     # SmartRecruiters links carry the company's name on a shared host: careers. and jobs.smartrecruiters.com/<name>/
     marks += [f"smartrecruiters.com/{st['company'].lower()}/" for ck, st in srcs if ck == "smartrecruiters"]
+    if p["batch"] >= 5:
+        marks += [m for ck, st in srcs if ck != "smartrecruiters" for m in own_marks(ck, st)] + MIRROR_MARKS.get(p["key"], [])
     marks = list(dict.fromkeys(marks))
     # dedupe_titles (a later board's job with a title an earlier board lists is a copy) fitted the first two batches'
     # second boards, which only repeat the first. From batch 3 on it is left out: a subsidiary's board lists different
@@ -300,7 +346,9 @@ def feed_of(checker: str, s: dict) -> str:
         return f"POST https://{s['host']}/wday/cxs/{s['tenant']}/{sites[0] if len(sites) == 1 else '{' + ','.join(sites) + '}'}/jobs"
     if checker == "smartrecruiters":
         return f"GET https://careers.smartrecruiters.com/{s.get('company')}"
-    return checker
+    from internwatch.adapters import get_checker
+    feed = get_checker(checker).describe(s)  # the adapter's own words: oracle, jibe, eightfold, phenom, talentbrew…
+    return feed if feed.split(" ")[0] in ("GET", "POST") else f"GET {feed}"
 
 
 def counted(v: dict) -> str:
@@ -311,6 +359,11 @@ def counted(v: dict) -> str:
 def page_count(k: str, p: dict, jobs: int) -> tuple[int | None, str, str]:
     """(page_total, how it was counted, explanation of a difference)."""
     pc, gh, rd = load("pagecounts.json"), load("ghpages.json"), load("renders.json") if (C / "renders.json").exists() else {}
+    if k in NOT_COUNTED:
+        return None, *NOT_COUNTED[k]
+    if k in EXPLAINED and isinstance((pc.get(p["sources"][0]["entry"]) or {}).get("page_total"), int):
+        v = pc[p["sources"][0]["entry"]]  # the site's own count, which its list doesn't match (EXPLAINED says why)
+        return v["page_total"], v["how"] + f" ({counted(v)})", ""
     main = p["sources"][0]["entry"]
     v = pc.get(main) or {}
     others = [(pc.get(s["entry"]) or {}).get("page_total") for s in p["sources"][1:]]
@@ -370,10 +423,12 @@ def result(k: str, p: dict, cand: dict) -> dict:
                                                     for x in p["sources"]):
         notes.append(f"The site reported {pt} postings on {counted(load('pagecounts.json').get(p['sources'][0]['entry']) or {})}"
                      f" and {jobs} were read: the others were listed without a link, title or place (unlinked_ok skips them).")
+    elif k in EXPLAINED:  # a difference the site itself makes (build_config.py uses the notes' first sentence)
+        notes.append(EXPLAINED[k])
     elif isinstance(pt, int) and pt != jobs:  # build_config.py explains a difference with the notes' first sentence
         day = counted(load("pagecounts.json").get(p["sources"][0]["entry"]) or {})
-        notes.append(f"The page showed {pt} jobs and the board {jobs} on {day} (a posting or two opened or "
-                     f"closed in between).")
+        notes.append(f"The page showed {pt} jobs and the board {jobs} on {day} (" + ("a posting or two" if abs(pt - jobs) <= 2
+                     else "postings") + " opened or closed in between).")
     if p["blocked_page"]:
         notes.append(f"The careers page {('is closed by robots.txt' if p['page'] == 'robots' else 'refuses scripts')}: "
                      f"the company is in liveness.blocked, with backup checks (backup_table.md).")
@@ -482,7 +537,8 @@ def add_settings(n: int, plan: dict) -> None:
                     from internwatch.moves import system_key_v2
                     target = system_key_v2("workday", {**st, "site": (st.get("sites") or [st.get("site")])[0]})
                 else:
-                    target = f"{main['checker']}:board={(st.get('board') or st.get('boards', [''])[0]).lower()}"
+                    from internwatch.moves import system_key_v2  # the key the config's own system goes by
+                    target = system_key_v2(main["checker"], {**st, "board": st.get("board") or (st.get("boards") or [""])[0]})
                 al.append(f"    ripplematch:company={rm[k]['slug']}: '{target}'   # {k}: its RippleMatch page, watched")
     for k, p in plan.items():
         if p.get("full"):  # a giant site: its student roles are the daily read, the whole site a weekly watched board

@@ -1,0 +1,25 @@
+{
+  "key": "american-express",
+  "name": "American Express",
+  "careers_url": "https://www.americanexpress.com/en-us/careers/",
+  "hiring_system": "oracle",
+  "checker": "oracle",
+  "settings": {
+    "host": "egug.fa.us2.oraclecloud.com",
+    "site": "CX_1",
+    "learn_ids": true
+  },
+  "feed": "GET https://egug.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions (siteNumber=CX_1)",
+  "feed_total": 308,
+  "page_total": 308,
+  "page_total_how": "the count its Oracle site's page shows (TotalJobsCount of site CX_1) (2026-11-15)",
+  "intern_total": 11,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "egug.fa.us2.oraclecloud.com/robots.txt checked before every request (discovery/robots/egug.fa.us2.oraclecloud.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-15",
+  "source": "added",
+  "round": "added"
+}

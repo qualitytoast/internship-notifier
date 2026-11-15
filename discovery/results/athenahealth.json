@@ -1,0 +1,27 @@
+{
+  "key": "athenahealth",
+  "name": "athenahealth",
+  "careers_url": "https://careers.athenahealth.com/us/en",
+  "hiring_system": "phenom",
+  "checker": "phenom",
+  "settings": {
+    "base_url": "https://careers.athenahealth.com",
+    "ref_num": "ATHAHHUS",
+    "match_urls": [
+      "careers.athenahealth.com"
+    ]
+  },
+  "feed": "POST https://careers.athenahealth.com/widgets (refineSearch, refNum ATHAHHUS)",
+  "feed_total": 73,
+  "page_total": 73,
+  "page_total_how": "phenom's own reported total (the careers page shows it) (2026-11-15)",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "careers.athenahealth.com/robots.txt checked before every request (discovery/robots/careers.athenahealth.com.txt)",
+  "notes": "Not read: athenahealth: www.athenahealth.com has no Phenom widgets; careers.athenahealth.com instead.",
+  "checked_at": "2026-11-15",
+  "source": "added",
+  "round": "added"
+}

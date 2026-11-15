@@ -1,0 +1,27 @@
+{
+  "key": "western-digital",
+  "name": "Western Digital",
+  "careers_url": "https://www.westerndigital.com/careers",
+  "hiring_system": "smartrecruiters",
+  "checker": "smartrecruiters",
+  "settings": {
+    "company": "WesternDigital",
+    "ignore_search_total": true,
+    "match_urls": [
+      "smartrecruiters.com/westerndigital/"
+    ]
+  },
+  "feed": "GET https://careers.smartrecruiters.com/WesternDigital",
+  "feed_total": 210,
+  "page_total": 162,
+  "page_total_how": "smartrecruiters's own reported total (the careers page shows it) (2026-11-15)",
+  "intern_total": 23,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "careers.smartrecruiters.com/robots.txt checked before every request (discovery/robots/careers.smartrecruiters.com.txt)",
+  "notes": "Its SmartRecruiters page lists 162 postings (all 336 on 11-09) and its search counts 325 but lists only the newest 100: the read is both (210), so each new posting is read on its first morning, and older ones off the page can't be.",
+  "checked_at": "2026-11-15",
+  "source": "added",
+  "round": "added"
+}

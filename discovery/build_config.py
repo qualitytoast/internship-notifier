@@ -68,6 +68,11 @@ ALIASES = {
     "synchrony": ["Synchrony Financial"],
     "walmart": ["Walmart"],
     "hp": ["Hewlett Packard", "Hewlett Packard (HP)", "HP IQ"],
+    "jpmorgan-chase": ["JP Morgan Chase"],
+    "hilton": ["Hilton Worldwide"],
+    "unitedhealth-group": ["Optum", "UnitedHealthcare"],
+    "ice": ["NYSE", "ICE"],
+    "navy-federal": ["Navy Federal"],
 }
 
 # Freshman/sophomore program names that can appear in a posting title without a student word (UNDERCLASSMEN.md
@@ -108,6 +113,7 @@ PROGRAM_KEYWORDS: dict[str, list[str]] = {
     "usaa": ["accelerate program"],
     "verizon": ["sprinternship"],
     "citi": ["d1 athlete development program"],
+    "jpmorgan-chase": ["fellowship program"],
 }
 
 # Hand-tuned settings on top of discovery (each comes from a discovery note).

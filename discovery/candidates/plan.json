@@ -174,10 +174,10 @@
    {
     "entry": "american-express",
     "checker": "oracle",
-    "jobs": 329,
-    "students": 14,
-    "matched": 2,
-    "seconds": 5.1,
+    "jobs": 308,
+    "students": 11,
+    "matched": 1,
+    "seconds": 5.8,
     "requests": 2,
     "error": null
    }
@@ -396,9 +396,9 @@
     "entry": "arista-networks",
     "checker": "smartrecruiters",
     "jobs": 98,
-    "students": 4,
-    "matched": 3,
-    "seconds": 1.4,
+    "students": 2,
+    "matched": 2,
+    "seconds": 1.5,
     "requests": 2,
     "error": null
    }
@@ -485,7 +485,7 @@
    {
     "entry": "athenahealth~careers",
     "checker": "phenom",
-    "jobs": 83,
+    "jobs": 73,
     "students": 0,
     "matched": 0,
     "seconds": 0.5,
@@ -852,10 +852,10 @@
    {
     "entry": "bny",
     "checker": "oracle",
-    "jobs": 1271,
+    "jobs": 1247,
     "students": 76,
-    "matched": 31,
-    "seconds": 26.6,
+    "matched": 32,
+    "seconds": 17.0,
     "requests": 7,
     "error": null
    }
@@ -1171,11 +1171,11 @@
    {
     "entry": "charles-schwab~talentbrew",
     "checker": "talentbrew",
-    "jobs": 284,
-    "students": 2,
+    "jobs": 269,
+    "students": 1,
     "matched": 1,
-    "seconds": 8.2,
-    "requests": 9,
+    "seconds": 6.5,
+    "requests": 7,
     "error": null
    }
   ],
@@ -1725,7 +1725,7 @@
  },
  "costco": {
   "name": "Costco",
-  "batch": 5,
+  "batch": 6,
   "main_checker": "jibe",
   "sources": [
    {
@@ -2833,10 +2833,10 @@
    {
     "entry": "ford",
     "checker": "oracle",
-    "jobs": 888,
+    "jobs": 867,
     "students": 3,
     "matched": 0,
-    "seconds": 24.3,
+    "seconds": 23.6,
     "requests": 5,
     "error": null
    }
@@ -2860,10 +2860,10 @@
    {
     "entry": "fortinet",
     "checker": "oracle",
-    "jobs": 1050,
+    "jobs": 1077,
     "students": 9,
     "matched": 1,
-    "seconds": 11.8,
+    "seconds": 12.2,
     "requests": 6,
     "error": null
    }
@@ -3415,10 +3415,10 @@
    {
     "entry": "hilton",
     "checker": "oracle",
-    "jobs": 4278,
-    "students": 33,
-    "matched": 2,
-    "seconds": 59.3,
+    "jobs": 4315,
+    "students": 36,
+    "matched": 4,
+    "seconds": 64.2,
     "requests": 22,
     "error": null
    }
@@ -3603,8 +3603,8 @@
    {
     "entry": "ice",
     "checker": "jibe",
-    "jobs": 327,
-    "students": 52,
+    "jobs": 315,
+    "students": 47,
     "matched": 44,
     "seconds": 15.3,
     "requests": 4,
@@ -3635,11 +3635,11 @@
    {
     "entry": "intuitive-surgical",
     "checker": "smartrecruiters",
-    "jobs": 846,
-    "students": 13,
-    "matched": 8,
-    "seconds": 152.6,
-    "requests": 81,
+    "jobs": 889,
+    "students": 16,
+    "matched": 10,
+    "seconds": 102.3,
+    "requests": 87,
     "error": null
    }
   ],
@@ -3716,11 +3716,11 @@
    {
     "entry": "jpmorgan-chase",
     "checker": "oracle",
-    "jobs": 7065,
-    "students": 69,
-    "matched": 23,
-    "seconds": 88.8,
-    "requests": 36,
+    "jobs": 6967,
+    "students": 67,
+    "matched": 22,
+    "seconds": 72.0,
+    "requests": 35,
     "error": null
    }
   ],
@@ -3748,11 +3748,11 @@
    {
     "entry": "keysight",
     "checker": "jibe",
-    "jobs": 769,
-    "students": 122,
+    "jobs": 815,
+    "students": 126,
     "matched": 83,
-    "seconds": 35.3,
-    "requests": 8,
+    "seconds": 40.3,
+    "requests": 9,
     "error": null
    }
   ],
@@ -4068,11 +4068,11 @@
    {
     "entry": "macys",
     "checker": "oracle",
-    "jobs": 6867,
-    "students": 106,
+    "jobs": 6655,
+    "students": 102,
     "matched": 13,
-    "seconds": 74.6,
-    "requests": 35,
+    "seconds": 74.4,
+    "requests": 34,
     "error": null
    }
   ],
@@ -4509,10 +4509,10 @@
    {
     "entry": "navy-federal",
     "checker": "oracle",
-    "jobs": 155,
-    "students": 75,
-    "matched": 63,
-    "seconds": 2.5,
+    "jobs": 133,
+    "students": 73,
+    "matched": 61,
+    "seconds": 2.1,
     "requests": 1,
     "error": null
    }
@@ -5190,10 +5190,10 @@
    {
     "entry": "principal",
     "checker": "jibe",
-    "jobs": 151,
-    "students": 21,
-    "matched": 2,
-    "seconds": 5.2,
+    "jobs": 144,
+    "students": 19,
+    "matched": 1,
+    "seconds": 5.5,
     "requests": 2,
     "error": null
    }
@@ -5379,11 +5379,11 @@
    {
     "entry": "qualcomm",
     "checker": "eightfold",
-    "jobs": 2017,
-    "students": 118,
+    "jobs": 2004,
+    "students": 119,
     "matched": 19,
-    "seconds": 234.8,
-    "requests": 203,
+    "seconds": 201.3,
+    "requests": 201,
     "error": null
    }
   ],
@@ -5633,10 +5633,10 @@
    {
     "entry": "rivian",
     "checker": "jibe",
-    "jobs": 964,
-    "students": 46,
-    "matched": 41,
-    "seconds": 45.3,
+    "jobs": 951,
+    "students": 45,
+    "matched": 40,
+    "seconds": 45.4,
     "requests": 10,
     "error": null
    }
@@ -5827,9 +5827,9 @@
    {
     "entry": "sas",
     "checker": "icims",
-    "jobs": 35,
-    "students": 3,
-    "matched": 3,
+    "jobs": 40,
+    "students": 9,
+    "matched": 5,
     "seconds": 1.4,
     "requests": 2,
     "error": null
@@ -6212,10 +6212,10 @@
    {
     "entry": "state-farm",
     "checker": "jibe",
-    "jobs": 238,
-    "students": 11,
-    "matched": 9,
-    "seconds": 10.2,
+    "jobs": 240,
+    "students": 5,
+    "matched": 3,
+    "seconds": 10.5,
     "requests": 3,
     "error": null
    }
@@ -6452,10 +6452,10 @@
    {
     "entry": "texas-instruments",
     "checker": "oracle",
-    "jobs": 915,
-    "students": 126,
-    "matched": 46,
-    "seconds": 10.7,
+    "jobs": 914,
+    "students": 133,
+    "matched": 45,
+    "seconds": 11.9,
     "requests": 5,
     "error": null
    },
@@ -6748,10 +6748,10 @@
    {
     "entry": "united-airlines",
     "checker": "phenom",
-    "jobs": 124,
+    "jobs": 119,
     "students": 0,
     "matched": 0,
-    "seconds": 0.4,
+    "seconds": 0.5,
     "requests": 1,
     "error": null
    }
@@ -7145,11 +7145,11 @@
    {
     "entry": "western-digital",
     "checker": "smartrecruiters",
-    "jobs": 336,
-    "students": 28,
-    "matched": 4,
-    "seconds": 87.4,
-    "requests": 30,
+    "jobs": 210,
+    "students": 23,
+    "matched": 11,
+    "seconds": 30.0,
+    "requests": 16,
     "error": null
    }
   ],

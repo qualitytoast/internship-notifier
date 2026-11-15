@@ -403,3 +403,27 @@ companies:
   - {key: lowes, name: "Lowe's", category: retail, source: added, round: added, urls: ["https://talent.lowes.com/"]}
   - {key: target, name: "Target", category: retail, source: added, round: added, urls: ["https://corporate.target.com/careers"]}
   - {key: cvs-health, name: "CVS Health", category: healthcare, source: added, round: added, urls: ["https://jobs.cvshealth.com/"]}
+  - {key: qualcomm, name: "Qualcomm", category: semiconductors, source: added, round: added, urls: ["https://careers.qualcomm.com/"]}
+  - {key: intuitive-surgical, name: "Intuitive Surgical", category: healthcare, source: added, round: added, urls: ["https://careers.intuitive.com/"]}
+  - {key: macys, name: "Macy's", category: retail, source: added, round: added, urls: ["https://www.macysjobs.com/"]}
+  - {key: jpmorgan-chase, name: "JPMorgan Chase", category: finance-insurance, source: added, round: added, urls: ["https://careers.jpmorgan.com/"]}
+  - {key: hilton, name: "Hilton", category: travel, source: added, round: added, urls: ["https://jobs.hilton.com/"]}
+  - {key: rivian, name: "Rivian", category: autonomy, source: added, round: added, urls: ["https://careers.rivian.com/"]}
+  - {key: unitedhealth-group, name: "UnitedHealth Group (Optum)", category: healthcare, source: added, round: added, urls: ["https://careers.unitedhealthgroup.com/"]}
+  - {key: keysight, name: "Keysight", category: hardware, source: added, round: added, urls: ["https://jobs.keysight.com/"]}
+  - {key: western-digital, name: "Western Digital", category: hardware, source: added, round: added, urls: ["https://jobs.westerndigital.com/"]}
+  - {key: ford, name: "Ford Motor Company", category: autonomy, source: added, round: added, urls: ["https://www.careers.ford.com/en"]}
+  - {key: bny, name: "BNY", category: finance-insurance, source: added, round: added, urls: ["https://www.bny.com/corporate/global/en/careers.html"]}
+  - {key: tyler-technologies, name: "Tyler Technologies", category: software, source: added, round: added, urls: ["https://www.tylertech.com/careers"]}
+  - {key: ice, name: "Intercontinental Exchange (NYSE)", category: fintech, source: added, round: added, urls: ["https://www.ice.com/careers"]}
+  - {key: texas-instruments, name: "Texas Instruments", category: semiconductors, source: added, round: added, urls: ["https://careers.ti.com/"]}
+  - {key: fortinet, name: "Fortinet", category: security, source: added, round: added, urls: ["https://www.fortinet.com/corporate/careers"]}
+  - {key: state-farm, name: "State Farm", category: finance-insurance, source: added, round: added, urls: ["https://jobs.statefarm.com/"]}
+  - {key: charles-schwab, name: "Charles Schwab", category: finance-insurance, source: added, round: added, urls: ["https://www.schwabjobs.com/"]}
+  - {key: american-express, name: "American Express", category: fintech, source: added, round: added, urls: ["https://www.americanexpress.com/en-us/careers/"]}
+  - {key: principal, name: "Principal Financial Group", category: finance-insurance, source: added, round: added, urls: ["https://careers.principal.com/"]}
+  - {key: navy-federal, name: "Navy Federal Credit Union", category: finance-insurance, source: added, round: added, urls: ["https://www.navyfederal.org/careers/"]}
+  - {key: arista-networks, name: "Arista Networks", category: hardware, source: added, round: added, urls: ["https://www.arista.com/en/careers"]}
+  - {key: sas, name: "SAS Institute", category: software, source: added, round: added, urls: ["https://www.sas.com/en_us/careers.html"]}
+  - {key: athenahealth, name: "athenahealth", category: healthcare, source: added, round: added, urls: ["https://careers.athenahealth.com/"]}
+  - {key: united-airlines, name: "United Airlines", category: travel, source: added, round: added, urls: ["https://careers.united.com/"]}

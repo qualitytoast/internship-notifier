@@ -1,0 +1,27 @@
+{
+  "key": "united-airlines",
+  "name": "United Airlines",
+  "careers_url": "https://careers.united.com/us/en",
+  "hiring_system": "phenom",
+  "checker": "phenom",
+  "settings": {
+    "base_url": "https://careers.united.com",
+    "ref_num": "UAIUADUS",
+    "match_urls": [
+      "careers.united.com"
+    ]
+  },
+  "feed": "POST https://careers.united.com/widgets (refineSearch, refNum UAIUADUS)",
+  "feed_total": 119,
+  "page_total": 119,
+  "page_total_how": "phenom's own reported total (the careers page shows it) (2026-11-15)",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "careers.united.com/robots.txt checked before every request (discovery/robots/careers.united.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-15",
+  "source": "added",
+  "round": "added"
+}

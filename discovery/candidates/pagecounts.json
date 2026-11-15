@@ -26,8 +26,9 @@
   "how": "hosted Greenhouse board's stated count"
  },
  "american-express": {
-  "page_total": null,
-  "how": "oracle: no total reported; the read's count stands"
+  "page_total": 308,
+  "how": "the count its Oracle site's page shows (TotalJobsCount of site CX_1)",
+  "at": "2026-11-15"
  },
  "amperity": {
   "page_total": 0,
@@ -65,8 +66,9 @@
   "how": "hosted Greenhouse board's stated count"
  },
  "arista-networks": {
-  "page_total": 147,
-  "how": "smartrecruiters's own reported total (the careers page shows it)"
+  "page_total": 132,
+  "how": "smartrecruiters's own reported total (the careers page shows it)",
+  "at": "2026-11-15"
  },
  "asana": {
   "page_total": 0,
@@ -74,7 +76,13 @@
  },
  "athenahealth": {
   "page_total": null,
-  "how": "phenom: no total reported; the read's count stands"
+  "how": "phenom: no total reported; the read's count stands",
+  "at": "2026-11-15"
+ },
+ "athenahealth~careers": {
+  "page_total": 73,
+  "how": "phenom's own reported total (the careers page shows it)",
+  "at": "2026-11-15"
  },
  "att": {
   "page_total": 1125,
@@ -164,12 +172,19 @@
   "at": "2026-11-12"
  },
  "bny": {
-  "page_total": null,
-  "how": "oracle: no total reported; the read's count stands"
+  "page_total": 1250,
+  "how": "the count its Oracle site's page shows (TotalJobsCount of site CX_1001)",
+  "at": "2026-11-15"
  },
  "bny~bny-careers": {
-  "page_total": null,
-  "how": "oracle: no total reported; the read's count stands"
+  "page_total": 1250,
+  "how": "the count its Oracle site's page shows (TotalJobsCount of site BNY-Careers)",
+  "at": "2026-11-15"
+ },
+ "bny~cx_1": {
+  "page_total": 1250,
+  "how": "the count its Oracle site's page shows (TotalJobsCount of site CX_1)",
+  "at": "2026-11-15"
  },
  "bot-auto": {
   "page_total": 26,
@@ -225,7 +240,13 @@
  },
  "charles-schwab": {
   "page_total": null,
-  "how": "icims: no total reported; the read's count stands"
+  "how": "icims: no total reported; the read's count stands",
+  "at": "2026-11-15"
+ },
+ "charles-schwab~talentbrew": {
+  "page_total": null,
+  "how": "https://www.schwabjobs.com/search-jobs is closed to scripts by robots.txt: the sitemap is the list",
+  "at": "2026-11-15"
  },
  "checkr": {
   "page_total": 38,
@@ -828,12 +849,19 @@
   "at": "2026-11-12"
  },
  "ford": {
-  "page_total": null,
-  "how": "oracle: no total reported; the read's count stands"
+  "page_total": 867,
+  "how": "the count its Oracle site's page shows (TotalJobsCount of site CX_1)",
+  "at": "2026-11-15"
  },
  "fortinet": {
-  "page_total": null,
-  "how": "oracle: no total reported; the read's count stands"
+  "page_total": 1078,
+  "how": "the count its Oracle site's page shows (TotalJobsCount of site CX_2001)",
+  "at": "2026-11-15"
+ },
+ "fortinet~cx_1": {
+  "page_total": 1078,
+  "how": "the count its Oracle site's page shows (TotalJobsCount of site CX_1)",
+  "at": "2026-11-15"
  },
  "fox": {
   "page_total": 325,
@@ -934,12 +962,14 @@
   "how": "hosted Greenhouse board's stated count"
  },
  "hilton": {
-  "page_total": null,
-  "how": "oracle: no total reported; the read's count stands"
+  "page_total": 4295,
+  "how": "the count its Oracle site's page shows (TotalJobsCount of site CX_1)",
+  "at": "2026-11-15"
  },
  "hilton~cx_1009": {
-  "page_total": null,
-  "how": "oracle: no total reported; the read's count stands"
+  "page_total": 4295,
+  "how": "the count its Oracle site's page shows (TotalJobsCount of site CX_1009)",
+  "at": "2026-11-15"
  },
  "home-depot": {
   "page_total": 1361,
@@ -981,20 +1011,23 @@
   "how": "hosted Greenhouse board's stated count"
  },
  "ice": {
-  "page_total": 327,
-  "how": "jibe's own reported total (the careers page shows it)"
+  "page_total": 315,
+  "how": "jibe's own reported total (the careers page shows it)",
+  "at": "2026-11-15"
  },
  "ice~icims": {
   "page_total": null,
-  "how": "icims: no total reported; the read's count stands"
+  "how": "icims: no total reported; the read's count stands",
+  "at": "2026-11-15"
  },
  "illumio": {
   "page_total": 67,
   "how": "the hosted Ashby page's job list"
  },
  "intuitive-surgical": {
-  "page_total": 846,
-  "how": "smartrecruiters's own reported total (the careers page shows it)"
+  "page_total": 889,
+  "how": "smartrecruiters's own reported total (the careers page shows it)",
+  "at": "2026-11-15"
  },
  "ironclad": {
   "page_total": 22,
@@ -1005,12 +1038,19 @@
   "how": "hosted Greenhouse board's stated count"
  },
  "jpmorgan-chase": {
-  "page_total": null,
-  "how": "oracle: no total reported; the read's count stands"
+  "page_total": 6968,
+  "how": "the count its Oracle site's page shows (TotalJobsCount of site CX_1001)",
+  "at": "2026-11-15"
+ },
+ "jpmorgan-chase~cx_2001": {
+  "page_total": 6968,
+  "how": "the count its Oracle site's page shows (TotalJobsCount of site CX_2001)",
+  "at": "2026-11-15"
  },
  "keysight": {
-  "page_total": 769,
-  "how": "jibe's own reported total (the careers page shows it)"
+  "page_total": 815,
+  "how": "jibe's own reported total (the careers page shows it)",
+  "at": "2026-11-15"
  },
  "khan-academy": {
   "page_total": 3,
@@ -1081,12 +1121,14 @@
   "how": "hosted Greenhouse board's stated count"
  },
  "macys": {
-  "page_total": null,
-  "how": "oracle: no total reported; the read's count stands"
+  "page_total": 6655,
+  "how": "the count its Oracle site's page shows (TotalJobsCount of site CX_1)",
+  "at": "2026-11-15"
  },
  "macys~cx_1001": {
-  "page_total": null,
-  "how": "oracle: no total reported; the read's count stands"
+  "page_total": 5329,
+  "how": "the count its Oracle site's page shows (TotalJobsCount of site CX_1001)",
+  "at": "2026-11-15"
  },
  "marvell": {
   "page_total": 381,
@@ -1216,8 +1258,9 @@
   "at": "2026-11-12"
  },
  "navy-federal": {
-  "page_total": null,
-  "how": "oracle: no total reported; the read's count stands"
+  "page_total": 133,
+  "how": "the count its Oracle site's page shows (TotalJobsCount of site nfcu)",
+  "at": "2026-11-15"
  },
  "ncino": {
   "page_total": 30,
@@ -1324,8 +1367,9 @@
   "how": "the hosted Ashby page's job list"
  },
  "principal": {
-  "page_total": 151,
-  "how": "jibe's own reported total (the careers page shows it)"
+  "page_total": 144,
+  "how": "jibe's own reported total (the careers page shows it)",
+  "at": "2026-11-15"
  },
  "prizepicks": {
   "page_total": 0,
@@ -1356,8 +1400,9 @@
   "at": "2026-11-12"
  },
  "qualcomm": {
-  "page_total": 2017,
-  "how": "eightfold's own reported total (the careers page shows it)"
+  "page_total": 2004,
+  "how": "eightfold's own reported total (the careers page shows it)",
+  "at": "2026-11-15"
  },
  "qumulo": {
   "page_total": 25,
@@ -1392,8 +1437,9 @@
   "how": "hosted Greenhouse board's stated count"
  },
  "rivian": {
-  "page_total": 964,
-  "how": "jibe's own reported total (the careers page shows it)"
+  "page_total": 951,
+  "how": "jibe's own reported total (the careers page shows it)",
+  "at": "2026-11-15"
  },
  "rivian-vw": {
   "page_total": 181,
@@ -1429,7 +1475,8 @@
  },
  "sas": {
   "page_total": null,
-  "how": "icims: no total reported; the read's count stands"
+  "how": "icims: no total reported; the read's count stands",
+  "at": "2026-11-15"
  },
  "sentry": {
   "page_total": 41,
@@ -1515,8 +1562,9 @@
   "how": "hosted Greenhouse board's stated count"
  },
  "state-farm": {
-  "page_total": 238,
-  "how": "jibe's own reported total (the careers page shows it)"
+  "page_total": 240,
+  "how": "jibe's own reported total (the careers page shows it)",
+  "at": "2026-11-15"
  },
  "suno": {
   "page_total": 68,
@@ -1575,8 +1623,19 @@
   "how": "the hosted Ashby page's job list"
  },
  "texas-instruments": {
-  "page_total": null,
-  "how": "oracle: no total reported; the read's count stands"
+  "page_total": 914,
+  "how": "the count its Oracle site's page shows (TotalJobsCount of site CX)",
+  "at": "2026-11-15"
+ },
+ "texas-instruments~ebgj": {
+  "page_total": 118,
+  "how": "the count its Oracle site's page shows (TotalJobsCount of site CX_1)",
+  "at": "2026-11-15"
+ },
+ "texas-instruments~edbz-cx_1": {
+  "page_total": 914,
+  "how": "the count its Oracle site's page shows (TotalJobsCount of site CX_1)",
+  "at": "2026-11-15"
  },
  "travelers": {
   "page_total": 418,
@@ -1602,6 +1661,11 @@
   "page_total": 34,
   "how": "hosted Greenhouse board's stated count"
  },
+ "tyler-technologies": {
+  "page_total": 125,
+  "how": "jobs on its hosted page jobs.jobvite.com/tylertech/jobs",
+  "at": "2026-11-15"
+ },
  "typeface": {
   "page_total": 18,
   "how": "hosted Greenhouse board's stated count"
@@ -1620,8 +1684,19 @@
   "how": "the hosted Ashby page's job list"
  },
  "united-airlines": {
-  "page_total": 124,
-  "how": "phenom's own reported total (the careers page shows it)"
+  "page_total": 119,
+  "how": "phenom's own reported total (the careers page shows it)",
+  "at": "2026-11-15"
+ },
+ "unitedhealth-group": {
+  "page_total": 6519,
+  "how": "https://careers.unitedhealthgroup.com/search-jobs shows data-total-results",
+  "at": "2026-11-15"
+ },
+ "unitedhealth-group~ripplematch": {
+  "page_total": null,
+  "how": "ripplematch: no total reported; the read's count stands",
+  "at": "2026-11-15"
  },
  "usaa": {
   "page_total": 207,
@@ -1721,8 +1796,9 @@
   "at": "2026-11-12"
  },
  "western-digital": {
-  "page_total": 336,
-  "how": "smartrecruiters's own reported total (the careers page shows it)"
+  "page_total": 162,
+  "how": "smartrecruiters's own reported total (the careers page shows it)",
+  "at": "2026-11-15"
  },
  "xcimer": {
   "page_total": 63,

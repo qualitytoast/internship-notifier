@@ -90,7 +90,7 @@ companies:
   name: athenahealth
   category: healthcare
   source: added
-  urls: ['https://www.athenahealth.com/careers']
+  urls: ['https://careers.athenahealth.com/']  # www.athenahealth.com/careers refuses scripts (403, 2026-11-15); its jobs are here
 - key: bamboohr
   name: BambooHR
   category: software
@@ -432,7 +432,7 @@ companies:
   name: Ford Motor Company
   category: autonomy
   source: added
-  urls: ['https://corporate.ford.com/careers.html']
+  urls: ['https://www.careers.ford.com/en']  # corporate.ford.com/careers.html refuses scripts (403, 2026-11-15)
 - key: fortinet
   name: Fortinet
   category: security

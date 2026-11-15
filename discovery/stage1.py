@@ -35,6 +35,7 @@ from internwatch import config  # noqa: E402
 from internwatch.detect import eightfold_from, from_text, phenom_from  # noqa: E402
 from internwatch.http import Http  # noqa: E402
 from internwatch.liveness import page_systems  # noqa: E402
+from internwatch.models import RobotsBlocked  # noqa: E402
 from internwatch.moves import outcome  # noqa: E402
 from internwatch.runner import http_settings, make_gate  # noqa: E402
 
@@ -722,6 +723,27 @@ def pagecount(keys: list[str]) -> None:
                 if checker == "ashby":
                     n = sum(len(Ashby()._hosted(http, {"board": b})) for b in s.get("boards") or [s["board"]])
                     return entry, {"page_total": n, "how": "the hosted Ashby page's job list"}
+                if checker == "oracle":  # the count the site's page shows: TotalJobsCount of the search it calls
+                    d = http.get_json(f"https://{s['host']}/hcmRestApi/resources/latest/recruitingCEJobRequisitions",
+                                      params={"onlyData": "true", "finder": f"findReqs;siteNumber={s['site']},limit=1"})
+                    n = (d.get("items") or [{}])[0].get("TotalJobsCount")
+                    return entry, {"page_total": n, "how": f"the count its Oracle site's page shows (TotalJobsCount of "
+                                                           f"site {s['site']})"}
+                if checker == "talentbrew":  # the site's own search page, where robots.txt allows reading it
+                    host = urlsplit(s["sitemap_url"]).netloc
+                    try:
+                        r = http.get(f"https://{host}/search-jobs", headers={"Accept": "text/html"})
+                    except RobotsBlocked:
+                        return entry, {"page_total": None, "how": f"https://{host}/search-jobs is closed to scripts by "
+                                                                  f"robots.txt: the sitemap is the list"}
+                    m = re.search(r'data-total-results="(\d+)"', r.text)
+                    return entry, {"page_total": int(m.group(1)) if m else None,
+                                   "how": f"https://{host}/search-jobs shows data-total-results" if m else
+                                          f"https://{host}/search-jobs states no count"}
+                if checker == "jobvite":  # the company's hosted Jobvite page lists every job
+                    r = http.get(f"https://jobs.jobvite.com/{s['slug']}/jobs", headers={"Accept": "text/html"})
+                    n = len(set(re.findall(rf"/{re.escape(s['slug'])}/job/(\w+)", r.text)))
+                    return entry, {"page_total": n, "how": f"jobs on its hosted page jobs.jobvite.com/{s['slug']}/jobs"}
                 rt, jobs = results[entry].get("reported_total"), results[entry].get("jobs", 0)
                 if checker == "workday" and rt and abs(rt - jobs) > max(3, 0.02 * jobs):
                     # a site over Workday's 2,000 cap read one location at a time: a job under several locations is in

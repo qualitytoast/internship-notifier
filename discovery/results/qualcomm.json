@@ -1,0 +1,24 @@
+{
+  "key": "qualcomm",
+  "name": "Qualcomm",
+  "careers_url": "https://careers.qualcomm.com/careers",
+  "hiring_system": "eightfold",
+  "checker": "eightfold",
+  "settings": {
+    "host": "careers.qualcomm.com",
+    "domain": "qualcomm.com"
+  },
+  "feed": "GET https://careers.qualcomm.com/api/pcsx/search?domain=qualcomm.com",
+  "feed_total": 2004,
+  "page_total": 2004,
+  "page_total_how": "eightfold's own reported total (the careers page shows it) (2026-11-15)",
+  "intern_total": 119,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "careers.qualcomm.com/robots.txt checked before every request (discovery/robots/careers.qualcomm.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-15",
+  "source": "added",
+  "round": "added"
+}

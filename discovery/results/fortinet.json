@@ -1,0 +1,24 @@
+{
+  "key": "fortinet",
+  "name": "Fortinet",
+  "careers_url": "https://www.fortinet.com/corporate/careers",
+  "hiring_system": "oracle",
+  "checker": "oracle",
+  "settings": {
+    "host": "edel.fa.us2.oraclecloud.com",
+    "site": "CX_2001"
+  },
+  "feed": "GET https://edel.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions (siteNumber=CX_2001)",
+  "feed_total": 1077,
+  "page_total": 1078,
+  "page_total_how": "the count its Oracle site's page shows (TotalJobsCount of site CX_2001) (2026-11-15)",
+  "intern_total": 9,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "edel.fa.us2.oraclecloud.com/robots.txt checked before every request (discovery/robots/edel.fa.us2.oraclecloud.com.txt)",
+  "notes": "The page showed 1078 jobs and the board 1077 on 2026-11-15 (a posting or two opened or closed in between). The careers page is closed by robots.txt: the company is in liveness.blocked, with backup checks (backup_table.md). Not read: fortinet~cx_1: mirror of CX_2001 (1,050 of 1,051 jobs).",
+  "checked_at": "2026-11-15",
+  "source": "added",
+  "round": "added"
+}

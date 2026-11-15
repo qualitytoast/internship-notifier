@@ -1,0 +1,24 @@
+{
+  "key": "navy-federal",
+  "name": "Navy Federal Credit Union",
+  "careers_url": "https://jobs.navyfederal.org/hcmUI/CandidateExperience/en/sites/nfcu",
+  "hiring_system": "oracle",
+  "checker": "oracle",
+  "settings": {
+    "host": "fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com",
+    "site": "nfcu"
+  },
+  "feed": "GET https://fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions (siteNumber=nfcu)",
+  "feed_total": 133,
+  "page_total": 133,
+  "page_total_how": "the count its Oracle site's page shows (TotalJobsCount of site nfcu) (2026-11-15)",
+  "intern_total": 73,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com/robots.txt checked before every request (discovery/robots/fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-15",
+  "source": "added",
+  "round": "added"
+}

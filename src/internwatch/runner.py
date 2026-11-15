@@ -251,7 +251,24 @@ class Runner:
     def _with_learned_ids(self, c: Company) -> Company:
         """learn_ids: true (Ashby, Oracle): besides the configured watch_ids, read one by one the postings that the
         last poll found open and those SimplifyJobs lists for the company in its latest download, so a posting left
-        out of the company's own list while it still takes applications is seen. Ids found closed are dropped."""
+        out of the company's own list while it still takes applications is seen. Ids found closed are dropped.
+        In a multi-source company one source may set it (the open and closed ids are kept in the company's checker
+        state, which its sources share); it learns from the links to its own host (Texas Instruments: its Oracle site
+        edbz, which every Simplify row links, not its second site on ebgj)."""
+        s = c.settings or {}
+        if c.checker == "multi":
+            srcs = list(s.get("sources") or [])
+            i = next((n for n, x in enumerate(srcs) if (x.get("settings") or {}).get("learn_ids")), None)
+            if i is None:
+                return c
+            x = srcs[i]
+            one = self._learned(dataclasses.replace(c, checker=x["checker"], settings=x.get("settings") or {}),
+                                host=(x.get("settings") or {}).get("host"))
+            srcs[i] = {**x, "settings": one.settings}
+            return dataclasses.replace(c, settings={**s, "sources": srcs})
+        return self._learned(c)
+
+    def _learned(self, c: Company, host: str | None = None) -> Company:
         s = c.settings or {}
         rx = POSTING_ID_IN_URL.get(c.checker)
         if not s.get("learn_ids") or rx is None:
@@ -262,7 +279,8 @@ class Runner:
         ids += [x for x in state.get("watch_open") or [] if x not in ids]
         rows = self.db.q("SELECT r.url FROM simplify_rows r JOIN kv k ON k.key = 'simplify_baselined:' || r.source "
                          "WHERE r.tracked_company = ? AND r.last_seen = k.value ORDER BY r.first_seen DESC", c.key)
-        learned = [m.group(1) for r in rows if (m := rx.search(r["url"] or ""))]
+        learned = [m.group(1) for r in rows if (m := rx.search(r["url"] or ""))
+                   and (host is None or f"//{host.lower()}/" in (r["url"] or "").lower())]
         ids += [x for x in dict.fromkeys(learned) if x not in closed and x not in ids][:LEARNED_IDS_MAX]
         return dataclasses.replace(c, settings={**s, "watch_ids": ids})
 

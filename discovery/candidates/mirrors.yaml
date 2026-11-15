@@ -70,3 +70,88 @@ micron:
   - system: eightfold:domain=micron.com
     as: workday:site=external,tenant=micron
     why: careers.micron.com, an Eightfold front over Micron's Workday site (Stage 1, 2026-11-09)
+american-express:
+  - system: eightfold:domain=aexp.eightfold.ai
+    as: oracle:host=egug.fa.us2.oraclecloud.com,site=cx_1
+    why: American Express's Eightfold site, a front over the Oracle site that is read (Stage 1, 2026-11-09)
+bny:
+  - system: oracle:host=eofe.fa.us2.oraclecloud.com,site=cx_1
+    as: oracle:host=eofe.fa.us2.oraclecloud.com,site=cx_1001
+    why: another Oracle site of BNY listing the same jobs (all 1,247 the same on 2026-11-15)
+  - system: oracle:host=eofe.fa.us2.oraclecloud.com,site=bny-careers
+    as: oracle:host=eofe.fa.us2.oraclecloud.com,site=cx_1001
+    why: another Oracle site of BNY listing the same jobs (all 1,247 the same on 2026-11-15)
+charles-schwab:
+  - system: icims:portal=career-schwab.icims.com
+    as: 'talentbrew:'
+    why: its iCIMS portal, closed to scripts by robots.txt; schwabjobs.com (Radancy) lists its jobs and is read
+fortinet:
+  - system: oracle:host=edel.fa.us2.oraclecloud.com,site=cx_1
+    as: oracle:host=edel.fa.us2.oraclecloud.com,site=cx_2001
+    why: another Oracle site of Fortinet listing the same jobs (all 1,077 the same on 2026-11-15)
+hilton:
+  - system: oracle:host=efet.fa.us2.oraclecloud.com,site=cx_1009
+    as: oracle:host=efet.fa.us2.oraclecloud.com,site=cx_1
+    why: another Oracle site of Hilton; 4,312 of its 4,316 jobs are on the site read (2026-11-15), the other 4 hotel
+      roles, none a student role
+ice:
+  - system: icims:portal=careers-ice.icims.com
+    as: jibe:host=ice.jibeapply.com
+    why: its iCIMS portal behind the Jibe site that is read, closed to scripts by robots.txt (the 16 stored Simplify
+      rows that link it are all in the Jibe read of 2026-11-15)
+jpmorgan-chase:
+  - system: oracle:host=jpmc.fa.oraclecloud.com,site=cx_2001
+    as: oracle:host=jpmc.fa.oraclecloud.com,site=cx_1001
+    why: another Oracle site of JPMorgan Chase listing the same jobs (all 6,967 the same on 2026-11-15)
+keysight:
+  - system: icims:portal=careers-keysight.icims.com
+    as: jibe:host=jobs.keysight.com
+    why: its iCIMS portal behind the Jibe site that is read, closed to scripts by robots.txt (a posting the lists
+      link there is in the Jibe read)
+  - system: icims:portal=globalcareers-keysight.icims.com
+    unreadable: robots.txt blocks it
+  - system: icims:portal=keysight.icims.com
+    unreadable: robots.txt blocks it
+macys:
+  - system: oracle:host=ebwh.fa.us2.oraclecloud.com,site=cx_1001
+    as: oracle:host=ebwh.fa.us2.oraclecloud.com,site=cx_1
+    why: another Oracle site of Macy's, a subset of the site read (all 5,329 of its jobs are there, 2026-11-15)
+principal:
+  - system: icims:portal=careers-principal.icims.com
+    unreadable: robots.txt blocks it
+  - system: icims:portal=careershk-principal.icims.com
+    unreadable: robots.txt blocks it
+  - system: icims:portal=careersindonesiapam-principal.icims.com
+    unreadable: robots.txt blocks it
+  - system: icims:portal=careersmalaysia-principal.icims.com
+    unreadable: robots.txt blocks it
+  - system: icims:portal=careerssingapore-principal.icims.com
+    unreadable: robots.txt blocks it
+  - system: icims:portal=careersthailandpam-principal.icims.com
+    unreadable: robots.txt blocks it
+  - system: icims:portal=internal-principal.icims.com
+    unreadable: robots.txt blocks it
+  - system: icims:portal=internalspanish-principal.icims.com
+    unreadable: robots.txt blocks it
+qualcomm:
+  - system: eightfold:domain=qualcomm.eightfold.ai
+    as: eightfold:domain=qualcomm.com
+    why: the same Eightfold site as careers.qualcomm.com, which is read (Stage 1, 2026-11-09)
+rivian:
+  - system: icims:portal=us-careers-rivian.icims.com
+    as: jibe:host=careers.rivian.com
+    why: its iCIMS portal behind the Jibe site that is read, closed to scripts by robots.txt (a posting the lists
+      link there is in the Jibe read)
+  - system: icims:portal=internal-careers-rivian.icims.com
+    unreadable: robots.txt blocks it
+state-farm:
+  - system: icims:portal=careers-statefarm.icims.com
+    unreadable: robots.txt blocks it
+  - system: icims:portal=events-statefarm.icims.com
+    unreadable: robots.txt blocks it
+  - system: icims:portal=statefarm.icims.com
+    unreadable: robots.txt blocks it
+texas-instruments:
+  - system: oracle:host=edbz.fa.us2.oraclecloud.com,site=cx_1
+    as: oracle:host=edbz.fa.us2.oraclecloud.com,site=cx
+    why: another Oracle site of Texas Instruments listing the same jobs (all 914 the same on 2026-11-15)

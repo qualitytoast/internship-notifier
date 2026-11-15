@@ -1,0 +1,30 @@
+{
+  "key": "charles-schwab",
+  "name": "Charles Schwab",
+  "careers_url": "https://www.schwabjobs.com/",
+  "hiring_system": "talentbrew",
+  "checker": "talentbrew",
+  "settings": {
+    "sitemap_url": "https://www.schwabjobs.com/sitemap.xml",
+    "org_id": 33727,
+    "detail_limit": 40,
+    "match_urls": [
+      "www.schwabjobs.com",
+      "career-schwab.icims.com"
+    ]
+  },
+  "feed": "GET https://www.schwabjobs.com/sitemap.xml (job URLs) + JSON-LD of new student roles",
+  "feed_total": 269,
+  "page_total": null,
+  "page_total_how": "schwabjobs.com's search page, which states the count, is closed to scripts by robots.txt (2026-11-15)",
+  "intern_total": 1,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "www.schwabjobs.com/robots.txt checked before every request (discovery/robots/www.schwabjobs.com.txt)",
+  "notes": "Not read: charles-schwab: robots.txt disallows the iCIMS portal: read through Radancy (schwabjobs.com). Page count: the sitemap the site publishes for crawlers is the list.",
+  "checked_at": "2026-11-15",
+  "source": "added",
+  "round": "added",
+  "explained": "The sitemap the site publishes for crawlers is the list (schwabjobs.com's search page, which states the count, is closed to scripts by robots.txt (2026-11-15))."
+}

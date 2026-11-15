@@ -481,3 +481,46 @@ HP Inc., Lowe's, Micron Technology, Target, Walmart (Walmart Global Tech).
       verdicts, 40,454 matches, 103 Workday files identical); three replayed mornings of the Nov 13 recording
       (proof-a611189): PASS, with nothing even for review (no outage page and no row sent via Simplify in it)
 - For the user to dismiss: #179 and #182 (sites batch 4 chose not to read), #186 (a closed posting)
+
+## Batch 5: 24 companies on Oracle, Jibe, SmartRecruiters, Phenom, Radancy, Eightfold, iCIMS and Jobvite (branch stage2-batch5)
+
+American Express, Arista Networks, athenahealth, BNY, Charles Schwab, Ford, Fortinet, Hilton, ICE (NYSE), Intuitive
+Surgical, JPMorgan Chase, Keysight, Macy's, Navy Federal, Principal, Qualcomm, Rivian, SAS, State Farm, Texas
+Instruments, Tyler Technologies, United Airlines, UnitedHealth Group (Optum), Western Digital.
+
+- Costco moves to batch 6: every Costco row SimplifyJobs ever listed is on its IT site (the Taleo reader of batch 6);
+  its warehouse site has no matching role, and going live without the IT site would make its 8 open rows day-one
+  possible misses and send its interns as "already open" later instead of in "Now watching". Symmetry Systems is
+  Zscaler's (an alias since batch 1).
+- Every site re-read on 2026-11-15, the copies the plan set aside included (40 reads), and every careers page.
+  - athenahealth's and Ford's careers pages now refuse scripts (403): their own careers sites answer and are the
+    pages read (careers.athenahealth.com, where its jobs are, and www.careers.ford.com).
+  - The Oracle sites recorded as copies list only jobs of the site read (BNY's two others, Fortinet's CX_1,
+    JPMorgan's CX_2001, TI's edbz CX_1: all the same; Macy's CX_1001 a subset; Hilton's CX_1009 has 4 of its own,
+    hotel roles, none a student role).
+  - Western Digital's SmartRecruiters page now lists 162 postings (all 336 on Nov 9); its search counts 325 and lists
+    only its newest 100, half of them not on the page (two US Summer 2027 internships among them); neither the
+    page's own keyword search nor any search parameter reaches the rest. The read is the page plus the newest 100
+    (210): every new posting is read on its first morning; older ones off the page can't be read.
+- Settings from Stage 1's plan: `learn_ids` (Simplify rows of open but unlisted requisitions read one by one) for
+  American Express, JPMorgan Chase, BNY and Texas Instruments; `ignore_search_total` for Arista (its search counts
+  132 and lists the same 98 on every page) and Western Digital. TI reads two Oracle sites, and learn_ids worked only
+  for a company with one source: a multi-source company may now set it on one source, which learns from the links
+  to its own host (runner.py; no company used learn_ids inside a source before, so nothing else changes).
+- URL markers (`match_urls`) for systems the cross-check can't tell from a link: SmartRecruiters and Jobvite (the
+  company's name on a shared host), Phenom, Radancy and iCIMS hosts, and the iCIMS portals robots.txt closes behind
+  ICE's Jibe site and Schwab's Radancy site (from batch 5 on; earlier batches' settings are unchanged).
+- Lists and careers pages: every job system the lists link is configured or recorded as a copy (listcheck: 0). The
+  careers pages name 14 iCIMS portals robots.txt closes (Keysight 2, Principal 8 including its Asian and internal
+  portals, Rivian's internal one, State Farm 3): listed as unreadable (watch_unreadable). The portals behind ICE's,
+  Keysight's and Rivian's Jibe sites are copies: the ids the lists link there are in the Jibe reads.
+- Backup checks for the four careers pages that refuse scripts or are closed by robots.txt: Arista and Intuitive
+  (refused), Fortinet and SAS (robots.txt): archive.org copies for all four, Intuitive's job sitemap and its program
+  pages. liveness.blocked: 64.
+- Page counts: the count each Oracle site's page shows (TotalJobsCount of the search it calls), Radancy's search page
+  where robots.txt allows it (UnitedHealth; Schwab's is closed: its sitemap is the list), Tyler's hosted Jobvite page
+  (it cuts off after 125 of 144 jobs, alphabetically), and the systems' own totals for the rest. All 24 match or are
+  explained (verify, 2026-11-15): 33,968 jobs, 1,014 student roles, 457 matching.
+- JPMorgan Chase's "Fellowship Program" is a company keyword (a 2027 posting becomes a sure match, tagged
+  freshman/sophomore). UNDERCLASSMEN.md: 10 rows (American Express 2, BNY 2, Ford 1, JPMorgan Chase 4, UnitedHealth
+  1); 351 companies with no program.

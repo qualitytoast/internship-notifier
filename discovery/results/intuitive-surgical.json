@@ -1,0 +1,26 @@
+{
+  "key": "intuitive-surgical",
+  "name": "Intuitive Surgical",
+  "careers_url": "https://careers.intuitive.com/",
+  "hiring_system": "smartrecruiters",
+  "checker": "smartrecruiters",
+  "settings": {
+    "company": "Intuitive",
+    "match_urls": [
+      "smartrecruiters.com/intuitive/"
+    ]
+  },
+  "feed": "GET https://careers.smartrecruiters.com/Intuitive",
+  "feed_total": 889,
+  "page_total": 889,
+  "page_total_how": "smartrecruiters's own reported total (the careers page shows it) (2026-11-15)",
+  "intern_total": 16,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "careers.smartrecruiters.com/robots.txt checked before every request (discovery/robots/careers.smartrecruiters.com.txt)",
+  "notes": "The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md).",
+  "checked_at": "2026-11-15",
+  "source": "added",
+  "round": "added"
+}

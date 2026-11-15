@@ -1,0 +1,23 @@
+{
+  "key": "principal",
+  "name": "Principal Financial Group",
+  "careers_url": "https://careers.principal.com/careers-home",
+  "hiring_system": "jibe",
+  "checker": "jibe",
+  "settings": {
+    "host": "careers.principal.com"
+  },
+  "feed": "GET https://careers.principal.com/api/jobs?page=N&limit=100&internal=false",
+  "feed_total": 144,
+  "page_total": 144,
+  "page_total_how": "jibe's own reported total (the careers page shows it) (2026-11-15)",
+  "intern_total": 19,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "careers.principal.com/robots.txt checked before every request (discovery/robots/careers.principal.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-15",
+  "source": "added",
+  "round": "added"
+}

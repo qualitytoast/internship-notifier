@@ -1,0 +1,27 @@
+{
+  "key": "sas",
+  "name": "SAS Institute",
+  "careers_url": "https://www.sas.com/en_us/careers.html",
+  "hiring_system": "icims",
+  "checker": "icims",
+  "settings": {
+    "portal": "https://careers-sas.icims.com",
+    "match_urls": [
+      "careers-sas.icims.com"
+    ]
+  },
+  "feed": "GET https://careers-sas.icims.com/jobs/search?ss=1&in_iframe=1&pr=N",
+  "feed_total": 40,
+  "page_total": null,
+  "page_total_how": "its iCIMS portal's search pages state no total (2026-11-15)",
+  "intern_total": 9,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "careers-sas.icims.com/robots.txt checked before every request (discovery/robots/careers-sas.icims.com.txt)",
+  "notes": "The careers page is closed by robots.txt: the company is in liveness.blocked, with backup checks (backup_table.md). Page count: the read walks the search pages to the last one.",
+  "checked_at": "2026-11-15",
+  "source": "added",
+  "round": "added",
+  "explained": "The read walks the search pages to the last one (its iCIMS portal's search pages state no total (2026-11-15))."
+}

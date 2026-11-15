@@ -169,15 +169,15 @@
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 1271,
+  "jobs": 1247,
   "students": 76,
-  "matched": 31,
-  "seconds": 22.6,
+  "matched": 32,
+  "seconds": 16.4,
   "requests": 7,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:53Z"
+  "started": "2026-11-15T15:23:43Z"
  },
  "cadence~site-addl_jobs": {
   "checker": "workday",
@@ -1369,15 +1369,15 @@
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 1051,
+  "jobs": 1077,
   "students": 9,
   "matched": 1,
-  "seconds": 10.7,
+  "seconds": 11.4,
   "requests": 6,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:54Z"
+  "started": "2026-11-15T15:23:50Z"
  },
  "fox~site-FOXTVST_Central": {
   "checker": "workday",
@@ -1459,15 +1459,15 @@
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 7067,
-  "students": 69,
-  "matched": 23,
-  "seconds": 75.4,
-  "requests": 36,
+  "jobs": 6967,
+  "students": 67,
+  "matched": 22,
+  "seconds": 71.8,
+  "requests": 35,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:53Z"
+  "started": "2026-11-15T15:23:39Z"
  },
  "kla~site-Filmetrics": {
   "checker": "workday",
@@ -2104,30 +2104,30 @@
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 127,
-  "students": 13,
-  "matched": 8,
-  "seconds": 2.2,
+  "jobs": 118,
+  "students": 11,
+  "matched": 5,
+  "seconds": 2.0,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:55Z"
+  "started": "2026-11-15T15:24:00Z"
  },
  "texas-instruments~edbz-cx_1": {
   "checker": "oracle",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 915,
-  "students": 126,
-  "matched": 46,
-  "seconds": 11.3,
+  "jobs": 914,
+  "students": 133,
+  "matched": 45,
+  "seconds": 11.0,
   "requests": 5,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:46:57Z"
+  "started": "2026-11-15T15:24:01Z"
  },
  "travelers~site-SimplyBusinesssExternal": {
   "checker": "workday",
@@ -2149,30 +2149,30 @@
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 145,
+  "jobs": 144,
   "students": 11,
   "matched": 11,
-  "seconds": 16.0,
+  "seconds": 13.7,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:47:16Z"
+  "started": "2026-11-15T15:24:40Z"
  },
  "unitedhealth-group": {
   "checker": "talentbrew",
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 6339,
-  "students": 111,
+  "jobs": 6520,
+  "students": 109,
   "matched": 87,
   "seconds": 40.5,
   "requests": 41,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:47:09Z"
+  "started": "2026-11-15T15:24:40Z"
  },
  "unitedhealth-group~ripplematch": {
   "checker": "ripplematch",
@@ -2182,12 +2182,12 @@
   "jobs": 1,
   "students": 1,
   "matched": 0,
-  "seconds": 1.0,
+  "seconds": 0.3,
   "requests": 1,
   "partial": false,
   "degraded": null,
   "reported_total": null,
-  "started": "2026-11-09T23:47:35Z"
+  "started": "2026-11-15T15:24:51Z"
  },
  "usaa~site-CONFIDENTIAL": {
   "checker": "workday",

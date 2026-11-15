@@ -229,3 +229,24 @@ def test_learned_ids_come_from_the_latest_download_and_skip_closed(make_cfg):
     r = Runner(cfg, db=db, checker_fn=FakeChecker({}))
     assert r._with_learned_ids(dell).settings["watch_ids"] == ["1", "9", "2"]  # 3: no longer listed; 4: closed
     assert r._with_learned_ids(other) is other  # companies without learn_ids are passed through unchanged
+
+
+def test_a_multi_source_company_learns_ids_for_its_source_that_asks(make_cfg):
+    # Texas Instruments: its Oracle site edbz (every Simplify row links it) and a second Oracle site on ebgj
+    ti = company("ti", checker="multi", settings={"dedupe": True, "sources": [
+        {"checker": "oracle", "settings": {"host": "edbz.fa.us2.oraclecloud.com", "site": "CX", "learn_ids": True}},
+        {"checker": "oracle", "settings": {"host": "ebgj.fa.us2.oraclecloud.com", "site": "CX_1"}}]})
+    plain = company("two", checker="multi", settings={"sources": [
+        {"checker": "oracle", "settings": {"host": "a", "site": "CX"}}, {"checker": "oracle", "settings": {"host": "b", "site": "CX"}}]})
+    cfg = make_cfg([ti, plain])
+    db = DB(cfg.settings.path("db"))
+    now = iso()
+    db.set("simplify_baselined:summer", now)
+    _row(db, "a", "https://edbz.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/25001234", now, "ti")
+    _row(db, "b", "https://ebgj.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/777", now, "ti")
+    db.set("ckstate:ti", json.dumps({"watch_open": ["25000001"], "watch_closed": []}))
+    r = Runner(cfg, db=db, checker_fn=FakeChecker({}))
+    srcs = r._with_learned_ids(ti).settings["sources"]
+    assert srcs[0]["settings"]["watch_ids"] == ["25000001", "25001234"]   # its own host's link only
+    assert "watch_ids" not in srcs[1]["settings"] and ti.settings["sources"][0]["settings"].get("watch_ids") is None
+    assert r._with_learned_ids(plain) is plain

@@ -1,0 +1,24 @@
+{
+  "key": "hilton",
+  "name": "Hilton",
+  "careers_url": "https://jobs.hilton.com/",
+  "hiring_system": "oracle",
+  "checker": "oracle",
+  "settings": {
+    "host": "efet.fa.us2.oraclecloud.com",
+    "site": "CX_1"
+  },
+  "feed": "GET https://efet.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions (siteNumber=CX_1)",
+  "feed_total": 4315,
+  "page_total": 4295,
+  "page_total_how": "the count its Oracle site's page shows (TotalJobsCount of site CX_1) (2026-11-15)",
+  "intern_total": 36,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "efet.fa.us2.oraclecloud.com/robots.txt checked before every request (discovery/robots/efet.fa.us2.oraclecloud.com.txt)",
+  "notes": "The page showed 4295 jobs and the board 4315 on 2026-11-15 (postings opened or closed in between). Not read: hilton~cx_1009: mirror.",
+  "checked_at": "2026-11-15",
+  "source": "added",
+  "round": "added"
+}

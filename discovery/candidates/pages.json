@@ -101,8 +101,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.americanexpress.com/en-us/careers/",
-  "bytes": 575893,
-  "seconds": 0.9,
+  "bytes": 575425,
+  "seconds": 0.8,
   "title": "American Express Careers &amp; Job Openings | Amex Careers US",
   "challenge": false,
   "systems": [
@@ -247,7 +247,7 @@
   "url": "https://www.arista.com/en/careers",
   "outcome": "refused",
   "error": "HTTP 406 for GET https://www.arista.com/en/careers",
-  "seconds": 0.2
+  "seconds": 0.8
  },
  "asana": {
   "url": "https://asana.com/jobs",
@@ -264,12 +264,12 @@
   "phenom": []
  },
  "athenahealth": {
-  "url": "https://www.athenahealth.com/careers",
+  "url": "https://careers.athenahealth.com/",
   "outcome": "ok",
   "status": 200,
-  "final_url": "https://careers.athenahealth.com/us/en/",
-  "bytes": 196380,
-  "seconds": 223.4,
+  "final_url": "https://careers.athenahealth.com/us/en",
+  "bytes": 196551,
+  "seconds": 2.5,
   "title": "Get Started with Your Healthcare IT Career | athenahealth",
   "challenge": false,
   "systems": [],
@@ -490,8 +490,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.bny.com/corporate/global/en/about-us/careers/work-with-us.html",
-  "bytes": 268409,
-  "seconds": 222.3,
+  "bytes": 268465,
+  "seconds": 1.3,
   "title": "Work With Us | BNY",
   "challenge": false,
   "systems": [
@@ -657,8 +657,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.schwabjobs.com/",
-  "bytes": 339870,
-  "seconds": 0.3,
+  "bytes": 339871,
+  "seconds": 0.6,
   "title": "Careers in Finance, Technology, and Service | Schwab Jobs",
   "challenge": false,
   "systems": [
@@ -1535,12 +1535,12 @@
   ]
  },
  "ford": {
-  "url": "https://corporate.ford.com/careers.html",
+  "url": "https://www.careers.ford.com/en",
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.careers.ford.com/en",
-  "bytes": 60348,
-  "seconds": 0.6,
+  "bytes": 60955,
+  "seconds": 0.2,
   "title": "Working at Ford Motor Company",
   "challenge": false,
   "systems": [],
@@ -1552,7 +1552,7 @@
   "url": "https://www.fortinet.com/corporate/careers",
   "outcome": "robots",
   "error": "robots.txt disallows https://www.fortinet.com/corporate/careers (Disallow: /)",
-  "seconds": 0.2
+  "seconds": 0.8
  },
  "fox": {
   "url": "https://www.foxcareers.com/",
@@ -1900,8 +1900,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://jobs.hilton.com/",
-  "bytes": 1394090,
-  "seconds": 3.7,
+  "bytes": 1404745,
+  "seconds": 0.7,
   "title": "",
   "challenge": false,
   "systems": [
@@ -2037,8 +2037,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.ice.com/careers",
-  "bytes": 113244,
-  "seconds": 0.4,
+  "bytes": 118698,
+  "seconds": 0.3,
   "title": "Careers at ICE",
   "challenge": false,
   "systems": [],
@@ -2064,7 +2064,7 @@
   "url": "https://careers.intuitive.com/",
   "outcome": "refused",
   "error": "HTTP 403 for GET https://careers.intuitive.com/",
-  "seconds": 0.2
+  "seconds": 0.3
  },
  "ironclad": {
   "url": "https://ironcladapp.com/careers",
@@ -2108,8 +2108,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.jpmorganchase.com/careers?redirect=careers_jpm",
-  "bytes": 174666,
-  "seconds": 0.7,
+  "bytes": 174645,
+  "seconds": 0.5,
   "title": "Careers | JPMorganChase",
   "challenge": false,
   "systems": [
@@ -2132,8 +2132,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://jobs.keysight.com/external",
-  "bytes": 547687,
-  "seconds": 1.4,
+  "bytes": 548128,
+  "seconds": 1.7,
   "title": "Keysight Careers",
   "challenge": false,
   "systems": [
@@ -2342,7 +2342,7 @@
   "status": 200,
   "final_url": "https://ebwh.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001",
   "bytes": 26043,
-  "seconds": 1.3,
+  "seconds": 2.4,
   "title": "Macy\\'s",
   "challenge": false,
   "systems": [
@@ -2540,7 +2540,7 @@
   "status": 200,
   "final_url": "https://jobs.navyfederal.org/hcmUI/CandidateExperience/en/sites/nfcu",
   "bytes": 170877,
-  "seconds": 2.4,
+  "seconds": 2.3,
   "title": "Navy Federal Credit Union",
   "challenge": false,
   "systems": [],
@@ -2962,8 +2962,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.principal.com/careers-home",
-  "bytes": 469258,
-  "seconds": 0.8,
+  "bytes": 469263,
+  "seconds": 1.5,
   "title": "Join our team | Careers at Principal",
   "challenge": false,
   "systems": [
@@ -3152,8 +3152,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.qualcomm.com/careers",
-  "bytes": 300569,
-  "seconds": 1.0,
+  "bytes": 299058,
+  "seconds": 1.4,
   "title": "Qualcomm Careers | Engineering Jobs and More | Qualcomm",
   "challenge": false,
   "systems": [
@@ -3331,8 +3331,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.rivian.com/careers-home/",
-  "bytes": 413967,
-  "seconds": 0.6,
+  "bytes": 413972,
+  "seconds": 1.4,
   "title": "Rivian Automotive",
   "challenge": false,
   "systems": [
@@ -3448,7 +3448,7 @@
   "url": "https://www.sas.com/en_us/careers.html",
   "outcome": "robots",
   "error": "robots.txt disallows https://www.sas.com/en_us/careers.html (Disallow: /)",
-  "seconds": 0.2
+  "seconds": 1.6
  },
  "sentry": {
   "url": "https://sentry.io/careers/",
@@ -3654,8 +3654,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://jobs.statefarm.com/main/",
-  "bytes": 463392,
-  "seconds": 0.5,
+  "bytes": 462748,
+  "seconds": 0.6,
   "title": "State Farm Careers",
   "challenge": false,
   "systems": [
@@ -3843,7 +3843,7 @@
   "status": 200,
   "final_url": "https://careers.ti.com/en/sites/CX",
   "bytes": 101396,
-  "seconds": 2.0,
+  "seconds": 1.8,
   "title": "Texas Instruments",
   "challenge": false,
   "systems": [],
@@ -3943,8 +3943,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.tylertech.com/careers",
-  "bytes": 169978,
-  "seconds": 0.8,
+  "bytes": 169985,
+  "seconds": 0.5,
   "title": "Careers | Tyler Technologies",
   "challenge": false,
   "systems": [],
@@ -4024,7 +4024,7 @@
   "status": 200,
   "final_url": "https://careers.united.com/us/en",
   "bytes": 140879,
-  "seconds": 2.9,
+  "seconds": 2.8,
   "title": "Careers at United Airlines | United Airlines jobs",
   "challenge": false,
   "systems": [],
@@ -4044,8 +4044,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://careers.unitedhealthgroup.com/search-jobs",
-  "bytes": 8674068,
-  "seconds": 1.2,
+  "bytes": 8703521,
+  "seconds": 1.3,
   "title": "Search our Job Opportunities at UnitedHealth Group",
   "challenge": false,
   "systems": [],
@@ -4210,8 +4210,8 @@
   "outcome": "ok",
   "status": 200,
   "final_url": "https://www.westerndigital.com/careers",
-  "bytes": 1023384,
-  "seconds": 0.8,
+  "bytes": 1023224,
+  "seconds": 1.2,
   "title": "Explore Western Digital Career Opportunities | WD",
   "challenge": false,
   "systems": [],

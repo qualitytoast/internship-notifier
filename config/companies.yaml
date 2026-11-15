@@ -3961,3 +3961,245 @@ companies:
       settings: {host: cvshealth.wd1.myworkdayjobs.com, tenant: cvshealth, past_total: true, unlinked_ok: 50, site: Private_Postings_Intern_Conversion_ONLY}
   verified: {page_total: 64}
   round: added
+- key: qualcomm
+  name: Qualcomm
+  category: semiconductors
+  careers_url: ['https://careers.qualcomm.com/careers', 'https://careers.qualcomm.com/']
+  checker: eightfold
+  settings: {host: careers.qualcomm.com, domain: qualcomm.com}
+  verified: {page_total: 2004}
+  round: added
+- key: intuitive-surgical
+  name: Intuitive Surgical
+  category: healthcare
+  careers_url: ['https://careers.intuitive.com/']
+  checker: smartrecruiters
+  settings:
+    company: Intuitive
+    match_urls: [smartrecruiters.com/intuitive/]
+  verified: {page_total: 889}
+  round: added
+- key: macys
+  name: Macy's
+  category: retail
+  careers_url: ['https://ebwh.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001', 'https://www.macysjobs.com/']
+  checker: oracle
+  settings: {host: ebwh.fa.us2.oraclecloud.com, site: CX_1}
+  verified: {page_total: 6655}
+  round: added
+- key: jpmorgan-chase
+  name: JPMorgan Chase
+  category: finance-insurance
+  aliases: [JP Morgan Chase]
+  careers_url: ['https://www.jpmorganchase.com/careers?redirect=careers_jpm', 'https://careers.jpmorgan.com/']
+  checker: oracle
+  settings: {host: jpmc.fa.oraclecloud.com, site: CX_1001, learn_ids: true}
+  role_keywords: [fellowship program]
+  verified: {page_total: 6968, explained: The page showed 6968 jobs and the board 6967 on 2026-11-15 (a posting or two opened or closed
+      in between).}
+  round: added
+- key: hilton
+  name: Hilton
+  category: travel
+  aliases: [Hilton Worldwide]
+  careers_url: ['https://jobs.hilton.com/']
+  checker: oracle
+  settings: {host: efet.fa.us2.oraclecloud.com, site: CX_1}
+  verified: {page_total: 4295, explained: The page showed 4295 jobs and the board 4315 on 2026-11-15 (postings opened or closed in between).}
+  round: added
+- key: rivian
+  name: Rivian
+  category: autonomy
+  careers_url: ['https://careers.rivian.com/careers-home/', 'https://careers.rivian.com/']
+  checker: jibe
+  settings: {host: careers.rivian.com}
+  verified: {page_total: 951}
+  round: added
+- key: unitedhealth-group
+  name: UnitedHealth Group (Optum)
+  category: healthcare
+  aliases: [Optum, UnitedHealthcare]
+  careers_url: ['https://careers.unitedhealthgroup.com/search-jobs', 'https://careers.unitedhealthgroup.com/']
+  checker: talentbrew
+  settings:
+    sitemap_url: https://careers.unitedhealthgroup.com/sitemap.xml
+    org_id: 34088
+    detail_limit: 40
+    match_urls: [careers.unitedhealthgroup.com]
+  verified: {page_total: 6519, explained: The page showed 6519 jobs and the board 6520 on 2026-11-15 (a posting or two opened or closed
+      in between).}
+  round: added
+- key: keysight
+  name: Keysight
+  category: hardware
+  careers_url: ['https://jobs.keysight.com/external', 'https://jobs.keysight.com/']
+  checker: jibe
+  settings: {host: jobs.keysight.com}
+  verified: {page_total: 815}
+  round: added
+- key: western-digital
+  name: Western Digital
+  category: hardware
+  careers_url: ['https://www.westerndigital.com/careers', 'https://jobs.westerndigital.com/']
+  checker: smartrecruiters
+  settings:
+    company: WesternDigital
+    ignore_search_total: true
+    match_urls: [smartrecruiters.com/westerndigital/]
+  verified: {page_total: 162, explained: 'Its SmartRecruiters page lists 162 postings (all 336 on 11-09) and its search counts 325 but
+      lists only the newest 100: the read is both (210), so each new posting is read on its first morning, and older ones off the page
+      can''t be.'}
+  round: added
+- key: ford
+  name: Ford Motor Company
+  category: autonomy
+  careers_url: ['https://www.careers.ford.com/en']
+  checker: oracle
+  settings: {host: efds.fa.em5.oraclecloud.com, site: CX_1}
+  verified: {page_total: 867}
+  round: added
+- key: bny
+  name: BNY
+  category: finance-insurance
+  careers_url: ['https://www.bny.com/corporate/global/en/about-us/careers/work-with-us.html', 'https://www.bny.com/corporate/global/en/careers.html']
+  checker: oracle
+  settings: {host: eofe.fa.us2.oraclecloud.com, site: CX_1001, learn_ids: true}
+  verified: {page_total: 1250, explained: The page showed 1250 jobs and the board 1247 on 2026-11-15 (postings opened or closed in between).}
+  round: added
+- key: tyler-technologies
+  name: Tyler Technologies
+  category: software
+  careers_url: ['https://www.tylertech.com/careers']
+  checker: jobvite
+  settings:
+    company_id: q6NaVfwI
+    slug: tylertech
+    match_urls: [jobs.jobvite.com/tylertech/]
+  verified: {page_total: 125, explained: 'Its hosted Jobvite page shows the first 125 jobs in alphabetical order and cuts off the other
+      19 (2026-11-15): the Jobvite feed that is read lists all 144.'}
+  round: added
+- key: ice
+  name: Intercontinental Exchange (NYSE)
+  category: fintech
+  aliases: [NYSE, ICE]
+  careers_url: ['https://www.ice.com/careers']
+  checker: jibe
+  settings:
+    host: ice.jibeapply.com
+    match_urls: [careers-ice.icims.com]
+  verified: {page_total: 315}
+  round: added
+- key: texas-instruments
+  name: Texas Instruments
+  category: semiconductors
+  careers_url: ['https://careers.ti.com/en/sites/CX', 'https://careers.ti.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [edbz.fa.us2.oraclecloud.com, ebgj.fa.us2.oraclecloud.com]
+    sources:
+    - checker: oracle
+      settings: {host: edbz.fa.us2.oraclecloud.com, site: CX, learn_ids: true}
+    - checker: oracle
+      settings: {host: ebgj.fa.us2.oraclecloud.com, site: CX_1}
+  verified: {page_total: 1032}
+  round: added
+- key: fortinet
+  name: Fortinet
+  category: security
+  careers_url: ['https://www.fortinet.com/corporate/careers']
+  checker: oracle
+  settings: {host: edel.fa.us2.oraclecloud.com, site: CX_2001}
+  verified: {page_total: 1078, explained: The page showed 1078 jobs and the board 1077 on 2026-11-15 (a posting or two opened or closed
+      in between).}
+  round: added
+- key: state-farm
+  name: State Farm
+  category: finance-insurance
+  careers_url: ['https://jobs.statefarm.com/main/', 'https://jobs.statefarm.com/']
+  checker: jibe
+  settings: {host: jobs.statefarm.com}
+  verified: {page_total: 240}
+  round: added
+- key: charles-schwab
+  name: Charles Schwab
+  category: finance-insurance
+  careers_url: ['https://www.schwabjobs.com/']
+  checker: talentbrew
+  settings:
+    sitemap_url: https://www.schwabjobs.com/sitemap.xml
+    org_id: 33727
+    detail_limit: 40
+    match_urls: [www.schwabjobs.com, career-schwab.icims.com]
+  verified: {page_total: null}
+  round: added
+- key: american-express
+  name: American Express
+  category: fintech
+  careers_url: ['https://www.americanexpress.com/en-us/careers/']
+  checker: oracle
+  settings: {host: egug.fa.us2.oraclecloud.com, site: CX_1, learn_ids: true}
+  verified: {page_total: 308}
+  round: added
+- key: principal
+  name: Principal Financial Group
+  category: finance-insurance
+  careers_url: ['https://careers.principal.com/careers-home', 'https://careers.principal.com/']
+  checker: jibe
+  settings: {host: careers.principal.com}
+  verified: {page_total: 144}
+  round: added
+- key: navy-federal
+  name: Navy Federal Credit Union
+  category: finance-insurance
+  aliases: [Navy Federal]
+  careers_url: ['https://jobs.navyfederal.org/hcmUI/CandidateExperience/en/sites/nfcu', 'https://www.navyfederal.org/careers/']
+  checker: oracle
+  settings: {host: fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com, site: nfcu}
+  verified: {page_total: 133}
+  round: added
+- key: arista-networks
+  name: Arista Networks
+  category: hardware
+  careers_url: ['https://www.arista.com/en/careers']
+  checker: smartrecruiters
+  settings:
+    company: AristaNetworks
+    ignore_search_total: true
+    match_urls: [smartrecruiters.com/aristanetworks/]
+  verified: {page_total: 132, explained: 'Its SmartRecruiters page and search count 132 postings but list the same 98 on every page
+      (2026-11-15, and 147 for 98 on 11-09): the read has all 98, and the search''s count isn''t compared (ignore_search_total).'}
+  round: added
+- key: sas
+  name: SAS Institute
+  category: software
+  careers_url: ['https://www.sas.com/en_us/careers.html']
+  checker: icims
+  settings:
+    portal: https://careers-sas.icims.com
+    match_urls: [careers-sas.icims.com]
+  verified: {page_total: null}
+  round: added
+- key: athenahealth
+  name: athenahealth
+  category: healthcare
+  careers_url: ['https://careers.athenahealth.com/us/en', 'https://careers.athenahealth.com/']
+  checker: phenom
+  settings:
+    base_url: https://careers.athenahealth.com
+    ref_num: ATHAHHUS
+    match_urls: [careers.athenahealth.com]
+  verified: {page_total: 73}
+  round: added
+- key: united-airlines
+  name: United Airlines
+  category: travel
+  careers_url: ['https://careers.united.com/us/en', 'https://careers.united.com/']
+  checker: phenom
+  settings:
+    base_url: https://careers.united.com
+    ref_num: UAIUADUS
+    match_urls: [careers.united.com]
+  verified: {page_total: 119}
+  round: added

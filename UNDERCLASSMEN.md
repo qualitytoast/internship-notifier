@@ -42,10 +42,14 @@ rows are yours.
 | Company | Program | For | Where it is posted | InternWatch | Summer 2027 cycle |
 |---|---|---|---|---|---|
 | Amazon | Propel | not stated | Amazon job site | emailed if posted ("propel") | no 2027 posting found |
+| American Express | Discovery Program (1-day in-person event; an accelerated interview track for the next summer's internship) | So (fall-semester sophomores) | American Express job site | emailed if posted ("discovery program") | 2027 edition open Aug 11-17, 2026 (closed) |
+| American Express | Campus Undergraduate Summer Internship Program - 2027 Sophomore Finance (8-9 weeks) | So | American Express job site | emailed if posted | closed; gone by Oct 8, 2026 |
 | Bank of America | Campus Insight Forum: The Power to Lead (multi-day program in New York on Global Banking & Markets) | So | Bank of America campus site (bankcampuscareers.tal.net) | not watched yet (the campus site gets its own reader in a later batch) | fall 2026 edition closed Aug 22, 2026 |
 | Bank of America | Global Technology Early Insights Forum (virtual) | Fr + So (per Harvard FAS; the posting's own eligibility was not read) | Bank of America campus site (bankcampuscareers.tal.net) | not watched yet (the campus site gets its own reader in a later batch) | last edition Feb 2026; 2027 not posted yet |
 | Bank of America | Sophomore Summer Analyst (Investment Banking and Sales & Trading in past cycles) | So | Bank of America campus site (bankcampuscareers.tal.net) | not watched yet (the campus site gets its own reader in a later batch) | no summer 2027 posting as of Oct 8, 2026 |
 | Bloomberg | First Year Insights | Fr | bloomberg.com program page | not watched (emailed if posted on the job site) | no 2027 listing |
+| BNY | Sophomore Summit (virtual, 3 sessions over 6 weeks; Engineering & Technology and Business & Corporate tracks) | So (graduating Dec 2028 or May 2029) | bny.com pre-internship page; BNY's job site is Oracle | emailed if posted on the job site ("sophomore") | applications open Jan 11, 2027 |
+| BNY | Freshman Jumpstart (two half-day virtual sessions, Jul 13-14, 2027; business functions only, no technology track) | Fr | bny.com pre-internship page | emailed if posted on the job site ("freshman") | registration opens Jan 11, 2027 |
 | Capital One | Technology Internship Program (formerly Technology Early Internship Program, TEIP) | early college | Capital One job site | emailed | not posted yet (not on the job site or SimplifyJobs on Oct 20, 2026) |
 | Capital One | Early Internship Program (10 weeks, McLean) and Analyst Early Internship (AEIP) | So | Capital One job site | emailed | AEIP closed; Early Internship not posted yet |
 | Capital One | First Gen Focus | Fr + So | capitalone.eightfold.ai events | not watched (events, not jobs) | — |
@@ -61,6 +65,7 @@ rows are yours.
 | Electronic Arts | Pathfinder | Fr + So | — | emailed if posted ("pathfinder") | page removed |
 | Expedia | Career Discovery Program (Software Development), Career Exploration Program | not stated | Expedia's second Workday site | emailed (2027 editions) | 2026 editions seen; 2027 not posted |
 | Five Rings | LINK: Software Development Intensive | So | Five Rings job site | emailed | open |
+| Ford Motor Company | Ignite Internship (10-12 week summer internship "designed for first and second year college students"; third-party sources only, not on Ford's students page) | Fr + So (unverified) | a Handshake listing; Ford's job site is Oracle | emailed if posted on Ford's job site | CMU's list gives a Jan 1, 2027 deadline |
 | GlobalFoundries | Advanced Manufacturing Process Engineering Intern, Sophomore, and Advanced Manufacturing Equipment Engineering Intern, Sophomore (Summer 2027, Essex Junction, VT) | So | GlobalFoundries job site | emailed | open (see above) |
 | Goldman Sachs | Possibilities Series (formerly Possibilities Summit) | Fr | goldmansachs.com program page | emailed when the page opens applications | expected ~Feb 2027 |
 | Goldman Sachs | Emerging Leaders Series | So | goldmansachs.com program page | emailed when the page opens applications | closed for this cycle |
@@ -73,6 +78,10 @@ rows are yours.
 | IMC | Launchpad: 2-day Chicago program that fast-tracks the next summer's SWE/quant trading internship | So | IMC job site | emailed (`launchpad`) | 2026 edition seen; 2027 expected Feb–Mar 2027 |
 | IMC | Women in Trading and Technology Program | women students (year not stated) | IMC job site | not caught (no student word; not confirmed as freshman/sophomore) | 2026 edition seen |
 | Jane Street | INSIGHT, FOCUS, FTTP, Bridge, SEE (CS and math in finance, express interest) | Fr, So | janestreet.com program pages (programs-endpoint.json) | emailed while a US session takes applications (Jane Street Programs) | see above |
+| JPMorgan Chase | Fellowship Program (5-week paid summer fellowship; tracks include Global Technology - Software Engineer and Firmwide - Data Science; fellows are considered for the next summer's internship) | So | JPMorgan Chase job site | emailed if posted (JPMorgan Chase keyword "fellowship program") | 2027 cohort not posted yet; last cycle open Nov 11, 2025 to Jan 13, 2026 |
+| JPMorgan Chase | Career.edYOU Academy (virtual live sessions over one semester, with a certificate) | So | jpmorganchase.com program page (registration, not a job posting) | not watched (not a job posting) | registration closed; nothing announced for 2026 or 2027 |
+| JPMorgan Chase | Freshman Focus (90-minute virtual session on the wholesale businesses) | Fr | university career-center event listings | not watched (not on the job site) | last held Apr 2026; 2027 expected about Mar-Apr 2027 |
+| JPMorgan Chase | Investment Banking & Markets Insights Program (one-day sessions Dec 2-4, 2026 in Chicago, NYC and SF; one source only) | So (graduating Dec 2028-Jun 2029) | event registration on jpmc.recsolu.com | not watched (event registration) | deadline Oct 15, 2026 (closed) |
 | Liberty Mutual | Claim Your Career (fall undergraduate program) | So + juniors | Liberty Mutual job site | emailed | Fall 2026 edition seen |
 | LinkedIn | First Play | Fr + So | linkedin.com and LinkedIn's SmartRecruiters page | emailed if posted on the SmartRecruiters page | expected late Nov 2026 |
 | Lowe's | Exploratory Software Engineering - Undergrad Internship (Charlotte Tech Hub; Lowe's calls it its rising sophomore/junior software internship) | Fr + So (2026 edition: graduating Dec 2027 to May 2029) | Lowe's job site | emailed (the daily search for "intern" on Lowe's site finds it) | open (see above) |
@@ -95,6 +104,7 @@ rows are yours.
 | Two Sigma | College Mentor Connect (open-source mentorship) | Fr | twosigma.com | not watched | — |
 | Uber | UberSTAR: 12-week SWE internship | Fr + So | Uber job site | emailed if posted | not posted for 2027 |
 | Uber | Career Prep: SWE fellowship (workshops, mentoring, mock interviews) | Fr + So | uber.com/careers/careerprep | emailed if posted on the job site | not stated |
+| UnitedHealth Group (Optum) | Interns Elevated Program (8-month rotational internship, full time in summer then part time; seen only as a communications role) | So (current sophomores) | UnitedHealth Group job site | emailed if a track is in your fields (2026's was communications) | 2026 cohort; no 2027 cohort seen |
 | USAA | Accelerate Program (2 weeks in June, paid) | So | USAA job site | emailed if posted ("accelerate program") | 2026 edition ran Jun 1-12, 2026; no 2027 edition yet |
 | Visa | 2027 Sophomore Internship Program (SWE) | So | Visa job site | emailed | posted Sep 18, gone by early Oct 2026 |
 | Walmart (Walmart Global Tech) | Sophomore Summit (3 days in Bentonville, travel paid; tracks include Software Engineer at Walmart Global Tech) | So | Walmart job site | emailed if posted under the site's Intern job family, which is read every morning; otherwise it comes as an alert within a week, from the weekly read of the whole site | 2027 edition not posted yet (the last one was promoted in early Jan 2026) |
@@ -102,43 +112,46 @@ rows are yours.
 
 ## No dedicated program found
 
-These 332 companies have no freshman/sophomore program in any source above. Their regular internships still
+These 351 companies have no freshman/sophomore program in any source above. Their regular internships still
 come through, and any whose posting or description names freshmen or sophomores is tagged `freshman/sophomore`.
 
 1Password, Abridge, Addepar, Adobe, Affirm, Airbnb, Akamai, Allen Institute for AI (Ai2), Allstate, AllTrails,
 Altruist, AMD, American Family Insurance, Amperity, Analog Devices, Anchorage Digital, Anyscale, Appian, Apple,
-Applied Intuition, Applied Materials, Apptronik, AQR, Arcesium, Asana, AT&T, Atlassian, Aurora Innovation, Autodesk,
-BambooHR, Bandwidth, Base Power, Baseten, Bedrock Robotics, Benchling, Betterment, BILL, BlackRock, Block,
-Booking.com, Bot Auto, Box, Braze, Brevan Howard, Brex, Bugcrowd, C3 AI, Cadence Design Systems, Capstone DC, Capstone
-Investment Advisors, Carbon Robotics, Cartesia, CCC Intelligent Solutions, Censys, Cerebras, Chan Zuckerberg
-Initiative, Checkr, Chewy, Chime, Ciena, Circle, Cisco, Clay, Clockwork Systems, Cloudflare, Cockroach Labs, Cohere,
-Cohesity, Coinbase, Collaborative Robotics (Cobot), Comcast, Commonwealth Fusion Systems, Commure, ConductorOne,
-Copart, CoreWeave (Weights & Biases), CoStar Group, Cox Enterprises, CrowdStrike, Crusoe, d-Matrix, Databricks,
-Datadog, DataRobot, Decagon, Deepgram, Delinea, Dell Technologies, Descript, Dexcom, Dick's Sporting Goods,
-DigitalOcean, DocuSign, Domino Data Lab, DoorDash, DriveWealth, Dropbox, Dusty Robotics, DV Trading, EarnIn, eBay,
-Elevance Health, Ellipsis Labs, Enova, Epic (Epic Systems), Epic Games, Equinix, Etched, Etsy, Eventual (Daft), Exa,
-F5, Fastly, Fervo Energy, Fidelity Investments, Figma, Figure AI, FIS, Fiserv, Freddie Mac, Garner Health, GE Vernova,
-GEICO, Gemini, Gen Digital, General Motors, Genesis Molecular AI, Geneva Trading, Gimlet Labs, Glean, GlossGenius,
-GoDaddy, Grafana Labs, Graviton Research Capital, Groq, Grow Therapy, Grubhub (Wonder), GTS, Guidewire, Gusto, Haize
-Labs, Handshake, Harvey, Hewlett Packard Enterprise, Hex Technologies, HeyGen, HP Inc., HubSpot, Hugging Face,
-Hyperproof, Illumio, Immuta, Instabase, Intel, Intuit, Ironclad, IXL Learning, John Deere, Jump Trading, Khan Academy,
-Kirin, KLA, Klaviyo, KnowBe4, Lambda, LaunchDarkly, Lightspark, Locus Robotics, Lucid Motors, Lucid Software, Lyft,
+Applied Intuition, Applied Materials, Apptronik, AQR, Arcesium, Arista Networks, Asana, AT&T, athenahealth, Atlassian,
+Aurora Innovation, Autodesk, BambooHR, Bandwidth, Base Power, Baseten, Bedrock Robotics, Benchling, Betterment, BILL,
+BlackRock, Block, Booking.com, Bot Auto, Box, Braze, Brevan Howard, Brex, Bugcrowd, C3 AI, Cadence Design Systems,
+Capstone DC, Capstone Investment Advisors, Carbon Robotics, Cartesia, CCC Intelligent Solutions, Censys, Cerebras,
+Chan Zuckerberg Initiative, Charles Schwab, Checkr, Chewy, Chime, Ciena, Circle, Cisco, Clay, Clockwork Systems,
+Cloudflare, Cockroach Labs, Cohere, Cohesity, Coinbase, Collaborative Robotics (Cobot), Comcast, Commonwealth Fusion
+Systems, Commure, ConductorOne, Copart, CoreWeave (Weights & Biases), CoStar Group, Cox Enterprises, CrowdStrike,
+Crusoe, d-Matrix, Databricks, Datadog, DataRobot, Decagon, Deepgram, Delinea, Dell Technologies, Descript, Dexcom,
+Dick's Sporting Goods, DigitalOcean, DocuSign, Domino Data Lab, DoorDash, DriveWealth, Dropbox, Dusty Robotics, DV
+Trading, EarnIn, eBay, Elevance Health, Ellipsis Labs, Enova, Epic (Epic Systems), Epic Games, Equinix, Etched, Etsy,
+Eventual (Daft), Exa, F5, Fastly, Fervo Energy, Fidelity Investments, Figma, Figure AI, FIS, Fiserv, Fortinet, Freddie
+Mac, Garner Health, GE Vernova, GEICO, Gemini, Gen Digital, General Motors, Genesis Molecular AI, Geneva Trading,
+Gimlet Labs, Glean, GlossGenius, GoDaddy, Grafana Labs, Graviton Research Capital, Groq, Grow Therapy, Grubhub
+(Wonder), GTS, Guidewire, Gusto, Haize Labs, Handshake, Harvey, Hewlett Packard Enterprise, Hex Technologies, HeyGen,
+Hilton, HP Inc., HubSpot, Hugging Face, Hyperproof, Illumio, Immuta, Instabase, Intel, Intercontinental Exchange
+(NYSE), Intuit, Intuitive Surgical, Ironclad, IXL Learning, John Deere, Jump Trading, Keysight, Khan Academy, Kirin,
+KLA, Klaviyo, KnowBe4, Lambda, LaunchDarkly, Lightspark, Locus Robotics, Lucid Motors, Lucid Software, Lyft, Macy's,
 Marvell, Mastercard, McKesson, Mercor, Mercury, Micron Technology, Mistral AI, MongoDB, Multiply Labs, Nasdaq, Nasuni,
-Nationwide, nCino, Netflix, Netic, Neuralink, Nextdoor, Niantic Spatial, Nike, Nordstrom, Northwestern Mutual, Notion,
-Numeric, Nuro, Nutanix, Obsidian Security, Okta, ONE Finance, OpenAI, Oracle, Pacific Fusion, Palo Alto Networks,
-Patreon, Pendo, Perpay, Persona, Persona AI, Pinecone, Pinterest, PitchBook, Plaid, Postman, Precisely, Procore,
-Progressive, Proofpoint, PTC, Pure Storage, Q2, Qualtrics, Qumulo, Radix Trading, Red Hat, Reddit, Redwood Materials,
-Remitly, Replit, Rhoda AI, Ridgeline, Rilla, Riot Games, Ripple, Rippling, Rivian and VW Group Technologies (JV),
-Robinhood, Roblox, Rocket Companies, Rockwell Automation, Roku, Rubrik, SailPoint, Samsara, Scale AI, SeatGeek,
-Semgrep, Sentry, Serval, ServiceNow, Seven Research, Shopify, Sierra, Sigma Computing, SingleStore, Smartsheet, Snap,
-Snorkel AI, Snowflake, Snyk, Socure, SoFi, Sonos, Southwest Airlines, Spotify, Squarepoint Capital, Squarespace,
-Starburst, Stripe, Suno, Superhuman (formerly Grammarly), Synopsys, T-Mobile, Talos, Tamr, Tanium, Target, Temporal,
-TensorWave, The Home Depot, The New York Times, The Trade Desk, The Voleon Group, The Walt Disney Company, The
-Washington Post, Toast, Together AI, TransMarket Group, Tricentis, Trimble, Truveta, Twilio, Twitch, Typeface, Uber
-Freight, Udemy, UiPath, UKG, Unify, Unity, Vanguard, Veeam Software, Veeva Systems, Vercel, Verizon, Verkada, Viam,
-Voloridge Investment Management, Waabi, Walleye Capital, Warner Bros. Discovery, Wayfair, Waymo, Whatnot, Wolfram,
-Wolverine Trading, Workday, Workiva, Xcimer Energy, XTX Markets, Yelp, Yext, You.com, YugabyteDB, Zebra Technologies,
-Zendesk, Zillow, Zip, ZipRecruiter, Zocdoc, ZoomInfo, Zoox, Zscaler.
+Nationwide, Navy Federal Credit Union, nCino, Netflix, Netic, Neuralink, Nextdoor, Niantic Spatial, Nike, Nordstrom,
+Northwestern Mutual, Notion, Numeric, Nuro, Nutanix, Obsidian Security, Okta, ONE Finance, OpenAI, Oracle, Pacific
+Fusion, Palo Alto Networks, Patreon, Pendo, Perpay, Persona, Persona AI, Pinecone, Pinterest, PitchBook, Plaid,
+Postman, Precisely, Principal Financial Group, Procore, Progressive, Proofpoint, PTC, Pure Storage, Q2, Qualcomm,
+Qualtrics, Qumulo, Radix Trading, Red Hat, Reddit, Redwood Materials, Remitly, Replit, Rhoda AI, Ridgeline, Rilla,
+Riot Games, Ripple, Rippling, Rivian, Rivian and VW Group Technologies (JV), Robinhood, Roblox, Rocket Companies,
+Rockwell Automation, Roku, Rubrik, SailPoint, Samsara, SAS Institute, Scale AI, SeatGeek, Semgrep, Sentry, Serval,
+ServiceNow, Seven Research, Shopify, Sierra, Sigma Computing, SingleStore, Smartsheet, Snap, Snorkel AI, Snowflake,
+Snyk, Socure, SoFi, Sonos, Southwest Airlines, Spotify, Squarepoint Capital, Squarespace, Starburst, State Farm,
+Stripe, Suno, Superhuman (formerly Grammarly), Synopsys, T-Mobile, Talos, Tamr, Tanium, Target, Temporal, TensorWave,
+Texas Instruments, The Home Depot, The New York Times, The Trade Desk, The Voleon Group, The Walt Disney Company, The
+Washington Post, Toast, Together AI, TransMarket Group, Tricentis, Trimble, Truveta, Twilio, Twitch, Tyler
+Technologies, Typeface, Uber Freight, Udemy, UiPath, UKG, Unify, United Airlines, Unity, Vanguard, Veeam Software,
+Veeva Systems, Vercel, Verizon, Verkada, Viam, Voloridge Investment Management, Waabi, Walleye Capital, Warner Bros.
+Discovery, Wayfair, Waymo, Western Digital, Whatnot, Wolfram, Wolverine Trading, Workday, Workiva, Xcimer Energy, XTX
+Markets, Yelp, Yext, You.com, YugabyteDB, Zebra Technologies, Zendesk, Zillow, Zip, ZipRecruiter, Zocdoc, ZoomInfo,
+Zoox, Zscaler.
 
 ## Sources
 

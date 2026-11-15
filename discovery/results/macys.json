@@ -1,0 +1,24 @@
+{
+  "key": "macys",
+  "name": "Macy's",
+  "careers_url": "https://ebwh.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001",
+  "hiring_system": "oracle",
+  "checker": "oracle",
+  "settings": {
+    "host": "ebwh.fa.us2.oraclecloud.com",
+    "site": "CX_1"
+  },
+  "feed": "GET https://ebwh.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions (siteNumber=CX_1)",
+  "feed_total": 6655,
+  "page_total": 6655,
+  "page_total_how": "the count its Oracle site's page shows (TotalJobsCount of site CX_1) (2026-11-15)",
+  "intern_total": 102,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "ebwh.fa.us2.oraclecloud.com/robots.txt checked before every request (discovery/robots/ebwh.fa.us2.oraclecloud.com.txt)",
+  "notes": "Not read: macys~cx_1001: subset of the main site.",
+  "checked_at": "2026-11-15",
+  "source": "added",
+  "round": "added"
+}

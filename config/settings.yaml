@@ -49,7 +49,8 @@ liveness:                        # boards that go dead, get abandoned or are rep
             tower-research, uber, ukg, veeva, whatnot,
             box, censys, chime, enova, gusto, haize-labs, lucid-software, rubrik, udemy, yugabyte, ziprecruiter, zocdoc,
             alltrails, d-matrix, persona, progressive, xcimer,
-            cadence, ciena, cohesity, costar, cox, datarobot, globalfoundries, marvell, nasdaq, verizon, wells-fargo]
+            cadence, ciena, cohesity, costar, cox, datarobot, globalfoundries, marvell, nasdaq, verizon, wells-fargo,
+            arista-networks, fortinet, intuitive-surgical, sas]
   blocked_scan_seconds: 300      # their checks' time budget in each daily run (before the emails)
   watch_seconds: 360             # time budget of the watched boards (src/internwatch/watch.py), after the checks above
   watch_boards:                  # mirrors with a feed of their own: read every run, never stored. Boards whose
@@ -88,6 +89,7 @@ liveness:                        # boards that go dead, get abandoned or are rep
        settings: {host: target.wd5.myworkdayjobs.com, tenant: target, site: targetcareers, pack: true, split_first: true, past_total: true, unlinked_ok: 50}}
     - {company: walmart, name: Workday full read, checker: workday, every_days: 7,
        settings: {host: walmart.wd504.myworkdayjobs.com, tenant: walmart, site: WalmartExternal, pack: true, split_first: true, past_total: true, unlinked_ok: 50}}
+    - {company: unitedhealth-group, name: RippleMatch, checker: ripplematch, settings: {company_id: 831}}
   watch_every_days:              # dismissed boards too big to read every run (T-Mobile's has no intern worker type)
     "workday:site=alumni,tenant=tmobile": 7
   watch_unreadable:              # mirrors that can't be read. A role a list carries still raises a possible miss
@@ -99,6 +101,20 @@ liveness:                        # boards that go dead, get abandoned or are rep
     - {company: atlassian, board: "icims:portal=campus-globalcareers-atlassian.icims.com", why: it has no job list}
     - {company: nike, board: "avature:site=nikeats.avature.net/niketalentcommunity", why: robots.txt blocks it}
     - {company: northwestern-mutual, board: "icims:portal=opportunities-northwesternmutual.icims.com", why: robots.txt blocks it}
+    - {company: keysight, board: "icims:portal=globalcareers-keysight.icims.com", why: robots.txt blocks it}
+    - {company: keysight, board: "icims:portal=keysight.icims.com", why: robots.txt blocks it}
+    - {company: principal, board: "icims:portal=careers-principal.icims.com", why: robots.txt blocks it}
+    - {company: principal, board: "icims:portal=careershk-principal.icims.com", why: robots.txt blocks it}
+    - {company: principal, board: "icims:portal=careersindonesiapam-principal.icims.com", why: robots.txt blocks it}
+    - {company: principal, board: "icims:portal=careersmalaysia-principal.icims.com", why: robots.txt blocks it}
+    - {company: principal, board: "icims:portal=careerssingapore-principal.icims.com", why: robots.txt blocks it}
+    - {company: principal, board: "icims:portal=careersthailandpam-principal.icims.com", why: robots.txt blocks it}
+    - {company: principal, board: "icims:portal=internal-principal.icims.com", why: robots.txt blocks it}
+    - {company: principal, board: "icims:portal=internalspanish-principal.icims.com", why: robots.txt blocks it}
+    - {company: rivian, board: "icims:portal=internal-careers-rivian.icims.com", why: robots.txt blocks it}
+    - {company: state-farm, board: "icims:portal=careers-statefarm.icims.com", why: robots.txt blocks it}
+    - {company: state-farm, board: "icims:portal=events-statefarm.icims.com", why: robots.txt blocks it}
+    - {company: state-farm, board: "icims:portal=statefarm.icims.com", why: robots.txt blocks it}
   extra_tenants:                 # Workday tenants of a parent company, where a new site would show (moves.py W)
     pitchbook: [morningstar.wd5.myworkdayjobs.com]
   wp_pages:                      # WordPress sites whose /wp-json/wp/v2/pages answers: every page is read (moves.py P)
@@ -126,6 +142,7 @@ liveness:                        # boards that go dead, get abandoned or are rep
     cox: {url: "https://jobs.coxenterprises.com/sitemap.xml"}
     wells-fargo: {url: "https://www.wellsfargojobs.com/sitemap.xml"}
     verizon: {url: "https://mycareer.verizon.com/en/jobs/sitemap.xml"}
+    intuitive-surgical: {url: "https://careers.intuitive.com/sitemap.xml"}
   parallel_sources:              # boards next to the configured ones, read daily but never stored (moves.py S)
     - {company: akuna-capital, checker: greenhouse, settings: {board: mit}}
     - {company: akuna-capital, checker: greenhouse, settings: {board: optionstrading201course}}
@@ -182,6 +199,7 @@ liveness:                        # boards that go dead, get abandoned or are rep
     cox: ["https://jobs.coxenterprises.com/sitemap.xml", "wp:https://www.coxenterprises.com"]
     wells-fargo: ["https://www.wellsfargojobs.com/sitemap.xml"]
     verizon: ["https://mycareer.verizon.com/en/sitemap.xml"]
+    intuitive-surgical: ["https://careers.intuitive.com/sitemap.xml"]
   archive_paths:                 # archive.org (moves.py A): `list` paths whose newly saved student pages are listed
     # (any_page: every new page; ids: the job id in a page's URL), `pages` whose newest copy is read for the systems
     capstone: {pages: ["https://www.capstoneco.com/careers/"]}
@@ -218,6 +236,10 @@ liveness:                        # boards that go dead, get abandoned or are rep
     nasdaq: {pages: ["https://www.nasdaq.com/about/careers"]}
     verizon: {pages: ["https://mycareer.verizon.com/"]}
     wells-fargo: {pages: ["https://www.wellsfargojobs.com/"]}
+    arista-networks: {pages: ["https://www.arista.com/en/careers"]}
+    fortinet: {pages: ["https://www.fortinet.com/corporate/careers"]}
+    intuitive-surgical: {pages: ["https://careers.intuitive.com/"]}
+    sas: {pages: ["https://www.sas.com/en_us/careers.html"]}
   archive_max_days: 45           # an older copy says nothing about where the company posts now
   aliases:                       # one job system under two names (moves.py): the left one counts as the right one
     eightfold:domain=libertymutual.eightfold.ai: eightfold:domain=libertymutual.com
@@ -274,6 +296,20 @@ liveness:                        # boards that go dead, get abandoned or are rep
     eightfold:domain=hp-sandbox.com: 'workday:site=externalcareersite,tenant=hp'   # hp: jobs.hp.com, an Eightfold front over HP's Workday site (Stage 1, 2026-11-09)
     eightfold:domain=hp-sandbox.eightfold.ai: 'workday:site=externalcareersite,tenant=hp'   # hp: jobs.hp.com, an Eightfold front over HP's Workday site (Stage 1, 2026-11-09)
     eightfold:domain=micron.com: 'workday:site=external,tenant=micron'   # micron: careers.micron.com, an Eightfold front over Micron's Workday site (Stage 1, 2026-11-09)
+    ripplematch:company=unitedhealth-group: 'talentbrew:'   # unitedhealth-group: its RippleMatch page, watched
+    eightfold:domain=aexp.eightfold.ai: 'oracle:host=egug.fa.us2.oraclecloud.com,site=cx_1'   # american-express: American Express's Eightfold site, a front over the Oracle site that is read (Stage 1, 2026-11-09)
+    oracle:host=eofe.fa.us2.oraclecloud.com,site=cx_1: 'oracle:host=eofe.fa.us2.oraclecloud.com,site=cx_1001'   # bny: another Oracle site of BNY listing the same jobs (all 1,247 the same on 2026-11-15)
+    oracle:host=eofe.fa.us2.oraclecloud.com,site=bny-careers: 'oracle:host=eofe.fa.us2.oraclecloud.com,site=cx_1001'   # bny: another Oracle site of BNY listing the same jobs (all 1,247 the same on 2026-11-15)
+    icims:portal=career-schwab.icims.com: 'talentbrew:'   # charles-schwab: its iCIMS portal, closed to scripts by robots.txt
+    oracle:host=edel.fa.us2.oraclecloud.com,site=cx_1: 'oracle:host=edel.fa.us2.oraclecloud.com,site=cx_2001'   # fortinet: another Oracle site of Fortinet listing the same jobs (all 1,077 the same on 2026-11-15)
+    oracle:host=efet.fa.us2.oraclecloud.com,site=cx_1009: 'oracle:host=efet.fa.us2.oraclecloud.com,site=cx_1'   # hilton: another Oracle site of Hilton
+    icims:portal=careers-ice.icims.com: 'jibe:host=ice.jibeapply.com'   # ice: its iCIMS portal behind the Jibe site that is read, closed to scripts by robots.txt (the 16 stored Simplify rows that link it are all in the Jibe read of 2026-11-15)
+    oracle:host=jpmc.fa.oraclecloud.com,site=cx_2001: 'oracle:host=jpmc.fa.oraclecloud.com,site=cx_1001'   # jpmorgan-chase: another Oracle site of JPMorgan Chase listing the same jobs (all 6,967 the same on 2026-11-15)
+    icims:portal=careers-keysight.icims.com: 'jibe:host=jobs.keysight.com'   # keysight: its iCIMS portal behind the Jibe site that is read, closed to scripts by robots.txt (a posting the lists link there is in the Jibe read)
+    oracle:host=ebwh.fa.us2.oraclecloud.com,site=cx_1001: 'oracle:host=ebwh.fa.us2.oraclecloud.com,site=cx_1'   # macys: another Oracle site of Macy's, a subset of the site read (all 5,329 of its jobs are there, 2026-11-15)
+    eightfold:domain=qualcomm.eightfold.ai: 'eightfold:domain=qualcomm.com'   # qualcomm: the same Eightfold site as careers.qualcomm.com, which is read (Stage 1, 2026-11-09)
+    icims:portal=us-careers-rivian.icims.com: 'jibe:host=careers.rivian.com'   # rivian: its iCIMS portal behind the Jibe site that is read, closed to scripts by robots.txt (a posting the lists link there is in the Jibe read)
+    oracle:host=edbz.fa.us2.oraclecloud.com,site=cx_1: 'oracle:host=edbz.fa.us2.oraclecloud.com,site=cx'   # texas-instruments: another Oracle site of Texas Instruments listing the same jobs (all 914 the same on 2026-11-15)
 
 crosscheck:
   grace_minutes: 90              # wait this long (and for a fresh poll) before calling a Simplify role a miss
