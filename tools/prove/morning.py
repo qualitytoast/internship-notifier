@@ -313,13 +313,21 @@ def compare(old_out: Path, new_out: Path, added: set[str]) -> int:
             problems.append(f"{table} {k}: {ra} -> {rb}")
     ea = sorted(p.name for p in (old_out / "emails").glob("*.html"))
     eb = sorted(p.name for p in (new_out / "emails").glob("*.html"))
-    if not added:  # nothing added: every email byte for byte
-        if [n[3:] for n in ea] != [n[3:] for n in eb]:
+    if not added:  # nothing added: every email byte for byte, kind by kind (files written in the same second sort
+        # by their kind's name, so the files' order is not the order of sending)
+        def kinds_of(names):
+            out = {}
+            for n in names:
+                out.setdefault(n[3:], []).append(n)
+            return out
+        ka, kb = kinds_of(ea), kinds_of(eb)
+        if {k: len(v) for k, v in ka.items()} != {k: len(v) for k, v in kb.items()}:
             problems.append(f"emails: {ea} -> {eb}")
         else:
-            for x, y in zip(ea, eb):
-                if (old_out / "emails" / x).read_text() != (new_out / "emails" / y).read_text():
-                    problems.append(f"emails: {x} differs")
+            for kind in sorted(ka):
+                for x, y in zip(ka[kind], kb[kind]):
+                    if (old_out / "emails" / x).read_text() != (new_out / "emails" / y).read_text():
+                        problems.append(f"emails: {x} differs")
     else:  # the same emails apart from "Now watching", and every link of the old ones still there (but the rows
         # that went to an added company); which jobs were emailed is in the jobs table, compared above
         def by_kind(names):  # morning.html → its files in order; "Now watching" is the added companies' own

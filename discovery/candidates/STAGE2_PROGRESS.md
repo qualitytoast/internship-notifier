@@ -528,3 +528,27 @@ Instruments, Tyler Technologies, United Airlines, UnitedHealth Group (Optum), We
 - JPMorgan Chase's "Fellowship Program" is a company keyword (a 2027 posting becomes a sure match, tagged
   freshman/sophomore). UNDERCLASSMEN.md: 10 rows (American Express 2, BNY 2, Ford 1, JPMorgan Chase 4, UnitedHealth
   1); 351 companies with no program.
+- [x] tests pass; golden.py against main (a3b2d46): PASS (802 cassette runs of the companies already live identical,
+      155,604 filter verdicts, 40,454 matches, 103 Workday files; 1,281 rows go to batch 5's companies)
+- [x] two live go-live mornings recorded on a copy of the database. The first (morning-2026-11-15-batch5) found
+      Western Digital's unlisted co-op (above). The second, with the final code and config (morning-2026-11-15-batch5b:
+      run 30, 429 checks, 24 seeded, 7,986 exchanges, 56.2 min with Target's first weekly read): the 198's checks
+      ended at 18.8 min, the added round's 228 companies ran from 24.5 to 38.6 min with 4,104 requests (581 batch
+      5's; Qualcomm the longest at 201 s). Alerts: CVS's two clinical rotations (`posting elsewhere?`, predicted after
+      its weekly read), a Texas Instruments row the filters reject ("Product Marketing Engineer Intern - Marketing":
+      excluded field 'Sales'), and the 198's own Rocket `board empty`; no `new job site?`, no `moved?`. Citi's first
+      check met one Workday maintenance page mid-read; the retry pass read it whole
+- [x] re-match: 347 stored rows given to batch 5's companies (269 known, 54 found, 23 abroad, 1 filtered), none
+      missed, no "via Simplify" job; "Now watching" 489 roles; learn_ids read 23 open requisitions the companies'
+      own lists leave out (American Express 9, Texas Instruments 9, JPMorgan Chase 4, BNY 1) and Western Digital's co-op
+- [x] three mornings replayed (proof-a3b2d46, old = main 42be46e; M2_NEW stripe;databricks;openai;walmart;
+      jpmorgan-chase;qualcomm;western-digital;keysight, M2_FAIL figma;target;hilton;intuitive-surgical): PASS when the
+      compare is given batch 5's companies as the ones added. For review: 2 archive.org requests and 4 to 10 keys of
+      the weekly archive.org check of earlier added companies fall on other days (the round grew)
+- [x] go-live with JPMorgan Chase, Keysight and Western Digital failing (new-1-fail): not seeded, their 11 open rows
+      stay pending, no "via Simplify" job, three `error` alerts
+- Correction to the proofs of batch 4 and of the go-live fixes: their compare was given every added company as
+  "added", which also exempted batches 1 to 3. Compared again with batch 4's 12 companies only (proof-9fd9414):
+  PASS, so batches 1 to 3 were identical. The go-live fixes compared with nothing exempt (proof-a611189): morning 1
+  differs only in the reworded "Now watching" sentence (the morning and HEALTH emails byte for byte), mornings 2 and
+  3 PASS. The compare now pairs emails by kind: written in the same second, they sort by name, not by sending order.
