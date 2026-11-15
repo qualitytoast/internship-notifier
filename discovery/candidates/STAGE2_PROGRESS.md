@@ -552,3 +552,15 @@ Instruments, Tyler Technologies, United Airlines, UnitedHealth Group (Optum), We
   PASS, so batches 1 to 3 were identical. The go-live fixes compared with nothing exempt (proof-a611189): morning 1
   differs only in the reworded "Now watching" sentence (the morning and HEALTH emails byte for byte), mornings 2 and
   3 PASS. The compare now pairs emails by kind: written in the same second, they sort by name, not by sending order.
+
+## After batch 5: the user's answers (2026-11-15)
+
+- Gmail clipping: yes. The morning email (and the new-postings email) now lists 50 roles at most in its body, new and
+  already-open ones together, the new ones first; a list that doesn't fit is attached whole. Rebuilt with the Nov 15
+  morning's 70 roles, its role lists go from 86.8 KB of HTML to 66.3 KB (the whole email about 83 KB instead of
+  103). Proof (bb2001c, old = main 1f5d456): golden PASS; three replayed mornings PASS with nothing exempt (none had
+  more than 50 roles); test_new_and_already_open_roles_share_one_body_cap fails on the old code.
+- Disk: every recorded morning but the latest (morning-2026-11-15-batch5b) deleted; data/stage2 40 GB to 4.1 GB.
+- `past_total` for the 198: measured, for the user (32 of the 198 read Workday, plus 7 watched Workday boards; 7
+  more requests of 1,583 on the Nov 15 recording; no Workday read of the 198 fell short of its count in the run
+  history since Oct 19).
