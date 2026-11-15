@@ -520,7 +520,7 @@ Instruments, Tyler Technologies, United Airlines, UnitedHealth Group (Optum), We
 - Page counts: the count each Oracle site's page shows (TotalJobsCount of the search it calls), Radancy's search page
   where robots.txt allows it (UnitedHealth; Schwab's is closed: its sitemap is the list), Tyler's hosted Jobvite page
   (it cuts off after 125 of 144 jobs, alphabetically), and the systems' own totals for the rest. All 24 match or are
-  explained (verify, 2026-11-15): 33,968 jobs, 1,014 student roles, 457 matching.
+  explained (verify, 2026-11-15): 35,391 jobs, 1,052 student roles, 501 matching.
 - JPMorgan Chase's "Fellowship Program" is a company keyword (a 2027 posting becomes a sure match, tagged
   freshman/sophomore). UNDERCLASSMEN.md: 10 rows (American Express 2, BNY 2, Ford 1, JPMorgan Chase 4, UnitedHealth
   1); 351 companies with no program.
