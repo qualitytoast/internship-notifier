@@ -209,6 +209,36 @@ def test_now_watching_leaves_out_roles_already_shown_and_is_sent_again(make_cfg,
     assert [s for k, s in sent if k == "watching"][-1] == watching[0] and db.get("watching_pending") == ""
 
 
+def test_now_watching_leaves_out_a_role_already_sent_via_simplify(make_cfg, monkeypatch, online):
+    # Micron, 2026-11-14/15: Workday was down on its first morning, so a new Simplify row for it went out "via
+    # Simplify"; the next morning its site was read and "Now watching" listed the role again, twice (both copies)
+    cfg = two_rounds(make_cfg)
+    monkeypatch.setattr(liveness, "scan_pages", lambda *a, **kw: [])
+    monkeypatch.setattr(moves, "run", lambda *a, **kw: [])
+    monkeypatch.setattr(watch, "run", lambda *a, **kw: [])
+    db = DB(cfg.settings.path("db"))
+    r = Runner(cfg, db=db, checker_fn=FakeChecker({
+        "acme": [[job("1", "Software Engineer Intern (Summer 2027)")]],
+        "newco": [[job("7", "Software Engineer Intern (Summer 2027)"), job("8", "Intern - Enterprise SSD Architecture"),
+                   job("9", "Data Science Intern (Summer 2027)")]]}))
+    r.run(DAILY)
+    db.update_state("newco", seeded_at=None)  # newco is read for the first time again: "Now watching"
+    row(db, "s", "Newco", "https://jobs.example.com/8", tracked="newco", status="via_simplify",
+        title="Enterprise SSD Architecture Intern")
+    row(db, "f", "Newco", "https://jobs.example.com/9", tracked="newco", status="via_simplify",
+        title="Data Science Intern (Summer 2027)")
+    from internwatch.models import Match
+    db.add_external_job("newco", job("simplify:s", "Enterprise SSD Architecture Intern"), iso(), Match(True), "simplify")
+    db.add_external_job("newco", job("simplify:f", "Data Science Intern (Summer 2027)"), iso(), Match(False), "simplify")
+    db.conn.execute("UPDATE jobs SET notified_at=? WHERE job_id LIKE 'simplify:%'", (iso(),))
+    sent = []
+    monkeypatch.setattr(r.mailer, "send", lambda kind, subject, *a, **kw: sent.append((kind, subject)) or (True, "", None))
+    monkeypatch.setattr(r.mailer, "ready", lambda: (True, ""))
+    r.run(RunOptions(daily=True, retry_delay=0, crosscheck=False, send=True, scheduled_mail=False))
+    # left out: role 8 and its Simplify copy; kept: role 7, and role 9, whose copy didn't pass the filters (no email had it)
+    assert [s for k, s in sent if k == "watching"] == ["[InternWatch] Now watching Newco: 2 matching roles open"]
+
+
 def test_a_later_rounds_list_check_reads_the_kept_lists_for_its_companies_only(make_cfg, memdb):
     cfg = make_cfg([company("acme", checker="greenhouse", settings={"board": "acme"}),
                     company("newco", checker="greenhouse", settings={"board": "newco"}, round="added")],

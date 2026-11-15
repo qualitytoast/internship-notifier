@@ -7,7 +7,7 @@ from datetime import datetime, timedelta, timezone
 
 import pytest
 
-from internwatch import liveness
+from internwatch import alerts, liveness
 from internwatch.adapters import get_checker
 from internwatch.adapters.base import FetchContext
 from internwatch.db import DB, iso, parse_iso, utcnow
@@ -121,6 +121,32 @@ def test_a_new_workday_site_in_the_cached_robots_txt(make_cfg, memdb, tmp_path):
     problems = liveness.scan_workday_sites(cfg, memdb, gate)
     assert [p["summary"] for p in problems] == ["Workday tenant acme.wd5.myworkdayjobs.com lists new sites: Students"]
     assert liveness.scan_workday_sites(cfg, memdb, gate) == []  # alerted once
+
+
+MAINTENANCE = '<!DOCTYPE html>\n<html lang="en" dir="ltr">\n<head><title>Workday is currently unavailable</title>'
+
+
+def test_workdays_maintenance_page_in_place_of_robots_txt_is_no_look_at_the_sites(make_cfg, memdb, tmp_path):
+    # 2026-11-14: Workday was down and some tenants answered /robots.txt with its maintenance page, which was cached.
+    # The first look took it for a robots.txt naming no site; the next morning every site not read was "new" (HPE).
+    c = company("hpe", checker="workday", settings={"host": "hpe.wd5.myworkdayjobs.com", "tenant": "hpe",
+                                                    "sites": ["jobsathpe", "acjobsite"]})
+    cfg = make_cfg([c])
+    gate = HostGate(tmp_path / "robots")
+    origin = "https://hpe.wd5.myworkdayjobs.com"
+    real = ("User-agent: *\nSitemap: https://hpe.wd5.myworkdayjobs.com/Jobsathpe/siteMap.xml\n"
+            "Sitemap: https://hpe.wd5.myworkdayjobs.com/ACJobSite/siteMap.xml\n"
+            "Sitemap: https://hpe.wd5.myworkdayjobs.com/WFMathpe/siteMap.xml\n")
+    gate._disk_put(origin, 200, MAINTENANCE)
+    assert liveness.scan_workday_sites(cfg, memdb, gate) == [] and memdb.get("workday_sites:hpe.wd5.myworkdayjobs.com") is None
+    gate._disk_put(origin, 200, real)
+    assert liveness.scan_workday_sites(cfg, memdb, gate) == []   # the first look: a silent baseline
+    gate._disk_put(origin, 200, real.replace("WFMathpe", "Students"))
+    problems = liveness.scan_workday_sites(cfg, memdb, gate)     # the configured sites in another case are not new
+    assert [p["summary"] for p in problems] == ["Workday tenant hpe.wd5.myworkdayjobs.com lists new sites: Students"]
+    alerts.record(memdb, problems, [])
+    gate._disk_put(origin, 200, MAINTENANCE)                     # another outage leaves the open alert as it is
+    assert liveness.scan_workday_sites(cfg, memdb, gate) == [] and len(alerts.live(memdb, "hpe", "site")) == 1
 
 
 class PageHttp:

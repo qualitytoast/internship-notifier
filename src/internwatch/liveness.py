@@ -481,6 +481,9 @@ def posting_portals(db: DB, company: str) -> set[str]:
     return {k for k in page_systems(urls, from_text(urls, "")) if _portal(k)}
 
 
+ROBOTS_LINE = re.compile(r"(?im)^\s*(user-agent|allow|disallow|sitemap)\s*:")
+
+
 def workday_sites(text: str) -> set[str]:
     """Site names a Workday tenant's robots.txt lists ("Allow: /<site>/", "Sitemap: …/<site>/siteMap.xml")."""
     import re
@@ -503,7 +506,10 @@ def scan_workday_sites(cfg: Config, db: DB, gate) -> list[dict]:
                 tenants[st["host"]] = (prev[0] if prev else c, (prev[1] if prev else set()) | configured)
     for host, (c, configured) in sorted(tenants.items()):
         disk = gate._disk_get(f"https://{host}")
-        if not disk or disk[0] != 200:
+        if not disk or disk[0] != 200 or not ROBOTS_LINE.search(disk[1] or ""):
+            # A Workday tenant always serves a robots.txt. A page without one robots.txt line is Workday's maintenance
+            # page, which some tenants sent for /robots.txt while Workday was down (2026-11-14): it names no site, so a
+            # first look at it took every site for new the next morning, and a later look would clear open alerts
             continue
         sites = workday_sites(disk[1])
         key = f"workday_sites:{host}"
@@ -511,7 +517,10 @@ def scan_workday_sites(cfg: Config, db: DB, gate) -> list[dict]:
         if known is None or known == "":
             db.set(key, json.dumps(sorted(sites)))  # first look: a silent baseline
             continue
-        new = sorted(sites - set(json.loads(known)) - configured)
+        # site names in any case, as the alert sweep compares them (HPE's robots.txt says "Jobsathpe", its config
+        # "jobsathpe": the same site)
+        old = {str(x).lower() for x in [*json.loads(known), *configured] if x}
+        new = sorted(x for x in sites if x.lower() not in old)
         alerts.seen(db, c.key, "site", sites, scope=host)
         if new:
             akey = f"live_alert:{c.key}:workday-sites"

@@ -447,3 +447,32 @@ HP Inc., Lowe's, Micron Technology, Target, Walmart (Walmart Global Tech).
       clinical student rotations outside its Intern worker type, as predicted
 - [x] go-live with Walmart, HPE and Micron failing (proof-9fd9414/new-1-fail): not seeded, their 11 open rows stay
       pending, no "via Simplify" job, three `error` alerts
+
+## Batch 4's go-live mornings (2026-11-14 run 28, 2026-11-15 run 29)
+
+- Nov 14 (run 28): Workday was down all morning. Every Workday site answered Workday's maintenance page (132 shape
+  errors; some tenants' robots.txt answered 503), and Rippling's API and Citadel's new sitemaps refused (403). 72
+  checks failed, 79 problems in the HEALTH email; all of them cleared on Nov 15. Two of batch 4's companies were
+  seeded (HP from its Greenhouse boards, Walmart): "Now watching" 31 roles. CVS's first weekly read failed.
+- Nov 15 (run 29): 404 checks, 3 failed (Citadel's three, the 198's own), 68.7 minutes: two weekly full reads (CVS
+  again, as a failed read is read again the next morning, 992 s, and Lowe's on its own turn, 662 s). The other ten
+  seeded: "Now watching" 303 roles, 20 left out as already shown; HP's Workday roles (its source's first answer)
+  went once in the morning email's "already open" (26). The 198 against the mornings before: the same 197
+  companies, requests within their range (Bloomberg 29, with no new job to read in detail), none slower.
+- Alerts: the three predicted possible misses (Lowe's, Applied Materials, Micron). Not predicted:
+  - `new site` at CVS (Private_Postings_Mergers_and_Acquisitions_ONLY) and HPE (WFMathpe; ACJobSite and Jobsathpe
+    raised and cleared in the same run). On Nov 14 their tenants answered /robots.txt with the maintenance page
+    (HTML, status 200), which was cached; the first look of the `new site` check took it for a robots.txt naming no
+    site, so on Nov 15 every site not read looked new. Fixed: the check skips a cached copy without one robots.txt
+    line (a Workday tenant always serves one), and compares site names in any case, as its alert sweep does. The
+    shared robots.txt handling is unchanged: 12 hosts (SmartRecruiters, IBM's API, Oracle, GEICO, KLA…) answer an HTML
+    page for /robots.txt every day, which means "no rules". The two open alerts are sites batch 4 chose not to read.
+  - a possible miss at Applied Materials: "2027 Spring Software Engineer Co-op (Billerica, MA)" was on its site on
+    Nov 13 (both recordings) and gone by Nov 15 (no search finds R2631540; its page answers 403). Workday was down on
+    the 14th, so the first good read came after it closed; SimplifyJobs still lists it.
+- Emailed twice: Micron's "Enterprise SSD Architecture Intern", a Simplify row first seen on Nov 14 while Micron
+  couldn't be read, went out "via Simplify" (as agreed for new rows), and the next morning "Now watching" listed it
+  again, as Simplify's copy and as the site's posting. Fixed: "Now watching" leaves out a role tied to a row stored
+  via Simplify (when that copy passed the filters) and the copy itself, as it does for rows shown in an untracked list.
+- The Nov 15 morning email had 103 KB of HTML, past Gmail's ~102 KB clipping: 44 new roles and 26 "already open",
+  each list capped at 50 rows on its own. For the user (it is the 198's email too).

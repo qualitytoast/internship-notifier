@@ -756,11 +756,19 @@ class Runner:
                                  (when, r["source"], r["row_key"]))
 
     def _not_shown_before(self, rows) -> tuple[list, int]:
-        """The open matching roles minus those tied (by the cross-check's own lookup) to a Simplify row that a morning
-        email already listed as an untracked company's role, and how many those were."""
+        """The open matching roles minus those a morning email brings you anyway, and how many those were: a role tied
+        (by the cross-check's own lookup) to a Simplify row that a morning email listed as an untracked company's role,
+        or to one stored "via Simplify" while the company couldn't be read (that copy goes out in the morning email:
+        Micron's on 2026-11-14, the day Workday was down), and the stored copy itself."""
         shown_ids: set[tuple[str, str]] = set()
         for k in {r["company"] for r in rows}:
-            for r in self.db.q("SELECT * FROM simplify_rows WHERE tracked_company=? AND digest_at IS NOT NULL", k):
+            for r in self.db.q("SELECT * FROM simplify_rows WHERE tracked_company=? AND "
+                               "(digest_at IS NOT NULL OR status='via_simplify')", k):
+                if r["digest_at"] is None:
+                    copy = self.db.job(k, f"simplify:{r['row_key']}")
+                    if copy is None or not copy["matched"]:
+                        continue  # the copy didn't pass your filters, so no email has it: the site's posting is news
+                    shown_ids.add((k, copy["job_id"]))
                 hit, _ = find_in_db(self.db, k, Row(r["source"], r["row_key"], r["company"] or "", r["title"] or "",
                                                     r["location"] or "", r["url"] or "", "", r["category"] or "",
                                                     r["terms"] or ""))
