@@ -564,3 +564,23 @@ Instruments, Tyler Technologies, United Airlines, UnitedHealth Group (Optum), We
 - `past_total` for the 198: measured, for the user (32 of the 198 read Workday, plus 7 watched Workday boards; 7
   more requests of 1,583 on the Nov 15 recording; no Workday read of the 198 fell short of its count in the run
   history since Oct 19).
+
+## Batch 5's go-live morning (2026-11-16, run 30): batch 5 as predicted; Workday answered 429
+
+- Batch 5: all 24 read and seeded, no failure (580 requests); "Now watching" 487 roles; Western Digital's unlisted
+  co-op emailed; learn_ids found 24 open unlisted requisitions; alerts as predicted (CVS's two clinical rotations,
+  TI's filtered row).
+- Workday answered HTTP 429 to most of its sites from the run's first minutes, the 198's included (Capital One,
+  T-Mobile, Workday, Adobe, PayPal, Salesforce, Visa, CrowdStrike, Zendesk, Intel…): 101 of 132 Workday checks
+  failed or came out partial, the 198's round took 36.5 min instead of about 19, the run 83 min, and 43 second tries
+  were postponed. Workday had never answered 429 before. On the Nov 15 recording, the 198's round peaks near 4
+  Workday requests a second and the added round at 11 a second across up to 51 Workday sites in a minute (each
+  site paced on its own, 12 workers). One request at 15:16 UTC got an ordinary answer: a rate limit, not a block.
+- Fix (the user chose to cover every company): `http.host_groups.workday`, one shared pace of 3 requests a second
+  for all Workday sites (myworkdayjobs.com, myworkdaysite.com) across threads and rounds, and a 429 from any of them
+  pauses all of them for 60 s, after which the request is asked again (up to 3 pauses; before, a read gave up after
+  4 quick tries while the other threads kept asking). The added round's time limit went from 35 to 50 minutes (its
+  Workday reads, about 3,300 requests, take 18 minutes or more at 3 a second). Tests in test_http.py. Proof
+  (old = main b698ee5): golden PASS; three replayed mornings PASS with nothing exempt (replays are never paced).
+- To watch: NVIDIA's weekly full read (the 198's) last completed on Nov 7 (Nov 14 the outage, Nov 15 cut short, Nov
+  16 out of time): it is read first on the next morning.
