@@ -219,14 +219,14 @@ JOB_ID = re.compile(r"/JobDetail/[^/]+/(\d+)")
 
 
 def bloomberg(**extra) -> dict:
-    return {k: v for k, v in {**cassette("bloomberg").meta["settings"], **extra}.items() if v is not None}
+    return {k: v for k, v in {**cassette("bloomberg-avature").meta["settings"], **extra}.items() if v is not None}
 
 
 def walks() -> tuple[list[dict], list[dict]]:
     """The recorded read (Nov 9, 2026): Bloomberg's newest-first walk showed 330 cards but only 310 jobs (20 cards
     showed twice and 20 jobs on no page), so the reader walked again by title (second_order) and found all 330.
     Returns (the newest-first pages, the title-sorted pages)."""
-    ex = cassette("bloomberg").exchanges
+    ex = cassette("bloomberg-avature").exchanges
     return [e for e in ex if "jobSort" not in e["url"]], [e for e in ex if "jobSort" in e["url"]]
 
 
@@ -248,7 +248,7 @@ def bloomberg_replay(exchanges, settings, ctx=None):
 
 def test_avature_second_order_finds_the_jobs_a_shuffled_walk_hid():
     newest, titled = walks()
-    hidden, total = ids(titled) - ids(newest), cassette("bloomberg").meta["count"]
+    hidden, total = ids(titled) - ids(newest), cassette("bloomberg-avature").meta["count"]
     assert len(hidden) == 20 and len(ids(newest)) == total - 20
     ctx = FetchContext()
     old = bloomberg_replay(newest, bloomberg(second_order=None), ctx)  # without the setting: short, and reported
@@ -279,7 +279,7 @@ def test_avature_complete_walk_never_takes_the_second_order():
         n += len(page)
     ctx = FetchContext()
     jobs = bloomberg_replay(complete, bloomberg(), ctx)
-    assert len(jobs) == cassette("bloomberg").meta["count"] and ctx.degraded is None
+    assert len(jobs) == cassette("bloomberg-avature").meta["count"] and ctx.degraded is None
 
 
 def test_avature_still_short_after_both_orders_is_reported_and_jobs_kept():
@@ -287,7 +287,7 @@ def test_avature_still_short_after_both_orders_is_reported_and_jobs_kept():
     gone = sorted(ids(titled) - ids(newest))[:6]
     ctx = FetchContext()
     jobs = bloomberg_replay(newest + by_title(skip=gone), bloomberg(), ctx)
-    total = cassette("bloomberg").meta["count"]
+    total = cassette("bloomberg-avature").meta["count"]
     assert len(jobs) == total - 6 and f"collected {total - 6} jobs but the source reports {total}" in ctx.degraded
 
 

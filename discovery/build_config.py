@@ -136,10 +136,23 @@ OVERRIDES: dict[str, dict] = {
                "count_tolerance": 0.05}},
     "two-sigma": {"settings": {"list_url": "https://careers.twosigma.com/careers/OpenRoles/", "page_size": 10,
                                "fields": ["location", "department", "employment_type"]}},
-    "bloomberg": {"settings": {"list_url": "https://bloomberg.avature.net/careers/SearchJobs/", "page_size": 12,
-                               "fields": {"location": ".list-item-location"},
-                               "total_regex": r'list-controls__text__legend"\s+aria-label="(\d+) results"',
-                               "second_order": "jobSort=schemaField_3_270_3&jobSortDirection=ASC"}},
+    # Bloomberg Industry Group (Bloomberg Law, Tax and Government; owned by Bloomberg) posts on a Workday site of its
+    # own, which Boardsweep linked on 15 Nov 2026 with an Engineering Intern on it (65 jobs, 2 interns). Read second,
+    # so the Avature site's job ids stay as they were.
+    "bloomberg": {"checker": "multi", "settings": {
+        "match_urls": ["//bloomberg.wd1.myworkdayjobs.com/"],
+        "sources": [
+            {"checker": "avature", "settings": {
+                "list_url": "https://bloomberg.avature.net/careers/SearchJobs/", "page_size": 12,
+                "fields": {"location": ".list-item-location"},
+                "total_regex": r'list-controls__text__legend"\s+aria-label="(\d+) results"',
+                "second_order": "jobSort=schemaField_3_270_3&jobSortDirection=ASC"}},
+            {"checker": "workday", "settings": {"host": "bloomberg.wd1.myworkdayjobs.com", "tenant": "bloomberg",
+                                                "site": "Bloombergindustrygroup_External_Career_Site"}}]},
+        "verified": {"feed": "GET https://bloomberg.avature.net/careers/SearchJobs/ + POST "
+                             "https://bloomberg.wd1.myworkdayjobs.com/wday/cxs/bloomberg/"
+                             "Bloombergindustrygroup_External_Career_Site/jobs",
+                     "explained": "Bloomberg's Avature site (the careers page's 337 on 15 Nov 2026) plus Bloomberg Industry Group's Workday site (65)"}},
     "synopsys": {"big": True, "timeout_minutes": 10, "settings": {
         "list_url": "https://synopsys.avature.net/careers/SearchJobs/", "page_size": 6,
         "fields": {"employment_type": ".list-item-hireType", "posted": ".list-item-posted"},

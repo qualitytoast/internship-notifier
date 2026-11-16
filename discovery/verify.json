@@ -376,12 +376,12 @@
   "requests": 1
  },
  "bloomberg": {
-  "jobs": 341,
-  "students": 7,
-  "matched": 0,
-  "at": "2026-10-20T15:09:46Z",
-  "duration": 37.7,
-  "requests": 29
+  "jobs": 402,
+  "students": 19,
+  "matched": 1,
+  "at": "2026-11-16T00:05:53Z",
+  "duration": 40.8,
+  "requests": 33
  },
  "bny": {
   "jobs": 1247,

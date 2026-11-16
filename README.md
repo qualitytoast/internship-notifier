@@ -307,7 +307,8 @@ Rules for changing things: CLAUDE.md.
   (Rockwell's roles that are also on Workday under the same title are skipped). Found by the October 2026 board audit:
   Flow Traders' term board ftsp27co-ops, Akuna's on-campus board akunacapitaloci, Virtu's virturecruitinghidden, Visa's
   Visa_Talent_Portal, PEAK6's Apex Fintech Solutions site (its "Fintern" roles count through a PEAK6 role keyword) and
-  MongoDB's RippleMatch page.
+  MongoDB's RippleMatch page. Bloomberg also reads Bloomberg Industry Group's Workday site
+  (Bloombergindustrygroup_External_Career_Site, since November 2026), after its Avature site.
 - **Not double-counted:** Epic Games' and Google's translated postings, and C3 AI's re-posted Ascend
   requisitions.
 - **Palo Alto Networks:** robots.txt disallows the HTML job pages but not the JSON API the checker uses, which

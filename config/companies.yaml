@@ -232,14 +232,21 @@ companies:
   category: fintech
   aliases: [Bloomberg LP]
   careers_url: ['https://bloomberg.avature.net/careers/SearchJobs', 'https://bloomberg.avature.net/careers/SearchJobs/?1686=%5B55479%5D&1686_format=2312&listFilterMode=1&jobRecordsPerPage=12']
-  checker: avature
+  checker: multi
   settings:
-    list_url: https://bloomberg.avature.net/careers/SearchJobs/
-    page_size: 12
-    fields: {location: .list-item-location}
-    total_regex: list-controls__text__legend"\s+aria-label="(\d+) results"
-    second_order: jobSort=schemaField_3_270_3&jobSortDirection=ASC
-  verified: {page_total: 337}
+    match_urls: [//bloomberg.wd1.myworkdayjobs.com/]
+    sources:
+    - checker: avature
+      settings:
+        list_url: https://bloomberg.avature.net/careers/SearchJobs/
+        page_size: 12
+        fields: {location: .list-item-location}
+        total_regex: list-controls__text__legend"\s+aria-label="(\d+) results"
+        second_order: jobSort=schemaField_3_270_3&jobSortDirection=ASC
+    - checker: workday
+      settings: {host: bloomberg.wd1.myworkdayjobs.com, tenant: bloomberg, site: Bloombergindustrygroup_External_Career_Site}
+  verified: {page_total: 337, feed: 'GET https://bloomberg.avature.net/careers/SearchJobs/ + POST https://bloomberg.wd1.myworkdayjobs.com/wday/cxs/bloomberg/Bloombergindustrygroup_External_Career_Site/jobs',
+    explained: Bloomberg's Avature site (the careers page's 337 on 15 Nov 2026) plus Bloomberg Industry Group's Workday site (65)}
 - key: microsoft
   name: Microsoft
   category: big-tech
