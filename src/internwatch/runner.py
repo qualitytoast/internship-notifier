@@ -35,7 +35,7 @@ from .db import DB, iso, parse_iso, reopened, utcnow
 from .filters import evaluate, is_student_role, vague_location
 from .health import Outcome, assess
 from .heartbeat import Heartbeat
-from .http import HostGate, Http, HttpSettings
+from .http import HostGroup, HostGate, Http, HttpSettings
 from .mailer import Mailer
 from .models import CheckerError, Job, NotModified, ShapeError
 
@@ -53,9 +53,12 @@ LEARNED_IDS_MAX = 60
 
 def http_settings(cfg: Config) -> HttpSettings:
     h = cfg.settings.get("http", default={}) or {}
+    groups = tuple(HostGroup(name=name, hosts=tuple(g["hosts"]), per_second=float(g["per_second"]),
+                             pause_on_429=float(g.get("pause_on_429", 60)), pauses=int(g.get("pauses", 3)))
+                   for name, g in (h.get("host_groups") or {}).items())
     return HttpSettings(connect_timeout=float(h.get("connect_timeout", 10)), read_timeout=float(h.get("read_timeout", 30)),
                         retries=int(h.get("retries", 3)), min_interval=float(h.get("min_interval", 1.0)),
-                        respect_robots=bool(h.get("respect_robots", True)))
+                        respect_robots=bool(h.get("respect_robots", True)), host_groups=groups)
 
 
 def make_gate(cfg: Config) -> HostGate:

@@ -7,8 +7,9 @@ httpx, SQLite. Per-company checkers and evidence: COVERAGE.md. Freshman/sophomor
 Rules for changing things: CLAUDE.md.
 
 ## Running it
-- **In use:** run `.venv/bin/internwatch run --daily` by hand each morning (about 35 min; 11 to 21 min more on the four
-  mornings a week when one giant store site gets its weekly full read). Every company gets a full
+- **In use:** run `.venv/bin/internwatch run --daily` by hand each morning (about 50 min, more since the Workday
+  sites share one pace; 11 to 21 min more on the four mornings a week when one giant store site gets its weekly full
+  read). Every company gets a full
   scan; failed ones are retried once later in the same run. Then ONE email goes out: `[InternWatch] <date>:
   N new: Co (n)…` (or "no new roles"), plus untracked-company roles, every open alert and the coverage table.
   `run --daily --emails-only` sends whatever earlier runs couldn't send, without checking any site.
@@ -281,6 +282,10 @@ Rules for changing things: CLAUDE.md.
   - Checks robots.txt (RFC 9309) before every request; an unreachable robots.txt is a temporary error, not a
     block.
   - At least 1 s between requests to a host (per-company min_interval), retries, 429 backoff, conditional GET.
+  - Host groups (settings `http.host_groups`): every Workday site (myworkdayjobs.com, myworkdaysite.com) shares one
+    pace, 3 requests a second across all threads and rounds, and a 429 from any of them pauses all of them for 60 s,
+    after which the request is asked again (up to 3 pauses). Workday answered 429 to most of its sites on 2026-11-16,
+    the 198's included, after mornings that reached 11 requests a second across them, each site paced on its own.
   - `ssl_context()` = certifi plus the bundled intermediates in certs/.
 - **crosscheck.py:**
   - Fetches SimplifyJobs' Summer2027 listings.json (with ETag), which its READMEs are built from and which also has

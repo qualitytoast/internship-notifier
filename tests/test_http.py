@@ -85,3 +85,89 @@ def test_record_and_replay_roundtrip(tmp_path):
     assert replay.get_json("https://x.test/jobs", params={"page": 2}) == {"n": "2"}
     with pytest.raises(FetchError, match="no recorded response"):
         replay.get("https://x.test/jobs", params={"page": 3})
+
+
+# host groups: Workday's sites share one pace and one pause (2026-11-16: 429s at 11 requests a second across them) ----
+
+from internwatch.http import HostGroup  # noqa: E402
+
+
+def _wd_group(**kw):
+    return HostGroup(name="workday", hosts=("myworkdayjobs.com", "myworkdaysite.com"), **{"per_second": 20, **kw})
+
+
+def _grouped(handler, gate, **kw):
+    h = Http(HttpSettings(backoff_base=0.01, min_interval=0, respect_robots=False, host_groups=(_wd_group(**kw),)),
+             gate=gate)
+    h._client = httpx.Client(transport=httpx.MockTransport(handler))
+    return h
+
+
+def test_a_host_group_paces_all_its_hosts_together_across_threads():
+    import threading
+    import time
+    gate, times = HostGate(), []
+    lock = threading.Lock()
+
+    def handler(req):
+        with lock:
+            times.append((time.monotonic(), req.url.host))
+        return httpx.Response(200, json={})
+
+    hosts = [f"t{i}.wd{i % 3 + 1}.myworkdayjobs.com" for i in range(6)] + ["wd5.myworkdaysite.com"]
+    threads = [threading.Thread(target=lambda h=h: [_grouped(handler, gate).get(f"https://{h}/jobs") for _ in range(3)])
+               for h in hosts]
+    [t.start() for t in threads]
+    [t.join() for t in threads]
+    stamps = sorted(t for t, _ in times)
+    assert len(stamps) == 21 and len({h for _, h in times}) == 7
+    gaps = [b - a for a, b in zip(stamps, stamps[1:])]
+    assert min(gaps) >= 0.05 - 0.01   # 20 a second across all seven hosts, not 20 a second each
+
+
+def test_a_host_outside_the_group_is_not_paced_by_it():
+    import time
+    gate = HostGate()
+    h = _grouped(lambda req: httpx.Response(200, json={}), gate, per_second=1)
+    h.get("https://acme.wd5.myworkdayjobs.com/jobs")
+    start = time.monotonic()
+    h.get("https://boards-api.greenhouse.io/v1/boards/acme/jobs")
+    assert time.monotonic() - start < 0.5
+
+
+def test_a_429_pauses_every_host_of_the_group_and_the_request_is_asked_again():
+    import time
+    gate, seen = HostGate(), []
+
+    def handler(req):
+        seen.append((time.monotonic(), req.url.host))
+        if req.url.host == "a.wd1.myworkdayjobs.com" and len(seen) == 1:
+            return httpx.Response(429)
+        return httpx.Response(200, json={"ok": req.url.host})
+
+    h = _grouped(handler, gate, pause_on_429=0.3)
+    assert h.get_json("https://a.wd1.myworkdayjobs.com/jobs") == {"ok": "a.wd1.myworkdayjobs.com"}
+    assert h.requests_made == 2 and seen[1][0] - seen[0][0] >= 0.29   # asked again after the pause, not given up
+    t429 = seen[0][0]
+    other = _grouped(handler, gate, pause_on_429=0.3)
+    other.get_json("https://b.wd5.myworkdayjobs.com/jobs")             # another host of the group, another client
+    assert seen[-1][0] - t429 >= 0.29
+
+
+def test_a_group_that_keeps_answering_429_is_given_up_after_its_pauses():
+    gate = HostGate()
+    h = _grouped(lambda req: httpx.Response(429), gate, pause_on_429=0.01, pauses=3)
+    with pytest.raises(FetchError, match="after 3 pauses of every workday host"):
+        h.get("https://a.wd1.myworkdayjobs.com/jobs")
+    assert h.requests_made == 4
+
+
+def test_a_group_pause_never_runs_past_the_check_deadline():
+    import time
+    gate = HostGate()
+    h = _grouped(lambda req: httpx.Response(429), gate, pause_on_429=30)
+    h.deadline = time.monotonic() + 0.3
+    start = time.monotonic()
+    with pytest.raises(CheckTimeout, match="workday's next turn"):
+        h.get("https://a.wd1.myworkdayjobs.com/jobs")
+    assert time.monotonic() - start < 1

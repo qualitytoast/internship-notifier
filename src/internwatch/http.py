@@ -4,6 +4,8 @@
 * retries with exponential backoff + jitter on timeouts, connection errors, 429 and 5xx
 * per-host pacing shared by all threads (at least `min_interval` seconds between requests to one
   host, more if robots.txt asks for a Crawl-delay)
+* host groups: hosts of one vendor share one pace, whatever host each request goes to (Workday's sites are hundreds
+  of hosts behind one rate limit), and a 429 from any of them pauses the whole group
 * robots.txt gate: every URL is checked before it is fetched; disallowed URLs raise RobotsBlocked
 * record / replay of every exchange, so checkers can be tested offline from fixtures
 """
@@ -34,6 +36,22 @@ RETRY_STATUSES = {408, 425, 429, 500, 502, 503, 504, 520, 521, 522, 524}
 
 
 @dataclass
+class HostGroup:
+    """Hosts that share one pace: every request to a host ending in one of `hosts` takes a turn at most `per_second`
+    times a second across all threads, and a 429 from any of them pauses all of them for `pause_on_429` seconds.
+    Workday answered 429 to most of its sites on 2026-11-16 after mornings that reached 11 requests a second across
+    its sites, each site paced on its own."""
+    name: str
+    hosts: tuple[str, ...]
+    per_second: float
+    pause_on_429: float = 60.0
+    pauses: int = 3               # a request is given up after this many pauses
+
+    def covers(self, host: str) -> bool:
+        return any(host == h or host.endswith("." + h) for h in self.hosts)
+
+
+@dataclass
 class HttpSettings:
     user_agent: str = DEFAULT_UA
     connect_timeout: float = 10.0
@@ -44,6 +62,7 @@ class HttpSettings:
     max_crawl_delay: float = 10.0  # cap for robots.txt Crawl-delay
     robots_ttl_hours: float = 12.0
     respect_robots: bool = True
+    host_groups: tuple[HostGroup, ...] = ()
 
 
 @dataclass
@@ -80,6 +99,8 @@ class HostGate:
         self._guard = threading.Lock()
         self._last: dict[str, float] = {}
         self._robots: dict[str, tuple[RobotsRules, float]] = {}
+        self._group_next: dict[str, float] = {}    # a host group's next free turn (time.monotonic())
+        self._group_pause: dict[str, float] = {}   # … and the end of its pause after a 429
         self.cache_dir = cache_dir
         if cache_dir:
             cache_dir.mkdir(parents=True, exist_ok=True)
@@ -95,6 +116,32 @@ class HostGate:
             if wait > 0:
                 time.sleep(wait)
             self._last[host] = time.monotonic()
+
+    def wait_group(self, group: HostGroup, deadline: float | None = None) -> bool:
+        """Take the group's next turn: 1/per_second after the last one taken by any thread, and not before its pause
+        ends. False when that turn comes after `deadline` (the caller's time budget), without waiting for it."""
+        spacing = 1.0 / group.per_second
+        while True:
+            with self.lock_for("group:" + group.name):
+                now = time.monotonic()
+                turn = max(now, self._group_next.get(group.name, 0.0), self._group_pause.get(group.name, 0.0))
+                if deadline is not None and turn > deadline:
+                    return False
+                self._group_next[group.name] = turn + spacing
+            if turn > now:
+                time.sleep(turn - now)
+            with self.lock_for("group:" + group.name):
+                if time.monotonic() >= self._group_pause.get(group.name, 0.0):
+                    return True
+            # a 429 paused the group while this turn was waiting: take a turn after the pause
+
+    def pause_group(self, group: HostGroup) -> None:
+        """A host of the group answered 429: no request to any of them before the pause ends."""
+        with self.lock_for("group:" + group.name):
+            until = time.monotonic() + group.pause_on_429
+            if until > self._group_pause.get(group.name, 0.0):
+                self._group_pause[group.name] = until
+                log.warning("http: %s answered 429: all its hosts wait %.0f s", group.name, group.pause_on_429)
 
     # robots cache -----------------------------------------------------------------------------
     def robots(self, origin: str, fetch, ttl_hours: float) -> RobotsRules:
@@ -336,15 +383,20 @@ class Http:
             if cd:
                 interval = max(interval, min(cd, self.s.max_crawl_delay))
 
-        last_err, timeouts = "", 0
-        for attempt in range(self.s.retries + 1):
+        group = next((g for g in self.s.host_groups if g.covers(parts.netloc)), None)
+        last_err, timeouts, paused, attempt, after_pause = "", 0, 0, 0, False
+        while attempt <= self.s.retries:
             self._check_deadline(method, url)
-            if attempt:
+            if attempt and not after_pause:
                 delay = self.s.backoff_base * (3 ** (attempt - 1)) * (0.75 + random.random() / 2)
                 if self.deadline is not None:
                     delay = min(delay, max(0.0, self.deadline - time.monotonic()))
                 time.sleep(min(delay, 60))
                 self._check_deadline(method, url)
+            after_pause = False
+            if group is not None and not self.gate.wait_group(group, self.deadline):
+                raise CheckTimeout(f"time budget exhausted waiting for {group.name}'s next turn before {method} "
+                                   f"{url[:160]} ({self.requests_made} requests made)")
             self.gate.wait_turn(parts.netloc, interval)
             try:
                 r = self.client.request(method, full, json=json, data=data, headers=headers,
@@ -353,11 +405,23 @@ class Http:
             except httpx.TimeoutException as e:
                 last_err = f"timeout ({type(e).__name__}) for {method} {url[:160]}"
                 timeouts += 1
+                attempt += 1
                 continue
             except httpx.TransportError as e:
                 last_err = f"network error ({type(e).__name__}: {str(e)[:120]}) for {method} {url[:160]}"
+                attempt += 1
                 continue
             resp = Resp(r.status_code, str(r.url), {k.lower(): v for k, v in r.headers.items()}, r.content)
+            if r.status_code == 429 and group is not None and 429 not in ok_statuses:
+                # the vendor limits all its hosts together: pause them all and ask again after the pause, which is
+                # not one of the request's attempts
+                self.gate.pause_group(group)
+                paused += 1
+                if paused > group.pauses:
+                    raise FetchError(f"HTTP 429 for {method} {url[:160]} (after {group.pauses} pauses of every "
+                                     f"{group.name} host)")
+                after_pause = True
+                continue
             if r.status_code in RETRY_STATUSES and r.status_code not in ok_statuses:
                 last_err = f"HTTP {r.status_code} for {method} {url[:160]}"
                 ra = r.headers.get("retry-after", "")
@@ -371,6 +435,7 @@ class Http:
                     wait = min(wait, max(0.0, self.deadline - time.monotonic()))
                 if wait and attempt < self.s.retries:  # no wait when no attempt follows
                     time.sleep(wait)
+                attempt += 1
                 continue
             if self.record is not None:
                 self.record.add(method, full, bkey, resp)
