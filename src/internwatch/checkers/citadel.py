@@ -12,7 +12,7 @@ and one request per poll is enough.
 Both sites were rebuilt on 2026-11-13 (WordPress to Next.js). The sitemaps kept their format and every job and
 page kept its address, but they moved from /career-sitemap.xml and /page-sitemap.xml to /sitemap/career.xml and
 /sitemap/page.xml, and the new addresses answer scripts with the same challenge (HTTP 403). The check then fails
-and alerts; the challenge is never worked around. See the notes for what was seen that day.
+and alerts. See the notes for what was seen that day.
 
 settings: base_url: https://www.citadel.com    (min_interval: 10)
 See discovery/notes/citadel.md.
