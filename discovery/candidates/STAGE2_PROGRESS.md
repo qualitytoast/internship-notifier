@@ -601,3 +601,8 @@ Instruments, Tyler Technologies, United Airlines, UnitedHealth Group (Optum), We
   tests in test_http.py.
 - To watch: tomorrow's log lines `workday answered 429 (...)`: their headers and "N requests in S s since the last
   pause ended" say what the limit is.
+- Rerun of the 96 Workday companies that failed (run 32, 15:37 to 16:30 UTC, the pause stepping up): all 96 partial
+  again, 88 requests, 1,340 jobs; 3 roles emailed (KLA 2, Comcast 1). The first 4 requests worked; then every pause,
+  60 s, 120 s and ten of 300 s, let only 1 to 3 requests through before the next 429. Every 429 is a Cloudflare
+  challenge page: `cf-mitigated: challenge`, `server: cloudflare`, an HTML body, no Retry-After, no rate-limit
+  headers. Back to a fixed 60 s pause (about 6 requests a minute this morning against about 2).

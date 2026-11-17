@@ -329,11 +329,12 @@ http:
     workday:                     # Workday's sites answered 429 on 2026-11-16, the 198's included, after mornings that
       hosts: [myworkdayjobs.com, myworkdaysite.com]   # reached 11 requests a second across them (each host paced alone)
       per_second: 3              # all Workday sites together, robots.txt included (unpaced until 2026-11-17)
-      pause_on_429: [60, 120, 300]   # a 429 from any Workday site: every Workday request waits the first step, then
-      escalate_within: 300       # asks again; a 429 within this many seconds of a pause's end takes the next step
-                                 # (a fixed 60 s met a new 429 nearly every minute on 2026-11-17: 98 in 97 minutes).
+      pause_on_429: [60]         # a 429 from any Workday site: every Workday request waits this long, then asks again.
                                  # A longer Retry-After is honored, up to 15 minutes. Each 429 is logged with its
-                                 # headers and the requests sent since the last pause, to measure the limit
+                                 # headers and the requests sent since the last pause. Fixed: stepping up to
+                                 # [60, 120, 300] (2026-11-17 rerun) let 1 to 3 requests through after every pause
+                                 # however long, so it read about a third of what 60 s pauses read; Workday's 429s are
+                                 # Cloudflare challenges (cf-mitigated: challenge), not a limit that waiting clears
       pauses: 3                  # a request is given up after this many pauses
 
 paths:

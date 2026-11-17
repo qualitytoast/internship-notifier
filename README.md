@@ -285,9 +285,10 @@ Rules for changing things: CLAUDE.md.
     robots.txt takes its turn like any other request (unpaced until 2026-11-17).
   - Host groups (settings `http.host_groups`): every Workday site (myworkdayjobs.com, myworkdaysite.com) shares one
     pace, 3 requests a second across all threads and rounds, robots.txt included, and a 429 from any of them pauses
-    all of them, after which the request is asked again (up to 3 pauses). The pause steps up, 60 s, 120 s, then
-    300 s, while 429s come back within 5 minutes of the last pause's end, and a longer Retry-After is honored (up to
-    15 minutes). Each pause is logged with the 429's headers, the start of its body and the requests sent since the
+    all of them for 60 s, after which the request is asked again (up to 3 pauses); a longer Retry-After is honored
+    (up to 15 minutes). The pause can step up (`pause_on_429: [60, 120, 300]`, `escalate_within`), but a rerun on
+    2026-11-17 showed longer pauses only read less: Workday let 1 to 3 requests through after every pause, however
+    long. Its 429s are Cloudflare challenges (`cf-mitigated: challenge`). Each pause is logged with the 429's headers, the start of its body and the requests sent since the
     last pause, to measure Workday's limit. Workday answered 429 to most of its sites on 2026-11-16, the 198's
     included, after mornings that reached 11 requests a second across them, each site paced on its own; on 2026-11-17,
     at 3 a second, a fixed 60 s pause met a new 429 nearly every minute and about 550 Workday requests got through.
