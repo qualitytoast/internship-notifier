@@ -606,3 +606,29 @@ Instruments, Tyler Technologies, United Airlines, UnitedHealth Group (Optum), We
   60 s, 120 s and ten of 300 s, let only 1 to 3 requests through before the next 429. Every 429 is a Cloudflare
   challenge page: `cf-mitigated: challenge`, `server: cloudflare`, an HTML body, no Retry-After, no rate-limit
   headers. Back to a fixed 60 s pause (about 6 requests a minute this morning against about 2).
+
+## 2026-11-17: the morning check of run 31, the late checks' own time, and one Chrome test
+
+- Runs 31 and 32 by company (last check): of the 198, 160 non-Workday companies read cleanly; the 3 others were
+  Citadel's checks (HTTP 403, before they moved to Chrome at 10:09); 29 of the 34 Workday companies came out partial
+  or failed. Of the added, 157 non-Workday companies read cleanly, plus Qualcomm (batch 5): its first read stopped 21
+  jobs short of its total (Eightfold's order moving during a 207 s walk: degraded) and its second ran out of the
+  round's time (alert dismissed by the user; no count_tolerance on one short read in two, watched); 67 of the 70
+  Workday companies came out partial or failed. NVIDIA's daily read (Eightfold) was whole; its weekly Workday full
+  read is still undone since Nov 7.
+- Found: neither round's careers-page scan, backup checks nor watched boards ran on Nov 16 or 17 (every
+  `page_scan_at` and `blocked:ok` is Nov 15 or older). They had to end five minutes before the round's limit, and
+  Workday's waits held the reading past it (the 198's round 36 min both days). A third such morning would have raised
+  `check gone dark` for about 440 reads, 160 of them the 198's careers pages.
+- The user's decision (permanent): Workday's reading is not cut short on refusal days; the late checks get their own
+  time after the reading ends, even if the run takes longer. Done: the page scan, the blocked companies' checks and the
+  watched boards each get their whole budget counted from their own start, in both rounds. On a morning when Workday
+  refuses, expect up to about 2.5 hours (the reading as on Nov 17, then up to 14 min of the 198's late checks and 36
+  of the added round's, which read Workday sites too). Proof (old = main d0cad33): golden PASS; three replayed
+  mornings PASS with nothing exempt (replays never reach a time limit); two tests that fail on the old code.
+- One Chrome test (the user's request, report before any change), NVIDIA's Workday site, 13:53 to 13:54 local: the
+  script's job-list POST got 429 `cf-mitigated: challenge` on its first request, before and after; a minimized real
+  Chrome window (fresh profile, as browser.py opens it, nothing hidden, nothing clicked) loaded the site (200, 3.5 s,
+  no challenge shown) and its own job-list request, then 30 more job-list POSTs from inside the page about one every
+  1.5 s: all 200, none challenged (postings per answer not counted). Chrome was closed and its profile deleted. Workday's
+  challenge goes by client, as Citadel's does. Nothing changed for it yet.

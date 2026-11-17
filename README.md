@@ -275,6 +275,12 @@ Rules for changing things: CLAUDE.md.
     entries in settings.liveness), then the same for the added ones with schedule.rounds.added (workers, time limit,
     budgets). Only the emails wait for the last round. Alerts are recorded round by round, so an original company's
     alert keeps the number it had before rounds existed.
+  - A round's time limit bounds its reading (first pass and retry pass) only. The careers-page scan, the blocked
+    companies' checks and the watched boards then each get their whole budget, counted from their own start, however
+    late the reading ended, so a morning when a vendor holds the reading (Workday's refusals on 2026-11-16 and 17)
+    runs longer instead of skipping them. Until 2026-11-17 they had to end five minutes before the round's limit and
+    got no time at all on those two mornings, in both rounds, which would have raised `check gone dark` for about
+    440 reads on the third.
 - **db.py:** SQLite (WAL) with tables jobs, company_state, checks, emails, runs, kv, alerts and simplify_rows. jobs
   keeps every job ever seen: first/last seen, match decision, notified_at, baseline, removed_at, repost_of,
   alt_ids.
