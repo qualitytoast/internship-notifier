@@ -35,20 +35,60 @@ DEFAULT_UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.3
 RETRY_STATUSES = {408, 425, 429, 500, 502, 503, 504, 520, 521, 522, 524}
 
 
+RETRY_AFTER_CAP = 900.0   # a group pause honors a server's Retry-After up to this many seconds
+
+
 @dataclass
 class HostGroup:
-    """Hosts that share one pace: every request to a host ending in one of `hosts` takes a turn at most `per_second`
-    times a second across all threads, and a 429 from any of them pauses all of them for `pause_on_429` seconds.
+    """Hosts that share one pace: every request to a host ending in one of `hosts` (robots.txt included) takes a turn
+    at most `per_second` times a second across all threads, and a 429 from any of them pauses all of them.
     Workday answered 429 to most of its sites on 2026-11-16 after mornings that reached 11 requests a second across
-    its sites, each site paced on its own."""
+    its sites, each site paced on its own.
+
+    The pause steps up: the first 429 pauses for `pause_on_429[0]` seconds, and a 429 that comes within
+    `escalate_within` seconds of the end of the last pause takes the next step (the last step repeats). A Retry-After
+    longer than the step is honored, up to RETRY_AFTER_CAP. On 2026-11-17 a fixed 60 s pause met a new 429 nearly
+    every minute (98 pauses in 97 minutes): coming back after 60 s only tripped the limit again."""
     name: str
     hosts: tuple[str, ...]
     per_second: float
-    pause_on_429: float = 60.0
+    pause_on_429: tuple[float, ...] | float = (60.0, 120.0, 300.0)
     pauses: int = 3               # a request is given up after this many pauses
+    escalate_within: float = 300.0
+
+    def __post_init__(self):
+        steps = self.pause_on_429
+        self.pause_on_429 = tuple(float(x) for x in steps) if isinstance(steps, (list, tuple)) else (float(steps),)
+        if not self.pause_on_429:
+            raise ValueError(f"host group {self.name}: pause_on_429 needs at least one step")
 
     def covers(self, host: str) -> bool:
         return any(host == h or host.endswith("." + h) for h in self.hosts)
+
+    def pause_for(self, step: int, retry_after: float | None) -> float:
+        """The pause of the step-th 429 in a row (1-based), lengthened to the server's Retry-After."""
+        pause = self.pause_on_429[min(step, len(self.pause_on_429)) - 1]
+        if retry_after is not None:
+            pause = max(pause, min(retry_after, RETRY_AFTER_CAP))
+        return pause
+
+
+def limit_info(resp) -> str:
+    """What a 429 answer says about the limit behind it, for the log: the headers that can carry it and the start of
+    the body. Workday sits behind Cloudflare, whose rate limiting and bot rules both answer 429."""
+    h = {k.lower(): v for k, v in resp.headers.items()}
+    keep = [k for k in sorted(h) if k in ("retry-after", "server", "cf-ray", "cf-mitigated", "x-wd-request-id",
+                                            "content-type")
+            or "ratelimit" in k or "rate-limit" in k]
+    parts = [f"{k}={h[k][:120]}" for k in keep]
+    body = " ".join(resp.content[:400].decode("utf-8", "replace").split())[:160]
+    parts.append(f"body={body!r}" if body else "no body")
+    return ", ".join(parts)
+
+
+def retry_after_seconds(resp) -> float | None:
+    ra = resp.headers.get("retry-after", "").strip()
+    return float(ra) if ra.isdigit() else None
 
 
 @dataclass
@@ -101,6 +141,8 @@ class HostGate:
         self._robots: dict[str, tuple[RobotsRules, float]] = {}
         self._group_next: dict[str, float] = {}    # a host group's next free turn (time.monotonic())
         self._group_pause: dict[str, float] = {}   # … and the end of its pause after a 429
+        self._group_step: dict[str, int] = {}      # … the step of that pause (429s in a row)
+        self._group_turns: dict[str, int] = {}     # … turns given since that pause ended (requests sent)
         self.cache_dir = cache_dir
         if cache_dir:
             cache_dir.mkdir(parents=True, exist_ok=True)
@@ -132,16 +174,34 @@ class HostGate:
                 time.sleep(turn - now)
             with self.lock_for("group:" + group.name):
                 if time.monotonic() >= self._group_pause.get(group.name, 0.0):
+                    self._group_turns[group.name] = self._group_turns.get(group.name, 0) + 1
                     return True
             # a 429 paused the group while this turn was waiting: take a turn after the pause
 
-    def pause_group(self, group: HostGroup) -> None:
-        """A host of the group answered 429: no request to any of them before the pause ends."""
+    def pause_group(self, group: HostGroup, url: str = "", resp=None) -> float:
+        """A host of the group answered 429: no request to any of them before the pause ends. A 429 to a request sent
+        before the current pause began belongs to that pause and changes nothing. Returns the pause's end."""
         with self.lock_for("group:" + group.name):
-            until = time.monotonic() + group.pause_on_429
-            if until > self._group_pause.get(group.name, 0.0):
-                self._group_pause[group.name] = until
-                log.warning("http: %s answered 429: all its hosts wait %.0f s", group.name, group.pause_on_429)
+            now = time.monotonic()
+            end = self._group_pause.get(group.name)
+            if end is not None and now < end:
+                return end
+            sent = self._group_turns.get(group.name, 0)
+            if end is not None and now - end <= group.escalate_within:
+                step = self._group_step.get(group.name, 0) + 1
+                since = f"{sent} requests in {now - end:.0f} s since the last pause ended"
+            else:
+                step = 1
+                since = (f"{sent} requests since the last pause, {now - end:.0f} s ago" if end is not None
+                         else f"the run's first 429, after {sent} requests")
+            pause = group.pause_for(step, retry_after_seconds(resp) if resp is not None else None)
+            self._group_pause[group.name] = now + pause
+            self._group_step[group.name] = step
+            self._group_turns[group.name] = 0
+            info = limit_info(resp) if resp is not None else "no answer kept"
+            log.warning("http: %s answered 429 (%s; %s; %s): all its hosts wait %.0f s (429 %d in a row)",
+                        group.name, urlsplit(url).netloc or "?", since, info, pause, step)
+            return now + pause
 
     # robots cache -----------------------------------------------------------------------------
     def robots(self, origin: str, fetch, ttl_hours: float) -> RobotsRules:
@@ -370,20 +430,21 @@ class Http:
             return resp
         parts = urlsplit(full)
         origin = f"{parts.scheme}://{parts.netloc}"
-        rules = None
-        if check_robots and self.s.respect_robots:
-            rules = self.gate.robots(origin, self._fetch_robots, self.s.robots_ttl_hours)
-            if not rules.allowed(full):
-                raise RobotsBlocked(f"robots.txt disallows {full[:160]} ({rules.matching_rule(full)})")
         interval = self.host_intervals.get(parts.netloc, self.s.min_interval)
         if self.min_interval:
             interval = max(interval, self.min_interval)
+        group = next((g for g in self.s.host_groups if g.covers(parts.netloc)), None)
+        rules = None
+        if check_robots and self.s.respect_robots:
+            rules = self.gate.robots(origin, lambda u: self._fetch_robots(u, parts.netloc, interval, group),
+                                     self.s.robots_ttl_hours)
+            if not rules.allowed(full):
+                raise RobotsBlocked(f"robots.txt disallows {full[:160]} ({rules.matching_rule(full)})")
         if rules is not None:
             cd = rules.crawl_delay()
             if cd:
                 interval = max(interval, min(cd, self.s.max_crawl_delay))
 
-        group = next((g for g in self.s.host_groups if g.covers(parts.netloc)), None)
         last_err, timeouts, paused, attempt, after_pause = "", 0, 0, 0, False
         while attempt <= self.s.retries:
             self._check_deadline(method, url)
@@ -415,7 +476,7 @@ class Http:
             if r.status_code == 429 and group is not None and 429 not in ok_statuses:
                 # the vendor limits all its hosts together: pause them all and ask again after the pause, which is
                 # not one of the request's attempts
-                self.gate.pause_group(group)
+                self.gate.pause_group(group, full, resp)
                 paused += 1
                 if paused > group.pauses:
                     raise FetchError(f"HTTP 429 for {method} {url[:160]} (after {group.pauses} pauses of every "
@@ -450,9 +511,24 @@ class Http:
             raise CheckTimeout(f"time budget exhausted before {method} {url[:160]} "
                                f"({self.requests_made} requests made)")
 
-    def _fetch_robots(self, url: str):
-        try:
-            r = self.client.get(url, timeout=15)
+    def _fetch_robots(self, url: str, host: str, interval: float, group: HostGroup | None):
+        """robots.txt takes its turn like any request to the host: its pace and its group's pace. Until 2026-11-17 it
+        went out unpaced, so each morning, with every copy older than robots_ttl_hours, began with a burst of them to
+        dozens of Workday sites at once. A 429 from a group's host pauses the group and robots.txt is asked again after
+        the pause; after the group's pauses the 429 is the answer, as before (RFC 9309: a 4xx means no rules)."""
+        paused = 0
+        while True:
+            self._check_deadline("GET", url)
+            if group is not None and not self.gate.wait_group(group, self.deadline):
+                raise CheckTimeout(f"time budget exhausted waiting for {group.name}'s next turn before GET {url[:160]} "
+                                   f"({self.requests_made} requests made)")
+            self.gate.wait_turn(host, interval)
+            try:
+                r = self.client.get(url, timeout=15)
+            except httpx.HTTPError:
+                return None, ""
+            if r.status_code == 429 and group is not None and paused < group.pauses:
+                self.gate.pause_group(group, url, r)
+                paused += 1
+                continue
             return r.status_code, r.text
-        except httpx.HTTPError:
-            return None, ""

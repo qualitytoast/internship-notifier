@@ -584,3 +584,20 @@ Instruments, Tyler Technologies, United Airlines, UnitedHealth Group (Optum), We
   (old = main b698ee5): golden PASS; three replayed mornings PASS with nothing exempt (replays are never paced).
 - To watch: NVIDIA's weekly full read (the 198's) last completed on Nov 7 (Nov 14 the outage, Nov 15 cut short, Nov
   16 out of time): it is read first on the next morning.
+
+## 2026-11-17 (run 31): Workday still answered 429, at 3 requests a second
+
+- The run's first Workday request got a 429 (06:53:19 local, about 22 hours after the last request), and a new 429
+  came nearly every minute after that: 98 pauses of 60 s in 97 minutes. About 550 Workday requests got through in
+  completed reads (3,229 on Nov 15, 1,625 on Nov 16); most Workday reads ran out of time partway ("time budget
+  exhausted waiting for workday's next turn"). The careers-page scan was never reached on Nov 16 or 17, so 29 pages
+  that last answered on Nov 14 alerted `check gone dark` (none of them is down). Partial reads close nothing. One
+  request at 14:53 UTC, 20 minutes after the run, got an ordinary 200: a limit that resets, not a block.
+- Fixes (the user's choice): robots.txt now takes its turn like any request (per host and in its host group; until
+  now each morning began with an unpaced burst of them, every copy being older than 12 hours), and a 429 on a Workday
+  robots.txt pauses the group and asks again. The group pause steps up, 60, 120, 300 s, while 429s come back within
+  5 minutes of a pause's end, honors a longer Retry-After (up to 15 min), and is logged with the 429's headers, body
+  start and the requests sent since the last pause, to measure the limit. Proof (old = main a3760e2): golden PASS;
+  tests in test_http.py.
+- To watch: tomorrow's log lines `workday answered 429 (...)`: their headers and "N requests in S s since the last
+  pause ended" say what the limit is.
