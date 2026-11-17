@@ -292,6 +292,12 @@ Rules for changing things: CLAUDE.md.
     included, after mornings that reached 11 requests a second across them, each site paced on its own; on 2026-11-17,
     at 3 a second, a fixed 60 s pause met a new 429 nearly every minute and about 550 Workday requests got through.
   - `ssl_context()` = certifi plus the bundled intermediates in certs/.
+  - `browser=True` (Citadel's sitemaps): the GET is made by the real Google Chrome (browser.py), for a site whose
+    Cloudflare guard refuses scripts but lets Chrome straight through. A normal window, minimized at once (Chrome's
+    hidden mode names itself HeadlessChrome and is challenged); a fresh profile each time, one Chrome at a time.
+    Chrome is closed and its profile deleted before the request returns, even on an error. robots.txt, pacing, retries,
+    time budgets and record/replay work as for any request. A challenge Chrome is still shown is never clicked: the
+    check fails and alerts. Needs Google Chrome installed and you logged in on the Mac when the run starts.
 - **crosscheck.py:**
   - Fetches SimplifyJobs' Summer2027 listings.json (with ETag), which its READMEs are built from and which also has
     the early-season roles they leave out. New rows go pending → found / filtered / missed / abroad, within 3 minutes;

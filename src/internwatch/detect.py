@@ -106,7 +106,7 @@ def probe(name: str, url: str) -> list[Candidate]:
 
 
 def browser_requests(url: str) -> str:
-    """Every request URL a headless browser makes while loading the page (needs `pip install .[browser]`)."""
+    """Every request URL a headless browser makes while loading the page."""
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:

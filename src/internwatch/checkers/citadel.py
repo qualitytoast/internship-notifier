@@ -11,8 +11,10 @@ and one request per poll is enough.
 
 Both sites were rebuilt on 2026-11-13 (WordPress to Next.js). The sitemaps kept their format and every job and
 page kept its address, but they moved from /career-sitemap.xml and /page-sitemap.xml to /sitemap/career.xml and
-/sitemap/page.xml, and the new addresses answer scripts with the same challenge (HTTP 403). The check then fails
-and alerts. See the notes for what was seen that day.
+/sitemap/page.xml, and the new addresses answer scripts with the same challenge (HTTP 403). Real Google Chrome
+gets the XML at once (2026-11-17), so the sitemaps are read through Chrome (Http.request(browser=True), browser.py):
+a minimized window, closed before the check goes on. If Chrome is challenged too, the check fails and alerts.
+See the notes for what was seen on both days.
 
 settings: base_url: https://www.citadel.com    (min_interval: 10)
 See discovery/notes/citadel.md.
@@ -74,7 +76,7 @@ class CitadelSitemap(Checker):
     type = "citadel"
 
     def describe(self, s):
-        return f"GET {s['base_url'].rstrip('/')}/sitemap/career.xml (job slugs)"
+        return f"GET {s['base_url'].rstrip('/')}/sitemap/career.xml in Chrome (job slugs)"
 
     def fetch(self, http, s, ctx=None):
         base = s["base_url"].rstrip("/")
@@ -94,7 +96,7 @@ class CitadelPrograms(Checker):
     type = "citadel_programs"
 
     def describe(self, s):
-        return f"GET {s['base_url'].rstrip('/')}/sitemap/page.xml (program application pages)"
+        return f"GET {s['base_url'].rstrip('/')}/sitemap/page.xml in Chrome (program application pages)"
 
     def fetch(self, http, s, ctx=None):
         base = s["base_url"].rstrip("/")
@@ -114,8 +116,9 @@ class CitadelPrograms(Checker):
 
 
 def sitemap(http, base: str, name: str) -> list[tuple[str, str]]:
-    """(loc, lastmod) of every entry of the site's sitemap of one kind of page, <base>/sitemap/<name>.xml."""
-    body = http.get(f"{base}/sitemap/{name}.xml").content
+    """(loc, lastmod) of every entry of the site's sitemap of one kind of page, <base>/sitemap/<name>.xml, read
+    through Chrome: the sitemaps refuse every other client."""
+    body = http.get(f"{base}/sitemap/{name}.xml", browser=True).content
     try:
         root = ET.fromstring(body)
     except ET.ParseError:

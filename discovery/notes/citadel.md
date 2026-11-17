@@ -144,3 +144,14 @@ This is bot management, not robots. The rule is: do not evade it, and use only t
 - The checkers ask the new addresses since then (one request each a run) and fail with HTTP 403 until Citadel lets
   scripts read them. While a checker fails, SimplifyJobs' rows for the company
   are emailed "via Simplify"; nothing stands in for the program pages.
+
+## 2026-11-17: the sitemaps are read through Chrome
+
+- Trial in real Google Chrome (Playwright, `channel="chrome"`, a normal window, fresh profile, automation not
+  hidden): `/sitemap/career.xml` answered **200** at once on both sites, with no challenge shown (65 and 79 entries).
+  So the challenge goes by address and by client: scripts are refused there, a real browser is not.
+- The same in Chrome's hidden mode (user agent `HeadlessChrome/157`): **403** `cf-mitigated: challenge` on both, still
+  "Just a moment..." after 30 s.
+- The three checkers now read their sitemaps through Chrome (`Http.request(browser=True)`, `internwatch/browser.py`),
+  minimized; macOS keeps part of a window on screen, so it can't be moved off it. First live reads: 65 jobs
+  (citadel), 79 (citadel-securities), 13 program pages (citadel-securities-programs), about 1.5 s each.

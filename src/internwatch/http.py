@@ -73,6 +73,12 @@ class HostGroup:
         return pause
 
 
+def chrome_timeout(read_timeout: float) -> float:
+    """How long a Chrome fetch may wait for its page: longer than a plain read, since Chrome starts first and a
+    challenge that passes on its own reloads the page."""
+    return max(45.0, read_timeout)
+
+
 def limit_info(resp) -> str:
     """What a 429 answer says about the limit behind it, for the log: the headers that can carry it and the start of
     the body. Workday sits behind Cloudflare, whose rate limiting and bot rules both answer 429."""
@@ -420,7 +426,11 @@ class Http:
     # core -----------------------------------------------------------------------------------
     def request(self, method: str, url: str, *, params: dict | None = None, json=None, data=None,
                 headers: dict | None = None, timeout: float | None = None,
-                ok_statuses: tuple[int, ...] = (), check_robots: bool = True) -> Resp:
+                ok_statuses: tuple[int, ...] = (), check_robots: bool = True, browser: bool = False) -> Resp:
+        """browser=True: a GET made by the real Google Chrome (browser.py) instead of httpx, for sites that refuse
+        every client but a browser. robots.txt, pacing, retries, the time budget and record/replay work the same."""
+        if browser and (method != "GET" or json is not None or data is not None or headers):
+            raise ValueError("browser=True is for plain GETs")
         full = canonical_url(url, params)
         bkey = body_key(json, data)
         if self.replay is not None:
@@ -459,21 +469,36 @@ class Http:
                 raise CheckTimeout(f"time budget exhausted waiting for {group.name}'s next turn before {method} "
                                    f"{url[:160]} ({self.requests_made} requests made)")
             self.gate.wait_turn(parts.netloc, interval)
-            try:
-                r = self.client.request(method, full, json=json, data=data, headers=headers,
-                                        timeout=timeout or httpx.USE_CLIENT_DEFAULT)
-                self.requests_made += 1
-            except httpx.TimeoutException as e:
-                last_err = f"timeout ({type(e).__name__}) for {method} {url[:160]}"
-                timeouts += 1
-                attempt += 1
-                continue
-            except httpx.TransportError as e:
-                last_err = f"network error ({type(e).__name__}: {str(e)[:120]}) for {method} {url[:160]}"
-                attempt += 1
-                continue
-            resp = Resp(r.status_code, str(r.url), {k.lower(): v for k, v in r.headers.items()}, r.content)
-            if r.status_code == 429 and group is not None and 429 not in ok_statuses:
+            if browser:
+                from . import browser as chrome
+                wait = timeout or chrome_timeout(self.s.read_timeout)
+                if self.deadline is not None:
+                    wait = max(1.0, min(wait, self.deadline - time.monotonic()))
+                try:
+                    resp = chrome.fetch(full, wait)
+                    self.requests_made += 1
+                except chrome.BrowserUnavailable:
+                    raise
+                except FetchError as e:
+                    last_err = f"{e} ({method} {url[:160]})"
+                    attempt += 1
+                    continue
+            else:
+                try:
+                    r = self.client.request(method, full, json=json, data=data, headers=headers,
+                                            timeout=timeout or httpx.USE_CLIENT_DEFAULT)
+                    self.requests_made += 1
+                except httpx.TimeoutException as e:
+                    last_err = f"timeout ({type(e).__name__}) for {method} {url[:160]}"
+                    timeouts += 1
+                    attempt += 1
+                    continue
+                except httpx.TransportError as e:
+                    last_err = f"network error ({type(e).__name__}: {str(e)[:120]}) for {method} {url[:160]}"
+                    attempt += 1
+                    continue
+                resp = Resp(r.status_code, str(r.url), {k.lower(): v for k, v in r.headers.items()}, r.content)
+            if resp.status == 429 and group is not None and 429 not in ok_statuses:
                 # the vendor limits all its hosts together: pause them all and ask again after the pause, which is
                 # not one of the request's attempts
                 self.gate.pause_group(group, full, resp)
@@ -483,12 +508,12 @@ class Http:
                                      f"{group.name} host)")
                 after_pause = True
                 continue
-            if r.status_code in RETRY_STATUSES and r.status_code not in ok_statuses:
-                last_err = f"HTTP {r.status_code} for {method} {url[:160]}"
-                ra = r.headers.get("retry-after", "")
+            if resp.status in RETRY_STATUSES and resp.status not in ok_statuses:
+                last_err = f"HTTP {resp.status} for {method} {url[:160]}"
+                ra = resp.headers.get("retry-after", "")
                 if ra.isdigit():
                     wait = min(int(ra), 60)
-                elif r.status_code == 429:
+                elif resp.status == 429:
                     wait = min(30.0 * (attempt + 1), 90)  # rate limited without a hint: back off hard
                 else:
                     wait = 0
@@ -500,8 +525,8 @@ class Http:
                 continue
             if self.record is not None:
                 self.record.add(method, full, bkey, resp)
-            if r.status_code >= 400 and r.status_code not in ok_statuses:
-                raise FetchError(f"HTTP {r.status_code} for {method} {url[:160]}")
+            if resp.status >= 400 and resp.status not in ok_statuses:
+                raise FetchError(f"HTTP {resp.status} for {method} {url[:160]}")
             return resp
         err = CheckTimeout if timeouts == self.s.retries + 1 else FetchError
         raise err(f"{last_err} (after {self.s.retries + 1} attempts)")

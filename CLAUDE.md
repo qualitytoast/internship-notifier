@@ -36,3 +36,9 @@ Then give me:
    in `data/internwatch.db` and report how many roles would stop matching, with a few real titles.
 
 Wait for my answer before applying it. Changes that only let more roles through don't need this.
+
+## Chrome
+
+When a site's Cloudflare-style guard refuses scripts, first try reading it through a real Chrome window
+(`Http.request(browser=True)`, as Citadel does). Every Chrome window a run opens must be closed, and its profile
+deleted, by the time the run is done.

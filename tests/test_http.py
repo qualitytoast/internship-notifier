@@ -298,3 +298,123 @@ def test_a_group_pause_logs_what_the_429_said(caplog):
 
 def test_a_single_pause_length_still_reads_as_one_step():
     assert _wd_group(pause_on_429=60).pause_on_429 == (60.0,)
+
+
+# browser=True: GETs made by Chrome (browser.py) --------------------------------------------------------------------
+
+def chrome(monkeypatch, *answers):
+    """browser.fetch replaced by canned answers (Resp or exceptions), in order; returns the URLs it was asked for."""
+    from internwatch import browser
+    from internwatch.http import Resp
+    asked, left = [], list(answers)
+
+    def fetch(url, timeout):
+        asked.append(url)
+        a = left.pop(0)
+        if isinstance(a, Exception):
+            raise a
+        status, body = a
+        return Resp(status, url, {"content-type": "text/xml"}, body.encode())
+
+    monkeypatch.setattr(browser, "fetch", fetch)
+    return asked
+
+
+def robots_only(rules=""):
+    """httpx answers robots.txt only: anything else reaching httpx fails the test."""
+    def handler(req):
+        assert req.url.path == "/robots.txt", f"httpx was asked for {req.url}"
+        return httpx.Response(200, text=rules) if rules else httpx.Response(404)
+    return handler
+
+
+def test_a_browser_get_goes_through_chrome_not_httpx(monkeypatch):
+    asked = chrome(monkeypatch, (200, "<urlset/>"))
+    h = client(robots_only())
+    assert h.get_text("https://x.test/sitemap.xml", browser=True) == "<urlset/>"
+    assert asked == ["https://x.test/sitemap.xml"] and h.requests_made == 1
+
+
+def test_a_browser_get_still_keeps_to_robots_txt(monkeypatch):
+    asked = chrome(monkeypatch)
+    with pytest.raises(RobotsBlocked):
+        client(robots_only("User-agent: *\nDisallow: /sitemap\n")).get("https://x.test/sitemap.xml", browser=True)
+    assert asked == []
+
+
+def test_a_challenge_chrome_does_not_pass_fails_the_check_without_retrying(monkeypatch):
+    asked = chrome(monkeypatch, (403, "Just a moment..."))
+    with pytest.raises(FetchError, match="HTTP 403"):
+        client(robots_only()).get("https://x.test/sitemap.xml", browser=True)
+    assert len(asked) == 1
+
+
+def test_a_chrome_failure_is_retried(monkeypatch):
+    asked = chrome(monkeypatch, FetchError("Chrome failed"), (200, "ok"))
+    assert client(robots_only()).get_text("https://x.test/a", browser=True) == "ok"
+    assert len(asked) == 2
+
+
+def test_chrome_missing_is_not_retried(monkeypatch):
+    from internwatch.browser import BrowserUnavailable
+    asked = chrome(monkeypatch, BrowserUnavailable("no Chrome"), (200, "ok"))
+    with pytest.raises(BrowserUnavailable):
+        client(robots_only()).get("https://x.test/a", browser=True)
+    assert len(asked) == 1
+
+
+def test_a_browser_get_replays_like_any_get():
+    rec = Cassette(exchanges=[{"method": "GET", "url": "https://x.test/a", "body": "", "status": 200,
+                               "headers": {}, "text": "ok"}])
+    assert Http(replay=rec).get_text("https://x.test/a", browser=True) == "ok"
+
+
+def test_browser_is_for_plain_gets_only():
+    with pytest.raises(ValueError):
+        Http().post("https://x.test/a", json={}, browser=True)
+
+
+def test_chrome_is_closed_and_its_profile_deleted_even_when_the_page_fails(monkeypatch, tmp_path):
+    """No Chrome: a stand-in Playwright whose page load fails. The context must be closed and the profile gone."""
+    import sys
+    import tempfile
+    import types
+
+    from internwatch import browser
+
+    class PwError(Exception):
+        pass
+
+    closed, profiles = [], []
+
+    class Ctx:
+        pages = []
+
+        def new_page(self):
+            raise PwError("page crashed")
+
+        def close(self):
+            closed.append(True)
+
+    class Pw:
+        class chromium:
+            @staticmethod
+            def launch_persistent_context(path, **kw):
+                profiles.append(path)
+                assert kw["headless"] is False and kw["channel"] == "chrome"
+                return Ctx()
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *a):
+            return False
+
+    fake = types.ModuleType("playwright.sync_api")
+    fake.Error, fake.sync_playwright = PwError, Pw
+    monkeypatch.setitem(sys.modules, "playwright.sync_api", fake)
+    monkeypatch.setattr(tempfile, "tempdir", str(tmp_path))
+    with pytest.raises(FetchError, match="page crashed"):
+        browser.fetch("https://x.test/a", 5)
+    assert closed == [True]
+    assert profiles and profiles[0].startswith(str(tmp_path)) and not list(tmp_path.iterdir())

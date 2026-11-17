@@ -15,10 +15,10 @@ dependencies = [
     "python-dotenv>=1.0",
     "beautifulsoup4>=4.12",
     "lxml>=5.0",
+    "playwright>=1.45",  # Citadel's sitemaps are read through Google Chrome (browser.py)
 ]
 
 [project.optional-dependencies]
-browser = ["playwright>=1.45"]
 dev = ["pytest>=8"]
 
 [project.scripts]
