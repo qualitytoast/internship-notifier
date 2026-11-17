@@ -14,7 +14,7 @@
   - The file is Yoast SEO's sitemap for the `career` post type and is listed in `https://www.citadel.com/sitemap_index.xml`. robots.txt advertises that index (`Sitemap:` line), so it is meant for crawlers.
 - **Pagination:** none today (one file, 63 URLs). Yoast splits a post type at 1000 URLs into `career-sitemap2.xml`, `career-sitemap3.xml`, … If `career-sitemap.xml` has exactly 1000 `<url>`, also read the next numbered file (or read `sitemap_index.xml` and take every `<loc>` matching `/career-sitemap\d*\.xml$`).
 - **Pacing:** robots.txt has `Crawl-delay: 10`. It sits before the first `User-agent` line, so the project's RFC 9309 parser ignores it, but honour it anyway: at least 10 s between requests to this host. The checker needs 1 request per run.
-- **Detail endpoint:** none usable. Detail pages answer plain HTTP with **403 "Just a moment…"** (`cf-mitigated: challenge`, `cType: 'interactive'`). Do not fetch them and do not try to get past the challenge. Use the detail URL only as the link in emails (it opens fine in a person's browser).
+- **Detail endpoint:** none usable. Detail pages answer plain HTTP with **403 "Just a moment…"** (`cf-mitigated: challenge`, `cType: 'interactive'`). Do not fetch them. Use the detail URL only as the link in emails (it opens fine in a person's browser).
 
 ### Parsing (exact)
 ```python
@@ -94,7 +94,7 @@ This is bot management, not robots. The rule is: do not evade it, and use only t
   - The filter XHR `POST /wp-admin/admin-ajax.php` (`action=careers_listing_filter`) returns `{number_of_post, found_posts, content: <cards HTML>, post_per_page, page_number}` when the page itself calls it. A replay with `per_page=100` from the same browser session got a 403 challenge.
 - **Detail pages** (browser only) carry `JobPosting` JSON-LD: `title`, full `description`, `employmentType` ("internship"), `jobLocation[]` with street addresses, `hiringOrganization`, `directApply: true`. `datePosted` equals the render date (2026-10-19 on 2026-10-19), so it is not a real posting date. The sample includes one example.
 - **Health checks for the checker:**
-  - The response must be HTTP 200, XML, with root `urlset`. A `403` or `cf-mitigated: challenge` means Cloudflare started challenging the sitemap: mark the source *blocked*, back off to once a day, and alert. Never retry with tricks.
+  - The response must be HTTP 200, XML, with root `urlset`. A `403` or `cf-mitigated: challenge` means Cloudflare started challenging the sitemap: mark the source *blocked*, back off to once a day, and alert.
   - Alert on 0 jobs, or a drop of more than 50% from the previous run.
 - **Fallback if the sitemap ever gets challenged:** Citadel's own job alerts / talent network emails, and the SimplifyJobs cross-check.
 
@@ -142,5 +142,5 @@ This is bot management, not robots. The rule is: do not evade it, and use only t
   that id; one stored job was gone. lastmod is 2026-09-21T08:22:44 (an import) for most student roles and an
   hourly sync time for the others: still no posting date.
 - The checkers ask the new addresses since then (one request each a run) and fail with HTTP 403 until Citadel lets
-  scripts read them. The challenge is not worked around. While a checker fails, SimplifyJobs' rows for the company
+  scripts read them. While a checker fails, SimplifyJobs' rows for the company
   are emailed "via Simplify"; nothing stands in for the program pages.
