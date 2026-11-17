@@ -406,7 +406,7 @@ class Runner:
 
         if opts.crosscheck:
             self._crosscheck(s, rnd)
-        self._liveness_finish(companies, opts, s, run_deadline)
+        self._liveness_finish(companies, opts, s)
 
     def _check_all(self, companies: list[Company], opts: RunOptions, s: RunSummary, first_run: bool,
                    run_deadline: float) -> None:
@@ -458,8 +458,14 @@ class Runner:
         except Exception:  # noqa: BLE001 — same: only logged
             log.exception("moves: %s failed", o.company.key)
 
-    def _liveness_finish(self, companies: list[Company], opts: RunOptions, s: RunSummary, run_deadline: float) -> None:
-        """Run-level checks (liveness.py): companies never processed, new Workday sites, careers pages that moved."""
+    def _liveness_finish(self, companies: list[Company], opts: RunOptions, s: RunSummary) -> None:
+        """Run-level checks (liveness.py): companies never processed, new Workday sites, careers pages that moved.
+
+        The careers-page scan, the blocked companies' checks and the watched boards each get their whole budget,
+        counted from their own start, however late the reading ended: the round's time limit bounds its reading, not
+        these. Until 2026-11-17 they had to end five minutes before the round's limit, so on mornings when Workday's
+        refusals held the reading past it (Nov 16 and 17) they got no time at all, in both rounds, and the reads they
+        missed raised `check gone dark` on the third such morning."""
         lv = liveness.settings(self.cfg)
         if not lv["enabled"]:
             return
@@ -470,26 +476,24 @@ class Runner:
             if not opts.daily:  # the weekly scans run once a morning, with time to spare
                 return
             s.problems += liveness.scan_workday_sites(self.cfg, self.db, self.gate)
-            budget_end = min(time.monotonic() + lv["scan_seconds"], run_deadline - 300)
-            if time.monotonic() < budget_end:
-                http = Http(http_settings(self.cfg), gate=self.gate)
-                try:
-                    s.problems += liveness.scan_pages(self.cfg, self.db, http, budget_end)
-                finally:
-                    http.close()
+            http = Http(http_settings(self.cfg), gate=self.gate)
+            try:
+                s.problems += liveness.scan_pages(self.cfg, self.db, http, time.monotonic() + lv["scan_seconds"])
+            finally:
+                http.close()
         except Exception:  # noqa: BLE001 — never block the run's emails
             log.exception("liveness: run-level checks failed")
         if not opts.daily:
             return
         # the companies whose careers page can't be read: where else they could start posting (moves.py)
-        budget_end = min(time.monotonic() + lv["blocked_seconds"], run_deadline - 300)
+        budget_end = time.monotonic() + lv["blocked_seconds"]
         try:
             later = (self.rnd, self.whole) if self.rnd else ()  # the first round calls it exactly as before rounds
             s.problems += moves.run(self.cfg, self.db, self.gate, self._scan_http, budget_end, s.healthy, *later)
         except Exception:  # noqa: BLE001 — never block the run's emails
             log.exception("moves: checks of the blocked companies failed")
         # boards read but not stored: dismissed ones and mirrors, for a role nothing else has (watch.py)
-        budget_end = min(time.monotonic() + lv["watch_seconds"], run_deadline - 300)
+        budget_end = time.monotonic() + lv["watch_seconds"]
         try:
             s.problems += watch.run(self.cfg, self.db, self.gate, self._scan_http, budget_end, s.healthy)
         except Exception:  # noqa: BLE001 — never block the run's emails

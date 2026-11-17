@@ -149,14 +149,54 @@ def test_every_late_check_failing_at_once_costs_no_email(make_cfg, monkeypatch):
     assert len(db.q("SELECT * FROM emails WHERE kind='morning'")) == 1 and db.q("SELECT * FROM emails WHERE kind='health'")
 
 
-def test_the_late_checks_are_skipped_once_the_run_is_out_of_time(make_cfg, monkeypatch):
-    """The run's limit is what keeps the email on time: nothing slow starts in its last five minutes."""
-    pages, budgets = [], []
-    monkeypatch.setattr(liveness, "scan_pages", lambda *a, **kw: pages.append(1) or [])
-    monkeypatch.setattr(moves, "run", lambda cfg, db, gate, http, budget_end, healthy: budgets.append(budget_end) or [])
+def test_the_late_checks_get_their_whole_budget_however_late_the_reading_ends(make_cfg, monkeypatch):
+    """The page scan, the blocked companies' checks and the watched boards each get their own time, counted from their
+    own start, even when the reading ran past the round's limit (Workday's refusals on 2026-11-16 and 17 held it there,
+    and the old five-minute rule then gave them nothing)."""
+    from internwatch import watch
+    budgets = {}
+
+    def phase(name, seconds_at):
+        def fn(*a, **kw):
+            budgets[name] = a[seconds_at] - time.monotonic()
+            return []
+        return fn
+
+    monkeypatch.setattr(liveness, "scan_pages", phase("pages", 3))
+    monkeypatch.setattr(moves, "run", phase("blocked", 4))
+    monkeypatch.setattr(watch, "run", phase("watch", 4))
     cfg = make_cfg([company("acme")])
     r, db, _ = setup(cfg, {"acme": [BASE]})
-    r._liveness_finish([], DAILY, RunSummary(), time.monotonic() + 100)     # under five minutes left
-    assert pages == [] and budgets[0] < time.monotonic()                    # moves.py's checks won't start a read
-    r._liveness_finish([], DAILY, RunSummary(), time.monotonic() + 3000)
-    assert pages == [1] and budgets[1] > time.monotonic()
+    r.run_timeout = 0                   # the round's limit is long gone
+    r._liveness_finish([], DAILY, RunSummary())
+    lv = liveness.settings(cfg)
+    assert set(budgets) == {"pages", "blocked", "watch"}
+    for name, key in (("pages", "scan_seconds"), ("blocked", "blocked_seconds"), ("watch", "watch_seconds")):
+        assert lv[key] - 5 < budgets[name] <= lv[key]
+
+
+def test_a_round_that_reads_past_its_limit_still_runs_its_late_checks(make_cfg, monkeypatch):
+    """The whole round: a check that holds the reading past the round's limit no longer costs the late checks."""
+    from internwatch import watch
+    left = {}
+
+    def phase(name, at):
+        def fn(*a, **kw):
+            left[name] = a[at] - time.monotonic()
+            return []
+        return fn
+
+    monkeypatch.setattr(liveness, "scan_pages", phase("pages", 3))
+    monkeypatch.setattr(moves, "run", phase("blocked", 4))
+    monkeypatch.setattr(watch, "run", phase("watch", 4))
+    cfg = make_cfg([company("acme")])
+    r, db, _ = setup(cfg, {"acme": [BASE]})
+    # the round's limit 60 s after its start: acme still starts, but the reading ends well inside the last five
+    # minutes, where the old rule gave the late checks nothing
+    monkeypatch.setattr(r, "_configure", lambda cfg: setattr(r, "cfg", cfg))   # keep the shortened limit
+    r.run_timeout = 60 - (DAILY.retry_delay + 600)
+    r.run(DAILY)
+    lv = liveness.settings(cfg)
+    assert set(left) == {"pages", "blocked", "watch"}
+    assert left["pages"] > lv["scan_seconds"] - 5 and left["blocked"] > lv["blocked_seconds"] - 5
+    assert left["watch"] > lv["watch_seconds"] - 5
