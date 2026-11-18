@@ -1,6 +1,6 @@
 # InternWatch
 
-Watches 426 companies' careers sites (425 polled; Wayfair blocked: its site refuses automated clients; 228 of them
+Watches 433 companies' careers sites (432 polled; Wayfair blocked: its site refuses automated clients; 235 of them
 added in November 2026 and checked in the added round, see Internals) through their
 hiring systems' official feeds and emails new internships that pass `config/filters.yaml`. Python 3.12+,
 httpx, SQLite. Per-company checkers and evidence: COVERAGE.md. Freshman/sophomore programs: UNDERCLASSMEN.md.
@@ -93,7 +93,7 @@ Rules for changing things: CLAUDE.md.
     alerts once. A read that fails (5xx, timeout, a missing page) is read again first thing the next morning, every
     morning. A page the site refuses (a bot check, HTTP 400, 401, 403, 406 or 429) gets one retry, then waits a week
     until it answers; a robots.txt block just waits. The first look is a silent baseline. About 193
-    of 396 pages name a job system in their HTML; the rest are built in the browser or block scripts. The 64 companies
+    of 396 pages name a job system in their HTML; the rest are built in the browser or block scripts. The 66 companies
     whose page refuses scripts (`liveness.blocked`) are left out: the checks below watch them instead. Resolved when
     the system is added to the config or the page stops naming it (two reads in a row), or for a system it stopped
     mentioning, when it names it again or it leaves the config.
@@ -114,7 +114,7 @@ Rules for changing things: CLAUDE.md.
     before the run reached it. A day with no run isn't a morning, and two runs in a day are one. A weekly read, or a page
     waiting out a refusal, is reported after 14 days instead. A page that has never answered isn't news, but a list or
     board is. Checked last in a run, so the third miss alerts the same morning. Resolved when it answers.
-- **Companies whose careers page can't be read** (`src/internwatch/moves.py`; the 64 in `liveness.blocked`, and
+- **Companies whose careers page can't be read** (`src/internwatch/moves.py`; the 66 in `liveness.blocked`, and
   only those): where else they could start posting. Daily runs, before the emails, within 300 s. Every check runs every
   morning except archive.org's, spread over the week. A failed read comes back the next morning, every morning. Only a
   page that refuses waits a week (asking a site that refuses every day teaches nothing, and Citadel's refused page
@@ -160,7 +160,10 @@ Rules for changing things: CLAUDE.md.
   own check (an intern job family or worker type, or a search for "intern": 2 to 11 requests), and the whole site once
   a week as a watched board, one site a morning (660 to 1,030 requests, 11 to 21 minutes). A matching role outside the
   student label reaches you as a `posting elsewhere?` alert within a week. A weekly read starts only if the time left
-  covers its last read. Mirrors that are the same
+  covers its last read. Costco's warehouse site (19,300 jobs, 17,400 of them in its warehouses) is read every morning
+  for its other categories and an "intern" search (2 requests) and has no weekly whole read: that is 194 pages at the
+  5 s its robots.txt asks for, and the filters reject warehouse and depot roles; its technology jobs are on its IT site,
+  read whole. Mirrors that are the same
   feed as a polled one need no read, and `internwatch liveness` lists each watched board and the ones that can't be read
   (robots.txt, or no job list): for those, only a role a list carries can surface.
 - **healthchecks.io:** pinged at the start and end of each run, so it alerts if no run happens or a run fails
@@ -229,9 +232,16 @@ Rules for changing things: CLAUDE.md.
     one is dropped. learn_ids: also read the ids of the company's postings in the latest SimplifyJobs download.
   - any adapter's settings: anchor_host (its host matches SimplifyJobs and list rows only at the start of a link:
     Morgan Stanley's ms.wd5… is inside williams.wd5…)
-  - smartrecruiters {company, ignore_search_total}, workable {account}, icims {portal}, jibe {host}, phenom {base_url, ref_num},
+  - smartrecruiters {company, ignore_search_total}, workable {account}, icims {portal}, jibe {host, queries (a giant
+    site's slice: these listings only, each to its end)}, phenom {base_url, ref_num},
     avature {list_url, page_size}, applicantpro {subdomain, domain_id}, gem, rippling, jobvite, pinpoint,
     recruiterbox, ripplematch
+  - added in batch 6 (2026-11-18): successfactors {host} (SAP SuccessFactors search pages: NetApp, Paramount, Qorvo),
+    taleo_tbe {server, dc, org, cws} (a Taleo Business Edition RSS feed: Costco's IT jobs; the server is shared, so
+    org and cws identify the site), oleeo {host, feeds | pages} (campus boards: Bank of America's feeds, Morgan
+    Stanley's pages, at robots.txt's 10 s), job_sitemap {sitemap, job_url, job_page} (a site whose sitemap is its only
+    list a script may read, titles from the addresses: Sandisk, whose new student roles' pages give title, place and
+    date; ADP), servicenow {host, portal, page, widget} (Best Buy's portal: one call lists every job)
   - multi {sources, dedupe, dedupe_titles, twin_ids}: later sources' ids are prefixed with `<checker>:`;
     dedupe_titles skips a later source's role whose title matches an earlier source's apart from case and
     punctuation (two roles one source lists under the same title are both kept);
