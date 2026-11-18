@@ -290,21 +290,46 @@ Rules for changing things: CLAUDE.md.
   - At least 1 s between requests to a host (per-company min_interval), retries, 429 backoff, conditional GET.
     robots.txt takes its turn like any other request (unpaced until 2026-11-17).
   - Host groups (settings `http.host_groups`): every Workday site (myworkdayjobs.com, myworkdaysite.com) shares one
-    pace, 3 requests a second across all threads and rounds, robots.txt included, and a 429 from any of them pauses
+    pace, 10 requests a second across all threads and rounds, robots.txt included, and a 429 from any of them pauses
     all of them for 60 s, after which the request is asked again (up to 3 pauses); a longer Retry-After is honored
     (up to 15 minutes). The pause can step up (`pause_on_429: [60, 120, 300]`, `escalate_within`), but a rerun on
-    2026-11-17 showed longer pauses only read less: Workday let 1 to 3 requests through after every pause, however
-    long. Its 429s are Cloudflare challenges (`cf-mitigated: challenge`). Each pause is logged with the 429's headers, the start of its body and the requests sent since the
-    last pause, to measure Workday's limit. Workday answered 429 to most of its sites on 2026-11-16, the 198's
-    included, after mornings that reached 11 requests a second across them, each site paced on its own; on 2026-11-17,
-    at 3 a second, a fixed 60 s pause met a new 429 nearly every minute and about 550 Workday requests got through.
+    2026-11-17 showed longer pauses only read less. Each pause is logged with the 429's headers, the start of its body
+    and the requests sent since the last pause. Workday answered 429 to most of its sites on 2026-11-16 and 17, at any
+    pace (3 a second from Nov 16): every 429 a Cloudflare challenge (`cf-mitigated: challenge`) to our script.
+  - A host group marked `browser: true` (Workday's, since 2026-11-17) is read through one real Google Chrome per run
+    (chrome_session.py). The request is built exactly as httpx would send it and sent with fetch() from a Chrome tab
+    on its site; the answer (status, final URL, headers, body bytes) becomes the same Resp. Chrome is given every
+    header httpx would send but the ones it sets itself (`CHROME_SETS`: User-Agent, Accept-Encoding, Host, Connection,
+    Content-Length, Cookie, Origin, Referer, sec-ch-ua*, sec-fetch-*, and Cache-Control/Pragma "no-cache", which come
+    from skipping Chrome's cache so every answer comes from the site). robots.txt, pacing, retries, time budgets and
+    recording stay in http.py, unchanged; Chrome is chosen inside `Http.request`, so replays are untouched.
+    - One Chrome for the run, started at the first Workday request, in a fresh temporary profile, one normal window
+      minimized at once; nothing hidden, nothing clicked. It runs on a thread of its own (async Playwright), and the
+      checks' threads hand it their requests, so several are in flight at once and the 10/s pace sets the run's
+      length.
+    - One tab per site, opened by loading its robots.txt (which the robots check needs anyway), at most 16 open (the
+      least recently used idle one closes). Opening a tab takes its own turn in the pace; a GET of robots.txt made to
+      open one is answered by that load. Chrome's favicon request is not sent.
+    - A redirect to another site (Workday's maintenance page on community.workday.com, which a fetch() can't read)
+      is followed as httpx follows it: the target is loaded in a scratch tab. An answer with `cf-mitigated` retires
+      its tab, so the next request loads the page again.
+    - Failures look as they did: a network failure in Chrome is retried like httpx's, no answer in time counts as a
+      timeout, 429 pauses the group. Chrome that can't start (Chrome missing, nobody logged in on the Mac) fails every
+      Workday request at once with that reason for the rest of the run.
+    - `Runner.run` closes Chrome and deletes its profile at the end of the run, crash or not (an exit handler does it
+      for CLI commands). Every profile records its owner (PID and start time); each run first stops and deletes the
+      Chrome of runs that were killed, and never one whose owner still runs (another run, a manual command, a proof
+      morning on a copy).
+    - Measured on 2026-11-17: 2,163 job-list POSTs through Chrome at 3, 5 and 10 a second across 12 sites, all 200,
+      none challenged; 19 of 20 sent again through httpx byte-identical (the 20th: the list changed in between).
   - `ssl_context()` = certifi plus the bundled intermediates in certs/.
   - `browser=True` (Citadel's sitemaps): the GET is made by the real Google Chrome (browser.py), for a site whose
     Cloudflare guard refuses scripts but lets Chrome straight through. A normal window, minimized at once (Chrome's
     hidden mode names itself HeadlessChrome and is challenged); a fresh profile each time, one Chrome at a time.
     Chrome is closed and its profile deleted before the request returns, even on an error. robots.txt, pacing, retries,
     time budgets and record/replay work as for any request. A challenge Chrome is still shown is never clicked: the
-    check fails and alerts. Needs Google Chrome installed and you logged in on the Mac when the run starts.
+    check fails and alerts. Needs Google Chrome installed and you logged in on the Mac when the run starts. Its
+    profile records its owner like the run's Chrome (above).
 - **crosscheck.py:**
   - Fetches SimplifyJobs' Summer2027 listings.json (with ETag), which its READMEs are built from and which also has
     the early-season roles they leave out. New rows go pending → found / filtered / missed / abroad, within 3 minutes;
