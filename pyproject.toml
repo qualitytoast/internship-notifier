@@ -33,3 +33,4 @@ internwatch = ["certs/*.pem"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+markers = ["chrome: drives a real Google Chrome against local test servers (runs only with INTERNWATCH_CHROME_TESTS=1)"]

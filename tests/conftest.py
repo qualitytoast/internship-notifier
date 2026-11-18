@@ -16,14 +16,30 @@ REPO = Path(__file__).resolve().parents[1]
 
 
 @pytest.fixture(autouse=True)
-def no_network(monkeypatch):
-    """The suite must pass offline: any real connection attempt fails the test."""
+def no_network(monkeypatch, request):
+    """The suite must pass offline: any real connection attempt fails the test. Tests marked `chrome` talk to their
+    own servers on 127.0.0.1 and run only when asked for (INTERNWATCH_CHROME_TESTS=1)."""
+    if request.node.get_closest_marker("chrome"):
+        return
     import socket
 
     def refuse(*a, **kw):
         raise RuntimeError("network access in a test (tests must run offline from fixtures)")
     monkeypatch.setattr(socket.socket, "connect", refuse)
     monkeypatch.setattr(socket, "create_connection", refuse)
+
+
+@pytest.fixture(autouse=True)
+def no_chrome(monkeypatch, request):
+    """No test starts a real Chrome by accident (a Workday request with the real settings would): starting one fails
+    with BrowserUnavailable, naming the cause. Tests marked `chrome` start it on purpose."""
+    if request.node.get_closest_marker("chrome"):
+        return
+    from internwatch import chrome_session
+
+    async def refuse(self):
+        raise RuntimeError("a test tried to start a real Chrome")
+    monkeypatch.setattr(chrome_session.ChromeSession, "_launch", refuse)
 
 
 @pytest.fixture

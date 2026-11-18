@@ -9,10 +9,16 @@ challenge is never clicked: if Chrome is still shown one after the wait, that an
 Each fetch is its own Chrome with a fresh temporary profile, one at a time across all threads. Chrome is always
 closed and its profile deleted before the fetch returns, even on an error: no window or profile outlives it.
 Only Http.request calls this, so robots.txt, pacing, time budgets and record/replay apply as for any request.
+
+Every profile (these and chrome_session.py's) records the process that owns it (new_profile). A run that is killed
+can't close its Chrome; the next run stops it and deletes its profile (sweep_leftovers), and touches nothing whose
+owner is still running.
 """
 from __future__ import annotations
 
+import json
 import logging
+import os
 import shutil
 import subprocess
 import tempfile
@@ -25,6 +31,7 @@ from .models import FetchError
 log = logging.getLogger(__name__)
 
 PROFILE_PREFIX = "internwatch-chrome-"
+OWNER_FILE = "internwatch-owner.json"   # in each profile: {"pid": …, "started": …} of the process that made it
 WINDOW_ARGS = ["--window-size=800,600"]
 _LOCK = threading.Lock()
 
@@ -42,7 +49,7 @@ def fetch(url: str, timeout: float = 45.0):
     except ImportError as e:
         raise BrowserUnavailable("fetching through Chrome needs Playwright: .venv/bin/pip install -e .") from e
     with _LOCK:
-        profile = Path(tempfile.mkdtemp(prefix=PROFILE_PREFIX))
+        profile = new_profile()
         try:
             with sync_playwright() as pw:
                 try:
@@ -92,6 +99,52 @@ def _minimize(ctx, page) -> None:
         cdp.send("Browser.setWindowBounds", {"windowId": wid, "bounds": {"windowState": "minimized"}})
     finally:
         cdp.detach()
+
+
+def new_profile() -> Path:
+    """A fresh temporary Chrome profile that records its owner: this process's PID and start time (a PID alone can
+    be reused by another process once this one is gone)."""
+    profile = Path(tempfile.mkdtemp(prefix=PROFILE_PREFIX))
+    (profile / OWNER_FILE).write_text(json.dumps({"pid": os.getpid(), "started": _started(os.getpid())}))
+    return profile
+
+
+def _started(pid: int) -> str | None:
+    """When a process started, as ps prints it; "" when no such process runs; None when ps can't say."""
+    try:
+        r = subprocess.run(["ps", "-o", "lstart=", "-p", str(pid)], capture_output=True, text=True, timeout=10)
+    except (OSError, subprocess.SubprocessError):
+        return None
+    return r.stdout.strip() if r.returncode == 0 else ""
+
+
+def owner_running(owner: dict) -> bool:
+    """Whether the process that made a profile still runs. Unsure (no start time on record, or ps can't say) counts
+    as running: a profile is never taken from a live process."""
+    pid, started = owner.get("pid"), owner.get("started")
+    if not isinstance(pid, int) or not started:
+        return True
+    now = _started(pid)
+    return now is None or now == started
+
+
+def sweep_leftovers(root: Path | None = None) -> list[Path]:
+    """Chrome left by runs that were killed: every profile whose owner no longer runs is stopped and deleted. A
+    profile whose owner still runs (another run, a manual command, a proof morning on a copy) or that records no
+    owner (made before owners were recorded, or this very moment) is left alone. Returns the profiles removed."""
+    gone = []
+    for profile in sorted(Path(root or tempfile.gettempdir()).glob(PROFILE_PREFIX + "*")):
+        try:
+            owner = json.loads((profile / OWNER_FILE).read_text())
+        except (OSError, ValueError):
+            continue
+        if not isinstance(owner, dict) or owner_running(owner):
+            continue
+        log.warning("browser: Chrome profile %s was left by process %s, which no longer runs: removed",
+                    profile, owner.get("pid"))
+        _remove(profile)
+        gone.append(profile)
+    return gone
 
 
 def _remove(profile: Path) -> None:

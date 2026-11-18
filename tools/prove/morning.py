@@ -166,7 +166,7 @@ def replay(version: Path, rec: Path, out: Path, edits: str = "") -> None:
     asked, missing, running = [], [], []
 
     def served(self, method, url, *, params=None, json=None, data=None, headers=None, timeout=None, ok_statuses=(),
-               check_robots=True):
+               check_robots=True, browser=False):  # browser: Citadel's Chrome GETs replay like any GET
         full, body = httpmod.canonical_url(url, params), httpmod.body_key(json, data)
         asked.append([method, full, body, getattr(running[0], "rnd", "") if running else ""])  # with its round
         q = queues.get((method, full, body)) or []

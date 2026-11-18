@@ -6,6 +6,8 @@
   host, more if robots.txt asks for a Crawl-delay)
 * host groups: hosts of one vendor share one pace, whatever host each request goes to (Workday's sites are hundreds
   of hosts behind one rate limit), and a 429 from any of them pauses the whole group
+* a host group marked `browser` is read through one real Chrome per run (chrome_session.py): each request is built
+  as httpx would send it and sent from a Chrome tab on its site; everything around the send stays the same
 * robots.txt gate: every URL is checked before it is fetched; disallowed URLs raise RobotsBlocked
 * record / replay of every exchange, so checkers can be tested offline from fixtures
 """
@@ -55,6 +57,7 @@ class HostGroup:
     pause_on_429: tuple[float, ...] | float = (60.0, 120.0, 300.0)
     pauses: int = 3               # a request is given up after this many pauses
     escalate_within: float = 300.0
+    browser: bool = False         # every request to the group goes through the run's Chrome (chrome_session.py)
 
     def __post_init__(self):
         steps = self.pause_on_429
@@ -71,6 +74,22 @@ class HostGroup:
         if retry_after is not None:
             pause = max(pause, min(retry_after, RETRY_AFTER_CAP))
         return pause
+
+
+# Headers Chrome sets itself on a request sent from a page, whatever it is given (the list the user approved on
+# 2026-11-17, measured against a local server): the ones httpx sends that Chrome replaces with its own (User-Agent,
+# Accept-Encoding, Host, Connection, Content-Length, Cookie: each client has its own session with the site); the ones
+# only Chrome adds (Origin, Referer, sec-ch-ua*, sec-fetch-*); and Cache-Control and Pragma "no-cache", which Chrome
+# adds because each request skips its cache, so every answer comes from the site as httpx's do. Every other header
+# httpx would send is given to Chrome as it is.
+CHROME_SETS = frozenset({"user-agent", "accept-encoding", "host", "connection", "content-length", "cookie",
+                         "origin", "referer", "sec-ch-ua", "sec-ch-ua-mobile", "sec-ch-ua-platform",
+                         "sec-fetch-dest", "sec-fetch-mode", "sec-fetch-site", "cache-control", "pragma"})
+
+
+def chrome_headers(headers) -> list[tuple[str, str]]:
+    """The headers of an httpx request that Chrome is given (CHROME_SETS are left to Chrome)."""
+    return [(k, v) for k, v in headers.multi_items() if k.lower() not in CHROME_SETS]
 
 
 def chrome_timeout(read_timeout: float) -> float:
@@ -149,9 +168,26 @@ class HostGate:
         self._group_pause: dict[str, float] = {}   # … and the end of its pause after a 429
         self._group_step: dict[str, int] = {}      # … the step of that pause (429s in a row)
         self._group_turns: dict[str, int] = {}     # … turns given since that pause ended (requests sent)
+        self._chrome = None                        # the run's Chrome (chrome_session.py), started when first needed
         self.cache_dir = cache_dir
         if cache_dir:
             cache_dir.mkdir(parents=True, exist_ok=True)
+
+    def chrome(self):
+        """The run's Chrome session, shared by every thread (created here, started at its first request)."""
+        with self._guard:
+            if self._chrome is None:
+                from . import chrome_session
+                self._chrome = chrome_session.ChromeSession()
+            return self._chrome
+
+    def close(self) -> None:
+        """Close the run's Chrome, if one was started, and delete its profile. The gate stays usable: a later request
+        through Chrome starts a new one."""
+        with self._guard:
+            session, self._chrome = self._chrome, None
+        if session is not None:
+            session.close()
 
     def lock_for(self, host: str) -> threading.Lock:
         with self._guard:
@@ -428,7 +464,9 @@ class Http:
                 headers: dict | None = None, timeout: float | None = None,
                 ok_statuses: tuple[int, ...] = (), check_robots: bool = True, browser: bool = False) -> Resp:
         """browser=True: a GET made by the real Google Chrome (browser.py) instead of httpx, for sites that refuse
-        every client but a browser. robots.txt, pacing, retries, the time budget and record/replay work the same."""
+        every client but a browser. robots.txt, pacing, retries, the time budget and record/replay work the same.
+        A host in a host group marked `browser` is read through the run's Chrome (chrome_session.py) whatever is
+        asked: the request httpx would send, sent from a Chrome tab on that site."""
         if browser and (method != "GET" or json is not None or data is not None or headers):
             raise ValueError("browser=True is for plain GETs")
         full = canonical_url(url, params)
@@ -444,6 +482,7 @@ class Http:
         if self.min_interval:
             interval = max(interval, self.min_interval)
         group = next((g for g in self.s.host_groups if g.covers(parts.netloc)), None)
+        use_chrome = not browser and group is not None and group.browser
         rules = None
         if check_robots and self.s.respect_robots:
             rules = self.gate.robots(origin, lambda u: self._fetch_robots(u, parts.netloc, interval, group),
@@ -481,6 +520,26 @@ class Http:
                     raise
                 except FetchError as e:
                     last_err = f"{e} ({method} {url[:160]})"
+                    attempt += 1
+                    continue
+            elif use_chrome:
+                from .browser import BrowserUnavailable
+                from .chrome_session import ChromeTimeout
+                try:
+                    resp = self._chrome_send(method, full, json, data, headers, timeout, origin, parts.netloc,
+                                             group, interval)
+                    self.requests_made += 1
+                except BrowserUnavailable:
+                    raise
+                except ChromeTimeout as e:
+                    last_err = f"timeout (Chrome) for {method} {url[:160]}: {e}"
+                    timeouts += 1
+                    attempt += 1
+                    continue
+                except CheckTimeout:
+                    raise
+                except FetchError as e:
+                    last_err = str(e)
                     attempt += 1
                     continue
             else:
@@ -531,6 +590,40 @@ class Http:
         err = CheckTimeout if timeouts == self.s.retries + 1 else FetchError
         raise err(f"{last_err} (after {self.s.retries + 1} attempts)")
 
+    def _chrome_wait(self, wait: float) -> float:
+        """A Chrome wait, cut to the time budget's end (at least a second, as for browser=True)."""
+        if self.deadline is not None:
+            wait = max(1.0, min(wait, self.deadline - time.monotonic()))
+        return wait
+
+    def _chrome_send(self, method: str, full: str, json, data, headers, timeout, origin: str, host: str,
+                     group: HostGroup, interval: float) -> Resp:
+        """One attempt through the run's Chrome, in the turn the caller took. The request is built exactly as httpx
+        would send it; Chrome is given its method, URL, body and headers (but CHROME_SETS). A site without a tab gets
+        one first, by loading its robots.txt: that load uses this turn and the request takes the next one, unless the
+        request is that same GET of robots.txt, which the load answers."""
+        from .chrome_session import TabClosed
+        session = self.gate.chrome()
+        req = self.client.build_request(method, full, json=json, data=data, headers=headers)
+        sent, body = chrome_headers(req.headers), req.read() or None
+        wait = self._chrome_wait(timeout or self.s.read_timeout)
+        for _ in range(3):
+            opened = session.ensure_tab(origin, self._chrome_wait(chrome_timeout(self.s.read_timeout)))
+            if opened is not None:
+                if method == "GET" and full == origin + "/robots.txt" and body is None:
+                    return opened
+                self._check_deadline(method, full)
+                if not self.gate.wait_group(group, self.deadline):
+                    raise CheckTimeout(f"time budget exhausted waiting for {group.name}'s next turn before {method} "
+                                       f"{full[:160]} ({self.requests_made} requests made)")
+                self.gate.wait_turn(host, interval)
+                wait = self._chrome_wait(timeout or self.s.read_timeout)
+            try:
+                return session.request(method, full, sent, body, wait)
+            except TabClosed:
+                continue  # closed since (retired after a challenge, or for room): open it again, in a turn of its own
+        raise FetchError(f"Chrome kept losing its tab for {origin} ({method} {full[:160]})")
+
     def _check_deadline(self, method: str, url: str) -> None:
         if self.deadline is not None and time.monotonic() > self.deadline:
             raise CheckTimeout(f"time budget exhausted before {method} {url[:160]} "
@@ -548,12 +641,24 @@ class Http:
                 raise CheckTimeout(f"time budget exhausted waiting for {group.name}'s next turn before GET {url[:160]} "
                                    f"({self.requests_made} requests made)")
             self.gate.wait_turn(host, interval)
-            try:
-                r = self.client.get(url, timeout=15)
-            except httpx.HTTPError:
-                return None, ""
-            if r.status_code == 429 and group is not None and paused < group.pauses:
+            if group is not None and group.browser:
+                from .browser import BrowserUnavailable
+                try:
+                    r = self.gate.chrome().robots(url, chrome_headers(self.client.build_request("GET", url).headers),
+                                                  self._chrome_wait(chrome_timeout(15)))
+                except BrowserUnavailable:
+                    raise
+                except FetchError:
+                    return None, ""
+                status, text = r.status, r.text
+            else:
+                try:
+                    r = self.client.get(url, timeout=15)
+                except httpx.HTTPError:
+                    return None, ""
+                status, text = r.status_code, r.text
+            if status == 429 and group is not None and paused < group.pauses:
                 self.gate.pause_group(group, url, r)
                 paused += 1
                 continue
-            return r.status_code, r.text
+            return status, text

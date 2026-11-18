@@ -26,7 +26,7 @@ from zoneinfo import ZoneInfo
 
 import httpx
 
-from . import alerts, emails, liveness, moves, watch
+from . import alerts, browser, emails, liveness, moves, watch
 from .adapters import get_checker
 from .adapters.base import FetchContext, dedupe
 from .config import Company, Config
@@ -55,7 +55,8 @@ def http_settings(cfg: Config) -> HttpSettings:
     h = cfg.settings.get("http", default={}) or {}
     groups = tuple(HostGroup(name=name, hosts=tuple(g["hosts"]), per_second=float(g["per_second"]),
                              pause_on_429=g.get("pause_on_429", (60, 120, 300)), pauses=int(g.get("pauses", 3)),
-                             escalate_within=float(g.get("escalate_within", 300)))
+                             escalate_within=float(g.get("escalate_within", 300)),
+                             browser=bool(g.get("browser", False)))
                    for name, g in (h.get("host_groups") or {}).items())
     return HttpSettings(connect_timeout=float(h.get("connect_timeout", 10)), read_timeout=float(h.get("read_timeout", 30)),
                         retries=int(h.get("retries", 3)), min_interval=float(h.get("min_interval", 1.0)),
@@ -324,12 +325,18 @@ class Runner:
             except BlockingIOError:
                 raise RunLocked("another run is in progress") from None
             self.heartbeat.start()
+            try:  # Chrome left by a run that was killed (never one whose process still runs)
+                browser.sweep_leftovers()
+            except Exception:  # noqa: BLE001 - never stops the run
+                log.exception("sweeping leftover Chrome failed")
             try:
                 summary = self._run(opts)
             except Exception as e:
                 log.exception("run crashed")
                 self.heartbeat.fail(f"run crashed: {type(e).__name__}: {e}")
                 raise
+            finally:
+                self.gate.close()  # the run's Chrome, after both rounds and every late check
             if summary.note.startswith("offline"):
                 self.heartbeat.fail(summary.line())
             elif summary.email_errors:

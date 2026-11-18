@@ -328,7 +328,11 @@ http:
   host_groups:                   # hosts of one vendor that share one pace, every round and every check together
     workday:                     # Workday's sites answered 429 on 2026-11-16, the 198's included, after mornings that
       hosts: [myworkdayjobs.com, myworkdaysite.com]   # reached 11 requests a second across them (each host paced alone)
-      per_second: 3              # all Workday sites together, robots.txt included (unpaced until 2026-11-17)
+      browser: true              # every Workday request goes through the run's Chrome (chrome_session.py): since
+                                 # 2026-11-16 Workday's Cloudflare challenges our script at any pace, while real
+                                 # Chrome got 2,163 of 2,163 job-list POSTs answered at 3, 5 and 10 a second (Nov 17)
+      per_second: 10             # all Workday sites together, robots.txt included (unpaced until 2026-11-17; 3 a
+                                 # second from Nov 16 until Chrome read them; 10 chosen after Chrome's Nov 17 trial)
       pause_on_429: [60]         # a 429 from any Workday site: every Workday request waits this long, then asks again.
                                  # A longer Retry-After is honored, up to 15 minutes. Each 429 is logged with its
                                  # headers and the requests sent since the last pause. Fixed: stepping up to
