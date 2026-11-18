@@ -714,3 +714,33 @@ Instruments, Tyler Technologies, United Airlines, UnitedHealth Group (Optum), We
   the added round 190 of 196 in 159 s (budget 240, Washington Post's timeout the last to end); the other 11 were not
   due (refused pages wait a week). No Chrome or profile left.
 - The 215 alerts clear by themselves (rule `dark`: the page answers again) with the next morning's scan.
+
+## 2026-11-18: the morning check of runs 33 and 35 (Workday through Chrome), and three fixes
+
+- Run 33 (08:32 to 09:36 local): 104 of 104 Workday companies read whole, Citadel's three checks read through
+  Chrome, every company but Qualcomm clean. Run 34 was stopped 16 s in (its row stays `running`; run 35 removed its
+  Chrome profile). Run 35 (10:23 to 11:21): every late check ran in both rounds (346 careers pages and 472 backup
+  checks answered today); the 209 `check gone dark` alerts of run 33 resolved. Weekly full reads done: NVIDIA's (the
+  first since Nov 7), Target's, Walmart's, T-Mobile's alumni site. No Chrome or profile left.
+- Run 33's morning email was 125 KB of HTML (Gmail clips past about 102 KB): 76.5 KB its 50 surest roles (93 new, the
+  refused mornings' roles among them), 26.2 KB its 221 open alerts (the gone-dark ones), 16.1 KB 36 untracked roles.
+  Run 35's was 62 KB. Left to the user (the open-alert list has no cap).
+- Alerts left open, explained: Rocket's and Yelp's Phenom copies (`board empty`, 1 job each to 0: while Workday
+  refused, the copies stood in; read whole again, they dedupe away); Target's weekly full read found 2 matching roles
+  its daily student slice doesn't list (`posting elsewhere?`, as designed); Akuna's three gone-dark backup checks
+  (open since Nov 12).
+- Fixes (4ccfbe5):
+  - Qualcomm (batch 5): its walk fell short of its total on 4 of its first 6 reads (up to 3.3%, postings moving during
+    a 3.5-minute walk). Its 'Intern' seniority filter (114 roles, 12 requests) is now read in full first on every
+    poll, as Microsoft's, and count_tolerance 0.04, as Autodesk's. Live verify: 2,020 jobs, 119 student roles.
+  - Cisco (the 198): 5 postings without a link on both reads of run 35, its first such alert: `unlinked_ok: 50`
+    (the user's rule of 2026-11-12). Visa listed 6 on one read of run 35, but its retry was clean: no alert, no change.
+  - The program-page check (N) leaves out the page of a job InternWatch already stores: Cox's and Wells Fargo's job
+    sitemaps list every job page, and 7 of the 15 `new page` alerts ever raised were such pages of stored apprentice
+    and program roles (Cox 2, Wells Fargo 5, all still open); the other 8 (Citadel Securities' programs, OpenAI) are
+    unchanged by the rule.
+  - Proof (old = main ee445be): golden PASS. Three replayed mornings of Nov 17's Chrome recording, strict: every
+    difference is Qualcomm's (its new first request, the Intern filter, isn't in the recording, so its replayed check
+    fails: with its requests left out, both rounds' requests are the same, in order) or the intended one: the 6 Cox
+    and Wells Fargo job-page alerts are not raised, with their counts, links and keys. Tests: a stored job's page
+    is no news, an unread one still is; the full suite passes.
