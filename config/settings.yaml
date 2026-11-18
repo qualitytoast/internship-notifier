@@ -53,7 +53,8 @@ liveness:                        # boards that go dead, get abandoned or are rep
             box, censys, chime, enova, gusto, haize-labs, lucid-software, rubrik, udemy, yugabyte, ziprecruiter, zocdoc,
             alltrails, d-matrix, persona, progressive, xcimer,
             cadence, ciena, cohesity, costar, cox, datarobot, globalfoundries, marvell, nasdaq, verizon, wells-fargo,
-            arista-networks, fortinet, intuitive-surgical, sas]
+            arista-networks, fortinet, intuitive-surgical, sas,
+            adp, netapp]
   blocked_scan_seconds: 300      # their checks' time budget in each daily run (before the emails)
   watch_seconds: 360             # time budget of the watched boards (src/internwatch/watch.py), after the checks above
   watch_boards:                  # mirrors with a feed of their own: read every run, never stored. Boards whose
@@ -203,6 +204,7 @@ liveness:                        # boards that go dead, get abandoned or are rep
     wells-fargo: ["https://www.wellsfargojobs.com/sitemap.xml"]
     verizon: ["https://mycareer.verizon.com/en/sitemap.xml"]
     intuitive-surgical: ["https://careers.intuitive.com/sitemap.xml"]
+    adp: ["https://jobs.adp.com/sitemap.xml", "https://www.adp.com/sitemap.xml"]
   archive_paths:                 # archive.org (moves.py A): `list` paths whose newly saved student pages are listed
     # (any_page: every new page; ids: the job id in a page's URL), `pages` whose newest copy is read for the systems
     capstone: {pages: ["https://www.capstoneco.com/careers/"]}
@@ -243,6 +245,7 @@ liveness:                        # boards that go dead, get abandoned or are rep
     fortinet: {pages: ["https://www.fortinet.com/corporate/careers"]}
     intuitive-surgical: {pages: ["https://careers.intuitive.com/"]}
     sas: {pages: ["https://www.sas.com/en_us/careers.html"]}
+    netapp: {pages: ["https://www.netapp.com/company/careers/"]}
   archive_max_days: 45           # an older copy says nothing about where the company posts now
   aliases:                       # one job system under two names (moves.py): the left one counts as the right one
     eightfold:domain=libertymutual.eightfold.ai: eightfold:domain=libertymutual.com
@@ -313,6 +316,7 @@ liveness:                        # boards that go dead, get abandoned or are rep
     eightfold:domain=qualcomm.eightfold.ai: 'eightfold:domain=qualcomm.com'   # qualcomm: the same Eightfold site as careers.qualcomm.com, which is read (Stage 1, 2026-11-09)
     icims:portal=us-careers-rivian.icims.com: 'jibe:host=careers.rivian.com'   # rivian: its iCIMS portal behind the Jibe site that is read, closed to scripts by robots.txt (a posting the lists link there is in the Jibe read)
     oracle:host=edbz.fa.us2.oraclecloud.com,site=cx_1: 'oracle:host=edbz.fa.us2.oraclecloud.com,site=cx'   # texas-instruments: another Oracle site of Texas Instruments listing the same jobs (all 914 the same on 2026-11-15)
+    smartrecruiters:company=sandisk: 'job_sitemap:host=avature.sandisk.com'   # sandisk: its former SmartRecruiters company, empty since Sandisk moved to its Avature site (read from its sitemap)
 
 crosscheck:
   grace_minutes: 90              # wait this long (and for a fresh poll) before calling a Simplify role a miss

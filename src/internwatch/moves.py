@@ -336,6 +336,10 @@ def system_key_v2(checker: str, s: dict) -> str:
         return "smartrecruiters:company=" + str(s["company"]).lower()
     if checker == "jobvite" and s.get("slug"):
         return "jobvite:slug=" + str(s["slug"]).lower()
+    if checker == "taleo_tbe" and s.get("org"):  # its server is shared by every Taleo Business Edition site there
+        return f"taleo_tbe:cws={str(s.get('cws', '')).lower()},org={str(s['org']).lower()}"
+    if checker == "job_sitemap" and s.get("sitemap"):
+        return "job_sitemap:host=" + _host(s["sitemap"])
     return liveness.system_key(checker, s)
 
 

@@ -248,7 +248,20 @@ reads:
   zoominfo: {checker: greenhouse, settings: {board: zoominfo}}
   zscaler: {checker: greenhouse, settings: {board: zscaler}}
   # added after the first reads: special cases, second sites, side boards, robots.txt sites
-  costco: {"checker": "jibe", "settings": {"host": "careers.costco.com"}}
+  # Costco's warehouse site (19,304 jobs on 2026-11-18: 17,434 warehouse, 964 depot): its other categories and an
+  # "intern" search, each to its end (a whole read is 194 pages at robots.txt's 5 s and didn't hold together in Stage 1)
+  costco: {"checker": "jibe", "settings": {"host": "careers.costco.com", "queries": [{"categories": "Costco Travel|Home/Regional Offices|Manufacturing and Other Businesses|Member Service Centers"}, {"keywords": "intern"}]}}
+  # batch 6's new readers (2026-11-18)
+  costco~taleo: {"checker": "taleo_tbe", "settings": {"server": "phf.tbe.taleo.net", "dc": "phf02", "org": "COSTCO", "cws": 41}}
+  sandisk~avature: {"checker": "job_sitemap", "settings": {"sitemap": "https://avature.sandisk.com/Careers/sitemap.xml", "job_url": "/Careers/JobDetail/(?P<slug>[^/]+)/(?P<id>\\d+)$", "job_page": "avature"}}
+  netapp~successfactors: {"checker": "successfactors", "settings": {"host": "jobs.netapp.com"}}
+  paramount~successfactors: {"checker": "successfactors", "settings": {"host": "careers.paramount.com"}}
+  qorvo~successfactors: {"checker": "successfactors", "settings": {"host": "careers.qorvo.com"}}
+  adp~sitemap: {"checker": "job_sitemap", "settings": {"sitemap": "https://jobs.adp.com/sitemap.xml", "job_url": "^https://jobs\\.adp\\.com/en/jobs/(?P<id>\\d+)/(?P<slug>[^/]+)/?$"}}
+  best-buy~servicenow: {"checker": "servicenow", "settings": {"host": "jobs.bestbuy.com", "portal": "bby", "page": "all_jobs", "widget": "dd786d721b71b010b4c011f18c4bcb87"}}
+  best-buy~canada: {"checker": "workday", "settings": {"host": "bestbuycanada.wd3.myworkdayjobs.com", "tenant": "bestbuycanada", "site": "BestBuyCA_Career"}}
+  bank-of-america~oleeo: {"checker": "oleeo", "settings": {"host": "bankcampuscareers.tal.net", "feeds": [1, 2, 5, 6]}}
+  morgan-stanley~oleeo: {"checker": "oleeo", "settings": {"host": "morganstanley.tal.net", "pages": ["/vx/lang-en-GB/mobile-0/brand-2/candidate/jobboard/vacancy/1/adv/"]}}
   unitedhealth-group: {"checker": "talentbrew", "settings": {"sitemap_url": "https://careers.unitedhealthgroup.com/sitemap.xml", "org_id": 34088, "detail_limit": 40}}
   tyler-technologies: {"checker": "jobvite", "settings": {"company_id": "q6NaVfwI", "slug": "tylertech"}}
   precisely: {"checker": "greenhouse", "settings": {"boards": ["preciselyusjobs", "preciselyinternationaljobs"]}}
@@ -259,7 +272,6 @@ reads:
   texas-instruments~edbz-cx_1: {"checker": "oracle", "settings": {"host": "edbz.fa.us2.oraclecloud.com", "site": "CX_1"}}
   conductorone~conductorone: {"checker": "ashby", "settings": {"board": "conductorone"}}
   superhuman~superhuman: {"checker": "ashby", "settings": {"board": "superhuman"}}
-  best-buy~canada: {"checker": "workday", "settings": {"host": "bestbuycanada.wd3.myworkdayjobs.com", "tenant": "bestbuycanada", "site": "BestBuyCA_Career"}}
   mercor~ripplematch: {"checker": "ripplematch", "settings": {"company_id": 1158}}
   unitedhealth-group~ripplematch: {"checker": "ripplematch", "settings": {"company_id": 831}}
   progressive~ripplematch: {"checker": "ripplematch", "settings": {"company_id": 1132}}

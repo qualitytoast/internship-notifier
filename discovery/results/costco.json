@@ -1,0 +1,53 @@
+{
+  "key": "costco",
+  "name": "Costco",
+  "careers_url": "https://www.costco.com/f/-/careers",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "careers.costco.com",
+      "org=costco&cws=41"
+    ],
+    "sources": [
+      {
+        "checker": "jibe",
+        "settings": {
+          "host": "careers.costco.com",
+          "queries": [
+            {
+              "categories": "Costco Travel|Home/Regional Offices|Manufacturing and Other Businesses|Member Service Centers"
+            },
+            {
+              "keywords": "intern"
+            }
+          ]
+        }
+      },
+      {
+        "checker": "taleo_tbe",
+        "settings": {
+          "server": "phf.tbe.taleo.net",
+          "dc": "phf02",
+          "org": "COSTCO",
+          "cws": 41
+        }
+      }
+    ]
+  },
+  "feed": "GET https://careers.costco.com/api/jobs?page=N&limit=100&internal=false + GET https://phf.tbe.taleo.net/phf02/ats/servlet/Rss?org=COSTCO&cws=41",
+  "feed_total": 88,
+  "page_total": 88,
+  "page_total_how": "each read's own count, added up: 72 (costco: the site's own totals for the two listings read: 70 in its office, travel, manufacturing and member-service categories, 2 for 'intern') + 16 (taleo: the IT site's search pages list the same 16 jobs (10 and 6)) (2026-11-18)",
+  "intern_total": 2,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "careers.costco.com/robots.txt checked before every request (discovery/robots/careers.costco.com.txt)",
+  "notes": "Two boards: GET https://careers.costco.com/api/jobs?page=N&limit=100&internal=false + GET https://phf.tbe.taleo.net/phf02/ats/servlet/Rss?org=COSTCO&cws=41; a later board's posting with an earlier one's id or requisition is skipped. Costco's warehouse site (careers.costco.com, 19,304 jobs on 2026-11-18: 17,434 in its warehouses, 964 in its depots) is read for its other categories (office, travel, manufacturing, member service: 70) and an 'intern' search (2), each to its end, every morning. It has no weekly whole read: that is 194 pages at the 5 s robots.txt asks for, and Stage 1's walk didn't hold together (5,106 of 18,692 after 200 pages); the filters reject warehouse and depot roles. Costco's technology jobs are on its IT site (Taleo), read whole.",
+  "checked_at": "2026-11-18",
+  "source": "added",
+  "round": "added"
+}

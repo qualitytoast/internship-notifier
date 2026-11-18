@@ -1,0 +1,28 @@
+{
+  "key": "adp",
+  "name": "ADP",
+  "careers_url": "https://jobs.adp.com/",
+  "hiring_system": "job_sitemap",
+  "checker": "job_sitemap",
+  "settings": {
+    "sitemap": "https://jobs.adp.com/sitemap.xml",
+    "job_url": "^https://jobs\\.adp\\.com/en/jobs/(?P<id>\\d+)/(?P<slug>[^/]+)/?$",
+    "match_urls": [
+      "jobs.adp.com"
+    ]
+  },
+  "feed": "GET https://jobs.adp.com/sitemap.xml (job pages)",
+  "feed_total": 855,
+  "page_total": null,
+  "page_total_how": "every jobs.adp.com page but its sitemap refuses scripts (2026-11-18)",
+  "intern_total": 10,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "jobs.adp.com/robots.txt checked before every request (discovery/robots/jobs.adp.com.txt)",
+  "notes": "The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md). Page count: the sitemap the site publishes for crawlers is the list (each job once, under its English address).",
+  "checked_at": "2026-11-18",
+  "source": "added",
+  "round": "added",
+  "explained": "The sitemap the site publishes for crawlers is the list (each job once, under its English address) (every jobs.adp.com page but its sitemap refuses scripts (2026-11-18))."
+}

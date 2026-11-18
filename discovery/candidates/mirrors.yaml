@@ -155,3 +155,8 @@ texas-instruments:
   - system: oracle:host=edbz.fa.us2.oraclecloud.com,site=cx_1
     as: oracle:host=edbz.fa.us2.oraclecloud.com,site=cx
     why: another Oracle site of Texas Instruments listing the same jobs (all 914 the same on 2026-11-15)
+sandisk:
+  - system: smartrecruiters:company=sandisk
+    as: job_sitemap:host=avature.sandisk.com
+    why: its former SmartRecruiters company, empty since Sandisk moved to its Avature site (read from its sitemap);
+      SimplifyJobs still lists one old posting there (2026-11-18)

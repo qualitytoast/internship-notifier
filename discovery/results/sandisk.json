@@ -1,0 +1,29 @@
+{
+  "key": "sandisk",
+  "name": "Sandisk",
+  "careers_url": "https://www.sandisk.com/careers/jobs-at-sandisk",
+  "hiring_system": "job_sitemap",
+  "checker": "job_sitemap",
+  "settings": {
+    "sitemap": "https://avature.sandisk.com/Careers/sitemap.xml",
+    "job_url": "/Careers/JobDetail/(?P<slug>[^/]+)/(?P<id>\\d+)$",
+    "job_page": "avature",
+    "match_urls": [
+      "avature.sandisk.com"
+    ]
+  },
+  "feed": "GET https://avature.sandisk.com/Careers/sitemap.xml (job pages, each new student role read from its page)",
+  "feed_total": 523,
+  "page_total": null,
+  "page_total_how": "its search page draws its list with scripts and styles robots.txt closes to scripts (/ASSET, /portalpacks), so no script may render it (2026-11-18)",
+  "intern_total": 22,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "avature.sandisk.com/robots.txt checked before every request (discovery/robots/avature.sandisk.com.txt)",
+  "notes": "Not read: sandisk: SmartRecruiters company emptied (moved to Avature). Page count: the sitemap the site publishes for crawlers is the list; a new student role's own page gives its title, place and date.",
+  "checked_at": "2026-11-18",
+  "source": "added",
+  "round": "added",
+  "explained": "The sitemap the site publishes for crawlers is the list; a new student role's own page gives its title, place and date (its search page draws its list with scripts and styles robots.txt closes to scripts (/ASSET, /portalpacks), so no script may render it (2026-11-18))."
+}

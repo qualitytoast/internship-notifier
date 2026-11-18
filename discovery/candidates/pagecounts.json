@@ -155,8 +155,9 @@
   "how": "the hosted Ashby page's job list"
  },
  "best-buy~canada": {
-  "page_total": 64,
-  "how": "workday's own reported total (the careers page shows it)"
+  "page_total": 67,
+  "how": "workday's own reported total (the careers page shows it)",
+  "at": "2026-11-18"
  },
  "betterment": {
   "page_total": 0,
@@ -1846,5 +1847,35 @@
  "zscaler": {
   "page_total": 377,
   "how": "hosted Greenhouse board's stated count"
+ },
+ "netapp~successfactors": {
+  "page_total": 332,
+  "how": "the site's search page states it ('Results 1 – 25 of 332')",
+  "at": "2026-11-18"
+ },
+ "paramount~successfactors": {
+  "page_total": 199,
+  "how": "the site's search page states it ('1 – 25 of 199 Jobs')",
+  "at": "2026-11-18"
+ },
+ "qorvo~successfactors": {
+  "page_total": 8,
+  "how": "the site's search page states it ('Results 1 – 8 of 8')",
+  "at": "2026-11-18"
+ },
+ "best-buy~servicenow": {
+  "page_total": 1753,
+  "how": "the job search's own total (total_count, the count the page shows); hours earlier its 1,740 jobs were exactly the 1,740 requisitions of the site's SEO sitemap",
+  "at": "2026-11-18"
+ },
+ "costco": {
+  "page_total": 72,
+  "how": "the site's own totals for the two listings read: 70 in its office, travel, manufacturing and member-service categories, 2 for 'intern'",
+  "at": "2026-11-18"
+ },
+ "costco~taleo": {
+  "page_total": 16,
+  "how": "the IT site's search pages list the same 16 jobs (10 and 6)",
+  "at": "2026-11-18"
  }
 }

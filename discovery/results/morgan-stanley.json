@@ -8,7 +8,8 @@
     "dedupe": true,
     "twin_ids": true,
     "match_urls": [
-      "//ms.wd5.myworkdayjobs.com/"
+      "//ms.wd5.myworkdayjobs.com/",
+      "morganstanley.tal.net"
     ],
     "sources": [
       {
@@ -28,20 +29,29 @@
           "tenant": "ms",
           "site": "private"
         }
+      },
+      {
+        "checker": "oleeo",
+        "settings": {
+          "host": "morganstanley.tal.net",
+          "pages": [
+            "/vx/lang-en-GB/mobile-0/brand-2/candidate/jobboard/vacancy/1/adv/"
+          ]
+        }
       }
     ]
   },
-  "feed": "POST https://ms.wd5.myworkdayjobs.com/wday/cxs/ms/External/jobs + POST https://ms.wd5.myworkdayjobs.com/wday/cxs/ms/private/jobs",
-  "feed_total": 1369,
-  "page_total": 1573,
-  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12)",
-  "intern_total": 40,
+  "feed": "POST https://ms.wd5.myworkdayjobs.com/wday/cxs/ms/External/jobs + POST https://ms.wd5.myworkdayjobs.com/wday/cxs/ms/private/jobs + GET https://morganstanley.tal.net/vx/lang-en-GB/mobile-0/brand-2/candidate/jobboard/vacancy/1/adv/",
+  "feed_total": 1437,
+  "page_total": 1641,
+  "page_total_how": "workday's own reported total (the careers page shows it) (2026-11-12); + 68 (oleeo: its two pages list 68 programs, 50 and 18) (2026-11-18)",
+  "intern_total": 101,
   "status": "verified",
   "blocked_reason": "",
   "fallback": "",
   "robots": "ms.wd5.myworkdayjobs.com/robots.txt checked before every request (discovery/robots/ms.wd5.myworkdayjobs.com.txt)",
-  "notes": "Its 2 Workday sites listed 1573 postings on 2026-11-12, 204 of them a requisition an earlier site already lists, which is read once. Two boards: POST https://ms.wd5.myworkdayjobs.com/wday/cxs/ms/External/jobs + POST https://ms.wd5.myworkdayjobs.com/wday/cxs/ms/private/jobs; a later board's posting with an earlier one's id or requisition is skipped.",
-  "checked_at": "2026-11-12",
+  "notes": "Its 2 Workday sites listed 1573 postings on 2026-11-12, 204 of them a requisition an earlier site already lists, which is read once. Two boards: POST https://ms.wd5.myworkdayjobs.com/wday/cxs/ms/External/jobs + POST https://ms.wd5.myworkdayjobs.com/wday/cxs/ms/private/jobs; a later board's posting with an earlier one's id or requisition is skipped. Its campus site (Oleeo, morganstanley.tal.net) is read with it from 2026-11-18 (batch 6), as the last source: the bank's summer programs and campus events are only there, not on its Workday sites; robots.txt asks for 10 s between requests (68 programs and events, 61 student roles that day).",
+  "checked_at": "2026-11-18",
   "source": "added",
   "round": "added"
 }

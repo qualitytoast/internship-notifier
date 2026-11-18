@@ -258,19 +258,33 @@ EXPLAINED = {
     "tyler-technologies": "Its hosted Jobvite page shows the first 125 jobs in alphabetical order and cuts off the other "
                           "19 (2026-11-15): the Jobvite feed that is read lists all 144.",
 }
+# How a company's read differs from a whole read of its sites, and why
+READ_NOTES = {
+    "costco": "Costco's warehouse site (careers.costco.com, 19,304 jobs on 2026-11-18: 17,434 in its warehouses, 964 in "
+              "its depots) is read for its other categories (office, travel, manufacturing, member service: 70) and an "
+              "'intern' search (2), each to its end, every morning. It has no weekly whole read: that is 194 pages at the "
+              "5 s robots.txt asks for, and Stage 1's walk didn't hold together (5,106 of 18,692 after 200 pages); the "
+              "filters reject warehouse and depot roles. Costco's technology jobs are on its IT site (Taleo), read whole.",
+}
 # Sites that state no count a script may read: why the read is the list
 NOT_COUNTED = {
     "charles-schwab": ("schwabjobs.com's search page, which states the count, is closed to scripts by robots.txt "
                        "(2026-11-15)", "the sitemap the site publishes for crawlers is the list"),
     "sas": ("its iCIMS portal's search pages state no total (2026-11-15)",
             "the read walks the search pages to the last one"),
+    "sandisk": ("its search page draws its list with scripts and styles robots.txt closes to scripts (/ASSET, "
+                "/portalpacks), so no script may render it (2026-11-18)", "the sitemap the site publishes for crawlers is "
+                "the list; a new student role's own page gives its title, place and date"),
+    "adp": ("every jobs.adp.com page but its sitemap refuses scripts (2026-11-18)",
+            "the sitemap the site publishes for crawlers is the list (each job once, under its English address)"),
 }
 
 
 def own_marks(ck: str, st: dict) -> list[str]:
     """URL markers for a system the cross-check can't tell from a link by itself (crosscheck.url_markers knows hosts
     and Greenhouse, Ashby, Lever, Gem and Workable boards): SmartRecruiters and Jobvite name the company in the path of
-    a shared host; Phenom, Radancy and iCIMS sites are the company's own hosts."""
+    a shared host, and a Taleo Business Edition site in the query of one (org=<org>&cws=<site>); Phenom, Radancy and
+    iCIMS sites and the sites read from their sitemaps are the company's own hosts."""
     if ck == "smartrecruiters":
         return [f"smartrecruiters.com/{st['company'].lower()}/"]
     if ck == "jobvite":
@@ -281,6 +295,10 @@ def own_marks(ck: str, st: dict) -> list[str]:
         return [urlsplit(st["sitemap_url"]).netloc.lower()]
     if ck == "icims":
         return [urlsplit(st["portal"]).netloc.lower()]
+    if ck == "taleo_tbe":  # its server is shared by every Taleo Business Edition site there: the site's own query
+        return [f"org={st['org'].lower()}&cws={st['cws']}"]
+    if ck == "job_sitemap":
+        return [urlsplit(st["sitemap"]).netloc.lower()]
     return []
 
 
@@ -447,6 +465,8 @@ def result(k: str, p: dict, cand: dict) -> dict:
                      + " + ".join(feed_of(x["checker"], x["settings"]) for x in s["sources"]) +
                      ("; a later board's posting with an earlier one's id or title is skipped." if s.get("dedupe_titles")
                       else "; a later board's posting with an earlier one's id or requisition is skipped."))
+    if k in READ_NOTES:
+        notes.append(READ_NOTES[k])
     notes += [f"Not read: {d['entry']}: {d['why']}." for d in p["dropped"]]
     notes += [f"Watched, not stored: {x['entry']} ({x.get('jobs', 0)} jobs)." for x in p["side"]]
     if why:
@@ -515,7 +535,8 @@ def add_settings(n: int, plan: dict) -> None:
         v = bp.get(k) or {}
         maps = {u: x for u, x in (v.get("sitemaps") or {}).items() if isinstance(x, dict)}
         job_map = next((u for u, x in maps.items() if x.get("jobs")), None)
-        if job_map:
+        if job_map and job_map not in json.dumps(settings_of(plan[k])[1]):  # a job list the read itself is (ADP's
+            # sitemap) can't show a job the read misses
             jobs.append(f'    {k}: {{url: "{job_map}"}}')
         if v.get("wordpress"):
             wp.append(f"    {k}: https://{v['wordpress'][0]['host']}")

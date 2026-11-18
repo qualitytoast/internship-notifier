@@ -1,0 +1,23 @@
+{
+  "key": "qorvo",
+  "name": "Qorvo",
+  "careers_url": "https://careers.qorvo.com/",
+  "hiring_system": "successfactors",
+  "checker": "successfactors",
+  "settings": {
+    "host": "careers.qorvo.com"
+  },
+  "feed": "GET https://careers.qorvo.com/search/?q=&sortColumn=referencedate&sortDirection=desc (HTML, 25 a page)",
+  "feed_total": 8,
+  "page_total": 8,
+  "page_total_how": "the site's search page states it ('Results 1 \u2013 8 of 8') (2026-11-18)",
+  "intern_total": 6,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "careers.qorvo.com/robots.txt checked before every request (discovery/robots/careers.qorvo.com.txt)",
+  "notes": "",
+  "checked_at": "2026-11-18",
+  "source": "added",
+  "round": "added"
+}

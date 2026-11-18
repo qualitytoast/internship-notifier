@@ -427,3 +427,10 @@ companies:
   - {key: sas, name: "SAS Institute", category: software, source: added, round: added, urls: ["https://www.sas.com/en_us/careers.html"]}
   - {key: athenahealth, name: "athenahealth", category: healthcare, source: added, round: added, urls: ["https://careers.athenahealth.com/"]}
   - {key: united-airlines, name: "United Airlines", category: travel, source: added, round: added, urls: ["https://careers.united.com/"]}
+  - {key: netapp, name: "NetApp", category: software, source: added, round: added, urls: ["https://www.netapp.com/company/careers/"]}
+  - {key: costco, name: "Costco", category: retail, source: added, round: added, urls: ["https://www.costco.com/jobs.html"]}
+  - {key: best-buy, name: "Best Buy", category: retail, source: added, round: added, urls: ["https://jobs.bestbuy.com/"]}
+  - {key: paramount, name: "Paramount", category: media, source: added, round: added, urls: ["https://www.paramount.com/careers", "https://careers.paramount.com/"]}
+  - {key: qorvo, name: "Qorvo", category: semiconductors, source: added, round: added, urls: ["https://careers.qorvo.com/"]}
+  - {key: adp, name: "ADP", category: software, source: added, round: added, urls: ["https://jobs.adp.com/"]}
+  - {key: sandisk, name: "Sandisk", category: semiconductors, source: added, round: added, urls: ["https://www.sandisk.com/careers/jobs-at-sandisk", "https://www.sandisk.com/company/careers"]}

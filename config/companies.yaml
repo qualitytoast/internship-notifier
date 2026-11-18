@@ -2964,13 +2964,17 @@ companies:
   settings:
     dedupe: true
     twin_ids: true
-    match_urls: [//ms.wd5.myworkdayjobs.com/]
+    match_urls: [//ms.wd5.myworkdayjobs.com/, morganstanley.tal.net]
     sources:
     - checker: workday
       settings: {host: ms.wd5.myworkdayjobs.com, anchor_host: true, tenant: ms, site: External}
     - checker: workday
       settings: {host: ms.wd5.myworkdayjobs.com, anchor_host: true, tenant: ms, site: private}
-  verified: {page_total: 1573, explained: 'Its 2 Workday sites listed 1573 postings on 2026-11-12, 204 of them a requisition an earlier
+    - checker: oleeo
+      settings:
+        host: morganstanley.tal.net
+        pages: [/vx/lang-en-GB/mobile-0/brand-2/candidate/jobboard/vacancy/1/adv/]
+  verified: {page_total: 1641, explained: 'Its 2 Workday sites listed 1573 postings on 2026-11-12, 204 of them a requisition an earlier
       site already lists, which is read once.'}
   round: added
 - key: wells-fargo
@@ -3783,7 +3787,7 @@ companies:
   settings:
     dedupe: true
     twin_ids: true
-    match_urls: [ghr.wd1.myworkdayjobs.com]
+    match_urls: [ghr.wd1.myworkdayjobs.com, bankcampuscareers.tal.net]
     sources:
     - checker: workday
       settings: {host: ghr.wd1.myworkdayjobs.com, tenant: ghr, pack: true, split_first: true, past_total: true, unlinked_ok: 50, site: us-emplsv}
@@ -3791,8 +3795,12 @@ companies:
       settings: {host: ghr.wd1.myworkdayjobs.com, tenant: ghr, pack: true, split_first: true, past_total: true, unlinked_ok: 50, site: lateral-emea}
     - checker: workday
       settings: {host: ghr.wd1.myworkdayjobs.com, tenant: ghr, pack: true, split_first: true, past_total: true, unlinked_ok: 50, site: lateral-ba_continuum}
+    - checker: oleeo
+      settings:
+        host: bankcampuscareers.tal.net
+        feeds: [1, 2, 5, 6]
   timeout_minutes: 10
-  verified: {page_total: 3238, explained: The page showed 3238 jobs and the board 3236 on 2026-11-13 (a posting or two opened or closed
+  verified: {page_total: 3255, explained: The page showed 3238 jobs and the board 3236 on 2026-11-13 (a posting or two opened or closed
       in between).}
   round: added
 - key: walmart
@@ -4215,4 +4223,87 @@ companies:
     ref_num: UAIUADUS
     match_urls: [careers.united.com]
   verified: {page_total: 119}
+  round: added
+- key: netapp
+  name: NetApp
+  category: software
+  careers_url: ['https://www.netapp.com/company/careers/']
+  checker: successfactors
+  settings: {host: jobs.netapp.com}
+  verified: {page_total: 332}
+  round: added
+- key: costco
+  name: Costco
+  category: retail
+  careers_url: ['https://www.costco.com/f/-/careers', 'https://www.costco.com/jobs.html']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [careers.costco.com, org=costco&cws=41]
+    sources:
+    - checker: jibe
+      settings:
+        host: careers.costco.com
+        queries:
+        - {categories: Costco Travel|Home/Regional Offices|Manufacturing and Other Businesses|Member Service Centers}
+        - {keywords: intern}
+    - checker: taleo_tbe
+      settings: {server: phf.tbe.taleo.net, dc: phf02, org: COSTCO, cws: 41}
+  verified: {page_total: 88}
+  round: added
+- key: best-buy
+  name: Best Buy
+  category: retail
+  careers_url: ['https://jobs.bestbuy.com/bby', 'https://jobs.bestbuy.com/']
+  checker: multi
+  settings:
+    dedupe: true
+    twin_ids: true
+    match_urls: [jobs.bestbuy.com, bestbuycanada.wd3.myworkdayjobs.com]
+    sources:
+    - checker: servicenow
+      settings: {host: jobs.bestbuy.com, portal: bby, page: all_jobs, widget: dd786d721b71b010b4c011f18c4bcb87}
+    - checker: workday
+      settings: {host: bestbuycanada.wd3.myworkdayjobs.com, tenant: bestbuycanada, site: BestBuyCA_Career}
+  verified: {page_total: 1820}
+  round: added
+- key: paramount
+  name: Paramount
+  category: media
+  careers_url: ['https://www.paramount.com/careers', 'https://careers.paramount.com/']
+  checker: successfactors
+  settings: {host: careers.paramount.com}
+  verified: {page_total: 199}
+  round: added
+- key: qorvo
+  name: Qorvo
+  category: semiconductors
+  careers_url: ['https://careers.qorvo.com/']
+  checker: successfactors
+  settings: {host: careers.qorvo.com}
+  verified: {page_total: 8}
+  round: added
+- key: adp
+  name: ADP
+  category: software
+  careers_url: ['https://jobs.adp.com/']
+  checker: job_sitemap
+  settings:
+    sitemap: https://jobs.adp.com/sitemap.xml
+    job_url: ^https://jobs\.adp\.com/en/jobs/(?P<id>\d+)/(?P<slug>[^/]+)/?$
+    match_urls: [jobs.adp.com]
+  verified: {page_total: null}
+  round: added
+- key: sandisk
+  name: Sandisk
+  category: semiconductors
+  careers_url: ['https://www.sandisk.com/careers/jobs-at-sandisk', 'https://www.sandisk.com/company/careers']
+  checker: job_sitemap
+  settings:
+    sitemap: https://avature.sandisk.com/Careers/sitemap.xml
+    job_url: /Careers/JobDetail/(?P<slug>[^/]+)/(?P<id>\d+)$
+    job_page: avature
+    match_urls: [avature.sandisk.com]
+  verified: {page_total: null}
   round: added

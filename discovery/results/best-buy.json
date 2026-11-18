@@ -1,0 +1,47 @@
+{
+  "key": "best-buy",
+  "name": "Best Buy",
+  "careers_url": "https://jobs.bestbuy.com/bby",
+  "hiring_system": "multi",
+  "checker": "multi",
+  "settings": {
+    "dedupe": true,
+    "twin_ids": true,
+    "match_urls": [
+      "jobs.bestbuy.com",
+      "bestbuycanada.wd3.myworkdayjobs.com"
+    ],
+    "sources": [
+      {
+        "checker": "servicenow",
+        "settings": {
+          "host": "jobs.bestbuy.com",
+          "portal": "bby",
+          "page": "all_jobs",
+          "widget": "dd786d721b71b010b4c011f18c4bcb87"
+        }
+      },
+      {
+        "checker": "workday",
+        "settings": {
+          "host": "bestbuycanada.wd3.myworkdayjobs.com",
+          "tenant": "bestbuycanada",
+          "site": "BestBuyCA_Career"
+        }
+      }
+    ]
+  },
+  "feed": "POST https://jobs.bestbuy.com/api/now/sp/widget/dd786d721b71b010b4c011f18c4bcb87?id=all_jobs (after the portal page) + POST https://bestbuycanada.wd3.myworkdayjobs.com/wday/cxs/bestbuycanada/BestBuyCA_Career/jobs",
+  "feed_total": 1820,
+  "page_total": 1820,
+  "page_total_how": "each read's own count, added up: 1753 (servicenow: the job search's own total (total_count, the count the page shows); hours earlier its 1,740 jobs were exactly the 1,740 requisitions of the site's SEO sitemap) + 67 (canada: workday's own reported total (the careers page shows it)) (2026-11-18)",
+  "intern_total": 0,
+  "status": "verified",
+  "blocked_reason": "",
+  "fallback": "",
+  "robots": "jobs.bestbuy.com/robots.txt checked before every request (discovery/robots/jobs.bestbuy.com.txt)",
+  "notes": "Two boards: POST https://jobs.bestbuy.com/api/now/sp/widget/dd786d721b71b010b4c011f18c4bcb87?id=all_jobs (after the portal page) + POST https://bestbuycanada.wd3.myworkdayjobs.com/wday/cxs/bestbuycanada/BestBuyCA_Career/jobs; a later board's posting with an earlier one's id or requisition is skipped.",
+  "checked_at": "2026-11-18",
+  "source": "added",
+  "round": "added"
+}

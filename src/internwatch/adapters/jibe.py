@@ -4,12 +4,18 @@ settings:
   host: careers.docusign.com
   use_employment_type: true   trust the site's employment_type (INTERN) as a student marker. Tenant-dependent:
                               SIG tags experienced roles INTERN too, so it is off there and titles decide.
+  queries: [{categories: "A|B"}, {keywords: intern}]   optional: read only these listings, each to its end, and merge
+                              them (a giant site's student slice: Costco's 19,000 jobs are 17,400 warehouse and 960
+                              depot jobs; its other categories and an "intern" search hold the rest). Without it the
+                              whole site is read.
 GET https://<host>/api/jobs?page=N&limit=100&internal=false   (page is 1-based, limit ≤ 100)
 → {"totalCount": N, "jobs": [{"data": {slug, req_id, title, full_location, city, state, country, posted_date,
      employment_type, categories[{name}], description, meta_data{canonical_url}}}]}
 Never send internal=true (adds internal-only postings). See discovery/notes/docusign.md.
 """
 from __future__ import annotations
+
+import json
 
 from ..models import Job
 from .base import Checker, check_total, html_text, iso_date, need, need_list, register, report_skipped
@@ -27,10 +33,31 @@ class Jibe(Checker):
     def fetch(self, http, s, ctx=None):
         url = f"https://{s['host']}/api/jobs"
         where = f"jibe:{s['host']}"
+        if s.get("queries"):  # a giant site's student slice: each query read to its end, the jobs merged
+            out: dict[str, Job] = {}
+            bad = 0
+            for q in s["queries"]:
+                got, total, skipped = self._walk(http, s, url, f"{where} {json.dumps(q, sort_keys=True)}",
+                                                 {**(s.get("params") or {}), **q})
+                check_total(len(got) + skipped, total, f"{where} {json.dumps(q, sort_keys=True)}")
+                for jid, job in got.items():
+                    out.setdefault(jid, job)
+                bad += skipped
+            report_skipped(ctx, bad, len(out), f"{where}: skipped {bad} jobs without slug/title")
+            return list(out.values())
+        out, total, bad = self._walk(http, s, url, where, s.get("params") or {})
+        if ctx is not None:
+            ctx.reported_total = total
+        check_total(len(out) + bad, total, where)
+        report_skipped(ctx, bad, len(out), f"{where}: skipped {bad} jobs without slug/title")
+        return list(out.values())
+
+    def _walk(self, http, s, url: str, where: str, params: dict) -> tuple[dict[str, Job], int, int]:
+        """Every page of one listing: (jobs by id, the listing's totalCount, postings skipped without slug/title)."""
         out: dict[str, Job] = {}
         page, total, bad = 1, None, 0
         while True:
-            d = http.get_json(url, params={"page": page, "limit": PAGE, "internal": "false", **(s.get("params") or {})},
+            d = http.get_json(url, params={"page": page, "limit": PAGE, "internal": "false", **params},
                               headers={"Accept": "application/json"})
             items = need_list(d, "jobs", where)
             if total is None:
@@ -59,8 +86,4 @@ class Jibe(Checker):
             page += 1
             if not items or len(out) + bad >= total or page > 200:
                 break
-        if ctx is not None:
-            ctx.reported_total = total
-        check_total(len(out) + bad, total, where)
-        report_skipped(ctx, bad, len(out), f"{where}: skipped {bad} jobs without slug/title")
-        return list(out.values())
+        return out, total, bad
