@@ -632,3 +632,61 @@ Instruments, Tyler Technologies, United Airlines, UnitedHealth Group (Optum), We
   no challenge shown) and its own job-list request, then 30 more job-list POSTs from inside the page about one every
   1.5 s: all 200, none challenged (postings per answer not counted). Chrome was closed and its profile deleted. Workday's
   challenge goes by client, as Citadel's does. Nothing changed for it yet.
+
+## 2026-11-17/18: every Workday request read through Chrome (1e669b7), proven
+
+- Why: since Nov 16 Workday's Cloudflare challenged every script request (429 `cf-mitigated: challenge`) whatever the
+  pace; real Chrome was never challenged. The user's choices: every Workday site through Chrome (one refused script
+  request pauses the whole group), the same requests and the same reading as before the refusals, only the transport
+  changed. Done inside `Http.request` for a host group with `browser: true`: one minimized Chrome per run
+  (`chrome_session.py`, async Playwright on its own thread), one tab per site opened by loading its robots.txt (the
+  robots check needs it anyway), each request a `fetch()` from that tab with httpx's own method, URL, body and headers.
+  Every run first stops and deletes Chrome profiles whose owning process no longer runs (PID and start time).
+- Trial (Nov 17, 19:11 to 19:18 local, 12 sites, one minimized Chrome): 3/s 361 of 361 answered 200, 5/s 601 of 601,
+  10/s 1,201 of 1,201 (9.94/s), no challenge. 20 of those requests again through httpx: all 200, 19 the same bytes;
+  Walmart's differed, and asking it again through Chrome gave httpx's bytes (its list changed in between). The user
+  chose 10/s. Chrome sends 16 headers its own way (`CHROME_SETS` in http.py), each approved.
+- Proofs (old = main 139717e):
+  1. golden PASS (850 cassettes, 195,570 verdicts, 40,578 matches, 104 Workday robots files); three replayed mornings
+     PASS with nothing exempt. `morning.py`'s replay now accepts `browser=`, so Citadel's checks replay their recorded
+     403s instead of crashing the same way in old and new.
+  2. tests: `tests/test_chrome_session.py` (37, plus 4 live ones against a local server with
+     `INTERNWATCH_CHROME_TESTS=1`): the exact request, the same Resp and recording, failures, robots, pauses,
+     timeouts, the owner-aware sweep, Chrome closed after a run, a crash, or a Chrome that can't start.
+  3. send-step replay (`tools/prove/sendstep.py`, Nov 15's recording through the real `Http.request`): 7,986 of 7,986
+     outcomes the same; 2,518 non-Workday requests the same, in order, Chrome never touched; 5,632 Workday requests
+     reach Chrome with httpx's method, URL, body and headers apart from `CHROME_SETS`; 230 robots.txt fetches (101 tab
+     loads), 1 redirect.
+  4. a live morning through Chrome (`tools/prove/chrome_morning.py`; recorded on a copy Nov 17 21:44 to 22:40, run
+     33, against Nov 15's recording and run 29) PASS: 103 of 103 Workday checks whole on the first try; 5,421 Workday
+     answers 200, 2 answers 422 (one-request checks of boards that don't exist at Dell and Netflix); 7 searches short
+     of their totals by 13 postings, each within the reader's 1.5% (Nov 15: 2 by 2; postings shifting during a walk
+     are as common through httpx: 140 postings on two pages of one search on Nov 15, 85 here); the same postedOn forms;
+     the same place text for 84,509 of the 84,574 postings both mornings list (the rest real edits); Workday reading
+     10.5 min in the 198's round (10.4) and 7.7 in the added round (6.9: about 12 sites start at once, more than the
+     10/s pace allows); the whole morning 56 min (69). Request differences: Citi read twice on Nov 15 (its first read
+     met Workday's maintenance page); watched boards reached this time (a0d06f7); Bloomberg Industry Group added after
+     Nov 15's recording; T-Mobile's weekly alumni read skipped for room after NVIDIA's weekly read (245 s through
+     Chrome, 252 s on its last httpx read). No Chrome or profile left. An earlier recording, paused 63 min at the
+     user's request, was dropped (its time limits ran out); its Chrome ended with it and the leftover sweep deleted its
+     profile ("left by process 59273, which no longer runs").
+  5. role by role (`tools/prove/chrome_roles.py`) PASS: 69,110 open Workday roles at 103 companies; 64,280 appeared.
+     Of the 4,830 missing, 4,781 pages confirm them closed, 28 were relisted since, 14 were unlisted on Nov 15 too, 4
+     are listed at a new address (same requisition), 3 slipped past Salesforce's walk (1,567 of 1,570; Workday's own
+     search finds them). 3,243 new roles: 3,109 posted after their site's last complete read, 132 on its day, and 2 at
+     HPE listed late (Nov 15's complete read of 1,774 didn't list them, never in the database, dated October). 216
+     reopened: 211 pages open, 5 closed within the hour after the morning. Filters: 1,145 matched against the
+     database's 1,201, every difference explained (179 roles opened or closed, 51 moved roles compared as one, 4
+     stored decisions older than a filter change, 2 postings retitled, CrowdStrike's "Launch Intern" moved to Reading,
+     UK and rejected there).
+     - Found: Workday answers a removed posting's job page with 403 `{"errorCode":"S22","message":"permission
+       denied"}` at 82 of the 97 companies with missing roles (others answer 404 or `canApply: false`); httpx gets the
+       same, and so does a role closed Oct 20. The user approved counting it as closed (2026-11-18), and four named
+       cases: same requisition at a new address, slipped past a walk, listed late or relisted, closed since the
+       morning. Every 403 asked again was S22 (4,078).
+     - Pages: 5,050 asked in 63 min (company by company, so mostly one site at a time), then the 4,118 that answered
+       403 asked again in 7.3 min (one site per thread, 12 at once).
+- Side finding (the runner, not Chrome: Nov 15's recorded morning through httpx does the same): a list's place
+  shorter than the stored one replaces it, and the role is judged on it. Marvell lists "Yokneam" for a stored
+  "Yokneam (Israel)", so 4 Marvell roles in Israel and Switzerland become possible matches ("location not
+  recognised") on their next complete read. Left as is.

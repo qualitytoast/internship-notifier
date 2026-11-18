@@ -4,7 +4,8 @@
 
 <earlier run id> is that morning's run in data/internwatch.db (Nov 15: 29); without it only the earlier recording is
 used. Reports, and FAIL on the first:
-- every Workday company's check whole in the Chrome morning (status ok: no error, nothing partial)
+- every Workday company's check whole in the Chrome morning (status ok: no error, nothing partial), and the searches
+  that listed fewer postings than their total, each within the reader's tolerance (check_total: 1.5%, at least 2)
 - Workday requests per site, against the earlier recording (sites more than 25% and 10 requests apart are listed)
 - the wording of postedOn and of the places (locationsText) in the job lists: the forms used, and for postings both
   mornings list, how many say exactly the same
@@ -90,6 +91,35 @@ def main(chrome_dir: Path, earlier_dir: Path, earlier_run: int | None) -> int:
         problems.append(f"{len(not_whole)} Workday checks not whole, {len(missing)} not checked {missing[:10]}")
 
     new, old = load(chrome_dir), load(earlier_dir)
+
+    def short_searches(ex):
+        """Searches (under Workday's 2,000 cap) that listed fewer distinct postings than their first page's total:
+        postings closing during a walk shift later pages (adapters.base.check_total allows 1.5%, at least 2)."""
+        s = {}
+        for e in ex:
+            m = CXS.match(e["url"])
+            if not m or e["method"] != "POST" or str(e.get("status")) != "200":
+                continue
+            try:
+                body, d = json.loads(e.get("body") or ""), json.loads(e.get("text") or "")
+            except ValueError:
+                continue
+            k = (m["host"], m["site"], json.dumps(body.get("appliedFacets"), sort_keys=True), body.get("searchText"))
+            x = s.setdefault(k, [None, set()])
+            if body.get("offset") == 0 and x[0] is None:
+                x[0] = d.get("total")
+            x[1].update(p["externalPath"] for p in d.get("jobPostings") or [] if p.get("externalPath"))
+        return sorted((t - len(p), t, k) for k, (t, p) in s.items() if isinstance(t, int) and len(p) < t < 2000)
+    for label, ex in (("this morning", new["exchanges"]), (old["local_date"], old["exchanges"])):
+        sh = short_searches(ex)
+        beyond = [x for x in sh if x[0] > max(2, int(x[1] * 0.015))]
+        print(f"   searches short of their total {label}: {len(sh)}, by {sum(x[0] for x in sh)} postings; beyond "
+              f"the reader's tolerance: {len(beyond)}")
+        if label == "this morning":
+            for n, t, k in sh:
+                print(f"      {k[0]}/{k[1]} {k[2][:50]}: {t - n} of {t}")
+            if beyond:
+                problems.append(f"{len(beyond)} searches short beyond tolerance")
 
     def per_site(ex):
         c = Counter()
