@@ -1048,7 +1048,7 @@ companies:
   category: big-tech
   careers_url: ['https://careers.cisco.com/global/en/search-results', 'https://careers.cisco.com/global/en/internships-and-co-ops']
   checker: workday
-  settings: {host: cisco.wd5.myworkdayjobs.com, tenant: cisco, site: Cisco_Careers}
+  settings: {host: cisco.wd5.myworkdayjobs.com, tenant: cisco, unlinked_ok: 50, site: Cisco_Careers}
   verified: {page_total: 1455}
 - key: john-deere
   name: John Deere
@@ -3973,7 +3973,12 @@ companies:
   category: semiconductors
   careers_url: ['https://careers.qualcomm.com/careers', 'https://careers.qualcomm.com/']
   checker: eightfold
-  settings: {host: careers.qualcomm.com, domain: qualcomm.com}
+  settings:
+    host: careers.qualcomm.com
+    domain: qualcomm.com
+    count_tolerance: 0.04
+    quick_queries:
+    - {filter_seniority: Intern}
   verified: {page_total: 2004}
   round: added
 - key: intuitive-surgical

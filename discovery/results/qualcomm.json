@@ -6,7 +6,13 @@
   "checker": "eightfold",
   "settings": {
     "host": "careers.qualcomm.com",
-    "domain": "qualcomm.com"
+    "domain": "qualcomm.com",
+    "count_tolerance": 0.04,
+    "quick_queries": [
+      {
+        "filter_seniority": "Intern"
+      }
+    ]
   },
   "feed": "GET https://careers.qualcomm.com/api/pcsx/search?domain=qualcomm.com",
   "feed_total": 2004,
@@ -17,7 +23,7 @@
   "blocked_reason": "",
   "fallback": "",
   "robots": "careers.qualcomm.com/robots.txt checked before every request (discovery/robots/careers.qualcomm.com.txt)",
-  "notes": "",
+  "notes": "The full walk (about 205 pages of 10, 3.5 min, newest first) fell short of the reported total on 4 of its first 6 daily reads (2026-11-17/18: 1,976 to 2,041 of 2,043 to 2,047, up to 3.3%), as Autodesk's does while postings move during a walk: count_tolerance 0.04 as Autodesk's. The site's 'Intern' seniority filter (114 roles on 2026-11-18, 12 requests) is read in full first on every poll, as Microsoft's, so a short walk can't hide a student role.",
   "checked_at": "2026-11-15",
   "source": "added",
   "round": "added"

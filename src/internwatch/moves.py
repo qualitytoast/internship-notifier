@@ -241,6 +241,14 @@ def is_stored(ident: str, toks: set[str]) -> bool:
     return bool(long) and all(d in toks for d in long)
 
 
+def stored_job_page(url: str, toks: set[str]) -> bool:
+    """A page of a job InternWatch already stores: a word of its address with 5 or more digits is a word of a stored
+    job's id or URL. Cox's jobs.coxenterprises.com/en/jobs/r202685089/inspector-apprentice-manheim/ is Workday's
+    …_R202685089, Wells Fargo's wellsfargojobs.com/en/jobs/r-586793/… is …_R-586793."""
+    return any(re.search(r"\d{5}", w) and w in toks
+               for w in (x.lower() for x in re.findall(r"[A-Za-z0-9]+", urlsplit(url).path)))
+
+
 def norm_title(t: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", (t or "").lower()).strip()
 
@@ -879,7 +887,9 @@ def check_programs(ctx: Ctx) -> list[dict]:
     address or title reads like a students, internships or program page. A source's first read is a silent
     baseline, unless the list moved there from an address the config no longer names (Citadel's sitemaps, November
     2026): the pages known from the old address are then the ones it is compared with, so a page added around the
-    move still alerts."""
+    move still alerts. The page of a job InternWatch already stores is no news (stored_job_page): a company's job-site
+    sitemap lists every job page, and an apprentice or program role read from its Workday site alerted again here
+    (Cox and Wells Fargo, November 2026)."""
     sources = per_company(ctx.cfg, "program_pages")
     problems: list[dict] = []
     http = ctx.http()
@@ -892,7 +902,7 @@ def check_programs(ctx: Ctx) -> list[dict]:
             raw = ctx.db.get(skey)
             state = json.loads(raw) if raw else {}
             moved = [s for s in state if s not in sources[key]]  # addresses the list was read from before
-            new, errors = [], []
+            new, errors, toks = [], [], None
             for source in sources[key]:
                 try:
                     pages = page_list(http, source)
@@ -907,8 +917,11 @@ def check_programs(ctx: Ctx) -> list[dict]:
                     before = [u for s in moved for u in state[s]]
                 state[source] = sorted(set(pages) | set(before or []))
                 if before is not None:
-                    new += [(u, t) for u, t in pages.items() if u not in before
-                            and STUDENT.search(f"{urlsplit(u).path} {t}")]
+                    fresh = [(u, t) for u, t in pages.items() if u not in before
+                             and STUDENT.search(f"{urlsplit(u).path} {t}")]
+                    if fresh and toks is None:
+                        toks = stored_tokens(ctx.db, key)
+                    new += [(u, t) for u, t in fresh if not stored_job_page(u, toks)]
             if errors and len(errors) == len(sources[key]):
                 done(ctx.db, "programs", key, worst(errors), ctx.now)
                 continue

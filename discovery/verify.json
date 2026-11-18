@@ -600,12 +600,12 @@
   "requests": 5
  },
  "cisco": {
-  "jobs": 1428,
-  "students": 60,
-  "matched": 35,
-  "at": "2026-10-20T15:09:47Z",
-  "duration": 71.7,
-  "requests": 72
+  "jobs": 1451,
+  "students": 36,
+  "matched": 15,
+  "at": "2026-11-18T17:34:37Z",
+  "duration": 74.3,
+  "requests": 73
  },
  "citadel": {
   "error": "fetch: HTTP 403 for GET https://www.citadel.com/sitemap/career.xml",
@@ -2308,12 +2308,12 @@
   "requests": 4
  },
  "qualcomm": {
-  "jobs": 1983,
-  "students": 118,
+  "jobs": 2020,
+  "students": 119,
   "matched": 19,
-  "at": "2026-11-15T15:43:27Z",
-  "duration": 203.2,
-  "requests": 203
+  "at": "2026-11-18T17:34:37Z",
+  "duration": 220.6,
+  "requests": 219
  },
  "qualtrics": {
   "jobs": 79,

@@ -787,6 +787,31 @@ def test_a_page_list_that_moved_is_compared_with_the_pages_its_old_address_had(b
     assert moves.check_programs(ctx(cfg, memdb, http)) == []  # told once
 
 
+def test_a_new_job_page_of_a_stored_job_is_no_news(blocked_cfg, memdb):
+    """A job site's sitemap lists every job page: one whose job InternWatch already read (Cox's apprentice roles, from
+    its Workday site, November 2026) is not a new program page. One it hasn't read still is."""
+    c = company("cox")
+    sm = "https://jobs.coxenterprises.com/sitemap.xml"
+    cfg = blocked_cfg([c], program_pages={"cox": [sm]})
+    base = ["https://jobs.coxenterprises.com/en/jobs/r202600001/analyst/"]
+    http = FakeHttp({sm: sitemap(*base)})
+    assert moves.check_programs(ctx(cfg, memdb, http)) == []
+    memdb.conn.execute("INSERT INTO jobs(company, job_id, title, url, first_seen, last_seen, alt_ids) VALUES "
+                       "('cox', '/job/San-Antonio-TX/Inspector-Apprentice--Manheim-_R202685089', 'Inspector Apprentice',"
+                       " 'https://cox.wd1.myworkdayjobs.com/en-US/Cox_External_Career_Site_1/job/San-Antonio-TX/"
+                       "Inspector-Apprentice--Manheim-_R202685089', 't', 't', '[]')")
+    memdb.set("blocked:at:programs:cox", "")
+    stored = "https://jobs.coxenterprises.com/en/jobs/r202685089/inspector-apprentice-manheim/"
+    unread = "https://jobs.coxenterprises.com/en/jobs/r202699999/finance-intern/"
+    http.pages[sm] = sitemap(*base, stored, unread)
+    problems = moves.check_programs(ctx(cfg, memdb, http))
+    assert [p["summary"] for p in problems] == [f"its site has new student or program pages: {unread}"]
+    assert moves.stored_job_page("https://www.wellsfargojobs.com/fr/jobs/r-586793/cib-markets-program-analyst/",
+                                 {"r", "586793", "cib"})
+    assert not moves.stored_job_page("https://www.citadelsecurities.com/careers/programs-and-events/phd-summit/",
+                                     {"careers", "programs", "phd", "summit"})
+
+
 def test_a_new_program_in_a_feed_and_a_new_wordpress_page(blocked_cfg, memdb):
     g, cap = company("goldman-sachs"), company("capstone")
     feed = "https://www.goldmansachs.com/feeds/programs-and-internships.json"
