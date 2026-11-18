@@ -39,7 +39,9 @@ liveness:                        # boards that go dead, get abandoned or are rep
   bleed_days: 30                 # a company under half its highest count of this many days is reported
   unchecked_runs: 2              # a due company never processed in this many runs in a row is reported
   page_scan_days: 1              # careers pages are compared this often, in daily runs (one that refuses: weekly) …
-  page_scan_seconds: 180         # … within this time budget per run
+  page_scan_seconds: 180         # … within this time budget per run …
+  page_scan_workers: 8           # … this many at a time, each host still at its own pace (one by one, about 350
+                                 # pages took 2 s each once robots.txt was paced on 2026-11-17, twice the budget)
   # Companies whose careers page answers scripts with a bot check, HTTP 400 or a robots.txt block. The weekly page
   # check leaves them out; src/internwatch/moves.py watches where else they could start posting instead, and its
   # checks read only these companies.

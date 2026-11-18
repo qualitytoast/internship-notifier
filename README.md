@@ -84,7 +84,8 @@ Rules for changing things: CLAUDE.md.
   - `board quiet`: no new job id on a board for 45 days, whatever its size, even an empty one. The newest date is the
     latest of the feed's own posting dates and the day InternWatch first saw a job there, because Workday's dates stop
     at "30+ days" and many feeds have none. Resolved when a new job id appears.
-  - `moved?`: each careers page is read once a day (3-minute budget) and the job systems it points at are compared
+  - `moved?`: each careers page is read once a day (3-minute budget, 8 pages at a time, each host at its own pace;
+    the pages read are then compared one by one, oldest first) and the job systems it points at are compared
     with what it named before: a new one that isn't configured, or a configured one it stopped mentioning on two reads
     in a row. An iCIMS portal, an Avature portal (bloomberg.avature.net/careers) and an Eightfold domain each count on
     their own, and links to an Eightfold site count too. A portal the page linked on an earlier look, or that a stored

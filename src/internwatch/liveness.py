@@ -31,7 +31,9 @@ import html
 import json
 import logging
 import re
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date, timedelta
 from urllib.parse import urlsplit
 
@@ -70,6 +72,7 @@ def settings(cfg: Config) -> dict:
             "unchecked_runs": int(lv.get("unchecked_runs", 2)),
             "scan_every": timedelta(days=float(lv.get("page_scan_days", 1))),
             "scan_seconds": float(lv.get("page_scan_seconds", 180)), "enabled": lv.get("enabled", True),
+            "scan_workers": max(1, int(lv.get("page_scan_workers", 8))),
             "blocked_seconds": float(lv.get("blocked_scan_seconds", 150)),
             "watch_seconds": float(lv.get("watch_seconds", 360))}
 
@@ -535,10 +538,41 @@ def scan_workday_sites(cfg: Config, db: DB, gate) -> list[dict]:
     return problems
 
 
+def read_pages(http, todo: list[Company], budget_end: float, workers: int) -> dict[str, tuple[str | None,
+                                                                                         Exception | None]]:
+    """The careers page of each company in `todo`, read `workers` at a time and started in `todo`'s order, none after
+    `budget_end` (time.monotonic()): {company key: (text, None) or (None, the exception)}. Each host keeps its own pace
+    (HostGate), so reading several hosts at once sends no host more. One at a time, the ~350 pages stopped fitting the
+    budget once robots.txt took a paced turn of its own (2026-11-17: about 2 s a page, not 1), and one site's timeout
+    (Washington Post: 145 s after 4 attempts) held up every page behind it."""
+    pages: dict[str, tuple[str | None, Exception | None]] = {}
+    queue = iter(todo)
+    lock = threading.Lock()
+
+    def worker() -> None:
+        while True:
+            with lock:  # the next page in order, or none once the budget is spent
+                c = next(queue, None) if time.monotonic() <= budget_end else None
+            if c is None:
+                return
+            try:
+                # */* too: Wolfram's server types its page application/x-httpd-php and answers 406 to text/html alone
+                pages[c.key] = (http.get_text(c.careers_url[0], headers={"Accept": "text/html,*/*;q=0.8"}), None)
+            except Exception as e:  # noqa: BLE001 — an unreadable page (bot wall, robots) is only logged
+                pages[c.key] = (None, e)
+
+    n = max(1, min(workers, len(todo)))
+    with ThreadPoolExecutor(max_workers=n, thread_name_prefix="page-scan") as pool:
+        for f in [pool.submit(worker) for _ in range(n)]:
+            f.result()
+    return pages
+
+
 def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
-    """Read careers pages not looked at today, oldest first, until `budget_end` (time.monotonic()). A page whose read
-    failed goes first the next morning, every morning. One the site refused goes first the next morning, and if it
-    refuses again waits REFUSED_DAYS."""
+    """Read careers pages not looked at today, oldest first, until `budget_end` (time.monotonic()), `page_scan_workers`
+    at a time (read_pages); each page read is then compared one by one in that order, as when they were read one at a
+    time. A page whose read failed goes first the next morning, every morning. One the site refused goes first the next
+    morning, and if it refuses again waits REFUSED_DAYS."""
     from .detect import from_text  # detect imports the runner
     from .moves import outcome, record  # moves imports this module
     p = settings(cfg)
@@ -554,17 +588,17 @@ def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
         every = timedelta(days=REFUSED_DAYS) if db.get(f"page_scan_refused:{c.key}") else p["scan_every"]
         if retry or last is None or now - last >= every - timedelta(hours=12):  # by hand, runs drift by some hours
             todo.append((not retry, last or now - timedelta(days=3650), c))
-    for *_, c in sorted(todo, key=lambda x: x[:2]):
-        if time.monotonic() > budget_end:
-            break
+    order = [c for *_, c in sorted(todo, key=lambda x: x[:2])]
+    pages = read_pages(http, order, budget_end, p["scan_workers"]) if order else {}
+    for c in order:
+        if c.key not in pages:  # not started before the budget ran out
+            continue
         url = c.careers_url[0]
         scanned = db.get(f"page_scan_at:{c.key}")
         rkey = f"page_scan_retry:{c.key}"
         retried = db.get(rkey)
-        try:
-            # */* too: Wolfram's server types its page application/x-httpd-php and answers 406 to text/html alone
-            text = http.get_text(url, headers={"Accept": "text/html,*/*;q=0.8"})
-        except Exception as e:  # noqa: BLE001 — an unreadable page (bot wall, robots) is only logged
+        text, e = pages[c.key]
+        if e is not None:
             log.info("liveness: careers page of %s not read: %s", c.key, str(e)[:160])
             result = outcome(e)
             record(db, "careers", c.key, result, now)

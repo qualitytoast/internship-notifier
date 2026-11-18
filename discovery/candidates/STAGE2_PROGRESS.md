@@ -686,7 +686,31 @@ Instruments, Tyler Technologies, United Airlines, UnitedHealth Group (Optum), We
        morning. Every 403 asked again was S22 (4,078).
      - Pages: 5,050 asked in 63 min (company by company, so mostly one site at a time), then the 4,118 that answered
        403 asked again in 7.3 min (one site per thread, 12 at once).
+  6. the first real morning (run 33, Nov 18 08:32 to 09:36 local, started by hand) against run 29: 103 of 103
+     Workday checks clean (run 29: 103; runs 30 to 32: 31, 7, 0), 4,546 requests in them (4,556), Workday reading
+     10.6 min of wall time in the 198's round (10.4) and 7.9 in the added round (6.9); no 429, no challenge, no
+     warning in the log; one Chrome for the run, closed and its profile deleted. 426 checked, 0 failed, 93 new
+     matches emailed (roles posted during the refused mornings among them).
 - Side finding (the runner, not Chrome: Nov 15's recorded morning through httpx does the same): a list's place
   shorter than the stored one replaces it, and the role is judged on it. Marvell lists "Yokneam" for a stored
   "Yokneam (Israel)", so 4 Marvell roles in Israel and Switzerland become possible matches ("location not
   recognised") on their next complete read. Left as is.
+
+## 2026-11-18: careers pages read 8 at a time
+- Why: run 33's health email had 215 `check gone dark` alerts, "Careers page has not answered since 2026-11-15". The
+  daily careers-page scan got no time on Nov 16 and 17 (fixed by a0d06f7), and on Nov 18 it read 138 of the 351 due
+  pages before its budgets ran out (180 s in the 198's round: 88 read; 240 s in the added round: 50 read). Read one at
+  a time, a page took about 1 s until 07a45df paced robots.txt like any request (Nov 17): each page now waits its
+  host's 1 s turn after its robots.txt, about 2 s a page, so the budgets held about half the pages. In the added round
+  Washington Post's timeout (145 s, 4 attempts) took most of the budget. Not Chrome: careers pages are not on Workday.
+- Change: `liveness.read_pages` reads the due pages `page_scan_workers` (8) at a time, started in the same order
+  (retries first, then oldest), none after the budget; each host keeps its own pace, so no site gets more. The pages
+  read are then compared one by one in that order, as before. No budget changed.
+- Proof (old = main d4c9183): tests (two mornings over 40 companies with every kind of answer, finishing in a shuffled
+  order: 8 at a time leaves the same kv, alerts and problems as one at a time; 8 reads overlap; the pages read are
+  always the first in line), the full suite (2,436 passed); three replayed mornings of Nov 17's Chrome recording PASS
+  with nothing exempt (the same answers give the same results). Live, on a copy of the database with every page a
+  morning reads made due and robots.txt fetched fresh: the 198's round read 160 of its 165 pages in 51 s (budget 180),
+  the added round 190 of 196 in 159 s (budget 240, Washington Post's timeout the last to end); the other 11 were not
+  due (refused pages wait a week). No Chrome or profile left.
+- The 215 alerts clear by themselves (rule `dark`: the page answers again) with the next morning's scan.

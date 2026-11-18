@@ -3,6 +3,10 @@ companies never processed, new Workday sites, careers pages that point somewhere
 health email, and nothing here may ever affect a company's poll or the run's emails."""
 import copy
 import json
+import random
+import re
+import threading
+import time
 from datetime import datetime, timedelta, timezone
 
 import pytest
@@ -338,7 +342,7 @@ def test_a_failed_email_puts_back_the_portals_known_before(make_cfg, memdb):
 
 def test_a_refused_page_is_read_again_first_the_next_morning_and_only_once(make_cfg, memdb):
     a, b = company("acme"), company("beta")
-    cfg = make_cfg([a, b])
+    cfg = make_cfg([a, b], liveness={"page_scan_workers": 1})  # one at a time: the order of the reads is the order asked
     memdb.set("page_scan_at:acme", iso(utcnow() - timedelta(days=9)))
     memdb.set("page_scan_at:beta", iso(utcnow() - timedelta(days=8)))
     http = PageHttp({a.careers_url[0]: FetchError("HTTP 403 for GET x"), b.careers_url[0]: "<html></html>"})
@@ -405,6 +409,82 @@ def test_a_retry_is_never_read_for_a_company_blocked_since_or_after_the_budget(m
     liveness.scan_pages(make_cfg([c], liveness={"blocked": ["acme"]}), memdb, http, float("inf"))
     liveness.scan_pages(make_cfg([c]), memdb, http, budget_end=0)  # the page check's time is already spent
     assert http.calls == [] and memdb.get("page_scan_retry:acme") == "1" and memdb.get("page_scan_at:acme") is None
+
+
+class SlowPageHttp(PageHttp):
+    """PageHttp whose answers take a random few milliseconds, so pages read at once finish in any order."""
+    def __init__(self, pages, seed=0, least=0.0):
+        super().__init__(pages)
+        self.rng, self.least, self.lock = random.Random(seed), least, threading.Lock()
+
+    def get_text(self, url, **kw):
+        with self.lock:
+            pause = self.least + self.rng.random() * 0.01
+        time.sleep(pause)
+        return super().get_text(url, **kw)
+
+
+STAMP = re.compile(r"\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d+)?Z?")
+
+
+def _scan_state(db):
+    """Everything a page scan leaves behind, with the wall clock's readings blanked."""
+    kv = {r["key"]: STAMP.sub("T", r["value"] or "") for r in db.q("SELECT key, value FROM kv")}
+    rows = [{k: STAMP.sub("T", str(v)) for k, v in dict(r).items() if k != "id"} for r in db.q("SELECT * FROM alerts")]
+    return kv, sorted(rows, key=lambda r: json.dumps(r, sort_keys=True))
+
+
+def test_pages_read_several_at_a_time_leave_exactly_what_one_at_a_time_leaves(make_cfg, monkeypatch):
+    """Two mornings over 40 companies (a baseline, then pages that moved, refused, failed or are blocked by robots.txt):
+    reading 8 at a time, finishing in a shuffled order, stores and reports exactly what reading one by one does."""
+    cs = [company(f"c{i:02d}", checker="greenhouse", settings={"board": f"c{i:02d}"}) for i in range(40)]
+    gh = '<script src="https://boards.greenhouse.io/embed/job_board/js?for={k}"></script>'
+    moved = '<a href="https://jobs.ashbyhq.com/{k}-inc">Open roles</a>'
+    errors = [FetchError("HTTP 403 for GET x"), FetchError("HTTP 503 for GET x (after 4 attempts)"),
+              RobotsBlocked("robots.txt disallows x (Disallow: /)"), RuntimeError("bot wall"),
+              CheckTimeout("timeout (ReadTimeout) for GET x (after 4 attempts)")]
+    first = {c.careers_url[0]: gh.format(k=c.key) for c in cs}
+    second = {c.careers_url[0]: (errors[i % 5] if i % 3 == 0 else moved.format(k=c.key) if i % 3 == 1
+                                 else gh.format(k=c.key)) for i, c in enumerate(cs)}
+    states, problems = [], []
+    for workers in (1, 8):
+        db = DB(":memory:")
+        cfg = make_cfg(cs, liveness={"page_scan_workers": workers})
+        found = []
+        for pages, seed, day in ((first, 1, "2026-11-18T14:00:00Z"), (second, 2, "2026-11-19T14:00:00Z")):
+            monkeypatch.setattr(liveness, "utcnow", lambda day=parse_iso(day): day)
+            found.append(liveness.scan_pages(cfg, db, SlowPageHttp(pages, seed=seed + workers), float("inf")))
+        states.append(_scan_state(db))
+        problems.append(found)
+        db.close()
+    assert problems[0][0] == problems[1][0] == []  # the first look is a silent baseline
+    assert [p["summary"] for p in problems[1][1]] == [p["summary"] for p in problems[0][1]] != []
+    assert STAMP.sub("T", json.dumps(problems[1])) == STAMP.sub("T", json.dumps(problems[0]))
+    assert states[1] == states[0]
+    assert sum(1 for k in states[0][0] if k.startswith("page_scan_retry:") and states[0][0][k]) > 0
+
+
+def test_pages_are_read_at_once(make_cfg, memdb):
+    """Eight careers pages, each answering only once all eight are being read: one at a time, none would answer."""
+    cs = [company(f"c{i}") for i in range(8)]
+    barrier = threading.Barrier(8, timeout=10)
+
+    class Together(PageHttp):
+        def get_text(self, url, **kw):
+            barrier.wait()
+            return super().get_text(url, **kw)
+    liveness.scan_pages(make_cfg(cs), memdb, Together({c.careers_url[0]: "<html></html>" for c in cs}), float("inf"))
+    assert all(memdb.get(f"page_scan_at:{c.key}") and not memdb.get(f"page_scan_retry:{c.key}") for c in cs)
+
+
+def test_pages_read_at_once_start_in_order_and_none_after_the_budget(make_cfg, memdb):
+    """However the reads overlap, the pages read are the first ones in line: none starts once the budget is spent."""
+    cs = [company(f"c{i:03d}") for i in range(200)]
+    http = SlowPageHttp({c.careers_url[0]: "<html></html>" for c in cs}, least=0.005)
+    liveness.scan_pages(make_cfg(cs, liveness={"page_scan_workers": 4}), memdb, http, time.monotonic() + 0.2)
+    read = [c.key for c in cs if memdb.get(f"page_scan_at:{c.key}")]
+    assert 0 < len(read) < len(cs)  # 200 reads of 5 ms or more, 4 at a time, can't fit in 0.2 s
+    assert read == [c.key for c in cs[:len(read)]] and len(http.calls) == len(read)
 
 
 def test_a_page_the_parsing_chokes_on_does_not_stay_first_in_line(make_cfg, memdb, monkeypatch):
