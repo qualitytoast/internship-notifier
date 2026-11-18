@@ -744,3 +744,59 @@ Instruments, Tyler Technologies, United Airlines, UnitedHealth Group (Optum), We
     fails: with its requests left out, both rounds' requests are the same, in order) or the intended one: the 6 Cox
     and Wells Fargo job-page alerts are not raised, with their counts, links and keys. Tests: a stored job's page
     is no news, an unread one still is; the full suite passes.
+
+## Batch 6: 7 companies on 5 new readers, and the campus sites of Bank of America and Morgan Stanley (branch stage2-batch6)
+
+ADP, Best Buy, Costco, NetApp, Paramount, Qorvo, Sandisk; Bank of America and Morgan Stanley (live since batches 4 and
+3) gain their Oleeo campus sites as a last source.
+
+- New readers (src/internwatch/adapters/, tests/test_batch6_readers.py, 22 tests on edited recordings):
+  - `successfactors` {host}: SAP SuccessFactors search pages, 25 jobs a page, table or tile layout, the page's own
+    total checked (NetApp 332, Paramount 199, Qorvo 8). A place "City, [State,] code, postal code" loses its postal
+    code and a country code with no state is written out ("Dusseldorf, DE" read as Delaware before); a list row's
+    "+1 more" stays as "+1 more" (unsure, not rejected) until the job's page gives every place.
+  - `taleo_tbe` {server, dc, org, cws}: a Taleo Business Edition RSS feed (Costco's IT jobs, 16 on Nov 18; its 25
+    Costco Digital Services interns of Nov 9 have closed: "This job has moved or is no longer available"). The
+    server is shared by every TBE site there, so it is not named `host` (no URL marker, no system identity): the site
+    is `org=costco&cws=41` (match_urls) and `taleo_tbe:cws=41,org=costco` (moves.system_key_v2).
+  - `oleeo` {host, feeds | pages}: Bank of America's four Atom feeds (20 entries, 17 programs and events) and Morgan
+    Stanley's two pages (68 programs; its feeds answer 404), at the 10 s robots.txt asks for.
+  - `job_sitemap` {sitemap, job_url, job_page}: Sandisk (523 job pages; its search page needs scripts and styles
+    robots.txt closes, so it can't be rendered or counted) and ADP (855 jobs, each under ~20 language addresses, 183
+    of them with 16-digit ids). Titles from the addresses; Sandisk's new student roles are read from their own page
+    (JSON-LD title and date, City / State / Country). (`detail` was the first name of that setting: build_config.py
+    drops a setting named so, and the reader never saw it.)
+  - `servicenow` {host, portal, page, widget}: Best Buy's portal page (for its guest token), then the call the page
+    makes to list its jobs (`update_data`, `getAll`): 1,740 jobs, exactly the requisitions of its SEO sitemap.
+  - `jibe` gains `queries` (off unless set; the 198's Jibe recordings replay the same): Costco's warehouse site
+    (19,304 jobs, 17,434 in its warehouses and 964 in its depots) is read for its other categories (70) and an
+    "intern" search (2), each to its end. No weekly whole read: 194 pages at its 5 s, and Stage 1's walk didn't hold
+    together (5,106 of 18,692).
+- Every site read live on Nov 18 through the project's checkers (read_results_extra.json). Page counts: the sites' own
+  totals (SuccessFactors, Best Buy, Costco's two listings, its IT site's search pages: 16 = the feed); Sandisk and ADP
+  can't be counted by a script (NOT_COUNTED). verify: all 9 match or are explained.
+- Lists and pages (listcheck): SimplifyJobs still links Sandisk's former SmartRecruiters company: recorded as a copy of
+  its Avature site (mirrors.yaml). 0 unknown systems after that.
+- Backup checks: NetApp's and ADP's careers pages refuse scripts (liveness.blocked: 66): NetApp's archive.org copies,
+  ADP's program pages (its jobs sitemap and adp.com's). ADP's own job list is its read itself, so it isn't read twice
+  (stage2_batch.py skips a job list the read already is).
+- UNDERCLASSMEN.md: none of the 7 has a freshman/sophomore program (358 companies with none).
+- [x] tests pass
+- [x] live go-live morning recorded on a copy of the database (morning-2026-11-18-batch6: run 36, 433 checked, 0
+      failed, 7 seeded, 6,689 exchanges, 36.7 min). Batch 6's checks: 34 requests, NetApp the longest (13 s); the
+      banks' Oleeo sources 6 more. "Now watching" 35 roles (ADP 5, Costco 2, NetApp 7, Qorvo 6, Sandisk 15). "Already
+      open": Morgan Stanley's 4 matching programs (a new source's first answer). Re-match: Costco's 8 and Qorvo's 50
+      stored rows given to them as known (SimplifyJobs no longer lists them open; a Qorvo one's page says "Sorry, this
+      position has been filled"): nothing pending, no possible miss. Alerts, none batch 6's: Copart's Workday listed 3
+      postings without a link (`shape`, its first such case), and Walmart's weekly read of run 35 confirmed 3 roles its
+      student read doesn't list (`posting elsewhere?`: a Canadian optician student, two "2026 Intern Conversion"
+      offers Stage 1 noted): both expected in the next real morning too
+- [x] golden.py against main (1f29e2c): PASS (850 cassette runs of the companies already live identical, 202,804
+      filter verdicts, 41,394 matches, 104 Workday files; 171 rows go to batch 6's companies)
+- [x] three mornings replayed (proof-a5b2eed, old = main 1f29e2c; M2_NEW stripe;databricks;openai;walmart;costco;
+      netapp;sandisk, M2_FAIL figma;target;best-buy;qorvo; compare given batch 6's 7 and the two banks): everything
+      the same apart from what the batch adds (7 more checked, their injected failures and roles, "4 already open" in
+      the subject). The compare's one flag, on all three mornings: four groups of alerts raised before the recording
+      (Nov 14, 16, 17, 18) where a bank's alert is numbered before another added company's. The banks went live in
+      batches 3 and 4, so their alerts sit among the added round's; identical in old and new, and no alert of the 198
+      is numbered after one of them
