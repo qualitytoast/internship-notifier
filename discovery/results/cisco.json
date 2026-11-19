@@ -7,7 +7,6 @@
   "settings": {
     "host": "cisco.wd5.myworkdayjobs.com",
     "tenant": "cisco",
-    "unlinked_ok": 50,
     "site": "Cisco_Careers"
   },
   "feed": "POST https://cisco.wd5.myworkdayjobs.com/wday/cxs/cisco/Cisco_Careers/jobs {\"appliedFacets\":{},\"limit\":20,\"offset\":N,\"searchText\":\"\"} (73 pages)",
@@ -19,6 +18,6 @@
   "blocked_reason": "",
   "fallback": "",
   "robots": "ALLOW (cisco.wd5.myworkdayjobs.com: no matching rule, Allow: /Cisco_Careers/; careers.cisco.com/widgets: no matching rule; */apply BLOCK)",
-  "notes": "Workday is the complete source; Phenom (phenom settings: base_url https://careers.cisco.com, ref_num CISCISGLOBAL, lang en_global, country global, site_type external, page_name search-results, job_path /global/en/job/{jobId}/{slug}, size up to 500) misses ~2% incl. 5 intern postings (4 US). The bookmarked Internships & Co-ops page (51) misses 8 of the 58 Workday interns. Alert if CXS total reaches 2000 (cap). On 2026-11-18 (run 35) the list had 5 postings without a link (no externalPath) on both reads: that one alert, then unlinked_ok as at Nordstrom, Wells Fargo, Humana and McKesson (the user's rule of 2026-11-12).",
+  "notes": "Workday is the complete source; Phenom (phenom settings: base_url https://careers.cisco.com, ref_num CISCISGLOBAL, lang en_global, country global, site_type external, page_name search-results, job_path /global/en/job/{jobId}/{slug}, size up to 500) misses ~2% incl. 5 intern postings (4 US). The bookmarked Internships & Co-ops page (51) misses 8 of the 58 Workday interns. Alert if CXS total reaches 2000 (cap).",
   "checked_at": "2026-10-20T00:33:39Z"
 }

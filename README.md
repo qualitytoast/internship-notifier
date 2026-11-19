@@ -134,9 +134,7 @@ Rules for changing things: CLAUDE.md.
     student pages, systems named). Copies older than 45 days, bot-check copies and pages the original site's
     robots.txt disallows are skipped. Most companies' copies come in bursts, so this one is slow.
   - N `new page`: a new student or program page in their sitemaps or WordPress page lists, or a new program in
-    Goldman's programs feed. The page of a job InternWatch already stores is left out (a job site's sitemap lists
-    every job page: Cox's and Wells Fargo's apprentice and program roles, read from their Workday sites, alerted here
-    until 2026-11-18). Only dismissing ends it: nothing can tell when you have looked.
+    Goldman's programs feed. Only dismissing ends it: nothing can tell when you have looked.
   - G `new label`: a new experience or source type in Goldman's job API; a new student team label in Meta's own
     poll (no request). Only dismissing ends it.
   - S `posting elsewhere?`: a role matching your filters on a board next to theirs (CTC's ctccampusboard, Liberty

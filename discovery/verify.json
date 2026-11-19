@@ -616,12 +616,12 @@
   "requests": 5
  },
  "cisco": {
-  "jobs": 1451,
-  "students": 36,
-  "matched": 15,
-  "at": "2026-11-18T17:34:37Z",
-  "duration": 74.3,
-  "requests": 73
+  "jobs": 1428,
+  "students": 60,
+  "matched": 35,
+  "at": "2026-10-20T15:09:47Z",
+  "duration": 71.7,
+  "requests": 72
  },
  "citadel": {
   "error": "fetch: HTTP 403 for GET https://www.citadel.com/sitemap/career.xml",

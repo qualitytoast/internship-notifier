@@ -744,6 +744,9 @@ Instruments, Tyler Technologies, United Airlines, UnitedHealth Group (Optum), We
     fails: with its requests left out, both rounds' requests are the same, in order) or the intended one: the 6 Cox
     and Wells Fargo job-page alerts are not raised, with their counts, links and keys. Tests: a stored job's page
     is no news, an unread one still is; the full suite passes.
+- Reverted the same day at the user's request: the Cisco fix (`unlinked_ok` removed; its list, cassette, verify
+  entry and coverage row back to before 4ccfbe5) and the program-page fix (`stored_job_page`, its test and README
+  line). Qualcomm's fix stays.
 
 ## Batch 6: 7 companies on 5 new readers, and the campus sites of Bank of America and Morgan Stanley (branch stage2-batch6)
 
