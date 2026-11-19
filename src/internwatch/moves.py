@@ -569,6 +569,7 @@ def check_pages(ctx: Ctx) -> list[dict]:
     flips back and forth alerts once, and one that stops naming a configured system alerts after two reads in a row."""
     problems: list[dict] = []
     al = aliases(ctx.cfg)
+    chrome = liveness.chrome_pages(ctx.cfg)
     http = ctx.http()
     try:
         for key in pick(ctx.db, "page", sorted(k for k, c in ctx.comps.items() if page_sources(ctx, c)), 1, ctx.now):
@@ -581,8 +582,8 @@ def check_pages(ctx: Ctx) -> list[dict]:
             results, errors = {}, []
             for kind, url in page_sources(ctx, c):
                 try:
-                    text = wp_pages(http, url) if kind == "wp" else http.get_text(
-                        url, headers={"Accept": "text/html,*/*;q=0.8"})  # */* too, as liveness.scan_pages
+                    text = wp_pages(http, url) if kind == "wp" else liveness.get_page(
+                        http, url, chrome, "text/html,*/*;q=0.8")  # */* too, as liveness.scan_pages
                 except Exception as e:  # noqa: BLE001 — a bot wall is only counted
                     if out_of_budget(e):
                         return problems
@@ -856,8 +857,9 @@ def check_job_lists(ctx: Ctx) -> list[dict]:
 
 # N: new student and program pages --------------------------------------------------------------------------
 
-def page_list(http, source: str) -> dict[str, str]:
-    """{page: title} of a site: a sitemap, a WordPress page list ("wp:<site>") or a JSON feed of programs."""
+def page_list(http, source: str, chrome: frozenset[str] = frozenset()) -> dict[str, str]:
+    """{page: title} of a site: a sitemap, a WordPress page list ("wp:<site>") or a JSON feed of programs. A sitemap
+    or feed in `chrome` (liveness.chrome_pages) is read through Chrome."""
     if source.startswith("wp:"):
         out, page, total = {}, 1, 1
         while page <= min(total, 20):
@@ -868,7 +870,7 @@ def page_list(http, source: str) -> dict[str, str]:
             total = int(r.headers.get("x-wp-totalpages") or 1)
             page += 1
         return {k: v for k, v in out.items() if k}
-    text = http.get_text(source, headers={"Accept": "application/xml,application/json,*/*"})
+    text = liveness.get_page(http, source, chrome, "application/xml,application/json,*/*")
     t = text.lstrip()
     if t.startswith(("[", "{")):
         data = json.loads(t)
@@ -885,6 +887,7 @@ def check_programs(ctx: Ctx) -> list[dict]:
     2026): the pages known from the old address are then the ones it is compared with, so a page added around the
     move still alerts."""
     sources = per_company(ctx.cfg, "program_pages")
+    chrome = liveness.chrome_pages(ctx.cfg)
     problems: list[dict] = []
     http = ctx.http()
     try:
@@ -899,7 +902,7 @@ def check_programs(ctx: Ctx) -> list[dict]:
             new, errors = [], []
             for source in sources[key]:
                 try:
-                    pages = page_list(http, source)
+                    pages = page_list(http, source, chrome)
                 except Exception as e:  # noqa: BLE001 — refused: tomorrow
                     if out_of_budget(e):
                         return problems

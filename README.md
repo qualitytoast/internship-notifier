@@ -7,10 +7,10 @@ httpx, SQLite. Per-company checkers and evidence: COVERAGE.md. Freshman/sophomor
 Rules for changing things: CLAUDE.md.
 
 ## Running it
-- **In use:** run `.venv/bin/internwatch run --daily` by hand each morning (about 50 min, more since the Workday
-  sites share one pace; 11 to 21 min more on the four mornings a week when one giant store site gets its weekly full
-  read). Every company gets a full
-  scan; failed ones are retried once later in the same run. Then ONE email goes out: `[InternWatch] <date>:
+- **In use:** run `.venv/bin/internwatch run --daily` by hand each morning (about 40 min: 38 on 2026-11-19, the
+  original companies 21 and the added round 17; about 15 to 20 min more on the four mornings a week when one giant
+  store site gets its weekly full read, as Walmart's on 2026-11-18). Every company gets a full scan; failed ones are
+  retried once later in the same run. Then ONE email goes out: `[InternWatch] <date>:
   N new: Co (n)…` (or "no new roles"), plus untracked-company roles, every open alert and the coverage table.
   `run --daily --emails-only` sends whatever earlier runs couldn't send, without checking any site.
 - **Set up but not in use:**
@@ -92,7 +92,9 @@ Rules for changing things: CLAUDE.md.
     posting links, isn't new, and every system a page ever named is remembered, so a page that flips back and forth
     alerts once. A read that fails (5xx, timeout, a missing page) is read again first thing the next morning, every
     morning. A page the site refuses (a bot check, HTTP 400, 401, 403, 406 or 429) gets one retry, then waits a week
-    until it answers; a robots.txt block just waits. The first look is a silent baseline. About 193
+    until it answers; a robots.txt block just waits. A page in `liveness.chrome_pages` (69 pages, the checks below
+    included, whose site refuses scripts but not Chrome: tested 2026-11-19) is read through Chrome instead
+    (`browser=True`, Internals). The first look is a silent baseline. About 193
     of 396 pages name a job system in their HTML; the rest are built in the browser or block scripts. The 66 companies
     whose page refuses scripts (`liveness.blocked`) are left out: the checks below watch them instead. Resolved when
     the system is added to the config or the page stops naming it (two reads in a row), or for a system it stopped
@@ -124,7 +126,9 @@ Rules for changing things: CLAUDE.md.
     Fidelity's myworkdayjobs.com host and on PitchBook's parent Morningstar.
   - P `moved?`: their careers page, and every WordPress page of CTC, GTS and Liberty Mutual (the page API answers
     where the pages don't), name a job system that isn't configured. An iCIMS portal, an Avature site and an
-    Eightfold domain each count on their own.
+    Eightfold domain each count on their own. 52 of the 66 careers pages are read through Chrome
+    (`liveness.chrome_pages`): the rest refuse even Chrome (AllTrails, Dropbox, Fidelity, GM, Nutanix, Pinterest,
+    SeatGeek, ServiceNow, Uber, Zocdoc) or are closed by robots.txt (Fortinet, Goldman, SAS, ZipRecruiter).
   - P/J/A/Getro `posting elsewhere?`: a job id on one of their pages (CTC's job lists, Tower's internships page), on
     their own job list (the sitemaps of Dropbox, Pinterest, Fidelity, GM, Nutanix, ServiceNow, Uber, American
     Family and PayPal's Eightfold copy; Akuna's job file), in archive.org's copies or in Getro's copy, that
@@ -134,7 +138,8 @@ Rules for changing things: CLAUDE.md.
     student pages, systems named). Copies older than 45 days, bot-check copies and pages the original site's
     robots.txt disallows are skipped. Most companies' copies come in bursts, so this one is slow.
   - N `new page`: a new student or program page in their sitemaps or WordPress page lists, or a new program in
-    Goldman's programs feed. Only dismissing ends it: nothing can tell when you have looked.
+    Goldman's programs feed (ADP's adp.com sitemap through Chrome). Only dismissing ends it: nothing can tell when
+    you have looked.
   - G `new label`: a new experience or source type in Goldman's job API; a new student team label in Meta's own
     poll (no request). Only dismissing ends it.
   - S `posting elsewhere?`: a role matching your filters on a board next to theirs (CTC's ctccampusboard, Liberty
@@ -334,8 +339,10 @@ Rules for changing things: CLAUDE.md.
     - Measured on 2026-11-17: 2,163 job-list POSTs through Chrome at 3, 5 and 10 a second across 12 sites, all 200,
       none challenged; 19 of 20 sent again through httpx byte-identical (the 20th: the list changed in between).
   - `ssl_context()` = certifi plus the bundled intermediates in certs/.
-  - `browser=True` (Citadel's sitemaps): the GET is made by the real Google Chrome (browser.py), for a site whose
-    Cloudflare guard refuses scripts but lets Chrome straight through. A normal window, minimized at once (Chrome's
+  - `browser=True` (Citadel's sitemaps, and the 69 pages in `liveness.chrome_pages`, read through it by the page scan
+    and moves.py's P and N via `liveness.get_page`; listed by URL because most of their hosts also serve script reads
+    that work): the GET is made by the real Google Chrome (browser.py), for a site whose
+    guard refuses scripts but lets Chrome straight through. A normal window, minimized at once (Chrome's
     hidden mode names itself HeadlessChrome and is challenged); a fresh profile each time, one Chrome at a time.
     Chrome is closed and its profile deleted before the request returns, even on an error. robots.txt, pacing, retries,
     time budgets and record/replay work as for any request. A challenge Chrome is still shown is never clicked: the

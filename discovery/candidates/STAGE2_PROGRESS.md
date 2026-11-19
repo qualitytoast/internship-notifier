@@ -803,3 +803,50 @@ ADP, Best Buy, Costco, NetApp, Paramount, Qorvo, Sandisk; Bank of America and Mo
       (Nov 14, 16, 17, 18) where a bank's alert is numbered before another added company's. The banks went live in
       batches 3 and 4, so their alerts sit among the added round's; identical in old and new, and no alert of the 198
       is numbered after one of them
+
+## 2026-11-19: batch 6's go-live (run 36), careers pages through Chrome, and batch 7's final pass
+
+- Run 36 (07:55 to 08:34 local, 38.3 min: the original companies 21.1, the added round 17.2): 432 checked, 0 failed,
+  76 new matches, 7 seeded. No Chrome or profile left.
+  - "Now watching" 38 roles (ADP 5, Costco 2, NetApp 9, Qorvo 6, Sandisk 16): the recording's 35 and 3 posted since
+    (NetApp's two "Emerging Talent - Software Engineer" roles, Sandisk's "Product Development Engineer University
+    Recruitment"). "Already open": Morgan Stanley's 4 Oleeo programs, as recorded. Morgan Stanley's 4 new roles are
+    other postings (its private Workday site's "Intern" roles).
+  - Re-match: 65 rows given a company in the added round's cross-check: Costco's 8 and Qorvo's 50, as known
+    (baseline), as in the dry run, and 7 rows first seen today at earlier batches' companies (found or abroad). No
+    possible miss.
+  - HEALTH: Walmart's 3 `posting elsewhere?`, as predicted. Copart's predicted `shape` didn't come (its Workday no
+    longer lists postings without a link). 3 `new page` alerts for job pages in sitemaps (Box, Intuitive Surgical,
+    Wells Fargo: the kind the reverted stored-job skip left out); the user dismissed them. Cisco's and Qualcomm's
+    Nov 18 `shape` alerts resolved.
+  - The user reverted on Nov 18 (2d8d83d) Cisco's `unlinked_ok` and the program-page check's stored-job skip,
+    keeping Qualcomm's fix. Not redone; fixes that quiet an alert are asked first from now on.
+- Gap: Paramount's careers page (page scan) and ADP's adp.com sitemap (its program pages) answered 200 on Nov 18 and
+  403 to scripts today; Chrome read both whole. Neither would have alerted: a page that never answered is no news,
+  and ADP's program check counts as answered when one of its two lists answers.
+- CLAUDE.md's rule (a page a Cloudflare-style guard refuses is first tried through Chrome) had not been applied to
+  the pages refused before it existed. One Chrome read (`Http.request(browser=True)`, robots.txt first) of every page
+  refused lately: 84 pages (16 of the page scan, 66 of the blocked companies' page check, ADP's sitemap); 69 answered
+  with the page itself (median 2.7 s, 13.4 s at most), 11 refused even Chrome (403 after ~47 s of retries:
+  AllTrails, Dropbox, Fidelity, GM, Nutanix, Pinterest, SeatGeek, ServiceNow, Uber, Zocdoc; Analog Devices, whose
+  robots.txt a script can't reach), 4 closed by robots.txt (Fortinet, Goldman's campus page, SAS, ZipRecruiter). A
+  first try through a `browser` host group (fetch() from a tab) was stopped part way: it reads by host, and most of
+  these hosts also serve script reads that work (Akamai's and Rocket's feeds, ADP's job sitemap, several sitemaps).
+- The user's choice: both the original companies' 28 pages and the added companies' 41 (69, about 3 more minutes a
+  morning). `liveness.chrome_pages` lists them by URL; `liveness.get_page` reads a listed URL with browser=True (no
+  headers: Chrome sends its own) and every other as before, in the page scan (read_pages) and moves.py's P
+  (check_pages) and N (page_list). The added round's backup-check budget goes from 150 to 300 s (its checks took ~40
+  s today; its 29 Chrome pages add ~80 s). A page that waits out a refusal is tried at its next weekly turn, so the
+  last of them are read through Chrome by Nov 26.
+- Batch 7 (final pass): README's run time (about 40 min; 15 to 20 more on a weekly full read morning), the Chrome
+  pages in README, UNDERCLASSMEN.md's 358 checked. Citadel's three checkers verified again (through Chrome since Nov
+  17: 66 jobs against the page's 63, 79 against 79, 13 programs against 11): COVERAGE.md now 432 verified, 1 blocked.
+- [x] tests pass (new: a listed page is read with browser=True and every other as before, in the page scan and in P
+      and N; every listed URL is a page some check reads)
+- [x] golden.py against main (2d8d83d): PASS (864 cassette runs, 210,363 filter verdicts, 41,441 matches, 105
+      Workday files; nothing given to another company)
+- [x] three mornings replayed (proof-2d8d83d of morning-2026-11-18-batch6, old = main 2d8d83d; M2_NEW
+      stripe;openai;netapp;paramount, M2_FAIL figma;box; compared strictly, no company exempted): PASS on all three.
+      The recording's answers for these pages are its script answers, so a replay can't show Chrome's: the tests and
+      the Nov 19 probe do. The next real morning is the live check (16 page-scan pages, 52 P pages and ADP's sitemap
+      read through Chrome as each comes due; no first look alerts).

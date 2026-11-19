@@ -538,13 +538,31 @@ def scan_workday_sites(cfg: Config, db: DB, gate) -> list[dict]:
     return problems
 
 
-def read_pages(http, todo: list[Company], budget_end: float, workers: int) -> dict[str, tuple[str | None,
-                                                                                         Exception | None]]:
+def chrome_pages(cfg: Config) -> frozenset[str]:
+    """liveness.chrome_pages: pages whose site refuses scripts but lets Chrome through (CLAUDE.md: such a page is first
+    tried through Chrome). They are read as Citadel's sitemaps are, with Http.request(browser=True): browser.py loads
+    the page in a fresh minimized Chrome window, one at a time, and closes it and deletes its profile before the
+    request returns. Read so wherever they are read: the careers-page scan (scan_pages), the blocked companies' page
+    check (moves.py P) and the program-page lists (moves.py N). Every other page is read by script, as before."""
+    return frozenset((cfg.settings.get("liveness", default={}) or {}).get("chrome_pages") or [])
+
+
+def get_page(http, url: str, chrome: frozenset[str], accept: str) -> str:
+    """The text of `url`: through Chrome if it is one of `chrome` (it sends its own Accept, as a browser loading the
+    page does: browser=True takes no headers), else by script asking for `accept`."""
+    if url in chrome:
+        return http.get_text(url, browser=True)
+    return http.get_text(url, headers={"Accept": accept})
+
+
+def read_pages(http, todo: list[Company], budget_end: float, workers: int,
+               chrome: frozenset[str] = frozenset()) -> dict[str, tuple[str | None, Exception | None]]:
     """The careers page of each company in `todo`, read `workers` at a time and started in `todo`'s order, none after
     `budget_end` (time.monotonic()): {company key: (text, None) or (None, the exception)}. Each host keeps its own pace
     (HostGate), so reading several hosts at once sends no host more. One at a time, the ~350 pages stopped fitting the
     budget once robots.txt took a paced turn of its own (2026-11-17: about 2 s a page, not 1), and one site's timeout
-    (Washington Post: 145 s after 4 attempts) held up every page behind it."""
+    (Washington Post: 145 s after 4 attempts) held up every page behind it. A page in `chrome` is read through Chrome
+    (get_page)."""
     pages: dict[str, tuple[str | None, Exception | None]] = {}
     queue = iter(todo)
     lock = threading.Lock()
@@ -557,7 +575,7 @@ def read_pages(http, todo: list[Company], budget_end: float, workers: int) -> di
                 return
             try:
                 # */* too: Wolfram's server types its page application/x-httpd-php and answers 406 to text/html alone
-                pages[c.key] = (http.get_text(c.careers_url[0], headers={"Accept": "text/html,*/*;q=0.8"}), None)
+                pages[c.key] = (get_page(http, c.careers_url[0], chrome, "text/html,*/*;q=0.8"), None)
             except Exception as e:  # noqa: BLE001 — an unreadable page (bot wall, robots) is only logged
                 pages[c.key] = (None, e)
 
@@ -589,7 +607,7 @@ def scan_pages(cfg: Config, db: DB, http, budget_end: float) -> list[dict]:
         if retry or last is None or now - last >= every - timedelta(hours=12):  # by hand, runs drift by some hours
             todo.append((not retry, last or now - timedelta(days=3650), c))
     order = [c for *_, c in sorted(todo, key=lambda x: x[:2])]
-    pages = read_pages(http, order, budget_end, p["scan_workers"]) if order else {}
+    pages = read_pages(http, order, budget_end, p["scan_workers"], chrome_pages(cfg)) if order else {}
     for c in order:
         if c.key not in pages:  # not started before the budget ran out
             continue

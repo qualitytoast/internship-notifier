@@ -24,7 +24,9 @@ schedule:
                                  # Workday reads, about 3,300 requests a morning, take 18 minutes or more at 3 a second)
       retry_delay: 90
       page_scan_seconds: 240     # ~210 careers pages
-      blocked_scan_seconds: 150  # backup checks of the added companies whose careers page refuses scripts (~30 s)
+      blocked_scan_seconds: 300  # backup checks of the added companies whose careers page refuses scripts (~40 s on
+                                 # 2026-11-19, then 150 s allowed; their 29 careers pages read through Chrome from
+                                 # 2026-11-19, liveness.chrome_pages, add about 80 s)
       watch_seconds: 1800        # their watched boards, incl. one giant store site's weekly full read (Walmart's took
                                  # 20.5 min on 2026-11-13; a weekly read starts only with 1.15 times that left)
 
@@ -55,6 +57,87 @@ liveness:                        # boards that go dead, get abandoned or are rep
             cadence, ciena, cohesity, costar, cox, datarobot, globalfoundries, marvell, nasdaq, verizon, wells-fargo,
             arista-networks, fortinet, intuitive-surgical, sas,
             adp, netapp]
+  # Pages whose site refuses scripts (HTTP 403, or a script read that times out) but lets Chrome through: read with
+  # Http.request(browser=True), as Citadel's sitemaps (CLAUDE.md), wherever they are read: the careers-page scan
+  # above, the blocked companies' page check (moves.py P) and their program-page lists (N). Every other page is read
+  # by script. Tested once on 2026-11-19 (one Chrome read each, robots.txt first): these 69 answered with the page
+  # itself in about 2.7 s (13 at most); the user chose both the original and the added companies' pages. Not listed:
+  # refused even by Chrome (AllTrails, Dropbox, Fidelity, General Motors, Nutanix, Pinterest, SeatGeek, ServiceNow,
+  # Uber, Zocdoc), closed by robots.txt (Fortinet, Goldman's campus page, SAS, ZipRecruiter), and Analog Devices,
+  # whose robots.txt a script can't reach (it is read before Chrome). By URL, not a `browser` host group: most of
+  # these hosts also serve script reads that work (Akamai's and Rocket's feeds, ADP's job sitemap, several sitemaps).
+  chrome_pages:
+    # the original companies: 28
+    - https://akunacapital.com/careers
+    - https://careers.amfam.com/
+    - https://careers.expediagroup.com/jobs/
+    - https://careers.linkedin.com/
+    - https://careers.pypl.com/
+    - https://careers.rocket.com/us/en/search-results
+    - https://careers.veeva.com/job-search-results/
+    - https://careersatdoordash.com/job-search/
+    - https://gtsx.com/careers/
+    - https://jobs.akamai.com/en/sites/CX_1/jobs
+    - https://jobs.intel.com/
+    - https://jobs.libertymutualgroup.com/
+    - https://openai.com/careers/search/
+    - https://pitchbook.com/careers
+    - https://www.capstoneco.com/careers/
+    - https://www.chicagotrading.com/open-roles/
+    - https://www.citadel.com/careers/open-opportunities/
+    - https://www.citadelsecurities.com/careers/open-opportunities/
+    - https://www.citadelsecurities.com/careers/programs-and-events/
+    - https://www.coinbase.com/careers/positions
+    - https://www.epicgames.com/site/en-US/careers/jobs
+    - https://www.hudsonrivertrading.com/careers/
+    - https://www.metacareers.com/jobsearch/
+    - https://www.rockwellautomation.com/en-us/careers.html
+    - https://www.schonfeld.com/careers/
+    - https://www.tower-research.com/open-positions
+    - https://www.ukg.com/company/careers
+    - https://www.whatnot.com/careers/discover
+    # the added companies: 41 (ADP's adp.com sitemap is a program-page list)
+    - https://about.udemy.com/careers/
+    - https://altruist.com/careers/
+    - https://careers.box.com/
+    - https://careers.chime.com/
+    - https://careers.intuitive.com/
+    - https://careers.progressive.com/
+    - https://censys.com/careers/
+    - https://gf.com/careers/
+    - https://gusto.com/about/careers
+    - https://hyperproof.io/working-at-hyperproof/
+    - https://jobs.adp.com/
+    - https://jobs.coxenterprises.com/
+    - https://jobs.hp.com/
+    - https://locusrobotics.com/company/careers/
+    - https://lucid.co/careers
+    - https://mycareer.verizon.com/
+    - https://withpersona.com/careers
+    - https://www.adp.com/sitemap.xml
+    - https://www.arista.com/en/careers
+    - https://www.cadence.com/en_US/home/company/careers.html
+    - https://www.ciena.com/careers
+    - https://www.cohesity.com/company/careers/
+    - https://www.costargroup.com/careers
+    - https://www.d-matrix.ai/careers/
+    - https://www.datarobot.com/careers/
+    - https://www.dickssportinggoods.jobs/
+    - https://www.drivewealth.com/company/careers/
+    - https://www.enova.com/careers/
+    - https://www.haizelabs.com/careers
+    - https://www.marvell.com/company/careers.html
+    - https://www.nasdaq.com/about/careers
+    - https://www.nasuni.com/about-us/careers/
+    - https://www.netapp.com/company/careers/
+    - https://www.paramount.com/careers
+    - https://www.precisely.com/careers-and-culture/
+    - https://www.rubrik.com/company/careers
+    - https://www.washingtonpost.com/careers/
+    - https://www.wellsfargojobs.com/
+    - https://www.yugabyte.com/careers/
+    - https://www.zillow.com/careers/
+    - https://xcimer.energy/careers
   blocked_scan_seconds: 300      # their checks' time budget in each daily run (before the emails)
   watch_seconds: 360             # time budget of the watched boards (src/internwatch/watch.py), after the checks above
   watch_boards:                  # mirrors with a feed of their own: read every run, never stored. Boards whose

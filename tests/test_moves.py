@@ -468,6 +468,46 @@ def test_a_source_not_read_today_never_reports_its_systems_as_gone(blocked_cfg, 
     assert [p["summary"] for p in problems] == ["its careers pages no longer mention eightfold:domain=libertymutual.com"]
 
 
+class AskedHttp(FakeHttp):
+    """FakeHttp that also keeps how each URL was asked for (its headers, and browser=True for a Chrome read)."""
+
+    def __init__(self, pages):
+        super().__init__(pages)
+        self.asked = {}
+
+    def request(self, method, url, params=None, json=None, headers=None, **kw):
+        self.asked[url] = {"headers": headers, **kw}
+        return super().request(method, url, params=params, json=json, headers=headers, **kw)
+
+
+def test_pages_in_chrome_pages_are_read_through_chrome_by_the_page_and_program_checks(blocked_cfg, memdb):
+    """liveness.chrome_pages: a blocked company's careers page (P) and a program-page list (N) named there are read with
+    browser=True and no headers; the others exactly as before. What is read from them is used as from any page."""
+    a, b = company("acme"), company("beta")
+    plain, guarded = "https://acme.example.com/sitemap.xml", "https://www.acme.example.com/sitemap.xml"
+    cfg = blocked_cfg([a, b], program_pages={"acme": [plain, guarded]}, chrome_pages=[a.careers_url[0], guarded])
+    http = AskedHttp({a.careers_url[0]: '<a href="https://jobs.lever.co/acme">jobs</a>', b.careers_url[0]: "<p>beta</p>",
+                      plain: sitemap("https://acme.example.com/"), guarded: sitemap("https://www.acme.example.com/")})
+    assert moves.check_pages(ctx(cfg, memdb, http)) == [] and moves.check_programs(ctx(cfg, memdb, http)) == []
+    assert http.asked == {a.careers_url[0]: {"headers": None, "browser": True},
+                          b.careers_url[0]: {"headers": {"Accept": "text/html,*/*;q=0.8"}},
+                          plain: {"headers": {"Accept": "application/xml,application/json,*/*"}},
+                          guarded: {"headers": None, "browser": True}}
+    assert json.loads(memdb.get("blocked:page:acme"))[a.careers_url[0]]["systems"] == ["lever:site=acme"]
+    assert json.loads(memdb.get("blocked:programs:acme")) == {plain: ["https://acme.example.com/"],
+                                                             guarded: ["https://www.acme.example.com/"]}
+
+
+def test_every_chrome_page_in_the_settings_is_a_page_a_check_reads():
+    """A listed page that no check reads (a typo, or a careers page the config no longer names) would read nothing."""
+    from internwatch.config import load
+    cfg = load()
+    listed = cfg.settings.get("liveness", "chrome_pages", default=[]) or []
+    read = {c.careers_url[0] for c in cfg.active if c.careers_url}
+    read |= {u for v in (cfg.settings.get("liveness", "program_pages") or {}).values() for u in v}
+    assert len(listed) == len(set(listed)) and not set(listed) - read
+
+
 TOWER_PAGE = ('<a href="https://tower-research.com/open-positions/?gh_jid=8044334"><h3>Quantitative Developer Intern'
               ' - Summer 2027</h3></a><a href="https://www.tower-research.com/open-positions/?gh_jid=8212158">'
               '<h3>Software Engineer Intern (Summer 2027)</h3> New York</a>')

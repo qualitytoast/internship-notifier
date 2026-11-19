@@ -190,6 +190,26 @@ def test_a_careers_page_that_points_at_a_new_job_site(make_cfg, memdb):
     assert liveness.scan_pages(cfg, memdb, later, float("inf")) == [] and later.calls == []  # today's look is done
 
 
+def test_a_page_in_chrome_pages_is_read_through_chrome_and_every_other_by_script(make_cfg, memdb):
+    """liveness.chrome_pages (CLAUDE.md: a page a Cloudflare-style guard refuses is first tried through Chrome): that
+    page is read with browser=True and no headers (Chrome sends its own); the others exactly as before."""
+    a = company("acme", checker="greenhouse", settings={"board": "acme"})
+    b = company("beta", checker="greenhouse", settings={"board": "beta"})
+    cfg = make_cfg([a, b], liveness={"chrome_pages": [a.careers_url[0]]})
+    asked = {}
+
+    class Http(PageHttp):
+        def get_text(self, url, **kw):
+            asked[url] = kw
+            return super().get_text(url, **kw)
+    gh = '<script src="https://boards.greenhouse.io/embed/job_board/js?for={}"></script>'
+    http = Http({a.careers_url[0]: gh.format("acme"), b.careers_url[0]: gh.format("beta")})
+    assert liveness.scan_pages(cfg, memdb, http, budget_end=float("inf")) == []  # first looks: silent
+    assert asked == {a.careers_url[0]: {"browser": True}, b.careers_url[0]: {"headers": {"Accept": "text/html,*/*;q=0.8"}}}
+    assert memdb.get("page_scan_at:acme") and memdb.get("page_systems_v2:acme")  # read and remembered as any page
+    assert liveness.chrome_pages(make_cfg([a], liveness={"chrome_pages": None})) == frozenset()  # none: by script
+
+
 def test_careers_pages_accept_any_content_type(make_cfg, memdb):
     """Wolfram's server answers 406 to Accept: text/html alone (its page is typed application/x-httpd-php)."""
     c = company("acme", checker="greenhouse", settings={"board": "acme"})
