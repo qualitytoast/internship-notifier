@@ -1,6 +1,7 @@
 """Golden comparison of two versions of InternWatch on the same inputs, no network.
 
-    python -I tools/prove/golden.py <old ref> [<new dir>]      (e.g. main; the new version defaults to this tree)
+    python -I tools/prove/golden.py <old ref> [<new dir>] [--strict key,key]
+                                                    (e.g. main; the new version defaults to this tree)
 
 Each version (a git ref is exported to a temporary folder; a directory is used as it is) is run in a process of its
 own and dumps, for the companies of its config:
@@ -12,6 +13,8 @@ own and dumps, for the companies of its config:
   workday    the sites each cached robots.txt lists (liveness.workday_sites) and hides (moves.workday_robots_sites)
 Then the two dumps are compared. Allowed differences: rows that went from no company to a company with `round: added`
 in the new config, and every entry of such a company. Anything else is listed and the result is FAIL.
+--strict names added companies that are compared like the others: for a change to a reader they share with the
+change's own company (the other SmartRecruiters users, when Arista's page layout is taught to the adapter).
 """
 from __future__ import annotations
 
@@ -134,8 +137,19 @@ def compare(old: dict, new: dict, added: set[str]) -> list[str]:
 
 
 def main() -> int:
-    old_ref = sys.argv[1]
-    new_dir = Path(sys.argv[2]) if len(sys.argv) > 2 else REPO
+    args = sys.argv[1:]
+    strict: set[str] = set()
+    if "--strict" in args:  # added companies compared like the others
+        i = args.index("--strict")
+        strict = {k for k in args[i + 1].split(",") if k}
+        del args[i:i + 2]
+    old_ref = args[0]
+    new_dir = Path(args[1]) if len(args) > 1 else REPO
+    every = added_keys(new_dir)
+    unknown = sorted(strict - every)
+    if unknown:
+        print(f"golden: --strict names no added company: {', '.join(unknown)}")
+        return 2
     data = REPO / "data" if (REPO / "data" / "internwatch.db").exists() else Path(
         subprocess.run(["git", "-C", str(REPO), "worktree", "list"], capture_output=True, text=True).stdout.split()[0]) / "data"
     with tempfile.TemporaryDirectory() as tmp:
@@ -143,11 +157,14 @@ def main() -> int:
         old_dir = Path(old_ref) if Path(old_ref).is_dir() else export(old_ref, tmp / "old")
         old = run_version(old_dir, data, tmp / "old.json")
         new = run_version(new_dir, data, tmp / "new.json")
-    added = added_keys(new_dir)
+    added = every - strict
     problems = compare(old, new, added)
     counts = {p: (len(old[p]), len(new[p])) for p in ("cassettes", "filters", "matching", "workday")}
     moved = sum(1 for k, v in new["matching"].items() if v in added and old["matching"].get(k) is None)
     print(f"golden: old {old['code']}\n        new {new['code']}\n        {counts}; rows given to added companies: {moved}")
+    if strict:
+        n = sum(1 for k in new["cassettes"] if k.split(" [")[0] in strict)
+        print(f"        added companies compared too: {', '.join(sorted(strict))} ({n} cassette runs)")
     for p in problems[:200]:
         print("  ", p)
     print("PASS" if not problems else f"FAIL ({len(problems)} differences)")
