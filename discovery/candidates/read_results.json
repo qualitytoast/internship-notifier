@@ -214,15 +214,15 @@
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 98,
+  "jobs": 218,
   "students": 2,
   "matched": 2,
-  "seconds": 1.5,
-  "requests": 2,
+  "seconds": 11.4,
+  "requests": 11,
   "partial": false,
-  "degraded": "smartrecruiters:AristaNetworks: collected 98 postings but the search reports 132",
-  "reported_total": 132,
-  "started": "2026-11-15T15:24:31Z"
+  "degraded": null,
+  "reported_total": 130,
+  "started": "2026-11-20T19:42:30Z"
  },
  "asana": {
   "checker": "greenhouse",

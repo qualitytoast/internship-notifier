@@ -2,8 +2,8 @@
 api.smartrecruiters.com, disallows all crawlers in robots.txt, so it is never used).
 
 settings: company: ServiceNow     (identifier in careers.smartrecruiters.com/<company>)
-          ignore_search_total: true   the search's totalFound isn't compared (Arista's says 147 and returns the
-                                      same 98 postings on every page); the page's own count still is
+          ignore_search_total: true   the search's totalFound isn't compared (Western Digital's counts 325 and
+                                      lists only the newest 100); the page's own count still is
           watch_ids: [744000152261929, …]   postings read one by one, from their own page: Western Digital's page
                                       leaves out older postings and its search lists only the newest 100 (a Winter
                                       2027 co-op posted in September was in neither on 2026-11-15). The runner adds
@@ -19,6 +19,15 @@ Detail: GET https://jobs.smartrecruiters.com/<company>/<id>-<slug>  (schema.org 
 A group page without groups, a group whose "more" pages run dry before its data-qty, fewer postings than the groups'
 data-qty, or fewer than 95% of the search's totalFound marks the poll degraded (the jobs read are kept).
 See discovery/notes/servicenow.md.
+
+A hosted page that is one flat list instead (Arista's: ul.js-openings-load[data-more] holding li.opening-job, no
+groups; until 2026-11-20 nothing was read from it, and only the search's 98 of its 218 postings were stored):
+1. the search first, so the postings it lists keep the values they have always had (its places read "City, Region,
+   cc", the page's "City, Country")
+2. the page's postings, then GET <data-more>?page=1, 2, … (24 each) until a page is empty; they add the postings
+   the search doesn't list
+The flat page shows no count, so the search's postings must be among the page's (all but 2 + 3%); a walk that repeats
+a page or doesn't end within FLAT_PAGES is reported too. Either marks the poll degraded.
 """
 from __future__ import annotations
 
@@ -33,6 +42,30 @@ HOSTED = "https://careers.smartrecruiters.com"
 SEARCH = "https://jobs.smartrecruiters.com/sr-jobs/search"
 ID_RE = re.compile(r"/(\d{6,})-")
 EXPIRED = re.compile(r"this job has expired|no longer (?:available|accepting)", re.I)
+FLAT_PAGES = 400  # a flat list's "more" pages are never followed past this many (24 postings each)
+
+
+def _flat_jobs(node, out: dict) -> tuple[int, int]:
+    """The postings of a flat list (the page, or one of its "more" pages) added to `out`. Returns (postings, new ones).
+    Each li.opening-job has the link, the title and li.job-desc texts: department, place, and for some a third that
+    is only a hybrid/remote icon. The place is the last text of two or more; a single text could be either, so the
+    place is then left to the posting's own page."""
+    seen = new = 0
+    for li in node.select("li.opening-job"):
+        a = li.select_one("a[href]")
+        m = ID_RE.search(a["href"]) if a is not None else None
+        if not m:
+            continue
+        seen += 1
+        if m.group(1) in out:
+            continue
+        title_el = a.select_one("h4.job-title, .job-title")
+        title = title_el.get_text(" ", strip=True) if title_el else a.get_text(" ", strip=True)
+        descs = [t for t in (d.get_text(" ", strip=True) for d in li.select("li.job-desc")) if t]
+        out[m.group(1)] = Job(id=m.group(1), title=" ".join(title.split()),
+                              location=descs[-1] if len(descs) >= 2 else "", url=a["href"].split("?")[0])
+        new += 1
+    return seen, new
 
 
 def _jobs_in(node, group: str, out: dict) -> int:
@@ -98,15 +131,29 @@ class SmartRecruiters(Checker):
         loader = soup.select_one("div.js-openings-load")
         need(loader is not None or soup.select("section.js-group") or "opening-job" in html,
              f"{where}: hosted career page has no job groups")
-        groups, qty = self._groups(http, html, out, where, problems)
-        pages = int(loader.get("data-groups-pages") or 1) if loader is not None else 1
-        more = loader.get("data-more") if loader is not None else None
-        for page in range(1, pages if more else 1):
-            g, q = self._groups(http, http.get_text(HOSTED + more, params={"page": page}), out, where, problems)
-            if not g:  # its groups' data-qty is missing from `qty` too, so the count check below can't see the loss
-                problems.append(f"group page {page} has no groups")
-            groups, qty = groups + g, qty + q
-        found = self._search(http, company, out)
+        flat = None
+        if loader is None and not soup.select("section.js-group"):
+            flat = soup.select_one("ul.js-openings-load[data-more]")
+        if flat is not None:  # one flat list, not groups (see the module docstring)
+            qty = 0
+            found, newest = self._search(http, company, out)
+            listing = self._flat(http, soup, flat["data-more"], problems)
+            lost = [i for i in newest if i not in listing]
+            if len(lost) > 2 + 0.03 * len(newest):
+                problems.append(f"{len(lost)} of the search's {len(newest)} postings are not among the "
+                                f"{len(listing)} the page lists")
+            for jid, j in listing.items():
+                out.setdefault(jid, j)
+        else:
+            groups, qty = self._groups(http, html, out, where, problems)
+            pages = int(loader.get("data-groups-pages") or 1) if loader is not None else 1
+            more = loader.get("data-more") if loader is not None else None
+            for page in range(1, pages if more else 1):
+                g, q = self._groups(http, http.get_text(HOSTED + more, params={"page": page}), out, where, problems)
+                if not g:  # its groups' data-qty is missing from `qty` too, so the count check below can't see the loss
+                    problems.append(f"group page {page} has no groups")
+                groups, qty = groups + g, qty + q
+            found, _ = self._search(http, company, out)
         listed = set(out)
         if isinstance(found, int) and not s.get("ignore_search_total") and len(out) < found * 0.95:
             problems.append(f"collected {len(out)} postings but the search reports {found}")
@@ -150,13 +197,31 @@ class SmartRecruiters(Checker):
             ctx.state["watch_closed"] = sorted(set(ctx.state.get("watch_closed") or []) | set(closed))[-300:]
         return out
 
-    def _search(self, http, company: str, out: dict) -> int | None:
+    def _flat(self, http, soup, more: str, problems: list) -> dict[str, Job]:
+        """A hosted page that is one flat list: the postings on it, then its "more" pages until one is empty. A page
+        that only repeats postings, or a list that doesn't end, is noted in `problems`."""
+        out: dict[str, Job] = {}
+        _flat_jobs(soup, out)
+        for page in range(1, FLAT_PAGES + 1):
+            seen, new = _flat_jobs(BeautifulSoup(http.get_text(HOSTED + more, params={"page": page}), "lxml"), out)
+            if not seen:
+                return out
+            if not new:
+                problems.append(f"page {page} of the list repeats postings already read")
+                return out
+        problems.append(f"the list did not end within {FLAT_PAGES} pages")
+        return out
+
+    def _search(self, http, company: str, out: dict) -> tuple[int | None, list[str]]:
+        """The search's newest 100 postings added to `out`. Returns (its totalFound, the ids it listed)."""
         d = http.get_json(SEARCH, params={"limit": 100, "company": company})
         need(isinstance(d, dict) and isinstance(d.get("content"), list), f"smartrecruiters:{company}: bad search JSON")
+        ids: list[str] = []
         for it in d["content"]:
             jid = str(it.get("id") or "")
             if not jid:
                 continue
+            ids.append(jid)
             loc = it.get("location") or {}
             where = ", ".join(x for x in (loc.get("city"), loc.get("region"), loc.get("country")) if x)
             if loc.get("remote"):
@@ -167,7 +232,7 @@ class SmartRecruiters(Checker):
                 out[jid] = Job(id=jid, title=" ".join((it.get("name") or "").split()), location=where,
                                url=it.get("applyUrl") or f"https://jobs.smartrecruiters.com/{company}/{jid}",
                                posted=iso_date(it.get("releasedDate")))
-        return d.get("totalFound")
+        return d.get("totalFound"), ids
 
     def detail(self, http, s, job):
         return self._from_page(BeautifulSoup(http.get_text(job.url), "lxml"), job)

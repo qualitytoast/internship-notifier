@@ -17,7 +17,7 @@ reads:
   applied-materials~eightfold: {checker: eightfold, settings: {host: careers.appliedmaterials.com, domain: appliedmaterials.com}}
   apptronik: {checker: greenhouse, settings: {board: apptronik}}
   arcesium: {checker: greenhouse, settings: {board: arcesiumllc}}
-  arista-networks: {checker: smartrecruiters, settings: {company: AristaNetworks, ignore_search_total: true}}  # its search says 132 and returns the same 98 postings on every page
+  arista-networks: {checker: smartrecruiters, settings: {company: AristaNetworks}}  # its page is one flat list, walked to its end since 2026-11-20 (218 postings; its search lists 98 of them)
   asana: {checker: greenhouse, settings: {board: asana}}
   att: {checker: workday, settings: {host: att.wd1.myworkdayjobs.com, anchor_host: true, tenant: att, sites: [ATTGeneral, ATTcollege, Cricket, ATTCollegeSpecialInvite]}}
   athenahealth: {checker: phenom, settings: {base_url: "https://www.athenahealth.com", ref_num: ATHAHHUS}}

@@ -236,7 +236,9 @@ Rules for changing things: CLAUDE.md.
     one is dropped. learn_ids: also read the ids of the company's postings in the latest SimplifyJobs download.
   - any adapter's settings: anchor_host (its host matches SimplifyJobs and list rows only at the start of a link:
     Morgan Stanley's ms.wd5… is inside williams.wd5…)
-  - smartrecruiters {company, ignore_search_total}, workable {account}, icims {portal}, jibe {host, queries (a giant
+  - smartrecruiters {company, ignore_search_total} (the hosted page's groups, or its one flat list where a company
+    has that layout, as Arista: walked to its end since 2026-11-20, after the newest-100 search),
+    workable {account}, icims {portal}, jibe {host, queries (a giant
     site's slice: these listings only, each to its end)}, phenom {base_url, ref_num},
     avature {list_url, page_size}, applicantpro {subdomain, domain_id}, gem, rippling, jobvite, pinpoint,
     recruiterbox, ripplematch

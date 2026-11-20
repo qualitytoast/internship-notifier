@@ -6,22 +6,21 @@
   "checker": "smartrecruiters",
   "settings": {
     "company": "AristaNetworks",
-    "ignore_search_total": true,
     "match_urls": [
       "smartrecruiters.com/aristanetworks/"
     ]
   },
   "feed": "GET https://careers.smartrecruiters.com/AristaNetworks",
-  "feed_total": 98,
-  "page_total": 132,
-  "page_total_how": "smartrecruiters's own reported total (the careers page shows it) (2026-11-15)",
+  "feed_total": 218,
+  "page_total": 218,
+  "page_total_how": "counted on its SmartRecruiters page, a flat list walked to its end (2026-11-20)",
   "intern_total": 2,
   "status": "verified",
   "blocked_reason": "",
   "fallback": "",
   "robots": "careers.smartrecruiters.com/robots.txt checked before every request (discovery/robots/careers.smartrecruiters.com.txt)",
-  "notes": "Its SmartRecruiters page and search count 132 postings but list the same 98 on every page (2026-11-15, and 147 for 98 on 11-09): the read has all 98, and the search's count isn't compared (ignore_search_total). The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md).",
-  "checked_at": "2026-11-15",
+  "notes": "Its SmartRecruiters page is one flat list, not groups: the reader walks it to its end (218 postings on 2026-11-20) after the search. Until 2026-11-20 nothing was read from the page and only the 98 postings its search lists were stored (the search counts 130 to 147 and lists 98). The careers page refuses scripts: the company is in liveness.blocked, with backup checks (backup_table.md).",
+  "checked_at": "2026-11-20",
   "source": "added",
   "round": "added"
 }

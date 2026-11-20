@@ -4188,10 +4188,8 @@ companies:
   checker: smartrecruiters
   settings:
     company: AristaNetworks
-    ignore_search_total: true
     match_urls: [smartrecruiters.com/aristanetworks/]
-  verified: {page_total: 132, explained: 'Its SmartRecruiters page and search count 132 postings but list the same 98 on every page
-      (2026-11-15, and 147 for 98 on 11-09): the read has all 98, and the search''s count isn''t compared (ignore_search_total).'}
+  verified: {page_total: 218}
   round: added
 - key: sas
   name: SAS Institute

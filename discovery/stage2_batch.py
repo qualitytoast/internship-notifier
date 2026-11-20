@@ -249,9 +249,6 @@ MIRROR_MARKS = {"ice": ["careers-ice.icims.com"], "charles-schwab": ["career-sch
 
 # Counts the site gives that its own list doesn't reach, measured on the day of the batch
 EXPLAINED = {
-    "arista-networks": "Its SmartRecruiters page and search count 132 postings but list the same 98 on every page "
-                       "(2026-11-15, and 147 for 98 on 11-09): the read has all 98, and the search's count isn't "
-                       "compared (ignore_search_total).",
     "western-digital": "Its SmartRecruiters page lists 162 postings (all 336 on 11-09) and its search counts 325 but "
                        "lists only the newest 100: the read is both (210) and the postings Simplify links, each read "
                        "from its own page (learn_ids), so an older posting off the page is read when Simplify lists it.",

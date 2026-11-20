@@ -183,6 +183,119 @@ def test_smartrecruiters_search_total_far_above_collected_is_reported():
         assert len(replay(key, ctx=ctx)) == cassette(key).meta["count"] and ctx.degraded is None
 
 
+# A hosted page that is one flat list (Arista, recorded 2026-11-20: 218 postings on the page and its 9 "more" pages, 98
+# of them in the search). Until then nothing was read from such a page: only the search's 98 were stored.
+
+def _arista_search():
+    return json.loads(next(e for e in cassette("arista-networks").exchanges if "/sr-jobs/search" in e["url"])["text"])
+
+
+def test_smartrecruiters_flat_page_is_walked_to_its_end_and_the_search_keeps_its_values():
+    ctx = FetchContext()
+    jobs = {j.id: j for j in replay("arista-networks", ctx=ctx)}
+    listed = _arista_search()["content"]
+    assert len(jobs) == cassette("arista-networks").meta["count"] == 218 and len(listed) == 98 and ctx.degraded is None
+    for it in listed:  # exactly as when the search was the whole read: its place ("City, Region, cc"), date and link
+        j, loc = jobs[str(it["id"])], it["location"]
+        assert j.location.split("; ")[0] == ", ".join(x for x in (loc.get("city"), loc.get("region"), loc.get("country")) if x)
+        assert j.url == it["applyUrl"] and j.posted == it["releasedDate"][:10] and j.title == " ".join(it["name"].split())
+    rest = [j for i, j in jobs.items() if i not in {str(it["id"]) for it in listed}]
+    assert len(rest) == 120 and all(j.url.startswith("https://jobs.smartrecruiters.com/AristaNetworks/") for j in rest)
+    assert all(j.posted is None and j.department == "" for j in rest)      # the page gives a title and a place
+    assert sum(1 for j in rest if j.location) >= 118 and any(j.location.endswith(", India") for j in rest)
+
+
+def test_smartrecruiters_flat_walk_cut_short_is_reported_and_jobs_kept():
+    ctx = FetchContext()
+    jobs = replay("arista-networks", blank("/AristaNetworks/api/more?page=3"), ctx=ctx)   # an empty page ends the walk
+    assert 98 <= len(jobs) < 218
+    assert re.search(r"\d+ of the search's 98 postings are not among the 97 the page lists", ctx.degraded)
+    assert len(replay("arista-networks", blank("/AristaNetworks/api/more?page=3"))) == len(jobs)  # no context: kept too
+
+
+def test_smartrecruiters_flat_page_that_repeats_stops_the_walk_and_is_reported():
+    third = next(e["text"] for e in cassette("arista-networks").exchanges if e["url"].endswith("/api/more?page=3"))
+
+    def again(e):
+        if e["url"].endswith("/api/more?page=4"):
+            e["text"] = third
+    ctx = FetchContext()
+    jobs = replay("arista-networks", again, ctx=ctx)
+    assert 98 <= len(jobs) < 218 and "page 4 of the list repeats postings already read" in ctx.degraded
+
+
+def _exchange(url, text, params=None):
+    return {"method": "GET", "url": canonical_url(url, params), "body": "", "status": 200, "headers": {}, "text": text}
+
+
+def _hosted(company, page, more=(), search=()):
+    """A SmartRecruiters company as a replay: its hosted page, the flat list's "more" pages and the search's answer."""
+    hosted = f"https://careers.smartrecruiters.com/{company}"
+    ex = [_exchange(hosted, page)]
+    ex += [_exchange(f"{hosted}/api/more", text, {"page": n}) for n, text in enumerate(more, 1)]
+    ex.append(_exchange("https://jobs.smartrecruiters.com/sr-jobs/search", json.dumps(
+        {"totalFound": len(search), "content": list(search)}), {"limit": 100, "company": company}))
+    return Http(replay=Cassette(exchanges=ex))
+
+
+def _opening(jid, title, *descs):
+    return (f'<li class="opening-job"><a class="js-job-ad-link" href="https://jobs.smartrecruiters.com/Co/{jid}-x?trid=1">'
+            f'<h4 class="job-title">{title}</h4><ul class="job-list">'
+            + "".join(f'<li class="job-desc">{d}</li>' for d in descs) + "</ul></a></li>")
+
+
+def _flat(*openings):
+    return '<ul class="opening-jobs js-openings-load" data-page="0" data-more="/Co/api/more">' + "".join(openings) + "</ul>"
+
+
+def test_smartrecruiters_flat_list_place_is_the_last_of_two_or_more_texts():
+    page = _flat(_opening(744000000001, "Software Engineer Intern", "Engineering", "Austin, TX"),
+                 _opening(744000000002, "Hardware  Intern", "Hardware", "Reno, NV", ""),   # third: a hybrid icon, no text
+                 _opening(744000000003, "Data Intern", "Finance"),                           # department or place? neither
+                 '<li class="opening-job"><a href="?search=&page=1">Next page</a></li>')
+    more = ["<ul>" + _opening(744000000004, "Firmware Intern", "Engineering", "Bengaluru, India") + "</ul>", ""]
+    search = [{"id": 744000000001, "name": "Software Engineer Intern", "releasedDate": "2026-11-12T10:00:00.000Z",
+               "applyUrl": "https://jobs.smartrecruiters.com/Co/744000000001-x",
+               "location": {"city": "Austin", "region": "TX", "country": "us"}}]
+    ctx = FetchContext()
+    jobs = {j.id: j for j in get_checker("smartrecruiters").fetch(_hosted("Co", page, more, search), {"company": "Co"}, ctx)}
+    assert {i: (j.title, j.location, j.posted) for i, j in jobs.items()} == {
+        "744000000001": ("Software Engineer Intern", "Austin, TX, us", "2026-11-12"),      # the search's values
+        "744000000002": ("Hardware Intern", "Reno, NV", None),
+        "744000000003": ("Data Intern", "", None),
+        "744000000004": ("Firmware Intern", "Bengaluru, India", None)}
+    assert jobs["744000000002"].url == "https://jobs.smartrecruiters.com/Co/744000000002-x" and ctx.degraded is None
+
+
+def test_smartrecruiters_flat_list_must_hold_the_searchs_postings():
+    page = _flat(*(_opening(744000000000 + i, f"Job {i}", "Dept", "Austin, TX") for i in range(10)))
+    listed = [{"id": 744000000000 + i, "name": f"Job {i}", "location": {}} for i in range(5, 15)]   # 5 not on the page
+    ctx = FetchContext()
+    jobs = get_checker("smartrecruiters").fetch(_hosted("Co", page, [""], listed), {"company": "Co"}, ctx)
+    assert len(jobs) == 15 and "5 of the search's 10 postings are not among the 10 the page lists" in ctx.degraded
+    ctx = FetchContext()                                                     # 2 missing of 10: postings just published
+    get_checker("smartrecruiters").fetch(_hosted("Co", page, [""], listed[:7][-4:] + listed[:2]), {"company": "Co"}, ctx)
+    assert ctx.degraded is None
+
+
+def test_smartrecruiters_pages_that_are_not_a_flat_list_are_read_as_before():
+    grouped = ('<div class="js-openings-load" data-groups-pages="1" data-more="/Co/api/groups">'
+               '<section class="js-group" data-qty="1"><h3 class="opening-title">Palo Alto, CA</h3><ul>'
+               + _opening(744000000001, "Engineer", "Engineering", "Somewhere Else") + "</ul></section></div>")
+    jobs = get_checker("smartrecruiters").fetch(_hosted("Co", grouped), {"company": "Co"}, FetchContext())
+    assert [(j.id, j.location) for j in jobs] == [("744000000001", "Palo Alto, CA")]   # the group's name, as always
+    # groups next to a flat list's markup: still the grouped path, which reads the groups only, as it always has (the
+    # replay holds no "more" page of the list, so asking for one would fail)
+    both = grouped + _flat(_opening(744000000002, "Other", "Dept", "Austin, TX"))
+    jobs = get_checker("smartrecruiters").fetch(_hosted("Co", both), {"company": "Co"}, FetchContext())
+    assert [(j.id, j.location) for j in jobs] == [("744000000001", "Palo Alto, CA")]
+    # a page with no job list (Visa's and Palo Alto Networks' watched boards, 2026-11-20): the same answer as before,
+    # before any other request
+    with pytest.raises(CheckerError, match="hosted career page has no job groups"):
+        get_checker("smartrecruiters").fetch(_hosted("Co", "<html><body>No openings</body></html>"), {"company": "Co"},
+                                             FetchContext())
+
+
 # Avature ------------------------------------------------------------------------------------
 
 EA_TOTAL = r'aria-label="(\d+) results"'

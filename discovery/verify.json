@@ -232,12 +232,12 @@
   "requests": 1
  },
  "arista-networks": {
-  "jobs": 98,
+  "jobs": 218,
   "students": 2,
   "matched": 2,
-  "at": "2026-11-15T15:43:26Z",
-  "duration": 1.6,
-  "requests": 2
+  "at": "2026-11-20T19:42:41Z",
+  "duration": 11.4,
+  "requests": 11
  },
  "asana": {
   "jobs": 108,
