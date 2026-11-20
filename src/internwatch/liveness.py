@@ -188,16 +188,42 @@ def _due(db: DB, alert_key: str, every: timedelta, now) -> bool:
     return last is None or now - last >= every
 
 
+def _burst_rule(db, c, o, known, now, problems) -> None:
+    """`burst: N` in a company's settings (Western Digital: 100): N or more postings of one read were never stored.
+    Its list reaches only its newest postings (its search lists 100), so that many between two reads means older ones
+    among them may have gone unread. Judged on any poll that brought jobs, a degraded one too: by the same run's second
+    look the postings are stored and nothing shows any more. One alert a day, which only dismissing ends."""
+    need = (c.settings or {}).get("burst")
+    if not need or not known or not o.ok or not o.jobs:
+        return
+    new = sum(1 for j in o.jobs if j.id not in known)
+    if new < int(need):
+        return
+    key = f"live_alert:{c.key}:burst:{now.date().isoformat()}"
+    if db.get(key):
+        return
+    problems.append(_problem(
+        c, "burst", f"{new} postings are new since the last read",
+        f"Its search lists only its newest postings, so when {int(need)} or more are posted between two reads, older "
+        "ones among them can go unread; the keyword sweep runs again on such a morning for the student roles.",
+        None, key, alert={"rule": "manual"}))
+    db.set(key, iso(now))
+
+
 def observe(cfg: Config, db: DB, c: Company, o: Outcome, verdict, known) -> tuple[list[dict], list[dict]]:
     """Judge one processed poll. Returns (problems, recovered) for the run's health email."""
+    problems, recovered = [], []
+    try:  # before the gates below (it also judges a degraded poll); an error in it must not cost the other rules
+        _burst_rule(db, c, o, known, utcnow(), problems)
+    except Exception:  # noqa: BLE001
+        log.exception("liveness: %s: the burst rule failed", c.key)
     if not (o.ok and not o.degraded and not o.partial and o.mode == "full"):
-        return [], []
+        return problems, recovered
     if (verdict.problem and verdict.problem.get("kind") in ("zero", "drop")) or db.get(f"zero_open:{c.key}"):
-        return [], []
+        return problems, recovered
     p = settings(cfg)
     ensure_schema(db)
     now = utcnow()
-    problems, recovered = [], []
     if not o.unchanged and o.jobs is not None:
         for sid, (what, n) in source_counts(c, o).items():
             _count_rules(db, c, sid, what, n, p, now, problems, recovered)

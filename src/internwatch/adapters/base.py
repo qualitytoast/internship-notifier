@@ -43,6 +43,8 @@ class FetchContext:
     partial:        set with `degraded` when the walk itself was cut short (out of time, short of the total): on a
                     company's first read, the runner then shows what later reads add as "already open", not new
     program_words:  the company's own program names (role_keywords), searched by checkers that read a student slice
+    years:          the years your filters accept in a title (terms and graduation classes), searched by a keyword
+                    sweep (SmartRecruiters `sweep`), which looks for every word a title can pass the role rule with
     source_counts:  jobs per sub-listing the returned jobs don't name (an Eightfold quick query), for liveness.py
     """
 
@@ -53,6 +55,7 @@ class FetchContext:
     degraded: str | None = None
     partial: bool = False
     program_words: tuple = ()
+    years: tuple = ()
     source_counts: dict = field(default_factory=dict)
     _old_streak: dict = field(default_factory=dict, repr=False)
 
@@ -141,6 +144,17 @@ STUDENT_SEARCH_WORDS = ["intern", "interns", "internship", "internships", "co-op
                         "summer analyst", "summer analysts", "summer associate", "summer associates", "externship",
                         "externships", "industrial placement", "industrial placements", "placement year",
                         "working student", "working students", "thrive program", "winternship", "winternships"]
+# The weaker hints a title can pass the role rule with: every role.weak phrase in config/filters.yaml (a test checks).
+# Searched only by a sweep that looks for all roles your filters accept (SmartRecruiters `sweep`).
+WEAK_SEARCH_WORDS = ["campus", "university", "early talent", "emerging talent", "early in career", "fellowship",
+                     "fellowships"]
+
+
+def title_words(words: list[str]) -> re.Pattern:
+    """Any of the searched words at a word start in a title ("intern" also covers Internship; a space or hyphen
+    inside a phrase may be either)."""
+    phrases = (r"[\s\-]?".join(re.escape(t) for t in re.split(r"[\s\-]+", w.strip()) if t) for w in words)
+    return re.compile(r"\b(?:" + "|".join(p for p in phrases if p) + ")", re.I)
 
 
 def need(cond, message: str) -> None:

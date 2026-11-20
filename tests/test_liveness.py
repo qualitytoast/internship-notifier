@@ -827,3 +827,91 @@ def test_the_careers_pages_are_read_daily_and_one_that_refuses_waits_a_week(make
     assert read(page)                  # answers again …
     age(1)
     assert read(page)                  # … and is daily again
+
+
+# `burst: N`, a company setting (Western Digital: its search lists only its newest 100 postings, so 100 or more new
+# ones between two reads means older ones among them may have gone unread)
+
+WD_BURST = {"company": "WD", "burst": 100}
+
+
+def _burst(cfg, db, c, new: int, known=("old",), **kw):
+    jobs = [job("old", "Engineer")] + [job(f"n{i}", f"Engineer {i}") for i in range(new)]
+    return liveness.observe(cfg, db, c, Outcome(company=c, jobs=jobs, **kw), Verdict(True), set(known))
+
+
+def test_a_burst_of_new_postings_alerts_once_a_day_and_only_dismissing_ends_it(make_cfg, memdb, monkeypatch):
+    c = company("wd", checker="smartrecruiters", settings=WD_BURST)
+    cfg = make_cfg([c])
+    monkeypatch.setattr(liveness, "utcnow", lambda: parse_iso("2026-11-21T14:00:00Z"))
+    assert _burst(cfg, memdb, c, 99) == ([], [])
+    problems, recovered = _burst(cfg, memdb, c, 100)
+    assert [(p["kind"], p["summary"]) for p in problems] == [("burst", "100 postings are new since the last read")]
+    assert problems[0]["alert"] == {"id": "live_alert:wd:burst:2026-11-21", "rule": "manual"} and recovered == []
+    assert "when 100 or more are posted between two reads" in problems[0]["detail"]
+    # the same morning again (the run's second look, by which the postings are stored anyway): told already
+    assert _burst(cfg, memdb, c, 150) == ([], [])
+    alerts.record(memdb, problems, [])
+    for _ in range(3):
+        alerts.sweep(cfg, memdb)
+    assert [a["kind"] for a in alerts.live(memdb, "wd")] == ["burst"]          # nothing clears it …
+    alerts.dismiss(memdb, kind="burst")
+    assert [a["state"] for a in alerts.live(memdb, "wd")] == ["dismissed"]
+    # … and another morning's burst is an alert of its own, dismissed or not
+    monkeypatch.setattr(liveness, "utcnow", lambda: parse_iso("2026-11-25T14:00:00Z"))
+    later, _ = _burst(cfg, memdb, c, 120)
+    assert [p["alert"]["id"] for p in later] == ["live_alert:wd:burst:2026-11-25"]
+    assert [p for p in alerts.record(memdb, later, [])[0]] == later
+
+
+def test_a_burst_is_judged_on_any_poll_that_brought_jobs_but_not_a_first_read(make_cfg, memdb):
+    c = company("wd", checker="smartrecruiters", settings=WD_BURST)
+    cfg = make_cfg([c])
+    for n, kw in enumerate(({"degraded": "smartrecruiters:WD: keyword sweep incomplete"}, {"partial": True}, {"mode": "quick"})):
+        memdb.conn.execute("DELETE FROM kv")
+        problems, _ = _burst(cfg, memdb, c, 100, **kw)                          # the other rules skip such a poll
+        assert [p["kind"] for p in problems] == ["burst"], kw
+    memdb.conn.execute("DELETE FROM kv")
+    assert _burst(cfg, memdb, c, 300, known=()) == ([], [])                     # the company's first read: all is new
+    failed = Outcome(company=c, error_kind="error", error="HTTP 503")
+    assert liveness.observe(cfg, memdb, c, failed, Verdict(False), {"old"}) == ([], [])
+    assert memdb.q("SELECT key FROM kv WHERE key LIKE '%burst%'") == []
+
+
+def test_a_company_without_burst_is_untouched(make_cfg, memdb):
+    c = company("acme", checker="greenhouse", settings={"board": "acme"})
+    cfg = make_cfg([c])
+    for kw in ({}, {"degraded": "x"}, {"partial": True}, {"mode": "quick"}):
+        assert _burst(cfg, memdb, c, 150, **kw) == ([], [])
+    assert memdb.q("SELECT key FROM kv WHERE key LIKE '%burst%'") == []
+    # and its other rules read the poll as ever: a board that empties still alerts on its second empty poll
+    g = company("gh", checker="greenhouse", settings=GH2)
+    cfg = make_cfg([g])
+    _observe(cfg, memdb, g, _jobs(10, 3))
+    _observe(cfg, memdb, g, _jobs(10, 0))
+    assert [p["kind"] for p in _observe(cfg, memdb, g, _jobs(10, 0))[0]] == ["board empty"]
+
+
+def test_an_error_in_the_burst_rule_costs_no_other_rule_of_the_poll(make_cfg, tmp_path, monkeypatch, caplog):
+    def broken(*a, **kw):
+        raise RuntimeError("boom")
+    monkeypatch.setattr(liveness, "_burst_rule", broken)
+    c = company("acme", checker="greenhouse", settings={**GH2, "burst": 100})
+    cfg = make_cfg([c])
+    db = DB(tmp_path / "burst.db")
+    assert _observe(cfg, db, c, _jobs(10, 3)) == ([], [])
+    assert _observe(cfg, db, c, _jobs(10, 0)) == ([], [])
+    problems, _ = _observe(cfg, db, c, _jobs(10, 0))                            # the count rules still judge the poll
+    assert [p["kind"] for p in problems] == ["board empty"]
+    assert db.get("board_new:acme:board:main")                                  # … and so does the quiet-board rule
+    assert "the burst rule failed" in caplog.text
+    # in a run: the poll's liveness problems and the rule that follows (moves.observe) are still there
+    from internwatch import moves
+    from internwatch.runner import RunSummary
+    seen = []
+    monkeypatch.setattr(moves, "observe", lambda cfg_, db_, o: seen.append(o.company.key) or [])
+    r, s = Runner(cfg, db=db, checker_fn=FakeChecker({})), RunSummary()
+    jobs = _jobs(10, 0)
+    r._liveness_observe(Outcome(company=c, jobs=jobs), Verdict(True), {j.id for j in jobs}, s)
+    assert seen == ["acme"] and s.processed == {"acme"} and s.healthy == {"acme"}
+    db.close()

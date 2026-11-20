@@ -148,6 +148,27 @@ def test_daily_mode_sends_one_morning_email(make_cfg):
     assert "no new roles" in emails(db, "morning")[-1]["subject"]   # still emailed: silence would hide breakage
 
 
+def test_a_role_a_first_sweep_found_goes_out_once_as_already_open(make_cfg):
+    # SmartRecruiters `sweep` (Western Digital): what only its first keyword sweep found was open before, so its reader
+    # tags it extra["baseline"], as a multi source's first answer is; it then stays in the reads through the watch list
+    cfg = make_cfg([company("wd", name="Western Digital")])
+    old = job("9", "Intern, Firmware Engineering", location="San Jose, CA", extra={"baseline": True})
+    new = job("10", "Software Engineer Intern, Summer 2027", location="Irvine, CA")
+    kept = job("9", "Intern, Firmware Engineering", location="San Jose, CA")          # read from its own page
+    r, db = runner(cfg, {"wd": [BASE, BASE + [old, new], BASE + [kept, new], BASE + [new]]})
+    r.run(DAILY)
+    s = r.run(DAILY)
+    subject = emails(db, "morning")[-1]["subject"]
+    assert "1 new: Western Digital (1)" in subject and "1 already open" in subject and s.new_matches == 1
+    row = db.job("wd", "9")
+    assert row["matched"] and row["baseline"] and row["notified_at"] and row["removed_at"] is None
+    r.run(DAILY)                                           # the next morning: still read, still open, not sent again
+    assert "no new roles" in emails(db, "morning")[-1]["subject"] and "already open" not in emails(db, "morning")[-1]["subject"]
+    assert db.job("wd", "9")["removed_at"] is None and not db.unnotified_matches()
+    r.run(DAILY)                                           # a read without it (it closed): removed like any posting
+    assert db.job("wd", "9")["removed_at"] is not None
+
+
 def test_daily_mode_rechecks_failures_before_alerting(make_cfg):
     cfg = make_cfg([company("acme"), company("beta")])
     err = FetchError("HTTP 503")

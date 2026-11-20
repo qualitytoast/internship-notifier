@@ -256,3 +256,133 @@ def test_multi_twin_ids_counts_a_board_that_only_repeats_another_as_its_own():
                             [("ashby source 2", 0), ("greenhouse source 1", 27)])
     assert boards({**base, "twin_ids": True}) == ([("ashby source 2", 27), ("greenhouse source 1", 27)],
                                                   [("ashby source 2", 27), ("greenhouse source 1", 27)])
+
+
+# SmartRecruiters `sweep` (Western Digital, 2026-11-20: its page lists 162 postings and its search the newest 100 of
+# 324, so older postings were in neither; the search takes a keyword, which reaches them whatever their age)
+
+SR_SEARCH = "https://jobs.smartrecruiters.com/sr-jobs/search"
+SR_PAGE = ('<div class="js-openings-load" data-groups-pages="1" data-more="/WD/api/groups">'
+           '<section class="js-group" data-qty="1"><h3 class="opening-title">Engineering</h3><ul><li class="opening-job">'
+           '<a href="https://jobs.smartrecruiters.com/WD/700001-engineer"><h4 class="job-title">Engineer</h4></a></li>'
+           '</ul></section></div>')
+
+
+def _sr_rows(*rows, total=None):
+    return {"totalFound": len(rows) if total is None else total, "content": [
+        {"id": i, "name": t, "releasedDate": "2026-08-03T10:00:00.000Z",
+         "location": {"city": "San Jose", "region": "CA", "country": "us"}} for i, t in rows]}
+
+
+def _sr_key(**params):
+    return SR_SEARCH + "?" + json.dumps({"company": "WD", "limit": 100, **params}, sort_keys=True)
+
+
+def _sr_site(newest=(), keywords=None, **more):
+    """Western Digital for FakeHttp: a page with one posting, the newest-100 search and the answers of the keyword
+    searches named (any other keyword finds nothing)."""
+    from test_board_fixes import FakeHttp
+    answers = {"https://careers.smartrecruiters.com/WD": SR_PAGE, SR_SEARCH: _sr_rows(), _sr_key(): _sr_rows(*newest)}
+    answers.update({_sr_key(keyword=w): a for w, a in (keywords or {}).items()})
+    return FakeHttp({**answers, **more})
+
+
+def _swept(http):
+    return [json.loads(a.split("?", 1)[1])["keyword"] for a in http.asked if a.startswith(SR_SEARCH) and '"keyword"' in a]
+
+
+def _sweep_words(program=(), years=()):
+    from internwatch.adapters.base import STUDENT_SEARCH_WORDS, UNDERCLASS_SEARCH_WORDS, WEAK_SEARCH_WORDS
+    return list(dict.fromkeys([*STUDENT_SEARCH_WORDS, *UNDERCLASS_SEARCH_WORDS, *WEAK_SEARCH_WORDS, *program,
+                               *map(str, years)]))
+
+
+SWEEP = {"company": "WD", "sweep": True}
+FOUND = {"intern": _sr_rows((700003, "Intern, Firmware Engineering"), (700002, "Staff Engineer")),
+         "2nd year": _sr_rows((700004, "Technician 2, Process")),       # the search matches any one word
+         "ignite": _sr_rows((700005, "Ignite Program: Hardware")), "2027": _sr_rows((700006, "Summer 2027 Analyst"))}
+
+
+def test_smartrecruiters_sweep_runs_once_and_tags_what_only_it_found_as_already_open():
+    http = _sr_site(newest=[(700002, "Staff Engineer")], keywords=FOUND)
+    ctx = FetchContext(known=frozenset({"700001", "700002"}), program_words=("ignite",), years=(2027, 2028))
+    jobs = {j.id: j for j in get_checker("smartrecruiters").fetch(http, SWEEP, ctx)}
+    # every word a title can pass the role rule with, the company's program names and the filters' years
+    assert _swept(http) == _sweep_words(("ignite",), (2027, 2028)) and len(_swept(http)) > 80
+    assert sorted(jobs) == ["700001", "700002", "700003", "700005", "700006"]   # not the technician: no swept word in
+    assert {i for i, j in jobs.items() if j.extra.get("baseline")} == {"700003", "700005", "700006"}   # its title
+    assert jobs["700003"].location == "San Jose, CA, us" and jobs["700003"].posted == "2026-08-03"
+    assert jobs["700002"].posted == "2026-08-03" and ctx.degraded is None and ctx.state["swept"]
+    assert ctx.state["watch_open"] == ["700003", "700005", "700006"]           # read from their own pages from now on
+    # the next read doesn't sweep; the runner hands it watch_open as watch_ids (learn_ids), so they stay read and open
+    wd = "https://jobs.smartrecruiters.com/WD/"
+    http = _sr_site(newest=[(700002, "Staff Engineer")], keywords=FOUND,
+                    **{wd + "700003": _sr_page("Intern, Firmware Engineering"), wd + "700005": _sr_page("Ignite Program"),
+                       wd + "700006": _sr_page("Summer 2027 Analyst", expired=True)})
+    ctx2 = FetchContext(known=frozenset(jobs), state=dict(ctx.state), program_words=("ignite",), years=(2027, 2028))
+    again = get_checker("smartrecruiters").fetch(http, {**SWEEP, "watch_ids": ctx.state["watch_open"]}, ctx2)
+    assert _swept(http) == [] and sorted(j.id for j in again) == ["700001", "700002", "700003", "700005"]
+    assert not any(j.extra.get("baseline") for j in again)
+    assert ctx2.state["watch_open"] == ["700003", "700005"] and ctx2.state["watch_closed"] == ["700006"]
+
+
+def test_smartrecruiters_sweep_that_is_cut_or_fails_is_reported_and_run_again():
+    from internwatch.models import FetchError
+    interns = [(710000 + i, f"Intern {i}") for i in range(100)]
+    http = _sr_site(keywords={"intern": _sr_rows(*interns, total=150)})        # counts 150, lists its newest 100
+    ctx = FetchContext(known=frozenset({"700001"}))
+    jobs = get_checker("smartrecruiters").fetch(http, SWEEP, ctx)
+    n = len(_sweep_words())
+    assert ctx.degraded == (f"smartrecruiters:WD: keyword sweep incomplete (1 of {n} searches): "
+                            "'intern' counts 150 postings and lists 100")
+    assert len(jobs) == 101 and "swept" not in ctx.state and not any(j.extra.get("baseline") for j in jobs)
+    assert len(ctx.state["watch_open"]) == 100
+    http = _sr_site(**{_sr_key(keyword="co-op"): FetchError("HTTP 503 for the search")})
+    ctx = FetchContext(known=frozenset({"700001"}))
+    assert len(get_checker("smartrecruiters").fetch(http, SWEEP, ctx)) == 1 and "swept" not in ctx.state
+    assert "keyword sweep incomplete (1 of" in ctx.degraded and "'co-op': HTTP 503 for the search" in ctx.degraded
+    assert len(_swept(http)) == n                                              # the other words were still searched
+    with pytest.raises(FetchError):                                            # no context: fails
+        get_checker("smartrecruiters").fetch(_sr_site(**{_sr_key(keyword="co-op"): FetchError("HTTP 503")}), SWEEP)
+
+
+def test_smartrecruiters_sweeps_again_when_the_newest_100_are_all_unknown():
+    window = [(720000 + i, f"Engineer {i}") for i in range(100)]
+    state = {"swept": "2026-11-20"}
+
+    def read(newest, known):
+        http = _sr_site(newest=newest, keywords=FOUND)
+        ctx = FetchContext(known=frozenset(known), state=dict(state))
+        return http, ctx, {j.id: j for j in get_checker("smartrecruiters").fetch(http, SWEEP, ctx)}
+    http, ctx, jobs = read(window, {"700001", "600000"})        # 100 or more were posted since the last read
+    assert _swept(http) == _sweep_words() and "700003" in jobs and ctx.degraded is None
+    assert not any(j.extra.get("baseline") for j in jobs.values())             # these are new, not "already open"
+    assert ctx.state["watch_open"] == ["700003"]
+    assert _swept(read(window, {"700001", "720099"})[0]) == []                 # one posting of the 100 was known
+    assert _swept(read(window[:99], {"700001"})[0]) == []                      # the answer isn't full
+    assert _swept(read(window, {"smartrecruiters:720000"})[0]) == []           # a multi source's ids carry its name
+    assert _swept(read(window, set())[0]) == []                                # no posting stored yet: nothing to say
+
+
+def test_smartrecruiters_without_sweep_asks_the_search_once():
+    http = _sr_site(newest=[(700002, "Staff Engineer")], keywords=FOUND)
+    ctx = FetchContext(known=frozenset({"700001"}))
+    jobs = get_checker("smartrecruiters").fetch(http, {"company": "WD"}, ctx)
+    assert [a for a in http.asked if a.startswith(SR_SEARCH)] == [_sr_key()] and sorted(j.id for j in jobs) == ["700001", "700002"]
+    assert ctx.state == {} and ctx.degraded is None
+
+
+def test_sweep_words_cover_every_weak_hint_in_filters_yaml_and_sweep_needs_learn_ids():
+    import re as _re
+    import yaml
+    from conftest import REPO
+    from internwatch.adapters.base import WEAK_SEARCH_WORDS
+    norm = lambda w: _re.sub(r"[\s\-*]+", "", w.lower())                      # noqa: E731
+    weak = yaml.safe_load((REPO / "config" / "filters.yaml").read_text())["role"]["weak"]
+    missing = [w for w in weak if norm(w) not in {norm(x) for x in WEAK_SEARCH_WORDS}]
+    assert not missing, f"add a search word for {missing} to WEAK_SEARCH_WORDS in adapters/base.py"
+    # what only the sweep found is kept read through watch_open, which the runner carries for learn_ids companies
+    for c in yaml.safe_load((REPO / "config" / "companies.yaml").read_text())["companies"]:
+        s = c.get("settings") or {}
+        for one in [s, *((x.get("settings") or {}) for x in s.get("sources") or [])]:
+            assert not one.get("sweep") or one.get("learn_ids"), f"{c['key']}: sweep needs learn_ids"

@@ -20,10 +20,9 @@ settings: {} (all defaults); `keywords` overrides the keyword list.
 from __future__ import annotations
 
 import copy
-import re
 
 from ..adapters.base import (STUDENT_SEARCH_WORDS, UNDERCLASS_SEARCH_WORDS, Checker, check_total_soft, degrade,
-                             html_text, iso_date, join_locations, need, register)
+                             html_text, iso_date, join_locations, need, register, title_words)
 from ..models import Job
 
 API = "https://www.amazon.jobs/api/jobs/search?is_als=true"
@@ -70,12 +69,6 @@ def queries(keywords: list[str]) -> list[tuple[str, dict]]:
         out.append((f"keyword:{kw}", q))
     return out
 
-
-def title_words(words: list[str]) -> re.Pattern:
-    """Any of the searched words at a word start in a title ("intern" also covers Internship; a space or hyphen
-    inside a phrase may be either)."""
-    phrases = (r"[\s\-]?".join(re.escape(t) for t in re.split(r"[\s\-]+", w.strip()) if t) for w in words)
-    return re.compile(r"\b(?:" + "|".join(p for p in phrases if p) + ")", re.I)
 
 @register
 class Amazon(Checker):

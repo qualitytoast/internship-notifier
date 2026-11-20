@@ -9,6 +9,18 @@ settings: company: ServiceNow     (identifier in careers.smartrecruiters.com/<co
                                       2027 co-op posted in September was in neither on 2026-11-15). The runner adds
                                       the ids of SimplifyJobs rows when learn_ids is true. One whose page says it has
                                       expired is closed
+          sweep: true     keyword searches of the same search, for a company whose page and newest-100 search leave
+                          older postings out (Western Digital). Every word a title can pass the role rule with is
+                          searched (base.STUDENT_SEARCH_WORDS, UNDERCLASS_SEARCH_WORDS and WEAK_SEARCH_WORDS, the
+                          company's role_keywords, the years the filters accept), and a hit is kept when its title has
+                          one of them: the search matches any single word ("2nd year" finds "Technician 2"). It runs
+                          on the first read with the setting (`swept` in the saved state), whose finds go out once as
+                          "already open", and again on a read whose newest 100 are all unknown: 100 or more were
+                          posted since the last read (liveness's `burst` alert, the company setting `burst: 100`).
+                          What only the sweep found joins watch_open, so it is read from its own page from then on
+                          (learn_ids carries watch_open between runs, so sweep needs it). A keyword search that
+                          fails, or counts more postings than it lists, marks the poll degraded and leaves `swept`
+                          unset: the sweep is run again on the next read
 1. GET https://careers.smartrecruiters.com/<company>  → first group page (HTML): section.js-group[data-qty] with up
    to 9 li.opening-job each, and div.js-openings-load[data-groups-pages][data-more]
 2. GET <data-more>?page=N for the other group pages (HTML fragments, 6 groups each)
@@ -35,11 +47,14 @@ import re
 
 from bs4 import BeautifulSoup
 
+from ..db import iso, utcnow
 from ..models import CheckerError, Job
-from .base import Checker, degrade, html_text, iso_date, join_locations, need, need_soft, register
+from .base import (STUDENT_SEARCH_WORDS, UNDERCLASS_SEARCH_WORDS, WEAK_SEARCH_WORDS, Checker, degrade, html_text,
+                   iso_date, join_locations, need, need_soft, register, title_words)
 
 HOSTED = "https://careers.smartrecruiters.com"
 SEARCH = "https://jobs.smartrecruiters.com/sr-jobs/search"
+WINDOW = 100  # the most postings one search answer lists: its newest
 ID_RE = re.compile(r"/(\d{6,})-")
 EXPIRED = re.compile(r"this job has expired|no longer (?:available|accepting)", re.I)
 FLAT_PAGES = 400  # a flat list's "more" pages are never followed past this many (24 postings each)
@@ -136,7 +151,7 @@ class SmartRecruiters(Checker):
             flat = soup.select_one("ul.js-openings-load[data-more]")
         if flat is not None:  # one flat list, not groups (see the module docstring)
             qty = 0
-            found, newest = self._search(http, company, out)
+            found, newest, rows = self._search(http, company, out)
             listing = self._flat(http, soup, flat["data-more"], problems)
             lost = [i for i in newest if i not in listing]
             if len(lost) > 2 + 0.03 * len(newest):
@@ -153,7 +168,8 @@ class SmartRecruiters(Checker):
                 if not g:  # its groups' data-qty is missing from `qty` too, so the count check below can't see the loss
                     problems.append(f"group page {page} has no groups")
                 groups, qty = groups + g, qty + q
-            found, _ = self._search(http, company, out)
+            found, newest, rows = self._search(http, company, out)
+        swept = self._sweep(http, company, ctx, out, newest, rows, problems) if s.get("sweep") else []
         listed = set(out)
         if isinstance(found, int) and not s.get("ignore_search_total") and len(out) < found * 0.95:
             problems.append(f"collected {len(out)} postings but the search reports {found}")
@@ -166,7 +182,42 @@ class SmartRecruiters(Checker):
             degrade(ctx, f"{where}: " + "; ".join(problems))
         if s.get("watch_ids"):
             out.update((j.id, j) for j in self._watched(http, s, ctx, listed))
+        if swept and ctx is not None:  # no list reaches them: read from their own pages from the next read on
+            ctx.state["watch_open"] = list(dict.fromkeys([*(ctx.state.get("watch_open") or []), *swept]))
         return list(out.values())
+
+    def _sweep(self, http, company: str, ctx, out: dict, newest: list[str], rows: int, problems: list) -> list[str]:
+        """`sweep` (see the module docstring): the keyword searches, when this is the first read with the setting or
+        the newest-100 answer holds no posting known before. Returns the ids only the sweep found, added to `out`."""
+        state = ctx.state if ctx is not None else {}
+        known = {k.rsplit(":", 1)[-1] for k in ctx.known} if ctx is not None else set()  # a multi source's ids: prefixed
+        first = not state.get("swept")
+        burst = bool(known) and rows >= WINDOW and not known.intersection(newest)
+        if not (first or burst):
+            return []
+        words = list(dict.fromkeys([*STUDENT_SEARCH_WORDS, *UNDERCLASS_SEARCH_WORDS, *WEAK_SEARCH_WORDS,
+                                    *(ctx.program_words if ctx is not None else ()),
+                                    *(str(y) for y in (ctx.years if ctx is not None else ()))]))
+        keep, before, bad = title_words(words), set(out), []
+        for w in words:
+            try:
+                found, _, listed = self._search(http, company, out, keyword=w, keep=keep)
+            except CheckerError as e:
+                if ctx is None:
+                    raise
+                bad.append(f"'{w}': {e}")
+                continue
+            if isinstance(found, int) and found > listed:
+                bad.append(f"'{w}' counts {found} postings and lists {listed}")
+        only = [i for i in out if i not in before]
+        if bad:  # not the whole sweep: reported, no removals recorded, and run again on the next read
+            problems.append(f"keyword sweep incomplete ({len(bad)} of {len(words)} searches): " + "; ".join(bad[:3]))
+            return only
+        if first:  # open before this read could see them: shown once as "already open", not as new (runner._process)
+            for i in only:
+                out[i].extra["baseline"] = True
+        state["swept"] = iso(utcnow())[:10]
+        return only
 
     def _watched(self, http, s, ctx, listed: set[str]) -> list[Job]:
         """watch_ids: each posting the page and search left out, read from its own page. Open: it has a title and no
@@ -212,14 +263,22 @@ class SmartRecruiters(Checker):
         problems.append(f"the list did not end within {FLAT_PAGES} pages")
         return out
 
-    def _search(self, http, company: str, out: dict) -> tuple[int | None, list[str]]:
-        """The search's newest 100 postings added to `out`. Returns (its totalFound, the ids it listed)."""
-        d = http.get_json(SEARCH, params={"limit": 100, "company": company})
+    def _search(self, http, company: str, out: dict, keyword: str | None = None,
+                keep: re.Pattern | None = None) -> tuple[int | None, list[str], int]:
+        """The search's newest 100 postings added to `out`. With `keyword` (a sweep): the newest 100 of that keyword,
+        only those whose title has one of the swept words (`keep`), and nothing already in `out` is touched.
+        Returns (its totalFound, the ids taken from it, the rows it listed)."""
+        params = {"limit": WINDOW, "company": company}
+        if keyword:
+            params["keyword"] = keyword
+        d = http.get_json(SEARCH, params=params)
         need(isinstance(d, dict) and isinstance(d.get("content"), list), f"smartrecruiters:{company}: bad search JSON")
         ids: list[str] = []
         for it in d["content"]:
             jid = str(it.get("id") or "")
             if not jid:
+                continue
+            if keyword and (jid in out or (keep is not None and not keep.search(" ".join((it.get("name") or "").split())))):
                 continue
             ids.append(jid)
             loc = it.get("location") or {}
@@ -232,7 +291,7 @@ class SmartRecruiters(Checker):
                 out[jid] = Job(id=jid, title=" ".join((it.get("name") or "").split()), location=where,
                                url=it.get("applyUrl") or f"https://jobs.smartrecruiters.com/{company}/{jid}",
                                posted=iso_date(it.get("releasedDate")))
-        return d.get("totalFound"), ids
+        return d.get("totalFound"), ids, len(d["content"])
 
     def detail(self, http, s, job):
         return self._from_page(BeautifulSoup(http.get_text(job.url), "lxml"), job)
