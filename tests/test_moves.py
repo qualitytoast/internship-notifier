@@ -498,6 +498,19 @@ def test_pages_in_chrome_pages_are_read_through_chrome_by_the_page_and_program_c
                                                              guarded: ["https://www.acme.example.com/"]}
 
 
+def test_a_job_list_in_chrome_pages_is_read_through_chrome(blocked_cfg, memdb):
+    """liveness.chrome_pages: a job list named there (Akuna's job file) is read with browser=True and no headers, the
+    others exactly as before; what it lists is kept as from any job list."""
+    a, b = company("acme"), company("beta")
+    guarded, plain = "https://acme.example.com/jobs.json", "https://beta.example.com/sitemap.xml"
+    cfg = blocked_cfg([a, b], job_lists={"acme": {"url": guarded}, "beta": {"url": plain}}, chrome_pages=[guarded])
+    http = AskedHttp({guarded: '[{"id": 8021124, "title": "Talent Community"}]', plain: sitemap()})
+    assert moves.check_job_lists(ctx(cfg, memdb, http)) == []
+    assert http.asked == {guarded: {"headers": None, "browser": True},
+                          plain: {"headers": {"Accept": "application/json,application/xml,*/*"}}}
+    assert json.loads(memdb.get("blocked:joblist:acme")) == ["8021124"]
+
+
 def test_every_chrome_page_in_the_settings_is_a_page_a_check_reads():
     """A listed page that no check reads (a typo, or a careers page the config no longer names) would read nothing."""
     from internwatch.config import load
@@ -505,6 +518,7 @@ def test_every_chrome_page_in_the_settings_is_a_page_a_check_reads():
     listed = cfg.settings.get("liveness", "chrome_pages", default=[]) or []
     read = {c.careers_url[0] for c in cfg.active if c.careers_url}
     read |= {u for v in (cfg.settings.get("liveness", "program_pages") or {}).values() for u in v}
+    read |= {v["url"] for v in (cfg.settings.get("liveness", "job_lists") or {}).values()}
     assert len(listed) == len(set(listed)) and not set(listed) - read
 
 

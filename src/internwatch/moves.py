@@ -813,8 +813,10 @@ def check_job_lists(ctx: Ctx) -> list[dict]:
     """J. Daily: the job list a company publishes itself (a sitemap of job pages, Akuna's job file), compared with every
     job InternWatch ever stored for it: by the id in the URL, or by title where the list uses its own ids
     (PayPal's Eightfold copy of Workday). The first read is a silent baseline; a job added since that InternWatch
-    doesn't have is noted, and confirm() reports it if a healthy poll on a later run still lacks it."""
+    doesn't have is noted, and confirm() reports it if a healthy poll on a later run still lacks it. A list in
+    liveness.chrome_pages is read through Chrome (Akuna's job file: its site refuses scripts since 2026-10-28)."""
     lists = per_company(ctx.cfg, "job_lists")
+    chrome = liveness.chrome_pages(ctx.cfg)
     problems: list[dict] = []
     http = ctx.http()
     try:
@@ -827,7 +829,7 @@ def check_job_lists(ctx: Ctx) -> list[dict]:
                     return problems
                 c, conf = ctx.comps[key], lists[key]
                 try:
-                    jobs = job_list(http.get_text(conf["url"], headers={"Accept": "application/json,application/xml,*/*"}))
+                    jobs = job_list(liveness.get_page(http, conf["url"], chrome, "application/json,application/xml,*/*"))
                 except Exception as e:  # noqa: BLE001 — refused: tomorrow
                     if out_of_budget(e):
                         return problems

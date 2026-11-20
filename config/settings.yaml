@@ -59,16 +59,24 @@ liveness:                        # boards that go dead, get abandoned or are rep
             adp, netapp]
   # Pages whose site refuses scripts (HTTP 403, or a script read that times out) but lets Chrome through: read with
   # Http.request(browser=True), as Citadel's sitemaps (CLAUDE.md), wherever they are read: the careers-page scan
-  # above, the blocked companies' page check (moves.py P) and their program-page lists (N). Every other page is read
+  # above, the blocked companies' page check (moves.py P), their program-page lists (N) and job lists (J). Every other page is read
   # by script. Tested once on 2026-11-19 (one Chrome read each, robots.txt first): these 69 answered with the page
   # itself in about 2.7 s (13 at most); the user chose both the original and the added companies' pages. Not listed:
   # refused even by Chrome (AllTrails, Dropbox, Fidelity, General Motors, Nutanix, Pinterest, SeatGeek, ServiceNow,
   # Uber, Zocdoc), closed by robots.txt (Fortinet, Goldman's campus page, SAS, ZipRecruiter), and Analog Devices,
   # whose robots.txt a script can't reach (it is read before Chrome). By URL, not a `browser` host group: most of
   # these hosts also serve script reads that work (Akamai's and Rocket's feeds, ADP's job sitemap, several sitemaps).
+  # Added on 2026-11-20, tested the same way: Akuna's page sitemap and job file (refused since 2026-10-28, raising
+  # three "check gone dark" alerts) and the page sitemaps of CTC, GTS, Liberty Mutual and Tower, refused from the start.
   chrome_pages:
-    # the original companies: 28
+    # the original companies: 28 pages, and 6 program-page or job lists
     - https://akunacapital.com/careers
+    - https://akunacapital.com/page-sitemap.xml
+    - https://akunacapital.com/wp-content/uploads/akuna_jobs.json
+    - https://www.chicagotrading.com/page-sitemap.xml
+    - https://gtsx.com/page-sitemap.xml
+    - https://jobs.libertymutualgroup.com/page-sitemap.xml
+    - https://tower-research.com/page-sitemap.xml
     - https://careers.amfam.com/
     - https://careers.expediagroup.com/jobs/
     - https://careers.linkedin.com/

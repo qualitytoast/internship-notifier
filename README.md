@@ -92,8 +92,8 @@ Rules for changing things: CLAUDE.md.
     posting links, isn't new, and every system a page ever named is remembered, so a page that flips back and forth
     alerts once. A read that fails (5xx, timeout, a missing page) is read again first thing the next morning, every
     morning. A page the site refuses (a bot check, HTTP 400, 401, 403, 406 or 429) gets one retry, then waits a week
-    until it answers; a robots.txt block just waits. A page in `liveness.chrome_pages` (69 pages, the checks below
-    included, whose site refuses scripts but not Chrome: tested 2026-11-19) is read through Chrome instead
+    until it answers; a robots.txt block just waits. A page in `liveness.chrome_pages` (75 pages, the checks below
+    included, whose site refuses scripts but not Chrome: tested 2026-11-19 and 2026-11-20) is read through Chrome instead
     (`browser=True`, Internals). The first look is a silent baseline. About 193
     of 396 pages name a job system in their HTML; the rest are built in the browser or block scripts. The 66 companies
     whose page refuses scripts (`liveness.blocked`) are left out: the checks below watch them instead. Resolved when
@@ -131,14 +131,15 @@ Rules for changing things: CLAUDE.md.
     SeatGeek, ServiceNow, Uber, Zocdoc) or are closed by robots.txt (Fortinet, Goldman, SAS, ZipRecruiter).
   - P/J/A/Getro `posting elsewhere?`: a job id on one of their pages (CTC's job lists, Tower's internships page), on
     their own job list (the sitemaps of Dropbox, Pinterest, Fidelity, GM, Nutanix, ServiceNow, Uber, American
-    Family and PayPal's Eightfold copy; Akuna's job file), in archive.org's copies or in Getro's copy, that
+    Family and PayPal's Eightfold copy; Akuna's job file, through Chrome), in archive.org's copies or in Getro's copy, that
     InternWatch has never stored and that a healthy poll on a later run still doesn't have. Resolved when InternWatch
     stores it or it leaves the place it was seen.
   - A: archive.org's copies of the pages of Coinbase, DoorDash, HRT, Meta, OpenAI, UKG, Whatnot and others (new
     student pages, systems named). Copies older than 45 days, bot-check copies and pages the original site's
     robots.txt disallows are skipped. Most companies' copies come in bursts, so this one is slow.
   - N `new page`: a new student or program page in their sitemaps or WordPress page lists, or a new program in
-    Goldman's programs feed (ADP's adp.com sitemap through Chrome). Only dismissing ends it: nothing can tell when
+    Goldman's programs feed (ADP's adp.com sitemap and the page sitemaps of Akuna, CTC, GTS, Liberty Mutual and Tower
+    through Chrome). Only dismissing ends it: nothing can tell when
     you have looked.
   - G `new label`: a new experience or source type in Goldman's job API; a new student team label in Meta's own
     poll (no request). Only dismissing ends it.
@@ -339,8 +340,8 @@ Rules for changing things: CLAUDE.md.
     - Measured on 2026-11-17: 2,163 job-list POSTs through Chrome at 3, 5 and 10 a second across 12 sites, all 200,
       none challenged; 19 of 20 sent again through httpx byte-identical (the 20th: the list changed in between).
   - `ssl_context()` = certifi plus the bundled intermediates in certs/.
-  - `browser=True` (Citadel's sitemaps, and the 69 pages in `liveness.chrome_pages`, read through it by the page scan
-    and moves.py's P and N via `liveness.get_page`; listed by URL because most of their hosts also serve script reads
+  - `browser=True` (Citadel's sitemaps, and the 75 pages in `liveness.chrome_pages`, read through it by the page scan
+    and moves.py's P, N and J via `liveness.get_page`; listed by URL because most of their hosts also serve script reads
     that work): the GET is made by the real Google Chrome (browser.py), for a site whose
     guard refuses scripts but lets Chrome straight through. A normal window, minimized at once (Chrome's
     hidden mode names itself HeadlessChrome and is challenged); a fresh profile each time, one Chrome at a time.
