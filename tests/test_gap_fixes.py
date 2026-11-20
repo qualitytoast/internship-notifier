@@ -7,7 +7,7 @@ import pytest
 
 from conftest import FakeChecker, company, job
 from internwatch.adapters.base import FetchContext
-from internwatch.checkers.multi import Multi
+from internwatch.checkers.multi import Multi, _source_ids as multi_source_ids
 from internwatch.db import DB, iso, utcnow
 from internwatch.filters import evaluate
 from internwatch.models import FetchError, Job
@@ -155,6 +155,22 @@ def test_state_saved_by_position_is_migrated(monkeypatch):
     jobs, ctx = _multi(monkeypatch, [a, b], {"ok_sources": [0, 1]})
     assert not any(j.extra.get("baseline") for j in jobs)
     assert "ok_sources" not in ctx.state and len(ctx.state["ok_source_ids"]) == 2
+
+
+def test_a_learn_ids_source_keeps_its_name_when_it_learns_new_ids(monkeypatch):
+    """The runner adds the ids a learn_ids source learns to its watch_ids before each check (Texas Instruments): the
+    source is still the one that answered before, so a posting new that morning is new, not "already open". A
+    source without learn_ids is still named by every setting, watch_ids included, as before."""
+    edbz = _Src([job("1", "A")], kind="oracle", settings={"host": "edbz", "learn_ids": True, "watch_ids": ["10"]})
+    ebgj = _Src([job("2", "B")], kind="oracle", settings={"host": "ebgj"})
+    _, ctx = _multi(monkeypatch, [edbz, ebgj])
+    edbz.settings = {**edbz.settings, "watch_ids": ["10", "11"]}  # learned overnight
+    edbz.jobs.append(job("3", "New Intern"))
+    jobs, ctx2 = _multi(monkeypatch, [edbz, ebgj], ctx.state)
+    assert not any(j.extra.get("baseline") for j in jobs) and ctx2.state["ok_source_ids"] == ctx.state["ok_source_ids"]
+    fixed = _Src(settings={"host": "x", "watch_ids": ["10"]}, kind="oracle")
+    other = _Src(settings={"host": "x", "watch_ids": ["11"]}, kind="oracle")
+    assert len(set(multi_source_ids([(0, fixed, fixed.settings), (1, other, other.settings)]))) == 2
 
 
 

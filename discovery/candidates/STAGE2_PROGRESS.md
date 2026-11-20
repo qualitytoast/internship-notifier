@@ -850,3 +850,30 @@ ADP, Best Buy, Costco, NetApp, Paramount, Qorvo, Sandisk; Bank of America and Mo
       The recording's answers for these pages are its script answers, so a replay can't show Chrome's: the tests and
       the Nov 19 probe do. The next real morning is the live check (16 page-scan pages, 52 P pages and ADP's sitemap
       read through Chrome as each comes due; no first look alerts).
+
+## 2026-11-20: the morning check of run 37 (the first with the Chrome pages), and Texas Instruments' source name
+
+- Run 37 (07:37 to 08:31 local, 54.0 min: the original companies 38.0, the added round 16.0): 433 checks (432
+  companies, NVIDIA twice), 0 failed, 84 new matches, 6 already open. No Chrome or profile left; the morning email
+  95 KB.
+  - The 16 extra minutes: NVIDIA's Eightfold walk (289 requests at 3 s) came back short (2,377 of about 2,617:
+    `shape`, part of the feed failing) and its retry, 14.4 min later in the run, read it whole. Once before (Nov 6,
+    2,630 of 2,801). Its interns are read in full every poll by their own query (228), so no role was missed; one
+    blip doesn't alert.
+  - Chrome pages: the 19 that came due today answered, none refused (careers pages of Altruist, DriveWealth,
+    Hyperproof, Locus Robotics, Nasuni, Precisely, Washington Post, Paramount; P pages of CTC, GTS, Liberty Mutual,
+    YugabyteDB, d-Matrix, Xcimer, Progressive, Persona, Cox, NetApp, ADP) and ADP's adp.com sitemap (4,574 pages).
+    First looks silent. The other 49 wait out last week's refusals and come due by Nov 26.
+  - Alerts: Wells Fargo 5 `new page` (job pages in its sitemap: the kind the user keeps), Ford `possible miss`:
+    SimplifyJobs titles Ford's "Vehicle Access System Engineering - Early Career Program, Advanced EV" (a 6-month
+    Early Career Program, its own words) as an intern role; the filters rejected it as a new-grad program. The user
+    then accepted Ford's Early Career Program postings (6c17784: 6-month roles for current students), and read
+    Akuna's job file and the page sitemaps of Akuna, CTC, GTS, Liberty Mutual and Tower through Chrome (7500b5b).
+- Found: Texas Instruments' 6 "already open" roles were posted on Nov 19: new roles labeled as old. multi.py names a
+  source by a hash of its settings, and the runner adds the ids a learn_ids source learns to its watch_ids before
+  every check, so TI's edbz source (the only multi source with learn_ids, set in batch 5) got a new name each time it
+  learned an id (Nov 16, 17, 19, 20): each such morning was its "first answer". Since go-live every new TI role (2 on
+  Nov 17, 2 on Nov 18, 6 on Nov 20) went out under "already open" instead of "new", none lost; and its board health
+  (`board empty`, `board drop`) never kept a baseline.
+- Fix: a learn_ids source is named without its watch_ids (multi._source_ids). No other source's name changes. TI's
+  source gets its lasting name on the next morning, which is its first answer one last time.

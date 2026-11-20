@@ -44,10 +44,15 @@ def _bare_title(title: str) -> str:
 
 def _source_ids(sources) -> list[str]:
     """Each source's name in the saved state: its checker and settings, so inserting or reordering sources in
-    companies.yaml can't make one source look like another (identical sources get #2, #3…)."""
+    companies.yaml can't make one source look like another (identical sources get #2, #3…). A source with learn_ids
+    is named without its watch_ids: the runner adds the ids it learns to them before every check
+    (Runner._with_learned_ids), and a new name each time one was learned made that morning the source's first answer,
+    so its new postings went out as "already open" and its board health never kept a baseline (Texas Instruments'
+    Oracle site edbz, 2026-11-16 to 20)."""
     out, seen = [], {}
     for _, checker, st in sources:
-        sid = f"{checker.type}:{hashlib.sha1(json.dumps(st, sort_keys=True, default=str).encode()).hexdigest()[:10]}"
+        named = {k: v for k, v in st.items() if k != "watch_ids"} if st.get("learn_ids") else st
+        sid = f"{checker.type}:{hashlib.sha1(json.dumps(named, sort_keys=True, default=str).encode()).hexdigest()[:10]}"
         seen[sid] = seen.get(sid, 0) + 1
         out.append(sid if seen[sid] == 1 else f"{sid}#{seen[sid]}")
     return out
