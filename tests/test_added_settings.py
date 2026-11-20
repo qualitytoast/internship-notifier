@@ -326,6 +326,18 @@ def test_smartrecruiters_sweep_runs_once_and_tags_what_only_it_found_as_already_
     assert ctx2.state["watch_open"] == ["700003", "700005"] and ctx2.state["watch_closed"] == ["700006"]
 
 
+def test_smartrecruiters_sweep_leaves_a_watched_posting_to_the_watch_list():
+    # Western Digital's Winter 2027 co-op (Simplify links it, learn_ids) is read from its own page every morning; the
+    # sweep finds it too, and must not swap its page's values for the search's that morning
+    wd = "https://jobs.smartrecruiters.com/WD/"
+    http = _sr_site(keywords=FOUND, **{wd + "700003": _sr_page("Intern, Firmware Engineering")})
+    ctx = FetchContext(known=frozenset({"700001", "700003"}), state={"watch_open": ["700003"]})
+    jobs = {j.id: j for j in get_checker("smartrecruiters").fetch(http, {**SWEEP, "watch_ids": ["700003"]}, ctx)}
+    assert len(_swept(http)) == len(_sweep_words()) and wd + "700003" in http.asked
+    assert jobs["700003"].location == "Rochester, Minnesota, United States" and jobs["700003"].extra == {"unlisted": True}
+    assert ctx.state["watch_open"] == ["700003"] and ctx.state["swept"] and ctx.degraded is None
+
+
 def test_smartrecruiters_sweep_that_is_cut_or_fails_is_reported_and_run_again():
     from internwatch.models import FetchError
     interns = [(710000 + i, f"Intern {i}") for i in range(100)]

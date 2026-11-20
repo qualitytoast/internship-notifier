@@ -18,7 +18,8 @@ settings: company: ServiceNow     (identifier in careers.smartrecruiters.com/<co
                           "already open", and again on a read whose newest 100 are all unknown: 100 or more were
                           posted since the last read (liveness's `burst` alert, the company setting `burst: 100`).
                           What only the sweep found joins watch_open, so it is read from its own page from then on
-                          (learn_ids carries watch_open between runs, so sweep needs it). A keyword search that
+                          (learn_ids carries watch_open between runs, so sweep needs it); a posting the watch list
+                          already reads is left to it, with the values its own page gives. A keyword search that
                           fails, or counts more postings than it lists, marks the poll degraded and leaves `swept`
                           unset: the sweep is run again on the next read
 1. GET https://careers.smartrecruiters.com/<company>  → first group page (HTML): section.js-group[data-qty] with up
@@ -169,7 +170,7 @@ class SmartRecruiters(Checker):
                     problems.append(f"group page {page} has no groups")
                 groups, qty = groups + g, qty + q
             found, newest, rows = self._search(http, company, out)
-        swept = self._sweep(http, company, ctx, out, newest, rows, problems) if s.get("sweep") else []
+        swept = self._sweep(http, s, ctx, out, newest, rows, problems) if s.get("sweep") else []
         listed = set(out)
         if isinstance(found, int) and not s.get("ignore_search_total") and len(out) < found * 0.95:
             problems.append(f"collected {len(out)} postings but the search reports {found}")
@@ -186,9 +187,11 @@ class SmartRecruiters(Checker):
             ctx.state["watch_open"] = list(dict.fromkeys([*(ctx.state.get("watch_open") or []), *swept]))
         return list(out.values())
 
-    def _sweep(self, http, company: str, ctx, out: dict, newest: list[str], rows: int, problems: list) -> list[str]:
+    def _sweep(self, http, s: dict, ctx, out: dict, newest: list[str], rows: int, problems: list) -> list[str]:
         """`sweep` (see the module docstring): the keyword searches, when this is the first read with the setting or
-        the newest-100 answer holds no posting known before. Returns the ids only the sweep found, added to `out`."""
+        the newest-100 answer holds no posting known before. Returns the ids only the sweep found, added to `out`.
+        A posting the watch list reads (watch_ids) is left to it: it keeps the values its own page gives."""
+        company, watched = s["company"], {str(x) for x in s.get("watch_ids") or []}
         state = ctx.state if ctx is not None else {}
         known = {k.rsplit(":", 1)[-1] for k in ctx.known} if ctx is not None else set()  # a multi source's ids: prefixed
         first = not state.get("swept")
@@ -201,7 +204,7 @@ class SmartRecruiters(Checker):
         keep, before, bad = title_words(words), set(out), []
         for w in words:
             try:
-                found, _, listed = self._search(http, company, out, keyword=w, keep=keep)
+                found, _, listed = self._search(http, company, out, keyword=w, keep=keep, skip=watched)
             except CheckerError as e:
                 if ctx is None:
                     raise
@@ -263,11 +266,11 @@ class SmartRecruiters(Checker):
         problems.append(f"the list did not end within {FLAT_PAGES} pages")
         return out
 
-    def _search(self, http, company: str, out: dict, keyword: str | None = None,
-                keep: re.Pattern | None = None) -> tuple[int | None, list[str], int]:
+    def _search(self, http, company: str, out: dict, keyword: str | None = None, keep: re.Pattern | None = None,
+                skip=frozenset()) -> tuple[int | None, list[str], int]:
         """The search's newest 100 postings added to `out`. With `keyword` (a sweep): the newest 100 of that keyword,
-        only those whose title has one of the swept words (`keep`), and nothing already in `out` is touched.
-        Returns (its totalFound, the ids taken from it, the rows it listed)."""
+        only those whose title has one of the swept words (`keep`); nothing already in `out` is touched and the ids
+        in `skip` are left out. Returns (its totalFound, the ids taken from it, the rows it listed)."""
         params = {"limit": WINDOW, "company": company}
         if keyword:
             params["keyword"] = keyword
@@ -278,7 +281,8 @@ class SmartRecruiters(Checker):
             jid = str(it.get("id") or "")
             if not jid:
                 continue
-            if keyword and (jid in out or (keep is not None and not keep.search(" ".join((it.get("name") or "").split())))):
+            if keyword and (jid in out or jid in skip
+                            or (keep is not None and not keep.search(" ".join((it.get("name") or "").split())))):
                 continue
             ids.append(jid)
             loc = it.get("location") or {}

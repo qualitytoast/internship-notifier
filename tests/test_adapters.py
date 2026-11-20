@@ -9,11 +9,16 @@ import pytest
 
 from internwatch.adapters import get_checker
 from internwatch.adapters.base import FetchContext, dedupe
+from internwatch.filters import load_rules
 from internwatch.http import Cassette, Http
 
 from conftest import REPO
 
 CASSETTES = sorted((REPO / "tests" / "fixtures" / "cassettes").glob("*.json.gz"))
+RULES = load_rules(str(REPO / "config" / "filters.yaml"))
+# The years a recording's reader was given (runner.run_checker): a SmartRecruiters `sweep` searches them too, so a
+# replay without them could keep fewer postings than the recording counted. No other reader uses them.
+YEARS = tuple(sorted(RULES.include_years | RULES.class_years))
 
 
 @pytest.mark.parametrize("path", CASSETTES, ids=[p.name.split(".")[0] for p in CASSETTES])
@@ -22,7 +27,7 @@ def test_replay_matches_recording(path: Path):
     meta = cas.meta
     checker = get_checker(meta["checker"])
     http = Http(replay=cas)
-    jobs = dedupe(checker.fetch(http, meta["settings"] or {}, FetchContext()))
+    jobs = dedupe(checker.fetch(http, meta["settings"] or {}, FetchContext(years=YEARS)))
     assert len(jobs) == meta["count"]
     ids = {j.id for j in jobs}
     assert set(meta.get("ids_sample", [])) <= ids
