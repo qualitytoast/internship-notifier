@@ -4077,6 +4077,7 @@ companies:
   careers_url: ['https://www.careers.ford.com/en']
   checker: oracle
   settings: {host: efds.fa.em5.oraclecloud.com, site: CX_1}
+  role_keywords: [early career program]
   verified: {page_total: 867}
   round: added
 - key: bny

@@ -114,6 +114,9 @@ PROGRAM_KEYWORDS: dict[str, list[str]] = {
     "verizon": ["sprinternship"],
     "citi": ["d1 athlete development program"],
     "jpmorgan-chase": ["fellowship program"],
+    # Ford's "<role> - Early Career Program, Advanced EV" postings are 6-month roles for current BS/MS students
+    # (checked 2026-11-20), not the new-grad programs the phrase means elsewhere (filters.yaml new_grad)
+    "ford": ["early career program"],
 }
 
 # Hand-tuned settings on top of discovery (each comes from a discovery note).
