@@ -519,6 +519,7 @@ def test_every_chrome_page_in_the_settings_is_a_page_a_check_reads():
     read = {c.careers_url[0] for c in cfg.active if c.careers_url}
     read |= {u for v in (cfg.settings.get("liveness", "program_pages") or {}).values() for u in v}
     read |= {v["url"] for v in (cfg.settings.get("liveness", "job_lists") or {}).values()}
+    read |= {u for v in (cfg.settings.get("liveness", "id_pages") or {}).values() for u in v}
     assert len(listed) == len(set(listed)) and not set(listed) - read
 
 

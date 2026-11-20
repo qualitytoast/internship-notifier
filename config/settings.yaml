@@ -62,15 +62,21 @@ liveness:                        # boards that go dead, get abandoned or are rep
   # above, the blocked companies' page check (moves.py P), their program-page lists (N) and job lists (J). Every other page is read
   # by script. Tested once on 2026-11-19 (one Chrome read each, robots.txt first): these 69 answered with the page
   # itself in about 2.7 s (13 at most); the user chose both the original and the added companies' pages. Not listed:
-  # refused even by Chrome (AllTrails, Dropbox, Fidelity, General Motors, Nutanix, Pinterest, SeatGeek, ServiceNow,
+  # refused even by Chrome (AllTrails, Dropbox, Fidelity, General Motors, Nutanix, Pinterest, ServiceNow,
   # Uber, Zocdoc), closed by robots.txt (Fortinet, Goldman's campus page, SAS, ZipRecruiter), and Analog Devices,
   # whose robots.txt a script can't reach (it is read before Chrome). By URL, not a `browser` host group: most of
   # these hosts also serve script reads that work (Akamai's and Rocket's feeds, ADP's job sitemap, several sitemaps).
   # Added on 2026-11-20, tested the same way: Akuna's page sitemap and job file (refused since 2026-10-28, raising
-  # three "check gone dark" alerts) and the page sitemaps of CTC, GTS, Liberty Mutual and Tower, refused from the start.
+  # three "check gone dark" alerts) and the page sitemaps of CTC, GTS, Liberty Mutual and Tower, refused from the start;
+  # then Citadel's and Citadel Securities' page sitemaps, Tower's internships page (refused since 2026-11-13 or before)
+  # and SeatGeek's careers page (refused by Chrome on 2026-11-19, read through it on 2026-11-20).
   chrome_pages:
-    # the original companies: 28 pages, and 6 program-page or job lists
+    # the original companies: 29 careers pages, and 9 program-page lists, job lists or pages linking postings
     - https://akunacapital.com/careers
+    - https://seatgeek.com/jobs
+    - https://www.citadel.com/sitemap/page.xml
+    - https://www.citadelsecurities.com/sitemap/page.xml
+    - https://tower-research.com/internships/
     - https://akunacapital.com/page-sitemap.xml
     - https://akunacapital.com/wp-content/uploads/akuna_jobs.json
     - https://www.chicagotrading.com/page-sitemap.xml
