@@ -877,3 +877,75 @@ ADP, Best Buy, Costco, NetApp, Paramount, Qorvo, Sandisk; Bank of America and Mo
   (`board empty`, `board drop`) never kept a baseline.
 - Fix: a learn_ids source is named without its watch_ids (multi._source_ids). No other source's name changes. TI's
   source gets its lasting name on the next morning, which is its first answer one last time.
+
+## 2026-11-20: Arista's flat page, Western Digital's keyword sweep and the `burst` alert (branch smartrecruiters-flat-sweep)
+
+An audit of what the readers can miss (the user's question, Nov 20) found two SmartRecruiters companies read in part
+with no alert, and IBM's list standing still. Measured with read-only probes through the project's own client.
+
+- **IBM: no change (the user's call).** Its search index stood still on Nov 17 to 20 (3,550 jobs, 0 added, 0 removed
+  on four mornings) and refreshed that afternoon: the reader's own request answers 5,776 (the page: 5,771), 2,764 of
+  them never stored, 6 matching, which the next morning run brings. Nothing alerts for a list that stops changing
+  (`board quiet` waits 45 days); an alert for it was offered and declined for now.
+- **Arista Networks.** Its hosted page is one flat list (`ul.js-openings-load[data-more]` of `li.opening-job`, no
+  groups), which the reader didn't parse: the page gave 0 jobs and only the search's 98 were stored, with
+  `ignore_search_total` hiding the gap (the note "the page and search list the same 98" was wrong). The reader now
+  takes a flat path for such a page: the search first, so its postings keep the values they had, then the page and its
+  `api/more?page=N` pages (24 each) to an empty one. Live: 218 postings in 11 requests and 11 s, 120 never stored
+  before, 2 student roles (both already stored). The flat page shows no count, so the search's postings must be among
+  the page's (all but 2 + 3%); `ignore_search_total` is dropped for Arista (218 is above the search's 130).
+- **Western Digital.** Its page lists 176 postings and its search the newest 100 of 324, so older postings are in
+  neither. The search takes a keyword (not an offset, page or place). New setting `sweep`: 86 keyword searches (every
+  word a title can pass the role rule with: the student, underclass and weak-hint lists, role_keywords, the filters'
+  years), a hit kept when its title has one of the words. It runs on the first read with the setting, whose finds go
+  out once as "already open", and again on a read whose newest 100 are all unknown. What only the sweep found joins
+  watch_open and is read from its own page from then on (without that the next healthy read would record it as
+  removed); a posting the watch list already reads is left to it; a watched posting whose page can't be read stays
+  watched (it used to drop off the list). A search that fails or lists fewer rows than it counts degrades the poll and
+  the sweep runs again. Live: 198 jobs, 104 requests, 104 s, no keyword cut at 100 (the largest lists 30). The sweep
+  reached 5 postings neither list had: three intern roles in Malaysia never read (the one-time send, tagged
+  `location?`), an intern role in Thailand read earlier and since pushed out of the newest 100 while open, and the
+  Winter 2027 co-op the watch list reads.
+- **`burst` alert** (company setting `burst: 100`, liveness._burst_rule): 100 or more postings of one read never
+  stored. Judged on any read that brought jobs, before the other rules' gates and inside its own try/except; one alert
+  a day, ended only by dismissing. A company without the setting returns from the rule at once.
+- **The user's decisions:** the sweep once and again on a 100+ morning (not every morning); places stay as they are
+  (writing "…, my" out as "Malaysia" would reject the three Malaysian roles: a stricter filter, declined); no IBM alert.
+- **A sweep morning, measured** (the added round's five SmartRecruiters reads started together through one gate, in
+  memory): Western Digital 69 s without the sweep and 155 s with it (104 requests, 87 on the search's host); Comcast's
+  source 128 and 128, Intuitive 163 and 163, Northwestern Mutual 34 and 35, Arista 46 and 49; all five together 163 s
+  both times; the longest wait for a turn 4.6 s both times, on the page host they share. Each check's budget is 480 s.
+- **The swept roles and the email's 50 rows:** as "already open" rows they get only what the new roles leave, so they
+  can't move a new role to the attachment; they can move as many other already-open rows as there are swept roles (3
+  today). On a 100+ morning they are new and share the 50 with every new role.
+- **Watched SmartRecruiters boards** (read through the same adapter), checked live: Glean's page is grouped (1
+  posting), Visa's and Palo Alto Networks' have no job list. None is flat, so none is read differently.
+- **Proofs** (tools/prove; golden.py got `--strict key,key`, which compares named added companies too):
+  - golden, each PASS (864 cassette runs, 215,037 filter verdicts, 41,594 matched rows, 105 Workday robots files):
+    the Arista commit against main, with Intuitive, Comcast, Northwestern Mutual and Western Digital strict; the sweep
+    and burst code against the Arista commit, with all five added SmartRecruiters companies strict (Amazon identical
+    with `title_words` moved to adapters/base.py); the final commit against the Arista commit, with the four others
+    strict.
+  - three replayed mornings (runall.sh, the Nov 18 recording, new roles at Stripe and LinkedIn and a failure at
+    ServiceNow on the second):
+    - the final code with sweep and burst off against the Arista commit, no exempt company: PASS, every table and
+      every email byte for byte;
+    - the Arista commit against main, Arista exempt, on the recording as it is: FAIL with 2 differences, both from
+      Arista's check failing in the replay. The recording holds no `api/more` page, so the new reader's request for
+      page 1 isn't recorded (2 requests, the first look and the second) and the check errors: the run's status goes
+      from ok to partial, and Arista's `error` alert takes a number before alerts raised later in the same run.
+      Nothing else differs;
+    - so the proofs of the two readers run on `data/stage2/morning-2026-11-18-batch6-sr`: the same recording with 104
+      answers appended from Nov 20 (Arista's 9 `api/more` pages, which fit the Nov 18 page and search: all 98 of the
+      search's postings are in the walk; Western Digital's 86 keyword answers and 9 posting pages). Code that doesn't
+      ask for them replays as on the original. On it: the Arista commit against main, Arista exempt: PASS on all
+      three mornings (816 new jobs for 696, 9 more requests, nothing for review); the final commit against the Arista
+      commit, Western Digital exempt: PASS on all three (86 more searches; 5 postings only the sweep finds, 4 of them
+      matching and listed once as already open, the subject's "4 already open" becoming 8; the four still open two
+      mornings later, read from their own pages; no posting both versions store differs in any field).
+- Tests: 18 new (flat walk, its cut and repeated pages, places, pages that aren't flat; the sweep, its cut and failed
+  searches, a second sweep on a full window of unknown postings, watched postings; the burst rule, an error inside it,
+  a company without it; a swept role sent once as already open). Fixture replays now give the reader the filters'
+  years, as a recording has them.
+- Commits: 75cb64c (golden --strict), 4e41694 (Arista), e58e6fb (sweep and burst, off), da041c5 (Western Digital's
+  settings), b1fd50a and 2d5a47a (the watch list fixes).
