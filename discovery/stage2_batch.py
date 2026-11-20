@@ -249,9 +249,9 @@ MIRROR_MARKS = {"ice": ["careers-ice.icims.com"], "charles-schwab": ["career-sch
 
 # Counts the site gives that its own list doesn't reach, measured on the day of the batch
 EXPLAINED = {
-    "western-digital": "Its SmartRecruiters page lists 162 postings (all 336 on 11-09) and its search counts 325 but "
-                       "lists only the newest 100: the read is both (210) and the postings Simplify links, each read "
-                       "from its own page (learn_ids), so an older posting off the page is read when Simplify lists it.",
+    "western-digital": "Its SmartRecruiters page lists 176 postings and its search only the newest 100 of 324 "
+                       "(2026-11-20): the read is both, a keyword sweep of the search for student roles (sweep) and the "
+                       "postings Simplify links (learn_ids), not the whole site.",
     "tyler-technologies": "Its hosted Jobvite page shows the first 125 jobs in alphabetical order and cuts off the other "
                           "19 (2026-11-15): the Jobvite feed that is read lists all 144.",
 }

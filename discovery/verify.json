@@ -3288,12 +3288,12 @@
   "requests": 80
  },
  "western-digital": {
-  "jobs": 210,
-  "students": 23,
-  "matched": 11,
-  "at": "2026-11-15T16:37:47Z",
-  "duration": 15.1,
-  "requests": 16
+  "jobs": 198,
+  "students": 28,
+  "matched": 16,
+  "at": "2026-11-20T20:03:03Z",
+  "duration": 103.8,
+  "requests": 104
  },
  "whatnot": {
   "jobs": 149,

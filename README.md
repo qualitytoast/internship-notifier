@@ -84,6 +84,10 @@ Rules for changing things: CLAUDE.md.
   - `board quiet`: no new job id on a board for 45 days, whatever its size, even an empty one. The newest date is the
     latest of the feed's own posting dates and the day InternWatch first saw a job there, because Workday's dates stop
     at "30+ days" and many feeds have none. Resolved when a new job id appears.
+  - `burst`: a company with `burst: N` in its settings (Western Digital: 100) lists N or more postings in one read
+    that were never stored. Its search reaches only its newest 100, so that many between two reads means older ones
+    among them may have gone unread; its keyword sweep (Adapters, `sweep`) runs again on such a read for the student
+    roles. Judged on any read that brought jobs, once a day. Only dismissing ends it.
   - `moved?`: each careers page is read once a day (3-minute budget, 8 pages at a time, each host at its own pace;
     the pages read are then compared one by one, oldest first) and the job systems it points at are compared
     with what it named before: a new one that isn't configured, or a configured one it stopped mentioning on two reads
@@ -236,8 +240,13 @@ Rules for changing things: CLAUDE.md.
     one is dropped. learn_ids: also read the ids of the company's postings in the latest SimplifyJobs download.
   - any adapter's settings: anchor_host (its host matches SimplifyJobs and list rows only at the start of a link:
     Morgan Stanley's ms.wd5… is inside williams.wd5…)
-  - smartrecruiters {company, ignore_search_total} (the hosted page's groups, or its one flat list where a company
-    has that layout, as Arista: walked to its end since 2026-11-20, after the newest-100 search),
+  - smartrecruiters {company, ignore_search_total, sweep, burst} (the hosted page's groups, or its one flat list where
+    a company has that layout, as Arista: walked to its end since 2026-11-20, after the newest-100 search).
+    sweep: for a company whose page and newest-100 search leave older postings out (Western Digital: 162 and 100 of
+    about 325), the search is also asked for every word a title can pass the role rule with (about 90 keyword
+    searches); a hit whose title has one of them is kept. It runs on the first read with the setting, whose finds go
+    out once as "already open", and again on a read whose newest 100 are all new (the `burst` alert, Health alerts);
+    what only the sweep found is then read from its own page each morning like a watch_ids posting,
     workable {account}, icims {portal}, jibe {host, queries (a giant
     site's slice: these listings only, each to its end)}, phenom {base_url, ref_num},
     avature {list_url, page_size}, applicantpro {subdomain, domain_id}, gem, rippling, jobvite, pinpoint,

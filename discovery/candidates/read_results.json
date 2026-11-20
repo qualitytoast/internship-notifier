@@ -3799,15 +3799,15 @@
   "ok": true,
   "error": null,
   "error_kind": null,
-  "jobs": 210,
-  "students": 23,
-  "matched": 11,
-  "seconds": 30.0,
-  "requests": 16,
+  "jobs": 198,
+  "students": 28,
+  "matched": 16,
+  "seconds": 103.8,
+  "requests": 104,
   "partial": false,
-  "degraded": "smartrecruiters:WesternDigital: collected 210 postings but the search reports 325",
-  "reported_total": 162,
-  "started": "2026-11-15T15:24:33Z"
+  "degraded": null,
+  "reported_total": 176,
+  "started": "2026-11-20T20:01:19Z"
  },
  "xcimer": {
   "checker": "lever",

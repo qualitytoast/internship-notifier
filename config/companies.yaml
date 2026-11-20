@@ -4066,10 +4066,12 @@ companies:
     company: WesternDigital
     ignore_search_total: true
     learn_ids: true
+    sweep: true
+    burst: 100
     match_urls: [smartrecruiters.com/westerndigital/]
-  verified: {page_total: 162, explained: 'Its SmartRecruiters page lists 162 postings (all 336 on 11-09) and its search counts 325 but
-      lists only the newest 100: the read is both (210) and the postings Simplify links, each read from its own page (learn_ids), so
-      an older posting off'}
+  verified: {page_total: 176, explained: 'Its SmartRecruiters page lists 176 postings and its search only the newest 100 of 324 (2026-11-20):
+      the read is both, a keyword sweep of the search for student roles (sweep) and the postings Simplify links (learn_ids), not the
+      whole site.'}
   round: added
 - key: ford
   name: Ford Motor Company
