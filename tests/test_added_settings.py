@@ -338,6 +338,19 @@ def test_smartrecruiters_sweep_leaves_a_watched_posting_to_the_watch_list():
     assert ctx.state["watch_open"] == ["700003"] and ctx.state["swept"] and ctx.degraded is None
 
 
+def test_smartrecruiters_watched_posting_whose_page_fails_stays_watched():
+    # a posting only a sweep found is in no list and on no SimplifyJobs row: dropped from watch_open after one failed
+    # read, the next healthy read would record it as closed while it is open
+    from internwatch.models import FetchError
+    wd = "https://jobs.smartrecruiters.com/WD/"
+    http = _sr_site(**{wd + "700003": FetchError("HTTP 503 for GET the posting"), wd + "700005": _sr_page("Ignite Program")})
+    ctx = FetchContext(known=frozenset({"700001"}), state={"swept": "2026-11-20", "watch_open": ["700003", "700005"]})
+    jobs = get_checker("smartrecruiters").fetch(http, {**SWEEP, "watch_ids": ["700003", "700005"]}, ctx)
+    assert sorted(j.id for j in jobs) == ["700001", "700005"]                  # a degraded poll records no removals
+    assert "watched posting 700003: HTTP 503" in ctx.degraded
+    assert ctx.state["watch_open"] == ["700003", "700005"] and ctx.state.get("watch_closed") == []
+
+
 def test_smartrecruiters_sweep_that_is_cut_or_fails_is_reported_and_run_again():
     from internwatch.models import FetchError
     interns = [(710000 + i, f"Intern {i}") for i in range(100)]

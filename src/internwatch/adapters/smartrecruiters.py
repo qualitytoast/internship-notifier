@@ -237,7 +237,8 @@ class SmartRecruiters(Checker):
                 if ctx is None:
                     raise
                 degrade(ctx, f"smartrecruiters:{company}: watched posting {wid}: {e}")
-                continue
+                opened.append(wid)  # not read this time, so still watched: left out, a later read would take it for
+                continue            # closed (what a sweep found is in no list that could bring it back)
             soup = BeautifulSoup(r.text, "lxml") if r.status == 200 else None
             title = soup.select_one("[itemprop=title]") if soup is not None else None
             if title is None or EXPIRED.search(soup.get_text(" ", strip=True)):
