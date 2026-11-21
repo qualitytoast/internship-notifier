@@ -82,6 +82,7 @@ the dates ran from 2025-04-10 to 2026-11-06. Unlike the career sitemap, these ar
   `role_keywords: [discover citadel, ignite, spark]` on this entry only: Spark and Discover's US page match (tagged
   freshman/sophomore, location?); the regional pages fail the location rule, and the events fail the role rule.
 - moves.py N still reports new program pages (`liveness.program_pages`), which is how Spark was found.
+- 2026-11-21: The Software Engineering Forum (a two-day event for second-year CS, CE, math and STEM students, travel paid, run by Citadel and Citadel Securities) got pages on 2026-11-20. The checker stored its apply page that day but the role rule rejected it (no student word in the title), so it was found only through the N `new page` alert. `software engineering forum` is now a role keyword here too.
 
 ## Evidence
 - Sample: `discovery/samples/citadel-securities.json`. It has the raw sitemap (whole), the parsed rows, and page-1 cards compared with derived titles.

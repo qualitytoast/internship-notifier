@@ -92,7 +92,7 @@ PROGRAM_KEYWORDS: dict[str, list[str]] = {
     "goldman-sachs": ["possibilities", "emerging leaders"],
     "citadel": ["discover citadel", "launch"],
     "citadel-securities": ["discover citadel", "ignite"],
-    "citadel-securities-programs": ["discover citadel", "ignite", "spark"],
+    "citadel-securities-programs": ["discover citadel", "ignite", "spark", "software engineering forum"],
     "jane-street": ["fttp", "jsip", "insight", "focus", "bridge"],
     "two-sigma": ["mentor connect"],
     "hudson-river-trading": ["witti", "women in trading"],
