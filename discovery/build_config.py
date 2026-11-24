@@ -303,6 +303,10 @@ OVERRIDES: dict[str, dict] = {
         "explained": "the careers page lists the akunacapital board; the on-campus board akunacapitaloci is read too"}},
     "virtu": {"settings": {"boards": ["virtu", "virturecruitinghidden"]}, "verified": {
         "explained": "the careers page lists the virtu board; the unadvertised virturecruitinghidden board is read too"}},
+    # Boardsweep linked AQR's joblinks board ("Job Links") on 2026-11-24: an MIT Micro-Intern posting (AQR Arbitrage,
+    # IAP) that the aqr board doesn't list. A program board that may be switched off between programs, hence missing_ok.
+    "aqr": {"settings": {"boards": ["aqr", "joblinks"], "missing_ok": True}, "verified": {
+        "explained": "the careers page lists the aqr board; the program board joblinks (MIT Micro-Intern) is read too"}},
     "visa": {"settings": {"host": "visa.wd5.myworkdayjobs.com", "tenant": "visa",
                           "sites": ["Visa", "Visa_Early_Careers", "Visa_Talent_Portal"]}, "verified": {
         "explained": "All 23 internships are on Visa_Early_Careers; the unlinked Visa_Talent_Portal site is read too"}},

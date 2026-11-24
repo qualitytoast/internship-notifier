@@ -1284,8 +1284,11 @@ companies:
   aliases: [AQR Capital Management]
   careers_url: ['https://careers.aqr.com/']
   checker: greenhouse
-  settings: {board: aqr}
-  verified: {page_total: 56}
+  settings:
+    boards: [aqr, joblinks]
+    missing_ok: true
+  verified: {page_total: 56, explained: the careers page lists the aqr board; the program board joblinks (MIT Micro-Intern) is read
+      too}
 - key: graviton
   name: Graviton Research Capital
   category: quant
